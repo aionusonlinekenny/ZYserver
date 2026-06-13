@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SDShowItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  width="387" height="117" states="normal,done" >
+	<e:Image right="0" left="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="48,33,19,18"/>
+	<e:Label id="scheduleTxt" text="达成10项任务" x="26" size="20" fontFamily="Microsoft YaHei" verticalCenter="0.5" textColor="0x001828"/>
+	<e:List id="list" x="174.5" verticalCenter="3.5" itemRendererSkinName="SkinItem3">
+		<e:layout>
+			<e:HorizontalLayout gap="30" paddingLeft="0"/>
+		</e:layout>
+	</e:List>	
+</e:Skin>

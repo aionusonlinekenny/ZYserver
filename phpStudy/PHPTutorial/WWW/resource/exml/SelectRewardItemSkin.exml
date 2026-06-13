@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinSelectRewardItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="203" width="499">
+
+	<e:Image left="0" right="0" top="0" bottom="0" scale9Grid="65,29,2,1" source="tongyonglabbg"/>
+	<e:Image source="tongyongline5" horizontalCenter="0" y="75.75"/>
+	<e:Label id="chooseNum" y="48" text="00/50" size="16" textColor="0x00842c" fontFamily="Microsoft YaHei" left="200" textAlign="left"/>
+	<e:Label y="48" text="已分配奖励:" size="16" x="112.75" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="boxname" y="18.5" text="玛法宝箱" size="20" x="113.5" textColor="0xec6014" fontFamily="Microsoft YaHei"/>
+	<ns1:ItemBase id="goods" y="6" skinName="SkinItem" scaleX="0.8" scaleY="0.8" x="28"/>
+	<e:Button id="choosePeople" x="342.5" y="15.5" label="选择成员" icon="zjmzidong" scaleX="1" width="116" height="47">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="zjmzidong" width.down="95%" height.down="95%" horizontalCenter.up="0" verticalCenter.up="0" horizontalCenter.down="0" verticalCenter.down="0"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="22" textColor="0x7e2a00" fontFamily="Microsoft YaHei"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Scroller y="82.5" horizontalCenter="-2.5" width="360" anchorOffsetX="0" anchorOffsetY="0" height="114.5">
+		<e:List id="list" y="1" itemRendererSkinName="SkinMemberHead" anchorOffsetX="0" width="358.5" x="9.5">
+			<e:layout>
+				<e:HorizontalLayout gap="12"/>
+			</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Image id="rightBtn" y="113" touchEnabled="true" right="13" source="jiantouxuan" scaleX="-1" width="55" height="46"/>
+	<e:Image id="leftBtn" y="113" scaleX="1" touchEnabled="true" x="4" source="jiantouxuan" width="55" height="46"/>
+	<e:Image source="jiangliitem_png" alpha="0.7" visible="false"/>
+</e:Skin>

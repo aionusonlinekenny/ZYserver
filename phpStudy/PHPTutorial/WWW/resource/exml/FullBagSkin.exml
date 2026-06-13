@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinFullBag" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="600" height="948">
+	<w:Config id="1586b35a531"/>
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.7"/>
+
+
+	<e:Group width="484" height="332" verticalCenter="0" horizontalCenter="0">
+		<e:Image left="0" right="0" scale9Grid="34,20,1,1" source="tongyong_dikuang2" height="314" bottom="0"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" top="15"/>
+		<e:Image top="0" source="tongyong_titlebg" horizontalCenter="0"/>
+		<e:Image top="60" source="tongyong_dikuang1" left="25" right="25" scale9Grid="10,10,64,66" anchorOffsetY="0" height="250"/>
+
+		<e:Button skinName="SkinBtn1" label="前往熔炼" id="sureBtn" horizontalCenter="0" verticalCenter="72"/>
+		<e:Label text="提  示" size="22" horizontalCenter="0" top="13" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label text="背包空间不足         ，请先清理背包，以免不能获得奖励。" size="20" width="300" lineSpacing="10" textAlign="center" horizontalCenter="0" textColor="0x213847" fontFamily="Microsoft YaHei" top="120"/>
+		<e:Label id="numText" text="20" size="20" width="40" lineSpacing="10" textAlign="center" horizontalCenter="2" fontFamily="Microsoft YaHei" textColor="0x0038ab" top="120"/>
+
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="tongyong_btnclose" right="-3" y="1"/>
+	</e:Group>
+</e:Skin>

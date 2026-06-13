@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="sevenDayWin" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  >
+	<e:Rect fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+	<e:Group top="0" bottom="0" width="600" horizontalCenter="0">
+		<e:Image scale9Grid="10,9,27,30" width="600" source="vipbg_png" horizontalCenter="0" top="0" bottom="0"/>
+		<ns1:RoleSelectPanel id="roleSelect" currentState="nohead" width="600" horizontalCenter="0" top="0" skinName="SkinRoleSelectPanel"/>
+		<e:Image horizontalCenter="-0.5" scale9Grid="25,25,15,19" anchorOffsetY="0" source="vipbg4_png" width="563" top="106" bottom="105"/>
+		<e:Image horizontalCenter="-125" source="shang_2_png" touchEnabled="false"/>
+		<e:Group id="infoBg" y="108" horizontalCenter="-0.5">
+			<e:Image source="sevendaytopbg_png" x="0" y="0"/>
+			<e:Group y="70.7" anchorOffsetY="0" height="67" anchorOffsetX="0" width="358" horizontalCenter="100.5">
+			<e:Label text="剩余时间:" size="18" left="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="actTime0" text="6天23时10分" size="18" textColor="0x00ff00" fontFamily="Microsoft YaHei" top="0" left="90"/>
+			<e:Label id="actInfo0" text="                 在活动开启7天内完成的活动任务 赚取积分赢最终大奖 " size="18"  anchorOffsetX="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="0" right="1" verticalCenter="10.5" anchorOffsetY="0" height="46"/>
+			<e:Label text="活动说明:" size="18" left="0" top="21" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			</e:Group>
+			<e:Image x="117" y="8" source="biaoti_qitianle_png"/>
+		</e:Group>
+		<e:Group anchorOffsetY="0" width="558" horizontalCenter="0" height="483" verticalCenter="14.5">
+			<e:Image id="bgD" width="122" anchorOffsetX="0" anchorOffsetY="0" bottom="0" top="0" y="69" left="0" scale9Grid="4,5,4,2" source="tongyonghongbg2"/>
+			<e:Group id="project" bottom="0" top="1" anchorOffsetY="0" x="120">
+				<e:Image id="bgP" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="4,4,7,6" left="0" bottom="0" right="-1" top="38" source="sd_projectbg_png" visible="false"/>
+				<e:List id="tabP" x="1" y="0" itemRendererSkinName="tabBtnSkin">
+				<e:layout>
+					<e:HorizontalLayout gap="0"/>
+				</e:layout>
+				</e:List>
+				<e:Scroller id="item" left="4" top="50" bottom="0" right="4" scrollPolicyH="off" scrollPolicyV="on" anchorOffsetY="0">
+				<e:List id="list" itemRendererSkinName="SDProjectItemSkin" left="0" top="0" right="0" bottom="0">
+					<e:layout>
+						<e:VerticalLayout gap="5"/>
+					</e:layout>
+				</e:List>
+				</e:Scroller>
+			</e:Group>
+			<e:List id="tabD" width="105" top="13" left="8" itemRendererSkinName="dayBtnSkin">
+				<e:layout>
+					<e:VerticalLayout gap="5"/>
+				</e:layout>
+			</e:List>
+			<e:Image scaleY="-1" horizontalCenter="0" source="line9" x="9" bottom="0"/>
+
+		</e:Group>
+		<e:Image horizontalCenter="-149" top="32" source="biaoti_qirikuanghuan_png" touchEnabled="false"/>
+		<e:Group horizontalCenter="-1" bottom="107" anchorOffsetX="0" width="506" anchorOffsetY="0" height="110.5">
+			<e:Label text="全目标终极奖励" size="16" bold="true" textColor="0xf8b141" top="16" right="94" visible="false"/>
+			<e:Group id="bar" verticalCenter="6.164999999999999" horizontalCenter="-23">
+				<e:Image width="438" source="progress2" scale9Grid="26,3,33,11" y="-0.4"/>
+				<e:ProgressBar id="schedule" width="415.5" x="10.7" y="0.8" value="100" skinName="Skinbar5" height="18"/>
+				<e:Image x="-8" y="-2" source="progress1"/>
+				<e:Image source="progress1" x="444" y="-2" scaleX="-1"/>
+			</e:Group>
+			<e:Group id="checkBtn" y="-12" right="0">
+				<e:Image y="12" x="11" source="jinglianitem"/>
+				<e:Image y="0" source="jinglianing" x="0"/>
+				<e:Image id="rewardBtn" y="24" touchEnabled="true" source="reward_check_png" x="10"/>
+			</e:Group>
+			<e:Group x="8.3" y="63.5" anchorOffsetX="0" width="443.5">
+				<e:Group height="16" y="-11.8" left="0" right="0">
+					<e:Image x="51" y="0" source="pailietouline3"/>
+					<e:Image x="91.7" y="0" source="pailietouline3"/>
+					<e:Image x="132" y="0" source="pailietouline3"/>
+					<e:Image x="173" y="0" source="pailietouline3"/>
+					<e:Image x="213.7" y="0" source="pailietouline3"/>
+					<e:Image x="254.5" y="0" source="pailietouline3"/>
+					<e:Image x="295.5" y="0" source="pailietouline3"/>
+					<e:Image x="335.7" y="0" source="pailietouline3"/>
+					<e:Image x="376.8" y="0" source="pailietouline3"/>
+				</e:Group>
+				<e:Group height="36.2" y="8.8" anchorOffsetY="0" left="0" right="0">
+					<e:Image x="35.8" y="2.4" source="252226_png"/>
+					<e:Image x="76.6" y="2.4" source="252226_png"/>
+					<e:Image x="117.6" y="2.4" source="252226_png"/>
+					<e:Image x="158.6" y="2.4" source="252226_png"/>
+					<e:Image x="198.8" y="2.4" source="252227_png"/>
+					<e:Image x="239.6" y="2.4" source="252227_png"/>
+					<e:Image x="282" y="2.4" source="252228_png"/>
+					<e:Image x="322.5" y="2.4" source="252228_png"/>
+					<e:Image x="363.5" y="2.4" source="252228_png"/>
+				</e:Group>
+			</e:Group>
+			<e:Image x="158" y="14.5" source="zhongji_reward_png"/>
+		</e:Group>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="274" x="544"/>
+	</e:Group>		
+</e:Skin>

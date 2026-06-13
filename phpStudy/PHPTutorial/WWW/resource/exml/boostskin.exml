@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBoost" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="728">
+	<w:Config id="159bef2916a"/>
+
+
+	<e:Image source="qianghuarenbg_png" width="594" horizontalCenter="0" top="98"/>
+	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" y="244" x="176"/>
+
+	<e:Group id="upInfo" bottom="0" height="110" horizontalCenter="0" width="560">
+		<e:Group id="costGroup" bottom="66" horizontalCenter="8.5">
+			<e:Label id="expendLabel" text="消耗:" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Image id="icon" x="55" source="200002_png" width="40" height="40" y="28"/>
+			<e:Label id="countLabel" text="" size="20" textAlign="left" x="83" y="12" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="-3"/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="getItemTxt" text="获取道具" size="20" textColor="0x00FF00"   horizontalCenter="170" bottom="10" height="60" verticalAlign="middle" width="100" textAlign="center" visible="false"/>
+		<e:Button id="upGradeBtn" label="强  化" horizontalCenter="0" skinName="SkinBtn6" width="213" icon="btn1_2" height="67" bottom="3"/>
+		<e:Button id="upGradeBtn0" label="一键强化" skinName="SkinBtn1" bottom="14" x="285" visible="false"/>
+	</e:Group>
+
+
+
+
+
+
+
+
+
+	<e:Group id="itemGroup" height="505" touchChildren="false" touchEnabled="false" horizontalCenter="0" width="560" top="90">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<e:Group id="item0" width="76" height="76" y="430" name="0" x="242">
+			<e:Image id="quality_0" source="quality0" width="76" height="76"/>
+			<e:Image id="pos0" touchEnabled="true" width="60" height="60" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0" source="xb_10_png"/>
+			<e:Label id="level_0" text="+10" x="5" size="20" textAlign="right" width="66" y="3" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group width="76" height="76" x="408" y="360" id="item1" name="1">
+			<e:Image id="quality_1" source="quality0" width="76" height="76"/>
+			<e:Image id="pos1" touchEnabled="true" width="60" height="60" horizontalCenter="0" verticalCenter="0" source="xb_11_png"/>
+			<e:Label id="level_1" text="+10" x="5" size="20" textAlign="right" width="66" y="3" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group width="76" height="76" x="484" y="216" id="item2" name="2">
+			<e:Image id="quality_2" source="quality0" width="76" height="76"/>
+			<e:Image id="pos2" touchEnabled="true" width="60" height="60" horizontalCenter="0" verticalCenter="0" source="xb_12_png"/>
+			<e:Label id="level_2" text="+10" x="5" size="20" textAlign="right" width="66" y="3" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group width="76" height="76" x="408" y="65" id="item3" name="3">
+			<e:Image id="quality_3" source="quality0" width="76" height="76"/>
+			<e:Image id="pos3" touchEnabled="true" width="60" height="60" horizontalCenter="0" verticalCenter="0" source="xb_13_png"/>
+			<e:Label id="level_3" text="+10" x="5" size="20" textAlign="right" width="66" y="3" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group width="76" height="76" id="item4" name="4" x="242">
+			<e:Image id="quality_4" source="quality0" width="76" height="76" name="0"/>
+			<e:Image id="pos4" touchEnabled="true" width="60" height="60" horizontalCenter="0" verticalCenter="0" source="xb_14_png"/>
+			<e:Label id="level_4" text="+10" x="5" size="20" textAlign="right" width="66" y="3" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group width="76" height="76" x="78" y="65" id="item5" name="5">
+			<e:Image id="quality_5" source="quality0" width="76" height="76"/>
+			<e:Image id="pos5" touchEnabled="true" width="60" height="60" horizontalCenter="0" verticalCenter="0" source="xb_15_png"/>
+			<e:Label id="level_5" text="+10" x="5" size="20" textAlign="right" width="66" y="3" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group width="76" height="76" y="216" id="item6" name="6">
+			<e:Image id="quality_6" source="quality0" width="76" height="76"/>
+			<e:Image id="pos6" touchEnabled="true" width="60" height="60" horizontalCenter="0" verticalCenter="0" source="xb_16_png"/>
+			<e:Label id="level_6" text="+10" x="5" size="20" textAlign="right" width="66" y="3" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group width="76" height="76" x="78" y="360" id="item7" name="7">
+			<e:Image id="quality_7" source="quality0" width="76" height="76"/>
+			<e:Image id="pos7" touchEnabled="true" width="60" height="60" horizontalCenter="0" verticalCenter="0" source="xb_17_png"/>
+			<e:Label id="level_7" text="+10" x="5" size="20" textAlign="right" width="66" y="3" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+	</e:Group>
+
+	<e:Label id="maxDesc" text="强化已满级"   size="24" horizontalCenter="0" bottom="35" top="671" textColor="0xffff00" fontFamily="Microsoft YaHei" visible="false"/>
+	<e:Group width="280" height="138" horizontalCenter="0" top="304">
+		<e:Group x="10" width="270">
+		<e:Label id="attr0" text="" size="16" textAlign="center" x="265" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" width="116" verticalAlign="middle"/>
+		<e:Image id="arrow0" x="139" y="1" rotation="0" source="tongyongup"/>
+		<e:Label id="addAttr0" text="" size="16" x="159" y="1.5" textColor="0x00FF06" fontFamily="Microsoft YaHei" width="96" textAlign="center" verticalAlign="middle"/>
+		<e:layout>
+			<e:HorizontalLayout gap="5"/>
+		</e:layout>
+		</e:Group>
+		<e:Group x="10" y="28" width="270">
+		<e:Label id="attr1" text="" size="16" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" width="116" verticalAlign="middle" textAlign="center"/>
+		<e:Image id="arrow1" source="tongyongup" x="139" y="1" rotation="0"/>
+		<e:Label id="addAttr1" text="" size="16" textAlign="center" x="126" textColor="0x00FF06" fontFamily="Microsoft YaHei" width="96" verticalAlign="middle"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="5"/>
+		</e:layout>
+		</e:Group>
+		<e:Group x="10" y="56" width="270">
+		<e:Label id="attr2" text="" size="16" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" width="116" verticalAlign="middle" textAlign="center"/>
+		<e:Image id="arrow2" source="tongyongup" x="139" y="1" rotation="0"/>
+		<e:Label id="addAttr2" text="" size="16" textAlign="center" x="126" textColor="0x00FF06" fontFamily="Microsoft YaHei" width="96" verticalAlign="middle"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="5"/>
+		</e:layout>
+		</e:Group>
+		<e:Group x="10" y="84" width="270">
+		<e:Label id="attr3" text="" size="16" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" width="116" verticalAlign="middle" textAlign="center"/>
+		<e:Image id="arrow3" source="tongyongup" x="139" y="1" rotation="0"/>
+		<e:Label id="addAttr3" text="" size="16" textAlign="center" x="124" textColor="0x00FF06" fontFamily="Microsoft YaHei" width="96" verticalAlign="middle"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="5"/>
+		</e:layout>
+		</e:Group>
+	</e:Group>
+
+
+
+
+
+
+
+
+
+
+</e:Skin>

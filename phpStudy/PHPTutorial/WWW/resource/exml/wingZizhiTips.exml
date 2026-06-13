@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="wingZizhiTips" currentState="normal" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" height="948" width="600" states="normal,maxLv,noitem" >
+	<w:Config id="1586b36a128"/>
+	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group horizontalCenter="-1" width="300" height="464" verticalCenter="-26" anchorOffsetY="0">
+		<e:Image id="BG" top="0" bottom="0" left="0" right="0" source="tongyongtip1" scale9Grid="8,8,47,57"/>
+		<e:Image height="202" scale9Grid="6,6,15,508" left="0" top="0" right="0" anchorOffsetY="0" source="quali2"/>
+		<e:Image source="tongyongtip2" left="-1" right="-1" top="0" bottom="-1" scale9Grid="10,8,54,41" visible="false"/>
+		<e:Group x="46" y="212">
+			<e:Label id="attr1" y="0" text="" size="18" verticalAlign="justify" x="0" textAlign="left"  textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Image x="124" y="1" source="tongyongup" rotation="90" includeIn="normal" scaleY="1" scaleX="-1"/>
+			<e:Label id="attr1NextLv" y="10" text="" size="18" verticalAlign="justify" x="10" textAlign="left" textColor="0x00ff00"  includeIn="normal" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" horizontalAlign="left"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="46" y="237">
+			<e:Label id="attr2" y="14" text="" size="18" verticalAlign="justify" x="0" textAlign="left"  textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Image x="134" y="0" source="tongyongup" rotation="90" includeIn="normal" scaleY="1" scaleX="-1"/>
+			<e:Label id="attr2NextLv" y="24" text="" size="18" verticalAlign="justify" x="10" textAlign="left" textColor="0x00ff00" includeIn="normal" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" horizontalAlign="left"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="46" y="262">
+			<e:Label id="attr3" y="227" text="" size="18" verticalAlign="justify" x="26" textAlign="left" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Image x="170" y="198" source="tongyongup" rotation="90" includeIn="normal" scaleY="1" scaleX="-1"/>
+			<e:Label id="attr3NextLv" y="0" text="" size="18" verticalAlign="justify" x="0" textAlign="left" textColor="0x00FF00" includeIn="normal" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" horizontalAlign="left"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="46" y="287">
+			<e:Label id="attr4" y="242" text="" size="18" verticalAlign="justify" x="16" textAlign="left" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Image x="170" y="198" source="tongyongup" rotation="90" includeIn="normal" scaleY="1" scaleX="-1"/>
+			<e:Label id="attr4NextLv" y="0" text="" size="18" verticalAlign="justify" x="0" textAlign="left" textColor="0x00FF00" includeIn="normal" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" horizontalAlign="left"/>
+			</e:layout>
+		</e:Group>
+		<e:Label y="186" text="基础属性" size="18" x="24" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Image y="128" width="299" horizontalCenter="0" anchorOffsetY="0" height="45" alpha="0.8" source="bantoutiaobg8" scale9Grid="116,5,50,31"/>
+		<ns1:PowerPanel id="powerPanel" y="119" x="17" skinName="Skin2PowerPanel" width="288"/>
+		<e:Label y="50" text="部位：" size="18" x="111" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+		<e:Label y="75" text="等级：" size="18" x="111" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+		<e:Label y="100" text="职业：" size="18" x="111" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+		<e:Label text="培养" size="20" x="25" y="16" textColor="0xd242fb" fontFamily="Microsoft YaHei" textAlign="center"/>
+		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" bottom="-48" scale9Grid="128,2,15,41" width="300"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-39" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image x="22" y="45" width="76" height="76" scale9Grid="26,40,8,4" source="quality2"/>
+		<e:Label id="wingName" text="" x="160" y="50" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="zizhiLv" text="" x="160" y="75" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="career" text="" x="160" y="100" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image x="28" y="51" source="200238_png"/>
+		<e:Button id="updateBtn" label="升  级" skinName="SkinBtn1" horizontalCenter="0" bottom="13" includeIn="normal"/>
+		<e:Image scaleX="-1" anchorOffsetX="0" width="260" source="tongyongline" y="370" horizontalCenter="0"/>
+		<e:Label text="消耗仙羽精魄可提高仙羽基础属性" size="14" bottom="126" left="39" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="maxLvDesc" text="当前仙羽资质最大可提升至 100 级" size="14" bottom="107" left="39" text.normal="" text.maxLv="" text.noitem="" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+		<e:Group includeIn="noitem" horizontalCenter="0" bottom="27">
+			<e:Label text="升级消耗:" includeIn="noitem" x="0" y="7" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Image id="itemImg" width="32" height="32" includeIn="noitem" x="94" y="0" source="200238_png"/>
+			<e:Label id="costNum" text="X1" includeIn="noitem" x="140" y="6" textColor="0xf71129" bold="true" size="18"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Label text="已满级" includeIn="maxLv" textColor="0xffd93f" horizontalCenter="0" bottom="30" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+</e:Skin>

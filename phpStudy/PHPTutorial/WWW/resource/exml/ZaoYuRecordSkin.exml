@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinZaoYuRecord" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6" width="600" height="948"/>
+	<e:Image anchorOffsetX="0" width="281" height="40" source="bantoutiaobg" top="755" horizontalCenter="0.5"/>
+	<e:Label text="点击空白区域关闭窗口" y="764" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" textAlign="center" horizontalCenter="0"/>
+	<e:Group width="488" height="610" horizontalCenter="0" verticalCenter="-38">
+		<e:Image height="580" scaleX="1" scaleY="1" source="tongyong_dikuang2" left="0" right="0" scale9Grid="26,12,62,58" bottom="0"/>
+		<e:Image height="23" y="16" source="tongyong_juanzhou" left="0" right="0"/>
+		<e:Image y="0" source="tongyong_titlebg" horizontalCenter="0"/>
+		<e:Button skinName="SkinBtn0" y="1" icon="tongyong_btnclose" label="按钮" id="closeBtn" x="438" scaleX="1" scaleY="1"/>
+		<e:Label text="战斗记录" y="14" fontFamily="Microsoft YaHei" size="22" textColor="0x084151" horizontalCenter="0"/>
+		<e:Image width="426" height="520" y="50" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,10,64,66"/>
+		<e:Scroller width="408" height="504" y="58" horizontalCenter="0" anchorOffsetY="0" x="40" scaleX="1" scaleY="1">
+			<e:List id="list" itemRendererSkinName="SkinZaoYuRecordInfo" verticalCenter="0" horizontalCenter="156">
+				<e:layout>
+					<e:VerticalLayout gap="4"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+	</e:Group>
+
+
+
+
+
+
+
+</e:Skin>

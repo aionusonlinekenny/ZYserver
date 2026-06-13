@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinCastingZBItem" width="92" height="92" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="zbItem" horizontalCenter="0" verticalCenter="0">
+		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" horizontalCenter="0" verticalCenter="0" x="0" y="0"   width="74" height="74"/>
+
+		<e:Label id="lvltext" text="" anchorOffsetY="0" height="15" size="20" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" top="12" width="65.34" right="14" textAlign="right" stroke="1" anchorOffsetX="0"/>
+		<e:Label id="openlevtext" text="" anchorOffsetY="0" height="38" size="18" fontFamily="Microsoft YaHei" textAlign="center" scaleX="1" scaleY="1" width="57" horizontalCenter="0" verticalCenter="0" textColor="0xffffff"/>
+		<e:Image id="state" horizontalCenter="0.5" source="zzcan_png" verticalCenter="0" visible="false"/>
+		<e:Image id="select" width="85" height="85" horizontalCenter="0" verticalCenter="0" source="xuanzekuang3" scale9Grid="18,18,4,3" visible="false"/>
+
+	</e:Group>
+</e:Skin>

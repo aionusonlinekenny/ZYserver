@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildWarResult" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:ns1="*">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Image id="bg"  top="0" bottom="0" source="tongyong_bgsuc" width="600" horizontalCenter="0"/>
+
+	<e:Group width="600" height="948" horizontalCenter="0" verticalCenter="0">
+
+		<e:Button id="closeBtn" label="领取奖励(3s)" y="759.3" horizontalCenter="-1.5" x="222"  skinName="SkinBtn7"/>
+		<e:Image id="result" y="4.98" horizontalCenter="28" x="300"  source="labwin_png"/>
+
+		<e:Group id="titleGroup" width="200" height="107" y="254" horizontalCenter="0" anchorOffsetY="0"/>
+		<e:Group y="253.69" horizontalCenter="0" height="130" x="171" >
+			<e:Image y="103" horizontalCenter="0" height="34" source="bantoutiaobg2" width="243" scale9Grid="11,2,70,17" visible="false"/>
+			<e:Image x="42" y="95" source="shuxingbg4" visible="false"/>
+			<e:Label id="guildName" text="仙盟名称六字" size="20" x="122" width="136" textAlign="left" bottom="-2" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="占领仙盟：" size="20" x="24" width="100" textAlign="left" height="18" bottom="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		</e:Group>
+		<e:Group width="580" height="363.33" y="389" horizontalCenter="0" anchorOffsetY="0">
+			<e:Image width="544" height="353" y="7.829999999999984" horizontalCenter="0" source="bantoutiaobg" scale9Grid="161,10,61,13" x="18" />
+			<e:Image y="7.829999999999984" horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" x="0" />
+			<e:Image y="357.33" horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" x="0" />
+			<e:Image y="-2.1" horizontalCenter="0" source="fuentitlebg" x="247" />
+		</e:Group>
+
+		<e:Group y="410.35" horizontalCenter="0" x="154" >
+			<e:Label text="个人积分" y="6" size="18" x="-7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="myPoint" text="123456" y="6" size="18" x="73" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="个人排名" y="5" size="18" x="166" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="myRank" text="123456" y="5" size="18" x="246" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group y="571.35" horizontalCenter="0" x="150"  anchorOffsetY="0" height="25">
+			<e:Label text="仙盟排名" y="6" size="18" x="166" width="81" height="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="仙盟积分" y="6" size="18" x="-7" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="guildPoint" text="123456" y="6" size="18" x="73" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="guildRank" text="123456" y="6" size="18" x="246" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:List id="list2" width="401" height="100" y="610.35" horizontalCenter="0.5" x="100"  itemRendererSkinName="SkinItem3">
+			<e:layout>
+			<e:HorizontalLayout gap="30" horizontalAlign="left"/>
+			</e:layout>
+		</e:List>
+		<e:Scroller id="scroller1" width="403" height="106" y="446.35" horizontalCenter="0.5" x="99" >
+			<e:List id="list1" x="2" y="358" itemRendererSkinName="SkinItem3">
+			<e:layout>
+				<e:HorizontalLayout gap="30" horizontalAlign="left"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+	</e:Group>
+
+</e:Skin>

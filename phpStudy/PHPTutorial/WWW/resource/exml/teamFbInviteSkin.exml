@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinTeamFbInvite" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="closeBtn" fillAlpha="0.6" left="0" right="0" bottom="0" top="0"/>
+	<e:Group horizontalCenter="0" width="484" height="332" verticalCenter="-71" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Image left="0" right="0" scale9Grid="40,31,15,15" source="tongyong_dikuang2" width="484" height="314" y="17"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" width="481" height="23" scaleY="1" scaleX="1"/>
+		<e:Image left="109" right="108" source="tongyong_titlebg" y="-15" anchorOffsetX="0" width="249"/>
+		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="206" width="419" scale9Grid="22,20,25,25"/>
+
+
+
+
+		<e:EditableText id="input" text="" size="20" verticalAlign="top" promptColor="0x848282" anchorOffsetX="0" anchorOffsetY="0" lineSpacing="2" fontFamily="Microsoft YaHei" textColor="0x213847" width="408" height="180" y="46" horizontalCenter="0"/>
+		<e:Button id="friendInviteBtn" label="好友邀请" skinName="SkinBtn3" bottom="15" horizontalCenter="-98"/>
+		<e:Button id="worldInviteBtn" label="世界邀请" skinName="SkinBtn3" bottom="15" horizontalCenter="98"/>
+		<e:Label text="组队邀请" y="-1" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	</e:Group>
+</e:Skin>

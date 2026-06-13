@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinRRoleInfo" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:ns1="*" height="948">
+    <e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+	<e:Image horizontalCenter="0" verticalCenter="0" x="10" y="10" source="juesebg3_jpg"/>
+
+
+	<ns1:PowerPanel id="powerPanel" horizontalCenter="37" height="64" verticalCenter="-304" skinName="SkinPowerPanel"/>
+	<e:Group  height="443" anchorOffsetY="0" width="585" horizontalCenter="0" verticalCenter="-16.5">
+		<ns1:RoleItem id="item1" skinName="SkinItem" y="0" right="0"/>
+		<ns1:RoleItem id="item3" skinName="SkinItem" y="112" right="0"/>
+		<ns1:RoleItem id="item5" skinName="SkinItem" y="220" right="0"/>
+		<ns1:RoleItem id="item7" skinName="SkinItem" y="329" x="509"/>
+		<ns1:RoleItem id="item0" skinName="SkinItem" y="0" left="0"/>
+		<ns1:RoleItem id="item2" skinName="SkinItem" y="112" left="0"/>
+		<ns1:RoleItem id="item4" skinName="SkinItem" y="220" left="0"/>
+		<ns1:RoleItem id="item6" skinName="SkinItem" y="329"/>
+		<ns1:RoleItem id="item8"   skinName="SkinItem" y="-108" right="0"/>
+		<ns1:RoleInfoItem id="roleInfoItem0" skinName="SkinRoleInfoItem" y="329" x="94"/>
+		<ns1:RoleInfoItem id="roleInfoItem1" skinName="SkinRoleInfoItem" y="329" x="406"/>
+		<ns1:RoleItem id="item9" skinName="SkinItem" y="112" x="94" visible="false"/>
+		<ns1:RoleItem id="item10" skinName="SkinItem" y="112" x="406" visible="false"/>
+		<ns1:RoleItem id="item11" skinName="SkinItem" y="220" x="94" visible="false"/>
+		<ns1:RoleItem id="item12" skinName="SkinItem" y="220" x="406" visible="false"/>
+	</e:Group>
+
+	<e:Group id="groupRole" width="580" height="770" verticalCenter="-42" horizontalCenter="0">
+
+
+
+
+
+
+		<e:Group id="wingGroup" y="580" scaleX="1" scaleY="1" width="0" horizontalCenter="0">
+
+
+		</e:Group>
+		<e:Group id="weaponGroup" y="580" scaleX="1" scaleY="1" width="0" horizontalCenter="-2">
+
+
+		</e:Group>
+
+		<e:Group id="roleGroup" y="580" scaleX="1" scaleY="1" width="0" horizontalCenter="0">
+
+
+		</e:Group>
+		<e:Group id="guanghuanGroup" y="480" scaleX="1" scaleY="1" width="0" horizontalCenter="0"/>
+
+		<e:Group id="suitGroup" y="460" scaleX="1" scaleY="1" width="0" horizontalCenter="0" visible="false">
+
+
+		</e:Group>
+
+
+
+	</e:Group>
+	<e:Group id="groupRoleNext" width="580" height="770" verticalCenter="-42" x="605">
+
+
+
+
+
+
+		<e:Group id="nextWingGroup" y="580" scaleX="1" scaleY="1" horizontalCenter="0">
+
+
+		</e:Group>
+		<e:Group id="nextWeaponGroup" y="578" scaleX="1" scaleY="1" horizontalCenter="0.5">
+		</e:Group>
+		<e:Group id="nRoleGroup" y="580" scaleX="1" scaleY="1" horizontalCenter="0">
+
+
+		</e:Group>
+		<e:Group id="nextguanghuanGroup" y="480" scaleX="1" scaleY="1" horizontalCenter="0">
+		</e:Group>
+
+
+		<e:Group id="nextSuitGroup" y="368" scaleX="1" scaleY="1" horizontalCenter="0" visible="false">
+
+
+		</e:Group>
+
+	</e:Group>
+
+	<e:Button id="juesexiangxi" label="" horizontalCenter="-122.5" verticalCenter="-304">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="tongyongxiangxi" />
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+
+</e:Skin>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinRoleSelectPanel" currentState="yhead" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="948" width="600" states="nohead,yhead" >
+	<w:Config id="15a191c88b7"/>
+	<e:Image id="bgImg" width="600" scale9Grid="4,0,53,44" anchorOffsetX="0" top="0" horizontalCenter="0" source="biaoti1_png"/>
+
+
+
+	<e:Group id="headGroup" horizontalCenter="0" width="394" visible.nohead="false" top="51">
+
+
+		<e:ToggleButton id="role2" skinName="SkinRoleToggleBtn" y="-1.5" icon="yuanhead21" horizontalCenter="80" width="90"/>
+		<e:ToggleButton id="role1" skinName="SkinRoleToggleBtn" y="-1.5" icon="yuanhead21" horizontalCenter="-2"/>
+		<e:ToggleButton id="role0" skinName="SkinRoleToggleBtn" y="-1.5" icon="yuanhead21" height="90" width="90" scaleX="1" scaleY="1" horizontalCenter="-85"/>
+	</e:Group>
+	<e:Group id="yb" height="45" width="171" anchorOffsetX="0" top="3" horizontalCenter="203.5">
+
+		<e:Button id="recharge0" skinName="SkinBtn0" y="8.01" icon="zjmyuanbao" width="42" x="3"  />
+		<e:Label id="ybTxt" text="0" size="24"  textAlign="center" width="115"   horizontalCenter="15.5" textColor="0xffffff" verticalCenter="-1" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+	<e:Group id="jinbi" height="45" top="3" horizontalCenter="7" width="171">
+
+		<e:Button id="recharge" skinName="SkinBtn0" y="4.01" icon="zjmjinbi" x="3" width="36"/>
+		<e:Label id="goldTxt" text="0" size="24"  textAlign="center" width="115"   horizontalCenter="15" anchorOffsetX="0" textColor="0xffffff" verticalCenter="-0.5" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+
+</e:Skin>

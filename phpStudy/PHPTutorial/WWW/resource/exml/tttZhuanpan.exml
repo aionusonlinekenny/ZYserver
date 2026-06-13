@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinTttZhuanpan" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*"
+        xmlns:w="http://ns.egret.com/wing" width="600" height="948">
+	<w:Config id="15a98a3982e" />
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.7" width="460" 
+	         height="610" />
+	<e:Group horizontalCenter="0" verticalCenter="-6" width="594" height="612" touchEnabled="false">
+		<e:Image scale9Grid="23,24,3,2"   
+		           source="tttluckybg_png" horizontalCenter="0" verticalCenter="-12"/>
+		<e:Group width="374" height="26" horizontalCenter="0" top="3">
+			<e:Image scale9Grid="29,5,180,35" width="374" height="26" horizontalCenter="0" verticalCenter="0" source="tongtiantatitle_png"/>
+		</e:Group>
+		<e:Group y="120" horizontalCenter="2" width="430" height="385">
+			<ns1:HaoTianTaLotteryItem id="item0" skinName="SkinTttZhuanpanItem" horizontalCenter="-0.5" scaleX="0.9" scaleY="0.9" verticalCenter="-153"/>
+			<ns1:HaoTianTaLotteryItem id="item1" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="88.5" verticalCenter="-127"/>
+			<ns1:HaoTianTaLotteryItem id="item2" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="143.5" verticalCenter="-47"/>
+			<ns1:HaoTianTaLotteryItem id="item3" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="148.5" verticalCenter="39"/>
+			<ns1:HaoTianTaLotteryItem id="item4" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="89.5" verticalCenter="119"/>
+			<ns1:HaoTianTaLotteryItem id="item5" skinName="SkinTttZhuanpanItem" horizontalCenter="2.5" scaleX="0.9" scaleY="0.9" verticalCenter="146"/>
+			<ns1:HaoTianTaLotteryItem id="item6" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="-86.5" verticalCenter="118"/>
+			<ns1:HaoTianTaLotteryItem id="item7" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="-146.5" verticalCenter="39"/>
+			<ns1:HaoTianTaLotteryItem id="item8" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="-140.5" verticalCenter="-49"/>
+			<ns1:HaoTianTaLotteryItem id="item9" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="-85.5" verticalCenter="-125"/>
+		</e:Group>
+		<e:Group y="346" horizontalCenter="0.5">
+			<e:Label text="可抽次数：" size="18" y="0" x="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="num" text="1" size="18" y="0" x="46" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:Group>
+		<e:Image id="tttzhi" x="300" y="299" touchEnabled="false" anchorOffsetX="45" anchorOffsetY="107" source="tttluckyzz_png"/>
+		<e:Image width="420" height="30" scale9Grid="30,0,32,17" horizontalCenter="0" bottom="42" source="ttttipsbg_png"/>
+		<e:Label text="每通关10层，即可拿走奖池内的1个奖励！" size="20" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" bottom="48"/>
+		<e:Button id="choujiangBtn" skinName="SkinBtn0" icon="tttluckybtn" horizontalCenter="2" verticalCenter="-6.5" anchorOffsetY="0" height="80" anchorOffsetX="0" width="82"/>
+		<e:Button id="closeBtn" skinName="SkinBtn0" icon="fanhui" right="0" y="530" visible="false"/>
+		<e:Image anchorOffsetX="0" width="300" height="34" source="bantoutiaobg" horizontalCenter="0" x="157" bottom="-2"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" textAlign="center" horizontalCenter="0" x="197" bottom="8"/>
+	</e:Group>
+</e:Skin>

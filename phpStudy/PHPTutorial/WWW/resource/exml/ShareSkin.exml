@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinShare" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group top="0" bottom="0" left="0" right="0">
+		<e:Image top="0" bottom="0" width="600" scale9Grid="15,12,2,3" y="0" horizontalCenter="0" source="vipbg_png"/>
+		<ns1:RoleSelectPanel id="roleSelect" currentState="nohead" top="0" bottom="0" width="600" horizontalCenter="0" skinName="SkinRoleSelectPanel"/>
+		<e:Image width="563" horizontalCenter="0.5" scale9Grid="25,20,19,26" height="681" verticalCenter="-28.5" anchorOffsetY="0" source="tongyongbgred"/>
+		<e:ViewStack id="viewStack" width="560" selectedIndex="2" horizontalCenter="0" height="677" verticalCenter="-28.5" anchorOffsetY="0">
+			<ns1:ShareReward id="shareReward" left="0" right="0" top="0" bottom="0" skinName="SkinShareReward"/>
+			<ns1:BaseComponent id="ZLTargetPanel0" left="0" right="0" top="0" bottom="0" skinName="OSATarget1" visible="false"/>
+		</e:ViewStack>
+		<e:Group width="600" top="0" horizontalCenter="0" touchEnabled="false" touchThrough="true" height="948" anchorOffsetY="0" touchChildren="false">
+		<e:Image source="shang_2_png" anchorOffsetX="0" left="0" top="0"/>
+		<e:Image id="title0" top="27" scaleX="1" left="49" source="share_biaoti_png"/>
+		</e:Group>
+		<e:Scroller id="menuScroller" scrollPolicyV="off" scrollPolicyH="on" height="82" horizontalCenter="0.5" width="477" anchorOffsetX="0" bottom="82">
+			<e:Group>
+				<e:Button id="shareRewardBtn" label="Button" x="65" y="32" icon="shareRewardBtn_png" width="76">
+					<e:skinName>
+						<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="shareRewardBtn_png"/>
+				<e:Image id="selectIcon" pixelHitTest="true" source="xuanzhongyuan" left="0" right="0" top="-5" height="73" width="61" includeIn="down,disabled"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" visible="false"/>
+						</e:Skin>
+					</e:skinName>
+				</e:Button>
+				<e:Button id="shareInvitationBtn" label="Button" x="75" y="42" icon="shareInvitationBtn_png" width="76" visible="false">
+					<e:skinName>
+						<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="shareInvitationBtn_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" visible="false"/>
+				<e:Image id="selectIcon" pixelHitTest="true" source="xuanzhongyuan" left="0" right="0" top="-5" height="73" width="61" includeIn="down,disabled"/>
+						</e:Skin>
+					</e:skinName>
+				</e:Button>
+				<e:layout>
+					<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="14" paddingLeft="5"/>
+				</e:layout>
+			</e:Group>
+		</e:Scroller>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="274"/>
+	</e:Group>
+</e:Skin>

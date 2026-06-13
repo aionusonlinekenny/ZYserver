@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinheirloomDown" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="600" height="948">
+	<w:Config id="15d12c8a940"/>
+	<e:Rect id="bgClose" top="0" bottom="0" fillAlpha="0.8" width="600" horizontalCenter="0"/>
+	<e:Group id="anigroup" width="569" height="715" horizontalCenter="0" verticalCenter="-20.5" anchorOffsetY="0">
+
+
+		<e:Image id="frame" left="0" right="0" source="tongyong_dikuang2" scale9Grid="25,5,71,71" height="640" anchorOffsetY="0" y="37"/>
+		<e:Image id="frame1" height="586" anchorOffsetY="0" y="65" source="tongyong_dikuang5" scale9Grid="5,5,14,16" anchorOffsetX="0" width="511" horizontalCenter="0" alpha="0.8"/>
+		<e:Image id="tou0" source="tongyong_juanzhou" anchorOffsetX="0" left="-1" right="-1" top="23"/>
+		<e:Image id="tou" source="tongyong_titlebg" left="162" right="161" top="5"/>
+		<e:Image source="bantoutiaobg" height="30" scale9Grid="128,2,15,41" width="300" touchEnabled="false" y="684" horizontalCenter="0"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" y="687" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
+		<e:Scroller id="equipScroller"   horizontalCenter="0" anchorOffsetY="0" anchorOffsetX="0" top="66.5" bottom="314" left="30" right="29">
+			<e:List id="equipList" x="0" y="7" itemRendererSkinName="SkinheirloomDownItem" anchorOffsetX="0" width="507" anchorOffsetY="0" height="331">
+			<e:layout>
+				<e:VerticalLayout verticalAlign="middle" gap="0"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Group id="contrain" width="430" height="126" horizontalCenter="0" bottom="75" anchorOffsetY="0">
+			<e:Group id="listGroupTxt" y="-40" touchEnabled="false" width="420" horizontalCenter="0">
+				<e:Image height="18" source="diwen6" y="12" left="38" right="38"/>
+				<e:Label text="获取途径" size="20" horizontalCenter="0" y="4" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			</e:Group>
+			<e:Scroller left="-36" right="-37" top="1" anchorOffsetX="0" anchorOffsetY="0" bottom="-9">
+				<e:Group anchorOffsetY="0" height="130">
+					<e:List id="gainList" height="134" y="0" width="503" x="0">
+						<e:layout>
+							<e:VerticalLayout gap="1"/>
+						</e:layout>
+					</e:List>
+				</e:Group>
+			</e:Scroller>
+		</e:Group>
+		<e:Label text="分 解" y="17"   horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+	</e:Group>
+
+	
+	
+</e:Skin>

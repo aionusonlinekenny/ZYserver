@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMyBetRecordItem" width="406" height="69" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" strokeColor="0x80C0D2" fillColor="0x78B8C1" fillAlpha="0.7" strokeAlpha="1" strokeWeight="1"/>
+	<e:Label id="round" text="本服赛16进8强" size="20" verticalCenter="3.5" left="9" textColor="0x1b3046" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="146.8" anchorOffsetY="0" height="48.4"/>
+	<e:Label id="infoLabel" text="下注包子包子包包300筹码， 损失300筹码" size="20" anchorOffsetY="0.5" height="50.5" anchorOffsetX="0.5" width="245.9" textColor="0x1b3046" fontFamily="Microsoft YaHei" right="2" verticalCenter="5"/>
+	<e:Image scale9Grid="112,0,4,3" source="xiazhuitem_png" alpha="0.69" visible="false"/>
+</e:Skin>

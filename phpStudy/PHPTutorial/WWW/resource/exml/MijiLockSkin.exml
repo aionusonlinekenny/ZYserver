@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMijiLock" width="584" height="852" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect id="otherRect" left="0" right="0" top="0" bottom="0" fillAlpha="0.6" width="600" height="948"/>
+	<e:Group width="566" anchorOffsetY="0" horizontalCenter="0" anchorOffsetX="0" verticalCenter="-43.5" height="755">
+		<e:Image anchorOffsetY="0" source="tongyong_dikuang2" scale9Grid="35,15,50,47" left="0" right="0" top="12" bottom="1"/>
+		<e:Image anchorOffsetY="0" horizontalCenter="0" height="20" y="9" source="tongyong_juanzhou" left="0" right="0" visible="false"/>
+		<e:Image anchorOffsetY="0" source="tongyong_dikuang1" scale9Grid="10,6,60,42" height="499" width="513" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="dinghong" height="95" left="6" right="6" y="649" visible="false">
+			<e:Image x="0" top="0" bottom="0" source="bantoumingkuang3" width="93"/>
+			<e:Image scaleX="-1" top="0" bottom="0" source="bantoumingkuang3" right="0" width="93"/>
+		</e:Group>
+		<ns1:RoleSelectPanel id="roleSelect" skinName="Skin2RoleSelectPanel" height="-16" y="-50" width="566" x="0"/>
+
+
+		<e:Image source="mijibg2_png" scaleX="1" scaleY="1" anchorOffsetX="0" height="462" width="554" horizontalCenter="-4" verticalCenter="2.5"/>
+	<e:Group scaleX="0.9" scaleY="0.9" horizontalCenter="-3.5" verticalCenter="0">
+		<ns1:MijiItem id="mijiBtn0" y="4" skinName="SkinMijiItem" width="100" height="100" x="222" alpha="1"/>
+		<ns1:MijiItem id="mijiBtn1" y="68" skinName="SkinMijiItem" width="100" height="100" x="374"/>
+		<ns1:MijiItem id="mijiBtn2" skinName="SkinMijiItem" width="100" height="100" y="218" x="434"/>
+		<ns1:MijiItem id="mijiBtn3" y="368" skinName="SkinMijiItem" width="100" height="100" x="368"/>
+		<ns1:MijiItem id="mijiBtn4" y="426" skinName="SkinMijiItem"   width="100" height="100" x="223"/>
+		<ns1:MijiItem id="mijiBtn5" y="367" skinName="SkinMijiItem" width="100" height="100" x="77"/>
+		<ns1:MijiItem id="mijiBtn6" y="218" skinName="SkinMijiItem" width="100" height="100" x="13"/>
+		<ns1:MijiItem y="67" skinName="SkinMijiItem" id="mijiBtn7" width="100" height="100" x="73"/>
+	</e:Group>
+		<e:Label id="link" text="天书置换" size="20" textColor="0x00ff00" fontFamily="Microsoft YaHei" bottom="46" right="72" width="80"/>
+		<e:Label id="labCount" text="剩余数量：12" size="20" textColor="0x00FF00" textAlign="right" right="41" verticalCenter="214.5" fontFamily="Microsoft YaHei"/>
+		<e:Button id="smeltBtn" label="书格加锁" skinName="SkinBtn1" width="176" height="69" horizontalCenter="-3" bottom="18"/>
+		<e:Button skinName="SkinBtn0" icon="tongyong_btnclose" label="按钮" id="closeBtn" height="29" width="30" right="2" top="8"/>
+		<e:Image source="gantanhao1" bottom="98" horizontalCenter="-152"/>
+		<e:Label text="被锁定的天书在学习时不会被替换" size="20" fontFamily="Microsoft YaHei" textColor="0x0038ab" bottom="95" horizontalCenter="14"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="KMHActivityTimeDrop" width="566" height="665" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image y="62" horizontalCenter="0.5" source="kaimenhong_bg_png"/>
+		<e:Group id="infoBg" left="0" right="0" x="10" scaleX="1" scaleY="1" height="169" top="-31">
+			<e:Image left="0" right="0" source="ny_curtain_png" top="0" bottom="0"/>
+			<e:Group left="28" y="99" anchorOffsetX="0" width="367">
+			<e:Label text="剩余时间：" size="18" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="actTime" text="6天23小时55分" size="18" textColor="0x00FF00" scaleX="1" scaleY="1" top="0" left="90" fontFamily="Microsoft YaHei"/>
+			<e:Label id="actDesc" text="开服活动期间，率先达到指定等级获得限量奖" x="63" y="-14" size="18" width="306" top="23" left="90" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetX="0"/>
+			<e:Label text="活动说明：" size="18" scaleX="1" scaleY="1" left="0" top="23" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			</e:Group>
+		</e:Group>
+		<e:Image id="title" y="7" scaleX="1" scaleY="1" source="title_LaBaDrop_png" horizontalCenter="-58.5"/>
+		<e:Image height="171" source="viplibaobg1_png" bottom="0" anchorOffsetY="0" left="0" right="0" scale9Grid="0,34,559,5"/>
+		<e:Image width="146" height="27" source="title_LaBaDrop2_png" horizontalCenter="0" bottom="108"/>
+		<e:List id="rewardList" horizontalCenter="0" itemRendererSkinName="SkinItem2" x="283" scaleX="1" scaleY="1" bottom="-2">
+			<e:layout>
+			<e:HorizontalLayout gap="40"/>
+			</e:layout>
+		</e:List>
+	</e:Group>
+</e:Skin>

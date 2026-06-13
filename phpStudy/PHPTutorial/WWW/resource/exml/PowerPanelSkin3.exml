@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Skin3PowerPanel" currentState="yhead" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="310" height="60">
+    <e:Image id="bgImg" touchEnabled="false"   width="310"  height="46" source="bantoutiaobg2" x="0" verticalCenter="0" visible="false"/>
+    <e:Group id="flameGroup" y="8" x="76"></e:Group>
+    <e:Image id="powerImg" touchEnabled="false"  verticalCenter="0" scaleX="1" scaleY="1" source="wingzhanli" horizontalCenter="-100" width="80"/>
+	<e:Label text="0" x="120" y="18" size="20" fontFamily="Microsoft YaHei" visible="false"/>
+</e:Skin>

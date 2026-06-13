@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinChatGuildItem" width="540" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bg" y="31" scale9Grid="86,1,4,1" width="410" x="10"  source="tongyongline" height="2" visible="false"/>
+	<e:Group id="textGroup" left="2" top="1" bottom="1" right="2">
+		<e:Label id="showChannel" text="111" x="0" y="5" size="20" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+		<e:Label id="showHead" text="" size="20" fontFamily="Microsoft YaHei" textColor="0x001828" y="5"/>
+		<e:Image id="chatVip" source="xvip_v2_png" height="19" width="28" y="7"/>
+		<e:Label id="showText" text="" size="20"  fontFamily="Microsoft YaHei" textColor="0xabebff" y="5"/>
+	</e:Group>
+</e:Skin>

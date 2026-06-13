@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinChuangtianguanDayrewardbtn" width="103" height="85" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*">
+	<w:Config id="15a98b829a2"/>
+	<e:Image source="jianglibtn_png" horizontalCenter="0"/>
+</e:Skin>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinReinCompose" width="584" height="670" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+				<e:Image scale9Grid="19,12,10,20" source="tongyong_dikuang3" scaleX="1" scaleY="1" anchorOffsetY="0" anchorOffsetX="0" width="584" horizontalCenter="0" top="0" x="0" bottom="2" height="670"/>
+	<e:Scroller id="contentScroller" horizontalCenter="76.5" scrollPolicyH="off" x="2" scaleX="1" scaleY="1" anchorOffsetX="0" width="415" anchorOffsetY="0" bottom="10" top="10">
+		<e:List id="list0" x="-1" y="30" itemRendererSkinName="SkinReinEquipItem" anchorOffsetY="0" height="650">
+		<e:layout>
+			<e:VerticalLayout gap="0" paddingLeft="0"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Scroller scrollPolicyH="off" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" bottom="10" top="10" left="5" width="171.33">
+		<e:List id="list" x="-2" y="30" itemRendererSkinName="SkinReinComposeItem" height="650" width="145">
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="left" paddingLeft="0"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+</e:Skin>

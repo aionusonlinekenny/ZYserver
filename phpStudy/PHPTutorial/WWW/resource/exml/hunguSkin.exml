@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Skinhungu" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586c85d15d"/>
+
+	<e:Group height="726" width="600" horizontalCenter="0" verticalCenter="-57">
+		<e:Image source="hunguBg_png" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0" height="702" verticalCenter="0" alpha="1"/>
+		<e:Group y="66" horizontalCenter="0" width="600" height="587" touchEnabled="false" anchorOffsetY="0">
+			<e:Group id="effect1quanshen" horizontalCenter="0" verticalCenter="0" visible="false"/>
+			<e:Group id="effect3xia" horizontalCenter="0" verticalCenter="-41"/>
+			<e:Group id="effect2toubu" horizontalCenter="0" verticalCenter="-41"/>
+			<e:Group id="pos0" width="248" verticalCenter="-205" left="29">
+
+
+			<e:Image id="HGliangxianzhi0" y="113.4" horizontalCenter="-1.5" source="lineliang1_png" visible="false"/>
+
+
+
+			<e:Component id="equip0" left="0" verticalCenter="2.5" skinName="EquipItem2"/>
+			<e:Group id="effectPos0" x="163" y="228"/>
+			</e:Group>
+			<e:Group id="pos2" left="29" verticalCenter="-72.5">
+
+
+
+			<e:Image id="HGliangxianzhi2" x="68" y="69" source="lineliang3_png"/>
+
+
+			<e:Component id="equip2" skinName="EquipItem2" left="0" verticalCenter="8"/>
+			<e:Group id="effectPos2" x="139" y="95"/>
+			</e:Group>
+			<e:Group id="pos4" width="251" left="29" verticalCenter="72">
+
+
+			<e:Image id="HGliangxianzhi4" x="70" y="53" source="lineliang5_png" visible="false"/>
+
+
+
+			<e:Component id="equip4" skinName="EquipItem2" verticalCenter="4" left="0"/>
+			<e:Group id="effectPos4" x="112" y="63"/>
+			</e:Group>
+			<e:Group id="pos6" width="251" left="29" verticalCenter="192.5">
+
+
+			<e:Image id="HGliangxianzhi6" x="71" y="14" source="lineliang7_png" visible="false"/>
+
+
+
+			<e:Component id="equip6" skinName="EquipItem2" left="0" verticalCenter="24"/>
+			<e:Group id="effectPos6" x="152" y="23"/>
+			</e:Group>
+			<e:Group id="pos1" right="0" width="249" horizontalCenter="175.5" verticalCenter="-208.5">
+
+
+			<e:Image id="HGliangxianzhi1" x="13" y="50"  source="lineliang2_png" visible="false"/>
+
+
+
+			<e:Component id="equip1" skinName="EquipItem2" right="23" verticalCenter="2"/>
+			<e:Group id="effectPos1" y="99" x="21"/>
+			</e:Group>
+			<e:Group id="pos3" width="249" height="118" horizontalCenter="175.5" verticalCenter="-70.5">
+
+
+			<e:Image id="HGliangxianzhi3" x="-16" y="62" scale9Grid="2,1,16,8"  source="lineliang4_png" visible="false"/>
+
+
+
+			<e:Component id="equip3" skinName="EquipItem2" right="23" verticalCenter="15"/>
+			<e:Group id="effectPos3" anchorOffsetX="1" anchorOffsetY="0" y="111" x="-7"/>
+			</e:Group>
+			<e:Group id="pos5" horizontalCenter="175.5" width="249" height="118" verticalCenter="65.5">
+
+
+			<e:Image id="HGliangxianzhi5" x="-25" y="61" scale9Grid="2,1,16,8"  source="lineliang6_png" visible="false"/>
+
+
+
+			<e:Component id="equip5" skinName="EquipItem2" verticalCenter="8" right="23"/>
+			<e:Group id="effectPos5" y="120" x="-16"/>
+			</e:Group>
+			<e:Group id="pos7" width="249" height="118" horizontalCenter="175.5" verticalCenter="180.5">
+
+
+			<e:Image id="HGliangxianzhi7" x="62" y="5" scale9Grid="2,1,16,8"  source="lineliang8_png" visible="false"/>
+
+
+
+			<e:Component id="equip7" skinName="EquipItem2" right="23" verticalCenter="27"/>
+			<e:Group id="effectPos7" y="14" x="71"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="fightGroup" horizontalCenter="-5" top="67" x="144" y="13" scaleX="1" scaleY="1">
+			<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel"/>
+		</e:Group>
+		<e:Button id="executeBtn0" label="龙元觉醒" skinName="SkinBtn0" icon="gongmingBtn_png" horizontalCenter="-106.5" bottom="10"/>
+		<e:Label id="getItemTxt0" text="获取道具" size="20" bottom="0" height="60" verticalAlign="middle" width="100" textAlign="center" horizontalCenter="215" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Button id="xiangxishuxing" label="" horizontalCenter="147" top="67">
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="tongyongxiangxi"/>
+			<e:Label id="labelDisplay1" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:Button>
+		<e:Button id="executeBtn" label="特殊觉醒" skinName="SkinBtn0" icon="gongmingBtn2_png" horizontalCenter="100" bottom="10"/>
+	</e:Group>
+
+
+
+
+
+
+
+
+
+
+ 
+</e:Skin>

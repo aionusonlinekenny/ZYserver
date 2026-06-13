@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinRingtogglebtn2" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down,disabled"  width="98" height="94">
+	<w:Config id="15a2308ede0"/>
+	<e:Rect id="noopen" fillColor="0x191919" visible.disabled="false"/>
+	<e:Image horizontalCenter="0.8299999999999983" verticalCenter="-0.5799999999999983" width="72" height="72" source="guildkuangbg" touchEnabled="false"/>
+	<e:Image horizontalCenter="0" verticalCenter="0" source="lingchongkuang" touchEnabled="false"/>
+
+	<e:Image id="xuanzhong" visible.disabled="false" horizontalCenter="0" verticalCenter="-1.4149999999999991" scaleX="0.9" scaleY="0.9" source="xuanzhongkuang8" visible.up="false" touchEnabled="false"/>
+	<e:Image id="ringicon" smoothing="true" source="tejie01" horizontalCenter="0.5" verticalCenter="-1.9149999999999991" anchorOffsetY="0" height="70" anchorOffsetX="0" width="70"  touchEnabled="false"/>
+	<e:Label id="ringNameTxt" size="18" textAlign="center" text="麻痹戒指" textColor.up="0xafab9c" textColor.disabled="0x8c887b" textColor="0x9f946d" horizontalCenter="0" verticalCenter="45" visible="false"/>
+	<e:Image id="textBg" y="65"  width="54" scale9Grid="24,8,22,6" source="" horizontalCenter="0" touchEnabled="false"/>
+	<e:Label id="levelTxt" size="18" textAlign="right" text="X阶" verticalAlign="bottom" x="84.67" y="66" textColor="0xf8b141" width="41.33"  visible="false"/>
+	<e:Image id="maskBg" horizontalCenter="0.8299999999999983" verticalCenter="-0.5799999999999983" width="72" height="72" source="guildkuangbg" touchEnabled="false"/>
+	<e:Image id="suoImg" horizontalCenter="0" includeIn="disabled" source="suowen2" verticalCenter="0" touchEnabled="false"/>
+
+
+	<e:Label id="openLv" size="16" textAlign="center" text="第X天或VIP5开启" verticalAlign="middle" width="56" strokeColor="0x000000" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0" textColor="0xffff00" stroke="1" touchEnabled="false"/>
+	<e:Image id="redPoint" source="zjmhongdian"   horizontalCenter="31.5" verticalCenter="-25.915" touchEnabled="false"/>
+	<e:Image id="actTxt" horizontalCenter="0.3299999999999983" bottom="9.159999999999997" source="kejihuo2" touchEnabled="false"/>
+</e:Skin>

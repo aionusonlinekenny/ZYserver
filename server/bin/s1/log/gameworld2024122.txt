@@ -1,0 +1,522 @@
+[2024-12-02 17:31:53]watch thread start 
+[2024-12-02 17:31:53]loading server config 
+[2024-12-02 17:31:53]open server time is : 2023-6-29 14:39:16 
+[2024-12-02 17:31:53]add route,Host=106.55.254.14,port=9001,serverid=1 
+[2024-12-02 17:31:53]load server config complete 
+[2024-12-02 17:31:53]start server................... 
+[2024-12-02 17:31:53]Start Load Luaguage Config! 
+[2024-12-02 17:31:54][LANGUAGE]Luaguage Load Complete! 
+[2024-12-02 17:32:02]all game config load complete! 
+[2024-12-02 17:32:02]wait for db client... 
+[2024-12-02 17:32:03]data server server succ 
+[2024-12-02 17:32:03]DBClientMgr start! 
+[2024-12-02 17:32:03]DBClientMgr start! 
+[2024-12-02 17:32:03]********npc script too big:./data/functions/globalfunction.txt 
+[2024-12-02 17:32:04]new gate connect,idx=0 
+[2024-12-02 17:32:04]gateway client (127.0.0.1:49227:0) registe success (GameWorld) 
+[2024-12-02 17:32:22]dispatcher reg 0 2 
+[2024-12-02 17:32:22]dispatcher reg 0 100 
+[2024-12-02 17:32:22]dispatcher reg 12 1 
+[2024-12-02 17:32:22]dispatcher reg 1 35 
+[2024-12-02 17:32:22]dispatcher reg 12 2 
+[2024-12-02 17:32:22][PACKAGE->guildbattle][FUN->initGlobalData] call, 
+[2024-12-02 17:32:22]file ./runtime//system_var_1.bin not exist 
+[2024-12-02 17:32:23][PACKAGE->guildbattlepersonalaward][FUN->initGlobalData] call, 
+[2024-12-02 17:32:23]dispatcher reg 6 5 
+[2024-12-02 17:32:23]load global function!!!! 
+[2024-12-02 17:32:23]loadServerRoute start ... 
+[2024-12-02 17:32:23]ResetGameRoute 
+[2024-12-02 17:32:23]add route,Host=106.55.254.14,port=9001,serverid=1 
+[2024-12-02 17:32:23]serverroute.saveSelfRoute count:1 
+[2024-12-02 17:32:23]serverroute.saveSelfRoute host = 106.55.254.14, port = 9001 
+[2024-12-02 17:32:23]loadCrossConfigPre start 
+[2024-12-02 17:32:23]loadCrossConfigPre finish, serverType : 0 
+[2024-12-02 17:32:23]loadCrossConfig start 
+[2024-12-02 17:32:23]loadCrossConfig is Common server 
+[2024-12-02 17:32:23]startOneGameClient : ip = 127.0.0.1, port = 3101, serverId = 9 
+[2024-12-02 17:32:23]loadCrossConfig finish, serverType : 0 
+[2024-12-02 17:32:24]instance init fid:22019 handle:3162505471 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31019,fbId:22019 
+[2024-12-02 17:32:24]instance init fid:23002 handle:1704984830 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33002,fbId:23002 
+[2024-12-02 17:32:24]instance init fid:23008 handle:3579838717 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33008,fbId:23008 
+[2024-12-02 17:32:24]instance init fid:22501 handle:864026876 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31501,fbId:22501 
+[2024-12-02 17:32:24]instance init fid:22502 handle:2145386747 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31502,fbId:22502 
+[2024-12-02 17:32:24]instance init fid:22503 handle:1447035130 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31503,fbId:22503 
+[2024-12-02 17:32:24]instance init fid:22504 handle:593494265 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31504,fbId:22504 
+[2024-12-02 17:32:24]instance init fid:23009 handle:664797432 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33009,fbId:23009 
+[2024-12-02 17:32:24]instance init fid:22505 handle:3152019703 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31505,fbId:22505 
+[2024-12-02 17:32:24]instance init fid:22506 handle:228589814 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31506,fbId:22506 
+[2024-12-02 17:32:24]instance init fid:22507 handle:1600127221 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31507,fbId:22507 
+[2024-12-02 17:32:24]instance init fid:22508 handle:3147825396 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31508,fbId:22508 
+[2024-12-02 17:32:24]instance init fid:23010 handle:1461715187 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33010,fbId:23010 
+[2024-12-02 17:32:24]instance init fid:22508 handle:945815794 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31508,fbId:22508 
+[2024-12-02 17:32:24]instance init fid:22509 handle:1423966449 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31509,fbId:22509 
+[2024-12-02 17:32:24]instance init fid:22510 handle:1736442096 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31510,fbId:22510 
+[2024-12-02 17:32:24]instance init fid:22511 handle:3409969391 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31511,fbId:22511 
+[2024-12-02 17:32:24]instance init fid:23011 handle:1533018350 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33011,fbId:23011 
+[2024-12-02 17:32:24]instance init fid:22512 handle:3640656109 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31512,fbId:22512 
+[2024-12-02 17:32:24]instance init fid:22513 handle:3363832044 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31513,fbId:22513 
+[2024-12-02 17:32:24]instance init fid:22513 handle:2759852267 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31513,fbId:22513 
+[2024-12-02 17:32:24]instance init fid:23003 handle:3416260842 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33003,fbId:23003 
+[2024-12-02 17:32:24]instance init fid:23012 handle:3267363049 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33012,fbId:23012 
+[2024-12-02 17:32:24]instance init fid:22515 handle:3093299432 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31515,fbId:22515 
+[2024-12-02 17:32:24]instance init fid:22516 handle:1128268007 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31516,fbId:22516 
+[2024-12-02 17:32:24]instance init fid:22517 handle:60817638 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31517,fbId:22517 
+[2024-12-02 17:32:24]instance init fid:22518 handle:3292528869 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31518,fbId:22518 
+[2024-12-02 17:32:24]instance init fid:22001 handle:2931818724 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31001,fbId:22001 
+[2024-12-02 17:32:24]instance init fid:22519 handle:2592080099 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31519,fbId:22519 
+[2024-12-02 17:32:24]instance init fid:51000 handle:4026532066 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31101,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:51000 handle:1486880993 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31102,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:51000 handle:1182793952 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31103,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:22002 handle:2583691487 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31002,fbId:22002 
+[2024-12-02 17:32:24]instance init fid:51000 handle:2002780382 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31104,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:51000 handle:1310720221 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31105,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:51000 handle:167772380 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31106,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:51000 handle:3718250715 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31107,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:22003 handle:786432218 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31003,fbId:22003 
+[2024-12-02 17:32:24]instance init fid:51000 handle:1694499033 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31108,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:51000 handle:2644508888 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31109,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:51000 handle:1449132247 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31110,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:23001 handle:1432355030 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33001,fbId:23001 
+[2024-12-02 17:32:24]instance init fid:23004 handle:3539992789 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33004,fbId:23004 
+[2024-12-02 17:32:24]instance init fid:22004 handle:1782579412 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31004,fbId:22004 
+[2024-12-02 17:32:24]instance init fid:51000 handle:2388656339 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31112,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:50005 handle:1977614546 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83116,fbId:50005 
+[2024-12-02 17:32:24]worldboss refreshTimer nextShield is NULL,id:65 
+[2024-12-02 17:32:24]instance init fid:50005 handle:2774532305 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83117,fbId:50005 
+[2024-12-02 17:32:24]worldboss refreshTimer nextShield is NULL,id:66 
+[2024-12-02 17:32:24]instance init fid:22005 handle:20971728 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31005,fbId:22005 
+[2024-12-02 17:32:24]instance init fid:50006 handle:356516047 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83119,fbId:50006 
+[2024-12-02 17:32:24]instance init fid:50006 handle:3248488654 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83120,fbId:50006 
+[2024-12-02 17:32:24]instance init fid:50006 handle:1912602829 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83121,fbId:50006 
+[2024-12-02 17:32:24]instance init fid:22006 handle:757072076 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31006,fbId:22006 
+[2024-12-02 17:32:24]instance init fid:50006 handle:1111490763 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83123,fbId:50006 
+[2024-12-02 17:32:24]instance init fid:40002 handle:503316682 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83200,fbId:40002 
+[2024-12-02 17:32:24]instance init fid:40003 handle:536871113 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83201,fbId:40003 
+[2024-12-02 17:32:24]instance init fid:22007 handle:1589641416 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31007,fbId:22007 
+[2024-12-02 17:32:24]instance init fid:40002 handle:3160408263 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83203,fbId:40002 
+[2024-12-02 17:32:24]instance init fid:40003 handle:1918894278 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83204,fbId:40003 
+[2024-12-02 17:32:24]instance init fid:23005 handle:4292870341 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33005,fbId:23005 
+[2024-12-02 17:32:24]instance init fid:22008 handle:2101346500 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31008,fbId:22008 
+[2024-12-02 17:32:24]instance init fid:40003 handle:994050243 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83207,fbId:40003 
+[2024-12-02 17:32:24]instance init fid:40004 handle:293601474 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83208,fbId:40004 
+[2024-12-02 17:32:24]instance init fid:40002 handle:4257218753 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83209,fbId:40002 
+[2024-12-02 17:32:24]instance init fid:22009 handle:3923771584 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31009,fbId:22009 
+[2024-12-02 17:32:24]instance init fid:40004 handle:1033896127 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83211,fbId:40004 
+[2024-12-02 17:32:24]instance init fid:51011 handle:2069889214 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85011,fbId:51011 
+[2024-12-02 17:32:24]instance init fid:51012 handle:3001024701 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85012,fbId:51012 
+[2024-12-02 17:32:24]instance init fid:22010 handle:3646947516 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31010,fbId:22010 
+[2024-12-02 17:32:24]instance init fid:51014 handle:3214934203 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85014,fbId:51014 
+[2024-12-02 17:32:24]instance init fid:51015 handle:3800039610 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85015,fbId:51015 
+[2024-12-02 17:32:24]instance init fid:51016 handle:52428985 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85016,fbId:51016 
+[2024-12-02 17:32:24]instance init fid:22011 handle:3433038008 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31011,fbId:22011 
+[2024-12-02 17:32:24]instance init fid:51018 handle:104857783 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85018,fbId:51018 
+[2024-12-02 17:32:24]instance init fid:23006 handle:2004877494 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33006,fbId:23006 
+[2024-12-02 17:32:24]instance init fid:22012 handle:2961178805 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31012,fbId:22012 
+[2024-12-02 17:32:24]instance init fid:22013 handle:3024093364 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31013,fbId:22013 
+[2024-12-02 17:32:24]instance init fid:22014 handle:3443523763 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31014,fbId:22014 
+[2024-12-02 17:32:24]instance init fid:22015 handle:3693084850 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31015,fbId:22015 
+[2024-12-02 17:32:24]instance init fid:51017 handle:2522874033 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85017,fbId:51017 
+[2024-12-02 17:32:24]instance init fid:51013 handle:2015363248 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85013,fbId:51013 
+[2024-12-02 17:32:24]instance init fid:23007 handle:901775535 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:33007,fbId:23007 
+[2024-12-02 17:32:24]instance init fid:22016 handle:939524270 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31016,fbId:22016 
+[2024-12-02 17:32:24]instance init fid:40003 handle:1098907821 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83210,fbId:40003 
+[2024-12-02 17:32:24]instance init fid:40002 handle:2514485420 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83206,fbId:40002 
+[2024-12-02 17:32:24]instance init fid:40004 handle:4192207019 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83205,fbId:40004 
+[2024-12-02 17:32:24]instance init fid:22017 handle:826278058 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31017,fbId:22017 
+[2024-12-02 17:32:24]instance init fid:40004 handle:377487529 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83202,fbId:40004 
+[2024-12-02 17:32:24]instance init fid:50006 handle:1138753704 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83122,fbId:50006 
+[2024-12-02 17:32:24]instance init fid:50005 handle:2556428455 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:83118,fbId:50005 
+[2024-12-02 17:32:24]worldboss refreshTimer nextShield is NULL,id:67 
+[2024-12-02 17:32:24]instance init fid:22018 handle:373293222 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31018,fbId:22018 
+[2024-12-02 17:32:24]instance init fid:51000 handle:3995074725 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31111,fbId:51000 
+[2024-12-02 17:32:24]instance init fid:22514 handle:3644850340 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:31514,fbId:22514 
+[2024-12-02 17:32:24]instance init fid:50002 handle:3980394659 
+[2024-12-02 17:32:24]peakracerank.resetRankingList start 
+[2024-12-02 17:32:24]peakracesystem.RegTimerEvent curStartTime:2024-12-9 0:0:0 
+[2024-12-02 17:32:24]peakracesystem.RegTimerEvent st:1,dotime:2024-12-9 12:0:0 
+[2024-12-02 17:32:24]peakracesystem.RegTimerEvent st:2,dotime:2024-12-10 21:0:0 
+[2024-12-02 17:32:24]peakracesystem.RegTimerEvent st:3,dotime:2024-12-11 21:0:0 
+[2024-12-02 17:32:24]peakracesystem.RegTimerEvent st:4,dotime:2024-12-11 21:30:0 
+[2024-12-02 17:32:24]peakracesystem.RegTimerEvent st:5,dotime:2024-12-11 22:0:0 
+[2024-12-02 17:32:24]peakracesystem.RegTimerEvent st:6,dotime:2024-12-11 22:30:0 
+[2024-12-02 17:32:24]instance init fid:51002 handle:905969826 
+[2024-12-02 17:32:24]instance:onMonsterCreate: monster_id:85027,fbId:51002 
+[2024-12-02 17:32:24]file ./runtime//system_chat_1.bin not exist 
+[2024-12-02 17:32:24]crossbossfb.refreshBossTimer: refresh monster success, id:8 
+[2024-12-02 17:32:24]createBossFb success, id:8 
+[2024-12-02 17:32:24]crossbossfb.openServerBoss:server fb create success:1 
+[2024-12-02 17:32:24]instance init fid:0 handle:1923088545 
+[2024-12-02 17:32:24]__SQL__:select * from globalmails; 
+[2024-12-02 17:32:24]__SQL__:select * from actors where serverindex=1 and (status & 2)=2 
+[2024-12-02 17:32:24]load all actor completed. size:1 
+[2024-12-02 17:32:24]__SQL__:call loadguildbasicdata(1); 
+[2024-12-02 17:32:24][PACKAGE->guildcommon][FUN->initBuildingLevel] mark1,[65537] [1] [470797692] [table: 000000B5F00125F0] [4]  
+[2024-12-02 17:32:24]__SQL__:call loadguildmembers(65537); 
+[2024-12-02 17:32:24]__SQL__:call loadguildlog(65537) 
+[2024-12-02 17:32:24]__SQL__:select type, date, actorid, content from guildchat where guildid = 65537 order by date 
+[2024-12-02 17:32:24]__SQL__:select logdate, actorid, itemid from guildstorelog where guildid = 65537 order by logdate desc limit 50 
+[2024-12-02 17:32:31]StartEngine, load global data finish!!!!!! 
+[2024-12-02 17:32:31]__SQL__:call loadmaxactoridseries(1) 
+[2024-12-02 17:32:31]********** load max actorid series is:1 ********** 
+[2024-12-02 17:32:31]__SQL__:call loadallactorname(1) 
+[2024-12-02 17:32:31]1 actor name loaded 
+[2024-12-02 17:32:31]__SQL__:call loadfilternames() 
+[2024-12-02 17:32:31]0 filter name loaded 
+[2024-12-02 17:32:31]__SQL__:select oldname, actorid from actoroldname; 
+[2024-12-02 17:32:31]0 actor old name loaded 
+[2024-12-02 17:32:31]load allowword.txt 
+[2024-12-02 17:32:31]start server...................[ok] 
+[2024-12-02 17:32:31]   _  ___  _  __  ___   _          
+[2024-12-02 17:32:31]  |_   |  |_| |_|  |   | | |_/     
+[2024-12-02 17:32:31]   _|  |  | | | \  |   |_| | \_      
+[2024-12-02 17:32:31]                                    
+[2024-12-02 17:32:31]start server...................[ok] 
+[2024-12-02 17:32:31]================================================ 
+[2024-12-02 17:32:31]gameworld start ok,kernal:2.0,version:18.9.25.1 
+[2024-12-02 17:32:31]quit:stop server and exit 
+[2024-12-02 17:32:31]================================================ 
+[2024-12-02 17:32:31]actor mar thread start! 
+[2024-12-02 17:32:31]1733131945 before connect. 
+[2024-12-02 17:32:31]AsyncWorker start! 
+[2024-12-02 17:32:31]1733131945 after connect. 
+[2024-12-02 17:32:31]ChatManager::ReloadFilterDb:24090 loaded FilterWords 
+[2024-12-02 17:32:31]tianti,CheckTianti 
+[2024-12-02 17:32:31]OpenTianti,isNotice:false 
+[2024-12-02 17:32:31]tiantirank,initRankingList 
+[2024-12-02 17:32:31]instance init fid:22019 handle:3797942432 
+[2024-12-02 17:32:31]instance init fid:23002 handle:1778385055 
+[2024-12-02 17:32:31]instance init fid:23008 handle:3915382942 
+[2024-12-02 17:32:31]instance init fid:22501 handle:1874854045 
+[2024-12-02 17:32:31]instance init fid:22502 handle:1428160668 
+[2024-12-02 17:32:31]instance init fid:22503 handle:2216689819 
+[2024-12-02 17:32:31]instance init fid:22504 handle:1052770458 
+[2024-12-02 17:32:31]instance init fid:23009 handle:459276441 
+[2024-12-02 17:32:31]instance init fid:22505 handle:2489319576 
+[2024-12-02 17:32:31]instance init fid:22506 handle:249561239 
+[2024-12-02 17:32:31]instance init fid:22507 handle:4250927254 
+[2024-12-02 17:32:31]instance init fid:22508 handle:3066036373 
+[2024-12-02 17:32:31]instance init fid:23010 handle:1031798932 
+[2024-12-02 17:32:31]instance init fid:22508 handle:4104126611 
+[2024-12-02 17:32:31]instance init fid:22509 handle:4236247186 
+[2024-12-02 17:32:31]instance init fid:22510 handle:3535798417 
+[2024-12-02 17:32:31]instance init fid:22511 handle:2340421776 
+[2024-12-02 17:32:31]instance init fid:23011 handle:2306867343 
+[2024-12-02 17:32:31]instance init fid:22512 handle:3103785102 
+[2024-12-02 17:32:31]instance init fid:22513 handle:2220884109 
+[2024-12-02 17:32:31]instance init fid:22513 handle:2107637900 
+[2024-12-02 17:32:31]instance init fid:23003 handle:423624843 
+[2024-12-02 17:32:31]instance init fid:23012 handle:2464153738 
+[2024-12-02 17:32:31]instance init fid:22515 handle:1761607817 
+[2024-12-02 17:32:31]instance init fid:22516 handle:3254780040 
+[2024-12-02 17:32:31]instance init fid:22517 handle:2367684743 
+[2024-12-02 17:32:31]instance init fid:22518 handle:1918894214 
+[2024-12-02 17:32:31]instance init fid:22001 handle:239075461 
+[2024-12-02 17:32:31]instance init fid:22519 handle:1962934404 
+[2024-12-02 17:32:31]instance init fid:51000 handle:1782579331 
+[2024-12-02 17:32:31]instance init fid:51000 handle:3235905666 
+[2024-12-02 17:32:31]instance init fid:51000 handle:4194433 
+[2024-12-02 17:32:31]instance init fid:22002 handle:847249536 
+[2024-12-02 17:32:31]instance init fid:51000 handle:71303295 
+[2024-12-02 17:32:31]instance init fid:51000 handle:2843738238 
+[2024-12-02 17:32:31]instance init fid:51000 handle:251658365 
+[2024-12-02 17:32:31]instance init fid:51000 handle:2883584124 
+[2024-12-02 17:32:31]instance init fid:22003 handle:1272971387 
+[2024-12-02 17:32:31]instance init fid:51000 handle:3277848698 
+[2024-12-02 17:32:31]instance init fid:51000 handle:1786773625 
+[2024-12-02 17:32:31]instance init fid:51000 handle:746586232 
+[2024-12-02 17:32:31]instance init fid:23001 handle:260046967 
+[2024-12-02 17:32:31]instance init fid:23004 handle:3997171830 
+[2024-12-02 17:32:31]instance init fid:22004 handle:2076180597 
+[2024-12-02 17:32:31]instance init fid:51000 handle:702546036 
+[2024-12-02 17:32:31]instance init fid:50005 handle:4263510131 
+[2024-12-02 17:32:31]instance init fid:50005 handle:3317694578 
+[2024-12-02 17:32:31]instance init fid:22005 handle:1780482161 
+[2024-12-02 17:32:31]instance init fid:50006 handle:367001712 
+[2024-12-02 17:32:31]instance init fid:50006 handle:2025848943 
+[2024-12-02 17:32:31]instance init fid:50006 handle:3770679406 
+[2024-12-02 17:32:31]instance init fid:22006 handle:3235905645 
+[2024-12-02 17:32:31]instance init fid:50006 handle:2212495468 
+[2024-12-02 17:32:31]instance init fid:40002 handle:3992977515 
+[2024-12-02 17:32:31]instance init fid:40003 handle:1264582762 
+[2024-12-02 17:32:31]instance init fid:22007 handle:2428502121 
+[2024-12-02 17:32:31]instance init fid:40002 handle:1761607784 
+[2024-12-02 17:32:31]instance init fid:40003 handle:2113929319 
+[2024-12-02 17:32:31]instance init fid:23005 handle:3577741414 
+[2024-12-02 17:32:31]instance init fid:22008 handle:3282042981 
+[2024-12-02 17:32:31]instance init fid:40003 handle:3877634148 
+[2024-12-02 17:32:31]instance init fid:40004 handle:1222639715 
+[2024-12-02 17:32:31]instance init fid:40002 handle:1430257762 
+[2024-12-02 17:32:31]instance init fid:22009 handle:2466250849 
+[2024-12-02 17:32:31]instance init fid:40004 handle:1004535904 
+[2024-12-02 17:32:31]instance init fid:51011 handle:1182793823 
+[2024-12-02 17:32:31]instance init fid:51012 handle:4175429726 
+[2024-12-02 17:32:31]instance init fid:22010 handle:2548039773 
+[2024-12-02 17:32:31]instance init fid:51014 handle:2000683100 
+[2024-12-02 17:32:31]instance init fid:51015 handle:3755999323 
+[2024-12-02 17:32:31]instance init fid:51016 handle:1723859034 
+[2024-12-02 17:32:31]instance init fid:22011 handle:2843738201 
+[2024-12-02 17:32:31]instance init fid:51018 handle:2814378072 
+[2024-12-02 17:32:31]instance init fid:23006 handle:205520983 
+[2024-12-02 17:32:31]instance init fid:22012 handle:3217031254 
+[2024-12-02 17:32:31]instance init fid:22013 handle:738197589 
+[2024-12-02 17:32:31]instance init fid:22014 handle:2753560660 
+[2024-12-02 17:32:31]instance init fid:22015 handle:1386217555 
+[2024-12-02 17:32:31]instance init fid:51017 handle:2646605906 
+[2024-12-02 17:32:31]instance init fid:51013 handle:1092616273 
+[2024-12-02 17:32:31]instance init fid:23007 handle:438304848 
+[2024-12-02 17:32:31]instance init fid:22016 handle:3875536975 
+[2024-12-02 17:32:31]instance init fid:40003 handle:3726639182 
+[2024-12-02 17:32:31]instance init fid:40002 handle:4229955661 
+[2024-12-02 17:32:31]instance init fid:40004 handle:2619342924 
+[2024-12-02 17:32:31]instance init fid:22017 handle:251658315 
+[2024-12-02 17:32:31]instance init fid:40004 handle:4106223690 
+[2024-12-02 17:32:31]instance init fid:50006 handle:912261193 
+[2024-12-02 17:32:31]instance init fid:50005 handle:1660944456 
+[2024-12-02 17:32:31]instance init fid:22018 handle:2575302727 
+[2024-12-02 17:32:31]instance init fid:51000 handle:1073741894 
+[2024-12-02 17:32:31]instance init fid:22514 handle:2625634373 
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] oinfo,[{
+	min=0,
+	hours=20,
+	day=4,
+}] [1]  
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] info,[{
+	min=0,
+	week=6,
+	hours=20,
+}] [1]  
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] hefu_info,[{
+	[1] = {
+		min=0,
+		hours=20,
+		day=3,
+	},
+	[2] = {
+		min=0,
+		hours=20,
+		day=5,
+	},
+	[3] = {
+		min=0,
+		hours=20,
+		day=7,
+	},
+}] [1]  
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] var,[{
+	open_size=0,
+	save_sec=0,
+	open_sec=0,
+}] [1]  
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] open_server_day,[523] [1]  
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] mark5, 
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] mark6, 
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] mark10, 
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] timer_sec:440855, 
+[2024-12-02 17:32:31][PACKAGE->guildbattle][FUN->setGlobalTimer] var.save_sec:12/07/24, 
+[2024-12-02 17:32:31]init red pack time out call back 
+[2024-12-02 17:32:31]guildboss: On GameServerStart... 
+[2024-12-02 17:32:31]offlinemails.gameStar: begin 
+[2024-12-02 17:32:31]__SQL__:select `actorid`, `head`,`context`,`file0_type`,`file0_id`,`file0_num` from offlinemails; 
+[2024-12-02 17:32:31]__SQL__:delete from offlinemails; 
+[2024-12-02 17:32:31]offlinemails.gameStar: end 
+[2024-12-02 17:32:31]__SQL__:select * from auction where serverid=1 
+[2024-12-02 17:32:31]create image actor 1!!!!! 
+[2024-12-02 17:32:31]init actor 1, logout:470797613:11606421 
+[2024-12-02 17:32:31]OnDbRetRole, rolecount:3 
+[2024-12-02 17:32:31]load actor cross LUA var actorid;1 
+[2024-12-02 17:32:31]LoadCSScriptData:actorid=1,buf_size=56 
+[2024-12-02 17:32:31]1 guildbattlefb.initData 
+[2024-12-02 17:32:31]User Init Finish, actorid=1 
+[2024-12-02 17:32:31]OnDbReturnDispatcher:1 35 
+[2024-12-02 17:32:31]connect fail! gameworld  10061 由于目标计算机积极拒绝，无法连接。
+[2024-12-02 17:32:31]gameworld server succ 
+[2024-12-02 17:32:31]csbase.OnConnected to 9, serverType:1 
+[2024-12-02 17:32:31]sendRouteData srvId:1, dstSrv:9 
+[2024-12-02 17:32:31]recvRouteData srvId:9 
+[2024-12-02 17:32:31]./data/functions/utils\log.lua[109]:[1] = { 
+[2024-12-02 17:32:31]    [1] = "192.168.200.129", 
+[2024-12-02 17:32:31]    [2] = 9009, 
+[2024-12-02 17:32:31]./data/functions/utils\log.lua[111]:}, 
+[2024-12-02 17:32:31]ResetSingleGameRoute sid:9 
+[2024-12-02 17:32:31]add route,Host=192.168.200.129,port=9009,serverid=9 
+[2024-12-02 17:32:31]peakracecrossdata.onCrossStatusChange st:0,isok:0 
+[2024-12-02 17:32:31]peakracesystem.sendAllStatusChange st:0,sto:0,cst:0,csto:0 
+[2024-12-02 17:32:31]instance:release, fbId:51002, handle:905969826 
+[2024-12-02 17:32:31]releaseInstance fb:905969826 
+[2024-12-02 17:32:31]crossbossfb.clearFb: fbHandle:905969826 
+[2024-12-02 17:32:31]crossbossfb.clearFb: clearFb success, srvId:1 
+[2024-12-02 17:32:31]crossbosssystem.onCloseFb:success 
+[2024-12-02 17:32:31]crossbosssystem.onRefreshBoss:receive boss info success. id:1, srvId:1 
+[2024-12-02 17:32:31]OnRecvCrossServerMsg not cmdType: 72 
+[2024-12-02 17:32:31]crossbosssystem.onRefreshBoss:receive boss info success. id:1, srvId:1 
+[2024-12-02 17:32:31]OnRecvCrossServerMsg not cmdType: 72 
+[2024-12-02 17:32:31]crossbosssystem.onRefreshBoss:receive boss info success. id:8, srvId:0 
+[2024-12-02 17:32:31]OnRecvCrossServerMsg not cmdType: 72 
+[2024-12-02 17:32:31]crossbosssystem.onRefreshBoss:receive boss info success. id:1, srvId:1 
+[2024-12-02 17:32:31]crossbosssystem.onRefreshBoss:receive boss info success. id:8, srvId:0 
+[2024-12-02 17:34:04]openuser:780908251664, reset all data 
+[2024-12-02 17:34:04]abc_syymwcom password ok,accountID =1 
+[2024-12-02 17:34:05]actor enterGame:0,account:abc_syymwcom,loginip:192.168.200.1 
+[2024-12-02 17:34:05]actormgr.enterGame err:0account:abc_syymwcom 
+[2024-12-02 17:34:05]update actors set `appid`='',`pfid`='abc' where `actorid`=1 and `serverindex`=1; 
+[2024-12-02 17:34:05]actormgr.enterGame aid:1,account:abc_syymwcom,pf:abc,pfid:abc,appid: 
+[2024-12-02 17:34:08]image actor timeout. id:1, flag:2047 
+[2024-12-02 17:34:08]actor login actorid=1, gateuser=780908251664 
+[2024-12-02 17:34:08]user Login, actorid=1,accountid=1,serverid=1 
+[2024-12-02 17:34:08]init actor 1, logout:470797613:11606421 
+[2024-12-02 17:34:08]OnDbRetRole, rolecount:3 
+[2024-12-02 17:34:08]load actor cross LUA var actorid;1 
+[2024-12-02 17:34:08]LoadCSScriptData:actorid=1,buf_size=56 
+[2024-12-02 17:34:08]1 guildbattlefb.initData 
+[2024-12-02 17:34:08]chapter.onBeforeLogin aid:1, effTime:987 
+[2024-12-02 17:34:08]User Init Finish, actorid=1 
+[2024-12-02 17:34:08]actor 1, senddata,handle:2959232467071 
+[2024-12-02 17:34:08]rolesystem onEnter roledata:3 0 2 1 308202.000000
+ 
+[2024-12-02 17:34:08]EnterScene name:syymw.net,id:1,fubenId:0,sceneId:6,x=4320,y=2272,px=67,py=35 
+[2024-12-02 17:34:08]instance:onEnter aid:1,fbId:0,isLogin:true 
+[2024-12-02 17:34:08]onEnter event fid:0 aid:1 
+[2024-12-02 17:34:08]actor vip:9 actorid:1 
+[2024-12-02 17:34:08]var.canGetGiftIndex:0 
+[2024-12-02 17:34:08]send daychargegift = 1 7 0 0 0 
+[2024-12-02 17:34:08]createSkirmishData index 0, level:34, name:澶╀功涔﹀嚊 
+[2024-12-02 17:34:08]createSkirmishData index 1, level:32, name:澶╂睜鏄ュⅷ 
+[2024-12-02 17:34:08]createSkirmishData index 2, level:38, name:鎮勭劧娓呯嫯 
+[2024-12-02 17:34:08]createSkirmishData index 3, level:34, name:杞讳交瀵诲挅 
+[2024-12-02 17:34:08]peakracesystem.sendAllStatusChange st:0,sto:0,cst:0,csto:0 
+[2024-12-02 17:34:08]Actor::SendDataValid start aid:1,flag:0 
+[2024-12-02 17:34:08]Actor::SendDataValid send aid:1,flag:0 
+[2024-12-02 17:34:08]OnDbReturnDispatcher:1 35 
+[2024-12-02 17:34:09]send daychargegift = 1 7 0 0 0 
+[2024-12-02 17:35:10]instance:onExit, aid:1,fbId:0, handle:1923088545 
+[2024-12-02 17:35:10]EnterScene name:syymw.net,id:1,fubenId:50002,sceneId:7002,x=3744,y=2144,px=58,py=33 
+[2024-12-02 17:35:10]instance:onEnter aid:1,fbId:50002,isLogin:false 
+[2024-12-02 17:35:10]onEnter event fid:50002 aid:1 
+[2024-12-02 17:35:10]Role,onStopMove,aid:1,roldId:0,dst:(-1,-1), now:(3744,2080) 
+[2024-12-02 17:35:10]Role,onStopMove,aid:1,roldId:1,dst:(-1,-1), now:(3744,2144) 
+[2024-12-02 17:35:10]Role,onStopMove,aid:1,roldId:2,dst:(-1,-1), now:(3680,2016) 
+[2024-12-02 17:35:10]1 teamfuben.ExitRoom not gdata.aidRoomId 
+[2024-12-02 17:35:10]Role,onStopMove,aid:1,roldId:2,dst:(3680,2080), now:(3680,2080) 
+[2024-12-02 17:35:14]Role,onStopMove,aid:1,roldId:0,dst:(-1,-1), now:(3744,2080) 
+[2024-12-02 17:35:14]Role,onStopMove,aid:1,roldId:1,dst:(-1,-1), now:(3744,2144) 
+[2024-12-02 17:35:14]Role,onStopMove,aid:1,roldId:2,dst:(-1,-1), now:(3680,2080) 
+[2024-12-02 17:35:15]Role,onStopMove,aid:1,roldId:0,dst:(3747,2080), now:(3747,2080) 
+[2024-12-02 17:35:15]Role,onStopMove,aid:1,roldId:2,dst:(3829,1823), now:(3829,1823) 
+[2024-12-02 17:35:15]Role,onStopMove,aid:1,roldId:0,dst:(3829,1951), now:(3829,1951) 
+[2024-12-02 17:35:16]Role,onStopMove,aid:1,roldId:2,dst:(3851,1808), now:(3851,1808) 
+[2024-12-02 17:35:17]Role,onStopMove,aid:1,roldId:0,dst:(3494,1723), now:(3494,1723) 
+[2024-12-02 17:35:18]Role,onStopMove,aid:1,roldId:1,dst:(3504,1369), now:(3504,1369) 
+[2024-12-02 17:35:18]Role,onStopMove,aid:1,roldId:2,dst:(3568,1433), now:(3568,1433) 
+[2024-12-02 17:35:18]Role,onStopMove,aid:1,roldId:0,dst:(3440,1433), now:(3440,1433) 
+[2024-12-02 17:35:21]Role,onStopMove,aid:1,roldId:0,dst:(-1,-1), now:(3440,1433) 
+[2024-12-02 17:35:21]Role,onStopMove,aid:1,roldId:1,dst:(-1,-1), now:(3504,1369) 
+[2024-12-02 17:35:21]Role,onStopMove,aid:1,roldId:2,dst:(-1,-1), now:(3568,1433) 
+[2024-12-02 17:35:21]Role,onStopMove,aid:1,roldId:2,dst:(3566,1435), now:(3566,1435) 
+[2024-12-02 17:35:24]Role,onStopMove,aid:1,roldId:1,dst:(3055,2032), now:(3055,2032) 
+[2024-12-02 17:35:24]Role,onStopMove,aid:1,roldId:2,dst:(3119,2096), now:(3119,2096) 
+[2024-12-02 17:35:24]Role,onStopMove,aid:1,roldId:0,dst:(3119,1968), now:(3119,1968) 
+[2024-12-02 17:35:28]instance:onExit, aid:1,fbId:50002, handle:3980394659 
+[2024-12-02 17:35:28]EnterScene name:syymw.net,id:1,fubenId:0,sceneId:6,x=4320,y=2272,px=67,py=35 
+[2024-12-02 17:35:28]instance:onEnter aid:1,fbId:0,isLogin:false 
+[2024-12-02 17:35:28]onEnter event fid:0 aid:1 
+[2024-12-02 17:37:35]user closed.actorid=1,accountId=1,ptr=780908251664 
+[2024-12-02 17:37:35]post actor logout msg:actorid=1, ptr=780908251664,reason=GW_CLOSE 
+[2024-12-02 17:37:35]clear ActorList idx:1.4620551000378e-311 
+[2024-12-02 17:37:35]1 teamfuben.ExitRoom not gdata.aidRoomId 
+[2024-12-02 17:37:35]Actor::SendDataValid start aid:1,flag:1 
+[2024-12-02 17:37:35]Actor::SendDataValid send aid:1,flag:1 
+[2024-12-02 17:37:35][syymw.net]Logout, actorID=1, account=1, reason=GW_CLOS, notic=no notice, gate=0 
+[2024-12-02 17:37:44]data server server disconnect! 
+[2024-12-02 17:37:44]data server client socket error! 10054 远程主机强迫关闭了一个现有的连接。

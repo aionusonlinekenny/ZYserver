@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinheirloomDownItem" width="504" height="114" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*">
+	<w:Config id="1586bdf2708"/>
+	<e:Image  right="0" top="2" left="2" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30" alpha="0.8"/>
+	<ns1:ChuanShiItem id="itemicon" skinName="SkinheirloomItem" y="17" horizontalCenter="-199"/>
+	<e:Label id="equipName" y="20" text="装备名称" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="-103"/>
+	<e:Label id="tip" y="20" text="推荐分解" size="20" fontFamily="Microsoft YaHei" textColor="0x00842c" horizontalCenter="-10"/>
+	<e:Label y="47" text="分解获得：" size="20" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-93"/>
+	<e:Label id="desc" y="75" text="传世宝钻 x100" size="20" fontFamily="Microsoft YaHei" textColor="0xec6014" horizontalCenter="-77"/>
+	<e:Button id="breakDown" skinName="SkinBtn1" label="分  解" name="breakDown" width="173" horizontalCenter="151" height="67" y="30"/>
+	<e:Image source="heirloombg2_bmp" width="600" height="948" y="-274" horizontalCenter="-4" alpha="0.5" visible="false"/>
+	
+	
+</e:Skin>

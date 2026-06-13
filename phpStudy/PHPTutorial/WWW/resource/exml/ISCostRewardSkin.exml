@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ISCostRewardSkin" width="560" height="670" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="infoBg" left="10" right="10" x="10" y="2" height="110">
+		<e:Image horizontalCenter="0" source="login_reward_des_jpg" top="-3"/>
+		<e:Image source="shuxingbg" scale9Grid="77,5,15,34" left="0" right="0" top="15" bottom="15" visible="false"/>
+		<e:Group left="14" y="65.5" anchorOffsetX="0">
+		<e:Label text="剩余时间:" size="18"  left="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="actTime" text="6天23时10分" size="18"  top="0" left="90" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="actInfo" text="                 在活动开启7天内完成的活动任务 赚取积分赢最终大奖 " x="63" y="-14" size="18" width="356" top="21" left="1"  textColor="0xffffff" fontFamily="Microsoft YaHei" anchorOffsetX="0" lineSpacing="4"/>
+		<e:Label text="活动说明: " size="18"  left="0" top="21" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		</e:Group>
+	</e:Group>
+	<e:Image id="title0" horizontalCenter="-87" x="280"  source="is_words_png" top="12"/>
+	<e:Scroller top="190" bottom="11" anchorOffsetY="0" width="517" horizontalCenter="0.5">
+		<e:List id="list" y="0" x="45.45" itemRendererSkinName="ISCostRewardItemSkin" anchorOffsetY="0" height="470">
+		<e:layout>
+			<e:VerticalLayout gap="0"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+</e:Skin>

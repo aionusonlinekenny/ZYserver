@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="NewGuild" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="323" width="480">
+
+
+
+	<e:Group id="groups" width="480" height="323" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="bg1" touchEnabled="false" scale9Grid="8,7,46,59" width="312" height="323" source="newladderbg_png" x="0" y="0" scaleX="1" scaleY="1"/>
+		<e:Image id="bg" touchEnabled="false" source="newladdercontentbg_png" width="281" height="98" x="199" y="45" scaleX="1" scaleY="1" scale9Grid="66,60,194,24"/>
+		<e:Label id="lab" text="有神兵利器相助，韩耀出没" size="22" touchEnabled="false" fontFamily="Microsoft YaHei" textAlign="left" verticalAlign="top" textColor="0x001828" width="195" lineSpacing="10" x="258" y="66" scaleX="1" scaleY="1"/>
+		<e:Image id="pic" source="" x="250" y="65" scaleX="1" scaleY="1"/>
+	</e:Group>
+
+</e:Skin>

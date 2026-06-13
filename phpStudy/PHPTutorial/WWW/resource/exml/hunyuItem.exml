@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinhunyuAllItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="93" height="110">
+	<w:Config id="1586bdf5e04"/>
+	<ns1:HunguBaseItemIcon id="itemIcon" skinName="SkinhunyuItem" horizontalCenter="0" top="5"/>
+	<e:Image id="select" horizontalCenter="0" source="quanLiang_png" top="5" visible="false"/>
+
+
+	<e:Label id="kejihuo" text="可激活" size="22" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xfde7bf" stroke="1" strokeColor="0x95774e" verticalCenter="0" visible="false"/>
+
+	<e:Image id="redPoint" y="5" touchEnabled="false" right="6" source="zjmhongdian" visible="false"/>
+	<e:Group horizontalCenter="0" bottom="0">
+		<e:Image id="lvBg" touchEnabled="false" source="zjmqipao" x="0" y="0"/>
+		<e:Label id="level" text="100级" size="20" textAlign="center" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
+		<e:Label id="openText" text="神品开启" size="20" textAlign="center" horizontalCenter="0" verticalCenter="-1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+	</e:Group>
+	<e:Group id="eff" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

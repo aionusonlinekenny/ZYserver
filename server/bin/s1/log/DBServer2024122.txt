@@ -1,0 +1,226 @@
+[2024-12-02 17:31:52]watch thread start 
+[2024-12-02 17:31:52][Configuration Error]unable to load config from file tables.lua 
+[2024-12-02 17:31:52]read db table config error 
+[2024-12-02 17:31:52]================================================ 
+[2024-12-02 17:31:52]dbserver start ok,kernal1.1 
+[2024-12-02 17:31:52]quit:stop server and exit 
+[2024-12-02 17:31:52]================================================ 
+[2024-12-02 17:32:02]db_session report 
+[2024-12-02 17:32:03]game client (127.0.0.1:49230:1) registe success (GameWorld) 
+[2024-12-02 17:32:03]=======recv:battleflag:0,targetsid:1 
+[2024-12-02 17:32:13]db_session report 
+[2024-12-02 17:32:24]db_session report 
+[2024-12-02 17:32:26]QueryActorFromDB start:1,561580 
+[2024-12-02 17:32:26]QueryActorFromDB end:1,3 
+[2024-12-02 17:32:26]QueryActorSubSystemData start:1,561583 
+[2024-12-02 17:32:26]size roledata:10657
+ 
+[2024-12-02 17:32:26]bag_type 0 size 56 
+[2024-12-02 17:32:26]bag_type 1 size 39 
+[2024-12-02 17:32:26]bag_type 2 size 0 
+[2024-12-02 17:32:26]load actor cross LUA var actorid;1 
+[2024-12-02 17:32:26]Query AllVariables.:30 
+[2024-12-02 17:32:26]Query RoleSystemData.:0 
+[2024-12-02 17:32:26]QueryActorSubSystemData end:1,561613 
+[2024-12-02 17:32:26]SaveScriptData:actorid=1,max_size=15411 
+[2024-12-02 17:32:26]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:32:26]---------DB, on SaveRole. 
+[2024-12-02 17:32:26]---------DB, on SaveMail. 
+[2024-12-02 17:32:26]SaveScriptData:actorid=1,max_size=15411 
+[2024-12-02 17:32:26]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:32:26]---------DB, on SaveRole. 
+[2024-12-02 17:32:30]game client (127.0.0.1:49251:1) registe success (GameWorld9) 
+[2024-12-02 17:32:30]=======recv:battleflag:1,targetsid:9 
+[2024-12-02 17:32:30]db_session report 
+[2024-12-02 17:32:35]db_session report 
+[2024-12-02 17:32:41]db_session report 
+[2024-12-02 17:32:46]db_session report 
+[2024-12-02 17:32:52]db_session report 
+[2024-12-02 17:32:57]db_session report 
+[2024-12-02 17:33:03]db_session report 
+[2024-12-02 17:33:08]db_session report 
+[2024-12-02 17:33:14]db_session report 
+[2024-12-02 17:33:19]db_session report 
+[2024-12-02 17:33:25]db_session report 
+[2024-12-02 17:33:30]db_session report 
+[2024-12-02 17:33:36]db_session report 
+[2024-12-02 17:33:41]db_session report 
+[2024-12-02 17:33:47]db_session report 
+[2024-12-02 17:33:52]db_session report 
+[2024-12-02 17:33:58]db_session report 
+[2024-12-02 17:34:03]db_session report 
+[2024-12-02 17:34:08]QueryActorFromDB start:1,663454 
+[2024-12-02 17:34:08]QueryActorFromCache end:1,0 
+[2024-12-02 17:34:08]QueryActorSubSystemData start:1,663454 
+[2024-12-02 17:34:08]--------------DB on queryRole: count:3 
+[2024-12-02 17:34:08]load actor cross LUA var actorid;1 
+[2024-12-02 17:34:08]Query AllVariables.:0 
+[2024-12-02 17:34:08]Query RoleSystemData.:0 
+[2024-12-02 17:34:08]QueryActorSubSystemData end:1,663454 
+[2024-12-02 17:34:08]DBSession::OnSetValid aid:1,flag:0 
+[2024-12-02 17:34:09]db_session report 
+[2024-12-02 17:34:14]db_session report 
+[2024-12-02 17:34:18]SaveScriptData:actorid=1,max_size=15398 
+[2024-12-02 17:34:18]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:18]---------DB, on SaveRole. 
+[2024-12-02 17:34:18]---------DB, on SaveMail. 
+[2024-12-02 17:34:18]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:34:18]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:20]db_session report 
+[2024-12-02 17:34:25]db_session report 
+[2024-12-02 17:34:28]SaveScriptData:actorid=1,max_size=15398 
+[2024-12-02 17:34:28]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:28]---------DB, on SaveRole. 
+[2024-12-02 17:34:28]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:34:28]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:31]db_session report 
+[2024-12-02 17:34:36]db_session report 
+[2024-12-02 17:34:38]SaveScriptData:actorid=1,max_size=15398 
+[2024-12-02 17:34:38]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:38]---------DB, on SaveRole. 
+[2024-12-02 17:34:38]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:34:38]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:42]db_session report 
+[2024-12-02 17:34:47]db_session report 
+[2024-12-02 17:34:48]SaveScriptData:actorid=1,max_size=15398 
+[2024-12-02 17:34:48]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:48]---------DB, on SaveRole. 
+[2024-12-02 17:34:48]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:34:48]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:53]db_session report 
+[2024-12-02 17:34:58]db_session report 
+[2024-12-02 17:34:58]SaveScriptData:actorid=1,max_size=15398 
+[2024-12-02 17:34:58]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:34:58]---------DB, on SaveRole. 
+[2024-12-02 17:34:58]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:34:58]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:04]db_session report 
+[2024-12-02 17:35:08]SaveScriptData:actorid=1,max_size=15398 
+[2024-12-02 17:35:08]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:08]---------DB, on SaveRole. 
+[2024-12-02 17:35:08]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:35:08]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:09]db_session report 
+[2024-12-02 17:35:15]db_session report 
+[2024-12-02 17:35:18]SaveScriptData:actorid=1,max_size=15458 
+[2024-12-02 17:35:18]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:18]---------DB, on SaveRole. 
+[2024-12-02 17:35:18]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:35:18]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:20]db_session report 
+[2024-12-02 17:35:26]db_session report 
+[2024-12-02 17:35:28]SaveScriptData:actorid=1,max_size=15458 
+[2024-12-02 17:35:28]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:28]---------DB, on SaveRole. 
+[2024-12-02 17:35:28]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:35:28]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:31]db_session report 
+[2024-12-02 17:35:37]db_session report 
+[2024-12-02 17:35:38]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:35:38]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:38]---------DB, on SaveRole. 
+[2024-12-02 17:35:38]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:35:38]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:42]db_session report 
+[2024-12-02 17:35:48]db_session report 
+[2024-12-02 17:35:48]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:35:48]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:48]---------DB, on SaveRole. 
+[2024-12-02 17:35:48]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:35:48]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:53]db_session report 
+[2024-12-02 17:35:58]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:35:58]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:58]---------DB, on SaveRole. 
+[2024-12-02 17:35:58]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:35:58]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:35:59]db_session report 
+[2024-12-02 17:36:04]db_session report 
+[2024-12-02 17:36:08]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:36:08]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:08]---------DB, on SaveRole. 
+[2024-12-02 17:36:08]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:36:08]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:10]db_session report 
+[2024-12-02 17:36:15]db_session report 
+[2024-12-02 17:36:18]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:36:18]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:18]---------DB, on SaveRole. 
+[2024-12-02 17:36:18]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:36:18]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:21]db_session report 
+[2024-12-02 17:36:26]db_session report 
+[2024-12-02 17:36:28]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:36:28]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:28]---------DB, on SaveRole. 
+[2024-12-02 17:36:28]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:36:28]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:32]db_session report 
+[2024-12-02 17:36:37]db_session report 
+[2024-12-02 17:36:38]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:36:38]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:38]---------DB, on SaveRole. 
+[2024-12-02 17:36:38]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:36:38]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:43]db_session report 
+[2024-12-02 17:36:48]db_session report 
+[2024-12-02 17:36:48]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:36:48]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:48]---------DB, on SaveRole. 
+[2024-12-02 17:36:48]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:36:48]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:54]db_session report 
+[2024-12-02 17:36:58]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:36:58]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:58]---------DB, on SaveRole. 
+[2024-12-02 17:36:58]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:36:58]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:36:59]db_session report 
+[2024-12-02 17:37:05]db_session report 
+[2024-12-02 17:37:08]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:37:08]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:37:08]---------DB, on SaveRole. 
+[2024-12-02 17:37:08]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:37:08]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:37:10]db_session report 
+[2024-12-02 17:37:16]db_session report 
+[2024-12-02 17:37:18]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:37:18]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:37:18]---------DB, on SaveRole. 
+[2024-12-02 17:37:18]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:37:18]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:37:21]db_session report 
+[2024-12-02 17:37:26]Save Actor[actorid=1] Data 
+[2024-12-02 17:37:26]SaveActorDataImpl:1,0,0 
+[2024-12-02 17:37:26]SaveActorDataImpl:1,1,2 
+[2024-12-02 17:37:26]SaveActorDataImpl:1,2,0 
+[2024-12-02 17:37:26]1 start 
+[2024-12-02 17:37:26]0 end--- 56 
+[2024-12-02 17:37:26]SaveActorDataImpl:1,3,2 
+[2024-12-02 17:37:26]1 start 
+[2024-12-02 17:37:26]8 end--- 300 
+[2024-12-02 17:37:26]SaveActorDataImpl:1,4,11 
+[2024-12-02 17:37:26]SaveActorDataImpl:1,5,2 
+[2024-12-02 17:37:26]SaveActorDataImpl:1,10,1 
+[2024-12-02 17:37:26]SaveActorDataImpl:1,11,0 
+[2024-12-02 17:37:26]Save Actor[actorid=1] Data finished 
+[2024-12-02 17:37:27]db_session report 
+[2024-12-02 17:37:28]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:37:28]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:37:28]---------DB, on SaveRole. 
+[2024-12-02 17:37:28]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:37:28]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:37:32]db_session report 
+[2024-12-02 17:37:35]SaveScriptData:actorid=1,max_size=15475 
+[2024-12-02 17:37:35]SaveScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:37:35]---------DB, on SaveRole. 
+[2024-12-02 17:37:35]SaveCSScriptData:actorid=1,max_size=60 
+[2024-12-02 17:37:35]SaveCSScriptData:actorid=1,curr_index=0 
+[2024-12-02 17:37:35]DBSession::OnSetValid aid:1,flag:1 
+[2024-12-02 17:37:38]db_session report 
+[2024-12-02 17:37:43]db_session report 
+[2024-12-02 17:37:44]SQLConnection::AfterQueryed:MySQL server has gone away:call loadgmcmd(1); 
+[2024-12-02 17:37:44]query gm cmd error:1 
+[2024-12-02 17:37:44]SQLConnection::AfterQueryed:MySQL server has gone away:call loadfee(1); 
+[2024-12-02 17:37:44]query fee error:1 
+[2024-12-02 17:37:44]SQLConnection::AfterQueryed:MySQL server has gone away:call loadtxapimsg(1); 

@@ -1,0 +1,73 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size:100%; font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;vertical-align: baseline }
+a { text-decoration: none }
+a:hover{text-decoration:underline}
+* {-webkit-tap-highlight-color: rgba(255,255,255,0);}
+* {margin: 0;padding: 0;}
+ol, ul, li, dd, dl, dt {list-style: none;}
+html,body{height:100%;width:100%;padding:0px;margin:0px;border:0;}
+body {text-align: center;margin: 0 auto !important;font: 12px/1.5 "Microsoft Yahei","Arial";}
+#game_iframe{ margin:0; padding:0; height:100px; min-height:100%; border:0; min-width:100%;}
+/*竖屏时的css代码*/
+@media all and (orientation:portrait){
+ #aay-guide{ position:fixed; top:50%; left:50%; margin:-30% 0 0 -42%; width:100%; height:100%; display:block; background:url(../../themes/default/static/images/guide_bg.html) no-repeat; background-size:84%;}
+ #aay-guide #guide-icon img{ position:absolute; top:5%; left:5%; width:18%; display:block;}
+ #aay-guide #guide-close img{ position:absolute; right:16.8%; top:0.3%; width:14%; display:block; cursor:pointer;}
+}
+/*横屏时的css代码*/
+@media all and (orientation:landscape){
+ #aay-guide{ position:fixed; top:0%; left:50%; margin:6% 0 0 -25%; width:100%; height:100%; display:block; background:url(../../themes/default/static/images/guide_bg.html) no-repeat; background-size:50%;}
+ #aay-guide #guide-icon img{ position:absolute; top:10%; left:3%; width:11%; display:block;}
+ #aay-guide #guide-close img{ position:absolute; right:50%; top:0%; width:8%; display:block; cursor:pointer;}
+}
+.yw_style{-webkit-overflow-scrolling:touch;overflow:auto;}
+
+/* 支付中心弹出层 */
+.payMain{ position:fixed; top:50%; left:50%; z-index:10; display:none; margin:-200px 0 0 -140px; max-width:300px; width:280px; border-radius:10px; background:rgba(238,238,238,1); color:#000;}
+.payHeader{ position:relative; text-align:center; padding:8px 0; font-size:16px;}
+.payHeader img{ position:absolute; top:12px; right:12px; width:16px; height:16px; display:block;}
+.payInfo{ width:100%; background:#fff; border-top:1px solid #ccc; border-bottom:1px solid #ccc; padding:6px 0; overflow:hidden;}
+.payInfo li{ font-size:14px; padding:0 20px; text-align:left; margin:6px 0; line-height:18px;}
+.payInfo li label{ width:60px; display:inline-block; margin-right:10px; color:#666;}
+.payInfo li span{ width:170px; display:inline-block; vertical-align:top;}
+.payInfo li span.orange{ color:#FF901D;}
+.payModeTit{ padding:5px 20px; text-align:left; font-size:14px; color:#666; overflow:hidden;}
+.payMode{ margin:0 0 0 0; background:#fff; border-top:1px solid #ccc; overflow:hidden;}
+.payMode a{ position:relative; background:#fff; padding:10px 20px; border-bottom:1px solid #ccc; display:block; text-decoration:none; overflow:hidden;}
+.payMode a:after{content:''; position:absolute; top:25px; right:20px; width:12px; height:12px; border:#ccc solid; border-width:1px 1px 0 0; -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg);}
+.payMode a i{ float:left; margin-right:10px;}
+.payMode a i.icon-wx{ width:45px; height:45px; display:block; background:url(../images/icon-wx.html) no-repeat; background-size:cover;}
+.payMode a i.icon-zfb{ width:45px; height:45px; display:block; background:url(../images/icon-zfb.html) no-repeat; background-size:cover;}
+.payMode a i.icon-wz{ width:45px; height:45px; display:block; background:url(../images/icon-wz.html) no-repeat; background-size:cover;}
+.payMode a dl{ margin:0; padding:0; text-align:left;}
+.payMode a dt{ font-size:14px; color:#000; line-height:24px;}
+.payMode a dd{ font-size:12px; color:#848588;}
+.tel-400{ height:24px; line-height:24px; color:#f00;}
+.tel-400 a{color:#f00; text-decoration:none;}
+
+#wx_pay_btn, #ali_pay_btn, #banlance_btn {display: none}
+#payMask{ position:fixed; top:0; left:0; z-index:9; display:none; overflow:hidden; width:100%; min-height:100%; background:rgba(0,0,0,0.7);}
+.pcbg{ background:url(../img/h5bg.html) no-repeat center top; width:100%; height:100%;}
+.iframe_box{ max-width:550px; margin:0 auto; height:100%; overflow: hidden;}
+
+.info{ display:block; width:67px; float:left;}
+.info .username{ display:block; width:100%;}
+.info .userid{ display:block; width:100%; color: #999;}
+.viplbao ul{ display:block; padding:0px; margin:0px;}
+.viplbao ul li{ display:block; background:#fff; border-top:1px solid #dcdcdc; margin-top:5px; border-bottom:1px solid #dcdcdc; overflow:hidden; margin-bottom:5px; position:relative; padding-left:39px; padding-right:18%;}
+.viplbao ul .vip_dh{ padding-right:6px;}
+.viplbao ul li img{ display:block; width:26px; position:absolute; left:8px; top:11px; overflow:hidden;}
+.viplbao ul li div{ display:block; float:left; width:100%; padding-top:10px; padding-bottom:10px;}
+.viplbao ul li div h2{ font-size:1.3rem; font-family:"微软雅黑"; color:#333333; font-weight:bold; display:block;}
+.viplbao ul li div b{ font-size:1.3rem; font-family:"微软雅黑"; color:#b30808; font-weight:normal; display:block;}
+.viplbao ul li div p{ font-size:1.1rem; font-family:"微软雅黑"; color:#888; font-weight:normal; display:block;}
+.viplbao ul li a{ display:block; width:17%; height:26px; position:absolute; border:1px solid #fda414; line-height:26px; text-align:center; font-size:1.1rem; font-family:"微软雅黑"; color:#fda414; font-weight:normal; text-decoration:none; right:3px; top:35px;}
+.fuchuang2{ padding-top:12px; padding-bottom:15px;}
+.fuchuang2 dl dt{ margin-top:5px; line-height:24px;}
+.fuchuang2{ left:3.5% !important; border-radius:5px;}
+.fuchuang2 dl dt.k{display:block;color:#fda412;font-weight:bold;font-size:16px;text-align: center; height:40px; border-bottom:1px solid #dcdcdc;}
+.fuchuang2 dl dt.k2{display:block;color:#fda412;font-weight:bold;font-size:14px; text-align:left;}
+.fuchuang2 dl dt img{ display:block; width:150px; height:150px; margin:0 auto;}
+.fuchuang2 dl dt.hao-con{ display:block; color:#fda412; font-weight:bold; font-size:14px;}
+.fuchuang2 dl dt.hao-cash{ display:block; color:#fda412; font-weight:bold; font-size:14px; text-align:center;}
+.fuchuang2 dl dt.l input{ display:block; width:80%; height:30px; border:2px dashed #fda412; border-radius:5px; line-height:30px; color:#fda412; font-weight:normal; font-size:14px; text-align:center; margin:0 auto;} 
+.fuchuang2 dl dt.f button{ display:block; width:120px; height:30px; background:#fda412; border-radius:5px; line-height:30px; text-align:center; font-size:14px; font-family:"微软雅黑"; font-weight:normal; color:#fff; margin:0 auto; border:none;}

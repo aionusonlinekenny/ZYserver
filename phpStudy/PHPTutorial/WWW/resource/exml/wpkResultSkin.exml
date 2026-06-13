@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinWpkResult" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        height="948" width="600">
+	<w:Config id="15c8d32c190" />
+	<e:Rect fillAlpha="0.6" left="0" right="0" top="0" bottom="0" />
+	<e:Image source="tongyong_bgsuc" width="600" top="0" bottom="0" horizontalCenter="0"/>
+	<e:Group horizontalCenter="0" width="600" height="948" verticalCenter="0">
+		<e:Group y="0"  x="55">
+			<e:Image id="title"   horizontalCenter="0" verticalCenter="0" source="labwin_png"/>
+		</e:Group>
+		<e:Group id="effGroup"   touchChildren="false" touchEnabled="false" y="211" x="290"  />
+		<e:Group width="400" height="540" horizontalCenter="0" y="286">
+			<e:Group y="20" horizontalCenter="0" visible="false">
+			<e:Label text="我的排名:" y="0" size="24" x="0" textColor="0xD1C28F"/>
+			<e:Label id="myrank" text="10" y="0" size="28" x="47" bold="true" textColor="0xF8B141"/>
+			<e:layout>
+				<e:HorizontalLayout gap="4" verticalAlign="middle"/>
+			</e:layout>
+			</e:Group>
+			<e:Group y="26" horizontalCenter="0">
+			<e:Label text="击杀BOSS耗时: " y="0" size="22" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="time" text="10分59秒" y="0" size="22" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:layout>
+				<e:HorizontalLayout/>
+			</e:layout>
+			</e:Group>
+			<e:Label text="奖励通过邮件发放" size="18" horizontalCenter="0" textAlign="center" bottom="69" textColor="0x9F946D" visible="false"/>
+			<e:Group id="lucky" horizontalCenter="0" bottom="114">
+			<e:Label text="在所有参与人中抽奖获得" y="30" size="18" textAlign="center" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Group y="0" horizontalCenter="0">
+				<e:Label id="luckyName" text="玩家名六个字" y="0" size="20" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+				<e:Label text="人品爆发，获得" y="0" size="20" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="luckyGift" text="2转红色装备" y="0" size="20" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+				<e:layout>
+				<e:HorizontalLayout/>
+				</e:layout>
+			</e:Group>
+			</e:Group>
+			<e:Image y="76" width="280" horizontalCenter="0" source="huawen"/>
+
+			<e:List id="rankList" width="338" y="106" horizontalCenter="0" itemRendererSkinName="SkinWpkResultRender">
+			<e:layout>
+				<e:VerticalLayout gap="0"/>
+			</e:layout>
+			</e:List>
+			<e:Image y="230" width="280" horizontalCenter="0" source="huawen"/>
+
+			<e:Label id="weidao" text="玩家名六个字" y="281" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Button id="closeBtn" label="离开（20）" horizontalCenter="0" bottom="11" skinName="SkinBtn1"/>
+			<e:Image y="76" source="shuchupaim_png" horizontalCenter="0"/>
+			<e:Image y="230" source="zuihouyiji_png" horizontalCenter="0"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

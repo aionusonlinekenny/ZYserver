@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinRuneItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"   states="unlock,ready,lock,emp"  height="115" width="101">
+	<e:Group height="110" width="101" y="0"  height.unlock="92" width.emp="100" horizontalCenter.emp="0" height.emp="92" height.lock="92" width.lock="100" horizontalCenter.lock="0" height.ready="92" width.unlock="101" x="0">
+		<e:Image y.lock="9" y.ready="9" y.unlock="9" y.emp="9" y="16" source="jinengkuang" width="76" height="76" horizontalCenter.ready="0" horizontalCenter.lock="0" horizontalCenter.emp="0" x.unlock="13"/>
+		<e:Image id="nameBG" visible.lock="false" y.unlock="68" source="bantoutiaobg" scale9Grid="0,5,238,35" left="0" right="0" height="24" y="84" visible.ready="false" visible.emp="false" visible="false"/>
+
+
+		<e:Image y="27" visible.lock="false" width="40" height="40" visible.emp="false" source="tongyongadd2" source.ready="tongyongadd" width.ready="42" height.ready="42" y.ready="27" source.unlock="tongyongadd" width.unlock="42" height.unlock="42" y.unlock="28" x.unlock="30" x="31"/>
+		<e:Image id="iconImg" visible.lock="false" y="0" visible.ready="false" y.unlock="15" visible.emp="false" source="501001_png" width="66" height="66" source.unlock="501001_png" scaleX="1" scaleY="1" width.unlock="64" height.unlock="64" touchEnabled="true" x="18"/>
+		<e:Image id="selectedImg" y="0" visible.lock="false" horizontalCenter="0" width="96" height="96" visible.ready="false" source="zwxuanzhong" visible.emp="false" visible="false"/>
+		<e:Label id="nameTF" text="火焰" y="87.5" size="18" touchEnabled="false" textColor="0xf4bc75" visible.lock="false" y.unlock="91" x="0" x.unlock="0" visible.ready="false" textAlign.emp="center" textAlign.lock="center" textAlign.ready="center" width="100" visible.emp="false" fontFamily.unlock="Microsoft YaHei" textColor.unlock="0xec6014" textAlign.unlock="center" verticalAlign.unlock="middle" size.unlock="20" fontFamily="Microsoft YaHei"/>
+		<e:Group id="noOpenGroup" y="0" visible.unlock="false" visible.ready="false" visible.emp="false" height="110" height.lock="115" width.lock="100" x="5">
+			<e:Image id="noOpenImg" visible.ready="false" source="zwfwbg2" horizontalCenter="0" locked="true" visible="false"/>
+			<e:Label id="noOpenTF" text="第X个战纹槽" size="16" verticalAlign="top" touchEnabled="true" textAlign="center" y="91" y.lock="90" width.lock="160" anchorOffsetY.lock="0"  height.lock="37" fontFamily="Microsoft YaHei" textColor="0x00ff06" x.emp="0" x.ready="0" x.unlock="0" horizontalCenter.lock="0"/>
+			<e:Image includeIn="lock" y="16" width="56" height="62" source="suowen4" x="18"/>
+		</e:Group>
+		<e:Image id="redPoint" y="15" touchEnabled="false" includeIn="unlock" source="zjmhongdian" x="76" visible="false"/>
+	</e:Group>
+</e:Skin>

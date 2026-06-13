@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinShenYuEquip" width="600" height="735" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15dbfa8e636"/>
+
+	<e:Image width="558" horizontalCenter="2" source="wingbg4_png" alpha="1" verticalCenter="-102.5"/>
+	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="11" y="83"/>
+	<ns1:GWingItem id="skill" skinName="ShenYuItem" y="50" x="507"/>
+	<e:Button id="attr" label="" x="13" y="51">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="btn_shenyudashi"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Group id="skillGroup" height="266" anchorOffsetY="0" width="600" horizontalCenter="0" bottom="4">
+		<e:Image scale9Grid="19,5,19,34" anchorOffsetY="0" horizontalCenter="0" source="tongyong_dikuang4" width="580" height="265" bottom="0"/>
+		<e:Image id="huawen1" width="237" height="50" left="31" top="-5" anchorOffsetX="0" source="huabian" scale9Grid="96,6,23,42" visible="false"/>
+		<e:Image id="huawen2" height="50" anchorOffsetX="0" right="35" width="237" top="-5" source="huabian" scale9Grid="98,6,19,41" visible="false"/>
+		<e:Image id="huawen0" height="50" anchorOffsetX="0" right="167" width="268.67" top="-5" source="huabian" scale9Grid="96,6,15,42" visible="false"/>
+		<e:Label id="attr0" text="攻击：1000000000" size="19" width="170" anchorOffsetX="0" horizontalCenter="10" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0" height="90" visible="false"/>
+		<e:Label id="power0" text="战斗力：10000" size="20" textColor="0xFF9900" bold="true" horizontalCenter="-5" top="51" textAlign="center" visible="false"/>
+		<e:Label id="state0" text="合成预览" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" top="14" textColor="0xffff00" visible="false"/>
+		<e:Label id="attr3" text="攻击：1000000000" size="19" textAlign="left" width="170" anchorOffsetX="0" horizontalCenter="10" verticalCenter="-17" fontFamily="Microsoft YaHei" textColor="0xffffff" height="90" visible="false"/>
+		<e:Label id="power3" text="战斗力：10000" size="20" textColor="0xFF9900" bold="true" horizontalCenter="-3" top="51" visible="false"/>
+		<e:Label id="state3" text="已满阶" size="22" horizontalCenter="2" fontFamily="Microsoft YaHei" top="15" textColor="0xffff00" visible="false"/>
+		<e:Label id="attr1" text="攻击：100\n物抗：1000\法抗：1000\n闪避：20%\n命中：1.2%" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" left="76" top="86" verticalAlign="middle" height="90" textColor="0xffffff" visible="false"/>
+		<e:Label id="power1" text="战斗力：5" size="20" textColor="0xFF9900" left="72" top="50" visible="false"/>
+		<e:Label text="升阶前" size="22" id="state1" fontFamily="Microsoft YaHei" left="117" top="17" textColor="0xffff00" visible="false"/>
+		<e:Label id="attr2" text="攻击：100物抗：1000法抗：1000闪避：20%命中：1.2%" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" height="90" right="58" top="86" textColor="0xffffff" visible="false"/>
+		<e:Label id="power2" text="战斗力：10000" size="20" textColor="0xFF9900" bold="true" right="88" top="52" visible="false"/>
+		<e:Label text="升阶后" size="22" id="state2" fontFamily="Microsoft YaHei" right="119" top="17" textColor="0xffff00" visible="false"/>
+		<e:Image id="arrows" source="jiantouyou" horizontalCenter="-5" verticalCenter="-16" visible="false"/>
+		<e:Image id="powerImage0" width="83" height="27" y="48" source="wingzhanli" x="221" visible="false"/>
+		<e:Image id="powerImage2" width="83" height="27" y="50" source="wingzhanli" x="368" visible="false"/>
+		<e:Image id="powerImage1" width="83" height="27" y="50" source="wingzhanli" x="71" visible="false"/>
+	</e:Group>
+	<e:Group horizontalCenter="7" verticalCenter="-87.5">
+		<ns1:GWingItem id="item0" y="31" x="25" skinName="ShenYuItem"/>
+		<ns1:GWingItem id="item1" y="41" x="35" skinName="ShenYuItem"/>
+		<ns1:GWingItem id="item2" y="51" x="45" skinName="ShenYuItem"/>
+		<ns1:GWingItem id="item3" y="21" x="15" skinName="ShenYuItem"/>
+		<e:layout>
+		<e:HorizontalLayout/>
+		</e:layout>
+	</e:Group>
+	<e:Group width="600" height="123.32" horizontalCenter="0" anchorOffsetY="0" bottom="3">
+		<e:Label id="getItemTxt" text="获取神羽" size="20" bottom="-10" height="60" verticalAlign="middle" width="100" textAlign="center" right="49" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:Button id="replace" label="装备神羽" skinName="SkinBtn1" horizontalCenter="116" bottom="40"/>
+		<e:Image id="redPointReplace" touchEnabled="false" source="zjmhongdian" horizontalCenter="186" bottom="86"/>
+		<e:Button id="replace0" label="快速合成" skinName="SkinBtn1" horizontalCenter="-116" bottom="40"/>
+		<e:Image id="costImg0" width="20" height="20" x="0" y="0" source="601000_png" visible="false"/>
+		<e:Group horizontalCenter="-164.5" bottom="10">
+			<e:Label id="costName" text="神羽(1阶):" x="18" y="16" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="cost0" text="99/99" size="20" textAlign="left" x="28" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+			<e:HorizontalLayout gap="5" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Image id="redPointReplace0" touchEnabled="false" source="zjmhongdian" horizontalCenter="-46" bottom="86"/>
+	</e:Group>
+</e:Skin>

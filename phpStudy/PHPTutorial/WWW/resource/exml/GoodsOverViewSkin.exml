@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGoodsOverView" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bgClose" left="0" right="0" top="0" fillAlpha="0.6" bottom="0"/>
+	<e:Group width="470" horizontalCenter="0" height="500" verticalCenter="0">
+		<e:Image source="tongyong_dikuang2" scale9Grid="23,9,75,67" height="490" width="478" horizontalCenter="0" anchorOffsetY="0" top="34"/>
+		<e:Image height="440" width="420" verticalCenter="23" horizontalCenter="0" anchorOffsetY="0" source="tongyong_dikuang1" scale9Grid="8,9,63,39"/>
+		<e:Image height="17" width="481" anchorOffsetY="0" horizontalCenter="0" source="tongyong_juanzhou" top="21"/>
+		<e:Image height="37.33" width="249" source="tongyong_titlebg" anchorOffsetY="0" horizontalCenter="0" y="7.67"/>
+		<e:Label text="极品预览" y="17" size="24" fontFamily="Microsoft YaHei" textColor="0x39566A" horizontalCenter="0"/>
+		<e:Scroller id="scroller" top="53" left="25" right="25" bottom="10" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group>
+			<e:List id="shopList" anchorOffsetY="0" top="0" bottom="0" horizontalCenter="0" itemRendererSkinName="SkinItem2">
+				<e:layout>
+					<e:TileLayout requestedColumnCount="3" horizontalAlign="center" orientation="rows" paddingLeft="20" paddingRight="20" paddingTop="30" horizontalGap="40" columnWidth="100" rowAlign="top" columnAlign="left" paddingBottom="30" requestedRowCount="3" verticalAlign="middle" verticalGap="29.5"/>
+				</e:layout>
+			</e:List>
+		</e:Group>
+		</e:Scroller>
+		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-67">
+			<e:Image source="bantoutiaobg" height="30" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" y="3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Button id="closeBtn0" label="按钮" y="-17" skinName="SkinBtn0" right="-10" x="188" visible="false"/>
+		</e:Group>
+	</e:Group>
+	<e:Image id="temp" height="948" width="600" alpha="0.5" horizontalCenter="0" verticalCenter="0" source="jipingBg_bmp" locked="true" visible="false"/>
+</e:Skin>

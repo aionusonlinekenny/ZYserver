@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMijiZh" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:ns1="*">
+	<e:Rect id="bgClose" top="0" bottom="0" left="0" right="0" fillAlpha="0.8"/>
+	<e:Group id="anigroup" width="515" height="725" horizontalCenter="0" verticalCenter="10.5">
+		<e:Image  source="tongyong_dikuang2" scale9Grid="38,11,50,49" height="719" y="0" width="506" horizontalCenter="0"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" top="-2"/>
+		<e:Image source="tongyong_titlebg" width="215" horizontalCenter="0" top="-20"/>
+		<e:Image width="436" horizontalCenter="0" top="27" height="40" source="huabian" scale9Grid="77,0,57,50"/>
+		<e:Image width="264" horizontalCenter="0" top="178" source="huabian" height="40" scale9Grid="69,0,64,50"/>
+
+		<e:Label text="消耗三本已有天书随机置换一本新天书" size="20"
+		         horizontalCenter="0"  top="38" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="置换" size="24" horizontalCenter="2" fontFamily="Microsoft YaHei" top="-8" textColor="0x084151"/>
+		<e:Label text="选择要消耗的天书" size="20" horizontalCenter="0"
+		          fontFamily="Microsoft YaHei" top="188" textColor="0xffffff"/>
+		<e:Image  source="jiantouyou" top="91" left="306"/>
+		<e:Image height="365" horizontalCenter="0" scale9Grid="7,10,11,7" source="tongyong_dikuang1" width="431" top="234"/>
+		<e:Scroller id="itemScroller" width="393" height="340" y="248" horizontalCenter="0">
+			<e:List id="itemList" itemRendererSkinName="SkinItem" anchorOffsetY="0" height="358">
+				<e:layout>
+					<e:TileLayout requestedColumnCount="4" paddingLeft="5" horizontalGap="26" verticalGap="10"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+
+		<ns1:MijiItem skinName="Skin2MijiItem" id="mijiItem1" top="84" left="130"/>
+		<ns1:MijiItem skinName="Skin2MijiItem" id="mijiItem0" top="84" left="40"/>
+		<ns1:MijiItem skinName="Skin2MijiItem" id="mijiItem2" top="84" left="220"/>
+		<ns1:MijiItem skinName="Skin2MijiItem" id="mijiItem3" top="84" left="390"/>
+		<e:Button id="smeltBtn" label="置    换" skinName="SkinBtn1" horizontalCenter="0" bottom="30"/>
+	</e:Group>
+	<e:Button id="closeBtn0" skinName="SkinBtn0" label="按钮" y="76" x="433"  visible="false"/>
+</e:Skin>

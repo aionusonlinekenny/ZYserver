@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinmarkMixItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:PriceIcon="PriceIcon.*" xmlns:ns1="*"  width="506"  height="142">
+	<w:Config id="15a177a4c02"/>
+	<e:Image width="76" height="76" horizontalCenter="0" top="0" source="quali5" scale9Grid="8,8,12,46" visible="false"/>
+
+
+
+
+	<e:Image left="0" right="0" top="0" bottom="0" source="tongyongdi6" scale9Grid="5,4,35,33"/>
+
+	<e:Group verticalCenter="0" height="142" anchorOffsetX="0" width="290.67" horizontalCenter="-22.5">
+		<e:Label id="limitLv" text="烈焰印记1~30级升级材料每消耗1个可以提升5点印记经验" y="0" size="18" width="277" x="0" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" lineSpacing="8" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+
+		<e:Label id="cost" text="合成消耗：初级魔印 X3" y="46" size="18" width="273.67" x="0" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="stock" text="当前拥有：1000" y="68" size="18" width="273" x="1" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="left" verticalAlign="middle" gap="8"/>
+		</e:layout>
+	</e:Group>
+
+	<e:Image id="redpoint" source="zjmhongdian" right="6" top="44"/>
+	<e:Group width="84.34" left="0" verticalCenter="0" anchorOffsetX="0" anchorOffsetY="0" height="142">
+		<ns1:ItemBase id="itemIcon" horizontalCenter="0" x="27" scaleX="1" scaleY="1" verticalCenter="0" skinName="SkinItem2"/>
+	</e:Group>
+	<e:Group width="130.67" height="142" anchorOffsetX="0" right="0" verticalCenter="0">
+		<e:Button id="MixBtn" label="更 换" name="changeBtn" verticalCenter="0" icon="btn3" y="56" scaleX="1" scaleY="1" horizontalCenter="0" skinName="SkinBtn3"/>
+	</e:Group>
+</e:Skin>

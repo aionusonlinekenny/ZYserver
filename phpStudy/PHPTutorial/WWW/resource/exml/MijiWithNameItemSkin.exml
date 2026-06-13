@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMijiWithNameItem" width="90" height="110" currentState="up" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<ns1:MijiItem id="miji" horizontalCenter="0" top="0" skinName="Skin2MijiItem"/>
+	<e:Image id="icon" source="mijiicon" anchorOffsetX="0" anchorOffsetY="0" height="70" y="5" width="70" x="10" visible="false"/>
+
+	<e:Label id="nameTF" text="" y="90" size="18" touchEnabled="false" textAlign="center" width="100" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+
+
+
+
+
+
+</e:Skin>

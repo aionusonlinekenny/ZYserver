@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGwMijingRank" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+<e:Rect id="bgClose" fillAlpha="0.6"  left="0" right="0" bottom="0" top="0"/>
+	<e:Group id="anigroup" width="576" height="635" horizontalCenter="0"  anchorOffsetY="0" verticalCenter="-74.5">
+		<e:Image id="bg" bottom="0"  source="tongyong_dikuang2" scale9Grid="29,6,62,62" width="576" height="608" horizontalCenter="0"/>
+		<e:Image id="titlebg" y="16" left="0" right="0"  source="tongyong_juanzhou" scale9Grid="207,0,73,23"/>
+		<e:Image width="249" height="41" source="tongyong_titlebg" horizontalCenter="0" top="0"/>
+		<e:Image width="532" height="554" y="52" source="tongyong_dikuang1" scale9Grid="10,10,64,66" horizontalCenter="0"/>
+		<e:Label id="title" text="秘境通关排行" size="20" y="14" horizontalCenter="0"  fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+		<e:Group y="56" width="520" height="41" horizontalCenter="0">
+			<e:Image id="titlebar" y="0" left="0" right="0"  source="pailietoubg2" scale9Grid="11,0,17,40"/>
+			<e:Label id="titlerank" text="排名" size="20" y="11"  fontFamily="Microsoft YaHei" x="11" textColor="0x001828"/>
+			<e:Label id="titlename" text="挑战者" size="20" y="11"  fontFamily="Microsoft YaHei" textColor="0x001828" x="138"/>
+			<e:Label id="titleStorey" text="S级通关层数" size="20" y="11"  fontFamily="Microsoft YaHei" textColor="0x001828" x="272"/>
+			<e:Label id="titletime" text="时间" size="20" y="11" fontFamily="Microsoft YaHei" textColor="0x001828" x="451"/>
+		</e:Group>
+		<e:Scroller width="520" height="498" y="98"   scrollPolicyH="off" anchorOffsetY="0" horizontalCenter="0">
+			<e:List id="list" width="520" height="460"   itemRendererSkinName="SkinGwMijingRankItem">
+			<e:layout>
+				<e:VerticalLayout gap="2"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Group horizontalCenter="0" height="35" x="25"  bottom="-38">
+			<e:Image source="bantoutiaobg" height="30" touchEnabled="false" scale9Grid="128,2,15,41" width="460" y="5" horizontalCenter="0"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" y="10" fontFamily="Microsoft YaHei" textColor="0xfcfcfc" horizontalCenter="0"/>
+		</e:Group>
+		<e:Button id="btnClose" label="Button" x="525" y="6" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+	</e:Group>
+</e:Skin>

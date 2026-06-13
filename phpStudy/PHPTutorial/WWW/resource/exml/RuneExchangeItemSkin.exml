@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinRuneExchangeItem" width="560" height="114" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15a59527d66"/>
+	<e:Image  source="tongyonglabbg" left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30" width="567"/>
+	<e:Label id="descLab" text="减少伤害+5%" size="18" width="270" height="58" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x001828" left="110" top="35"/>
+	<e:Label id="descLab1" text="昊天塔9999关解锁" size="18" fontFamily="Microsoft YaHei" textColor="0x0038ab" top="19" horizontalCenter="-25"/>
+	<ns1:RuneDisplay id="icon" x="10" skinName="SkinRuneItem" top="-4"/>
+	<e:Group id="effpos" x="60" y="44" scaleX="1.2" scaleY="1.1"/>
+	<e:Button id="goBtn" label="兑  换" skinName="SkinBtn6" x="400" width="130" height="50" verticalCenter="10" icon="btn3"/>
+	<e:Group right="44" y="8">
+		<e:Image y="0" x="0"   source="500008_png" width="32" height="32"/>
+		<e:Label id="nameLab0" text="99/99" y="7" size="20" x="30" textAlign="center"   fontFamily="Microsoft YaHei" textColor="0x00842c" height="24"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="bottom" gap="0" horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

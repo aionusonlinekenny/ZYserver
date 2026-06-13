@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinWpkResultRender" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="338" height="38">
+	<e:Group height="38" y="0" left="0" right="0">
+		<e:Image id="paihang" scaleX="1" scaleY="1" left="1" width="38" height="34" verticalCenter="0" source="paihang1"/>
+		<e:Label id="nameTxt" text="玩家名六个字" y="8" size="20" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" textColor="0xabebff" left="60"/>
+		<e:Label id="valueTxt" text="1000000000" y="8" size="20" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" textColor="0xabebff" left="220"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinPointCurrentButton" width="128" height="42" xmlns:e="http://ns.egret.com/eui" states="one,two,three,five"  width.one="128">
+	<e:Image source="jqpd_grap_btn" left="0" verticalCenter="0" source.three="jqpd_blue_btn" source.one="jqpd_yellow_btn" source.two="jqpd_green_btn" includeIn="three,five"/>
+	<e:Image source="jqpd_grap_btn" scaleX="-1" right="0" verticalCenter="0" source.three="jqpd_blue_btn" source.one="jqpd_yellow_btn" source.two="jqpd_green_btn" scaleX.one="1" includeIn="one,two"/>
+	<e:Label text="5倍区" size="25" verticalCenter="0" textColor="0xeaadff" horizontalCenter="0" text.one="1倍区" text.two="2倍区" text.three="3倍区" fontFamily.one="Microsoft YaHei" textColor.one="0xffffff" size.one="22" textColor.two="0xffffff" fontFamily.two="Microsoft YaHei" size.two="22" fontFamily.three="Microsoft YaHei" size.three="22" textColor.three="0xffffff" fontFamily.five="Microsoft YaHei" size.five="22" textColor.five="0xffffff"/>
+</e:Skin>

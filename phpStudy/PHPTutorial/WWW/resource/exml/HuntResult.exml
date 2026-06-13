@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="HuntResult" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*"  width="600" height="948">
+	<e:Rect id="closeBtn" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group width="535" height="662" horizontalCenter="0" verticalCenter="0">
+		<e:Image   width="535" horizontalCenter="0" top="2" source="tongyong_dikuang2" bottom="0" scale9Grid="30,7,53,54"/>
+		<e:Image source="tongyong_juanzhou" height="23" top="0" left="0" right="0"/>
+		<e:Image height="41" width="273" horizontalCenter="0" top="-16" source="tongyong_titlebg" scale9Grid="103,0,42,41"/>
+		<e:Image width="476" horizontalCenter="0" source="tongyongbg7" height="500" top="35" scale9Grid="5,4,18,16"/>
+		<e:Image source="bantoutiaobg" height="40" width="383" bottom="-52" horizontalCenter="-1" scale9Grid="44,5,310,30"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="-7.5" bottom="-39" textColor="0xFFFFFF" fontFamily="Microsoft YaHei"/>
+		<e:Group id="dinghong" height="100" bottom="4" left="5" right="5">
+
+
+
+		</e:Group>
+		<e:Label id="title" text="获得如下宝物" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" top="-4" textColor="0x084151"/>
+		<e:Button id="buyBtn" label="购买10次" icon="xb_25" horizontalCenter="0" bottom="19" skinName="SkinBtn1"/>
+		<e:Group id="zwHunt" bottom="90" horizontalCenter="0">
+			<e:Image source="szyuanbao" width="40"  left="0" top="0"/>
+			<e:Label id="zw" text="10000" size="20" x="32" y="14"  fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:Label text="（" size="20" x="189" y="5"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Image id="icon" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30" source="200166_png" x="215" y="0" />
+			<e:Label id="zwNum1" text="5" size="20" x="199" y="15"  textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="zwNum2" text="/1）" size="20" x="209" y="25"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="2"/>
+			</e:layout>
+		</e:Group>
+
+
+
+
+
+		<e:Group id="listCon" height="473" y="50" width="473" horizontalCenter="0">
+			<e:layout>
+				<e:TileLayout requestedRowCount="4" requestedColumnCount="5" horizontalAlign="center" verticalGap="10" horizontalGap="17" paddingLeft="12" paddingRight="12"/>
+			</e:layout>
+		</e:Group>
+		<e:Button id="closeBtn2" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="248.5" x="468"  top="-2"/>
+
+	</e:Group>
+	
+	
+</e:Skin>

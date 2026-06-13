@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinPunchExchangeItem" width="397" height="106" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15a59527d66"/>
+
+
+
+
+
+
+
+
+	<e:Group left="0" top="0" bottom="0" right="0">
+		<e:Image source="tongyonglabbg" scale9Grid="40,20,30,30" anchorOffsetX="0" anchorOffsetY="0" top="0" left="0" bottom="0" right="0" x="0" y="0" scaleX="1" scaleY="1"/>
+		<e:Image width="80" scale9Grid="3,3,12,9" height="35" source="textbg" horizontalCenter="16.5" verticalCenter="16.5" x="175" y="52" scaleX="1" scaleY="1"/>
+		<e:Label id="descLab" text="100/200" size="20" verticalAlign="middle" width="83" textAlign="center" anchorOffsetX="0" textColor="0xffffff" horizontalCenter="16" verticalCenter="16" fontFamily="Microsoft YaHei"/>
+		<e:Image id="icon" source="hejisuipian" width="26" height="26" left="146" bottom="22"/>
+		<e:Label text="消耗:" size="18" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei" top="59" left="96"/>
+		<e:Label id="nameLab" text="等级" size="18" fontFamily="Microsoft YaHei" textColor="0x0000f1" top="17" left="98"/>
+		<e:Button id="goBtn" label="确定" skinName="SkinBtn6" width="118" height="52" icon="btn3" top="26" right="16"/>
+		<e:Image id="redPoint" source="zjmhongdian" right="12" top="20"/>
+		<ns1:ItemIcon id="itemIcon0" skinName="SkinItemIcon" scaleX="1" scaleY="1" verticalCenter="0" left="13"/>
+	</e:Group>
+
+</e:Skin>

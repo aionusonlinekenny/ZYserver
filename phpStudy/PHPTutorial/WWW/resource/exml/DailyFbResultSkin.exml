@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinDailyFbResult" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        height="948" width="600">
+	<w:Config id="15c8d32c190" />
+	<e:Rect right="0" top="0" fillAlpha="0.75" left="0" bottom="0"/>
+	<e:Image id="bg" source="tongyong_bgsuc" width="600" horizontalCenter="0" top="0" bottom="0"/>
+	<e:Group horizontalCenter="0" width="600" height="948" verticalCenter="0">
+
+
+		<e:Label id="txt" text="获得奖励" size="20" horizontalCenter="0" textAlign="center" x="220" y="288"   fontFamily="Microsoft YaHei"/>
+		<e:Button id="closeBtn" label="退出(10s)" horizontalCenter="0" y="778.15" skinName="SkinBtn7"/>
+		<e:Group id="biankuang1" width="580" height="363.33" y="324" horizontalCenter="0" anchorOffsetY="0" visible="false">
+			<e:Image width="544" horizontalCenter="0" source="bantoutiaobg" scale9Grid="161,10,61,13" x="18" top="8" bottom="2.3"/>
+			<e:Image horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" bottom="3.5"/>
+			<e:Group id="biankuangTop" width="580" height="16" horizontalCenter="0" anchorOffsetY="0" top="0">
+				<e:Image y="8" horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1"/>
+				<e:Image y="-2" horizontalCenter="0" source="fuentitlebg" x="250"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="biankuang2" width="580" height="459.16" y="319.67" horizontalCenter="0" anchorOffsetY="0">
+			<e:Image width="544" horizontalCenter="0" source="bantoutiaobg" scale9Grid="161,10,61,13" x="18" top="8" bottom="2.3"/>
+			<e:Image horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" bottom="3.5"/>
+			<e:Group id="biankuangTop0" width="580" height="16" horizontalCenter="0" anchorOffsetY="0" top="0">
+			<e:Image y="8" horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1"/>
+			<e:Image y="-2" horizontalCenter="0" source="fuentitlebg" x="250"/>
+			</e:Group>
+		</e:Group>
+		<e:Scroller id="scrollerGroup" width="580" y="342" enabled="true" horizontalCenter="0" height="331" anchorOffsetY="0">
+			<e:Group id="listGroup" horizontalCenter="0" verticalCenter="-2" anchorOffsetY="0">
+			<e:List id="listItem" width="395" horizontalCenter="0.5">
+				<e:layout>
+				<e:TileLayout horizontalGap="30" verticalGap="5" horizontalAlign="left" verticalAlign="top"/>
+				</e:layout>
+			</e:List>
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
+			</e:Group>
+		</e:Scroller>
+
+		<e:Image id="title" y="5" horizontalCenter="28" source="labwin_png"/>
+
+		<e:Group id="effGroup"   touchChildren="false" touchEnabled="false" y="198" horizontalCenter="-12" x="230"  />
+		<e:Group width="580" height="493.5" id="defeat" verticalCenter="49" y="216" horizontalCenter="0" x="66" anchorOffsetY="0">
+			<e:Image horizontalCenter="0" source="huabian" y="-16"/>
+
+			<e:Label id="lostTxt" text="我要变强" size="20" y="11" horizontalCenter="0" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
+			<e:Scroller width="464" height="434.5" verticalCenter="27.75" horizontalCenter="0" anchorOffsetY="0" anchorOffsetX="0">
+			<e:List id="list0" itemRendererSkinName="SkinDefeatItem">
+				<e:layout>
+				<e:TileLayout verticalGap="5" horizontalAlign="center" paddingLeft="30" horizontalGap="6"/>
+				</e:layout>
+			</e:List>
+			</e:Scroller>
+
+		</e:Group>
+
+
+
+	</e:Group>
+</e:Skin>

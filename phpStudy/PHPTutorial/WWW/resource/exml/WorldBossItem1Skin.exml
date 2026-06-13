@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinWorldBossItem1" currentState="open" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="open,close" width.open="160" width.close="160">
+	<e:Group horizontalCenter="0" top="1" bottom="1" left="0" right="0">
+		<e:Group width="160" height="52" verticalCenter="0" right="0" scaleX="1">
+			<e:Button label="Button" icon="btn2_2" x.open="0" y.close="0" x.close="0" anchorOffsetX="0" width="162.13" anchorOffsetY="0" height="42" scaleX="0.82" scaleY="0.71" skinName="SkinBtn0" right="6" height.open="44.012048" verticalCenter="-1" scaleY.open="0.72"/>
+			<e:Image id="title" horizontalCenter="11.5" verticalCenter="-3" source="title_mijingboss" source.open="title_mijingboss" touchEnabled="false" horizontalCenter.open="8.5" verticalCenter.open="-3"/>
+		</e:Group>
+		<e:List id="list" width="160" includeIn="open" itemRendererSkinName="SkinWorldBossItem" verticalCenter="30" horizontalCenter="0">
+			<e:layout>
+				<e:VerticalLayout gap="1"/>
+			</e:layout>
+		</e:List>
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="right" gap="0"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" includeIn="open" x="140" y="0"/>
+</e:Skin>

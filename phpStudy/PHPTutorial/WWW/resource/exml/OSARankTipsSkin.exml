@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OSARankTipsSkin" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="1665e81c13c"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
+	<e:Group id="anigroup" horizontalCenter="0" verticalCenter="0">
+		<e:Group name="装备" width="569" height="759" verticalCenter="0" horizontalCenter="0" x="7" y="104">
+			<e:Image id="bg" source="tongyong_dikuang2" horizontalCenter="0" scale9Grid="20,8,80,69" top="11" bottom="37" left="-12" right="-12"/>
+			<e:Image id="bgt" left="0" right="0" source="tongyong_juanzhou" scale9Grid="198,2,84,19" top="0"/>
+			<e:Image source="tongyong_titlebg" width="281" height="41" horizontalCenter="0" top="-20"/>
+			<e:Image width="535" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,6,60,42" top="32" anchorOffsetY="0" bottom="59"/>
+			<e:Label id="title" text="开服聚灵榜" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" top="-8" textColor="0x39566A"/>
+			<e:Button label="按钮" id="closeBtn" right="-16" top="-14" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+			<e:Scroller width="511" height="644.86" horizontalCenter="1" scrollPolicyV="on" scrollPolicyH="off" verticalCenter="-13" anchorOffsetY="0">
+			<e:List id="record" left="0" top="-4" bottom="-0.13999999999998636" right="0" itemRendererSkinName="OSARankListItemSkin" anchorOffsetY="0">
+				<e:layout>
+				<e:VerticalLayout gap="0"/>
+				</e:layout>
+			</e:List>
+			</e:Scroller>
+		</e:Group>
+		<e:Group width="200" height="40" x="727" y="395" visible="false">
+			<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" width="400" x="-100" scaleX="1" scaleY="1" verticalCenter="0"/>
+			<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="0" textColor="0xFFFFFF" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" y="239.9999999999999" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:layout>
+		<e:VerticalLayout gap="-21" horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

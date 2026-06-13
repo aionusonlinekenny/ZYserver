@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinShop" width="600" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="948">
+	<w:Config id="15bfb52746c"/>
+	<e:Image scale9Grid="10,9,27,30" horizontalCenter="0" top="-5" bottom="0" width="600" source="shopbg_png"/>
+	<e:Image horizontalCenter="0" top="546" bottom="0" width="600" source="shopbg2_png" scale9Grid="0,0,0,0" anchorOffsetY="0"/>
+	<e:Image horizontalCenter="-1.5" top="105" width="563" source="tongyongbgred" bottom="185" anchorOffsetY="0" scale9Grid="34,30,23,25"/>
+	<e:Group width="556" horizontalCenter="0" bottom="58">
+	</e:Group>
+	<ns1:RoleSelectPanel id="roleSelect" y="0"  currentState="nohead" width="600" horizontalCenter="0" skinName="SkinRoleSelectPanel"/>
+	<e:Group width="600" top="0" horizontalCenter="0" touchEnabled="false" touchThrough="true" height="755" touchChildren="false">
+		<e:Image top="68" left="2" source="shang_5_png"/>
+		<e:Image y="1.5" source="shang_2_png" width="276" height="98" anchorOffsetX="0" left="0"/>
+		<e:Image top="54" left="26" source="shang_4_png"/>
+		<e:Image source="shang_3_png" top="34" left="70"/>
+		<e:Image horizontalCenter="-186.5" top="10" source="biaoti_shangcheng_png"/>
+	</e:Group>
+	<e:ViewStack id="viewStack" width="560" selectedIndex="1" anchorOffsetY="0" top="107" bottom="186" horizontalCenter="0">
+		<ns1:BlackMarketPanel id="blackMarketPanel" skinName="SkinBlackMarket" name="神秘商店" top="0" bottom="0" left="0" right="0" width="560" visible="false"/>
+		<ns1:PropertyPanel id="itemShopPanel" skinName="SkinItemShop" name="道具商店" anchorOffsetY="0" top="0" bottom="0" left="0" right="0"/>
+	</e:ViewStack>
+<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}"
+	          selectedIndex="0" horizontalCenter="0" bottom="106">
+		<e:layout>
+		<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+	</e:TabBar>
+	<e:Image id="redPoint0" source="zjmhongdian" horizontalCenter="-10.5" bottom="138" visible="false"/>
+	<e:Image id="redPoint2" source="zjmhongdian" horizontalCenter="101.5" bottom="138" visible="false"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="276"/> 
+	<e:Image id="temp" height="948" width="600" source="blackMarketBg_bmp" verticalCenter="0" horizontalCenter="0" alpha="0.5" x="10" y="10" visible="false" locked="true"/> 
+</e:Skin>

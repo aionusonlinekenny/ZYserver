@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildBossHarm" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect id="bgClose" fillAlpha="0.6"  left="0" right="0" top="0" bottom="0"/>
+	<e:Group width="563" height="751" horizontalCenter="0" verticalCenter="0" >
+
+		<e:Image id="bg"  scale9Grid="34,20,1,1" source="tongyong_dikuang2" width="563" horizontalCenter="0" top="0" bottom="0"/>
+		<e:Image height="708" horizontalCenter="0.5" width="500" source="tongyongbg5" scale9Grid="8,5,12,9" verticalCenter="-1.5"/>
+		<e:Image id="titlebg"  source="tongyong_juanzhou" scale9Grid="223,0,35,15" width="563" horizontalCenter="0" top="-14"/>
+		<e:Image width="281" horizontalCenter="0" top="-32" source="tongyong_titlebg" scale9Grid="114,22,24,15"/>
+		<e:Label id="title" text="伤害排行" size="22" horizontalCenter="0"  fontFamily="Microsoft YaHei" top="-18" textColor="0x084151"/>
+		<e:Group width="496" height="45" scaleX="1" scaleY="1" horizontalCenter="-0.5" top="22" x="34" y="-132">
+			<e:Image source="leibiefengetou" left="0" right="0" scale9Grid="2,0,5,48" top="0" bottom="0"/>
+			<e:Label id="SkinGuildBossHarm" text="贡献" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="191" verticalCenter="-4.5"/>
+			<e:Label text="排名" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-205" verticalCenter="-4.5"/>
+			<e:Label text="总伤害" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="60" verticalCenter="-4.5"/>
+			<e:Label text="名称" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-87" verticalCenter="-4.5"/>
+			<e:Image source="leibeifengexian" horizontalCenter="137" verticalCenter="-1"/>
+			<e:Image source="leibeifengexian" horizontalCenter="-155" verticalCenter="-1"/>
+			<e:Image source="leibeifengexian" horizontalCenter="-14" verticalCenter="-1"/>
+			<e:Label id="infoDesc0" height="28" text="一个字，干！" size="18" textAlign="left" verticalAlign="justify" horizontalCenter="5" width="324" anchorOffsetY="0" x="92" scaleX="1" scaleY="1" verticalCenter="10.5" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" visible="false"/>
+		</e:Group>
+
+		<e:Group id="my" width="485" height="60" horizontalCenter="0" bottom="31">
+
+			<e:Label id="myrank" text="10" size="30" width="50" y="10"  textAlign="center" verticalAlign="middle"
+			         textColor="0x7E6437"  height="50" x="31"  fontFamily="Microsoft YaHei" visible="false"/>
+			<e:Label id="myname" text="玩家昵称六字" size="20" textAlign="center" verticalAlign="middle"
+			         verticalCenter="1" horizontalCenter="-87.5"  textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+			<e:Label id="myharm" text="9999999999999" size="20" textAlign="center" verticalAlign="middle" verticalCenter="1"
+			         horizontalCenter="60"  textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+			<e:Label id="myreword" text="306" size="20" textAlign="center" verticalAlign="middle" verticalCenter="1"
+			         horizontalCenter="187.5"  textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="86"/>
+			<e:Image id="qiansan" source="paihang1"  left="11" verticalCenter="0"/>
+			<e:Image width="470" height="2" horizontalCenter="0" bottom="0" x="8" y="89" scaleX="1" scaleY="1" source="line6"/>
+		</e:Group>
+
+
+		<e:Scroller width="485" height="578"   scrollPolicyH="off" horizontalCenter="0" verticalCenter="-19" anchorOffsetY="0" anchorOffsetX="0">
+			<e:List id="list" itemRendererSkinName="SkinGuildBossHarmItem"  >
+			<e:layout>
+				<e:VerticalLayout gap="10" horizontalAlign="center"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+	</e:Group>
+	<e:Image alpha="0.7" source="guildbossrank_png" horizontalCenter="0" verticalCenter="0" visible="false"/>
+
+</e:Skin>

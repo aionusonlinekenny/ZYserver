@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="ActivityWinSkin" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  >
+	<e:Group top="0" bottom="0" left="0" right="0">
+
+		<e:Image top="0" bottom="0" width="600" scale9Grid="15,12,2,3" y="0"   horizontalCenter="0" source="shopbg_png"/>
+		<e:Image top="340" bottom="67" width="600" y="10" horizontalCenter="0" x="10" source="shopbg2_png" scale9Grid="2,12,15,594" anchorOffsetY="0"/>
+		<e:Image width="563" horizontalCenter="0.5" scale9Grid="25,20,19,26" anchorOffsetY="0" source="tongyongbgred" bottom="186" top="85"/>
+
+
+		<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" width="580" horizontalCenter="-1"/>
+
+
+
+		<e:ViewStack id="viewStack" width="560" selectedIndex="3" horizontalCenter="0" anchorOffsetY="0" height="671" verticalCenter="-49">
+		</e:ViewStack>
+		<e:Group width="600" top="0" horizontalCenter="0" touchEnabled="false" touchThrough="true" height="948" anchorOffsetY="0" touchChildren="false">
+			<e:Image top="68" left="7" source="shang_5_png"/>
+
+
+			<e:Image y="1.36" source="shang_2_png" width="276" height="98" anchorOffsetX="0" left="0"/>
+			<e:Image top="50" left="27" source="shang_4_png"/>
+			<e:Image source="shang_3_png" top="34" left="70"/>
+			<e:Image id="title" top="15" source="biaoti_kaifuhuodong_png" left="54"/>
+
+
+
+		</e:Group>
+
+
+
+
+		<e:Group horizontalCenter="-253" bottom="105">
+			<e:Button id="leftBtn" label="" icon="jiantouxuan" skinName="SkinBtn0"/>
+			<e:Image id="leftRed" x="18" y="-8" source="zjmhongdian" touchEnabled="false" visible="false"/>
+		</e:Group>
+		<e:Group horizontalCenter="252" bottom="105">
+			<e:Button id="rightBtn" label="" icon="jiantouxuan" skinName="SkinBtn0" scaleX="-1" x="67"/>
+			<e:Image id="rightRed" x="29" y="-8" source="zjmhongdian" touchEnabled="false" visible="false"/>
+		</e:Group>
+		<e:Scroller id="menuScroller" scrollPolicyV="off" scrollPolicyH="on" height="107" horizontalCenter="0" width="435" bottom="82">
+			<e:List id="menuList" y="74" itemRendererSkinName="SkinActBtn" horizontalCenter="0" scrollEnabled="false">
+			<e:layout>
+				<e:HorizontalLayout gap="0" paddingLeft="0" horizontalAlign="center" paddingTop="0"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+	</e:Group>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" horizontalCenter="275" top="55"/>		
+</e:Skin>

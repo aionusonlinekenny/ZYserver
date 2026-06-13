@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="limittime" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="600" height="948">
+	<w:Config id="15c43009529"/>
+	<e:Rect width="600" fillColor="0x0D97AE" horizontalCenter="0" top="0" bottom="0"/>
+	<e:Image horizontalCenter="0" verticalCenter="-35" source="bg_1_png"/>
+
+
+
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel"  width="600" horizontalCenter="0" currentState="nohead" top="0"/>
+	<e:Group width="600" height="728" horizontalCenter="0" verticalCenter="-46">
+		<e:Image horizontalCenter="0" source="tongyong_dikuang4" scale9Grid="10,10,60,60" width="585" height="381" top="392" x="8" y="393" />
+		<e:Group id="timeGroup" width="350" height="30" top="39" horizontalCenter="0" x="125" y="40" >
+			<e:Image id="bg" width="339" verticalCenter="5" horizontalCenter="0" source="jineng_json.huabian2" scale9Grid="38,0,40,18"/>
+			<e:Group id="deadLine" width="228" height="20" horizontalCenter="0" top="0">
+			<e:Label id="title" text="任务剩余时间：" x="-2" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="time" text="119:19:19" x="132" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:layout>
+				<e:HorizontalLayout gap="0" horizontalAlign="center"/>
+			</e:layout>
+			</e:Group>
+			<e:layout>
+			<e:BasicLayout/>
+			</e:layout>
+		</e:Group>
+		<e:Group top="87" right="0" left="0" height="309" x="0" y="88" >
+			<e:Image source="hejibg2_png" touchEnabled="false" scaleX="0.53" scaleY="0.53" top="0" horizontalCenter="-177"/>
+			<e:Button id="viewBtn" label="查看火符" width="124" height="57" horizontalCenter="0" icon="btn3" top="245" skinName="SkinBtn3"/>
+			<e:Group width="287" height="180" top="57" horizontalCenter="132.5">
+			<e:Label text="火符套装效果（三角色时）" y="10" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="link2" text="1转" size="20" x="16" fontFamily="Microsoft YaHei" textColor="0xffff00" top="8" visible="false"/>
+			<e:Label id="link13" text="火符套装效果" size="20" x="61" fontFamily="Microsoft YaHei" textColor="0xffff00" top="8" visible="false"/>
+			<e:Label id="link9" text="+400%" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" top="35" right="0" visible="false"/>
+			<e:Label id="link10" text="+40%" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" top="87" right="0" visible="false"/>
+			<e:Label id="link11" text="+20%" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" top="136" right="0" visible="false"/>
+			<e:Label id="link3" text="集齐3块火符" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" top="35" left="29"/>
+			<e:Label id="link4" text="神罚技能对玩家伤害" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" top="60" left="0"/>
+			<e:Label id="link5" text="集齐5块火符" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" left="29" top="87"/>
+			<e:Label id="link6" text="神罚技能对怪物伤害提高到2400%" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" left="0" top="112"/>
+			<e:Label id="link7" text="集齐8块火符" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" left="29" top="136"/>
+			<e:Label id="link8" text="怒气恢复速度" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" left="0" top="161"/>
+			<e:Image source="tongyongdian3" top="35" left="7"/>
+			<e:Image source="tongyongdian3" left="7" top="87"/>
+			<e:Image source="tongyongdian3" left="7" top="136"/>
+			</e:Group>
+			<e:Image width="247" scaleX="-1" top="-25" source="huabian" horizontalCenter="144.5"/>
+			<e:Label text="火符收集进度" size="20" fontFamily="Microsoft YaHei" textColor="0x001828" top="0" horizontalCenter="142"/>
+			<e:Label id="link" text="任务剩余时间:" y="-16" size="20" x="135" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+			<e:Label id="link12" text="23小时30分钟59秒" y="-16" size="20" textAlign="center" x="276" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
+			<e:Group id="EffectGroup" width="352" height="351" scaleX="0.53" scaleY="0.53" horizontalCenter="-167.5" verticalCenter="-40.5">
+			<ns1:PunchEquipItemBase id="item0" x="95.46" y="14.12" skinName="SkinPunchEquipItem" currentState="1"/>
+			<ns1:PunchEquipItemBase id="item1" x="159.91" y="18" skinName="SkinPunchEquipItem" currentState="2"/>
+			<ns1:PunchEquipItemBase id="item2" x="159.77" y="102.99" skinName="SkinPunchEquipItem" currentState="3"/>
+			<ns1:PunchEquipItemBase id="item3" x="158" y="165.58" skinName="SkinPunchEquipItem" currentState="4"/>
+			<ns1:PunchEquipItemBase id="item4" x="95.33" y="161.67" skinName="SkinPunchEquipItem" currentState="5"/>
+			<ns1:PunchEquipItemBase id="item5" x="10.22" y="167.45" skinName="SkinPunchEquipItem" currentState="6"/>
+			<ns1:PunchEquipItemBase id="item6" x="14.01" y="103" skinName="SkinPunchEquipItem" currentState="7"/>
+			<ns1:PunchEquipItemBase id="item7" x="11.34" y="15.09" skinName="SkinPunchEquipItem" currentState="8"/>
+			</e:Group>
+			<e:Group horizontalCenter="49" top="65" visible="false">
+			<e:Label id="link0" text="2转" x="0" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="link1" text="火符收集" x="30" y="0.5" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+			</e:Group>
+			<e:Image id="progress"  scale9Grid="28,1,7,20" width="310" horizontalCenter="136" top="35" source="jingyantiao1"/>
+			<e:ProgressBar id="expBar" width="271" height="13" y="39.3" value="100" scaleX="1" skinName="Skinbar3" horizontalCenter="135.5"/>
+
+		</e:Group>
+		<e:Scroller width="575" height="371" horizontalCenter="0" top="397" x="13" y="398" >
+			<e:List id="list" itemRendererSkinName="LimitTimeItem" y="16" height="294" horizontalCenter="0">
+			<e:layout>
+				<e:TileLayout horizontalGap="4" verticalGap="4"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Group id="title0" height="25" horizontalCenter="0" top="4" x="68" y="5" >
+			<e:Label text="集齐" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="全套" x="65" size="21" textColor="0x35e62d" verticalCenter="0" fontFamily="Microsoft YaHei"/>
+			<e:Label text=" 60级火符，" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="神罚伤害" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="全面大幅上涨" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0" verticalAlign="bottom"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="title1" height="25" horizontalCenter="0" top="2" x="70" y="3"  visible="false">
+			<e:Label text="全套" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="1转" x="65" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="火符，PK打怪无压力！" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="神罚加成" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="带你飞！" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0" verticalAlign="bottom"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="title2" height="25" horizontalCenter="0" top="2" x="59" y="3"  visible="false">
+			<e:Label text="全套" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="3转" x="65" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="火符，神罚技能" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="UP" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="！体验一击制敌的快感！" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0" verticalAlign="bottom"/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46"  horizontalCenter="272"/>
+	<e:Image id="tit" touchEnabled="false"  top="10" horizontalCenter="-221.5" source="xianshirenwut_png"/>
+</e:Skin>

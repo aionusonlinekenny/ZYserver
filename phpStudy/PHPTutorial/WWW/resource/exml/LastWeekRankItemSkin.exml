@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinLastWeekRankItem" width="488" height="87" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15acbac88a0"/>
+	<e:Image left="0" right="0" source="rankitembg" bottom="0" top="0" scale9Grid="11,6,66,41"/>
+	<e:Label id="rank" text="1" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center" horizontalCenter="-200.5"/>
+	<e:Label id="nameLabel" text="" size="20" textAlign="left" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" x="174"/>
+	<e:Label id="winNum" size="20" text="" textAlign="center" width="80" x="306" verticalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+
+	<e:Image id="levelBg" y="44" x="130" source="" scale9Grid="10,6,19,9"/>
+	<e:Group x="89" width="58" height="50" verticalCenter="0">
+		<e:Image id="dwImg" scaleX="0.5" scaleY="0.5" horizontalCenter="0" verticalCenter="0" source="ladder_rank_3_png"/>
+		<e:Image id="level" source="laddergradnum_5" scaleX="0.6" scaleY="0.6" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+	<ns1:ItemBase id="item1" scaleX="0.8" scaleY="0.8" skinName="SkinItem" verticalCenter="0" x="410"/>
+	<e:Image id="rankImg" x="16" verticalCenter="0" source="paihang1"/>
+	<e:Image id="headBg" x="340" y="-8" source="" visible="false"/>
+	<e:Image id="head" x="365" y="23" scaleX="0.54" scaleY="0.54" source="" visible="false"/> 
+</e:Skin>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinAdvanEquipWin" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+    <w:Config id="1586be3e7df" />
+   	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" verticalCenter="-35" source="bg_1_jpg"/>
+
+
+    <e:ViewStack id="viewStack" width="600" selectedIndex="0" horizontalCenter="0" height="735" verticalCenter="-51">
+        <ns1:GoddessEquipPanel id="orangeEquipPanel" name="神装" skinName="SkinOrangeEquip" width="600" height="735" horizontalCenter="0" verticalCenter="0"/>
+        <ns1:LegendEquipPanel id="legendEquipPanel" name="至圣" skinName="SkinLegendEquip" width="600" horizontalCenter="0" height="735" verticalCenter="0" visible="false"/>
+		<ns1:WuJiEquipPanel id="extremeEquipPanel" name="无极" skinName="SkinExtremeEquip" width="600" height="735" horizontalCenter="0" verticalCenter="0"/>
+
+    </e:ViewStack>
+    <e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="96" source="bantoumingkuang3_png"/>
+    <e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0"
+              horizontalCenter="0" bottom="104">
+        <e:layout>
+		<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+    </e:TabBar>
+	<ns1:RoleSelectPanel id="roleSelect" y="0" skinName="SkinRoleSelectPanel"   width="600" horizontalCenter="0" locked="true"/>
+	<e:Group horizontalCenter="44" bottom="138" touchEnabled="false">
+		<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian"/>
+		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian"/>
+		<e:Image id="redPoint2" touchEnabled="false" source="zjmhongdian"/>
+		<e:layout>
+			<e:HorizontalLayout gap="93"/>
+		</e:layout>
+	</e:Group>
+
+
+	<e:Image top="8" horizontalCenter="-229" source="biaoti_chengzhuang_png"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" horizontalCenter="275" top="44"/>
+</e:Skin>

@@ -1,0 +1,4 @@
+[{"type":0,"effectId":"6404","playSpeed":0.7,"layer":1,"isRot":1,"y":-80,"rotation":90},
+{"type":2,"effectId":"6407","playSpeed":0.9,"layer":1,"customX":50,"playCount":1,"isRot":1,"rotation":0,"delay":100},
+{"type":2,"effectId":"6407","playSpeed":0.9,"layer":1,"customX":50,"playCount":1,"isRot":1,"rotation":-20,"delay":150},
+{"type":2,"effectId":"6407","playSpeed":0.9,"layer":1,"customX":50,"playCount":1,"isRot":1,"rotation":-40,"delay":250,"exEff":"301t"},{"type":99,"delay":500}]

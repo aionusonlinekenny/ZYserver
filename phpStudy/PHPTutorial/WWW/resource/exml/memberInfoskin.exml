@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMemberInfo" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="closeBtn" left="0" top="0" right="0" bottom="0" fillAlpha="0.4"/>
+	<e:Group anchorOffsetX="0" anchorOffsetY="0" height="220" width="288" horizontalCenter="0" verticalCenter="0">
+
+		<e:Image scale9Grid="10,7,11,14" source="tongyongtip1" left="3" top="3" bottom="3" right="3"/>
+		<e:Image source="tongyongtip2" scale9Grid="19,18,2,5" left="0" bottom="0" top="0" right="0"/>
+		<e:Image id="imgHead" x="16" y="24" height="62" width="62" source="yuanhead20"/>
+		<e:Image id="imgBg" x="12" y="20" height="70" width="70" source="touxiangkuang0" scale9Grid="4,4,5,5"/>
+		<e:Label id="labelName" text="名字有六个字" x="96" y="16" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
+		<e:Label id="labelGuild" text="仙盟名字多少" x="96" y="66" size="18" fontFamily="Microsoft YaHei" textColor="0xec6014" textAlign="left"/>
+		<e:Label id="labelLv" text="12转100级" x="96" y="43" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
+		<e:Button id="btnInfo" label="查看" skinName="SkinBtn3" x="19" y="154" scaleX="0.8" scaleY="0.8"/>
+		<e:Button id="btnRemove" label="移出队伍" skinName="SkinBtn3" x="169" y="154" scaleY="0.8" scaleX="0.8"/>
+
+		<e:Image source="bantoutiaobg" height="36" scale9Grid="128,2,15,41" width="263" y="232" horizontalCenter="0"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" y="236" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	</e:Group>
+
+
+</e:Skin>

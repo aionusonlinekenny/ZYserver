@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinDailyFb" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+
+
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+
+	<e:ViewStack id="viewStack" selectedIndex="2" width="585" anchorOffsetY="0" horizontalCenter="0" height="728" verticalCenter="-47">
+		<e:Group name="材料副本" width="585" horizontalCenter="-1" top="0" bottom="0">
+			<e:Image width="585" horizontalCenter="0" source="tongyong_dikuang4" anchorOffsetY="0" top="0" bottom="0" scale9Grid="10,10,60,60"/>
+			<e:Scroller width="578" anchorOffsetY="0" alpha="1" top="4" bottom="4" horizontalCenter="-1">
+				<e:List id="fbList">
+				<e:layout>
+					<e:VerticalLayout gap="4" horizontalAlign="center"/>
+				</e:layout>
+				</e:List>
+			</e:Scroller>
+
+		</e:Group>
+
+		<ns1:FbExpsPanel name="经验副本" id="fbExpPanel" skinName="SkinJinyan" top="0" bottom="0" width="585" horizontalCenter="0" visible="false"/>
+		<ns1:FBThreatPanel name="昊天塔" id="fbChallengePanel" skinName="SkinChuangtianguan" top="0" bottom="0" width="585" horizontalCenter="0"/>
+		<ns1:PlayMethodPanel id="playWayPanel" name="玩法" skinName="SkinplayWay" width="585" horizontalCenter="-1" top="0" bottom="0" visible="false"/>
+		<ns1:GuardWeaponView id="guardWeaponPanel" name="守护神剑" skinName="SkinGuardGodWeapon" width="600" anchorOffsetY="0" bottom="0" top="0" horizontalCenter="0" visible="false"/>
+	</e:ViewStack>
+
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" width="600" horizontalCenter="0"/>
+	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="94" source="bantoumingkuang3_png" scale9Grid="277,7,51,49"/>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" bottom="101" horizontalCenter="0">
+		<e:layout>
+		<e:HorizontalLayout gap="-10" horizontalAlign="center"/>
+		</e:layout>
+	</e:TabBar>
+
+
+
+
+
+	<e:Group id="redPointGroup" touchEnabled="false" horizontalCenter="55.5" width="485" bottom="139">
+		<e:layout>
+			<e:HorizontalLayout gap="94"/>
+		</e:layout>
+		<e:Image id="redPoint0" touchEnabled="false" bottom="139" horizontalCenter="-183" source="zjmhongdian" x="-195" y="-24"/>
+		<e:Image id="redPoint1" touchEnabled="false" bottom="139" horizontalCenter="-71" source="zjmhongdian" x="-83" y="-24"/>
+		<e:Image id="redPoint2" touchEnabled="false" bottom="139" horizontalCenter="43" source="zjmhongdian" x="31" y="-24"/>
+		<e:Image id="redPoint3" touchEnabled="false" bottom="139" horizontalCenter="153" source="zjmhongdian" x="141" y="-24"/>
+		<e:Image id="redPoint4" touchEnabled="false" bottom="139" horizontalCenter="264" source="zjmhongdian" x="252" y="-24"/>
+	</e:Group>
+	<e:Image id="biaoti" y="8"  horizontalCenter="-227" source="biaoti_fuben_png"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="52" 
+	          horizontalCenter="275" />
+	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-264" y="5" scaleX="0.9" scaleY="0.9" visible="false"/>
+</e:Skin>

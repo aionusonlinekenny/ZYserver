@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Skinbar3" minWidth="30" minHeight="11" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="thumb" source="jingyantiao3" top="0" bottom="0" scale9Grid="2,2,14,14" left="0" right="0"/>
+	<e:Label id="labelDisplay" textAlign="center" verticalAlign="middle" size="14" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x000000"/>
+</e:Skin>

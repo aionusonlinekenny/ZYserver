@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinItemUseTips" currentState="2" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:euiextension="euiextension.*" xmlns:ns1="*" states="2,10,guildgifts,rename"  width="600" height="948">
+	<w:Config id="1586b37c599" />
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.7" />
+	<e:Group id="anigroup" horizontalCenter="0" width="400" width.guildgifts="430" height.guildgifts="510" bottom="259">
+		<e:Image id="BG" left="0" right="0" top="0" bottom="0"  source="tongyongtip1" scale9Grid="11,8,43,52" left.guildgifts="0" right.guildgifts="0" top.guildgifts="1" bottom.guildgifts="0"/>
+		<e:Image left="-1" right="-1" top="-1" source="tongyongtip2" scale9Grid="18,18,2,4" bottom="0" left.guildgifts="-1" right.guildgifts="-1" top.guildgifts="-1" bottom.guildgifts="0"/>
+		<e:Image id="qualityImg" left="0" right="0" anchorOffsetY="0" source="quali3_png" top="0" height="451" scale9Grid="7,8,13,509"/>
+
+		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="33" y="30" />
+		<e:Label id="nameLabel" text="羽毛" size="22" x="130" y="28"  fontFamily.guildgifts="Microsoft YaHei" size.guildgifts="22" textColor.guildgifts="0x00ff06" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label text="等级：" size="20" x="130" y="62" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+
+
+		<e:Label id="lv" text="9" size="20" x="191" y="62"  fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" bold.guildgifts="false" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="数量：" size="20" x="130" y="89" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="num" text="1级" size="20" x="190" y="89"  fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image source="tongyongline" y="120" left="0" right="0" />
+
+
+		<e:Group horizontalCenter="0" touchEnabled="false" touchChildren="false" bottom="-54">
+			<e:Image source="bantoutiaobg" height="40" width="400" y="0" x="0"  height.rename="35" width.rename="352" horizontalCenter.rename="0"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" x="105" y="8"  fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter.rename="0" y.rename="6.66"/>
+		</e:Group>
+		<e:Group top="130" bottom="20" left="0" right="0">
+			<e:Group top="130" horizontalCenter="0">
+				<e:Group width="200" height="141" x="2" y="4" anchorOffsetX.2="0" width.2="346" anchorOffsetY.2="0" height.2="93" height.rename="120"/>
+				<e:Label id="description" text="使用后获得1000万角色经验值使用后获得1000万角色经验值" size="20" width="350" horizontalCenter="0" verticalAlign="middle" width.guildgifts="400" horizontalCenter.guildgifts="0" x="-175"  top="0" textColor="0x6b9baa" fontFamily="Microsoft YaHei" lineSpacing="4"/>
+			</e:Group>
+			<e:Group id="add" width="380" height="60" horizontalCenter="0" includeIn="2,guildgifts" bottom="110" x="-190" y="0"  visible.guildgifts="false">
+			<e:Image id="sub2Btn" width="50" height="50" source="btn-" verticalCenter="0" horizontalCenter="-80" visible="false"/>
+			<e:Image id="add2Btn" width="50" height="50" y="46" source="btnadd" verticalCenter="0" horizontalCenter="80" visible="false"/>
+			<e:Button id="sub1Btn" label="" skinName="SkinBtn0" icon="btn-" verticalCenter="0" left="92"/>
+			<e:Button id="add1Btn" label="" skinName="SkinBtn0" icon="btnadd" verticalCenter="0" horizontalCenter="80" x="10" y="10"/>
+			<e:Button id="maxBtn" label="最大" icon="btnmax2" skinName="SkinBtn0" verticalCenter="0" right="45"/>
+			<e:Button id="minBtn" label="最小" icon="btnmax2" skinName="SkinBtn0" rotation="180" verticalCenter="-2" left="44"/>
+			<e:Image width="100" height="38" source="shuzibg" verticalCenter="0" horizontalCenter="0" scale9Grid="8,4,10,14"/>
+			<e:EditableText id="numLabel" text="1" textAlign="center" size="30" width="90" verticalCenter="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			</e:Group>
+			<e:Group id="btnGroup" width="380" height="60" horizontalCenter="0" bottom="20" x="0" y="90" >
+			<e:Button id="useBtn" skinName="SkinBtn1" label="使 用" horizontalCenter.rename="0" horizontalCenter.2="0" width="156" height="60" label.guildgifts="领取" verticalCenter.10="0" right.10="25" y.guildgifts="0" x.rename="199" x.10="199" x.2="199" y="0" x.guildgifts="107"/>
+
+			<e:Button id="useBtn0" skinName="SkinBtn1" label="回收" width="150" height="60" includeIn="10" x="25" y="0"/>
+				<e:Label id="useLabel" text="加入仙盟即可开启" includeIn="guildgifts" fontFamily="Microsoft YaHei" textColor="0xffffff" x="70" y="15"/>
+				<e:layout.10>
+					<e:HorizontalLayout horizontalAlign="center" gap="36"/>
+				</e:layout.10>
+			</e:Group>
+			<e:layout>
+			<e:VerticalLayout gap="25" horizontalAlign="center" gap.rename="20" gap.guildgifts="37"/>
+			</e:layout>
+		</e:Group>
+		<e:Group height="106" includeIn="guildgifts" horizontalCenter="0" top="278" left="0" right="0">
+			<e:Scroller includeIn="guildgifts" left="0" right="0" top="0" bottom="0" scrollPolicyV="off">
+				<e:List id="itemList" horizontalCenter="-1" verticalCenter="0" itemRendererSkinName="SkinItem2">
+					<e:layout>
+						<e:HorizontalLayout gap="6" paddingLeft="10"/>
+					</e:layout>
+				</e:List>
+			</e:Scroller>
+		</e:Group>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinShenYuBoss" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="600" height="728">
+	<w:Config id="15d305f2e2d"/>
+	<e:Image left="9" right="9" top="62" bottom="0" source="tongyong_dikuang4" scale9Grid="10,10,60,60" anchorOffsetY="0" anchorOffsetX="0"/>
+	<e:Group width="554" horizontalCenter="0" height="30" top="28">
+		<e:Group id="juan" height="26" x="-15.5" y="-24" anchorOffsetY="0">
+			<e:Image id="jicon" source="200156_png" width="27" height="27" x="22" y="-1"/>
+			<e:Label text="野外挑战令" size="20" x="-1" y="0" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
+			<e:Label text="X" size="20" x="9" y="10" fontFamily="Microsoft YaHei" textColor="0x00FF00"/>
+			<e:Label id="jcount" text="100" size="20" y="0" horizontalCenter="-38" fontFamily="Microsoft YaHei" textColor="0x00FF06"/>
+			<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="4"/>
+			</e:layout>
+		</e:Group>
+		<e:Label text="挑战次数：" size="20" x="15" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="timeTxt" text="" size="20" verticalCenter="0" textAlign="center" width="210" fontFamily="Microsoft YaHei" textColor="0xffffff" x="194"/>
+		<e:Label id="challengeCountTxt" text="" size="20" x="110" textAlign="center" verticalAlign="middle" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="setting" text="提醒设置" size="20" x="444" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Button id="buyBtn" label="" x="165" y="8.5" visible="false">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btnadd"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Scroller id="bossScroller" width="567" horizontalCenter="0.5" top="95" bottom="7" anchorOffsetY="0">
+        <e:List itemRendererSkinName="SkinBossItem" id="list" verticalCenter="5.5" horizontalCenter="0" anchorOffsetY="0" height="640">
+				<e:layout>
+					<e:TileLayout/>
+				</e:layout>
+        </e:List>
+    </e:Scroller>
+	<e:Group horizontalCenter="1" top="68">
+		<e:Label text="参与万魔祖地有概率获得神羽" size="20" x="53" y="-9" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="6"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

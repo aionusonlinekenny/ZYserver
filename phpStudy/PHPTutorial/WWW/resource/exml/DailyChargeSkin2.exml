@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinDailyCharge2" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect id="bgClose" fillAlpha="0.8" left="2" right="-2" top="0" bottom="0"  alpha="0.7"/>
+	<e:Group id="mainGroup" width="563" height="402" horizontalCenter="0" verticalCenter="-128">
+		<e:Image id="bg" source="meirichongzhibg_png"  width="585" horizontalCenter="0"/>
+		<e:Image id="title"  horizontalCenter="0" source="meirishouchong_png" top="68"/>
+		<e:Image id="titlerecharge" horizontalCenter="22" top="147" source="meirichongzhibg2_png"/>
+		<e:Group id="moneyGroup" y="165" width="90" horizontalCenter="40.5"></e:Group>
+		<e:Group id="listCon"  width="386"  height="96" y="286" anchorOffsetX="0" x="85">
+			<ns1:ItemBase id="item1"  top="0" bottom="0" left="0" skinName="SkinItem2"/>
+			<ns1:ItemBase id="item2"  top="0" bottom="0" horizontalCenter="-52" skinName="SkinItem2"/>
+			<ns1:ItemBase id="item3"  top="0" bottom="0" width="76" horizontalCenter="52" skinName="SkinItem2"/>
+			<ns1:ItemBase id="item4"  top="0" bottom="0" right="0" skinName="SkinItem2"/>
+		</e:Group>
+		<e:Button id="closeBtn" label="按钮" y="43" skinName="SkinBtn0" icon="czclose"  x="370"/>
+		<e:Button id="goUpBtn" label="充点小钱" y="444" icon="sc_05" skinName="SkinBtn9"  width="198" anchorOffsetX="0" x="180"/>
+	</e:Group>
+
+
+	<e:TabBar id="tab" width="200" height="48" x="56" y="365">
+		<e:layout>
+			<e:HorizontalLayout gap="5" />
+		</e:layout>
+	</e:TabBar>
+
+
+
+
+
+
+</e:Skin>

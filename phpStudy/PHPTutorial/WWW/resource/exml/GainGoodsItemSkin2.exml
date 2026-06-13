@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGainGoodsItem2" width="407" height="63" currentState="up" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down"  width.down="407" height.down="63" width.up="407">
+	<w:Config id="15c493970d9"/>
+	<e:Image top.up="0" bottom.up="0" source.down="jnmb" anchorOffsetX="0" source="jnmb" anchorOffsetY="0" width.up="407" y.up="0" horizontalCenter.up="0" height.up="60" scale9Grid="33,8,130,36" top.down="2" bottom.down="2" height="63" horizontalCenter="0" verticalCenter="0" height.down="60" left.down="2" right.down="2" width="407"/>
+
+	<e:Image id="dir" verticalCenter="0" scale9Grid="6,5,9,10" source="jiantouxia" rotation="270" horizontalCenter="161"/>
+	<e:Label id="desc" text="完成任务" size="20" touchEnabled="false" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00842c" textColor.down="0x00842c" textAlign="left" left="38"/>
+	<e:Label id="desc2" text="前往" size="20" touchEnabled="false" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" textColor.down="0x001828" horizontalCenter="115.5"/>
+	<e:Group id="stars" verticalCenter="0" left="160" visible="false">
+		<e:Image id="star1" width="32" height="29" x="127" y="4"   source="star_png"/>
+		<e:Image id="star2" width="32" height="29" x="161" y="4"   source="star_png"/>
+		<e:Image id="star3" width="32" height="29" x="194" y="4"   source="star_png"/>
+
+
+		<e:layout>
+			<e:HorizontalLayout/>
+		</e:layout>
+	</e:Group>
+
+</e:Skin>

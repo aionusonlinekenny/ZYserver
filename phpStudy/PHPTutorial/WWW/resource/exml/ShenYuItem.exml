@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="ShenYuItem" width="90" height="106" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586b362dfe"/>
+
+
+
+	<e:Image id="iconBG" width="76" height="76" scale9Grid="8,8,48,48" source="jinengkuang" horizontalCenter="0" verticalCenter="-15" scaleX="1" scaleY="1" visible="false"/>
+	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" horizontalCenter="0" top="0"/>
+	<e:Label id="count" size="16" y="55.8" text="999" x="51" stroke="1" strokeColor="0x232323" textColor="0xDDD3B1" visible="false"/>
+	<e:Image id="select" width="80" height="80" scale9Grid="20,20,5,5" horizontalCenter="0" verticalCenter="-16" scaleX="1.1" scaleY="1.1" source="xuanzekuang3" visible="false"/>
+
+
+	<e:Label id="nameTxt" size="18" textAlign="center" text="name" strokeColor="0x75706d" horizontalCenter="1" stroke="0" fontFamily="Microsoft YaHei" y="80" textColor="0xffffff"/>
+	<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="31.5" verticalCenter="-45.5" visible="false"/>
+	<e:Image id="bg" source="sybg1" horizontalCenter="0.5" verticalCenter="-18" visible="false"/>
+	<e:Image id="imgIcon" verticalCenter="-15" horizontalCenter="0" width="70" height="70" source="" visible="false"/>
+	<e:Image width="20" height="20" x="35" y="30"/>
+
+	<!--<ns1:BaseComponent id="tongIcon" skinName="SkinRuneItem" horizontalCenter="1" verticalCenter="-3" visible="false"/>-->
+</e:Skin>

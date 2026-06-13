@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildList" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" width="600" height="948">
+
+	<e:Group horizontalCenter="0" width="582" height="709" verticalCenter="-61.5">
+
+
+
+		<e:Image top="0" bottom="0" left="0" right="0" x="-9" y="-120" scaleX="1" scaleY="1" source="tongyong_dikuang4" scale9Grid="28,26,25,29"/>
+		<e:Scroller width="566" horizontalCenter="0.5" top="7" bottom="19" x="16" y="-6" scaleX="1" scaleY="1" anchorOffsetY="0" anchorOffsetX="0">
+			<e:List id="list" x="1" y="-1" itemRendererSkinName="SkinGuildListItem">
+			<e:layout>
+				<e:VerticalLayout gap="2" horizontalAlign="center"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+	</e:Group>
+	<e:Image source="hhdt4_png" alpha="0.7" visible="false"/>
+	
+</e:Skin>

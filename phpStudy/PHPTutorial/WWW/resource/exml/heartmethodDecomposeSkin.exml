@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinheartmethodDecompose" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="600" height="948">
+	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group width="574" height="805" horizontalCenter="0" verticalCenter="0">
+		<e:Image source="tongyong_dikuang2" scale9Grid="25,15,73,59" width="574" height="727" horizontalCenter="0" top="15"/>
+		<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" width="509" scale9Grid="22,20,25,25" top="55" horizontalCenter="0" bottom="184"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" width="570" top="13"/>
+		<e:Image top="0" source="tongyong_titlebg" horizontalCenter="0"/>
+
+
+
+
+
+		<e:Label text="道藏分解" y="14" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Scroller id="itemScroller" horizontalCenter="0.5" height="527" scrollPolicyH="off" scrollPolicyV="auto" width="509" x="24"  top="73" anchorOffsetY="0">
+			<e:List id="itemList" itemRendererSkinName="SkinheartmethodItem" useVirtualLayout="false" horizontalCenter="0" verticalCenter="2.5" anchorOffsetY="0" height="553">
+			<e:layout>
+				<e:TileLayout verticalGap="10" requestedColumnCount="3" horizontalGap="15" paddingLeft="10" paddingTop="0" paddingRight="10"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Group width="531" height="99" horizontalCenter="0.5" verticalCenter="283" x="0" y="516"  anchorOffsetX="0" anchorOffsetY="0">
+
+			<e:Label text="红" size="22" touchEnabled="false" top="4" left="99" textColor="0xe40000" fontFamily="Microsoft YaHei"/>
+			<e:Label text="橙" size="22" touchEnabled="false" top="4" left="217" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
+			<e:Label text="紫" size="22" touchEnabled="false" top="4" left="336" fontFamily="Microsoft YaHei" textColor="0xac00dd"/>
+			<e:Label text="绿" size="22" touchEnabled="false" top="4" left="455" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+
+			<e:CheckBox id="cb0" skinName="SkinCheckBox0" label="   " top="0" left="414"/>
+			<e:CheckBox id="cb1" skinName="SkinCheckBox0" label="   " top="0" left="295"/>
+			<e:CheckBox id="cb2" skinName="SkinCheckBox0" label="   " top="0" left="175"/>
+			<e:CheckBox id="cb3" skinName="SkinCheckBox0" label="   " top="0" left="57"/>
+			<e:Button id="decomposeBtn" label="一键分解" skinName="SkinBtn3" right="26" bottom="0"/>
+			<e:Group left="30" bottom="7" height="38">
+				<e:Image id="bg" width="255" height="38"  left="0" verticalCenter="0" source="duoxuankuang" scale9Grid="4,4,31,30"/>
+			<e:Image id="suipianIcon"  left="0" source="311000_png" verticalCenter="1" width="30" height="30"/>
+			<e:Label id="suipianNum" text="99900" size="22"  left="32" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="suipianAdd" text="+99999" size="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" right="40"/>
+			</e:Group>
+		</e:Group>
+
+	</e:Group>
+	<e:Group horizontalCenter="0" x="25"  verticalCenter="367">
+		<e:Image source="bantoutiaobg" touchEnabled="false" width="383" height="40" verticalCenter="0" horizontalCenter="0"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" horizontalCenter="0.5" verticalCenter="-2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	</e:Group>
+
+
+
+
+
+</e:Skin>

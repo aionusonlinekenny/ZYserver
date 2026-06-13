@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinBossBelong" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="attackBtnGroup" bottom="166" horizontalCenter="0" width="322">
+		<ns1:BossUIBtnItem xmlns:ns1="*" id="attackBoss1" skinName="SkinWorldBossAtbtn" x="75" y="35"  anchorOffsetX="75" anchorOffsetY="35"/>
+		<ns1:BossUIBtnItem xmlns:ns1="*" id="attackPlayer1" skinName="SkinWorldBossAtbtn" x="246" y="35"  anchorOffsetX="75" anchorOffsetY="35"/>
+	</e:Group>
+	<e:Group id="belongGroup" width="253" y="110" right="1">
+		<e:Image y="23.8" width="144" x="66.2" source="rolebloodbg" height="16"/>
+		<e:Image source="zdbosshudunxuetiaobg" scale9Grid="2,0,2,7" width="110" height="8" y="40.17" x="64"/>
+		<e:ProgressBar id="neigongBar0" width="110" height="9" y="40.18" value="100" x="64" skinName="Skinbar9"/>
+		<e:Scroller id="roleBlood1" width="144" height="14.5" x="65" y="24.5">
+		<e:Group id="roleBloodGroup1">
+			<e:Image id="grayImg0" scale9Grid="212,2,3,10" source="bosshp1" width="144" height="14.5"  verticalCenter="0"/>
+		</e:Group>
+		</e:Scroller>
+		<e:Image scale9Grid="92,32,5,7" y="1" source="zjmtouxiangkuang" x="0.4" width="253" height="67"/>
+		<e:Group x="77" y="7.5" height="18" width="140">
+		<e:Label text="归属" size="16" textAlign="center" x="-1.2" textColor="0xFFFF00" fontFamily="Microsoft YaHei" y="-1"/>
+		<e:Label id="belongNameTxt1" text="玩家名称" size="16" textAlign="left" y="-1" x="35.2" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="111.6" textColor="0x00ff06"/>
+		</e:Group>
+		<e:Image id="roleHead1" source="yuanhead10" width="52" height="52" x="2.96" y="5.24" scaleX="1.2" scaleY="1.2"/>
+		<e:Button id="attguishu1" label="" x="60.95" y="49.85" icon="bossqiangduo" anchorOffsetY="0" height="23.5" anchorOffsetX="0" width="73">
+		</e:Button>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="CERechargeItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="116" height="134">
+	<w:Config id="1586b362dfe"/>
+	<e:Image id="ball" horizontalCenter="0"  source="ce_little_egg_0_png" bottom="22"/>
+	<e:Image id="ball0" horizontalCenter="0" source="ce_egg_selected_png" height="116" width="86" bottom="18" visible="false"/>
+
+
+	<e:Group horizontalCenter="0" bottom="2">
+		<e:Label text="（" size="16" anchorOffsetX="0" anchorOffsetY="0" height="20" y="0" verticalAlign="middle" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="now" text="1280" size="16" anchorOffsetX="0" anchorOffsetY="0" height="20" y="10" verticalAlign="middle" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label text="/" size="16" anchorOffsetX="0" anchorOffsetY="0" height="20" y="20" verticalAlign="middle" textAlign="center" x="10" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="target" text="1280" size="16" anchorOffsetX="0" anchorOffsetY="0" height="20" y="20" verticalAlign="middle" textAlign="center" x="10" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label text="）" size="16" anchorOffsetX="0" anchorOffsetY="0" height="20" y="30" verticalAlign="middle" textAlign="center" x="20" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:layout>
+			<e:HorizontalLayout gap="0" verticalAlign="bottom"/>
+		</e:layout>
+	</e:Group>
+
+	<e:Image id="already" y="59.17" rotation="-35" source="yilingqu" horizontalCenter="3" visible="false"/>
+	<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="3" horizontalCenter="22"/>
+</e:Skin>

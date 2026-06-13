@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="PunchEquip" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15acfe56d68"/>
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+	<e:Group width="600" horizontalCenter="0" verticalCenter="-57" height="728">
+		<e:Group id="Punch" width="600" horizontalCenter="0" x="0" scaleX="1" scaleY="1" height="728" verticalCenter="0">
+			<e:Image source="hejibg2_png" touchEnabled="false" width="582" alpha="1" horizontalCenter="0" top="13"/>
+			<e:Image anchorOffsetY="0" width="580" height="280" bottom="0" source="tongyong_dikuang4" scale9Grid="18,21,45,45" horizontalCenter="0"/>
+			<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" top="384"/>
+			<e:Image horizontalCenter="0" source="huabian" height="50" verticalCenter="103" scale9Grid="92,0,32,50" width="300"/>
+			<e:Label text="当前火符套装" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" top="465" textColor="0xffffff"/>
+			<e:Scroller width="437" touchEnabled="false" height="208" anchorOffsetY="0" top="504" left="38">
+			<e:Group horizontalCenter="14" verticalCenter="0" height="182" anchorOffsetX="0" width="424">
+				<e:Label id="currTitleText" text="60级套装 (3/8)" size="20" y="125" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="preViewText" text="更多套装预览" size="20" y="125" x="200" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:Label id="currText0" text="杜    开    休    生    死    伤    景    惊" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="370" textColor="0xffffff" horizontalCenter="-12.5" bottom="10"/>
+				<e:Label id="currText3" text="3件套：神罚伤害增加" size="20" x="22" y="30" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="currText1say" text="装备3件火符大幅增强对怪物的伤害" size="20" x="22" y="30" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+				<e:Label id="currText5" text="5件套：神罚伤害增加" size="20" x="22" y="58" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="currText2say" text="装备5件火符大幅增强对玩家的伤害" size="20" x="22" y="58" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+				<e:Label id="currText8" text="8件套：神罚伤害增加" size="20" x="22" y="89" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="currText3say" text="装备8件火符大幅减少神罚冷却时间" size="20" horizontalCenter="-29.5" bottom="95" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+				<e:Label id="nextTitleText" text="套装名称" x="0" size="18" y="110" textColor="0xd04cc1" fontFamily="Microsoft YaHei" visible="false"/>
+				<e:Label id="nextText0" text="乾  巽  坎  艮  坤  震  离  兑" x="0" size="18" y="130" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+				<e:Label id="nextText1" text="3件套：神罚伤害增加" x="0" size="18" y="155" textColor="0xffffff" fontFamily="Microsoft YaHei" visible="false"/>
+				<e:Label id="nextText2" text="5件套：神罚伤害增加" x="0" size="18" y="175" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" visible="false"/>
+				<e:Label id="nextText3" text="8件套：神罚伤害增加" x="0" size="18" y="195" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" visible="false"/>
+				<e:Label text="火符套装累计加成（三角色时）" size="20" y="0" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Image source="tongyongdian2" y="63" x="4"/>
+				<e:Image source="tongyongdian2" x="4" y="91"/>
+				<e:Image source="tongyongdian2" y="35" x="4"/>
+			</e:Group>
+			</e:Scroller>
+			<e:Button id="punchtogether12" label="兑 换" skinName="SkinBtn1" width="100" height="46" bottom="20" right="30" visible="false"/>
+			<e:Button id="preViewBtn1" label="预 览" skinName="SkinBtn1" width="100" height="46" bottom="160" right="30" visible="false"/>
+			<e:Button id="fenjieBtn1" label="分 解" width="100" height="46" bottom="90" right="30" visible="false"/>
+			<e:Button id="AttrBtn" label="按钮" skinName="SkinBtn0" icon="hejishuxing" width="73" height="75" top="40" x="30"/>
+			<e:Button id="skillitem" label="按钮" skinName="SkinBtn0" icon="hejijineng" width="73" height="75" right="42" top="39"/>
+			<e:Group id="EffectGroup" width="352" height="332" horizontalCenter="4" top="61">
+			<e:Group id="clickGroup" width="300" height="300" x="28" y="29" visible="false"/>
+
+			<ns1:PunchEquipItem id="item1" x="112" y="8" skinName="SkinPunchEquipItem" currentState="1"/>
+			<ns1:PunchEquipItem id="item2" x="171" y="7" skinName="SkinPunchEquipItem" currentState="2"/>
+			<ns1:PunchEquipItem id="item3" x="172" y="91" skinName="SkinPunchEquipItem" currentState="3"/>
+			<ns1:PunchEquipItem id="item4" x="172" y="153" skinName="SkinPunchEquipItem" currentState="4"/>
+			<ns1:PunchEquipItem id="item5" y="154" skinName="SkinPunchEquipItem" currentState="5" x="113"/>
+			<ns1:PunchEquipItem id="item6" x="26" y="153" skinName="SkinPunchEquipItem" currentState="6"/>
+			<ns1:PunchEquipItem id="item7" x="24" y="93" skinName="SkinPunchEquipItem" currentState="7"/>
+			<ns1:PunchEquipItem id="item8" x="25" y="9" skinName="SkinPunchEquipItem" currentState="8"/>
+			</e:Group>
+			<e:Button id="fenjieBtn" label="" width="73" height="75" right="39" top="500">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="hejifenjie"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="punchtogether1" label="" width="73" height="75" top="610" right="39">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="hejiduihuan"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Image id="redPointSo" source="zjmhongdian" touchEnabled="false" top="502" right="45" visible="false"/>
+			<e:Image id="redPointEx" source="zjmhongdian" touchEnabled="false" right="45" top="611" visible="false"/>
+			<e:Button id="turnPunchForge" label="Button" skinName="SkinBtn0" icon="hejizhuling" right="33" top="363"/>
+			<e:Image id="redPointPf" source="zjmhongdian" touchEnabled="false" right="39" top="366"/>
+
+		</e:Group>
+		<e:Group id="Punchpre" width="600" scaleX="1" scaleY="1" height="728" verticalCenter="0" x="0" visible="false">
+			<e:Image source="hejibg4_png" height="491" left="7" right="7" top="61"/>
+
+
+			<e:Image left="10" right="10" source="tongyong_dikuang4" scale9Grid="17,12,49,54" top="552" height="180"/>
+			<e:Group horizontalCenter="21" top="580" bottom="26">
+			<e:Image x="0" y="0" source="star_png" width="21" height="20"/>
+			<e:Image x="0" y="34" source="star_png" width="21" height="20"/>
+			<e:Image x="0" y="68" source="star_png" width="21" height="20"/>
+			<e:Image x="0" source="star_png" width="21" height="20" y="102"/>
+			<e:Label text="集三角色攻击力总和" y="0" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="对玩家造成         的伤害" y="34" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="480%" y="34" size="20" x="125" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="1050%" y="68" size="20" x="124" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="对怪物造成           的伤害" y="68" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="60级" y="102" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="开启神罚火符装备" y="102" size="20" x="68" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			</e:Group>
+			<e:Image width="76" source="jinengkuang_png" left="80" top="597" height="76"/>
+			<e:Image id="skillIcon" horizontalCenter="-182" bottom="58" source="71000_png" width="70" height="70"/>
+			<e:Label text="神罚技能" y="676" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" horizontalCenter="-184"/>
+
+			<e:Image id="skillName" horizontalCenter="29" source="80001_png" bottom="172" visible="false"/>
+			<e:Image y="-9" scale9Grid="11,2,70,17" width="214" height="50" horizontalCenter="0" source="huabian"/>
+			<e:Label text="技能预览" y="14" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" size="22"/>
+		</e:Group>
+		<e:Group id="Activation" x="0" scaleX="1" scaleY="1" height="728" width="600" verticalCenter="0" visible="false">
+			<e:Group left="0" right="0" top="0" bottom="0">
+			<e:Image horizontalCenter="0" y="92" source="hejibg2_png"/>
+			<e:Label id="activeTipsTxt" text="闯关达到 第5关 即可开启神罚技能" horizontalCenter="0" size="22" y="34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+
+
+			<e:Button id="UplevelBtn1" label="激活神罚" skinName="SkinBtn6" width="180" height="60" horizontalCenter="0" x="210" y="620" icon="btn1_2"/>
+
+
+
+
+
+
+
+			<e:Image y="184" horizontalCenter="0" source="weijihuobg_png"/>
+				<e:Image y="556" source="shanghai_png" horizontalCenter="0"/>
+				<e:Image y="556" source="shenfaactor_png" horizontalCenter="-162.5"/>
+				<e:Image y="556" source="shuchu_png" horizontalCenter="163.5"/>
+			<e:Image id="redPointAct" source="zjmhongdian" x="364" y="620"/>
+			</e:Group>
+		</e:Group>
+		<ns1:PunchEquipToForge id="PunchForge" skinName="SkinPunchEquipForge" top="21" bottom="0" horizontalCenter="0" x="0" y="-32" scaleX="1" scaleY="1" visible="false"/>
+	</e:Group>
+
+
+
+
+
+	<!--<ns1:BaseComponent id="roleSelect" skinName="SkinRoleSelectPanel"   width="640" horizontalCenter="0" currentState="nohead"/>-->
+</e:Skin>

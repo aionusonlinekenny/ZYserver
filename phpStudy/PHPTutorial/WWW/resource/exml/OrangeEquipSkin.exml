@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinOrangeEquip" width="600" height="735" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586c85d15d"/>
+	<e:Image source="hejibg1_png" y="2" horizontalCenter="0" width="554" height="495" visible="false"/>
+
+	<e:Image width="580" anchorOffsetY="0" horizontalCenter="0" bottom="0" top="475" source="tongyong_dikuang4" scale9Grid="10,10,60,60"/>
+	<e:Image width="405" height="363" y="90" scale9Grid="40,1,78,16" source="chengzhuangkuang_png" horizontalCenter="0"/>
+	<e:Image width="520" height="2" x="45" y="626" source="tongyongline4" visible="false"/>
+	<e:Group anchorOffsetY="0" height="102" width="600" horizontalCenter="0" bottom="0">
+		<e:Group id="costNum" horizontalCenter="0" bottom="74">
+			<e:Label text="消耗神装结晶:" size="20" x="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="cur" text="120" size="20" x="122" verticalCenter="0" textAlign="right" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="need" text="/100" size="20" x="180" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:layout>
+			<e:HorizontalLayout gap="2" horizontalAlign="center"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="btnGroup" width="213" height="67" horizontalCenter="0" bottom="0">
+			<e:Button id="executeBtn" label="升  级" width="213" height="67" y="0" horizontalCenter="0" icon="btn1_2" skinName="SkinBtn7"/>
+		</e:Group>
+		<e:Label id="getTreasureBtn" text="获得神装结晶" size="20" height="60" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="192" bottom="6" stroke="0" textColor="0x00ff06"/>
+
+	</e:Group>
+	<e:Component id="grewupPanel" y="120" skinName="GrewupOrangePanel" horizontalCenter="0"/>
+	<e:Component id="mixPanel" y="120" skinName="MixOrangePanel" horizontalCenter="0"/>
+	<e:Group y="75" horizontalCenter="0" width="566" height="395">
+		<e:Component id="equip0" y="-6" skinName="EquipItem" x="-3"/>
+		<e:Component id="equip2" y="92" skinName="EquipItem" x="-3"/>
+		<e:Component id="equip4" y="193" skinName="EquipItem" x="-3"/>
+		<e:Component id="equip6" y="292" skinName="EquipItem" x="-3"/>
+		<e:Component id="equip1" y="-6" skinName="EquipItem" x="484"/>
+		<e:Component id="equip3" y="92" skinName="EquipItem" x="484"/>
+		<e:Component id="equip5" y="193" skinName="EquipItem" x="484"/>
+		<e:Component id="equip7" y="292" skinName="EquipItem" x="484"/>
+	</e:Group>
+	<e:Label id="topLevel" text="已升级至满级" size="24" horizontalCenter="0" bottom="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9" visible="false"/>
+	<e:Label id="labelMax" text="已满级" size="24" horizontalCenter="0" bottom="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9" visible="false"/> 
+</e:Skin>

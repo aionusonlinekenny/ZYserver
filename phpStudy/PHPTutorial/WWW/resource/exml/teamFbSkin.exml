@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinTeamFb" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="600" height="948" >
+	<e:Image anchorOffsetY="0" height="696" width="588" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,10,64,66" top="93"/>
+
+	<e:Scroller id="FbScroller" horizontalCenter="0" height="651" top="108">
+		<e:DataGroup id="Fblist" itemRendererSkinName="SkinTeamFbItem" currentState="disabled" useVirtualLayout="false" top="0" horizontalCenter="0">
+			<e:layout>
+				<e:VerticalLayout gap="3"/>
+			</e:layout>
+		</e:DataGroup>
+	</e:Scroller>
+</e:Skin>

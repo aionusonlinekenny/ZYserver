@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinchallengeHunshou" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="600" height="948">
+	<w:Config id="15a98a3982e"/>
+	<e:Image id="BG" source="challengeHunshouBG_png" y="115" x="75"/>
+	<e:Group id="Boss" horizontalCenter="0" top="438">
+
+	</e:Group>
+	<e:Label id="zsLimit" text="" size="20" horizontalCenter="1" fontFamily="Microsoft YaHei" textColor="0xe40000" y="106" stroke="0"/>
+	<e:Label id="max" text="当前已通关" size="20" horizontalCenter="1" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="104" stroke="0"/>
+	<e:Image y="82" source="huawen2" width="339" height="18" scale9Grid="27,0,7,18" horizontalCenter="0"/>
+	<e:Image id="bossName" y="78" horizontalCenter="0" visible="false"/>
+
+	<e:Label id="passname" text="" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" y="71" textAlign="center"/>
+	<e:Group width="600" height="144" horizontalCenter="0" y="538">
+		<e:Image width="580" source="huabian2" scale9Grid="90,0,41,144" horizontalCenter="0"/>
+
+		<e:Image width="97" y="-25" source="tgjl2" horizontalCenter="0"/>
+
+
+
+	</e:Group>
+
+
+	<e:Scroller id="itemScroller" horizontalCenter="0" height="106" y="568" width="420">
+		<e:List id="itemList" useVirtualLayout="false" width="450" height="206" horizontalCenter="0" itemRendererSkinName="SkinItem2">
+		<e:layout>
+			<e:TileLayout verticalGap="0" requestedColumnCount="4" horizontalGap="36" horizontalAlign="center"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+
+	<e:Button id="btnChallenge" label="挑  战" width="209" skinName="SkinBtn7" bottom="162" height="67" x="334"/>
+	<e:Button id="btnSweep" label="扫  荡" width="209" height="67" skinName="SkinBtn7" x="62" bottom="162"/>
+	<e:Label text="剩余奖励次数：" size="20" horizontalCenter="-10" fontFamily="Microsoft YaHei" y="691" stroke="0" textColor="0x00ff00"/>
+	<e:Label id="lbTime" text="" size="20" fontFamily="Microsoft YaHei" y="691" x="358" textAlign="left" stroke="0" textColor="0x00ff00"/>
+		<e:Scroller id="notice" horizontalCenter="-149" bottom="257">
+
+		</e:Scroller>
+	<e:Label id="sweepInfo" text="" size="18" horizontalCenter="-56.5" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="485" textAlign="center"/>
+	<e:Label id="sweepInfoText" text="（扫荡第    层，可获得龙元黄玉）" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" y="484"/>
+
+</e:Skin>

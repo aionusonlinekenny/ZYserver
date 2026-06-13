@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinDailyAward" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" height="948" width="600">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group horizontalCenter="7.5" verticalCenter="-65" width="529" height="338" anchorOffsetY="0">
+		<e:Image width="517" height="331" horizontalCenter="0" scale9Grid="34,20,1,1" source="tongyong_dikuang2" verticalCenter="3.5"/>
+		<e:Image width="516" horizontalCenter="0.5" source="tongyong_juanzhou" scale9Grid="227,0,40,14" top="-7"/>
+		<e:Image y="-23.03" horizontalCenter="0" source="tongyong_titlebg" width="281"/>
+		<e:Image horizontalCenter="1" width="465" source="tongyongbg5" height="285" verticalCenter="2.5" scale9Grid="5,5,16,9"/>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="243.5" top="-21"/>
+		<e:Label id="desc" text="占领仙宫的仙盟成员可领取每日奖励" size="20" horizontalCenter="0.5" textColor="0x001828" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" anchorOffsetX="0" width="460" top="55"/>
+		<e:Label text="每日奖励" size="22" horizontalCenter="1" fontFamily="Microsoft YaHei" top="-10" textColor="0x084151"/>
+		<e:List id="list" scaleX="1" scaleY="1" itemRendererSkinName="SkinItem2" verticalCenter="-13" anchorOffsetX="0" horizontalCenter="-0.5" anchorOffsetY="0">
+			<e:layout>
+			<e:HorizontalLayout paddingLeft="0" gap="15" paddingRight="0" horizontalAlign="center"/>
+			</e:layout>
+		</e:List>
+		<e:Button id="sure" label="领 取" horizontalCenter="0" bottom="65" skinName="SkinBtn6" icon="btn2_2"/>
+		<e:Image source="bantoutiaobg" height="40" width="383" bottom="-54" horizontalCenter="-1" scale9Grid="44,5,310,30" x="65" y="706" scaleX="1" scaleY="1"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="-7.5" bottom="-41" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" x="150" y="713" scaleX="1" scaleY="1"/>
+	</e:Group>
+
+
+
+
+
+
+
+
+	<e:Button id="closeBtn1" label="按钮" x="360" y="475" skinName="SkinBtn0" visible="false"/>
+	<e:Image x="0" y="0" source="guildmrjl_png" alpha="0.7" visible="false"/>
+</e:Skin>

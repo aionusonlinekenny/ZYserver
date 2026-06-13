@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinXinShenQi" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="normal,open">
+
+  <e:Image horizontalCenter="0" width="600" top.normal="0" bottom.normal="80" top="0" bottom="80" source="xianlvbg_jpg"/>
+<e:Group horizontalCenter="0" height="868" width="600" verticalCenter="-40">
+	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="13"  top="111"/>
+	<e:Group id="groupMaterial" width="470" height="470" horizontalCenter="0" top="171" horizontalCenter.normal="12">
+		<e:Image id="imgArtfact" y="-10.98"  horizontalCenter="0" source=""/>
+	</e:Group>
+	<e:Label id="labelName" text="" y="123" size="28" textColor="0xf8b141"  width="32"
+	          height="159" x="70.32" textAlign="center" verticalAlign="middle"  fontFamily="Microsoft YaHei" visible="false"/>
+	<e:Group width="52" height="179" left="95" top="171">
+		<e:Image rotation="359.63" source="xianlvnamebg_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="imgName" rotation="359.63" source="sqname_01_png" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+
+	<e:Image id="imgLeft" source="jiantouxuan"  width="62" height="55" left="47" top="353"/>
+	<e:Image id="imgRight" source="jiantouxuan" scaleX="-1"  width="62" height="55" right="47" top="353"/>
+	<e:Group id="attribute" width="594" height="95" horizontalCenter="0.5"
+	         top="645">
+		<e:Image id="attrTItleBg" width="594" horizontalCenter="0"
+		         height="86" touchEnabled="false"  source="longhuntextbg2" scale9Grid="16,13,559,12" anchorOffsetY="0" verticalCenter="2.5"/>
+		<e:Image id="imgFunc"  horizontalCenter="0" 
+		         touchEnabled="false"  source="shenqides_01_png" y="16"/>
+		<e:Label id="attrTitle" text="获得神罚技能" size="30" horizontalCenter="0" top="10" bottom="45"
+		          width="347"  verticalAlign="middle" textAlign="center"  fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+		<e:Label id="labelAttr" text="" size="20"
+		         horizontalCenter="0" bottom="18"
+		         touchEnabled="false"  fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
+		<e:Label id="turnicon" text="查看神罚" size="20" width="80"   textAlign="center"
+		         verticalAlign="middle" height="20" y="21.5" x="390.39"  fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Image id="imgOpen" horizontalCenter="133.5" verticalCenter="-15" touchEnabled="false"  rotation="0" source="weijihuo3_png"/>
+	</e:Group>
+	<e:Group id="part" width="583" height="86" visible.open="false"
+	         horizontalCenter="0" top="749">
+		<e:Image rotation="359.63" horizontalCenter="0" width="583" height="86" verticalCenter="0" source="tongyongdikuang7" scale9Grid="4,3,26,12"/>
+		<ns1:ShenqiSelectionItemWin id="pieceCom" width="560" height="80" horizontalCenter="0" skinName="WinshenqiItem" verticalCenter="0"/>
+
+		<e:List id="piece" width="650" height="102" y="7" itemRendererSkinName="SkinshenqiItem" scaleX="0.8" scaleY="0.8"
+		          horizontalCenter="0.5" visible="false">
+			<e:layout>
+				<e:TileLayout requestedRowCount="2" requestedColumnCount="4" horizontalGap="6" verticalGap="5" />
+			</e:layout>
+		</e:List>
+	</e:Group>
+	<e:Group id="groupEff" touchChildren="false" touchEnabled="false" horizontalCenter="0"  scaleX="1.25" scaleY="1.25" top="450"/>
+	<!--<e:Button id="btnOpen" label="激活" skinName="SkinBtn1" visible.normal="false" y="705" horizontalCenter="0"
+	          visible="false" />-->
+	<e:Group id="actGroup"  width="349"  horizontalCenter="0" touchEnabled="false" top="762" height="50">
+		<e:Button id="btnOpen" label="解锁" visible.normal="false"  horizontalCenter="0" verticalCenter="0" skinName="SkinBtn7"/>
+		<e:Image id="guide0" width="100" height="40" horizontalCenter="-123.5" verticalCenter="0"/>
+		<e:Image id="guide1" horizontalCenter="124" width="100" height="40" x="248" verticalCenter="0"/>
+	</e:Group>
+	<e:Button id="detail" label="Button" skinName="SkinBtn0" icon="tongyongxiangxi"  horizontalCenter="141.5" top="118"/>
+	<e:Group id="parttips"  height="290"  width="340" horizontalCenter="0"
+	         verticalCenter="0" visible="false">
+		<e:Rect id="parttipsClose" fillAlpha="0.6" width="580" height="930" x="0" y="0" anchorOffsetX="120"
+		        anchorOffsetY="250" />
+		<e:Image id="tipsbg" touchEnabled="true" source="tongyongtip1" 
+		          left="2" right="2" top="2" bottom="2"  scale9Grid="8,6,46,59"/>
+		<e:Image id="icon" touchEnabled="true"   source="180001_png" x="16" y="6" width="44"
+		         height="44" />
+		<e:List id="list" width="240" height="100" y="145" itemRendererSkinName="SkinshenQiAttrDesc" horizontalCenter="-27">
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:List>
+		<e:Image id="tipsnamebg" height="71" source="quali3"  
+		         top="2" left="2" right="2"  scale9Grid="7,6,14,510"/>
+		<e:Image id="tipsdepartline" source="tongyongline" left="0" right="0" bottom="36" />
+		<e:Label text="碎片属性" x="23" y="115" size="20"  textColor="0x6b9baa"/>
+		<e:Label id="getway" text="通关1.落霞村获得" size="20" horizontalCenter="0"  left="45"
+		         right="45" bottom="9" verticalAlign="middle" textAlign="center" bold="true"  textColor="0x6b9baa"/>
+		<e:Label id="partname" text="神器碎片一" x="61" y="18" size="26" verticalAlign="middle" textAlign="center"
+		          textColor="0xffff00"/>
+		<e:Image id="tipscorner" touchEnabled="true"   left="2" right="2" top="2" bottom="2"
+		         source="tongyongtip2"  scale9Grid="10,10,53,38"/>
+		<e:Image left="2" right="2" top="53" bottom="189"  source="bantoutiaobg" scale9Grid="29,5,180,35" />
+		<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel" left="-10" verticalCenter="-68" />
+	</e:Group>
+</e:Group>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="98">
+		<e:layout>
+		<e:HorizontalLayout gap="-3"/>
+		</e:layout>
+	</e:TabBar>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" y="46" horizontalCenter="275" icon="chatclose"/>
+</e:Skin>

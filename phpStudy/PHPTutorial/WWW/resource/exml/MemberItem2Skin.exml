@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinMemberItem2" width="588" height="131" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*">
+	<e:Group id="vip" scaleX="0" scaleY="0" touchChildren="false" touchEnabled="false" visible="false"/>
+	<e:Image source="tongyonglabbg" left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30"/>
+	<e:Label id="conLab" text="贡献度:   999999" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-46" verticalCenter="-3.5" textAlign="left" anchorOffsetX="0" width="232"/>
+	<e:Label id="attack" text="99999999" x="224.4" y="85.6" size="20" textColor="0xf8b141" textAlign="left" visible="false"/>
+	<e:Label id="nameLab" text="【盟主】道可道" size="22" textAlign="left" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="-32.5" horizontalCenter="-18.5" anchorOffsetX="0" width="307.33"/>
+	<e:Label id="onLine" text="在线" size="22" verticalCenter="-2.5" textColor="0x00842c" fontFamily="Microsoft YaHei" horizontalCenter="111"/>
+	<e:Image scale9Grid="6,6,1,1" verticalCenter="-4.5" left="15" scaleX="1" scaleY="1" source="guildkuangbg"/>
+	<e:Image id="face" verticalCenter="-3.5" left="13" source="yuanhead10" scaleX="1.3" scaleY="1.3"/>
+	<e:Image id="headBG" scale9Grid="6,6,1,1" verticalCenter="-2" left="11" scaleX="1" scaleY="1" source="guildkuang"/>
+
+
+	<e:Image id="vipTitle" scaleX="1" scaleY="1" source="vipv_png" top="20" left="103"/>
+	<e:Group id="group1" width="100" height="80" right="38" verticalCenter="-9.5">
+		<e:Button id="impeachBtn" label="弹 劾" width="100" height="40" verticalCenter="0" skinName="SkinBtn3"/>
+	</e:Group>
+	<e:Group id="group2" width="121.33" height="100.67" verticalCenter="-1" right="16" anchorOffsetY="0" anchorOffsetX="0">
+		<e:Button id="demiseBtn" label="禅 让" width="100" height="40" x="25.34" y="10.71" skinName="SkinBtn6" icon="btn2_2" scaleX="0.7" scaleY="0.7"/>
+		<e:Button id="downBtn" label="降 职" y="64.04" width="100" height="40" scaleX="0.7" scaleY="0.7" skinName="SkinBtn6" icon="btn2" x="25.31"/>
+	</e:Group>
+	<e:Group id="group3" width="129" height="105" verticalCenter="-1" right="13" anchorOffsetY="0" anchorOffsetX="0">
+		<e:Button label="踢 出" width="100" height="40" skinName="SkinBtn6" icon="btn2" scaleX="0.7" scaleY="0.7" x="30.67" y="66.34" visible="false"/>
+		<e:Button id="appointBtn" label="任 命" y="12.66" width="100" height="40" scaleX="0.7" scaleY="0.7" skinName="SkinBtn6" icon="btn2_2" x="30"/>
+		<e:Button id="kickBtn" label="踢 出" y="56.7" scaleX="0.6999999999999998" scaleY="0.6999999999999998" x="3">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn2" source.down="btn2" scaleX="1" scaleY="1" scaleX.down="1" scaleY.down="1" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" textColor="0x1b3046" size="28" fontFamily="Microsoft YaHei"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Image id="powerImage" source="wingzhanli" verticalCenter="30" horizontalCenter="-122.5"/>
+	<e:Image x="0" y="0" alpha="0.7" source="hhcyitem2_png" visible="false"/>
+</e:Skin>

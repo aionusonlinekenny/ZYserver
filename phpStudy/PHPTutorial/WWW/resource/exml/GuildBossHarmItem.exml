@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildBossHarmItem" width="485" height="50" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*">
+
+
+
+
+
+
+
+
+
+
+
+	<e:Image source="hhbossdamageitem_png" alpha="0.7" width="485" height="50" visible="false"/>
+	<e:Group id="info" width="485" horizontalCenter="0" top="0" bottom="0">
+		<e:Label id="rank" text="10" size="30" width="50" textAlign="center" verticalAlign="middle" textColor="0x7E6437" height="50" x="30.74" fontFamily="Microsoft YaHei" verticalCenter="0" visible="false"/>
+		<e:Label id="playerName" text="玩家昵称六字" size="20" textAlign="center" verticalAlign="middle" verticalCenter="1" horizontalCenter="-88.5" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+		<e:Label id="harm" text="9999999999999" size="20" textAlign="center" verticalAlign="middle" verticalCenter="1" horizontalCenter="61" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+		<e:Label id="reward" text="306" size="20" textAlign="center" verticalAlign="middle" verticalCenter="1" horizontalCenter="189.5" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+		<e:Image id="qiansan" source="paihang1" verticalCenter="0" horizontalCenter="-206.5"/>
+		<e:Image width="470" height="2" horizontalCenter="0.5" bottom="-1" x="8" y="89" scaleX="1" scaleY="1" source="line6_png"/>
+	</e:Group>
+	<e:Image width="470" height="2" horizontalCenter="0" bottom="0" x="8" y="89" scaleX="1" scaleY="1" source="line6"/>
+</e:Skin>

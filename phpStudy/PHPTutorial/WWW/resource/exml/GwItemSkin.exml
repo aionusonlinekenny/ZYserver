@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGwItem" width="90" currentState="skillicon2" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*"  height="90" states="skillicon2,skillicon1,skillicon3" >
+	<w:Config id="1586b349dbe"/>
+	<e:Image id="Bg1" horizontalCenter="0" verticalCenter="0" source="godweapon_skillicon1" visible.skillicon2="false" visible.skillicon1="false" visible.skillicon3="false"/>
+	<e:Image id="Bg2" horizontalCenter="0" verticalCenter="0" source="godweapon_skillicon2" source.skillicon1="jinengkuang" source.skillicon3="jinengkuang" width.skillicon3="38" height.skillicon3="38" width.skillicon1="61" height.skillicon1="61"/>
+	<e:Image id="Img" width.skillicon2="74" height.skillicon2="74" horizontalCenter="0" verticalCenter="0" horizontalCenter.skillicon1="0" verticalCenter.skillicon1="0" width="74" height="74" width.skillicon3="32" height.skillicon3="32" width.skillicon1="57" height.skillicon1="57"/>
+	<e:Image id="lockImg" source="42000_png" width="76" height="76" horizontalCenter="0" verticalCenter="0" source.skillicon2="" width.skillicon1="76" height.skillicon1="76" source.skillicon1="" visible.skillicon3="false"/>
+	<e:Image id="lvFrame" width="60" height="20" y="41" horizontalCenter="0" source="lcskillbg" visible.skillicon2="false" height.skillicon1="19" y.skillicon1="58.5" height.skillicon3="16" y.skillicon3="50" width.skillicon3="36" source.skillicon1="gwdi_1_png" source.skillicon3="gwdi_2_png"/>
+
+	<e:Label id="lvCount" text="0/5" y="70" size="18" horizontalCenter="0" bold="false" horizontalCenter.skillicon1="1" y.skillicon1="58" fontFamily="Microsoft YaHei" textColor="0xffff00" y.skillicon3="50" y.skillicon2="66" stroke="1" size.skillicon3="16" horizontalCenter.skillicon3="1"/>
+	<e:Image id="glowImg" source="godweapon_attention" y.skillicon2="9" x.skillicon2="9" horizontalCenter.skillicon1="0" verticalCenter.skillicon1="0" y="9" x="9" visible.skillicon2="false" visible="false"/>
+</e:Skin>

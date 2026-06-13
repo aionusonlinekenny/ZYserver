@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinCityBossJiangliTips" width="430" height="323" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15ca5ef6a05"/>
+
+	<e:Group verticalCenter="0" horizontalCenter="0" width="400" height="265">
+		<e:Image   left="0" right="0" top="0" bottom="0" source="tongyong_dikuang2" scale9Grid="36,12,45,50"/>
+
+		<e:Image y="-8.64" source="tongyong_juanzhou" left="0" right="0"/>
+		<e:Image source="tongyong_titlebg" width="215" height="41" horizontalCenter="0" y="-26"/>
+		<e:Image width="351" height="180" horizontalCenter="0" y="30" source="tongyong_dikuang4" scale9Grid="10,10,60,60"/>
+		<e:Group width="400" y="-14" height="41" horizontalCenter="0">
+
+			<e:Label id="nameTxt" text="必定掉落" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+			<e:Label id="nameTxt0" text="护盾奖励" size="24" bold="true" horizontalCenter="0" verticalCenter="0" x="127" y="19" fontFamily="Microsoft YaHei" textColor="0x084151" visible="false"/>
+		</e:Group>
+		<e:Image id="giveUp" source="tongyong_btnclose" y="-25" right="-16"/>
+
+
+
+		<e:Group width="326" horizontalCenter="0" top="35" height="205">
+			<e:Group y="179">
+				<e:Label text="1、归属者必定获得一件神装" size="18" height="20" left="0" bottom="31" y="209" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label text="2、参与者随机获得剩余神装的1-5件" size="18" height="20" bottom="7" left="0" y="238" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			</e:Group>
+
+			<e:Group top="6" bottom="6" left="0" right="10">
+				<e:Scroller horizontalCenter="0" top="6" bottom="6" x="-189">
+					<e:Group>
+					<e:List id="belongList" itemRendererSkinName="SkinItem">
+						<e:layout>
+						<e:TileLayout requestedRowCount="2" requestedColumnCount="4" horizontalGap="8"/>
+						</e:layout>
+					</e:List>
+					</e:Group>
+				</e:Scroller>
+
+				<e:layout>
+					<e:VerticalLayout gap="11"/>
+				</e:layout>
+			</e:Group>
+
+
+
+
+
+
+
+
+
+
+		</e:Group>
+
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinFriendsAppListItem" height="95" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" width="542">
+	<e:Rect fillAlpha="0.2" left="0" right="0" top="0" bottom="0" touchEnabled="true"/>
+	<e:Image left="0" right="0" bottom="0" top="0" source="chatbg2" scale9Grid="5,5,36,36"/>
+	<e:Group width="116" height="32" x="201" y="7" visible="false">
+		<e:Image x="0"   verticalCenter="0" source="xvip_v2_png"/>
+		<e:Image id="img_vipLv0" x="45"   verticalCenter="0" source=""/>
+		<e:Image id="img_vipLv1" x="55"   verticalCenter="0"/>
+		<e:layout>
+			<e:HorizontalLayout gap="0" horizontalAlign="left" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+	<e:Group width="64" height="70" x="12" verticalCenter="0.5" anchorOffsetX="0">
+		<e:Image id="img_userIcon" source="{data.userIcon}" width="59" height="59" x="3" y="3"/>
+		<e:Image id="headBg" scale9Grid="5,5,3,3" source="friend_kuang" width="66" x="0" height="69" y="0"/>
+	</e:Group>
+	<e:Label id="label_name" text="{data.name}" size="20" y="30" x="88" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+	<e:Label id="labelGuild" text="帮会名六个字" size="18" y="60" x="88" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+	<e:Button id="btn_yes" label="同 意" verticalCenter="0" width="91" height="50" icon="friend_btnbg" right="7" skinName="SkinBtn26"/>
+	<e:Button id="btn_no" label="拒 绝" verticalCenter="0" width="91" height="50" icon="friend_btnbg" right="103" skinName="SkinBtn26"/>
+
+
+	
+</e:Skin>

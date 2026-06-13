@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinZaoyurewardItem" width="408" height="87" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15acbac88a0"/>
+	<e:Image left="0" right="0" bottom="0" top="0" scale9Grid="5,5,35,31" source="rankitembg"/>
+	<e:Label id="rank" text="" size="24" verticalCenter="0" width="255" x="-39" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.5"/>
+	<ns1:ItemBase id="item0" scaleX="0.85" scaleY="0.85" skinName="SkinItem3" x="209" y="5"/>
+	<ns1:ItemBase id="item1" scaleX="0.85" scaleY="0.85" skinName="SkinItem3" x="302" y="5"/>
+	<e:Image id="topthree" x="63" y="20" source="paihang1" anchorOffsetX="0.5" anchorOffsetY="0.5"/> 
+</e:Skin>

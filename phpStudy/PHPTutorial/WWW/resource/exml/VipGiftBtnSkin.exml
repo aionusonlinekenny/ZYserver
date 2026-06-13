@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinVipGiftBtn" states="up,down,disabled"
+        xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" includeIn="down" >
+	<e:Image id="LeftLine" verticalCenter="0" source="vipGiftItem3_png" left="1" width="2" height="94"/>
+	<e:Image id="RightLine" verticalCenter="0" source="vipGiftItem3_png" right="1" visible="false"/>
+	<e:Image id="selectIcon" visible.disabled="false" pixelHitTest="true"  y="0" horizontalCenter="0" visible.up="false" width="112" height="144" source="vipGiftItem_png"/>
+	<e:Image id="iconDisplay" pixelHitTest="true"  horizontalCenter="0" visible.disabled="false" source="vipGiftItem2_png" verticalCenter="-4" width="96" height="96"/>
+	<e:Image id="item" source="200003_png" horizontalCenter="1" width="82" height="82" visible.disabled="false" verticalCenter="-4" horizontalCenter.up="0"/>
+	<e:Group id="redPoint" alpha.disabled="0.5" right="2" top="2" visible="false">
+		<e:Image x="0" y="0" source="zjmhongdian"/>
+	</e:Group>
+	<e:Label id="viptxt" text="V1礼包" fontFamily="Microsoft YaHei" size="18" horizontalCenter="0" textAlign="center" stroke="0.1" textColor="0xffffff" textColor.down="0x921526" textColor.up="0xffffff" bottom="6"/>
+</e:Skin>

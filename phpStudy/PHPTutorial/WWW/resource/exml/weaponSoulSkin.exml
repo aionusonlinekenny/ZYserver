@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinweaponSoul" width="600" height="728" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15dbfa8e636"/>
+
+	<e:Group id="normal" width="600" top="0" horizontalCenter="0" height="730" visible="false">
+		<e:Image y="120" horizontalCenter="0" source="worldbossbg_png" width="452" height="343"/>
+		<e:Image y="364" horizontalCenter="0" touchEnabled="false" source="worldbossbg2_png" width="547" height="206"/>
+		<e:Group width="588" horizontalCenter="0" height="164" y="563" x="40">
+			<e:Image width="580" horizontalCenter="0" top="0" height="164" source="tongyong_dikuang4" scale9Grid="9,6,64,65"/>
+			<e:Image width="230" height="50" y="-6" source="huabian" anchorOffsetX="0" scale9Grid="67,0,72,50" horizontalCenter="0"/>
+			<e:Label text="属性预览" y="19" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
+			<e:Label text="所有仙弓属性累加" y="130" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" horizontalCenter="0" textColor="0x00ff00"/>
+			<e:Group y="66" width="150" horizontalCenter="-102" height="20">
+			<e:Label id="attr0" text="" size="20" y="0" fontFamily="Microsoft YaHei" left="0" right="0" verticalAlign="middle" textColor="0xffffff"/>
+			</e:Group>
+			<e:Group y="66" horizontalCenter="110" width="150" height="20">
+			<e:Label id="attr1" text="" size="20" y="0" fontFamily="Microsoft YaHei" left="0" right="0" textColor="0xffffff"/>
+			</e:Group>
+			<e:Group y="92" width="150" horizontalCenter="-102" height="20">
+			<e:Label id="attr2" text="" size="20" textAlign="left" y="0" fontFamily="Microsoft YaHei" left="0" right="0" textColor="0xffffff"/>
+			</e:Group>
+			<e:Group y="92" width="150" horizontalCenter="110" height="20">
+			<e:Label id="attr3" text="" size="20" y="0" fontFamily="Microsoft YaHei" left="0" right="0" textColor="0xffffff"/>
+			</e:Group>
+		</e:Group>
+		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" y="506" horizontalCenter="20"/>
+		<e:Group horizontalCenter="0" x="15" y="254" width="586">
+			<e:Image id="leftbtn" source="jiantouxuan" x="0" y="0"/>
+			<e:Image id="rightbtn" source="jiantouxuan" scaleX="-1" right="0"/>
+		</e:Group>
+		<e:Button id="turnBtn" label="Button" skinName="SkinBtn0" icon="icon_wsuse_png" horizontalCenter="244.5" top="57"/>
+		<e:Image id="redPoint0" source="zjmhongdian" y="51" horizontalCenter="262.5"/>
+		<e:Scroller id="list1Scroll" width="430" scrollPolicyH="off" scrollPolicyV="off" height="450" y="66" touchEnabled="false" horizontalCenter="-8">
+			<e:List id="list1" itemRendererSkinName="SkinsoulItem" scrollEnabled="false" x="84" y="119" width="430" anchorOffsetY="0" height="450">
+				<e:layout>
+					<e:HorizontalLayout gap="0"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Image width="345" height="20" source="diwen6" y="98" horizontalCenter="0"/>
+		<e:Image id="red1Right" x="543" y="257" source="zjmhongdian" touchEnabled="false" visible="false"/>
+		<e:Image id="red1Left" x="40" y="257" source="zjmhongdian" touchEnabled="false" visible="false"/>
+	</e:Group>
+
+
+	<e:Group id="soul" horizontalCenter="0" width="600" anchorOffsetY="0" height="730" top="0">
+		<e:Image width="521" horizontalCenter="0.5" source="wingbg4_png" height="356" anchorOffsetY="0" y="218"/>
+		<e:Scroller id="list0Scroll" horizontalCenter="0" width="430" scrollPolicyH="off" scrollPolicyV="off" height="420" y="126">
+		<e:List id="list0" itemRendererSkinName="SkinsoulItem" scrollEnabled="false" x="-1" y="-140" width="430">
+			<e:layout>
+			<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+		<e:Label id="nothingTips" text="该角色尚未激活仙弓之灵" size="24" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" y="462" visible="false"/>
+		<e:Image id="nothingtrue" width="172" height="129" y="318" source="wpstai" horizontalCenter="0" visible="false"/>
+		<e:Image id="leftbtn0" source="jiantouxuan" horizontalCenter="-244.5" y="300"/>
+		<e:Image id="rightbtn0" source="jiantouxuan" scaleX="-1" horizontalCenter="244.5" y="300"/>
+		<e:Image touchEnabled="false" source="title_wsuse_png" x="210" y="86"/>
+
+		<e:Group id="descGroup" horizontalCenter="0" y="142">
+			<e:Image x="0" y="1" source="gantanhao3"/>
+			<e:Label id="desc" y="0" size="20" x="27" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+			<e:HorizontalLayout gap="2" horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="lingskill" anchorOffsetY="0" height="132" width="595" horizontalCenter="0" y="513">
+			<e:Image width="595" height="132" y="0" anchorOffsetX="0" fillMode="scale" scale9Grid="62,21,13,45" x="0" source="xgdi2_png"/>
+
+			<e:Label id="skill" text="" size="18" width="368" x="164" verticalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+			<e:Group id="upInfo" x="61" anchorOffsetY="0" height="102" anchorOffsetX="0" width="89" y="20">
+				<ns1:WeaponSkillItemRender id="skillicon0" skinName="SkinweaponSkillItem" horizontalCenter="0"/>
+				<e:Label id="skillname0" text="技能名字" size="22" horizontalCenter="0" y="77" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			</e:Group>
+		</e:Group>
+		<e:Button id="active" label="激  活" horizontalCenter="0" skinName="SkinBtn28" icon="btn1_2" width="213" height="67" bottom="5"/>
+		<e:Button id="backBtn" label="Button" skinName="SkinBtn0" icon="icon_wsuse_png" horizontalCenter="244.5" top="57"/>
+		<e:Image id="redPoint1" source="zjmhongdian" height="19" y="51" horizontalCenter="262.5"/>
+		<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="77.5" bottom="51"/>
+	</e:Group>
+</e:Skin>

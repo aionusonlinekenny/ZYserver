@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="EquipItem2" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="88" height="110">
+	<w:Config id="1586bdf5e04"/>
+	<ns1:ItemIcon id="itemIcon" y="6" skinName="SkinItemIcon" x="6"/>
+	<e:Image id="select" y="0" horizontalCenter="0" width="88" height="88" scale9Grid="20,20,5,5" source="xuanzekuang3" visible="false"/>
+	<e:Image id="NBwupingkuang" horizontalCenter="0" width="90" height="90" scale9Grid="4,4,8,8" x="10" source="quality9" verticalCenter="-11" visible="false"/>
+	<e:Label id="level" text="Lv.100" size="20" horizontalCenter="0.5" textAlign="center" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="45"/>
+	<e:Button id="mixBtn" skinName="SkinBtn7" label="�ϳ�" horizontalCenter="0" bottom="0" visible="false"/>
+	<e:Image id="redPoint" y="0" touchEnabled="false" right="0" source="zjmhongdian" visible="false"/>
+</e:Skin>

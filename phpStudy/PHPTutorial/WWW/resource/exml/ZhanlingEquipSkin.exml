@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinZhanlingEquip" width="65" height="66" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="quality" width="65" height="66" horizontalCenter="0" verticalCenter="0" source="normalBg"/>
+	<e:Image id="bg" verticalCenter="0" source="zl_equip_bg_1" scaleX="1" scaleY="1" horizontalCenter="0"/>
+	<e:Image id="equip" width="65" height="66" horizontalCenter="0" verticalCenter="0" source=""/>
+	<e:Image id="redPoint" source="zjmhongdian" y="-3" horizontalCenter="25" touchEnabled="false"/>
+</e:Skin>

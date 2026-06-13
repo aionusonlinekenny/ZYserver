@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBtnTab5" states="up,down,disabled"
+        xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width.down="120" width.up="120" width="120" height="60">
+	<e:Image  y.disabled="5" touchEnabled="false" bottom.down="0" visible.disabled="false" x.down="0" x.up="0" y.up="0" left="0" right="0" top="0" bottom="0" scale9Grid="14,13,38,38" scale9Grid.up="13,12,40,39" scale9Grid.down="14,13,38,38" source="" source.up="" source.down="" top.up="6" top.down="6" visible="false"/>
+	<e:Image y.disabled="-1" y.down="0" x.up="0" bottom.up="0" visible.disabled="false" x.down="0" touchEnabled="false" visible.up="false" source="chatyeqian" horizontalCenter="0" width="120" height="60" bottom="0"/>
+	<e:Image right="0" bottom="0" height="60" width="1" source="chat_line_png"/>
+	<e:Label id="labelDisplay" size="24" verticalAlign="middle" textAlign="center" x.up="8" y.up="0" x.down="8" touchEnabled="false" y.down="0" x.disabled="8" y.disabled="1"  visible.disabled="false" horizontalCenter.disabled="0" text="{data}" left="0" right="0" height="36" textColor="0xabebef" fontFamily="Microsoft YaHei" bottom="8" textColor.up="0xabebff" textColor.down="0xffffff"/>
+</e:Skin>

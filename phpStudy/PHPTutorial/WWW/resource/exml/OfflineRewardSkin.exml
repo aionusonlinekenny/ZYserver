@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinOfflineReward" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" height="465">
+	<w:Config id="159bf027b06"/>
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
+	<e:Group width="461" height="425" horizontalCenter="0" verticalCenter="-20">
+		<e:Image bottom="0" width="461" x="0" source="tongyong_dikuang2" scale9Grid="40,31,15,15" anchorOffsetX="0" height="410"/>
+		<e:Image scaleX="-1" right="0" source="tongyong_juanzhou" scale9Grid="200,0,81,18" left="0" top="15"/>
+		<e:Image source="tongyong_titlebg" top="0" horizontalCenter="0"/>
+		<e:Label text="离线收益" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" top="12" textColor="0x084151"/>
+		<e:Label id="time" text="离线时间：" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x1b3046" top="50"/>
+		<e:Button id="closeBtn" width="54" height="54" skinName="SkinBtn0" icon="tongyong_btnclose" top="0" right="-5"/>
+
+		<e:Group width="411" height="322" horizontalCenter="0" top="86">
+			<e:Image scale9Grid="22,20,25,25" left="0" right="0" source="tongyong_dikuang1" top="0" bottom="0"/>
+
+
+		<e:Label text="月卡" y="130" size="16" x="239" id="label0" textColor="0x3bff34" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Label text="神器" y="130" size="16" x="322" textColor="0x3BFF34" id="label2" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Label text="100000" y="195" size="20" x="296" id="label6" width="80" textAlign="center" textColor="0x00ff00" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Label text="100000" y="155" size="20" x="296" id="label4" width="80" textAlign="center" textColor="0x00ff00" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Group width="195" height="233" top="80" left="9">
+			<e:Image alpha="0.5" top="0" bottom="0" source="tongyong_dikuang4" scale9Grid="11,8,57,61" left="0" right="0"/>
+
+
+
+
+
+
+			<e:Label text="离线收益" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" top="10" strokeColor="0x1e4201" stroke="0" textColor="0x00ff06"/>
+			<e:Label text="铜钱：" size="20" left="10" fontFamily="Microsoft YaHei" textColor="0xffffff" top="50"/>
+			<e:Label id="money" text="100000" y="50" size="20" width="88" left="70" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="经验：" size="20" left="10" fontFamily="Microsoft YaHei" textColor="0xffffff" top="90"/>
+			<e:Label id="exp" text="100000" size="20" width="88" left="70" textColor="0xffffff" fontFamily="Microsoft YaHei" y="90"/>
+			<e:Label text="装备：" size="20" left="10" fontFamily="Microsoft YaHei" textColor="0xffffff" y="130"/>
+			<e:Label id="equipNum" text="100000" y="130" size="20" width="88" left="70" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="精炼：" size="20" left="10" fontFamily="Microsoft YaHei" textColor="0xffffff" y="170"/>
+			<e:Label id="jinglianshiNum" text="100000" y="170" size="20" width="88" left="70" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group width="195" height="233" top="80" right="9">
+
+
+			<e:Image alpha="0.5" top="0" bottom="0" scale9Grid="11,8,57,61" source="tongyong_dikuang4" left="0" right="0"/>
+
+
+
+			<e:Label text="铜钱：" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" top="50" left="10"/>
+			<e:Label text="经验：" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" top="90" left="10"/>
+			<e:Label id="label1" text="月卡额外收益" size="20" horizontalCenter="0" top="10" fontFamily="Microsoft YaHei" strokeColor="0x875104" stroke="0" textColor="0xffff00"/>
+			<e:Label text="1000" size="20" id="label3" textAlign="center" top="50" left="70" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:Label text="100000" size="20" id="label5" textAlign="center" top="90" left="70" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		</e:Group>
+
+		<e:Label id="bagFull" text="背包已满，自动熔炼      件装备" size="20" horizontalCenter="0.5" bottom="-10" textColor="0xffffff" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Label text="最多累计24小时离线收益" size="18" textAlign="left" y="12" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label text="离线超过8小时后，只能获得80%离线收益" size="18" textAlign="left" y="41" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		</e:Group>
+		<e:Group height="36" anchorOffsetX="0" bottom="-38" anchorOffsetY="0" width="461" horizontalCenter="0" x="0" y="429" scaleX="1" scaleY="1">
+			<e:Image scale9Grid="15,15,15,15" width="383" height="40" x="17" source="bantoutiaobg" scaleX="1" scaleY="1" verticalCenter="0"/>
+			<e:Label horizontalCenter="0.5" text="点击空白区域关闭窗口" size="20" x="118" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" bottom="11"/>
+		</e:Group>
+
+
+	</e:Group>
+	<e:Button id="okBtn" bottom="0" skinName="SkinBtn0" left="0" right="0" top="0"/>
+	<e:Label id="getmc" text="激活月卡" size="22" horizontalCenter="98" textColor="0x20CB30" verticalCenter="100" visible="false"/>
+
+
+
+	
+	
+</e:Skin>

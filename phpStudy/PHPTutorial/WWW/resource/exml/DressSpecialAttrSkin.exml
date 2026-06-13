@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinDressSpecialAttr" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"   xmlns:ns1="*" width="300" >
+
+	<e:Group left="0" top="0">
+		<e:Label id="attrType" y="0" text="特殊属性" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+		<e:Group id="desc1" x="32" y="35">
+			<e:Label y="10" text="" size="18" verticalAlign="justify" x="10" textAlign="left" lineSpacing="5" width="22" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="suit" y="0" text="衣服部位属性增加5%" size="18" verticalAlign="justify" x="0" textAlign="left" lineSpacing="5" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+
+
+		<e:layout>
+			<e:VerticalLayout gap="7"/>
+		</e:layout>
+
+
+
+	</e:Group>
+
+</e:Skin>

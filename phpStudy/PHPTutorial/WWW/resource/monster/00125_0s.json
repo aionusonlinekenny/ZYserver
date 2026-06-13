@@ -1,0 +1,12 @@
+{"mc":{
+"00125_0s":{
+"frameRate":2,
+"frames":[
+{"res":"monster_125_stand_0_01","x":-26,"y":-130},
+{"res":"monster_125_stand_0_02","x":-26,"y":-130}
+]
+}},
+"res":{
+"monster_125_stand_0_01":{"x":0,"y":0,"w":79,"h":136},
+"monster_125_stand_0_02":{"x":81,"y":0,"w":79,"h":136}
+}}

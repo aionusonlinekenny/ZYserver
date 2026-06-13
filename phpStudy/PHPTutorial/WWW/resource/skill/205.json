@@ -1,0 +1,4 @@
+[{"effectId":"32002","layer":1,"playCount":1,"playSpeed":0.8,"y":-150},
+ {"effectId":"32003","layer":1,"playCount":1,"playSpeed":0.8,"y":-150,"delay":666},
+ {"effectId":"32004","layer":1,"playCount":1,"playSpeed":0.8,"y":-150,"delay":1333},
+ {"type":99,"delay":800}]

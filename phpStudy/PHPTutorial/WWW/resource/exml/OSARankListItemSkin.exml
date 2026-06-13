@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OSARankListItemSkin" width="511" height="125" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
+		<e:Image id="bg0" source="scitembg" scale9Grid="56,26,4,3" left="0" right="0" top="0" bottom="0" x="0" y="0" visible="false"/>
+		<e:Image id="rankImg" source="paihang1" verticalCenter="0" horizontalCenter="-194.5"/>
+		<e:List id="reward" verticalCenter="3" scaleX="1" scaleY="1" x="112" itemRendererSkinName="SkinItem2">
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="16"/>
+			</e:layout>
+		</e:List>
+		<e:BitmapLabel id="rankNum" text="13" verticalCenter="0" horizontalCenter="-197" scaleX="1" scaleY="1" letterSpacing="-2" font="num_chongzhi_fnt"/>
+		<e:Label id="name1" text="布拉格の神话" size="20" horizontalCenter="160" fontFamily="Microsoft YaHei" textColor="0x0000f1" top="40" textAlign="center"/>
+		<e:Label id="value" text="等级：4转100级" size="20" horizontalCenter="160" fontFamily="Microsoft YaHei" textColor="0x00842c" bottom="40" textAlign="center"/>
+	</e:Group>
+</e:Skin>

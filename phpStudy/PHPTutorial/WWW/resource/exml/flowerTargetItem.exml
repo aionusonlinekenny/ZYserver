@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinFlowerTargetItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:euiextension="euiextension.*" xmlns:ns1="*"  width="226" height="36">
+	<w:Config id="1586b37c599" />
+
+	<e:Image source="flower_namelistBg" left="0" right="0" top="0" bottom="0" scale9Grid="7,8,25,21"/>
+	<e:Label id="nameTxt" text="玩家名字六字" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" verticalAlign="middle" horizontalCenter="0"/>
+
+
+</e:Skin>

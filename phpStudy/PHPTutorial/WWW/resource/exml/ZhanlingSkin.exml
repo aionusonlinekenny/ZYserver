@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZhanlingSkin" currentState="zl_up" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"          xmlns:tween="egret.tween.*" states="zl_up,zl_max,skin_up,skin_max" includeIn="normalWithPrompt,disabledWithPrompt" width="600"          height="728" height.zl_up="728" height.zl_max="728" width.skin_up="600" width.skin_max="600" width.zl_up="600">
+
+	<e:Group id="content" width="600" scaleX.skin_up="1" scaleY.skin_up="1" height="728" verticalCenter="0" horizontalCenter="0" verticalCenter.skin_up="-56" verticalCenter.skin_max="-56">
+		<e:Image width="600" horizontalCenter="0" top="-150" bottom="-150" includeIn="skin_up,skin_max" source="bg_1_jpg" x.skin_up="15" y.skin_up="44"/>
+		<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  		<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35" verticalCenter.zl_up="-37"/>
+
+
+
+		<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" top="-10" source="wingbg4_png" width="521" includeIn="zl_max"/>
+		<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" top="-10" width="521" includeIn="zl_up,skin_up,skin_max" source="wingbg4_png"/>
+		<e:Group id="zhanling" horizontalCenter="0.5" top="320" top.zl_up="333" top.zl_max="333"/>
+		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" top="8" left="169"/>
+		<e:Image anchorOffsetX="0" anchorOffsetY="0" top="7" width="55" includeIn="zl_up" height="54" left="130" source="neigongzhuzi2"/>
+		<e:Image anchorOffsetX="0" anchorOffsetY="0" top="7" width="55" includeIn="zl_max" height="54" left="130" source="neigongzhuzi2"/>
+		<e:Button id="suit" label="" skinName="SkinBtn0" icon="zl_suit_btn" includeIn="zl_up,zl_max" top="12" horizontalCenter="-146" left="138"/>
+		<e:Button id="detail" label="" x="102" y="70" visible="false">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="tongyongxiangxi"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Group includeIn="skin_up,skin_max" top="71" right="5" width="108">
+		<e:Group id="group0" top="-29" horizontalCenter="0" visible.skin_max="false" visible.skin_up="false">
+			<e:Button label="" icon="jiantouxuan" skinName="SkinBtn0" scaleX="1" scaleY="1" y="-8" x="39" rotation="90" visible.skin_up="false" visible.skin_max="false"/>
+			<e:Image x="15" y="-8" source="zjmhongdian" touchEnabled="false" visible.skin_up="false" visible.skin_max="false"/>
+		</e:Group>
+
+		<e:Group id="group1" bottom="-40" horizontalCenter="0" visible="false">
+			<e:Button label="" icon="jiantouxuan" skinName="SkinBtn0" rotation="-90" y="39" visible.skin_up="false" visible.skin_max="false"/>
+			<e:Image x="20" y="18" source="zjmhongdian" touchEnabled="false" visible.skin_up="false" visible.skin_max="false"/>
+		</e:Group>
+		<e:Scroller id="listScroller" scrollPolicyH="off" height="290" horizontalCenter="0" height.skin_up="259" height.skin_max="259" width.skin_up="108" width.skin_max="108">
+			<e:List id="list" itemRendererSkinName="SkinZhanlingZBItem">
+			<e:layout>
+				<e:VerticalLayout gap="13"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		</e:Group>
+		<e:Group width="80" right="22" top="160" height="163" x="504" y="71" includeIn="zl_up,zl_max">
+			<e:Group width="75" height="75" includeIn="zl_up,zl_max" horizontalCenter="0" top="0">
+				<e:Image includeIn="zl_up,zl_max" width="73" height="72" source="touxiangkuang" verticalCenter="0" horizontalCenter="0"/>
+				<e:Button id="up0" label="Button" skinName="SkinBtn0" icon="205002_png" horizontalCenter="0" x="5" y="0" verticalCenter="0" includeIn="zl_up,zl_max"/>
+				<e:Image id="redPoint0" source="zjmhongdian" y="3" horizontalCenter="18" top="1" includeIn="zl_up,zl_max"/>
+				<e:Label id="used0" text="100" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" y="46" bottom="5" textAlign="center" includeIn="zl_up,zl_max" horizontalCenter="0"/>
+			</e:Group>
+
+			<e:Group width="75" height="75" includeIn="zl_up,zl_max" horizontalCenter="0" top="90" top.zl_max="86" top.zl_up="86">
+				<e:Image includeIn="zl_up,zl_max" width="73" height="72" horizontalCenter="0" source="touxiangkuang" x="1" verticalCenter="0"/>
+				<e:Button id="up1" label="Button" skinName="SkinBtn0" icon="205001_png" horizontalCenter="0" y.zl_up="-1" y.zl_max="89" x="5" verticalCenter="0" includeIn="zl_up,zl_max"/>
+				<e:Image id="redPoint1" source="zjmhongdian" horizontalCenter="18" y="-4" top="1" x="46" includeIn="zl_up,zl_max"/>
+				<e:Label id="used1" text="100" size="16" textColor="0xffffff" fontFamily="Microsoft YaHei" size.zl_up="20" y="133" bottom="5" includeIn="zl_up,zl_max" textAlign="center" horizontalCenter="0"/>
+			</e:Group>
+
+
+		</e:Group>
+
+		<e:Group width="500" height="97" horizontalCenter="0" top.skin_up="0" top.skin_max="0"  top="705">
+			<e:Image source="yuyitongyongbg2" y="0" width="603" horizontalCenter="0" bottom.zl_max="204" width.zl_max="500" height.zl_max="1" source.zl_max="tongyongline" bottom.skin_max="0" top.skin_up="472" height.skin_up="180" includeIn="zl_max,skin_up" width.skin_up="580" source.skin_up="tongyong_dikuang4" scale9Grid.skin_up="10,10,60,60"/>
+
+		<e:Image width="580" horizontalCenter="0" includeIn="zl_max" x="10" source="tongyong_dikuang4" scale9Grid="10,10,60,60" top="-232" height="180" visible="false"/>
+		<e:Image  width="580" horizontalCenter="0" source="tongyong_dikuang4" top.skin_up="455"  top.skin_max="472" scale9Grid="10,10,60,60" includeIn="zl_up,zl_max,skin_max"   top="-232" height="180" />
+
+			<e:Image id="tongyongline" height="1" y="10" width="500" horizontalCenter="0" top="594" includeIn="skin_max" source="tongyongline" x="10"/>
+		<e:Label id="curAtt" text="" size="20" textAlign.skin_max="left" textAlign.skin_up="left" textAlign.zl_max="left" verticalAlign="justify" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign.zl_up="left" width="140" horizontalCenter.zl_up="-128"  horizontalCenter.skin_up="-128"  top.skin_up="486" top.skin_max="486" top="-218" lineSpacing="3" height="95" />
+
+		<e:Label id="nextAtt" text="" size="20" textAlign="left" verticalAlign="justify" includeIn="zl_up,skin_up" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="140" width="140" top.zl_up="-218" height="95" top.skin_up="486"   lineSpacing="3"/>
+		<e:Image id="cursor" source="jiantouyou" horizontalCenter="0" includeIn="zl_up,skin_up" verticalCenter.zl_max="14" anchorOffsetY.zl_up="0" top.skin_up="485" height.skin_up="70" top.zl_up="-218" height.zl_up="70"/>
+			<e:Image height="2" y="0" width="500" horizontalCenter="0" top="595" includeIn="skin_max" source="tongyongline" />
+		</e:Group>
+		<e:Group width.zl_max="500" height="60" id="starGroup" scaleX="0.8" scaleY="0.8" includeIn="zl_up,skin_up" horizontalCenter="0" bottom.zl_max="110" bottom.zl_up="120" height.zl_up="35" height.skin_up="35" top.skin_max="636" width.skin_max="448" height.skin_max="35" bottom.skin_up="121" left.zl_up="80" right.zl_up="77"/>
+		<e:Group id="barGroup" width.zl_max="525" height="26" includeIn="zl_up,skin_up" bottom="101" horizontalCenter="0" width="558"  top.skin_max="672" />
+		<e:Group top="372" height="76"  left="42" right="44">
+			<e:Image height="50" width="23" right="491" verticalCenter="0" source="zl_tianfu_png"/>
+			<e:Group touchEnabled="false" touchChildren="true" height="76" width="76" right="406" verticalCenter="0">
+				<e:Image scale9Grid="8,8,48,48" width="76" height="76" x="0" horizontalCenter="0" source="jinengkuang" verticalCenter="0"/>
+				<e:Image id="skillIcon0" width="69" height="70" touchEnabled="true" source="yupei_skill_0" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image id="skillRedPoint0" source="zjmhongdian" includeIn="skin_up,skin_max" touchEnabled="false" right="0" top="0"/>
+				<e:Image id="mijilock0" horizontalCenter="0" verticalCenter="0" touchEnabled="false" source="suowen3" visible="false"/>
+				<e:Group id="eff" touchEnabled="false" horizontalCenter="0" verticalCenter="0"/>
+			</e:Group>
+			<e:Image source="zl_jineng" height="50" width="24" verticalCenter="0" right="346"/>
+		<e:Group touchChildren="true" touchEnabled="false" height="76" width="76" right="252" verticalCenter="0">
+			<e:Image scale9Grid="8,8,48,48" width="76" height="76" x="0" verticalCenter="0" horizontalCenter="0" source="jinengkuang"/>
+			<e:Image id="skillIcon1" width="69" height="70" touchEnabled="true" source="yupei_skill_1" verticalCenter="0" horizontalCenter="0"/>
+			<e:Image id="skillRedPoint1" source="zjmhongdian" x="42" includeIn="skin_up,skin_max" touchEnabled="false" right="0" top="0"/>
+			<e:Image id="mijilock1" horizontalCenter="0" verticalCenter="0" touchEnabled="false" source="suowen3" visible="false"/>
+
+
+
+		</e:Group>
+		<e:Group touchChildren="true" touchEnabled="false" height="76" right="168" verticalCenter="0" width="76">
+			<e:Image scale9Grid="8,8,48,48" width="76" height="76" x="0" horizontalCenter="0" verticalCenter="0" source="jinengkuang"/>
+			<e:Image id="skillIcon2" width="69" height="70" touchEnabled="true" source="yupei_skill_2" verticalCenter="0" horizontalCenter="0"/>
+			<e:Image id="skillRedPoint2" source="zjmhongdian" includeIn="skin_up,skin_max" touchEnabled="false" right="0" top="0"/>
+			<e:Image id="mijilock2" horizontalCenter="0" verticalCenter="0" touchEnabled="false" source="suowen3" visible="false"/>
+
+
+
+		</e:Group>
+		<e:Group touchEnabled="false" touchChildren="true" height="76" width="76" right="84" verticalCenter="0">
+			<e:Image scale9Grid="8,8,48,48" width="76" height="76" source="jinengkuang" verticalCenter="0" horizontalCenter="0"/>
+			<e:Image id="skillIcon3" width="69" height="70" touchEnabled="true" source="yupei_skill_3" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="skillRedPoint3" source="zjmhongdian" includeIn="skin_up,skin_max" touchEnabled="false" right="0" top="0"/>
+			<e:Image id="mijilock3" horizontalCenter="0" verticalCenter="0" touchEnabled="false" source="suowen3" visible="false"/>
+
+
+
+		</e:Group>
+		<e:Group touchEnabled="false" touchChildren="true" height="76" right="0" width="76" verticalCenter="0">
+			<e:Image scale9Grid="8,8,48,48" width="76" height="76" verticalCenter="0" horizontalCenter="0" source="jinengkuang"/>
+			<e:Image id="skillIcon4" width="69" height="70" touchEnabled="true" source="yupei_skill_4" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="skillRedPoint4" source="zjmhongdian" includeIn="skin_up,skin_max" touchEnabled="false" right="0" top="0"/>
+			<e:Image id="mijilock4" horizontalCenter="0" verticalCenter="0" touchEnabled="false" source="suowen3" visible="false"/>
+
+		</e:Group>
+
+		</e:Group>
+		
+		<e:Group id="dinghong" height="75" anchorOffsetY="0" width="590" horizontalCenter="0" includeIn="zl_up,skin_up" bottom="0">
+			<e:Group id="upBtnGroup" includeIn="zl_up,skin_up" horizontalCenter="0" bottom="6">
+			<e:Button id="upBtn" includeIn="zl_up,skin_up" label="一键升星" width="209" height="63" y="0" x="0" icon="btn1_2" skinName="SkinBtn6" horizontalCenter="0" verticalCenter="0"/>
+			<e:Button id="upBtnEx" label="激 活" skinName="SkinBtn6" width="209" height="63" includeIn="skin_up" icon="btn1_2" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="upRedPoint" source="zjmhongdian" x="132" y="0" right.skin_up="20" top.skin_up="0" right.zl_up="20" top.zl_up="0"/>
+			</e:Group>
+			<e:Group id="costGroup" includeIn="zl_up,skin_up" verticalCenter="4" left="15" width="180">
+			<e:Label id="expendLabel" text="消耗：" size="20" bold.zl_max="true" x="0" y="0" textColor="0x001828" fontFamily="Microsoft YaHei" width.skin_max="60"/>
+			<e:Image id="icon" x="55" width="31" height="31" y="28" source="205003_png" source.skin_up="zl_suit_btn" width.skin_max="36" source.zl_up="tongyongyuanbao2"/>
+			<e:Label id="countLabel" text="12000/100" size="20" textAlign="left" x="94" y="12" textAlign.zl_up="left" textColor="0x001828" fontFamily="Microsoft YaHei" text.zl_up="" text.skin_up="" width="88"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap.zl_max="-5" gap.zl_up="0" gap.skin_up="0" gap.skin_max="0" gap="0"/>
+			</e:layout>
+			</e:Group>
+			<e:CheckBox label="元宝自动购买" skinName="SkinCheckBox0" id="checkBoxs" includeIn="zl_up,skin_up" verticalCenter="0" verticalCenter.skin_up="0" right="6"/>
+		</e:Group>
+
+		<e:Button id="huanxing" label="" icon="zl_huanxing_btn" skinName="SkinBtn0" includeIn="zl_up,zl_max" right="25" top="71"/>
+		<e:Image id="hxRedPoint" source="zjmhongdian" includeIn="zl_up,zl_max" touchEnabled="false" top="71" right="24"/>
+		<ns1:ZhanLingItemRender id="item1" skinName="SkinZhanlingEquip" includeIn="zl_up,zl_max"  left="25" top="51" height="66" width="65"/>
+		<ns1:ZhanLingItemRender id="item2" skinName="SkinZhanlingEquip" includeIn="zl_up,zl_max"  top="127" height="66" left="25" width="65"/>
+		<ns1:ZhanLingItemRender id="item3" skinName="SkinZhanlingEquip" includeIn="zl_up,zl_max"  left="25" top="204" height="66" width="65"/>
+		<ns1:ZhanLingItemRender id="item4" skinName="SkinZhanlingEquip" includeIn="zl_up,zl_max"  left="25" width="65" top="280" height="66"/>
+
+		<e:Group horizontalCenter="-249" bottom.zl_max="312" bottom.zl_up="556" top="281" height.skin_max="79">
+		<e:Button id="huanhua" label="" icon="zl_huanhua_btn_png" skinName="SkinBtn0" includeIn="skin_up,skin_max" x="0" y="0" x.skin_up="0"/>
+		<e:Image id="hhRedPoint" touchEnabled="false" includeIn="skin_up,skin_max" x="43" y="1" source="zjmhongdian"/>
+		</e:Group>
+		<e:Group id="maxLevel" width="158" height="40" includeIn="zl_max,skin_max" y.zl_max="658" bottom="-139" horizontalCenter="0" bottom.zl_max="28" bottom.skin_max="0">
+			<e:Image source="bantoutiaobg" left="0" right="0" top="0" bottom="0" visible.zl_max="false" visible.skin_max="false"/>
+			<e:Label textColor="0xffff00" text="已满阶" size="26" width="144" height="36" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" bottom.skin_max="19" horizontalCenter="0" bottom.zl_max="-10"/>
+		</e:Group>
+		<ns1:ItemStage id="lv" skinName="SkinLv" y="116" top="64" left="105"/>
+		<e:Image id="zhanlingName" source="zl_name_1" top="232" left="113" width="27" height="111" source.skin_up="zl_name_1_png"/>
+	</e:Group>
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" includeIn="skin_up,skin_max" y.skin_up="0" height.skin_up="738" height.skin_max="748" top="1" bottom="0" horizontalCenter="0"/>
+	<e:Image id="skillTitle" source="biaoti_zhanling" includeIn="skin_up,skin_max" horizontalCenter="-198.5" top="9"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" horizontalCenter="273" includeIn="skin_up,skin_max" top="46" y.skin_up="46"/>
+	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" includeIn="skin_up,skin_max" horizontalCenter="-272" top="3"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</e:Skin>

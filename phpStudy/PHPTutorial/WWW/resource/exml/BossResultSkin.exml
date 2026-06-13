@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBossResult" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        height="948" width="600">
+	<w:Config id="15c8d32c190" />
+	<e:Rect fillAlpha="0.6" left="0" right="0" top="0" bottom="0" />
+	<e:Image id="bg" top="0" bottom="0" source="tongyong_bgsuc" width="600" horizontalCenter="0"/>
+	<e:Group horizontalCenter="0" verticalCenter="0" width="600" height="948">
+
+		<e:Group width="580" height="363.33" y="389" horizontalCenter="0" anchorOffsetY="0">
+			<e:Image width="544" height="353" y="9" horizontalCenter="0" source="bantoutiaobg" scale9Grid="161,10,61,13" x="18"/>
+			<e:Image y="10" horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" />
+			<e:Image y="357.33" horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" />
+			<e:Image horizontalCenter="0" source="fuentitlebg" x="247"/>
+		</e:Group>
+		<e:Button id="closeBtn" label="退出(10s)" skinName="SkinBtn7" y="760.36" horizontalCenter="-3.5"/>
+		<e:Label id="labelItem" text="获得道具：" y="365.32" size="20" height="40" verticalAlign="middle" x="101" fontFamily="Microsoft YaHei"/>
+
+
+
+		<e:Scroller id="scrollerGroup" width="580" height="330"    enabled="true"  horizontalCenter="0" y="409" anchorOffsetY="0" anchorOffsetX="0">
+			<e:Group id="listGroup">
+
+
+
+
+			<e:List id="listItem" y="2" width="395"  horizontalCenter="0">
+				<e:layout>
+				<e:TileLayout horizontalGap="30" verticalGap="5" horizontalAlign="left" verticalAlign="top"/>
+				</e:layout>
+			</e:List>
+				<e:layout>
+					<e:BasicLayout/>
+				</e:layout>
+
+			</e:Group>
+		</e:Scroller>
+
+
+
+		<e:Group id="effGroup"   touchChildren="false" touchEnabled="false" y="198.32" horizontalCenter="-10.5" x="230"  />
+		<e:Group id="winnerGroup"   touchChildren="false" touchEnabled="false" y="294.32" width="400"   horizontalCenter="0">
+			<e:Label text="BOSS归属者：" size="20"    verticalCenter="-20" fontFamily="Microsoft YaHei"/>
+			<e:ToggleButton id="roleIcon" skinName="SkinRoleToggleBtn" y="-30" icon="yuanhead11" horizontalCenter="0"/>
+			<e:Label id="belongTxt" text="今晚打老虎" y="60" size="20"   horizontalCenter="0" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Image id="title" y="5.32" horizontalCenter="28" source="labwin_png"/>
+
+
+	</e:Group>
+
+</e:Skin>

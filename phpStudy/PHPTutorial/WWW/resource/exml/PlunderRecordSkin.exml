@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinPlunderRecord" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*"  height="948" >
+	<w:Config id="1586b349dbe"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.5"/>
+	<e:Group id="anigroup" horizontalCenter="0" verticalCenter="0" width="544" height="638">
+		<e:Group name="装备" width="544" height="638" x="0" y="0"  >
+			<e:Image left="0" bottom="0" right="0" source="tongyong_dikuang2" scale9Grid="30,6,60,65" height="613"/>
+			<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="215,0,51,23" y="16"/>
+			<e:Image y="0" source="tongyong_titlebg" horizontalCenter="0"/>
+			<e:Image width="488" height="506" y="66" scale9Grid="6,6,36,37" horizontalCenter="0" source="tongyong_dikuang1"/>
+			<e:Label text="掠夺记录" size="22" horizontalCenter="0" y="15" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+			<e:Scroller width="476" height="492" y="73"  horizontalCenter="0" scrollPolicyV="on" scrollPolicyH="off">
+			<e:List id="record" left="0" top="0" bottom="0" itemRendererSkinName="SkinPlunderRecordItem" right="0">
+				<e:layout>
+				<e:VerticalLayout gap="4"/>
+				</e:layout>
+			</e:List>
+			</e:Scroller>
+			<e:Button id="btnClose" label="Button" x="496" y="1" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+		</e:Group>
+		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" y="651"   horizontalCenter="0" width="480">
+			<e:Image source="bantoutiaobg" height="36" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" y="6" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+		</e:Group>
+		<e:layout>
+			<e:BasicLayout/>
+		</e:layout>
+
+	</e:Group>
+</e:Skin>

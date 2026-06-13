@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="weaponSoulbreakitem" width="90" height="92" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586b362dfe"/>
+	<ns1:ItemIcon id="itemIcon" horizontalCenter="0" skinName="SkinItemIcon" y="0"/>
+	<e:Label id="lv" size="16" y="54" text="" stroke="1" textColor="0xffffff" fontFamily="Microsoft YaHei" textAlign="right" right="13" width="72"/>
+	<e:Label id="nameTxt" size="20" text="name" strokeColor="0x111111" bottom="0" horizontalCenter="0" stroke="0" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+</e:Skin>

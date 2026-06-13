@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="limitChangeItemSkin" width="548" height="125" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  >
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0"   scale9Grid="65,27,1,2" source="kaifuhuodongitembg4_png"/>
+		<e:Group id="slimit" y="4" width="230">
+			<e:Image source="bantoutiaoboss" left="0" right="0" top="0" bottom="0" visible="false"/>
+			<e:Label id="limitchange0" text="今日全服可兑换次数：100" size="18" x="6" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		</e:Group>
+
+
+		<e:List id="reward" itemRendererSkinName="SkinItem2" x="30" y="10">
+			<e:layout>
+				<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:List>
+		<e:Group x="288" verticalCenter="0">
+			<e:Label text="消耗:" size="20" y="2" x="0" textColor="0x7c3416" fontFamily="Microsoft YaHei"/>
+			<e:Image x="90" y="0" source="szyuanbao" width="38" height="28"/>
+			<e:Label id="consnum" text="99999" size="20" y="2" x="116" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="limitchange1" text="可兑换：10/10" y="90" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" right="18"/>
+		<e:Button id="get" label="兑换" y="35" skinName="SkinBtn6" width="91" icon="friend_btnbg" height="50" right="11"/>
+		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" y="34" right="12" visible="false"/>
+
+
+
+
+
+	</e:Group>		
+</e:Skin>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinSelectMemberReward" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15c3ed136aa"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+
+	<e:Button id="closeBtn" label="按钮" x="407" y="620" skinName="SkinBtn0" visible="false"/>
+	<e:Group horizontalCenter="1.5" verticalCenter="-23.5" width="571" height="741">
+		<e:Image right="1" scale9Grid="34,20,1,1" source="tongyong_dikuang2" left="-1" top="15" bottom="17" x="-16" y="-89" scaleX="1" scaleY="1"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="24,0,443,17" top="0" x="-15" y="-104" scaleX="1" scaleY="1"/>
+		<e:Image height="555" source="tongyongbg5" width="512" horizontalCenter="0.5" verticalCenter="-18" scale9Grid="4,4,18,11" x="48" y="61" scaleX="1" scaleY="1"/>
+		<e:Image source="tongyong_titlebg" horizontalCenter="1" top="-17" width="281" scale9Grid="69,14,112,8" x="146" y="-121" scaleX="1" scaleY="1"/>
+		<e:Image source="tongyongbg14" horizontalCenter="0.5" y="32"/>
+		<e:Label text="奖励分配" size="22" y="-5.5" horizontalCenter="0.5" textColor="0x084151" fontFamily="Microsoft YaHei"/>
+		<e:Label id="rankLabel" text="" size="20" y="39.5" horizontalCenter="5.5" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+
+		<e:Scroller width="499" height="540.67" y="80" horizontalCenter="0" anchorOffsetY="0" anchorOffsetX="0">
+			<e:List id="list" itemRendererSkinName="SkinSelectRewardItem" x="0">
+				<e:layout>
+					<e:VerticalLayout gap="1"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Button id="sendReward" label="分配奖励" skinName="SkinBtn1" horizontalCenter="2.5" bottom="30"/>
+		<e:Image source="bantoutiaobg" height="40" width="383" bottom="-26" horizontalCenter="-1" scale9Grid="44,5,310,30"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="-7.5" bottom="-13" textColor="0xFFFFFF" fontFamily="Microsoft YaHei"/>
+
+	</e:Group>	
+</e:Skin>

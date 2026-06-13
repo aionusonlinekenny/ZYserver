@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinFriendsAddWin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="948">
+	<e:Rect id="shadow" left="0" right="0" top="0" fillAlpha="0.6" bottom="0"/>
+	<e:Group id="anigroup" width="484" height="348" horizontalCenter="0" verticalCenter="-34">
+
+		<e:Image left="0" right="0" bottom="0" source="tongyong_dikuang2" scale9Grid="33,19,54,21" height="321" anchorOffsetY="0"/>
+		<e:Image height="23" y="16" source="tongyong_juanzhou" left="0" right="0"/>
+		<e:Image source="tongyong_titlebg" y="0" horizontalCenter="0"/>
+		<e:Image width="426" height="176" y="54" source="tongyong_dikuang1" scale9Grid="10,10,64,66" horizontalCenter="0"/>
+		<e:Label text="添加好友" size="22" y="14" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Button id="closeBtn0" label="按钮" x="335" y="218" skinName="SkinBtn0" visible="false"/>
+		<e:Group width="388" y="61" horizontalCenter="0" anchorOffsetX="0" anchorOffsetY="0" height="261">
+			<e:Button id="btn_add" label="添 加" y="198" horizontalCenter="0" skinName="SkinBtn3"/>
+			<e:Label text="请输入玩家昵称" size="20" y="68" fontFamily="Microsoft YaHei" textColor="0xffffff" x="33"/>
+			<e:Group x="178" y="61">
+				<e:Image width="173" height="36" source="shuzibg" scale9Grid="5,6,48,26"/>
+				<e:EditableText id="editText_name" size="18" textAlign="center" verticalAlign="middle" height="30" width="173" x="0" fontFamily="Microsoft YaHei" textColor="0xffff00" promptColor="0xabebff" y="2"/>
+			</e:Group>
+		</e:Group>
+		<e:Button id="closeBtn" label="Button" x="434" y="3" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+	</e:Group>
+</e:Skin>

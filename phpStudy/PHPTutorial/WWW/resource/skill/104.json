@@ -1,0 +1,18 @@
+[{"type":2,"effectId":"180","delay":20,"playSpeed":1,"moveSpeed":12000,"layer":1,"recoveryTime":1000,"customX":0,"customY":-210,"playCount":-1,"scaleX":0.8,"scaleY":0.8},
+ {"type":2,"effectId":"180","delay":40,"playSpeed":1,"moveSpeed":12000,"layer":1,"recoveryTime":1000,"customX":160,"customY":-150,"playCount":-1,"scaleX":0.8,"scaleY":0.8},
+ {"type":2,"effectId":"180","delay":60,"playSpeed":1,"moveSpeed":12000,"layer":1,"recoveryTime":1000,"customX":215,"customY":-33,"playCount":-1,"scaleX":0.8,"scaleY":0.8},
+ {"type":2,"effectId":"180","delay":80,"playSpeed":1,"moveSpeed":12000,"layer":1,"recoveryTime":1000,"customX":160,"customY":80,"playCount":-1,"scaleX":0.8,"scaleY":0.8},
+ {"type":2,"effectId":"180","delay":100,"playSpeed":1,"moveSpeed":12000,"layer":1,"recoveryTime":1000,"customX":0,"customY":140,"playCount":-1,"scaleX":0.8,"scaleY":0.8},
+ {"type":2,"effectId":"180","delay":120,"playSpeed":1,"moveSpeed":12000,"layer":1,"recoveryTime":1000,"customX":-160,"customY":80,"playCount":-1,"scaleX":0.8,"scaleY":0.8},
+ {"type":2,"effectId":"180","delay":140,"playSpeed":1,"moveSpeed":12000,"layer":1,"recoveryTime":1000,"customX":-215,"customY":-33,"playCount":-1,"scaleX":0.8,"scaleY":0.8},
+ {"type":2,"effectId":"180","delay":160,"playSpeed":1,"moveSpeed":12000,"layer":1,"recoveryTime":1000,"customX":-160,"customY":-150,"playCount":-1,"scaleX":0.8,"scaleY":0.8,"exEff":"102t"},
+{
+	"type": 99,
+	"delay": 400
+}, {
+	"type": 98,
+	"moveSpeed": 600
+}, {
+	"type": 97,
+	"moveSpeed": 600
+}]

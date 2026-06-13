@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinLiLianWin" xmlns:e="http://ns.egret.com/eui" width="600" height="948" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+    <e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+
+
+
+	<e:Group width="556" horizontalCenter="0" bottom="58">
+
+
+	</e:Group>
+	<e:ViewStack selectedIndex="3" horizontalCenter="0" width="600" id="viewStack" top="0" bottom="0" anchorOffsetY="0">
+		<ns1:NewLilianWindow name="境界" id="liLianPanel" skinName="SkinLiLian" height="728" width="600" horizontalCenter="0" verticalCenter="-57"/>
+		<!--<ns1:NewArtifactWin name="神器" id="artifactWin" skinName="SkinXinShenQi" height="728" width="600" horizontalCenter="0" verticalCenter="-57"/>-->
+		<ns1:XunzhangPanelView name="神职" id="xunzhangPanel" skinName="SkinXunzhangPanel" height="728" width="600" horizontalCenter="0" verticalCenter="-57" visible="false"/>
+		<ns1:IllustrationsWin id="bookPanel" skinName="SkinTujian" name="图鉴" height="728" width="600" horizontalCenter="0" verticalCenter="-57" visible="false"/>
+		<ns1:WeiWangPanelView id="WeiWang" name="威望" skinName="SkinWeiWang" width="600" horizontalCenter="0" height="728" verticalCenter="-57" visible="false"/>
+
+	</e:ViewStack>
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" currentState="nohead" horizontalCenter="0" top="0"/>
+	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="89" source="bantoumingkuang3_png"/>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0"
+	          bottom="98">
+		<e:layout>
+			<e:HorizontalLayout  gap="-3"/>
+		</e:layout>
+	</e:TabBar>
+	
+	<e:Group id="redPointGroup" horizontalCenter="43" touchEnabled="false" width="354" bottom="133">
+		<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" x="0" y="0"/>
+		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" x="118" y="0"/>
+		<e:Image id="redPoint2" touchEnabled="false" source="zjmhongdian" x="237" y="0"/>
+		<e:Image id="redPoint3" source="zjmhongdian" touchEnabled="false" x="357" y="0"/>
+		<!--<e:Image id="redPoint4" source="zjmhongdian" touchEnabled="false" x="367" y="10"/>-->
+		<e:layout>
+			<e:HorizontalLayout gap="98"/>
+		</e:layout>
+	</e:Group>
+
+
+	<e:Button id="help" icon="wenhao" skinName="SkinBtn0" label="按钮"  horizontalCenter="-269" scaleX="0.9" scaleY="0.9" y="3" visible="false"/>
+	<e:Image id="titleName" width="66" height="34" source="biaoti_tujian" horizontalCenter="-225" top="7"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46"  horizontalCenter="275"/>
+</e:Skin>

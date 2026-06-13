@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="SkinPunchEquipItem" minHeight="50" minWidth="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="1,2,3,4,5,6,7,8" >
+	<w:Config id="15a6a784557"/>
+	<e:Button id="addBtn" skinName="SkinBtn0" icon="tongyongadd" y.2="37" x.6="68" x.8="40" y.8="67" y.1="15" x.4="110" y="18"   x.2="78" x.3="133" y.3="42" x.7="18" y.7="40" y.6="111" x.5="40" y.5="90" y.4="80"  x.1="40" x="40" rotation.2="45" rotation.3="90" rotation.4="135" rotation.6="225" rotation.8="315"/>
+	<e:Image id="img" source="180_1_png" x="0" y="0" source.2="180_2_png" source.3="180_3_png" source.5="180_5_png" source.6="180_6_png" source.7="180_7_png" source.8="180_8_png" source.4="180_4_png" pixelHitTest="true"/>
+	<!--<e:Image id="quality" source="runequal5_1_png" x="0" y="0" source.2="runequal5_2_png" source.3="runequal5_3_png" source.5="runequal5_5_png" source.6="runequal5_6_png" source.7="runequal5_7_png" source.8="runequal5_8_png" source.4="runequal5_4_png" touchEnabled="false" pixelHitTest="true" visible="false"/>-->
+	<e:Image id="redPoint" y.2="58" x.6="32" x.8="62" y.8="32.5" source="zjmhongdian" y.1="10" x.2="90" x.4="70.5" y.4="93.7" y.6="69" y.5="121" x.3="120" x.7="13" x.1="68" y.3="74" x.5="35" y.7="35" x="66" y="15" visible.6="false"/>
+
+</e:Skin>

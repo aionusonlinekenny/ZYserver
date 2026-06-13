@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ringBossItemSkin" width="505" height="110" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15a59527d66"/>
+	<e:Image  left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="52,25,4,45"/>
+
+	<e:Label id="descLab" text="" x="186" y="62" size="20" verticalAlign="middle" textAlign="left" width="138" fontFamily="Microsoft JhengHei" textColor="0xffffff"/>
+	<e:Label text="需积分" x="114" y="62" size="20" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="nameLab" text="装备名字" x="114" y="24" size="20" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+
+	<ns1:ItemBase id="itemIcon0" x="18" verticalCenter="0" scaleX="1" scaleY="1" skinName="SkinItem"/>
+
+	<e:Group y="15" horizontalCenter="153.5">
+		<e:Button id="goBtn" label="兑换" skinName="SkinBtn1" width="158" height="59" y="0" horizontalCenter="0"/>
+		<e:Label id="count" text="剩余300份" y="62" size="20" width="100" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x00842c" horizontalCenter="0"/>
+
+	</e:Group>
+	<e:Image id="redPoint" source="zjmhongdian" y="14" x="465"/>
+</e:Skin>

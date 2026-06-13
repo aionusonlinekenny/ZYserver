@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinLYRSkillItem" currentState="unlearn" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:PriceIcon="PriceIcon.*" xmlns:ns1="*"  width="201" height="92" states="learn,unlearn,lock"  height.learn="92" width.learn="201" width.unlearn="201" height.unlearn="92" width.lock="201" height.lock="92">
+	<w:Config id="15a177a4c02"/>
+	<e:Image source="jnmb" horizontalCenter="0" verticalCenter="0"/>
+
+
+	<e:Image y.learn="8" x.learn="6.02" x.unlearn="6.02" y.unlearn="8" x.lock="6.02" y.lock="8" width="76" height="76" scale9Grid="8,8,48,48" source="jinengkuang" left="11" verticalCenter="2"/>
+	<e:Label id="skillName" text="初级威能" size="20" y.learn="18.99" x.learn="85.32" x.unlearn="85.69" y.unlearn="18.99" text.unlearn="未学习" x.lock="85.69" y.lock="18.99" text.lock="多少解锁" textColor="0x0038ab" fontFamily="Microsoft YaHei" horizontalCenter="31" verticalCenter="-14" horizontalCenter.unlearn="20.5" verticalCenter.unlearn="0" textColor.unlearn="0x001828"/>
+	<e:Image id="skillImg" width="68" height="68" source="ability_1N" source.lock="suowen" width.lock="31" x.learn="13.02" width.learn="68" height.learn="68" x.unlearn="22.02" height.lock="32" source.unlearn="tongyongadd3" width.unlearn="44" height.unlearn="43" y.learn="15" y.unlearn="24" y.lock="30" x.lock="29" left="15" verticalCenter="2" left.unlearn="27" verticalCenter.unlearn="2.5" left.lock="34" verticalCenter.lock="5"/>
+	<ns1:PriceIcon id="price" skinName="SkinPriceIcon" includeIn="lock" horizontalCenter="29.5" verticalCenter="22"/>
+	<e:Label id="skillLv" text="Lv.100" size="22" includeIn="learn" textColor="0x00842c" fontFamily="Microsoft YaHei" horizontalCenter="21.5" verticalCenter="24"/>
+	<e:Image id="select" visible.unlearn="false" visible.lock="false" visible.learn="false" touchEnabled="false" source="xuanzekuang5" scale9Grid="16,9,40,30" width="206" height="98" horizontalCenter="0" verticalCenter="1"/>
+	<e:Image id="redpoint" source="zjmhongdian" horizontalCenter="92.5" visible.lock="false" x.unlearn="178" top="0"/>
+
+
+
+
+</e:Skin>

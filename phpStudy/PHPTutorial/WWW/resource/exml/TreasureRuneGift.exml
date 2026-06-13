@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="TreasureRuneGift" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" height="436" width="308">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group id="anigroup"  horizontalCenter="0" verticalCenter="-52" width="307" height="330">
+		<e:Image scale9Grid="18,14,12,20" horizontalCenter="0" top="0" left="0" bottom="0" right="0" source="tongyongtip1"/>
+		<e:Image scale9Grid="6,6,15,508" horizontalCenter="0" top="1" left="1" bottom="1" right="1" source="quali4"/>
+		<e:Label y="13" text="累计购买额外奖励" size="24" horizontalCenter="0" x="144"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="already" text="已领取" textColor="0x00ff00" size="18" horizontalCenter="0" x="213" top="298" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:List id="gift" horizontalCenter="0" itemRendererSkinName="SkinItem2" width="79" height="106" top="100">
+			<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:List>
+		<e:Group horizontalCenter="0.5" x="153"   top="266">
+			<e:Label y="2" text="你已累计购买" size="20" horizontalCenter="0" x="63"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="num0" y="12" text="40" size="20" horizontalCenter="0" x="73"   textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label y="12" text="次" size="20" horizontalCenter="0" x="73"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+			<e:HorizontalLayout/>
+			</e:layout>
+		</e:Group>
+		<e:Image width="307" horizontalCenter="0" x="0" top="255" source="tongyongline" height="2"/>
+		<e:Group id="more" horizontalCenter="0.5" x="103" bottom="14">
+			<e:Label id="num2" y="2" text="再购买" size="20" horizontalCenter="0" x="63"   textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="num1" y="12" text="40" size="20" horizontalCenter="0" textColor="0x00FF00" x="73"   fontFamily="Microsoft YaHei"/>
+			<e:Label id="num3" y="12" text="次即可获取以下奖励" size="20" horizontalCenter="0" x="73"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+			<e:HorizontalLayout/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+	<e:Group width="307" height="34" horizontalCenter="0" verticalCenter="141">
+		<e:Image scale9Grid="6,6,15,508" source="bantoutiaobg" height="34" verticalCenter="0" horizontalCenter="0" width="307"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0" x="58" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="-1"/>
+	</e:Group>
+</e:Skin>

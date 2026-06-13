@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildWarReward" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Image id="title" top="0" horizontalCenter="0" source="" visible="false"/>
+	<e:ViewStack id="viewStack" width="600" selectedIndex="1" horizontalCenter="0" top="0" bottom="0">
+		<!--<ns1:BaseComponent width="562" height="730" x="0" y="0" skinName="SkinPersonInteReward"/>
+		<ns1:BaseComponent width="562" height="730" x="0" y="0" skinName="SkinGuildInteReward" visible="false"/>
+		<ns1:BaseComponent width="562" height="730" x="0" y="0" skinName="SkinGuildInteRank" visible="false"/>
+		<ns1:BaseComponent width="562" height="730" x="0" y="0" skinName="SkinPersonalInteRank" visible="false"/>-->
+	</e:ViewStack>
+	<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="258" verticalCenter="-439"/>
+	<e:Button id="closeBtn" label="按钮" x="399" y="618" skinName="SkinBtn0" visible="false"/>
+	<e:Image width="593" height="63" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="107"/>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" selectedIndex="0" horizontalCenter="0" bottom="115" height="48">
+	<e:layout>
+			<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+	</e:TabBar>
+	<e:Image x="0" y="0" source="hanghuipm_png" alpha="0.7" visible="false"/>
+		
+</e:Skin>

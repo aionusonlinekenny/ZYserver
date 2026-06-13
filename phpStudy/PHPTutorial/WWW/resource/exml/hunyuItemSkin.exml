@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinhunyuItem" width="93" height="96" currentState="up" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image id="iconBg"  width="93" height="96" horizontalCenter="0" verticalCenter="0" source="hunyuHole_png"/>
+	<e:Image id="select" touchEnabled="false"  width="93" height="96" horizontalCenter="0" verticalCenter="0" source="quanLiang_png" visible="false"/>
+	<e:Image id="lock" source="touxianglock" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="icon"  anchorOffsetX="0" anchorOffsetY="0" source="321101_png" width="70" height="70" horizontalCenter="0" verticalCenter="0" visible="false"/>
+
+
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="29" verticalCenter="-37" visible="false"/>
+</e:Skin>

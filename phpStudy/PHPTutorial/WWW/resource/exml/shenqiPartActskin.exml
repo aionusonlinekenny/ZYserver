@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinshenqiPartAct" width="347" height="629" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<e:Rect id="rect" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" width="307" height="476" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="bg0" touchEnabled="true" source="tongyongtip1" left="0" right="0" top="0" bottom="0" scale9Grid="8,6,46,56"/>
+		<e:Image source="tongyongtip2" scale9Grid="18,18,4,4" left="0" right="0" top="-1" bottom="-0.5"/>
+		<e:Image id="namebg0" height="231" left="0" right="0" anchorOffsetY="0" scale9Grid="7,6,13,499" source="quali3_png"/>
+		<e:Label id="labelName" text="" size="28" y="10" textColor="0xC41200" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
+		<e:Image id="departline0" source="tongyongline" left="8" right="8" bottom="73" height="1.5"/>
+		<e:Group y="332" left="18">
+			<e:Label id="tipsDes2" text="收集饰品可获得大量属性" size="20" y="27" textAlign="left" verticalAlign="top" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="labelInfo" text="" size="20" y="0" textAlign="left" verticalAlign="top" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		</e:Group>
+		<e:Image id="imgArtifact" y="50" source="sq_11_png" width="100" height="100" horizontalCenter="0.5"/>
+		<e:Button id="btnOpen" label="激 活" horizontalCenter="-0.5" bottom="16" width="118" height="51" icon="btn2_2" scaleX="0.8" scaleY="0.8" skinName="SkinBtn6"/>
+		<e:List id="list" width="76" height="100" y="217.38" itemRendererSkinName="SkinshenQiAttrDesc" anchorOffsetX="0" horizontalCenter="-96.5">
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:List>
+		<e:Image height="34" width="307" x="0" top="489" source="bantoutiaobg" scale9Grid="0,6,383,25"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" y="495" textAlign="left" verticalAlign="top" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" horizontalCenter="0.5"/>
+		<e:Image y="158" width="302" horizontalCenter="0.5" anchorOffsetY="0" height="45" alpha="0.8" source="bantoutiaobg8" scale9Grid="145,5,44,31"/>
+		<ns1:PowerPanel id="powerPanel" y="149" skinName="Skin2PowerPanel" horizontalCenter="17.5"/>
+	</e:Group>
+</e:Skin>

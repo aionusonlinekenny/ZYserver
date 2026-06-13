@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinZhanglingUpTips" width="383" height="380" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" width="380" verticalCenter="-30" horizontalCenter="0">
+		<e:Image id="BG" top="0" bottom="0" left="0" right="0" scale9Grid="11,10,9,10" source="tongyongtip1"/>
+		<e:Image source="tongyongtip2" left="0" right="0" top="0" scale9Grid="18,18,2,4" bottom="0"/>
+		<e:Label id="nameLabel" text="法宝资质丹" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="20" top="20"/>
+		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" left="20" top="52"/>
+		<e:Label id="num" text="9" size="20" x="180" y="90" bold="true" textColor="0xFFD9B5" visible="false"/>
+		<e:Label text="当前使用：" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="100" top="66"/>
+		<e:Label id="use" text="" size="20" fontFamily="Microsoft YaHei" left="200" top="66" textColor="0xffffff"/>
+		<e:Group id="info" left="100" top="100">
+			<e:Label text="（法宝达到" size="16" x="0" y="0" textColor="0xFF0000" fontFamily="Microsoft YaHei"/>
+			<e:Label id="num0" text="100阶10星" size="16" x="60" y="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="增加使用上限）" size="16" x="10" y="10" textColor="0xFF0000" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:Group>
+		<e:Image width="340" horizontalCenter="0" height="1" top="136" source="tongyongline" scale9Grid="153,0,4,1"/>
+		<e:Label text="使用后法宝属性：" size="18" width="320" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="20" top="149"/>
+		<e:Label id="attr" text="" size="18" width="320" lineSpacing="7" top="175" bottom="51" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="20" anchorOffsetY="0" verticalAlign="top" height="113"/>
+		<e:Group bottom="20" left="20">
+			<e:Label text="可在" size="18" y="0" textAlign="left" x="81" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label text="法宝" size="18" y="10" textAlign="left" x="81" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="界面使用为法宝提升属性" size="18" y="20" textAlign="left" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" x="100" scaleX="1" scaleY="1" height="30" bottom="-40">
+		<e:Image source="bantoutiaobg" height="35" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="1"/>
+		<e:Button id="closeBtn2" label="按钮" y="-17" skinName="SkinBtn0" right="9" x="188" visible="false"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

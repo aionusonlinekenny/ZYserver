@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinItem2" width="74" height="106" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586b362dfe"/>
+	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon"  x="0" y="0"/> 
+	<e:Image id="bless" source="" y="41" x="38" visible="false"/>
+
+	<e:Label id="count" size="16" y="56" text="" stroke="1" strokeColor="0x232323" fontFamily="Microsoft YaHei" textAlign="right" width="68" textColor="0xffffff" x="3"/>
+	<e:Label id="nameTxt" size="16" textAlign="center" text="" strokeColor="0x111111" fontFamily="Microsoft YaHei"  stroke="0" textColor="0xffffff" anchorOffsetX="0" width="93" verticalAlign="top" height="32" anchorOffsetY="0" y="80" x="-9"/>
+	<e:Group id="redPoint" x="57" y="0" visible="false">
+		<e:Image source="zjmhongdian"/>
+	</e:Group>
+	<e:Image id="getImg" source="yilingqu" rotation="0" y="22" width="90" x="-7" visible="false"/>
+	<e:Image id="selectFrame" source="xuanzekuang3" scale9Grid="20,20,5,5" width="90" height="90"  x="-8" y="-9" visible="false"/>
+	<!--<ns1:BaseComponent id="tongIcon" skinName="SkinRuneItem" horizontalCenter="1" verticalCenter="-3" visible="false"/>-->
+</e:Skin>

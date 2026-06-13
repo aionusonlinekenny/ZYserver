@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="weaponSoulUse" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15dc1d89cd5"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
+	<e:Group id="anigroup" horizontalCenter="0" height="510" width="485" anchorOffsetY="0" verticalCenter="87">
+		<e:Image source="tongyong_dikuang2" scale9Grid="46,6,31,38" width="485" horizontalCenter="0" height="478" anchorOffsetY="0" y="28"/>
+		<e:Image width="485" source="tongyong_juanzhou" height="23" y="16" x="0"/>
+		<e:Image horizontalCenter="0" anchorOffsetY="0" height="178" source="tongyong_dikuang1" width="415" scale9Grid="10,6,60,42" y="52"/>
+		<e:Image width="259" height="41" y="-2" source="tongyong_titlebg" horizontalCenter="0"/>
+		<e:Image width="370" height="20" x="60" y="181" source="diwen6"/>
+		<e:Label id="title" text="请选择使用角色" size="20" y="12" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x084151" horizontalCenter="0"/>
+		<e:Group id="tupo" width="417" height="178" horizontalCenter="-1" anchorOffsetX="0" y="238">
+			<e:Image left="0" right="0" height="178" y="0" scale9Grid="5,4,14,12" source="tongyong_dikuang4"/>
+			<e:Group horizontalCenter="-65" anchorOffsetY="0" height="154" anchorOffsetX="0" width="253" y="10">
+				<e:Group id="g0" y="20" x="11">
+					<e:Label text="使用数量" size="20" x="40" y="50" textColor="0x001838" fontFamily="Microsoft YaHei"/>
+					<e:Label id="curUse" text="" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Image id="dir" x="48" y="2" rotation="0" source="tongyongup"/>
+					<e:Label id="nextUse" text="" size="20" textAlign="center" x="52" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+					<e:layout>
+					<e:HorizontalLayout verticalAlign="middle" gap="10" paddingLeft="0"/>
+					</e:layout>
+				</e:Group>
+				<e:Group id="g1" y="60" x="11">
+					<e:Label id="name0" text="" size="20" x="40" y="100" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Label id="tpattr0" text="" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Image id="dir0" x="65" y="3.5" rotation="0" source="tongyongup"/>
+					<e:Label id="ntpattr0" text="" size="20" textAlign="center" x="75" y="1" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+					<e:layout>
+					<e:HorizontalLayout verticalAlign="middle" gap="10"/>
+					</e:layout>
+				</e:Group>
+				<e:Group id="g2" y="70" x="21">
+					<e:Label id="name1" text="" size="20" x="40" y="100" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Label id="tpattr1" text="" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Image id="dir1" x="65" y="3.5" rotation="0" source="tongyongup"/>
+					<e:Label id="ntpattr1" text="" size="20" textAlign="center" x="75" y="1" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+					<e:layout>
+					<e:HorizontalLayout verticalAlign="middle" gap="10"/>
+					</e:layout>
+				</e:Group>
+				<e:Group id="g3" y="80" x="31">
+					<e:Label id="name2" text="" size="20" x="40" y="100" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Label id="tpattr2" text="" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Image id="dir2" x="65" y="3.5" rotation="0" source="tongyongup"/>
+					<e:Label id="ntpattr2" text="" size="20" textAlign="center" x="75" y="1" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+					<e:layout>
+					<e:HorizontalLayout verticalAlign="middle" gap="10"/>
+					</e:layout>
+				</e:Group>
+				<e:Group id="g4" y="90" x="41">
+					<e:Label id="name3" text="" size="20" x="40" y="100" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Label id="tpattr3" text="" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+					<e:Image id="dir3" x="65" y="3.5" rotation="0" source="tongyongup"/>
+					<e:Label id="ntpattr3" text="" size="20" textAlign="center" x="75" y="1" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+					<e:layout>
+					<e:HorizontalLayout verticalAlign="middle" gap="10"/>
+					</e:layout>
+				</e:Group>
+				<e:layout>
+				<e:VerticalLayout horizontalAlign="left" gap="13"/>
+				</e:layout>
+			</e:Group>
+		<ns1:ItemBase id="material" skinName="SkinItem" y="42" x="300"/>
+		</e:Group>
+		<e:Button id="btntupo" label="使  用" horizontalCenter="0" width="176" height="69" y="428" icon="btn2_2" skinName="SkinBtn6"/>
+		<e:Group id="headGroup" width="394" anchorOffsetY="0" height="149" y="44" x="48">
+			<e:Image id="selectrole3" x="280" source="zijiantou" y="-10"/>
+			<e:Image id="selectrole2" source="zijiantou" y="-10" x="175"/>
+			<e:Image id="selectrole1" x="67" source="zijiantou" y="-10"/>
+			<e:ToggleButton id="role3" skinName="SkinRoleToggleBtn" icon="yuanhead20" x="258" bottom="0"/>
+			<e:ToggleButton id="role2" skinName="SkinRoleToggleBtn" icon="yuanhead20" x="152" bottom="0"/>
+			<e:ToggleButton id="role1" skinName="SkinRoleToggleBtn" icon="yuanhead20" x="46" bottom="0"/>
+		</e:Group>
+		<e:Button id="closeBtn" label="Button" x="439" y="0" icon="tongyong_btnclose" width="54" skinName="SkinBtn0"/>
+	</e:Group>
+</e:Skin>

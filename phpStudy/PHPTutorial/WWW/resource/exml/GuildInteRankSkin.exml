@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildInteRank" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="600" height="948">
+
+
+
+	<e:Group width="560" height="774"  horizontalCenter="0" verticalCenter="-73">
+		<e:Image width="560" scale9Grid="34,20,1,1" source="tongyong_dikuang2" height="751"   horizontalCenter="0" verticalCenter="0"/>
+		<e:Image width="563" source="tongyong_juanzhou" height="23"   horizontalCenter="0" verticalCenter="-365.965" scale9Grid="238,0,19,16"/>
+		<e:Image scaleX="-1" source="tongyongbg5" width="502" height="713" scale9Grid="13,9,1,1" scaleY="1" horizontalCenter="0" verticalCenter="11.5" anchorOffsetY="0"/>
+		<e:Image source="tongyong_titlebg" width="281" scale9Grid="108,16,37,20"   horizontalCenter="0" top="-7"/>
+
+		<e:Label id="lastName" text="上届排行" size="22" fontFamily="Microsoft YaHei"   horizontalCenter="0" top="7" textColor="0x084151"/>
+		<e:Group width="496" height="145"   horizontalCenter="0" top="45">
+			<e:Image source="leibiefengetou" left="0" right="0" scale9Grid="2,0,5,48" top="0" bottom="0"/>
+			<e:Image source="shangjiepaiming_bg_png" alpha="1"   anchorOffsetX="0" left="1" right="-1" y="0"/>
+			<e:Label text="积分" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" bottom="12" horizontalCenter="198"/>
+			<e:Label text="名次" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-197" bottom="12"/>
+			<e:Label text="盟主" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="70" bottom="12"/>
+			<e:Label text="仙盟" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-78" bottom="12"/>
+			<e:Image source="leibeifengexian" horizontalCenter="144" bottom="2"/>
+			<e:Image source="leibeifengexian" horizontalCenter="-148" bottom="2"/>
+			<e:Image source="leibeifengexian" horizontalCenter="-7" bottom="2"/>
+			<e:Label id="guildName" text="999" size="26" textColor="0xffff00" fontFamily="Microsoft YaHei"   anchorOffsetX="0" textAlign="center" width="460" verticalCenter="-15.5" horizontalCenter="4"/>
+			<e:Label id="infoDesc" height="28" text="一个字，干！" size="18" textAlign="left" verticalAlign="justify" horizontalCenter="5" width="324" anchorOffsetY="0" x="92"   verticalCenter="10.5" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+			<e:Image source="war_result_title" horizontalCenter="0" top="14"/>
+		</e:Group>
+		<e:Scroller width="493" height="560" horizontalCenter="0" x="25"   bottom="27" anchorOffsetY="0">
+			<e:List id="list" itemRendererSkinName="SkinGuildInteRankItem" y="36">
+			<e:layout>
+				<e:VerticalLayout horizontalAlign="center" paddingTop="4" gap="3"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+
+	</e:Group>
+
+
+
+
+
+
+	<e:Label id="lastNameJie" text="仙宫占领仙盟" size="20" textAlign="center" verticalAlign="middle" horizontalCenter="0" y="55" bold="true" textColor="0x7e6437" visible="false"/>
+
+
+
+	
+
+
+</e:Skin>

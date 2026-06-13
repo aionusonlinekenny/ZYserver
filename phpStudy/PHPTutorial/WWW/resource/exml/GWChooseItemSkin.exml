@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGWChooseItem" width="450" height="142" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
+
+	<e:Image y="110" source="tongyongline" width="350" x="56" height="2"/>
+	<e:Label id="nameTxt" text="" y="90" size="18" horizontalCenter="-170" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="power" text="" size="20" y="11" x="288" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+
+
+
+	<e:Label id="attr" text="" y="34" size="18" width="150" x="106" verticalAlign="middle" height="72"  fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="skill" text="" y="12" size="20" x="103" verticalAlign="middle" bold="true" textColor="0xf8b141" width="220" height="20" textAlign="left"/>
+	<e:Button id="changeBtn" skinName="SkinBtn1" label="更 换" y="38" name="changeBtn" x="286" width="140"/>
+	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" y="10" horizontalCenter="-171"/>
+	<e:Image id="best" y="0" touchEnabled="false" source="tuijian2" rotation="90" x="453" visible="false"/>
+
+
+
+	<e:Group id="now" x="453" y="0" anchorOffsetX="0" width="83" rotation="90" scaleX="0.8" scaleY="0.8" visible="false">
+		<e:Image source="xiejiaotiao" scale9Grid="20,2,2,15" rotation="0" width="83" scaleX="1" scaleY="1" x="0" y="0"/>
+
+	</e:Group>
+	<e:Label id="addNameLb" text="" y="116" size="18" horizontalCenter="0" textColor="0x00842c" fontFamily="Microsoft YaHei"/>
+	<e:Label text="圣物品级：" x="106" y="11" size="18" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="quality" text="" x="193" y="11" size="18" fontFamily="Microsoft YaHei"/>
+</e:Skin>

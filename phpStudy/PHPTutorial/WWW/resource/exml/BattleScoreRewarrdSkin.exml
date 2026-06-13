@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinBattleScoreRewarrd" width="512" height="625" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image scale9Grid="10,5,28,31" left="0" right="0" height="435" top="0" source="tongyong_dikuang4"/>
+	<e:Image source="personrankreward_png" y="10" horizontalCenter="0"/>
+	<e:Image source="tongyong_dikuang4" scale9Grid="10,5,28,31" left="0" right="0" height="155" top="444"/>
+	<e:Image y="456" horizontalCenter="0" source="scoregetreward_png"/>
+	<e:Scroller x="0" height="387" y="41" scrollPolicyH="off" width="510">
+		<e:List id="list0" x="-3" y="30" itemRendererSkinName="SkinBattleRewarrdItem">
+		<e:layout>
+			<e:VerticalLayout paddingLeft="8" paddingRight="8" gap="2"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Scroller left="10" right="10" scrollPolicyV="off" anchorOffsetY="0" top="483" height="106">
+		<e:List id="list1" x="0" y="17" itemRendererSkinName="SkinBattleTargetItem" anchorOffsetY="0">
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="20" paddingLeft="24"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+</e:Skin>

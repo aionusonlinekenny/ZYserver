@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinPeakedNessResult" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="container" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="bg" height="788" source="tongyong_bgsuc" width="600" y="0" horizontalCenter="0"/>
+		<e:Image id="result" horizontalCenter="28" source="labwin_png" y="6"/>
+		<e:Image id="resultImg" y="267.95" horizontalCenter="-13.5" source="peakness_win_png"/>
+		<e:Group id="win" y="577.96" horizontalCenter="0">
+			<e:Label text="成功击败对手：" y="0" fontFamily="Microsoft YaHei" size="20" lineSpacing="10" x="0" textColor="0xffffff"/>
+			<e:Label id="winPlayer" text="布拉格の白炽[s101]" y="0" fontFamily="Microsoft YaHei" size="20" x="230" textColor="0x00ff00"/>
+			<e:layout>
+				<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="lose" y="579.96" horizontalCenter="0" visible="false">
+			<e:Label text="您被玩家" y="0" fontFamily="Microsoft YaHei" size="20" lineSpacing="10" x="0" textColor="0xff0000"/>
+			<e:Label id="losePlayer" text="布拉格の白炽[s101]" y="0" fontFamily="Microsoft YaHei" size="20" x="230" textColor="0x00ff00"/>
+			<e:Label text="击败" y="30" fontFamily="Microsoft YaHei" size="20" x="233" textColor="0xff0000"/>
+			<e:layout>
+				<e:HorizontalLayout/>
+			</e:layout>
+		</e:Group>
+		<e:Button id="quitBtn" label="退出(10s)" skinName="SkinBtn1" width="160" horizontalCenter="0" y="643"/>
+	</e:Group>
+</e:Skin>

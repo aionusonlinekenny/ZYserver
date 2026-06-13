@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinBattleTargetItem" width="89" height="97" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Label id="rank" text="1000积分" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" width="87" height="20" horizontalCenter="0" y="77"/>
+	<ns1:ItemBase id="award" skinName="SkinItem" top="0" horizontalCenter="0"/>
+	<e:Image id="already" source="yilingqu" y="0" rotation="45" touchEnabled="false" horizontalCenter="0"/>
+</e:Skin>

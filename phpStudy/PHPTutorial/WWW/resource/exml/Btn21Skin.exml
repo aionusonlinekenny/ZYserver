@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBtn21" states="up,down"
+        currentState="up" xmlns:e="http://ns.egret.com/eui"  width="94" height="39" width.down="94" height.down="39">
+	<e:Image scale9Grid.down="16,0,54,40" scale9Grid.up="18,0,51,40" source="btn_middle_light" source.up="btn_middle_light" horizontalCenter.up="0" verticalCenter.up="0" verticalCenter.down="0" horizontalCenter.down="0" scaleX.down="0.9" scaleY.down="0.9" horizontalCenter="0" verticalCenter="0" source.down="btn_middle_light"/>
+	<e:Label size="20" text="按钮" id="labelDisplay" x.down="1" y.down="1" verticalCenter="0" verticalCenter.down="0" size.down="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x7e2a00" textColor.up="0x7e2a00" textColor.down="0x7e2a00" horizontalCenter.down="0" scaleX.down="1" scaleY.down="1"/>
+</e:Skin>

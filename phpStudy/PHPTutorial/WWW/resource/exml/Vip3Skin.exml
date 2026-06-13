@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Skin3Vip" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15d3ae5b08d"/>
+
+	<e:Image horizontalCenter="0" scale9Grid="30,22,1,1" source="vipbg_png" top="0" bottom="0"/>
+	<ns1:RoleSelectPanel id="roleSelect" horizontalCenter="0" currentState="nohead" top="0" skinName="SkinRoleSelectPanel"/>
+	<e:Image horizontalCenter="0.5" source="vipbg4_png" width="563" height="737" scale9Grid="26,22,20,16" verticalCenter="1.5"/>
+	<e:Image horizontalCenter="0" source="vip3bg_png" verticalCenter="-170.5"/>
+
+	<e:Image source="vip3txt0_png" horizontalCenter="0" verticalCenter="-342"/>
+	<e:Image source="shang_2_png" horizontalCenter="-130" verticalCenter="-412.5" touchEnabled="false"/>
+	<e:Image source="biaoti_lingqumb_png" verticalCenter="-407" horizontalCenter="-156.5" touchEnabled="false"/>
+	<e:Image id="libaobg" verticalCenter="-136" horizontalCenter="0" source="viplibaobg_png"/>
+	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="-38"/>
+	<e:Label text="极品效果：攻击时有几率定身目标      ，　　　　　使目标无法攻击、移动。" size="20" lineSpacing="10" horizontalCenter="0.5" width="370" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle" verticalCenter="12"/>
+	<e:Label text="2秒" size="20" lineSpacing="10" horizontalCenter="136" fontFamily="Microsoft YaHei" textColor="0x76ff00" textAlign="right" verticalCenter="-3"/>
+	<e:Group id="mcGroup" horizontalCenter="0" verticalCenter="-150"/>
+	<e:Group horizontalCenter="0" verticalCenter="150">
+		<e:Image source="vip3bg2_png" scale9Grid="0,39,0,16" top="0" bottom="0" left="0" right="0" height="220"/>
+	</e:Group>
+
+	<e:Group verticalCenter="161" horizontalCenter="-188" width="191" height="195">
+		<ns1:ItemBase id="gift0" skinName="SkinItem2" top="10" horizontalCenter="0"/>
+		<e:Label id="at0" text="" size="18" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="50" verticalCenter="23.5"/>
+		<e:Label id="att0" text="" size="18"  textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="50" verticalCenter="46.5"/>
+		<ns1:PowerPanel id="power0"  skinName="Skin3PowerPanel" bottom="-10" left="0"/>
+	</e:Group>
+	<e:Group horizontalCenter="0" verticalCenter="160.5" width="191" height="195">
+		<ns1:ItemBase id="gift1" horizontalCenter="0" top="10" skinName="SkinItem2"/>
+		<e:Label id="at1" text="" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" left="50" verticalCenter="23.5"/>
+		<e:Label id="att1" text="" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff" left="50" verticalCenter="46.5"/>
+		<ns1:PowerPanel id="power1" skinName="Skin3PowerPanel" bottom="-10"  left="0"/>		
+	</e:Group>
+	<e:Group verticalCenter="161.5" width="182" height="195" anchorOffsetX="0" horizontalCenter="187">
+		<ns1:ItemBase id="gift2" skinName="SkinItem2" horizontalCenter="0" top="10"/>
+		<e:Label id="at2" text="" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="23.5" left="50"/>
+		<e:Label id="att2" text="" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff" left="50" verticalCenter="46.5"/>
+		<ns1:PowerPanel id="power2" skinName="Skin3PowerPanel" bottom="-10"  left="0"/>		
+	</e:Group>
+	<e:Group horizontalCenter="0" verticalCenter="283">
+		<e:Label text="累计充值" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="100元" size="20" x="10" y="10" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label text="成为VIP3，马上获得！" size="20" x="20" y="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:layout>
+		<e:HorizontalLayout gap="6"/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="pay" label="领取" horizontalCenter="0" icon="btn1_2" verticalCenter="333.5" width="209" height="63" skinName="SkinBtn6"/>
+	<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" icon="chatclose"  top="44" horizontalCenter="273"/>
+</e:Skin>

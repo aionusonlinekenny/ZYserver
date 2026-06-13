@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinZaoYuQue" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="600" height="948">
+	<w:Config id="1586bde6cc9"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group id="anigroup" width="484" height="332" horizontalCenter="0" verticalCenter="-2">
+		<e:Image left="0" right="0" top="0" bottom="0" source="tongyong_dikuang2" scale9Grid="27,8,68,66"/>
+		<e:Image left="0" right="0" height="23" y="1" source="tongyong_juanzhou" scale9Grid="226,0,45,22"/>
+		<e:Image width="249" height="41" y="-15" horizontalCenter="0" source="tongyong_titlebg"/>
+		<e:Button id="btnBuy" label="确  定" horizontalCenter="90" skinName="SkinBtn6" y="255" icon="btn3"/>
+		<e:Button id="btnClose" label="取  消" horizontalCenter="-90" skinName="SkinBtn6" y="255" icon="btn3_1"/>
+		<e:Group horizontalCenter="0" y="109">
+			<e:Group y="0" horizontalCenter="0" x="0"  >
+				<e:Label text="当前PK值达到" y="0" size="20"   x="0"   fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="pkNow" text="" size="20" x="127" y="0" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+				<e:Label text="，是否消耗" y="0" size="20"   x="0"   fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Image x="306" y="48" source="szyuanbao" scaleX="0.9" scaleY="0.9"/>
+				<e:Label id="ybNum" text="" y="48"  size="20" x="338" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:layout>
+				<e:HorizontalLayout gap="0"/>
+				</e:layout>
+			</e:Group>
+			<e:Group x="1" y="32"  >
+				<e:Label text="减少" y="-2" size="20"   x="1"   fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="pkValue" text="25" y="8" size="20"   horizontalCenter="22" x="153"   fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:Label text="点PK值" y="8" size="20"   x="11"   fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label text="立即挑战" y="-2" size="20"   horizontalCenter="22" x="143"   fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:Label text="？" y="8" size="20"   x="11"   fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:layout>
+				<e:HorizontalLayout gap="0"/>
+				</e:layout>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="4" horizontalAlign="left" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Image width="419" height="206" y="37" source="tongyong_dikuang1" horizontalCenter="0" scale9Grid="10,10,64,66"/>
+		<e:Label text="挑战提示" y="-1" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+		<e:Button id="btnClose2" label="Button" x="437" y="-14" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ISCostWinSkin" width="560" height="670" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group left="0" top="0" bottom="0" right="0">
+		<e:Image source="tongyongmianbanbg" top="0" left="0" right="0" scale9Grid="23,22,1,1" bottom="45" width="560" x="0" y="0" scaleX="1" scaleY="1" visible="false"/>
+		<e:ViewStack id="viewStack" width="560" selectedIndex="1" horizontalCenter="0" x="0" scaleX="1" scaleY="1" anchorOffsetY="0" top="0" bottom="0">
+			<ns1:KfRankPanel id="ranking" left="0" right="0" top="0" bottom="0" skinName="ISCostRankSkin" name="排名"/>
+			<ns1:BaseView id="costTarget" skinName="OSATarget1" name="达标" className="OSATarget1Panel" top="0" bottom="0" left="0" right="0" visible="false"/>
+			<ns1:KfRankRewardPanel id="reward" left="0" right="0" top="0" bottom="0" skinName="ISCostRewardSkin" name="奖励" visible="false"/>
+		</e:ViewStack>
+		<e:Button id="rankingBtn" label="" x="62" y="138.5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+	<e:Image scale9Grid="60,15,6,9" y="0" x="0" source.up="sd_projecttitle2_png" source="sd_projecttitle2_png" source.down="sd_projecttitle1_png" source.disabled="sd_projecttitle1_png"/>
+	<e:Image id="redpoint" source="zjmhongdian" right="0" top="0" scaleX="0.8" scaleY="0.8" visible="false"/>
+	<e:Label id="tabName" text="排   名" fontFamily="Microsoft YaHei" size="22" horizontalCenter="0" verticalCenter="0" textColor="0xffffff" textColor.down="0x7e2a00" textColor.disabled="0x7e2a00"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="costTargetBtn" label="" x="207" y="138.5">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image scale9Grid="60,15,6,9" y="0" x="0" source.up="sd_projecttitle2_png" source="sd_projecttitle2_png" source.down="sd_projecttitle1_png" source.disabled="sd_projecttitle1_png"/>
+				<e:Image id="redpoint" source="zjmhongdian" right="0" top="0" scaleX="0.8" scaleY="0.8" visible="false"/>
+				<e:Label id="tabName" text="达   标" fontFamily="Microsoft YaHei" size="22" horizontalCenter="0" verticalCenter="0" textColor="0xffffff" textColor.down="0x7e2a00" textColor.disabled="0x7e2a00"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="rewardBtn" label="" x="352" y="138.5">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image scale9Grid="60,15,6,9" y="0" x="0" source.up="sd_projecttitle2_png" source="sd_projecttitle2_png" source.down="sd_projecttitle1_png" source.disabled="sd_projecttitle1_png"/>
+				<e:Image id="redpoint" source="zjmhongdian" right="0" top="0" scaleX="0.8" scaleY="0.8" visible="false"/>
+				<e:Label id="tabName" text="奖   励" fontFamily="Microsoft YaHei" size="22" horizontalCenter="0" verticalCenter="0" textColor="0xffffff" textColor.down="0x7e2a00" textColor.disabled="0x7e2a00"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="0" x="108" y="623" scaleX="1" scaleY="1" visible="false">
+			<e:layout>
+			<e:HorizontalLayout gap="-8"/>
+			</e:layout>
+		</e:TabBar>
+		<ns1:OSATarget19PanelAct1 id="target" x="399.00000000000006" skinName="ISCostTargetSkin" bottom="55" y="540" scaleX="1" scaleY="1" visible="false"/>
+		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" horizontalCenter="61.5" x="314" scaleX="1" scaleY="1" top="139" visible="false"/>
+	</e:Group>
+</e:Skin>

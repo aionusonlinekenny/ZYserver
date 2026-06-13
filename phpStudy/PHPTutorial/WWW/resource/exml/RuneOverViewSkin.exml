@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinRuneOverView" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="948" width="600" >
+	<w:Config id="1586b1c98a7"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" fillAlpha="0.6" bottom="0"/>
+	<e:Group width="575" horizontalCenter="0" height="828" y="30">
+		<e:Image   source="tongyong_dikuang2" scale9Grid="45,10,46,23" height="800" width="575" horizontalCenter="0" y="28"/>
+		<e:Image width="575" horizontalCenter="0" source="tongyong_juanzhou" scale9Grid="225,0,56,22" y="16"/>
+		<e:Image width="515" height="750" y="60" scaleX="1" scaleY="1" x="31" source="tongyong_dikuang4" scale9Grid="7,6,10,14"/>
+		<e:Image width="249" height="41" x="162" y="0" source="tongyong_titlebg"/>
+		<e:Label text="仙纹总览" size="22"   y="13" fontFamily="Microsoft YaHei" height="20" horizontalCenter="-3.5" textAlign="center" textColor="0x084151"/>
+		<ns1:RoleSelectPanel id="title" skinName="SkinRoleSelectPanel" width="580" horizontalCenter="0" currentState="nohead" x="0"   top="0" visible="false"/>
+		<e:Image source="biaoti_zhanwen" horizontalCenter="-155" x="84"   top="5" visible="false"/>
+		<e:Scroller id="scroller" width="515" height="735" horizontalCenter="1" top="68" anchorOffsetY="0">
+			<e:Group height="735" width="515">
+			<e:List id="nuneList" width="515" y="0" itemRendererSkinName="SkinRuneOverViewItem" horizontalCenter="0"/>
+			</e:Group>
+		</e:Scroller>
+		<e:Button id="closeBtn" label="Button" x="526" y="12" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+	</e:Group>
+</e:Skin>

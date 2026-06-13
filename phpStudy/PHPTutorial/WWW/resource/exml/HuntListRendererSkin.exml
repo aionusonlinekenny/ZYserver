@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinHuntListRenderer"  height="28" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Label id="showText" text="vip" size="20" wordWrap="true" verticalCenter="0" left="0" right="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	
+	
+	
+</e:Skin>

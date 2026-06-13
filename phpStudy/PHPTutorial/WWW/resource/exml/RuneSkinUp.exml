@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinRuneUp" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  width="600" height="728">
+	<e:Group id="showAct" top="0" width="600" height="735" horizontalCenter="0">
+
+		<e:Image width="590" horizontalCenter="0" height="615" x="0" y="6"   source="tongyong_dikuang4" scale9Grid="3,3,18,20" visible="false"/>
+		<e:Image width="493" height="497" horizontalCenter="0" x="88" y="74"   source="zhanwenbg_png"/>
+		<e:Group id="Rune" x="0" y="0" visible="false"/>
+		<e:Group id="info" horizontalCenter="0.5" y="525" anchorOffsetY="0">
+			<e:Image width="557" height="102" y="0" source="tongyong_dikuang4" scale9Grid="11,9,52,49" anchorOffsetY="0" horizontalCenter="0"/>
+			<e:Group height="96" horizontalCenter="0" y="0" width="520" anchorOffsetY="0">
+			<ns1:RuneDisplay id="rune8" x="30" skinName="SkinRuneItem" height="88" width="100" y="-2"/>
+			<e:Label id="nuneName" text="狂暴 lv.3" x="145" y="10" size="20" textColor="0xd242fb" fontFamily="Microsoft YaHei"/>
+			<e:Group x="145" y="38">
+				<e:Label id="addAttr" text="武器基础属性" x="17.5" size="18" y="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Image id="arrow" y="0" x="0" source="tongyongup"/>
+				<e:Label id="attrDesc" text="攻击力 +9999" x="262.5" size="18" y="21" fontFamily="Microsoft YaHei" textColor="0x00ff03"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="6"/>
+				</e:layout>
+			</e:Group>
+			</e:Group>
+		</e:Group>
+		<e:Group id="Runeitem" width="520" height="600" horizontalCenter="0" top="0">
+			<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" y="78" x="118"/>
+			<e:Image id="runeBook" y="82" source="tongyongxiangxi" x="378"/>
+			<e:Image id="linebg0" source="zwfwline1" x="143" y="191" width="90" scale9Grid="2,2,1,3" rotation="6" height="5"/>
+			<e:Image id="linebg1" source="zwfwline1" x="303" y="204" width="94" scale9Grid="2,2,1,3" height="5"/>
+			<e:Image id="linebg2" source="zwfwline1" x="426" y="244" width="97" rotation="105" scale9Grid="2,2,2,2" height="5"/>
+			<e:Image id="linebg3" source="zwfwline1" x="293" y="328" width="69" rotation="22" scale9Grid="2,2,2,2" height="5"/>
+			<e:Image id="linebg4" source="zwfwline1" x="154" y="306" width="70" scale9Grid="2,2,2,2" rotation="5" height="5"/>
+			<e:Image id="linebg5" x="128" y="335" width="49" scale9Grid="2,2,2,3" rotation="78" height="5" source="zwfwline1_png"/>
+			<e:Image id="linebg6" source="zwfwline1" x="181" y="427" width="55" rotation="22" scale9Grid="2,2,2,3" height="5"/>
+			<e:Image id="line0" x="142" y="188" width="92" source="jingmailine1" rotation="6" height="10" scale9Grid="1,4,11,2"/>
+			<e:Image id="line1" x="304" y="202" width="92" source="jingmailine1" height="10" scale9Grid="1,4,10,2" visible="false"/>
+			<e:Image id="line2" x="428" y="244" width="96" rotation="105" source="jingmailine1" height="10" scale9Grid="1,4,2,2" visible="false"/>
+			<e:Image id="line3" x="295" y="327" width="67" rotation="22" source="jingmailine1" scale9Grid="2,4,2,2" visible="false"/>
+			<e:Image id="line4" x="153" y="304" width="73" source="jingmailine1" rotation="5" scale9Grid="2,4,2,2" visible="false"/>
+			<e:Image id="line5" x="130" y="334" width="49" source="jingmailine1" rotation="78" scale9Grid="2,4,2,2" visible="false"/>
+			<e:Image id="line6" x="183" y="425" width="55" rotation="22." source="jingmailine1" scale9Grid="2,4,2,2" visible="false"/>
+			<ns1:RuneDisplay id="rune0" y="144" skinName="SkinRuneItem" x="56"/>
+			<ns1:RuneDisplay id="rune1" y="162" skinName="SkinRuneItem" x="216"/>
+			<ns1:RuneDisplay id="rune2" y="162" skinName="SkinRuneItem" x="382"/>
+			<ns1:RuneDisplay id="rune3" y="323" skinName="SkinRuneItem" x="338"/>
+			<ns1:RuneDisplay id="rune4" y="272" skinName="SkinRuneItem" horizontalCenter="-1"/>
+			<ns1:RuneDisplay id="rune5" y="253" skinName="SkinRuneItem" x="68"/>
+			<ns1:RuneDisplay id="rune6" y="370" skinName="SkinRuneItem" x="97"/>
+			<ns1:RuneDisplay id="rune7" y="410" skinName="SkinRuneItem" horizontalCenter="6"/>
+			<e:Label id="levelsay" text="通过X层开启下一凹槽" x="169.33" y="529.57" visible="false"/>
+			<e:Image id="bookBtn" source="zhanwenjiacheng" y="21" x="-17"/>
+		</e:Group>
+
+		<e:Group id="up" width="590" height="109" bottom="4" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0">
+
+
+
+
+
+
+			<e:Button id="replace" label="替 换" width="213" height="67" scaleX="1" scaleY="1" skinName="SkinBtn2" horizontalCenter="-140" bottom="4"/>
+			<e:Button id="uplevel" label="升 级" width="213" height="67" scaleX="1" scaleY="1" skinName="SkinBtn7" icon="btn1_2" horizontalCenter="130" bottom="4"/>
+			<e:Image id="redPointReplace" touchEnabled="false" source="zjmhongdian" x="230" bottom="48"/>
+			<e:Image id="upRed" touchEnabled="false" source="zjmhongdian" right="71" bottom="48"/>
+			<e:Group scaleX="1" scaleY="1" bottom="79" left="360">
+				<e:Label id="yiman" text="消耗:" x="367" y="-179" scaleX="1" scaleY="1" size="20" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Image id="costImg" width="20" height="20" x="0" y="0" source="500007_png"/>
+				<e:Label id="cost" text="99/99" size="20" textAlign="left" x="28" y="0" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+				<e:layout>
+				<e:HorizontalLayout gap="2" horizontalAlign="center"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:Group id="Activation" horizontalCenter="0" bottom="6" visible="false">
+			<e:Label id="activeTipsTxt" text="1转可激活战纹" size="22" y="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Button id="UplevelBtn1" label="激 活 战 纹" skinName="SkinBtn1" y="42" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group id="linkGroup" width="500" height="96" horizontalCenter="0" bottom="12" visible="false">
+			<e:Label text="可以通过以下方式获得仙纹" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="74"/>
+			<e:Button id="btn1" label="仙纹寻宝 " skinName="SkinBtn1" horizontalCenter="-120" bottom="0" scaleX="0.8" scaleY="0.8"/>
+			<e:Button id="btn2" label="昊天塔" skinName="SkinBtn1" horizontalCenter="120" bottom="0" scaleX="0.8" scaleY="0.8"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

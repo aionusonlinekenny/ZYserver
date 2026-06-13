@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinSixteen" width="600" height="728" currentState="kf" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="bf,kf_four,kf" >
+	<e:Group id="sixteenGroup" top="0" bottom="0" width="600" horizontalCenter="0">
+		<e:Image source="peakness_bg_png" horizontalCenter="0" verticalCenter="-13"/>
+		<e:Label id="singleTimeInfoLabel" text="12月12日（周日）21:00 16进8第2场" size="20" textAlign="center" horizontalCenter.kf_four="0.5" y.kf_four="561" horizontalCenter="0" bottom="160" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Image id="competition_name" source="peakness_type_single" horizontalCenter="0" horizontalCenter.bf="0" includeIn="bf,kf" source.kf="peakness_type_final" horizontalCenter.kf="0" y="683" y.bf="683"/>
+		
+		<e:Group id="content" horizontalCenter="0" width="600" verticalCenter="-88">
+			<e:Group id="link" anchorOffsetX="0" width="600" horizontalCenter="0" height="474" verticalCenter="-10">
+				<e:Image source="jinduzuo" x="148" y="62" visible="false"/>
+				<e:Group width="300" anchorOffsetX="0" anchorOffsetY="0" top="0" bottom="0" left="0">
+					<e:Group id="link_0_1" y="63.2" x="149">
+						<e:Image width="22" top="0" horizontalCenter="0" source="line_blue"/>
+						<e:Image width="31.9" rotation="90" right="0" verticalCenter="0" source="line_blue"/>
+					</e:Group>
+					<e:Group id="link_0_2" y="92" x="149">
+						<e:Image width="22" bottom="0" horizontalCenter="0" source="line_blue"/>
+						<e:Image width="31.9" rotation="90" right="0" verticalCenter="0" source="line_blue"/>
+					</e:Group>
+					<e:Group id="link_0_3" y="179" x="149">
+						<e:Image width="22" source="line_blue" horizontalCenter="0" top="0"/>
+						<e:Image width="32" rotation="90" source="line_blue" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_4" y="208.5" x="149">
+						<e:Image width="22" source="line_blue" bottom="0" horizontalCenter="0"/>
+						<e:Image width="31.8" rotation="90" source="line_blue" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_5" y="295" x="149">
+						<e:Image source="line_blue" width="22" top="0" horizontalCenter="0"/>
+						<e:Image source="line_blue" width="33" rotation="90" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_6" y="325" x="149">
+						<e:Image source="line_blue" width="22" bottom="0" horizontalCenter="0"/>
+						<e:Image source="line_blue" width="30.8" rotation="90" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_7" y="412" x="149">
+						<e:Image source="line_blue" width="22" top="0" horizontalCenter="0"/>
+						<e:Image source="line_blue" width="32" rotation="90" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_8" y="441.26" x="149">
+						<e:Image source="line_blue" width="22" bottom="0" horizontalCenter="0"/>
+						<e:Image source="line_blue" width="32" rotation="90" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_1_1" y="92" x="171">
+						<e:Image width="22" source="line_blue" top="0" horizontalCenter="0"/>
+						<e:Image width="60.2" rotation="90" source="line_blue" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_1_2" y="149" x="171">
+						<e:Image width="22" source="line_blue" bottom="0" horizontalCenter="0"/>
+						<e:Image source="line_blue" width="61.8" rotation="90" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_1_3" y="325" x="171">
+						<e:Image source="line_blue" width="22" horizontalCenter="0" top="0"/>
+						<e:Image source="line_blue" width="60" rotation="90" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_1_4" y="382" x="171">
+						<e:Image source="line_blue" width="22" bottom="0" horizontalCenter="0"/>
+						<e:Image source="line_blue" width="62" rotation="90" right="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_2_1" y="149" touchEnabled="false" x="193" x.bf="193">
+						<e:Image source="line_blue" width="22" y.bf="0" width.bf="22" x.bf="0" width.kf_four="22" x.kf_four="0" y.kf="0" width.kf="22" x.kf="0" top="0" horizontalCenter="0"/>
+						<e:Image source="line_blue" width="119.4" rotation="90" width.kf_four="119" x.bf="28" x.kf_four="28" x.kf="28" right="0" verticalCenter="0" width.bf="119.8" source.bf="line_blue"/>
+					</e:Group>
+					<e:Group id="link_2_2" y.kf="265.5" y.bf="265.5" x.bf="193" y.kf_four="264.7" x.kf="193" y="265" x.kf_four="193" x="193">
+						<e:Image source="line_blue" width="22" y.kf="117" width.bf="22" x.bf="0" y.bf="117" width.kf_four="22" x.kf_four="0" width.kf="22" x.kf="0" bottom.kf="0" bottom.bf="0" bottom.kf_four="0" bottom="0" horizontalCenter="0"/>
+						<e:Image source="line_blue" y.kf="0" y.bf="0" width.kf="120" width.bf="120" rotation="90" width.kf_four="121" x.kf="28" x.bf="28" x.kf_four="28" y.kf_four="0" width="119.1" right="0" right.kf_four="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_3_1" includeIn="bf,kf" horizontalCenter="93" y="265.5" horizontalCenter.kf="93">
+						<e:Image source="line_blue" width="56" scale9Grid="5,2,1,1" horizontalCenter="0" verticalCenter="0"/>
+					</e:Group>
+				</e:Group>
+				<e:Group width="300" anchorOffsetX="0" anchorOffsetY="0" top="0" bottom="0" right="0">
+					<e:Group id="link_0_9" y="63" x="129.7">
+					<e:Image source="line_blue" width="23" horizontalCenter="0" top="0"/>
+					<e:Image source="line_blue" width="30.5" rotation="90" verticalCenter="0" left="0"/>
+					</e:Group>
+					<e:Group id="link_0_10" y="90.5" x="129.7">
+					<e:Image source="line_blue" width="23" horizontalCenter="0" bottom="0"/>
+					<e:Image source="line_blue" width="33.8" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_11" y="178" x="129.7">
+					<e:Image source="line_blue" width="23" horizontalCenter="0" top="0"/>
+					<e:Image source="line_blue" width="31.8" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_12" y="206.7" x="129.7">
+					<e:Image source="line_blue" width="23" bottom="0" horizontalCenter="0"/>
+					<e:Image source="line_blue" width="31.8" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_13" y="295" x="129.7">
+					<e:Image source="line_blue" width="23" horizontalCenter="0" top="0"/>
+					<e:Image source="line_blue" width="30.8" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_14" y="323" x="129.7">
+					<e:Image source="line_blue" width="23" bottom="0" horizontalCenter="0"/>
+					<e:Image source="line_blue" width="34" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_0_15" y="411.6" x="129.7">
+					<e:Image source="line_blue" width="23" top="0" horizontalCenter="0"/>
+					<e:Image source="line_blue" width="34" rotation="90" verticalCenter="0" left="0"/>
+					</e:Group>
+					<e:Group id="link_0_16" y="442.5" x="129.7">
+					<e:Image source="line_blue" width="23" bottom="0" horizontalCenter="0"/>
+					<e:Image source="line_blue" width="30" rotation="90" verticalCenter="0" left="0"/>
+					</e:Group>
+					<e:Group id="link_1_5" y="90.6" x="108">
+					<e:Image source="line_blue" width="23" horizontalCenter="0" top="0"/>
+					<e:Image source="line_blue" width="61" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_1_6" y="149" x="108">
+					<e:Image source="line_blue" width="22" horizontalCenter="0" bottom="0"/>
+					<e:Image source="line_blue" width="61" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_1_7" y="323" x="108">
+					<e:Image source="line_blue" width="22" horizontalCenter="0" top="0"/>
+					<e:Image source="line_blue" width="62.5" rotation="90" verticalCenter="0" left="0"/>
+					</e:Group>
+					<e:Group id="link_1_8" y="382.5" x="108">
+					<e:Image source="line_blue" width="22" horizontalCenter="0" bottom="0"/>
+					<e:Image source="line_blue" width="62.5" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_2_3" y="148.8" touchEnabled="false" x="85.5">
+					<e:Image source="line_blue" width="23" horizontalCenter="0" top="0"/>
+					<e:Image source="line_blue" width="119.8" rotation="90" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_2_4" x="85.5" y="265.5">
+					<e:Image source="line_blue" width="23" bottom="0" bottom.kf_four="0" horizontalCenter="0"/>
+					<e:Image source="line_blue" rotation="90" width="119.8" left="0" verticalCenter="0"/>
+					</e:Group>
+					<e:Group id="link_3_2" includeIn="bf,kf" horizontalCenter="-92.5" y="265.5">
+					<e:Image source="line_blue" scale9Grid="5,2,1,1" horizontalCenter="0" verticalCenter="0" width="56"/>
+					</e:Group>
+				</e:Group>
+			</e:Group>
+			<e:Group id="btn" width="600" horizontalCenter="0" height="442" verticalCenter="26">
+				<e:Group width="300" top="-4" bottom="4" left="2">
+					<e:Group id="group0" x="0" y="0">
+						<e:Image source="peakness_name_bg" x="0" y="0"/>
+						<e:Label id="player0" size="18" textAlign="center" width="120" horizontalCenter="-6" textColor="0xffffff" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2"/>
+					</e:Group>
+					<e:Group id="group1" x="0" y="58">
+						<e:Image source="peakness_name_bg" x="0" y="0"/>
+						<e:Label id="player1" size="18" textAlign="center" width="120" textColor="0xFFFFFF" horizontalCenter="-6" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="84" y="149"/>
+					</e:Group>
+					<e:Group id="group2" x="0" y="115">
+						<e:Image source="peakness_name_bg" x="0" y="0"/>
+						<e:Label id="player2" size="18" textAlign="center" width="120" textColor="0xFFFFFF" horizontalCenter="-6" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="84" y="91"/>
+					</e:Group>
+					<e:Group id="group3" x="0" y="172.5">
+						<e:Image source="peakness_name_bg" x="0" y="0"/>
+						<e:Label id="player3" size="18" textAlign="center" width="120" textColor="0xFFFFFF" horizontalCenter="-6" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="84" y="36"/>
+					</e:Group>
+					<e:Group id="group4" x="0" y="232">
+						<e:Image source="peakness_name_bg" x="0" y="0"/>
+						<e:Label id="player4" size="18" textAlign="center" width="120" textColor="0xFFFFFF" horizontalCenter="-6" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="84" y="-21"/>
+					</e:Group>
+					<e:Group id="group5" x="0" y="291">
+						<e:Image source="peakness_name_bg" x="0" y="0"/>
+						<e:Label id="player5" size="18" textAlign="center" width="120" textColor="0xFFFFFF" horizontalCenter="-6" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="84" y="-78"/>
+					</e:Group>
+					<e:Group id="group6" x="0" y="348">
+						<e:Image source="peakness_name_bg" x="0" y="0"/>
+						<e:Label id="player6" size="18" textAlign="center" width="120" textColor="0xFFFFFF" horizontalCenter="-6" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="84" y="-135"/>
+					</e:Group>
+					<e:Group id="group7" x="0" y="405.85">
+						<e:Image source="peakness_name_bg" x="0" y="0"/>
+						<e:Label id="player7" size="18" textAlign="center" width="120" textColor="0xFFFFFF" horizontalCenter="-6" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="84" y="-192"/>
+					</e:Group>
+				</e:Group>
+				<e:Group width="300" top="-4" bottom="4" right="0">
+					<e:Group id="group8" x="150" y="0">
+						<e:Image source="peakness_name_bg" y="0" scaleX="-1" right="0"/>
+						<e:Label id="player8" size="18" textAlign="center" width="120" horizontalCenter="5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="-66" y="206"/>
+					</e:Group>
+					<e:Group id="group9" x="150" y="58">
+						<e:Image source="peakness_name_bg" y="0" scaleX="-1" right="0"/>
+						<e:Label id="player9" size="18" textAlign="center" width="120" horizontalCenter="5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="-55" y="149"/>
+					</e:Group>
+					<e:Group id="group10" x="150" y="115">
+						<e:Image source="peakness_name_bg" y="0" scaleX="-1" right="0"/>
+						<e:Label id="player10" size="18" textAlign="center" width="120" horizontalCenter="5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="-55" y="92"/>
+					</e:Group>
+					<e:Group id="group11" x="150" y="172.5">
+						<e:Image source="peakness_name_bg" y="0" scaleX="-1" right="0"/>
+						<e:Label id="player11" size="18" textAlign="center" width="120" horizontalCenter="5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="-55" y="35"/>
+					</e:Group>
+					<e:Group id="group12" x="150" y="232">
+						<e:Image source="peakness_name_bg" y="0" scaleX="-1" right="0"/>
+						<e:Label id="player12" size="18" textAlign="center" width="120" horizontalCenter="5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="-55" y="-22"/>
+					</e:Group>
+					<e:Group id="group13" x="150" y="291">
+						<e:Image source="peakness_name_bg" y="0" scaleX="-1" right="0"/>
+						<e:Label id="player13" size="18" textAlign="center" width="120" horizontalCenter="5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="-55" y="-79"/>
+					</e:Group>
+					<e:Group id="group14" x="150" y="348">
+						<e:Image source="peakness_name_bg" y="0" scaleX="-1" right="0"/>
+						<e:Label id="player14" size="18" textAlign="center" width="120" horizontalCenter="5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="-55" y="-136"/>
+					</e:Group>
+					<e:Group id="group15" x="150" y="405.8">
+						<e:Image source="peakness_name_bg" y="0" scaleX="-1" right="0"/>
+						<e:Label id="player15" size="18" textAlign="center" width="120" horizontalCenter="5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalCenter="-2" x="-55" y="-193"/>
+					</e:Group>
+				</e:Group>
+			</e:Group>
+			<e:Group id="competion" horizontalCenter="0" verticalCenter="24">
+				<e:Image source="peakness_dragon_png" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image id="peaknessProcess" source="peakness_dianfengsaiji" source.kf_four="peakness_kuafushiliuqiang" source.kf="peakness_dianfengjuesai" verticalCenter="-11.5" horizontalCenter="0"/>
+			</e:Group>
+			<e:Group id="bet" horizontalCenter="0" width="600" height="474" verticalCenter="-11" visible="false">
+				<e:Group width="300" top="0" bottom="0" left="0">
+					<ns1:BaseComponent id="actState_1_1" x="144" y="76.5" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_1_2" x="145" y="195" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_1_3" x="145" y="311" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_1_4" x="144" y="428.5" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_2_1" x="174" y="135" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_2_2" x="174" y="370" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_3_1" x="189" y="248" skinName="SkinVsItem" includeIn="bf,kf"/>
+				</e:Group>
+				<e:Group width="300" top="0" bottom="0" right="0">
+					<ns1:BaseComponent id="actState_1_5" x="102" y="77" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_1_6" x="102" y="195" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_1_7" x="102" y="308" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_1_8" x="102" y="426" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_2_3" x="69" y="137" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_2_4" x="69" y="367" skinName="SkinVsItem"/>
+					<ns1:BaseComponent id="actState_3_2" x="61" y="248" skinName="SkinVsItem" includeIn="bf,kf"/>
+				</e:Group>
+			</e:Group>
+			<e:Group id="finals" visible.kf="false" visible.kf_four="false" anchorOffsetY="0" height="183.5" horizontalCenter="0" verticalCenter="12" visible="false">
+				<e:Image source="peakness_champion_title" horizontalCenter="0" top="0"/>
+				<e:Rect width="100" height="98" horizontalCenter="0" verticalCenter="8" strokeColor="0x143445" fillColor="0x143445"/>
+				<e:Image id="championFace" source="head_11" width="103" height="98" horizontalCenter="0" verticalCenter="8"/>
+				<e:Image source="peakness_champion_kuang" verticalCenter="8.8" horizontalCenter="0"/>
+				<e:Label id="championNameLabel" text="布拉格の地狱" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="0"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="groupMatch" includeIn="kf_four" horizontalCenter="0" bottom="5" width="402" height="97">
+			<e:Image id="groupBtnSelect0" source="xuanzhongyuan" height="87" width="87" anchorOffsetX="0.5" anchorOffsetY="0.5" verticalCenter="0" horizontalCenter="-153"/>
+			<e:Image id="groupBtnSelect1" source="xuanzhongyuan" height="87" width="87" anchorOffsetX="0" verticalCenter="0" horizontalCenter="-51"/>
+			<e:Image id="groupBtnSelect2" source="xuanzhongyuan" height="87" width="87" anchorOffsetX="0" verticalCenter="0" horizontalCenter="51"/>
+			<e:Image id="groupBtnSelect3" source="xuanzhongyuan" height="87" width="87" anchorOffsetX="0" horizontalCenter="153" verticalCenter="0"/>
+			<e:Button id="groupBtn0" label="Button" icon="peakness_group_0_png" horizontalCenter="-153" verticalCenter="0" width="96" height="97" skinName="SkinBtn0"/>
+			<e:Button label="Button"  icon="peakness_group_1_png" id="groupBtn1" horizontalCenter="-51" verticalCenter="0" width="96" height="97" skinName="SkinBtn0"/>
+			<e:Button label="Button" icon="peakness_group_2_png" id="groupBtn2" horizontalCenter="51" verticalCenter="0" width="96" height="97" skinName="SkinBtn0"/>
+			<e:Button label="Button" icon="peakness_group_3_png" id="groupBtn3" horizontalCenter="153" verticalCenter="0" width="96" height="97" skinName="SkinBtn0"/>
+		</e:Group>
+		<e:Group id="timerGroup" width="600" horizontalCenter="0" bottom="57" height="97">
+			<e:Image scaleX="-1" right="0" left="0" top="0" bottom="0" source="bantoumingkuang3" scale9Grid="264,5,124,48"/>
+			<e:Group left="0" right="0" top="0" bottom="0">
+				<e:Group x="1" y="0" anchorOffsetY="0" height="97" anchorOffsetX="0" width="120">
+					<e:Label text="第1局" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
+					<e:Label id="gameTime1Txt" x="20" y="55" size="20" textColor="0xdaffff" fontFamily="Microsoft YaHei" textAlign="center"/>
+					<e:layout>
+						<e:BasicLayout/>
+					</e:layout>
+				</e:Group>
+				<e:Group x="61" y="0" width="120" height="97">
+					<e:Label text="第2局" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
+					<e:Label id="gameTime2Txt" x="20" y="55" size="20" fontFamily="Microsoft YaHei" textColor="0xdaffff" textAlign="center"/>
+					<e:layout>
+						<e:BasicLayout/>
+					</e:layout>
+				</e:Group>
+				<e:Group x="122" y="0" width="120" height="97">
+					<e:Label text="第3局" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
+					<e:Label id="gameTime3Txt" x="20" y="55" size="20" textColor="0xdaffff" fontFamily="Microsoft YaHei" textAlign="center"/>
+					<e:layout>
+						<e:BasicLayout/>
+					</e:layout>
+				</e:Group>
+				<e:Group x="183" y="0" width="120" height="97">
+					<e:Label text="第4局" x="30" y="25" size="22" fontFamily="Microsoft YaHei" textColor="0xdaffff"/>
+					<e:Label id="gameTime4Txt" x="20" y="55" size="20" fontFamily="Microsoft YaHei" textColor="0xdaffff" textAlign="center"/>
+					<e:layout>
+						<e:BasicLayout/>
+					</e:layout>
+				</e:Group>
+				<e:Group x="244" y="0" width="120" height="97">
+					<e:Label text="第5局" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
+					<e:Label id="gameTime5Txt" x="20" y="55" size="20" fontFamily="Microsoft YaHei" textColor="0xdaffff" textAlign="center"/>
+					<e:layout>
+						<e:BasicLayout/>
+					</e:layout>
+				</e:Group>
+				<e:layout>
+					<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="0" paddingLeft="0"/>
+				</e:layout>
+			</e:Group>
+			<e:Group left="0" right="0" top="0" bottom="0">
+			<e:Image x="0" y="0" source="line7"/>
+			<e:Image x="0" y="0" source="line7"/>
+			<e:Image x="0" y="0" source="line7"/>
+			<e:Image x="0" y="0" source="line7"/>
+			<e:layout>
+				<e:HorizontalLayout gap="119" horizontalAlign="left" verticalAlign="middle" paddingLeft="120"/>
+			</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:Group horizontalCenter="0" top="0" width="378">
+			<e:Button id="myRecord" label="我的战绩" y="0" skinName="SkinBtn20" x="25"/>
+			<e:Button id="myBet" label="我的下注" y="1" skinName="SkinBtn21" horizontalCenter="0"/>
+			<e:Button id="topRank" label="人气排名" x="235" y="0" skinName="SkinBtn22"/>
+			<e:Image id="border1" source="peakness_btn_border" scale9Grid="68,38,4,4" touchEnabled="false" y="0" y.kf="-0.67" horizontalCenter="0"/>
+			<e:Image id="border2" source="peakness_btn_border" scaleX="-1" y="0" scale9Grid="69,39,3,2" width="225" right="-10" touchEnabled="false" visible="false"/>
+			<e:Image id="myRecordRedpoint" touchEnabled="false" source="zjmhongdian" x="122" y="0" visible="false"/>
+			<e:Image id="myBetRedpoint" touchEnabled="false" source="zjmhongdian" x="216" y="0" visible="false"/>
+			<e:Image id="topRankRedpoint" touchEnabled="false" source="zjmhongdian" x="314" y="0" visible="false"/>
+			<e:Image width="20" height="20" x="4" y="15"/>
+		</e:Group>
+		<e:Button id="vewChampScore" label="查看比分" horizontalCenter="0" top="449" skinName="SkinBtn3"/>
+		<e:Label id="vewChampScore2" text="查看比分" size="20" horizontalCenter="0" top="468" textColor="0x00ff00" visible.kf_four="false" visible="false"/>
+	</e:Group>
+</e:Skin>

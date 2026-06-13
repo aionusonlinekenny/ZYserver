@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildBoss" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+
+
+
+
+
+
+
+
+
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Rect top="0" bottom="0" fillColor="0x000000" fillAlpha="0.6" left="0" right="0"/>
+		<e:Rect width="600" fillColor="0x0D97AE" horizontalCenter="0" top="0" bottom="0"/>
+		<e:Image scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" source="gb_ditusuoxiao_jpg"/>
+		<e:Group id="vsmodel" horizontalCenter="0" x="23" scaleX="1" scaleY="1" width="600" top="0">
+			<e:Image width="507.34" rotation="0" scaleX="-1" source="jindutiao1" scale9Grid="106,0,3,17" horizontalCenter="15.5" y="91.5" anchorOffsetX="0"/>
+			<e:Image id="enemynamebg" x="369.21" y="50" source="gb_guildname_bg2_png"/>
+			<e:Image id="enemybosshp" y="91.5" rotation="0.11" width="227.5" scale9Grid="106,0,2,17" source="jindutiao1" horizontalCenter="154" anchorOffsetX="0"/>
+			<e:ProgressBar id="ebhpbar" x="361.07" y="93" width="202.6" value="100" height="17" anchorOffsetX="0" skinName="Skinbar8"/>
+			<e:Label id="enemyname" text="前锋" x="424.09" y="60" size="20" textAlign="left" width="150" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+
+			<e:Image id="selfnamebg" x="68.61" y="50" source="gb_guildname_bg1_png"/>
+			<e:Image id="selfbosshp" y="91.5" rotation="0.11" width="228" source="jindutiao1" scale9Grid="106,0,2,17" horizontalCenter="-124" anchorOffsetY="1" anchorOffsetX="1.01"/>
+			<e:ProgressBar id="sbhpbar" x="67.2" y="92.5" width="197.6" value="100" height="17" skinName="Skinbar6" anchorOffsetX="0" scaleY="1" scaleX="1"/>
+			<e:Image y="88" rotation="0.11" source="jiantouxiazuo" x="55.5"/>
+			<e:Image y="88" rotation="0.11" source="jiantouxiazuo" x="575.5" scaleX="-1"/>
+			<e:Label id="selfname" text="前锋" x="22.63" y="60" size="20" textAlign="right" width="176" textColor="0xffff00" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+			<e:Image id="vs" y="102.63" horizontalCenter="12.5" source="gb_vs_png"/>
+
+			<e:Image id="fightframe" y="-27.22" horizontalCenter="6.5" source="gb_zhongjianp1_png"/>
+			<e:Image id="fightboss" y="6.5" scaleX="0.6" scaleY="0.6" horizontalCenter="19.5" source="gb_b2_png"/>
+		</e:Group>
+		<e:Group id="topline" horizontalCenter="0" y="0" x="10" scaleX="1" scaleY="1" visible="false">
+			<e:Image id="topline2" y="0" x="0" scale9Grid="50,0,6,12" width="200" source="gb_dingbuxianp1"/>
+			<e:Image id="topline0" x="196" y="0" source="gb_dingbuxianp2"/>
+			<e:Image id="topline3" y="0" x="580" scale9Grid="50,0,6,12" width="200" scaleX="-1" source="gb_dingbuxianp1"/>
+			<e:Image id="topline1" rotation="0" scaleX="-1" x="385" y="0" source="gb_dingbuxianp2"/>
+		</e:Group>
+		<e:Group id="underline" horizontalCenter="0" x="10" bottom="-15" height="15" y="948" scaleX="1" scaleY="1" visible="false">
+			<e:Image id="underline1" y="0" x="0" scale9Grid="50,0,6,12" width="200" scaleY="-1" source="gb_dingbuxianp1"/>
+			<e:Image id="underline0" x="196" y="0" scaleY="-1" source="gb_dingbuxianp2"/>
+			<e:Image id="underline3" y="0" x="580" scale9Grid="50,0,6,12" width="200" scaleX="-1" scaleY="-1" source="gb_dingbuxianp1"/>
+			<e:Image id="underline2" rotation="0" scaleX="-1" x="385" y="0" scaleY="-1" source="gb_dingbuxianp2"/>
+		</e:Group>
+		<e:Group id="bosslist" width="600" height="814" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="27">
+			<ns1:GuildBossListItemRender id="bossItem0" name="角色" x="376.36" y="42.05"/>
+			<ns1:GuildBossListItemRender id="bossItem1" name="角色" x="0.16" y="39.5"/>
+			<ns1:GuildBossListItemRender id="bossItem2" name="角色" x="298.5" y="289.5"/>
+			<ns1:GuildBossListItemRender id="bossItem3" name="角色" width="237" x="21.51" y="351.34"/>
+			<ns1:GuildBossListItemRender id="bossItem4" name="角色" x="2.71" y="622.38"/>
+			<ns1:GuildBossListItemRender id="bossItem5" name="角色" width="237" x="337.05" y="570.01"/>
+		</e:Group>
+		<e:Group id="state" horizontalCenter="0" x="228" scaleX="1" scaleY="1" bottom="30">
+			<e:Image source="gantanhao" bottom="32" horizontalCenter="-57" x="-68" y="-24" scaleX="1" scaleY="1"/>
+			<e:Label text="周日休战" size="30" bottom="30" horizontalCenter="19" x="-41" y="-30" scaleX="1" scaleY="1" textColor="0xe40000" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+			<e:HorizontalLayout verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Image id="imgRight" horizontalCenter="248" verticalCenter="-41" source="jiantouxuan" scaleX="-1" x="582" y="405" scaleY="1" visible="false"/>
+		<e:Image id="imgleft" verticalCenter="-41" horizontalCenter="-248" source="jiantouxuan" x="19" y="405" scaleX="1" scaleY="1" visible="false"/>
+		<e:Image source="zjmfanhuikuang" horizontalCenter="255" bottom="3"/>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="zjmfanhui" bottom="7" horizontalCenter="254.5" x="501.00000000000006" y="855.0000000000001" scaleX="1" scaleY="1"/>
+	</e:Group>
+
+
+
+</e:Skin>

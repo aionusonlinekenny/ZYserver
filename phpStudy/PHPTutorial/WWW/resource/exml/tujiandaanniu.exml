@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinTujiandaanniu" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  states="up,down"  height="92" width="88">
+
+	<e:Image id="select0" width="92" height="92" horizontalCenter="0" scaleX="0.9" scaleY="0.9" source="touxiangkuang" verticalCenter="0" visible="false"/>
+
+	<e:Image id="btnName" horizontalCenter="0" verticalCenter="0" source="tujiantuji_01"/>
+	<e:Label id="label" text=""  size="20" fontFamily="Microsoft YaHei" visible="false"/>
+	<e:Image id="select" width="96.5" height="98.45" horizontalCenter="0.5" visible.up="false" scaleX="0.9" scaleY="0.9" verticalCenter="-1.5" source="xuanzhongyuan" anchorOffsetY="0"/>
+
+	<e:Image source="zjmhongdian" right="8" id="redPoint" y="9"/>
+
+</e:Skin>

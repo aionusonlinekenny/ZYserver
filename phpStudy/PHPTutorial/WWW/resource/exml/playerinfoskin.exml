@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinPlayerInfo" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="rect" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="group_friend" width="439" height="332" horizontalCenter="0" verticalCenter="0">
+		<e:Image scale9Grid="40,31,15,15" source="tongyong_dikuang2" bottom="0" left="0" right="0" top="0"/>
+		<e:Image left="27" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="276" width="384" scale9Grid="22,20,25,25" top="34"/>
+		<e:Image scale9Grid="19,18,2,5" source="tongyong_juanzhou" left="0" right="0" top="0"/>
+		<e:Image id="imgHead" height="85" width="85" left="96" top="58" source="yuanhead20"/>
+		<e:Image id="imgBg" height="95" width="92" scale9Grid="4,4,5,5" source="guildkuang" left="94" top="54"/>
+		<e:Label id="labelName" text="名字有六个字" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="229" top="64"/>
+		<e:Label id="labelGuild" text="仙盟名字多少" y="118" size="20" left="229" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="labelLv" text="12转100级" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" left="229"/>
+		<e:Button id="btnFriend" label="好友" bottom="38" right="77" skinName="SkinBtn3"/>
+		<e:Button id="btnInfo" label="查看" skinName="SkinBtn3" top="169" right="77"/>
+		<e:Button id="btnChat" label="私聊" skinName="SkinBtn3" left="74" top="169"/>
+		<e:Button id="btnIgnore" label="屏蔽"   bottom="38" skinName="SkinBtn3" left="74"/>
+		<e:Button id="closebtn" width="54" height="54" skinName="SkinBtn0" icon="tongyong_btnclose" scaleX="1" scaleY="1" right="-5" top="-13"/>
+	</e:Group>
+</e:Skin>

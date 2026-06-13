@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinFlowerOpen" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"   width="600" height="948">
+	<e:Rect left="0" right="0" top="-1" bottom="1" fillAlpha="0.7"/>
+
+
+
+
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image source="flower_bg_png" scaleY="1" x="0" y="0"/>
+		<e:Scroller id="scroller" anchorOffsetY="0" height="101" scrollPolicyV="on" y="124" width="500" horizontalCenter="8" anchorOffsetX="0">
+			<e:List id="list" y="1" anchorOffsetY="0" itemRendererSkinName="SkinFlowerRewardItem" scaleX="1" scaleY="1" height="96" anchorOffsetX="0" width="479">
+			<e:layout>
+				<e:VerticalLayout gap="2" paddingLeft="15"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Label id="charmCount" text="你的魅力提高了 4999 点" size="20" y="231" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Button id="closeBtn" label="朕知道了" icon="btn2_2" y="307" horizontalCenter="-5.5" skinName="SkinBtn6" width="176" height="59"/>
+		<e:Button id="closeBtn0" label="" icon="flower_closeBtn" skinName="SkinBtn0" top="17" right="36"/>
+
+	</e:Group>		
+</e:Skin>

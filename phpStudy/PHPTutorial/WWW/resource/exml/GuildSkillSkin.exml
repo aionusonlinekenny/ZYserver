@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildSkill" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+
+
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+
+	<e:ViewStack id="viewStack"   selectedIndex="1" width="600" horizontalCenter="0" top="0" bottom="0">
+		<ns1:GuildSkillPanelView name="修法静室" id="guildskill" skinName="SkinGuildSkillWin" width="600" height="728" verticalCenter="-57" horizontalCenter="0" visible="false"/>
+		<ns1:GuildFirePanelView id="guildcampfire" name="仙山建设" skinName="SkinGuildCampFire" width="600" horizontalCenter="0" top="0" bottom="0"/>		
+		<!--<e:Component name="仙盟商店" id="guildstore" skinName="GuildStoreWinSkin" top="0" bottom="10" left="0" right="9" visible="false"/>-->
+	</e:ViewStack>
+
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" horizontalCenter="0"  top="0"/>
+	<e:Group width="600" height="63" horizontalCenter="0" bottom="93">
+		<e:Image width="593" anchorOffsetX="0" anchorOffsetY="0"   horizontalCenter="0" verticalCenter="0" source="bantoumingkuang3_png"/>
+		<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" selectedIndex="0" dataProvider="{viewStack}"   horizontalCenter="0" verticalCenter="-0.5">
+		<e:layout>
+			<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+		</e:TabBar>
+		<e:Image id="redPoint1" source="zjmhongdian" touchEnabled="false"   horizontalCenter="108.5" verticalCenter="-21"/>
+		<e:Image id="redPoint0" source="zjmhongdian" touchEnabled="false"   horizontalCenter="-5.5" verticalCenter="-21"/>
+	</e:Group>
+
+
+
+	<e:Image id="title" horizontalCenter="-225" top="11" source="guildcamp_title1_png"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose"   horizontalCenter="274" top="46"/>
+
+
+
+	<!--<e:TabBar id="tab" height="48" horizontalCenter="0" bottom="108" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}"/>
+	<e:Image id="redPoint0" x="261" y="773" source="zjmhongdian" visible="false"/>
+	<e:Image id="redPoint1" x="386" y="773" source="zjmhongdian" visible="false"/>-->
+</e:Skin>

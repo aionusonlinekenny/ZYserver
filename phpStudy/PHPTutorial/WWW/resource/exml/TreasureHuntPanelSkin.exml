@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinTreasureHuntPanel" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="600" height="728">
+	<w:Config id="15de4979d7a"/>
+
+	<e:Group width="600" height="728" horizontalCenter="0" verticalCenter="0">
+		<e:Image source="xunbaozhuangbeiditu_png" horizontalCenter="0" top="0" x="0" y="0" />
+		<e:Image width="580" scale9Grid="8,7,12,6" horizontalCenter="0" x="6"  source="tongyong_dikuang4" bottom="114" height="190" anchorOffsetY="0"/>
+
+		<e:List id="list1" height="240" itemRendererSkinName="SkinItem" scaleX="0.9" scaleY="0.9" top="85" y="109" horizontalCenter="0" width="432" touchEnabled="false">
+			<e:layout>
+			<e:TileLayout requestedColumnCount="2" requestedRowCount="2" horizontalGap="280" verticalGap="10" paddingTop="0"/>
+			</e:layout>
+		</e:List>
+		<e:Group id="chuanqi" height="90" width="228" horizontalCenter="0" verticalCenter="-165" x="186" y="134" >
+			<e:Group width="90" height="90" horizontalCenter="-70" verticalCenter="0">
+				<e:Image width="76" height="77"  source="quality3" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image width="90" height="90"  verticalCenter="0" horizontalCenter="0" source="quality9"/>
+			<e:Image id="icon1" source="rx_weapon"  verticalCenter="0" horizontalCenter="0"/>
+			</e:Group>
+			<e:Group width="90" height="90" horizontalCenter="70" verticalCenter="0">
+			<e:Image width="76" height="76"  verticalCenter="0" horizontalCenter="0" source="quality3"/>
+				<e:Image width="90" height="90"  verticalCenter="0" horizontalCenter="0" x="10" y="10" source="quality9"/>
+			<e:Image id="icon2" source="rx_body" verticalCenter="0" horizontalCenter="0"/>
+			</e:Group>
+		</e:Group>
+		<e:List id="list2" height="375" itemRendererSkinName="SkinItem" scaleX="0.9" scaleY="0.9" verticalCenter="-166" y="29" anchorOffsetY="0" horizontalCenter="0" width="266" touchEnabled="false">
+			<e:layout>
+			<e:TileLayout requestedColumnCount="3" requestedRowCount="2" verticalGap="220" horizontalGap="20" paddingLeft="0"/>
+			</e:layout>
+		</e:List>
+		<e:Image width="102" height="24" source="treasurelog" left="21" verticalCenter="82" x="18" y="435" />
+		<e:Scroller id="barList" width="478" bounces="false" scrollPolicyV="on" scrollPolicyH="off" left="17" x="22"  bottom="124" height="140">
+			<e:List id="list" x="-1" y="1" itemRendererSkinName="SkinHuntListRenderer"/>
+		</e:Scroller>
+		<e:Group id="btnGroup" right="17" x="499"  top="432">
+			<e:Button id="outBag" skinName="SkinBtn6" width="81" height="80" icon="warehouse_png" verticalCenter="0" horizontalCenter="0"/>
+			<e:Image id="redPoint2" source="zjmhongdian" touchEnabled="false" right="2" top="0"/>
+		</e:Group>
+		<e:Group width="280" height="115" bottom="0" right="20">
+			<e:Group id="zbHunt10"  horizontalCenter="0" top="0">
+				<e:Image source="szyuanbao" width="40" x="0" y="0"  height="32"/>
+				<e:Label id="zb10" text="4980" size="18" x="32" y="1"  fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+				<e:Label text="（" size="20" x="189" y="5"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Image anchorOffsetX="0" width="30" anchorOffsetY="0" height="30" x="215" y="0"  source="200165_png"/>
+				<e:Label id="num10" text="1000" y="0" size="18" x="136.5" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+				<e:Label text="/10）" size="18" x="199" y="15"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+				<e:HorizontalLayout gap="2" verticalAlign="middle"/>
+				</e:layout>
+			</e:Group>
+			<e:Button id="buy10" label="寻宝十次" icon="btn1_2"  skinName="SkinBtn7" horizontalCenter="0" verticalCenter="8"/>
+			<e:Label text="必得神装" fontFamily="Microsoft YaHei" size="18" bottom="3" y="695"  horizontalCenter="0" bold="true" textColor="0xff0000" visible="false"/>
+			<e:Image source="bideshenzhuang_png" x="108.36" y="92"/>
+		</e:Group>
+		<e:Group width="280" height="115" bottom="0" left="20">
+			<e:Group id="zbHunt1"  horizontalCenter="0" top="0">
+				<e:Image source="szyuanbao" width="40"  left="0" top="0" height="32"/>
+				<e:Label id="zb1" text="10000" size="18" x="32" y="14"  fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+				<e:Label text="（" size="20" x="189" y="5"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Image anchorOffsetX="0" width="30" anchorOffsetY="0" height="30" x="215" y="0"  source="200165_png"/>
+				<e:Label id="num1" text="1000" y="0" size="18" x="136.5" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+				<e:Label text="/1）" size="18" x="199" y="15"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="2"/>
+				</e:layout>
+			</e:Group>
+			<e:Button id="buy1" label="寻宝一次" icon="btn1"  skinName="SkinBtn2" horizontalCenter="0" verticalCenter="8"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

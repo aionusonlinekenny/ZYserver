@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGainYeLi" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*">
+	<w:Config id="1586bc24b09"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.7"/>
+	
+	<e:Group id="anigroup" width="525" height="480" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="bg" scale9Grid="20,8,80,69" source="tongyong_dikuang2" width="525" height="478" verticalCenter="0" horizontalCenter="0"/>
+		<e:Image id="bgt" left="0" right="0" source="tongyong_juanzhou" scale9Grid="198,2,84,19"/>
+		<e:Image source="tongyong_titlebg" width="281" horizontalCenter="0" top="-20"/>
+		<e:Image width="461" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,6,60,42" top="34" anchorOffsetY="0" bottom="32"/>
+		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-35" width="400"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-27" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center"/>
+		<e:Label text="获取劫力" size="24" horizontalCenter="0" textColor="0x39566a" fontFamily="Microsoft YaHei" top="-8" verticalAlign="middle" textAlign="center"/>
+		<e:Button skinName="SkinBtn0" label="按钮" id="closeBtn" right="4" top="-14" icon="tongyong_btnclose"/>
+		<ns1:PriceIcon2 id="priceIcon0" x="325" y="50" skinName="SkinPriceIcon2" visible="false"/>
+		<e:Group id="gr1" width="444" height="122" horizontalCenter="0" top="46">
+			<e:Image source="tongyonglabbg" scale9Grid="40,20,30,30" left="0" right="0" top="0" bottom="0"/>
+			<e:Label id="yeli0" text="10000" size="22" x="190" y="26" fontFamily="Microsoft YaHei" textColor="0x0000f1"/>
+			<e:Label text="获得劫力：" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="left" verticalAlign="middle" top="26" x="90"/>
+			<e:Label text="消耗铜钱：" size="20" textColor="0xE2B142" x="98" y="64" visible="false"/>
+			<e:Label id="cost0" text="10000" size="20" x="198" y="64" textColor="0x00ff00" visible="false"/>
+			<e:Label id="yeli4" text="等级兑换：降1级" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
+			<e:Group id="time0" right="10" top="12">
+				<e:Label text="今日还可兑换" size="18" textAlign="center" y="7" right="48" x="11"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label id="toDay0" text="5" size="18" textAlign="center" y="7" right="36" x="131" textColor="0x0000f1" fontFamily="Microsoft YaHei"/>
+				<e:Label text="次" size="18" textAlign="center" y="7" right="1" x="143"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:layout>
+				<e:HorizontalLayout gap="0"/>
+				</e:layout>
+			</e:Group>
+
+			<e:Button id="btn0" label="兑  换" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
+			<ns1:ItemBase id="item0" skinName="SkinItem" verticalCenter="0" left="10"/>
+			<e:Image id="redPoint0" source="zjmhongdian" right="10" verticalCenter="-16.5"/>
+			<e:Label id="limit" text="等级大于110级可兑换" size="18" x="257" y="96" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group id="gr2" width="444" height="122" horizontalCenter="0" verticalCenter="2">
+			<e:Image   left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
+			<e:Label text="获得劫力：" size="22" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="26"/>
+			<e:Label id="yeli1" text="10000" size="22" x="190" textColor="0x0000f1" top="26" fontFamily="Microsoft YaHei"/>
+			<e:Label id="name1" text="高级轮回丹" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
+			<e:Group right="10" top="12">
+				<e:Label text="今日还可兑换" size="18" textAlign="center" y="7" right="48" x="11"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label id="toDay1" text="5" size="20" textAlign="center" y="7" right="36" x="131"   textColor="0x0000f1" fontFamily="Microsoft YaHei"/>
+				<e:Label text="次" size="18" textAlign="center" y="7" right="16" x="143"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:layout>
+				<e:HorizontalLayout gap="0"/>
+				</e:layout>
+			</e:Group>
+
+			<e:Button id="btn1" label="购 买" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
+			<ns1:ItemBase id="item1" skinName="SkinItem" verticalCenter="0" left="10"/>
+			<ns1:PriceIcon2 id="priceIcon1" x="190" skinName="SkinPriceIcon2" top="65"/>
+			<e:Image id="redPoint1" y="38" source="zjmhongdian" right="10"/>
+
+		</e:Group>
+		<e:Group id="gr3" width="444" height="122" horizontalCenter="0" bottom="42">
+			<e:Image   left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
+			<e:Label text="获得劫力：" size="22" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="26"/>
+			<e:Label id="yeli2" text="10000" size="22" x="190" textColor="0x0000f1" top="26" fontFamily="Microsoft YaHei"/>
+			<e:Group right="10" top="12">
+				<e:Label text="今日还可兑换" size="20" textAlign="center" y="7" right="48" x="11"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label id="toDay2" text="5" size="20" textAlign="center" y="7" right="36" x="131"   textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+				<e:Label text="次" size="20" textAlign="center" y="7" right="16" x="143"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:layout>
+				<e:HorizontalLayout gap="0"/>
+				</e:layout>
+			</e:Group>
+			<e:Label id="name2" text="超级轮回丹" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
+
+			<e:Button id="btn2" label="购 买" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
+			<ns1:ItemBase id="item2" skinName="SkinItem" verticalCenter="0" left="10"/>
+			<ns1:PriceIcon2 id="priceIcon2" x="190" skinName="SkinPriceIcon2" top="65"/>
+			<e:Image id="redPoint2" y="34" source="zjmhongdian" right="10"/>
+
+		</e:Group>
+		<ns1:PriceIcon2 id="priceIcon3" skinName="SkinPriceIcon2" x="327" y="94" visible="false"/>
+	</e:Group>
+	
+</e:Skin>

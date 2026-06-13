@@ -1,0 +1,58 @@
+
+<e:Skin class="SkinStateweaponSoul" width="512" height="490" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"   states="4,6,8" >
+	<w:Config id="15dbfb4ddfb"/>
+	<e:Group id="effgroup" x.4="275" y.4="285" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="weaponImg" touchEnabled="false" source="weapsdao_png" horizontalCenter="0" top="16" visible="false"/>
+		<e:Image id="effpos" rotation="120"   y="226" x="106"/>
+	</e:Group>
+	<e:Group id="lianjiexian0" x="110" y="64" touchEnabled="false" x.4="91" y.4="188" x.6="104" y.6="112" anchorOffsetY="0" height="78" anchorOffsetX="0" width="177" x.8="87" width.8="226">
+		<e:Image rotation="90.47" width="27" scale9Grid="1,4,1,1" x="20" y="23" y.4="23" source="qianghuaxian_png" x.4="21" x.6="21" x.8="21" width.6="28" y.6="22"/>
+		<e:Image x="14" y="43" width="147" rotation="360" scale9Grid="1,4,1,1" width.8="187" x.4="15" y.6="43" source="qianghuaxian_png"/>
+		<e:Image x="160" y="37"   x.8="194" source="wps3_png"/>
+	</e:Group>
+	<e:Group id="lianjiexian1" x="302" y="59" touchEnabled="false" x.4="286" y.4="103" x.6="289" y.6="131" anchorOffsetX.4="0" width.4="99">
+
+		<e:Image rotation="360" width="26" x="56" scale9Grid="1,4,1,1" width.4="43" source="qianghuaxian_png" x.6="54" width.6="27"/>
+		<e:Image rotation="360" width="44" x="16" y="82" scale9Grid="1,4,1,1" source="qianghuaxian_png" x.4="15.5" x.6="15" width.4="42" width.6="42" width.8="42"/>
+		<e:Image width="87" rotation="90.47" y="1.5" x="62" scale9Grid="1,4,1,1" width.4="86.5" x.4="61.5" width.6="86.5" x.6="61" y.8="2" width.8="86.5" source="qianghuaxian_png" y.4="2" y.6="2.5"/>
+		<e:Image x="18" y="97" rotation="180" source="wps3_png"/>
+	</e:Group>
+	<e:Group id="lianjiexian2" x="93" y="180" touchEnabled="false" y.4="367" x.4="90" x.6="102" y.6="280" anchorOffsetX="0" width="145" anchorOffsetY="0" height="16" y.8="176" width.8="177" x.8="88">
+		<e:Image x="10" y="4" width="121" rotation="360" scale9Grid="1,4,1,1" width.4="80" width.6="108" width.8="171" x.8="-1" x.4="9" source="qianghuaxian_png"/>
+		<e:Image x="127" y="-2"   x.4="88" x.6="118" x.8="160" source="wps3_png"/>
+	</e:Group>
+	<e:Group id="lianjiexian3" x="280" y="183" touchEnabled="false" x.4="220" y.4="294" x.6="270" y.6="251" anchorOffsetX="0" width="145" width.4="163" anchorOffsetY.6="0" height.6="61" width.6="146">
+		<e:Image rotation="360" width="76" x="66" width.4="141" x.4="15" x.6="1" width.6="141" scale9Grid="1,4,1,1" y="2" y.4="11" y.6="43" source="qianghuaxian_png" x.8="62"/>
+		<e:Image rotation="360" width="51" x="16" y="36" scale9Grid="1,4,1,1" visible.4="false" visible.6="false" source="qianghuaxian_png" width.8="50"/>
+		<e:Image width="38" rotation="90.47" y="4" x="70" scale9Grid="1,4,1,1" x.6="8" y.6="7" y.8="4.5" x.8="69" source="qianghuaxian_png" visible.4="false"/>
+		<e:Image x="16" y="51"   x.4="16" y.4="26" x.6="-7" y.6="6" rotation="180" rotation.6="-90" source="wps3_png"/>
+	</e:Group>
+	<e:Group id="lianjiexian4" x="92" y="229" touchEnabled="false" visible.4="false" x.6="137" y.6="380" anchorOffsetX="0" width="168" width.6="56">
+		<e:Image width="16" rotation="90.47" scale9Grid="1,4,1,1" y="12" x="8" visible.6="false" source="qianghuaxian_png"/>
+		<e:Image width="152" rotation="360" scale9Grid="1,4,1,1" y="9" x="0" width.6="42" x.8="2.5" y.8="10" source="qianghuaxian_png"/>
+		<e:Image x="146.5" y="3" x.6="40" source="wps3_png"/>
+	</e:Group>
+	<e:Group id="lianjiexian5" x="282.5" y="299" touchEnabled="false" visible.4="false" x.6="206" y.6="411" width="198" anchorOffsetY="0" height="36" anchorOffsetX.6="0" width.6="184">
+		<e:Image width="189" rotation="360" scale9Grid="1,4,1,1" anchorOffsetY="0" height="9" x="8" y="15" width.6="172" source="qianghuaxian_png" width.8="121"/>
+		<e:Image source="qianghuaxian" scale9Grid="1,1,6,6" rotation="90.47" visible="false"/>
+		<e:Image x="14" y="30" rotation="180" y.6="29.5" source="wps3_png"/>
+	</e:Group>
+	<e:Group id="lianjiexian6" x="149" y="396" touchEnabled="false" visible.4="false" visible.6="false">
+		<e:Image width="32" rotation="360" scale9Grid="1,4,1,1" y="15" source="qianghuaxian_png"/>
+		<e:Image source="qianghuaxian" scale9Grid="1,1,6,6" width="64" rotation="90.47" visible="false"/>
+		<e:Image x="30" y="9"   source="wps3_png"/>
+	</e:Group>
+	<e:Group id="lianjiexian7" x="198" y="344" touchEnabled="false" visible.4="false" visible.6="false" anchorOffsetY="0" height="118" anchorOffsetX="0" width="118">
+		<e:Image width="110" rotation="360" y="67" scale9Grid="1,4,1,1" x="7" source="qianghuaxian_png"/>
+		<e:Image rotation="90.47" x="14" y="14" width="60" scale9Grid="1,4,1,1" source="qianghuaxian_png" x.8="14.5"/>
+		<e:Image x="-1" y="17" rotation="-90" source="wps3_png" x.8="0"/>
+	</e:Group>
+	<ns1:WeaponSoulItemRender id="item0" x="90" y="13" skinName="weaponSoulitem" x.4="59" y.4="138" x.6="72" y.6="60" x.8="46"/>
+	<ns1:WeaponSoulItemRender id="item1" y="25" skinName="weaponSoulitem" y.4="64" y.6="96" x="384" x.4="368" x.6="353" x.8="366"/>
+	<ns1:WeaponSoulItemRender id="item2" x="28" y="145" skinName="weaponSoulitem" y.4="337" x.4="10" x.6="22" y.6="243" x.8="0"/>
+	<ns1:WeaponSoulItemRender id="item3" y="153" skinName="weaponSoulitem" y.4="271" y.6="260" x="422" x.4="360" x.6="392" y.8="144" x.8="372"/>
+	<ns1:WeaponSoulItemRender id="item4" x="55" y="256" skinName="weaponSoulitem" visible.4="false" x.6="48" y.6="357" y.8="258" x.8="47"/>
+	<ns1:WeaponSoulItemRender id="item5" y="277" skinName="weaponSoulitem" right.4="32" visible.4="false" y.6="387" x.6="368" y.8="276" x.8="387"/>
+	<ns1:WeaponSoulItemRender id="item6" x="75" y="377" skinName="weaponSoulitem" visible.4="false" visible.6="false" y.8="376" x.8="63"/>
+	<ns1:WeaponSoulItemRender id="item7" y="382" skinName="weaponSoulitem" visible.4="false" visible.6="false" x="314" x.8="301"/>
+</e:Skin>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="shenqispTip" width="313" height="530" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<e:Rect id="rect" fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="parttips" height="440" width="307" horizontalCenter="0" verticalCenter="0">
+		<e:Image source="bantoutiaobg" height="34" scale9Grid="128,2,15,41" width="300" y="451" horizontalCenter="0"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" y="456" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
+		<e:Image id="tipsbg" touchEnabled="true" left="2" right="2" top="0" bottom="0" source="tongyongtip1" scale9Grid="11,11,43,56"/>
+		<e:Image id="tipscorner" touchEnabled="true" left="0.5" right="0.5" top="0" bottom="0" source="tongyongtip2" scale9Grid="18,17,44,7"/>
+
+		<e:List id="list" width="240" height="100" y="145" itemRendererSkinName="SkinshenQiAttrDesc" horizontalCenter="-27">
+		<e:layout>
+			<e:VerticalLayout/>
+		</e:layout>
+		</e:List>
+		<e:Image id="tipsnamebg" height="161" top="0" left="2" right="2" scale9Grid="7,6,13,450" anchorOffsetY="0" source="quali4_png"/>
+		<e:Image id="tipsdepartline" source="tongyongline" left="8" right="8" bottom="42" height="1.5"/>
+		<e:Label text="碎片属性" x="23" y="115" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="getway" size="20" bottom="15" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="partname" x="61" y="18" size="26" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+		<e:Image left="2" right="2" top="53"  source="bantoutiaobg" scale9Grid="47,5,289,30" height="41"/>
+		<ns1:PowerPanel id="powerPanel" left="15" verticalCenter="-147" skinName="Skin2PowerPanel"/>
+		<e:Image id="icon" touchEnabled="true" source="180001_png" x="16" y="6" width="44" height="44"/>
+	</e:Group>
+</e:Skin>

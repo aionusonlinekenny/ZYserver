@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+ <e:Skin class="SkinBtnVip" states="up,down,disabled" width="68" height="24"
+        xmlns:e="http://ns.egret.com/eui" width.up="68" height.up="24" width.down="68" height.down="24" width.disabled="68" height.disabled="24">
+	<e:Image x.disabled="0" x.up="0" y.disabled="0" y.up="0" source="vip_dikuang" source.up="vip_dikuang" source.down="vip_dikuang" source.disabled="vip_dikuang"/>
+</e:Skin>

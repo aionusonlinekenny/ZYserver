@@ -1,0 +1,409 @@
+html,body{
+    -ms-touch-action: none;
+    background: rgba(255,255,255,0);
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    overflow: hidden;
+}
+.gameDiv{
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    display: block;
+    border: medium none;
+    left: 0;
+    top:0;
+    right: 0;
+    background:url("../images/game/index/bg_login.jpg") no-repeat center;
+    background-size: cover;
+}
+.gameDiv.serverlist{
+    background-image:url("../images/game/index/bg_server.jpg");
+}
+#gbox{
+    /*background:url("../images/game/index/bg_login.jpg") no-repeat;*/
+    position: relative;
+    overflow: hidden;
+    display: block;
+    transform-origin:0px 0px;
+    -ms-transform-origin:0px 0px;
+    -webkit-transform-origin:0px 0px;
+    -moz-transform-origin:0px 0px;
+    -o-transform-origin:0px 0px;
+}
+
+.loading{
+    background:url("../images/game/bzsch5/loading.gif");
+    width:60px;
+    height:60px;
+    position:absolute;
+    top:45%;
+    left:45%;
+    z-index:100;
+}
+
+.exit{
+    background: url(../images/game/index/btn_closs_1.png) no-repeat;
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    top: 300px;
+    right: 50px;
+    z-index: 1;
+}
+.exit:focus{
+    outline: none;
+    background-image:url("../images/game/index/btn_closs_2.png");
+}
+.announce_exit{
+    top: 360px;
+    right: 50px;
+}
+.mainbg{
+    /*width:429px;*/
+    /*height:83px;*/
+    /*position:relative;*/
+    margin:auto;
+    /*top: 70%;*/
+    cursor: default;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20%;
+}
+.server_sign{
+    position: absolute;
+    width: 344px;
+    height: 50px;
+    top: 380px;
+    left: 39%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sign{
+    font-size: 24px;
+    color: #624913;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 36px;
+}
+.sign.fluent{
+    background-image: url(../images/game/index/pic_fluent.png);
+}
+.sign.full{
+    background-image: url(../images/game/index/pic_full.png);
+}
+.sign.maintain{
+    background-image: url(../images/game/index/pic_maintain.png);
+}
+
+.pic{
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    position: absolute;
+}
+.pic.full{
+    left: 50px;
+    top: 0;
+    width: 63px;
+    height: 60px;
+    background: url(../images/game/index/pic_fiery.png);
+}
+.pic.maintain{
+    left: 50px;
+    top: -8px;
+    width: 68px;
+    height: 110px;
+    background: url(../images/game/index/pic_new.png);
+}
+
+
+.scrollwrap{
+    position: absolute;
+    width: 50%;
+    height: 52%;
+    top: 440px;
+    left: 38%;
+    overflow-x: hidden;
+}
+.items{
+    position:relative;
+    z-index: 0;
+    margin-top: 16px;
+}
+.item0{
+    background-image:url("../images/game/index/btn_partition.png");
+    background-size:100% 100%;
+    width:355px;
+    height: 83px;
+    line-height:81px;
+    left: -15px;
+    font-size: 28px;
+    color: #fddc98;
+    font-weight:bold;
+    cursor: default ;
+}
+.items .sign{
+    width: 29px;
+    height: 28px;
+    position: absolute;
+    right: 25px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.gray{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+.hot{
+    width:91px;
+    height:87px;
+    position: absolute;
+    left: 30px;
+    bottom: 0px;
+    pointer-events: none;
+    background:url("../images/game/index/pic_fiery.png") no-repeat 0 0;
+}
+.update, .new{
+    width:68px;
+    height:110px;
+    position: absolute;
+    left: 50px;
+    top: -8px;
+    pointer-events: none;
+    background:url("../images/game/index/pic_new.png") no-repeat 0 0;
+    background-size: contain;
+}
+.enter{
+    background:url("../images/game/index/btn_start_1.png");
+    width:298px;
+    height:102px;
+    background-position: center;
+    margin: 80px auto 0!important;
+}
+.enter:focus{
+    outline: none;
+    background-image:url("../images/game/index/btn_start_2.png");
+}
+
+.choosebg{
+    background:url("../images/game/index/bg_server_choice.png") no-repeat center;
+    margin: auto;
+}
+.tag{
+    background:url("../images/game/index/btn_area_1.png");
+    width:168px;
+    height:61px;
+    line-height: 61px;
+    font-size: 24px;
+    color: #624913;
+    left:5px;
+    font-weight:bold;
+    cursor: default ;
+}
+.tagc{
+    background:url("../images/game/index/btn_area_2.png");
+    color: #624913;
+}
+.hide{
+    display:none;
+}
+.show{
+    display: block;
+}
+.tagbar{
+    width: 200px;
+    height: 518px;
+    position: absolute;
+    top: 440px;
+    left: 95px;
+}
+.tagbar .last_login{
+    position:relative;
+    margin-top:10px;
+}
+.tagbar .select_server{
+    position:relative;
+    margin-top: 16px
+}
+/**隐藏滚动条*/
+::-webkit-scrollbar{
+    display:none;
+}
+.announcebg{
+    background:url("../images/game/bzsch5/notice_bg.png") no-repeat center;
+}
+.announce{
+    background:url(../images/game/bzsch5/gameStart.png);
+    width:105px;
+    height:102px;
+    background-position:-8px 115px;
+    position:absolute;
+    top:20px;
+    right:25px;
+}
+.notice_text{
+    position: relative;
+    margin: auto;
+    width: 70%;
+    height: 49%;
+    padding: 5px;
+    top: 26%;
+    font-size: 20px;
+    overflow-x: hidden;
+    color: white;
+}
+.notice_text h1{
+    font-family:"KaiTi_GB2312";
+    font-size: 1.5em;
+    font-weight:bold;
+    color: #fcf7c3;
+}
+.notice_text p{
+    font-family: "Microsoft YaHei";
+    color: #332e30;
+    text-align: left;
+    line-height: 30px;
+}
+.cgr{color:#fff580;margin-left: 20px;text-decoration: underline;}
+.cw{color:wheat;}
+.fs3{
+    background: url(../images/game/index/bg_Constituency.png) no-repeat center;
+    width: 437px;
+    height: 76px;
+    font-size: 32px;
+    text-align: center;
+    line-height: 70px;
+    color: #f2f0b7;
+}
+.ma{margin:auto;}
+.tc{text-align:center;}
+.pa{position:absolute;left:0px;width:100%;height:100%;z-index:2;}
+
+.logout {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    position: absolute;
+    font-size: 1.0em;
+    text-transform: uppercase;
+    padding: 5px;
+    left: 5%;
+    width: 80px;
+    top: 10%;
+    border-radius: 10px;
+    color: #d8c56a;
+    text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+    border: 5px solid transparent;
+    border-bottom-color: rgba(0,0,0,0.35);
+    background: hsla(218, 57%, 85%, 1);
+    cursor: pointer;
+    animation: pulse 1s infinite alternate;
+    transition: background 0.4s, border 0.2s, margin 0.2s;
+}
+.logout:hover {
+    background: hsla(218, 60%, 85%, 1);
+    margin-top: -1px;
+    animation: none;
+}
+.logout:active {
+    border-bottom-width: 0;
+    margin-top: 5px;
+}
+@keyframes pulse {
+    0% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: 6px;
+    }
+}
+
+.shilinbg{
+    background:url("../images/game/bzsch5/notice_bg.png") no-repeat center;
+}
+.shilin {
+    background: url(../images/game/index/btn_shiling.png);
+    width: 80px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 25px;
+}
+
+.agreement-check {
+    margin-bottom: 10px; /* 给复选框区域一些底部边距 */
+}
+
+.agreement-label {
+    color: white;
+    font-size: 20px; /* 统一字体大小 */
+}
+
+.policy-links {
+    color: green;
+    cursor: pointer;
+}
+
+.toast-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.toast-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.important-info {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    float: left;
+    width: 100%;
+}
+
+.important-info div{
+    float: left;
+    width: 100%;
+}
+
+.important-info div:first-child {
+    /* 给第一段文字加黑色描边 */
+    text-shadow: 1px 1px 2px black;
+}
+
+.important-info div:last-child {
+    /* 给第二段文字加黑色描边 */
+    text-shadow: 1px 1px 2px black;
+    cursor: pointer;
+}
+
+.important-info p{
+    white-space: nowrap; /* 禁止换行 */
+    max-width: fit-content; /* 自动调整容器宽度 */
+    text-align: center;
+    margin: 0 auto; /* 确保块级元素在其父元素中居中 */
+}
+
+html {
+    -webkit-text-size-adjust: 100%; /* 禁用 Safari 自动调整字体大小 */
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMineNpcHead" width="230" height="120" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="none,mine" >
+	<e:Group id="contentGroup" left="0" right="0" top="0" bottom="0" touchEnabled="false">
+		<e:Image source="npcnamebg" scale9Grid="41,18,4,5" width="91" height="25" horizontalCenter="0" bottom="3"/>
+		<e:Image width="150" height="34" y="83" source="gwdi_2_png" horizontalCenter="0" horizontalCenter.none="10" scale9Grid="0,2,64,14"/>
+		<e:Label id="nameTxt" text="矿洞使者" size="18"   horizontalCenter="0" bottom="11" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter.none="10"/>
+		<e:Group id="titleGroup" includeIn="none" horizontalCenter="-7" width="200" y="-1">
+			<e:Image source="wordsbg" scale9Grid="21,0,21,29" width="182" x="30" y="28"/>
+
+			<e:Image id="icon" y="0"   left="0" source="icon_wakuang" width="77" height="75"/>
+			<e:Label text="点击参与" x="80" y="34" fontFamily="Microsoft YaHei" size="20"/>
+		</e:Group>
+		<e:Label id="timeTxt" text="" size="18" horizontalCenter="1" visible.none="false" textColor="0x00ff06" fontFamily="Microsoft YaHei" y.mine="57" y="77"/>
+		<e:Group id="stateGroup" horizontalCenter="0" x="50"   touchEnabled="false" includeIn="mine" width="72" height="21" y="29">
+			<e:Image id="workerState" horizontalCenter="0" verticalCenter="3" source="kuanggong_title_png"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

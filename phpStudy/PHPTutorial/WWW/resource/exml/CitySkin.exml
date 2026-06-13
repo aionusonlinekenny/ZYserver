@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinCity" width="600" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:ns1="*" xmlns:euiextension="euiextension.*">
+
+	<e:Image top="-110" bottom="-100" width="600" horizontalCenter="0" source="bg_1_jpg"/>
+	<e:Image top="0" bottom="0" width="600" horizontalCenter="0" source="chuangtianguanbg_png"/>
+
+
+	<ns1:RoleSelectPanel id="roleSelect" y="0" skinName="SkinRoleSelectPanel"  width="600" horizontalCenter="0" currentState="nohead"/>
+	<e:Image  horizontalCenter="-204" source="biaoti_yuanguboss_png" top="12"/>
+	<e:ViewStack id="viewStack" selectedIndex="0" width="600" horizontalCenter="0" height="794" verticalCenter="-20">
+		<ns1:MonsterWarInCityView id="personalBoss" name="怪物攻城"
+		                    left="0" right="0" top="0" bottom="0" skinName="SkinCityBoss" height="794"/>
+
+
+
+
+	</e:ViewStack>
+	<e:TabBar id="tab" selectedIndex="0" itemRendererSkinName="SkinBtnTab0"
+	          dataProvider="{viewStack}"   bottom="112" horizontalCenter="0" visible="false">
+		<e:layout>
+			<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+	</e:TabBar>
+	<e:Image id="redPoint0" touchEnabled="false"  bottom="138" horizontalCenter="41" source="zjmhongdian" visible="false"/>
+	<e:Image id="redPoint1" touchEnabled="false"  bottom="138" horizontalCenter="101" source="zjmhongdian" visible="false"/>
+
+
+	<e:Button id="seeRule" label="按钮" icon="wenhao" skinName="SkinBtn0" horizontalCenter="-277" scaleX="0.9" scaleY="0.9" top="4"/>
+	<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="273"/>
+</e:Skin>

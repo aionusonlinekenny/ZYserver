@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinFirstCharge" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15d0cca272f"/>
+
+	<e:Image width="600" anchorOffsetY="0" top="0" bottom="0" horizontalCenter="0" source="scvipbg_png"/>
+	<e:Image anchorOffsetY="0" scale9Grid="24,20,20,27" horizontalCenter="0" source="shouchongbg2_png" verticalCenter="-18.5"/>
+
+	<ns1:RoleSelectPanel id="roleSelect" width="600" horizontalCenter="0" currentState="nohead" top="0" bottom="0" skinName="SkinRoleSelectPanel"/>
+
+	<e:Group width="582" horizontalCenter="0" touchEnabled="false" touchChildren="false" height="61.33" anchorOffsetY="0" top="54">
+		<e:Image anchorOffsetY="0" height="115" y="-51" x="-8" width="324" source="shang_2_png"/>
+		<e:Image width="138" height="96" horizontalCenter="-179" source="biaoti_shouchong_png" y="-38"/>
+
+
+
+
+
+
+
+
+
+
+
+
+	</e:Group>
+
+
+
+	<e:Group width="555" horizontalCenter="1.5" height="834" verticalCenter="-57">
+		<e:Image width="311" height="72" horizontalCenter="143" source="rechargestage_png" verticalCenter="121"/>
+
+
+
+
+
+
+		<e:Group width="600" height="149" horizontalCenter="0.5" top="107" anchorOffsetY="0">
+			<e:Image x="36" source="shouchongt1_png" top="15"/>
+			<e:Image y="58.03" x="92" source="shouchongt2_png"/>
+			<e:Image y="114.32" horizontalCenter="-206" source="shouchongt3_png"/>
+			<e:BitmapLabel text="30000" y="114.32" letterSpacing="1" scaleX="1.1" scaleY="1.1" left="163" font="num_vip_v2_fnt_fnt"/>
+		</e:Group>
+
+
+
+
+
+
+
+
+
+		<e:Group width="304" height="106.67" horizontalCenter="-129.5" anchorOffsetY="0" y="324.36" anchorOffsetX="0">
+			<e:Image anchorOffsetY="0" source="shouchongbg3_png" verticalCenter="32.16499999999999" left="0"/>
+			<e:Group horizontalCenter="3.5" width="290.67" anchorOffsetX="0" anchorOffsetY="0" height="290" top="-2">
+				<ns1:FirstRechargeItemBase id="item3" x="184" skinName="SkinItem2" scaleX="1.1" scaleY="1.1"/>
+				<ns1:FirstRechargeItemBase id="item5" x="380" skinName="SkinItem2" scaleX="1.1" scaleY="1.1"/>
+				<ns1:FirstRechargeItemBase id="item4" x="290" skinName="SkinItem2" scaleX="1.1" scaleY="1.1"/>
+				<ns1:FirstRechargeItemBase id="item1" x="4" skinName="SkinItem2" scaleX="1.1" scaleY="1.1"/>
+				<ns1:FirstRechargeItemBase id="item2" x="93" y="-1" skinName="SkinItem2" scaleX="1.1" scaleY="1.1"/>
+
+
+
+				<ns1:FirstRechargeItemBase id="item6" x="300" y="10" scaleX="1.1" scaleY="1.1" skinName="SkinItem2"/>
+				<e:layout>
+					<e:TileLayout requestedRowCount="3" requestedColumnCount="3" rowHeight="116" columnWidth="95" paddingLeft="8" horizontalGap="0"/>
+				</e:layout>
+
+			</e:Group>
+
+
+
+
+
+
+
+
+
+
+
+		</e:Group>
+		<e:Group id="roleGroup" width="1" height="1" horizontalCenter="140" verticalCenter="100"/>
+
+		<e:Group id="unbuy" horizontalCenter="0" width="450" height="240" y="572">
+		<e:Button id="chong0" label="Button" skinName="SkinBtn8" width="175"/>
+		<e:Button id="chong1" label="Button" skinName="SkinBtn8" right="0" width="175"/>
+		<e:Button id="chong2" label="Button" skinName="SkinBtn8" y="105" width="175"/>
+		<e:Button id="chong3" label="Button" skinName="SkinBtn8" right="0" width="175" verticalCenter="44"/>
+			<e:Image y="127" touchEnabled="false" source="tuijian2" x="273"/>
+			<e:Group id="warn" horizontalCenter="0" width="550" bottom="-38" height="32">
+
+				<e:Image source="shouchongt4_png" x="68"/>
+				<e:Image y="3" x="42" source="gantanhao2"/>
+			</e:Group>
+		</e:Group>
+
+		<e:Group id="buyGroup" horizontalCenter="0" width="173" height="60" y="650">
+			<e:Button id="buyed" label="领取首充礼包" width="173" height="60" icon="btn2_2" skinName="SkinBtn6" verticalCenter="0" horizontalCenter="0"/>
+		</e:Group>
+
+	</e:Group>
+
+
+
+
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" top="47" horizontalCenter="275"/>
+
+
+</e:Skin>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBtn8" states="up,down" currentState="up" xmlns:e="http://ns.egret.com/eui"         xmlns:w="http://ns.egret.com/wing"         width="209" height="120">
+	<e:Image  x.up="0" y.up="0" horizontalCenter="0" scaleX.down="0.95" scaleY.down="0.95" y.down="4" source="czbtn" verticalCenter="-6"/>
+	<e:Label id="rmb" size="28" text="100元" verticalCenter="-8"
+	         stroke="0.5" strokeColor="0xa0743e" horizontalCenter="2" size.down="24" fontFamily="Microsoft YaHei" textColor="0xffd226"/>
+	<e:Label id="yuanbao" size="20" text="40000" strokeColor="0x2b2b2b" y="90" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffd226"/>
+	<e:Label size="20" text="获得           元宝" strokeColor="0x2B2B2B" y="90" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0.5"/>
+</e:Skin>

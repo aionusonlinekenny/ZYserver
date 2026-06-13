@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinCreateRole1" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"   width="600">
+	<e:Rect left="0" strokeColor="0x000000" right="0" top="0" bottom="0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<e:Group horizontalCenter="0" verticalCenter="0" width="600" height="948">
+		<e:Image id="createRoleBg" width="600" height="948" source="createbg1_jpg"/>
+
+		<e:Group width="276" horizontalCenter="-1" x="161" top="5">
+			<e:Image source="createrole_title" y="8.66" horizontalCenter="-0.5"/>
+		</e:Group>
+		<e:Scroller id="scroller" width="300" height="99" horizontalCenter="0" x="148" verticalCenter="414.5">
+			<e:List id="list" itemRendererSkinName="SkinCreateRolItem">
+			<e:layout>
+				<e:VerticalLayout gap="5" paddingTop="2"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+
+		<e:Label id="timeLab" text="剩余15秒" size="22" horizontalCenter="185" textColor="0xff750f" fontFamily="Microsoft YaHei" x="439" verticalCenter="306"/>
+
+
+
+
+		<e:Group id="role" verticalCenter="-45" horizontalCenter="50">
+			<e:Image id="rolemc" y="-107" horizontalCenter="0" source="chuangjue_1_png"/>
+		</e:Group>
+		<e:Group width="289.33" height="383" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-154.5" x="1" verticalCenter="-111.5">
+			<e:Image id="job1_select" y="-15.35" source="job1_2" x="11"/>
+			<e:Button id="job1" label="" icon="job1" y="13" x="29" enabled="true" visible="false">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="job1" source.down="job1" source.disabled="job1_2" y.disabled="0"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Image id="job2_select" y="101.01" x="2.67" source="job2_2" visible="false"/>
+			<e:Button id="job2" label="" icon="job1" y="129" x="29" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="job2" source.down="job2" source.disabled="job2_2"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Image id="job3_select" y="217.02" x="10" source="job3_2" visible="false"/>
+			<e:Button id="job3" label="" icon="job1" y="246" x="29" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="job3" source.down="job3" source.disabled="job3_2"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+		</e:Group>
+		<e:Group width="274" height="45" horizontalCenter="0" x="162" verticalCenter="218.5">
+
+			<e:Image scaleX="-1" width="255" height="48.67" horizontalCenter="0.5" verticalCenter="2" anchorOffsetY="0" anchorOffsetX="0" source="zjmgonggaobg" scale9Grid="12,6,381,28"/>
+			<e:EditableText id="nameInput" height="30" width="244" text="输入玩家名称" x="15" y="8" size="25" fontFamily="Microsoft YaHei" textAlign="center"/>
+			<e:Button id="diceBtn" label="按钮" skinName="SkinBtn0" icon="createrole_any_png" height="64" right="19" verticalCenter="2.5"/>
+		</e:Group>
+		<e:Group width="300" height="100" horizontalCenter="0" x="151.00000000000003" verticalCenter="306">
+			<e:Button id="createBtn" label="按钮" y="17" skinName="SkinBtn0" icon="createrole_btn_png" height="60" horizontalCenter="0"/>
+			<e:Image id="imgA" y="16" horizontalCenter="-115" source="" visible="false"/>
+		</e:Group>
+		<e:Group id="enterGroup" left="0" right="0" top="0" bottom="0" visible="false">
+			<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
+			<e:Rect height="30" left="0" right="0" strokeColor="0x030306" fillAlpha="0.6" verticalCenter="0"/>
+			<e:Label id="loadText" text="正在进入游戏（50%）" size="20" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group id="dontCreateRole" anchorOffsetY="0" left="0" top="0" bottom="0" right="0" visible="false">
+			<e:Rect left="0" strokeColor="0x000000" right="0" top="0" bottom="0" alpha="0.8"/>
+			<e:Image scale9Grid="40,31,15,15" width="484" height="320" anchorOffsetY="0" source="tongyong_dikuang2" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="tongyong_juanzhou" width="484" height="23" scaleY="1" scaleX="1" horizontalCenter="0" verticalCenter="-156"/>
+			<e:Image source="tongyong_titlebg" anchorOffsetX="0" width="267" horizontalCenter="0.5" verticalCenter="-166"/>
+			<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="260" width="435" scale9Grid="22,20,25,25" horizontalCenter="0" verticalCenter="0"/>
+			<e:Label id="title0" size="22" text="提  示" bold="false" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="-162"/>
+			<e:Label id="warnLabel0" text="区服火爆，已关闭角色注册" size="22" textAlign="center" verticalAlign="middle" width="332" height="160" textColor="0x213847" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="leftGroup0" verticalCenter="150" x="97" visible="false">
+			<e:Image id="icon0" width="20" height="20" x="0" y="0" source="zjmyuanbao"/>
+			<e:Label id="label0" text="单元宝" x="30" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
+			<e:layout>
+				<e:HorizontalLayout/>
+			</e:layout>
+			</e:Group>
+			<e:Group id="rightGroup0" verticalCenter="150.5" x="287" height="25" visible="false">
+			<e:Image id="icon1" width="20" height="20" x="0" y="0" source="zjmyuanbao"/>
+			<e:Label id="label1" text="vip1" size="20" x="27" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center"/>
+			</e:layout>
+			</e:Group>
+		</e:Group>
+
+	</e:Group>
+
+</e:Skin>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinShenYuTransfer" width="600" height="728" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15dbfa8e636"/>
+
+	<e:Image width="558" height="428" source="wingbg4_png" alpha="1" horizontalCenter="-3" verticalCenter="-60" scaleX="0.95" scaleY="0.95"/>
+	<e:Group horizontalCenter="-3" bottom="74">
+		<e:Image id="costImg0" width="32" height="20" x="0" y="0" source="szyuanbao"/>
+		<e:Label id="cost" text="500" size="22" textAlign="left" x="28" y="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:layout>
+		<e:HorizontalLayout gap="7"/>
+		</e:layout>
+	</e:Group>
+	<e:Group id="skillGroup" width="600" anchorOffsetY="0" bottom="0" horizontalCenter="0">
+		<e:Image scale9Grid="27,5,8,34" width="580" horizontalCenter="0" source="tongyong_dikuang4" bottom="0" height="260"/>
+		<e:Label id="attr1" text="攻击：1000000000" size="18" textAlign="left" y="80" width="170" anchorOffsetX="0" horizontalCenter="0" textColor="0x9F946D" visible="false"/>
+		<e:Label text="战斗力：10000" y="46" size="20" id="power1" textColor="0xFF9900" bold="true" horizontalCenter="0" visible="false"/>
+		<ns1:GWingItem id="item1" skinName="ShenYuItem" left="121" top="21"/>
+		<ns1:GWingItem id="item2" skinName="ShenYuItem" horizontalCenter="4" top="21"/>
+		<ns1:GWingItem id="item3" skinName="ShenYuItem" left="393" top="21"/>
+	</e:Group>
+	<ns1:GWingItem id="item0" skinName="ShenYuItem" horizontalCenter="4" verticalCenter="-94.5"/>
+	<e:Image left="0" right="0" top="5" anchorOffsetY="0" height="118" scale9Grid="80,10,150,5" source="tongyongbg3" width="560"/>
+	<e:Scroller scrollPolicyV="off" scrollPolicyH="on" horizontalCenter="-15" width="530" top="10">
+		<e:List id="have" y="-1" horizontalCenter="0" scrollEnabled="false" itemRendererSkinName="ShenYuItem" anchorOffsetY="0" height="106">
+		<e:layout>
+			<e:HorizontalLayout paddingLeft="0" horizontalAlign="center" gap="8"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Image source="jiantouyou" verticalCenter="7.5" y="-31" rotation="90" horizontalCenter="2" scaleX="0.8" scaleY="0.8"/>
+	<e:Label id="warn" text="没有多余的神羽" y="47" horizontalCenter="0.5" size="25" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+	<e:Image width="90" height="90" source="quality9" horizontalCenter="4" verticalCenter="-109" scaleX="1.1" scaleY="1.1"/>
+	<e:Button id="transfer" label="转 换" skinName="SkinBtn1" horizontalCenter="0" bottom="10" scaleX="0.9" scaleY="0.9"/>
+</e:Skin>

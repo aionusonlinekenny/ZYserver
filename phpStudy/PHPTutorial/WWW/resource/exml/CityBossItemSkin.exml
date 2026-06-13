@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinCityBossItem" width="160" height="52" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" states="up,down,disabled" >
+	<e:Image id="bg"  scale9Grid="52,0,58,58" source="btn2" width="140" height="52" horizontalCenter="10" verticalCenter="0" source.disabled="btn2_3" source.down="btn2_2"/>
+	<e:Image id="bg0" visible.up="false" visible.disabled="false" source="yeqian6" height="39" width="60" verticalCenter="0" horizontalCenter="-45"/>
+
+	<e:Label id="nameTxt" text="怪物名称·12转" size="20" horizontalCenter="10" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" textColor.up="0x001828" textColor.disabled="0x6b6b6b" textColor.down="0x7e2a00"/>
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="0" top="0" visible="false"/>
+</e:Skin>

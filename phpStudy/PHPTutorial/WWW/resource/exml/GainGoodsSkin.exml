@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGainGoods" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586bddbcf0"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>	
+	<e:Group id="bgGroup" width="487" verticalCenter="-28"  horizontalCenter="0" height="574">
+		<e:Group x="0" y="0" width="484"  height="547">
+			<e:Image id="frame"   touchEnabled="false"   source="tongyong_dikuang2" width="484" height="547" scale9Grid="19,5,81,72" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="tongyong_juanzhou" horizontalCenter="0" top="0" scale9Grid="198,2,84,19"/>
+			<e:Image id="tou"   source="tongyong_titlebg" width="281" horizontalCenter="0" top="-20"/>
+			<e:Image width="417" source="tongyong_dikuang1" height="499" scale9Grid="10,6,60,42" horizontalCenter="0" verticalCenter="9"/>
+			<e:Label id="titleTxt" horizontalCenter="1" y="50" text="道具不足" size="20" x="180"   fontFamily="Microsoft YaHei" textColor="0x0038ab" textAlign="center"/>
+			<e:Label horizontalCenter="0" y="-8" text="获取材料方式" size="22" x="190" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+			<e:Group id="goodsGroup" touchEnabled="false" width="400" height="303"   horizontalCenter="0" verticalCenter="-27">
+				<e:Image source="teshuwenzibg" y="-18"   horizontalCenter="0" visible="false"/>
+				<e:Label text="商城购买" size="20" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="-159.5"/>
+				<ns1:PriceIcon id="price" skinName="SkinPriceIcon" horizontalCenter="-91.5" verticalCenter="0.5"/>
+				<e:Label text="总价：" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="2.5" horizontalCenter="63"/>
+				<e:Label text="单价：" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-155" verticalCenter="2.5"/>
+				<e:Image y="180" scale9Grid="6,6,3,3" width="148" height="38" source="shuzibg" horizontalCenter="0"/>
+				<e:TextInput id="countTxt" textColor="0xffffff" text="1" maxChars="6" skinName="skins.SkinTextInput" height="37" horizontalCenter="0" width="68" verticalCenter="47"/>
+				<e:Button id="decBtn" label="按钮" skinName="SkinBtn0" icon="btn-" verticalCenter="48.5" horizontalCenter="-102"/>
+				<e:Button id="addBtn" label="按钮" skinName="SkinBtn0" icon="btnadd" right="80" verticalCenter="48.5"/>
+				<e:Button id="dec10Btn" label="-10" skinName="SkinBtn0" icon="btnmax2" rotation="180" verticalCenter="47.5" left="34" width="36"/>
+				<e:Button id="add10Btn" label="+10" skinName="SkinBtn0" icon="btnmax2" right="35" verticalCenter="48.5"/>
+				<ns1:PriceIcon id="totalPrice" skinName="SkinPriceIcon" verticalCenter="0.5" horizontalCenter="131.5"/>
+				<e:Button id="buyBtn" label="购 买" skinName="SkinBtn3" width="124" height="50" right="50" verticalCenter="113.5"/>
+				<e:Button id="topUpBtn" label="充 值" skinName="SkinBtn3" width="124" height="50" left="51" verticalCenter="113.5"/>
+			</e:Group>
+			<e:Group id="listGroup" touchEnabled="false" width="450"   horizontalCenter="0" verticalCenter="-17">
+				<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" horizontalCenter="0" verticalCenter="-111.5"/>
+				<e:Label id="nameTxt" text="强化石啊" size="20" textAlign="center" horizontalCenter="0" textColor="0xac00dd" fontFamily="Microsoft YaHei" verticalCenter="-60.5"/>
+				<e:Group id="gainListGroup" width="450"  verticalCenter="200" horizontalCenter="0">
+				<e:Group x="6">
+					<e:Label text="获取途径" size="20" fontFamily="Microsoft YaHei" textColor="0x001828" verticalCenter="7.5" horizontalCenter="21.5"/>
+
+
+
+
+					<e:Image scale9Grid="18,8,2,1" width="339" scaleX="-1" source="diwen6" verticalCenter="17.5" horizontalCenter="26"/>
+				</e:Group>
+				<e:List id="gainList" horizontalCenter="0" verticalCenter="31.5" itemRendererSkinName="SkinGainGoodsItem2">
+					<e:layout>
+					<e:VerticalLayout gap="2"/>
+					</e:layout>
+				</e:List>
+				</e:Group>
+			</e:Group>
+		</e:Group>
+		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" y="487" x="25">
+			<e:Image source="bantoutiaobg" height="35" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="-2"/>
+			<e:Button id="closeBtn" label="按钮" y="-17" skinName="SkinBtn0" right="-10" x="188"   visible="false"/>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout gap="5" horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

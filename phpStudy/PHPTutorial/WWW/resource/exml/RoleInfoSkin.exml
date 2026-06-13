@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinRoleInfo" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:ns1="*" height="948">
+	<w:Config id="15d2b9ed8cd"/>
+
+
+
+
+
+<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+ <e:Image horizontalCenter="0" verticalCenter="0" source="juesebg3_jpg"/>
+	<e:Group  anchorOffsetX="0" height="788" anchorOffsetY="0" width="600" verticalCenter="-35" horizontalCenter="0">
+
+
+		<ns1:RoleItem id="item1" skinName="SkinItem" right="10" verticalCenter="-167"/>
+		<ns1:RoleItem id="item3" skinName="SkinItem" right="10" verticalCenter="-57"/>
+		<ns1:RoleItem id="item5" skinName="SkinItem" right="10" verticalCenter="52"/>
+		<ns1:RoleItem id="item7" skinName="SkinItem" right="10" verticalCenter="161"/>
+
+		<ns1:RoleItem id="item2" skinName="SkinItem" left="10" verticalCenter="-57"/>
+		<ns1:RoleItem id="item0" skinName="SkinItem" left="10" verticalCenter="-167"/>
+		<ns1:RoleItem id="item4" skinName="SkinItem" left="10" verticalCenter="52"/>
+		<ns1:RoleItem id="item6" skinName="SkinItem" left="10" verticalCenter="161"/>
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		<ns1:RoleInfoItem id="roleInfoItem0" skinName="SkinRoleInfoItem" left="102" verticalCenter="161"/>
+		<ns1:RoleInfoItem id="roleInfoItem1" skinName="SkinRoleInfoItem" right="102" verticalCenter="161"/>
+
+
+
+
+		<ns1:RoleItem id="item8"   skinName="SkinItem" right="10" verticalCenter="-274"/>
+		<ns1:RoleItem id="item9" skinName="SkinItem" left="102" verticalCenter="-57"/>
+		<ns1:RoleItem id="item10" skinName="SkinItem" right="102" verticalCenter="-57"/>
+		<ns1:RoleItem id="item11" skinName="SkinItem" left="102" verticalCenter="52"/>
+		<ns1:RoleItem id="item12" skinName="SkinItem" right="102" verticalCenter="52"/>
+		<e:Group id="groupRole" width="600" anchorOffsetX="0" x="0" height="788" top="0" y="15" scaleX="1" scaleY="1">
+
+
+
+			<e:Group id="wingGroup" width="1" height="1" x="294" y="562" scaleX="1" scaleY="1"/>
+			<e:Group id="weaponGroup" width="1" height="1" x="294" y="578" scaleX="1" scaleY="1"/>
+			<e:Group id="roleGroup" width="1" height="1" anchorOffsetY="0" y="578" x="294" anchorOffsetX="0" scaleX="1" scaleY="1"/>
+			<e:Group id="guanghuanGroup" width="1" height="1" anchorOffsetY="0" y="480" x="304" anchorOffsetX="0" scaleX="1" scaleY="1"/>
+
+
+
+
+
+		</e:Group>
+		<e:Group id="groupRoleNext" width="580" x="580" top="0" height="788" y="15" scaleX="1" scaleY="1">
+
+
+
+
+			<e:Group id="nextWingGroup" width="1" height="1" x="295" y="562" scaleX="1" scaleY="1"/>
+			<e:Group id="nextWeaponGroup" width="1" height="1" x="292" y="582" scaleX="1" scaleY="1"/>
+			<e:Group id="nRoleGroup" width="1" height="1" anchorOffsetY="0" y="578" x="294" anchorOffsetX="0" scaleX="1" scaleY="1"/>
+			<e:Group id="nextguanghuanGroup" width="1" height="1" anchorOffsetY="0" y="480" x="304" anchorOffsetX="0" scaleX="1" scaleY="1"/>
+
+
+
+
+
+		</e:Group>
+
+
+
+
+
+	</e:Group>
+
+
+
+	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" top="160" horizontalCenter="16"/>
+	<e:Button id="juesexiangxi" label="" skinName="SkinBtn0" icon="tongyongxiangxi" top="167" horizontalCenter="-147.5"/>
+	<e:Group left="0" right="0" verticalCenter="268.5">
+		<e:Button id="orange" label="按钮" icon="juese_chengzhuang" skinName="SkinBtn0" bottom="-2" left="13" x="111" y="863" scaleX="1" scaleY="1"/>
+		<e:Button id="bless" label="按钮" skinName="SkinBtn0" icon="juese_tejie" bottom="0" left="111" height="86" x="13" y="862" scaleX="1" scaleY="1"/>
+		<e:Button id="shenlu" label="按钮" skinName="SkinBtn0" icon="juese_baowu" bottom="-1" left="210" x="307" y="863" scaleX="1" scaleY="1"/>
+		<e:Button id="rune" icon="juese_zhanwen" skinName="SkinBtn0" bottom="0" left="307" height="86" x="404" y="862" scaleX="1" scaleY="1"/>
+		<e:Button id="Skinheirloom" label="按钮" icon="juese_chuanshi" skinName="SkinBtn0" bottom="0" height="86" y="862" scaleX="1" scaleY="1" left="404"/>
+
+
+
+		<e:Button id="shuzhuang" label="按钮" skinName="SkinBtn0" icon="juese_zhuangban" bottom="1" left="501" width="88" height="86" x="501" y="861" scaleX="1" scaleY="1"/>
+		<e:Button id="orange0" label="按钮" bottom="-2" left="13" x="121" y="873" scaleX="1" scaleY="1" skinName="SkinBtn0" icon="juese_chengzhuang2">
+
+		</e:Button>
+		<e:Button id="bless0" label="按钮" icon="juese_tejie2" bottom="0" left="111" height="86" x="23" y="872" scaleX="1" scaleY="1" skinName="SkinBtn0">
+
+		</e:Button>
+		<e:Button id="shenlu0" label="按钮" icon="juese_baowu2" bottom="-1" left="210" x="317" y="873" scaleX="1" scaleY="1" skinName="SkinBtn0">
+
+		</e:Button>
+		<e:Button id="rune0" icon="juese_zhanwen2" bottom="0" left="307" height="86" x="414" y="872" scaleX="1" scaleY="1" skinName="SkinBtn0">
+
+		</e:Button>
+		<e:Button id="Skinheirloom0" label="按钮" icon="juese_chuanshi2" bottom="0" height="86" y="862" scaleX="1" scaleY="1" left="404" skinName="SkinBtn0">
+
+		</e:Button>
+		<e:Image id="orangeRedPoint" touchEnabled="false" bottom="56" source="zjmhongdian" left="71" x="171" y="873" scaleX="1" scaleY="1"/>
+		<e:Image id="ringRedPoint" source="zjmhongdian" bottom="56" left="171" x="71" y="873" scaleX="1" scaleY="1"/>
+
+
+		<e:Image id="redPointShenlu" bottom="56" source="zjmhongdian" left="267" x="363" y="873" scaleX="1" scaleY="1"/>
+		<e:Image id="zwRedPoint" source="zjmhongdian" bottom="56" left="363" x="459" y="873" scaleX="1" scaleY="1"/>
+		<e:Image id="heirloomRedPoint" touchEnabled="false" bottom="56" source="zjmhongdian" left="459" x="267" y="873" scaleX="1" scaleY="1"/>
+		<e:Image id="fashionPoint" source="zjmhongdian" bottom="56" left="552" x="552" y="873" scaleX="1" scaleY="1"/>
+	</e:Group>
+
+
+
+
+
+
+
+
+	<e:Group touchEnabled="false" width="600" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" height="788" verticalCenter="-26">
+		<e:Image id="redPoint0" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" left="74" verticalCenter="-211"/>
+		<e:Image id="redPoint1" right="5" source="zjmhongdian" x="521" scaleX="1" scaleY="1" touchEnabled="false" verticalCenter="-211"/>
+		<e:Image id="redPoint2" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" left="74" verticalCenter="-101"/>
+		<e:Image id="redPoint3" right="5" source="zjmhongdian" x="521" scaleX="1" scaleY="1" touchEnabled="false" verticalCenter="-101"/>
+		<e:Image id="redPoint4" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" left="74" verticalCenter="9"/>
+		<e:Image id="redPoint5" right="5" source="zjmhongdian" x="521" scaleX="1" scaleY="1" touchEnabled="false" verticalCenter="9"/>
+		<e:Image id="redPoint6" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" left="74" verticalCenter="116"/>
+		<e:Image id="redPoint7" right="5" source="zjmhongdian" x="521" scaleX="1" scaleY="1" touchEnabled="false" verticalCenter="116"/>
+		<e:Image id="redPoint8" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" right="5" verticalCenter="-317"/>
+		<e:Image id="redPoint9" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" left="165" verticalCenter="-101"/>
+		<e:Image id="redPoint10" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" right="96" verticalCenter="-101"/>
+		<e:Image id="redPoint11" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" left="165" verticalCenter="9"/>
+		<e:Image id="redPoint12" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" right="96" verticalCenter="9"/>
+
+		<e:Button id="oneKeyChange" label="一键换装" width="213" height="67" bottom="140" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2"/>
+		<e:Group id="effGroup" touchEnabled="false" bottom="141.5" width="213" height="67" y="596" scaleX="1" scaleY="1" horizontalCenter="1"/>
+		<e:Image id="bodyImg" touchEnabled="false" scaleX="0.9" scaleY="0.9" source="body001_0_c_png" x="144.8" y="0" visible="false"/>
+	</e:Group>
+
+</e:Skin>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinheirloomSkillItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="82" height="108">
+	<w:Config id="1586b362dfe"/>
+	<ns1:ChuanShiItemIcon id="itemIcon" horizontalCenter="0" verticalCenter="-10" skinName="SkinheirloomSkillItemIcon"/>
+	<e:Image id="bless" horizontalCenter="0" verticalCenter="-11" source=""/>
+	<e:Image id="lvBg" source="heirjiao" height="44" width="37" horizontalCenter="13.5" verticalCenter="-19" visible="false"/>
+	<e:Image id="lv" source="heir_01" horizontalCenter="26" verticalCenter="-34" visible="false"/>
+	<e:Image id="selectIcon" width="87" height="86" horizontalCenter="0.5" scale9Grid="17,15,61,62" anchorOffsetY="0" verticalCenter="-10" source="xuanzhongyuan"/>
+	<e:Label id="equipName" text="月￠传世之刃" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="40"/>
+	<e:Group id="redPoint" right="5" y="7" visible="false">
+		<e:Image   source="zjmhongdian"/>
+	</e:Group>
+</e:Skin>

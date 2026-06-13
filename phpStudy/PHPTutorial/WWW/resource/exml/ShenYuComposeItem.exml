@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShenYuComposeItem" width="164" height="52" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" states="up,down,disabled" >
+	<e:Image id="bg"   scale9Grid="80,0,7,58" source="btn2" width="145" height="54" verticalCenter="0" horizontalCenter="0" visible.down="false"/>
+	<e:Image id="bg0" visible.up="false" visible.disabled="false" scale9Grid="55,0,9,40" source="btn2_2" width="145" height="52" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" x="139.99" y="-6"/>
+	<e:Image width="78" height="38" source="xuanzejiantou" horizontalCenter="-52" verticalCenter="0" visible.up="false" visible.disabled="false"/>
+
+	<e:Label id="nameTxt" text="2阶神羽" size="22" horizontalCenter="0" verticalCenter="0" textColor="0x7e2a00" fontFamily="Microsoft YaHei" textColor.up="0x000000" textColor.disabled="0x000000" size.disabled="22" size.down="22" size.up="22"/>
+	<e:Image id="notOpenImg" source="zdbossweikaiqi" y="0" right="6" visible="false"/>
+
+</e:Skin>

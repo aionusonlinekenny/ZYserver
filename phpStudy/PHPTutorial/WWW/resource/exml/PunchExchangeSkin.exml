@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinPunchExchange" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="948">
+	<e:Rect id="bgClose" width="600" horizontalCenter="0" top="0" bottom="0" fillColor="0x000000" fillAlpha="0.8"/>
+
+	<e:Group width="600" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" height="728" verticalCenter="-57">
+		<!--<e:Rect width="600" fillColor="0x0D97AE" horizontalCenter="0" top="0" bottom="0"/>
+		<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>-->
+
+
+		<e:Image anchorOffsetY="0" source="tongyong_dikuang2" scale9Grid="35,17,53,45" left="0" right="0" top="25" bottom="0"/>
+		<e:Image height="23" y="17" source="tongyong_juanzhou" scale9Grid="216,0,53,23" left="0" right="0"/>
+		<e:Image source="tongyong_titlebg" width="282" height="41" anchorOffsetX="0" horizontalCenter="0" top="0"/>
+		<e:Image width="556" height="590" source="tongyong_dikuang1" scale9Grid="10,6,60,42" horizontalCenter="0" top="60"/>
+		<e:Label text="火符兑换" size="22" fontFamily="Microsoft YaHei" textAlign="center" left="0" right="0" top="13" textColor="0x084151"/>
+
+
+
+
+
+
+
+		<e:Scroller width="390" top="74" height="560" left="30" scrollPolicyH="off">
+			<e:List id="exchangelist" x="-1.33" y="1.33" itemRendererSkinName="SkinPunchExchangeItem">
+			<e:layout>
+				<e:VerticalLayout gap="1"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Scroller width="162" top="74" right="30" height="560" anchorOffsetX="0" scrollPolicyH="off">
+			<e:List id="equiplist" x="24.24" y="-22.73" itemRendererSkinName="SkinPunchExchangeBtn">
+			<e:layout>
+				<e:VerticalLayout gap="0"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Group width="130" bottom="20" height="40" left="50">
+			<e:Image anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" source="textbg" bottom="0" left="0" top="0" right="0"/>
+			<e:Image source="hejisuipian1" scaleX="1" scaleY="1" verticalCenter="0" left="10" width="26" height="26"/>
+			<e:Label id="suipian1" text="2000" size="22" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" right="0" verticalCenter="0" width="90" anchorOffsetX="0"/>
+		</e:Group>
+		<e:Group width="130" height="40" bottom="20" left="280">
+			<e:Image anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" source="textbg" bottom="0" left="0" right="0" top="0"/>
+			<e:Image width="26" height="26" source="hejisuipian" scaleX="1" scaleY="1" left="10" verticalCenter="0"/>
+			<e:Label id="suipian" text="2000" size="22" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" height="22" verticalCenter="0" width="90" right="0" textAlign="center"/>
+		</e:Group>
+		<e:Label id="goturn" text="材料转换" size="22" fontFamily="Microsoft YaHei" bottom="22" textColor="0x00ff06" anchorOffsetX="0" border="false" italic="false" lineSpacing="0" multiline="false" stroke="0" right="50"/>
+
+
+		<e:Image height="30" scale9Grid="128,2,15,41" width="300" horizontalCenter="0" bottom="-40" touchEnabled="false" source="bantoutiaobg"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0" bottom="-34" touchEnabled="false" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+	</e:Group>
+
+
+</e:Skin>

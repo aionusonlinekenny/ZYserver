@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinmarkSkillItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:PriceIcon="PriceIcon.*" xmlns:ns1="*"  width="80"  height="94">
+	<w:Config id="15a177a4c02"/>
+	<e:Image horizontalCenter="0" top="0" scale9Grid="8,8,12,46" source="jinengkuang"/>
+
+	<e:Image id="skillImg" horizontalCenter="0" top="3" source="14000_png" width="70" height="70"/>
+
+
+
+
+	<e:Image source="wingskillbg" horizontalCenter="0" bottom="7"/>
+	<e:Image id="lock" horizontalCenter="0" source="suowen3" top="4"/>
+	<e:Label id="skillName" text="御珠灵术" size="18" horizontalCenter="0" bottom="11" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+	<e:Image id="redpoint" source="zjmhongdian" right="5" top="4"/>
+</e:Skin>

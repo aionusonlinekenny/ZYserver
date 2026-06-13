@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="OSABoss" width="563" height="671" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<e:Group left="0" right="0" top="0" bottom="0">
+
+
+
+		<e:Image id="bossbg" scaleY="1" horizontalCenter="3.5" top="324" alpha="1" source="quanminbossbg1_png" anchorOffsetY="0" height="328" width="580"/>
+		<e:Image scaleY="1" horizontalCenter="0" y="-6.34" width="214" height="50" source="huabian3"/>
+		<e:Image id="title" y="12.66" horizontalCenter="0" source="biaoti_quanminboss_png"/>
+		<e:Group id="infoBg" height="106" width="556" horizontalCenter="0" top="51">
+			<e:Image left="0" right="0" top="0" bottom="0" source="quanminbossbg0_png"/>
+			<e:Group left="11" y="29">
+			<e:Label text="剩余时间：" size="20" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
+			<e:Label id="actTime" text="6天23小时55分" size="20" textColor="0x00FF00" scaleX="1" scaleY="1" top="0" left="100" fontFamily="Microsoft YaHei"/>
+			<e:Label id="actInfo" text="开服活动期间，率先达到指定等级获得限量奖励。得限量奖励。得限量奖励。" x="63" y="-14" size="20" width="422" top="28" left="100" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" anchorOffsetX="0" verticalAlign="top"/>
+			<e:Label text="活动说明：" size="20" scaleX="1" scaleY="1" left="0" fontFamily="Microsoft YaHei" textColor="0xFFFF00" top="28"/>
+			</e:Group>
+		</e:Group>
+
+
+
+
+		<e:Image id="actTitle"   horizontalCenter="0" source="biaoti_jingdianboss_png" top="164"/>
+		<e:Group y="193" horizontalCenter="0">
+
+			<e:Group x="0"   verticalCenter="0">
+				<e:Image id="leftBtn" y="38" left="58" x="0" scaleX="1"  source="jiantouxuan"/>
+				<e:Scroller y="5"   horizontalCenter="0" x="45"  >
+				<e:Group >
+					<e:Group x="22"   verticalCenter="0" height="120">
+						<e:Image source="touxiangkuang0" width="69" height="71" verticalCenter="0" horizontalCenter="0"/>
+						<e:Image id="boss1" y="29" height="60" anchorOffsetX="0" width="61" horizontalCenter="1" source="monhead1006_png"/>
+
+
+						<e:Label id="monName0" text="兽人战将" size="18" horizontalCenter="0" bottom="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+						<e:Image id="state0" horizontalCenter="0" source="yijisha_png" verticalCenter="0" visible="false"/>
+					</e:Group>
+					<e:Group x="142"   verticalCenter="0" height="120">
+						<e:Image width="69" height="71" verticalCenter="0" horizontalCenter="0" source="touxiangkuang0"/>
+						<e:Image id="boss2" width="61" height="60" verticalCenter="0" horizontalCenter="0" source="monhead1006_png"/>
+
+
+						<e:Label text="兽人战将" bottom="0" size="18" horizontalCenter="0" id="monName1" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+						<e:Image id="state1"   horizontalCenter="0" source="yijisha_png" verticalCenter="0" visible="false"/>
+					</e:Group>
+					<e:Group x="262"   verticalCenter="0" height="120">
+					<e:Image   source="touxiangkuang0" width="69" height="71" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image id="boss3" source="monhead1006_png" verticalCenter="0" horizontalCenter="0" width="61" height="60"/>
+						<e:Label text="兽人战将" bottom="0" size="18" horizontalCenter="0" id="monName2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+						<e:Image   id="state2" source="yijisha_png" horizontalCenter="0" verticalCenter="0" visible="false"/>
+					</e:Group>
+					<e:layout>
+					<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
+					</e:layout>
+				</e:Group>
+				</e:Scroller>
+				<e:Image id="rightBtn" y="28" right="0" x="444"   source="jiantouxuan" rotation="180"/>
+				<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:Group  horizontalCenter="0" width="460" anchorOffsetY="0" top="375" height="167">
+
+
+
+
+			<e:Group id="reward"   y="62" horizontalCenter="0">
+			<ns1:ItemBase id="item0" x="100" y="2" skinName="SkinItem2"/>
+			<ns1:ItemBase id="item1" x="110" y="12" skinName="SkinItem2"/>
+			<ns1:ItemBase id="item2" x="120" y="22" skinName="SkinItem2"/>
+			<ns1:ItemBase id="item3" x="130" y="32" skinName="SkinItem2"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="20"/>
+			</e:layout>
+			</e:Group>
+			<e:Image id="giftTitle" y="4"   horizontalCenter="0" source="libao_jingdianboss_png"/>
+		</e:Group>
+		<e:Button id="goBtn" label="前往击杀" skinName="SkinBtn1" horizontalCenter="0.5" bottom="17"/>
+		<e:Label id="successBtn" text="已击杀" size="30" horizontalCenter="0.5" bottom="37" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian"   horizontalCenter="79" bottom="69"/>
+	</e:Group>		
+</e:Skin>

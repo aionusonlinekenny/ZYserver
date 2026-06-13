@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinDress" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*"
+        xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="16585a32a7a"/>
+
+
+	<e:Group id="dressGroup" width="600" horizontalCenter="0" top="0" bottom="0">
+        <e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+        <e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+		<e:Image source="juesebg_png" height="725"  width="600" horizontalCenter="0" verticalCenter="-111.5" anchorOffsetY="0"/>
+		<e:Image height="99" width="548" horizontalCenter="0" verticalCenter="142" source="juesebg2_png" anchorOffsetY="0"/>
+
+		<e:Group id="wingGroup" width="1" height="1"  horizontalCenter="-2" verticalCenter="120.5"/>
+		<e:Group id="weaponGroup" width="1" height="1"  horizontalCenter="0" verticalCenter="123.5"/>
+		<e:Group id="bodyGroup"  width="1" height="1" horizontalCenter="0" verticalCenter="123.5"/>
+		<e:Group id="effGroup"  width="1" height="1" horizontalCenter="0" verticalCenter="-37.5"/>
+
+		<e:ViewStack selectedIndex="0" id="viewStack" horizontalCenter="0"  height="551" verticalCenter="-49.5" width="455"/>
+
+
+
+
+
+
+		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="19" verticalCenter="-308"/>
+		<e:Image id="bg" anchorOffsetY="0" anchorOffsetX="0" alpha="1" width="596" horizontalCenter="0" height="141" verticalCenter="235.5" source="tongyongbg7" scale9Grid="5,5,18,16"/>
+		<e:Scroller width="589" horizontalCenter="0.5" anchorOffsetX="0" anchorOffsetY="0" height="136" skinName="skins.SkinScroller" verticalCenter="240">
+			<e:List id="list" y="2" itemRendererSkinName="SkinDressItem">
+				<e:layout>
+					<e:HorizontalLayout paddingTop="2" paddingLeft="0"  gap="8"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Group id="selectGroup" width="600" height="300" horizontalCenter="0" verticalCenter="12">
+			<e:Image id="nameImage" y="20" right="10" scaleX="1.2" scaleY="1.2"  source=""/>
+			<e:Button id="dressBtn" label="幻 化" skinName="SkinBtn1"  right="11" bottom="15" anchorOffsetX="0" width="149"/>
+			<e:Button id="dressBtn2" label="脱 下" skinName="SkinBtn1"  horizontalCenter="47" width="149" bottom="15" visible="false"/>
+			<e:Image id="background" width="269" height="124"  left="-1" anchorOffsetY="0" anchorOffsetX="0" bottom="27" source="tongyongbg7" scale9Grid="8,4,12,16"/>
+
+			<e:Label text="幻化属性可累加" x="7" size="20"  fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="2"/>
+			<e:Label id="dressName" text="属性-烈焰" y="104" size="20" textColor="0xFFF300" width="150" textAlign="center"
+			          visible="false"/>
+			<e:Label id="attrLabel" x="6" size="18" width="130" text="攻击:123\n攻击:345\n攻击:10\n攻击:12" lineSpacing="10"
+			         height="107" textAlign="left"  verticalAlign="top" anchorOffsetX="0" fontFamily="Microsoft YaHei" anchorOffsetY="0" y="159"/>
+			<e:Label id="attrLv" x="126.98" y="159" size="18" width="180" text="升级+123\n升级+345\n升级+10\n升级+12" lineSpacing="10" height="107" textAlign="left" verticalAlign="top" textColor="0x1AFF00" anchorOffsetY="0" fontFamily="Microsoft YaHei"/>
+
+			<e:Group id="itemGroup" x="425" y="194.34">
+
+				<e:Label id="itemName" text="道具名称x1" size="20" textAlign="center" y="-3" textColor="0x00ff00" fontFamily="Microsoft YaHei" x="24" width="140"/>
+				<e:layout>
+					<e:BasicLayout/>
+				</e:layout>
+
+			</e:Group>
+			<!--<e:Label id="attrPower" text="战力:12345" y="270" size="20" textColor="0xffb82a" width="160" textAlign="center"
+			         horizontalCenter="0" bold="true" />-->
+			<e:Image id="expBarBg" x="189" y="229" scale9Grid="12,10,6,4" width="100"  source="" visible="false"/>
+			<e:ProgressBar id="expBar" skinName="Skinbar1" maximum="100" value="10" x="193" y="233" width="100"  visible="false"/>
+			<e:Label id="expLabel" stroke="1" strokeColor="0x000000" text="100/100" x="190" y="235" size="12" width="100"
+			         verticalAlign="middle" textAlign="center"  visible="false"/>
+		</e:Group>
+		<e:Group id="unSelectGroup" horizontalCenter="0" verticalCenter="162" visible="false">
+			<e:Label text="请选择下列装扮试穿" size="20"  fontFamily="Microsoft YaHei" stroke="1" textColor="0xffff00"/>
+		</e:Group>
+
+
+
+
+
+</e:Group>
+<e:Group id="titleGroup" horizontalCenter="0" top="0" bottom="0" visible="false">
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" source="bg_1_jpg" top="0"/>
+
+	<e:Image width="590" horizontalCenter="0" anchorOffsetY="0" source="tongyong_dikuang4" scale9Grid="7,7,67,69" top="147" bottom="176"/>
+
+
+
+	<e:Group width="600" horizontalCenter="0" top="147" anchorOffsetY="0" bottom="167">
+		<e:Scroller width="580" anchorOffsetY="0"  horizontalCenter="0" bottom="10" top="0">
+			<e:DataGroup id="titleList" itemRendererSkinName="SkinTitleItem" currentState="disabled" useVirtualLayout="false" anchorOffsetY="0" y="1">
+			<e:layout>
+				<e:VerticalLayout gap="3" horizontalAlign="center" verticalAlign="middle" paddingTop="3"/>
+			</e:layout>
+			</e:DataGroup>
+		</e:Scroller>
+	</e:Group>
+</e:Group>
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" horizontalCenter="0" top="0" bottom="0"/>
+	<e:Button id="help" icon="wenhao" skinName="SkinBtn0" label="按钮" scaleX="0.9" scaleY="0.9" top="5" horizontalCenter="-271"/>
+	<e:Image top="11" horizontalCenter="-208.5" source="biaoti_zhuangban_png"/>
+
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose"  width="64" top="48" anchorOffsetY="0" height="64" horizontalCenter="272"/>
+	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="bantoumingkuang3_png" verticalCenter="342.5"/>
+<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" horizontalCenter="0" verticalCenter="342">
+	<e:layout>
+			<e:HorizontalLayout gap="-3"/>
+		</e:layout>
+</e:TabBar>
+
+
+
+	<e:Group  verticalCenter="325.5" horizontalCenter="50">
+		<e:Image id="redPoint0" source="zjmhongdian" horizontalCenter="-190" x="-147"  verticalCenter="0"/>
+		<e:Image id="redPoint1" source="zjmhongdian" horizontalCenter="-72" x="-29"  verticalCenter="0"/>
+		<e:Image id="redPoint2" source="zjmhongdian" horizontalCenter="46" x="89"  verticalCenter="0"/>
+		<e:Image id="redPoint3" source="zjmhongdian" horizontalCenter="164" x="207"  verticalCenter="0"/>
+		<e:layout>
+			<e:HorizontalLayout gap="100"/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="chenghao" icon="dresschenghao_png" skinName="SkinBtn0" label="按钮" scaleX="0.9" scaleY="0.9" top="117" horizontalCenter="258"/>
+
+
+</e:Skin>

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinAct14log" width="600" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="656">
+	<w:Config id="1586d1506c8" />
+
+
+
+
+
+
+
+	<e:Scroller id="scroller" horizontalCenter="0" top="5" height="310">
+		<e:Group id="dataGroup">
+		<e:Group x="5" y="25" height="135">
+			<e:Image id="arrow0" y="58" source="jiantouyou" width="31" height="29" x="90"/>
+			<e:Image id="arrow7" y="58" x="210" source="jiantouyou" width="31" height="29"/>
+			<e:Image id="arrow8" y="58" x="330" source="jiantouyou" width="31" height="29"/>
+			<e:Label text="第一天" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-180" top="0"/>
+			<e:Label text="第二天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
+			<e:Label text="第三天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
+			<e:Label text="第四天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
+
+
+
+
+
+
+
+
+			<ns1:SevenDayItemRender id="dayNum1" skinName="SkinAct14item"  bottom="0"/>
+			<ns1:SevenDayItemRender id="dayNum2" x="121" skinName="SkinAct14item" bottom="0"/>
+			<ns1:SevenDayItemRender id="dayNum3" x="241" skinName="SkinAct14item" bottom="0"/>
+			<ns1:SevenDayItemRender id="dayNum4" x="360" skinName="SkinAct14item" bottom="0"/>
+		</e:Group>
+			<e:Group x="-25" y="-74" height="135">
+				<e:Image id="arrow9" y="58" x="90" source="jiantouyou" width="31" height="29"/>
+				<e:Image id="arrow10" y="58" x="210" source="jiantouyou" width="31" height="29"/>
+				<e:Image id="arrow11" y="58" x="330" source="jiantouyou" width="31" height="29"/>
+				<e:Label text="第五天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-180"/>
+				<e:Label text="第六天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
+				<e:Label text="第七天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
+				<e:Label text="第八天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
+
+
+
+
+
+
+
+
+				<ns1:SevenDayItemRender id="dayNum5" x="0" skinName="SkinAct14item" bottom="0"/>
+				<ns1:SevenDayItemRender id="dayNum6" x="120" skinName="SkinAct14item" bottom="0"/>
+				<ns1:SevenDayItemRender id="dayNum7" x="240" skinName="SkinAct14item" bottom="0"/>
+				<ns1:SevenDayItemRender id="dayNum8" x="360" skinName="SkinAct14item" bottom="0"/>
+			</e:Group>
+			<e:Group x="-15" y="-64" height="135">
+				<e:Image id="arrow12" y="58" x="90" source="jiantouyou" width="31" height="29"/>
+				<e:Image id="arrow13" y="58" x="210" source="jiantouyou" width="31" height="29"/>
+				<e:Image id="arrow14" y="58" x="330" source="jiantouyou" width="31" height="29"/>
+				<e:Label text="第十二天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
+				<e:Label text="第十一天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
+				<e:Label text="第十天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
+				<e:Label text="第九天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-180"/>
+
+
+
+
+
+
+
+
+				<ns1:SevenDayItemRender id="dayNum9" x="0" skinName="SkinAct14item" bottom="0"/>
+				<ns1:SevenDayItemRender id="dayNum10" x="120" skinName="SkinAct14item" bottom="0"/>
+				<ns1:SevenDayItemRender id="dayNum11" x="240" skinName="SkinAct14item" bottom="0"/>
+				<ns1:SevenDayItemRender id="dayNum12" x="360" skinName="SkinAct14item" bottom="0"/>
+			</e:Group>
+			<e:Group x="-5" y="-54" height="135">
+				<e:Image id="arrow17" y="58" x="90" source="jiantouyou" width="31" height="29"/>
+				<e:Label text="第十三天" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-180" top="0"/>
+				<e:Label text="第十四天" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-60" top="0"/>
+
+
+
+
+				<ns1:SevenDayItemRender id="dayNum13" skinName="SkinAct14item" bottom="0" x="0"/>
+				<ns1:SevenDayItemRender id="dayNum14" x="120" skinName="SkinAct14item" bottom="0"/>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="5"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+	<e:Image source="denglu14bg_png" top="268" horizontalCenter="0"/>
+
+	<e:Group id="group1" horizontalCenter="52" bottom="73" scaleX="1" scaleY="1">
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" paddingTop="0"  gap="14"/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="suerBtn" label="领取奖励" horizontalCenter="0" height="56" bottom="5" width="180"  skinName="SkinBtn6" icon="btn2_2"/>
+	<e:Label id="daylabel" text="登陆天数:13" size="20" bottom="18" fontFamily="Microsoft YaHei" left="45"/>
+	<e:Label id="dayaward" text="  第一天奖励详情" size="18" bottom="117" fontFamily="Microsoft YaHei" left="12" width="78"/>
+
+
+	<e:Image id="redPoint" width="20" height="20" horizontalCenter="77" source="zjmhongdian" bottom="53"/>
+</e:Skin>

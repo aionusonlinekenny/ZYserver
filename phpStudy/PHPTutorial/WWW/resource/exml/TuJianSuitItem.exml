@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinTuJianSuitItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group height="113" anchorOffsetY="0" width="385" verticalCenter="0" left="0">
+
+		<e:Image width="274" height="32" source="bantoutiaobg6" horizontalCenter="-51.5" y="0" scale9Grid="4,3,272,22"/>
+
+
+
+
+		<e:Label id="jieduan" text="一阶" y="4" size="20" x="8" fontFamily="Microsoft YaHei" textColor="0xffb400" verticalAlign="middle"/>
+		<e:Label text="套装件数：" x="60" y="4" size="20" fontFamily="Microsoft YaHei" textColor="0xffb400" verticalAlign="middle"/>
+		<e:Label id="num" text="3" x="160" y="4" size="20" fontFamily="Microsoft YaHei" textColor="0xffb400" verticalAlign="middle"/>
+		<e:Label id="suitNum" text="2/3" x="192" y="4" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="activated" text="已集齐" y="3" size="22"   fontFamily="Microsoft YaHei" horizontalCenter="136.5" textAlign="center" textColor="0x00ff00"/>
+		<e:Label id="value0" text="" x="50" y="53" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="value1" text="" x="207" y="53" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="value2" text="" x="50" y="83" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="value3" text="" x="207" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa" y="83"/>
+	</e:Group>
+</e:Skin>

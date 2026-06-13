@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBtn26" states="up,down,disabled" width="50" height="30"
+        currentState="up" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width.up="50" height.up="30">
+	<e:Image id="iconDisplay" alpha.disabled="1"
+	         source="" x.down="0" y.down="1"  scaleX.down="0.95" scaleY.down="0.95" pixelHitTest="true" verticalCenter="0" horizontalCenter="0"/>
+	<e:Label size="24" text="" id="labelDisplay"  textColor="0x7e2a00"  scaleX.down="0.95" scaleY.down="0.95" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0" bold="false"/>
+	<e:Rect strokeAlpha="0" touchEnabled="true" strokeColor.disabled="0x222222" strokeColor="0x222222" includeIn="disabled" fillColor="0x222222" left="0" right="0" top="0" bottom="0" fillAlpha="0.5" visible="false"/>
+</e:Skin>

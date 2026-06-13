@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinFriendItem" width="420" height="107" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
+
+	<e:Image id="vipTitle" x="100.54" y="10" scaleX="1" scaleY="1" source="vipv_png"/>
+	<e:Label id="labelName" text="名字有六个字" x="133" y="12" size="22" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+	<e:Label id="labelGuild" text="仙盟名字多少" x="168.67" y="73" size="22" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+	<e:Label text="仙盟：" x="102" y="73" size="22" fontFamily="Microsoft YaHei" textColor="0x39566A"/>
+	<e:Label id="labelLv" text="12转100级" x="102" size="22" fontFamily="Microsoft YaHei" y="44" textColor="0x00842c"/>
+	<e:Image id="imgBg0" x="21" height="70" width="70" verticalCenter="-1.5" source="guildkuangbg"/>
+	<e:Image id="imgHead" source="head_10" x="25" height="64" width="64" verticalCenter="0"/>
+	<e:Image id="imgBg" x="18" height="76" width="76" verticalCenter="0" source="friend_kuang"/>
+	<e:Button id="inviteBtn" skinName="SkinBtn1" label="发送邀请" name="changeBtn" x="308.02" width="140" verticalCenter="-0.5" scaleX="0.7" scaleY="0.7"/>
+</e:Skin>

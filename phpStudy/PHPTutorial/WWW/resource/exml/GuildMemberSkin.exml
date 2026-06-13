@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildMember" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" height="948" width="600">
+	<e:Image width="598" horizontalCenter="0" top="57" bottom="244" anchorOffsetY="0" height="649" scale9Grid="4,4,18,11" source="tongyong_dikuang4"/>
+	<e:Group id="dinghong" width="556" height="80" bottom="7" horizontalCenter="0" visible="false">
+		<e:Image x="0" top="0" bottom="0" source="bantoumingkuang3"/>
+		<e:Image scaleX="-1" top="0" bottom="0" source="bantoumingkuang3" right="0" />
+	</e:Group>
+
+	<e:Group bottom="160" horizontalCenter="0" width="600" height="80">
+
+		<e:Label text="我的职位:" size="20" verticalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" x="19"/>
+		<e:Label text="历史贡献:" size="20" x="199.99" verticalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="office" text="成员" size="20" x="119.35" verticalCenter="0" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
+		<e:Label id="totalCon" text="0" size="20" x="299.96" verticalCenter="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:Button id="quitBtn" label="退出" width="110" height="46" verticalCenter="1" x="435.97" skinName="SkinBtn6" icon="btn2_2"/>
+	</e:Group>	
+	<e:Scroller width="588" horizontalCenter="-0.5" top="60" bottom="259" anchorOffsetY="0">
+
+			<e:List id="list" x="2" y="2" itemRendererSkinName="SkinMemberItem2">
+				<e:layout>
+					<e:VerticalLayout gap="2" horizontalAlign="center" paddingTop="2"/>
+				</e:layout>
+			</e:List>
+
+	</e:Scroller>
+	<e:Image x="0" y="0" source="hhcy_png" alpha="0.7" visible="false"/>
+	
+</e:Skin>

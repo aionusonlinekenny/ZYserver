@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGwBoss" width="600" height="728" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image horizontalCenter="-3" y="8" source="gwboss_bg_jpg"/>
+	<e:Group id="tower" x="128" y="21" anchorOffsetX="0" width="466">
+		<e:Image y="-7"  x="48" width="192" source="gw_tower_black_png"/>
+		<e:Image id="towerTitleBg" x="0" y="40"  source="gw_title_bg_0_png"/>
+		<e:Image id="towerTitle" x="9" y="74"  source="gw_title_0_png"/>
+		<e:Group id="tower0" y="166" width="190" height="162" x="44"  anchorOffsetY="0">
+		<e:Image horizontalCenter="2" y="8" source="gw_tower_0_png"/>
+		</e:Group>
+		<e:Group id="tower1" y="116" x="53"  visible="false">
+		<e:Image verticalCenter="0" horizontalCenter="0" source="gw_tower_1_png"/>
+		</e:Group>
+		<e:Group id="tower2" y="70" width="148" height="114" x="65"  anchorOffsetY="0" visible="false">
+			<e:Image horizontalCenter="1" y="1" source="gw_tower_2_png"/>
+		</e:Group>
+		<e:Group id="tower3" y="35" width="122" height="89" x="79"  anchorOffsetY="0" visible="false">
+			<e:Image horizontalCenter="0.5" top="-1" source="gw_tower_3_png"/>
+		</e:Group>
+		<e:Group id="tower4" y="-18" width="100" height="103" x="88"  anchorOffsetY="0" visible="false">
+			<e:Image horizontalCenter="0.5" y="1" source="gw_tower_4_png"/>
+		</e:Group>
+		<e:Label id="towerInfo0" text="" y="243" size="22" textAlign="center" touchEnabled="false" x="190"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="towerInfo1" text="" y="182" size="22" textAlign="center" touchEnabled="false" x="190"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="towerInfo2" text="" y="130" size="22" textAlign="center" touchEnabled="false" x="190"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="towerInfo3" text="" y="80" size="22" textAlign="center" touchEnabled="false" x="190"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="towerInfo4" text="" y="26" size="22" textAlign="center" touchEnabled="false" x="190"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image id="towerRedPoint0" source="zjmhongdian"  x="322" y="238" touchEnabled="false"/>
+		<e:Image id="towerRedPoint1" source="zjmhongdian"  x="322" y="176" touchEnabled="false"/>
+		<e:Image id="towerRedPoint2" source="zjmhongdian"  x="322" y="124" touchEnabled="false"/>
+		<e:Image id="towerRedPoint3" source="zjmhongdian"  x="336" y="77" touchEnabled="false"/>
+		<e:Image id="towerRedPoint4" source="zjmhongdian"  x="348" y="22" touchEnabled="false"/>
+	</e:Group>
+	<e:Group id="gw2" x="247" y="462" anchorOffsetX="0" width="215">
+		<e:Image id="img2" y="55" x="65" source="gw_field_locked_2_png"/>
+		<e:Image id="redPoint2" source="zjmhongdian"  bottom="140" x="161" y="19" touchEnabled="false" width="19"/>
+		<e:Image id="titleBg2" x="4" y="57" touchEnabled="false" source="gw_title_bg_0_png"/>
+		<e:Image id="title2" x="14" y="80" touchEnabled="false" source="gw_title_3_png"/>
+		<e:Label id="info2" text="" y="188" size="22" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" x="53"/>
+	</e:Group>
+	<e:Group id="gw0" x="10" bottom="40" anchorOffsetX="0" width="180" anchorOffsetY="0" height="296">
+		<e:Image id="img0" x="34" y="22" source="gw_field_locked_0_png"/>
+		<e:Image id="redPoint0" source="zjmhongdian"  touchEnabled="false" x="155" y="46"/>
+		<e:Image id="titleBg0" x="8" touchEnabled="false" y="22" source="gw_title_bg_0_png"/>
+		<e:Image id="title0" x="18" touchEnabled="false" y="44" source="gw_title_1_png"/>
+		<e:Label id="info0" text="" y="240" size="22" textAlign="center" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	</e:Group>
+	<e:Group id="gw1" x="354" y="333" anchorOffsetX="0" width="233" anchorOffsetY="0" height="196">
+		<e:Image id="img1" y="12" x="58" source="gw_field_locked_1_png"/>
+		<e:Image id="titleBg1" x="15" y="1" touchEnabled="false" source="gw_title_bg_0_png"/>
+		<e:Image id="title1" x="25" y="22" touchEnabled="false" source="gw_title_2_png"/>
+		<e:Label id="info1" text="" y="153" size="22" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" x="63"/>
+		<e:Image id="redPoint1" source="zjmhongdian"  x="157" y="25" touchEnabled="false"/>
+	</e:Group>
+	<e:Label id="leftTime" text="" size="22" bottom="13" fontFamily="Microsoft YaHei" textColor="0xffffff" x="133"/>
+	<e:Label id="remindTpis" text="提醒设置" size="22" horizontalCenter="178" bottom="13" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+</e:Skin>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinRoleToggleBtn" width="90" height="90" states="up,down,disabled" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="1586b28ffb8"/>
+    <e:Image smoothing="true"  width="75" height="76" horizontalCenter="0" verticalCenter="0" source="touxiangkuang"/>
+	<e:Image source="touxianglock" horizontalCenter="0" verticalCenter="0" visible="false"/>
+	<e:Image visible.disabled="false" horizontalCenter="0" verticalCenter="0" source="xuanzhongyuan" width="84" height="84" visible.up="false"/>
+	<e:Image id="iconDisplay" verticalCenter="0" horizontalCenter="0" smoothing="true" width="66" height="66"/>
+
+
+
+
+    <e:Image id="redPoint"  right="7" bottom="61" source="zjmhongdian" visible="false"/>
+	<e:Image id="stageImg" touchEnabled="false" horizontalCenter="0" verticalCenter="0" source=""/>
+	<e:Image id="jobImg" y.disabled="0" x.disabled="61" right="60" top="55" source="job1Item"/> </e:Skin>

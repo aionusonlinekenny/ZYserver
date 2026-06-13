@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinWorldBossGold" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="948">
+	<w:Config id="1586bd3e6ef"/>
+	<e:Group height="346" horizontalCenter="-3" width="490" verticalCenter="53">
+		<e:Image width="484" height="314" horizontalCenter="0" scale9Grid="34,20,1,1" source="tongyong_dikuang2" verticalCenter="0"/>
+		<e:Image width="419" height="186" source="tongyongbg5" horizontalCenter="0.5" verticalCenter="-42" scale9Grid="6,6,14,7"/>
+		<e:Group width="350" height="133" horizontalCenter="0" anchorOffsetY="0" verticalCenter="-29.5">
+			<e:Label text="自动复活" size="23"   x="161" y="64" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+			<e:Label id="reliveTimesTxt" text="9 秒" size="23" x="71" y="64" textColor="0x00ff00" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" width="100"/>
+			<e:Label id="killTips" text="不幸落败，是否复活" y="7.3" textAlign="center" size="23" horizontalCenter="0" anchorOffsetX="0" width="246" fontFamily="Microsoft YaHei" textColor="0x1b3046" verticalAlign="top" anchorOffsetY="0" height="58.33"/>
+			<e:Image source="gantanhao" x="50.83" y="-1" visible="false"/>
+		</e:Group>
+		<e:Group width="240" bottom="46" horizontalCenter="0">
+			<e:Button id="reliveBtn" icon="czbtn"  skinName="SkinBtn6" horizontalCenter="3" verticalCenter="1.5"/>
+			<e:Button id="exitBtn" label="退出" x="-90" y="0" skinName="SkinBtn3" width="110" visible="false"/>
+			<e:Label id="alive" text="复活道具 0/1" x="229" size="18" textColor="0x00ff00" verticalCenter="0" visible="false"/>
+			<e:Image id="moneyIcon" touchEnabled="false" horizontalCenter="-121" source="" y="17"/>
+			<e:Label id="moneyLabel" text="100元宝原地复活" fontFamily="Microsoft YaHei" size="20" horizontalCenter="0" verticalCenter="-1.5"/>
+		</e:Group>
+		<e:Image  width="481" horizontalCenter="0" source="tongyong_juanzhou" scale9Grid="215,3,56,7" top="0"/>
+		<e:Image   horizontalCenter="0.5" source="tongyong_titlebg" top="-16"/>
+		<e:Label text="复活提示" y="-0.67" size="22"   horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+	</e:Group>
+	<e:Group width="383" height="40" horizontalCenter="0.5" verticalCenter="270" visible="false">
+		<e:Image source="bantoutiaobg" height="40" width="383" horizontalCenter="0" scale9Grid="44,5,310,30" x="-1" verticalCenter="0"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="-4.5" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" x="84" verticalCenter="0"/>
+	</e:Group>
+
+</e:Skin>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMijiOverViewItem" width="501" height="170" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" states="miji,title"  height.title="45" height.miji="125">
+	<w:Config id="15c92505802"/>
+<e:Rect fillAlpha="0.6" anchorOffsetY.title="0" left.title="0" right.title="0" top.title="0" top="0" left="0" right="0" bottom.miji="0" bottom.title="-2" bottom="0" visible="false"/>
+	<e:Group x.miji="-2" y.title="0" horizontalCenter.title="0" height="168" y="3" height.miji="120" height.title="45" width="501" x="0">
+		<e:Group id="defaultTitle" width="501" horizontalCenter="0" verticalCenter="0" includeIn="title" x="2" y="33"   height="45" height.title="45">
+			<e:Image source="zjmdingtiaobg" y="19" width="335" horizontalCenter="0.5" visible="false"/>
+			<e:Image   width="310" horizontalCenter="0" horizontalCenter.title="0" verticalCenter.title="0" y.title="12" source="huabian" top="15"/>
+			<e:Label id="name1" text="中级天书"   size="22" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" top="15"/>
+		</e:Group>
+		<e:Group id="mjgroup" width="501" horizontalCenter="0" verticalCenter="0" includeIn="miji" x="2" y="37"   height.miji="116" height="118">
+			<ns1:MijiWithNameItemEx id="item0" x="6" y="0"  skinName="SkinMijiWithNameItem" height="118"/>
+			<ns1:MijiWithNameItemEx id="item1" x="106" y="0"  skinName="SkinMijiWithNameItem" height="118"/>
+			<ns1:MijiWithNameItemEx id="item2" y="0"  skinName="SkinMijiWithNameItem" height="118" x="206"/>
+			<ns1:MijiWithNameItemEx id="item3" x="306" y="0"  skinName="SkinMijiWithNameItem" height="118"/>
+			<ns1:MijiWithNameItemEx id="item4" x="406" y="0"  skinName="SkinMijiWithNameItem" height="118"/>
+			<e:Image y="117" width="500" includeIn="miji" x="0"   source="tongyongline" height="2"/>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout gap="0"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

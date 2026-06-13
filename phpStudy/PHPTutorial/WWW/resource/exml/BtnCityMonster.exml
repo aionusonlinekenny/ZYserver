@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinBtnCityMonster" width="112" height="111" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="btn_monster_bg" anchorOffsetX="0" width="112" anchorOffsetY="0" height="111" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="process" source="round_process" horizontalCenter="0.5" verticalCenter="-8"/>
+	<e:Image id="redPoint" y="10" source="zjmhongdian" x="76"/>
+</e:Skin>

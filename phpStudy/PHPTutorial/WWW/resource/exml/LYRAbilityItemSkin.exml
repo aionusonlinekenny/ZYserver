@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinLYRAbilityItem" width="506" height="112" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*">
+	<e:Image source="tongyongdi6" alpha="1" scale9Grid="24,4,9,33" left="0" right="0" top="0" bottom="0"/>
+	<e:Image y="0" source="lingchongnenglitip_png" alpha="0.7" x="0" visible="false"/>
+	<e:Image width="497" height="117" x="0" y="0" alpha="0.7" source="lingchongnenglitip2_png" visible="false"/>
+
+
+
+
+
+
+
+	<e:Image y="3" width="477" source="line2" height="1" horizontalCenter="0" visible="false"/>
+	<e:Image id="skillImg" y="112.34" width="477" source="line2" height="1" horizontalCenter="0" visible="false"/>
+	<e:Group width="105" height="110" left="0" top="0">
+		<e:Image id="imgBg" scale9Grid="9,9,46,46" anchorOffsetX="0" anchorOffsetY="0" width="76" height="76" source="jinengkuang" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="imgIcon" anchorOffsetX="0" anchorOffsetY="0" width="70" height="70" source="14000_png" horizontalCenter="0" verticalCenter="0" x="20" y="9" scaleX="1" scaleY="1"/>
+	</e:Group>
+	<e:Group width="400" height="110" top="0" anchorOffsetY="0" right="0">
+		<e:Label id="stateLabel" text="(十阶解锁)" size="20" left="90" textColor="0xe40000" fontFamily="Microsoft YaHei" x="89" scaleX="1" scaleY="1" verticalCenter="-28"/>
+		<e:Label id="descLabel" text="技能格凤的前3个技能格炎煌灵凤的前3个技能格，炎煌灵凤可以学习技能提高加成属性" size="18" width="395" anchorOffsetY="0" height="50" anchorOffsetX="0" fontFamily="Microsoft YaHei" alpha="1" textColor="0x001828" scaleX="1" scaleY="1" verticalCenter="15" verticalAlign="middle" horizontalCenter="-0.5"/>
+		<e:Label id="nameTxt" size="20" textAlign="center" text="小火球术" strokeColor="0x111111" fontFamily="Microsoft YaHei" textColor="0x0038ab" scaleX="1" scaleY="1" left="0" verticalCenter="-28"/>
+	</e:Group>
+
+
+
+</e:Skin>

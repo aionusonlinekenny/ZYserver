@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinForge" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586be3384a"/>
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+
+
+	<!--<e:Image x="24" y="85" source="xduanzao_07_png"/>-->
+	<e:ViewStack id="viewStack" selectedIndex="1" horizontalCenter="0" width="600" height="728" verticalCenter="-55">
+		<ns1:ForgeQiangHuaPanel id="boostPanel" name="强化" skinName="SkinBoost" width="600" horizontalCenter="0" height="728" top="0" visible="false"/>
+
+		<ns1:ForgeJingLianPanel id="gemPanel" name="精炼" skinName="SkinCasting" top="0" width="600" horizontalCenter="0" height="728" visible="false"/>
+		<ns1:ForgeJulingPanel id="zhulingPanel" name="聚灵" skinName="SkinRefine" width="600" horizontalCenter="0" height="728" top="0"/>
+		<ns1:WeaponView id="weaponsoul" name="仙弓" skinName="SkinweaponSoul" width="600" horizontalCenter="0" height="728" top="0"/>
+		<!--<ns1:BaseComponent id="reinComposePanel" name="合成" skinName="SkinReinCompose" left="0" right="0" top="0" bottom="0" visible="false"/>-->
+	</e:ViewStack>
+
+	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="98"/>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}"
+	          selectedIndex="0" horizontalCenter="0" bottom="106">
+		<e:layout>
+			<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+	</e:TabBar>
+
+
+
+	<e:Group id="redPointGroup" horizontalCenter="47" touchEnabled="false" width="354" bottom="143">
+		<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" x="0" y="0"/>
+		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" x="118" y="0"/>
+		<e:Image id="redPoint2" touchEnabled="false" source="zjmhongdian" x="237" y="0"/>
+		<e:Image id="redPoint3" source="zjmhongdian" touchEnabled="false" x="357" y="0"/>
+		<!--<e:Image id="redPoint4" source="zjmhongdian" touchEnabled="false" x="367" y="10"/>-->
+		<e:layout>
+			<e:HorizontalLayout gap="94"/>
+		</e:layout>
+	</e:Group>
+
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" anchorOffsetX="0" width="601" top="0" horizontalCenter="0.5"/>
+
+	<e:Image source="biaoti_duanzao" horizontalCenter="-227.5" top="8"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="273"/>
+	
+</e:Skin>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinluckyTurntable" currentState="reset" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*"
+        xmlns:w="http://ns.egret.com/wing" width="600" height="681" states="unReset,reset,resetWithKey" >
+	<w:Config id="15a98a3982e" />
+
+	<e:Image width="265" source="tongyongbg15" left="0" top.unReset="454" bottom.reset="92" bottom.unReset="92" left.unReset="0" scale9Grid.unReset="2,3,16,20" top.reset="473" left.resetWithKey="0" left.reset="0" scale9Grid.reset="6,3,23,20" scale9Grid.resetWithKey="7,3,21,20" top.resetWithKey="522" bottom.resetWithKey="74"/>
+	<e:Group height="620" width="560" verticalCenter="0" horizontalCenter="0">
+
+		<e:Group horizontalCenter="0" width="512" height="604" verticalCenter="-30">
+			<e:Image horizontalCenter="0" verticalCenter="0" source="xyzp_png" height="465" width="555"/>
+
+
+			<e:Group width="472" height="436" horizontalCenter="0" verticalCenter="0">
+				<e:Image id="select0"  source="xyzp3_png" rotation="0" horizontalCenter="0" anchorOffsetX="63.5" anchorOffsetY="144" verticalCenter="-145"/>
+				<e:Image id="select1"  source="xyzp3_png" rotation="36" anchorOffsetX="63.5" anchorOffsetY="144" y="157" x="274.5" visible="false"/>
+				<e:Image id="select2"  source="xyzp3_png" rotation="72" anchorOffsetX="63.5" anchorOffsetY="144" y="188.47" x="298.3" visible="false"/>
+				<e:Image id="select3"  source="xyzp3_png" rotation="108" anchorOffsetX="63.5" anchorOffsetY="144" y="227.47" x="298.13" visible="false"/>
+				<e:Image id="select4"  source="xyzp3_png" rotation="144" anchorOffsetX="63.5" anchorOffsetY="144" y="260.15" x="274.12" visible="false"/>
+				<e:Image id="select5"  source="xyzp3_png" rotation="180" anchorOffsetX="63.5" anchorOffsetY="144" y="271.49" horizontalCenter="-0.5"/>
+				<e:Image id="select6"  source="xyzp3_png" rotation="216" anchorOffsetX="63.5" anchorOffsetY="144" y="257.45" horizontalCenter="-79.5" visible="false"/>
+				<e:Image id="select7"  source="xyzp3_png" rotation="252" anchorOffsetX="63.5" anchorOffsetY="144" y="226.13" horizontalCenter="-127" visible="false"/>
+				<e:Image id="select8"  source="xyzp3_png" rotation="288" anchorOffsetX="63.5" anchorOffsetY="144" y="190.79" horizontalCenter="-127" visible="false"/>
+				<e:Image id="select9"  source="xyzp3_png" rotation="324" anchorOffsetX="63.5" anchorOffsetY="144" y="158.11" horizontalCenter="-77.5" visible="false"/>
+			</e:Group>
+			<e:Group y="105" horizontalCenter="2" width="430" height="385">
+			<ns1:HaoTianTaLotteryItem id="item0" y="0" skinName="SkinTttZhuanpanItem" horizontalCenter="0" scaleX="0.9" scaleY="0.9"/>
+			<ns1:HaoTianTaLotteryItem id="item1" y="32" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="85"/>
+			<ns1:HaoTianTaLotteryItem id="item2" y="112" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="148"/>
+			<ns1:HaoTianTaLotteryItem id="item3" y="200" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="148"/>
+			<ns1:HaoTianTaLotteryItem id="item4" y="278" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="85"/>
+			<ns1:HaoTianTaLotteryItem id="item5" skinName="SkinTttZhuanpanItem" horizontalCenter="0" bottom="0" scaleX="0.9" scaleY="0.9"/>
+			<ns1:HaoTianTaLotteryItem id="item6" skinName="SkinTttZhuanpanItem" y="278" scaleX="0.9" scaleY="0.9" horizontalCenter="-85"/>
+			<ns1:HaoTianTaLotteryItem id="item7" y="200" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="-148"/>
+			<ns1:HaoTianTaLotteryItem id="item8" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" y="112" horizontalCenter="-148"/>
+			<ns1:HaoTianTaLotteryItem id="item9" y="32" skinName="SkinTttZhuanpanItem" scaleX="0.9" scaleY="0.9" horizontalCenter="-85"/>
+			</e:Group>
+
+			<e:Image id="tttzhi" touchEnabled="false" anchorOffsetX="55.5" anchorOffsetY="119" source="xyzp2_png" rotation="0" y="293" x="257.5"/>
+			<e:CheckBox id="turnten" label="10连抽" skinName="SkinCheckBox1" horizontalCenter="0"  icon="xyzp4_png" y="336"/>
+
+
+			<e:Button id="choujiangBtn" skinName="SkinBtn0" icon="xyzpstart_png" horizontalCenter="0" verticalCenter="-6"/>
+			<e:Button id="closeBtn" skinName="SkinBtn0" right="0" y="530" label="" visible="false"/>
+		</e:Group>
+		<e:Image scaleY="1" horizontalCenter="0" y="-40.34" width="214" height="50" source="huabian3"/>
+
+
+		<e:Image id="title" y="-21" horizontalCenter="0" source="biaoti_xingyunzhuanpan_png"/>
+
+
+
+
+	</e:Group>
+	<e:Group  bottom="10" horizontalCenter="0" includeIn="reset,resetWithKey" visible.resetWithKey="false" bottom.reset="8">
+		<e:Group y="16" horizontalCenter="-253">
+		<e:Button id="leftBtn" label="" icon="jiantouxuan" skinName="SkinBtn0"  x="0" y="0"/>
+		<e:Image id="leftRed" x="20" y="-8" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9"/>
+		</e:Group>
+		<e:Group y="16" horizontalCenter="253" width.reset="67">
+		<e:Button id="rightBtn" label="" icon="jiantouxuan" skinName="SkinBtn0" scaleX="-1" scaleY="1" y="0" x="39" horizontalCenter.reset="0"/>
+		<e:Image id="rightRed" x="19" y="-8" source="zjmhongdian" touchEnabled="false" x.reset="24" scaleX="0.9" scaleY="0.9"/>
+		</e:Group>
+		<e:Scroller id="menuScroller" scrollPolicyV="off" scrollPolicyH="on" height="82" y="0" horizontalCenter="0" width="432" height.reset="86">
+		<e:List id="menuList" y="74" horizontalCenter="0" scrollEnabled="false" itemRendererSkinName="SkinluckyTurntableItem">
+			<e:layout>
+				<e:HorizontalLayout gap="18"/>
+			</e:layout>
+
+
+
+		</e:List>
+		</e:Scroller>
+	</e:Group>
+	<e:Group horizontalCenter="0" width="530" bottom="4"  includeIn="unReset">
+		<e:Image source="jingyantiao6" left="75" right="75" y="31" scale9Grid="4,3,21,9" height="18" anchorOffsetX="0"/>
+		<e:ProgressBar id="bar0" height="17" skinName="Skinbar5" value="100" y="32" width="90" horizontalCenter="-144"/>
+		<e:ProgressBar id="bar1" height="17" skinName="Skinbar5" value="100" y="32" width="90" horizontalCenter="0"/>
+		<e:ProgressBar id="bar2" height="17" skinName="Skinbar5" value="100" y="32" width="90" horizontalCenter="144"/>
+
+
+		<e:Image source="touxiangkuang" anchorOffsetX="0" width="75" anchorOffsetY="0" height="75" horizontalCenter="-225"/>
+
+		<e:Label text="已抽次数" y="24" size="14"  horizontalCenter="-225" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="turntime" text="25" y="41" size="22" textColor="0x00FF00" textAlign="center" horizontalCenter="-225.5"/>
+		<e:Group y="6" width="56" horizontalCenter="-73">
+		<e:Label id="turntime0" text="抽奖4次" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<ns1:ItemBase id="gift0" skinName="SkinItem" scaleX="0.8" scaleY="0.8"/>
+		<e:Group id="eff0" scaleX="0.8" scaleY="0.8" y="30" x="34"/>
+		<e:Group id="isget0" width="90" height="96" scaleX="0.8" scaleY="0.8"/>
+
+		<e:Image id="lingqu0" source="yilingqu" horizontalCenter="0" verticalCenter="-3.5"/>
+		<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" x="50" y="-8" scaleX="0.8" scaleY="0.8"/>
+		</e:Group>
+		<e:Group y="6" width="56" horizontalCenter="73">
+		<e:Label id="turntime1" text="抽奖10次" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+		<ns1:ItemBase id="gift1" skinName="SkinItem" scaleX="0.8" scaleY="0.8"/>
+		<e:Group id="eff1" scaleX="0.8" scaleY="0.8" x="34" y="30"/>
+		<e:Group id="isget1" width="90" height="96" scaleX="0.8" scaleY="0.8"/>
+		<e:Image id="lingqu1" source="yilingqu" horizontalCenter="0" verticalCenter="-3.5"/>
+		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" x="50" y="-8" scaleX="0.8" scaleY="0.8"/>
+		</e:Group>
+		<e:Group y="6" width="56" horizontalCenter="213">
+		<e:Label id="turntime2" text="抽奖20次" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<ns1:ItemBase id="gift2" skinName="SkinItem" scaleX="0.8" scaleY="0.8"/>
+		<e:Group id="eff2" scaleX="0.8" scaleY="0.8" x="34" y="30"/>
+		<e:Group id="isget2" height="96" scaleX="0.8" scaleY="0.8" width="90"/>
+		<e:Image id="lingqu2" source="yilingqu" horizontalCenter="0" verticalCenter="-3.5"/>
+
+		<e:Image id="redPoint2" touchEnabled="false" source="zjmhongdian" x="50" y="-8" scaleX="0.8" scaleY="0.8"/>
+		</e:Group>
+
+	</e:Group>
+
+	<e:Group horizontalCenter="0" top="51">
+		<e:Label id="actTime" text="剩余时间：20时20分20秒" size="18" y="0" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:layout>
+		<e:HorizontalLayout/>
+		</e:layout>
+	</e:Group>
+
+	<e:Label id="getkey" text="获取钥匙" size="20" right="60" textColor="0x20cb30" bottom="111" visible="false"/>
+
+	<e:Scroller id="barList" bounces="false" bottom="92" top="454" left="0" scrollPolicyV="on" left.resetWithKey="3" top.resetWithKey="522" bottom.resetWithKey="74" anchorOffsetX.resetWithKey="0"  anchorOffsetY.resetWithKey="0" left.reset="3" top.reset="473" bottom.reset="92" left.unReset="3" anchorOffsetY.reset="0">
+		<e:List id="list" x="0" y="-2" itemRendererSkinName="SkinHuntListRenderer" scaleX="0.7" scaleY="0.7" anchorOffsetY.reset="0" height.reset="189.05" anchorOffsetY.resetWithKey="0" height.resetWithKey="205.71" x.resetWithKey="0" y.resetWithKey="-68">
+			<e:layout>
+				<e:VerticalLayout gap="0" horizontalAlign="left"/>
+			</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Group y.reset="480" y.unReset="480" horizontalCenter="0" verticalCenter.resetWithKey="308.5" verticalCenter="227.5" horizontalCenter.resetWithKey="0">
+		<e:Group y="0" height="30" y.resetWithKey="0">
+		<e:Label text="抽奖消耗：" textColor="0xFFFFFF" size="20" y="5" x="0" fontFamily="Microsoft YaHei"/>
+		<e:Image source="szyuanbao"  left="0" top="0"/>
+		<e:Label id="pay0" text="500" size="20" textColor="0xFFFF00" x="32" y="14"  fontFamily="Microsoft YaHei"/>
+		<e:Label text="或" size="20" textColor="0xFFFFFF" x="189" y="5"  fontFamily="Microsoft YaHei"/>
+		<e:Image id="icon" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30" x="215" y="0"  source="szkey"/>
+		<e:Label id="num" text="10" y="0" size="20" x="136.5" textColor="0x00FF00" fontFamily.reset="Microsoft YaHei" fontFamily.unReset="Microsoft YaHei"/>
+		<e:Label id="num2" text="/1" size="20" textColor="0xFFFFFF" x="199" y="15"  fontFamily="Microsoft YaHei"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="6" horizontalAlign="center"/>
+		</e:layout>
+		</e:Group>
+	</e:Group>
+
+
+
+
+</e:Skin>

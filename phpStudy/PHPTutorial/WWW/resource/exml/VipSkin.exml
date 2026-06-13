@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinVip" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15d3ae5b08d"/>
+
+	<e:Image width="600" horizontalCenter="0" source="vipbg_png" top="0" bottom="0" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image width="565" horizontalCenter="0" anchorOffsetX="0" anchorOffsetY="0" x="10" scale9Grid="22,20,24,28" height="726" verticalCenter="-8" source="vipbg4_png"/>
+	<e:Image width="563" horizontalCenter="0" anchorOffsetX="0" anchorOffsetY="0" height="250" verticalCenter="88" source="vipbg3"/>
+	<ns1:RoleSelectPanel id="roleSelect" width="600" horizontalCenter="0" currentState="nohead" top="0" bottom="0" skinName="SkinRoleSelectPanel"/>
+	<e:Group width="569" horizontalCenter="0.5" touchEnabled="false" touchChildren="false" anchorOffsetX="0" anchorOffsetY="0" height="757" verticalCenter="-24.5">
+		<e:Image width="324" height="115" y="-67" x="-14" source="shang_2_png"/>
+		<e:Image scaleX="-1" right="0" source="shang_7" rotation="180" top="-1" visible="false"/>
+		<e:Image source="shang_8" width="40" anchorOffsetX="0" height="40" rotation="180" bottom="-7" left="-4" visible="false"/>
+		<e:Image width="46" anchorOffsetX="0" height="46" rotation="0" source="shang_7" bottom="-7" right="-1.5" visible="false"/>
+	</e:Group>
+	<e:Image horizontalCenter="-173" verticalCenter="-406" source="biaoti_vip_png"/>
+	<e:Group id="topGroup" width="550" height="100" horizontalCenter="0" verticalCenter="-354">
+		<e:Group id="vipGroup"  left="-4" verticalCenter="44.5">
+			<e:Image source="viphuizhang" y="0" anchorOffsetX="0"  horizontalCenter="0"/>
+		</e:Group>
+		<e:Label id="titleLabel" text="" size="20" fontFamily="Microsoft YaHei" y="102" textColor="0xffffff" horizontalCenter="-41.5" textAlign="center"/>
+		<e:Button id="topUpBtn" label="立即充值" width="158" height="48" y="67" x="408" skinName="SkinBtn0" icon="czbtn3" scaleX="0.7" scaleY="0.7"/>
+	</e:Group>
+
+	<e:Image id="vipImg0" horizontalCenter="-189" width="174" height="41" anchorOffsetY="0" source="viptequanbg" anchorOffsetX="0" verticalCenter="-223.5"/>
+	<e:Label id="titleText" text="VIP 1 特权" size="26" lineSpacing="10" horizontalCenter="-200" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-223"/>
+	<e:Image id="vipImg" horizontalCenter="1" width="576" height="168" anchorOffsetY="0" verticalCenter="-120" source="vipbn3_png"/>
+	<e:Button id="leftBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" scaleX="1.1" scaleY="1.1" width="60" height="50" horizontalCenter="-240" verticalCenter="84.5"/>
+	<e:Button id="rightBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" scaleX="-1.1" scaleY="1.1" width="60" height="50" horizontalCenter="238.5" bottom="362" verticalCenter="84.5"/>
+	<e:Label id="more" text="" x="47" y="105" size="20"  fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+	<e:Group horizontalCenter="0" anchorOffsetX="0" width="360" anchorOffsetY="0" height="238" verticalCenter="87">
+		<e:Label id="show" x="22" y="85" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff" height="22" verticalAlign="middle" anchorOffsetX="0" width="358"/>
+		<e:Label id="depictLabel" size="18" lineSpacing="10" width="377" textAlign="left" horizontalCenter="8.5" y="26" x="11"  fontFamily="Microsoft YaHei" anchorOffsetY="0" height="215" textColor="0xffffff" anchorOffsetX="0" verticalAlign="top"/>
+		<e:layout>
+		<e:VerticalLayout horizontalAlign="left" gap="2"/>
+		</e:layout>
+	</e:Group>
+
+	<e:Group horizontalCenter="0" width="570" height="141" anchorOffsetY="0" verticalCenter="282.5">
+		<e:Image width="133" x="18.34" height="34" scale9Grid="0,3,58,18" y="-3" source="viplibao" anchorOffsetY="0"/>
+		<e:Label text="VIP礼包" size="24" bold="true" x="20" textColor="0xf8b141" visible="false"/>
+		<e:Scroller id="scrollerlist" width="342" anchorOffsetX="0" horizontalCenter="-102" height="108" verticalCenter="8.5" scrollPolicyH="off" scrollPolicyV="off">
+		<e:List id="list" anchorOffsetX="0" width="339.33" x="17" y="-1" height="108" anchorOffsetY="0" itemRendererSkinName="SkinItem2">
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" paddingTop="13" gap="4" paddingLeft="13" paddingRight="13"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+		<e:Button id="suerBtn" y="49" skinName="SkinBtn0" icon="czbtn2" right="27" height="49" width="176"/>
+	</e:Group>
+	<e:Group width="570" horizontalCenter="0" height="141" verticalCenter="281.5" visible="false">
+
+		<e:Label text="每周礼包" size="22" x="42" y="4.33" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Scroller scaleX="0.9" scaleY="0.9" y="27.01" width="342" horizontalCenter="-121" height="113">
+		<e:List id="list0" itemRendererSkinName="SkinItem">
+			<e:layout>
+			<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+		<e:Button id="suerBtn0" label="领取" width="205" height="58" y="46.34" skinName="SkinBtn0" icon="czbtn2" right="11"/>
+	</e:Group>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="zjmfanhui" horizontalCenter="255" bottom="7" visible="false"/>
+	<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" icon="chatclose"  width="80" height="80" horizontalCenter="274" top="40"/>
+</e:Skin>

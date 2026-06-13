@@ -1,0 +1,212 @@
+[2024-12-02 17:31:57]watch thread start 
+[2024-12-02 17:31:57]loading server config 
+[2024-12-02 17:31:57]open server time is : 2023-6-29 18:38:7 
+[2024-12-02 17:31:57]add route,Host=192.168.200.129,port=9009,serverid=9 
+[2024-12-02 17:31:57]load server config complete 
+[2024-12-02 17:31:57]start server................... 
+[2024-12-02 17:31:57]Start Load Luaguage Config! 
+[2024-12-02 17:31:58][LANGUAGE]Luaguage Load Complete! 
+[2024-12-02 17:32:05]all game config load complete! 
+[2024-12-02 17:32:05]wait for db client... 
+[2024-12-02 17:32:06]data server server succ 
+[2024-12-02 17:32:06]DBClientMgr start! 
+[2024-12-02 17:32:06]DBClientMgr start! 
+[2024-12-02 17:32:06]********npc script too big:./data/functions/globalfunction.txt 
+[2024-12-02 17:32:08]new gate connect,idx=0 
+[2024-12-02 17:32:08]gateway client (127.0.0.1:49229:0) registe success (GameWorld9) 
+[2024-12-02 17:32:25]dispatcher reg 0 2 
+[2024-12-02 17:32:25]dispatcher reg 0 100 
+[2024-12-02 17:32:25]dispatcher reg 12 1 
+[2024-12-02 17:32:25]dispatcher reg 1 35 
+[2024-12-02 17:32:25]dispatcher reg 12 2 
+[2024-12-02 17:32:26][PACKAGE->guildbattle][FUN->initGlobalData] call, 
+[2024-12-02 17:32:26]file ./runtime//system_var_9.bin not exist 
+[2024-12-02 17:32:26][PACKAGE->guildbattlepersonalaward][FUN->initGlobalData] call, 
+[2024-12-02 17:32:26]dispatcher reg 6 5 
+[2024-12-02 17:32:26]load global function!!!! 
+[2024-12-02 17:32:26]loadServerRoute start ... 
+[2024-12-02 17:32:26]ResetGameRoute 
+[2024-12-02 17:32:26]add route,Host=192.168.200.129,port=9009,serverid=9 
+[2024-12-02 17:32:26]serverroute.saveSelfRoute count:1 
+[2024-12-02 17:32:26]serverroute.saveSelfRoute host = 192.168.200.129, port = 9009 
+[2024-12-02 17:32:27]loadCrossConfigPre start 
+[2024-12-02 17:32:27]loadCrossConfigPre finish, serverType : 1 
+[2024-12-02 17:32:27]loadCrossConfig start 
+[2024-12-02 17:32:27]loadCrossConfig startGameConnSrv : port = 3101 
+[2024-12-02 17:32:27]loadCrossConfig finish, serverType : 1 
+[2024-12-02 17:32:27]instance init fid:50002 handle:3162505471 
+[2024-12-02 17:32:27]peakracerank.resetRankingList start 
+[2024-12-02 17:32:27]peakracecrosssystem.RegTimerEvent curStartTime:2024-12-9 0:0:0 
+[2024-12-02 17:32:27]peakracesystem.RegTimerEvent st:0,dotime:2024-12-9 12:0:0 
+[2024-12-02 17:32:27]peakracesystem.RegTimerEvent st:1,dotime:2024-12-13 21:0:0 
+[2024-12-02 17:32:27]peakracesystem.RegTimerEvent st:2,dotime:2024-12-15 15:0:0 
+[2024-12-02 17:32:27]peakracesystem.RegTimerEvent st:3,dotime:2024-12-15 15:30:0 
+[2024-12-02 17:32:27]peakracesystem.RegTimerEvent st:4,dotime:2024-12-15 16:0:0 
+[2024-12-02 17:32:27]peakracesystem.RegTimerEvent st:5,dotime:2024-12-15 16:30:0 
+[2024-12-02 17:32:27]peakracesystem.RegTimerEvent st:6,dotime:2024-12-15 17:0:0 
+[2024-12-02 17:32:27]peakracesystem.RegTimerEvent st:7,dotime:2024-12-15 17:30:0 
+[2024-12-02 17:32:27]instance init fid:0 handle:1704984830 
+[2024-12-02 17:32:27]__SQL__:select * from globalmails; 
+[2024-12-02 17:32:27]__SQL__:select * from actors where serverindex=9 and (status & 2)=2 
+[2024-12-02 17:32:27]load all actor completed. size:0 
+[2024-12-02 17:32:27]__SQL__:call loadguildbasicdata(9); 
+[2024-12-02 17:32:28]StartEngine, load global data finish!!!!!! 
+[2024-12-02 17:32:28]__SQL__:call loadmaxactoridseries(9) 
+[2024-12-02 17:32:28]********** load max actorid series is:0 ********** 
+[2024-12-02 17:32:28]__SQL__:call loadallactorname(9) 
+[2024-12-02 17:32:28]0 actor name loaded 
+[2024-12-02 17:32:28]__SQL__:call loadfilternames() 
+[2024-12-02 17:32:28]0 filter name loaded 
+[2024-12-02 17:32:28]__SQL__:select oldname, actorid from actoroldname; 
+[2024-12-02 17:32:28]0 actor old name loaded 
+[2024-12-02 17:32:28]load allowword.txt 
+[2024-12-02 17:32:28]start server...................[ok] 
+[2024-12-02 17:32:28]   _  ___  _  __  ___   _          
+[2024-12-02 17:32:28]  |_   |  |_| |_|  |   | | |_/     
+[2024-12-02 17:32:28]   _|  |  | | | \  |   |_| | \_      
+[2024-12-02 17:32:28]                                    
+[2024-12-02 17:32:28]start server...................[ok] 
+[2024-12-02 17:32:28]================================================ 
+[2024-12-02 17:32:28]gameworld start ok,kernal:2.0,version:18.9.25.1 
+[2024-12-02 17:32:28]quit:stop server and exit 
+[2024-12-02 17:32:28]================================================ 
+[2024-12-02 17:32:28]actor mar thread start! 
+[2024-12-02 17:32:28]1733131948 before connect. 
+[2024-12-02 17:32:28]AsyncWorker start! 
+[2024-12-02 17:32:28]ChatManager::ReloadFilterDb:24090 loaded FilterWords 
+[2024-12-02 17:32:28]tianti,CheckTianti 
+[2024-12-02 17:32:28]OpenTianti,isNotice:false 
+[2024-12-02 17:32:28]tiantirank,initRankingList 
+[2024-12-02 17:32:28]1733131948 after connect. 
+[2024-12-02 17:32:28]instance init fid:22019 handle:3579838717 
+[2024-12-02 17:32:28]instance init fid:23002 handle:864026876 
+[2024-12-02 17:32:28]instance init fid:23008 handle:2145386747 
+[2024-12-02 17:32:28]instance init fid:22501 handle:1447035130 
+[2024-12-02 17:32:28]instance init fid:22502 handle:593494265 
+[2024-12-02 17:32:28]instance init fid:22503 handle:664797432 
+[2024-12-02 17:32:28]instance init fid:22504 handle:3152019703 
+[2024-12-02 17:32:28]instance init fid:23009 handle:228589814 
+[2024-12-02 17:32:28]instance init fid:22505 handle:1600127221 
+[2024-12-02 17:32:28]instance init fid:22506 handle:3147825396 
+[2024-12-02 17:32:28]instance init fid:22507 handle:1461715187 
+[2024-12-02 17:32:28]instance init fid:22508 handle:945815794 
+[2024-12-02 17:32:28]instance init fid:23010 handle:1423966449 
+[2024-12-02 17:32:28]instance init fid:22508 handle:1736442096 
+[2024-12-02 17:32:28]instance init fid:22509 handle:3409969391 
+[2024-12-02 17:32:28]instance init fid:22510 handle:1533018350 
+[2024-12-02 17:32:28]instance init fid:22511 handle:3640656109 
+[2024-12-02 17:32:28]instance init fid:23011 handle:3363832044 
+[2024-12-02 17:32:28]instance init fid:22512 handle:2759852267 
+[2024-12-02 17:32:28]instance init fid:22513 handle:3416260842 
+[2024-12-02 17:32:28]instance init fid:22513 handle:3267363049 
+[2024-12-02 17:32:28]instance init fid:23003 handle:3093299432 
+[2024-12-02 17:32:28]instance init fid:23012 handle:1128268007 
+[2024-12-02 17:32:28]instance init fid:22515 handle:60817638 
+[2024-12-02 17:32:28]instance init fid:22516 handle:3292528869 
+[2024-12-02 17:32:28]instance init fid:22517 handle:2931818724 
+[2024-12-02 17:32:28]instance init fid:22518 handle:2592080099 
+[2024-12-02 17:32:28]instance init fid:22001 handle:4026532066 
+[2024-12-02 17:32:28]instance init fid:22519 handle:1486880993 
+[2024-12-02 17:32:28]instance init fid:51000 handle:1182793952 
+[2024-12-02 17:32:28]instance init fid:51000 handle:2583691487 
+[2024-12-02 17:32:28]instance init fid:51000 handle:2002780382 
+[2024-12-02 17:32:28]instance init fid:22002 handle:1310720221 
+[2024-12-02 17:32:28]instance init fid:51000 handle:167772380 
+[2024-12-02 17:32:28]instance init fid:51000 handle:3718250715 
+[2024-12-02 17:32:28]instance init fid:51000 handle:786432218 
+[2024-12-02 17:32:28]instance init fid:51000 handle:1694499033 
+[2024-12-02 17:32:28]instance init fid:22003 handle:2644508888 
+[2024-12-02 17:32:28]instance init fid:51000 handle:1449132247 
+[2024-12-02 17:32:28]instance init fid:51000 handle:1432355030 
+[2024-12-02 17:32:28]instance init fid:51000 handle:3539992789 
+[2024-12-02 17:32:28]instance init fid:23001 handle:1782579412 
+[2024-12-02 17:32:28]instance init fid:23004 handle:2388656339 
+[2024-12-02 17:32:28]instance init fid:22004 handle:1977614546 
+[2024-12-02 17:32:28]instance init fid:51000 handle:2774532305 
+[2024-12-02 17:32:28]instance init fid:50005 handle:20971728 
+[2024-12-02 17:32:28]instance init fid:50005 handle:356516047 
+[2024-12-02 17:32:28]instance init fid:22005 handle:3248488654 
+[2024-12-02 17:32:28]instance init fid:50006 handle:1912602829 
+[2024-12-02 17:32:28]instance init fid:50006 handle:757072076 
+[2024-12-02 17:32:28]instance init fid:50006 handle:1111490763 
+[2024-12-02 17:32:28]instance init fid:22006 handle:503316682 
+[2024-12-02 17:32:28]instance init fid:50006 handle:536871113 
+[2024-12-02 17:32:28]instance init fid:40002 handle:1589641416 
+[2024-12-02 17:32:28]instance init fid:40003 handle:3160408263 
+[2024-12-02 17:32:28]instance init fid:22007 handle:1918894278 
+[2024-12-02 17:32:28]instance init fid:40002 handle:4292870341 
+[2024-12-02 17:32:28]instance init fid:40003 handle:2101346500 
+[2024-12-02 17:32:28]instance init fid:23005 handle:994050243 
+[2024-12-02 17:32:28]instance init fid:22008 handle:293601474 
+[2024-12-02 17:32:28]instance init fid:40003 handle:4257218753 
+[2024-12-02 17:32:28]instance init fid:40004 handle:3923771584 
+[2024-12-02 17:32:28]instance init fid:40002 handle:1033896127 
+[2024-12-02 17:32:28]instance init fid:22009 handle:2069889214 
+[2024-12-02 17:32:28]instance init fid:40004 handle:3001024701 
+[2024-12-02 17:32:28]instance init fid:51011 handle:3646947516 
+[2024-12-02 17:32:28]instance init fid:51012 handle:3214934203 
+[2024-12-02 17:32:28]instance init fid:22010 handle:3800039610 
+[2024-12-02 17:32:28]instance init fid:51014 handle:52428985 
+[2024-12-02 17:32:28]instance init fid:51015 handle:3433038008 
+[2024-12-02 17:32:28]instance init fid:51016 handle:104857783 
+[2024-12-02 17:32:28]instance init fid:22011 handle:2004877494 
+[2024-12-02 17:32:28]instance init fid:51018 handle:2961178805 
+[2024-12-02 17:32:28]instance init fid:23006 handle:3024093364 
+[2024-12-02 17:32:28]instance init fid:22012 handle:3443523763 
+[2024-12-02 17:32:28]instance init fid:22013 handle:3693084850 
+[2024-12-02 17:32:28]instance init fid:22014 handle:2522874033 
+[2024-12-02 17:32:28]instance init fid:22015 handle:2015363248 
+[2024-12-02 17:32:28]instance init fid:51017 handle:901775535 
+[2024-12-02 17:32:28]instance init fid:51013 handle:939524270 
+[2024-12-02 17:32:28]instance init fid:23007 handle:1098907821 
+[2024-12-02 17:32:28]instance init fid:22016 handle:2514485420 
+[2024-12-02 17:32:28]instance init fid:40003 handle:4192207019 
+[2024-12-02 17:32:28]instance init fid:40002 handle:826278058 
+[2024-12-02 17:32:28]instance init fid:40004 handle:377487529 
+[2024-12-02 17:32:28]instance init fid:22017 handle:1138753704 
+[2024-12-02 17:32:28]instance init fid:40004 handle:2556428455 
+[2024-12-02 17:32:28]instance init fid:50006 handle:373293222 
+[2024-12-02 17:32:28]instance init fid:50005 handle:3995074725 
+[2024-12-02 17:32:28]instance init fid:22018 handle:3644850340 
+[2024-12-02 17:32:28]instance init fid:51000 handle:3980394659 
+[2024-12-02 17:32:28]instance init fid:22514 handle:905969826 
+[2024-12-02 17:32:28]init red pack time out call back 
+[2024-12-02 17:32:28]guildboss: On GameServerStart... 
+[2024-12-02 17:32:28]__SQL__:select * from auction where serverid=9 
+[2024-12-02 17:32:31]game client (127.0.0.1:49240:1) registe success (GameWorld) 
+[2024-12-02 17:32:31]OnRecvCrossServerMsg not cmdType: 72 
+[2024-12-02 17:32:31]OnRecvCrossServerMsg not cmdType: 10 
+[2024-12-02 17:32:31]csbase.OnConnected to 1, serverType:0 
+[2024-12-02 17:32:31]sendRouteData srvId:9, dstSrv:1 
+[2024-12-02 17:32:31]peakracecrosssystem.sendStatusChangeToServ send status to all server:1,st:nil,o:0 
+[2024-12-02 17:32:31]devilbossfb.OnServerConn:sendBossInfo scccess, srvId:1 
+[2024-12-02 17:32:31]data server server succ 
+[2024-12-02 17:32:31]recvRouteData srvId:1 
+[2024-12-02 17:32:31]./data/functions/utils\log.lua[109]:[1] = { 
+[2024-12-02 17:32:31]    [1] = "106.55.254.14", 
+[2024-12-02 17:32:31]    [2] = 9001, 
+[2024-12-02 17:32:31]./data/functions/utils\log.lua[111]:}, 
+[2024-12-02 17:32:31]ResetSingleGameRoute sid:1 
+[2024-12-02 17:32:31]add route,Host=106.55.254.14,port=9001,serverid=1 
+[2024-12-02 17:32:31]start to crossBossOpen 
+[2024-12-02 17:32:31]instance init fid:51003 handle:910164130 
+[2024-12-02 17:32:31]instance:onMonsterCreate: monster_id:85004,fbId:51003 
+[2024-12-02 17:32:31]crossbossfb.refreshBossTimer: refresh monster success, id:1 
+[2024-12-02 17:32:31]crossbossfb.refreshFlagTimer: refresh flag success, id:1 
+[2024-12-02 17:32:31]createBossFb success, id:1 
+[2024-12-02 17:32:31]instance init fid:51002 handle:3984588963 
+[2024-12-02 17:32:31]instance:onMonsterCreate: monster_id:85003,fbId:51002 
+[2024-12-02 17:32:31]crossbossfb.refreshBossTimer: refresh monster success, id:8 
+[2024-12-02 17:32:31]createBossFb success, id:8 
+[2024-12-02 17:32:31]end to crossBossOpen 
+[2024-12-02 17:32:31]crossbossfb.OnAllServerConn:sendBossInfo scccess, id:1 
+[2024-12-02 17:32:31]crossbossfb.OnAllServerConn:sendBossInfo scccess, id:8 
+[2024-12-02 17:32:31] 等待采集时间超时  
+[2024-12-02 17:37:43]mysql ping error, errcode=1 
+[2024-12-02 17:37:43]1733132263 before connect. 
+[2024-12-02 17:37:44]can not connect to mysql锛?s 
+[2024-12-02 17:37:44]DB will reconnect after 5s 
+[2024-12-02 17:37:44]data server server disconnect! 
+[2024-12-02 17:37:44]data server client socket error! 10054 远程主机强迫关闭了一个现有的连接。
+[2024-12-02 17:37:44]data server server disconnect! 
+[2024-12-02 17:37:44]data server client socket error! 10054 远程主机强迫关闭了一个现有的连接。

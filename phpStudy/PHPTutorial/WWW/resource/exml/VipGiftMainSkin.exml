@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinVipGiftMain" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:ViewStack id="viewStack" width="600" selectedIndex="0" horizontalCenter="0" top="0" anchorOffsetY="0" bottom="0">
+	</e:ViewStack>
+	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="94.5" height="63" source="bantoumingkuang3_png" visible="false"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="275.5" width="80" height="80" top="39"/>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="102.5">
+		<e:layout>
+		<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+	</e:TabBar>
+	<e:Group id="redPointGroup" horizontalCenter="45" touchEnabled="false" bottom="142">
+		<e:Image id="redPoint0" source="zjmhongdian" x="0" y="0" visible="false"/>
+		<e:Image id="redPoint1" source="zjmhongdian" x="123" y="0" visible="false"/>
+		<e:Image id="redPoint2" source="zjmhongdian" x="133" y="10" visible="false"/>
+		<e:Image id="redPoint3" source="zjmhongdian" x="143" y="20" visible="false"/>
+		<e:Image id="redPoint4" source="zjmhongdian" x="153" y="30" visible="false"/>
+		<e:layout>
+		<e:HorizontalLayout gap="93"/>
+		</e:layout>
+	</e:Group>
+	<e:Image horizontalCenter="0" width="600" source="viplibao_bmp" height="948" y="0" alpha="0.5" locked="true" visible="false"/>
+</e:Skin>

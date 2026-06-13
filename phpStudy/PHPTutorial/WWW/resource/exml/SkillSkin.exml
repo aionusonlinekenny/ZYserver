@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinSkill" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="728">
+
+	<e:Group width="600" height="728" anchorOffsetY="0" horizontalCenter="0" top="0">
+		<e:Image width="590" height="546" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="1" top="90" source="tongyong_dikuang4" scale9Grid="8,8,48,48"/>
+
+		<e:Component id="skillItem1" skinName="SkillItem" y="97" x="10" scaleX="1" scaleY="1"/>
+		<e:Component id="skillItem2" skinName="SkillItem" y="203" x="10" scaleX="1" scaleY="1"/>
+		<e:Component id="skillItem3" skinName="SkillItem" y="309" x="10" scaleX="1" scaleY="1"/>
+		<e:Component id="skillItem4" skinName="SkillItem" y="415" x="10" scaleX="1" scaleY="1"/>
+		<e:Component id="skillItem5" skinName="SkillItem" y="521" x="10" scaleX="1" scaleY="1"/>
+		<e:Button id="all" label="全部升级" width="213" height="67" scaleX="1" scaleY="1" horizontalCenter="0" bottom="0" icon="btn1_2" skinName="SkinBtn7"/>
+	</e:Group>
+</e:Skin>

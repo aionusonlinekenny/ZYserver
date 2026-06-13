@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinJinMai" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="728">
+	<!--<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>-->
+  	<!--<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>-->
+
+
+	<e:Group name="经脉" width="600" anchorOffsetX="0" horizontalCenter="0" height="728" y="0">
+		<e:Group width="600" anchorOffsetY="0" horizontalCenter="0" bottom="0" top="0" height="728">
+			<e:Image source="jingmaibg2_png" scale9Grid="6,4,1,1" anchorOffsetY="0" scaleY="1" width="397" x="34" height="545" y="95"/>
+			<e:Image id="nadis0" x="238" width="48" rotation="40" height="10" y="129" scale9Grid="1,4,13,2" source="jingmailine1"/>
+			<e:Image id="nadis1" x="283.6" width="63" rotation="81.98" height="10" y="175" scale9Grid="1,4,13,2" source="jingmailine1"/>
+			<e:Image id="nadis2" x="196" width="94" rotation="337.09" height="10" y="268.4" scale9Grid="4,4,5,2" source="jingmailine1"/>
+			<e:Image id="nadis3" x="198.8" width="90" rotation="108.76" height="10" y="273" scale9Grid="1,4,13,2" source="jingmailine1"/>
+			<e:Image id="nadis4" x="285" width="120" rotation="173.48" height="10" y="338.6" scale9Grid="1,4,13,2" source="jingmailine1"/>
+			<e:Image id="nadis5" x="295.13" width="68" rotation="45.26" height="10" y="329.35" source="jingmailine1" scale9Grid="1,4,13,2"/>
+			<e:Image id="nadis6" x="350" width="105" rotation="162.99" scale9Grid="4,4,5,2" height="10" y="389.4" source="jingmailine1"/>
+			<e:Image id="nadis7" x="242" width="100" rotation="143.66" scale9Grid="4,4,5,2" height="10" y="429.27" source="jingmailine1"/>
+			<e:Image id="nadis8" x="161" width="138" rotation="24.47" height="10" y="489.37" source="jingmailine1" scale9Grid="4,4,5,2"/>
+			<ns1:JimMaiItem id="jinmai_0" x="208" skinName="SkinJinMaiItem" width="40" height="40" y="109"/>
+			<ns1:JimMaiItem x="259" skinName="SkinJinMaiItem" id="jinmai_1" width="40" height="40" y="150"/>
+			<ns1:JimMaiItem x="273.13" skinName="SkinJinMaiItem" id="jinmai_2" width="40" height="40" y="216"/>
+			<ns1:JimMaiItem width="40" x="171.34" skinName="SkinJinMaiItem" id="jinmai_3" height="40" y="251"/>
+			<ns1:JimMaiItem width="40" x="142.68" skinName="SkinJinMaiItem" id="jinmai_4" height="40" y="329.66"/>
+			<ns1:JimMaiItem width="40" x="271.34" skinName="SkinJinMaiItem" id="jinmai_5" height="40" y="315"/>
+			<ns1:JimMaiItem width="40" x="319.09" skinName="SkinJinMaiItem" id="jinmai_6" height="40" y="362"/>
+			<ns1:JimMaiItem width="40" x="223" skinName="SkinJinMaiItem" id="jinmai_7" height="40" y="402"/>
+			<ns1:JimMaiItem width="40" x="137.47" skinName="SkinJinMaiItem" id="jinmai_8" height="40" y="471"/>
+			<ns1:JimMaiItem width="40" x="266" skinName="SkinJinMaiItem" id="jinmai_9" height="40" y="534"/>
+
+
+		</e:Group>
+		<e:Group height="302" width="85" verticalCenter="-138.5" horizontalCenter="-251.5">
+			<e:Image source="bantoutiaobg" rotation="90" scale9Grid="29,5,180,35" width="176" height="49" y="65" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-17" visible="false"/>
+			<e:Label id="jinMaiName" text="" italic="false" width="24" size="24" fontFamily="Microsoft YaHei" y="109" x="19" textColor="0xffff00" stroke="1" textAlign="center"/>
+			<ns1:LevelImage id="jinmaiStage" width="41" height="119" x="11" y="-10" skinName="Skinjieji"/>
+		</e:Group>
+		
+		<e:Group y="15" right="49" visible="false">
+			<e:Button id="bigUpLevelBtn" icon="mingmaizsd" skinName="SkinBtn0" x="5" y="1.5"/>
+		</e:Group>
+	</e:Group>
+
+	<e:Group id="fightGroup" width="244" y="565" horizontalCenter="-12">
+		<!--<e:Image source="zhandoulibg" x="2" y="10"/>
+		<e:Image source="zjmzhandouli" x="0" y="0"/>-->
+		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" y="4" height="62" width="267"  x="-4"/>
+	</e:Group>
+	<e:Group width="164.58" height="320" anchorOffsetX="0" y="101" horizontalCenter="208.5">
+
+		<e:Image top="3" bottom="296" right="0" scaleX="-1" anchorOffsetX="0" width="164" anchorOffsetY="0" source="zhuakuang2" height="285"/>
+		<e:Image source="jingmaizibg" left="3" right="3" y="15" anchorOffsetX="0" anchorOffsetY="0" height="337"/>
+
+		<e:Image source="jiantouyou" y="166" rotation="90" horizontalCenter="0" width="56" height="50"/>
+		<e:Label id="attr" text="" size="20" lineSpacing="6" textAlign="left" y="66" fontFamily="Microsoft YaHei" textColor="0xffffff" left="16"/>
+		<e:Label text="当前加成" y="36" size="20" fontFamily="Microsoft YaHei" textColor="0xffe500" horizontalCenter="0"/>
+		<e:Label y="230" text="下级加成" size="20" horizontalCenter="0" textColor="0xffe500" fontFamily="Microsoft YaHei"/>
+		<e:Label id="nextAttr" text="" size="20" lineSpacing="6" textAlign="left" y="262" fontFamily="Microsoft YaHei" textColor="0x00ff00" left="16"/>
+	</e:Group>
+
+	<e:Label id="countLabel" text="经脉已满阶" size="20" textAlign="center" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" height="20" verticalCenter="278"/>
+	<e:Button id="boostBtn" label="洗  髓" width="221" horizontalCenter="0" icon="btn1_2" anchorOffsetY="0" height="54" skinName="SkinBtn6" verticalCenter="330"/>
+	<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" horizontalCenter="74" height="19" verticalCenter="315.5"/>
+
+</e:Skin>

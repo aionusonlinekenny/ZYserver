@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinDailyFbItem" currentState="canChallenge" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="canChallenge,noChallenge"  width="575" height="159">
+	<w:Config id="1586bf85aa4"/>
+	<e:Image id="bg" left="0" right="0" top="0" bottom="0" source="3001bg_jpg"/>
+	<e:Image id="bg2" right="3" x="10" source="bantoutiaobg10" height="41.33" bottom="4" width="195.67" anchorOffsetY="0" anchorOffsetX="0"/>
+	<ns1:PriceIcon id="price" visible.noChallenge="false" skinName="SkinPriceIcon" horizontalCenter="210" bottom="8"/>
+	<ns1:PriceIcon id="doublePrice" visible.noChallenge="false" skinName="SkinPriceIcon" horizontalCenter="14" bottom="8" visible="false"/>
+	<e:Label id="levelRequire" text="70级开放" size="22" verticalCenter="0.5" bold.canChallenge="true" size.noChallenge="24" text.noChallenge="开服15天并达到5转开启" fontFamily.noChallenge="Microsoft YaHei" textColor.noChallenge="0xffffff" visible.canChallenge="false" fontFamily="Microsoft YaHei" includeIn="noChallenge"  horizontalCenter="130"/>
+	<e:Button id="doubleChallengeBtn" label="双倍扫荡" horizontalCenter="-6" width="168" height="68" skinName="SkinBtn1" bottom="48" visible.canChallenge="false" visible.noChallenge="false" visible="false"/>
+	<e:Button id="challengeBtn" label="挑 战" visible.noChallenge="false" width="168" height="68" horizontalCenter="171.5" icon="btn2_2" bottom="48" skinName="SkinBtn1"/>
+	<e:Image id="redPoint" x="524" y="42" includeIn="canChallenge" source="zjmhongdian" visible="false"/>
+	<e:Label id="count" size="20" text="今日挑战次数：4次" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" verticalAlign="top" x="373.68" y="11" visible.noChallenge="false"/>
+	<ns1:ItemBase id="item" x="50" y="54" skinName="SkinItem"/>
+	<e:Group id="barGaroup" width="150" includeIn="canChallenge" bottom="13" horizontalCenter="166.5" visible="false">
+		<e:Image id="barbg" anchorOffsetX="0" source="progress2" height="21" scale9Grid="10,2,60,15" left="8" right="-7" verticalCenter="0.5"/>
+		<e:ProgressBar id="bar" includeIn="canChallenge"  skinName="Skinbar1" value="0" width="126" x="19" y="3"/>
+		<e:Image id="barbg0" anchorOffsetX="0" source="progress1" width="25" height="24" verticalCenter="0" left="1"/>
+		<e:Image id="barbg1" source="progress1" anchorOffsetX="0" scaleX="-1" right="-13" width="25" height="24" verticalCenter="0"/>
+
+
+
+
+	</e:Group>
+
+</e:Skin>

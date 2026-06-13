@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="TreasureChuanshi" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="600" height="728">
+	<w:Config id="15de4979d7a"/>
+
+	<e:Group width="600" height="728" horizontalCenter="0" verticalCenter="0">
+		<e:Image horizontalCenter="0" width="585" height="435" x="7"  top="4" scale9Grid="10,8,9,9" source="tongyong_dikuang4"/>
+		<e:Image width="585" horizontalCenter="0" x="8"  height="187" bottom="99" scale9Grid="10,8,9,9" source="tongyong_dikuang4"/>
+		<e:Group left="25" top="20" x="25" y="17" >
+			<e:Label text="本周抽奖次数：" x="0" size="18" y="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="times" text="20" x="10" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
+			<e:layout>
+			<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group right="75" top="20" x="287" y="17" >
+			<e:Label text="剩余时间：" x="0" size="18" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="leftTimeTxt" text="" x="100" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:layout>
+			<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group width="513" left="50" top="63" x="50" y="54" >
+			<e:Image left="42" verticalCenter="0" width="418" source="jingyantiao6" scale9Grid="3,1,22,13"/>
+			<e:ProgressBar id="bar0" height="12" skinName="Skinbar4" value="100" width="45" slideDuration="0" left="45" verticalCenter="-0.5"/>
+			<e:ProgressBar id="bar1" height="12" skinName="Skinbar4" value="100" width="55" x="127" slideDuration="0" verticalCenter="-0.5"/>
+			<e:ProgressBar id="bar2" height="12" skinName="Skinbar4" value="100" width="55" x="221" slideDuration="0" verticalCenter="-0.5"/>
+			<e:ProgressBar id="bar3" height="12" skinName="Skinbar4" value="100" width="55" x="313" slideDuration="0" verticalCenter="-0.5"/>
+			<e:ProgressBar id="bar4" height="12" skinName="Skinbar4" value="100" width="55" x="403" slideDuration="0" verticalCenter="-0.5"/>
+			<e:Image source="touxiangkuang" x="0" anchorOffsetX="0" width="47" anchorOffsetY="0" height="47" verticalCenter="0"/>
+			<e:Image source="star2" x="5" verticalCenter="0"/>
+		</e:Group>
+		<e:Group top="54" right="45">
+			<e:Group y="-484" x="-224" width="55" height="59">
+			<e:Image source="touxiangkuang" width="47" height="47" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="box0" source="200116_png" width="53" height="42" verticalCenter="0" horizontalCenter="0"/>
+
+			<e:Label id="time0" text="10次" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="done0" text="已领取" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Image id="boxPoint0" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" visible="false"/>
+			</e:Group>
+			<e:Group x="-468" y="-414" width="55" height="59">
+			<e:Image source="touxiangkuang" width="47" height="47" horizontalCenter="0" x="2"  verticalCenter="0"/>
+			<e:Image id="box1" horizontalCenter="0" source="200116_png" width="53" height="42" verticalCenter="0"/>
+
+			<e:Label id="time1" text="20次" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="done1" text="已领取" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Image id="boxPoint1" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" visible="false"/>
+			</e:Group>
+			<e:Group x="-468" y="-344" width="55" height="59">
+			<e:Image source="touxiangkuang" width="47" height="47" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="box2" horizontalCenter="0" source="200116_0_png" width="53" height="42" verticalCenter="0"/>
+
+			<e:Label id="time2" text="50次" size="16" horizontalCenter="0" bottom="-2" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="已领取" size="16" id="done2" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Image id="boxPoint2" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" x="36" y="-60" visible="false"/>
+			</e:Group>
+			<e:Group x="-468" y="-274" width="55" height="59">
+			<e:Image source="touxiangkuang" width="47" height="47" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="box3" horizontalCenter="0" source="200116_0_png" width="53" height="42" verticalCenter="0"/>
+
+			<e:Label id="time3" text="100次" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="已领取" size="16" id="done3" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Image id="boxPoint3" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" x="36" y="-60" visible="false"/>
+			</e:Group>
+			<e:Group x="-458" y="-264" width="55" height="59">
+			<e:Image source="touxiangkuang" width="47" height="47" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="box4" horizontalCenter="0" source="200116_0_png" width="53" height="42" verticalCenter="0"/>
+
+			<e:Label id="time4" text="100次" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="已领取" size="16" id="done4" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Image id="boxPoint4" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" x="36" y="-60" visible="false"/>
+			</e:Group>
+			<e:layout>
+			<e:HorizontalLayout gap="37"/>
+			</e:layout>
+		</e:Group>
+
+		<e:Group height="293"  top="134" y="120" left="15" right="15">
+			<e:Group width="112" height="97"  left="0" top="0">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png"/>
+				<ns1:ItemBase id="gift0" skinName="SkinItem2" scaleX="0.85" scaleY="0.85" horizontalCenter="0" verticalCenter="5"/>
+			</e:Group>
+			<e:Group width="112" height="97"  left="114" top="0">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="-114" y="0"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift1" scaleX="0.85" scaleY="0.85" horizontalCenter="0" verticalCenter="5"/>
+			</e:Group>
+			<e:Group width="112" height="97"  left="228" top="0">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="-228" y="0"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift11" horizontalCenter="0" scaleX="0.85" scaleY="0.85" x="253" verticalCenter="5"/>
+
+			</e:Group>
+			<e:Group width="112" height="97"  left="342" top="0">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="-342" y="0"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift2" scaleX="0.85" scaleY="0.85" horizontalCenter="0" verticalCenter="5"/>
+
+			</e:Group>
+			<e:Group width="112" height="97"  left="456" top="0" x="40" y="40">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" x="-456" y="0" source="treasurechuanshibg_png"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift3" scaleX="0.85" scaleY="0.85" horizontalCenter="0" verticalCenter="5"/>
+
+			</e:Group>
+			<e:Group width="112" height="97"  left="0" top="98" x="50" y="50">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="0" y="-98"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift4" verticalCenter="5" scaleX="0.85" scaleY="0.85" y="101" horizontalCenter="0"/>
+
+			</e:Group>
+			<e:Group width="112" height="97"  left="456" top="98" x="60" y="60">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="-456" y="-98"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift5" verticalCenter="5" scaleX="0.85" scaleY="0.85" y="3" horizontalCenter="0"/>
+
+			</e:Group>
+			<e:Group width="112"  left="0" x="70" top="196" height="97">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="0" y="-98"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift6" scaleX="0.85" scaleY="0.85" horizontalCenter="0" verticalCenter="5"/>
+
+			</e:Group>
+			<e:Group width="112" height="97"  left="114" top="196" x="80" y="80">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="0" y="-196"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift7" scaleY="0.85" scaleX="0.85" verticalCenter="5" horizontalCenter="0"/>
+
+			</e:Group>
+			<e:Group width="112" height="97"  left="228" top="196" x="90" y="90">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="0" y="-196"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift8" horizontalCenter="0" scaleY="0.85" scaleX="0.85" x="253" verticalCenter="5"/>
+
+			</e:Group>
+			<e:Group width="112" height="97"  left="342" top="196" x="100" y="100">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="0" y="-196"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift9" scaleX="0.85" scaleY="0.85" horizontalCenter="0" verticalCenter="5"/>
+
+			</e:Group>
+			<e:Group height="97"  top="196" y="110" left="456" width="112">
+				<e:Image touchEnabled="false" top="0"  left="0" right="0" bottom="0" source="treasurechuanshibg_png" x="0" y="-196"/>
+				<ns1:ItemBase skinName="SkinItem2" id="gift10" scaleY="0.85" scaleX="0.85" horizontalCenter="0" verticalCenter="5"/>
+			</e:Group>
+			<e:Image top="0" horizontalCenter="0" touchEnabled="false" width="76" height="74" source="csbk04_png" x="247" y="-140" />
+			<e:Image horizontalCenter="0" touchEnabled="false" top="66" x="248" y="-74"  source="chuanshizhibao_png"/>
+		</e:Group>
+		<e:Image  anchorOffsetX="0" anchorOffsetY="0" width="91" height="96" top="236" horizontalCenter="-116" x="122" y="200" source="luckvaluebg2_png"/>
+		<e:Group horizontalCenter="-115.5" top="237" x="129" y="200"  width="80" height="80">
+			<e:Image id="maxHopeValue0"  anchorOffsetX="0" anchorOffsetY="0" width="80" source="luckvalue_png" top="0" height="80" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group  height="28" anchorOffsetX="0" anchorOffsetY="0" width="218" top="235" horizontalCenter="49" x="261" y="209">
+			<e:Label id="Descri0" text="当前祝福值：" size="18" textAlign="center" x="2" fontFamily="Microsoft YaHei" lineSpacing="4"  y="4" textColor="0xffff00"/>
+			<e:BitmapLabel id="hopeValue0" font="num_g0_fnt" text="10000" letterSpacing="-10" lineSpacing="0" anchorOffsetX="0" anchorOffsetY="0" top="2" left="105"/>
+		</e:Group>
+		<e:Group top="267" y="238"  left="238">
+			<e:Label id="Descri" text="祝福值越高，获得诛仙珍宝盒的机会就越大！祝福值满，必定获得一个诛仙珍宝盒！" width="224" size="16" textAlign="left" top="512" x="5" y="42" fontFamily="Microsoft YaHei" textColor="0xffffff" height="64" lineSpacing="4"/>
+			<e:layout>
+			<e:VerticalLayout horizontalAlign="left"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="btnGroup" right="15" width="82" height="81" x="509"  verticalCenter="123">
+			<e:Button id="outBag" label="" width="82" height="81" icon="warehouse_png" horizontalCenter="0" verticalCenter="0" skinName="SkinBtn6"/>
+			<e:Image id="redPoint2" source="zjmhongdian" touchEnabled="false" right="8" top="1"/>
+		</e:Group>
+		<e:Image touchEnabled="false"  top="451" height="24" left="20" x="18" y="440" width="102" source="treasurelog_png"/>
+		<e:Scroller id="barList" width="480" bounces="false" top="486" scrollPolicyV="on" scrollPolicyH="off" height="135" y="472"  left="22">
+			<e:List id="list" x="0" y="-0.67" itemRendererSkinName="SkinHuntListRenderer"/>
+		</e:Scroller>
+		<e:Group width="280" height="95" bottom="-2" left="20">
+			<e:Group id="zbHunt1"  horizontalCenter="13" top="0">
+			<e:Image source="szyuanbao" width="40"  left="0" top="0" height="32"/>
+			<e:Label id="zb1" text="10000" size="18" x="32" y="14"  fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="（" size="20" x="189" y="5"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Image anchorOffsetX="0" width="30" anchorOffsetY="0" height="30" x="215" y="0"  source="200300_png"/>
+			<e:Label id="num1" text="1000" y="0" size="18" x="136.5" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="/1）" size="18" x="199" y="15"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="2"/>
+			</e:layout>
+			</e:Group>
+			<e:Button id="buy1" label="寻宝一次" icon="btn1"  skinName="SkinBtn2" horizontalCenter="14" bottom="0"/>
+		</e:Group>
+		<e:Group width="280" height="95" bottom="-2" right="20">
+			<e:Group id="zbHunt10"  horizontalCenter="-13" top="0">
+				<e:Image source="szyuanbao" width="40" x="0" y="0"  height="32"/>
+				<e:Label id="zb10" text="4980" size="18" x="32" y="1"  fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:Label text="（" size="20" x="189" y="5"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Image anchorOffsetX="0" width="30" anchorOffsetY="0" height="30" x="215" y="0"  source="200300_png"/>
+				<e:Label id="num10" text="1000" y="0" size="18" x="136.5" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
+				<e:Label text="/10）" size="18" x="199" y="15"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+				<e:HorizontalLayout gap="2" verticalAlign="middle"/>
+				</e:layout>
+			</e:Group>
+			<e:Button id="buy10" label="寻宝十次" icon="btn1_2"  skinName="SkinBtn7" horizontalCenter="-14" verticalCenter="14"/>
+		</e:Group>	
+		<e:Image id="redPoint3" source="zjmhongdian" touchEnabled="false"  horizontalCenter="-52" bottom="46" x="245" y="659"/>	
+	</e:Group>
+</e:Skin>

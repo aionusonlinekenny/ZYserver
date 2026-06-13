@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinZaoYuRecordInfo" width="408" height="165" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image left="0" right="0" top="0" source="rankitembg" bottom="0" scale9Grid="10,10,64,29"/>
+	<e:Label id="lingpo" text="Label" x="20" y="21" size="20" fontFamily="Microsoft YaHei" visible="false"/>
+	<e:Image y="50" horizontalCenter="0" source="pk_cordkuang"/>
+	<e:Label id="exp" text="" y="91" fontFamily="Microsoft YaHei" size="18" textAlign="left" textColor="0x1b3046" left="76"/>
+	<e:Label id="money" text="" y="128" fontFamily="Microsoft YaHei" size="18" textAlign="left" textColor="0x1b3046" left="76"/>
+	<e:Label id="playerName" text="" y="55" fontFamily="Microsoft YaHei" size="18" horizontalCenter="0" textAlign="center"/>
+	<e:Label id="time" text="" x="228" y="15" fontFamily="Microsoft YaHei" size="18" textColor="0x1b3046"/>
+	<e:Image id="resultImg" y="-8" x="6" source="pk_win"/>
+	<e:Label id="prestige" text="Label" x="424" y="100" fontFamily="Microsoft YaHei" size="20"/>
+</e:Skin>

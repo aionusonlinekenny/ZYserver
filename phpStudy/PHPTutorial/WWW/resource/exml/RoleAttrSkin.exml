@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinRoleAttr" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:ns1="*" height="948">
+	<w:Config id="1586b1359f6" />
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.8" />
+	<e:Group id="anigroup" width="350" height="450" horizontalCenter="0" verticalCenter="-19">
+		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" bottom="-34" width="280"  scale9Grid="180,5,23,29"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-25"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image id="bg"  
+		          scale9Grid="10,9,9,10" source="tongyongtip1" horizontalCenter="-2" width="276" height="432" verticalCenter="-12"/>
+		<e:Image id="bg0"   source="tongyongtip2"
+		         scale9Grid="19,18,2,6"  width="284" height="440" verticalCenter="-12" horizontalCenter="-2"/>
+		<e:Image id="job" touchEnabled="false" source="op_1" y="16" horizontalCenter="-1" />
+		<e:Image width="260" height="330" horizontalCenter="0" verticalCenter="14"  source="zjmqipao" scale9Grid="6,9,9,8" alpha="0.5" visible="false"/>
+		<e:Label text="角色属性" size="20" textColor="0xFFB82A" touchEnabled="false" y="50" bold="true" horizontalCenter="0"  visible="false"/>
+		<e:Button id="leftBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" x="-70"  verticalCenter="0" scaleX="1.2" scaleY="1.2"/>
+		<e:Button id="rightBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" right="-70"  scaleX="-1.2" verticalCenter="0" scaleY="1.2"/>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="fanhui" x="271" y="369" visible="false" />
+		<e:Group id="attrGroup" x="56" y="90">
+			<e:Label id="attr" text="攻    击：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" width="147"  bottom="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="116"/>
+			<e:Group x="0" verticalCenter="-150">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="生      命:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="-120">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="法      力:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="-90">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="攻      击:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="-60">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="物      抗:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="-30">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="魔      抗:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="0">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="暴      击:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="30">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="暴击加强:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="60">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="抗      暴:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="90">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="定身几率" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" y="0" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="120">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="定身抵抗:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+			<e:Group x="0" verticalCenter="150">
+				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
+				<e:Label text="伤害减免:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+
+</e:Skin>

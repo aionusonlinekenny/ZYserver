@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinCDkey" width="560" height="620" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image width="561" height="626" source="cdkeybg_png" horizontalCenter="0" top="-8"/>
+	<e:Image width="430" horizontalCenter="0" source="rectinputred" scale9Grid="11,8,20,8" top="354" height="50"/>
+	<e:Button id="sendBtn" skinName="SkinBtn6" width="156" height="60" label="领取奖励" horizontalCenter="0" top="465" icon="btn1_2"/>
+	<e:TextInput id="input" text="" width="410" height="50" horizontalCenter="0" top="354" prompt="请输入激活码" visible="false"/>
+	<e:EditableText id="inputs" width="354" height="30" x="105" y="365" fontFamily="Microsoft YaHei" size="20" anchorOffsetY="0" anchorOffsetX="0" verticalAlign="middle" textAlign="center" textColor="0xffffff" prompt="请输入激活码" promptColor="0xabebff"/>
+</e:Skin>

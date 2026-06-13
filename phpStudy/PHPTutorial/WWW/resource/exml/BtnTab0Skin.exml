@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBtnTab0" states="up,down,disabled" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="110" height="45" width.down="120" width.up="120" height.up="48" height.down="48">
+	<e:Image  y.disabled="5" touchEnabled="false" bottom.down="0" x.down="0" x.up="0" y.up="0" source.down="yeqian2" visible.down="false" width.up="112" height.up="51" scale9Grid="19,6,50,18" source.up="yeqian2" width="112" height="51" anchorOffsetX="0" horizontalCenter="0" verticalCenter="0" source="yeqian2"/>
+	<e:Image y.disabled="-1" y.down="0" x.up="0" bottom.up="0" visible.disabled="false" x.down="0" touchEnabled="false" source.up="yeqian1" visible.up="false" scale9Grid="15,5,58,22" source="yeqian1" source.down="yeqian1" width="112" height="51" verticalCenter="0" horizontalCenter="0"/>
+	<e:Label id="labelDisplay" size="21" verticalAlign="middle" textAlign="center" x.up="5" x.down="6" touchEnabled="false" x.disabled="8"  horizontalCenter.disabled="0" text="{data}" horizontalCenter="0" verticalCenter.down="0" verticalCenter.disabled="0" verticalCenter.up="0" verticalCenter="0" textColor.down="0x60371a" textColor.up="0x0a3c47" textColor.disabled="0x0a3c47" fontFamily="Microsoft YaHei" strokeColor="0xfffdd1" stroke="0" textColor="0x60371a"/>
+</e:Skin>

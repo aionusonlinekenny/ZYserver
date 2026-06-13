@@ -1,0 +1,12 @@
+{"mc":{
+"00306_4s":{
+"frameRate":2,
+"frames":[
+{"res":"monster_306_stand_2_01","x":-21,"y":-102},
+{"res":"monster_306_stand_2_02","x":-23,"y":-93}
+]
+}},
+"res":{
+"monster_306_stand_2_01":{"x":0,"y":0,"w":45,"h":116},
+"monster_306_stand_2_02":{"x":47,"y":0,"w":46,"h":107}
+}}

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="hefuLogSkin" width="600" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="681">
+	<w:Config id="1586d1506c8" />
+
+
+	<e:Image horizontalCenter="0"  y="269" source="douyuhefu2_png"/>
+
+
+
+
+
+	<e:Scroller id="scroller" horizontalCenter="0" height="300" verticalCenter="-170">
+		<e:Group id="dataGroup">
+		<e:Group x="5" y="25" width="506">
+			<e:Image id="arrow1" y="60" x="100"  source="jiantouyou" width="32" height="29"/>
+			<e:Image id="arrow2" y="60" x="235"  source="jiantouyou" width="32" height="29"/>
+			<e:Image id="arrow3" y="60" x="372"  width="32" height="29" source="jiantouyou"/>
+			<e:Image id="imgDay1" x="22" y="0" source="denglu_01_png"/>
+			<e:Image id="imgDay2" x="157" y="0" source="denglu_02_png"/>
+			<e:Image id="imgDay3" x="292" y="0" source="denglu_03_png"/>
+			<e:Image id="imgDay4" x="431" y="0" source="denglu_04_png"/>
+
+
+
+
+			<ns1:ActivityHFRenderItem id="dayNum1" x="0" y="20" skinName="SkinAct14item" />
+			<ns1:ActivityHFRenderItem id="dayNum2" x="135" y="20" skinName="SkinAct14item" />
+			<ns1:ActivityHFRenderItem id="dayNum3" x="271" y="20" skinName="SkinAct14item" />
+			<ns1:ActivityHFRenderItem id="dayNum4" x="408" y="20" skinName="SkinAct14item" />
+		</e:Group>
+			<e:Group x="-25" y="-74" width="368">
+				<e:Image id="arrow4" y="60" x="100"  source="jiantouyou" width="32" height="29"/>
+				<e:Image id="arrow5" y="60" x="234"  source="jiantouyou" width="32" height="29"/>
+
+				<e:Image id="imgDay5" x="22" y="0" source="denglu_05_png"/>
+				<e:Image id="imgDay6" x="157" y="0" source="denglu_06_png"/>
+				<e:Image id="imgDay7" x="292" y="0" source="denglu_07_png"/>
+
+
+
+
+
+				<ns1:ActivityHFRenderItem id="dayNum5" x="0" y="20" skinName="SkinAct14item" />
+				<ns1:ActivityHFRenderItem id="dayNum6" x="136" y="20" skinName="SkinAct14item" />
+				<ns1:ActivityHFRenderItem id="dayNum7" x="270" y="20" skinName="SkinAct14item" />
+
+			</e:Group>
+
+
+			<e:layout>
+				<e:VerticalLayout horizontalAlign="center" gap="10"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+
+	<e:Group id="group1" horizontalCenter="0" scaleX="0.9" scaleY="0.9" y="480">
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" gap="22" paddingTop="0" />
+		</e:layout>
+	</e:Group>
+	<e:Button id="suerBtn" label="领取奖励" horizontalCenter="0" bottom="20"  width="176" height="69" skinName="SkinBtn1"/>
+	<e:Label id="daylabel" text="7" size="22" bottom="42" x="144"  fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+	<e:Image x="44" source="denglutianshu_png" bottom="40"/>
+	<e:Label id="dayaward" text="第一天\n奖励详情" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" y="494" x="12" textAlign="center" width="80"/>
+	<e:Group y="331" x="151">
+		<e:Label text="剩余时间：" size="18"  x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="actTime" text="6天23小时55分" size="18"  x="90" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:layout>
+			<e:HorizontalLayout gap="0"/>
+		</e:layout>
+	</e:Group>
+
+
+	<e:Image id="redPoint" width="20" height="20" horizontalCenter="77" source="zjmhongdian" bottom="69" visible="false"/>
+</e:Skin>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinBattleScore" width="600" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
+	<e:Group id="anigroup" name="排名" height="708" width="573" horizontalCenter="0" top="40">
+		<e:Image source="tongyong_dikuang2" height="708" width="573" scale9Grid="31,15,52,49"/>
+		<e:Image source="tongyong_juanzhou" width="573" horizontalCenter="0"/>
+		<e:Image y="-18" width="249" source="tongyong_titlebg" horizontalCenter="0"/>
+		<e:Label id="titleDesc" y="-6" text="杀劫积分榜" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:ViewStack id="viewStack" width="512" horizontalCenter="0" selectedIndex="1" bottom="0" top="83">
+			<ns1:BattleRankOfScorePanel  xmlns:ns1="*" id="runePanel0" name="排名" left="0" right="0" top="0" bottom="0" skinName="SkinBattleScoreRank"/>
+			<ns1:BattleRewardsPanel  xmlns:ns1="*" id="decomPanel0" name="奖励" left="0" right="0" top="0" bottom="0" skinName="SkinBattleScoreRewarrd" visible="false"/>
+		</e:ViewStack>
+		<e:Image id="imgleft" width="121" height="44" y="32" left="161" source="tabberhigh_png"/>
+		<e:Image id="imgright" width="121" height="44" y="32" left="282" source="tabberlow_png"/>
+		<e:Label id="labelleft" text="排名" x="205" y="44" fontFamily="Microsoft YaHei" size="22" lineSpacing="0" textColor="0x7e2a00" touchEnabled="false"/>
+		<e:Label id="labelright" text="奖励" x="318" y="44" fontFamily="Microsoft YaHei" size="22" lineSpacing="0" textColor="0x001828" touchEnabled="false"/>
+	</e:Group>
+</e:Skin>

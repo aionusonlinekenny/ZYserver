@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinAct14item" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        height="114" width="96">
+	<e:Image y="2" width="96" height="114" horizontalCenter="0" scale9Grid="4,4,8,8" source="qiandaobg_png"/>
+	<ns1:SevenDayIconBase id="item" skinName="SkinItem3"  horizontalCenter="0" top="10"/>
+	<e:Image id="select" horizontalCenter="0" top="2" source="xuanzekuang3" width="90" height="90" scale9Grid="12,13,17,11"/>
+	<e:Rect id="checkedMask" fillAlpha="0.7" fillColor="0x222222" top="1" left="1" right="1" bottom="1" visible="false"/>
+	<e:Image id="checked" source="duoxuangou" verticalCenter="-8" horizontalCenter="0" height="42" width="42" visible="false"/>
+</e:Skin>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="OSATarget1" width="560" height="670" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  states="default,cost" >
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image scaleY="1" horizontalCenter="0" y="-6.34" width="214" height="50" source="huabian3" visible.cost="false"/>
+		<e:Image id="title" y="12.66" horizontalCenter="0" source="biaoti_dengjidabiao_png" visible.cost="false"/>
+		<e:Group id="infoBg" height="106" width="556" horizontalCenter="0" top="51" horizontalCenter.cost="0" top.cost="2" anchorOffsetY.cost="0" height.cost="140">
+			<e:Image left="0" right="0" top="0" bottom="0" source="activity_headbg1_png" includeIn="default"/>
+			<e:Image horizontalCenter="0" source="login_reward_des_jpg" top="-3" includeIn="cost"/>
+			<e:Group left="22" anchorOffsetX="0" left.default="15" y.cost="65.5" left.cost="22" verticalCenter.default="0">
+				<e:Label text="剩余时间:" size="18" scaleX="1" scaleY="1" left="0" top="0" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" size.default="20"/>
+				<e:Label id="actTime0" text="6天23时10分" size="18" scaleX="1" scaleY="1" top="0" left="90" textColor="0x00FF00" fontFamily="Microsoft YaHei" textColor.default="0x00ff00" size.default="20" text.default="200级"/>
+				<e:Label id="actInfo0" text="                 在活动开启7天内完成的活动任务 赚取积分赢最终大奖 " x="63" y="-14" size="18" width="356" top="21" left="1" scaleX="1" scaleY="1" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" lineSpacing="4" size.default="20" left.default="89" top.default="28" width.default="428.5" text.default="开服活动期间，达到指定等级可领取对应奖励" text.cost="                 活动期间，消费满足要求上榜后可获得对应珍稀奖励"/>
+				<e:Label text="活动说明: " size="18" scaleX="1" scaleY="1" left="0" top="21" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" textColor.default="0xffff00" size.default="20" left.default="0" top.default="28"/>
+			</e:Group>
+		</e:Group>
+		<e:Image id="title0" horizontalCenter="-87" x="280" scaleX="1" scaleY="1" top="12" includeIn="cost" source="is_words_png"/>
+
+		<e:Group left="0" right="0" height="586" verticalCenter="3.5">
+
+
+
+		</e:Group>
+		<e:Group bottom="0" left="0" right="0" height="42">
+
+
+			<e:Group verticalCenter="0" horizontalCenter="0" horizontalCenter.cost="-39.5" verticalCenter.cost="-5">
+				<e:Label id="attr" text="我的装备总评分：" size="22" x="-7" scaleX="1" scaleY="1" verticalCenter="0.5" y="-12" fontFamily="Microsoft YaHei" textColor="0xffffff" size.cost="20" textColor.cost="0xffff00" text.cost="我的消费:   "/>
+				<e:Label id="myAttrValue" text="30" size="22" x="163" scaleX="1" scaleY="1" verticalCenter="0.5" y="-12" fontFamily="Microsoft YaHei" textColor="0x00ff00" textColor.cost="0xffff00" size.cost="20"/>
+				<e:layout>
+					<e:HorizontalLayout gap="0" verticalAlign="middle"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+	<e:Scroller scrollPolicyH="off" scrollPolicyV="on" horizontalCenter="0" width="549" top="180" anchorOffsetY="0" height="455" horizontalCenter.cost="0.5" top.cost="189" width.cost="517" height.cost="433.67">
+		<e:List id="content" y="24" horizontalCenter="0" itemRendererSkinName="OSATargetItem" x="0" anchorOffsetY="0" height="479.67">
+		<e:layout>
+			<e:VerticalLayout gap="2"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Image verticalCenter="30.5" horizontalCenter="0" alpha="0.7" visible.default="false" source="syzfdb_png" visible.cost="false"/>		
+</e:Skin>

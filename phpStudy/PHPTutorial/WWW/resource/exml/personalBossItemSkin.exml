@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinPersonalBossItem" width="160" height="52" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" states="up,down,disabled" >
+	<e:Image id="bg"  horizontalCenter="9" anchorOffsetX="0" width="140" source="btn2" height="52" verticalCenter="0" source.down="btn2_2" source.disabled="btn2_3" alpha.down="1"/>
+	<e:Image id="bg0" source="yeqian6" visible.up="false" visible.disabled="false" anchorOffsetX="0" height="39" verticalCenter="0" width="60" horizontalCenter="-45"/>
+
+	<e:Label id="nameTxt" text="怪物名称·12转" size="20" horizontalCenter="9.5" verticalCenter="0" textColor.disabled="0x6b6b6b" fontFamily="Microsoft YaHei" textAlign="center" textColor.down="0x7e2a00" textColor="0x1b3046" textColor.up="0x1b3046"/>
+	<e:Image id="notOpenImg" anchorOffsetY="0" height="67" width="66" source="zdbossweikaiqi2_png" scaleX="0.7" scaleY="0.7" right="1" top="0" visible="false"/>
+</e:Skin>

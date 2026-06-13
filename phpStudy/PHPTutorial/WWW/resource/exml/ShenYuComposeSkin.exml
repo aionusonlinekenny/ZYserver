@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinShenYuCompose" width="600" height="728" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15dbfa8e636"/>
+
+	<e:Image width="558" height="428" source="wingbg4_png" alpha="1" top="100" fillMode="scale" scaleX="0.85" scaleY="0.85" left="0"/>
+	<e:Group id="skillGroup" width="600" height="250" horizontalCenter="0" anchorOffsetY="0" bottom="0">
+		<e:Image source="tongyong_dikuang4" scale9Grid="19,16,43,45" width="580" horizontalCenter="0" bottom="0" height="248"/>
+		<e:Image id="huawen1" width="237" height="50" left="31" top="-5" anchorOffsetX="0" source="huabian" scale9Grid="96,6,23,42" visible="false"/>
+		<e:Image id="huawen2" height="50" anchorOffsetX="0" right="35" width="237" top="-5" source="huabian" scale9Grid="98,6,19,41" visible="false"/>
+		<e:Image id="huawen0" height="50" anchorOffsetX="0" right="167" width="268.5" top="-5" source="huabian" scale9Grid="96,6,15,42" visible="false"/>
+		<e:Label id="attr0" text="" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" horizontalCenter="18" top="87" textColor="0xffffff" visible="false"/>
+		<e:Label id="power0" text="" size="20" textColor="0xFF9900" bold="true" top="52" horizontalCenter="0" visible="false"/>
+		<e:Image id="powerImage0" width="83" height="27" y="50" source="wingzhanli" x="221.15" visible="false"/>
+		<e:Label id="state0" text="合成预览" size="22" horizontalCenter="0" top="16" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+		<e:Image id="powerImage1" width="83" height="27" source="wingzhanli" left="71" top="51" visible="false"/>
+		<e:Label id="attr1" text="" size="19" textAlign="left" width="170" anchorOffsetX="0" left="75" top="88" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Label id="power1" text="战斗力：5" x="100" y="53" size="20" textColor="0xFF9900" visible="false"/>
+		<e:Label text="升阶前" size="22" id="state1" fontFamily="Microsoft YaHei" left="118" top="16" textColor="0xffff00" visible="false"/>
+		<e:Image id="powerImage2" width="83" height="27" source="wingzhanli" left="368" top="51" visible="false"/>
+		<e:Label id="attr2" text="" size="19" textAlign="left" y="87.4" width="170" anchorOffsetX="0" x="372" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Label id="power2" text="" x="211" y="76" size="20" textColor="0xFF9900" bold="true" visible="false"/>
+		<e:Label text="升阶后" size="22" id="state2" fontFamily="Microsoft YaHei" top="16" textColor="0xffff00" right="118" visible="false"/>
+		<e:Image id="arrows" source="jiantouyou" horizontalCenter="-5.5" verticalCenter="-53" visible="false"/>
+	</e:Group>
+	<e:Image anchorOffsetY="0" height="96" width="600" y="7" anchorOffsetX="0" scale9Grid="80,10,150,5" source="tongyongbg3" horizontalCenter="0"/>
+	<e:Group height="374.5" width="180" right="6" verticalCenter="-72.5" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Image anchorOffsetY="0" scale9Grid="13,11,1,1" left="0" right="0" bottom="0" top="0" source="tongyong_dikuang5"/>
+		<e:Scroller right="0" left="0" top="0" bottom="0">
+		<e:List id="list" y="11" x="1" useVirtualLayout="true" itemRendererSkinName="ShenYuComposeItem">
+			<e:layout>
+			<e:VerticalLayout paddingTop="10" gap="1" paddingLeft="15"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+	</e:Group>
+	<e:Group top="18" anchorOffsetX="0" width="598" anchorOffsetY="0" height="93" x="0.5">
+		<ns1:GWingItem id="item0" y="21" x="15" skinName="ShenYuItem" width="90" height="106"/>
+		<ns1:GWingItem id="item1" y="31" x="25" skinName="ShenYuItem" width="90" height="106"/>
+		<ns1:GWingItem id="item2" y="41" x="35" skinName="ShenYuItem" width="90" height="106"/>
+		<ns1:GWingItem id="item3" y="51" x="45" skinName="ShenYuItem" width="90" height="106"/>
+		<e:layout>
+		<e:HorizontalLayout gap="12" paddingLeft="106" paddingTop="0"/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="compose" label="合 成" horizontalCenter="-1" bottom="13" skinName="SkinBtn6" icon="btn2_2" height="55" scaleX="0.79" scaleY="0.79" width="150"/>
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="63" bottom="47"/>
+	<ns1:GWingItem id="now" skinName="ShenYuItem" horizontalCenter="-172" verticalCenter="-93.5"/>
+	<e:Image width="90" height="90" source="quality9" horizontalCenter="-172.5" verticalCenter="-108" scaleX="1.1" scaleY="1.1"/>
+	<ns1:GWingItem id="next" skinName="ShenYuItem" horizontalCenter="36" verticalCenter="-93.5"/>
+	<e:Image width="90" height="90" source="quality9" horizontalCenter="35.5" verticalCenter="-108" scaleX="1.1" scaleY="1.1"/>
+	<e:Label id="number" size="20" textAlign="left" y="334" horizontalCenter="-170" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+	<e:Image source="jiantouyou" horizontalCenter="-68.5" x="150" width="61" height="56" verticalCenter="-111.5"/>
+</e:Skin>

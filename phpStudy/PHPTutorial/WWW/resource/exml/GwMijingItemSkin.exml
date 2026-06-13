@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGwMijingItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="114">
+	<e:Group id="Bg" y="0" horizontalCenter="0" height="114">
+		<e:Image id="BgLeft" x="0" y="0" height="114" scale9Grid="3,6,545,14" source="godweapon_mjchoose1_png"/>
+	</e:Group>
+	<e:Group id="choose" x="0" y="0" visible="false">
+		<e:Image id="chooseLeft" y="0" width="552" height="114" horizontalCenter="0" scale9Grid="6,6,543,16" source="godweapon_mjchoose2_png"/>
+	</e:Group>
+	<e:List id="list" height="106" x="155" anchorOffsetY="0" anchorOffsetX="0" width="249" itemRendererSkinName="SkinItem2" verticalCenter="3">
+		<e:layout>
+		<e:HorizontalLayout gap="10"/>
+		</e:layout>
+	</e:List>
+	<e:Group id="rank" verticalCenter="2" x="433">
+		<e:Image id="rankbg" source="godweapon_rankbg" x="-1" y="0"/>
+		<e:Image id="rankImg" horizontalCenter="-8" y="2" source="godweapon_rank1_png"/>
+	</e:Group>
+	<e:Label id="storeyCount" text="第1层" x="59" verticalCenter="0" fontFamily="Microsoft YaHei" size="22" textColor="0xffffff" stroke="1"/>
+</e:Skin>

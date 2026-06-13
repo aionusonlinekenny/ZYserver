@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Zaoyurewardskin" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" >
+	<w:Config id="159b5e0f988"/>
+	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/> 
+	<e:Group name="上周" height="700" width="485" horizontalCenter="0" verticalCenter="-34">
+		<e:Image source="bantoutiaobg" height="30" bottom="-38" scale9Grid="128,2,15,41" width="391" x="49" visible="false"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-32" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Image     left="0" right="0" bottom="0" source="tongyong_dikuang2" scale9Grid="27,5,70,70" anchorOffsetY="0" height="670"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="201,0,81,23" bottom="659"/>
+		<e:Image source="tongyong_titlebg" horizontalCenter="-1" bottom="657"/>
+
+
+		<e:Label text="每日0点结算" size="20" right="63" y="653" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0"/>
+		<e:Label y="14" text="奖励说明" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+		<e:Image y="54" width="420" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,5,60,44" height="580"/>
+		<e:Label y="63" text="排名" size="20" x="108" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label y="63" text="奖励" size="20" x="300" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+
+		<e:Label id="myRankText" text="我的当前排名：123" size="20" x="48" fontFamily="Microsoft YaHei" textColor="0xffffff" y="653" stroke="0"/>
+		<e:Scroller width="408" horizontalCenter="0" height="536" y="90">
+		<e:List id="list0" x="-3" y="29" itemRendererSkinName="SkinZaoyurewardItem" width="408" height="536">
+			<e:layout>
+				<e:VerticalLayout gap="3" horizontalAlign="center"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+		<e:Button id="closeBtn" label="Button" x="436" y="6" skinName="SkinBtn0" icon="tongyong_btnclose" scaleX="1" scaleY="1"/>
+	</e:Group>
+</e:Skin>

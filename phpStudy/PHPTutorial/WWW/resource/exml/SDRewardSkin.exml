@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SDRewardSkin" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"   >
+	<e:Rect id="closeBtn" left="0" right="0" top="0" bottom="0" fillAlpha="0.8" x="0" y="0"/>
+	<e:Group anchorOffsetY="0" width="466" height="633" horizontalCenter="0" anchorOffsetX="0" verticalCenter="9.5">
+		<e:Image right="0" scale9Grid="34,20,1,1" source="tongyong_dikuang2" left="0" top="0" bottom="0" x="-76" y="-114" scaleX="1" scaleY="1"/>
+		<e:Image left="1" right="-1" source="tongyong_juanzhou" scale9Grid="24,0,443,17" top="0" x="-75" y="-129" scaleX="1" scaleY="1"/>
+		<e:Image height="526" source="tongyongbg5" width="405" horizontalCenter="0.5" verticalCenter="-23.5" scale9Grid="4,4,18,11" x="-11.999999999999993" y="36" scaleX="1" scaleY="1"/>
+		<e:Image source="tongyong_titlebg" horizontalCenter="-2.5" top="-18" width="249" scale9Grid="69,14,112,8" x="86" y="-146" scaleX="1" scaleY="1"/>
+		<e:Label id="nametxt" text="任务积分大礼" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" top="-6" horizontalCenter="0"/>
+
+
+
+
+
+
+
+
+		<e:Group horizontalCenter="13" bottom="13" anchorOffsetY="0" height="53.33" anchorOffsetX="0" width="328">
+			<e:Image x="10" y="0" source="gantanhao4"/>
+			<e:Label text="积分大礼只发放最高档次的奖励！" size="18" x="30.64" y="0.67" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Image x="10" y="30" source="gantanhao4"/>
+			<e:Label text="奖励将在活动结束后通过邮件发放!" size="18" x="30.64" y="32.04" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+
+
+		<e:Scroller id="rewardShow" height="512.34" anchorOffsetY="0" scrollPolicyV="on" top="38" horizontalCenter="0.5">
+			<e:List id="list" itemRendererSkinName="SDShowItemSkin" anchorOffsetY="0">
+			</e:List>
+		</e:Scroller>
+		<e:Button id="closebtn2" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="216" top="-14" x="434" y="-182" scaleX="1" scaleY="1"/>
+
+
+
+
+
+	</e:Group>
+	<e:Image source="qiriitem2_png" alpha="0.7" visible="false"/>		
+</e:Skin>

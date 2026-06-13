@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="alwaysRechargeSkin" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bgClose" fillAlpha="0.8" left="2" right="-2" top="0" bottom="0" alpha="0.7"/>
+	<e:Group id="mainGroup" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="bg" horizontalCenter="-1" source="alwaysRechargeBg_png"/>
+		<e:Image id="title0" horizontalCenter="0" source="meirishouchong_png" top="68" visible="false"/>
+		<e:Image id="titlerecharge0" horizontalCenter="22" top="147" source="meirichongzhibg2_png" visible="false"/>
+		<e:Group id="moneyGroup0" y="107.57" width="90" horizontalCenter="-1"/>
+		<e:Group id="moneyGroup1" y="152.98" width="90" horizontalCenter="69"/>
+		<e:Group id="listCon0" width="386" height="96" y="286" anchorOffsetX="0" x="85" visible="false">
+		<ns1:ItemBase xmlns:ns1="*" id="item0" top="0" bottom="0" left="0" skinName="SkinItem2"/>
+		<ns1:ItemBase xmlns:ns1="*" id="item1" top="0" bottom="0" horizontalCenter="-52" skinName="SkinItem2"/>
+		<ns1:ItemBase xmlns:ns1="*" id="item2" top="0" bottom="0" width="76" horizontalCenter="52" skinName="SkinItem2"/>
+		<ns1:ItemBase xmlns:ns1="*" id="item3" top="0" bottom="0" right="0" skinName="SkinItem2"/>
+		</e:Group>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="alwaysRechargeClose_png" right="50" top="-79" rotation="359.85"/>
+		<e:Button id="goUpBtn" label="立即领取" y="444" icon="sc_05" skinName="SkinBtn9" width="198" anchorOffsetX="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:TabBar id="tab" width="200" height="48" x="56" y="365">
+		<e:layout>
+		<e:HorizontalLayout gap="5"/>
+		</e:layout>
+	</e:TabBar>
+</e:Skin>

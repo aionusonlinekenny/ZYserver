@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ISCostRewardItemSkin" width="517" height="128" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bg" left="0" right="0" top="0" bottom="0" x="0" y="0" source="tongyongbg13" scale9Grid="5,5,2,2"/>
+	<e:Label id="pos" text="50-60" size="30" textAlign="center" verticalCenter="0" left="3" textColor="0xFFFF00" fontFamily="Microsoft YaHei" width="85"/>
+	<e:Image id="number1" source="paihang1" verticalCenter="0" left="15"/>
+	<e:Label id="need" text="(消费≥400000元宝 即可参与本排行）" size="18" verticalCenter="-5" width="184" right="0" verticalAlign="justify" textAlign="center" textColor="0xffff00" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+	<e:List id="reward" itemRendererSkinName="SkinItem" left="94" verticalCenter="0">
+		<e:layout>
+			<e:HorizontalLayout gap="15"/>
+		</e:layout>
+	</e:List>
+</e:Skin>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinReinEquipItem" width="407" height="120" currentState="state1" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" states="state1,state2">
+	<e:Image source="tongyonglabbg" scale9Grid="40,20,30,30" left.state2="2" right.state2="-2" top.state2="0" bottom.state2="0" left="0" right="0" top="0" height="120"/>
+	<e:Group id="content" x="0" y="0" width="407" height="120" visible.state2="false">
+		<ns1:ComposeItemBase id="need" y="10" x="31" skinName="SkinItem3"/>
+		<ns1:ComposeItemBase id="target" x="184" y="10" skinName="SkinItem3"/>
+		<e:Label id="num" text="2" size="24" textColor="0x1b3046" top="37" left="138" fontFamily="Microsoft YaHei"/>
+		<e:Button id="compose" label="合 成" height="50" width="120" x="270" icon="btn3" y="30" skinName.state1="SkinBtn3" skinName="SkinBtn3"/>
+		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" x="381" y="25" visible.state1="false"/>
+		<e:Image x="110.5" y="37" source="rein_mulit_png"/>
+		<e:Image x="158" y="42" source="rein_equal_png"/>
+	</e:Group>
+	<e:Group id="content1" verticalCenter="0" left="0" right="0" visible.state1="false">
+		<ns1:ComposeItemBase id="need0" y="19.5" x="11" scaleX="0.7" scaleY="0.7" skinName="SkinItem3" includeIn="state2"/>
+		<ns1:ComposeItemBase id="need1" y="19.5" x="93" scaleX="0.7" scaleY="0.7" skinName="SkinItem3" includeIn="state2"/>
+		<ns1:ComposeItemBase id="need2" y="19.5" x="169" scaleX="0.7" scaleY="0.7" skinName="SkinItem3" includeIn="state2"/>
+		<ns1:ComposeItemBase id="target1" x="251" y="19.5" scaleX="0.7" scaleY="0.7" skinName="SkinItem3" includeIn="state2"/>
+		<e:Button id="compose1" label="合 成" x="313" skinName="SkinBtn3" scaleX="0.7" scaleY="0.7" verticalCenter="-0.5"/>
+		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" y="7" scaleX="0.8" scaleY="0.8" right="8" right.state2="6" visible.state2="false"/>
+		<e:Image x="224" y="38" source="rein_equal_png"/>
+		<e:Image x="69" y="39" source="tongyongadd" width="20" height="20"/>
+		<e:Image x="147" y="39" source="tongyongadd" width="20" height="20"/>
+	</e:Group>
+</e:Skin>

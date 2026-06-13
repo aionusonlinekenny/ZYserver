@@ -1,0 +1,49 @@
+[Sun Dec 01 13:13:55.088000 2024] [core:warn] [pid 7808:tid 320] AH00098: pid file D:/ZYserver/phpStudy/PHPTutorial/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Dec 01 13:13:55.202000 2024] [mpm_winnt:notice] [pid 7808:tid 320] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9 configured -- resuming normal operations
+[Sun Dec 01 13:13:55.202000 2024] [mpm_winnt:notice] [pid 7808:tid 320] AH00456: Server built: Jul  1 2016 16:42:20
+[Sun Dec 01 13:13:55.202000 2024] [core:notice] [pid 7808:tid 320] AH00094: Command line: 'D:\\ZYserver\\phpStudy\\PHPTutorial\\Apache\\bin\\httpd.exe -d D:/ZYserver/phpStudy/PHPTutorial/Apache'
+[Sun Dec 01 13:13:55.205000 2024] [mpm_winnt:notice] [pid 7808:tid 320] AH00418: Parent: Created child process 16704
+[Sun Dec 01 13:13:56.302000 2024] [mpm_winnt:notice] [pid 16704:tid 336] AH00354: Child: Starting 150 worker threads.
+[Sun Dec 01 13:16:56.669000 2024] [mpm_winnt:crit] [pid 16704:tid 336] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Sun Dec 01 23:32:01.343800 2024] [core:warn] [pid 2488:tid 468] AH00098: pid file D:/ZYserver/phpStudy/PHPTutorial/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Dec 01 23:32:01.437541 2024] [mpm_winnt:notice] [pid 2488:tid 468] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9 configured -- resuming normal operations
+[Sun Dec 01 23:32:01.437541 2024] [mpm_winnt:notice] [pid 2488:tid 468] AH00456: Server built: Jul  1 2016 16:42:20
+[Sun Dec 01 23:32:01.437541 2024] [core:notice] [pid 2488:tid 468] AH00094: Command line: 'D:\\ZYserver\\phpStudy\\PHPTutorial\\Apache\\bin\\httpd.exe -d D:/ZYserver/phpStudy/PHPTutorial/Apache'
+[Sun Dec 01 23:32:01.438518 2024] [mpm_winnt:notice] [pid 2488:tid 468] AH00418: Parent: Created child process 4908
+[Sun Dec 01 23:32:01.850628 2024] [mpm_winnt:notice] [pid 4908:tid 520] AH00354: Child: Starting 150 worker threads.
+[Mon Dec 02 00:34:24.731106 2024] [mpm_winnt:crit] [pid 4908:tid 520] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Mon Dec 02 00:34:58.488337 2024] [core:warn] [pid 4684:tid 520] AH00098: pid file D:/ZYserver/phpStudy/PHPTutorial/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 02 00:34:58.584993 2024] [mpm_winnt:notice] [pid 4684:tid 520] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9 configured -- resuming normal operations
+[Mon Dec 02 00:34:58.584993 2024] [mpm_winnt:notice] [pid 4684:tid 520] AH00456: Server built: Jul  1 2016 16:42:20
+[Mon Dec 02 00:34:58.584993 2024] [core:notice] [pid 4684:tid 520] AH00094: Command line: 'D:\\ZYserver\\phpStudy\\PHPTutorial\\Apache\\bin\\httpd.exe -d D:/ZYserver/phpStudy/PHPTutorial/Apache'
+[Mon Dec 02 00:34:58.586005 2024] [mpm_winnt:notice] [pid 4684:tid 520] AH00418: Parent: Created child process 4692
+[Mon Dec 02 00:34:58.987354 2024] [mpm_winnt:notice] [pid 4692:tid 520] AH00354: Child: Starting 150 worker threads.
+[Mon Dec 02 00:35:21.417957 2024] [mpm_winnt:crit] [pid 4692:tid 520] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Mon Dec 02 00:36:51.206811 2024] [core:warn] [pid 4684:tid 524] AH00098: pid file D:/ZYserver/phpStudy/PHPTutorial/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 02 00:36:51.299568 2024] [mpm_winnt:notice] [pid 4684:tid 524] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9 configured -- resuming normal operations
+[Mon Dec 02 00:36:51.299568 2024] [mpm_winnt:notice] [pid 4684:tid 524] AH00456: Server built: Jul  1 2016 16:42:20
+[Mon Dec 02 00:36:51.299568 2024] [core:notice] [pid 4684:tid 524] AH00094: Command line: 'D:\\ZYserver\\phpStudy\\PHPTutorial\\Apache\\bin\\httpd.exe -d D:/ZYserver/phpStudy/PHPTutorial/Apache'
+[Mon Dec 02 00:36:51.300579 2024] [mpm_winnt:notice] [pid 4684:tid 524] AH00418: Parent: Created child process 5096
+[Mon Dec 02 00:36:51.691198 2024] [mpm_winnt:notice] [pid 5096:tid 524] AH00354: Child: Starting 150 worker threads.
+[Mon Dec 02 00:39:52.775814 2024] [mpm_winnt:crit] [pid 5096:tid 524] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Mon Dec 02 00:39:56.127384 2024] [core:warn] [pid 1744:tid 512] AH00098: pid file D:/ZYserver/phpStudy/PHPTutorial/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 02 00:39:56.221109 2024] [mpm_winnt:notice] [pid 1744:tid 512] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9 configured -- resuming normal operations
+[Mon Dec 02 00:39:56.221109 2024] [mpm_winnt:notice] [pid 1744:tid 512] AH00456: Server built: Jul  1 2016 16:42:20
+[Mon Dec 02 00:39:56.221109 2024] [core:notice] [pid 1744:tid 512] AH00094: Command line: 'D:\\ZYserver\\phpStudy\\PHPTutorial\\Apache\\bin\\httpd.exe -d D:/ZYserver/phpStudy/PHPTutorial/Apache'
+[Mon Dec 02 00:39:56.222095 2024] [mpm_winnt:notice] [pid 1744:tid 512] AH00418: Parent: Created child process 3100
+[Mon Dec 02 00:39:56.615662 2024] [mpm_winnt:notice] [pid 3100:tid 520] AH00354: Child: Starting 150 worker threads.
+[Mon Dec 02 00:40:23.120465 2024] [mpm_winnt:crit] [pid 3100:tid 520] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Mon Dec 02 00:40:45.304328 2024] [core:warn] [pid 1712:tid 512] AH00098: pid file D:/ZYserver/phpStudy/PHPTutorial/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 02 00:40:45.396143 2024] [mpm_winnt:notice] [pid 1712:tid 512] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9 configured -- resuming normal operations
+[Mon Dec 02 00:40:45.396143 2024] [mpm_winnt:notice] [pid 1712:tid 512] AH00456: Server built: Jul  1 2016 16:42:20
+[Mon Dec 02 00:40:45.396143 2024] [core:notice] [pid 1712:tid 512] AH00094: Command line: 'D:\\ZYserver\\phpStudy\\PHPTutorial\\Apache\\bin\\httpd.exe -d D:/ZYserver/phpStudy/PHPTutorial/Apache'
+[Mon Dec 02 00:40:45.397087 2024] [mpm_winnt:notice] [pid 1712:tid 512] AH00418: Parent: Created child process 4916
+[Mon Dec 02 00:40:45.785759 2024] [mpm_winnt:notice] [pid 4916:tid 392] AH00354: Child: Starting 150 worker threads.
+[Mon Dec 02 01:11:23.785719 2024] [mpm_winnt:crit] [pid 4916:tid 392] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Mon Dec 02 17:27:36.589306 2024] [core:warn] [pid 1016:tid 460] AH00098: pid file D:/ZYserver/phpStudy/PHPTutorial/Apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 02 17:27:36.808339 2024] [mpm_winnt:notice] [pid 1016:tid 460] AH00455: Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9 configured -- resuming normal operations
+[Mon Dec 02 17:27:36.808339 2024] [mpm_winnt:notice] [pid 1016:tid 460] AH00456: Server built: Jul  1 2016 16:42:20
+[Mon Dec 02 17:27:36.808339 2024] [core:notice] [pid 1016:tid 460] AH00094: Command line: 'D:\\ZYserver\\phpStudy\\PHPTutorial\\Apache\\bin\\httpd.exe -d D:/ZYserver/phpStudy/PHPTutorial/Apache'
+[Mon Dec 02 17:27:36.823392 2024] [mpm_winnt:notice] [pid 1016:tid 460] AH00418: Parent: Created child process 3912
+[Mon Dec 02 17:27:37.569763 2024] [mpm_winnt:notice] [pid 3912:tid 464] AH00354: Child: Starting 150 worker threads.
+[Mon Dec 02 17:37:42.552862 2024] [mpm_winnt:crit] [pid 3912:tid 464] AH02538: Child: Parent process exited abruptly. Child process is ending

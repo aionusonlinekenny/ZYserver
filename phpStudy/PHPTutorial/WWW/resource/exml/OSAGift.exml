@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="OSAGift" width="563" height="671" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<w:Config id="1666642385d"/>
+	<e:Image scaleY="1" horizontalCenter="0" y="-6.34" width="214" height="50" source="huabian3"/>
+
+
+	<e:Image id="title" horizontalCenter="0" x="211" y="12.66" source="biaoti_kaifulibao_png"/>
+
+	<e:Image id="bg" height="352.66" anchorOffsetY="0" source="kaifulibaodikuang_png" left="0" right="0" verticalCenter="88" scale9Grid="7,31,542,167"/>
+
+	<e:Image id="showbg" source="kaifucailiaobg_png" verticalCenter="116.5" horizontalCenter="-140.5"/>
+	<e:Group y="275.32" right="10" width="408" x="141">
+		<e:Group y="11.69" right="0" width="365" height="48" visible="false">
+
+		<e:Image y="0" left="0" right="0" source="kaifubantoumingkuang_png" scale9Grid="209,5,36,34"/>
+		<e:Label id="desc01" text="累积充值" horizontalCenter="0" verticalCenter="0" size="20" textColor="0xd1c28f"/>
+		<e:Label id="desc111" text="123" horizontalCenter="-80" verticalCenter="0.5" size="20" textColor="0xff9900"/>
+		<e:Group id="desc1111" verticalCenter="0" horizontalCenter="0">
+			<e:Label id="desc21" text="花费" horizontalCenter="-80" verticalCenter="0.5" size="20" textColor="0xd1c28f" fontFamily="Microsoft YaHei"/>
+			<e:Label id="desc31" text="12340" horizontalCenter="96" verticalCenter="0.5" size="20" textColor="0xFF9900" fontFamily="Microsoft YaHei"/>
+			<e:Label id="desc41" text="元宝即可购买" horizontalCenter="-80" verticalCenter="0.5" size="20" textColor="0xD1C28F" fontFamily="Microsoft YaHei"/>
+			<e:Label id="desc51" text="材料礼包" horizontalCenter="96" verticalCenter="0.5" size="20" textColor="0xFF9900" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+			<e:HorizontalLayout/>
+			</e:layout>
+		</e:Group>
+		</e:Group>
+		<e:Group y="11.69" right="-9" width="365" height="48">
+			<e:Image y="3" left="0" right="0" source="kaifubantoumingkuang_png" scale9Grid="209,5,36,34"/>
+			<e:Label id="desc0" text="累积充值" horizontalCenter="0" verticalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="desc1" text="123" horizontalCenter="-80" verticalCenter="0.5" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Group id="desc" verticalCenter="0" horizontalCenter="0" height="27">
+			<e:Label id="desc2" text="花费" horizontalCenter="-80" verticalCenter="0.5" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="bottom" height="22"/>
+			<e:Label id="desc3" text="12340" horizontalCenter="96" verticalCenter="0.5" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" strokeColor="0xe34032" stroke="1" verticalAlign="middle" height="25"/>
+			<e:Label id="desc4" text="元宝即可购买" horizontalCenter="-80" verticalCenter="0.5" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle" height="22"/>
+			<e:Label id="desc5" text="材料礼包" horizontalCenter="96" verticalCenter="0.5" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" strokeColor="0xe34032" stroke="1" verticalAlign="top" height="22"/>
+				<e:layout>
+					<e:HorizontalLayout/>
+				</e:layout>
+
+			</e:Group>
+		</e:Group>
+		<e:Group id="reward0" y="70.34" horizontalCenter="32">
+		<ns1:BagItemBase id="item0" x="100" y="2" skinName="SkinItem2"/>
+		<ns1:BagItemBase id="item1" x="110" y="12" skinName="SkinItem2"/>
+		<ns1:BagItemBase id="item2" x="120" y="22" skinName="SkinItem2"/>
+		<ns1:BagItemBase id="item3" x="130" y="32" skinName="SkinItem2"/>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="8"/>
+		</e:layout>
+		</e:Group>
+		<e:Group id="reward1" y="170.34" horizontalCenter="32">
+		<ns1:BagItemBase id="item4" x="100" y="2" skinName="SkinItem2"/>
+		<ns1:BagItemBase id="item5" x="110" y="12" skinName="SkinItem2"/>
+		<ns1:BagItemBase id="item6" x="120" y="22" skinName="SkinItem2"/>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="8"/>
+		</e:layout>
+		</e:Group>
+	</e:Group>
+	<e:Label id="actTime" text="0天23小时55分" size="18" textColor="0x00FF00" horizontalCenter="174" x="218" y="612" fontFamily="Microsoft YaHei"/>
+	<e:Group y="653" horizontalCenter="0" visible="false">
+		<e:Label id="ybTxt0" text="当前元宝：" size="18" horizontalCenter="0" bottom="7" x="-55" y="8" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" textColor="0xffff00"/>
+		<e:Image  x="20" y="9" source="szyuanbao" width="35" height="25"/>
+		<e:Label id="ybTxt" text="1000000000000" size="18" horizontalCenter="0" bottom="7" x="-65" y="-2" fontFamily="Microsoft YaHei" textColor="0xffff00" scaleX="1" scaleY="1"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+	<e:Group horizontalCenter="0" y="51" x="16">
+		<e:Group id="lhlb" x="0" y="0" width="127" height="187">
+			<e:Image id="di0" horizontalCenter="0" y="2" source="kaifulibaodi_png"/>
+			<e:Image id="namedi0" horizontalCenter="0" y="150.66" x="10" source="kaifuhuodongitembg3_png" anchorOffsetX="0" width="131"/>
+		<e:Image id="bg0" horizontalCenter="0" source="cailiaolibao_bg_png" verticalCenter="11.5"/>
+
+			<e:Image id="name0" horizontalCenter="-1.5" y="154" source="n_cailiaolibao_png"/>
+		<e:Image id="arrow0" y="179" horizontalCenter="0" source="arrow_down_png" visible="false"/>
+			<e:Image id="select0" width="143" height="166.67" horizontalCenter="0.5" source="kaifulibaoselectkuang_png" bottom="-1" anchorOffsetY="0"/>
+
+		</e:Group>
+		<e:Group id="yylb" x="10" y="10" width="127" height="187">
+			<e:Image id="di1" horizontalCenter="0" source="kaifulibaodi_png" verticalCenter="1"/>
+			<e:Image id="namedi1" horizontalCenter="0" y="150.66" x="10" source="kaifuhuodongitembg3_png" anchorOffsetX="0" width="131"/>
+		<e:Image id="bg1" horizontalCenter="0" source="tujianlibao_png" verticalCenter="11.5"/>
+			<e:Image horizontalCenter="-1.5" y="154" id="name1" source=""/>
+		<e:Image id="arrow1" source="arrow_down" y="156" horizontalCenter="0" visible="false"/>
+		<e:Image id="select1" width="143" height="166.67" horizontalCenter="0.5" source="kaifulibaoselectkuang_png" bottom="-1" anchorOffsetY="0"/>
+		</e:Group>
+		<e:Group id="szlb" x="20" y="20" width="127" height="187">
+			<e:Image id="di2" horizontalCenter="0" y="2" source="kaifulibaodi_png"/>
+			<e:Image id="namedi2" horizontalCenter="0" y="150.66" x="10" source="kaifuhuodongitembg3_png" anchorOffsetX="0" width="131"/>
+		<e:Image id="bg2" horizontalCenter="0" source="chibanglibao_png" verticalCenter="11.5"/>
+			<e:Image horizontalCenter="-1.5" y="154" id="name2" source=""/>
+		<e:Image id="arrow2" source="arrow_down" y="156" horizontalCenter="0" visible="false"/>
+			<e:Image id="select2" width="143" height="166.67" horizontalCenter="0.5" source="kaifulibaoselectkuang_png" bottom="-1" anchorOffsetY="0"/>
+
+		</e:Group>
+		<e:Group id="sblb" x="30" y="30" width="127" height="187">
+			<e:Image id="di3" horizontalCenter="0" y="2" source="kaifulibaodi_png"/>
+			<e:Image id="namedi3" horizontalCenter="0" y="150.66" x="10" source="kaifuhuodongitembg3_png" anchorOffsetX="0" width="131"/>
+		<e:Image id="bg3" horizontalCenter="0" source="shenbinglibao_png" verticalCenter="11.5"/>
+			<e:Image horizontalCenter="-1.5" y="154" id="name3" source=""/>
+		<e:Image id="arrow3" y="156" horizontalCenter="0" source="arrow_down_png" visible="false"/>
+			<e:Image id="select3" width="143" height="166.67" horizontalCenter="0.5" source="kaifulibaoselectkuang_png" bottom="-1" anchorOffsetY="0"/>
+
+		</e:Group>
+		<e:layout>
+		<e:HorizontalLayout horizontalAlign="center" verticalAlign="top" gap="6"/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="buy" label="购  买" skinName="SkinBtn1" horizontalCenter="0.5" bottom="13"/>
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="79" bottom="65"/>
+	<e:Label id="already" text="已购买" textColor="0x00FF00" size="30" horizontalCenter="0.5" bottom="32" x="249" y="554" fontFamily="Microsoft YaHei"/>
+
+		
+</e:Skin>

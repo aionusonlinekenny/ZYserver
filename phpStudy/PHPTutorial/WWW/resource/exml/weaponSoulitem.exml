@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="weaponSoulitem" height="98" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="108">
+	<w:Config id="1586b362dfe"/>
+	<ns1:ItemIcon id="itemIcon" skinName="weaponSoulitemicon" y="0" x="16"/>
+	<e:Rect id="black" width="74" height="74" x="16" y="0" fillAlpha="0" visible="false"/>
+
+
+	<e:Group id="redPoint" y="0"   x="71">
+		<e:Image source="zjmhongdian"/>
+	</e:Group>
+	<e:Group width="108" height="22" anchorOffsetY="0" rotation="0.11" anchorOffsetX="0" horizontalCenter="0" top="77">
+		<e:Label id="nameTxt" size="18" text="name" strokeColor="0x848484" stroke="0" x="0" textAlign="right" verticalAlign="middle" fontFamily="Microsoft YaHei" y="0" scaleX="1" scaleY="1" textColor="0x001828"/>
+		<e:Label text="Lv" x="52" y="8" anchorOffsetY="0" height="20.25" verticalAlign="middle" size="18" textColor="0xec6014"/>
+		<e:Label id="lv" size="18" y="0" text="299" textColor="0xec6014" verticalAlign="middle" x="0" scaleX="1" scaleY="1" height="18" fontFamily="Microsoft YaHei"/>
+		<e:layout>
+			<e:HorizontalLayout gap="0"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

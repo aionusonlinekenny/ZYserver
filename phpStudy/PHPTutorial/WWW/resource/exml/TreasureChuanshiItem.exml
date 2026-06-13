@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="TreasureChuanshiItem" width="90" height="94" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586b362dfe"/>
+	<ns1:ItemBase id="gift" horizontalCenter="0" skinName="SkinItem2" verticalCenter="6"/>
+
+	<e:Image id="select" horizontalCenter="0" touchEnabled="false" width="88" height="88" source="xuanzekuang3" verticalCenter="-10" scale9Grid="20,20,5,5"/>
+
+
+	<e:Image id="select2" source="duoxuangou" x="52" bottom="23"/>
+	<!--<ns1:BaseComponent id="tongIcon" skinName="SkinRuneItem" horizontalCenter="1" verticalCenter="-3" visible="false"/>-->
+</e:Skin>

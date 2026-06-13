@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGwMijingRankItem" width="520" height="48" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image source="rankitembg" left="0" right="0" top="0" bottom="0" scale9Grid="11,6,66,41"/>
+	<e:Label id="rank" text="" size="24" textAlign="center" verticalAlign="middle" verticalCenter="0" horizontalCenter="-224" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+	<e:Label id="playerName" text="" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" x="118"/>
+	<e:Label id="storeyCount" text="" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" x="301"/>
+	<e:Label id="time" text="" size="20"  verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" left="451" textAlign="left"/>
+	<e:Image id="qiansan" source="paihang1" verticalCenter="0" width="47" height="42" x="12" visible="false"/>
+</e:Skin>

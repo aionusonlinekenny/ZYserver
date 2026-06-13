@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildCampFire" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="948">
+	<w:Config id="15d5f01209d"/>
+
+
+
+
+
+
+
+
+
+
+
+	<e:Group top="0" bottom="0" width="600" horizontalCenter="0">
+		<e:Image id="bgImg" anchorOffsetY="0" anchorOffsetX="0" source="campfire_bg_jpg" scaleX="1" scaleY="1" horizontalCenter="0" alpha="1" top="0" bottom="0"/>
+		<e:Group id="bar" horizontalCenter="6" x="100" scaleX="1" scaleY="1" bottom="249">
+
+			<e:Image id="progressBg" width="348" anchorOffsetX="0" horizontalCenter="-5" verticalCenter="0.5" source="jindutiao1" scale9Grid="60,6,88,8"/>
+			<e:ProgressBar id="progressBar" width="325" value="0" skinName="Skinbar5" horizontalCenter="-3.5" verticalCenter="0.5" height="17"/>
+			<e:Image anchorOffsetX="0" source="jindutiaotou" horizontalCenter="-172" verticalCenter="0"/>
+			<e:Image source="jindutiaotou" anchorOffsetX="0" scaleX="-1" horizontalCenter="165" verticalCenter="0"/>
+		</e:Group>
+		<e:Group width="600" height="99" horizontalCenter="0" anchorOffsetY="0" anchorOffsetX="0" bottom="277">
+			<e:Label id="cha" text="×" scaleX="1" scaleY="1" size="28" textColor="0xffe500" fontFamily="Microsoft YaHei" verticalCenter="3.5" horizontalCenter="47.5"/>
+			<e:Label id="count" text="1" anchorOffsetX="0" width="105" size="22" scaleX="1" scaleY="1" textColor="0xffe500" fontFamily="Microsoft YaHei" horizontalCenter="114.5" verticalCenter="5.5"/>
+			<e:Button id="give" label="Button" icon="campfire_button_png" horizontalCenter="-7" scaleX="1" scaleY="1" x="253" verticalCenter="0" skinName="SkinBtn0"/>
+		</e:Group>
+		<e:Image id="point1" x="81.99" scaleX="1" scaleY="1" source="gantanhao3" bottom="206"/>
+		<e:Label id="desc1" text="每捐献1个火柴增加5点点火值以及30点仙盟贡献" x="99.36" anchorOffsetX="0" width="495" size="20" scaleX="1" scaleY="1" textColor="0xffffff" fontFamily="Microsoft YaHei" bottom="208"/>
+		<e:Image id="point2" x="82" scaleX="1" scaleY="1" source="gantanhao3" bottom="171"/>
+		<e:Label id="desc2" text="每捐献1个火柴增加5点点火值以及30点仙盟贡献" x="100" anchorOffsetX="0" width="495" size="20" scaleX="1" scaleY="1" textColor="0xffffff" fontFamily="Microsoft YaHei" bottom="172"/>
+		<e:Group id="fireLv" horizontalCenter="0" anchorOffsetY="0" height="473" x="59" scaleX="1" scaleY="1" bottom="377" visible="false">
+			<e:Image id="lv0" y="285" source="campfire_lv1" horizontalCenter="-2.5" visible="false"/>
+			<e:Image id="lv1" y="285" source="campfire_lv1" horizontalCenter="-2.5" visible="false"/>
+			<e:Image id="fire1" y="194" source="campfire_fire" horizontalCenter="5" visible="false"/>
+			<e:Image id="lv2" y="255" source="campfire_lv2" horizontalCenter="-6.5" visible="false"/>
+			<e:Image id="fire2" y="158" source="campfire_fire" horizontalCenter="5.5" visible="false"/>
+			<e:Image id="lv3" y="244" source="campfire_lv3" horizontalCenter="4.5" visible="false"/>
+			<e:Image id="fire3" y="142" source="campfire_fire" horizontalCenter="5.5" visible="false"/>
+			<e:Image id="lv4" y="219" source="campfire_lv4" horizontalCenter="4" visible="false"/>
+			<e:Image id="fire4" y="115" source="campfire_fire" horizontalCenter="5.5" visible="false"/>
+			<e:Image id="lv5" y="203" source="campfire_lv5" horizontalCenter="-4.5" visible="false"/>
+			<e:Image id="fire5" y="93" source="campfire_fire" horizontalCenter="5.5" visible="false"/>
+			<e:Image id="firestar" y="36" x="108" source="campfire_star" scaleX="2" scaleY="2" visible="false"/>
+		</e:Group>
+		<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="25.5" x="316" scaleX="1" scaleY="1" bottom="349"/>
+	</e:Group>
+	<e:Image source="guildgouhuo_png" alpha="0.7" x="0" y="0" visible="false"/>
+
+
+</e:Skin>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGameFightScene" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="580"
+        height="930">
+
+
+	<e:Image id="stateImg" touchEnabled="false"  horizontalCenter="0" verticalCenter="-170" source=""/>
+	<e:Button id="escBtn" label="按钮" skinName="SkinBtn0" icon="tuichu"
+	           x="10" bottom="128" visible="false"/>
+	<e:Group id="guildBossGroup" width="200" height="75" bottom="160" horizontalCenter="0" visible="false">
+		<e:Image  height="75" source="bantoutiaobg2" y="0" scale9Grid="41,5,7,12" width="200" horizontalCenter="0" visible="false"/>
+		<e:Image id="leftTimeImg" y="38" source="" horizontalCenter="-39"/>
+	</e:Group>
+	<e:Group id="flyExpGroup" width="300" height="110" horizontalCenter="0" y="70" visible="false">
+		<e:Image  left="0" right="0" top="0" bottom="-30" source="tongyong_dikuang4" scale9Grid="15,13,51,53"/>
+
+
+
+
+		<e:Image id="totleExp" y="20" horizontalCenter="0.5" source=""/>
+	</e:Group>
+	<e:Group id="flyExpGroup1" width="300" height="32"   horizontalCenter="0" y="174" visible="false">
+		<e:Image  source="bantoutiaobg2" scale9Grid="41,5,7,12" left="0" right="0" top="0" bottom="0" visible="false"/>
+
+		<e:Image id="killNumImg" y="6" horizontalCenter="-50" scaleX="0.6" scaleY="0.6" source="" visible="false"/>
+		<e:Label id="lbNum0" text="击杀怪物的数量：" y="5" size="20" horizontalCenter="-54" fontFamily="Microsoft YaHei"/>
+		<e:Label id="lbNum" text="100/100" y="5" size="20" horizontalCenter="63" fontFamily="Microsoft YaHei" textAlign="left"/>
+	</e:Group>
+	<e:Group id="GwRankGroup" bottom="175" horizontalCenter="15.5" anchorOffsetX="0" visible="false">
+
+		<e:Image id="rankbg" verticalCenter="0" scale9Grid="180,12,7,78" source="GodWeapon_rankball_png" x="0"/>
+		<e:Image id="rank" scaleX="0.8" scaleY="0.8" x="28" verticalCenter="4.5" source=""/>
+		<e:Image id="schedule" source="godweapon_rankschedule" y="22" x="3"/>
+		<e:Image x="2" y="93" source="godpfwaikuang_png"/>
+		<e:Label id="requireTime" text="120秒内通关将保持S评价" x="112" y="43" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+		<e:Label text="奖励神兵经验:" x="112" y="68" size="18" fontFamily="Microsoft YaHei"/>
+
+		<e:Label id="rewardExp" text="10000000" x="228" y="69" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="time" text="00:00:00" x="112" y="92" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+	</e:Group>
+	<e:Group id="riseupBtn" y="551" right="11" visible="false">
+		<e:Button id="riseup" label="Button" x="11" y="20" skinName="SkinBtn0" icon="guwu" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Label id="addLabel" text="鼓舞    攻击+10%" x="0" y="0" size="12" textColor="0x35e26d"/>
+	</e:Group>
+</e:Skin>

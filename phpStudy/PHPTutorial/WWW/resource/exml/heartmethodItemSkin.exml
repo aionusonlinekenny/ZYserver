@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinheartmethodItem" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="153" height="151">
+	<w:Config id="1586b3cda3a"/>
+
+
+
+
+
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image left="0" top="0" right="0" bottom="0" source="xianwenfenjiebg_png"/>
+		<ns1:HeartMethodDisplayRender id="itemIcon"  horizontalCenter="0" verticalCenter="7" skinName="SkinheartmethodItemIcon"/>
+		<e:CheckBox id="cb" skinName="SkinCheckBox0" top="2" width="43" right="-5"/>
+	</e:Group>
+</e:Skin>

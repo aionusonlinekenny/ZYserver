@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBtn9" states="up,down" currentState="up"
+        xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<e:Image source="czbtn"  scaleX.down="0.95" scaleY.down="0.95" horizontalCenter.down="0" horizontalCenter.up="0" verticalCenter.up="0" verticalCenter.down="0"/>
+	<e:Label id="labelDisplay" size="26" fontFamily="Microsoft YaHei" text="充点小钱" y.up="18" horizontalCenter.down="0.5" verticalCenter.down="-2" scaleX.down="0.95" scaleY.down="0.95" left="0" right="0" top="0" bottom="6" verticalAlign="middle" textAlign="center" textColor="0xffff00"/>
+</e:Skin>

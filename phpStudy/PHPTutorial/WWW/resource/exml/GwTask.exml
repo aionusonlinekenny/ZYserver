@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGwTask" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="600" xmlns:ns1="*" height="633">
+	<e:Group id="GwTask" name="桃源秘境" left="0" right="0" top="0" bottom="0">
+		<e:Image x="0" y="478" width="600" height="155" rotation="0" anchorOffsetY="0" scale9Grid="16,13,559,12" source="longhuntextbg2_png"/>
+		<e:Image id="BG" width="578" horizontalCenter="0" source="tongyongbg2" height="373" scale9Grid="6,6,36,37" verticalCenter="-32"/>
+		<e:Image id="nameBG" width="257" height="45" y="24" source="tongyongbg8" scale9Grid="66,0,145,44" x="170"/>
+		<e:Group width="557" height="30" horizontalCenter="0" verticalCenter="184.5">
+			<e:Image id="gantanhao" bottom="140" x="99" source="gantanhao3"/>
+			<e:Label id="taskLabel" text="" bottom="141" size="20" left="125" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="renwuchushi" text="每次只能领取一个任务" horizontalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="93"/>
+		<e:Label id="quanbuwancheng" text="全部任务已完成" horizontalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="93" visible="false"/>
+		<e:Label id="renwuneirong" text="1.xxxxxxxxxxxxxxxxxxxxxx" horizontalCenter="0" bottom="93" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Group id="showSkill0" width="563" height="118" y="107" horizontalCenter="0">
+			<e:Image id="bg0" width="563" scale9Grid="40,20,30,30" source="tongyonglabbg" horizontalCenter="0" top="0" bottom="0"/>
+			<ns1:GweaponSkillIcon id="item0" x="7" y="9" skinName="SkinGwItem" currentState="skillicon2"/>
+			<e:Label id="skillName0" y="19" text="" size="22" x="104" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="skillDesc0" y="50" text="" size="18" height="54" x="104" width="418" fontFamily="Microsoft YaHei" textColor="0x001828" skewY="0"/>
+		</e:Group>
+		<e:Group id="showSkill1" width="563" height="118" y="227" horizontalCenter="0">
+			<e:Image id="bg1" width="563" height="118" x="0" y="0" scale9Grid="40,20,30,30" source="tongyonglabbg"/>
+			<ns1:GweaponSkillIcon id="item1" x="7" y="9" skinName="SkinGwItem" currentState="skillicon2"/>
+			<e:Label id="skillName1" y="19" text="" size="22" x="104" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="skillDesc1" y="50" text="" size="18" height="54" x="104" width="418" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		</e:Group>
+		<e:Group id="showSkill2" width="563" height="118" y="347" horizontalCenter="0">
+			<e:Image id="bg2" width="563" height="118" x="0" y="0" scale9Grid="40,20,30,30" source="tongyonglabbg"/>
+			<ns1:GweaponSkillIcon id="item2" x="6" y="5" skinName="SkinGwItem" currentState="skillicon2"/>
+			<e:Label id="skillName2" y="19" text="" size="22" x="104" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="skillDesc2" y="50" text="" size="18" height="54" x="104" width="418" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		</e:Group>
+		<e:Group width="176" height="69" bottom="10" horizontalCenter="0">
+			<e:Button id="btn" skinName="SkinBtn1" label="领取任务" y="0" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		</e:Group>
+	</e:Group>
+	<e:Label id="skillname" text="" y="37" size="22" fontFamily="Microsoft YaHei" width="143" textAlign="center" horizontalCenter="3"/>
+</e:Skin>

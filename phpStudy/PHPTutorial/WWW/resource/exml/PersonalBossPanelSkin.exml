@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinPersonalBossPanel" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="600" height="728">
+	<w:Config id="1662032d911"/>
+
+	<e:Image source="worldbossbg_png" anchorOffsetY="0" height="304" width="408" verticalCenter="-78" horizontalCenter="-66"/>
+	<e:Image anchorOffsetY="0" height="103" width="432" verticalCenter="79.5" horizontalCenter="-66" source="worldbossbg2_png"/>
+
+
+
+	<e:Group id="bossGroup"  horizontalCenter="-67" verticalCenter="-40" scaleX="1.2" scaleY="1.2" width="200" height="200"/>
+	<e:Image width="147.33" source="tongyong_dikuang4" scale9Grid="10,10,60,60" anchorOffsetX="0" right="1" anchorOffsetY="0" top="88" bottom="27"/>
+
+	<e:Scroller top="95" bottom="26" width="161.33" right="1" anchorOffsetX="0" anchorOffsetY="0">
+		<e:List id="list" y="11.33" x="-1" useVirtualLayout="false" width="161.33" anchorOffsetY="0" height="608">
+			<e:layout>
+				<e:VerticalLayout gap="1"/>
+			</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Button id="challengeBtn" label="挑战" skinName="SkinBtn1" bottom="3" horizontalCenter="-58"/>
+
+
+	<e:Label id="canChallengeTxt" text="80级可挑战" horizontalCenter="-54" size="24" bottom="25" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+	<e:Group y="14.38" horizontalCenter="-65" visible="false">
+		<e:Label text="上次归属：" y="0" size="22" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
+		<e:Label text="玩家名六个字（仙盟名六个字）" y="0" size="22" x="90" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xffffff"/>
+		<e:layout>
+			<e:HorizontalLayout gap="0"/>
+		</e:layout>
+	</e:Group>
+	<e:Image width="408" horizontalCenter="-64" scale9Grid="16,13,559,12" source="longhuntextbg2" bottom="103" anchorOffsetY="0" height="117"/>
+	<e:Image width="25" height="49" source="bossItemDorp_png" horizontalCenter="-254.5" bottom="135"/>
+
+
+
+	<e:List id="rewardList" scaleX="1" scaleY="1"  bottom="110" horizontalCenter="-63.5" width="309" height="100.5" itemRendererSkinName="SkinItem3">
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" gap="42"/>
+		</e:layout>
+	</e:List>
+
+	<e:Label id="leftText" text="总剩余挑战次数：1次" size="18" horizontalCenter="-55" y="633" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+	<e:Label text="1~2转可挑战" size="24" horizontalCenter="-56" bottom="24" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+
+
+	<e:Image id="stateImage" source="zdbosskejisha" bottom="287" horizontalCenter="-56.5"/>
+	<e:Image width="248" height="48.67" source="huabian" anchorOffsetY="0" scale9Grid="97,6,22,42" y="25" horizontalCenter="-65"/>
+	<e:Label id="nameTxt" text="BOSS名字70级" size="22" textAlign="center" fontFamily="Microsoft YaHei" height="25" width="170" textColor="0xffffff" y="46" horizontalCenter="-65"/>
+
+
+
+
+	<e:Image source="bossbg_bmp" width="600" height="948" horizontalCenter="0" alpha="0.7" y="-57" locked="true" visible="false"/>
+
+</e:Skin>

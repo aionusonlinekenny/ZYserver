@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinhunguTips" currentState="putong" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" height="948" width="600" states="putong,shenshang" >
+	<w:Config id="1586b3502a7"/>
+	<e:Rect id="bgClose" fillAlpha="0.7" left="-1" right="1" top="0" bottom="0"/>
+	<e:Group id="anigroup" height="591" width="345" horizontalCenter="0" verticalCenter="0" touchEnabled="false" anchorOffsetY="0" y.putong="155" horizontalCenter.putong="0" verticalCenter.putong="-13" height.putong="540">
+		<e:Image id="background" source="tongyongtip1" touchEnabled="false" left.putong="0" right.putong="0" top.putong="0" bottom.putong="0" scale9Grid="11,6,41,57" width="345" top="0" horizontalCenter="0" height="540"/>
+		<e:Image id="quali" left="1" right="0" source="quali3" scale9Grid="9,0,10,0" y.putong="2" top="1" scale9Grid.putong="9,0,10,0" height="523"/>
+		<e:Image id="line" touchEnabled="false" source="tongyongline" height="0.8" width="345" horizontalCenter="0" verticalCenter="86" height.putong="0.7" y.putong="103" width.putong="345" visible.putong="false" height.shenshang="0.8"/>
+
+
+		<e:Image y="142" scale9Grid="85,1,6,1" width="311" horizontalCenter="0" source="longhuntextbg"/>
+		<ns1:ItemIcon id="equipIcon" x="10" y="54" skinName="SkinItemIcon"/>
+		<e:Label id="nameTxt" text="屠龙 " size="24" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xed5f00" left="12" top="15"/>
+		<e:Label id="buwei" y="58" text="部位：" size="20" x="105" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="toubuhungu" y="58" text="头部魂骨" size="20" x="165" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="pinjie" y="82" text="品阶：" size="20" x="105" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="fanpin" y="82" text="凡品" size="20" x="165" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="zhiye" y="106" text="职业：" size="20" x="106" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="tongyong" y="106" text="通用" size="20" x="166" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Group id="baseAttr" y="183" left="24">
+			<e:Group x="22" y="25" width="250">
+				<e:Label id="attr0" y="0" text="攻击：100" size="20" verticalAlign="justify" x="0" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="forgeAttr0" y="0" text="+1000" size="20" verticalAlign="justify" x="10" textAlign="left" visible.putong="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:layout>
+				<e:HorizontalLayout gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Group x="22" y="50" width="250">
+				<e:Label id="attr1" y="0" text="攻击：100" size="20" verticalAlign="justify" x="0" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="forgeAttr1" y="10" text="+1000" size="20" verticalAlign="justify" x="10" textAlign="left" visible.putong="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:layout>
+				<e:HorizontalLayout gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Group x="22" y="75" width="250">
+				<e:Label id="attr2" y="0" text="攻击：100" size="20" verticalAlign="justify" x="0" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="forgeAttr2" y="10" text="+1000" size="20" verticalAlign="justify" x="10" textAlign="left" visible.putong="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:layout>
+				<e:HorizontalLayout gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Label y="0" text="基础属性" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		</e:Group>
+		<e:Group id="starAttr" y="286" visible.putong="false" left="24">
+			<e:Label id="starAttr0" y="25" text="攻击：100" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="starAttr1" y="50" text="攻击：100" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="starAttr2" y="75" text="攻击：100" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label y="0" text="星级属性" size="20" x="0" text.shenshang="魂玉属性" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+
+		<e:Image source="bantoutiaobg" horizontalCenter="0" bottom="0" touchEnabled="false" horizontalCenter.putong="0" bottom.putong="-43"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="12" touchEnabled="false" horizontalCenter.putong="0" bottom.putong="-30" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<ns1:PowerPanel id="powerPanel" y="130" horizontalCenter="0" skinName="Skin2PowerPanel"/>
+
+
+
+		<e:Button id="changeBtn" label="更 换" bottom="144" y="500" visible.putong="false" label.shenshang="升  阶" skinName="SkinBtn1" width="140" height="55" right="12"/>
+		<e:Button id="hunyuBtn" label="龙 晶" bottom="72" y="510" visible.putong="false" width="140" height="55" skinName="SkinBtn1" right="12"/>
+		<e:Button id="takeoffBtn" label="卸 下" bottom="144" y="510" visible.putong="false" skinName="SkinBtn1" width="140" height="55" left="12"/>
+		<e:Image id="changeRedPoint" y="383" source="zjmhongdian" visible.putong="false" right="5"/>
+		<e:Image id="forgeRedPoint" y="455" source="zjmhongdian" visible.putong="false" right="5"/>
+	</e:Group>
+</e:Skin>

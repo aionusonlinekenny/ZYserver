@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGwWeapon" width="600" height="728" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="task,active">
+	<e:Group name="装备" top="0" bottom="0" left="0" right="0">
+		<ns1:GweaponGodWeaponSkillView id="godweaponskill" xmlns:ns1="*" width="557" height="633" anchorOffsetX="0" anchorOffsetY="0" skinName="SkinGwSkill" horizontalCenter="0" includeIn="active" y="4"/>
+		<e:Image width="580" height="141" includeIn="active" y="498" source="tongyong_dikuang4" horizontalCenter="0" anchorOffsetY="0" scale9Grid="10,10,60,60"/>
+		<e:Group id="exp" anchorOffsetX="0" width="510" includeIn="active" y="506" x="41">
+			<e:Image width="119" height="119" x="8" y="1" source="neigongqiu2_png" anchorOffsetY="0"/>
+			<e:Image id="expschedule" y="4" x="10.5" width="115" height="115" source="godweapon_expschedule"/>
+			<e:Image id="expball" y="0" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="205,66,13,5" width="506" source="rena_png" horizontalCenter="0"/>
+			<e:Rect id="maskRect" width="118" height="118" x="69" y="113" anchorOffsetX="60" anchorOffsetY="112" visible="false"/>
+			<e:Label id="expcount" text="" y="52" size="16" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="-187" width="106" textAlign="center"/>
+			<e:Label id="expText" text="神兵经验" y="68" size="16" fontFamily="Microsoft YaHei" textColor="0xffff00" x="36.35"/>
+			<e:Rect id="clickRect" width="106" height="106" x="62" y="105" anchorOffsetX="48" anchorOffsetY="96" fillAlpha="0"/>
+			<e:Group id="shengwu" x="176" y="0" scaleX="1" scaleY="1">
+			<ns1:GweaponshengwuItem id="shengwu1" skinName="SkinGwShengWu"/>
+			<ns1:GweaponshengwuItem id="shengwu2" x="50" skinName="SkinGwShengWu"/>
+			<ns1:GweaponshengwuItem id="shengwu3" x="100" skinName="SkinGwShengWu"/>
+			<ns1:GweaponshengwuItem id="shengwu4" x="150" skinName="SkinGwShengWu"/>
+			<ns1:GweaponshengwuItem id="shengwu5" x="200" skinName="SkinGwShengWu"/>
+				<e:layout>
+					<e:HorizontalLayout gap="14"/>
+				</e:layout>
+			</e:Group>
+			<e:Image width="354" height="18" x="135" y="53" source="shb_jindutiaodi" scale9Grid="10,0,16,18"/>
+			<e:Image id="progressImg" x="136" y="53" width="353" source="shenb_jindutiao" scale9Grid="8,0,21,18"/>
+			<e:Image id="rpImgExp" x="106" y="12" source="zjmhongdian"/>
+			<e:Rect id="maskPro" width="356" height="20" x="135" y="61" anchorOffsetX="0" anchorOffsetY="10"/>
+			<e:Group width="300" height="20" includeIn="active" x="135" y="75">
+				<e:Label id="lvCount" text="" size="18" y="1" fontFamily="Microsoft YaHei" textColor="0x00ff06" x="6" scaleX="1" scaleY="1" textAlign="left"/>
+				<e:Label id="needExp" text="" size="18" y="1" fontFamily="Microsoft YaHei" textColor="0xffff00" x="54" scaleX="1" scaleY="1" textAlign="left"/>
+				<e:layout>
+					<e:HorizontalLayout gap="3"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:Label id="curPointLabel" text="" size="18" horizontalCenter="0.5" includeIn="active" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="75"/>
+		<ns1:PowerPanel id="power" skinName="SkinPowerPanel" x="161" y="6" horizontalCenter.active="12" visible.task="false" y.active="13"/>
+		<e:Group id="powerpanel" includeIn="active" x="422" anchorOffsetX="0" width="37" y="26">
+			<e:Image id="detailBtn" x="0" source="tongyongxiangxi" width="37" height="38" verticalCenter="0"/>
+		</e:Group>
+		<e:Image id="weaponName" x="18" includeIn="active" y="79" source="godweapon_name1_png"/>
+		<ns1:GweaponTaskView id="gwTask" xmlns:ns1="*" anchorOffsetX="0" anchorOffsetY="0" skinName="SkinGwTask" includeIn="task" top="0" left="0" right="0" height="633"/>
+		<e:Group id="bottomGroup" width="556" height="92" bottom="-3" horizontalCenter="0" locked="true">
+			<e:Image id="selectIcon0" pixelHitTest="true" source="xuanzhongyuan" width="86" height="87" y="8" x="115"/>
+			<e:Image id="selectIcon1" pixelHitTest="true" source="xuanzhongyuan" width="86" height="87" y="8" x="231" horizontalCenter="0"/>
+			<e:Image id="selectIcon2" pixelHitTest="true" source="xuanzhongyuan" width="86" height="87" y="8" x="353"/>
+			<e:Button id="weapon0" label="Button" y="1" skinName="SkinBtn0" icon="godweapon_weapon1" x="120"/>
+			<e:Button id="weapon1" label="Button" y="10" skinName="SkinBtn0" icon="godweapon_weapon2" x="236" horizontalCenter="0"/>
+			<e:Button id="weapon2" label="Button" y="10" skinName="SkinBtn0" icon="godweapon_weapon3" x="357"/>
+			<e:Image id="rpImg0" x="177" y="10" source="zjmhongdian"/>
+			<e:Image id="rpImg1" x="298" y="10" source="zjmhongdian"/>
+			<e:Image id="rpImg2" x="418" y="10" source="zjmhongdian"/>
+		</e:Group>
+		<e:Label id="reset" text="重置技能点" includeIn="active" size="18" touchEnabled="true" textColor="0x00ff06" fontFamily="Microsoft YaHei" y="76" x="481"/>
+	
+	</e:Group>
+</e:Skin>

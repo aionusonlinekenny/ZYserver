@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinReincarnateSoul" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Image width="600" horizontalCenter="0" scale9Grid="5,12,5,25" source="heirloombg_png" bottom="0" anchorOffsetY="0" top="0"/>
+	<e:Image horizontalCenter="0" anchorOffsetY="0" top="6" height="357" source="rein_soul_bg_jpg"/>
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" width="600" top="0" horizontalCenter="0" height="948"/>
+	<e:Group width="500" height="225" horizontalCenter="0" top="331">
+		<e:Image width="600" scaleX="-1" scaleY="1" source="shuxingbiankuang_png" horizontalCenter="0" height="20" top="19"/>
+		<e:Image horizontalCenter="1" top="-18" source="rein_demon_soul_title"/>
+		<e:Group id="attrGroup3" width="310" y="32" scaleX="1" scaleY="1" horizontalCenter="0" height="176" visible="false">
+			<ns1:PowerPanel id="powerPanel3" skinName="SkinPowerPanel" scaleX="1" scaleY="1" horizontalCenter="0" top="-6"/>
+		<e:Label id="attr3" text="攻击：10000000\n物抗：10000000\n法抗：10000000\n生命：10000000\n神圣伤害：10000000" y="52" size="20" width="225" lineSpacing="5" height="120" verticalAlign="top" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="18"/>
+		</e:Group>
+		<e:Group id="attrGroup0" y="32" horizontalCenter="-129" width="310">
+		<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel" scaleX="1" scaleY="1" horizontalCenter="0" top="-6"/>
+		<e:Label id="attr0" text="攻击：10000000\n物抗：10000000\n法抗：10000000\n生命：10000000\n神圣伤害：1000000" size="20" lineSpacing="5" verticalAlign="top" y="52" scaleX="1" scaleY="1" horizontalCenter="18" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="192" anchorOffsetY="0" height="124"/>
+		</e:Group>
+		<e:Group id="attrGroup1" y="32" width="310" horizontalCenter="172">
+			<ns1:PowerPanel id="powerPanel1" skinName="SkinPowerPanel" scaleX="1" scaleY="1" horizontalCenter="0" top="-6"/>
+		<e:Label id="attr1" text="攻击：10000000\n物抗：10000000\n法抗：10000000\n生命：10000000\n神圣伤害：10000000" y="52" size="20" lineSpacing="5" verticalAlign="top" textAlign="left" scaleX="1" scaleY="1" horizontalCenter="18" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetY="0" height="124" anchorOffsetX="0" width="198"/>
+		</e:Group>
+		<e:Image id="arrow0" source="jiantouyou" scaleX="1" scaleY="1" width="77" horizontalCenter="1.5" verticalCenter="21.5"/>
+	</e:Group>
+	<e:Image id="title" horizontalCenter="-222" source="biaoti_reinsoul" top="13"/>
+	<e:Group horizontalCenter="0" bottom="147" width="290">
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center"/>
+		</e:layout>
+		<e:Image x="38" width="32" height="32" y="-11" scaleX="1" scaleY="1" source="410001_png" id="costImg"/>
+		<e:Label text="上古魔魂披风·法" x="185" y="18" size="20" id="materialLabel" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label text="(" size="20" x="219" y="35" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="num" text="1000" y="0" size="20" x="136.5" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="needNum" text="/1" size="20" x="199" y="15" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label text=")" size="20" x="209" y="25" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	</e:Group>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" y="46" width="80" height="80" horizontalCenter="275"/>
+	<e:Group horizontalCenter="176" bottom="108" visible="false">
+		<e:Label id="getItemTxt" text="获取材料" size="20" verticalAlign="middle" textAlign="center" scaleX="1" scaleY="1" y="0" x="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+	<e:Button id="soulBtn" label="注 魂" width="210" height="64" horizontalCenter="0" bottom="88" icon="btn1_2" skinName="SkinBtn7"/>
+	<e:Label id="maxLevel" text="已满级" size="30" horizontalCenter="0" bottom="153" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" width="15" height="15" horizontalCenter="83.5" bottom="137"/>
+	<e:Image scaleX="1" scaleY="1" source="tongyong_dikuang4" scale9Grid="4,5,15,16" anchorOffsetY="0" width="588" horizontalCenter="0" height="211" bottom="190"/>
+	<e:Group height="209" width="573" horizontalCenter="-1" bottom="189">
+		<e:Group id="chainGroup" x="103" y="12" width="573">
+			<e:Image width="580" height="103" scaleX="1" scaleY="1" source="jnmb" scale9Grid="50,13,93,31" horizontalCenter="0" anchorOffsetY="0" y="0"/>
+			<e:Group x="111" y="10" anchorOffsetX="0" width="210.66">
+			<e:Label id="chainName0" y="0" text="古魂共鸣" size="22" x="0" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+			<e:Label id="chainLv0" y="10" text="Lv1" size="22" x="10" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+			<e:layout>
+				<e:HorizontalLayout gap="51" verticalAlign="bottom"/>
+			</e:layout>
+			</e:Group>
+			<e:Group x="100" y="46" height="22">
+				<e:Label id="chainPos" y="0" text="[古魂法链]" size="20" verticalAlign="justify" x="0" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="chainAttr" y="0" text="伤害加成" size="20" verticalAlign="justify" x="83" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="chainState" y="10" text="增加" size="20" verticalAlign="justify" x="93" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="chainValue" y="20" text="5%" size="20" verticalAlign="justify" x="103" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+				<e:layout>
+				<e:HorizontalLayout gap="0"/>
+				</e:layout>
+			</e:Group>
+			<e:Group x="100" y="75" id="nextChainTextGroup">
+				<e:Label y="50" id ="nextChainDesc" text="（下级" size="20" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="nextChain0" y="50" text="5%" size="20" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id ="nextChainDesc1" y="60" text="）" size="20" verticalAlign="justify" x="32" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:layout>
+				<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
+				</e:layout>
+			</e:Group>
+			<e:Image x="9" y="11" width="80" height="80" scaleX="1" scaleY="1" source="touxiangkuang"/>
+			<e:Image id="chainImg" x="17" y="19" source="rein_skill_chain" scaleX="1" scaleY="1"/>
+			<e:Image width="218" height="5" source="tongyong_diwen" verticalCenter="-16.5" horizontalCenter="-76"/>
+		</e:Group>
+		<e:Group id="soulGroup" x="103" y="115" width="573">
+			<e:Image width="580" height="103" scaleX="1" scaleY="1" source="jnmb" scale9Grid="50,13,93,31" horizontalCenter="0" anchorOffsetY="0" y="0"/>
+			<e:Group x="111" y="10" width="210.66">
+			<e:Label id="soulName" y="0" text="魂灵" size="22" x="0" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
+			<e:Label id="soulLvText" y="10" text="Lv1" size="22" x="10" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="bottom" gap="96"/>
+			</e:layout>
+			</e:Group>
+			<e:Label y="45" text="为当前部位注入古魂，提升基础属性至" size="20" verticalAlign="justify" x="101" textAlign="left" lineSpacing="7" width="388" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="soulAttr" y="45" text="550%" size="20" verticalAlign="justify" x="443" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+			<e:Group x="100" y="75" id="nextSoulTextGroup" width="116">
+				<e:Label y="50" text="（下级" size="20" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="nextChain1" y="50" text="5%" size="20" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label y="60" text="）" size="20" verticalAlign="justify" x="32" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:layout>
+				<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
+				</e:layout>
+			</e:Group>
+			<e:Image x="9" y="11" width="80" height="80" scaleX="1" scaleY="1" source="touxiangkuang"/>
+			<e:Image id="soulImg" x="17" y="19" source="rein_skill_demon" scaleX="1" scaleY="1"/>
+			<e:Image width="218" height="5" source="tongyong_diwen" verticalCenter="-16.5" horizontalCenter="-76"/>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="left" gap="0"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="rein_titlebg" source="bantoutiaobg2" horizontalCenter="-236" height="288" width="39" top="65"/>
+	<e:Image id="rein_title" horizontalCenter="-237" source="rein_demon_soul_112" top="108"/>
+</e:Skin>

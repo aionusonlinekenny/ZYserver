@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinPeakMarketItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="554" height="108">
+	<w:Config id="1586bde13e1"/>
+	<e:Image left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30" source="tongyonglabbg"/>
+
+	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" left="17" top="14"/>
+	<e:Button id="buyBtn" label="购 买" name="buy" right="25"  top="37" skinName="SkinBtn29"/>
+	<e:Image id="textBG" x="110" y="44" source="tongyongline2" visible="false"/>
+
+	<e:Label id="money" text="123456" size="22" fontFamily="Microsoft YaHei" left="147" top="63" textColor="0x00842c"/>
+
+
+
+	<e:Image id="moneyIcon" anchorOffsetX="0" anchorOffsetY="0" source="204076_png" left="104" top="58" scaleX="0.7" scaleY="0.7"/>
+
+	<e:Label id="num" text="5" x="43" y="70" size="20" width="45" textAlign="right" fontFamily="Microsoft YaHei"/>
+	<e:Image id="discountIcon" x="21" y="21" scaleX=".8" scaleY=".8" source="" visible="false"/>
+
+	<e:Image id="wuzhe" source="tuijian2" x="490" y="12" touchEnabled="false" visible="false"/>
+	<e:Label id="myTimes" text="永久限购：0/5" size="18" fontFamily="Microsoft YaHei" right="13" top="12" textColor="0x1b3046"/>
+	<e:Group left="102" top="25">
+		<e:Label id="itemName" text="商品名称" x="0" y="0" size="22" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+		<e:Label id="usage" text="（合成升级热血装备）" y="0" size="22" x="120" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+		<e:layout>
+			<e:HorizontalLayout gap="3"/>
+		</e:layout>
+	</e:Group> 
+</e:Skin>

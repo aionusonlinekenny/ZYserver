@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="CELogSkin" width="560" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="671">
+	<w:Config id="1586d1506c8" />
+
+
+
+
+
+
+
+
+
+
+
+
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image horizontalCenter="0.5" top="141" anchorOffsetY="0" x="3" y="152" source="login_reward_bg_jpg"/>
+		<e:Image scaleY="-1" horizontalCenter="0" y="50" width="400" height="50" x="80" scaleX="1" source="teshuwenzibg2"/>
+
+
+
+		<e:Group id="infoBg" left="0" right="0" x="3" top="0">
+			<e:Image horizontalCenter="0" source="login_reward_des_jpg" verticalCenter="0"/>
+			<e:Group left="24" y="69.98">
+			<e:Label text="剩余时间:" size="18" left="0" top="0" fontFamily="Microsoft YaHei"/>
+			<e:Label id="actTime1" text="6天23时10分" size="18" top="0" left="90" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:Label id="actInfo1" text="                 在活动开启7天内完成的活动任务 赚取积分赢最终大奖 " x="63" y="-14" size="18" width="356" top="21" left="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" anchorOffsetY="0" height="42" lineSpacing="4"/>
+			<e:Label text="活动说明:" size="18" left="0" top="21" fontFamily="Microsoft YaHei"/>
+			</e:Group>
+		</e:Group>
+		<e:Group horizontalCenter="6" anchorOffsetY="0" height="263" anchorOffsetX="0" width="438" x="67" verticalCenter="0">
+			<e:Image y="99.61" x="110.33" source="jiantouyou" width="46" height="43"/>
+			<e:Image y="99.61" x="281.33" source="jiantouyou" width="46" height="43"/>
+
+
+			<e:Image y="19.92" horizontalCenter="-164" source="denglu_01_2_png"/>
+			<e:Image y="19.92" horizontalCenter="2" source="denglu_02_2_png"/>
+			<e:Image y="19.92" horizontalCenter="167" source="denglu_03_2_png"/>
+
+
+			<ns1:ActivityHFRenderItem id="dayNum1" y="63.23" horizontalCenter="-166" skinName="CELogitem"/>
+			<ns1:ActivityHFRenderItem id="dayNum2" y="63.23" horizontalCenter="1" skinName="CELogitem"/>
+			<ns1:ActivityHFRenderItem id="dayNum3" y="63.23" horizontalCenter="166" skinName="CELogitem"/>
+
+
+		</e:Group>
+		<e:Image y="457.65" horizontalCenter="0" source="login_reward_bg2_png" scale9Grid="16,39,536,89" height="175"/>
+		<e:Group id="group1" scaleX="0.9" scaleY="0.9" horizontalCenter="-89.5" bottom="39" x="280" y="591" height="106" anchorOffsetX="0" width="407.78">
+			<e:layout>
+			<e:HorizontalLayout horizontalAlign="left" gap="6" paddingTop="0"/>
+			</e:layout>
+		</e:Group>
+		<e:Image id="title" horizontalCenter="-87" x="280" source="biaoti_qingdiandengluyouli2_png" top="12"/>
+
+		<e:Label id="done" text="已领取" textColor="0x00FF00" size="28" bold="true" bottom="86" y="619" horizontalCenter="181"/>
+		<e:Button id="suerBtn" label="领取奖励" horizontalCenter="184.5" bottom="65" x="200" y="615" scaleX="1.25" scaleY="1.25" icon="btn2_2" skinName="SkinBtn16"/>
+		<e:Label id="daylabel" text="登录天数:  5" size="20" bottom="8" y="624" horizontalCenter="-18.5" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="dayaward" text="第一天奖励详情" size="20" horizontalCenter="-4" bottom="151" x="209" y="478" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Image id="redPoint" width="20" height="20" horizontalCenter="264" source="zjmhongdian" bottom="117" x="347" y="601"/>
+	</e:Group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</e:Skin>

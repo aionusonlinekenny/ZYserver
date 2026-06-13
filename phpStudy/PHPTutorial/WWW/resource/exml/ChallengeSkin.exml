@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinChallenge" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group horizontalCenter="0" width="600" height="450" verticalCenter="-24">
+		<e:Image source="wangzhebg_png" width="600" x="0" height="421" y="16"/>
+
+
+
+
+
+
+
+
+		<e:Image id="myhead" y="160" width="100" height="100" x="90" source="bigyuanhead30"/>
+		<e:Label id="enterTime" text="" y="12" size="28" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0" textAlign="center"/>
+		<e:Label id="ingImg" text="匹配中..." y="419" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00" strokeColor="0xff6332" stroke="0.8" x="238" textAlign="center"/>
+		<e:Label id="myname" text="" y="106" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" width="120" horizontalCenter="-158" height="20"/>
+		<e:Label id="othername" text="" y="136" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" width="120" horizontalCenter="168" height="20"/>
+		<e:Label id="mylv" text="" y="283" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei" textAlign="center" x="100"/>
+		<e:Image id="headBg" y="156" width="107" height="110" source="touxiangkuang0" scale9Grid="6,6,1,1" x="86"/>
+		<e:Image id="headBg0" source="touxiangkuang0" y="180" width="107" height="110" scale9Grid="6,6,1,1" x="413"/>
+		<e:Label id="otherlv" text="" y="308" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" x="429"/>
+		<e:Group id="group1" width="100" height="100" x="419" y="184">
+			<e:Image id="otherHead" y="0" source="head_10" width="100" height="100" x="0" scaleX="1" scaleY="1"/>
+			<e:Image id="scrollHead" width="100" height="100" y="44" source="head_10" x="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

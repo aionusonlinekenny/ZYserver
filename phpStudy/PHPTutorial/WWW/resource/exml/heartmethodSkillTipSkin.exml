@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinheartmethodSkillTip" width="600" height="948" currentState="max" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="normal,initial,max" >
+	<e:Rect id="bgClose" left="0" top="0" bottom="0" right="0" fillAlpha="0.9"/>
+	<e:Group id="anigroup" horizontalCenter="0" anchorOffsetX="0" width="487" anchorOffsetY="0" height="584"  verticalCenter="0" height.normal="650">
+		<e:Image id="Bg" anchorOffsetY="0" anchorOffsetX="0" width="484" horizontalCenter="0" source="tongyong_dikuang2" scale9Grid="24,10,69,65" top="20" horizontalCenter.initial="0" top.initial="20" height.normal="513" bottom="51"/>
+		<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="359" width="419" scale9Grid="22,20,25,25" top="49" horizontalCenter="0"/>
+		<e:Image id="skillShow" anchorOffsetY="0" anchorOffsetX="0" scale9Grid="5,5,15,15" fillMode="scale" source="heartmethodSkillBG_png" top="56" horizontalCenter="0" height="345" width="406"/>
+		<e:Image left="0" anchorOffsetX="0" anchorOffsetY="0" source="tongyong_juanzhou" top="15"/>
+		<e:Image id="namebg" scale9Grid="41,28,6,3" scaleX="-1" anchorOffsetX="0" source="tongyong_titlebg" horizontalCenter="0" top="0"/>
+		<e:Label id="skillName" text="无影刀" size="22" horizontalCenter="0" top="12" textColor="0x084151" fontFamily="Microsoft YaHei"/>
+		<e:Label id="curskillDesc0" text="【技能名字1层】" size="20" visible.max="false" verticalCenter="146" left="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" verticalCenter.initial="146" verticalCenter.normal="96" left.normal="32" left.initial="32"/>
+		<e:Label id="curskillDesc1" text="（已生效）" anchorOffsetX="0" width="119" anchorOffsetY="0" height="38" size="18" verticalAlign="middle" textAlign="center" horizontalCenter="-33.5" visible.max="false" y.initial="512" visible.initial="false" fontFamily="Microsoft YaHei" textColor="0x00ff06" verticalCenter="146" verticalCenter.normal="96" horizontalCenter.normal="-23.5"/>
+		<e:Label id="curskillDesc2" text="收集一套绿色道藏篇章激活" anchorOffsetX="0" width="224" anchorOffsetY="0" height="38" size="18" verticalAlign="middle" textAlign="center" text.normal="收集一套紫色心法残页激活（1/5）" horizontalCenter.normal="88" width.normal="298" visible.max="false" horizontalCenter.initial="68.5" y.initial="514" text.initial="收集一套绿色心法残页激活（1/5）" width.initial="302" verticalCenter="146" fontFamily="Microsoft YaHei" textColor="0x0038ab" right="36" right.initial="24" verticalCenter.initial="146" verticalCenter.normal="96" visible.normal="false"/>
+		<e:Label id="curskillDesc3" text="这里是当前技能效果描述" anchorOffsetX="0" width="400" anchorOffsetY="0" height="38" size="20" verticalAlign="middle" textAlign="left" horizontalCenter="0" visible.max="false" horizontalCenter.initial="0" y.initial="558" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="191" width.initial="400" verticalCenter.normal="140"/>
+		<e:Label id="nextskillTitle0" text="【技能名字2层】" x.initial="22" x.normal="22" y.initial="606" y.normal="606" size="20" textColor="0xF41CAE" visible.initial="false" verticalCenter.max="146" verticalCenter="146" verticalCenter.normal="195" fontFamily.normal="Microsoft YaHei" left.normal="32" left.max="32"/>
+		<e:Label id="nextskillTitle1" text="（已生效）" anchorOffsetX="0" width="119" anchorOffsetY="0" height="38" size="18" verticalAlign="middle" textAlign="center" horizontalCenter="-33.5" includeIn="max" fontFamily="Microsoft YaHei" textColor="0x00ff06" verticalCenter="146"/>
+		<e:Label id="nextskillTitle2" text="收集一套紫色道藏篇章激活" anchorOffsetX="0" width="224" anchorOffsetY="0" height="38" size="18" verticalAlign="middle" textAlign="center" text.normal="收集一套紫色心法残页激活（1/5）" horizontalCenter.normal="75" width.normal="289" visible.initial="false" visible.max="false" fontFamily="Microsoft YaHei" textColor="0x0038ab" right.max="36" right.initial="36" verticalCenter="146" verticalCenter.normal="195"/>
+		<e:Label id="nextskillTitle3" text="这里是下一级技能描述" anchorOffsetX="0" width="400" anchorOffsetY="0" height="38" size="20" verticalAlign="middle" textAlign="left" horizontalCenter="0" visible.initial="false" horizontalCenter.max="0" y.max="551" fontFamily="Microsoft YaHei" textColor="0x001828" verticalCenter="191" verticalCenter.normal="238"/>
+		<e:Button id="closebtn" width="54" height="54" skinName="SkinBtn0" icon="tongyong_btnclose" top="0" right="-5"/>
+		<e:Group horizontalCenter="0" x="25"  bottom="0">
+			<e:Image source="bantoutiaobg" touchEnabled="false" y="5" horizontalCenter.initial="0" verticalCenter.initial="2" width.initial="383"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" horizontalCenter="0.5" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

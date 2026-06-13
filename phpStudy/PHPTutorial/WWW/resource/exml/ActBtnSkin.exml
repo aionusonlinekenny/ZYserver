@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinActBtn" states="up,down,disabled"
+        xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" includeIn="down" width="93" height="106">
+	<e:Image id="LeftLine" verticalCenter="0" left="0" width="2" height="94" source="huodongline3_png"/>
+	<e:Image id="selectIcon" visible.disabled="false" visible.up="false" pixelHitTest="true" height="106" width="92.5" source="vipGiftItem_png" verticalCenter="0" horizontalCenter="0"/>
+	<e:Image id="iconDisplay" pixelHitTest="true" visible.disabled="false" horizontalCenter="0" verticalCenter="0" source="fuli_denglu_png"/>
+	<e:Group id="redPoint" alpha.disabled="0.5" right="3" top="3">
+		<e:Image x="0" y="0" source="zjmhongdian"/>
+	</e:Group>
+</e:Skin>

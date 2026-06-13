@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinTips" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="30">
+	<e:Image id="bg" touchEnabled="false" left="0" right="0" top="0" bottom="0" source="tongyongbg12" scale9Grid="6,7,14,9"/>
+	<e:Label id="lab" text="Tips" size="18" touchEnabled="false" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0" textColor="0xffffff"/>
+	<e:Image id="pic" left="0" top="0" right="0" bottom="0"/>
+</e:Skin>

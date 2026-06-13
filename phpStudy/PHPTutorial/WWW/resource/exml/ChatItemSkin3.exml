@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinChatItem3" width="540" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="textGroup" top="1" bottom="1" left="2" right="2">
+		<e:Label id="showChannel" text="[世界]" x="0" y="3" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="showHead" text="[名字]" size="20" x="82" y="3" height="20"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="showText" text="内容内容内容" y="3" size="20" x="136" fontFamily="Microsoft YaHei" textColor="0xabebff" lineSpacing="6"/>
+		<e:Image id="chatVip" x="55" y="5" source="xvip_v2_png" height="19" width="28"/>
+		<e:Label id="lineFeed" text="" x="453" y="2" fontFamily="Microsoft YaHei" size="20" visible="false"/>
+	</e:Group>
+</e:Skin>

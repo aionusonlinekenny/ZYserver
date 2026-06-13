@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGw" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"   xmlns:ns1="*"  height="948" >
+	<w:Config id="1586b349dbe"/>
+
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" verticalCenter="-35" source="bg_1_jpg"/>
+
+
+
+	<e:ViewStack id="viewStack" width="600" selectedIndex="2" horizontalCenter="0" height="728" verticalCenter="-57">
+		<ns1:GweaponView id="weaponGroup" scaleX="1" scaleY="1" skinName="SkinGwWeapon" anchorOffsetX="0" anchorOffsetY="0" name="神 兵" left="0" right="0" top="0" bottom="0"/>
+		<ns1:GweaponFubenView id="mijingGroup" scaleX="1" scaleY="1" skinName="SkinGwMijing" name="神兵幻境" top="0" bottom="0" left="0" right="0" visible="false"/>
+		<ns1:MagicalweaponItemMixView id="mixGroup" scaleX="1" scaleY="1" skinName="SkinGwMixSkin" name="圣物合成" top="0" bottom="0" left="0" right="0"/>
+		<ns1:GweaponBossView id="gwBoss" scaleX="1" scaleY="1" skinName="SkinGwBoss" name="神兵圣域" top="0" bottom="0" left="0" right="0" visible="false"/>
+	</e:ViewStack>
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" currentState="nohead" horizontalCenter="0" top="0"/>
+	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" y="4" scaleX="0.9" scaleY="0.9" horizontalCenter="-274" visible="true"/>
+	<e:Image id="titleImg" source="godweapon_title" y="7" horizontalCenter="-223"/>
+	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" scale9Grid="29,7,539,49" bottom="80" source="bantoumingkuang3_png"/>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" horizontalCenter="0" bottom="88">
+		<e:layout>
+			<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+	</e:TabBar>
+	<e:Image id="gwRp" source="zjmhongdian" bottom="120" horizontalCenter="-123.5"/>
+	<e:Image id="mjRp" source="zjmhongdian" bottom="120" horizontalCenter="-10.5"/>
+	<e:Image id="mixRp" source="zjmhongdian" bottom="120" horizontalCenter="101" visible="false"/>
+	<e:Image id="gwBossRp" source="zjmhongdian" bottom="120" horizontalCenter="213.5"/>
+	<e:Image id="gwadImg" horizontalCenter="-0.5" verticalCenter="-56" source="GwadBG_png" visible="false"/>
+	<e:BitmapLabel id="timeBp" text="000.00.00" anchorOffsetX="0" anchorOffsetY="0" font="num_4_fnt" horizontalCenter="136" verticalCenter="-371" visible="false"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="275"/>
+</e:Skin>

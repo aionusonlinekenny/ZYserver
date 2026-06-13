@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinmarkMix" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:PriceIcon="PriceIcon.*" xmlns:ns1="*"  width="600"  height="948">
+	<w:Config id="15a177a4c02"/>
+	<e:Rect id="closeBtn" left="0" top="0" bottom="0" right="0" fillAlpha="0.8"/>
+
+
+
+
+	<e:Image id="redpoint" source="zjmhongdian" right="-6" top="-6" visible="false"/>
+
+	<e:Group width="580" height="513" anchorOffsetY="0" horizontalCenter="1" verticalCenter="14.5">
+		<e:Image source="bantoutiaobg" height="30" scale9Grid="128,2,15,41" width="300" y="516" horizontalCenter="0" visible="false"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" bold="true" textColor="0x7E6437" y="521" horizontalCenter="0" visible="false"/>
+		<e:Image width="574" height="483" scale9Grid="34,20,1,1" source="tongyong_dikuang2" horizontalCenter="-2" verticalCenter="1"/>
+		<e:Image horizontalCenter="-1" source="tongyong_juanzhou" width="580" scale9Grid="0,0,481,17" top="3"/>
+		<e:Image width="516" height="440" fillMode="scale" alpha="1" anchorOffsetY="0" source="tongyongbg5" scale9Grid="4,5,17,9" horizontalCenter="-1" verticalCenter="5.5"/>
+		<e:Button id="closeBtn2" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="263" top="-1"/>
+		<e:Label text="材料合成" size="24" bold="true" y="-6" horizontalCenter="0" textColor="0xf8b141" visible="false"/>
+		<e:Scroller id="scroll" width="516" height="440" horizontalCenter="-1" anchorOffsetY="0" verticalCenter="5.5">
+		<e:List id="list" x="78" y="241" useVirtualLayout="false" anchorOffsetY="0" height="440" itemRendererSkinName="SkinmarkMixItem">
+			<e:layout>
+			<e:VerticalLayout horizontalAlign="center" paddingTop="5" gap="3"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+		<e:Image source="tongyong_titlebg" width="249" horizontalCenter="-4.5" top="-15" scale9Grid="114,21,21,15"/>
+		<e:Image horizontalCenter="-3.5" top="-5" source="ring_biaoti3" visible="false"/>
+		<e:Label text="材料合成" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="-3" top="-2"/>
+
+	</e:Group>
+	<e:Image source="cailiaohecheng_png" alpha="0.7" x="0" y="0" visible="false"/>
+
+</e:Skin>

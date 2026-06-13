@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Skinbloodyel" width="60" height="4" xmlns:e="http://ns.egret.com/eui">
+	<e:Image id="thumb" source="boolyel" width="58" height="5" x="1" y="0" scale9Grid="1,1,2,1"/>
+	<e:Image source="boolBg" width="60" x="0" height="5" y="0" scale9Grid="6,0,37,4"/>
+</e:Skin>

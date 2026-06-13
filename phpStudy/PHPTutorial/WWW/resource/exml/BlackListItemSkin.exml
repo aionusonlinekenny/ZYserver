@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBlackListItem" height="95" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" width="542">
+	<w:Config id="1584d37f79e"/>
+	<e:Rect touchEnabled="true" fillAlpha="0.2" left="0" right="0" top="0" bottom="0"/>
+	<e:Image height="95" source="chatbg2" width="542" x="0" y="0" scale9Grid="5,5,36,36"/>
+	<e:Group width="66" height="70" verticalCenter="0.5" horizontalCenter="-228" anchorOffsetX="0">
+		<e:Image id="img_userIcon" source="{data.userIcon}" width="59" height="59" y="3" x="3"/>
+		<e:Image id="headBg" scale9Grid="5,5,3,3" height="69" y="0" width="66" x="0" source="friend_kuang"/>
+	</e:Group>
+	<e:Label id="label_name" text="{data.name}" size="20" x="88" y="30" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
+	<e:Label id="labelGuild" text="帮会名六个字" size="18" y="60" x="88" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+	<e:Button id="btn_delete" label="删 除" width="91" height="50" icon="friend_btnbg" x="426" y="26" skinName="SkinBtn26"/>
+</e:Skin>

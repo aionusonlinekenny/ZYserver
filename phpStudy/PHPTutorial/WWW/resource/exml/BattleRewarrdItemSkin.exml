@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinBattleRewarrdItem" width="496" height="108" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image source="rankitembg" left="0" top="0" bottom="0" right="0" scale9Grid="11,6,66,41"/>
+	<e:Image id="image" y="32" x="17" source="paihang1"/>
+	<e:Label id="rank" text="1" size="36" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center" horizontalCenter="-203"/>
+	<e:List id="awards" x="100" itemRendererSkinName="SkinItem2" verticalCenter="5">
+		<e:layout>
+			<e:HorizontalLayout/>
+		</e:layout>
+	</e:List>
+</e:Skin>

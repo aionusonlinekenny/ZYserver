@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildBg" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="600" height="948">
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+	<e:Group width="556" horizontalCenter="0" bottom="58" visible="false">
+		<e:Image source="bantoumingkuang4" x="0" top="0" bottom="0" width="278" height="90" visible="false"/>
+		<e:Image source="bantoumingkuang4" scaleX="-1" right="0" top="0" bottom="0" width="278" height="90" visible="false"/>
+	</e:Group>
+	<e:ViewStack id="viewStack" width="600" horizontalCenter="0" top="0" selectedIndex="2" bottom="0" height="948">
+		<ns1:GuildInfoPanel name="基础" id="InfoPanel" skinName="SkinGuildInfo" top="0" bottom="0" width="600" horizontalCenter="0"/>
+		<ns1:GuildManagePanel name="管理" id="managePanel" skinName="SkinGuildManageBuild" width="600" horizontalCenter="0" top="0" bottom="0" visible="false"/>
+		<ns1:GuildMemberPanel name="成员" id="memberPanel" skinName="SkinGuildMember" top="0" bottom="0" width="600" horizontalCenter="0" visible="false"/>
+		<ns1:GuildListPanel name="列表" id="listPanel" skinName="SkinGuildList" top="0" bottom="0" left="0" right="0" visible="false"/>
+	</e:ViewStack>
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel"
+	             currentState="nohead"  width="600" height="948" horizontalCenter="1" top="0"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="274" top="46"/>
+	<e:Image  horizontalCenter="-227" top="10" source="guild_title1_png"/>
+
+	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="91" scale9Grid="227,19,149,27"/>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" selectedIndex="0" horizontalCenter="0" dataProvider="{viewStack}" bottom="99">
+		<e:layout>
+			<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+	</e:TabBar>
+	<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" horizontalCenter="-5.5" bottom="135"/>
+	<e:Image x="0" y="0" alpha="0.6" source="hhdt_png" visible="false"/>
+	<!--<e:TextInput id="textInput" width="170" height="25" maxChars="12" x="318" y="468" skinName="skins.SkinTextInput"
+	                 enabled="true" />
+	-->
+	<!--<e:TextInput id="textInput" width="170" height="25" enabled="true" textColor="0xf1faf9" maxChars="6" y="469"
+	                 x="317" />
+	-->
+</e:Skin>

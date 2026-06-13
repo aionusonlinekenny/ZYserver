@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGwResult" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        height="948" width="600">
+	<w:Config id="15c8d32c190" />
+	<e:Rect fillAlpha="0.8" left="0" right="0" top="0" bottom="0" />
+	<e:Image id="bg" source="tongyong_bgsuc" top="0" bottom="0" width="600" horizontalCenter="0"/>
+	<e:Group width="600" height="948" horizontalCenter="0" verticalCenter="0">
+
+		<e:Group width="580" height="273.33" y="429" horizontalCenter="0" anchorOffsetY="0">
+			<e:Image width="544" height="251" y="22" horizontalCenter="0" source="bantoutiaobg" scale9Grid="161,10,61,13" x="18" scaleX="1" scaleY="1" anchorOffsetY="0"/>
+			<e:Image y="22" horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" x="0" scaleX="1" scaleY="1"/>
+			<e:Image y="270" horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" x="0" scaleX="1" scaleY="1"/>
+			<e:Image y="10.83" horizontalCenter="0" source="fuentitlebg" x="247" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Label id="txt" text="" size="20" textColor="0xdfd1b5" verticalCenter="-239" horizontalCenter="0" textAlign="center" x="220" y="229"   visible="false"/>
+		<e:Button id="closeBtn" label="退出(10)" horizontalCenter="0" bottom="148" skinName="SkinBtn7" visible="false"/>
+		<e:Button id="closenoget" label="退 出" horizontalCenter="130" bottom="148" skinName="SkinBtn7"/>
+		<e:Label id="noget" text="不领奖不扣次数" size="18" horizontalCenter="130" textAlign="center" x="240" fontFamily="Microsoft YaHei" textColor="0xffff00" y="806"/>
+		<e:Button id="get" label="领取奖励" horizontalCenter="-140" bottom="148" skinName="SkinBtn7"/>
+		<e:Image id="rank" horizontalCenter="0" y="278" scaleX="1.2" scaleY="1.2" source="godweapon_rank1_png"/>
+		<e:Image id="titleImg" horizontalCenter="28" y="0" source="labwin_png"/>
+		<e:Label id="timeTitle" text="消耗时间：" size="20" textAlign="center" x="100" y="386" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="time" text="" size="20" textAlign="left" x="206" y="386" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="gaptime" text="" size="20" x="280" y="386" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Group id="listGroup" width="414"   anchorOffsetY="0" height="242" x="100" y="430">
+			<e:List id="listCoin" y="48" width="410" left="4" anchorOffsetX="0" anchorOffsetY="0" height="105" itemRendererSkinName="SkinItem2">
+				<e:layout>
+					<e:HorizontalLayout gap="22"/>
+				</e:layout>
+
+			</e:List>
+
+
+			<e:Label id="labelItem" text="获得道具：" x="0" y="-16" size="20" height="40" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+			</e:Group>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuardGodWeaponBossTips" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" width="600" height="948">
+	<w:Config id="1586b36a128"/>
+	<e:Rect fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" horizontalCenter="0" width="484" height="332" verticalCenter="0">
+	<e:Image left="0" right="0" scale9Grid="40,31,15,15" source="tongyong_dikuang2" width="484" height="314" y="17"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" width="481" height="23" scaleY="1" scaleX="1"/>
+		<e:Image source="tongyong_titlebg" y="-15" anchorOffsetX="0" width="272" horizontalCenter="0" scale9Grid="98,0,50,41"/>
+		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="188" width="419" scale9Grid="22,20,25,25"/>
+		<e:Image source="tongyongtip1" scale9Grid="5,5,15,15" touchEnabled="true" width="400" height="240" x="0" y="0" visible="false"/>
+		<e:Image source="tongyongtip2" scale9Grid="19,18,3,6" width="400" height="240" x="0" y="0" visible="false"/>
+		<e:Label id="callTimesLable" text="1" size="20" x="284" y="176" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label text="召唤幸运BOSS" size="22" y="-2" fontFamily="Microsoft YaHei" textColor="0x084151" horizontalCenter="0"/>
+		<e:Label id="desc" text="每次挑战可以召唤幸运BOSS\n\n幸运BOSS血量低，高几率掉落心法残页" size="20" y="74" width="400" height="62" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x213847"/>
+		<e:Label id="desc0" text="可召唤次数： 次" size="20" y="176" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Image scale9Grid="85,1,6,1" y="40" source="tongyongline" left="0" right="0" visible="false"/>
+
+
+		<e:Button id="closeBtn" label="关 闭" horizontalCenter="-98" bottom="16" skinName="SkinBtn3" width="120" height="50"/>
+		<e:Button id="up" label="召 唤" horizontalCenter="98" bottom="16" skinName="SkinBtn3" width="120" height="50"/>
+		<e:Group id="cost" horizontalCenter="98" bottom="68">
+			<e:Image source="szyuanbao" x="0" y="0" scaleX="1" scaleY="1"/>
+			<e:Label id="zb0" text="4980" size="20" x="44" y="4" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
+		</e:Group>
+
+	</e:Group>
+</e:Skin>

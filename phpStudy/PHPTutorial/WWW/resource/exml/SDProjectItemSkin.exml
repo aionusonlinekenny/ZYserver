@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SDProjectItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  width="427" height="128" states="normal,done" >
+	<e:Image right="0" left="0" top="0" bottom="0" source="tongyongbg13" scale9Grid="4,4,4,4"/>
+	<e:Label id="pName" text="累计登录1天" x="7" y="7" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+	<e:List id="list" x="22.99" y="38.48" anchorOffsetY="0" scaleX="0.85" scaleY="0.85" itemRendererSkinName="SkinItem3">
+		<e:layout>
+			<e:HorizontalLayout gap="50" paddingLeft="0"/>
+		</e:layout>
+	</e:List>
+	<e:Button id="actBtn" label="领 取" visible.done="false" verticalCenter.normal="10" right.normal="5" right="5" verticalCenter="10" width="116" scaleX="1" scaleY="1" icon="friend_btnbg" skinName="SkinBtn25"/>
+	<e:Label id="scedule" text="5/5" includeIn="normal" size="20" right="5" verticalCenter="-30" verticalAlign="middle" fontFamily="Microsoft YaHei" textAlign="center" anchorOffsetX="0" width="113.5"/>
+	<e:Label text="已领取" x="330.2" y="61.2" size="24" fontFamily="Microsoft YaHei" textColor="0x00ff00" includeIn="done"/>
+	<e:Image includeIn="done" x="321" source="yilingqu" rotation="-25" verticalCenter="12" visible="false"/>
+	<e:Image id="redpoint" source="zjmhongdian" right="16" verticalCenter="-10.5" scaleX="0.8" scaleY="0.8" includeIn="normal" visible="false"/>
+	<e:Image source="7item_jpg" y="0" width="427" x="0" alpha="0.7" visible.done="false" visible="false"/>	
+</e:Skin>

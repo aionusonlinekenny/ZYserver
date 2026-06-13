@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMijiLearn" width="630" height="853" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect left="0" right="0" top="1" bottom="-1" fillAlpha="0.6"/>
+	<e:Group width="571" horizontalCenter="0" verticalCenter="8" height="577">
+		<e:Image left="0" right="0" top="0" bottom="0" source="tongyong_dikuang2" scale9Grid="43,18,38,43" horizontalCenter="0"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="209,2,59,19" horizontalCenter="0" top="0"/>
+		<e:Image width="251" scale9Grid="104,0,32,41" horizontalCenter="-0.5" height="42" top="-18" source="tongyong_titlebg"/>
+		<e:Image source="tongyong_dikuang1" scale9Grid="10,14,57,27" height="407" horizontalCenter="0" top="35" left="27" right="27"/>
+		<e:Label text="选择天书" horizontalCenter="0" size="24" fontFamily="Microsoft YaHei" top="-7" textColor="0x39566a"/>
+		<e:Button skinName="SkinBtn0" icon="tongyong_btnclose" label="按钮" id="closeBtn" right="-13" top="-13"/>
+		<e:Image horizontalCenter="0.5" bottom="137.4" height="100" source="juxing_png" scale9Grid="217,12,68,76"/>
+		<e:Group height="289" width="491" horizontalCenter="0" top="48">
+			<e:Scroller id="itemScroller" width="491" height="285" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="1" top="4">
+				<e:List id="itemList" x="87" y="-65" width="490" itemRendererSkinName="SkinItem" height="274" anchorOffsetY="0" anchorOffsetX="0">
+					<e:layout>
+						<e:TileLayout requestedColumnCount="5" horizontalGap="21" paddingLeft="0" verticalGap="8"/>
+					</e:layout>
+				</e:List>
+
+			</e:Scroller>
+		</e:Group>
+
+		<e:Group bottom="142" width="413" height="96" horizontalCenter="56">
+			<e:Label id="mijiName" text="中级幸运" size="20" lineSpacing="15" x="10" width="380" verticalAlign="middle" y="-35" scaleX="1" scaleY="1" textColor="0x0038ab" fontFamily="Microsoft YaHei" height="25"/>
+			<e:Label id="info" text="每次攻击15%的几率增加12%伤该状态下死亡无法触发化神天书效果。" size="20" lineSpacing="5" x="0" width="406" y="-45" scaleX="1" scaleY="1" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="left" anchorOffsetY="0"/>
+			<e:layout>
+				<e:VerticalLayout verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+
+		<ns1:MijiItem id="mijiLearnIcon" width="90" bottom="148" height="90" left="37" skinName="Skin2MijiItem" scaleX="0.9" scaleY="0.9"/>
+		<e:Label id="link" text="获取天书" size="20" textColor="0x00ff00" bottom="55" right="65" fontFamily="Microsoft YaHei"/>
+		<e:Button id="closeBtn0" skinName="SkinBtn0" label="按钮" y="4" x="637" visible="false"/>
+		<e:Button id="smeltBtn" label="放  入" skinName="SkinBtn6" horizontalCenter="0" bottom="34" width="160" height="60" icon="btn2_2"/>
+	</e:Group>
+</e:Skin>

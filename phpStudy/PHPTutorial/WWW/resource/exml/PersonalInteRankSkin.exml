@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinPersonalInteRank" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="600" height="948">
+
+
+	
+
+
+
+
+
+
+
+
+	<e:Group width="560" height="774" horizontalCenter="0" verticalCenter="-73">
+		<e:Image width="560" scale9Grid="34,20,1,1" source="tongyong_dikuang2" height="751" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image width="563" source="tongyong_juanzhou" scale9Grid="66,0,271,16" height="23" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="-365.965"/>
+		<e:Image scaleX="-1" source="tongyongbg5" width="502" height="713" scaleY="1" horizontalCenter="0" verticalCenter="11.5" anchorOffsetY="0" scale9Grid="13,9,1,1"/>
+		<e:Image source="tongyong_titlebg" width="281" scale9Grid="108,16,37,20" scaleX="1" scaleY="1" horizontalCenter="0" top="-7"/>
+
+		<e:Label id="lastName0" text="上届排行" size="22" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" horizontalCenter="0" top="7" textColor="0x084151"/>
+		<e:Group width="496" height="45" scaleX="1" scaleY="1" horizontalCenter="0" top="45">
+		<e:Image source="leibiefengetou" left="0" right="0" scale9Grid="2,0,5,48" top="0" bottom="0"/>
+		<e:Image source="shangjiepaiming_bg_png" alpha="1" scaleX="1" scaleY="1" anchorOffsetX="0" left="0" right="0" top="0" bottom="0" visible="false"/>
+		<e:Label text="积分" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" bottom="14" horizontalCenter="198"/>
+		<e:Label text="名次" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-197" bottom="14"/>
+		<e:Label text="仙盟" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="70" bottom="14"/>
+		<e:Label text="盟主" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-78" bottom="14"/>
+		<e:Image source="leibeifengexian" horizontalCenter="144" bottom="2"/>
+		<e:Image source="leibeifengexian" horizontalCenter="-148" bottom="2"/>
+		<e:Image source="leibeifengexian" horizontalCenter="-7" bottom="2"/>
+		</e:Group>
+		<e:Scroller width="496" height="658.67" horizontalCenter="0" x="25" scaleX="1" scaleY="1" bottom="27" anchorOffsetY="0">
+		<e:List id="list" y="36" height="560" itemRendererSkinName="SkinGuildInteRankItem">
+			<e:layout>
+			<e:VerticalLayout gap="3" horizontalAlign="center" paddingTop="2"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+	</e:Group>
+	<e:Image x="0" y="0" alpha="0.7" source="hanghuipm_png" visible="false"/>
+</e:Skin>

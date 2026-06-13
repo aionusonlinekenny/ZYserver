@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinNeiGong" width="600" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="728">
+	<w:Config id="1586b13ea96"/>
+
+  	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+
+	<e:Image source="neigongbg2_png" horizontalCenter="0" height="564" y="46"/>
+	<e:Image width="215" height="215" x="193" y="294" source="neigongbg3"/>
+	<e:Image source="neigongqiu2" x="240" y="344"/>
+
+	<e:Group id="showAct" horizontalCenter="0" width="554" height="652" top="76" anchorOffsetY="0">
+		<e:Group id="lineGroup" y="63" width="478" height="309" horizontalCenter="0">
+			<e:Image id="lineBg" width="478" height="309" horizontalCenter="0" source="neigongbg3_png" visible="false"/>
+			<e:Image id="point_0" y="270" source="neigongzhuzi2_png"/>
+			<e:Image id="point_4" y="-28" x="164" source="neigongzhuzi2_png"/>
+		</e:Group>
+		<e:Group id="stageGroup" anchorOffsetX="0" anchorOffsetY="0" left="0" top="-20">
+			<e:Image scale9Grid="6,22,43,5" x="0" top="0" source="neigonglevelbg_png"/>
+		</e:Group>
+		<e:Image width="580" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="tongyong_dikuang4" scale9Grid="10,10,60,60" bottom="0" height="175"/>
+		<e:Group width="500" horizontalCenter="-6" bottom="115" height="50">
+			<e:Group id="top" width="461" height="22" y="0" anchorOffsetY="0" horizontalCenter="0">
+				<e:Group top="0" left="20" x="-130" y="0" scaleX="1" scaleY="1" width="456">
+				<e:Label id="attr0" text="" x="0" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Image id="arrow0" source="tongyongup" x="178" y="18" rotation="0"/>
+				<e:Label id="addAttr0" text="" x="148" y="0" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+					<e:Label id="attr1" text="" x="75" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+					<e:Image id="arrow1" source="tongyongup" x="0" y="28" rotation="0"/>
+					<e:Label id="addAttr1" text="" x="225" y="0" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+				<e:layout>
+					<e:HorizontalLayout verticalAlign="middle" gap="10" horizontalAlign="left"/>
+				</e:layout>
+				</e:Group>
+
+				<e:layout>
+					<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle" gap="15"/>
+				</e:layout>
+			</e:Group>
+
+
+
+
+
+			<e:Group top="30" left="20">
+			<e:Label id="attr2" text="" x="0" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Image id="arrow2" source="tongyongup" x="198" y="3" rotation="0"/>
+			<e:Label id="addAttr2" text="" x="148" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="10"/>
+			</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:Group id="fightGroup" horizontalCenter="32" verticalCenter="110">
+			<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="0"/>
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="btnGroup" touchEnabled="false" width="400" horizontalCenter="0" anchorOffsetY="0" bottom="0" height="113">
+			<e:Group id="costInfo" touchEnabled="false"  width="170" horizontalCenter="0" height="30" bottom="72">
+			<e:Label id="cosInfodesc" text="消耗:" size="20" textColor="0x000000" fontFamily="Microsoft YaHei" width="46" x="-22"/>
+			<e:Image x="48" source="coin1"/>
+			<e:Label id="costlable" text="" x="82" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="6"/>
+			</e:layout>
+			</e:Group>
+			<e:Button id="mixBtn" label="凝   气" width="213" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2" bottom="0" height="75" visible="false"/>
+			<e:Button id="upBtn" label="修  炼" width="213" horizontalCenter="0" anchorOffsetX="0" skinName="SkinBtn6" icon="btn1_2" bottom="0" height="69"/>
+			<e:Button id="oneKeyUp" skinName="SkinBtn1" label="一键修炼" height="60" width="160" x="240" y="35" visible="false"/>
+			<e:Image id="redPoint1" touchEnabled="false"   x="267" y="34" source="zjmhongdian" visible="false"/>
+			<e:Image id="redPoint0" touchEnabled="false" x="266" y="35" source="zjmhongdian" visible="false"/>
+			<e:Label id="getcoin" text="获取铜钱" x="406" y="70" size="20" textColor="0x20cb30" visible="false"/>
+			<e:Label id="noble" text="贵族减少20%铜钱消耗" x="222" textColor="0x20cb30" size="20" y="0" visible="false"/>
+		</e:Group>
+
+
+		<e:Image id="point_1" y="244" x="25" source="neigongzhuzi2_png"/>
+
+		<e:Image id="point_2" y="151" x="53" source="neigongzhuzi2_png"/>
+
+		<e:Image id="point_3" y="76" x="116" source="neigongzhuzi2_png"/>
+
+
+
+		<e:Image id="point_5" y="33" x="300" source="neigongzhuzi2_png"/>
+
+		<e:Image id="point_6" y="75" x="390" source="neigongzhuzi2_png"/>
+
+		<e:Image id="point_7" y="148" x="454" source="neigongzhuzi2_png"/>
+
+		<e:Image id="point_8" y="243" x="481" source="neigongzhuzi2_png"/>
+
+		<e:Image id="point_9" y="334" x="467" source="neigongzhuzi2_png"/>
+		<e:Group id="eff_0" y="330" x="64"/>
+		<e:Group id="eff_1" y="242" x="51"/>
+		<e:Group id="eff_2" y="148" x="79"/>
+		<e:Group id="eff_3" y="73" x="142"/>
+		<e:Group id="eff_4" y="32" x="228"/>
+		<e:Group id="eff_5" y="31" x="326"/>
+		<e:Group id="eff_6" y="73" x="415"/>
+		<e:Group id="eff_7" y="146" x="480"/>
+		<e:Group id="eff_8" y="241" x="506"/>
+		<e:Group id="eff_9" y="332" x="493"/>
+
+		<e:Group id="ball" width="120" height="120"   anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="4" y="266">
+
+			<e:Group id="mcGroup"   x="-25" y="-15"/>
+			<e:Label id="expLabel" strokeColor="0x000000" text="100/910" size="18" verticalAlign="middle" textAlign="center" y="54"   textColor="0xffd93f" x="24" visible="false"/>
+		</e:Group>
+		<e:Label id="maxDesc" text="仙罡已满级" size="24" horizontalCenter="0" bottom="43" textColor="0xffff00" fontFamily="Microsoft YaHei" height="24" visible="false"/>
+	</e:Group>
+	<e:Group id="Activation" height="576" top="144" horizontalCenter="0" width="600" visible="false">
+		<e:Label id="activeTipsTxt0" text="闯关达到 第15关 即可激活内功" size="24" fontFamily="Microsoft YaHei" horizontalCenter="3" textAlign="center" verticalAlign="middle" y="438" textColor="0xffff00"/>
+		<e:Image source="neigongtxt" horizontalCenter="0" y="-60"/>
+
+		<e:Button id="UplevelBtn0" label="激活仙罡" width="180" height="60" scaleX="1" scaleY="1" skinName="SkinBtn6" icon="btn1_2" bottom="0" horizontalCenter="0"/>
+		<e:Group y="508" horizontalCenter="0">
+
+		</e:Group>
+
+
+
+		<e:Image id="redPointAct0" source="zjmhongdian" horizontalCenter="82" bottom="60" visible="false"/>
+		<e:Image width="117" height="141" x="237" y="200" source="huomiao" scaleX="1" scaleY="1"/>
+
+	</e:Group>
+</e:Skin>

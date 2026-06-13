@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinMainButton" states="up,down,disabled" width="76" height="76"
+        xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" includeIn="down" width.down="76" height.down="76" width.disabled="80" height.disabled="80">
+	<e:Image id="iconDisplay" alpha.disabled="0.5" pixelHitTest="true" horizontalCenter="0" verticalCenter="0" source="zjmhanghui" verticalCenter.down="1" horizontalCenter.down="1"/>
+	<e:Image id="redPoint" right="-2" top="2" source="zjmhongdian" visible="false"/>
+</e:Skin>

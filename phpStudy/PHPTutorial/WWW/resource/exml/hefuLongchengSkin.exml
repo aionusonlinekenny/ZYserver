@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="hefuLongchengSkin" width="560" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  height="671">
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image id="bg" source="longchengzhengbabg2_jpg" left="0" right="0" top="51"/>
+		<e:Image scaleY="1" horizontalCenter="0" source="huabian3" top="1"/>
+		<e:Image horizontalCenter="0" source="biaoti_longchengzhengba_png" top="20"/>
+
+		<e:Group id="infoBg" width="540" top="55" left="11">
+
+			<e:Label text="活动时间：" x="14" y="14" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="actTime" text="7月30日20:00-20:20(周日)" x="104" y="14" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="actInfo" text="活动期间首个带领仙盟攻占仙宫的仙盟盟主可获得丰厚的奖励，奖励通过邮件发放。" x="104" y="42" size="18" width="344" left="104" right="14" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0" lineSpacing="5"/>
+			<e:Label text="活动说明：" x="14" y="42" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		</e:Group>
+
+
+
+		<e:Group id="aw0" horizontalCenter="-178.5" top="478">
+
+			<e:List id="list0" itemRendererSkinName="SkinItem2" horizontalCenter="0" verticalCenter="0" >
+
+			<e:layout>
+			<e:HorizontalLayout gap="2"/>
+			</e:layout>
+			</e:List>
+			<e:Label id="guild0" text="归属:未开始" y="110" size="16" horizontalCenter="0" textColor="0x20cb30" bold="true" fontFamily="Microsoft YaHei" visible="false"/>
+
+		</e:Group>
+		<e:Group horizontalCenter="-3.5" id="aw1" top="478">
+
+			<e:List id="list1" itemRendererSkinName="SkinItem2" horizontalCenter="0" verticalCenter="0" >
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+			</e:List>
+			<e:Label text="归属:未开始" y="110" size="16" id="guild1" horizontalCenter="0" textColor="0x20cb30" bold="true" fontFamily="Microsoft YaHei" visible="false"/>
+		</e:Group>
+		<e:Group horizontalCenter="171.5" id="aw2" top="478">
+
+			<e:List id="list2" itemRendererSkinName="SkinItem2" horizontalCenter="0" verticalCenter="0" >
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+			</e:List>
+			<e:Label text="归属:未开始" y="110" size="16" id="guild2" horizontalCenter="0" textColor="0x20cb30" bold="true" fontFamily="Microsoft YaHei" visible="false"/>
+		</e:Group>
+		<e:Button id="go" label="前往参加" skinName="SkinBtn1" horizontalCenter="0" bottom="0"/>
+
+
+
+
+
+
+		<e:Label id="over" text="已结束" textColor="0x00FF00" size="30" horizontalCenter="0" fontFamily="Microsoft YaHei" bottom="15" visible="false"/>
+	</e:Group>		
+</e:Skin>

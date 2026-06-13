@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="WingSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:PriceIcon="PriceIcon.*" xmlns:ns1="*" width="600" height="948">
+	<w:Config id="15d35efe574" />
+	<e:Group id="wing" width="553" height="304" horizontalCenter="0" verticalCenter="0" visible="false">
+		<e:Image id="wingMid" source="wingbg3_png" horizontalCenter="0" verticalCenter="-4.5" x="78" y="14"/>
+		<e:Group id="wingeff" x="-14" y="-257" width="580" height="770"/>
+		<e:Image id="wingR" source="wingbg1_png" x="321" y="45" rotation="-20"/>
+		<e:Image id="wingL" source="wingbg1_png" x="232" y="45" scaleX="-1" rotation="20"/>
+	</e:Group>
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+	<e:Group width="600" height="728" horizontalCenter="0" verticalCenter="-57">
+		<e:Group id="jihuo" horizontalCenter="0" width="600" x="0" height="748" verticalCenter="13">
+			<e:Image source="wingbg4_png" width="558" height="428" horizontalCenter="0" top="-50" alpha="1"/>
+			<e:Image id="wingImg" touchEnabled="false" source="wing01_png" top="88" horizontalCenter="4" alpha="1" visible="false"/>
+			<e:Group id="wingGroup" width="500" height="320" top="25" horizontalCenter="0"/>
+			<e:Group id="actEff" horizontalCenter="-17" verticalCenter="-147"/>
+			<e:Image id="jihuostate" scaleX="1" top="80" horizontalCenter="110" source="weijihuo2"/>
+			<e:Button id="rightBtn" label="按钮" icon="jiantouxuan" skinName="SkinBtn0" right="50" scaleX="-1" scaleY="1" top="150"/>
+			<e:Button id="leftBtn" label="按钮" icon="jiantouxuan" skinName="SkinBtn0" left="50" top="150"/>
+			<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="22" top="275"/>
+			<e:Group id="skillGroup" anchorOffsetY="0" horizontalCenter="0" width="600" height="415" bottom="1">
+			<e:Image anchorOffsetY="0" width="580" horizontalCenter="0" source="tongyong_dikuang4" scale9Grid="18,15,46,51" height="240" top="0"/>
+			<e:Image id="huawenImage" width="272" scaleX="1" top="-10" horizontalCenter="0" source="huabian" scale9Grid="94,0,21,50"/>
+			<e:Label id="nameTxt" text="1阶仙羽" size="22" textAlign="center" width="140" horizontalCenter="0" fontFamily="Microsoft YaHei" top="10" textColor="0xffff00" verticalAlign="middle"/>
+			<ns1:WingSkillItemRender id="itemicon0" skinName="SkinWingSkillItem" horizontalCenter="-213.5" y="145"/>
+			<e:Image id="nameBg0" width="76" height="24" horizontalCenter="-215" y="208" source=""/>
+			<e:Label id="openTxt0" text="4阶开启" size="17" horizontalCenter="-213.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<ns1:WingSkillItemRender id="itemicon1" skinName="SkinWingSkillItem" horizontalCenter="-106.5" y="145"/>
+			<e:Image id="nameBg1" width="76" height="24" horizontalCenter="-107" y="208" source=""/>
+			<e:Label id="openTxt1" text="6阶开启" size="17" horizontalCenter="-105.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<ns1:WingSkillItemRender id="itemicon2" skinName="SkinWingSkillItem" horizontalCenter="0" y="145"/>
+			<e:Image id="nameBg2" width="76" height="24" horizontalCenter="1" y="208" source=""/>
+			<e:Label id="openTxt2" text="8阶开启" size="17" horizontalCenter="2.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<ns1:WingSkillItemRender id="itemicon3" skinName="SkinWingSkillItem" horizontalCenter="111.5" y="145"/>
+			<e:Image id="nameBg3" width="76" height="24" horizontalCenter="109" y="208" source=""/>
+			<e:Label id="openTxt3" text="10阶开启" size="17" horizontalCenter="109" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<ns1:WingSkillItemRender id="itemicon4" skinName="SkinWingSkillItem" horizontalCenter="216" y="145"/>
+			<e:Image id="nameBg4" width="76" height="24" horizontalCenter="218" y="208" source=""/>
+			<e:Label id="openTxt4" text="10阶开启" size="17" horizontalCenter="218" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<e:Group id="infoGroup" anchorOffsetX="0" width="512" height="90" anchorOffsetY="0" horizontalCenter="0" top="50">
+				<e:Group id="attrGroup" anchorOffsetX="0" width="257" top="0" bottom="0" left="0">
+				<e:Label id="attrLabel" text="" y="36" size="19" horizontalCenter="-100" height="90" verticalAlign="middle" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xffffff"/>
+				<e:Label id="attrTempLabel" text="" y="36" size="19" horizontalCenter="-100" height="90" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+					<e:HorizontalLayout gap="16" paddingTop="0" paddingBottom="5" paddingLeft="0" horizontalAlign="left"/>
+				</e:layout>
+				</e:Group>
+				<e:Image id="arrows" source="jiantouyou" y="1" x="220"/>
+				<e:Label id="nextAttrLabel" text="" size="19" height="90" verticalAlign="middle" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="191" textAlign="left" anchorOffsetY="0" verticalCenter="0" right="-45" textColor="0xffffff"/>
+				<e:layout>
+				<e:BasicLayout/>
+				</e:layout>
+			</e:Group>
+			</e:Group>
+			<e:Group id="expGroup" height="140" width="600" horizontalCenter="0" bottom="0">
+			<e:CheckBox label="元宝自动购买" skinName="SkinCheckBox0" id="checkBoxs" bottom="24" horizontalCenter="145"/>
+			<e:Button id="boostBtn0" label="一键升阶" skinName="SkinBtn1" horizontalCenter="117" verticalCenter="-22" scaleX="0.9" scaleY="0.9"/>
+			<e:Button id="boostBtn1" label="升  阶" horizontalCenter="-92" verticalCenter="-22" skinName="SkinBtn1" scaleX="0.9" scaleY="0.9"/>
+			<ns1:PriceIcon id="boostPrice1" skinName="SkinPriceIcon" bottom="23" left="86"/>
+			<e:Label id="noclean" text="本阶祝福值不清空" size="18" horizontalCenter="5" textColor="0xffffff" fontFamily="Microsoft YaHei" top="-32"/>
+			<e:Group id="clearGroup" horizontalCenter="0" top="-32">
+				<e:Label text="祝福值:" y="0" size="18" x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="desc" text="本阶祝福值会在获得后24小时清空。" y="0" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="lastTime" text="剩余时间:" y="0" size="18" x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="timeLabel" text="23:59:59" y="0" size="18" x="33" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:layout>
+				<e:HorizontalLayout gap="4"/>
+				</e:layout>
+			</e:Group>
+			</e:Group>
+			<e:Group id="maxInfo" width="162.67" height="56" y="643.64" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0.5">
+				<e:Image width="137" height="24" horizontalCenter="0" source="maxyuyi_png" x="13"/>
+			</e:Group>
+
+			<e:Button id="bigUpLevelBtn" label="" left="10" top="52" skinName="SkinBtn0" icon="mingmaizsd"/>
+			<e:Button id="feishengBtn" label="" skinName="SkinBtn0" icon="wing_feisheng_png" top="245" left="10"/>
+			<e:Image id="redPoint1" source="zjmhongdian" touchEnabled="false" left="65" top="245"/>
+			<e:Button id="zizhiBtn" label="" skinName="SkinBtn0" icon="wing_zizhi_png" right="9" top="245"/>
+			<e:Image id="redPoint2" source="zjmhongdian" touchEnabled="false" top="245" right="10"/>
+			<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" left="65" top="50"/>
+			<e:Button id="shenyu" label="" right="10" top="50">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="btn_shenyu_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Image id="redPoint0" source="zjmhongdian" touchEnabled="false" right="10" top="50"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="weijihuo" width="600" horizontalCenter="0" top="0" bottom="0" visible="false">
+		<e:Image id="bgImg"    top="0" bottom="0" left="0" right="0"
+		         source="wingstartbg_png"  visible="false"/>
+		<e:Image id="dor1" source="wingbg2_png" width="294"  height="500" x="8" y="166"/>
+		<e:Image id="dor2" width="294" scaleX="1"  source="wingbg2_2_png" height="500" x="302" y="166"/>
+
+		<e:Button id="openStatusBtn" label="激活仙羽" width="200" height="70"  horizontalCenter="1"  skinName="SkinBtn6" icon="btn1_2" y="696"/>
+		<e:Label id="jihuolv" text="16级可激活" size="20" horizontalCenter="0" bottom="70" textColor="0x7e6437" visible="false"/>
+		<e:Rect id="shan" fillColor="0xeee9e3" left="0" right="0" top="0" bottom="0" visible="false"/>
+	</e:Group>
+</e:Skin>

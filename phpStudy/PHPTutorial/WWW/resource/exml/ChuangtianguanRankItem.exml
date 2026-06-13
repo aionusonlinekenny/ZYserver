@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinChuangtianguanRankItem" width="425" height="50" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="-1" right="1" top="0" bottom="0" fillAlpha="0.6" visible="false"/>
+	<e:Image bottom="0" left="0" right="0" top="0" scale9Grid="6,5,52,37" source="paihangbangbg_png"/>
+	<e:Image id="vip" x="96" source="xvip_v2_png" verticalCenter="0"/>
+	<e:Image id="rankImg" verticalCenter="0" width="54" height="48" left="18" source="paihang1"/>
+	<e:Label id="rank" text="1" size="20" x="40" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" visible="false"/>
+	<e:Label id="nameLabel" text="狂拽酷炫叼去" size="20" textAlign="left" verticalCenter="0" x="136" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="cengNum" size="20" text="36重天10层" textAlign="center" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="119"/>
+</e:Skin>

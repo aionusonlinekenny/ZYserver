@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinsoulItem" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" height="450" width="430">
+	<w:Config id="15dc09958d7"/>
+	<e:Image horizontalCenter="0" bottom="10" source="wpstai" visible="false"/>
+	<e:Group width="224" anchorOffsetX="0" horizontalCenter="0" bottom="36" touchThrough="false" touchEnabled="true" touchChildren="true">
+		<e:Button id="imgIcon" label="" skinName="SkinBtn0" icon="weapsdao_png" scaleX="1" scaleY="1" x="0" y="0" anchorOffsetX="0" width="224" alpha="0.1" visible="false"/>
+		<e:Image id="effpos" width="20" height="20"   y="198" rotation="120" touchEnabled="true" x="112"/>
+	</e:Group>
+	<e:Group y="22" horizontalCenter="1.5">
+		<e:Label id="timelabel" text="兵魂名字" size="22" x="0" y="296" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+		<e:Label id="levellabel" text="X阶" size="22" y="0" x="17" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+		<e:layout>
+			<e:HorizontalLayout gap="4" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="redPoint0" source="zjmhongdian" y="90" x="350"/>
+	<e:Group id="huanhuaImage" y="200" horizontalCenter="46.5" visible="false">
+		<e:Image source="shiyongzhong_png"/>
+	</e:Group>
+	<e:Image id="weijihuo" x="281" y="345" rotation="360" touchEnabled="true" source="weijihuo2" visible="false"/>
+</e:Skin>

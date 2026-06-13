@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinDecomposerune" width="600" height="728" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586b3b43d7" />
+	<e:Image width="580" source="tongyong_dikuang4" scale9Grid="5,6,12,14" horizontalCenter="0" top="82" height="525"/>
+	<e:Scroller id="itemScroller" horizontalCenter="0" width="555" height="515" bottom="125">
+		<e:List id="itemList" itemRendererSkinName="SkinRuneSeletctItem" useVirtualLayout="false">
+			<e:layout>
+				<e:TileLayout requestedColumnCount="3"  verticalGap="10" horizontalGap="20"/>
+			</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Group width="558" height="122" horizontalCenter="0" bottom="0">
+
+
+		<e:Button id="decomposeBtn" label="一键分解"  skinName="SkinBtn7" icon="btn1_2" width="213" height="69" y="46" x="346"/>
+		<e:CheckBox id="cb0" x="360" skinName="SkinCheckBox0" label="   "  y="8"/>
+		<e:CheckBox id="cb1" x="270" skinName="SkinCheckBox0" label="   "  y="8"/>
+		<e:CheckBox id="cb2" x="180" skinName="SkinCheckBox0" label="   "  y="8"/>
+		<e:CheckBox id="cb3" x="90" skinName="SkinCheckBox0" label="   "  y="8"/>
+		<e:CheckBox id="cb4" skinName="SkinCheckBox0"  label="   "  y="8"/>
+		<e:Label text="红" x="128" size="22" touchEnabled="false"  y="12" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+		<e:Label text="橙" x="218" size="22" touchEnabled="false"  y="12" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
+		<e:Label text="绿" x="398" size="22" touchEnabled="false"  fontFamily="Microsoft YaHei" y="12" textColor="0x00ff06"/>
+		<e:Label text="紫" x="308" size="22" touchEnabled="false"  fontFamily="Microsoft YaHei" y="12" textColor="0xac00dd"/>
+		<e:Label text="金" x="38" size="22" touchEnabled="false"  fontFamily="Microsoft YaHei" y="12" textColor="0xffff00"/>
+
+		<e:Group bottom="27" left="184">
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="right"/>
+			</e:layout>
+
+
+		</e:Group>
+
+		<e:Group height="40" x="-5" anchorOffsetY="0" y="58" anchorOffsetX="0" width="362">
+			<e:Image id="suipianIcon" source="500008_png" width="35" height="35" bottom="24" x="-32"/>
+			<e:Label id="suipianNow" text="9990" size="16" x="32" fontFamily="Microsoft YaHei"/>
+
+			<e:Label id="suipianAdd" text="+9999" size="16" bottom="27" left="260" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+
+			<e:Image id="specialShatter" width="35" height="35" bottom="0" x="138" source="500007_png"/>
+			<e:Label id="curLab" text="9990" size="16" horizontalCenter="-60" bottom="27" x="161" fontFamily="Microsoft YaHei"/>
+
+			<e:Label id="addLab" text="+9999" size="16" bottom="27" left="260" x="211" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Image id="material" width="35" height="35" bottom="1" x="135" source="200332_png"/>
+			<e:Label id="materialLab" text="0" size="16" bottom="0"  x="211" fontFamily="Microsoft YaHei"/>
+			<e:Label id="addMaterialLab" text="+9999" size="16" bottom="27" left="260" x="211" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" horizontalAlign="left" gap="0"/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+</e:Skin>

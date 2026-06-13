@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinTreasureHunt" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1586be3e7df" />
+	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+	<ns1:RoleSelectPanel id="roleSelect" y="0" skinName="SkinRoleSelectPanel"  width="600" horizontalCenter="0" currentState="nohead"/>
+	<e:ViewStack id="viewStack" width="600" selectedIndex="2" horizontalCenter="0"  height="736" verticalCenter="-54">
+		<ns1:TreasureHuntPanel id="treasureHuntPanel"  name="装备" left="0" right="0" top="0" bottom="0" skinName="SkinTreasureHuntPanel"/>
+		<ns1:TreasureRunePanel id="treasureRune" name="仙纹" skinName="TreasureRune"  left="0" right="0" top="0" bottom="0" visible="false"/>
+		<ns1:TreasureChuanshiPanel id="treasureChuanshi" name="诛仙" skinName="TreasureChuanshi"  left="0" right="0" top="0" bottom="0" visible="false"/>
+	</e:ViewStack>
+	<e:Image top="11" horizontalCenter="-213.5" source="xunbao_5"/>
+	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" scaleX="0.9" scaleY="0.9" top="4" horizontalCenter="-278"/>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="266"/>
+	<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="98" source="bantoumingkuang3"/>
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="102" height="50">
+		<e:layout>
+		<e:HorizontalLayout gap="-8"/>
+		</e:layout>
+	</e:TabBar>
+	<e:Group id="redGroup" bottom="133" horizontalCenter="52.5" touchEnabled="false">
+		<e:layout>
+		<e:HorizontalLayout gap="93" verticalAlign="middle"/>
+		</e:layout>
+		<e:Image id="redPoint0" source="zjmhongdian" touchEnabled="false" horizontalCenter="-72" y="-24" x="206"/>
+		<e:Image id="redPoint1" source="zjmhongdian" touchEnabled="false" bottom="140" horizontalCenter="49" x="327" y="-24"/>
+		<e:Image id="redPoint2" source="zjmhongdian" touchEnabled="false" bottom="140" horizontalCenter="169" x="447" y="-24"/>
+	</e:Group>
+</e:Skin>

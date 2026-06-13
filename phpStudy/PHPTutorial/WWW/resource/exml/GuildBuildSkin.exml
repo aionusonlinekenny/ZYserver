@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildBuild" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="600" height="948">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6" anchorOffsetX="0" anchorOffsetY="0"/>
+	<!--<e:TextInput id="textInput" width="170" height="25" maxChars="12" x="318" y="468" skinName="skins.SkinTextInput"  enabled="true"/>-->
+	<!--<e:TextInput id="textInput" width="170" height="25" enabled="true" textColor="0xf1faf9" maxChars="6" y="469" x="317"/>-->
+	<e:Group id="Noanigroup" width="535" height="418" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="-56">
+		<e:Image   scale9Grid="34,20,1,1" source="tongyong_dikuang2" height="386" width="535" horizontalCenter="0" verticalCenter="9"/>
+		<e:Image source="tongyong_juanzhou" scale9Grid="0,0,481,16" top="10" horizontalCenter="0" width="535"/>
+		<e:Group id="dinghong" height="80" bottom="4" left="6" right="6" visible="false">
+			<e:Image x="-0.67" top="0" bottom="0" source="bantoumingkuang3" width="255"  visible="false"/>
+			<e:Image scaleX="-1" top="0" bottom="0" source="bantoumingkuang3" right="0" width="255"  visible="false"/>
+		</e:Group>
+		<e:Image source="tongyong_titlebg" width="281" top="-6" scale9Grid="72,16,107,8" horizontalCenter="0"/>
+		<e:Image source="tongyongbg5" width="475" height="253" scale9Grid="4,4,18,11" horizontalCenter="0" verticalCenter="-37.5"/>
+		
+		<e:Button id="okBtn" label="创建" icon="btn40" skinName="SkinBtn1" horizontalCenter="6.5" bottom="34" scaleX="1.1" scaleY="1.1"/>
+		<e:Label id="time" text="请输入仙盟名字" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-87.5" bottom="143"/>
+		<e:Label id="title" text="创建仙盟" size="22" textAlign="center" horizontalCenter="0" fontFamily="Microsoft YaHei" top="6" textColor="0x084151"/>
+		<e:Image id="selectBmp" width="221" height="191" y="47.65" x="33" source="xuanzekuang3" scale9Grid="20,20,5,5"/>
+		<e:Image id="bg1" width="201" height="175" horizontalCenter="-123" source="tongyongbg6" scale9Grid="0,0,10,9" top="57"/>
+		<e:Image id="bg2" width="201" height="175" horizontalCenter="123" source="tongyongbg6" scale9Grid="0,0,10,9" top="57"/>
+		<e:Image width="204" height="18" horizontalCenter="-123.5" source="zhuakuang2" scale9Grid="0,7,159,4" top="46"/>
+		<e:Image width="204" height="18" horizontalCenter="123" source="zhuakuang2" scale9Grid="0,7,159,3" top="46"/>
+		<e:Image width="173" horizontalCenter="87" bottom="132" source="shuzibg"/>
+		<e:Label id="leftLab" text="1级仙盟" size="22" multiline="true" height="152.5" width="194" textAlign="center" lineSpacing="4" horizontalCenter="-121.5" fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetY="0" top="72" anchorOffsetX="0"/>
+		<e:Label id="rightLab" text="1级仙盟" size="22" multiline="true" height="152.5" width="191.33" textAlign="center" lineSpacing="4" horizontalCenter="128" fontFamily="Microsoft YaHei" textColor="0xffffff" top="72" anchorOffsetX="0"/>
+		<e:TextInput id="textInput" width="165" height="30" maxChars="6" enabled="true" skinName="skins.SkinTextInput" horizontalCenter="87" bottom="136"/>
+		<e:Button id="closeBtn" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="228.5" top="-4"/>
+		<e:Image x="149" y="189" source="szyuanbao" scaleX="0.9" scaleY="0.9"/>
+		<e:Image x="389" y="189" source="szyuanbao" scaleX="0.9" scaleY="0.9"/>
+
+	</e:Group>
+	<e:Image x="0" y="0" source="hhcj_png" alpha="0.7" visible="false"/>
+</e:Skin>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinFlowerRewardItem" width="485" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"   height="30" >
+	<e:Image anchorOffsetY="0" anchorOffsetX="0" source="zjmgonggaobg" bottom="0" top="0" y="0" scaleX="1" scaleY="1" left="0" right="0" scale9Grid="9,5,382,26"/>
+
+
+
+
+	<e:Group horizontalCenter="0" left="0" right="0" top="0" bottom="0">
+		<e:Label id="playerName" text="玩家名字六字" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="flowerCount" text="被你的魅力折服，送上了【999】朵泣血神花" size="18" anchorOffsetX="0" anchorOffsetY="0" x="100" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" horizontalAlign="left"/>
+		</e:layout>
+	</e:Group>
+
+		
+</e:Skin>

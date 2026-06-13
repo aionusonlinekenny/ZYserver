@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinShenluNew" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        xmlns:tween="egret.tween.*" states="open" includeIn="normalWithPrompt,disabledWithPrompt" width="600"
+        height="728">
+	<w:Declarations></w:Declarations>
+	<w:Config id="158995f2c90"></w:Config>
+	<e:Image source="chuangtianguanbg_png" width="600" horizontalCenter="0" verticalCenter="-117"/>
+	<e:Image horizontalCenter="12"  top="184" source="ringbg3_png" horizontalCenter.open="8"/>
+	<e:Group width="600" bottom="0" horizontalCenter="0" verticalCenter="28.5" height="671" anchorOffsetY="0">
+		<e:Label id="vipLabel" text="VIP14加成" x="82" y="613" size="16" textColor="0x00ff00"  visible="false"/>
+		<e:Group id="maxGroup" horizontalCenter="0" width="600" anchorOffsetY="0" height="301" verticalCenter="185">
+			<e:Group width="600" height="103" y="6" horizontalCenter="0">
+				<e:Image id="nextAttBG"  
+				         source="longhuntextbg2" width="600" bottom="-78" horizontalCenter="0" height="103" anchorOffsetY="0" horizontalCenter.open="0" top="10" scale9Grid="45,13,488,12"/>
+				<e:Label id="nextAtt" text="攻击：8000" size="20"  height="90" 
+				         width="213" textAlign="left" verticalAlign="middle" verticalCenter="0.5" horizontalCenter="191.5"  anchorOffsetX="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+				<e:Image id="cursor" source="jiantouyou" verticalCenter="0" horizontalCenter="0" />
+				<e:Label id="curAtt" text="攻击：8000" size="20" height="90" width="230" textAlign="left"
+				         verticalCenter="0.5"  x="0" verticalAlign="middle" textColor="0xffffff" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+			</e:Group>
+			<e:Group width="513" height="40" id="starGroup" scaleX="0.8" scaleY="0.8"  horizontalCenter="0" verticalCenter="-30"/>
+			<e:Button id="upgradeBtn" label="升  级"  horizontalCenter="0" anchorOffsetX="0" verticalCenter="105.5" icon="btn1_2" skinName="SkinBtn7"/>
+			<e:Group id="expGroup" width="361" horizontalCenter="0" verticalCenter="-6"></e:Group>
+			<e:Group id="costGroup" height="30" x="22" y="240">
+				<e:Label text="消耗:" size="20" fontFamily="Microsoft YaHei"/>
+				<e:Image width="30" height="30" source="200005_png"/>
+				<e:Label id="material" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" textColor="0xffffff"/>
+				<e:layout>
+					<e:HorizontalLayout gap="3" verticalAlign="middle"/>
+				</e:layout>
+			</e:Group>
+			<e:CheckBox id="autoBuy" label="自动购买" x="440" y="239" skinName="SkinCheckBox0"/>
+		</e:Group>
+		<e:Group id="maxShowGroup" width="600" height="103" horizontalCenter="0" verticalCenter="114" visible="false">
+			<e:Group width="600" height="103" horizontalCenter="0" verticalCenter="0">
+				<e:Image id="nextAttBG1" scale9Grid="16,13,559,12" source="longhuntextbg2" width="600" height="103" verticalCenter="0" horizontalCenter="0"/>
+				<e:Label id="maxCurAtt" text="攻击：8000" size="18" height="103" width="300" textAlign="left"
+				         y="0" verticalAlign="middle" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="100"/>
+			</e:Group>
+		</e:Group>
+
+		<e:Group id="maxLevel" width="158" height="84" horizontalCenter="0" verticalCenter="244">
+			<e:Label text="已满级" size="26" verticalAlign="middle" textAlign="center"
+			         verticalCenter="0" textColor="0xffff00" left="0" right="0" top="0" bottom="0" fontFamily="Microsoft YaHei" stroke="1" strokeColor="0x000000"/>
+		</e:Group>
+		<e:Group id="icon" width="200" height="200" horizontalCenter="100" y="225"/>
+		<ns1:LevelImage id="stairImg" width="40" height="109" skinName="Skinjieji" verticalCenter="-296.5" left="16"/>
+		<e:Image id="nameImg" x="63" y="51" source="lhname_1_png"/>
+		<e:Group width="554" height="60" y="229" horizontalCenter="0" touchEnabled="false">
+			<e:Button id="leftBtn" label="Button" x="0" y="1" icon="jiantouxuan" skinName="SkinBtn0"/>
+			<e:Button id="rightBtn" label="Button" x="555" y="1" skinName="SkinBtn0" icon="jiantouxuan" scaleX="-1"/>
+		</e:Group>
+		<e:Label id="isHaveLevel" text="还没升级至该阶御器" y="493" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0" visible="false"/>
+	</e:Group>
+	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="-248"/>
+	<e:Button id="onHorseBtn" label="御 器" height="74" width="75" icon="zhanqibtn" skinName="SkinBtn0" y="192" horizontalCenter="251.5"/>
+	<e:Button id="huanhua" label="Button" x="514" y="76" skinName="SkinBtn0" icon="btn_huanhua2_png"/>
+	<e:Label id="zhanqilab" text="骑乘" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" border="false" borderColor="0x000000" stroke="1" y="251" horizontalCenter="251"/>
+	<e:Image id="isQi" y="391" source="yiqishen_png" horizontalCenter="8" visible="false"/>
+	<e:Image id="weijihuo" x="414" y="241" source="weijihuo2" touchEnabled="false" visible="false"/>
+
+<e:Group id="activeGroup" bottom="0" horizontalCenter="0" height="280" width="600" visible="false">
+	<e:Image width="428" height="39" horizontalCenter="0.5" top="0" anchorOffsetY="0" source="longhuntextbg" verticalCenter="-120.5"/>
+	<e:Label id="sysDescText" text="46级可开启" textAlign="center" touchEnabled="false" horizontalCenter="0.5" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-60" strokeColor="0x000000" stroke="1"/>
+	<e:Label id="sysDescText1" text="激活飞行法宝获得大量攻击防御" touchEnabled="false" horizontalCenter="0"
+	         size="24"  text.open="激活飞行法宝获得大量攻击防御" fontFamily="Microsoft YaHei" top="7" textAlign="center" verticalAlign="middle" textColor="0xfaff82" verticalCenter="-121" stroke="1" strokeColor="0x95440f"/>
+	<e:Button id="activeBtn" label="激  活"  x.open="51" verticalCenter="12.5" horizontalCenter="0" width="212" x="10" skinName="SkinBtn7"/>
+	<e:Image id="redPoint" width="20" height="20"   source="zjmhongdian" horizontalCenter="82" verticalCenter="-4"/>
+	<e:Group id="activeBtnMc" width="212" height="61" horizontalCenter="0" verticalCenter="12.5" visible="false"/>
+</e:Group>
+
+</e:Skin>

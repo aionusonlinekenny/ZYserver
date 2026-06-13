@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinshenqiAttr" width="359" height="473" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<e:Rect id="rect" fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" width="350" height="240" horizontalCenter="0" verticalCenter="-111">
+		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-35" scale9Grid="128,2,15,41" width="300"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-28" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image id="bg1"   left="0" right="0" top="1" bottom="1" source="tongyongtip1" scale9Grid="10,9,45,56"/>
+		<e:Image id="bg2"   left="0" right="0" top="0" source="tongyongtip2" scale9Grid="19,18,2,6" bottom="0"/>
+		<e:Image width="260" height="125" horizontalCenter="0" source="zjmqipao" alpha="0.5"  verticalCenter="0" scale9Grid="6,9,9,8"/>
+		<e:Image source="shuxingbg4" horizontalCenter="1" top="7" width="230" visible="false"/>
+		<e:Label text="仙侣属性" size="24" touchEnabled="false" horizontalCenter="0" y="22" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Label text="所有仙侣属性总和" size="20" touchEnabled="false" horizontalCenter="0.5" y="198" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+
+
+		<e:List id="list"  itemRendererSkinName="SkinshenQiAttrDesc" horizontalCenter="0" height="90" verticalCenter="0">
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:List>
+	</e:Group>
+
+
+</e:Skin>

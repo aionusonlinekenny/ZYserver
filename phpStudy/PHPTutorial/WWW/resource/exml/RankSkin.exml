@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinRank" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" height="948" width="600">
+	<e:Rect width="600" fillColor="0x0D97AE" horizontalCenter="0" top="0" bottom="0"/>
+
+
+    <e:Image horizontalCenter="0" alpha="0.9" anchorOffsetY="0" source="paihangdabg_jpg" verticalCenter="0"/>
+
+	<e:Group width="556" horizontalCenter="0" bottom="58">
+	</e:Group>
+
+
+
+
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" width="600" horizontalCenter="1" top="0"/>
+	<e:Image horizontalCenter="-229" source="biaoti_paihang" top="12"/>
+
+
+	<e:Group width="146" horizontalCenter="232" verticalCenter="354">
+		<e:Image scaleX="1" height="23" width="93" horizontalCenter="8" source="myRank" scaleY="1" top="-28"/>
+
+		<e:Label id="selfPos" text="" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="11" top="0"/>
+
+	</e:Group>
+	<e:Group id="praiseGroup3" scaleX="0.6" scaleY="0.6" horizontalCenter="158" verticalCenter="-343">
+
+
+
+
+
+
+
+		<e:Group id="bodyEffect2" x="230" y = "416" scaleX="0.8" scaleY="0.8" horizontalCenter="0">
+
+
+	</e:Group>
+	</e:Group>
+	<e:Group id="praiseGroup2" scaleX="0.6" scaleY="0.6" horizontalCenter="-158" verticalCenter="-343">
+
+
+
+
+
+
+
+		<e:Group id="bodyEffect1" x="230" y = "416" scaleX="0.8" scaleY="0.8" horizontalCenter="0">
+
+
+	</e:Group>
+	</e:Group>
+	<e:Group id="praiseGroup" horizontalCenter="0" scaleX="0.75" scaleY="0.75" verticalCenter="-326">
+
+
+
+
+
+
+
+
+		<e:Group id="bodyEffect0" x="230" y = "410" scaleX="0.8" scaleY="0.8" horizontalCenter="0">
+
+
+		</e:Group>
+
+		<e:Group id="titleMcGroup" horizontalCenter="0" y="30"/>
+	</e:Group>
+	<e:Image width="481" anchorOffsetY="0" anchorOffsetX="0" source="tongyongbg2" scale9Grid="6,6,36,37" horizontalCenter="-54.5" height="473" verticalCenter="154.5" bottom="83"/>
+	<e:Scroller width="475" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="-50" height="465" verticalCenter="156.5" bottom="85">
+		<e:List id="list" y="0" itemRendererSkinName="SkinRankItemPower" x="45.45" scaleX="1" scaleY="1" anchorOffsetX="0" width="475" height="465">
+		<e:layout>
+			<e:VerticalLayout gap="3"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Group id="mobai" horizontalCenter="254.5" top="337" visible="false">
+		<e:Label id="exp" text="12345" y="25" size="16" stroke="1" strokeColor="000000" textColor="0x1DDA1D" x="30"/>
+		<e:Label id="money" text="12345" y="4" size="16" stroke="1" strokeColor="000000" textColor="0xe5d0a7" x="30"/>
+		<e:Image y="0" source="szjinbi" x="0"/>
+		<e:Image source="szexp" y="20" x="-3"/>
+		<e:Button id="praiseBtn" label="按钮" skinName="SkinBtn0" icon="phb_2" horizontalCenter="0" y="-64"/>
+	</e:Group>
+	<e:Label id="state" text="暂时无人上榜" horizontalCenter="0" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-67" visible="false"/>
+	<e:Group id="firstGroup" height="60" width="304" horizontalCenter="-31" anchorOffsetX="0" verticalCenter="-110">
+
+
+		<e:Image alpha="0.8" source="titlebg" width="427.66" height="54" horizontalCenter="67" verticalCenter="0" anchorOffsetX="0" scale9Grid="24,19,121,21"/>
+		<e:Image y="6" source="paihang1" width="50" height="46" horizontalCenter="-123"/>
+		<e:Image id="vip" source="xvip_v2_png" verticalCenter="0" horizontalCenter="-69.5"/>
+		<e:Label id="firstNameTxt" text="玩家名屌炸天" size="20" horizontalCenter="33" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" verticalCenter="0" verticalAlign="middle"/>
+		<e:Label id="firstLevelTxt" text="100级" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="155" textAlign="left" verticalAlign="middle"/>
+		<e:Image id="weiwang" rotation="0" source="prestige_title_8" verticalCenter="0" horizontalCenter="154.5"/>
+	</e:Group>
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="47" scaleX="1" scaleY="1" horizontalCenter="276"/>
+	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-273" scaleX="0.9" scaleY="0.9" top="58"/>
+	<e:Image width="100" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="239.5" source="line" height="2" verticalCenter="287"/>
+	<e:Scroller scrollPolicyV="on" scrollPolicyH="off" anchorOffsetY="0" horizontalCenter="234" anchorOffsetX="0" width="136" height="392" verticalCenter="114">
+		<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab3" width="135" height="362" scaleX="1" scaleY="1" y="0" x="2" anchorOffsetX="0" anchorOffsetY="0">
+		<e:ArrayCollection>
+				<e:Array>
+					<e:Object null="" name="总战力" type="0"/>
+					<e:Object null="" name="等  级" type="5"/>
+					<e:Object null="" name="境  界" type="10"/>
+					<e:Object null="" name="聚  灵" type="12"/>
+					<e:Object null="" name="御  器" type="14"/>
+					<e:Object null="" name="神  职" type="15"/>
+					<e:Object null="" name="仙  羽" type="16"/>
+					<e:Object null="" name="图  鉴" type="17"/>
+					<e:Object null="" name="转  生" type="18"/>
+					<e:Object null="" name="装  备" type="19"/>
+					<e:Object null="" name="威  望" type="22"/>
+					<e:Object null="" name="杀  戮" type="2"/>
+				</e:Array>
+				</e:ArrayCollection>
+		<e:layout>
+		<e:VerticalLayout gap="1"/>
+		</e:layout>
+		</e:TabBar>
+	</e:Scroller>
+		
+</e:Skin>

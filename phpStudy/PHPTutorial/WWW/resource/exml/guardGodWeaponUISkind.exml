@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuardGodWeaponUISkind" currentState="normal" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="948">
+	<w:Config id="15c6d0f73d2" />
+	<e:Group id="RoleInformation" right="6" bottom="396" height="368" width="112">
+		<e:Image width="112" height="368" x="0" source="zsbg2" scale9Grid="5,4,87,14" anchorOffsetY="0" anchorOffsetX="0" y="0"/>
+		<e:Group id="player1" y="12" horizontalCenter="0">
+
+
+
+
+			<e:Rect width="70" height="70" ellipseWidth="82" ellipseHeight="82" fillColor="0x111010" horizontalCenter="0" verticalCenter="-6"/>
+			<e:Image id="player1touxiang" source="yuanhead10" width="85" height="85" horizontalCenter="0" verticalCenter="-8"/>
+			<e:Image verticalCenter="-6" horizontalCenter="0" source="guildkuang"/>
+
+			<e:Image id="hpBg1" source="newhpBg" scale9Grid="17,2,2,13" horizontalCenter="1" y="94"/>
+			<e:ProgressBar id="bloodBar0" y="96" value="50" left="9" skinName="Skinbar11" width="91" height="11"/>
+			<e:Label id="CountDown1" text="5" size="36" textColor="0xFF0404" horizontalCenter="0" verticalCenter="0" visible="false"/>
+			<e:Image id="littleBuff1" width="30" height="30" x="0" y="0" source="GWskillS2" visible="false"/>
+		</e:Group>
+		<e:Group id="player2" width="109" height="109" y="128" horizontalCenter="0">
+			<e:Rect width="70" height="70" ellipseWidth="82" ellipseHeight="82" fillColor="0x111010" horizontalCenter="0.5" verticalCenter="-6"/>
+			<e:Image id="player2touxiang" source="yuanhead10" width="85" height="85" horizontalCenter="0.5" verticalCenter="-8"/>
+			<e:Image verticalCenter="-6" horizontalCenter="0.5" source="guildkuang"/>
+
+			<e:Image id="hpBg2" x="2" y="94" source="newhpBg" scale9Grid="17,2,2,13"/>
+			<e:ProgressBar id="bloodBar1" y="96" value="50" left="9" skinName="Skinbar11" width="91" height="11"/>
+			<e:Label id="CountDown2" text="5" size="36" textColor="0xFF0404" horizontalCenter="0" verticalCenter="0" visible="false"/>
+			<e:Image id="littleBuff2" width="30" height="30" x="0" y="0" source="GWskillS2" visible="false"/>
+		</e:Group>
+		<e:Group id="player3" width="109" height="109" y="244" horizontalCenter="0">
+			<e:Rect width="70" height="70" ellipseWidth="82" ellipseHeight="82" fillColor="0x111010" horizontalCenter="0" verticalCenter="-6"/>
+			<e:Image id="player3touxiang" source="yuanhead10" width="85" height="85" horizontalCenter="0" verticalCenter="-8"/>
+			<e:Image verticalCenter="-6" horizontalCenter="0" source="guildkuang"/>
+
+			<e:Image id="hpBg3" x="2" y="94" source="newhpBg" scale9Grid="17,2,2,13"/>
+			<e:ProgressBar id="bloodBar2" y="96" value="50" left="9" skinName="Skinbar11" width="91" height="11"/>
+
+
+			<e:Image id="littleBuff3" width="30" height="30" x="0" y="0" source="GWskillS2" visible="false"/>
+
+
+			<e:Label id="CountDown3" text="5" size="36" textColor="0xFF0404" horizontalCenter="-0.5" verticalCenter="-6" visible="false"/>
+		</e:Group>
+	</e:Group>
+
+	<e:Group id="leftTimeGroup" horizontalCenter="0" width="360" height="40" top="6" anchorOffsetY="0">
+		<e:Image left="0" right="0" top="0" bottom="0"  source="Gwshkuang" scale9Grid="2,5,128,17"/>
+		<e:Group y="7" horizontalCenter="0">
+			<e:Label text="剩余时间:" x="0" y="0" size="20"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="lastTime" text="15分00秒" x="111" y="0" size="20" rotation="359.27"  fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:layout>
+				<e:HorizontalLayout  gap="3"/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+	<e:Group id="bossBloodGroup" width="480" horizontalCenter="0" top="20" visible="false">
+		<e:Rect height="20" y="50" left="110" right="30" fillColor="0x111010" />
+		<e:Rect width="82" height="82" x="17" y="19" ellipseWidth="82" ellipseHeight="82" fillColor="0x111010" />
+		<e:Image id="head" source="" y="22" x="20"  scaleX="1.2" scaleY="1.2"/>
+		<e:Image id="grayImg" y="52" source="bosshp2" width="340" x="110" />
+		<e:Image y="22" height="28" width="396" source="bantoutiaobg" x="44" scale9Grid="51,5,136,35"/>
+		<e:ProgressBar id="bloodBar" y="52" value="50" left="110" right="30" skinName="Skinbar7" />
+		<e:Image left="0" right="0" scale9Grid="150,0,9,122" source="bosstouxiangk"  y="0"/>
+		<e:Group id="hudun" x="120" y="74" visible="false">
+			<e:Rect left="13" right="13" top="0" bottom="10" fillColor="0x111010" />
+			<e:ProgressBar id="hudunbloodBar" width="290" height="4" value="100" x="12" y="1" skinName="Skinbar6" />
+			<e:Image source="zdbosshudunxuetiaobg" x="0" y="0" width="315" scale9Grid="15,1,13,3" />
+		</e:Group>
+		<e:Label id="lvTxt" y="27" size="20" text="Lv.2000" x="126" textColor="0xf8b141" width="70" textAlign="right" />
+		<e:Label id="nameTxt" y="26" size="20" text="祖玛教主" x="200" textColor="0xd1c28f" bold="true" />
+		<e:Button id="tipBtn" label="奖励" x="13" y="100.33" skinName="SkinBtn18"/>
+	</e:Group>
+	<e:Image width="344" height="130" source="zsbg2" scale9Grid="5,4,87,14" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="-16" bottom="161"/>
+	<e:Group id="fubenSkillGroup" bottom="161" horizontalCenter="-16">
+		<e:Group id="skillGroup1" width="100" height="100" x="-16" y="0">
+			<e:Button id="skillBtn1" x="0" y="0" skinName="SkinBtn0" width="100" height="100" icon="GWskill1" />
+			<e:Group id="cdGroup1" x="50" y="50" touchEnabled="false"/>
+			<e:Image id="costBg1" y="70" scaleY="1" source="Gwshkuang" width="112" horizontalCenter="0"/>
+
+			<e:Label id="skillcostnum1" text="-300积分" y="73" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
+			<e:Label id="skillcost1" text="-       积分" x="10" y="79" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		</e:Group>
+		<e:Group id="skillGroup2" width="100" height="100" x="100" y="0">
+			<e:Button  id="skillBtn2" x="0" y="0" skinName="SkinBtn0" width="100" height="100" icon="GWskill2"/>
+			<e:Group id="cdGroup2" x="50" y="50"  touchEnabled="false"/>
+			<e:Image id="costBg2" width="112" y="70" scale9Grid="33,2,24,17" scaleY="1" source="Gwshkuang" horizontalCenter="0"/>
+			<e:Label id="skillcostnum2" text="-300积分" y="73" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="skillcost2" text="-       积分" x="17" y="79" textColor="0xCDCF8A" size="18" visible="false"/>
+
+
+
+
+		</e:Group>
+		<e:Group id="skillGroup3" width="100" height="100" x="236" y="-1">
+			<e:Button  id="skillBtn3" x="0" y="0" skinName="SkinBtn0" width="100" height="100" icon="GWskill3"/>
+			<e:Group id="cdGroup3" x="50" y="50"  touchEnabled="false"/>
+			<e:Image id="costBg3" width="112" y="70" scale9Grid="33,2,24,17" scaleY="1" source="Gwshkuang" horizontalCenter="0"/>
+			<e:Label id="skillcostnum3" text="-300积分" y="73" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="skillcost3" text="-       积分" x="17" y="79" textColor="0xCDCF8A" size="18" fontFamily="Microsoft YaHei" visible="false"/>
+
+
+
+		</e:Group>
+		<e:layout>
+			<e:HorizontalLayout gap="22"/>
+		</e:layout>
+	</e:Group>
+	<e:Label id="refreshHints" text="距离下一波出现还有" size="20" bottom="267" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="refreshHints0" text="(15/15)" size="20" textColor="0x05FE03" bottom="267" horizontalCenter="-130" fontFamily="Microsoft YaHei"/>
+	<e:Label id="refreshHints1" text="9秒" size="20" textColor="0x3BFE03" bottom="267" horizontalCenter="108.5" fontFamily="Microsoft YaHei"/>
+	<e:Group id="missionInformation" width="126" height="73" right="4" top="687">
+		<e:Image width="126" height="73" x="0" y="0" scale9Grid="7,11,4,5" source="zsbg2"/>
+		<e:Image width="120" y="36" height="2" source="line6" horizontalCenter="0"/>
+
+		<e:Label id="dangqianbo" text="第    波：    只" x="10" y="11" size="18" textColor="0xCDCF8A" visible="false"/>
+		<e:Label id="dangqianbo1" text="10" y="11" size="18" textColor="0x2EFC02" horizontalCenter="-27.5" visible="false"/>
+		<e:Label id="dangqianbo2" text="10" y="11" size="18" textColor="0x2EFC02" horizontalCenter="25.5" visible="false"/>
+		<e:Label id="zongshu" text="总怪物:    只" x="0" y="18" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Label id="zongshu2" text="总怪物:10只" y="10" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="10"/>
+		<e:Label id="jifen" text="积分：" x="27" y="64" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Label text="积分:100" y="45" size="20" id="zongshu0" fontFamily="Microsoft YaHei" textColor="0xffffff" left="10"/>
+	</e:Group>
+	<e:Button id="luckyBossBtn" label="" skinName="SkinBtn0" icon="luckyBossBtn" right="10" y="590"/>
+	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" scaleX="0.9" scaleY="0.9" bottom="128" right="17"/>
+	<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" bottom="333" right="13"/>
+
+
+
+
+
+
+</e:Skin>

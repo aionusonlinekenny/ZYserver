@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinWingSkillItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="75" height="75">
+	<e:Rect id="blackImg" width="75" height="75" x="0" y="0" fillAlpha="0" strokeAlpha="1"/>
+    <e:Image id="iconBg"  left="0" right="0" top="0" bottom="0" scale9Grid="8,8,48,48" source="jinengkuang"/>
+
+    <e:Image id="skillIcon" verticalCenter="0" horizontalCenter="0"/>
+	<e:Image id="icon" horizontalCenter="0" verticalCenter="0" source="suowen3" touchEnabled="false"/>
+
+
+</e:Skin>

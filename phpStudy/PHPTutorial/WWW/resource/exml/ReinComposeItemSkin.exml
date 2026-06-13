@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinReinComposeItem" currentState="open" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="open,close" width.open="155" width.close="155" width="150">
+	<e:Group left="0" right="0" top="0" bottom="0" width="150">
+		<e:Group x="8" y="7" width="150" width.open="155" width.close="155">
+			<e:Image id="bg" width="145" scaleX="1" scaleY="1" width.open="145" width.close="145" height="52" anchorOffsetX.open="0" y.open="0" scale9Grid="40,0,46,57" verticalCenter="0" horizontalCenter="0" source.open="btn2" source.close="btn2_2" source="btn2_2"/>
+			<e:Image id="select" width="63" scaleX="-1" scaleY="1" height="35" anchorOffsetX="0" y="0" verticalCenter="-1" horizontalCenter="56" includeIn="open" source="yeqian6" visible="false"/>
+			<e:Label id="nameLabel" text="" size="20" horizontalCenter.open="0" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="rein_equips" source="rein_equip_sheng" horizontalCenter.open="0" verticalCenter.open="-1" verticalCenter="0" horizontalCenter="0" source.open="rein_equip_shen_png"/>
+		</e:Group>
+		<e:List id="list" x="0" y="41" width="150" itemRendererSkinName="SKinReinComposeLvItem" includeIn="open">
+		</e:List>
+		<e:layout>
+			<e:VerticalLayout gap="0" horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" includeIn="open" x="129" y="0"/>
+</e:Skin>

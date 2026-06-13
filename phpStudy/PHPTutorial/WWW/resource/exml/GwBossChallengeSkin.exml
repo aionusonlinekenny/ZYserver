@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGwBossChallenge" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group horizontalCenter="0" verticalCenter="0" width="484" height="332">
+		<e:Image left="0" right="0" top="2" bottom="0" source="tongyong_dikuang2" scale9Grid="33,6,62,61"/>
+		<e:Image height="23" y="0" source="tongyong_juanzhou" left="0" right="0"/>
+		<e:Image source="tongyong_titlebg" width="249" horizontalCenter="0" y="-15"/>
+		<e:Image height="206" y="38" source="tongyong_dikuang1" scale9Grid="17,15,45,55" width="436" horizontalCenter="0"/>
+		<e:Label id="title" size="22" text="BOSS掉落" horizontalCenter="0" y="-1" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Group id="zwHunt" y="198" scaleX="1" scaleY="1" horizontalCenter="0">
+			<e:Label text="进入条件: " x="1" y="2" size="20" fontFamily="Microsoft YaHei" textColor="0x213847"/>
+			<e:Image source="szyuanbao" width="40" scaleX="1" scaleY="1" left="0" top="0" height="30"/>
+			<e:Label id="yuanbao" text="" size="20" x="32" y="14" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="或" size="20" x="189" y="5" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x213847"/>
+			<e:Image id="ticket" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30" x="215" y="0" scaleX="1" scaleY="1" source="200307_png"/>
+			<e:Label id="num" text="" size="20" x="133" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="/1" size="20" x="199" y="15" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="3"/>
+			</e:layout>
+		</e:Group>
+		<e:Button id="challengeBtn" label="进入" width="120" height="50" skinName="SkinBtn3" horizontalCenter="88" y="255"/>
+		<e:Button id="notBtn" label="取消" horizontalCenter="-88" width="120" height="50" skinName="SkinBtn3" y="255"/>
+		<e:Label id="leftCDText" text="" size="18" horizontalCenter="88" x="65" scaleX="1" scaleY="1" bottom="9" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+		<e:List id="reward" y="66" horizontalCenter="0">
+			<e:layout>
+				<e:HorizontalLayout gap="22"/>
+			</e:layout>
+		</e:List>
+	</e:Group>
+</e:Skin>

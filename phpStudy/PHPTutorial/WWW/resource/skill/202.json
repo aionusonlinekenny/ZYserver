@@ -1,0 +1,13 @@
+[{"type":2,"effectId":"32001","customX":-50,"customY":0,"delay":100,"isRot":1,"scaleX":0.6,"scaleY":0.6},
+{"type":2,"effectId":"32001","customX":-50,"customY":0,"rotation":20,"isRot":1,"delay":100,"scaleX":0.6,"scaleY":0.6},
+{"type":2,"effectId":"32001","customX":-50,"customY":0,"rotation":-20,"isRot":1,"delay":100,"scaleX":0.6,"scaleY":0.6},
+
+{"type":2,"effectId":"32001","customX":0,"customY":0,"delay":100,"isRot":1,"scaleX":0.9,"scaleY":0.9,"playSpeed":0.8},
+{"type":2,"effectId":"32001","customX":0,"customY":0,"rotation":20,"isRot":1,"delay":100,"scaleX":0.9,"scaleY":0.9,"playSpeed":0.8},
+{"type":2,"effectId":"32001","customX":0,"customY":0,"rotation":-20,"isRot":1,"delay":100,"scaleX":0.9,"scaleY":0.9,"playSpeed":0.8},
+
+{"type":2,"effectId":"32001","customX":50,"customY":0,"delay":100,"isRot":1,"scaleX":1.2,"scaleY":1.2,"playSpeed":0.7},
+{"type":2,"effectId":"32001","customX":50,"customY":0,"rotation":20,"isRot":1,"delay":100,"scaleX":1.2,"scaleY":1.2,"playSpeed":0.7},
+{"type":2,"effectId":"32001","customX":50,"customY":0,"rotation":-20,"isRot":1,"delay":100,"scaleX":1.2,"scaleY":1.2,"playSpeed":0.7,"exEff":"201t"},
+
+{"type":99,"delay":200}]

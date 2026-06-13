@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinTeamFbRoom" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" height="948" width="600" >
+	<e:Rect left="0" top="0" bottom="0" right="0" fillAlpha="0.8"/>
+	<e:Group width="500" height="726" horizontalCenter="0" verticalCenter="-3">
+		<e:Image left="4" right="4" top="4" bottom="4" source="tongyongtip1" scale9Grid="12,12,39,52"/>
+		<e:Image source="tongyongtip2" scale9Grid="18,19,3,4" left="0" top="0" bottom="0" right="0"/>
+		<e:Image anchorOffsetY="0" y="4" x="3" source="tfb_bg_jpg"/>
+		<e:Image width="220" height="61" horizontalCenter="0" top="-68" source="whatkuang2_png"/>
+		<e:Group id="roleGroup" height="430" width="497" x="2" y="100" anchorOffsetX="0">
+			<ns1:TeamFbPlayerItemRender id="member1" scaleX="0.8" scaleY="0.8" y="-67" skinName="SkinTeamFbRoleItem" width="450" height="420" x="-101"/>
+			<ns1:TeamFbPlayerItemRender id="member2" scaleX="0.8" scaleY="0.8" y="-67" skinName="SkinTeamFbRoleItem" width="450" height="420" x="226"/>
+			<ns1:TeamFbPlayerItemRender id="leader" y="-36" skinName="SkinTeamFbRoleItem" horizontalCenter="-2" width="450" height="420"/>
+		</e:Group>
+		<e:List id="itemList" useVirtualLayout="false" width="400" horizontalCenter="0" anchorOffsetY="0" height="106" y="478" itemRendererSkinName="SkinItem2">
+			<e:layout>
+				<e:HorizontalLayout gap="32"/>
+			</e:layout>
+		</e:List>
+		<e:Button id="challengeBtn" label="挑   战" skinName="SkinBtn1" horizontalCenter="0" bottom="13"/>
+		<e:Label text="通关奖励本周内只可获取一次" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="611"/>
+		<e:Image horizontalCenter="0" anchorOffsetX="0" y="445" source="tfb_rewardtitle_png"/>
+		<e:Label id="fbName" text="子鼠宫" horizontalCenter="0" size="26" fontFamily="Microsoft YaHei" textColor="0xffff00" top="-48"/>
+		<e:Label id="infoText" text="" horizontalCenter="0.5" bottom="38" size="26" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="passTxt" text="已通关" horizontalCenter="0" bottom="36" fontFamily="Microsoft YaHei" textColor="0x00ff06" size="28"/>
+	</e:Group>
+	<e:Group id="backBtnGroup" width="66" height="71" horizontalCenter="248" verticalCenter="402">
+		<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" icon="tuichu" y="0" horizontalCenter="0"/>
+	</e:Group>
+
+
+
+
+
+
+
+</e:Skin>

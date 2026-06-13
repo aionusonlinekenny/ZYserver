@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinmarkSkillTips" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:PriceIcon="PriceIcon.*" xmlns:ns1="*"  width="600"  height="948" states="skill0,skill1,skill2,skill3,skill4,skill5,skill6" >
+	<w:Config id="15a177a4c02"/>
+	<e:Rect id="closeBtn" left="0" top="0" bottom="0" right="0" fillAlpha="0.6"/>
+
+	<e:Group width="481" height="685" horizontalCenter="-1.5" top="104" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Image id="quali" height="110" top="0" source="quali5" left="0" right="0" anchorOffsetY="0" scale9Grid="8,1,12,5" visible="false"/>
+		<e:Image source="tongyongtip1" scale9Grid="7,6,11,12" touchEnabled="false" left="4" right="4" top="4" bottom="4"/>
+
+		<e:Image id="corner" source="tongyongtip2" scale9Grid="18,18,2,4" touchEnabled="false" anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" top="0" bottom="0"/>
+		<e:Image y="113.65" anchorOffsetX="0" horizontalCenter="1" source="line2" width="455"/>
+		<e:Image anchorOffsetX="0" anchorOffsetY="0" left="31" top="28" source="jinengkuang"/>
+		<e:Image id="skillImg" source="lym_skill1" source.skill0="lym_skill0" source.skill2="lym_skill2" source.skill3="lym_skill3" source.skill4="lym_skill4" source.skill5="lym_skill5" source.skill6="lym_skill6" left="35" top="32" width="68" height="68"/>
+		<e:Group anchorOffsetX="0" width="195" left="119" top="35">
+			<e:Label id="nametxt" text="血食之印" x="0" y="0" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="lvtxt" text="Lv.2" x="116.67" y="0" size="24" fontFamily="Microsoft YaHei" visible.skill0="false" textColor="0xffff00"/>
+			<e:layout>
+				<e:HorizontalLayout gap="27"/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="keyDesctxt"  size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetY="0" height="40" anchorOffsetX="0" width="240" verticalAlign="middle" text="触发概率：15%" top="66" left="119"/>
+		<e:Label id="infoDesctxt" text="汇聚天地灵气，凝聚成灵珠环绕于灵凤身周，激活后可以攻击目标对其造成海量伤害" size="20" anchorOffsetY="0" anchorOffsetX="0" width="423.67" lineSpacing="3" top="126" horizontalCenter="1.5" fontFamily="Microsoft YaHei" textColor="0xffffff" height="57"/>
+		<e:Label id="skillDesctxt" size="20" anchorOffsetY="0" anchorOffsetX="0" width="421" lineSpacing="3" left="29" bottom="85" left.skill3="29" bottom.skill3="85" height="50" text="                 目标倍标记为血食体，攻击血食体将 恢复自身血量2000000点，持续3秒" fontFamily="Microsoft YaHei"/>
+		<e:Label text="技能效果 :" size="20" left="30" bottom="116" textColor="0xec6014" fontFamily="Microsoft YaHei"/>
+		<e:Label id="damageDesctxt" text="                 每个印记将对目标造成100%印记攻 击力+500000伤害(印记攻击力：999999)" size="20" anchorOffsetY="0" anchorOffsetX="0" width="421" lineSpacing="3" left="30" bottom="21" includeIn="skill0" height="50" fontFamily="Microsoft YaHei"/>
+		<e:Label text="伤害效果 :" size="20" left="30" bottom="52" includeIn="skill0" textColor="0xec6014" fontFamily="Microsoft YaHei"/>
+		<e:Image horizontalCenter="1" width="455" bottom="80" source="line2"/>
+		<e:Group id="show" anchorOffsetX="0" width="409.34" horizontalCenter="1" verticalCenter="17" anchorOffsetY="0" height="360.5">
+			<e:Image scale9Grid="5,5,5,4" anchorOffsetX="0" anchorOffsetY="0" left="0" bottom="0" right="0.339999999999975" top="0" source="cd_rewardbg_png"/>
+			<e:Image source="lyr_markbg_jpg" width="398" height="344" anchorOffsetX="0" horizontalCenter="0" verticalCenter="0"/>
+		</e:Group>
+		<e:Button id="update" label="升  级" skinName="SkinBtn3" includeIn="skill1,skill2,skill3,skill4,skill5,skill6" horizontalCenter="0" bottom="13" horizontalCenter.skill1="0" horizontalCenter.skill2="0"  horizontalCenter.skill3="0"  horizontalCenter.skill4="0" horizontalCenter.skill5="0"  horizontalCenter.skill6="0" />
+		<e:Image right="30"  bottom="50" visible.skill0="false"  source="zjmhongdian" visible="false"/>
+		<e:Image id="redpoint" width="20" height="20" x="283" y="616" source="zjmhongdian"/>
+		<e:Group id="cost" horizontalCenter="0" bottom="24" includeIn="skill1,skill2,skill3,skill4,skill5,skill6" horizontalCenter.skill1="0"  horizontalCenter.skill2="0" horizontalCenter.skill3="-38.5"  horizontalCenter.skill4="0"  horizontalCenter.skill5="0" >
+			<e:Label text="升级消耗:" x="0" y="0" size="30" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Image id="costImg" width="40" height="40" x="19" y="2" source="200926_png"/>
+			<e:Label id="costNum" text="X 3" x="10" y="10" size="26" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:layout>
+			<e:HorizontalLayout verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="nextLevel" text="" size="20" bold="true" horizontalCenter="1.5" bottom="23" includeIn="skill1,skill2,skill3,skill4,skill5,skill6" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Group id="uieff" x="251.67" y="370" anchorOffsetX="0" anchorOffsetY="0"/>
+	</e:Group>
+	<e:Image x="0" y="0" source="lcskilltip_png" width="600" height="948" alpha="0.7" visible.skill6="false" visible.skill5="false" visible.skill4="false" visible.skill3="false" visible.skill1="false" visible.skill2="false" visible="false"/>
+</e:Skin>

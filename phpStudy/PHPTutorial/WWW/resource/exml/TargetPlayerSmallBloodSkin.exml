@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinTargetPlayerSmallBlood" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="playerBloodGroup" width="480" horizontalCenter="53" x="-24" top="150">
+		<e:Group id="neiGong" width="176" y="73" x="91.5" height="28">
+		<e:Image source="zdbosshudunxuetiaobg" y="0" x="0"/>
+		<e:ProgressBar id="hudunbloodBar0" value="100" width="177" x="1" height="8" y="2" skinName="Skinbar9"/>
+		<e:Label id="proLab1" text="护盾归0时触发抽奖" y="10.5" size="16" horizontalCenter="-3" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" x="80" visible="false"/>
+		</e:Group>
+		<e:Image y="30" x="76" source="rolenamebg"/>
+		<e:Image x="66.5" y="29.5" source="bosstouxiangjinbian"/>
+		<e:Image x="66.5" y="92" source="bosstouxiangjinbian" scaleY="-1"/>
+		<e:Image y="49" x="89.6" source="rolebloodbg" scale9Grid="33,3,201,18"/>
+		<e:Image x="27.5" y="28.5" source="guildkuangbg" scaleX="0.75" scaleY="0.75"/>
+		<e:Scroller id="bosshp1" width="263" height="21" x="90" y="50">
+		<e:Group id="bosspanel1">
+			<e:Image id="grayImg" y="0" x="0" source="bosshp2" height="22" width="264"/>
+			<e:Image id="bloodBar" y="0" x="0" scale9Grid="212,2,3,10" source="bosshp1"/>
+		</e:Group>
+		</e:Scroller>
+		<e:Image id="head" y="27.5" x="25" source=""/>
+		<e:ProgressBar id="bloodBar0" y="53" value="50" skinName="Skinbar7" width="233" x="92" visible="false"/>
+		<e:Image width="69" height="71" x="24" y="26" source="guildkuang"/>
+		<e:Label id="lvTxt0" y="30" size="20" text="Lv.2000" x="110.5" width="70" textAlign="right" textColor="0x00FF00" visible="false"/>
+		<e:Label id="nameTxt" y="30" size="18" text="祖玛教主" x="104" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="230.5" textAlign="left"/>
+		<e:Button id="tipBtn0" label="奖励" x="261" y="14" skinName="SkinBtn18" visible="false"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinhunguStage" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        xmlns:tween="egret.tween.*" includeIn="normalWithPrompt,disabledWithPrompt" width="600"
+        height="948">
+	<w:Declarations></w:Declarations>
+	<w:Config id="158995f2c90"></w:Config>
+	<e:Rect id="bgClose" fillAlpha="0.7" left="0" top="0" right="0" bottom="0"/>
+	<e:Group id="anigroup" horizontalCenter="0" width="578" anchorOffsetY="0" height="735" verticalCenter="0">
+		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="0" width="300"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image anchorOffsetX="0" anchorOffsetY="0" height="688" source="tongyong_dikuang2" scale9Grid="23,13,74,62" width="574" x="0" top="15"/>
+		<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="541" width="516" scale9Grid="22,20,25,25" top="34" horizontalCenter="0"/>
+		<e:Image source="tongyong_juanzhou" scale9Grid="209,0,69,0" left="0" right="0" top="0"/>
+		<e:Image top="-15" source="tongyong_titlebg" horizontalCenter="0"/>
+		<e:Image id="zuoBG" source="hunguuplevelbg_png" top="70" left="61"/>
+		<e:Image id="youBG" source="hunguuplevelbg_png" top="70" right="65"/>
+
+
+		<e:Label text="龙元升阶" size="22" horizontalCenter="0" top="-3" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+
+
+
+
+		<ns1:ItemBase id="nowItemIcon" horizontalCenter="-128" top="122" skinName="SkinItem2"/>
+		<ns1:ItemBase id="nextItemIcon" horizontalCenter="129" top="122" skinName="SkinItem2"/>
+
+
+
+
+
+
+		<e:Button id="lvUpBtn" label="升   级" skinName="SkinBtn1" horizontalCenter="0" bottom="54"/>
+		<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="603" horizontalCenter="85.5"/>
+
+
+
+
+
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="tongyong_btnclose" scaleX="0.8" scaleY="0.8" top="-11" right="2"/>
+
+
+
+		<e:Group id="attr" width="516" height="200" horizontalCenter="0" verticalCenter="16.5" anchorOffsetY="0">
+			<e:Image id="attrBg" anchorOffsetX="0" anchorOffsetY="0" height="193" width="516" source="hgsjtextbg" scale9Grid="109,15,122,19" horizontalCenter="0" top="0"/>
+			<e:Image id="jiantou" source="jiantouyou" horizontalCenter="0.5" verticalCenter="-20"/>
+
+			<e:Group id="nowAttr" anchorOffsetX="0" width="197" horizontalCenter="-129.5" height="180" top="5">
+
+				<e:Label id="attrNowText" text="当 前" y="0" size="20" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+				<e:Group id="nowFightGroup" horizontalCenter="0" scaleX="0.75" scaleY="0.75" top="128">
+					<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel"/>
+				</e:Group>
+				<e:Label id="attr1Now0" text="攻击：xxx" y="30" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45"/>
+				<e:Label id="attr2Now0" text="攻击：xxx" y="57" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45" visible="false"/>
+				<e:Label id="attr3Now0" text="攻击：xxx" y="84" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45" visible="false"/>
+				<e:Label id="hunyuNow" text="龙晶数量：5" y="112" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45"/>
+			</e:Group>
+			<e:Group id="nextAttr" anchorOffsetX="0" width="197" horizontalCenter="151.5" top="5">
+
+				<e:Label id="attrNextText" text="下一阶" y="0" size="20" horizontalCenter="-26.5" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+				<e:Group id="nextFightGroup" horizontalCenter="0" top="128" scaleX="0.75" scaleY="0.75">
+					<ns1:PowerPanel id="powerPanel1" skinName="SkinPowerPanel"/>
+				</e:Group>
+
+				<e:Label id="attr1Next0" text="攻击：xxx" y="30" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30"/>
+				<e:Label id="attr2Next0" text="攻击：xxx" y="57" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30" visible="false"/>
+				<e:Label id="attr3Next0" text="攻击：xxx" y="84" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30" visible="false"/>
+				<e:Label id="hunyuNext" text="龙晶数量：5" y="112" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="cost" width="466" height="99" verticalCenter="153" anchorOffsetY="0" horizontalCenter="0">
+
+
+
+			<e:List id="getItemList" height="85" width="90" horizontalCenter="33" verticalCenter="-5" itemRendererSkinName="SkinItem2">
+				<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="30"/>
+				</e:layout>
+			</e:List>
+			<e:Label id="costText" text="升阶消耗" size="20" horizontalCenter="-77.5" verticalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+
+
+	</e:Group>
+</e:Skin>

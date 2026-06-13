@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OSADailyRechargeItem" width="549" height="132" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0" source="scitembg_png" scale9Grid="56,64,10,11"/>
+		<e:List id="reward" verticalCenter="0" left="14" itemRenderer="KaifuItemBase">
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="7"/>
+		</e:layout>
+		</e:List>
+		<e:Button id="getBtn" label="领取" verticalCenter="10.5" width="140" height="55" skinName="SkinBtn5" horizontalCenter="157.5"/>
+		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="56" verticalCenter="-7.5" visible="false"/>
+		<e:BitmapLabel id="info"  y="20" text="累计充值50000元宝" font="num_chongzhi_fnt" scaleX="0.7" scaleY="0.7" horizontalCenter="157.5"/>
+	</e:Group>
+</e:Skin>

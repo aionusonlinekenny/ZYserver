@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinSwitchCD" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" states="revive,switch,exit" >
+	<w:Config id="15c44cc4323"/>
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Image id="background" scale9Grid="21,19,18,32" source=""/>
+	<e:Group horizontalCenter="0" verticalCenter="0" width="280" height="70">
+		<e:Image left="0" right="0" top="0" bottom="0" source="guildwarbg" scale9Grid="1,2,115,45"/>
+		<e:Label id="killName" size="18" x.exit="98" x.switch="98" height.revive="27" width.revive="302" visible.switch="false" textAlign="center" text.exit="即将退出仙宫争霸活动" includeIn="revive,switch" y.revive="6" x.revive="89" horizontalCenter="0" y="7" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="guildName" size="18" textAlign="center" includeIn="revive" horizontalCenter="0" y="30" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="即将退出仙宫争霸活动" size="18" textAlign="center" includeIn="exit" verticalCenter="-19" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="mapName" text="仙宫殿前" size="18" includeIn="switch" horizontalCenter="44" verticalCenter="-19" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="timeDown" size="18" textAlign="center" text="" horizontalCenter="0" verticalCenter="21" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label text="即将前往：" includeIn="switch" size="18" horizontalCenter="-50" verticalCenter="-19" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+	<e:Button id="closeBtn" label="关闭" x.switch="361" y.switch="503" x.exit="361" y.exit="503" skinName="SkinBtn6" width="89" horizontalCenter="0" verticalCenter="61" icon="btn2_2" scaleX="0.6" scaleY="0.6" visible.revive="false"/>
+</e:Skin>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinWeiWang" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        xmlns:tween="egret.tween.*" width="600"
+        height="728">
+	<w:Declarations></w:Declarations>
+	<w:Config id="158995f2c90"></w:Config>
+	<e:Group width="600" height="728" horizontalCenter="0" verticalCenter="0">
+		<e:Image width="600" horizontalCenter="0" source="rankbg_png" anchorOffsetY="0" anchorOffsetX="0" top="0" x="-273" y="-195"/>
+		<e:Group width="600" height="415" top="0" horizontalCenter="0" scrollEnabled="false">
+
+			<e:Image id="stage3" width="138" height="115" right="57" top="284" source="optaizi_png"/>
+			<e:Image id="stage2" width="138" height="115" top="284" source="optaizi_png" left="57"/>
+			<e:Image id="stage0" horizontalCenter="0" width="196" height="163" top="310" source="optaizi_png"/>	
+		</e:Group>
+
+		<e:Group id="praiseGroup0" scaleX="0.8" scaleY="0.8" horizontalCenter="166.5" verticalCenter="44.5">
+			<e:Image id="wingImg0" horizontalCenter="44" scaleX="0.8" scaleY="0.8" source="wing00_png" verticalCenter="-68.5"/>
+			<e:Image id="weaponImg0" horizontalCenter="-203" source="weapon101_0_c_png" scaleX="0.8" scaleY="0.8" verticalCenter="78.5"/>
+			<e:Image id="bodyImg0" horizontalCenter="-10" scaleX="0.8" scaleY="0.8" source="body101_0_c_png" touchEnabled="true" verticalCenter="-58.5"/>
+		</e:Group>
+		<e:Group id="praiseGroup1" scaleX="0.8" scaleY="0.8" verticalCenter="12.5" horizontalCenter="-10">
+			<e:Image id="wingImg1" horizontalCenter="44" scaleX="0.8" scaleY="0.8" source="wing00_png" verticalCenter="-68.5"/>
+			<e:Image id="weaponImg1" horizontalCenter="-203" source="weapon101_0_c_png" scaleX="0.8" scaleY="0.8" verticalCenter="78.5"/>
+			<e:Image id="bodyImg1" horizontalCenter="-10" scaleX="0.8" scaleY="0.8" source="body101_0_c_png" touchEnabled="true" verticalCenter="-58.5"/>
+		</e:Group>
+		<e:Group id="praiseGroup2" scaleX="0.8" scaleY="0.8" horizontalCenter="339.5" verticalCenter="12.5">
+			<e:Image id="wingImg2" horizontalCenter="44" scaleX="0.8" scaleY="0.8" verticalCenter="-68.5" source="wing00_png"/>
+			<e:Image id="weaponImg2" horizontalCenter="-203" source="weapon101_0_c_png" scaleX="0.8" scaleY="0.8" verticalCenter="78.5"/>
+			<e:Image id="bodyImg2" horizontalCenter="-10" scaleX="0.8" scaleY="0.8" source="body101_0_c_png" touchEnabled="true" verticalCenter="-58.5"/>
+		</e:Group>
+
+		<e:Group horizontalCenter="-6.5" top="7">
+			<e:Image id="title0" touchEnabled="true" y="0" x="0" source="prestige_top_0"/>
+			<e:Group horizontalCenter="0" verticalCenter="0" height="45" width="170">
+			<e:Label text="威望排行榜第1名" size="18" horizontalCenter="0" top="5" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="" size="18" id="name0" horizontalCenter="0" bottom="2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			</e:Group>
+			<e:layout>
+			<e:VerticalLayout horizontalAlign="center" gap="-2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group top="59" left="42">
+			<e:Image id="title1" touchEnabled="true" source="prestige_top_1" y="0" x="0"/>
+			<e:Group horizontalCenter="0" verticalCenter="0" height="45" width="170">
+			<e:Label text="威望排行榜第2名" size="18" top="4" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0.5"/>
+			<e:Label text="" size="18" id="name1" horizontalCenter="0" bottom="2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			</e:Group>
+			<e:layout>
+			<e:VerticalLayout horizontalAlign="center" gap="219"/>
+			</e:layout>
+		</e:Group>
+		<e:Group top="59" right="42">
+			<e:Image id="title2" touchEnabled="true" y="0" x="0" source="prestige_top_2"/>
+			<e:Group horizontalCenter="0" verticalCenter="0" height="45" width="170">
+			<e:Label text="威望排行榜第3名" size="18" horizontalCenter="0" top="4" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="" size="18" id="name2" horizontalCenter="0" bottom="2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			</e:Group>
+			<e:layout>
+			<e:VerticalLayout horizontalAlign="center" gap="217"/>
+			</e:layout>
+		</e:Group>
+
+		<e:Group width="254" horizontalCenter="0" top="351" height="66">
+			<e:Image left="0" right="0" top="0" bottom="0" source="bantoutiaobg9" scale9Grid="72,2,17,42"/>
+			<e:Label text="当前：" size="20" horizontalCenter="-80" fontFamily="Microsoft YaHei" textColor="0xffffff" top="10"/>
+			<e:Label id="info" text="每日0点回收1000威望" size="18" y="38" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Image id="myTitle" source="prestige_title_2" left="75" top="5" width="111" height="30"/>
+			<e:Label id="overViewTxt" text="威望预览" size="20" verticalAlign="middle" textAlign="center" touchEnabled="true" horizontalCenter="95" fontFamily="Microsoft YaHei" textColor="0x00ff06" top="10"/>
+		</e:Group>
+		<e:Image width="580" horizontalCenter="0" source="tongyong_dikuang4" scale9Grid="10,10,60,60" anchorOffsetY="0" x="10" height="200" y="427.04"/>
+		<e:Image width="253" source="huabian" horizontalCenter="0.5" scale9Grid="71,0,67,50" verticalCenter="78"/>
+		<e:Image width="100" horizontalCenter="0" source="yupei_wsxg" verticalCenter="87"/>
+
+		<e:Group height="70" width="580" horizontalCenter="0" verticalCenter="128">
+			<e:Image width="75" height="75" scale9Grid="31,30,2,2" left="21" source="jinengkuang" verticalCenter="0.5"/>
+			<e:Image id="deter" anchorOffsetX="0" anchorOffsetY="0" touchEnabled="true" source="ZSprestige" left="27" verticalCenter="1"/>
+			<e:Image source="yupei_wssh" x="100" y="14" visible="false"/>
+			<e:Label id="desc" text="" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0" textAlign="left" width="455" left="115"/>
+		</e:Group>
+		<e:Group id="attrGroup" anchorOffsetY="0" bottom="105" height="110" left="0" right="0">
+			<e:Group id="notMaxGroup" width="500" horizontalCenter="0" verticalCenter="0">
+			<e:Label id="curAtt" text="" size="20" textAlign="left" verticalAlign="middle" verticalCenter="0" fontFamily="Microsoft YaHei" lineSpacing="4" textColor="0xffffff" left="60"/>
+			<e:Label id="nextAtt" text="" size="20" textAlign="left" verticalAlign="middle" verticalCenter="0" y="0" fontFamily="Microsoft YaHei" lineSpacing="4" textColor="0xffffff" right="30" width="143"/>
+			<e:Image id="cursor" source="jiantouyou" verticalCenter="0" horizontalCenter="0"/>
+			</e:Group>
+			<e:Group id="maxShowGroup" width="500" horizontalCenter="0" verticalCenter="0">
+			<e:Label id="maxCurAtt" text="" size="20" height="72" textAlign="left" verticalAlign="middle" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" width="108" textColor="0xffffff"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="barGroup" width="520" height="20" horizontalCenter="0" bottom="69">
+			<e:Image id="barBg" source="jingyantiao1" verticalCenter="0" left="0" right="0" scale9Grid="26,0,12,22"/>
+			<e:ProgressBar id="expBar" maximum="100" value="40" skinName="SkinWingExpBar" slideDuration="0" width="481" height="16" verticalCenter="0" horizontalCenter="0"/>
+			<e:Label id="expLabel" text="100/100" size="18" width="460" verticalAlign="middle" textAlign="center" height="18" verticalCenter="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		</e:Group>
+		<e:Group id="dinghong" width="556" height="39" bottom="0" horizontalCenter="0" anchorOffsetY="0">
+			<e:Label id="getItemTxt" text="获取威望" size="20" height="20" verticalAlign="middle" width="80" textAlign="center" touchEnabled="true" horizontalCenter="170" bottom="15" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Group horizontalCenter="-170" bottom="15">
+			<e:Label id="findItemTxt" text="找回威望" size="20" verticalAlign="middle" textAlign="center" touchEnabled="true" horizontalCenter="0" fontFamily="Microsoft YaHei" bottom="0" textColor="0x00ff06"/>
+			</e:Group>
+		</e:Group>
+		<e:Button id="checkBtn" label="查看排名" skinName="SkinBtn6" width="180" height="60" bottom="-5" horizontalCenter="0" icon="btn1_2"/>
+		<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-267" y="8" visible="false"/>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" right="0" visible="false"/>
+	</e:Group>
+</e:Skin>

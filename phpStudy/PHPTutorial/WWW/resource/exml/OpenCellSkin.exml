@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinOpenCell" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" states="normal,sure,check" >
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6" width="600" height="948"/>
+	<e:Group width="484" height="332" horizontalCenter="0" anchorOffsetY="0" y="278">
+		<e:Image left="0" right="0" scale9Grid="40,31,15,15" source="tongyong_dikuang2" width="484" height="314" y="17"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" width="481" height="23" scaleY="1" scaleX="1"/>
+		<e:Image left="109" right="108" source="tongyong_titlebg" y="-15" anchorOffsetX="0" width="249"/>
+		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="172" width="419" scale9Grid="22,20,25,25"/>
+		<e:Label id="title" size="22" text="开启背包"     horizontalCenter="0.5" y="-3.35" bold="false" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Button id="decBtn" label="按钮" skinName="SkinBtn0" icon="btn-" width="36" height="37" y="98" x="134"/>
+		<e:Button id="addBtn" label="按钮" skinName="SkinBtn0" icon="btnadd" width="36" height="37" y="98" x="311"/>
+		<e:Image width="131" height="38" scale9Grid="6,6,3,3" source="shuzibg" y="97" x="175"/>
+		<e:Label id="count" text="1" width="131" textAlign="center" size="22" height="38" verticalAlign="middle" y="97" fontFamily="Microsoft YaHei" x="175"/>
+
+		<e:Button skinName="SkinBtn6" label="确定" id="sureBtn" bottom="20" horizontalCenter="89" width="120" height="50" icon="btn3"/>
+		<e:Button skinName="SkinBtn6" label="取消" id="cancelBtn" bottom="20" width="120" height="50" horizontalCenter="-89" icon="btn3_1"/>
+		<e:Button id="closeBtn" width="54" height="54" y="-14" x="437" skinName="SkinBtn0" icon="tongyong_btnclose">
+
+		</e:Button>
+		<e:Group  y="217" anchorOffsetY="0" horizontalCenter="0">
+			<e:Label id="count0" text="消耗元宝：" textAlign="center" size="22" height="38" verticalAlign="middle" y="-113" fontFamily="Microsoft YaHei" x="-49" scaleX="1" scaleY="1" textColor="0xffff00"/>
+			<ns1:PriceIcon id="price" skinName="SkinPriceIcon" y="0" x="50" scaleX="1" scaleY="1"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center"/>
+			</e:layout>
+		</e:Group>
+
+
+
+
+	</e:Group>	
+</e:Skin>

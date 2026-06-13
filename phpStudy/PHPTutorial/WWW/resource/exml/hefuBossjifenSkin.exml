@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="hefuBossjifenSkin" currentState="hefu" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="hefu,lyring"  width="600" height="948">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.7"/>
+	<e:Group verticalCenter="-24" horizontalCenter="0" width="600" height="659">
+		<e:Group width="582" height="651" horizontalCenter="0" top="0">
+			<e:Image left="0" right="0" top="0" bottom="0" source="tongyong_dikuang2" scale9Grid="43,18,38,43"/>
+			<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="209,2,59,19" top="0"/>
+			<e:Image width="251" scale9Grid="104,0,32,41" horizontalCenter="-0.5" height="42" top="-18" source="tongyong_titlebg"/>
+			<e:Image source="tongyong_dikuang1" scale9Grid="10,14,57,27" top="35" left="23" right="23" bottom="89" />
+			<e:Label text="积分兑换" horizontalCenter="0.5" size="24" fontFamily="Microsoft YaHei" top="-7" textColor="0x39566A"/>
+			<e:Image source="bantoutiaobg" height="35" width="300" y="666" horizontalCenter="0.5" scale9Grid="182,2,31,30"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" y="672" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" horizontalCenter="0.5"/>
+		</e:Group>
+
+
+
+
+		<e:Scroller width="505" height="506.33" anchorOffsetX.lyring="0" width.lyring="504" x.lyring="8" top="45" anchorOffsetY="0" horizontalCenter="-8" scrollPolicyH="off" anchorOffsetX.hefu="0" horizontalCenter.hefu="-67" top.hefu="45" width.hefu="370">
+			<e:List id="exchangelist" x="265" y="2" itemRendererSkinName="hefuBossItemSkin" anchorOffsetX.lyring="0" width.lyring="367" scaleX.lyring="1" scaleY.lyring="1" itemRendererSkinName.lyring="ringBossItemSkin" anchorOffsetX.hefu="0" width.hefu="374">
+			<e:layout>
+				<e:VerticalLayout gap="0" horizontalAlign.lyring="center"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Scroller width="141" height="503" x="420" includeIn="hefu" top="45">
+			<e:List id="equiplist" x="24.24" y="-22.73" itemRendererSkinName="hefuBossBtnSkin">
+				<e:layout>
+					<e:VerticalLayout/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Group height="61" y="576"  width="549" horizontalCenter="0">
+
+
+
+			<e:Group  x="30" y="20">
+
+				<e:Label text="BOSS积分：" size="20" x="163"  verticalCenter="0.5" y="-12" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="suipian" text="2000" size="20" x="173"  verticalCenter="0.5" y="-2" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:layout>
+				<e:HorizontalLayout gap="0" verticalAlign="bottom"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="0" scaleX="0.9" scaleY="0.9" right="0" visible="false"/>
+	</e:Group>
+</e:Skin>

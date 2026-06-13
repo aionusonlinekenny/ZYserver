@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuardGodWeaponQuiteTip" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" width="600" height="948">
+	<w:Config id="1586b36a128"/>
+	<e:Rect id="BG" fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" horizontalCenter="0" width="484" height="332" verticalCenter="0">
+		<e:Image left="0" right="0" scale9Grid="40,31,15,15" source="tongyong_dikuang2" width="484" height="314" y="17"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" width="481" height="23" scaleY="1" scaleX="1"/>
+		<e:Image left="109" right="108" source="tongyong_titlebg" y="-15" anchorOffsetX="0" width="249"/>
+		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="206" width="419" scale9Grid="22,20,25,25"/>
+
+
+		<e:Label text="退出提示" size="24" y="-3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label id="desc" text="将按当前击杀波数发放奖励\n\n是否继续退出？" size="20" y="88" width="304" height="73" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x213847"/>
+		<e:Image scale9Grid="85,1,6,1" y="336" source="bantoutiaobg" width="360" horizontalCenter="0" height="36"/>
+
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-30" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Button id="closeBtn" label="取消" horizontalCenter="-94" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3_1"/>
+		<e:Button id="up" label="退出" horizontalCenter="95" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3"/>
+
+	</e:Group>
+</e:Skin>

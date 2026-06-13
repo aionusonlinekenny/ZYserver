@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinSupportRank" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group id="anigroup" horizontalCenter="0" verticalCenter="-57" width="490" height="536">
+		<e:Image anchorOffsetX="0" scale9Grid="34,20,1,1" source="tongyong_dikuang2" left="3" right="3" top="12" bottom="12"/>
+		<e:Image source="tongyongbg5" width="419" height="375" horizontalCenter="0" verticalCenter="-27.5" scale9Grid="8,5,11,9"/>
+		<e:Group width="419" horizontalCenter="0" top="45">
+			<e:Label y="18" text="排名" size="20" horizontalCenter="-164.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
+			<e:Label y="18" text="角色名" size="20" horizontalCenter="-58.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
+			<e:Label y="18" text="人气" size="20" horizontalCenter="63.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
+			<e:Label y="18" text="操作" size="20" horizontalCenter="158.5" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+		</e:Group>
+		<e:Scroller id="scrollerList" scrollPolicyH="off" scaleX="1" scaleY="1" anchorOffsetY="0" anchorOffsetX="0" width="406" height="326.33" y="94" horizontalCenter="0">
+		<e:List id="list" x="-3" y="30" itemRendererSkinName="SkinSupportRecordItem">
+			<e:layout>
+			<e:VerticalLayout gap="2"/>
+			</e:layout>
+		</e:List>
+		</e:Scroller>
+		<e:Image source="tongyong_juanzhou" scale9Grid="244,3,22,7" top="5" width="481" horizontalCenter="-1.5"/>
+		<e:Image top="-12" width="249" horizontalCenter="-1.5" source="tongyong_titlebg" scale9Grid="117,3,16,7"/>
+		<e:Label size="22" text="人气排行" horizontalCenter="0" textColor="0x084151" fontFamily="Microsoft YaHei" top="2"/>
+		<e:Group id="dinghong" width="480" height="60" bottom="10" horizontalCenter="0" visible="false">
+			<e:Image top="0" bottom="0" source="bantoumingkuang3" left="0"/>
+			<e:Image scaleX="-1" top="0" bottom="0" source="bantoumingkuang3" right="0"/>
+		</e:Group>
+		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-36" x="75" y="646" scaleX="1" scaleY="1">
+		<e:Image height="40" horizontalCenter="0" width="383" source="bantoutiaobg" scale9Grid="66,8,244,20" verticalCenter="0"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0"/>
+		</e:Group>
+		<e:Label text="5战3胜制" x="204" y="540" size="20" textColor="0x00ff00" visible="false"/>
+		<e:Label text="每日最多点赞3次" size="20" bottom="53" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Button id="closebtn" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="221" top="-9" x="448" y="-164" scaleX="1" scaleY="1"/>
+	</e:Group>
+	<e:Image source="renqipaiming_png" alpha="0.7" visible="false"/>
+</e:Skin>

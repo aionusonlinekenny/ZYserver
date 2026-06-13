@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Skinrichman" width="600" height="948" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group width="600" horizontalCenter="0" top="0" bottom="0">
+		<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+  		<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
+
+		<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" width="600" horizontalCenter="0" top="-1"/>
+		<e:Image id="title" source="richman_title" top="10" horizontalCenter="-228"/>
+
+
+		<e:Image anchorOffsetY="0" height="36" anchorOffsetX="0" width="252" horizontalCenter="0" source="richman_textbg" top="59"/>
+		<e:Label id="count" text="当前圈数： 999" size="20" textAlign="center" anchorOffsetX="0" width="266" anchorOffsetY="0" height="27" verticalAlign="middle" horizontalCenter="0" top="62" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image id="tablebg" width="394" horizontalCenter="0" scale9Grid="60,0,99,3" source="richman_BG_png" top="279"/>
+
+
+
+		<e:Group height="150" verticalCenter="129" width="600" horizontalCenter="0">
+			<e:Label id="desc" text="点击骰子移动" size="18" textColor="0xF8B141" textAlign="center" anchorOffsetX="0" width="266" anchorOffsetY="0" height="27" verticalAlign="middle" scaleX="1" scaleY="1" x="35" y="123" visible="false"/>
+			<e:Button id="go" label="Button" skinName="SkinBtn0" icon="btn2" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" verticalCenter="0" left="75"/>
+			<e:Label id="y1" text="元宝" size="24" anchorOffsetX="0" width="55" anchorOffsetY="0" height="26" scaleX="1" scaleY="1" horizontalCenter="-180.5" fontFamily="Microsoft YaHei" textColor="0x1b3046" verticalCenter="2"/>
+			<e:Label id="paycount" text="500" size="24" anchorOffsetX="0" width="45" anchorOffsetY="0" height="20" scaleX="1" scaleY="1" horizontalCenter="-85.5" fontFamily="Microsoft YaHei" textColor="0x1b3046" verticalCenter="1"/>
+			<e:Image id="y2" source="szyuanbao" scaleX="0.8" scaleY="0.8" horizontalCenter="-130" verticalCenter="1"/>
+			<e:Button id="autoGo" label="自动掷骰子" icon="btn2" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" skinName="SkinBtn1" verticalCenter="0" right="75"/>
+			<e:Label text="优先消耗骰子 (当前拥有       )" size="20" anchorOffsetX="0" width="273" anchorOffsetY="0" height="18" scaleX="1" scaleY="1" bottom="5" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+			<e:Label id="dicecount" text="999" size="20" textAlign="center" anchorOffsetX="0" width="68" anchorOffsetY="0" height="18" verticalAlign="middle" scaleX="1" scaleY="1" horizontalCenter="98" bottom="5" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+		</e:Group>
+		<e:Group id="millionaireViewPane" height="386"  width="513" left="44" top="110">
+		</e:Group>
+		<e:Group id="reward" width="593" height="103" anchorOffsetX="0" horizontalCenter="0" bottom="140">
+			<e:Image width="593" scaleX="1" scaleY="1" scale9Grid="4,3,20,8" source="heart_sxbh_bg" height="103" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="barbg" width="437" source="jingyantiao6" scaleX="1" scaleY="1" scale9Grid="4,3,20,8" horizontalCenter="0" height="19" top="37"/>
+			<e:ProgressBar id="bar1" width="90" height="16" skinName="Skinbar1" top="38" left="88" value="100"/>
+			<e:ProgressBar id="bar2" width="103" height="16" x="246" skinName="Skinbar1" top="38"/>
+			<e:ProgressBar id="bar3" width="100" height="16" x="412" skinName="Skinbar1" top="38"/>
+
+			<e:Image id="box0under" x="18" y="0" source="richman_rewardunder"/>
+			<e:Image id="box1under" source="richman_rewardunder" y="0" x="177"/>
+			<e:Image id="box2under" y="0" source="richman_rewardunder" x="343"/>
+			<e:Image id="box3under" source="richman_rewardunder" y="0" x="510"/>
+			<e:Group id="group1" width="593" height="102" anchorOffsetX="0" top="0" left="0">
+			<e:Image id="box1" x="9" y="0" source="richman_reward" scaleX="1" scaleY="1"/>
+			<e:Image id="box2" y="0" scaleX="1" scaleY="1" source="richman_reward1" x="170"/>
+			<e:Image id="box3" scaleX="1" scaleY="1" source="richman_reward2" x="337" y="0"/>
+			<e:Image id="box4" scaleX="1" scaleY="1" source="richman_reward3" x="504" y="0"/>
+			</e:Group>
+			<e:Group id="group2" x="43" y="110" width="455" height="102" visible="false">
+			<e:Image id="box5" x="0" y="12" source="richman_reward" scaleX="1" scaleY="1"/>
+			<e:Image id="box6" x="126" y="11" source="richman_reward" scaleX="1" scaleY="1"/>
+			<e:Image id="box7" x="243" y="12" scaleX="1" scaleY="1" source="richman_reward"/>
+			<e:Image id="box8" x="364" y="12" scaleX="1" scaleY="1" source="richman_reward"/>
+			</e:Group>
+			<e:Label id="box0desc" text="第1圈" size="18" anchorOffsetX="0" width="70" anchorOffsetY="0" height="20" y="76" x="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="box1desc" text="第3圈" size="18" anchorOffsetX="0" width="70" anchorOffsetY="0" height="20" y="77" x="175" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="box2desc" text="第5圈" size="18" anchorOffsetX="0" width="70" anchorOffsetY="0" height="20" y="77" x="343" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="box3desc" text="第10圈" size="18" anchorOffsetX="0" width="70" anchorOffsetY="0" height="20" y="77" x="512" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		</e:Group>
+		<e:Group id="touchGroup" width="550" height="102" horizontalCenter="0" bottom="140" visible="false">
+			<e:Image id="arrowleft" source="jiantouxuan" scaleX="1" scaleY="1" verticalCenter="0" left="5"/>
+			<e:Image id="arrowright" source="jiantouxuan" scaleX="-1" scaleY="1" verticalCenter="0" right="5"/>
+		</e:Group>
+		<e:Image id="dice" source="richman_dice6" scaleX="1.5" scaleY="1.5" horizontalCenter="0.5" top="220"/>
+		<e:Button id="btnclose" label="Button" skinName="SkinBtn0" icon="chatclose" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" top="51" right="0" width="54"/>
+	</e:Group>
+
+
+
+</e:Skin>

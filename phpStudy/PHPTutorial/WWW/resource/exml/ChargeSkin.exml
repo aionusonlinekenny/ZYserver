@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinCharge" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15d3fece326"/>
+
+
+	<e:Image top="31" bottom="-63" width="600" horizontalCenter="0" source="chongzhidabig_jpg"/>
+
+
+	<e:Image width="562" top="88" horizontalCenter="-1" alpha="1" source="tongyongbgred" bottom="41" scale9Grid="29,23,28,30"/>
+
+	<e:Image horizontalCenter="0" width="600" height="41" x="10" source="chongzhidi_png" bottom="-1"/>
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" width="600" horizontalCenter="-1"/>
+	<e:Group width="600" top="0" horizontalCenter="0" touchEnabled="false" touchThrough="true" height="948" anchorOffsetY="0" touchChildren="false" x="10" y="10">
+		<e:Image top="43" left="-1" source="shang_5_png"/>
+		<e:Image y="1.36" source="shang_2_png" width="276" height="98" anchorOffsetX="0" left="0"/>
+		<e:Image top="50" left="27" source="shang_4_png"/>
+		<e:Image source="shang_3_png" top="34" left="70"/>
+		<e:Image id="title0" top="15" left="54" source="chongzhititle_png"/>
+	</e:Group>
+
+
+
+	
+	<e:Group width="600" horizontalCenter="0" height="948" verticalCenter="0">
+
+		<e:Group id="topGroup" width="600" height="100" top="88" horizontalCenter="0">
+
+			<e:Group id="vipGroup" left="25" verticalCenter="0">
+				<e:Image source="viphuizhang"/>
+			</e:Group>
+
+			<e:Group horizontalCenter="-41.5" bottom="20">
+				<e:Label text="再充值" id="tipsText" size="20" fontFamily="Microsoft YaHei" textAlign="center"/>
+				<e:layout>
+					<e:HorizontalLayout gap="2"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:Button id="vipBtn" label="查看VIP" height="48" icon="czbtn3" skinName="SkinBtn0" left="440" width="166" top="118" scaleX="0.7" scaleY="0.7"/>
+		<e:Scroller id="scrollBar" width="552" top="201" horizontalCenter="0">
+			<e:List id="list" itemRendererSkinName="SkinChargeItem">
+				<e:layout>
+					<e:TileLayout requestedColumnCount="2" horizontalAlign="center" verticalAlign="middle" rowAlign="top" columnAlign="justifyUsingWidth" verticalGap="0" horizontalGap="4"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+
+
+	</e:Group>
+
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="return" bottom="0" horizontalCenter="259.5" height="108"/>
+</e:Skin>

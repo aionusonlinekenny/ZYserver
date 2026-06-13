@@ -1,0 +1,18 @@
+[2024-12-02 17:31:58]GateWay[GameWorld9] Started 
+[2024-12-02 17:31:58]================================================ 
+[2024-12-02 17:31:58]Gateway start ok,kernal 2.0, Select Mode 
+[2024-12-02 17:31:58]spf:view status 
+[2024-12-02 17:31:58]quit:stop server and exit 
+[2024-12-02 17:31:58]================================================ 
+[2024-12-02 17:31:59]connect fail! GameWorld9  10061 由于目标计算机积极拒绝，无法连接。
+[2024-12-02 17:31:59]Free Sesssion Memory!count:8192 
+[2024-12-02 17:31:59]Free Sesssion Memory:free memory size:0, processed session count=8192 
+[2024-12-02 17:32:04]connect fail! GameWorld9  10061 由于目标计算机积极拒绝，无法连接。
+[2024-12-02 17:32:08]GameWorld Connected 
+[2024-12-02 17:32:08]GameWorld9 server succ 
+[2024-12-02 17:37:00]Free Sesssion Memory!count:8192 
+[2024-12-02 17:37:00]Free Sesssion Memory:free memory size:0, processed session count=8192 
+[2024-12-02 17:37:45]GameWorld Socket Error  10054 远程主机强迫关闭了一个现有的连接。
+[2024-12-02 17:37:45]GameWorld Connection Closed 
+[2024-12-02 17:37:45]GameWorld9 server disconnect! 
+[2024-12-02 17:37:45]GameWorld9 client socket error! 10054 远程主机强迫关闭了一个现有的连接。

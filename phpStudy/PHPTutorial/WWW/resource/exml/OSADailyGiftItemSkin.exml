@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OSADailyGiftItemSkin" width="549" height="132" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0" source="scitembg_png" scale9Grid="51,60,21,18"/>
+		<e:Label id="times" text="可购买：1/1" size="18" verticalCenter="-44" right="30" fontFamily="Microsoft YaHei" textColor="0x7b3316"/>
+		<e:Label id="already" text="已领取" size="24" left="434" verticalCenter="4" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+		<e:Button id="get" label="购买" verticalCenter="0.5" right="10" skinName="SkinBtn16"/>
+		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="9" verticalCenter="-19.5" visible="false"/>
+		<e:Group id="discountSrc" top="4" left="16">
+			<e:Image scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="shangzk0_png" top="0"/>
+			<e:BitmapLabel id="discountNum" y="1" font="num_xvip_4_fnt" text="58" letterSpacing="-1" horizontalCenter="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Group id="vip" y="9" anchorOffsetY="0" height="33" horizontalCenter="57.5">
+			<e:Image source="vipvip_png" x="-3" y="-3" scaleX="1" scaleY="1"/>
+			<e:BitmapLabel id="vipLv" x="48" y="0" text="6" scaleX="1" scaleY="1" font="num_vip3_v_fnt"/>
+			<e:Label text="特权" x="25" y="7" size="18" textColor="0xffffb1" fontFamily="Microsoft YaHei" strokeColor="0xe34032" stroke="1"/>
+			<e:layout>
+				<e:HorizontalLayout gap="4" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:List id="reward" verticalCenter="3" left="82" itemRendererSkinName="SkinItem2">
+			<e:layout>
+				<e:HorizontalLayout gap="9"/>
+			</e:layout>
+		</e:List>
+		<e:Group y="37" horizontalCenter="57">
+			<e:Label text="原价：" size="20" verticalCenter="-11" x="0" y="11" scaleX="1" scaleY="1" textColor="0x7b3316" fontFamily="Microsoft YaHei"/>
+			<e:Label id="original" text="10000" size="20" verticalCenter="-11" x="60" y="11" scaleX="1" scaleY="1" textColor="0x7b3316" fontFamily="Microsoft YaHei"/>
+			<e:Label id="now" text="10000" size="20" verticalCenter="16" x="60" y="38" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x7b3316"/>
+			<e:Label text="现价：" size="20" verticalCenter="16" x="0" y="38" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x7b3316"/>
+			<e:Image source="tongyongline2" x="-2" height="6" verticalCenter="-10" y="19" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

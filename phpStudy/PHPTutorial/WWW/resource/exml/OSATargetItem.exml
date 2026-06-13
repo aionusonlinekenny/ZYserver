@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="OSATargetItem" width="549" height="132" currentState="can" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  states="already,zero,can" >
+	<w:Config id="1665cf1abec"/>
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image id="bg" top="0" bottom="0" y="0"   source="scitembg_png" scale9Grid="56,62,16,16" left="0" right="0"/>
+		<e:Group id="level"   horizontalCenter="0" verticalCenter="0" visible="false">
+			<e:Image id="lv1" source="attr6_png" x="-76" y="-48"   visible="false"/>
+			<e:Image id="lv0" source="attr0_png" x="-59" y="-48"   visible="false"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="zhuan" x="5" y="32"   visible="false">
+			<e:Image id="zhuanLv" x="0" y="0"   source="attr1_png"/>
+			<e:Label text="转" x="20" y="0" textColor="0xFFFF00" size="20"  />
+		</e:Group>
+		<e:Label id="target" text="累计充值3000元宝" size="18" scaleX="1" scaleY="1" textColor="0xFF9900" right="13" verticalCenter="-40" visible="false"/>
+		<e:Label id="recharge" text="123456/12345" size="18" verticalCenter="43" horizontalCenter="186.5" fontFamily.already="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x00842c" textAlign="center" textColor.already="0x00842c"/>
+		<e:Group   right="15" verticalCenter="0" verticalCenter.can="0" height="124">
+			<e:Button id="get" label="领取" includeIn="can"     verticalCenter="0" horizontalCenter="0" width="176" height="69" icon="btn2_2" skinName="SkinBtn1" scaleX="0.8" scaleY="0.8"/>
+			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian"   x="121.71" verticalCenter="-18.5" visible="false"/>
+			<e:Label id="num" text="剩余3000份" size="16" includeIn="can"   y="97.06" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+		</e:Group>
+		<e:Label id="none" text="被抢光" size="24" includeIn="zero" textColor="0xff0000"   x="432" y="52" fontFamily="Microsoft YaHei"/>
+		<e:Label id="already" text="已领取" size="24" includeIn="already"   x="428" y="52" fontFamily="Microsoft YaHei" textColor="0x00842c" textAlign="center"/>
+		<e:Group   verticalCenter="0" horizontalCenter="-207.5">
+
+			<e:BitmapLabel id="lvName" width="100" height="25" x="26" y="22" font="num_kaifu_fnt" text="总转生数" textAlign="center"/>
+			<e:BitmapLabel id="lvName0" width="100" height="25" x="36" y="32" font="num_kaifu_fnt" text="1200" textAlign="center" letterSpacing="-2"/>
+			<e:layout>
+			<e:VerticalLayout horizontalAlign="center" gap="2"/>
+			</e:layout>
+		</e:Group>
+		<ns1:KaifuItemBase id="item0" x="120"  verticalCenter="0" y="0" skinName="SkinItem2"/>
+		<ns1:KaifuItemBase id="item1" x="210"  verticalCenter="0" y="0" skinName="SkinItem2"/>
+		<ns1:KaifuItemBase id="item2" x="300"  verticalCenter="0" y="0" skinName="SkinItem2"/>
+	</e:Group>		
+</e:Skin>

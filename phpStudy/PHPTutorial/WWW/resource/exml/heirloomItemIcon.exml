@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="SkinheirloomItemIcon" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="76" height="76" xmlns:euiextension="euiextension.*" xmlns:ns1="*">
+	<w:Config id="1586b29e830"/>
+	<e:Image id="imgRect" left="0" right="0" top="0" bottom="0" scale9Grid="9,9,46,46" width="76" height="76" alpha="1" x="10" y="10" source="quality0" visible="false"/>
+	<e:Image id="imgBg" left="0" right="0" top="0" bottom="0" scale9Grid="9,9,46,46" width="76" height="76" source="quality5" alpha="1"/>
+
+	<e:Image id="imgIcon" width="55" height="55" scaleX="1.25" horizontalCenter="0" verticalCenter="0" scaleY="1.25" source=""/>
+
+	<e:Image id="imgheirloom" horizontalCenter="0" verticalCenter="0" source=""/>
+	<e:Image id="lock" anchorOffsetY="0" anchorOffsetX="0" left="0" right="0" top="0" bottom="0" source="zhuxiansuo_png" visible="false"/>
+</e:Skin>

@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinReincarnateEquipTips" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" width="600" height="948" states="noSpirit0,doSpirit0,noSpirit1,doSpirit1" >
+	<w:Config id="1586b3502a7"/>
+	<e:Rect id="bgClose" fillAlpha="0.7" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" width="350" horizontalCenter="0" touchEnabled="false" verticalCenter="-58">
+		<e:Image id="background" source="tongyongtip1" touchEnabled="false" top="1" right="2" bottom="-80" left="2" scale9Grid="9,6,45,12"/>
+		<e:Image id="background2" source="tongyongtip2" scale9Grid="18,18,43,4" top="0" left="0" right="0" bottom="-80"/>
+		<e:Image id="quali" left="1" right="1" top="1" anchorOffsetY="0" height="371" source="quali4_png" scale9Grid="7,8,12,506"/>
+		<e:Image source="tongyongtip2" left="0" right="0" top="0" bottom="0" scale9Grid="18,18,2,4" touchEnabled="false" visible="false"/>
+		<e:Image y="140" scale9Grid="85,1,6,1" width="340" horizontalCenter="0" source="bantoutiaobg" visible="false"/>
+		<e:Group x="20" y="15">
+			<e:Label id="head" text="" size="20" textAlign="left" textColor="0x90F490" y="10" x="10" bold="true"/>
+			<e:Label id="nameLabel" text="" size="20" textAlign="left" textColor="0x90f490" y="0" x="0" bold="true" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="score" text="" size="18" y="15" textAlign="right" right="20" width="200" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+
+
+		<e:Label y="53" text="部位：" size="18" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="type" y="53" text="" size="18" x="180" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label y="77" text="转生：" size="18" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="lv" y="77" text="" size="18" x="180" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label y="101" text="职业：" size="18" x="120" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+		<e:Label id="career" y="101" text="" size="18" x="180" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="47"/>
+		<e:Image y="132" width="340" horizontalCenter="0" anchorOffsetY="0" height="45" alpha="0.8" source="bantoutiaobg8" scale9Grid="116,5,50,31"/>
+
+		<ns1:PowerPanel id="powerPanel" y="123" x="16" skinName="Skin2PowerPanel"/>
+		<e:Group x="26" top="190" bottom="27">
+			<e:Group id="baseGroup" x="0" y="0"  >
+				<e:Label y="0" text="基础属性" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="25" text="攻击：生命：物抗：法抗：" size="18" verticalAlign="justify" x="22" textAlign="left" width="54" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="attr0" y="25" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attr1" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attr2" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attr3" y="100" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label y="125" text="神圣伤害：神圣精通：" size="18" verticalAlign="justify" x="22" textAlign="left" width="90" lineSpacing="7"  text.noSpirit1="神圣伤害：" text.doSpirit1="神圣伤害：" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="attr4" y="125" text="" size="18" verticalAlign="justify" x="112" textAlign="left"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attr5" y="150" text="" size="18" verticalAlign="justify" x="112" textAlign="left"  includeIn="noSpirit0,doSpirit0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="soulAddAttr0" y="25" text="" size="18" verticalAlign="justify" x="237" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="soulAddAttr1" y="50" text="" size="18" verticalAlign="justify" x="237" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="soulAddAttr2" y="75" text="" size="18" verticalAlign="justify" x="237" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="soulAddAttr3" y="100" text="" size="18" verticalAlign="justify" x="237" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="soulAddAttr4" y="125" text="" size="18" verticalAlign="justify" x="237" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="soulDescLable" text="" x="181" y="25" size="18" width="56" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			</e:Group>
+			<e:Group id="spiritGroup" x="-2" y="132"   includeIn="doSpirit0,doSpirit1">
+				<e:Group>
+				<e:Label y="0" text="附灵" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="spiritLv" y="0" text="" size="18" x="40"   fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="spiritCost" y="10" text="" size="18" x="50"   includeIn="noSpirit0,doSpirit0,noSpirit1,doSpirit1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
+				</e:layout>
+				</e:Group>
+				<e:Label y="25" text="攻击：生命：物抗：法抗：" size="18" verticalAlign="justify" x="22" textAlign="left" width="54" lineSpacing="7"    fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="attr6" y="25" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff" />
+				<e:Label id="attr7" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attr8" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attr9" y="100" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+
+
+			</e:Group>
+			<e:Group id="suitGroup" x="8" y="142"   anchorOffsetY="0" height="170">
+				<e:Group>
+				<e:Label id="suitName" y="0" text="装备" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label id="suitNum" y="0" text="装备" size="18" x="40"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
+				</e:layout>
+				</e:Group>
+				<e:Label id="suitState" y="25" text="属性" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="attrDesc" y="50" text="攻击：生命：物抗：法抗：" size="18" verticalAlign="justify" x="22" textAlign="left" width="54" lineSpacing="7"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label id="attr12" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="attr13" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attr14" y="100" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attr15" y="125" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="attrDesc1" y="150" text="神罚伤害减免：" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="attr16" y="150" text="" size="18" verticalAlign="justify" x="148" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0x00ff00" text.doSpirit1="3%"/>
+			</e:Group>
+			<e:Group id="chainGroup" x="18" y="152">
+				<e:Group>
+				<e:Label id="chainName" y="0" text="【灵魂锁链" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+					<e:Label id="chainLv" y="10" text="" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
+				</e:layout>
+				</e:Group>
+
+				<e:Group x="22" y="25">
+					<e:Label id="chainPos" y="0" text="" size="18" verticalAlign="justify" x="0" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+					<e:Label id="chainAttr" y="0" text="" size="18" verticalAlign="justify" x="83" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0xbe79ff"/>
+					<e:Label id="chainState" y="10" text="" size="18" verticalAlign="justify" x="93" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0xbe79ff"/>
+					<e:Label id="chainValue" y="20" text="" size="18" verticalAlign="justify" x="103" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0xbe79ff"/>
+					<e:layout>
+						<e:HorizontalLayout gap="0"/>
+					</e:layout>
+				</e:Group>
+			</e:Group>
+			<e:Group id="soulGroup" x="28" y="162">
+				<e:Group>
+				<e:Label id="soulName" y="0" text="【魔化" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="soulLv" y="10" text="" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
+				</e:layout>
+				</e:Group>
+				<e:Label y="25" text="       为当前部位注入上古魔魂，提升基础属性至" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" width="279" fontFamily="Microsoft YaHei" textColor="0xbe79ff"/>
+				<e:Label id="soulAttr" y="50" text="550%" size="18" verticalAlign="justify" x="133" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0xbe79ff"/>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="5" horizontalAlign="left"/>
+			</e:layout>
+		</e:Group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<e:Group horizontalCenter="0" id="btnGroup" height="159" bottom="-130">
+			<e:Image source="tongyongline" width="289" horizontalCenter="0" height="1" y="30"/>
+			<e:Button id="spiritBtn" label="附 灵" skinName="SkinBtn1" width="140" height="60" x="0" y="42"/>
+			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" x="121" y="40" visible="false"/>
+			<e:Button id="soulBtn" label="注 魂" skinName="SkinBtn1" width="140" height="60" x="160" y="42"/>
+			<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" x="280" y="40"/>
+			<e:Group y="126" horizontalCenter="0">
+				<e:Image source="bantoutiaobg" height="35" scale9Grid="128,2,15,41" width="300" touchEnabled="false" y="0" horizontalCenter="0"/>
+				<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" y="6" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			</e:Group>
+
+		</e:Group>
+	</e:Group>
+</e:Skin>

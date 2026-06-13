@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGwMijing" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="600" height="728">
+	<e:Group name="桃源秘境" left="0" right="0" top="0" bottom="0">
+		<e:Image id="BG" source="GwmijingBG_jpg" height="716" width="585" y="10" horizontalCenter="0"/>
+		<e:Image id="nameBg" y="43" x="310" source="godweapon_mijingtitle_png"/>
+		<e:Group id="rank" y="88" anchorOffsetX="0" width="306" anchorOffsetY="0" height="150" x="284">
+			<e:Image id="rankbg" anchorOffsetX="0" anchorOffsetY="0" left="0" top="0" bottom="0" right="0" scale9Grid="0,4,305,19" source="godweapon_paihangbg_png"/>
+			<e:Label id="checkRank" text="查看排行" y="122" size="18" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Image id="rank1Img" x="6" y="9" source="paihang1" width="37" height="33"/>
+			<e:Label id="player1Name" text="" x="50" y="13" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="left"/>
+			<e:Label id="player1Rank" text="" y="13" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" x="183" textAlign="left"/>
+			<e:Label id="player1Time" text="" x="238" y="13" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="left"/>
+			<e:Image id="rank2Img" x="6" y="46" source="paihang2" width="37" height="33"/>
+			<e:Label id="player2Name" text="" x="50" y="50" size="18" textColor="0xabebff" fontFamily="Microsoft YaHei" textAlign="left"/>
+			<e:Label id="player2Rank" text="" y="50" size="18" textColor="0xabebff" fontFamily="Microsoft YaHei" x="183" textAlign="left"/>
+			<e:Label id="player2Time" text="" x="238" y="50" size="18" fontFamily="Microsoft YaHei" textColor="0xabebff" textAlign="left"/>
+			<e:Image id="rank3Img" x="6" y="80" source="paihang3" width="37" height="33"/>
+			<e:Label id="player3Name" text="" x="50" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06" textAlign="left"/>
+			<e:Label id="player3Rank" text="" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06" x="183" textAlign="left"/>
+			<e:Label id="player3Time" text="" x="238" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff03" textAlign="left"/>
+		</e:Group>
+		<e:Button id="challenge" label="挑  战" skinName="SkinBtn1" horizontalCenter="0" y="620"/>
+		<e:Label id="countText" text="" horizontalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="695"/>
+		<e:Label id="buyCount" text="购买次数" horizontalCenter="0" bottom="20" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
+		<e:Scroller horizontalCenter="0" scaleX="0.9" scaleY="0.9" y="308" height="320">
+			<e:List id="list" itemRendererSkinName="SkinGwMijingItem" anchorOffsetY="0">
+				<e:layout>
+					<e:VerticalLayout gap="5"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Group id="info" y="250" x="168">
+			<e:Image id="infoImg1" x="3" y="2" source="gantanhao4"/>
+			<e:Image id="infoImg2" x="3" y="27" source="gantanhao4"/>
+			<e:Label id="infoText1" text="S评价通关可以解锁下一层挑战" x="28" y="2" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="infoText2" text="通关评价越高奖励越丰厚" x="28" y="27" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		</e:Group>
+	</e:Group>
+	<e:Image id="rpImg" x="368" source="zjmhongdian" y="620"/>
+</e:Skin>

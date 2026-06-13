@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinFriendsWin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="948">
+	<e:Rect left="0" right="0" top="-79" bottom="408" fillAlpha=".6" anchorOffsetY="0" fillColor="0x24201f" strokeColor="0xffffff" strokeAlpha="0" alpha="0.6"/>
+	<e:Group height="408" left="0" right="0" bottom="0" anchorOffsetY="0">
+		<e:Image left="0" right="0" bottom="0" top="0" alpha="0.9" anchorOffsetY="0" height="408" source="chatbg6" scale9Grid="4,4,33,31"/>
+		<e:Image bottom="0" height="60" width="600" source="chat_diline" scale9Grid="0,17,20,31" horizontalCenter="0"/>
+
+
+
+		<e:Image source="tongyongline" width="556" horizontalCenter="0" bottom="56"/>
+
+
+
+		<e:Image id="redPoint0" source="zjmhongdian" x="70" bottom="30" visible="false"/>
+		<e:Image id="redPoint1" source="zjmhongdian" x="156" bottom="30" visible="false"/>
+	</e:Group>
+	<e:ViewStack id="viewStack" selectedIndex="4" height="348" width="600" horizontalCenter="0" bottom="60">
+		<ns1:FriendRecentlyPanel id="friendChatPanel" name="最近" skinName="SkinFriendChat" top="0" bottom="0" left="0" right="0"/>
+		<ns1:FriendMenuPanel id="friendPanel" name="好友" skinName="SkinFriendInfo" top="0" bottom="0" horizontalCenter="0" visible="false"/>
+		<ns1:FriendApplyListWin id="friendAppListPanel" name="申请" skinName="SkinFriendsAppListWin" top="0" bottom="0" horizontalCenter="0" visible="false"/>
+		<ns1:ShieldListWin id="blackListPanel" name="屏蔽" skinName="SkinBlackListWin" top="0" bottom="0" horizontalCenter="0" visible="false"/>
+		<ns1:MailWindow id="mailPanel" name="邮件" skinName="SkinMail" bottom="0" horizontalCenter="0" width="600" height="348" visible="false"/>
+	</e:ViewStack>
+	<e:TabBar id="tab" dataProvider="{viewStack}"
+	          selectedIndex="0" bottom="0" itemRendererSkinName="SkinBtnTab5" horizontalCenter="0">
+		<e:layout>
+			<e:HorizontalLayout gap="0" />
+		</e:layout>
+	</e:TabBar>
+	<e:Button id="btnClose" skinName="SkinBtn0" label="按钮" icon="chatclose2" bottom="364" right="2"/>
+	<e:Image id="applyRedPoint" source="zjmhongdian" horizontalCenter="46" bottom="34" visible="false"/>
+	<e:Image id="mailRedPoint" source="zjmhongdian" bottom="34" horizontalCenter="287.5" visible="false"/>
+</e:Skin>

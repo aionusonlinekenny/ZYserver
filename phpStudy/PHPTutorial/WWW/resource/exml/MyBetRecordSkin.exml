@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinMyBetRecord" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group id="anigroup" horizontalCenter="0" verticalCenter="-57" width="490" height="546">
+		<e:Image anchorOffsetX="0" width="484" horizontalCenter="-1" height="512" verticalCenter="0" scale9Grid="34,20,1,1" source="tongyong_dikuang2"/>
+		<e:Image width="481" top="10" horizontalCenter="-2.5" source="tongyong_juanzhou" scale9Grid="224,5,32,8"/>
+		<e:Image width="249" top="-7" horizontalCenter="-2.5" source="tongyong_titlebg" scale9Grid="118,16,18,13"/>
+		<e:Image source="tongyongbg5" width="419" height="375" horizontalCenter="0" verticalCenter="-26.5" scale9Grid="9,5,10,9"/>
+		<e:Group id="dinghong" width="520" height="60" bottom="10" horizontalCenter="0" visible="false">
+			<e:Image top="0" bottom="0" source="bantoumingkuang3" left="0"/>
+			<e:Image scaleX="-1" top="0" bottom="0" source="bantoumingkuang3" right="0"/>
+		</e:Group>
+		<e:Group width="419" horizontalCenter="0" top="60" anchorOffsetY="0" height="38.5">
+			<e:Label text="场次" size="20" horizontalCenter="-127.5" textColor="0x1b3046" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+			<e:Label text="下注详情" size="20" verticalCenter="0" horizontalCenter="76.5" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+		</e:Group>
+		<e:Scroller id="scrollerList" scrollPolicyH="off" scaleX="1" scaleY="1" height="327" width="406" verticalCenter="-10.5" horizontalCenter="1" anchorOffsetY="0">
+			<e:List id="list" x="-3" y="30" itemRendererSkinName="SkinMyBetRecordItem">
+			<e:layout>
+				<e:VerticalLayout gap="2"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Label size="22" text="我的下注" horizontalCenter="0" fontFamily="Microsoft YaHei" top="6" textColor="0x084151"/>
+		<e:Label id="infoLabel" text="您已下注5场比赛 下注总额：600000筹码  损失：30000筹码" size="20" horizontalCenter="9" bottom="31" fontFamily="Microsoft YaHei" textColor="0x1b3046" anchorOffsetY="0" height="64" anchorOffsetX="0" width="398"/>
+		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-31" x="75" y="646" scaleX="1" scaleY="1">
+		<e:Image height="40" horizontalCenter="0" scale9Grid="128,2,15,41" width="383" verticalCenter="0" source="bantoutiaobg"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+		</e:Group>
+		<e:Button id="closebtn" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="220" top="-4" x="440" y="-153" scaleX="1" scaleY="1"/>
+	</e:Group>
+	<e:Image source="wodexiazhu_png" alpha="0.7" visible="false"/>
+</e:Skin>

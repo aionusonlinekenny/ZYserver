@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinBossItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="566" height="128">
+	<e:Image id="bg"  left="0" right="0" top="0" bottom="0" alpha="1" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
+
+
+
+	<e:Label id="timeTxt" text="01:01:55后重生" size="18" textAlign="center"
+	          y="67" horizontalCenter="204" fontFamily="Microsoft YaHei" textColor="0x00842c" visible="false"/>
+
+
+	<e:Group verticalCenter="0" height="128" width="372" horizontalCenter="-88">
+
+
+		<e:Image id="head" width="61" height="62" source="" horizontalCenter="-91.5" verticalCenter="-7.5" anchorOffsetY="0"/>
+		<e:Image source="bosstouxiangk2" width="69" height="71" horizontalCenter="-91.5" verticalCenter="-5"/>
+		<e:Image id="barBg" width="243.67" height="19" source="jindutiao1" horizontalCenter="86" anchorOffsetX="0" y="9" scale9Grid="18,1,129,16"/>
+		<e:ProgressBar id="bar" value="50" width="213.8" height="17.5" skinName="Skinbar5" horizontalCenter="87" anchorOffsetX="0" y="10.41"/>
+		<e:Image id="barBg0" width="24" height="22" source="jindutiaotou" horizontalCenter="-27" y="7.35"/>
+		<e:Image id="barBg1" width="24" source="jindutiaotou" height="22" horizontalCenter="202" scaleX="-1" y="7.35"/>
+
+
+
+		<e:Label id="nameTxt" text="触龙神大神" size="20" horizontalCenter="-89" y="94" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+	</e:Group>
+	<e:Group id="needLv" horizontalCenter="204" y="42" visible="false">
+
+		<e:Label id="levelRequire" text="70级开放" size="18" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
+	</e:Group>
+	<e:Image source="bantoutiaoboss" x="4" height="101" width="37"/>
+	<e:List id="list" scaleX="0.9" scaleY="0.9" horizontalCenter="-0.5" width="268" height="61" verticalCenter="-2.5">
+		<e:layout>
+		<e:HorizontalLayout horizontalAlign="center" gap="20"/>
+		</e:layout>
+	</e:List>
+	<e:Label id="nameTxt0" text="1\n转" size="22" textAlign="center" y="11" fontFamily="Microsoft YaHei" verticalAlign="middle" anchorOffsetY="0" height="69" width="27" horizontalCenter="-260.5"/>
+	<e:Button id="challengeBtn" label="挑 战" height="49" width="94" icon="btn2_2" horizontalCenter="204" verticalCenter="7.5" scaleX="0.72" scaleY="0.72" skinName="SkinBtn28"/>
+</e:Skin>

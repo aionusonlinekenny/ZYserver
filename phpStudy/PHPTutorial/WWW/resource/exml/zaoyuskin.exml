@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Skinzaoyu" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group y="54.51" width="600" height="240" horizontalCenter="0">
+		<e:Image x="67" bottom="41" source="gantanhao1"/>
+		<e:Label text="击杀玩家道心波动+25点，达到100后不能挑战" size="20" horizontalCenter="-6" bottom="42" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
+		<e:Group x="204" y="16" width="184.67" anchorOffsetY="0" height="36.67" anchorOffsetX="0">
+			<e:Image verticalCenter="1.6649999999999991" source="huawen2" scale9Grid="27,14,9,2" width="179" horizontalCenter="1.1650000000000063"/>
+			<e:Label text="个人信息" size="22" horizontalCenter="0.6650000000000063" verticalCenter="-7.335000000000001" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Image right="0" verticalCenter="0" source="tongyongdian2" visible="false"/>
+		</e:Group>
+		<e:Group horizontalCenter="-188" top="16" anchorOffsetY="0" height="156">
+			<e:Image horizontalCenter="1" verticalCenter="-2" source="jingjirolebg_png"/>
+			<e:Image id="myFace" height="130" horizontalCenter="0.5" verticalCenter="-2" width="131" source="yuanhead10"/>
+			<e:Image scale9Grid="6,6,1,1" horizontalCenter="1.5" verticalCenter="0" scaleX="1" scaleY="1" source="jingjirolebg2_png"/>
+		</e:Group>
+		<e:Label text="杀戮值:" y="64" size="20" x="217.73" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label text="杀戮排名:" y="100.02" size="20" x="217.67" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label text="道心波动:" y="136.06" size="20" x="217.69" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="dayPrestige" text="" y="64.65" size="20" x="297.32" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label id="rank" text="" y="100.01" size="20" x="318.03" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label id="labelRed" text="立即消除" x="217.27" y="155.35" size="20" textColor="0x35e62d" fontFamily="Microsoft YaHei"/>
+		<e:Button id="rewardBtn" label="Button" x="476.83" y="47.84" skinName="SkinBtn0" icon="meirijiangli2"/>
+		<e:Group x="318.7" y="137.31">
+			<e:Label id="labelRedPoint" text="" x="0" y="0" size="20"   fontFamily="Microsoft YaHei" textColor="0x35e62d"/>
+			<e:Label id="time" text="（33：59后可挑战）" x="167" y="6" fontFamily="Microsoft YaHei" size="20" textColor="0xf3311e"/>
+			<e:layout>
+				<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+	<e:Image width="578" scale9Grid="3,3,21,18" horizontalCenter="-1" top="259" bottom="237" anchorOffsetY="0" source="tongyong_dikuang4"/>
+	<e:Label text="附近玩家" horizontalCenter="-1" size="22" textColor="0xffff00" fontFamily="Microsoft YaHei" top="269" bottom="657"/>
+	<e:Scroller id="scroller" width="578" top="295" bottom="244" horizontalCenter="-1" anchorOffsetY="0">
+		<e:List id="list" itemRendererSkinName="ZaoYuInfoItem" height="409">
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="center" gap="-1"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+	<e:Button id="rankBtn" label="查看排名" skinName="SkinBtn1" horizontalCenter="-100" bottom="168"/>
+	<e:Button id="recordBtn" skinName="SkinBtn1" label="战斗记录" horizontalCenter="100" bottom="168"/>
+
+</e:Skin>

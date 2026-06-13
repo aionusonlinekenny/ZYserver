@@ -1,0 +1,45 @@
+[2024-12-02 17:31:56]watch thread start 
+[2024-12-02 17:31:56][Configuration Error]unable to load config from file tables.lua 
+[2024-12-02 17:31:56]read db table config error 
+[2024-12-02 17:31:56]================================================ 
+[2024-12-02 17:31:56]dbserver start ok,kernal1.1 
+[2024-12-02 17:31:56]quit:stop server and exit 
+[2024-12-02 17:31:56]================================================ 
+[2024-12-02 17:32:05]db_session report 
+[2024-12-02 17:32:06]game client (127.0.0.1:49231:9) registe success (GameWorld9) 
+[2024-12-02 17:32:06]=======recv:battleflag:0,targetsid:9 
+[2024-12-02 17:32:16]db_session report 
+[2024-12-02 17:32:27]db_session report 
+[2024-12-02 17:32:38]db_session report 
+[2024-12-02 17:32:49]db_session report 
+[2024-12-02 17:33:00]db_session report 
+[2024-12-02 17:33:11]db_session report 
+[2024-12-02 17:33:22]db_session report 
+[2024-12-02 17:33:33]db_session report 
+[2024-12-02 17:33:44]db_session report 
+[2024-12-02 17:33:55]db_session report 
+[2024-12-02 17:34:06]db_session report 
+[2024-12-02 17:34:17]db_session report 
+[2024-12-02 17:34:28]db_session report 
+[2024-12-02 17:34:39]db_session report 
+[2024-12-02 17:34:50]db_session report 
+[2024-12-02 17:35:01]db_session report 
+[2024-12-02 17:35:12]db_session report 
+[2024-12-02 17:35:23]db_session report 
+[2024-12-02 17:35:34]db_session report 
+[2024-12-02 17:35:45]db_session report 
+[2024-12-02 17:35:56]db_session report 
+[2024-12-02 17:36:07]db_session report 
+[2024-12-02 17:36:18]db_session report 
+[2024-12-02 17:36:29]db_session report 
+[2024-12-02 17:36:40]db_session report 
+[2024-12-02 17:36:51]db_session report 
+[2024-12-02 17:37:02]db_session report 
+[2024-12-02 17:37:13]db_session report 
+[2024-12-02 17:37:24]db_session report 
+[2024-12-02 17:37:35]db_session report 
+[2024-12-02 17:37:43]SQLConnection::AfterQueryed:MySQL server has gone away:call loadgmcmd(9); 
+[2024-12-02 17:37:43]query gm cmd error:9 
+[2024-12-02 17:37:43]SQLConnection::AfterQueryed:MySQL server has gone away:call loadfee(9); 
+[2024-12-02 17:37:43]query fee error:9 
+[2024-12-02 17:37:43]SQLConnection::AfterQueryed:MySQL server has gone away:call loadtxapimsg(9); 

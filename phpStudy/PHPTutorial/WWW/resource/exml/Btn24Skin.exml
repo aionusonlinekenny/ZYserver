@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBtn24" states="up,down" minHeight="25" minWidth="25" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="153" height="137">
+	<e:Group horizontalCenter="0" scaleX.down="0.95" scaleY.down="0.95" verticalCenter="0">
+		<e:Image horizontalCenter="0" verticalCenter="-7" source="hidebossbtn_kuang_png"/>
+		<e:Image source="hidebossbtn_bottom_png" horizontalCenter="0" top="83"/>
+		<e:Group id="eff_btn" touchThrough="true" touchChildren="false" y="60" x="60" scaleX="0.8" scaleY="0.8" scaleY.up="0.8" scaleX.up="0.8" y.up="57"/>
+		<e:Image id="headImg" scaleX="0.9" scaleY="0.9" verticalCenter="-7.5" source="monhead10066_png" horizontalCenter="0" verticalCenter.up="-10" horizontalCenter.up="1"/>
+		<e:Label text="隐藏BOSS" y="103" size="20" textColor="0xf8b141" x="28" fontFamily="Microsoft YaHei" visible="false"/>
+	</e:Group>
+</e:Skin>

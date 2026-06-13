@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="TreasureStore" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="535" height="750">
+	<e:Rect id="otherRect" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group width="535" height="662" horizontalCenter="0" verticalCenter="-3">
+		<e:Image left="0" right="0" top="2" bottom="0" source="tongyong_dikuang2" scale9Grid="33,9,54,53"/>
+		<e:Image y="0" left="0" right="0" source="tongyong_juanzhou"/>
+		<e:Image width="239" horizontalCenter="0" source="tongyong_titlebg" top="-16"/>
+
+		<e:Image horizontalCenter="0" top="35" width="476" scale9Grid="6,6,15,13" height="522" source="tongyongbg7"/>
+		<e:Image horizontalCenter="0" width="476" bottom="-44" height="35" source="bantoutiaobg" scale9Grid="184,5,31,30"/>
+
+		<e:Button id="get" icon="xb_42" skinName="SkinBtn1" horizontalCenter="0" bottom="19" label="全部取出"/>
+		<e:Scroller id="listScroller" width="460" height="500" horizontalCenter="0" top="50">
+			<e:List id="list" itemRendererSkinName="SkinItem2" x="1" scaleX="1" scaleY="1">
+				<e:layout>
+					<e:TileLayout requestedColumnCount="4" horizontalGap="40" verticalGap="13" paddingLeft="18" paddingTop="5"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Label text="寻宝仓库" size="24" horizontalCenter="0" textColor="0x084151" fontFamily="Microsoft YaHei" top="-4"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" bottom="-39" height="24" textColor="0xffffff"/>
+		<e:Button id="closeBtn0" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" right="3" top="-16"/>
+	</e:Group>
+</e:Skin>

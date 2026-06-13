@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Skinladderinfo" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" >
+	<w:Config id="159b5e0f988"/>
+	<e:Image width="579" height="380" horizontalCenter="0" y="266" source="tongyong_dikuang4" scale9Grid="10,10,60,60"/>
+	<e:Group width="554" height="230" horizontalCenter="0" y="55">
+
+
+		<e:Image left="0" right="0" top="0" bottom="0" source="shitouban" scale9Grid="21,18,10,13"/>
+		<e:Image x="109" width="455" height="166" source="wzjianbanbg1" scale9Grid="8,7,447,16" y="26"/>
+		<e:Image x="217" y="43" width="103" source="wzwddw_png"/>
+		<e:Group id="pipeiPlus" x="0" verticalCenter="0">
+			<ns1:LadderStarListView id="starInfo" skinName="SkinLadderSratList"/>
+		</e:Group>
+
+
+		<e:Image id="winImg" y="63" scale9Grid="25,23,9,22" x="432" source="jjliansheng"/>
+
+		<e:Label text="我的排名:" x="223" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="净胜场次:" x="223" y="121" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="winNum" text="" x="324" y="122" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="winNum0" text="" x="325" y="94" size="18" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="duanwei" text="" x="330" y="44" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="showNomber" text="当前排名" x="331" y="160" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:Label id="showNomber0" text="上周排名" x="216" y="160" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+	<e:Image horizontalCenter="0.5" y="291" source="wzdw_png"/>
+
+
+
+
+	<e:Scroller horizontalCenter="1" top="400">
+		<e:List id="rewardList" itemRendererSkinName="SkinItem2">
+		<e:layout>
+			<e:HorizontalLayout/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+
+	<e:Label id="showReward" text="更多段位奖励" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="546"/>
+	<e:Image width="283" height="30" source="wzdixian" horizontalCenter="1.5" y="329"/>
+	<e:Label id="truceIng" text="竞技时间:周一10:00-周日22:00 （周日22:30结算）" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="25" top="599"/>
+	<e:Image source="gantanhao4" width="16" height="22" horizontalCenter="-224" top="598"/>
+
+	<e:Group id="openInfo" horizontalCenter="0" width="578" anchorOffsetY="0" height="119" top="661">
+		<e:Button id="flowPlayer" label="匹配对手" y="40" horizontalCenter="0" icon="btn1_2" width="213" height="67" skinName="SkinBtn7"/>
+		<e:Label id="lastNum" text="" y="7" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textAlign="center" textColor="0x00842c"/>
+		<e:Label id="buyTime" text="购买匹配次数" size="20"   fontFamily="Microsoft YaHei" y="63" x="413" textColor="0x00842c"/>
+	</e:Group>
+	<e:Label id="noOpenDesc" text="活动结算中" width="291" horizontalCenter="0" textAlign="center" size="24" bottom="65" fontFamily="Microsoft YaHei" textColor="0xffffff"/> 
+</e:Skin>

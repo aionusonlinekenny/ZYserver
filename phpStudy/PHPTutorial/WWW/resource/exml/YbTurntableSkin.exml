@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinYbTurntable" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*"
+        xmlns:w="http://ns.egret.com/wing" width="563" height="681">
+	<w:Config id="15a98a3982e" />
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.7" width="460" 
+	         height="610"  visible="false"/>
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Image id="bg0" width="554" horizontalCenter="0" top="0" bottom="0" source="quanminbossbg"/>
+		<e:Image source="zhuanpanbg_png" horizontalCenter="0" y="87"/>
+		<e:Group horizontalCenter="0" width="563" height="604" verticalCenter="-30">
+
+
+
+			<e:Image id="img_level" x="30" y="100" source="trun_100001" visible="false"/>
+			<e:Group y="93" width="400" height="400" horizontalCenter="0">
+				<e:BitmapLabel id="multiple0" font="num_xvip_4_fnt" text="10倍" y="38" horizontalCenter="0" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="71" id="multiple1" horizontalCenter="90" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="150" id="multiple2" horizontalCenter="142" letterSpacing="-2"/>
+				<e:BitmapLabel text="1.2倍" y="236" id="multiple3" horizontalCenter="142" font="num_xvip_4_fnt" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="320" id="multiple4" horizontalCenter="90" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="0.1" y="355" id="multiple5" horizontalCenter="0" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="320" id="multiple6" horizontalCenter="-90" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="236" id="multiple7" horizontalCenter="-142" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="150" id="multiple8" horizontalCenter="-142" letterSpacing="-2"/>
+				<e:BitmapLabel x="80" font="num_xvip_4_fnt" text="1.2倍" y="71" id="multiple9" letterSpacing="-2"/>
+			</e:Group>
+
+			<e:Image id="select" y="-165" source="tttzpselect_png" x="219" scaleX="2" scaleY="2" visible="false"/>
+
+
+			<e:Image id="tttzhi" touchEnabled="false" anchorOffsetX="56" anchorOffsetY="120" source="xyzp2_png" x="284" y="306"/>
+
+
+
+			<e:Button id="choujiangBtn" skinName="SkinBtn0" horizontalCenter="0" verticalCenter="3" width="94" height="99" icon="xyzpstart_png"/>
+			<e:Group y="371" horizontalCenter="0">
+				<e:Image y="0" width="262" x="0" height="39" source="zhuanpanbg2_png"/>
+				<e:Label id="label_needCharge" text="额外充值999999元宝可激活" size="18" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			</e:Group>
+			<e:Group horizontalCenter="0" y="340" touchEnabled="false" touchThrough="true" touchChildren="false">
+
+				<e:Image scaleX="1" scaleY="1" left="0" top="0" source="touzi_png"/>
+				<e:Image source="szyuanbao" width="40" scaleX="1" scaleY="1" left="0" top="0" x="10" y="10" height="29"/>
+				<e:BitmapLabel id="pay0" x="105" y="-6" font="num_xvip_4_fnt" text="100"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="2"/>
+				</e:layout>
+			</e:Group>
+
+		</e:Group>
+		<e:Image scaleY="1" horizontalCenter="0" y="-7" width="214" height="50" source="huabian3"/>
+
+		<e:Image id="title" y="11" horizontalCenter="0" source="biaoti_ybzp_png"/>
+		<e:Label id="actTime" text="剩余时间：20时20分20秒" size="20" y="53" x="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+
+
+
+
+	</e:Group>
+
+
+
+
+
+
+	<e:Scroller id="barList" bounces="false" touchEnabled="false" height="85" bottom="30" width="563" horizontalCenter="0">
+		<e:List id="list" x="0" y="-2" itemRendererSkinName="SkinHuntListRenderer" scrollEnabled="true">
+			<e:layout>
+				<e:VerticalLayout paddingLeft="50" gap="0"/>
+			</e:layout>
+
+		</e:List>
+	</e:Scroller>
+
+
+
+
+
+
+</e:Skin>

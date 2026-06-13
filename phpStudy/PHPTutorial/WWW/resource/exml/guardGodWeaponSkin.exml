@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinGuardGodWeapon" currentState="challenge" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="600" height="728"        states="challenge" >
+	<w:Config id="15a98a3982e"/>
+
+
+
+	<e:Image width="580" horizontalCenter="-1" anchorOffsetY="0" height="450.34" verticalCenter="-139" source="guardGodWeaponBG_jpg"/>
+	<e:Image width="580" anchorOffsetY="0" source="tongyong_dikuang4" scale9Grid="3,5,16,16" horizontalCenter="0" height="270" verticalCenter="229"/>
+
+	<e:Image horizontalCenter="0" anchorOffsetY="0" source="huabian" scale9Grid="93,0,20,50" verticalCenter="109"/>
+	<e:Label text="副本奖励" size="22" horizontalCenter="0" includeIn="challenge" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="117"/>
+
+
+
+
+
+	<e:Scroller id="itemScroller" includeIn="challenge" height="107" left="20" right="20" verticalCenter="202" width="542">
+		<e:List id="itemList" y="1.33" useVirtualLayout="false" horizontalCenter="0" itemRendererSkinName="SkinItem2">
+			<e:layout>
+				<e:HorizontalLayout gap="40.5" horizontalAlign="center" paddingLeft="0" paddingRight="0"/>
+			</e:layout>
+
+		</e:List>
+	</e:Scroller>
+
+	<e:Button id="btnChallenge" label="挑  战" skinName="SkinBtn1" width="176" height="69" anchorOffsetX="0" horizontalCenter="0" verticalCenter="300.5"/>
+	<e:Label text="今日可挑战次数：" size="20" horizontalCenter="-8" includeIn="challenge" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="345"/>
+	<e:Label id="lbTime" text="10" size="20" horizontalCenter="79" includeIn="challenge" fontFamily="Microsoft YaHei" textColor="0x00ff00" verticalCenter="345"/>
+		<e:Scroller id="notice" top="440" width="350" height="60" scrollPolicyV="off" scrollPolicyH="off" horizontalCenter="-102" visible="false">
+				<e:List id="noticeList" itemRendererSkinName="SkinUIshowDropNotice" bottom="0" horizontalCenter="0">
+					<e:layout>
+						<e:VerticalLayout gap="-1"/>
+					</e:layout>
+				</e:List>
+		</e:Scroller>
+
+</e:Skin>

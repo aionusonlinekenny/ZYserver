@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinItemTips" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" width="380">
+	<w:Config id="1586b36a128"/>
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.7"/>
+	<e:Group horizontalCenter="0" width="380" verticalCenter="-23">
+		<e:Image id="BG" top="0" bottom="1" left="0" right="0" source="tongyongtip1" scale9Grid="11,7,44,57"/>
+		<e:Image source="tongyongtip2" left="-1" right="-1" top="-1" bottom="0" scale9Grid="18,18,2,4"/>
+		<e:Image id="quali" source="quali1_png" anchorOffsetY="0" top="0" right="0" left="0" height="315" scale9Grid="7,7,13,507"/>
+
+		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="52"/>
+		<e:Label id="nameLabel" text="羽毛" size="24" x="20" y="10" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label text="数量：" size="20" x="120" y="90" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="num" text="9" size="20" x="180" y="90" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="等级：" size="20" x="120" y="66" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Group y="160" horizontalCenter="0" width="361">
+			<e:Label id="description" text="使用后获得1000万角色经验值使用后获得1000万角色经验值" size="18" width="361" y="0" textAlign="left" horizontalCenter="0" x="0"   fontFamily="Microsoft YaHei" textColor="0x6b9baa" lineSpacing="4"/>
+			<e:Group height="15" x="188" y="-3"/>
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="lv" text="1级" size="20" x="180" y="66" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image width="300" y="140" horizontalCenter="0" source="tongyongline" height="1"/>
+		<e:Label id="power" text="评分：999999" size="20" y="20" textAlign="right" width="200" right="10" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" bottom="-46" width="300" scale9Grid="179,4,17,30"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-37" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+</e:Skin>

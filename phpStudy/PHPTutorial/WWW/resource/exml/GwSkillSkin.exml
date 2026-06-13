@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGwSkill" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*"  height="633">
+	<w:Config id="1586b349dbe"/>
+	<e:Group id="skill_wp1" width="600" height="633" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="weapon1" source="godweapon_weaponBG2_png" width="600" height="416" horizontalCenter="0" y="82"/>
+		<ns1:GweaponSkillIcon id="wp1_skill0" x="432" y="106" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill12" x="372" y="150" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp1_skill1" x="283" y="93" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill2" x="230" y="181" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill3" x="306" y="157" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill4" y="216" skinName="SkinGwItem" x="366" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill5" x="432" y="239" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill6" x="335" y="288" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill13" x="270" y="243" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp1_skill7" x="334" y="363" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill8" x="217" y="357" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill9" x="139" y="183" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill10" x="156" y="280" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill11" x="219" y="288" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp1_skill14" x="154" y="344" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp1_skill15" x="65" y="398" skinName="SkinGwItem" scaleX="1.2" scaleY="1.2" currentState="skillicon1"/>
+	</e:Group>
+	<e:Group id="skill_wp2" width="600" height="633" verticalCenter="0" horizontalCenter="0" visible="false">
+		<e:Image id="weapon2" source="godweapon_weaponBG3_png" horizontalCenter="0" width="600" height="416" y="82"/>
+		<ns1:GweaponSkillIcon id="wp2_skill0" x="144" y="411" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill12" x="190" y="356" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp2_skill1" x="126" y="134" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill2" x="297" y="116" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill3" x="330" y="395" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill4" x="354" y="287" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill5" x="405" y="314" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill6" x="418" y="224" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill13" x="353" y="181" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp2_skill7" x="304" y="247" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill8" x="264" y="209" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill9" x="224" y="165" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill10" x="167" y="188" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill11" x="193" y="254" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp2_skill14" x="242" y="303" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp2_skill15" x="392" y="109" skinName="SkinGwItem" scaleX="1.2" scaleY="1.2" currentState="skillicon1"/>
+	</e:Group>
+	<e:Group id="skill_wp3" width="600" height="633" horizontalCenter="0" verticalCenter="0" visible="false">
+		<e:Image id="weapon3" source="godweapon_weaponBG1_png" horizontalCenter="0" width="600" height="416" y="82"/>
+		<ns1:GweaponSkillIcon id="wp3_skill0" x="444" y="122" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill12" x="362" y="134" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp3_skill1" x="413" y="197" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill2" x="373" y="291" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill3" x="285" y="95" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill4" x="208" y="103" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill5" x="203" y="159" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill6" x="269" y="199" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill13" x="257" y="275" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp3_skill7" x="162" y="232" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill8" x="118" y="284" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill9" x="236" y="345" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill10" x="154" y="350" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill11" x="86" y="384" skinName="SkinGwItem" currentState="skillicon3"/>
+		<ns1:GweaponSkillIcon id="wp3_skill14" x="14" y="347" skinName="SkinGwItem" currentState="skillicon1"/>
+		<ns1:GweaponSkillIcon id="wp3_skill15" x="430" y="378" skinName="SkinGwItem" scaleX="1.2" scaleY="1.2" currentState="skillicon1"/>
+	</e:Group>
+
+
+</e:Skin>

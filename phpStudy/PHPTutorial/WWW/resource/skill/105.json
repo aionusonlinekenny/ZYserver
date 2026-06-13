@@ -1,0 +1,9 @@
+[{"type":0,"effectId":"170","rotation":-30,"delay":0,"playSpeed":0.45,"isRot":1,"layer":0},
+ {"type":0,"effectId":"170","rotation":-20,"delay":70,"playSpeed":0.45,"isRot":1,"layer":0},
+ {"type":0,"effectId":"170","rotation":-10,"delay":135,"playSpeed":0.45,"isRot":1,"layer":0},
+ {"type":0,"effectId":"170","rotation":0,"delay":195,"playSpeed":0.45,"isRot":1,"layer":0},
+ {"type":0,"effectId":"170","rotation":10,"delay":245,"playSpeed":0.45,"isRot":1,"layer":0},
+ {"type":0,"effectId":"170","rotation":20,"delay":285,"playSpeed":0.45,"isRot":1,"layer":0},
+ {"type":0,"effectId":"170","rotation":30,"delay":315,"playSpeed":0.45,"isRot":1,"layer":0},
+ {"type":0,"effectId":"170","rotation":40,"delay":335,"playSpeed":0.45,"isRot":1,"layer":0,"exEff":"102t"},
+ {"type":99,"delay":400}]

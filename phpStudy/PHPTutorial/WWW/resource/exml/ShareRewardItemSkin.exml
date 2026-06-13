@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinShareRewardItem" width="551" height="128" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="sharerewarditem_png" visible="false"/>
+	<e:Image source="tongyongbg13" scale9Grid="4,4,4,4" left="0" right="0" top="0" bottom="0"/>
+	<e:List id="list" height="106" x="29.66" y="14.33" anchorOffsetY="0" width="500" itemRendererSkinName="SkinItem3">
+		<e:layout>
+			<e:HorizontalLayout gap="30"/>
+		</e:layout>
+	</e:List>
+	<e:Label id="receiveNum" text="累计展示1次" x="434" y="16.5" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center" anchorOffsetX="0" width="111.5"/>
+	<e:Label id="receive" text="已领取" x="464.5" y="54.5" size="18" fontFamily="Microsoft YaHei" textAlign="center" anchorOffsetX="0" textColor="0xffff00"/>
+</e:Skin>

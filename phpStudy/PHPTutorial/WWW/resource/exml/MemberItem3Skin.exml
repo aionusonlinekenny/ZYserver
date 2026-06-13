@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinMemberItem3" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="499" height="123">
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<e:Group width="499" height="123" y="0" x="0">
+		<e:Image scale9Grid="40,20,30,30" source="tongyonglabbg" scaleX="1" scaleY="1" left="0" top="0" bottom="0" right="0"/>
+		<e:Image id="powerImage" source="wingzhanli" verticalCenter="35" horizontalCenter="-90"/>
+		<e:Group width="120.66" height="123" left="0" verticalCenter="0" anchorOffsetX="0" x="0" y="0" scaleX="1" scaleY="1">
+			<e:Image id="headBg0" scale9Grid="10,8,5,3" source="guildkuangbg" x="18" y="13" scaleX="1" scaleY="1"/>
+			<e:Image id="face" width="85" height="85" y="12" x="18" scaleX="1" scaleY="1" source="head_11"/>
+			<e:Image id="headBg" scale9Grid="10,8,5,3" verticalCenter="-4" left="14" source="guildkuang" x="14" y="10" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Group width="223.5" height="123" horizontalCenter="-25.5" verticalCenter="0" anchorOffsetX="0" x="112" y="0" scaleX="1" scaleY="1">
+			<e:Label id="payNum" text="999999" x="74.34" y="50" size="22" textColor="0x00842C" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1"/>
+			<e:Label text="积分:" x="8.340000000000003" y="50" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" scaleX="1" scaleY="1"/>
+			<e:Label text="战斗力：" x="27.840000000000003" y="89.5" size="16" textColor="0x9F946D" scaleX="1" scaleY="1" visible="false"/>
+			<e:Label id="attr" text="99999999" x="91.84" y="89.5" size="16" textColor="0xF7B910" scaleX="1" scaleY="1" visible="false"/>
+
+			<e:Group x="8" y="15">
+				<e:Label id="nameLable" text="微笑宿命" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" horizontalCenter="-51" verticalCenter="0"/>
+				<e:Label id="job" text="【成员】" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="51"/>
+				<e:layout>
+					<e:HorizontalLayout/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+	<e:CheckBox id="checkBoxs" skinName="SkinCheckBox0" verticalCenter="1" x="457" y="56" scaleX="1" scaleY="1"/>
+	<e:Button id="btn1" label="按钮" x="326" skinName="SkinBtn0" icon="btn-" verticalCenter="0.5" width="40" height="40" y="54" scaleX="0.8" scaleY="0.8"/>
+	<e:Button id="btn2" label="按钮" x="406" skinName="SkinBtn0" icon="btnadd" verticalCenter="0" width="40" height="40" y="54" scaleX="0.8" scaleY="0.8"/>
+	<e:Image id="inputBg" x="366" width="40" verticalCenter="0" source="shuzibg" scale9Grid="6,6,14,13" height="44" y="50" scaleX="0.8" scaleY="0.75"/>
+	<e:Label id="num1" text="1" x="367.5" width="28" height="29" textAlign="center" verticalCenter="0" y="58" scaleX="1" scaleY="1" anchorOffsetX="0"/>	
+</e:Skin>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="hefuBossItemSkin" width="368" height="110" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15a59527d66"/>
+	<e:Image  source="tongyonglabbg" left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30"/>
+
+	<e:Label id="descLab" text="99999" x="160" y="63" size="18" verticalAlign="middle" textAlign="left" width="100" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+	<e:Label id="nameLab" text="装备名字" x="90" y="27" size="18" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+
+	<e:Label text="需积分：" x="90" y="63" size="18" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+
+
+
+
+	<ns1:ItemBase id="itemIcon0" x="10" verticalCenter="-2.5" scaleX="0.9" scaleY="0.9" skinName="SkinItem2"/>
+	<e:Group y="20" horizontalCenter="119.5">
+		<e:Button id="goBtn0" label="兑换" width="158" height="59" horizontalCenter="0" verticalCenter="-11.5" skinName="SkinBtn1" scaleX="0.7" scaleY="0.7"/>
+		<e:Label id="count0" text="剩余300份" y="55" size="18" width="100" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x00842C" horizontalCenter="0"/>
+		<e:Image id="redPoint" source="zjmhongdian" y="3" x="93" visible="false"/>
+	</e:Group>
+</e:Skin>

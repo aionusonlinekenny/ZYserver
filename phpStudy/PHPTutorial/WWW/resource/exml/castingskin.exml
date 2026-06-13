@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinCasting" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        width="600" height="728">
+	<w:Config id="159bef2916a" />
+
+
+	<e:Image source="jinglianbg_png" width="368" horizontalCenter="0" height="345" y="95"/>
+	<e:Image height="204" width="580" horizontalCenter="0" source="tongyong_dikuang4" scale9Grid="27,19,29,26" anchorOffsetY="0" bottom="0"/>
+
+	<e:Group id="upInfo" height="110" bottom="0" horizontalCenter="0" width="560">
+
+
+
+		<e:Group horizontalCenter="0" height="40" bottom="66">
+			<e:Label text="消耗:" size="20" y="2" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Image x="64" width="40" height="40" verticalCenter="0" source="200136_png"/>
+			<e:Label id="countLabel" text="" size="20" textAlign="left" x="108" y="2" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="-3"/>
+			</e:layout>
+		</e:Group>
+		<e:Button id="upGradeBtn" label="精  炼" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2" width="213" height="67" bottom="3"/>
+		<e:Label id="getItemTxt" text="获取道具" size="20" horizontalCenter="170" width="100" verticalAlign="middle" textAlign="center" y="72" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+	</e:Group>
+	<!--<e:Group id="powerGroup" y="140" horizontalCenter="0">
+		<e:Image source="zhandoulibg" x="2" y="10" />
+		<e:Image id="powerImg" source="zjmzhandouli" />
+	</e:Group>-->
+	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" y="466" x="166"/>
+	<e:Group width="538" height="85" horizontalCenter="-1" bottom="115" anchorOffsetX="0" anchorOffsetY="0">
+
+
+
+		<e:Group y="50" left="170">
+			<e:Label id="attr1" text="" size="20" textAlign="center" fontFamily="Microsoft YaHei"/>
+			<e:Image id="arrow1" x="119" y="1" rotation="0" source="tongyongup"/>
+			<e:Label id="addAttr1" text="" size="20" textAlign="center" x="124" textColor="0x32FF00" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group y="18" left="170">
+			<e:Label id="attr0" text="" size="20" textAlign="center" fontFamily="Microsoft YaHei"/>
+			<e:Image id="arrow0" source="tongyongup" x="120" y="1" rotation="0"/>
+			<e:Label id="addAttr0" text="" size="20" textAlign="center" textColor="0x32FF00" x="126" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+
+
+		<e:Label id="attr" text="攻击 +100\n法师+9999\n法师+9999\n法师+9999" size="18" textAlign="center" y="40" height="50"
+		         width="400" lineSpacing="5" horizontalCenter="0" verticalAlign="middle"  textColor="0xf8b141" visible="false"/>
+	</e:Group>
+
+
+		<e:Group  height="380" width="560" horizontalCenter="0" top="88">
+		<ns1:ForgeZhuItem id="item0" y="-8" x="-8" skinName="SkinCastingZBItem"/>
+		<ns1:ForgeZhuItem id="item1" y="-8" x="478" skinName="SkinCastingZBItem"/>
+		<ns1:ForgeZhuItem id="item2" y="96" x="-8" skinName="SkinCastingZBItem"/>
+		<ns1:ForgeZhuItem id="item3" y="96" x="478" skinName="SkinCastingZBItem"/>
+		<ns1:ForgeZhuItem id="item4" y="197" x="-8" skinName="SkinCastingZBItem"/>
+		<ns1:ForgeZhuItem id="item5" y="197" x="478" skinName="SkinCastingZBItem"/>
+		<ns1:ForgeZhuItem id="item6" y="296" x="-8" skinName="SkinCastingZBItem"/>
+		<ns1:ForgeZhuItem id="item7" y="296" x="478" skinName="SkinCastingZBItem"/>
+	</e:Group>
+	<e:Group id="itemGroup2" width="320" height="248"  horizontalCenter="0" top="240">
+
+
+
+
+		<ns1:ForgeZhuItem id="now" width="76" height="76" x="34" y="115" skinName="SkinCastingZBItem"/>
+		<ns1:ForgeZhuItem id="new" width="77" height="77" y="-55" skinName="SkinCastingZBItem" x="121"/>
+		<e:Group id="rightEff" width="45" height="10" x="206" y="144.2" rotation="180"  anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Group id="leftEff" width="45" height="10" x="110" y="132.5" />
+		<e:Group id="buttonEff" width="13" height="33" x="166" y="134"   anchorOffsetY="1"/>
+		<e:Group id="rightEff4" width="39.1" height="6" x="198.71" y="205.45" rotation="180"  visible="false"/>
+		<e:Group id="obliqueright2" width="14.66" height="6" x="205.34" y="195.47" rotation="134.61"   visible="false"/>
+		<e:Group id="rightEff3" width="67.15" height="6" x="202.96" y="129.4" rotation="90"   visible="false"/>
+		<e:Group id="obliqueright" width="13.06" height="8" x="197" y="120.75" rotation="45"   visible="false"/>
+		<e:Group id="rightEff2" width="37.25" height="6" x="159.09" y="120.51"   visible="false"/>
+		<e:Group id="leftEff4" width="39.15" height="6" x="120.91" y="198.2"  visible="false"/>
+		<e:Group id="obliqueleft2" width="13" height="8" x="120.4" y="190.75" rotation="43.74" visible="false"/>
+		<e:Group id="leftEff3" width="69.1" height="6" x="122.77" y="128.6" rotation="90"  visible="false"/>
+		<e:Group id="obliqueleft" width="11.21" height="6" x="127.66" y="124.4" rotation="133.4"   visible="false"/>
+		<e:Group id="leftEff2" width="37.5" height="6" x="160.91" y="128.1" rotation="180"  visible="false"/>
+
+		<e:Image x="207" y="117" width="74" height="74" source="quality2"/>
+				<e:Image x="217" y="127" width="55" height="56" anchorOffsetX="0" source="200136_png"/>
+
+	</e:Group>
+	<e:Label id="maxDesc" text="精炼已满级"   horizontalCenter="0" size="24" textColor="0xffff06" fontFamily="Microsoft YaHei" top="671" bottom="35" visible="false"/>
+</e:Skin>

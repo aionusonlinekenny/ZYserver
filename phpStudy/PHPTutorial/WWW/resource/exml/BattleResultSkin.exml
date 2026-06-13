@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBattleResult" width="600" height="728" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:ns1="*">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+
+
+
+
+
+
+
+
+
+
+
+	<e:Group width="600" height="728" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="bg" y="42" horizontalCenter="0" source="win_png" width="522" height="662" x="39" />
+		<e:Image width="290" height="66" y="640" source="win_bg2_png" x="300" scaleX="-1"/>
+		<e:Image height="66" y="640" source="win_bg2_png"  width="290" x="300" />
+		<e:Button id="closeBtn" label="确定" skinName="SkinBtn1" width="157" horizontalCenter="0" height="60" y="606" x="222"/>
+		<e:Image id="result" anchorOffsetX="0" anchorOffsetY="0" width="365" height="83" horizontalCenter="0" source="battle_result_title_png" top="70" x="118" y="70"/>
+		<e:Group y="167" horizontalCenter="0" width="408" x="96" >
+			<e:Label id="myRanking" text="12" size="20" x="102" textAlign="left" y="10" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="我的排名：" size="20" x="4" textAlign="left" height="20" y="10" fontFamily="Microsoft YaHei"/>
+			<e:Label text="获得奖励" size="20" x="4" textAlign="left" height="20" y="50" fontFamily="Microsoft YaHei"/>
+			<e:Label id="myScore" text="1200" size="20" x="305" textAlign="left" y="10" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="我的积分：" size="20" x="206" textAlign="left" height="20" y="10" fontFamily="Microsoft YaHei"/>
+			<e:List id="myRewarrd" x="101" itemRendererSkinName="SkinItem2" top="50">
+			<e:layout>
+				<e:HorizontalLayout gap="30"/>
+			</e:layout>
+			</e:List>
+		</e:Group>
+		<e:Image scale9Grid="43,9,4,3" y="352" width="580" height="215" horizontalCenter="0" x="10" source="paimingbg_png"/>
+		<e:Group y="382" horizontalCenter="0" width="420" height="20" x="90" >
+			<e:Label text="名次" size="20" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="NaN" text="玩家" size="20" x="86" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="guild0" text="仙盟" size="20" x="246" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="score0" text="积分" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff" x="376"/>
+		</e:Group>
+		<e:Scroller width="420" height="120" y="424" horizontalCenter="0">
+			<e:List id="rankList" itemRendererSkinName="SkinBattleResultItem">
+				<e:layout>
+				<e:VerticalLayout horizontalAlign="center" gap="0"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+
+		<e:Group id="timerGroup" y="625" horizontalCenter="154" x="403" >
+			<e:Label id="info" text="5" y="8" textColor="0x00ff00" size="18" horizontalCenter="172" x="37" />
+			<e:Label text="秒退出杀劫" y="8" textColor="0x00FF00" size="18" horizontalCenter="172" x="37" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+			<e:HorizontalLayout gap="1"/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+
+
+
+</e:Skin>

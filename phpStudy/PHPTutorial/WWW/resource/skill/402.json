@@ -1,0 +1,27 @@
+[{"type":0,"effectId":"2815","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":300,"y":-200},
+ {"type":0,"effectId":"2815","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":-300,"y":-200},
+ {"type":0,"effectId":"2815","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":300,"y":200},
+ {"type":0,"effectId":"2815","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":-300,"y":200},
+ 
+ {"type":0,"effectId":"2812","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":300,"y":-200,"delay":400},
+ {"type":0,"effectId":"2812","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":-300,"y":-200,"delay":400},
+ {"type":0,"effectId":"2812","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":300,"y":200,"delay":400},
+ {"type":0,"effectId":"2812","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":-300,"y":200,"delay":400},
+   
+ {"type":0,"effectId":"2816","layer":4,"playSpeed":0.8,"scaleX":1,"scaleY":1,"x":90,"y":-60,"delay":100},
+ {"type":0,"effectId":"2816","layer":4,"playSpeed":0.8,"scaleX":1,"scaleY":1,"x":90,"y":60,"delay":100},
+ {"type":0,"effectId":"2816","layer":4,"playSpeed":0.8,"scaleX":1,"scaleY":1,"x":-90,"y":-60,"delay":100},
+ {"type":0,"effectId":"2816","layer":4,"playSpeed":0.8,"scaleX":1,"scaleY":1,"x":-90,"y":60,"delay":100},
+ 
+ {"type":0,"effectId":"2814","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":0,"y":200},
+ {"type":0,"effectId":"2814","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":0,"y":-200},
+ {"type":0,"effectId":"2814","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":300,"y":0},
+ {"type":0,"effectId":"2814","layer":4,"playSpeed":0.8,"scaleX":1.2,"scaleY":1.2,"x":-300,"y":0},
+ 
+ {"type":0,"effectId":"2813","layer":4,"playSpeed":0.8,"scaleX":0.8,"scaleY":0.8,"x":0,"y":200,"delay":400},
+ {"type":0,"effectId":"2813","layer":4,"playSpeed":0.8,"scaleX":0.8,"scaleY":0.8,"x":0,"y":-200,"delay":400},
+ {"type":0,"effectId":"2813","layer":4,"playSpeed":0.8,"scaleX":0.8,"scaleY":0.8,"x":300,"y":0,"delay":400},
+ {"type":0,"effectId":"2813","layer":4,"playSpeed":0.8,"scaleX":0.8,"scaleY":0.8,"x":-300,"y":0,"delay":400},
+ 
+ 
+{"type":99,"delay":500}]

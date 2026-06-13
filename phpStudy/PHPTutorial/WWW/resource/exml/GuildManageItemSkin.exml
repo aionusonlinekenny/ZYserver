@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildManageItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+	xmlns:ns1="*" width="588" height="121">
+	<e:Image id="bg"   height="121" width="588" horizontalCenter="0" verticalCenter="0" source="builditem1_png"/>
+
+
+
+
+	<e:Image id="progressbg" x="362.46" y="16.96" source="jindutiao1" scale9Grid="30,6,159,8"/>
+	<e:ProgressBar id="progress" width="181.2" height="17.4" x="374.79" y="18.4" value="60" skinName="Skinbar5" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image id="progressbg0" x="356.1" y="15" source="jindutiaotou"/>
+	<e:Image id="progressbg1" x="574.1" y="15" source="jindutiaotou" scaleY="1" scaleX="-1"/>
+	<e:Label id="nameLab" text="练功房" x="10.66" y="15.02" size="22" textColor="0x0000f1" fontFamily="Microsoft YaHei" visible="false"/>
+	<e:Image id="title"  top="9" left="13"  source="title_builditem1_png"/>
+	<e:Group  y="61" anchorOffsetY="0" anchorOffsetX="0" right="210">
+		<e:Image id="gold" x="25" y="-5" scaleY="1" scaleX="1" source="szjinbi" visible="false"/>
+		<e:Label text="需资金:" x="-15" y="10" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"   textAlign="right"/>
+		<e:Label id="needMoney" text="999999" x="-25" y="14.5" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"   textAlign="right"/>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="right" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+
+	<e:Label id="levelLab" text="等级 99" x="279.35" y="15.34" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="upLevelLab" text="升级要求：管理大厅达到2级 " y="42.74" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="14"/>
+	<e:Label id="money" text="12/12" x="376.38" y="18" size="16" width="180.4" textAlign="center" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalAlign="middle" textColor="0x001828"/>
+	<e:Button id="upBtn" y="62.01" label="升 级" width="100" height="46" scaleX="0.8" scaleY="0.8" icon="btn2_2" skinName="SkinBtn28" right="87"/>
+	<e:Label id="buildingLab" text="决定仙盟等级" x="14.66" y="90" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Image id="buildImg" source="tongyongdian2" x="13" y="74.99" visible="false"/>
+
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" y="51.67" right="56" visible="false"/>
+
+
+
+	
+</e:Skin>

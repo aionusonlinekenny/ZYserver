@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinheartmethodPos" width="76" height="76" currentState="blank" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<w:Config id="1586b362dfe"/>
+	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="0" y="0" visible="false"/>
+	<e:Image id="blank" source="wydblank1" horizontalCenter="0" verticalCenter="0"/>
+
+
+
+	<e:Group id="redPoint" y="0" right="0" visible="false">
+		<e:Image source="zjmhongdian"/>
+	</e:Group>
+
+
+	<!--<ns1:BaseComponent id="tongIcon" skinName="SkinRuneItem" horizontalCenter="1" verticalCenter="-3" visible="false"/>-->
+</e:Skin>

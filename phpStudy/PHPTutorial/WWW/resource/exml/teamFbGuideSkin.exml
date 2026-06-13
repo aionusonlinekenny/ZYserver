@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinTeamFbGuide" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<w:Config id="15a6a432acd"/>
+	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group width="526" height="675" horizontalCenter="0" anchorOffsetY="0" verticalCenter="-31.5">
+		<e:Image left="0" right="0" bottom="0" source="tongyong_dikuang2" scale9Grid="23,4,75,70" height="646" anchorOffsetY="0"/>
+		<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="203,0,78,23" y="16"/>
+		<e:Image source="bantoutiaobg" height="30" scale9Grid="128,2,15,41" width="409" y="689" horizontalCenter="0"/>
+		<e:Image width="468" height="614" y="51" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,10,64,66"/>
+		<e:Image width="249" height="41" source="tongyong_titlebg" horizontalCenter="0" top="0"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" y="693" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+
+		<e:Label id="fbName" text="边界村"   size="22" y="14" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Scroller id="scroll" width="448" height="596" y="60" horizontalCenter="0" anchorOffsetY="0">
+			<e:List id="list" x="78" y="241" useVirtualLayout="false" anchorOffsetY="0" height="596" itemRendererSkinName="SkinTeamFbGuideItem">
+				<e:layout>
+					<e:VerticalLayout gap="2"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+		<e:Button id="closeBtn" label="Button" x="480" y="7" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+
+	</e:Group>
+
+</e:Skin>

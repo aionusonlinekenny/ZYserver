@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ZhanlingSkillTipsSkin" width="399" height="362" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="unactive,active,max"  width.active="399" height.active="390">
+	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" horizontalCenter="0" verticalCenter="-10" width="394" height="329" height.unactive="184" height.max="165" height.active="321" verticalCenter.active="-10" width.active="394">
+		<e:Group x="0" y="0" width="394" height.unactive="181" height.max="165" top.active="0" bottom.active="49" left.active="0" right.active="0">
+			<e:Group id="curGroup" width="394" y="0" horizontalCenter="0" x="0" scaleX="1" scaleY="1" height="289" height.unactive="181" height.max="165" height.active="320">
+				<e:Image source="tongyongtip2" scale9Grid="18,18,2,4" scaleX="1" scaleY="1" width="394" horizontalCenter="0" height.unactive="183" top.unactive="0" top.active="0" bottom.active="0" left.active="0" right.active="0" top.max="0" bottom.max="0" right.max="0" left.max="0" top="0" bottom="0"/>
+				<e:Image source="tongyongtip1" scale9Grid="7,6,11,12" scaleX="1" scaleY="1" horizontalCenter="0" width="386" top="4" height.unactive="174" height.max="157" left.active="4" right.active="4" bottom.active="4" bottom="4"/>
+				<e:Image scaleX="1" scaleY="1" top="16" left="5" source="shoujilan" source.unactive="shoujihong" width.unactive="206" height.unactive="30"/>
+				<e:Label id="skillName0" text="战神附体Lv1" size="20" top="20" y="30" scaleX="1" scaleY="1" textColor="0xff0000" textColor.max="0x00ff00" textColor.active="0x00ff00" textColor.unactive="0xff0000" fontFamily="Microsoft YaHei" left="12" text.active="战神附体Lv1"/>
+				<e:Group top="55" left="13" height="56" height.active="87" height.unactive="89">
+					<e:Label id="skillDesc0" text="战灵出现时，10%概率附体到角色上，让三角色刀刀致命一击，持续3秒" size="20" textAlign="left" y="0" scaleX="1" scaleY="1" width="355" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa" lineSpacing="12" text.unactive="战灵出现时，10%概率附体到角色上，击杀几率提升，让三角色刀刀致命一击，持续3秒"/>
+					<e:layout>
+						<e:VerticalLayout gap="10"/>
+					</e:layout>
+				</e:Group>
+				<e:Group id="conditionGroup0" x="0" y="45" height.unactive="20" top="149" left="13" includeIn="unactive">
+					<e:Label id="condition0" text="解锁" size="20" textAlign="left" scaleX="1" scaleY="1" x="0" y="0" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+					<e:Label id="lock0" text="解锁" size="20" textAlign="left" scaleX="1" scaleY="1" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+					<e:layout>
+					<e:HorizontalLayout/>
+					</e:layout>
+				</e:Group>
+				<e:Image scaleX="1" scaleY="1" source="shoujihong" height="30" width="206" top="151" left="5" visible.unactive="false" includeIn="active"/>
+				<e:Label id="skillName1" text="战神附体Lv1" size="20" top="155" y="30" scaleX="1" scaleY="1" textColor="0xff0000" fontFamily="Microsoft YaHei" left="12" visible.unactive="false" includeIn="active"/>
+				<e:Group top="190" left="13" height="89" width="350" visible.unactive="false" includeIn="active">
+					<e:Label id="skillDesc1" text="战灵出现时，10%概率附体到角色上，暴击几率增加5%，让三角色刀刀致命一击，持续3秒" size="20" textAlign="left" y="0" scaleX="1" scaleY="1" width="350" x="0" textColor="0x6b9baa" fontFamily="Microsoft YaHei" lineSpacing="12"/>
+					<e:layout>
+					<e:VerticalLayout gap="10"/>
+					</e:layout>
+				</e:Group>
+				<e:Group left="13" top="289" visible.unactive="false" includeIn="active">
+					<e:Label id="condition1" text="解锁" size="20" textAlign="left" scaleX="1" scaleY="1" x="0" textColor="0x00FF00" y="0" fontFamily="Microsoft YaHei"/>
+					<e:Label id="lock1" text="解锁" size="20" textAlign="left" scaleX="1" scaleY="1" x="0" y="0" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+					<e:layout>
+					<e:HorizontalLayout/>
+					</e:layout>
+				</e:Group>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" x="25" scaleX="1" scaleY="1" height="30" top.unactive="193" top.max="175" x.active="47" bottom.active="-40" height.active="30">
+			<e:Image source="bantoutiaobg" height="35" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300" top.max="0" top.unactive="0"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" y="6" y.unactive="6" y.active="6" y.max="6"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

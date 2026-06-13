@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="shenshouItem" currentState="1" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        xmlns:tween="egret.tween.*" includeIn="normalWithPrompt,disabledWithPrompt" width="600"
+        height="642" states="1,2,3,4,5,6,7,8,9" >
+	<w:Declarations></w:Declarations>
+	<w:Config id="158995f2c90"></w:Config>
+	<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" height="362" top="74" source="heartmethodBG_png" width="480"/>
+	<e:Image id="shenshouImg" anchorOffsetX="0" anchorOffsetY="0" source="ss_1b_png" source.2="ss_2b_png" source.3="ss_3b_png" source.4="ss_4b_png" source.5="ss_5b_png" source.6="ss_6b_png" source.7="ss_7b_png" source.8="ss_8b_png" source.9="ss_9b_png" y.1="-11" y.2="0" y.3="-43" y.4="-74" y.5="-42" y.6="-37" y.7="-80" y.8="-26" y.9="-81" verticalCenter="-63" horizontalCenter.9="49" verticalCenter.9="-73" verticalCenter.1="-94" horizontalCenter.1="25.5" horizontalCenter.2="8.5" verticalCenter.2="-63" horizontalCenter.3="54.5" verticalCenter.3="-34" horizontalCenter.4="-2.5" verticalCenter.4="-65" horizontalCenter.5="15" verticalCenter.5="-66" horizontalCenter.6="-18.5" verticalCenter.6="-107" horizontalCenter.7="21.5" verticalCenter.7="-86" horizontalCenter.8="38" verticalCenter.8="-77" horizontalCenter="-2.5"/>
+	<e:Image anchorOffsetX="0" anchorOffsetY="0" source="shenshouBgxian_png" left="99" top="80" source.1="shenshouBgxian1_png" source.2="shenshouBgxian2_png" source.3="shenshouBgxian3_png" source.4="shenshouBgxian4_png" source.5="shenshouBgxian5_png" source.6="shenshouBgxian6_png" source.7="shenshouBgxian7_png" source.8="shenshouBgxian8_png" source.9="shenshouBgxian9_png"/>
+	<ns1:ShenshouEquipItem id="item0" skinName="ItemshenshouEquip" touchChildren="false" y.1="62" x.1="102" x.4="68" y.4="1.6" x.5="110" y.5="1" x.3="1" top="44" height="74" left="30"/>
+	<ns1:ShenshouEquipItem id="item1" skinName="ItemshenshouEquip" touchChildren="false" y.1="9" x.1="0" y.2="13" x.2="1" y.3="0" y.4="0" x.4="-5" y.5="4" x.5="1" y.6="15" x.6="-6" x.7="5" y.7="1" y.8="2" y.9="2.5" x.9="108" left="30" top="184"/>
+	<ns1:ShenshouEquipItem id="item2" skinName="ItemshenshouEquip" touchChildren="false" y.3="9" y.4="1" x.5="112" y.5="0" x.1="2" y.1="1" y.6="2" y.7="11" y.8="1" y.9="1" left="30" top="323"/>
+	<ns1:ShenshouEquipItem id="item3" skinName="ItemshenshouEquip" touchChildren="false" x.1="68" y.1="17" x.2="75" y.2="42" x.3="162" y.3="5" x.4="1" y.4="2" x.5="-2" y.5="0" x.6="136" y.6="12" x.7="111" y.7="-2.22" x.8="84" x.9="113" top="58" right="34"/>
+	<ns1:ShenshouEquipItem id="item4" skinName="ItemshenshouEquip" touchChildren="false" x.1="0" y.1="2" x.2="89" y.2="1" x.3="74" x.4="74" y.4="0" x.5="1" y.5="0" y.3="2" y.6="1" x.6="87" x.7="86" y.7="20" x.8="73" y.8="1" y.9="1" x.9="96" top="202" right="25" width="92"/>
+</e:Skin>

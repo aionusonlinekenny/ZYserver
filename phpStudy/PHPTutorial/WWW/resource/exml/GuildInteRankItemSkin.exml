@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGuildInteRankItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="493" height="48">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2" visible="false"/>	
+	<e:Label id="rank" text="1" size="20" x="68.5" textColor="0x9f946d" y="30" visible="false"/>
+	<e:Image bottom="0" left="0" right="0" top="0" source="tongyongitembg" scale9Grid="3,6,10,36"/>
+	<e:Group id="numberGroup" width="72" height="48" left="14" anchorOffsetX="0" verticalCenter="0">
+		<e:Image id="rankNumImage" source="guildrank1" scaleX="1" scaleY="1" horizontalCenter="-0.5" verticalCenter="0"/>
+	</e:Group>
+
+	<e:Label id="guildName" text="小小猪佩奇啊" size="22" verticalCenter="1" horizontalCenter="-78.5" verticalAlign="middle" textAlign="center" anchorOffsetX="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="guildOwn" text="小小猪佩奇啊" size="22" verticalCenter="1" horizontalCenter="72.5" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="point" size="22" text="999999" verticalCenter="1" horizontalCenter="196.5" verticalAlign="middle" anchorOffsetX="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+
+	<e:Image x="0" y="3.5" alpha="0.7" source="hhbossdamageitem_png" visible="false"/>
+</e:Skin>

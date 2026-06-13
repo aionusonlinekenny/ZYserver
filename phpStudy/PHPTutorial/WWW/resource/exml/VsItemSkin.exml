@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin  class="SkinVsItem" width="55" height="30" currentState="view" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="view,bet,beted" >
+	<e:Button id="betBtn" label.bet="下注" left="0" right="0" top="0" bottom="0" label.beted="已下注" skinName="SkinBtn0" icon.view="magnifier" skinName.bet="SkinBtn7" skinName.beted="SkinBtn7" enabled.beted="false"/>
+</e:Skin>

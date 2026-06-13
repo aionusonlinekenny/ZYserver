@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinReincarnateSpirit" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect id="bgClose" fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" width="574" height="715" horizontalCenter="0" verticalCenter="-20.5" anchorOffsetY="0">
+		<e:Image id="frame1" left="0" right="0" source="tongyong_dikuang2" scale9Grid="25,5,71,71" height="640" anchorOffsetY="0" y="37"/>
+		<e:Image id="tou2" source="tongyong_juanzhou" anchorOffsetX="0" left="-1" right="-1" top="23"/>
+		<e:Image id="tou1" source="tongyong_titlebg" left="162" right="161" top="5"/>
+		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" top="66" horizontalCenter="27"/>
+		<e:Group y="120" width="436" height="145" horizontalCenter="0">
+			<e:Image scaleX="1" scaleY="1" left="-50" right="-48" top="14" bottom="5" scale9Grid="16,13,559,12" source="longhuntextbg2" anchorOffsetY="0" anchorOffsetX="0"/>
+			<e:Image id="arrow0" source="jiantouyou" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="attrGroup0" horizontalCenter="35" verticalCenter="0" visible="false">
+			<e:Label text="攻击生命物抗法抗" size="20" verticalAlign="middle" textAlign="left" lineSpacing="5" width="52" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="attr0" text="+1000000" size="20" verticalAlign="middle" textAlign="center" lineSpacing="5" scaleX="1" scaleY="1" x="49" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="attr1" text="+1000000" size="20" verticalAlign="middle" textAlign="center" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="25" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="attr2" text="+1000000" size="20" verticalAlign="middle" textAlign="center" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="50" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="attr3" text="+1000000" size="20" verticalAlign="middle" textAlign="center" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="74" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			</e:Group>
+			<e:Group id="attrGroup1" horizontalCenter="-106" width="143" height="95" verticalCenter="0">
+			<e:Label text="攻击生命物抗法抗" size="20" verticalAlign="middle" textAlign="left" lineSpacing="5" width="52" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828" height="95"/>
+			<e:Label id="attr4" text="+1000000" size="20" verticalAlign="middle" textAlign="center" lineSpacing="5" scaleX="1" scaleY="1" x="49" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="attr5" text="+1000000" size="20" verticalAlign="middle" textAlign="center" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="25" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="attr6" text="+1000000" size="20" verticalAlign="middle" textAlign="center" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="50" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="attr7" text="+1000000" size="20" verticalAlign="middle" textAlign="center" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="74" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			</e:Group>
+			<e:Group id="attrGroup2" horizontalCenter="156" verticalCenter="-2">
+				<e:Label text="攻击生命物抗法抗" size="20" verticalAlign="middle" textAlign="left" lineSpacing="5" width="52" scaleX="1" scaleY="1" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label id="attr8" text="+1000000" size="20" verticalAlign="middle" textAlign="left" lineSpacing="5" scaleX="1" scaleY="1" x="49" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+				<e:Label id="attr9" text="+1000000" size="20" verticalAlign="middle" textAlign="left" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="25" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+				<e:Label id="attr10" text="+1000000" size="20" verticalAlign="middle" textAlign="left" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="50" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+				<e:Label id="attr11" text="+1000000" size="20" verticalAlign="middle" textAlign="left" lineSpacing="5" scaleX="1" scaleY="1" x="49" y="74" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+			</e:Group>
+		</e:Group>
+		<e:Group width="532" horizontalCenter="-4" bottom="398" height="43">
+			<e:Label text="附灵值" x="9" y="20" size="20" fontFamily="Microsoft YaHei" textColor="0x001828" width="68"/>
+			<e:Group id="barGroup" width="421" height="40" horizontalCenter="30" y="11" x="43" anchorOffsetX="0">
+				<e:Image id="barBg0" verticalCenter="0" width="349" scaleX="-1" source="progress2" horizontalCenter="-29" scale9Grid="17,5,33,7"/>
+				<e:ProgressBar id="expBar" maximum="100" value="40" skinName="SkinWingExpBar" slideDuration="0" height="16" anchorOffsetX="0" width="328.5" x="16" y="12"/>
+			<e:Image id="barBg1" left="0" verticalCenter="0" source="progress1" width="27"/>
+				<e:Image id="barBg2" verticalCenter="0" source="progress1" width="27" scaleX="-1" right="58"/>
+			<e:Label id="expLabel" strokeColor="0x000000" text="100/100" size="16" verticalAlign="middle" textAlign="center" height="18" verticalCenter="-22" right="60" left="0" textColor="0xFFFFFF" fontFamily="Microsoft YaHei"/>
+			<e:Label id="lvTxt" text="（Lv.30）" size="20" scaleX="1" scaleY="1" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textAlign="right" textColor="0xec6014" x="364"/>
+			</e:Group>
+			<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="2" horizontalAlign="center"/>
+			</e:layout>
+		</e:Group>
+		<e:Group width="486" height="220" horizontalCenter="0" anchorOffsetX="0" verticalCenter="95.5">
+			<e:Image scaleX="1" scaleY="1" source="tongyong_dikuang4" scale9Grid="4,5,15,16" top="-13" bottom="-13" left="-16" right="-17"/>
+			<e:List id="lunhuiList" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="3.5" itemRendererSkinName="SkinItem2" anchorOffsetY="0" height="227" anchorOffsetX="0" width="500">
+			<e:layout>
+				<e:TileLayout requestedRowCount="2" requestedColumnCount="5" horizontalGap="30" verticalGap="21"/>
+			</e:layout>
+			</e:List>
+		</e:Group>
+		<e:Image source="bantoutiaobg" height="30" scale9Grid="128,2,15,41" width="300" touchEnabled="false" y="684" horizontalCenter="0"/>
+		<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" y="687" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" horizontalCenter="0"/>
+		<e:Label text="附 灵" y="15" horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0x39566A" width="566" textAlign="center" anchorOffsetY="0" height="29" verticalAlign="middle"/>
+		<e:Button id="upBtn" label="附 灵" width="173" height="68" skinName="SkinBtn1" horizontalCenter="0" bottom="57"/>
+		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="78" bottom="109"/>
+	</e:Group>
+	<e:Image width="600" height="948" y="0" x="0" source="fulingbg_bmp" alpha="0.5" locked="true" visible="false"/>
+</e:Skin>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="Skinheirloomqmbtn" width="75" height="75" currentState="1" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="0,1,2,3,4"  width.0="75" height.0="75" width.1="75" height.1="75" width.2="75" height.2="75" width.3="75" height.3="75" width.4="75" height.4="75">
+	<w:Config id="1586b362dfe"/>
+	<e:Image  x="0" y="0" visible.2="false" visible.1="false" visible.3="false" visible.4="false" source.0="taozhuangtubiao" width.0="75" anchorOffsetY.0="0" height.0="75" width="75" height="75" source="taozhuangtubiao"/>
+	<e:Image  x="0" y="0"   visible.2="false" visible.0="false" visible.3="false" visible.4="false" source.1="taozhuangtubiao" anchorOffsetX.1="0" width.1="75" anchorOffsetY.1="0" height.1="75" width="75" height="75" source="taozhuangtubiao"/>
+	<e:Image  x="0" y="0" visible.1="false" visible.0="false" visible.3="false" visible.4="false" width="75" height="75" source="taozhuangtubiao" width.2="75" height.2="75"/>
+	<e:Image  x="0" y="0"   visible.2="false" visible.1="false" visible.0="false" visible.4="false" width="75" height="75" source="taozhuangtubiao" width.3="75" height.3="75"/>
+	<e:Image  x="0" y="0"   visible.2="false" visible.1="false" visible.0="false" visible.3="false" width="75" height="75" source="taozhuangtubiao" width.4="75" height.4="75"/>
+</e:Skin>

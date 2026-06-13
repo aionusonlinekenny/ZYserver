@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinNameChange" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>	
+	<e:Group id="anigroup" height="332" width="484" verticalCenter="0" horizontalCenter="0">
+		<e:Image source="tongyong_dikuang2" scale9Grid="24,3,76,69" height="314" bottom="0" width="484" horizontalCenter="0"/>
+		<e:Image y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="206" width="434" scale9Grid="22,20,25,25" horizontalCenter="0"/>
+		<e:Image source="tongyong_juanzhou" horizontalCenter="0" top="5"/>
+		<e:Image left="109" right="108" source="tongyong_titlebg" y="-15" anchorOffsetX="0" width="249"/>
+		<e:Label text="修改名字" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-2"/>
+		<e:Label text="请输入新名字" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x213847" top="90"/>
+		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" right="4" bottom="-66" visible="false"/>
+		<e:Button id="sureBtn" skinName="SkinBtn1" label="确定修改" horizontalCenter="0" bottom="10"/>
+		<e:Image y="156" scale9Grid="6,6,3,3" width="250" height="40" source="shuzibg" horizontalCenter="0"/>
+		<e:EditableText id="input" width="230" prompt="单击此处输入名字" maxChars="6" size="20" promptColor="0x878787" multiline="false" textAlign="center" verticalAlign="middle" horizontalCenter="0" y="160" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Group horizontalCenter="0" touchEnabled="false" touchChildren="false" bottom="-45" x="42" y="600" scaleX="1" scaleY="1">
+			<e:Image source="bantoutiaobg" height="40" width="400" y="0" x="0"/>
+			<e:Label text="点击空白区域关闭窗口" size="20" x="105" y="7" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinNewFuncNotice" width="600" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"   xmlns:ns1="*"  height="948" >
+	<w:Config id="1586b349dbe"/>
+
+
+
+
+    <e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
+    <e:Image horizontalCenter="0" verticalCenter="-35" source="bg_1_jpg"/>
+	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" currentState="nohead" top="0" horizontalCenter="0"/>
+	<e:Image id="titleImg" top="10" horizontalCenter="-223.5" source="newFuncNotice_png"/>
+	<e:Image id="activityImg" horizontalCenter="0" verticalCenter="-18.5" source=""/>
+
+	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="266"/>
+
+	<e:Group width="211" height="21" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-279.5">
+		<e:Label id="daojishi" text="开启倒计时" y="0" size="22" horizontalCenter="93" fontFamily="Microsoft YaHei" textColor="0xffffff" x="45" scaleX="1" scaleY="1"/>
+		<e:Label id="daojishi0" text="00:00:00" y="0" size="22" textColor="0x00FF00" horizontalCenter="0" fontFamily="Microsoft YaHei" x="163" scaleX="1" scaleY="1"/>
+		<e:layout>
+			<e:HorizontalLayout gap="12" horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

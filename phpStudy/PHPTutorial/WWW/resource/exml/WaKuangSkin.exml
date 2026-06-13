@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinWaKuang" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image left="0" right="0" top="0" bottom="0" source="wakuang_bg_jpg"/>
+
+
+	<e:Group id="btnGroup" horizontalCenter="0" top="720">
+		<e:Button id="go" label="前往玉矿" skinName="SkinBtn1"/>
+		<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="-3" x="162"/>
+	</e:Group>
+	<e:Group horizontalCenter="162" height="75" top="651">
+		<e:Image source="wordsbg" verticalCenter="0" left="21"/>
+		<e:Image source="icon_rob" y="2"   left="0"/>
+		<e:Label id="plunderNum" text="" size="20"   verticalCenter="-1" fontFamily="Microsoft YaHei" textColor="0xffffff" x="57"/>
+	</e:Group>
+	<e:Group horizontalCenter="-167.5" width="203" height="75" top="651">
+		<e:Image source="wordsbg" verticalCenter="0" left="21"/>
+		<e:Image y="-6"   source="icon_wakuang" x="0"/>
+		<e:Label id="workNum" text="" size="20"   verticalCenter="-1" fontFamily="Microsoft YaHei" x="57" textColor="0xffffff"/>
+	</e:Group>
+
+
+
+</e:Skin>

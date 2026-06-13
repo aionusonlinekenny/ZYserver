@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBossBlood" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+	xmlns:euiextension="euiextension.*" xmlns:ns1="*" width="580" height="930">
+	<w:Config id="15ab14fc7ea"/>
+
+
+
+	<e:Group id="barGroup" y="20" horizontalCenter="24">
+
+
+		<e:Group id="bossBloodGroup" width="480" horizontalCenter="0" x="-24" y="1">
+
+
+			<e:Group id="hudun" width="176" y="73" x="91" height="28">
+			<e:Image source="zdbosshudunxuetiaobg"/>
+			<e:ProgressBar id="hudunbloodBar" value="100" width="177" x="1" height="8" y="2" skinName="Skinbar9"/>
+				<e:Label id="proLab" text="护盾归0时触发抽奖" y="10" size="16" horizontalCenter="-3" fontFamily="Microsoft YaHei" x="80"/>
+			</e:Group>
+			<e:Image y="29.91" x="76" source="rolenamebg"/>
+			<e:Image x="66.46" y="29.51" source="bosstouxiangjinbian"/>
+			<e:Image x="66.46" y="91.68" source="bosstouxiangjinbian" scaleY="-1"/>
+			<e:Image y="49" x="89.6" source="rolebloodbg" scale9Grid="33,3,201,18"/>
+			<e:Image x="27.49" y="28.52" source="guildkuangbg" scaleX="0.75" scaleY="0.75"/>
+			<e:Image id="grayImg" y="50" x="91" scale9Grid="212,2,3,10" source="bosshp1" height="21" width="263" visible="false"/>
+			<e:Scroller id="bosshp" width="263" height="21" x="90" y="50">
+				<e:Group id="bosspanel"/>
+			</e:Scroller>
+
+			<e:Image id="head" y="27.5" x="25" source=""/>
+
+
+			<e:Image width="69" height="71" x="24.33" y="26.33" source="guildkuang"/>
+
+			<e:Label id="nameTxt" y="30.05" size="18" text="祖玛教主" x="104.3"  fontFamily="Microsoft YaHei" anchorOffsetX="0" width="230" textAlign="left"/>
+			<e:Button id="tipBtn0" label="奖励" x="261.26" y="13.73" skinName="SkinBtn18"/>
+		</e:Group>
+		<e:Label id="bossBloodNumLabel" text="X5" x="313.6" y="52.5" fontFamily="Microsoft YaHei" size="18"/>
+		<ns1:DropDown id="dropDown" y="97" skinName="SkinDropDown" right="-16"/>
+		<e:Label id="bossBloodPercentageLabel" text="100%" x="194.1" y="52.5" fontFamily="Microsoft YaHei" size="18"/>
+
+
+		<e:Label id="myTxt" y="30.5" size="16" text="自己：10" x="354" fontFamily="Microsoft YaHei"/>
+		<ns1:BossesRewardsItem id="currewards" skinName="SkinChuangtianguanBossReward" verticalCenter="29" horizontalCenter="18.5"/>
+	</e:Group>
+
+	</e:Skin>

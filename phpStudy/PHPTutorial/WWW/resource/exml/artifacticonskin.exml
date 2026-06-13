@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SkinArtifactIcon" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<e:Group id="shenqi"   touchEnabled="false" bottom="0" horizontalCenter="0" width="99" height="140" anchorOffsetY="0">
+		<e:Image id="shenqibg1" source="longhunbg3_png" verticalCenter="19" horizontalCenter="0"/>
+		<e:Image id="imgItem" rotation="0.3" source="sq_10_png" y="-48.4"  horizontalCenter="0"/>
+
+
+
+		<e:Group id="tableMc" horizontalCenter="0" verticalCenter="20"/>
+		<e:Group id="shenqieff0" touchEnabled="false" anchorOffsetY="0" height="22" verticalCenter="58"  horizontalCenter="0">
+
+			<e:Image id="imgInfo" rotation="0.23" horizontalCenter="0" source="gnygtextbg_png" height="30" width="150" anchorOffsetY="0" y="0" scale9Grid="55,4,6,18"/>
+		<e:Label id="labelInfo" text="挂机铜钱效率提升" size="16" y="5" horizontalCenter="0.5" fontFamily="Microsoft YaHei" bold="false" textAlign="center"/>
+		</e:Group>
+		<e:Group id="partcount0" horizontalCenter="0" touchEnabled="false" width="116" height="40" verticalCenter="49">
+
+		<e:Label id="labelChapter" text="再战20关" size="16" horizontalCenter="0" bold="false" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="1" textAlign="center" y="3"/>
+		</e:Group>
+		<e:Image id="imgName" y="20" horizontalCenter="47" scaleX="0.6" scaleY="0.6" source="" visible="false"/>
+	</e:Group>
+	<e:Group id="groupEff" bottom="80" x="73"/>
+	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian"   right="-1" bottom="21" scaleX="0.6" scaleY="0.6" visible="false"/>
+	<e:Group id="guiderGroup" width="100" height="100" bottom="28" horizontalCenter="0"/>
+</e:Skin>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinGwAttrs" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<e:Rect id="rect" fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="anigroup" width="350" height="260" horizontalCenter="0" verticalCenter="-78">
+		<e:Image source="bantoutiaobg" height="36" horizontalCenter="0" scale9Grid="128,2,15,41" width="300" bottom="-44"/>
+		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Image id="bg1"   left="0" right="0" top="0" scale9Grid="10,9,9,10" bottom="0" source="tongyongtip1"/>
+		<e:Image id="bg2"   left="0" right="0" top="0" bottom="0" source="quali4_png" scale9Grid="9,18,8,500"/>
+
+		<e:Label id="GwName" text="" size="24" touchEnabled="false" horizontalCenter="0" y="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label text="神兵等级和圣物镶嵌属性总和" size="18" touchEnabled="false" horizontalCenter="0.5" y="211" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+
+		<e:List id="list" width="240" itemRendererSkinName="SkinshenQiAttrDesc" horizontalCenter="0" height="100" y="80">
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:List>
+	</e:Group>
+</e:Skin>

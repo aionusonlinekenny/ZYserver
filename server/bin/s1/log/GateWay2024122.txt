@@ -1,0 +1,19 @@
+[2024-12-02 17:31:54]GateWay[GameWorld] Started 
+[2024-12-02 17:31:54]================================================ 
+[2024-12-02 17:31:54]Gateway start ok,kernal 2.0, Select Mode 
+[2024-12-02 17:31:54]spf:view status 
+[2024-12-02 17:31:54]quit:stop server and exit 
+[2024-12-02 17:31:54]================================================ 
+[2024-12-02 17:31:55]connect fail! GameWorld  10061 由于目标计算机积极拒绝，无法连接。
+[2024-12-02 17:31:55]Free Sesssion Memory!count:8192 
+[2024-12-02 17:31:55]Free Sesssion Memory:free memory size:0, processed session count=8192 
+[2024-12-02 17:32:00]connect fail! GameWorld  10061 由于目标计算机积极拒绝，无法连接。
+[2024-12-02 17:32:04]GameWorld Connected 
+[2024-12-02 17:32:04]GameWorld server succ 
+[2024-12-02 17:34:04]accept new user:192.168.200.1, socket:184 
+[2024-12-02 17:34:04]gateway active user 1, new user socket:184, ip:192.168.200.1 
+[2024-12-02 17:34:04]SendOpenSession: socket=184 sessionId=8191 
+[2024-12-02 17:36:56]Free Sesssion Memory!count:8191 
+[2024-12-02 17:36:56]Free Sesssion Memory:free memory size:0, processed session count=8191 
+[2024-12-02 17:37:35]Close Sess,ip:192.168.200.1,reason:2004, socket err = 0, gate_ptr:424421657120, socket=184 
+[2024-12-02 17:37:35]closesocket 184 
