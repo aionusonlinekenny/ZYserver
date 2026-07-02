@@ -1,12 +1,12 @@
 --墓碑名字
 mbmc = {
-	t0001 = "连服BOSS-末日之影的墓碑",
+	t0001 = "Bia Mộ BOSS Liên Server - Ảnh Mạt Nhật",
 },
 mbsh = {
-	s0001 = "禁止在此小便，违者没收作案工具！请给予对每日22点复活的连服BOSS足够的尊重",		---------------【1号世界boss，末日之影】刷新前5分钟外说的话
-	s0002 = "来吧 ，逝去的魂灵，来的你们的主人身边，本座即将复活，让我用痛苦来净化这群无知的人类",	---------------【1号世界boss，末日之影】刷新前5分钟内说的话
+	s0001 = "Cấm tiểu tiện ở đây, vi phạm sẽ bị tịch thu công cụ gây án! Hãy dành đủ sự tôn trọng cho BOSS liên server hồi sinh lúc 22h mỗi ngày",		---------------【1号世界boss，末日之影】刷新前5分钟外说的话
+	s0002 = "Đến đây, những linh hồn đã khuất, hãy đến bên chủ nhân của các ngươi, bản tọa sắp hồi sinh, để ta dùng đau khổ thanh tẩy đám người ngu muội này",	---------------【1号世界boss，末日之影】刷新前5分钟内说的话
 },
 --尸体名字
 CorpseName = {
-	c0001 = "连服BOSS-末日之影的尸体",
+	c0001 = "Thi Thể BOSS Liên Server - Ảnh Mạt Nhật",
 }
