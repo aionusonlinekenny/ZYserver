@@ -331,7 +331,10 @@ Game có **3 lớp văn bản tách biệt**, mỗi lớp cần cách xử lý k
 - ⬜ Còn lại trong Giai đoạn 1: ~255 chuỗi xuất hiện đúng 2 lần (chưa dịch).
 - ✅ **Giai đoạn 2** — 2026-07-02: đã dịch xong web đăng ký/đăng nhập: `index.php` (title, tên server hiển thị trong danh sách chọn server), `reg/index.php` (nhãn, nút, placeholder), `reg/api/api.php` + `reg/api/config.php` (thông báo lỗi trả về khi đăng ký/đăng nhập), `reg/user/js/app.js` (thông báo validate form). Đã kiểm tra `php -l` và `node --check` không lỗi cú pháp. Comment code (không hiển thị cho người chơi) cố tình không dịch để giữ phạm vi gọn.
 - ✅ **Giai đoạn 3** — 2026-07-02: đã dịch panel gameplay chính (nhân vật, túi đồ, kỹ năng, cửa hàng, bang hội — 101 file mục tiêu, 184 chuỗi mới trong `text=`, 222 lượt áp dụng). Đồng thời phát hiện và xử lý một lớp thuộc tính riêng: nút bấm Egret dùng `label="..."` (không phải `text="..."`) — đã dịch toàn bộ **276 nhãn nút** (chuẩn hoá về 237 khái niệm gốc để tránh dịch trùng các biến thể có khoảng trắng đệm như "购 买"/"购  买"/"购买"), áp dụng 728 lượt trên 392 file. Script `apply_glossary.py` đã được nâng cấp để nhận diện cả `text=` và `label=`. Xác minh 840 file vẫn là XML hợp lệ.
-- ⬜ Giai đoạn 4 (panel sự kiện), Giai đoạn 5 (server-side language), Giai đoạn 6 (config game) — chưa bắt đầu.
+- ✅ **Giai đoạn 4** — 2026-07-02: đã dịch **toàn bộ phần còn lại** của panel sự kiện/hoạt động (4 đợt: 4a/4b/4c/4d, tổng 1.393 chuỗi mới). Xác nhận bằng scan lại toàn bộ 840 file: **0 chuỗi chữ Hán còn sót lại** trong bất kỳ thuộc tính `text=` hay `label=` nào. Tổng cộng từ Giai đoạn 1→4: **675/840 file exml đã được sửa**, 3.464 dòng thay đổi, 0 lỗi XML ở lần kiểm tra cuối cùng.
+  → **Toàn bộ "UI code" theo đúng nghĩa (file `.exml` — khung giao diện, nút bấm, nhãn, tooltip) đã dịch xong 100%.**
+- ⬜ Giai đoạn 5 (server-side language — `data/language/zh-cn/*.txt`, ~19.300 dòng: tên item/skill/quái, hội thoại NPC, thông báo hệ thống) — chưa bắt đầu, khối lớn nhất còn lại.
+- ⬜ Giai đoạn 6 (config game — `data/config/**/*.config`, 401 file có chữ Hán nhúng trực tiếp trong tên/mô tả) — chưa bắt đầu, rủi ro cao nhất do cần tránh sửa nhầm field không phải text.
 
 ### 8.5. Lưu ý triển khai
 
