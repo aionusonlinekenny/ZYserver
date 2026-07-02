@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="SkinMijiLearnItem" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" >
 	<ns1:ItemBaseNoTap id="item" y="2" skinName="SkinItem3" x="2"/>
-	<e:Label id="label" text="已学" y="7" size="20" strokeColor="000000" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" bold="true" visible="false"/>
+	<e:Label id="label" text="Đã học" y="7" size="20" strokeColor="000000" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" bold="true" visible="false"/>
 
 	<e:Image id="select" y="-4" x="-3.5" source="xuanzekuang3" width="85" height="85" scale9Grid="15,13,11,11"/>
 	<e:Image id="yixue" width="40" height="40" y="2" source="tianshuyixue_png" x="35"/>

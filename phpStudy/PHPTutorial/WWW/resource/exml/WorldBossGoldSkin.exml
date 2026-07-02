@@ -12,7 +12,7 @@
 		</e:Group>
 		<e:Group width="240" bottom="46" horizontalCenter="0">
 			<e:Button id="reliveBtn" icon="czbtn"  skinName="SkinBtn6" horizontalCenter="3" verticalCenter="1.5"/>
-			<e:Button id="exitBtn" label="退出" x="-90" y="0" skinName="SkinBtn3" width="110" visible="false"/>
+			<e:Button id="exitBtn" label="Thoát" x="-90" y="0" skinName="SkinBtn3" width="110" visible="false"/>
 			<e:Label id="alive" text="复活道具 0/1" x="229" size="18" textColor="0x00ff00" verticalCenter="0" visible="false"/>
 			<e:Image id="moneyIcon" touchEnabled="false" horizontalCenter="-121" source="" y="17"/>
 			<e:Label id="moneyLabel" text="100元宝原地复活" fontFamily="Microsoft YaHei" size="20" horizontalCenter="0" verticalCenter="-1.5"/>

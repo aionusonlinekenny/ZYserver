@@ -17,7 +17,7 @@
 			</e:layout>
 		</e:List>
 	</e:Scroller>
-	<e:Button id="challengeBtn" label="挑战" skinName="SkinBtn1" bottom="3" horizontalCenter="-58"/>
+	<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn1" bottom="3" horizontalCenter="-58"/>
 
 
 	<e:Label id="canChallengeTxt" text="80级可挑战" horizontalCenter="-54" size="24" bottom="25" fontFamily="Microsoft YaHei" textColor="0xffff00"/>

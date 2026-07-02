@@ -3,7 +3,7 @@
 	<w:Config id="15c3ed136aa"/>
 	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
 
-	<e:Button id="closeBtn" label="按钮" x="407" y="620" skinName="SkinBtn0" visible="false"/>
+	<e:Button id="closeBtn" label="Nút bấm" x="407" y="620" skinName="SkinBtn0" visible="false"/>
 	<e:Group horizontalCenter="1.5" verticalCenter="-23.5" width="571" height="741">
 		<e:Image right="1" scale9Grid="34,20,1,1" source="tongyong_dikuang2" left="-1" top="15" bottom="17" x="-16" y="-89" scaleX="1" scaleY="1"/>
 		<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="24,0,443,17" top="0" x="-15" y="-104" scaleX="1" scaleY="1"/>
@@ -20,7 +20,7 @@
 				</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Button id="sendReward" label="分配奖励" skinName="SkinBtn1" horizontalCenter="2.5" bottom="30"/>
+		<e:Button id="sendReward" label="Phân phối thưởng" skinName="SkinBtn1" horizontalCenter="2.5" bottom="30"/>
 		<e:Image source="bantoutiaobg" height="40" width="383" bottom="-26" horizontalCenter="-1" scale9Grid="44,5,310,30"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="-7.5" bottom="-13" textColor="0xFFFFFF" fontFamily="Microsoft YaHei"/>
 

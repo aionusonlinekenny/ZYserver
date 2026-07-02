@@ -15,6 +15,6 @@
 				</e:layout>
 			</e:List>
 		</e:Group>
-		<e:Button id="challengeBtn" label="挑战" skinName="SkinBtn6" horizontalCenter="5" icon="btn2_2" top="543" width="174" height="69" scaleX="0.8" scaleY="0.8"/>
+		<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn6" horizontalCenter="5" icon="btn2_2" top="543" width="174" height="69" scaleX="0.8" scaleY="0.8"/>
 	</e:Group>
 </e:Skin>

@@ -45,10 +45,10 @@
 		</e:List>
 	</e:Group>
 	<e:Group id="groupEff" touchChildren="false" touchEnabled="false" horizontalCenter="0"  scaleX="1.25" scaleY="1.25" top="450"/>
-	<!--<e:Button id="btnOpen" label="激活" skinName="SkinBtn1" visible.normal="false" y="705" horizontalCenter="0"
+	<!--<e:Button id="btnOpen" label="Kích hoạt" skinName="SkinBtn1" visible.normal="false" y="705" horizontalCenter="0"
 	          visible="false" />-->
 	<e:Group id="actGroup"  width="349"  horizontalCenter="0" touchEnabled="false" top="762" height="50">
-		<e:Button id="btnOpen" label="解锁" visible.normal="false"  horizontalCenter="0" verticalCenter="0" skinName="SkinBtn7"/>
+		<e:Button id="btnOpen" label="Mở khóa" visible.normal="false"  horizontalCenter="0" verticalCenter="0" skinName="SkinBtn7"/>
 		<e:Image id="guide0" width="100" height="40" horizontalCenter="-123.5" verticalCenter="0"/>
 		<e:Image id="guide1" horizontalCenter="124" width="100" height="40" x="248" verticalCenter="0"/>
 	</e:Group>
@@ -85,5 +85,5 @@
 		<e:HorizontalLayout gap="-3"/>
 		</e:layout>
 	</e:TabBar>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" y="46" horizontalCenter="275" icon="chatclose"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" y="46" horizontalCenter="275" icon="chatclose"/>
 </e:Skin>

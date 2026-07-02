@@ -23,12 +23,12 @@
 			<e:Image id="gameName_3" alpha="1" y="152.06" rotation="0" scaleX="1" scaleY="1" horizontalCenter="5" source="desktop_name1_png"/>
 		</e:Group>
 		<e:Image id="icon" x="388.65" y="579.9" rotation="350" source="desktop_icon_png"/>
-		<e:Button id="receiveRewardBtn" label="领取奖励" x="90" y="180" skinName="SkinBtn16"/>
+		<e:Button id="receiveRewardBtn" label="Nhận thưởng" x="90" y="180" skinName="SkinBtn16"/>
 		<e:Image id="redPoint" width="20" height="20" x="211.71" y="177.33" source="zjmhongdian"/>source="desktop_png" alpha="0.7" x="-268" y="247"/>
 	</e:Group>
 	<e:Group width="600" top="0" horizontalCenter="0" touchEnabled="false" touchThrough="true" height="948" anchorOffsetY="0" x="10" y="10">
 		<ns1:RoleSelectPanel id="roleSelect" currentState="nohead" skinName="Skin1RoleSelectPanel" top="0" bottom="0" width="600" horizontalCenter="0" x="0" y="0" scaleX="1" scaleY="1"/>
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="45.66" scaleX="1" scaleY="1" horizontalCenter="274"/>
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="45.66" scaleX="1" scaleY="1" horizontalCenter="274"/>
 		<e:Image source="shang_2_png" anchorOffsetX="0" left="0" top="0"/>
 		<e:Image id="title1" top="27" left="80" source="shoucang_biaoti_png"/>
 	</e:Group>

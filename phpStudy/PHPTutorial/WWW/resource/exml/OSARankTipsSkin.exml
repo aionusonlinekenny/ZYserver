@@ -9,7 +9,7 @@
 			<e:Image source="tongyong_titlebg" width="281" height="41" horizontalCenter="0" top="-20"/>
 			<e:Image width="535" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,6,60,42" top="32" anchorOffsetY="0" bottom="59"/>
 			<e:Label id="title" text="开服聚灵榜" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" top="-8" textColor="0x39566A"/>
-			<e:Button label="按钮" id="closeBtn" right="-16" top="-14" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+			<e:Button label="Nút bấm" id="closeBtn" right="-16" top="-14" skinName="SkinBtn0" icon="tongyong_btnclose"/>
 			<e:Scroller width="511" height="644.86" horizontalCenter="1" scrollPolicyV="on" scrollPolicyH="off" verticalCenter="-13" anchorOffsetY="0">
 			<e:List id="record" left="0" top="-4" bottom="-0.13999999999998636" right="0" itemRendererSkinName="OSARankListItemSkin" anchorOffsetY="0">
 				<e:layout>

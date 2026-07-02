@@ -99,7 +99,7 @@
 			</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Button id="seek" label="查看排行" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="0.5" bottom="13"/>
+		<e:Button id="seek" label="Xem bảng xếp hạng" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="0.5" bottom="13"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" scaleX="1" scaleY="1" horizontalCenter="78" bottom="63"/>
 
 	</e:Group>

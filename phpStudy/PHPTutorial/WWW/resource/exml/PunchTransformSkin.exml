@@ -11,8 +11,8 @@
 
 
 		<e:Label text="火珠转换" y="25" size="22" fontFamily="Microsoft YaHei" textAlign="center" left="0" right="0" textColor="0x084151"/>
-		<e:Button id="transformBtn" label="一键转换" y="297" skinName="SkinBtn3" left="90"/>
-		<e:Button id="quicklytransformBtn" label="转  换" y="297" skinName="SkinBtn3" right="90"/>
+		<e:Button id="transformBtn" label="Chuyển đổi nhanh" y="297" skinName="SkinBtn3" left="90"/>
+		<e:Button id="quicklytransformBtn" label="Chuyển đổi" y="297" skinName="SkinBtn3" right="90"/>
 		<e:Image source="jiantouyou" x="205" y="130" height="70"/>
 		<e:Group id="seniorPiece" height="114" left="65" top="85">
 			<e:Image source="quality0" anchorOffsetX="0" width="74" anchorOffsetY="0" height="74" scale9Grid="8,8,48,48" horizontalCenter="0" bottom="0"/>

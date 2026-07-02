@@ -45,5 +45,5 @@
 			</e:List>
 		</e:Scroller>
 	</e:Group>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" horizontalCenter="275" top="55"/>		
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" horizontalCenter="275" top="55"/>		
 </e:Skin>

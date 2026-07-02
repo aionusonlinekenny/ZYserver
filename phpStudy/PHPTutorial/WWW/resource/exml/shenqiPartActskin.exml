@@ -12,7 +12,7 @@
 			<e:Label id="labelInfo" text="" size="20" y="0" textAlign="left" verticalAlign="top" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 		<e:Image id="imgArtifact" y="50" source="sq_11_png" width="100" height="100" horizontalCenter="0.5"/>
-		<e:Button id="btnOpen" label="激 活" horizontalCenter="-0.5" bottom="16" width="118" height="51" icon="btn2_2" scaleX="0.8" scaleY="0.8" skinName="SkinBtn6"/>
+		<e:Button id="btnOpen" label="Kích hoạt" horizontalCenter="-0.5" bottom="16" width="118" height="51" icon="btn2_2" scaleX="0.8" scaleY="0.8" skinName="SkinBtn6"/>
 		<e:List id="list" width="76" height="100" y="217.38" itemRendererSkinName="SkinshenQiAttrDesc" anchorOffsetX="0" horizontalCenter="-96.5">
 			<e:layout>
 				<e:VerticalLayout/>

@@ -23,7 +23,7 @@
 		</e:List>
 	</e:Scroller>
 
-	<e:Button id="btnChallenge" label="挑  战" skinName="SkinBtn1" width="176" height="69" anchorOffsetX="0" horizontalCenter="0" verticalCenter="300.5"/>
+	<e:Button id="btnChallenge" label="Thách đấu" skinName="SkinBtn1" width="176" height="69" anchorOffsetX="0" horizontalCenter="0" verticalCenter="300.5"/>
 	<e:Label text="今日可挑战次数：" size="20" horizontalCenter="-8" includeIn="challenge" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="345"/>
 	<e:Label id="lbTime" text="10" size="20" horizontalCenter="79" includeIn="challenge" fontFamily="Microsoft YaHei" textColor="0x00ff00" verticalCenter="345"/>
 		<e:Scroller id="notice" top="440" width="350" height="60" scrollPolicyV="off" scrollPolicyH="off" horizontalCenter="-102" visible="false">

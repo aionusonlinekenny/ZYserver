@@ -7,7 +7,7 @@
 		<e:Image width="249" top="-34" horizontalCenter="-1.5" source="tongyong_titlebg" scale9Grid="118,16,18,13" x="119" y="-12" scaleX="1" scaleY="1"/>
 		<e:Image source="tongyongbg5" width="419" height="288" horizontalCenter="1.5" verticalCenter="-67" scale9Grid="9,5,10,9" x="37" y="53" scaleX="1" scaleY="1"/>
 		<e:Label size="22" text="比赛下注" horizontalCenter="0" textColor="0x084151" fontFamily="Microsoft YaHei" top="-21"/>
-		<e:Button id="betBtn" label="下 注" bottom="93" width="120" height="50" horizontalCenter="1" icon="btn2_2" skinName="SkinBtn6"/>
+		<e:Button id="betBtn" label="Đặt cược" bottom="93" width="120" height="50" horizontalCenter="1" icon="btn2_2" skinName="SkinBtn6"/>
 		<e:Group horizontalCenter="-121" width="150" height="170" top="12">
 			<e:Image scale9Grid="10,8,5,3" horizontalCenter="0" source="guildkuangbg" verticalCenter="-2" scaleX="1" scaleY="1"/>
 			<e:Image id="face0" source="head_11" width="85" height="85" horizontalCenter="0" verticalCenter="0"/>
@@ -23,7 +23,7 @@
 			<e:Label id="name1" text="Bánh Bao Bánh Bao Bao" size="20" horizontalCenter="0" textColor="0x1b3046" fontFamily="Microsoft YaHei" bottom="4"/>
 		</e:Group>
 		<e:Group bottom="213" horizontalCenter="1" width="328" height="50">
-			<e:Button id="maxBtn" label="最大" icon="zjmzidong" width="68" height="41" horizontalCenter="99" top="-3">
+			<e:Button id="maxBtn" label="Tối đa" icon="zjmzidong" width="68" height="41" horizontalCenter="99" top="-3">
 				<e:skinName>
 					<e:Skin states="up,down,disabled">
 					<e:Image width="68" height="41" source="zjmzidong" scaleX.down="0.9" scaleY.down="0.9"/>

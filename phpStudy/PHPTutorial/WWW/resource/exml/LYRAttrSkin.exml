@@ -15,7 +15,7 @@
 
 
 
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="fanhui" x="271" y="369" visible="false" />
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="fanhui" x="271" y="369" visible="false" />
 		<e:Image anchorOffsetX="0" horizontalCenter="0.5" width="329" top="153" source="line2_png"/>
 		<e:Group id="attrGroup" left="29" anchorOffsetY="0" height="119" anchorOffsetX="0" width="314.5" top="21">
 

@@ -36,7 +36,7 @@
 			</e:Group>
 
 			<e:Image id="tttzhi" touchEnabled="false" anchorOffsetX="55.5" anchorOffsetY="119" source="xyzp2_png" rotation="0" y="293" x="257.5"/>
-			<e:CheckBox id="turnten" label="10连抽" skinName="SkinCheckBox1" horizontalCenter="0"  icon="xyzp4_png" y="336"/>
+			<e:CheckBox id="turnten" label="Rút 10 lần" skinName="SkinCheckBox1" horizontalCenter="0"  icon="xyzp4_png" y="336"/>
 
 
 			<e:Button id="choujiangBtn" skinName="SkinBtn0" icon="xyzpstart_png" horizontalCenter="0" verticalCenter="-6"/>

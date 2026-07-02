@@ -69,6 +69,6 @@
 		</e:Group>
 		<e:Group id="titleMcGroup" anchorOffsetX="0" anchorOffsetY="0" x="235" top="-12"/>
 	</e:Group>
-	<e:Button id="shipBtn" label="膜拜冠军" name="buy" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2" top="642" width="209" height="63"/>
-	<e:Button label="膜拜冠军" name="buy" skinName="SkinBtn0" icon="peakness_worship_btn" top="213" left="27"/>
+	<e:Button id="shipBtn" label="Bái phục Nhà vô địch" name="buy" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2" top="642" width="209" height="63"/>
+	<e:Button label="Bái phục Nhà vô địch" name="buy" skinName="SkinBtn0" icon="peakness_worship_btn" top="213" left="27"/>
 </e:Skin>

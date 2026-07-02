@@ -18,19 +18,19 @@
 				<e:HorizontalLayout/>
 			</e:layout.special>
 		</e:List>
-		<e:Button id="get" label="领取" horizontalCenter="0" bottom="22" skinName="SkinBtn3"/>
+		<e:Button id="get" label="Nhận" horizontalCenter="0" bottom="22" skinName="SkinBtn3"/>
 		<e:Group id="add" width="380" height="60" horizontalCenter="0" bottom="92" x="-190" y="0">
 			<e:Button id="sub1Btn0" label="" skinName="SkinBtn0" icon="btn-" verticalCenter="0" horizontalCenter="-80"/>
 			<e:Button id="add1Btn0" label="" skinName="SkinBtn0" icon="btnadd" verticalCenter="0" horizontalCenter="80" x="10" y="10"/>
-			<e:Button id="maxBtn0" label="最大" icon="btnmax2" skinName="SkinBtn0" verticalCenter="0" right="43"/>
-			<e:Button id="minBtn0" label="最小" icon="btnmax2" x="80" skinName="SkinBtn0" rotation="180" verticalCenter="0"/>
+			<e:Button id="maxBtn0" label="Tối đa" icon="btnmax2" skinName="SkinBtn0" verticalCenter="0" right="43"/>
+			<e:Button id="minBtn0" label="Tối thiểu" icon="btnmax2" x="80" skinName="SkinBtn0" rotation="180" verticalCenter="0"/>
 			<e:Image width="100" height="38" source="shuzibg" verticalCenter="0" horizontalCenter="0" scale9Grid="8,4,10,14"/>
 			<e:EditableText id="numLabel0" text="1" textAlign="center" size="30" width="90" verticalCenter="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" bottom="-39" y="601" horizontalCenter="0">
 			<e:Image source="bantoutiaobg" height="40" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" verticalCenter="-3"/>
-			<e:Button id="closeBtn0" label="按钮" y="-17" skinName="SkinBtn0" right="-10" x="188" visible="false"/>
+			<e:Button id="closeBtn0" label="Nút bấm" y="-17" skinName="SkinBtn0" right="-10" x="188" visible="false"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

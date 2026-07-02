@@ -59,8 +59,8 @@
 		</e:Group>
 		<ns1:LevelImage id="stageImg" width="40" height="109" skinName="Skinjieji" horizontalCenter="-236" top="130" visible="false"/>
 		<e:Group id="btnGroup" width="450" height="120" horizontalCenter="0" includeIn="open" visible.open="true" bottom="169" visible="false">
-		<e:Button id="uplevel" label="升星" skinName="SkinBtn1" width="180" height="60" horizontalCenter="0" bottom="0"/>
-		<e:Button id="upgradebtn" label="升阶" skinName="SkinBtn1" width="180" horizontalCenter="0" bottom="0" height="60"/>
+		<e:Button id="uplevel" label="Nâng sao" skinName="SkinBtn1" width="180" height="60" horizontalCenter="0" bottom="0"/>
+		<e:Button id="upgradebtn" label="Thăng bậc" skinName="SkinBtn1" width="180" horizontalCenter="0" bottom="0" height="60"/>
 		<e:Label id="ringget" text="碎片获取" textColor="0x56e22d" size="20" right="30" bottom="22"/>
 		<e:Group horizontalCenter="0" bottom="67">
 			<e:Label id="countTxt" y="0" text="消耗特戒碎片:" size="20" x="0" textColor="0xd1c28f"/>
@@ -76,7 +76,7 @@
 			<e:Image id="openDeimage" scaleX="1" scaleY="1" source="ringlabel2_png" bottom="-93" horizontalCenter="51" visible="false"/>
 
 		</e:Group>
-		<e:Button id="acivebtn" label="激 活" icon="btn1_2" scaleX="1" scaleY="1" horizontalCenter="0" bottom="-3" visible.tejie8="false" skinName="SkinBtn7" visible.open="false"/>
+		<e:Button id="acivebtn" label="Kích hoạt" icon="btn1_2" scaleX="1" scaleY="1" horizontalCenter="0" bottom="-3" visible.tejie8="false" skinName="SkinBtn7" visible.open="false"/>
 		<e:Group y.quicly="74" y.tejie8="74"  horizontalCenter.quicly="1" horizontalCenter.tejie8="1" width="456" height="42"  includeIn="disable,wait,open"  verticalCenter="165" horizontalCenter="-65">
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" x.wait="0" x="-10" visible="false"/>
 		<e:Image includeIn="disable,wait" source="shuxingbg4" anchorOffsetX="0" width="190" y.wait="537" horizontalCenter.disable="6" width.disable="200" width.wait="200"  horizontalCenter="0" verticalCenter="0" visible="false"/>
@@ -141,8 +141,8 @@
 		</e:Group>
 		<e:Button id="goQuicklyOpen" label="" skinName="SkinBtn0" icon="czbtn" horizontalCenter="0" bottom="25"/>
 		<ns1:PriceIcon id="price0" skinName="SkinPriceIcon" horizontalCenter="0" bottom="96"/>
-		<e:Label text="召 唤" size="26" touchEnabled="false" horizontalCenter="0" bottom="45" fontFamily="Microsoft YaHei"/>
-		<e:Button id="remix" label="融  合" x="87" skinName="SkinBtn1" bottom="16" visible="false"/>
+		<e:Label text="Triệu hồi" size="26" touchEnabled="false" horizontalCenter="0" bottom="45" fontFamily="Microsoft YaHei"/>
+		<e:Button id="remix" label="Dung hợp" x="87" skinName="SkinBtn1" bottom="16" visible="false"/>
 		<e:Label id="remixText" text="完成任务可免费融合 (0/5)" size="20" textColor="0x9f946d" bold="true" horizontalCenter="0" bottom="115" visible="false"/>
 		<e:Image id="ringName" source="ring_title" verticalCenter="-281" horizontalCenter="-255"/>
 		<e:Image source="lyr_fuse_award0_png" horizontalCenter="0" verticalCenter="175"/>
@@ -162,7 +162,7 @@
 	</e:Group>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" horizontalCenter="0" currentState="nohead" top="0" locked="true"/>
 	<e:Image source="biaoti_tejie" horizontalCenter="-230.5" top="11"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="275" top="51"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="275" top="51"/>
 
 	
 </e:Skin>

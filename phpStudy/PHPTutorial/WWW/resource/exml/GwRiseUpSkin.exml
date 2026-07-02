@@ -14,8 +14,8 @@
 		<e:Image id="yuanbaoImg" verticalCenter="48" source="szyuanbao" x="210" touchEnabled="false"/>
 		<e:Label id="yuanbaoCost" text="200/次" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="69" bottom="93" anchorOffsetY="0" textColor="0xf8b141"/>
 		<e:CheckBox id="yuanbao" label="" x="100" y="179" skinName="SkinCheckBox0" scaleX="0.8" scaleY="0.8" anchorOffsetX="0" width="260"/>
-		<e:Button id="sureBtn" skinName="SkinBtn1" label="鼓 舞" bottom="20" horizontalCenter="80" width="130" height="50"/>
-		<e:Button id="cancelBtn" skinName="SkinBtn1" label="取  消" bottom="20" horizontalCenter="-80" width="130" height="50"/>
-		<e:Label id="title" text="鼓 舞" y="12" size="24" bold="true" horizontalCenter="0" textColor="0xBD600D"/>
+		<e:Button id="sureBtn" skinName="SkinBtn1" label="Cổ vũ" bottom="20" horizontalCenter="80" width="130" height="50"/>
+		<e:Button id="cancelBtn" skinName="SkinBtn1" label="Hủy" bottom="20" horizontalCenter="-80" width="130" height="50"/>
+		<e:Label id="title" text="Cổ vũ" y="12" size="24" bold="true" horizontalCenter="0" textColor="0xBD600D"/>
 	</e:Group>
 </e:Skin>

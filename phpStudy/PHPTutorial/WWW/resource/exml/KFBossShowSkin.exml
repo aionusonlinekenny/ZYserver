@@ -16,6 +16,6 @@
 			</e:List>
 		</e:Group>
 		<e:Image id="bossName" source="title_yincangboss" horizontalCenter="0.5" top="30"/>
-		<e:Button id="challengeBtn" label="挑战" skinName="SkinBtn1" horizontalCenter="0" height="62" y="538"/>
+		<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn1" horizontalCenter="0" height="62" y="538"/>
 	</e:Group>
 </e:Skin>

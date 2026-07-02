@@ -10,10 +10,10 @@
 		<e:Label id="labelName" text="Tên có 6 chữ" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="229" top="64"/>
 		<e:Label id="labelGuild" text="Tên Tiên Minh bao nhiêu chữ" y="118" size="20" left="229" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="labelLv" text="Chuyển sinh 12 cấp 100" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" left="229"/>
-		<e:Button id="btnFriend" label="好友" bottom="38" right="77" skinName="SkinBtn3"/>
-		<e:Button id="btnInfo" label="查看" skinName="SkinBtn3" top="169" right="77"/>
-		<e:Button id="btnChat" label="私聊" skinName="SkinBtn3" left="74" top="169"/>
-		<e:Button id="btnIgnore" label="屏蔽"   bottom="38" skinName="SkinBtn3" left="74"/>
+		<e:Button id="btnFriend" label="Bạn bè" bottom="38" right="77" skinName="SkinBtn3"/>
+		<e:Button id="btnInfo" label="Xem" skinName="SkinBtn3" top="169" right="77"/>
+		<e:Button id="btnChat" label="Nhắn riêng" skinName="SkinBtn3" left="74" top="169"/>
+		<e:Button id="btnIgnore" label="Chặn"   bottom="38" skinName="SkinBtn3" left="74"/>
 		<e:Button id="closebtn" width="54" height="54" skinName="SkinBtn0" icon="tongyong_btnclose" scaleX="1" scaleY="1" right="-5" top="-13"/>
 	</e:Group>
 </e:Skin>

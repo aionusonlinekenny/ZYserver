@@ -4,7 +4,7 @@
 
 
 	<e:Image id="stateImg" touchEnabled="false"  horizontalCenter="0" verticalCenter="-170" source=""/>
-	<e:Button id="escBtn" label="按钮" skinName="SkinBtn0" icon="tuichu"
+	<e:Button id="escBtn" label="Nút bấm" skinName="SkinBtn0" icon="tuichu"
 	           x="10" bottom="128" visible="false"/>
 	<e:Group id="guildBossGroup" width="200" height="75" bottom="160" horizontalCenter="0" visible="false">
 		<e:Image  height="75" source="bantoutiaobg2" y="0" scale9Grid="41,5,7,12" width="200" horizontalCenter="0" visible="false"/>

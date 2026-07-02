@@ -33,5 +33,5 @@
 		</e:layout>
 	</e:List>
 	<e:Label id="nameTxt0" text="1\n转" size="22" textAlign="center" y="11" fontFamily="Microsoft YaHei" verticalAlign="middle" anchorOffsetY="0" height="69" width="27" horizontalCenter="-260.5"/>
-	<e:Button id="challengeBtn" label="挑 战" height="49" width="94" icon="btn2_2" horizontalCenter="204" verticalCenter="7.5" scaleX="0.72" scaleY="0.72" skinName="SkinBtn28"/>
+	<e:Button id="challengeBtn" label="Thách đấu" height="49" width="94" icon="btn2_2" horizontalCenter="204" verticalCenter="7.5" scaleX="0.72" scaleY="0.72" skinName="SkinBtn28"/>
 </e:Skin>

@@ -18,8 +18,8 @@
 				<e:BasicLayout/>
 			</e:layout>
 		</e:Group>
-		<e:Button id="auctionBtn" label="上架拍卖" width="120" height="50" skinName="SkinBtn3" bottom="18" horizontalCenter="80"/>
-		<e:Button id="ownUse" label="自己用" bottom="18" horizontalCenter="-80" width="120" height="50" skinName="SkinBtn3"/>
+		<e:Button id="auctionBtn" label="Đăng bán đấu giá" width="120" height="50" skinName="SkinBtn3" bottom="18" horizontalCenter="80"/>
+		<e:Button id="ownUse" label="Tự dùng" bottom="18" horizontalCenter="-80" width="120" height="50" skinName="SkinBtn3"/>
 		<e:Label text="您打开拍卖盒，获得拍品：" size="20" textColor="0xF8B141" y="56" verticalAlign="justify" x="11"/>
 		<e:Label text="请选择自己使用，或者上架拍卖" size="20" y="262" horizontalCenter="0" textColor="0x7E6437"/>
 		<ns1:ItemBase id="item" y="91" skinName="SkinItem" horizontalCenter="0"/>

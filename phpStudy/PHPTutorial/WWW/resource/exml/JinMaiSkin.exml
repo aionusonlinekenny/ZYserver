@@ -58,7 +58,7 @@
 	</e:Group>
 
 	<e:Label id="countLabel" text="经脉已满阶" size="20" textAlign="center" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" height="20" verticalCenter="278"/>
-	<e:Button id="boostBtn" label="洗  髓" width="221" horizontalCenter="0" icon="btn1_2" anchorOffsetY="0" height="54" skinName="SkinBtn6" verticalCenter="330"/>
+	<e:Button id="boostBtn" label="Tẩy Tủy" width="221" horizontalCenter="0" icon="btn1_2" anchorOffsetY="0" height="54" skinName="SkinBtn6" verticalCenter="330"/>
 	<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" horizontalCenter="74" height="19" verticalCenter="315.5"/>
 
 </e:Skin>

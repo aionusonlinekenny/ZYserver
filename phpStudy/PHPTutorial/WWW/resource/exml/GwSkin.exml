@@ -14,7 +14,7 @@
 		<ns1:GweaponBossView id="gwBoss" scaleX="1" scaleY="1" skinName="SkinGwBoss" name="神兵圣域" top="0" bottom="0" left="0" right="0" visible="false"/>
 	</e:ViewStack>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" currentState="nohead" horizontalCenter="0" top="0"/>
-	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" y="4" scaleX="0.9" scaleY="0.9" horizontalCenter="-274" visible="true"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" y="4" scaleX="0.9" scaleY="0.9" horizontalCenter="-274" visible="true"/>
 	<e:Image id="titleImg" source="godweapon_title" y="7" horizontalCenter="-223"/>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" scale9Grid="29,7,539,49" bottom="80" source="bantoumingkuang3_png"/>
 	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" horizontalCenter="0" bottom="88">
@@ -28,5 +28,5 @@
 	<e:Image id="gwBossRp" source="zjmhongdian" bottom="120" horizontalCenter="213.5"/>
 	<e:Image id="gwadImg" horizontalCenter="-0.5" verticalCenter="-56" source="GwadBG_png" visible="false"/>
 	<e:BitmapLabel id="timeBp" text="000.00.00" anchorOffsetX="0" anchorOffsetY="0" font="num_4_fnt" horizontalCenter="136" verticalCenter="-371" visible="false"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="275"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="275"/>
 </e:Skin>

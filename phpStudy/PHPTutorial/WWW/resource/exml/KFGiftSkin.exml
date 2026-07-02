@@ -54,7 +54,7 @@
 		</e:layout>
 		</e:List>
 	</e:Group>
-	<e:Button id="buy" label="购  买" skinName="SkinBtn1" horizontalCenter="0" bottom="30"/>
+	<e:Button id="buy" label="Mua" skinName="SkinBtn1" horizontalCenter="0" bottom="30"/>
 	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="66" bottom="66" visible="false"/>
 	<e:Label id="already" text="Đã nhận" textColor="0x00FF00" size="20" horizontalCenter="0" bottom="45" x="249" y="554" visible="false"/>
 	<e:Label id="readydesc" text="Đã nhận" textColor="0x00FF00" size="20" horizontalCenter="0" bottom="45" x="259" y="564" visible="false"/>

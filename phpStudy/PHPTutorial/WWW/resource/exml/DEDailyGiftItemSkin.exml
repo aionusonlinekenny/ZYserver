@@ -19,7 +19,7 @@
 			<e:Label text="现价: " size="20" x="0" y="28" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image source="tongyongline2" x="-6" verticalCenter="-12" y="19"/>
 		</e:Group>
-		<e:Button id="get" label="购买" skinName="SkinBtn25" icon="friend_btnbg" y="24" width="91" height="50" right="22"/>
+		<e:Button id="get" label="Mua" skinName="SkinBtn25" icon="friend_btnbg" y="24" width="91" height="50" right="22"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="15" verticalCenter="-28" visible="false"/>
 		<ns1:ItemBase skinName="SkinItem" y="20" x="38" visible="false"/>
 		<e:Image id="discount" x="35" y="23" source="" visible="false"/>

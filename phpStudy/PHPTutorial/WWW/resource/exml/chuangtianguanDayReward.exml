@@ -25,6 +25,6 @@
 		</e:layout>
 	</e:Group>
 		<e:Image y="446" source="chest1_png" width="130" height="120" horizontalCenter="0"/>
-		<e:Button id="GetRewardBtn0" label=" 领取奖励(9)" width="176" horizontalCenter="0" bottom="10" skinName="SkinBtn1" scaleX="0.9" scaleY="0.9"/>
+		<e:Button id="GetRewardBtn0" label="Nhận thưởng(9)" width="176" horizontalCenter="0" bottom="10" skinName="SkinBtn1" scaleX="0.9" scaleY="0.9"/>
 </e:Group>
 </e:Skin>

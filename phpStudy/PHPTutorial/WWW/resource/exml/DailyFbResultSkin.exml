@@ -8,7 +8,7 @@
 
 
 		<e:Label id="txt" text="Nhận thưởng" size="20" horizontalCenter="0" textAlign="center" x="220" y="288"   fontFamily="Microsoft YaHei"/>
-		<e:Button id="closeBtn" label="退出(10s)" horizontalCenter="0" y="778.15" skinName="SkinBtn7"/>
+		<e:Button id="closeBtn" label="Thoát(10s)" horizontalCenter="0" y="778.15" skinName="SkinBtn7"/>
 		<e:Group id="biankuang1" width="580" height="363.33" y="324" horizontalCenter="0" anchorOffsetY="0" visible="false">
 			<e:Image width="544" horizontalCenter="0" source="bantoutiaobg" scale9Grid="161,10,61,13" x="18" top="8" bottom="2.3"/>
 			<e:Image horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" bottom="3.5"/>

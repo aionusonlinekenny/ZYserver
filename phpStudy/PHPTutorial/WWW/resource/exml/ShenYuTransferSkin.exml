@@ -30,5 +30,5 @@
 	<e:Image source="jiantouyou" verticalCenter="7.5" y="-31" rotation="90" horizontalCenter="2" scaleX="0.8" scaleY="0.8"/>
 	<e:Label id="warn" text="没有多余的神羽" y="47" horizontalCenter="0.5" size="25" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 	<e:Image width="90" height="90" source="quality9" horizontalCenter="4" verticalCenter="-109" scaleX="1.1" scaleY="1.1"/>
-	<e:Button id="transfer" label="转 换" skinName="SkinBtn1" horizontalCenter="0" bottom="10" scaleX="0.9" scaleY="0.9"/>
+	<e:Button id="transfer" label="Chuyển đổi" skinName="SkinBtn1" horizontalCenter="0" bottom="10" scaleX="0.9" scaleY="0.9"/>
 </e:Skin>

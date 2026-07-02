@@ -3,7 +3,7 @@
 	<e:Group left="0" right="0" top="0" bottom="0">
 		<e:Image id="bg0" left="0" right="0" top="0" bottom="0" x="0" y="0" source="kaifuhuodongitembg4_png" scale9Grid="25,19,32,8"/>
 		<e:Group anchorOffsetY="0" verticalCenter="0" horizontalCenter="190.5" verticalCenter.hefus="12">
-		<e:Button id="get0" label="领取"  verticalCenter="0" skinName="SkinBtn5" enabled="true" left="0"/>
+		<e:Button id="get0" label="Nhận"  verticalCenter="0" skinName="SkinBtn5" enabled="true" left="0"/>
 			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" x="105" y="-3" visible="false"/>
 			<e:Label id="already" text="Đã nhận" size="24" textColor="0x00ff00" verticalCenter="0" x="29" fontFamily="Microsoft YaHei"/>
 		</e:Group>

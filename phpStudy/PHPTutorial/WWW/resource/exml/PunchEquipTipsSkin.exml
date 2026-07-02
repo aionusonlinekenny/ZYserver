@@ -25,6 +25,6 @@
 			<e:Label id="attr1" y="30" text="攻击：100 +100\n生命：100 +100\n生命：100 +100\n生命：100 +100" size="18" x="20" verticalAlign="justify" width="250" lineSpacing="7" wordWrap="true" multiline="true" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Label id="desc1" text="基础属性:" size="20" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 		</e:Group>
-		<e:Button id="forgeGroup" label="更  换" width="156" height="60" skinName="SkinBtn1" horizontalCenter="0" bottom="10"/>
+		<e:Button id="forgeGroup" label="Thay đổi" width="156" height="60" skinName="SkinBtn1" horizontalCenter="0" bottom="10"/>
 	</e:Group>
 </e:Skin>

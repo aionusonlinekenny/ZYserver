@@ -35,7 +35,7 @@
 				<e:HorizontalLayout verticalAlign="middle" gap="1"/>
 			</e:layout>
 		</e:Group>
-		<e:Button id="lvupBtn" label="升 星" horizontalCenter="0" icon="btn1_2" bottom="0" skinName="SkinBtn7"/>
+		<e:Button id="lvupBtn" label="Nâng sao" horizontalCenter="0" icon="btn1_2" bottom="0" skinName="SkinBtn7"/>
 		<e:Button id="showBtn" label="" icon="tongyongxiangxi" skinName="SkinBtn0" horizontalCenter="-156.5" top="18"/>
 		<e:Group width="561.66" height="60" id="starGroup" scaleX="0.8" scaleY="0.8"  horizontalCenter="0" anchorOffsetX="0" top="410">
 			<e:layout>

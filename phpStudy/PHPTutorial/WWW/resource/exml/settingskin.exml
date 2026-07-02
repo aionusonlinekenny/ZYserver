@@ -20,21 +20,21 @@
 
 		<e:Group id="contentGroup" width="419" height="362" horizontalCenter="0" verticalCenter="0">
 			<e:Group width="430" horizontalCenter="0" verticalCenter="-139" x="-6" y="27" scaleX="1" scaleY="1">
-				<e:CheckBox id="cbSound" label="音效" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
-				<e:CheckBox id="cbShake" label="震屏" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="105" anchorOffsetY="0"/>
+				<e:CheckBox id="cbSound" label="Âm thanh" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
+				<e:CheckBox id="cbShake" label="Rung màn hình" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="105" anchorOffsetY="0"/>
 			</e:Group>
 			<e:Group width="430" horizontalCenter="0" verticalCenter="-79" x="-6" y="87" scaleX="1" scaleY="1">
-				<e:CheckBox id="cbSkillEff" label="屏蔽技能特效" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
-				<e:CheckBox id="cbMonster" label="屏蔽怪物" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="65" anchorOffsetY="0"/>
+				<e:CheckBox id="cbSkillEff" label="Chặn hiệu ứng kỹ năng" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
+				<e:CheckBox id="cbMonster" label="Chặn quái vật" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="65" anchorOffsetY="0"/>
 			</e:Group>
 			<e:Group width="430" horizontalCenter="0" verticalCenter="-19" x="-6" y="147" scaleX="1" scaleY="1">
-				<e:CheckBox id="cbOtherRole" label="屏蔽别的玩家" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
-				<e:CheckBox id="cbAllRole" label="屏蔽全部玩家" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="25" anchorOffsetY="0"/>
+				<e:CheckBox id="cbOtherRole" label="Chặn người chơi khác" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
+				<e:CheckBox id="cbAllRole" label="Chặn tất cả người chơi" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="25" anchorOffsetY="0"/>
 			</e:Group>
 			<e:Group width="430" horizontalCenter="0" verticalCenter="41" x="-6" y="207" scaleX="1" scaleY="1">
-				<e:CheckBox id="cbHeji" label="自动释放神罚" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45"/>
+				<e:CheckBox id="cbHeji" label="Tự động thi triển Thần Phạt" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45"/>
 			</e:Group>
-			<e:Button id="logout" label="重新登录" scaleX="1" scaleY="1" skinName="SkinBtn2" bottom="90" horizontalCenter="0" x="103" y="265"/>
+			<e:Button id="logout" label="Đăng nhập lại" scaleX="1" scaleY="1" skinName="SkinBtn2" bottom="90" horizontalCenter="0" x="103" y="265"/>
 			<e:layout>
 				<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="33"/>
 			</e:layout>

@@ -24,7 +24,7 @@
 
 
 
-		<e:Button id="goBtn" label="前往抽奖" horizontalCenter="0" skinName="SkinBtn1" bottom="20"/>
+		<e:Button id="goBtn" label="Đi quay thưởng" horizontalCenter="0" skinName="SkinBtn1" bottom="20"/>
 
 
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian"   horizontalCenter="66" bottom="66" visible="false"/>

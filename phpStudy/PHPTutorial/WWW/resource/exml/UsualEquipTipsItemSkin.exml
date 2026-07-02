@@ -5,7 +5,7 @@
 		<e:Label id="attrType" y="0" text="Thuộc tính cơ bản" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
 		<e:Group id="desc1" x="32" y="35">
 			<e:Label y="10" text="" size="18" verticalAlign="justify" x="10" textAlign="left" textColor="0x9F946D" lineSpacing="5" width="22" fontFamily="Microsoft YaHei"/>
-			<e:Label id="suit" y="0" text="攻击：" size="18" verticalAlign="justify" x="0" textAlign="left" lineSpacing="5" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+			<e:Label id="suit" y="0" text="Công kích：" size="18" verticalAlign="justify" x="0" textAlign="left" lineSpacing="5" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
 			<e:layout>
 			<e:HorizontalLayout gap="0" verticalAlign="middle"/>
 			</e:layout>
@@ -13,7 +13,7 @@
 
 		<e:Group x="22" y="25">
 			<e:Label y="10" text="" size="18" verticalAlign="justify" x="10" textAlign="left" textColor="0x9F946D" lineSpacing="5" width="22"/>
-			<e:Label id="attrName" y="0" text="攻击：" size="18" verticalAlign="justify" x="0" textAlign="left" lineSpacing="5" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+			<e:Label id="attrName" y="0" text="Công kích：" size="18" verticalAlign="justify" x="0" textAlign="left" lineSpacing="5" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
 			<e:Label id="attrValue" y="0" text="100000" size="18" verticalAlign="justify" x="0" textAlign="left" lineSpacing="5" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0" verticalAlign="middle"/>

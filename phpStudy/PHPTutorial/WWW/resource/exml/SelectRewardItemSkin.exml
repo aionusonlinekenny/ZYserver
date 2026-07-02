@@ -7,7 +7,7 @@
 	<e:Label y="48" text="已分配奖励:" size="16" x="112.75" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 	<e:Label id="boxname" y="18.5" text="玛法宝箱" size="20" x="113.5" textColor="0xec6014" fontFamily="Microsoft YaHei"/>
 	<ns1:ItemBase id="goods" y="6" skinName="SkinItem" scaleX="0.8" scaleY="0.8" x="28"/>
-	<e:Button id="choosePeople" x="342.5" y="15.5" label="选择成员" icon="zjmzidong" scaleX="1" width="116" height="47">
+	<e:Button id="choosePeople" x="342.5" y="15.5" label="Chọn thành viên" icon="zjmzidong" scaleX="1" width="116" height="47">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="zjmzidong" width.down="95%" height.down="95%" horizontalCenter.up="0" verticalCenter.up="0" horizontalCenter.down="0" verticalCenter.down="0"/>

@@ -27,7 +27,7 @@
 
 
 	<e:Image id="title" horizontalCenter="-225" top="11" source="guildcamp_title1_png"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose"   horizontalCenter="274" top="46"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose"   horizontalCenter="274" top="46"/>
 
 
 

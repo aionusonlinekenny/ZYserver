@@ -27,7 +27,7 @@
 			<e:HorizontalLayout gap="0" />
 		</e:layout>
 	</e:TabBar>
-	<e:Button id="btnClose" skinName="SkinBtn0" label="按钮" icon="chatclose2" bottom="364" right="2"/>
+	<e:Button id="btnClose" skinName="SkinBtn0" label="Nút bấm" icon="chatclose2" bottom="364" right="2"/>
 	<e:Image id="applyRedPoint" source="zjmhongdian" horizontalCenter="46" bottom="34" visible="false"/>
 	<e:Image id="mailRedPoint" source="zjmhongdian" bottom="34" horizontalCenter="287.5" visible="false"/>
 </e:Skin>

@@ -4,7 +4,7 @@
 	<e:Image id="titleBg" width="568" horizontalCenter="0" includeIn="expand" source="tongyong_dikuang7" scale9Grid="10,10,48,32" top="110" bottom="0"/>
 	<e:Image anchorOffsetY="0" width="578" height="108" top="2" horizontalCenter="0" alpha="1" source="tongyonglabbg2" scale9Grid="70,20,10,36"/>
     <e:Image id="img" source="ch_2_png" y.simple="10" left="16" anchorOffsetX="0" width="225" anchorOffsetY="0" height="76" top="12"/>
-	<e:Button id="btnSet" label="穿戴" icon="xch_02" width="125" horizontalCenter="87.5" height="53" top="30" skinName="SkinBtn3"/>
+	<e:Button id="btnSet" label="Mặc/Đeo" icon="xch_02" width="125" horizontalCenter="87.5" height="53" top="30" skinName="SkinBtn3"/>
 	<e:Label id="labLack" text="未获得" size="24" x.simple="340" y.simple="32" y.expand="32" x.expand="340" fontFamily="Microsoft YaHei" horizontalCenter="88" top="43" textColor="0x1b3046"/>
 	<e:Label id="time" text="有效期：" size="18" textAlign="left" y="65" x="316" fontFamily="Microsoft YaHei" anchorOffsetY="0" height="19" top="82" width="145" horizontalCenter="103.5" textColor="0x00ff00"/>
 	<e:Image rotation="0" source.expand="btnmax" rotation.expand="180" y.expand="21" x.expand="516" horizontalCenter="234.5" top="21" source="btnmax"/>

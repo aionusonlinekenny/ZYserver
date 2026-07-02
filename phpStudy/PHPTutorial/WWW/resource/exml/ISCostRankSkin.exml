@@ -8,7 +8,7 @@
 		<e:Image left="0" top="0" bottom="0" source="bantoumingkuang5" scale9Grid="150,24,2,3" width="270"/>
 		<e:Image top="0" bottom="0" source="bantoumingkuang5" scale9Grid="150,24,2,3" width="270" scaleX="-1" right="0"/>
 		<e:Image source="shuxingbg" scale9Grid="77,5,15,34" left="0" right="0" top="15" bottom="15" visible="false"/>
-		<e:Button id="rechargeBtn" label="立即充值" scaleX="0.6" scaleY="0.6" skinName="SkinBtn19" right="12" verticalCenter="0" skinName.none="SkinBtn19"/>
+		<e:Button id="rechargeBtn" label="Nạp ngay" scaleX="0.6" scaleY="0.6" skinName="SkinBtn19" right="12" verticalCenter="0" skinName.none="SkinBtn19"/>
 		<e:Group y="50" x="27">
 		<e:Label text="Thời gian còn lại：" size="18" textColor="0xFF9900"  left="0" top="0"/>
 		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00"  top="0" left="90"/>

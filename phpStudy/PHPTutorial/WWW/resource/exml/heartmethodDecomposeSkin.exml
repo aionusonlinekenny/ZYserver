@@ -31,7 +31,7 @@
 			<e:CheckBox id="cb1" skinName="SkinCheckBox0" label="   " top="0" left="295"/>
 			<e:CheckBox id="cb2" skinName="SkinCheckBox0" label="   " top="0" left="175"/>
 			<e:CheckBox id="cb3" skinName="SkinCheckBox0" label="   " top="0" left="57"/>
-			<e:Button id="decomposeBtn" label="一键分解" skinName="SkinBtn3" right="26" bottom="0"/>
+			<e:Button id="decomposeBtn" label="Phân giải nhanh" skinName="SkinBtn3" right="26" bottom="0"/>
 			<e:Group left="30" bottom="7" height="38">
 				<e:Image id="bg" width="255" height="38"  left="0" verticalCenter="0" source="duoxuankuang" scale9Grid="4,4,31,30"/>
 			<e:Image id="suipianIcon"  left="0" source="311000_png" verticalCenter="1" width="30" height="30"/>

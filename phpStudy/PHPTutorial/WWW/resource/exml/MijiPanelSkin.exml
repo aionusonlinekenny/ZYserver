@@ -45,12 +45,12 @@
 		<e:Image id="mijitujian" x="518" y="235" source="" scaleX="1" scaleY="1"/>
 		<e:Group height="80" scaleX="1" scaleY="1" bottom="0" horizontalCenter="0">
 
-			<e:Label id="change" text="天书置换" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" right="50" bottom="40"/>
+			<e:Label id="change" text="Đổi Thiên Thư" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" right="50" bottom="40"/>
 			<e:Group id="btnAct" scaleX="1" scaleY="1" bottom="24" horizontalCenter="0">
-			<e:Button id="getBtn" label="镶  嵌" width="160" height="47" scaleX="1" scaleY="1" skinName="SkinBtn6" icon="btn1_2" bottom="0" horizontalCenter="0"/>
+			<e:Button id="getBtn" label="Khảm" width="160" height="47" scaleX="1" scaleY="1" skinName="SkinBtn6" icon="btn1_2" bottom="0" horizontalCenter="0"/>
 			<e:Group id="arrow" width="0" height="0" x="-24" bottom="25"/>
 			</e:Group>
-			<e:Label id="learnLabel" text="镶嵌有可能替换已学天书,高级天书必定替换同属性的中级天书" size="18" strokeColor="000000" textColor="0x0038ab" y="-32" x="18" fontFamily="Microsoft YaHei" visible="false"/>
+			<e:Label id="learnLabel" text="Khảm có thể thay thế Thiên Thư đã học, Thiên Thư Cao Cấp chắc chắn thay thế Thiên Thư Trung Cấp cùng thuộc tính" size="18" strokeColor="000000" textColor="0x0038ab" y="-32" x="18" fontFamily="Microsoft YaHei" visible="false"/>
 			<e:Image id="learnImg" source="gantanhao1" x="0" y="-34" visible="false"/>
 		</e:Group>
 		<e:Image id="all" source="mijizonglan" height="79" anchorOffsetY="0" anchorOffsetX="0" width="79" scaleX="1" scaleY="1" top="40" left="19"/>

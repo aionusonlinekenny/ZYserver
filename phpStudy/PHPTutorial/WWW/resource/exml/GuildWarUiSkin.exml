@@ -10,7 +10,7 @@
 		<e:Group id="hudun1" width="176" y="72.74" x="91.47" height="28">
 		<e:Image source="zdbosshudunxuetiaobg" y="0" x="0"/>
 		<e:ProgressBar id="hudun" value="100" width="177" x="0.99" height="8" y="1.99" skinName="Skinbar9" />
-		<e:Label id="proLab" text="（护盾归0时打断夺取）" y="10.26" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" x="42.53"  textColor="0xffffff"/>
+		<e:Label id="proLab" text="（Khiên về 0 sẽ bị ngắt chiếm đoạt）" y="10.26" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" x="42.53"  textColor="0xffffff"/>
 		</e:Group>
 		<e:Image y="29.91" x="76" source="rolenamebg"/>
 		<e:Image x="66.46" y="29.51" source="bosstouxiangjinbian"/>
@@ -31,7 +31,7 @@
 
 		<e:Image id="head0" width="69" height="71" x="24.73" y="19.13" source="monhead9001_png"/>
 		<e:Label id="lvTxt0" y="30.05" size="20" text="Lv.2000" x="110.5" width="70" textAlign="right" textColor="0x00FF00" visible="false"/>
-		<e:Label id="timeDesc" y="30.05" size="18" text="玩家名称六字 正在夺旗中…" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" horizontalCenter="-15"/>
+		<e:Label id="timeDesc" y="30.05" size="18" text="Tên người chơi 6 chữ đang đoạt cờ…" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" horizontalCenter="-15"/>
 	</e:Group>
 	<e:Group id="belongGroup" width="253" y="195" right="11">
 
@@ -49,7 +49,7 @@
 		</e:Scroller>
 		<e:Image y="1" source="zjmtouxiangkuang" x="0.4" width="253" height="67"/>
 		<e:Group x="77" y="7.5" height="18" width="140">
-		<e:Label text="目标" size="16" textAlign="center" y="-0.66" x="-1.2" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Mục tiêu" size="16" textAlign="center" y="-0.66" x="-1.2" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
 		<e:Label id="belongNameTxt0" text="Tên người chơi" size="16" textAlign="left" y="-0.66" x="35.2" textColor="0xF0F4FE" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="111.6"/>
 		</e:Group>
 		<e:Image id="roleHead0" source="yuanhead10" width="52" height="52" x="2.96" y="5.24" scaleX="1.2" scaleY="1.2"/>
@@ -58,7 +58,7 @@
 		<e:Image scaleY="-1" left="0" top="0" bottom="0" right="0" source="guildwarbg" scale9Grid="1,2,114,45"/>
 		<e:Group y="0" height="100" width="200" horizontalCenter="-190" x="10" >
 
-			<e:Label text="仙盟战况" y="5" size="20" horizontalCenter="11" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Tình hình chiến sự Tiên Minh" y="5" size="20" horizontalCenter="11" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 
 
 
@@ -75,20 +75,20 @@
 			<e:Label id="guildPoint" text="1 người" x="133" y="56" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label id="ownPoint" text="1 người" x="133" y="81" size="18" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 			<e:Label id="comNum" text="1 người" x="133" y="31" size="18" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-			<e:Label text="仙盟积分" x="45" y="56" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-			<e:Label text="我的积分" x="45" y="81" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-			<e:Label text="本盟战况" y="5" size="20" horizontalCenter="2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Điểm Tiên Minh" x="45" y="56" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Điểm của tôi" x="45" y="81" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Tình hình chiến sự minh ta" y="5" size="20" horizontalCenter="2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 
 			<e:Label id="guid2" text="Hướng dẫn chơi" x="32" y="31" size="16" textColor="0x02FF00" visible="false"/>
-			<e:Label id="scene" text="当前区域" y="31" size="18" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" x="45"/>
-			<e:Button id="seeMyGuild" label="本帮战况" right="21" top="1" alpha="1"  skinName="SkinBtn0" icon="btnshousuo2"/>
+			<e:Label id="scene" text="Khu vực hiện tại" y="31" size="18" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" x="45"/>
+			<e:Button id="seeMyGuild" label="Tình hình bang ta" right="21" top="1" alpha="1"  skinName="SkinBtn0" icon="btnshousuo2"/>
 		</e:Group>
 		<e:Group y="2" horizontalCenter="0" height="100" x="236" >
 			<e:Image y="-3.9" horizontalCenter="0" source="tongyong_titlebg2"/>
 
 			<e:Label id="lastTime" text="15:14:56" y="53.66" size="18" horizontalCenter="0" strokeColor="0x212121" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-			<e:Label id="guildName" text="这里是仙盟名" y="23.8" size="18" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="center"/>
-			<e:Label text="仙宫归属" y="-0.5" size="22" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label id="guildName" text="Đây là tên Tiên Minh" y="23.8" size="18" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="center"/>
+			<e:Label text="Chủ quyền Tiên Cung" y="-0.5" size="22" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group id="ruleDesc" horizontalCenter="33" y="61.3" width="162.2" x="243"  anchorOffsetX="0" anchorOffsetY="0" height="51">
 			<e:Image id="descImg" source="" visible="false"/>
@@ -134,15 +134,15 @@
 	</e:Group>
 	<e:Group id="flagStatu" width="273" height="69" horizontalCenter="0.5" bottom="237">
 		<e:Image source="guildwarbg" scale9Grid="7,2,106,45" width="273" height="69" horizontalCenter="0" verticalCenter="0"/>
-		<e:Label id="flagTime" text="玩家名称很长夺取仙旗中（5分10秒）" size="18" y="11.6" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="guildName1" text="仙盟：仙盟名称很长" size="18" y="40.5" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="flagTime" text="Tên người chơi rất dài đang đoạt Tiên Kỳ（5 phút 10 giây）" size="18" y="11.6" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="guildName1" text="Tiên Minh：Tên Tiên Minh rất dài" size="18" y="40.5" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 	</e:Group>
 	<e:Group id="attList" width="106" height="433" y="260" x="0">
 
 		<e:Image height="30" left="-4" right="4" source="teshuwenzibg3"/>
-		<e:Button id="refush" label="按钮" x="0" y="1" skinName="SkinBtn0" width="76" visible="false"/>
+		<e:Button id="refush" label="Nút bấm" x="0" y="1" skinName="SkinBtn0" width="76" visible="false"/>
 		<e:Label text="Chọn mục tiêu" y="6" size="16" strokeColor="000000" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:ToggleButton id="btn" touchEnabled="true" label="按钮" right="1" skinName="SkinBtn4" y="1" alpha="0.6" visible="false"/>
+		<e:ToggleButton id="btn" touchEnabled="true" label="Nút bấm" right="1" skinName="SkinBtn4" y="1" alpha="0.6" visible="false"/>
 		<e:Group x="0" y="30">
 			<e:Group id="mon" width="103" height="79" x="0" y="0">
 
@@ -151,7 +151,7 @@
 				<e:Image id="monHead" y="3.73" horizontalCenter="0.5" source="monhead157_png" width="56" height="56"/>
 				<e:Image x="21.2" y="1" scaleX="0.9" scaleY="0.9" width="69" height="72" source="guildkuang"/>
 				<e:Image y="57.01" width="97" height="30" source="bantoutiaobg" scale9Grid="144,5,101,27" x="4.33"/>
-				<e:Label id="roleName" text="负刑王猩" fontFamily="Microsoft YaHei" size="18" textAlign="center" width="101" textColor="0xffffff" x="2" y="61.33"/>
+				<e:Label id="roleName" text="Phụ Hình Vương Tinh" fontFamily="Microsoft YaHei" size="18" textAlign="center" width="101" textColor="0xffffff" x="2" y="61.33"/>
 			</e:Group>
 			<e:Scroller id="bar1" height="330" y="104"  width="112" x="8">
 				<e:List id="list1" x="5" y="6" itemRendererSkinName="SkinMemberHead" anchorOffsetX="0">
@@ -164,9 +164,9 @@
 
 	</e:Group>
 	<e:Group id="gongxun" horizontalCenter="0.5" bottom="173">
-		<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao"  x="-43" visible="false"/>
+		<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao"  x="-43" visible="false"/>
 		<e:Image width="237" height="40" source="zjmgonggaobg" horizontalCenter="0" verticalCenter="0" scale9Grid="4,7,383,26"/>
-		<e:Label text="仙宫玉令:" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-20" verticalCenter="0"/>
+		<e:Label text="Ngọc Lệnh Tiên Cung:" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-20" verticalCenter="0"/>
 		<e:Label id="point" text="10/10" size="20" verticalCenter="0.5" textColor="0x00ff06" fontFamily="Microsoft YaHei" horizontalCenter="54.5"/>
 	</e:Group>
 	<e:Group id="weixie" width="106" height="341" y="260" right="0">
@@ -176,18 +176,18 @@
 			</e:List>
 		</e:Scroller>
 		<e:Image width="123" height="30" horizontalCenter="-5.5" source="teshuwenzibg3"/>
-		<e:Label text="恶意玩家"  size="16" y="6" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xd6240e"/>
+		<e:Label text="Người chơi ác ý"  size="16" y="6" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xd6240e"/>
 	</e:Group>
 	<e:Group id="guid" width="206" height="63" y="296" touchChildren="false" touchEnabled="false" x="72">
 		<e:Image source="zjmyindao" scaleX="-1" width="192" height="77" x="206" y="0" scale9Grid="63,37,41,4"/>
-		<e:Label text="选择击杀目标获取玉令/积分" x="61.4" y="19" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei" width="116" height="36"/>
+		<e:Label text="Chọn mục tiêu tiêu diệt để nhận Ngọc Lệnh/Điểm" x="61.4" y="19" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei" width="116" height="36"/>
 	</e:Group>
 
 	<e:Group id="taskTraceBtn" width="120" right="0" height="98" bottom="120">
 		<e:Image id="jifenImage" y="0"   horizontalCenter="0" source="200155_png"/>
 		<e:Image height="39" left="0" right="0" bottom="0" source="guildwarbg"/>
-		<e:Label id="taskTraceName0" text="积分目标：(10/20)" size="16" horizontalCenter="0" bottom="3" width="110" textAlign="center" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Label id="taskTraceAwards0" text="奖励:屠龙宝刀" x="61" y="34" size="14" width="183" fontFamily="黑体" visible="false"/>
+		<e:Label id="taskTraceName0" text="Mục tiêu điểm：(10/20)" size="16" horizontalCenter="0" bottom="3" width="110" textAlign="center" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="taskTraceAwards0" text="Thưởng:Đồ Long Bảo Đao" x="61" y="34" size="14" width="183" fontFamily="黑体" visible="false"/>
 		<e:Image id="scorePoint" source="zjmhongdian"  y="7" horizontalCenter="28"/>
 	</e:Group>
 

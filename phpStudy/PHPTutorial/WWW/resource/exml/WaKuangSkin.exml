@@ -4,7 +4,7 @@
 
 
 	<e:Group id="btnGroup" horizontalCenter="0" top="720">
-		<e:Button id="go" label="前往玉矿" skinName="SkinBtn1"/>
+		<e:Button id="go" label="Đi Mỏ Ngọc" skinName="SkinBtn1"/>
 		<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="-3" x="162"/>
 	</e:Group>
 	<e:Group horizontalCenter="162" height="75" top="651">

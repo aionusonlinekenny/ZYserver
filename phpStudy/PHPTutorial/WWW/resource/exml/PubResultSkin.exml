@@ -6,7 +6,7 @@
 	<e:Label text="（狂拽酷炫拽 Lv.70）" size="18" id="txt0" textColor="0x009DFF" horizontalCenter="5" verticalCenter="-148"/>
 	<e:Label text="我的奖励：" size="18" id="txt1" horizontalCenter="-114" verticalCenter="6"/>
 	<e:Label text="（伤害排名：第n名）" id="txt2" size="18" textColor="0x37FE21" verticalCenter="6" horizontalCenter="5"/>
-	<e:Button id="closeBtn" label="领取奖励(10s)" skinName="SkinBtn1" width="180" horizontalCenter="0" height="60" verticalCenter="179"/>
+	<e:Button id="closeBtn" label="Nhận thưởng(10s)" skinName="SkinBtn1" width="180" horizontalCenter="0" height="60" verticalCenter="179"/>
 	<e:Image scale9Grid="86,1,8,1" width="340" horizontalCenter="0" verticalCenter="-16" source="tongyongline"/>
 	<e:Scroller width="314" height="100" horizontalCenter="0" verticalCenter="-81">
 		<e:Group id="container0">

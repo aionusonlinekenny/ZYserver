@@ -12,7 +12,7 @@
 		<e:Label text="Mô tả sự kiện：" size="20" scaleX="1" scaleY="1" left="0" top="26" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 	</e:Group>
-	<e:Button id="pay0" label="领取返利" bottom="20" horizontalCenter="0" skinName="SkinBtn1"/>
+	<e:Button id="pay0" label="Nhận hoàn tiền" bottom="20" horizontalCenter="0" skinName="SkinBtn1"/>
 	<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" verticalCenter="213" horizontalCenter="-56" visible="false"/>
 	<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" verticalCenter="213" horizontalCenter="186" visible="false"/>
 </e:Skin>

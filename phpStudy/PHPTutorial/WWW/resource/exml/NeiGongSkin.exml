@@ -66,13 +66,13 @@
 				<e:HorizontalLayout verticalAlign="middle" gap="6"/>
 			</e:layout>
 			</e:Group>
-			<e:Button id="mixBtn" label="凝   气" width="213" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2" bottom="0" height="75" visible="false"/>
-			<e:Button id="upBtn" label="修  炼" width="213" horizontalCenter="0" anchorOffsetX="0" skinName="SkinBtn6" icon="btn1_2" bottom="0" height="69"/>
-			<e:Button id="oneKeyUp" skinName="SkinBtn1" label="一键修炼" height="60" width="160" x="240" y="35" visible="false"/>
+			<e:Button id="mixBtn" label="Ngưng Khí" width="213" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2" bottom="0" height="75" visible="false"/>
+			<e:Button id="upBtn" label="Tu luyện" width="213" horizontalCenter="0" anchorOffsetX="0" skinName="SkinBtn6" icon="btn1_2" bottom="0" height="69"/>
+			<e:Button id="oneKeyUp" skinName="SkinBtn1" label="Tu luyện nhanh" height="60" width="160" x="240" y="35" visible="false"/>
 			<e:Image id="redPoint1" touchEnabled="false"   x="267" y="34" source="zjmhongdian" visible="false"/>
 			<e:Image id="redPoint0" touchEnabled="false" x="266" y="35" source="zjmhongdian" visible="false"/>
-			<e:Label id="getcoin" text="获取铜钱" x="406" y="70" size="20" textColor="0x20cb30" visible="false"/>
-			<e:Label id="noble" text="贵族减少20%铜钱消耗" x="222" textColor="0x20cb30" size="20" y="0" visible="false"/>
+			<e:Label id="getcoin" text="Nhận Đồng" x="406" y="70" size="20" textColor="0x20cb30" visible="false"/>
+			<e:Label id="noble" text="Quý Tộc giảm 20% tiêu hao Đồng" x="222" textColor="0x20cb30" size="20" y="0" visible="false"/>
 		</e:Group>
 
 
@@ -109,13 +109,13 @@
 			<e:Group id="mcGroup"   x="-25" y="-15"/>
 			<e:Label id="expLabel" strokeColor="0x000000" text="100/910" size="18" verticalAlign="middle" textAlign="center" y="54"   textColor="0xffd93f" x="24" visible="false"/>
 		</e:Group>
-		<e:Label id="maxDesc" text="仙罡已满级" size="24" horizontalCenter="0" bottom="43" textColor="0xffff00" fontFamily="Microsoft YaHei" height="24" visible="false"/>
+		<e:Label id="maxDesc" text="Tiên Cương đã đạt cấp tối đa" size="24" horizontalCenter="0" bottom="43" textColor="0xffff00" fontFamily="Microsoft YaHei" height="24" visible="false"/>
 	</e:Group>
 	<e:Group id="Activation" height="576" top="144" horizontalCenter="0" width="600" visible="false">
-		<e:Label id="activeTipsTxt0" text="闯关达到 第15关 即可激活内功" size="24" fontFamily="Microsoft YaHei" horizontalCenter="3" textAlign="center" verticalAlign="middle" y="438" textColor="0xffff00"/>
+		<e:Label id="activeTipsTxt0" text="Vượt qua Ải 15 là có thể kích hoạt Nội Công" size="24" fontFamily="Microsoft YaHei" horizontalCenter="3" textAlign="center" verticalAlign="middle" y="438" textColor="0xffff00"/>
 		<e:Image source="neigongtxt" horizontalCenter="0" y="-60"/>
 
-		<e:Button id="UplevelBtn0" label="激活仙罡" width="180" height="60" scaleX="1" scaleY="1" skinName="SkinBtn6" icon="btn1_2" bottom="0" horizontalCenter="0"/>
+		<e:Button id="UplevelBtn0" label="Kích hoạt Tiên Cương" width="180" height="60" scaleX="1" scaleY="1" skinName="SkinBtn6" icon="btn1_2" bottom="0" horizontalCenter="0"/>
 		<e:Group y="508" horizontalCenter="0">
 
 		</e:Group>

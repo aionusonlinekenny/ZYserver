@@ -14,7 +14,7 @@
 	<e:Image id="moneyKey" x="207" y="62" visible.none="false" source="szjinbi" visible="false"/>
 	<e:Label id="soulTxt" y="64" textColor="0xA89C88" text="12.3w" fontFamily="黑体" size="16" x="333" visible.none="false" visible="false"/>
 	<e:Image id="soulKey" x="305" y="59" visible.none="false" source="" visible="false"/>
-	<e:Button id="challengeBtn" label="挑 战" y.none="82" visible.none="false" verticalCenter="0" width="120" right="43" skinName="SkinBtn6" icon="btn3"/>
+	<e:Button id="challengeBtn" label="Thách đấu" y.none="82" visible.none="false" verticalCenter="0" width="120" right="43" skinName="SkinBtn6" icon="btn3"/>
 
 
 

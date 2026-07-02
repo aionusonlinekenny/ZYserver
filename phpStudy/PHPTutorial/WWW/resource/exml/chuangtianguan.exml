@@ -97,8 +97,8 @@
 	</e:Group>
 	<e:Image scaleY="-1" touchEnabled="false" anchorOffsetY="0" source="tongyong_dikuang4" scale9Grid="10,10,60,60" width="577" height="114" horizontalCenter="0" verticalCenter="300"/>
 
-	<e:Button id="challengeBtn" label="挑 战" skinName="SkinBtn1" horizontalCenter="131" width="177" height="65" verticalCenter="305.5"/>
-	<e:Button id="challengeBtn0" label="每日奖励" skinName="SkinChuangtianguanDayrewardbtn" horizontalCenter="-204.5" verticalCenter="285.5"/>
+	<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn1" horizontalCenter="131" width="177" height="65" verticalCenter="305.5"/>
+	<e:Button id="challengeBtn0" label="Thưởng hàng ngày" skinName="SkinChuangtianguanDayrewardbtn" horizontalCenter="-204.5" verticalCenter="285.5"/>
 	<e:Label id="limit" text="1转X级可继续挑战" size="24"   horizontalCenter="134" bottom="39" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 
 	<e:Label id="dailyGift" text="（可领取）" size="18"   horizontalCenter="-204.5" x="86" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x00ff00" verticalCenter="343" textAlign="center"/>

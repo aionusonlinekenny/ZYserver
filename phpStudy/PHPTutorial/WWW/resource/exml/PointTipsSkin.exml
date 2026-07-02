@@ -39,7 +39,7 @@
 
 
 
-		<e:Button id="goTo" label="进入" skinName="SkinBtn1" bottom="15" horizontalCenter="0"/>
+		<e:Button id="goTo" label="Vào" skinName="SkinBtn1" bottom="15" horizontalCenter="0"/>
 		<e:Button id="closeBtn" label="" skinName="SkinBtn0" horizontalCenter="213" icon="tongyong_btnclose" top="-17"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" bottom="65" horizontalCenter="76" visible="false"/>
 		<e:Image touchEnabled="false" bottom="-44" horizontalCenter="0" source="bantoutiaobg" width="300" height="34"/>

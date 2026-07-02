@@ -23,7 +23,7 @@
 		</e:List>
 		<e:Group horizontalCenter="0" bottom="28.5" anchorOffsetY="0" height="67">
 			<e:Label id="already" text="Đã nhận" size="30" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
-			<e:Button id="getBtn" label="立即领取" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="0" y="0"/>
+			<e:Button id="getBtn" label="Nhận ngay" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="0" y="0"/>
 			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" scaleX="1" scaleY="1" horizontalCenter="79" top="-2" visible="false"/>
 		</e:Group>
 		<e:Group y="165" height="100" left="20" right="10">

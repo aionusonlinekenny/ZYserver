@@ -24,7 +24,7 @@
 			<e:HorizontalLayout gap="6"/>
 			</e:layout>
 		</e:List>
-		<e:Button id="btnUse" label="使用" skinName="SkinBtn1" horizontalCenter="0" y="602"/>
+		<e:Button id="btnUse" label="Sử dụng" skinName="SkinBtn1" horizontalCenter="0" y="602"/>
 		<e:Group x="24" y="425">
 			<e:Label id="specialAttr" text="特殊属性：所有角色伤害减免 +5%" y="0" size="20" textColor="0xD242FB" bold="true" x="0"   visible="false"/>
 			<e:Group x="0" y="0"  >

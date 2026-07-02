@@ -12,5 +12,5 @@
 	<e:Image id="face" source="head_11" x="30" width="60" height="60" verticalCenter="0"/>
 	<e:Image id="headBG" x="25" source="touxiangkuang0" width="70" height="70" scale9Grid="6,6,1,1" verticalCenter="0"/>
 	<e:Image id="vipTitle" x="101" y="4" scaleX="0.8" scaleY="0.8" source="vipv_png"/>
-	<e:Button id="inviteBtn" label="邀请" width="100" height="40" verticalCenter="0" skinName="SkinBtn3" right="10"/>
+	<e:Button id="inviteBtn" label="Mời" width="100" height="40" verticalCenter="0" skinName="SkinBtn3" right="10"/>
 </e:Skin>

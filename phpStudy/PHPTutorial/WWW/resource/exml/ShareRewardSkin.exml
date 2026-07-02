@@ -19,7 +19,7 @@
 				</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Button id="gotoShareBtn" label="前往分享" x="423.5" y="132" icon="chat_btnbg">
+		<e:Button id="gotoShareBtn" label="Đi chia sẻ" x="423.5" y="132" icon="chat_btnbg">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="chat_btnbg" width.down="95%" height.down="95%" horizontalCenter="0" verticalCenter="0"/>

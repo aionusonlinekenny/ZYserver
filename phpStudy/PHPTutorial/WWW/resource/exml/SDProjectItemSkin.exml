@@ -7,7 +7,7 @@
 			<e:HorizontalLayout gap="50" paddingLeft="0"/>
 		</e:layout>
 	</e:List>
-	<e:Button id="actBtn" label="领 取" visible.done="false" verticalCenter.normal="10" right.normal="5" right="5" verticalCenter="10" width="116" scaleX="1" scaleY="1" icon="friend_btnbg" skinName="SkinBtn25"/>
+	<e:Button id="actBtn" label="Nhận" visible.done="false" verticalCenter.normal="10" right.normal="5" right="5" verticalCenter="10" width="116" scaleX="1" scaleY="1" icon="friend_btnbg" skinName="SkinBtn25"/>
 	<e:Label id="scedule" text="5/5" includeIn="normal" size="20" right="5" verticalCenter="-30" verticalAlign="middle" fontFamily="Microsoft YaHei" textAlign="center" anchorOffsetX="0" width="113.5"/>
 	<e:Label text="Đã nhận" x="330.2" y="61.2" size="24" fontFamily="Microsoft YaHei" textColor="0x00ff00" includeIn="done"/>
 	<e:Image includeIn="done" x="321" source="yilingqu" rotation="-25" verticalCenter="12" visible="false"/>

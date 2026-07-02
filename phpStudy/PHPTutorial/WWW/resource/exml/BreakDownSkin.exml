@@ -38,7 +38,7 @@
 			</e:Scroller>
 			<e:Label text="没有可以分解的装备\n试试下面的获取途径" y="145" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" x="116" textColor="0x001828"/>
 		</e:Group>
-		<e:Label text="分  解" y="12"   horizontalCenter="0" size="24" textColor="0x084151" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Phân giải" y="12"   horizontalCenter="0" size="24" textColor="0x084151" fontFamily="Microsoft YaHei"/>
 		<e:Group bottom="-43" horizontalCenter="0" x="140" y="804">
 			<e:Image source="bantoutiaobg" height="35" scale9Grid="128,2,15,41" width="300" touchEnabled="false" y="-6" horizontalCenter="0"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" fontFamily="Microsoft YaHei" horizontalCenter="0"/>

@@ -22,7 +22,7 @@
 			<e:BasicLayout/>
 			</e:layout>
 		</e:Group>
-		<e:Button id="seeRule" label="按钮" icon="wenhao" skinName="SkinBtn0" y="0" scaleX="0.9" scaleY="0.9" x="222"/>
+		<e:Button id="seeRule" label="Nút bấm" icon="wenhao" skinName="SkinBtn0" y="0" scaleX="0.9" scaleY="0.9" x="222"/>
 		<e:BitmapLabel id="blueScore" x="0" y="11" font="num_j2_fnt" text="0"/>
 		<e:BitmapLabel id="redScore" x="290" y="11" text="0" font="num_j1_fnt"/>
 		<e:Group x="46" y="632" touchChildren="false" touchEnabled="false">

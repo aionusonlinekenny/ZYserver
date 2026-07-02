@@ -13,11 +13,11 @@
 		<e:Image id="job" touchEnabled="false" source="op_1" y="20" horizontalCenter="0" />
 
 		<e:Label text="Thuộc tính Chiến Văn" size="30" touchEnabled="false" horizontalCenter="0"  textColor="0xffff00" fontFamily="Microsoft YaHei" y="86"/>
-		<e:Button id="leftBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan"  verticalCenter="0" horizontalCenter="-186.5"/>
-		<e:Button id="rightBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan"  scaleX="-1" verticalCenter="0" horizontalCenter="186.5"/>
+		<e:Button id="leftBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan"  verticalCenter="0" horizontalCenter="-186.5"/>
+		<e:Button id="rightBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan"  scaleX="-1" verticalCenter="0" horizontalCenter="186.5"/>
 
 		<e:Group id="attrGroup" horizontalCenter="0.5" width="248" anchorOffsetX="0" top="150" bottom="6">
-			<e:Label id="attr" text="攻    击：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：\n麻痹几率：" size="20" lineSpacing="10" touchEnabled="false"  width="186" y="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa" anchorOffsetX="0" textAlign="left" horizontalCenter="33"/>
+			<e:Label id="attr" text="Công    kích：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：" size="20" lineSpacing="10" touchEnabled="false"  width="186" y="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa" anchorOffsetX="0" textAlign="left" horizontalCenter="33"/>
 			<e:Group x="0" y="28" id="imgGroup">
 
 			</e:Group>

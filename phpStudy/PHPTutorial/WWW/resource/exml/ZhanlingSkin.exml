@@ -123,8 +123,8 @@
 		
 		<e:Group id="dinghong" height="75" anchorOffsetY="0" width="590" horizontalCenter="0" includeIn="zl_up,skin_up" bottom="0">
 			<e:Group id="upBtnGroup" includeIn="zl_up,skin_up" horizontalCenter="0" bottom="6">
-			<e:Button id="upBtn" includeIn="zl_up,skin_up" label="一键升星" width="209" height="63" y="0" x="0" icon="btn1_2" skinName="SkinBtn6" horizontalCenter="0" verticalCenter="0"/>
-			<e:Button id="upBtnEx" label="激 活" skinName="SkinBtn6" width="209" height="63" includeIn="skin_up" icon="btn1_2" horizontalCenter="0" verticalCenter="0"/>
+			<e:Button id="upBtn" includeIn="zl_up,skin_up" label="Nâng sao nhanh" width="209" height="63" y="0" x="0" icon="btn1_2" skinName="SkinBtn6" horizontalCenter="0" verticalCenter="0"/>
+			<e:Button id="upBtnEx" label="Kích hoạt" skinName="SkinBtn6" width="209" height="63" includeIn="skin_up" icon="btn1_2" horizontalCenter="0" verticalCenter="0"/>
 			<e:Image id="upRedPoint" source="zjmhongdian" x="132" y="0" right.skin_up="20" top.skin_up="0" right.zl_up="20" top.zl_up="0"/>
 			</e:Group>
 			<e:Group id="costGroup" includeIn="zl_up,skin_up" verticalCenter="4" left="15" width="180">
@@ -135,7 +135,7 @@
 				<e:HorizontalLayout verticalAlign="middle" gap.zl_max="-5" gap.zl_up="0" gap.skin_up="0" gap.skin_max="0" gap="0"/>
 			</e:layout>
 			</e:Group>
-			<e:CheckBox label="元宝自动购买" skinName="SkinCheckBox0" id="checkBoxs" includeIn="zl_up,skin_up" verticalCenter="0" verticalCenter.skin_up="0" right="6"/>
+			<e:CheckBox label="Tự động mua bằng Nguyên Bảo" skinName="SkinCheckBox0" id="checkBoxs" includeIn="zl_up,skin_up" verticalCenter="0" verticalCenter.skin_up="0" right="6"/>
 		</e:Group>
 
 		<e:Button id="huanxing" label="" icon="zl_huanxing_btn" skinName="SkinBtn0" includeIn="zl_up,zl_max" right="25" top="71"/>
@@ -158,8 +158,8 @@
 	</e:Group>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" includeIn="skin_up,skin_max" y.skin_up="0" height.skin_up="738" height.skin_max="748" top="1" bottom="0" horizontalCenter="0"/>
 	<e:Image id="skillTitle" source="biaoti_zhanling" includeIn="skin_up,skin_max" horizontalCenter="-198.5" top="9"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" horizontalCenter="273" includeIn="skin_up,skin_max" top="46" y.skin_up="46"/>
-	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" includeIn="skin_up,skin_max" horizontalCenter="-272" top="3"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" horizontalCenter="273" includeIn="skin_up,skin_max" top="46" y.skin_up="46"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" includeIn="skin_up,skin_max" horizontalCenter="-272" top="3"/>
 
 
 

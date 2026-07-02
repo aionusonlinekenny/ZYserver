@@ -23,7 +23,7 @@
 			</e:layout>
 		</e:Group>
 
-		<e:Button id="go" label="前往参加" skinName="SkinBtn1" horizontalCenter="0.5" height="69" top="576"/>
+		<e:Button id="go" label="Đi tham gia" skinName="SkinBtn1" horizontalCenter="0.5" height="69" top="576"/>
 		<e:Image x="61" source="words_longcheng_png" top="196" visible="false"/>
 		<e:Label text="无兄弟，不传奇！" x="50" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" top="360" visible="false"/>
 		<e:Label text="拿下仙宫人人有份，可别忘了犒劳盟中道友!" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" top="425" horizontalCenter="0" visible="false"/>

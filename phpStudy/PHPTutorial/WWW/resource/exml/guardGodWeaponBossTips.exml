@@ -17,8 +17,8 @@
 		<e:Image scale9Grid="85,1,6,1" y="40" source="tongyongline" left="0" right="0" visible="false"/>
 
 
-		<e:Button id="closeBtn" label="关 闭" horizontalCenter="-98" bottom="16" skinName="SkinBtn3" width="120" height="50"/>
-		<e:Button id="up" label="召 唤" horizontalCenter="98" bottom="16" skinName="SkinBtn3" width="120" height="50"/>
+		<e:Button id="closeBtn" label="Đóng" horizontalCenter="-98" bottom="16" skinName="SkinBtn3" width="120" height="50"/>
+		<e:Button id="up" label="Triệu hồi" horizontalCenter="98" bottom="16" skinName="SkinBtn3" width="120" height="50"/>
 		<e:Group id="cost" horizontalCenter="98" bottom="68">
 			<e:Image source="szyuanbao" x="0" y="0" scaleX="1" scaleY="1"/>
 			<e:Label id="zb0" text="4980" size="20" x="44" y="4" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>

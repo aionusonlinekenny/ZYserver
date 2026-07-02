@@ -21,7 +21,7 @@
 			<e:Label id="y1" text="元宝" size="24" anchorOffsetX="0" width="55" anchorOffsetY="0" height="26" scaleX="1" scaleY="1" horizontalCenter="-180.5" fontFamily="Microsoft YaHei" textColor="0x1b3046" verticalCenter="2"/>
 			<e:Label id="paycount" text="500" size="24" anchorOffsetX="0" width="45" anchorOffsetY="0" height="20" scaleX="1" scaleY="1" horizontalCenter="-85.5" fontFamily="Microsoft YaHei" textColor="0x1b3046" verticalCenter="1"/>
 			<e:Image id="y2" source="szyuanbao" scaleX="0.8" scaleY="0.8" horizontalCenter="-130" verticalCenter="1"/>
-			<e:Button id="autoGo" label="自动掷骰子" icon="btn2" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" skinName="SkinBtn1" verticalCenter="0" right="75"/>
+			<e:Button id="autoGo" label="Tự động lắc xúc xắc" icon="btn2" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" skinName="SkinBtn1" verticalCenter="0" right="75"/>
 			<e:Label text="优先消耗骰子 (当前拥有       )" size="20" anchorOffsetX="0" width="273" anchorOffsetY="0" height="18" scaleX="1" scaleY="1" bottom="5" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 			<e:Label id="dicecount" text="999" size="20" textAlign="center" anchorOffsetX="0" width="68" anchorOffsetY="0" height="18" verticalAlign="middle" scaleX="1" scaleY="1" horizontalCenter="98" bottom="5" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 		</e:Group>

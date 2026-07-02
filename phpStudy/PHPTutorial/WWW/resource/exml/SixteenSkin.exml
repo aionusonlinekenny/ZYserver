@@ -296,9 +296,9 @@
 			</e:Group>
 		</e:Group>
 		<e:Group horizontalCenter="0" top="0" width="378">
-			<e:Button id="myRecord" label="我的战绩" y="0" skinName="SkinBtn20" x="25"/>
-			<e:Button id="myBet" label="我的下注" y="1" skinName="SkinBtn21" horizontalCenter="0"/>
-			<e:Button id="topRank" label="人气排名" x="235" y="0" skinName="SkinBtn22"/>
+			<e:Button id="myRecord" label="Chiến tích của tôi" y="0" skinName="SkinBtn20" x="25"/>
+			<e:Button id="myBet" label="Cược của tôi" y="1" skinName="SkinBtn21" horizontalCenter="0"/>
+			<e:Button id="topRank" label="Xếp hạng độ nổi tiếng" x="235" y="0" skinName="SkinBtn22"/>
 			<e:Image id="border1" source="peakness_btn_border" scale9Grid="68,38,4,4" touchEnabled="false" y="0" y.kf="-0.67" horizontalCenter="0"/>
 			<e:Image id="border2" source="peakness_btn_border" scaleX="-1" y="0" scale9Grid="69,39,3,2" width="225" right="-10" touchEnabled="false" visible="false"/>
 			<e:Image id="myRecordRedpoint" touchEnabled="false" source="zjmhongdian" x="122" y="0" visible="false"/>
@@ -306,7 +306,7 @@
 			<e:Image id="topRankRedpoint" touchEnabled="false" source="zjmhongdian" x="314" y="0" visible="false"/>
 			<e:Image width="20" height="20" x="4" y="15"/>
 		</e:Group>
-		<e:Button id="vewChampScore" label="查看比分" horizontalCenter="0" top="449" skinName="SkinBtn3"/>
-		<e:Label id="vewChampScore2" text="查看比分" size="20" horizontalCenter="0" top="468" textColor="0x00ff00" visible.kf_four="false" visible="false"/>
+		<e:Button id="vewChampScore" label="Xem tỷ số" horizontalCenter="0" top="449" skinName="SkinBtn3"/>
+		<e:Label id="vewChampScore2" text="Xem tỷ số" size="20" horizontalCenter="0" top="468" textColor="0x00ff00" visible.kf_four="false" visible="false"/>
 	</e:Group>
 </e:Skin>

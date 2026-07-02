@@ -14,7 +14,7 @@
 		<e:Image y="0" source="tongyong_titlebg" horizontalCenter="0"/>
 		<e:Label text="世界BOSS" size="22" y="14" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 
-		<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" right="0" y="3" icon="tongyong_btnclose"/>
+		<e:Button id="closeBtn0" label="Nút bấm" skinName="SkinBtn0" right="0" y="3" icon="tongyong_btnclose"/>
 		<e:Image id="help" x="496" y="60" source="wenhao"/>
 		<e:Group id="boss" y="168" horizontalCenter="0" touchEnabled="false" touchChildren="false">
 			<e:Image id="bossImg" source=""/>
@@ -33,7 +33,7 @@
 			<e:HorizontalLayout horizontalAlign="center" gap="8"/>
 			</e:layout>
 		</e:List>
-		<e:Button id="enter" label="进入战场" horizontalCenter="0" bottom="64" skinName="SkinBtn26" icon="chat_btnbg" scaleX="1.1" scaleY="1.1"/>
+		<e:Button id="enter" label="Vào chiến trường" horizontalCenter="0" bottom="64" skinName="SkinBtn26" icon="chat_btnbg" scaleX="1.1" scaleY="1.1"/>
 		<e:Label text="每日19点30分开启" horizontalCenter="0" size="20" bottom="28" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		<e:Label id="nameTxt" text="BOSS名字" horizontalCenter="0" size="24" y="70" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="1"/>
 		<e:Group id="tips" horizontalCenter="0" y="53" visible="false">

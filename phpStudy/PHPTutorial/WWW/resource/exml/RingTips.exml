@@ -52,7 +52,7 @@
 					<e:Image source="tongyongline" y="94.34" width="289" horizontalCenter="0" height="1"/>
 				</e:Group>
 				<e:Group height="59" y="155.33" horizontalCenter="0.5" x="105"   includeIn="active">
-					<e:Button id="btnUse" label="激活" skinName="SkinBtn1" includeIn="active"   verticalCenter="1"
+					<e:Button id="btnUse" label="Kích hoạt" skinName="SkinBtn1" includeIn="active"   verticalCenter="1"
 					          horizontalCenter="0" />
 				</e:Group>
 				<e:layout>

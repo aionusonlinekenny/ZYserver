@@ -29,14 +29,14 @@
 
 
 
-		<e:Button id="lvUpBtn" label="升   级" skinName="SkinBtn1" horizontalCenter="0" bottom="54"/>
+		<e:Button id="lvUpBtn" label="Nâng cấp" skinName="SkinBtn1" horizontalCenter="0" bottom="54"/>
 		<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="603" horizontalCenter="85.5"/>
 
 
 
 
 
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="tongyong_btnclose" scaleX="0.8" scaleY="0.8" top="-11" right="2"/>
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="tongyong_btnclose" scaleX="0.8" scaleY="0.8" top="-11" right="2"/>
 
 
 

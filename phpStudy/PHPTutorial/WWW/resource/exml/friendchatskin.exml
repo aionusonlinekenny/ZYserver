@@ -28,6 +28,6 @@
 		<e:EditableText id="input" text="" prompt="请输入内容" left="5" size="18" textAlign="left" verticalAlign="middle" verticalCenter="0" fontFamily="Microsoft YaHei" width="412" promptColor="0x6b9baa" textColor="0xabebff"/>
 		</e:Group>
 	</e:Group>
-	<e:Button id="btnSend" label="发 送" width="123" height="50" icon="chat_btnbg" bottom="1" horizontalCenter="237.5" skinName="SkinBtn26"/>
+	<e:Button id="btnSend" label="Gửi" width="123" height="50" icon="chat_btnbg" bottom="1" horizontalCenter="237.5" skinName="SkinBtn26"/>
 
 </e:Skin>

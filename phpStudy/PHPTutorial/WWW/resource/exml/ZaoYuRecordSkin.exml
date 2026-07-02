@@ -7,8 +7,8 @@
 		<e:Image height="580" scaleX="1" scaleY="1" source="tongyong_dikuang2" left="0" right="0" scale9Grid="26,12,62,58" bottom="0"/>
 		<e:Image height="23" y="16" source="tongyong_juanzhou" left="0" right="0"/>
 		<e:Image y="0" source="tongyong_titlebg" horizontalCenter="0"/>
-		<e:Button skinName="SkinBtn0" y="1" icon="tongyong_btnclose" label="按钮" id="closeBtn" x="438" scaleX="1" scaleY="1"/>
-		<e:Label text="战斗记录" y="14" fontFamily="Microsoft YaHei" size="22" textColor="0x084151" horizontalCenter="0"/>
+		<e:Button skinName="SkinBtn0" y="1" icon="tongyong_btnclose" label="Nút bấm" id="closeBtn" x="438" scaleX="1" scaleY="1"/>
+		<e:Label text="Lịch sử chiến đấu" y="14" fontFamily="Microsoft YaHei" size="22" textColor="0x084151" horizontalCenter="0"/>
 		<e:Image width="426" height="520" y="50" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,10,64,66"/>
 		<e:Scroller width="408" height="504" y="58" horizontalCenter="0" anchorOffsetY="0" x="40" scaleX="1" scaleY="1">
 			<e:List id="list" itemRendererSkinName="SkinZaoYuRecordInfo" verticalCenter="0" horizontalCenter="156">

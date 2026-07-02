@@ -45,9 +45,9 @@
 			</e:layout>
 		</e:Group>
 			<e:Group id="btn" width="326" height="46" horizontalCenter="0" anchorOffsetY="0" verticalCenter="223">
-				<e:Button id="addStar" label="升星" icon="xb_25" skinName="SkinBtn1" width="130" height="50" horizontalCenter="-98" y="0"/>
+				<e:Button id="addStar" label="Nâng sao" icon="xb_25" skinName="SkinBtn1" width="130" height="50" horizontalCenter="-98" y="0"/>
 				<e:Image id="redPoint1" source="zjmhongdian" horizontalCenter="-35.5" y="-7"/>
-				<e:Button id="replace" label="替 换" icon="xb_26" skinName="SkinBtn1" width="130" height="50" x="195" y="0"/>
+				<e:Button id="replace" label="Thay thế" icon="xb_26" skinName="SkinBtn1" width="130" height="50" x="195" y="0"/>
 				<e:Image id="redPoint2" source="zjmhongdian" horizontalCenter="159.5" verticalCenter="-21.5"/>
 
 			</e:Group>

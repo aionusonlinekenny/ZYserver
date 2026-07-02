@@ -28,7 +28,7 @@
 	<e:Label text="品质：" size="20" fontFamily="Microsoft YaHei" left="100" top="11" textColor="0x001828"/>
 	<e:Label id="quality" text="" size="20" fontFamily="Microsoft YaHei" left="162" top="11"/>
 	<e:Label id="power" text="" size="18" fontFamily="Microsoft YaHei" textColor="0x001828" top="15" right="16"/>
-	<e:Button id="changeBtn" label="更 换" name="changeBtn" skinName="SkinBtn3" height="49" right="7" top="48"/>
+	<e:Button id="changeBtn" label="Thay đổi" name="changeBtn" skinName="SkinBtn3" height="49" right="7" top="48"/>
 	<ns1:ItemBase id="itemIcon" top="12" left="17" skinName="SkinItem2"/>
 	<e:Image id="best" touchEnabled="false" source="tuijian2" top="45" left="312" width="46"/>
 	<e:Group id="now" left="0" top="0">

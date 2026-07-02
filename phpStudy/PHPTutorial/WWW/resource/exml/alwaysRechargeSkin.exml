@@ -13,8 +13,8 @@
 		<ns1:ItemBase xmlns:ns1="*" id="item2" top="0" bottom="0" width="76" horizontalCenter="52" skinName="SkinItem2"/>
 		<ns1:ItemBase xmlns:ns1="*" id="item3" top="0" bottom="0" right="0" skinName="SkinItem2"/>
 		</e:Group>
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="alwaysRechargeClose_png" right="50" top="-79" rotation="359.85"/>
-		<e:Button id="goUpBtn" label="立即领取" y="444" icon="sc_05" skinName="SkinBtn9" width="198" anchorOffsetX="0" horizontalCenter="0"/>
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="alwaysRechargeClose_png" right="50" top="-79" rotation="359.85"/>
+		<e:Button id="goUpBtn" label="Nhận ngay" y="444" icon="sc_05" skinName="SkinBtn9" width="198" anchorOffsetX="0" horizontalCenter="0"/>
 	</e:Group>
 	<e:TabBar id="tab" width="200" height="48" x="56" y="365">
 		<e:layout>

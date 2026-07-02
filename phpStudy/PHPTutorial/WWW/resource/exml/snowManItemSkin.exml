@@ -13,7 +13,7 @@
 			<e:VerticalLayout/>
 		</e:layout>
 	</e:Group>
-	<e:Button id="goBtn" label="领  取" skinName="SkinBtn3" horizontalCenter="0" bottom="6" scaleX="0.8" scaleY="0.8" visible.normal="false" visible.done="false"/>
+	<e:Button id="goBtn" label="Nhận" skinName="SkinBtn3" horizontalCenter="0" bottom="6" scaleX="0.8" scaleY="0.8" visible.normal="false" visible.done="false"/>
 	<e:Group id="redPoint" bottom="31" scaleX="0.8" scaleY="0.8" horizontalCenter="29.5" visible.normal="false" visible.done="false">
 		<e:Image source="zjmhongdian" horizontalCenter="0"/>
 	</e:Group>

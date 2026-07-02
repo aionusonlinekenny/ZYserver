@@ -18,11 +18,11 @@
 	<e:ViewStack id="viewStack" width="584" selectedIndex="2" horizontalCenter="0" top="110" bottom="250">
 		<e:Group name="装备" top="0" bottom="0" horizontalCenter="0">
 			<e:Image scale9Grid="19,12,10,20" anchorOffsetY="0" anchorOffsetX="0" width="584" top="0" bottom="0" horizontalCenter="0" source="tongyong_dikuang4"/>
-			<e:Button id="smeltBtn" label="熔  炼" icon="btn1_2" right="50" width="213" height="67" skinName="SkinBtn6" bottom="-86"/>
+			<e:Button id="smeltBtn" label="Nung Luyện" icon="btn1_2" right="50" width="213" height="67" skinName="SkinBtn6" bottom="-86"/>
 			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="61" bottom="-39"/>
 
 			<e:Button id="addBtn" icon="btnadd" skinName="SkinBtn0" x="216" bottom="-70"/>
-			<e:Label text="容量" size="22" x="27" fontFamily="Microsoft YaHei" bottom="-61" textColor="0x1b3046"/>
+			<e:Label text="Dung lượng" size="22" x="27" fontFamily="Microsoft YaHei" bottom="-61" textColor="0x1b3046"/>
 			<e:Image scale9Grid="6,6,3,3" source="shuzibg" width="132" height="37" x="80" bottom="-70"/>
 			<e:Label id="itemCount" text="100" size="22" width="131" x="81" height="38" textAlign="center" verticalAlign="middle" textColor="0xffffff" bottom="-70"/>
 			<e:Scroller id="itemScroller" left="0" right="0" top="0" bottom="3" height="593" anchorOffsetY="0">
@@ -83,7 +83,7 @@
 		<e:Image source="zjmhongdian" locked="true"/>
 	</e:Group>-->
 	<e:Image y="9.5" horizontalCenter="-227.5" source="biaoti_beibao_png"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="273"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="273"/>
 
 
 </e:Skin>

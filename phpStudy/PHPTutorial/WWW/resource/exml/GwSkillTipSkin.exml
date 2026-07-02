@@ -9,20 +9,20 @@
 		<e:Image id="skillImg" y="71" width="66" height="66" horizontalCenter="0" source=""/>
 		<e:Image id="lvBg" y="120" horizontalCenter="0.5" source="godweapon_skillframe" scaleX="1.1" scaleY="1.1" visible="false"/>
 		<e:Label id="lvCount" text="0/0" y="141" size="20" horizontalCenter="0" width="60" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="nowskillTitle" text="当前属性：" x="22" y="163" size="20" visible.lock="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="nowskillTitle" text="Thuộc tính hiện tại：" x="22" y="163" size="20" visible.lock="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:Label id="nowskillDesc" text="" y="188" anchorOffsetX="0" width="300" anchorOffsetY="0" height="54" size="20" verticalAlign="top" textAlign="left"  height.max="80" height.lock="92" fontFamily="Microsoft YaHei" textColor="0x6b9baa" x="37" height.fullLv="80" x.lock="27"/>
-		<e:Label id="nextskillTitle" text="下一级属性：" x="22" y="242" size="20" y.max="272" visible.lock="false" fontFamily="Microsoft YaHei" textColor="0x00ff06" y.fullLv="272"/>
+		<e:Label id="nextskillTitle" text="Thuộc tính cấp tiếp theo：" x="22" y="242" size="20" y.max="272" visible.lock="false" fontFamily="Microsoft YaHei" textColor="0x00ff06" y.fullLv="272"/>
 		<e:Label id="nextskillDesc" text="" y="267" anchorOffsetX="0" width="302" anchorOffsetY="0" height="84" size="20" verticalAlign="top" textAlign.fullLv="left" textAlign.lock="left" textAlign.normal="left" height.max="83" text.max="" y.max="298" visible.lock="false" textColor="0x6b9baa" fontFamily="Microsoft YaHei" x="38" x.max="36" textAlign="left" y.fullLv="298"/>
-		<e:Button id="update" label="升 级" y="384" horizontalCenter="1" includeIn="normal,max" horizontalCenter.max="1" y.max="439" skinName="SkinBtn1"/>
+		<e:Button id="update" label="Nâng cấp" y="384" horizontalCenter="1" includeIn="normal,max" horizontalCenter.max="1" y.max="439" skinName="SkinBtn1"/>
 		<e:Label id="pointCount" text="" y="457" size="18" horizontalCenter="0" includeIn="normal,max" horizontalCenter.max="1" y.max="510" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:Group horizontalCenter="0" height="35" x="25" scaleX="1" scaleY="1" bottom="-44">
 			<e:Image height="36" touchEnabled="false" scale9Grid="128,2,15,41" width="336" y="0" alpha="1" source="bantoutiaobg" horizontalCenter="0"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" y="6" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
 		</e:Group>
 		<e:Label id="unlockDesc" text="" y="484" size="20" horizontalCenter.fullLv="0" horizontalCenter.normal="0" verticalAlign="middle" textAlign="center" height="32" width="330" anchorOffsetY.lock="0" horizontalCenter.lock="0" height.lock="58" y.lock="345" includeIn="lock,max" y.max="526" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalAlign.max="middle" textAlign.max="center" x.max="5" verticalAlign.lock="top"/>
-		<e:Label id="unlcokTitle" text="解锁条件：" includeIn="lock,max" y="463" size="22" y.max="506" y.lock="317" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter.fullLv="0" horizontalCenter.lock="0" horizontalCenter.normal="0" size.max="20" text.max="【解锁条件】" x.max="112" text.lock="【解锁条件】"/>
-		<e:Label id="ultraskillTitle" text="神兵威压" includeIn="max" y="152" size="20" bold="true" textColor="0xe5b613" horizontalCenter="0" visible="false"/>
+		<e:Label id="unlcokTitle" text="Điều kiện mở khóa：" includeIn="lock,max" y="463" size="22" y.max="506" y.lock="317" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter.fullLv="0" horizontalCenter.lock="0" horizontalCenter.normal="0" size.max="20" text.max="【Điều kiện mở khóa】" x.max="112" text.lock="【Điều kiện mở khóa】"/>
+		<e:Label id="ultraskillTitle" text="Thần Binh Uy Áp" includeIn="max" y="152" size="20" bold="true" textColor="0xe5b613" horizontalCenter="0" visible="false"/>
 		<e:Label id="ultraskillDesc" text="" y="389" anchorOffsetX="0" width="313" anchorOffsetY="0" height="36" size="18" verticalAlign="middle" textAlign="center" horizontalCenter="4.5" includeIn="max" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="fullLvDesc" text="镶嵌圣物可继续提升技能等级" includeIn="fullLv" y="490" horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+		<e:Label id="fullLvDesc" text="Khảm Thánh Vật có thể tiếp tục nâng cấp độ kỹ năng" includeIn="fullLv" y="490" horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 	</e:Group>
 </e:Skin>

@@ -48,7 +48,7 @@
 		</e:List>
 		<e:Label id="signed" text="已报名" bottom="25" horizontalCenter="0" textColor="0x00FF00" fontFamily="Microsoft YaHei" visible="false"/>
 		<e:Group id="btnGroup" bottom="25" horizontalCenter="-1.5">
-		<e:Button id="signUpBtn" label="报名" x="0" y="0" skinName="SkinBtn7"/>
+		<e:Button id="signUpBtn" label="Đăng ký tham gia" x="0" y="0" skinName="SkinBtn7"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" x="173" y="5"/>
 		</e:Group>
 		<e:Image source="peakness_rules" top="39" horizontalCenter="-213.5"/>

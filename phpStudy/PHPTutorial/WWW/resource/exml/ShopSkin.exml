@@ -27,6 +27,6 @@
 	</e:TabBar>
 	<e:Image id="redPoint0" source="zjmhongdian" horizontalCenter="-10.5" bottom="138" visible="false"/>
 	<e:Image id="redPoint2" source="zjmhongdian" horizontalCenter="101.5" bottom="138" visible="false"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="276"/> 
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="276"/> 
 	<e:Image id="temp" height="948" width="600" source="blackMarketBg_bmp" verticalCenter="0" horizontalCenter="0" alpha="0.5" x="10" y="10" visible="false" locked="true"/> 
 </e:Skin>

@@ -4,13 +4,13 @@
 	<e:Group width="600" horizontalCenter="1" horizontalCenter.challenge="1" top="0" bottom="162" bottom.challenge="104">
 		<e:Image source="lyr_fuben_bg_png" anchorOffsetY="0" anchorOffsetX="0"  horizontalCenter.sdget="0" horizontalCenter.sdfb="0" horizontalCenter.free="0" horizontalCenter.challenge="0" verticalCenter.challenge="-67" verticalCenter.free="-40" verticalCenter.sdfb="-40" verticalCenter.sdget="-40"/>
 
-		<e:Button id="btnChallenge" label="挑 战" width="160" height="55" visible.free="false" visible.sdfb="false" visible.sdget="false" horizontalCenter="1" horizontalCenter.challenge="0" icon="btn1_2" skinName="SkinBtn6" x="221"  bottom.sdget="47" bottom.sdfb="47" bottom.free="47" verticalCenter.challenge="306.5"/>
+		<e:Button id="btnChallenge" label="Thách đấu" width="160" height="55" visible.free="false" visible.sdfb="false" visible.sdget="false" horizontalCenter="1" horizontalCenter.challenge="0" icon="btn1_2" skinName="SkinBtn6" x="221"  bottom.sdget="47" bottom.sdfb="47" bottom.free="47" verticalCenter.challenge="306.5"/>
 		<e:Label text="今日可挑战次数 :" size="20" visible.free="false" visible.sdget="false" x.challenge="192" includeIn="free,sdget" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="330.67" textAlign="left" verticalAlign="middle"  textColor="0x00ff06" bottom="14" horizontalCenter="85.5"/>
 		<e:Label id="lbTime" text="1" size="20" visible.free="false" visible.sdget="false" horizontalCenter="86" text.challenge="Số lần thách đấu hôm nay：10" horizontalCenter.challenge="0" text.sdfb="Số lần thách đấu hôm nay：10" horizontalCenter.sdfb="1.5" bottom.sdfb="57" fontFamily="Microsoft YaHei" textColor="0x00ff06" x="380"  bottom.sdget="14" bottom.free="14" verticalCenter.challenge="354"/>
 
 		<e:Image source="ring_fubenslogen1_png" visible.free="false" visible.sdget="false" width="551" height="85" horizontalCenter="6.5" y.sdget="92" y.sdfb="92" y.free="92" x="31"  horizontalCenter.challenge="6.5" verticalCenter.challenge="-289.5"/>
 		<e:Group width="300" height="100" visible.challenge="false" horizontalCenter="0" x="150" y="676"  visible.sdfb="false" visible.free="false" visible.sdget="false">
-			<e:Button id="btnSD" label="扫荡" skinName="SkinBtn1" width="160" height="55" y="14" horizontalCenter="0" visible="false"/>
+			<e:Button id="btnSD" label="Càn quét" skinName="SkinBtn1" width="160" height="55" y="14" horizontalCenter="0" visible="false"/>
 			<e:Label id="lbVip" text="VIP10可额外挑战1次" y="72" horizontalCenter="0" x="14" textColor="0x35e62b" size="20" visible.sdfb="false" visible="false"/>
 			<e:Label id="lbVip0" text="今日可扫荡次数10次" y="72" horizontalCenter="0" x="24" textColor="0x35E62B" size="20" includeIn="sdfb" visible="false"/>
 		</e:Group>
@@ -23,7 +23,7 @@
 			<e:Label id="lbFree" text="（免费）" y="121.5" size="20" horizontalCenter="0" visible.sdget="false" textColor="0x00842c" fontFamily="Microsoft YaHei" visible.sdfb="false"/>
 			<e:Image source="fb1bei" horizontalCenter="0" top="20"/>
 			<e:Label id="lbExp0" text="200" size="20" horizontalCenter="29" top="75" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
-			<e:Button id="btnGet0" label="领取" width="120" height="50" horizontalCenter="0" bottom="16" label.sdget="快速扫荡"  icon="btn3" skinName="SkinBtn6"/>
+			<e:Button id="btnGet0" label="Nhận" width="120" height="50" horizontalCenter="0" bottom="16" label.sdget="Càn quét nhanh"  icon="btn3" skinName="SkinBtn6"/>
 			<ns1:PriceIcon id="gold0" skinName="SkinPriceIcon" horizontalCenter="7.5" bottom="72" visible.free="false"/>
 			<e:Image x="47.84" y="65.49"  source="200015_png" width="35" height="35"/>
 			</e:Group>
@@ -31,7 +31,7 @@
 				<e:Image scale9Grid="38,21,50,22" source="lcfbjsdk" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image horizontalCenter="0" top="20" source="fb2bei"/>
 				<e:Label id="lbExp1" text="400" size="20" horizontalCenter="29" top="75" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
-				<e:Button id="btnGet1" label="领取" width="120" height="50" horizontalCenter="0" bottom="16"  icon="btn3" skinName="SkinBtn6"/>
+				<e:Button id="btnGet1" label="Nhận" width="120" height="50" horizontalCenter="0" bottom="16"  icon="btn3" skinName="SkinBtn6"/>
 				<ns1:PriceIcon id="gold1" skinName="SkinPriceIcon" horizontalCenter="2.5" bottom="71"/>
 				<e:Image x="47.84" y="65.49"  source="200015_png" width="35" height="35"/>
 			</e:Group>
@@ -39,7 +39,7 @@
 				<e:Image scale9Grid="38,21,50,22" source="lcfbjsdk" right="0" verticalCenter="0"/>
 				<e:Image horizontalCenter="0" top="20" source="fb3bei"/>
 				<e:Label id="lbExp2" text="600" size="20" horizontalCenter="29" top="75" textColor="0x00842C" fontFamily="Microsoft YaHei"/>
-				<e:Button id="btnGet2" label="领取" width="120" height="50" horizontalCenter="0" bottom="16"  icon="btn3" skinName="SkinBtn6"/>
+				<e:Button id="btnGet2" label="Nhận" width="120" height="50" horizontalCenter="0" bottom="16"  icon="btn3" skinName="SkinBtn6"/>
 				<ns1:PriceIcon id="gold2" skinName="SkinPriceIcon" horizontalCenter="-3.5" bottom="72"/>
 				<e:Image x="47.84" y="65.49"  source="200015_png" width="35" height="35"/>
 			</e:Group>

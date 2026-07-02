@@ -42,7 +42,7 @@
 			</e:Group>
 			<e:Group id="forgeGroup" top="0" left="0" right="0">
 			</e:Group>
-			<e:Button id="changeBtn" label="更  换" skinName="SkinBtn1" horizontalCenter="0" bottom.not_max_no="30" bottom.max="30" bottom.unactivated_no="30" x="97" y="672"  includeIn="default,unactivated_have,not_max" label.unactivated_have="激  活" label.not_max="更  换" skinName.not_max="SkinBtn1" width.not_max="176" height.not_max="69" skinName.unactivated_have="SkinBtn1" width.unactivated_have="176" height.unactivated_have="69" horizontalCenter.default="0" x.default="87" y.default="340" scaleX.default="1" scaleY.default="1" y.unactivated_have="377" y.not_max="646"/>
+			<e:Button id="changeBtn" label="Thay đổi" skinName="SkinBtn1" horizontalCenter="0" bottom.not_max_no="30" bottom.max="30" bottom.unactivated_no="30" x="97" y="672"  includeIn="default,unactivated_have,not_max" label.unactivated_have="Kích hoạt" label.not_max="Thay đổi" skinName.not_max="SkinBtn1" width.not_max="176" height.not_max="69" skinName.unactivated_have="SkinBtn1" width.unactivated_have="176" height.unactivated_have="69" horizontalCenter.default="0" x.default="87" y.default="340" scaleX.default="1" scaleY.default="1" y.unactivated_have="377" y.not_max="646"/>
 			<e:Group id="next" width="350" horizontalCenter="0" includeIn="not_max,not_max_no" y="328" horizontalCenter.not_max="0" y.not_max="354">
 				<e:Group left="24" top="0">
 

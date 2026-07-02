@@ -11,13 +11,13 @@
 			</e:layout>
 					<!--<e:ArrayCollection>
 						<e:Array>
-							<e:Object label="数据1"/>
-							<e:Object label="数据2"/>
-							<e:Object label="数据3"/>
-							<e:Object label="数据4"/>
-							<e:Object label="数据5"/>
-							<e:Object label="数据6"/>
-							<e:Object label="数据7"/>
+							<e:Object label="Dữ liệu 1"/>
+							<e:Object label="Dữ liệu 2"/>
+							<e:Object label="Dữ liệu 3"/>
+							<e:Object label="Dữ liệu 4"/>
+							<e:Object label="Dữ liệu 5"/>
+							<e:Object label="Dữ liệu 6"/>
+							<e:Object label="Dữ liệu 7"/>
 						</e:Array>
 					</e:ArrayCollection>-->
 				</e:List>

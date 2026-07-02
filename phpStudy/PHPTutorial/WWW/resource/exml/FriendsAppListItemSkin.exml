@@ -17,8 +17,8 @@
 	</e:Group>
 	<e:Label id="label_name" text="{data.name}" size="20" y="30" x="88" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
 	<e:Label id="labelGuild" text="帮会名六个字" size="18" y="60" x="88" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-	<e:Button id="btn_yes" label="同 意" verticalCenter="0" width="91" height="50" icon="friend_btnbg" right="7" skinName="SkinBtn26"/>
-	<e:Button id="btn_no" label="拒 绝" verticalCenter="0" width="91" height="50" icon="friend_btnbg" right="103" skinName="SkinBtn26"/>
+	<e:Button id="btn_yes" label="Đồng ý" verticalCenter="0" width="91" height="50" icon="friend_btnbg" right="7" skinName="SkinBtn26"/>
+	<e:Button id="btn_no" label="Từ chối" verticalCenter="0" width="91" height="50" icon="friend_btnbg" right="103" skinName="SkinBtn26"/>
 
 
 	

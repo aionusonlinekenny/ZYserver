@@ -5,8 +5,8 @@
 		<e:Group id="group_pingbi" horizontalCenter="0" verticalCenter="0" visible="false">
 			<e:Label text="你的黑名单里居然没有人，真幸福！" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
-		<e:Button id="closeBtn0" skinName="SkinBtn0" label="按钮" y="8" x="424"   visible="false"/>
-		<e:Button id="closeBtn" skinName="SkinBtn0" label="按钮" y="581" x="401"   visible="false"/>
+		<e:Button id="closeBtn0" skinName="SkinBtn0" label="Nút bấm" y="8" x="424"   visible="false"/>
+		<e:Button id="closeBtn" skinName="SkinBtn0" label="Nút bấm" y="581" x="401"   visible="false"/>
 		<e:Group   left="0" right="0" top="0" bottom="0">
 			<e:Label id="label_num" text="xx/xxx" x="102" y="214" size="16"   textColor="0xDFD1B5" fontFamily="黑体" visible="false"/>
 			<e:Label id="label" text="屏蔽数量:" x="16" y="214" size="16"   textColor="0xDFD1B5" fontFamily="黑体" visible="false"/>

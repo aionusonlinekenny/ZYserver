@@ -7,7 +7,7 @@
 		<e:Label id="first" text="现在购买，额外赠送 8800 元宝" size="20" horizontalCenter="0" textAlign="left" verticalCenter="230" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:Label text="购买月卡不计入VIP和首充" size="20" top="210" fontFamily="Microsoft YaHei" left="164" textColor="0xffff00"/>
 		<e:Label id="feng" text="封测期间不开放月卡功能" size="24" horizontalCenter="0" bottom="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
-		<e:Button id="btn1" label="88元抢购" verticalCenter="283" horizontalCenter="0" icon="btn2_2" skinName="SkinBtn1"/>
+		<e:Button id="btn1" label="Mua ngay 88 NDT" verticalCenter="283" horizontalCenter="0" icon="btn2_2" skinName="SkinBtn1"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="77" verticalCenter="256"/>
 		<e:Label id="leftTime" horizontalCenter="0" size="20" verticalCenter="230" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
 		<e:Label id="depictLabel" text="" size="18" lineSpacing="6" textAlign="left" verticalAlign="middle" top="327" anchorOffsetX="0" width="471" left="34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>

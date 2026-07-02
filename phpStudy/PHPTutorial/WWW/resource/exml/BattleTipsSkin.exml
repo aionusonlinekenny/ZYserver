@@ -35,8 +35,8 @@
 
 
 
-		<e:Button id="goTo" label="进入" skinName="SkinBtn1" bottom="15" horizontalCenter="0"/>
-		<e:Button id="closeBtn" label="进入" skinName="SkinBtn0" horizontalCenter="213" top="-17" icon="tongyong_btnclose"/>
+		<e:Button id="goTo" label="Vào" skinName="SkinBtn1" bottom="15" horizontalCenter="0"/>
+		<e:Button id="closeBtn" label="Vào" skinName="SkinBtn0" horizontalCenter="213" top="-17" icon="tongyong_btnclose"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" bottom="65" horizontalCenter="78" visible="false"/>
 		<e:Image width="300" horizontalCenter="0" height="34" scale9Grid="10,10,60,60" bottom="-44" source="bantoutiaobg"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" width="200" lineSpacing="10" fontFamily="Microsoft YaHei" horizontalCenter="0" bottom="-36" height="20"/>

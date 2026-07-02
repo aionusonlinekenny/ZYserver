@@ -18,7 +18,7 @@
 			<e:ArrayCollection/>
 			</e:List>
 		</e:Scroller>
-		<e:Button id="btn" label="升  星" horizontalCenter="0.5" skinName="SkinBtn7" verticalCenter="340"/>
+		<e:Button id="btn" label="Nâng sao" horizontalCenter="0.5" skinName="SkinBtn7" verticalCenter="340"/>
 		<e:Label id="nameTF" text="两仪勋章" y="13" size="24" textColor="0xffb82a" bold="true" x="207" visible="false"/>
 		<e:Label id="manjiTF" text="Đã đạt cấp tối đa" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="340"/>
 		<e:BitmapLabel id="stageImg" font="num_lv_jie_fnt" text="九十九阶" width="37" anchorOffsetX="0" height="149" anchorOffsetY="0" left="90" top="140"/>
@@ -29,7 +29,7 @@
 		<e:Label id="activeTipsTxt1" text="15级可开启勋章" horizontalCenter="0" size="24" y="64" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label text="暴击伤害提升" size="22" horizontalCenter="0" y="170" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Label text="暴击概率提升" size="22" horizontalCenter="0" y="250" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Button id="UplevelBtn1" label="开启勋章" skinName="SkinBtn1" width="180" height="60" y="410" horizontalCenter="0"/>
+		<e:Button id="UplevelBtn1" label="Mở Huân Chương" skinName="SkinBtn1" width="180" height="60" y="410" horizontalCenter="0"/>
 		<e:Image id="redPointAct1" source="zjmhongdian" x="332" y="406" visible="false"/>
 		</e:Group>
 	</e:Group>

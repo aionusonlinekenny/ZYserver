@@ -7,7 +7,7 @@
 		<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="676" width="516" scale9Grid="15,16,51,55" horizontalCenter="0" top="52"/>
 		<e:Image anchorOffsetY="0" horizontalCenter="0" source="tongyong_juanzhou" scale9Grid="202,0,76,0" width="580" top="15"/>
 		<e:Image source="tongyong_titlebg" horizontalCenter="0" top="0"/>
-		<e:Label text="龙 晶" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="13"/>
+		<e:Label text="Long Tinh" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="13"/>
 		<e:Group id="fightGroup" horizontalCenter="0" x="-145"  verticalCenter="38.5">
 			<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="0"/>
 		</e:Group>
@@ -28,7 +28,7 @@
 		<e:Group id="activation" width="500" height="243" horizontalCenter="0" y.activation="597" x="-240"  verticalCenter="180" anchorOffsetY="0" visible.upgrade="false" visible.max="false">
 			<e:Label id="att0" text="Công kích：800\nCông kích：8000\nCông kích：8000" size="20" textAlign="left" verticalAlign="middle" verticalCenter="-46.5" horizontalCenter="0.5" x="0" y="0"  textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter.activation="0.5" verticalCenter.activation="-50.5" verticalAlign.activation="middle"/>
 			<e:Label id="activationTip" text="（激活后可继续升级魂玉）" size="20" textAlign="left" verticalAlign="middle" verticalCenter="-3.5" horizontalCenter="1" x="10" y="10"  fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter.activation="1" verticalCenter.activation="-7.5" text.upgrade="（激活后可继续升级龙晶）"/>
-			<e:Button id="executeBtn0" skinName="SkinBtn1" label="激活" horizontalCenter="0" bottom="2"/>
+			<e:Button id="executeBtn0" skinName="SkinBtn1" label="Kích hoạt" horizontalCenter="0" bottom="2"/>
 			<e:Label id="name0" text="Huyết Ý Hồn Ngọc cấp 1" size="20" textAlign="center" verticalAlign="middle"  horizontalCenter="0" fontFamily="Microsoft YaHei" top="14" textColor="0xffffff"/>
 			<e:Group id="costGroup0" horizontalCenter="-1" height="40" y="120">
 			<e:Label id="expendLabel0" text="Tiêu hao: " size="20" x="0" y="12" fontFamily="Microsoft YaHei" textColor="0x001828"/>
@@ -42,7 +42,7 @@
 			<e:Label id="maxText" text="当前魂玉已满级" size="20" textAlign="left" verticalAlign="middle"  horizontalCenter="0" y.upgrade="131" y.activation="131" horizontalCenter.max="0" bottom.max="-50" fontFamily.max="Microsoft YaHei" textColor.max="0xffff00" size.max="30" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 		<e:Group id="upgrade" width="500" height="217" horizontalCenter="0" visible.activation="false" y="174" x="-240"  visible.max="false" verticalCenter.upgrade="189" anchorOffsetY.upgrade="0" horizontalCenter.upgrade="0" height.upgrade="245">
-			<e:Button id="executeBtn" skinName="SkinBtn1" label="升 级" horizontalCenter="0" bottom="2" horizontalCenter.upgrade="0" bottom.upgrade="12"/>
+			<e:Button id="executeBtn" skinName="SkinBtn1" label="Nâng cấp" horizontalCenter="0" bottom="2" horizontalCenter.upgrade="0" bottom.upgrade="12"/>
 			<e:Label id="curname" text="Huyết Ý Hồn Ngọc cấp 1" size="20" textAlign="left" verticalAlign="middle"  verticalCenter.max="-88.5" verticalCenter.activation="-88.5" horizontalCenter.max="-127.5" horizontalCenter.activation="-127.5" textColor.upgrade="0xffff00" fontFamily.upgrade="Microsoft YaHei" top.upgrade="14" left.upgrade="55" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
 			<e:Label id="nextname" text="2级血意魂玉" size="20" textAlign="left" verticalAlign="middle"  verticalCenter.max="-88.5" verticalCenter.activation="-88.5" horizontalCenter="114.5" horizontalCenter.upgrade="115" textColor.upgrade="0xffff00" fontFamily.upgrade="Microsoft YaHei" top.upgrade="14" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
 			<e:Label id="curAtt0" text="攻击：800\n攻击：800201\n攻击：8000" size="20" textAlign="left" verticalAlign="middle"  verticalCenter="-46.5" horizontalCenter.max="-111.5" horizontalCenter.activation="-111.5" fontFamily.upgrade="Microsoft YaHei" textColor.upgrade="0xffffff" anchorOffsetX.upgrade="0" verticalCenter.upgrade="-46.5" width.upgrade="149" left.upgrade="65" fontFamily="Microsoft YaHei" textColor="0xffffff"/>

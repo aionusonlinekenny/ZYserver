@@ -10,7 +10,7 @@
 		<e:Image horizontalCenter="0" top="35" width="476" scale9Grid="6,6,15,13" height="522" source="tongyongbg7"/>
 		<e:Image horizontalCenter="0" width="476" bottom="-44" height="35" source="bantoutiaobg" scale9Grid="184,5,31,30"/>
 
-		<e:Button id="get" icon="xb_42" skinName="SkinBtn1" horizontalCenter="0" bottom="19" label="全部取出"/>
+		<e:Button id="get" icon="xb_42" skinName="SkinBtn1" horizontalCenter="0" bottom="19" label="Lấy hết ra"/>
 		<e:Scroller id="listScroller" width="460" height="500" horizontalCenter="0" top="50">
 			<e:List id="list" itemRendererSkinName="SkinItem2" x="1" scaleX="1" scaleY="1">
 				<e:layout>

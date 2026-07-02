@@ -12,9 +12,9 @@
 		<e:Label id="desc" text="你的仙羽有祝福值         ， 将在xx:xx:xx清空，请尽快升阶！" size="22" width="332" height="112" horizontalCenter="2" fontFamily="Microsoft YaHei" verticalCenter="-35" lineSpacing="4" textColor="0x213847" anchorOffsetY="0" verticalAlign="middle" textAlign="left"/>
 		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" bottom="-52" width="350" visible="false"/>
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-43" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
-		<e:Button id="closeBtn" label="关闭" horizontalCenter="-79" bottom="18" skinName="SkinBtn6" width="124" height="57" icon="btn3_1"/>
-		<e:Button id="up" label="去升阶" horizontalCenter="81" bottom="18" skinName="SkinBtn6" width="124" height="57" icon="btn3"/>
-		<e:CheckBox id="nextHint" label="本次不再提示" skinName="SkinCheckBox0" horizontalCenter="0" scaleX="0.9" scaleY="0.9" verticalCenter="52"/>
+		<e:Button id="closeBtn" label="Đóng" horizontalCenter="-79" bottom="18" skinName="SkinBtn6" width="124" height="57" icon="btn3_1"/>
+		<e:Button id="up" label="Đi thăng bậc" horizontalCenter="81" bottom="18" skinName="SkinBtn6" width="124" height="57" icon="btn3"/>
+		<e:CheckBox id="nextHint" label="Lần này không nhắc lại" skinName="SkinCheckBox0" horizontalCenter="0" scaleX="0.9" scaleY="0.9" verticalCenter="52"/>
 		<e:Button id="closeBtn2" width="54" height="54" y="-14" x="437" skinName="SkinBtn0" icon="tongyong_btnclose"/>
 	</e:Group>
 </e:Skin>

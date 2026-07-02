@@ -15,8 +15,8 @@
 		<e:Image scale9Grid="85,1,6,1" y="336" source="bantoutiaobg" width="360" horizontalCenter="0" height="36"/>
 
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-30" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Button id="closeBtn" label="取消" horizontalCenter="-94" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3_1"/>
-		<e:Button id="up" label="退出" horizontalCenter="95" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3"/>
+		<e:Button id="closeBtn" label="Hủy" horizontalCenter="-94" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3_1"/>
+		<e:Button id="up" label="Thoát" horizontalCenter="95" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3"/>
 
 	</e:Group>
 </e:Skin>

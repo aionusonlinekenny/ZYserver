@@ -5,7 +5,7 @@
 	<e:Group id="mainGroup" width="334" height="392" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="tongyongtip1" left="3" right="3" top="3" bottom="3" scale9Grid="7,9,48,56"/>
 		<e:Image     top="0" bottom="0" left="0" right="0" width="334" scale9Grid="12,9,5,9" height="392" source="tongyongtip2"/>
-		<e:Button id="btnGet" label="前往领取(10)"  width="177"   horizontalCenter="0" top="227" height="60" skinName="SkinBtn26" icon="btn2_2"/>
+		<e:Button id="btnGet" label="Đi nhận(10)"  width="177"   horizontalCenter="0" top="227" height="60" skinName="SkinBtn26" icon="btn2_2"/>
 
 		<e:Image source="fbljjy" horizontalCenter="0" top="67"/>
 		<e:Image source="r09_png" verticalCenter="-12" horizontalCenter="0" visible="false"/>

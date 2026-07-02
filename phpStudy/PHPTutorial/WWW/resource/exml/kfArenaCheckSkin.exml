@@ -13,7 +13,7 @@
 		<e:Image id="headBG" x="25" source="touxiangkuang0" width="70" height="70" scale9Grid="6,6,1,1" verticalCenter="-46"/>
 
 
-		<e:Button id="outBtn" label="移出队伍" bottom="59" horizontalCenter="90" width="120" height="50" skinName="SkinBtn3" horizontalCenter.normal="80" horizontalCenter.check="80" visible.check="false"/>
-		<e:Button id="checkBtn" label="查看" bottom="57" horizontalCenter="-78" width="120" height="50" skinName="SkinBtn3" horizontalCenter.normal="-80" horizontalCenter.check="5" bottom.check="57"/>
+		<e:Button id="outBtn" label="Đưa ra khỏi đội" bottom="59" horizontalCenter="90" width="120" height="50" skinName="SkinBtn3" horizontalCenter.normal="80" horizontalCenter.check="80" visible.check="false"/>
+		<e:Button id="checkBtn" label="Xem" bottom="57" horizontalCenter="-78" width="120" height="50" skinName="SkinBtn3" horizontalCenter.normal="-80" horizontalCenter.check="5" bottom.check="57"/>
 	</e:Group>	
 </e:Skin>

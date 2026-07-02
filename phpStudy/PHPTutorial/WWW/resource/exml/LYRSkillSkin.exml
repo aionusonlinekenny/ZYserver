@@ -7,7 +7,7 @@
 
 		<ns1:PowerPanel id="power" skinName="SkinPowerPanel" y.study="74" top="20"  right.update="35" top.update="20" right="35"/>
 
-		<e:Button id="opraBtn" label="升  级" label.study="学  习" x.update="285" icon="btn1_2" width="213" right="90" bottom.update="0" height.update="67" bottom.study="50" bottom="0" skinName="SkinBtn7"/>
+		<e:Button id="opraBtn" label="Nâng cấp" label.study="Học" x.update="285" icon="btn1_2" width="213" right="90" bottom.update="0" height.update="67" bottom.study="50" bottom="0" skinName="SkinBtn7"/>
 		<e:Group id="updateGroup" includeIn="update" anchorOffsetX="0" anchorOffsetY="0" right="90" bottom="80" height="110" width="213">
 			<e:Label id="cost" text="消耗 :0/1" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="0" right="0" textAlign="center" bottom="0"/>
 			<ns1:ItemBase id="needItem" x="72.01" y="4.69" anchorOffsetY="0" skinName="SkinItem"/>

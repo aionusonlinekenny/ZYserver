@@ -3,8 +3,8 @@
         xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="580" height="930">
 	<w:Config id="15c6d0f73d2" />
 	<e:Group id="attList" width="100" top="190" bottom="144" right="0">
-		<e:Button id="refush" label="按钮" x="0" y="1" skinName="SkinBtn0" width="76"  visible="false"/>
-		<e:ToggleButton id="btn" touchEnabled="true" label="按钮" right="1" skinName="SkinBtn4" y="1"  visible="false"/>
+		<e:Button id="refush" label="Nút bấm" x="0" y="1" skinName="SkinBtn0" width="76"  visible="false"/>
+		<e:ToggleButton id="btn" touchEnabled="true" label="Nút bấm" right="1" skinName="SkinBtn4" y="1"  visible="false"/>
 		<e:Label text="Chọn mục tiêu" x="6" y="6" size="16" textColor="0xDFD1B5" stroke="1" strokeColor="000000" visible="false" />
 		<e:Group id="beAttackGroup" x="0" top="151" bottom="0">
 			<e:Group x="0" y="0" width="100">
@@ -61,7 +61,7 @@
 		<e:Image width="69" height="71" x="24.33" y="26.33" source="guildkuang"/>
 		<e:Label id="lvTxt" y="30" size="20" text="Lv.2000" x="110.5" width="70" textAlign="right"  textColor="0xffff00"/>
 		<e:Label id="nameTxt" y="30" size="18" text="Tổ Mã Giáo Chủ" x="188"  textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Button id="tipBtn" label="奖励" x="278.26" y="13.73" skinName="SkinBtn18"/>
+		<e:Button id="tipBtn" label="Phần thưởng" x="278.26" y="13.73" skinName="SkinBtn18"/>
 		<e:Label id="bossBloodNumLabel" text="X5" x="313.6" y="52.5" fontFamily="Microsoft YaHei" size="18"/>
 	</e:Group>
 	<e:Button id="attackPlayer1" label="" skinName="SkinWorldBossAtbtn" currentState="attgsup" horizontalCenter="66" bottom="150" visible="false"/>

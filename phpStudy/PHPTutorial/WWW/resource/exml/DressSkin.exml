@@ -33,8 +33,8 @@
 		</e:Scroller>
 		<e:Group id="selectGroup" width="600" height="300" horizontalCenter="0" verticalCenter="12">
 			<e:Image id="nameImage" y="20" right="10" scaleX="1.2" scaleY="1.2"  source=""/>
-			<e:Button id="dressBtn" label="幻 化" skinName="SkinBtn1"  right="11" bottom="15" anchorOffsetX="0" width="149"/>
-			<e:Button id="dressBtn2" label="脱 下" skinName="SkinBtn1"  horizontalCenter="47" width="149" bottom="15" visible="false"/>
+			<e:Button id="dressBtn" label="Ảo Hóa" skinName="SkinBtn1"  right="11" bottom="15" anchorOffsetX="0" width="149"/>
+			<e:Button id="dressBtn2" label="Cởi ra" skinName="SkinBtn1"  horizontalCenter="47" width="149" bottom="15" visible="false"/>
 			<e:Image id="background" width="269" height="124"  left="-1" anchorOffsetY="0" anchorOffsetX="0" bottom="27" source="tongyongbg7" scale9Grid="8,4,12,16"/>
 
 			<e:Label text="幻化属性可累加" x="7" size="20"  fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="2"/>
@@ -87,10 +87,10 @@
 	</e:Group>
 </e:Group>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" horizontalCenter="0" top="0" bottom="0"/>
-	<e:Button id="help" icon="wenhao" skinName="SkinBtn0" label="按钮" scaleX="0.9" scaleY="0.9" top="5" horizontalCenter="-271"/>
+	<e:Button id="help" icon="wenhao" skinName="SkinBtn0" label="Nút bấm" scaleX="0.9" scaleY="0.9" top="5" horizontalCenter="-271"/>
 	<e:Image top="11" horizontalCenter="-208.5" source="biaoti_zhuangban_png"/>
 
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose"  width="64" top="48" anchorOffsetY="0" height="64" horizontalCenter="272"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose"  width="64" top="48" anchorOffsetY="0" height="64" horizontalCenter="272"/>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="bantoumingkuang3_png" verticalCenter="342.5"/>
 <e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" horizontalCenter="0" verticalCenter="342">
 	<e:layout>
@@ -109,7 +109,7 @@
 			<e:HorizontalLayout gap="100"/>
 		</e:layout>
 	</e:Group>
-	<e:Button id="chenghao" icon="dresschenghao_png" skinName="SkinBtn0" label="按钮" scaleX="0.9" scaleY="0.9" top="117" horizontalCenter="258"/>
+	<e:Button id="chenghao" icon="dresschenghao_png" skinName="SkinBtn0" label="Nút bấm" scaleX="0.9" scaleY="0.9" top="117" horizontalCenter="258"/>
 
 
 </e:Skin>

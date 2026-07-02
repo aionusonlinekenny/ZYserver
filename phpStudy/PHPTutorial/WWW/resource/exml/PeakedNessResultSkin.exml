@@ -19,6 +19,6 @@
 				<e:HorizontalLayout/>
 			</e:layout>
 		</e:Group>
-		<e:Button id="quitBtn" label="退出(10s)" skinName="SkinBtn1" width="160" horizontalCenter="0" y="643"/>
+		<e:Button id="quitBtn" label="Thoát(10s)" skinName="SkinBtn1" width="160" horizontalCenter="0" y="643"/>
 	</e:Group>
 </e:Skin>

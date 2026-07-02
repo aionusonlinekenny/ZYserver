@@ -8,7 +8,7 @@
 		<e:Image y="0" scale9Grid="0,3,51,25" width="249" source="tongyong_titlebg" height="41" x="120"/>
 		<e:Image scale9Grid="0,3,51,25" width="239" scaleX="-1" source="diwen6" horizontalCenter="0" top="391"/>
 		<e:Image width="418" height="312" y="53" x="33" source="tongyong_dikuang1" scale9Grid="10,6,60,42"/>
-		<e:Button label="领取附件" id="receiveBtn" horizontalCenter="0" icon="btn2_2" width="176" height="69" top="526" skinName="SkinBtn1"/>
+		<e:Button label="Nhận tệp đính kèm" id="receiveBtn" horizontalCenter="0" icon="btn2_2" width="176" height="69" top="526" skinName="SkinBtn1"/>
 		<e:Label id="textLabel" text="这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 这真的是标准的十个字 三个字 这真的是标准的十个字 三" size="18" height="287" width="389" lineSpacing="5" y="68" horizontalCenter="0"  textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetY="0" anchorOffsetX="0"/>
 		<e:Scroller id="menuScroller" width="432" scaleX="0.9" scaleY="0.9" height="120" scrollPolicyV="off" horizontalCenter="0" top="418">
 			<e:List id="itemList" x="68" y="375" itemRendererSkinName="SkinItem">
@@ -19,7 +19,7 @@
 			</e:List>
 		</e:Scroller>
 		<e:Label id="desc" text="该邮件没有附件" size="20" textAlign="center" y="430" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" visible="false"/>
-		<e:Button skinName="SkinBtn0" label="按钮" id="closeBtn" icon="tongyong_btnclose" top="6" x="435"/>
+		<e:Button skinName="SkinBtn0" label="Nút bấm" id="closeBtn" icon="tongyong_btnclose" top="6" x="435"/>
 		<e:Label text="邮件内容" y="11" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
 		<e:Label text="附 件" size="22" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x001828" top="378"/>
 

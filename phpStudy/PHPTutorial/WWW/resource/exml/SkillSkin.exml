@@ -9,6 +9,6 @@
 		<e:Component id="skillItem3" skinName="SkillItem" y="309" x="10" scaleX="1" scaleY="1"/>
 		<e:Component id="skillItem4" skinName="SkillItem" y="415" x="10" scaleX="1" scaleY="1"/>
 		<e:Component id="skillItem5" skinName="SkillItem" y="521" x="10" scaleX="1" scaleY="1"/>
-		<e:Button id="all" label="全部升级" width="213" height="67" scaleX="1" scaleY="1" horizontalCenter="0" bottom="0" icon="btn1_2" skinName="SkinBtn7"/>
+		<e:Button id="all" label="Nâng cấp tất cả" width="213" height="67" scaleX="1" scaleY="1" horizontalCenter="0" bottom="0" icon="btn1_2" skinName="SkinBtn7"/>
 	</e:Group>
 </e:Skin>

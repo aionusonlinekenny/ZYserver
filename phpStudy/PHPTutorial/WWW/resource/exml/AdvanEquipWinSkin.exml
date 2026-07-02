@@ -31,5 +31,5 @@
 
 
 	<e:Image top="8" horizontalCenter="-229" source="biaoti_chengzhuang_png"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" horizontalCenter="275" top="44"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" horizontalCenter="275" top="44"/>
 </e:Skin>

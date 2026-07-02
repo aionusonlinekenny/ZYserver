@@ -12,7 +12,7 @@
 		</e:layout>
 		</e:List>
 	</e:Scroller>
-	<e:Button id="challengeBtn" label="参与挑战" skinName="SkinBtn1" bottom="3" horizontalCenter="-58"/>
+	<e:Button id="challengeBtn" label="Tham gia thách đấu" skinName="SkinBtn1" bottom="3" horizontalCenter="-58"/>
 	<e:Group y="14.38" horizontalCenter="-65">
 		<e:Label text="上次归属：" y="-38.5" size="22" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="-118" textAlign="center" verticalAlign="middle"/>
 		<e:Label id="playerNameTxt" text="玩家名六个字（仙盟名六个字）" y="-38.5" size="22" textAlign="left" fontFamily="Microsoft YaHei" horizontalCenter="71" verticalAlign="middle" textColor="0xffff00"/>

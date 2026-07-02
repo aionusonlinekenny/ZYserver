@@ -12,7 +12,7 @@
 
 		<e:Label id="starLabel" text="连跳     星" x="348" y="68" size="38" textColor="0x35e62d" visible="false"/>
 
-		<e:Button id="chanllage" label="挑  战" icon="btnshouchong_png" horizontalCenter="0" visible.fullcount="false" skinName="SkinBtn1" bottom="38" horizontalCenter.normal="0" bottom.normal="38"/>
+		<e:Button id="chanllage" label="Thách đấu" icon="btnshouchong_png" horizontalCenter="0" visible.fullcount="false" skinName="SkinBtn1" bottom="38" horizontalCenter.normal="0" bottom.normal="38"/>
 
 
 		<e:Label text="今日挑战已完成" includeIn="fullcount" horizontalCenter="0" bottom="58" fontFamily="Microsoft YaHei" textColor="0xffff00"/>

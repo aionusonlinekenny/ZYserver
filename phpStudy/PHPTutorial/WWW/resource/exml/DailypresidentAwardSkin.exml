@@ -7,12 +7,12 @@
 		<e:Image width="516"   horizontalCenter="0.5" source="tongyong_juanzhou" scale9Grid="227,0,40,14" top="-7"/>
 		<e:Image y="-23.03" horizontalCenter="0" source="tongyong_titlebg" width="281"/>
 		<e:Image horizontalCenter="0" width="465" source="tongyongbg5" height="259" verticalCenter="-9.5" scale9Grid="5,5,16,9"/>
-		<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="243.5" top="-21"/>
+		<e:Button id="closeBtn0" label="Nút bấm" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="243.5" top="-21"/>
 		<e:Label id="desc" text="占领仙宫的仙盟盟主的奖励" size="20"   horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" anchorOffsetX="0" width="460" top="55"/>
 		<e:Label text="Phần thưởng gửi qua thư" size="20" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" anchorOffsetX="0" width="460" top="86"/>
 
 		<e:Label y="-10.5" text="盟主奖励" size="22"   horizontalCenter="1.5" fontFamily="Microsoft YaHei" textColor="0x084151"/>
-		<e:Button id="sure" label="领 取" skinName="SkinBtn1"   horizontalCenter="0" bottom="50" visible="false"/>
+		<e:Button id="sure" label="Nhận" skinName="SkinBtn1"   horizontalCenter="0" bottom="50" visible="false"/>
 		<e:List id="list" scaleX="1" scaleY="1" itemRendererSkinName="SkinItem2" verticalCenter="12" anchorOffsetX="0" horizontalCenter="-0.5" anchorOffsetY="0">
 			<e:layout>
 			<e:HorizontalLayout paddingLeft="0" gap="15" paddingRight="0" horizontalAlign="center"/>

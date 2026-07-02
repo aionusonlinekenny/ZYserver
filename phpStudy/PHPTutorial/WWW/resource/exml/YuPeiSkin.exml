@@ -44,7 +44,7 @@
 
 <e:Image y="5" horizontalCenter="-155"  source="biaoti_yupei"/>
 
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
 	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" y="80" visible="false"/>
 	<ns1:LevelImage id="stairImg" width="40" height="109" y="141" skinName="Skinjieji" left="39"/>
 	<ns1:JadeBaseItem id="yupei" y="154" skinName="YuPei0Skin" x="162"/>
@@ -62,7 +62,7 @@
 	<e:Group id="maxGroup" horizontalCenter="0" bottom="10">
 		<e:Label id="material" text="消耗：998/9999" size="20" y="177" textColor="0xD1C28F" horizontalCenter="0"/>
 		<e:Group width="500" height="60" id="starGroup" scaleX="0.8" scaleY="0.8" x="36" y="-59"/>
-		<e:Button id="upgradeBtn" label="升  级" skinName="SkinBtn1" width="180" height="60" bottom="10" horizontalCenter="0"/>
+		<e:Button id="upgradeBtn" label="Nâng cấp" skinName="SkinBtn1" width="180" height="60" bottom="10" horizontalCenter="0"/>
 		<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="78" bottom="46"/>
 
 		<e:Group width="500" height="128" horizontalCenter="0" bottom="142" x="10" y="20" scaleX="1" scaleY="1">

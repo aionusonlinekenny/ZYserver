@@ -108,7 +108,7 @@
 		<e:HorizontalLayout horizontalAlign="center" verticalAlign="top" gap="6"/>
 		</e:layout>
 	</e:Group>
-	<e:Button id="buy" label="购  买" skinName="SkinBtn1" horizontalCenter="0.5" bottom="13"/>
+	<e:Button id="buy" label="Mua" skinName="SkinBtn1" horizontalCenter="0.5" bottom="13"/>
 	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="79" bottom="65"/>
 	<e:Label id="already" text="Đã mua" textColor="0x00FF00" size="30" horizontalCenter="0.5" bottom="32" x="249" y="554" fontFamily="Microsoft YaHei"/>
 

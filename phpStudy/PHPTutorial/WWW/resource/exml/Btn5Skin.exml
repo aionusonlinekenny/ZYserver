@@ -2,5 +2,5 @@
 <e:Skin class="SkinBtn5" states="up,down,disabled"
         currentState="up" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="123" height="50">
 	<e:Image id="imageDisplay"  horizontalCenter="0" verticalCenter="0" source="chat_btnbg" source.disabled="chat_btnbg_2" scaleX.down="0.95" scaleY.down="0.95"/>
-	<e:Label id="labelDisplay" size="24" fontFamily="Microsoft YaHei" anchorOffsetX="0" anchorOffsetY="0" bold="false" text="确定" textColor="0x7E2A00" horizontalCenter="0" verticalCenter="0" textColor.disabled="0x222222" scaleX.down="0.95" scaleY.down="0.95"/>
+	<e:Label id="labelDisplay" size="24" fontFamily="Microsoft YaHei" anchorOffsetX="0" anchorOffsetY="0" bold="false" text="Xác nhận" textColor="0x7E2A00" horizontalCenter="0" verticalCenter="0" textColor.disabled="0x222222" scaleX.down="0.95" scaleY.down="0.95"/>
 </e:Skin>

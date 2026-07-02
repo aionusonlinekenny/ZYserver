@@ -17,7 +17,7 @@
 		<e:Label id="target" text="Nạp tích lũy 3000 Nguyên Bảo" size="18" scaleX="1" scaleY="1" textColor="0xFF9900" right="13" verticalCenter="-40" visible="false"/>
 		<e:Label id="recharge" text="123456/123450" size="18" verticalCenter="43" horizontalCenter="183.5" fontFamily="Microsoft YaHei" textAlign="center" textColor="0x00ff00" includeIn="can"/>
 		<e:Group right="7" verticalCenter="0" height="124">
-		<e:Button id="get" label="领取奖励" includeIn="can" verticalCenter="0" horizontalCenter="0" width="176" height="69" icon="btn2_2" skinName="SkinBtn1" scaleX="0.8" scaleY="0.8"/>
+		<e:Button id="get" label="Nhận thưởng" includeIn="can" verticalCenter="0" horizontalCenter="0" width="176" height="69" icon="btn2_2" skinName="SkinBtn1" scaleX="0.8" scaleY="0.8"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" x="121.71" verticalCenter="-18.5" visible="false"/>
 		<e:Label id="num" text="剩余3000份" size="16" includeIn="can" y="97.06" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>

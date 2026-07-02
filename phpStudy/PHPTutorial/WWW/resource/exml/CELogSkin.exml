@@ -53,7 +53,7 @@
 		<e:Image id="title" horizontalCenter="-87" x="280" source="biaoti_qingdiandengluyouli2_png" top="12"/>
 
 		<e:Label id="done" text="Đã nhận" textColor="0x00FF00" size="28" bold="true" bottom="86" y="619" horizontalCenter="181"/>
-		<e:Button id="suerBtn" label="领取奖励" horizontalCenter="184.5" bottom="65" x="200" y="615" scaleX="1.25" scaleY="1.25" icon="btn2_2" skinName="SkinBtn16"/>
+		<e:Button id="suerBtn" label="Nhận thưởng" horizontalCenter="184.5" bottom="65" x="200" y="615" scaleX="1.25" scaleY="1.25" icon="btn2_2" skinName="SkinBtn16"/>
 		<e:Label id="daylabel" text="登录天数:  5" size="20" bottom="8" y="624" horizontalCenter="-18.5" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
 		<e:Label id="dayaward" text="第一天奖励详情" size="20" horizontalCenter="-4" bottom="151" x="209" y="478" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 		<e:Image id="redPoint" width="20" height="20" horizontalCenter="264" source="zjmhongdian" bottom="117" x="347" y="601"/>

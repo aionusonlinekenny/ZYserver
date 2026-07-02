@@ -11,6 +11,6 @@
 		</e:List>
 		<e:BitmapLabel id="rankNum" text="13" verticalCenter="0" horizontalCenter="-197" scaleX="1" scaleY="1" letterSpacing="-2" font="num_chongzhi_fnt"/>
 		<e:Label id="name1" text="VươngGiả·HuyềnThoại" size="20" horizontalCenter="160" fontFamily="Microsoft YaHei" textColor="0x0000f1" top="40" textAlign="center"/>
-		<e:Label id="value" text="等级：4转100级" size="20" horizontalCenter="160" fontFamily="Microsoft YaHei" textColor="0x00842c" bottom="40" textAlign="center"/>
+		<e:Label id="value" text="Cấp độ：Chuyển sinh 4 cấp 100" size="20" horizontalCenter="160" fontFamily="Microsoft YaHei" textColor="0x00842c" bottom="40" textAlign="center"/>
 	</e:Group>
 </e:Skin>

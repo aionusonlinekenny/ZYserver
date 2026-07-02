@@ -8,7 +8,7 @@
 			<e:Label y="18" text="Xếp hạng" size="20" horizontalCenter="-164.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
 			<e:Label y="18" text="Tên nhân vật" size="20" horizontalCenter="-58.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
 			<e:Label y="18" text="人气" size="20" horizontalCenter="63.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
-			<e:Label y="18" text="操作" size="20" horizontalCenter="158.5" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+			<e:Label y="18" text="Thao tác" size="20" horizontalCenter="158.5" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
 		</e:Group>
 		<e:Scroller id="scrollerList" scrollPolicyH="off" scaleX="1" scaleY="1" anchorOffsetY="0" anchorOffsetX="0" width="406" height="326.33" y="94" horizontalCenter="0">
 		<e:List id="list" x="-3" y="30" itemRendererSkinName="SkinSupportRecordItem">

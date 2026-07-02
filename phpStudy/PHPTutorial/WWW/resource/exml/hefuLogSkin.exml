@@ -59,7 +59,7 @@
 			<e:HorizontalLayout horizontalAlign="center" gap="22" paddingTop="0" />
 		</e:layout>
 	</e:Group>
-	<e:Button id="suerBtn" label="领取奖励" horizontalCenter="0" bottom="20"  width="176" height="69" skinName="SkinBtn1"/>
+	<e:Button id="suerBtn" label="Nhận thưởng" horizontalCenter="0" bottom="20"  width="176" height="69" skinName="SkinBtn1"/>
 	<e:Label id="daylabel" text="7" size="22" bottom="42" x="144"  fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 	<e:Image x="44" source="denglutianshu_png" bottom="40"/>
 	<e:Label id="dayaward" text="第一天\n奖励详情" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" y="494" x="12" textAlign="center" width="80"/>

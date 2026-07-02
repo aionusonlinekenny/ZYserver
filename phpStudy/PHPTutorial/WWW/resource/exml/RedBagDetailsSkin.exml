@@ -9,7 +9,7 @@
 
 	<e:Group width="456" height="714" horizontalCenter="0" verticalCenter="0">
 		<e:Image horizontalCenter="0" verticalCenter="0" x="48" y="60" scaleX="1" scaleY="1" source="hongbao2_png"/>
-		<e:Button id="closeBtn0" label="按钮" x="323" y="62" skinName="SkinBtn0" scaleX="1" scaleY="1" visible="false"/>
+		<e:Button id="closeBtn0" label="Nút bấm" x="323" y="62" skinName="SkinBtn0" scaleX="1" scaleY="1" visible="false"/>
 		<e:Group id="yuanbaoGroup" horizontalCenter="0" y="191.35" scaleX="1" scaleY="1" width="456">
 			<e:Group id="numGroup" scaleX="1" scaleY="1" x="177" y="0">
 				<e:Image id="yuanbaoImg" x="5" y="0" source="szyuanbao" scaleX="1" scaleY="1"/>

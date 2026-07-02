@@ -19,8 +19,8 @@
 			<e:HorizontalLayout verticalAlign="middle" gap="3"/>
 			</e:layout>
 		</e:Group>
-		<e:Button id="challengeBtn" label="进入" width="120" height="50" skinName="SkinBtn3" horizontalCenter="88" y="255"/>
-		<e:Button id="notBtn" label="取消" horizontalCenter="-88" width="120" height="50" skinName="SkinBtn3" y="255"/>
+		<e:Button id="challengeBtn" label="Vào" width="120" height="50" skinName="SkinBtn3" horizontalCenter="88" y="255"/>
+		<e:Button id="notBtn" label="Hủy" horizontalCenter="-88" width="120" height="50" skinName="SkinBtn3" y="255"/>
 		<e:Label id="leftCDText" text="" size="18" horizontalCenter="88" x="65" scaleX="1" scaleY="1" bottom="9" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		<e:List id="reward" y="66" horizontalCenter="0">
 			<e:layout>

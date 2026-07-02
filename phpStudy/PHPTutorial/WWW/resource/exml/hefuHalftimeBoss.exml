@@ -18,8 +18,8 @@
 		<e:Label id="cost" text="积分:9999999" size="20" horizontalCenter="115" bottom="94" fontFamily="Microsoft YaHei" textColor="0xffff00" textColor.hefu="0xffffff"/>
 		<e:Group id="bossGroup" width="200" height="200" horizontalCenter.hefu="-59" bottom.hefu="-18" horizontalCenter.lieyan="-143" bottom.lieyan="-1" scaleX.lieyan="-1" width.lieyan="150" height.lieyan="150" horizontalCenter.celebreate="-44" bottom.celebreate="-58"/>
 		<e:Image horizontalCenter="0" source="words_kuangshuazhuangbei_png" y="148" y.hefu="151" includeIn="hefu"/>
-		<e:Button id="boss" label="野外BOSS" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="-115" x="202" bottom="20"/>
-		<e:Button id="costbtn" label="积分兑换" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="115" x="212" bottom="20"/>
+		<e:Button id="boss" label="BOSS Ngoài Trời" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="-115" x="202" bottom="20"/>
+		<e:Button id="costbtn" label="Đổi điểm" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="115" x="212" bottom="20"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" scaleX="1" scaleY="1" horizontalCenter="192.5" bottom="70"/>
 		<e:Group includeIn="lieyan" horizontalCenter="0" bottom="146">
 			<e:Image includeIn="lieyan" x="0" y="3" source="gantanhao3"/>

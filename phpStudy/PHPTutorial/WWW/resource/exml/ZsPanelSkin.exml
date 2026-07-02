@@ -8,7 +8,7 @@
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="88"/>
 		<e:Group id="group" horizontalCenter="0" width="500" anchorOffsetY="0" height="132" x="50" scaleX="1" scaleY="1" verticalCenter="296">
 			<e:Label id="link" text="获得修为" size="20" width="120" height="40" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" right="30" top="78" textColor="0x00ff06"/>
-			<e:Button id="getBtn" label="转生" skinName="SkinBtn1" horizontalCenter="0" scaleX="0.9" scaleY="0.9" bottom="0" height="70"/>
+			<e:Button id="getBtn" label="Chuyển sinh" skinName="SkinBtn1" horizontalCenter="0" scaleX="0.9" scaleY="0.9" bottom="0" height="70"/>
 			<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="76" top="64"/>
 			<e:Group width="447" anchorOffsetY="0" height="20" anchorOffsetX="0" horizontalCenter="0" top="30">
 			<e:Image source="shuzibg" x="90" scale9Grid="3,3,18,19" height="26" width="110" y="0" visible="false"/>

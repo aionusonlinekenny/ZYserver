@@ -3,8 +3,8 @@
 	xmlns:ns1="*">
 	<e:Image source="tongyonglabbg"  scale9Grid="40,20,30,30" left="0" right="0" top="0" bottom="0"/>
 	<e:Label id="nameLab" text="Tiên Phong" size="22" fontFamily="Microsoft YaHei" textColor="0x0038ab" horizontalCenter="-60.5" verticalCenter="-18" verticalAlign="middle" textAlign="left" anchorOffsetX="0" width="248.67"/>
-	<e:Label text="盟主:" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-162.5" verticalCenter="18"/>
-	<e:Label id="president" text="道可道" size="20" textColor="0x0038ab" fontFamily="Microsoft YaHei" horizontalCenter="-31.5" verticalCenter="18" verticalAlign="middle" textAlign="left" anchorOffsetX="0" width="188.67"/>
+	<e:Label text="Minh Chủ:" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-162.5" verticalCenter="18"/>
+	<e:Label id="president" text="ĐạoKhảĐạo" size="20" textColor="0x0038ab" fontFamily="Microsoft YaHei" horizontalCenter="-31.5" verticalCenter="18" verticalAlign="middle" textAlign="left" anchorOffsetX="0" width="188.67"/>
 	<e:Label id="president0" text="Chiến lực:" x="310" y="56" size="20" textColor="0x9f946d" visible="false"/>
 	<e:Label id="attrLab" text="3000000" x="384" y="56" size="20" textColor="0xF8B141" visible="false"/>
 	<e:Label text="Số người:" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="167.5" verticalCenter="18"/>

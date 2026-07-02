@@ -86,28 +86,28 @@
 	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" top="160" horizontalCenter="16"/>
 	<e:Button id="juesexiangxi" label="" skinName="SkinBtn0" icon="tongyongxiangxi" top="167" horizontalCenter="-147.5"/>
 	<e:Group left="0" right="0" verticalCenter="268.5">
-		<e:Button id="orange" label="按钮" icon="juese_chengzhuang" skinName="SkinBtn0" bottom="-2" left="13" x="111" y="863" scaleX="1" scaleY="1"/>
-		<e:Button id="bless" label="按钮" skinName="SkinBtn0" icon="juese_tejie" bottom="0" left="111" height="86" x="13" y="862" scaleX="1" scaleY="1"/>
-		<e:Button id="shenlu" label="按钮" skinName="SkinBtn0" icon="juese_baowu" bottom="-1" left="210" x="307" y="863" scaleX="1" scaleY="1"/>
+		<e:Button id="orange" label="Nút bấm" icon="juese_chengzhuang" skinName="SkinBtn0" bottom="-2" left="13" x="111" y="863" scaleX="1" scaleY="1"/>
+		<e:Button id="bless" label="Nút bấm" skinName="SkinBtn0" icon="juese_tejie" bottom="0" left="111" height="86" x="13" y="862" scaleX="1" scaleY="1"/>
+		<e:Button id="shenlu" label="Nút bấm" skinName="SkinBtn0" icon="juese_baowu" bottom="-1" left="210" x="307" y="863" scaleX="1" scaleY="1"/>
 		<e:Button id="rune" icon="juese_zhanwen" skinName="SkinBtn0" bottom="0" left="307" height="86" x="404" y="862" scaleX="1" scaleY="1"/>
-		<e:Button id="Skinheirloom" label="按钮" icon="juese_chuanshi" skinName="SkinBtn0" bottom="0" height="86" y="862" scaleX="1" scaleY="1" left="404"/>
+		<e:Button id="Skinheirloom" label="Nút bấm" icon="juese_chuanshi" skinName="SkinBtn0" bottom="0" height="86" y="862" scaleX="1" scaleY="1" left="404"/>
 
 
 
-		<e:Button id="shuzhuang" label="按钮" skinName="SkinBtn0" icon="juese_zhuangban" bottom="1" left="501" width="88" height="86" x="501" y="861" scaleX="1" scaleY="1"/>
-		<e:Button id="orange0" label="按钮" bottom="-2" left="13" x="121" y="873" scaleX="1" scaleY="1" skinName="SkinBtn0" icon="juese_chengzhuang2">
-
-		</e:Button>
-		<e:Button id="bless0" label="按钮" icon="juese_tejie2" bottom="0" left="111" height="86" x="23" y="872" scaleX="1" scaleY="1" skinName="SkinBtn0">
+		<e:Button id="shuzhuang" label="Nút bấm" skinName="SkinBtn0" icon="juese_zhuangban" bottom="1" left="501" width="88" height="86" x="501" y="861" scaleX="1" scaleY="1"/>
+		<e:Button id="orange0" label="Nút bấm" bottom="-2" left="13" x="121" y="873" scaleX="1" scaleY="1" skinName="SkinBtn0" icon="juese_chengzhuang2">
 
 		</e:Button>
-		<e:Button id="shenlu0" label="按钮" icon="juese_baowu2" bottom="-1" left="210" x="317" y="873" scaleX="1" scaleY="1" skinName="SkinBtn0">
+		<e:Button id="bless0" label="Nút bấm" icon="juese_tejie2" bottom="0" left="111" height="86" x="23" y="872" scaleX="1" scaleY="1" skinName="SkinBtn0">
+
+		</e:Button>
+		<e:Button id="shenlu0" label="Nút bấm" icon="juese_baowu2" bottom="-1" left="210" x="317" y="873" scaleX="1" scaleY="1" skinName="SkinBtn0">
 
 		</e:Button>
 		<e:Button id="rune0" icon="juese_zhanwen2" bottom="0" left="307" height="86" x="414" y="872" scaleX="1" scaleY="1" skinName="SkinBtn0">
 
 		</e:Button>
-		<e:Button id="Skinheirloom0" label="按钮" icon="juese_chuanshi2" bottom="0" height="86" y="862" scaleX="1" scaleY="1" left="404" skinName="SkinBtn0">
+		<e:Button id="Skinheirloom0" label="Nút bấm" icon="juese_chuanshi2" bottom="0" height="86" y="862" scaleX="1" scaleY="1" left="404" skinName="SkinBtn0">
 
 		</e:Button>
 		<e:Image id="orangeRedPoint" touchEnabled="false" bottom="56" source="zjmhongdian" left="71" x="171" y="873" scaleX="1" scaleY="1"/>
@@ -142,7 +142,7 @@
 		<e:Image id="redPoint11" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" left="165" verticalCenter="9"/>
 		<e:Image id="redPoint12" source="zjmhongdian" scaleX="1" scaleY="1" touchEnabled="false" right="96" verticalCenter="9"/>
 
-		<e:Button id="oneKeyChange" label="一键换装" width="213" height="67" bottom="140" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2"/>
+		<e:Button id="oneKeyChange" label="Đổi trang bị nhanh" width="213" height="67" bottom="140" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2"/>
 		<e:Group id="effGroup" touchEnabled="false" bottom="141.5" width="213" height="67" y="596" scaleX="1" scaleY="1" horizontalCenter="1"/>
 		<e:Image id="bodyImg" touchEnabled="false" scaleX="0.9" scaleY="0.9" source="body001_0_c_png" x="144.8" y="0" visible="false"/>
 	</e:Group>

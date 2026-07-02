@@ -69,7 +69,7 @@
 		</e:Group>
 		<e:Label id="lvTxt" y="27" size="20" text="Lv.2000" x="126" textColor="0xf8b141" width="70" textAlign="right" />
 		<e:Label id="nameTxt" y="26" size="20" text="Tổ Mã Giáo Chủ" x="200" textColor="0xd1c28f" bold="true" />
-		<e:Button id="tipBtn" label="奖励" x="13" y="100.33" skinName="SkinBtn18"/>
+		<e:Button id="tipBtn" label="Phần thưởng" x="13" y="100.33" skinName="SkinBtn18"/>
 	</e:Group>
 	<e:Image width="344" height="130" source="zsbg2" scale9Grid="5,4,87,14" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="-16" bottom="161"/>
 	<e:Group id="fubenSkillGroup" bottom="161" horizontalCenter="-16">
@@ -122,7 +122,7 @@
 		<e:Label text="积分:100" y="45" size="20" id="zongshu0" fontFamily="Microsoft YaHei" textColor="0xffffff" left="10"/>
 	</e:Group>
 	<e:Button id="luckyBossBtn" label="" skinName="SkinBtn0" icon="luckyBossBtn" right="10" y="590"/>
-	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" scaleX="0.9" scaleY="0.9" bottom="128" right="17"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" scaleX="0.9" scaleY="0.9" bottom="128" right="17"/>
 	<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" bottom="333" right="13"/>
 
 

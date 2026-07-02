@@ -23,6 +23,6 @@
 		<ns1:ItemBase id="itemIcon" horizontalCenter="0" x="27" scaleX="1" scaleY="1" verticalCenter="0" skinName="SkinItem2"/>
 	</e:Group>
 	<e:Group width="130.67" height="142" anchorOffsetX="0" right="0" verticalCenter="0">
-		<e:Button id="MixBtn" label="更 换" name="changeBtn" verticalCenter="0" icon="btn3" y="56" scaleX="1" scaleY="1" horizontalCenter="0" skinName="SkinBtn3"/>
+		<e:Button id="MixBtn" label="Thay đổi" name="changeBtn" verticalCenter="0" icon="btn3" y="56" scaleX="1" scaleY="1" horizontalCenter="0" skinName="SkinBtn3"/>
 	</e:Group>
 </e:Skin>

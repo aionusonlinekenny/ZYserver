@@ -36,6 +36,6 @@
 			<e:Image x="0" height="46.33" source="bantoutiaobg8" scale9Grid="145,4,28,35" width="365" anchorOffsetY="0" verticalCenter="0"/>
 			<ns1:PowerPanel id="powerPanel" y="0" horizontalCenter="0" skinName="Skin2PowerPanel"/>
 		</e:Group>
-		<e:Button id="takeBtn" label="装  扮" width="156" height="60" skinName="SkinBtn1" horizontalCenter="0" bottom="38"/>
+		<e:Button id="takeBtn" label="Trang điểm" width="156" height="60" skinName="SkinBtn1" horizontalCenter="0" bottom="38"/>
 	</e:Group>
 </e:Skin>

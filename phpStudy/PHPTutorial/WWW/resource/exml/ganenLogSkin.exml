@@ -43,7 +43,7 @@
 			<e:HorizontalLayout horizontalAlign="center" gap="4" paddingTop="0" />
 		</e:layout>
 	</e:Group>
-	<e:Button id="suerBtn" label="领取奖励" horizontalCenter="0" height="56" bottom="10" width="180"  skinName="SkinBtn16"/>
+	<e:Button id="suerBtn" label="Nhận thưởng" horizontalCenter="0" height="56" bottom="10" width="180"  skinName="SkinBtn16"/>
 	<e:Label id="daylabel" text="登陆天数:13" size="20" bottom="30" x="50" textColor="0xf8b141" />
 	<e:Label id="dayaward" text="第一天奖励详情" size="20" textColor="0xF8B141" horizontalCenter="0" bold="true" y="429"/>
 	<e:Group horizontalCenter="60" y="30">

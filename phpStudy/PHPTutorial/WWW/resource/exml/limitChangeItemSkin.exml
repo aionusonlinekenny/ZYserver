@@ -22,7 +22,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Label id="limitchange1" text="可兑换：10/10" y="90" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" right="18"/>
-		<e:Button id="get" label="兑换" y="35" skinName="SkinBtn6" width="91" icon="friend_btnbg" height="50" right="11"/>
+		<e:Button id="get" label="Đổi" y="35" skinName="SkinBtn6" width="91" icon="friend_btnbg" height="50" right="11"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" y="34" right="12" visible="false"/>
 
 

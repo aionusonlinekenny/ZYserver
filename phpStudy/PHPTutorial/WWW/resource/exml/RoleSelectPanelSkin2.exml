@@ -4,7 +4,7 @@
 
 	<e:Image height="23" source="tongyong_juanzhou" left="0" right="0" top="60"/>
 	<e:Image width="249" anchorOffsetX="0" source="tongyong_titlebg" top="42" horizontalCenter="0"/>
-	<e:Label id="titleTxt" text="标题" size="24" textAlign="center" width="115" horizontalCenter="0" anchorOffsetX="0" fontFamily="Microsoft YaHei" top="52" textColor="0x39566a"/>
+	<e:Label id="titleTxt" text="Tiêu đề" size="24" textAlign="center" width="115" horizontalCenter="0" anchorOffsetX="0" fontFamily="Microsoft YaHei" top="52" textColor="0x39566a"/>
 	<e:Image id="leftImg" source="biaoti1" width="310" height="60" scale9Grid="127,0,52,55" horizontalCenter="-183" visible="false"/>
 	<e:Group id="headGroup" horizontalCenter="0" width="394" visible.nohead="false" top="88">
 

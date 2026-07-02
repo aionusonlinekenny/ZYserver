@@ -5,7 +5,7 @@
 
 	<e:Group horizontalCenter="0" verticalCenter="-22">
 		<e:Image id="bg" width="562" height="788"   source="win_png" horizontalCenter="0" verticalCenter="-49" x="9" y="22"/>
-		<e:Button id="closeBtn" label="领取奖励(10s)" skinName="SkinBtn1" width="160" y="629" horizontalCenter="0"/>
+		<e:Button id="closeBtn" label="Nhận thưởng(10s)" skinName="SkinBtn1" width="160" y="629" horizontalCenter="0"/>
 
 
 

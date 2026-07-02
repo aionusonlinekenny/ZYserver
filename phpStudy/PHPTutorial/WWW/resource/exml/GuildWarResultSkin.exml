@@ -6,15 +6,15 @@
 
 	<e:Group width="600" height="948" horizontalCenter="0" verticalCenter="0">
 
-		<e:Button id="closeBtn" label="领取奖励(3s)" y="759.3" horizontalCenter="-1.5" x="222"  skinName="SkinBtn7"/>
+		<e:Button id="closeBtn" label="Nhận thưởng(3s)" y="759.3" horizontalCenter="-1.5" x="222"  skinName="SkinBtn7"/>
 		<e:Image id="result" y="4.98" horizontalCenter="28" x="300"  source="labwin_png"/>
 
 		<e:Group id="titleGroup" width="200" height="107" y="254" horizontalCenter="0" anchorOffsetY="0"/>
 		<e:Group y="253.69" horizontalCenter="0" height="130" x="171" >
 			<e:Image y="103" horizontalCenter="0" height="34" source="bantoutiaobg2" width="243" scale9Grid="11,2,70,17" visible="false"/>
 			<e:Image x="42" y="95" source="shuxingbg4" visible="false"/>
-			<e:Label id="guildName" text="仙盟名称六字" size="20" x="122" width="136" textAlign="left" bottom="-2" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label text="占领仙盟：" size="20" x="24" width="100" textAlign="left" height="18" bottom="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="guildName" text="Tên Tiên Minh 6 chữ" size="20" x="122" width="136" textAlign="left" bottom="-2" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Tiên Minh chiếm giữ：" size="20" x="24" width="100" textAlign="left" height="18" bottom="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 		<e:Group width="580" height="363.33" y="389" horizontalCenter="0" anchorOffsetY="0">
 			<e:Image width="544" height="353" y="7.829999999999984" horizontalCenter="0" source="bantoutiaobg" scale9Grid="161,10,61,13" x="18" />
@@ -24,14 +24,14 @@
 		</e:Group>
 
 		<e:Group y="410.35" horizontalCenter="0" x="154" >
-			<e:Label text="个人积分" y="6" size="18" x="-7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Điểm cá nhân" y="6" size="18" x="-7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="myPoint" text="123456" y="6" size="18" x="73" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-			<e:Label text="个人排名" y="5" size="18" x="166" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Xếp hạng cá nhân" y="5" size="18" x="166" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="myRank" text="123456" y="5" size="18" x="246" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group y="571.35" horizontalCenter="0" x="150"  anchorOffsetY="0" height="25">
-			<e:Label text="仙盟排名" y="6" size="18" x="166" width="81" height="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label text="仙盟积分" y="6" size="18" x="-7" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Xếp hạng Tiên Minh" y="6" size="18" x="166" width="81" height="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Điểm Tiên Minh" y="6" size="18" x="-7" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Label id="guildPoint" text="123456" y="6" size="18" x="73" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Label id="guildRank" text="123456" y="6" size="18" x="246" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>

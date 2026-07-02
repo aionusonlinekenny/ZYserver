@@ -29,7 +29,7 @@
 			<e:Image scale9Grid="5,5,5,4" anchorOffsetX="0" anchorOffsetY="0" left="0" bottom="0" right="0.339999999999975" top="0" source="cd_rewardbg_png"/>
 			<e:Image source="lyr_markbg_jpg" width="398" height="344" anchorOffsetX="0" horizontalCenter="0" verticalCenter="0"/>
 		</e:Group>
-		<e:Button id="update" label="升  级" skinName="SkinBtn3" includeIn="skill1,skill2,skill3,skill4,skill5,skill6" horizontalCenter="0" bottom="13" horizontalCenter.skill1="0" horizontalCenter.skill2="0"  horizontalCenter.skill3="0"  horizontalCenter.skill4="0" horizontalCenter.skill5="0"  horizontalCenter.skill6="0" />
+		<e:Button id="update" label="Nâng cấp" skinName="SkinBtn3" includeIn="skill1,skill2,skill3,skill4,skill5,skill6" horizontalCenter="0" bottom="13" horizontalCenter.skill1="0" horizontalCenter.skill2="0"  horizontalCenter.skill3="0"  horizontalCenter.skill4="0" horizontalCenter.skill5="0"  horizontalCenter.skill6="0" />
 		<e:Image right="30"  bottom="50" visible.skill0="false"  source="zjmhongdian" visible="false"/>
 		<e:Image id="redpoint" width="20" height="20" x="283" y="616" source="zjmhongdian"/>
 		<e:Group id="cost" horizontalCenter="0" bottom="24" includeIn="skill1,skill2,skill3,skill4,skill5,skill6" horizontalCenter.skill1="0"  horizontalCenter.skill2="0" horizontalCenter.skill3="-38.5"  horizontalCenter.skill4="0"  horizontalCenter.skill5="0" >

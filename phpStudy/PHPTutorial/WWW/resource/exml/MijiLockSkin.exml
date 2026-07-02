@@ -24,11 +24,11 @@
 		<ns1:MijiItem id="mijiBtn6" y="218" skinName="SkinMijiItem" width="100" height="100" x="13"/>
 		<ns1:MijiItem y="67" skinName="SkinMijiItem" id="mijiBtn7" width="100" height="100" x="73"/>
 	</e:Group>
-		<e:Label id="link" text="天书置换" size="20" textColor="0x00ff00" fontFamily="Microsoft YaHei" bottom="46" right="72" width="80"/>
-		<e:Label id="labCount" text="剩余数量：12" size="20" textColor="0x00FF00" textAlign="right" right="41" verticalCenter="214.5" fontFamily="Microsoft YaHei"/>
-		<e:Button id="smeltBtn" label="书格加锁" skinName="SkinBtn1" width="176" height="69" horizontalCenter="-3" bottom="18"/>
-		<e:Button skinName="SkinBtn0" icon="tongyong_btnclose" label="按钮" id="closeBtn" height="29" width="30" right="2" top="8"/>
+		<e:Label id="link" text="Đổi Thiên Thư" size="20" textColor="0x00ff00" fontFamily="Microsoft YaHei" bottom="46" right="72" width="80"/>
+		<e:Label id="labCount" text="Số lượng còn lại：12" size="20" textColor="0x00FF00" textAlign="right" right="41" verticalCenter="214.5" fontFamily="Microsoft YaHei"/>
+		<e:Button id="smeltBtn" label="Khóa ô sách" skinName="SkinBtn1" width="176" height="69" horizontalCenter="-3" bottom="18"/>
+		<e:Button skinName="SkinBtn0" icon="tongyong_btnclose" label="Nút bấm" id="closeBtn" height="29" width="30" right="2" top="8"/>
 		<e:Image source="gantanhao1" bottom="98" horizontalCenter="-152"/>
-		<e:Label text="被锁定的天书在学习时不会被替换" size="20" fontFamily="Microsoft YaHei" textColor="0x0038ab" bottom="95" horizontalCenter="14"/>
+		<e:Label text="Thiên Thư đã khóa sẽ không bị thay thế khi học" size="20" fontFamily="Microsoft YaHei" textColor="0x0038ab" bottom="95" horizontalCenter="14"/>
 	</e:Group>
 </e:Skin>

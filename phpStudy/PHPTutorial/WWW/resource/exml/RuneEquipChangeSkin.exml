@@ -7,13 +7,13 @@
 		<e:Image width="580" source="tongyong_juanzhou" horizontalCenter="0" scale9Grid="66,0,273,23" y="16"/>
 		<e:Image width="249" height="41" x="166" y="0" scaleX="1" scaleY="1" source="tongyong_titlebg"/>
 		<e:Image width="515" height="637" y="60" scaleX="1" scaleY="1" x="33" source="tongyong_dikuang1" scale9Grid="10,6,60,42" anchorOffsetY="0"/>
-		<e:Label text="更 换"   size="22" y="14" fontFamily="Microsoft YaHei" textColor="0x084151" verticalAlign="middle" textAlign="center" horizontalCenter="0"/>
+		<e:Label text="Thay đổi"   size="22" y="14" fontFamily="Microsoft YaHei" textColor="0x084151" verticalAlign="middle" textAlign="center" horizontalCenter="0"/>
 		<e:Scroller id="scroll" width="505" height="517.91" horizontalCenter="0.5" top="174" anchorOffsetY="0">
 			<e:List id="list" width="505" height="740"  useVirtualLayout="false" horizontalCenter="0" verticalCenter="0" itemRendererSkinName="SkinRuneEquipChangeItem">
 			</e:List>
 		</e:Scroller>
 		<e:Group id="itemGroup" width="502"  height="105"  x="39" y="66"/>
 		<e:Button id="closeBtn" label="Button" x="528" y="12" scaleX="1" scaleY="1" skinName="SkinBtn0" icon="tongyong_btnclose"/>
-		<e:Button id="getBtn" skinName="SkinBtn1" label="获得仙纹"  horizontalCenter="0" bottom="30"/>
+		<e:Button id="getBtn" skinName="SkinBtn1" label="Nhận Tiên Văn"  horizontalCenter="0" bottom="30"/>
 	</e:Group>
 </e:Skin>

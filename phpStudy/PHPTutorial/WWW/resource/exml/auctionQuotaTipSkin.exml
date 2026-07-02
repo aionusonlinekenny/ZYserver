@@ -31,6 +31,6 @@
 		<e:Label id="positiveQuotaNum" text="50000" size="20" textColor="0x20CB30" horizontalCenter="73" bottom="123" x="10" y="10"/>
 
 
-		<e:Button id="goRechargeBtn" label="前往充值" skinName="SkinBtn1" width="160" horizontalCenter="0" bottom="19"/>
+		<e:Button id="goRechargeBtn" label="Đi nạp" skinName="SkinBtn1" width="160" horizontalCenter="0" bottom="19"/>
 </e:Group>
 </e:Skin>

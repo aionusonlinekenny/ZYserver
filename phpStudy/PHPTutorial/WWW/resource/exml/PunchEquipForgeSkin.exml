@@ -78,7 +78,7 @@
 			</e:layout>
 		</e:Group>
 
-		<e:Button id="btn" label="注   灵" skinName="SkinBtn1" horizontalCenter="0" visible.full="false" top="607"/>
+		<e:Button id="btn" label="Chú Linh" skinName="SkinBtn1" horizontalCenter="0" visible.full="false" top="607"/>
 		<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" horizontalCenter="75" visible.full="false" top="608" horizontalCenter.normal="78"/>
 		<e:Group id="costGroup" visible.full="false" left="15" top="675" left.normal="55">
 			<e:Label id="cosedesc" text="Tiêu hao：" x="0" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>

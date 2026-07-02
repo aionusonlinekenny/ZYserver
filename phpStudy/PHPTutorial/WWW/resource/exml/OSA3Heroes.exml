@@ -13,7 +13,7 @@
 			<e:Label text="Mô tả sự kiện：" x="14" y="32" size="18" textColor="0xf8b141"/>
 		</e:Group>
 
-		<e:Button id="active" label="20000元宝" skinName="SkinBtn1" horizontalCenter="0" bottom="30"/>
+		<e:Button id="active" label="20000 Nguyên Bảo" skinName="SkinBtn1" horizontalCenter="0" bottom="30"/>
 		<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="72" bottom="70"/>
 
 

@@ -26,23 +26,23 @@
 		<e:Group top="130" bottom="20" left="0" right="0">
 			<e:Group top="130" horizontalCenter="0">
 				<e:Group width="200" height="141" x="2" y="4" anchorOffsetX.2="0" width.2="346" anchorOffsetY.2="0" height.2="93" height.rename="120"/>
-				<e:Label id="description" text="使用后获得1000万角色经验值使用后获得1000万角色经验值" size="20" width="350" horizontalCenter="0" verticalAlign="middle" width.guildgifts="400" horizontalCenter.guildgifts="0" x="-175"  top="0" textColor="0x6b9baa" fontFamily="Microsoft YaHei" lineSpacing="4"/>
+				<e:Label id="description" text="Sử dụng để nhận 10.000.000 kinh nghiệm nhân vậtSử dụng để nhận 10.000.000 kinh nghiệm nhân vật" size="20" width="350" horizontalCenter="0" verticalAlign="middle" width.guildgifts="400" horizontalCenter.guildgifts="0" x="-175"  top="0" textColor="0x6b9baa" fontFamily="Microsoft YaHei" lineSpacing="4"/>
 			</e:Group>
 			<e:Group id="add" width="380" height="60" horizontalCenter="0" includeIn="2,guildgifts" bottom="110" x="-190" y="0"  visible.guildgifts="false">
 			<e:Image id="sub2Btn" width="50" height="50" source="btn-" verticalCenter="0" horizontalCenter="-80" visible="false"/>
 			<e:Image id="add2Btn" width="50" height="50" y="46" source="btnadd" verticalCenter="0" horizontalCenter="80" visible="false"/>
 			<e:Button id="sub1Btn" label="" skinName="SkinBtn0" icon="btn-" verticalCenter="0" left="92"/>
 			<e:Button id="add1Btn" label="" skinName="SkinBtn0" icon="btnadd" verticalCenter="0" horizontalCenter="80" x="10" y="10"/>
-			<e:Button id="maxBtn" label="最大" icon="btnmax2" skinName="SkinBtn0" verticalCenter="0" right="45"/>
-			<e:Button id="minBtn" label="最小" icon="btnmax2" skinName="SkinBtn0" rotation="180" verticalCenter="-2" left="44"/>
+			<e:Button id="maxBtn" label="Tối đa" icon="btnmax2" skinName="SkinBtn0" verticalCenter="0" right="45"/>
+			<e:Button id="minBtn" label="Tối thiểu" icon="btnmax2" skinName="SkinBtn0" rotation="180" verticalCenter="-2" left="44"/>
 			<e:Image width="100" height="38" source="shuzibg" verticalCenter="0" horizontalCenter="0" scale9Grid="8,4,10,14"/>
 			<e:EditableText id="numLabel" text="1" textAlign="center" size="30" width="90" verticalCenter="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			</e:Group>
 			<e:Group id="btnGroup" width="380" height="60" horizontalCenter="0" bottom="20" x="0" y="90" >
-			<e:Button id="useBtn" skinName="SkinBtn1" label="使 用" horizontalCenter.rename="0" horizontalCenter.2="0" width="156" height="60" label.guildgifts="领取" verticalCenter.10="0" right.10="25" y.guildgifts="0" x.rename="199" x.10="199" x.2="199" y="0" x.guildgifts="107"/>
+			<e:Button id="useBtn" skinName="SkinBtn1" label="Sử dụng" horizontalCenter.rename="0" horizontalCenter.2="0" width="156" height="60" label.guildgifts="Nhận" verticalCenter.10="0" right.10="25" y.guildgifts="0" x.rename="199" x.10="199" x.2="199" y="0" x.guildgifts="107"/>
 
-			<e:Button id="useBtn0" skinName="SkinBtn1" label="回收" width="150" height="60" includeIn="10" x="25" y="0"/>
-				<e:Label id="useLabel" text="加入仙盟即可开启" includeIn="guildgifts" fontFamily="Microsoft YaHei" textColor="0xffffff" x="70" y="15"/>
+			<e:Button id="useBtn0" skinName="SkinBtn1" label="Thu hồi" width="150" height="60" includeIn="10" x="25" y="0"/>
+				<e:Label id="useLabel" text="Gia nhập Tiên Minh là có thể mở" includeIn="guildgifts" fontFamily="Microsoft YaHei" textColor="0xffffff" x="70" y="15"/>
 				<e:layout.10>
 					<e:HorizontalLayout horizontalAlign="center" gap="36"/>
 				</e:layout.10>

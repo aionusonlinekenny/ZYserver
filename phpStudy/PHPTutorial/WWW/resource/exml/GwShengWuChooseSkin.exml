@@ -9,7 +9,7 @@
 		<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="204,0,74,23" y="14"/>
 		<e:Image width="249" height="41" y="-2" source="tongyong_titlebg" horizontalCenter="0"/>
 		<e:Image width="466" height="622" y="42" source="tongyong_dikuang1" horizontalCenter="0" scale9Grid="10,10,64,66" anchorOffsetY="0"/>
-		<e:Label text="更 换"   size="22" y="12" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label text="Thay đổi"   size="22" y="12" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Scroller id="scroll" width="450" height="607" y="50" horizontalCenter="0" anchorOffsetY="0">
 			<e:List id="list" x="78" y="241" useVirtualLayout="false" itemRendererSkinName="SkinGWChooseItem" anchorOffsetY="0" height="606">
 				<e:layout>

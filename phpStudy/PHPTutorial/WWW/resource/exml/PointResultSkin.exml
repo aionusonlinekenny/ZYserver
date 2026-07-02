@@ -12,7 +12,7 @@
 			<e:Image horizontalCenter="0" source="fuentitlebg3" scale9Grid="267,0,2,1" x="0" scaleX="1" scaleY="1" bottom="0.3299999999999841"/>
 			<e:Image y="-2.170000000000016" horizontalCenter="0" source="fuentitlebg" x="247" scaleX="1" scaleY="1"/>
 		</e:Group>
-		<e:Button id="closeBtn" label="确定" skinName="SkinBtn1" width="176" height="69" horizontalCenter="0" x="212" scaleX="1" scaleY="1" bottom="30"/>
+		<e:Button id="closeBtn" label="Xác nhận" skinName="SkinBtn1" width="176" height="69" horizontalCenter="0" x="212" scaleX="1" scaleY="1" bottom="30"/>
 		<e:Image id="result" y="27" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="146" scaleX="1" scaleY="1" width="294" height="85" source="point_result_title"/>
 		<e:Label text="Nhận thưởng" size="20" x="94" textAlign="left" height="20" y="140" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:List id="myRewarrd" x="186" itemRendererSkinName="SkinPointResultAward" y="121" scaleX="1.2" scaleY="1.2">

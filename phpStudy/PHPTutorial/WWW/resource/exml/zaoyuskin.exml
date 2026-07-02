@@ -37,7 +37,7 @@
 		</e:layout>
 		</e:List>
 	</e:Scroller>
-	<e:Button id="rankBtn" label="查看排名" skinName="SkinBtn1" horizontalCenter="-100" bottom="168"/>
-	<e:Button id="recordBtn" skinName="SkinBtn1" label="战斗记录" horizontalCenter="100" bottom="168"/>
+	<e:Button id="rankBtn" label="Xem xếp hạng" skinName="SkinBtn1" horizontalCenter="-100" bottom="168"/>
+	<e:Button id="recordBtn" skinName="SkinBtn1" label="Lịch sử chiến đấu" horizontalCenter="100" bottom="168"/>
 
 </e:Skin>

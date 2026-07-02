@@ -29,8 +29,8 @@
 		</e:List>
 	</e:Scroller>
 
-	<e:Button id="btnChallenge" label="挑  战" width="209" skinName="SkinBtn7" bottom="162" height="67" x="334"/>
-	<e:Button id="btnSweep" label="扫  荡" width="209" height="67" skinName="SkinBtn7" x="62" bottom="162"/>
+	<e:Button id="btnChallenge" label="Thách đấu" width="209" skinName="SkinBtn7" bottom="162" height="67" x="334"/>
+	<e:Button id="btnSweep" label="Càn quét" width="209" height="67" skinName="SkinBtn7" x="62" bottom="162"/>
 	<e:Label text="剩余奖励次数：" size="20" horizontalCenter="-10" fontFamily="Microsoft YaHei" y="691" stroke="0" textColor="0x00ff00"/>
 	<e:Label id="lbTime" text="" size="20" fontFamily="Microsoft YaHei" y="691" x="358" textAlign="left" stroke="0" textColor="0x00ff00"/>
 		<e:Scroller id="notice" horizontalCenter="-149" bottom="257">

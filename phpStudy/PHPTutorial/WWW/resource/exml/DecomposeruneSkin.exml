@@ -13,7 +13,7 @@
 	<e:Group width="558" height="122" horizontalCenter="0" bottom="0">
 
 
-		<e:Button id="decomposeBtn" label="一键分解"  skinName="SkinBtn7" icon="btn1_2" width="213" height="69" y="46" x="346"/>
+		<e:Button id="decomposeBtn" label="Phân giải nhanh"  skinName="SkinBtn7" icon="btn1_2" width="213" height="69" y="46" x="346"/>
 		<e:CheckBox id="cb0" x="360" skinName="SkinCheckBox0" label="   "  y="8"/>
 		<e:CheckBox id="cb1" x="270" skinName="SkinCheckBox0" label="   "  y="8"/>
 		<e:CheckBox id="cb2" x="180" skinName="SkinCheckBox0" label="   "  y="8"/>

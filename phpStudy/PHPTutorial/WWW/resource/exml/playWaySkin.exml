@@ -12,7 +12,7 @@
 
 
 			<e:Label id="info1" text="Hướng dẫn chơi" size="20" y="-5" x="26" width="120" height="50" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x00ff00" anchorOffsetX="0"/>
-			<e:Button id="btn1" label="进入" skinName="SkinBtn3" width="123" height="55" enabled="true" verticalCenter="-3" horizontalCenter="192"/>
+			<e:Button id="btn1" label="Vào" skinName="SkinBtn3" width="123" height="55" enabled="true" verticalCenter="-3" horizontalCenter="192"/>
 			<e:Image id="redPoint1" source="zjmhongdian" scaleX="1" scaleY="1" verticalCenter="-24" right="31" locked="true" visible="false"/>
 
 			<e:Label id="time1" text="开服第2天起 每天 19:30 开启" size="18" y="125" right="16" width="400" textAlign="right" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
@@ -22,7 +22,7 @@
 			<e:Image source="pwyzbq1_png" left="0" right="0" top="0" bottom="0"/>
 
 			<e:Label id="info3" text="Hướng dẫn chơi" size="20" y="-5" x="26" width="120" height="50" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x00ff00" anchorOffsetX="0"/>
-			<e:Button id="btn3" label="进入" skinName="SkinBtn3" width="123" height="55" enabled="true" verticalCenter="-3" horizontalCenter="192"/>
+			<e:Button id="btn3" label="Vào" skinName="SkinBtn3" width="123" height="55" enabled="true" verticalCenter="-3" horizontalCenter="192"/>
 			<e:Image id="redPoint3" source="zjmhongdian" scaleX="1" scaleY="1" verticalCenter="-24" right="31" locked="true" visible="false"/>
 			<e:Label id="time3" text="每周一、三、五 20:00 开启" size="18" y="125" right="16" width="400" textAlign="right" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
@@ -30,14 +30,14 @@
 			<e:Image left="0" right="0" top="0" bottom="0" source="pwjqpd_png"/>
 
 			<e:Label id="info4" text="Hướng dẫn chơi" size="20" y="-5" x="26" width="120" height="50" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x00ff00" anchorOffsetX="0"/>
-			<e:Button id="btn4" label="进入" skinName="SkinBtn3" width="123" height="55" enabled="true" verticalCenter="-3" horizontalCenter="192"/>
+			<e:Button id="btn4" label="Vào" skinName="SkinBtn3" width="123" height="55" enabled="true" verticalCenter="-3" horizontalCenter="192"/>
 			<e:Image id="redPoint0" source="zjmhongdian" scaleX="1" scaleY="1" right="31" verticalCenter="-24" locked="true" visible="false"/>
 			<e:Label id="time4" text="开服第5天起 每天 20:00 开启" size="18" y="125" right="16" width="400" textAlign="right" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group y="129" width="575" height="159" x="0">
 			<e:Image source="pwcbg_png" right="0" left="0" top="0" bottom="0"/>
 			<e:Label id="info2" text="Hướng dẫn chơi" x="26" y="-5" size="20" touchEnabled="true" width="120" height="50" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Button id="btn2" label="进入" skinName="SkinBtn3" width="123" height="55" verticalCenter="-3" horizontalCenter="192"/>
+			<e:Button id="btn2" label="Vào" skinName="SkinBtn3" width="123" height="55" verticalCenter="-3" horizontalCenter="192"/>
 			<e:Image id="redPoint2" source="zjmhongdian" scaleX="1" scaleY="1" right="31" verticalCenter="-24" locked="true" visible="false"/>
 			<e:Label id="time2" text="开服第二周开启" size="18" y="125" right="16" width="400" textAlign="right" textColor="0xFFFFFF" fontFamily="Microsoft YaHei"/>
 		</e:Group>

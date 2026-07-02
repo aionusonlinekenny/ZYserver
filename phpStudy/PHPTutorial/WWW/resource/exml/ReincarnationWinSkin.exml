@@ -36,7 +36,7 @@
 			</e:Group>
 			<e:Image id="arrow" source="jiantouyou" scaleX="1" scaleY="1" verticalCenter="21.5" horizontalCenter="0.5"/>
 		</e:Group>
-		<e:Button id="upBtn" label="飞 升" width="156" height="60" skinName="SkinBtn1" horizontalCenter="0" bottom="-4" x="284" y="561" scaleX="1" scaleY="1"/>
+		<e:Button id="upBtn" label="Phi Thăng" width="156" height="60" skinName="SkinBtn1" horizontalCenter="0" bottom="-4" x="284" y="561" scaleX="1" scaleY="1"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="75.5" bottom="41" x="419" y="566" scaleX="1" scaleY="1"/>
 		<e:Label id="maxLevel" text="Đã đạt cấp tối đa" size="24" horizontalCenter="0" bottom="13" x="325" y="579" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="1"/>
 		<e:Group horizontalCenter="160" bottom="3" x="488" y="578" scaleX="1" scaleY="1">

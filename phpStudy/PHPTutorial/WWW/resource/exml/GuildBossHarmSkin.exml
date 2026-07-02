@@ -8,24 +8,24 @@
 		<e:Image height="708" horizontalCenter="0.5" width="500" source="tongyongbg5" scale9Grid="8,5,12,9" verticalCenter="-1.5"/>
 		<e:Image id="titlebg"  source="tongyong_juanzhou" scale9Grid="223,0,35,15" width="563" horizontalCenter="0" top="-14"/>
 		<e:Image width="281" horizontalCenter="0" top="-32" source="tongyong_titlebg" scale9Grid="114,22,24,15"/>
-		<e:Label id="title" text="伤害排行" size="22" horizontalCenter="0"  fontFamily="Microsoft YaHei" top="-18" textColor="0x084151"/>
+		<e:Label id="title" text="Xếp hạng sát thương" size="22" horizontalCenter="0"  fontFamily="Microsoft YaHei" top="-18" textColor="0x084151"/>
 		<e:Group width="496" height="45" scaleX="1" scaleY="1" horizontalCenter="-0.5" top="22" x="34" y="-132">
 			<e:Image source="leibiefengetou" left="0" right="0" scale9Grid="2,0,5,48" top="0" bottom="0"/>
 			<e:Label id="SkinGuildBossHarm" text="Cống hiến" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="191" verticalCenter="-4.5"/>
 			<e:Label text="Xếp hạng" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-205" verticalCenter="-4.5"/>
-			<e:Label text="总伤害" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="60" verticalCenter="-4.5"/>
-			<e:Label text="名称" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-87" verticalCenter="-4.5"/>
+			<e:Label text="Tổng sát thương" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="60" verticalCenter="-4.5"/>
+			<e:Label text="Tên" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-87" verticalCenter="-4.5"/>
 			<e:Image source="leibeifengexian" horizontalCenter="137" verticalCenter="-1"/>
 			<e:Image source="leibeifengexian" horizontalCenter="-155" verticalCenter="-1"/>
 			<e:Image source="leibeifengexian" horizontalCenter="-14" verticalCenter="-1"/>
-			<e:Label id="infoDesc0" height="28" text="一个字，干！" size="18" textAlign="left" verticalAlign="justify" horizontalCenter="5" width="324" anchorOffsetY="0" x="92" scaleX="1" scaleY="1" verticalCenter="10.5" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" visible="false"/>
+			<e:Label id="infoDesc0" height="28" text="Một chữ, chơi!" size="18" textAlign="left" verticalAlign="justify" horizontalCenter="5" width="324" anchorOffsetY="0" x="92" scaleX="1" scaleY="1" verticalCenter="10.5" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" visible="false"/>
 		</e:Group>
 
 		<e:Group id="my" width="485" height="60" horizontalCenter="0" bottom="31">
 
 			<e:Label id="myrank" text="10" size="30" width="50" y="10"  textAlign="center" verticalAlign="middle"
 			         textColor="0x7E6437"  height="50" x="31"  fontFamily="Microsoft YaHei" visible="false"/>
-			<e:Label id="myname" text="玩家昵称六字" size="20" textAlign="center" verticalAlign="middle"
+			<e:Label id="myname" text="Biệt danh người chơi 6 chữ" size="20" textAlign="center" verticalAlign="middle"
 			         verticalCenter="1" horizontalCenter="-87.5"  textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
 			<e:Label id="myharm" text="9999999999999" size="20" textAlign="center" verticalAlign="middle" verticalCenter="1"
 			         horizontalCenter="60"  textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>

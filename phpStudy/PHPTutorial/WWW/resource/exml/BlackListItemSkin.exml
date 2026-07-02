@@ -10,5 +10,5 @@
 	</e:Group>
 	<e:Label id="label_name" text="{data.name}" size="20" x="88" y="30" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
 	<e:Label id="labelGuild" text="帮会名六个字" size="18" y="60" x="88" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-	<e:Button id="btn_delete" label="删 除" width="91" height="50" icon="friend_btnbg" x="426" y="26" skinName="SkinBtn26"/>
+	<e:Button id="btn_delete" label="Xóa" width="91" height="50" icon="friend_btnbg" x="426" y="26" skinName="SkinBtn26"/>
 </e:Skin>

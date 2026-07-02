@@ -9,10 +9,10 @@
 		<e:Image width="436" horizontalCenter="0" top="27" height="40" source="huabian" scale9Grid="77,0,57,50"/>
 		<e:Image width="264" horizontalCenter="0" top="178" source="huabian" height="40" scale9Grid="69,0,64,50"/>
 
-		<e:Label text="消耗三本已有天书随机置换一本新天书" size="20"
+		<e:Label text="Tiêu hao 3 quyển Thiên Thư đã có để đổi ngẫu nhiên lấy 1 quyển Thiên Thư mới" size="20"
 		         horizontalCenter="0"  top="38" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label text="置换" size="24" horizontalCenter="2" fontFamily="Microsoft YaHei" top="-8" textColor="0x084151"/>
-		<e:Label text="选择要消耗的天书" size="20" horizontalCenter="0"
+		<e:Label text="Đổi" size="24" horizontalCenter="2" fontFamily="Microsoft YaHei" top="-8" textColor="0x084151"/>
+		<e:Label text="Chọn Thiên Thư cần tiêu hao" size="20" horizontalCenter="0"
 		          fontFamily="Microsoft YaHei" top="188" textColor="0xffffff"/>
 		<e:Image  source="jiantouyou" top="91" left="306"/>
 		<e:Image height="365" horizontalCenter="0" scale9Grid="7,10,11,7" source="tongyong_dikuang1" width="431" top="234"/>
@@ -28,7 +28,7 @@
 		<ns1:MijiItem skinName="Skin2MijiItem" id="mijiItem0" top="84" left="40"/>
 		<ns1:MijiItem skinName="Skin2MijiItem" id="mijiItem2" top="84" left="220"/>
 		<ns1:MijiItem skinName="Skin2MijiItem" id="mijiItem3" top="84" left="390"/>
-		<e:Button id="smeltBtn" label="置    换" skinName="SkinBtn1" horizontalCenter="0" bottom="30"/>
+		<e:Button id="smeltBtn" label="Đổi" skinName="SkinBtn1" horizontalCenter="0" bottom="30"/>
 	</e:Group>
-	<e:Button id="closeBtn0" skinName="SkinBtn0" label="按钮" y="76" x="433"  visible="false"/>
+	<e:Button id="closeBtn0" skinName="SkinBtn0" label="Nút bấm" y="76" x="433"  visible="false"/>
 </e:Skin>

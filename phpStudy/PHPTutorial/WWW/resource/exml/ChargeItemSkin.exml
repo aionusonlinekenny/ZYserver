@@ -23,7 +23,7 @@
 		</e:layout>
 	</e:Group>
 	<e:Label id="pay" text="￥10" size="26"  right="10" y="20" textAlign="right" fontFamily="Microsoft YaHei" textColor="0x790b00"/>
-	<e:Button id="payBtn" label="60元" x="114" skinName="SkinBtn1" verticalCenter="0"  visible="false"/>
+	<e:Button id="payBtn" label="60 NDT" x="114" skinName="SkinBtn1" verticalCenter="0"  visible="false"/>
 	<e:Label id="desc" text="2000元=20000元宝   首充送20000元宝" x="103" y="88" size="16" textColor="0xDFD1B5" width="144"
 	          visible="false"/>
 	<e:Image id="priceImg" x="103" y="76" source=""  visible="false"/>

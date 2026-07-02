@@ -30,7 +30,7 @@
 			</e:layout>
 		</e:Group>
 
-		<e:Button id="jihuo" label="一键升星" horizontalCenter="0" icon="btn1_2" bottom="-25" skinName="SkinBtn7"/>
+		<e:Button id="jihuo" label="Nâng sao nhanh" horizontalCenter="0" icon="btn1_2" bottom="-25" skinName="SkinBtn7"/>
 		<e:Label id="getItemTxt" text="合成武器" size="20"  fontFamily="Microsoft YaHei" textColor="0x00ff06" textAlign="left" stroke="0" y="64" x="437"/>
 
 	</e:Group>
@@ -76,8 +76,8 @@
 			<e:Image id="icon0" source="longhun_01_png" height="256" width="211"  horizontalCenter="0" verticalCenter="-25"/>
 		</e:Group>
 
-		<e:Button id="rightBtn" label="按钮" icon="jiantouxuan" skinName="SkinBtn0" right="95" scaleX="-1.2" scaleY="0.9" height="50" y="211" anchorOffsetX="0" width="42.33" visible="false"/>
-		<e:Button id="leftBtn" label="按钮" icon="jiantouxuan" skinName="SkinBtn0" scaleX="1.2" scaleY="0.9" width="42.33" height="50" left="95" y="220" visible="false"/>
+		<e:Button id="rightBtn" label="Nút bấm" icon="jiantouxuan" skinName="SkinBtn0" right="95" scaleX="-1.2" scaleY="0.9" height="50" y="211" anchorOffsetX="0" width="42.33" visible="false"/>
+		<e:Button id="leftBtn" label="Nút bấm" icon="jiantouxuan" skinName="SkinBtn0" scaleX="1.2" scaleY="0.9" width="42.33" height="50" left="95" y="220" visible="false"/>
 		<ns1:ChuanShiItem id="pos0" skinName="SkinheirloomItem" left="-21" top="83"/>
 		<ns1:ChuanShiItem id="pos1" skinName="SkinheirloomItem" right="-17" top="83"/>
 		<ns1:ChuanShiItem id="pos2" skinName="SkinheirloomItem" left="-21" top="188"/>
@@ -91,7 +91,7 @@
 	</e:Group>
 	<e:Button id="attrSet" label="Button" y="100" skinName="SkinBtn0" icon="hejishuxing" horizontalCenter="-239" visible="false"/>
 	<e:Button id="neatSet" label="Button" icon="taozhuangtubiao" skinName="Skinheirloomqmbtn" horizontalCenter="239.5" verticalCenter="-325"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose"  width="80" height="80" horizontalCenter="273" y="45"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose"  width="80" height="80" horizontalCenter="273" y="45"/>
 
 
 </e:Skin>

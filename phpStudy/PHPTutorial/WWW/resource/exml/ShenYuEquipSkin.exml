@@ -46,9 +46,9 @@
 	</e:Group>
 	<e:Group width="600" height="123.32" horizontalCenter="0" anchorOffsetY="0" bottom="3">
 		<e:Label id="getItemTxt" text="获取神羽" size="20" bottom="-10" height="60" verticalAlign="middle" width="100" textAlign="center" right="49" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-		<e:Button id="replace" label="装备神羽" skinName="SkinBtn1" horizontalCenter="116" bottom="40"/>
+		<e:Button id="replace" label="Trang bị Thần Vũ" skinName="SkinBtn1" horizontalCenter="116" bottom="40"/>
 		<e:Image id="redPointReplace" touchEnabled="false" source="zjmhongdian" horizontalCenter="186" bottom="86"/>
-		<e:Button id="replace0" label="快速合成" skinName="SkinBtn1" horizontalCenter="-116" bottom="40"/>
+		<e:Button id="replace0" label="Hợp thành nhanh" skinName="SkinBtn1" horizontalCenter="-116" bottom="40"/>
 		<e:Image id="costImg0" width="20" height="20" x="0" y="0" source="601000_png" visible="false"/>
 		<e:Group horizontalCenter="-164.5" bottom="10">
 			<e:Label id="costName" text="神羽(1阶):" x="18" y="16" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>

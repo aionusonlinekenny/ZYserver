@@ -5,7 +5,7 @@
 	<e:Image id="nameBG" height="24" y="83" source="bantoutiaobg2" scale9Grid="44,4,2,8" width="152" horizontalCenter="0"/>
 	<ns1:ItemBase id="itemIcon" verticalCenter="-35" horizontalCenter="4" skinName="SkinItem"/>
 
-	<e:Button id="buyBtn" label="购 买" name="buy" x="41" y="129" skinName="SkinBtn15"/>
+	<e:Button id="buyBtn" label="Mua" name="buy" x="41" y="129" skinName="SkinBtn15"/>
 
 
 

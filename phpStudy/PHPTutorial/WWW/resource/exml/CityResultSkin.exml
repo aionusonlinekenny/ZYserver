@@ -12,7 +12,7 @@
 			<e:Image y="0" horizontalCenter="0" source="fuentitlebg" x="247" scaleX="1" scaleY="1"/>
 		</e:Group>
 
-		<e:Button id="closeBtn" label="退出(10s)" horizontalCenter="0.5" skinName="SkinBtn7" y="793.36"/>
+		<e:Button id="closeBtn" label="Thoát(10s)" horizontalCenter="0.5" skinName="SkinBtn7" y="793.36"/>
 		<e:Label id="labelItem" text="Nhận vật phẩm：" y="382" size="20" height="40" verticalAlign="middle" x="101" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 
 

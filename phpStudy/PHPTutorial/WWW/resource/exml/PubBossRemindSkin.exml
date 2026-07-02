@@ -23,8 +23,8 @@
 		<e:Label text="BOSS" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-158"/>
 		<e:Label text="Cấp độ" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="0"/>
 		<e:Label text="提醒状态" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="158"/>
-		<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" right="0" icon="chatclose" top="12"/>
-		<e:CheckBox id="autoChallenge" label="自动挑战" skinName="SkinCheckBox0" scaleX="1" scaleY="1" horizontalCenter="0" bottom="22"/>
+		<e:Button id="closeBtn0" label="Nút bấm" skinName="SkinBtn0" right="0" icon="chatclose" top="12"/>
+		<e:CheckBox id="autoChallenge" label="Tự động thách đấu" skinName="SkinCheckBox0" scaleX="1" scaleY="1" horizontalCenter="0" bottom="22"/>
 		<e:Group id="franchise"  height="20" anchorOffsetY="0" bottom="28" horizontalCenter="0">
 			<e:Image  x="143" y="9" source="gantanhao1"/>
 			<e:Label text="特权月卡开启自动挑战" size="20" x="0" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" y="0" textColor="0x00038a"/>

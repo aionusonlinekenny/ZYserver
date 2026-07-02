@@ -17,7 +17,7 @@
 
 
 
-	<e:Button y="58" skinName="SkinBtn0" label="按钮" id="closeBtn0" horizontalCenter="210" visible="false"/>
+	<e:Button y="58" skinName="SkinBtn0" label="Nút bấm" id="closeBtn0" horizontalCenter="210" visible="false"/>
 
 
 	<e:Scroller id="listBar" horizontalCenter="0" height="108" bottom="82">
@@ -27,9 +27,9 @@
 		</e:layout>
 		</e:List>
 	</e:Scroller>
-	<e:Button id="rightBtn" label="按钮" icon="jiantouxuan" skinName="SkinBtn0" bottom="150" horizontalCenter="252" scaleX="-1" visible="false"/>
+	<e:Button id="rightBtn" label="Nút bấm" icon="jiantouxuan" skinName="SkinBtn0" bottom="150" horizontalCenter="252" scaleX="-1" visible="false"/>
 
-	<e:Button id="leftBtn" label="按钮" icon="jiantouxuan" skinName="SkinBtn0" bottom="150" horizontalCenter="-243" visible="false"/>
+	<e:Button id="leftBtn" label="Nút bấm" icon="jiantouxuan" skinName="SkinBtn0" bottom="150" horizontalCenter="-243" visible="false"/>
 	<e:Group id="info" width="540" horizontalCenter="0" verticalCenter="-50" height="656">
 	</e:Group>
 	<e:Group top="20" horizontalCenter="0" bottom="118" width="570" touchChildren="false" touchEnabled="false" visible="false">
@@ -43,5 +43,5 @@
 		<e:Image scale9Grid="33,2,4,12" x="0" bottom="-22" source="fulikuang5"/>
 		<e:Image scale9Grid="33,2,4,12" bottom="-6" source="fulikuang6" right="0"/>
 	</e:Group>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="276" top="45"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="276" top="45"/>
 </e:Skin>

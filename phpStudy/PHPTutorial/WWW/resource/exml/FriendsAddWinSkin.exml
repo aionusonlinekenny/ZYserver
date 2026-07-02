@@ -8,9 +8,9 @@
 		<e:Image source="tongyong_titlebg" y="0" horizontalCenter="0"/>
 		<e:Image width="426" height="176" y="54" source="tongyong_dikuang1" scale9Grid="10,10,64,66" horizontalCenter="0"/>
 		<e:Label text="添加好友" size="22" y="14" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
-		<e:Button id="closeBtn0" label="按钮" x="335" y="218" skinName="SkinBtn0" visible="false"/>
+		<e:Button id="closeBtn0" label="Nút bấm" x="335" y="218" skinName="SkinBtn0" visible="false"/>
 		<e:Group width="388" y="61" horizontalCenter="0" anchorOffsetX="0" anchorOffsetY="0" height="261">
-			<e:Button id="btn_add" label="添 加" y="198" horizontalCenter="0" skinName="SkinBtn3"/>
+			<e:Button id="btn_add" label="Thêm" y="198" horizontalCenter="0" skinName="SkinBtn3"/>
 			<e:Label text="请输入玩家昵称" size="20" y="68" fontFamily="Microsoft YaHei" textColor="0xffffff" x="33"/>
 			<e:Group x="178" y="61">
 				<e:Image width="173" height="36" source="shuzibg" scale9Grid="5,6,48,26"/>

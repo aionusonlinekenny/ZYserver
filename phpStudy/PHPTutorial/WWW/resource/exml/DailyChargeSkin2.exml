@@ -13,8 +13,8 @@
 			<ns1:ItemBase id="item3"  top="0" bottom="0" width="76" horizontalCenter="52" skinName="SkinItem2"/>
 			<ns1:ItemBase id="item4"  top="0" bottom="0" right="0" skinName="SkinItem2"/>
 		</e:Group>
-		<e:Button id="closeBtn" label="按钮" y="43" skinName="SkinBtn0" icon="czclose"  x="370"/>
-		<e:Button id="goUpBtn" label="充点小钱" y="444" icon="sc_05" skinName="SkinBtn9"  width="198" anchorOffsetX="0" x="180"/>
+		<e:Button id="closeBtn" label="Nút bấm" y="43" skinName="SkinBtn0" icon="czclose"  x="370"/>
+		<e:Button id="goUpBtn" label="Nạp ít tiền" y="444" icon="sc_05" skinName="SkinBtn9"  width="198" anchorOffsetX="0" x="180"/>
 	</e:Group>
 
 

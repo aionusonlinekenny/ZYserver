@@ -7,7 +7,7 @@
 		<e:Image width="571" horizontalCenter="1" top="27" source="tongyong_juanzhou" scale9Grid="220,0,50,17" x="-9" y="-150"/>
 		<e:Image horizontalCenter="0" x="147" top="10" source="tongyong_titlebg" width="287" y="-166" scale9Grid="114,23,27,13"/>
 		<e:Image source="tongyongbg5" scale9Grid="5,5,16,9" bottom="177" horizontalCenter="0.5" anchorOffsetX="0" width="512" anchorOffsetY="0" height="405" x="18" y="50.66999999999996"/>
-		<e:Label text="分配奖励" size="22" y="22" fontFamily="Microsoft YaHei" horizontalCenter="0" textColor="0x084151"/>
+		<e:Label text="Phân phối thưởng" size="22" y="22" fontFamily="Microsoft YaHei" horizontalCenter="0" textColor="0x084151"/>
 		<e:Scroller id="scroller0" width="499" height="392" horizontalCenter="0" anchorOffsetY="0" verticalCenter="-57.5">
 		<e:List id="list" y="2" x="0" itemRendererSkinName="SkinMemberItem3">
 			<e:layout>
@@ -19,7 +19,7 @@
 		<e:Image touchEnabled="false" source="bantoutiaobg" left="0" right="0" top="3" bottom="-3" scale9Grid="31,4,329,26"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0"/>
 		</e:Group>
-		<e:Button id="closeBtn1" label="按钮" skinName="SkinBtn0" icon="tongyong_btnclose" top="13" right="-2" visible="false"/>
-		<e:Button id="sureBtn" skinName="SkinBtn1" label="确定" horizontalCenter="0.5" bottom="74"/>
+		<e:Button id="closeBtn1" label="Nút bấm" skinName="SkinBtn0" icon="tongyong_btnclose" top="13" right="-2" visible="false"/>
+		<e:Button id="sureBtn" skinName="SkinBtn1" label="Xác nhận" horizontalCenter="0.5" bottom="74"/>
 	</e:Group>	
 </e:Skin>

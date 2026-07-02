@@ -105,7 +105,7 @@
 
 
 	<e:Label id="already" text="Đã đạt cấp tối đa" size="20" y="368" x="255" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-	<e:Button id="updateBtn" label="激 活" skinName="SkinBtn7" icon="btn1_2" width="213" height="67" y="342" horizontalCenter="-10"/>
+	<e:Button id="updateBtn" label="Kích hoạt" skinName="SkinBtn7" icon="btn1_2" width="213" height="67" y="342" horizontalCenter="-10"/>
 	<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="342" horizontalCenter="63.5"/>
 	<e:Group y="366" x="395">
 		<e:Label text="消耗" size="20" fontFamily="Microsoft YaHei"/>

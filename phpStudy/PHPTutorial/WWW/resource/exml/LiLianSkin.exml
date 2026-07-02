@@ -31,9 +31,9 @@
 					<e:HorizontalLayout gap="0" horizontalAlign="center"/>
 					</e:layout>
 				</e:Group>
-				<e:Label text="可领取" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0" top="21"/>
+				<e:Label text="Có thể nhận" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0" top="21"/>
 				</e:Group>
-				<e:Button id="reward" label="领  取" skinName="SkinBtn6" width="88" height="35" horizontalCenter="47" icon="btn2_2" scaleX="0.5" scaleY="0.5" verticalCenter="0" visible="false"/>
+				<e:Button id="reward" label="Nhận" skinName="SkinBtn6" width="88" height="35" horizontalCenter="47" icon="btn2_2" scaleX="0.5" scaleY="0.5" verticalCenter="0" visible="false"/>
 				<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" x="66" y="0" visible="false"/>
 				<e:Group x="-16" y="0" id="guanyinMing0" touchChildren="false" touchEnabled="false" visible="false">
 				<e:Image id="guanyinBg0" source="guanyindb_png" y="0" x="0" scale9Grid="17,14,2,2" height="75"/>
@@ -43,7 +43,7 @@
 			</e:Group>
 
 
-			<e:Button id="upgradeBtn" label="晋  升" right="17" skinName="SkinBtn1" height="69" includeIn="nomax" top="364" width="176"/>
+			<e:Button id="upgradeBtn" label="Thăng chức" right="17" skinName="SkinBtn1" height="69" includeIn="nomax" top="364" width="176"/>
 			<e:Group height="21" width="269" includeIn="nomax,max" visible.max="false" top="396" width.nomax="269" left.nomax="119" left="116">
 				<e:Image width="269" height="21" scale9Grid="4,4,25,12" horizontalCenter="0" verticalCenter="0" source="sliderbg_png"/>
 				<e:ProgressBar id="barbc" width="269" height="18" scaleX="1" scaleY="1" horizontalCenter="1" verticalCenter="-0.5" skinName="Skinbar1" horizontalCenter.nomax="0.5" height.nomax="18"/>
@@ -79,7 +79,7 @@
 			<e:Label text="任务名称" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" left="41"/>
 				<e:Label text="次数" x="200" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 				<e:Label text="单次奖励" x="331" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-			<e:Label text="操作" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" right="50"/>
+			<e:Label text="Thao tác" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" right="50"/>
 
 
 

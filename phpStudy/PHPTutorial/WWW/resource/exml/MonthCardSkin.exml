@@ -38,7 +38,7 @@
 		<e:Label text="购买月卡不计入VIP和首充" size="22" fontFamily="Microsoft YaHei" width="160" top="80" textColor="0xffff00" left="368" textAlign="center"/>
 		<e:Label id="feng" text="封测期间不开放月卡功能" size="24" horizontalCenter="0" bottom="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		<e:Label id="first" text="现在购买，额外赠送 3000 元宝" size="20" textAlign="left" fontFamily="Microsoft YaHei" left="379" width="157" textColor="0x00ff06" bottom="10"/>
-		<e:Button id="btn1" label="30元抢购" skinName="SkinBtn1" horizontalCenter="0" height="69" bottom="-7"/>
+		<e:Button id="btn1" label="Mua ngay 30 NDT" skinName="SkinBtn1" horizontalCenter="0" height="69" bottom="-7"/>
 		<e:Label id="leftTime" text="月卡剩余：XX天XX小时" horizontalCenter="0" bottom="18" size="20" textColor="0xff9900" fontFamily="Microsoft YaHei"/>
 
 

@@ -8,7 +8,7 @@
 		<e:Image width="515" height="420" source="tongyong_dikuang1" horizontalCenter="0.5" top="53" scale9Grid="10,6,60,42"/>
 		<e:Image width="376" height="398" x="104" y="63" source="weapsbg2_png"/>
 		<e:Image width="249" height="41" top="0" source="tongyong_titlebg" x="169"/>
-		<e:Label id="title" text="激 活" size="24" y="11" horizontalCenter="0" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x084151"/>
+		<e:Label id="title" text="Kích hoạt" size="24" y="11" horizontalCenter="0" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x084151"/>
 		<e:Group id="star" y="85" width="333" height="324" anchorOffsetX="0" anchorOffsetY="0" x="125">
 			<e:Image id="cirimg" source="wepsyuan_png" width="291" height="291" x="23" y="23"/>
 			<ns1:ItemIcon id="item1" skinName="SkinItemIcon" x="132" y="136"/>
@@ -60,7 +60,7 @@
 			</e:Group>
 			<e:Label id="name1" text="Tên Binh Hồn" y="6" size="20" textColor="0x001838" x="218" fontFamily="Microsoft YaHei"/>
 			<ns1:WeaponSoulbreakItemRender id="material1" skinName="weaponSoulbreakitem" x="106" y="53"/>
-			<e:Button id="btnjihuo" label="激  活" horizontalCenter="0" width="176" height="69" icon="btn2_2" y="173" skinName="SkinBtn28"/>
+			<e:Button id="btnjihuo" label="Kích hoạt" horizontalCenter="0" width="176" height="69" icon="btn2_2" y="173" skinName="SkinBtn28"/>
 		</e:Group>
 		<e:Group id="lianhua" height="245" width="515" anchorOffsetY="0" horizontalCenter="0.5" top="483">
 			<e:Label id="name2" text="Tên Binh Hồn" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001838" y="6"/>
@@ -122,7 +122,7 @@
 				<e:HorizontalLayout verticalAlign="middle" gap="0"/>
 				</e:layout>
 			</e:Group>
-			<e:Button id="btnlianhua" label="炼 化" horizontalCenter="0" icon="btn2_2" width="176" height="69" y="173" skinName="SkinBtn28"/>
+			<e:Button id="btnlianhua" label="Luyện Hóa" horizontalCenter="0" icon="btn2_2" width="176" height="69" y="173" skinName="SkinBtn28"/>
 			<e:Label id="maxdesc0" text="Đã đạt cấp tối đa" size="22" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" y="196" visible="false"/>
 		</e:Group>
 		<e:Group id="tupo" width="515" height="241" horizontalCenter="0.5" y="481" anchorOffsetY="0" visible="false">
@@ -161,7 +161,7 @@
 				</e:layout>
 			</e:Group>
 		<ns1:WeaponSoulbreakItemRender id="material" skinName="weaponSoulbreakitem" y="50" x="360"/>
-		<e:Button id="btntupo" label="突  破" horizontalCenter="0" width="176" height="69" y="174" icon="btn2_2" skinName="SkinBtn28"/>
+		<e:Button id="btntupo" label="Đột phá" horizontalCenter="0" width="176" height="69" y="174" icon="btn2_2" skinName="SkinBtn28"/>
 		</e:Group>
 		<e:Image id="lock" source="weapssuo_png" y="156" x="195" visible="false"/>
 		<e:Button id="closeBtn" label="Button" x="526" y="10" skinName="SkinBtn0" icon="tongyong_btnclose"/>

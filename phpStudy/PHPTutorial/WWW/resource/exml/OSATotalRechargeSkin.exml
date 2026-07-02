@@ -25,7 +25,7 @@
 		</e:List>
 		<e:Group horizontalCenter="0.5" bottom="4" anchorOffsetY="0" height="106">
 			<e:Label id="state" text="已充值0/588888元宝" size="22" scaleX="1" scaleY="1" horizontalCenter="0" top="9" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Button id="getBtn" label="立即领取" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="0" bottom="0"/>
+			<e:Button id="getBtn" label="Nhận ngay" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="0" bottom="0"/>
 			<e:Label id="already" text="Đã nhận" size="26" scaleX="1" scaleY="1" horizontalCenter="0" y="59" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
 			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" scaleX="1" scaleY="1" horizontalCenter="79" verticalCenter="-10.5" visible="false"/>
 		</e:Group>

@@ -8,7 +8,7 @@
 	</e:Scroller>
 	<e:Image id="topImg" source="hongbao_top_png" height="373" y="2" horizontalCenter="0"/>
 	<e:Image id="downImg" source="hongbao_bottom_png" y="322" height="187" horizontalCenter="0"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="3" scaleX="0.8" scaleY="0.8" horizontalCenter="160" visible="false"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="3" scaleX="0.8" scaleY="0.8" horizontalCenter="160" visible="false"/>
 	<e:Group y="62" horizontalCenter="0">
 		<e:Image y="0" x="0" width="80" height="80" source="touxiangkuang0" scale9Grid="6,6,1,1"/>
 		<e:Image id="myFace" x="4" y="4" width="72" height="72" source="head_10"/>

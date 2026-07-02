@@ -11,8 +11,8 @@
 		<ns1:TreasureChuanshiPanel id="treasureChuanshi" name="诛仙" skinName="TreasureChuanshi"  left="0" right="0" top="0" bottom="0" visible="false"/>
 	</e:ViewStack>
 	<e:Image top="11" horizontalCenter="-213.5" source="xunbao_5"/>
-	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" scaleX="0.9" scaleY="0.9" top="4" horizontalCenter="-278"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="266"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" scaleX="0.9" scaleY="0.9" top="4" horizontalCenter="-278"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" horizontalCenter="266"/>
 	<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="98" source="bantoumingkuang3"/>
 	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="102" height="50">
 		<e:layout>

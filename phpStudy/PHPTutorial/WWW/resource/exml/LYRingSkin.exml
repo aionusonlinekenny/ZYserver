@@ -18,7 +18,7 @@
 
 	</e:ViewStack>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel"  width="600" horizontalCenter="0" currentState="nohead"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="274" top="51"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="274" top="51"/>
 	<e:Image source="biaoti_tejie" top="11" horizontalCenter="-230.5"/>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="98"/>
 		<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="106">

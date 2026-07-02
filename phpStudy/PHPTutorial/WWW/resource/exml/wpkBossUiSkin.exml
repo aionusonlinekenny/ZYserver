@@ -3,7 +3,7 @@
         xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="948">
 	<w:Config id="15c6d0f73d2" />
 	<e:Group id="attList" width="100" top="176" bottom="144" x="0" visible="false">
-		<e:Button id="refush" label="按钮" y="0" skinName="SkinBtn0" width="80"  horizontalCenter="0" visible="false"/>
+		<e:Button id="refush" label="Nút bấm" y="0" skinName="SkinBtn0" width="80"  horizontalCenter="0" visible="false"/>
 
 		<e:Group id="beAttackGroup" x="0" top="151" bottom="0">
 			<e:Group x="0" y="0" width="100">
@@ -54,12 +54,12 @@
 		<e:Label id="bossBloodPercentageLabel" text="100%" x="194.1" y="52.5" fontFamily="Microsoft YaHei" size="18"/>
 		<e:Image width="69" height="71" x="24.33" y="26.33" source="guildkuang"/>
 
-		<e:Button id="tipBtn0" label="奖励" x="31" y="97" skinName="SkinBtn0" icon="bosstouxiangbtn"/>
+		<e:Button id="tipBtn0" label="Phần thưởng" x="31" y="97" skinName="SkinBtn0" icon="bosstouxiangbtn"/>
 
 		<e:Label id="lvTxt" y="28" size="20" text="Lv.600" x="96" width="65" textAlign="right"  fontFamily="Microsoft YaHei" anchorOffsetX="0" textColor="0xffff00"/>
 		<e:Label id="nameTxt" y="28" size="18" text="Tổ Mã Giáo Chủ" x="162"  fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
 		<e:Label id="myTxt" y="30" size="16" text="自己: 10" x="288" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Button id="tipBtn" label="奖励" x="31" y="98" skinName="SkinBtn0" icon="bosstouxiangbtn" visible="false"/>
+		<e:Button id="tipBtn" label="Phần thưởng" x="31" y="98" skinName="SkinBtn0" icon="bosstouxiangbtn" visible="false"/>
 	</e:Group>
 
 
@@ -72,7 +72,7 @@
 	<e:Group id="attList0" width="106" right="0" top="176" bottom="140" visible="false">
 
 		<e:Image source="teshuwenzibg" height="30" left="0" right="0"/>
-		<e:Button id="refush0" label="按钮" y="0" skinName="SkinBtn0" width="100" horizontalCenter="0" visible="false"/>
+		<e:Button id="refush0" label="Nút bấm" y="0" skinName="SkinBtn0" width="100" horizontalCenter="0" visible="false"/>
 		<e:Label text="Chọn mục tiêu" y="6" size="16" strokeColor="0x000000" textColor="0xD1C28F" bold="true" horizontalCenter="0" touchEnabled="false"/>
 		<e:Scroller id="bar0" scaleX="0.9" scaleY="0.9" horizontalCenter="0" width="100" top="34" bottom="0">
 		<e:List id="list0" x="5" y="6" itemRendererSkinName="SkinMemberHead">

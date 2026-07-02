@@ -8,6 +8,6 @@
 			</e:layout>
 		</e:List>
 	</e:Scroller>
-	<e:Label id="noGoods" text=" 商品已全部售完" size="24" textColor="0xFF8534" horizontalCenter="0" verticalCenter="0" visible="false"/>
+	<e:Label id="noGoods" text=" Sản phẩm đã bán hết" size="24" textColor="0xFF8534" horizontalCenter="0" verticalCenter="0" visible="false"/>
 	<e:Image id="tipImg" source="shopbn1_png" horizontalCenter="0" bottom="0" width="548" height="136"/> 
 </e:Skin>

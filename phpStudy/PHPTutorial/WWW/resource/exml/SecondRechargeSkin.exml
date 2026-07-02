@@ -15,7 +15,7 @@
 		<e:Image left="0" right="0" top="0" height="241" scaleY="-1" source="scitembg2_png" scale9Grid="25,20,9,7"/>
 		<e:Image height="115" source="kaifuhuodongitembg1_png" scale9Grid="5,4,30,30" width="537" horizontalCenter="0" verticalCenter="-15" anchorOffsetY="0"/>
 		<e:Label id="already0" text="Đã nhận" size="30" horizontalCenter="0" x="249" y="184" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
-		<e:Button id="get0" label="立即领取" width="179" y="163" horizontalCenter="0" skinName="SkinBtn1"/>
+		<e:Button id="get0" label="Nhận ngay" width="179" y="163" horizontalCenter="0" skinName="SkinBtn1"/>
 		<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" y="154" horizontalCenter="79" width="25" height="25" visible="false"/>
 		<e:Image height="38.6" width="303.8" anchorOffsetY="0" anchorOffsetX="0" source="kaifuhuodongitembg2_png" top="0" left="2" scale9Grid="28,1,6,31"/>
 		<e:List id="reward0" horizontalCenter="0" x="45" itemRendererSkinName="SkinItem2" top="53">
@@ -30,7 +30,7 @@
 		<e:Image scale9Grid="25,20,9,7" left="0" right="0" top="0" height="241" scaleY="-1" source="scitembg2_png"/>
 		<e:Image height="115" source="kaifuhuodongitembg1_png" scale9Grid="5,4,30,30" width="537" horizontalCenter="0" verticalCenter="-15" anchorOffsetY="0"/>
 		<e:Label id="already1" text="Đã nhận" size="30" horizontalCenter="0" x="249" y="184" fontFamily="Microsoft YaHei" textColor="0x00842c" visible="false"/>
-		<e:Button id="get1" label="立即领取" width="179" horizontalCenter="0.5" y="163" skinName="SkinBtn1"/>
+		<e:Button id="get1" label="Nhận ngay" width="179" horizontalCenter="0.5" y="163" skinName="SkinBtn1"/>
 		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" y="154" horizontalCenter="79" width="25" height="25" visible="false"/>
 		<e:List id="reward1" y="48" horizontalCenter="0" x="45" itemRendererSkinName="SkinItem2" top="53">
 		<e:layout>

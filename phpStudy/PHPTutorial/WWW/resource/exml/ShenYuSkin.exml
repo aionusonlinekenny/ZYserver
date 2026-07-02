@@ -23,7 +23,7 @@
 	<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" horizontalCenter="-63.5" bottom="143"/>
 	<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" horizontalCenter="51.5" bottom="143"/>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" horizontalCenter="0" width="600" height="855" top="0"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="274" top="46"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="274" top="46"/>
 	<e:Image top="10" source="biaoti_yuyi" horizontalCenter="-229"/>
 
 

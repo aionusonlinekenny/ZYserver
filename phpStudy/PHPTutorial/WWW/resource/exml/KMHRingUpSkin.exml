@@ -27,6 +27,6 @@
 	<e:Image rotation="345.37" verticalCenter="-103.5" source="xn_wingup2_png" right="23"/>
 	<e:Image rotation="11.48" verticalCenter="14" source="xn_wingup5_png" right="11"/>
 	<e:Image right="0" verticalCenter="226" source="wingup_bottomtext_png"/>
-	<e:Button id="pay0" label="前去升级" horizontalCenter="0.5" bottom="14" scaleX="1" scaleY="1" skinName="SkinBtn29"/>
+	<e:Button id="pay0" label="Đi nâng cấp" horizontalCenter="0.5" bottom="14" scaleX="1" scaleY="1" skinName="SkinBtn29"/>
 	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="79.5" bottom="53"/>
 </e:Skin>

@@ -23,7 +23,7 @@
 
 	<e:Group id="rechargeBtn" bottom="15" horizontalCenter="0">
 
-		<e:Button label="我要砸蛋" icon="btnshouchong_png" horizontalCenter="0" skinName="SkinBtn9"/>
+		<e:Button label="Tôi muốn đập trứng" icon="btnshouchong_png" horizontalCenter="0" skinName="SkinBtn9"/>
 		<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="-4.18" horizontalCenter="76.5" x="117.5" scaleX="1.25" scaleY="1.25"/>
 
 	</e:Group>

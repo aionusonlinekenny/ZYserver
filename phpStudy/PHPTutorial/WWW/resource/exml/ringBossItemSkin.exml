@@ -10,7 +10,7 @@
 	<ns1:ItemBase id="itemIcon0" x="18" verticalCenter="0" scaleX="1" scaleY="1" skinName="SkinItem"/>
 
 	<e:Group y="15" horizontalCenter="153.5">
-		<e:Button id="goBtn" label="兑换" skinName="SkinBtn1" width="158" height="59" y="0" horizontalCenter="0"/>
+		<e:Button id="goBtn" label="Đổi" skinName="SkinBtn1" width="158" height="59" y="0" horizontalCenter="0"/>
 		<e:Label id="count" text="剩余300份" y="62" size="20" width="100" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x00842c" horizontalCenter="0"/>
 
 	</e:Group>

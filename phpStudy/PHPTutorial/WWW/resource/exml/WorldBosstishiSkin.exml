@@ -8,11 +8,11 @@
 		<e:Label text="Thông báo" size="24" y="11" textColor="0xfd600d" bold="true" horizontalCenter="0"/>
 		<e:Image source="zdbossjianglixiaobg" horizontalCenter="0" verticalCenter="16" scaleX="2" scaleY="2"/>
 		<e:Group id="see" y="266" horizontalCenter="0">
-			<e:CheckBox id="check" label="本次挑战不再提示" skinName="SkinCheckBox0" verticalCenter="0.5" left="0"/>
+			<e:CheckBox id="check" label="Lần thách đấu này không nhắc lại" skinName="SkinCheckBox0" verticalCenter="0.5" left="0"/>
 		</e:Group>
 		<e:Group y="170" horizontalCenter="0">
-			<e:Button id="sure" skinName="SkinBtn6" label="确  定" width="130" x="203" y="0" icon="btn3" height="50"/>
-			<e:Button id="giveUp" skinName="SkinBtn6" label="取消" width="130" height="50" x="0" y="0" icon="btn3_1"/>
+			<e:Button id="sure" skinName="SkinBtn6" label="Xác nhận" width="130" x="203" y="0" icon="btn3" height="50"/>
+			<e:Button id="giveUp" skinName="SkinBtn6" label="Hủy" width="130" height="50" x="0" y="0" icon="btn3_1"/>
 		</e:Group>
 		<e:Group y="120" horizontalCenter="0">
 			<e:Label id="tipsTxt" text="确定需要消耗" size="22" width="350" textAlign="center" textColor="0xc6bca9"/>

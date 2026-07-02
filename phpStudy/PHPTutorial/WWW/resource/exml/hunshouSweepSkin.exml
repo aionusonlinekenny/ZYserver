@@ -18,7 +18,7 @@
 			</e:List>
 		</e:Group>
 		<e:Label id="title" size="24" text="扫荡成功" horizontalCenter="0" y="11" textColor="0xBD600D" fontFamily="Microsoft YaHei"/>
-		<e:Button id="closeBtn" label="关闭" width="120" height="50" skinName="SkinBtn3" bottom="20" horizontalCenter="80"/>
-		<e:Button id="nextBtn" label="继续扫荡" bottom="20" horizontalCenter="-80" width="120" height="50" skinName="SkinBtn3"/>
+		<e:Button id="closeBtn" label="Đóng" width="120" height="50" skinName="SkinBtn3" bottom="20" horizontalCenter="80"/>
+		<e:Button id="nextBtn" label="Tiếp tục càn quét" bottom="20" horizontalCenter="-80" width="120" height="50" skinName="SkinBtn3"/>
 	</e:Group>
 </e:Skin>

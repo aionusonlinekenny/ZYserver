@@ -17,7 +17,7 @@
 		<e:Image id="bg" y="42" horizontalCenter="0" source="win_png" width="522" height="662" x="39" />
 		<e:Image width="290" height="66" y="640" source="win_bg2_png" x="300" scaleX="-1"/>
 		<e:Image height="66" y="640" source="win_bg2_png"  width="290" x="300" />
-		<e:Button id="closeBtn" label="确定" skinName="SkinBtn1" width="157" horizontalCenter="0" height="60" y="606" x="222"/>
+		<e:Button id="closeBtn" label="Xác nhận" skinName="SkinBtn1" width="157" horizontalCenter="0" height="60" y="606" x="222"/>
 		<e:Image id="result" anchorOffsetX="0" anchorOffsetY="0" width="365" height="83" horizontalCenter="0" source="battle_result_title_png" top="70" x="118" y="70"/>
 		<e:Group y="167" horizontalCenter="0" width="408" x="96" >
 			<e:Label id="myRanking" text="12" size="20" x="102" textAlign="left" y="10" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>

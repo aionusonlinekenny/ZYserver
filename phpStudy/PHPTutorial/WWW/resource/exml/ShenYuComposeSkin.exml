@@ -42,7 +42,7 @@
 		<e:HorizontalLayout gap="12" paddingLeft="106" paddingTop="0"/>
 		</e:layout>
 	</e:Group>
-	<e:Button id="compose" label="合 成" horizontalCenter="-1" bottom="13" skinName="SkinBtn6" icon="btn2_2" height="55" scaleX="0.79" scaleY="0.79" width="150"/>
+	<e:Button id="compose" label="Hợp thành" horizontalCenter="-1" bottom="13" skinName="SkinBtn6" icon="btn2_2" height="55" scaleX="0.79" scaleY="0.79" width="150"/>
 	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="63" bottom="47"/>
 	<ns1:GWingItem id="now" skinName="ShenYuItem" horizontalCenter="-172" verticalCenter="-93.5"/>
 	<e:Image width="90" height="90" source="quality9" horizontalCenter="-172.5" verticalCenter="-108" scaleX="1.1" scaleY="1.1"/>

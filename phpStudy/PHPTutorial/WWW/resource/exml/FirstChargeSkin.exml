@@ -94,7 +94,7 @@
 		</e:Group>
 
 		<e:Group id="buyGroup" horizontalCenter="0" width="173" height="60" y="650">
-			<e:Button id="buyed" label="领取首充礼包" width="173" height="60" icon="btn2_2" skinName="SkinBtn6" verticalCenter="0" horizontalCenter="0"/>
+			<e:Button id="buyed" label="Nhận Gói Nạp Đầu" width="173" height="60" icon="btn2_2" skinName="SkinBtn6" verticalCenter="0" horizontalCenter="0"/>
 		</e:Group>
 
 	</e:Group>
@@ -102,7 +102,7 @@
 
 
 
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" top="47" horizontalCenter="275"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" top="47" horizontalCenter="275"/>
 
 
 </e:Skin>

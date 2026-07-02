@@ -52,7 +52,7 @@
 			</e:List>
 		</e:Scroller>
 	</e:Group>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="44" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="44" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
 	<e:Group horizontalCenter="-253" bottom="158">
 		<e:Button id="leftBtn" label="" icon="jiantouxuan" skinName="SkinBtn0" x="0" y="0"/>
 		<e:Image id="leftRed" x="20" y="-8" source="zjmhongdian" touchEnabled="false"/>

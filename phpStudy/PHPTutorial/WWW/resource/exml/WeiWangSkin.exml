@@ -98,8 +98,8 @@
 			<e:Label id="findItemTxt" text="找回威望" size="20" verticalAlign="middle" textAlign="center" touchEnabled="true" horizontalCenter="0" fontFamily="Microsoft YaHei" bottom="0" textColor="0x00ff06"/>
 			</e:Group>
 		</e:Group>
-		<e:Button id="checkBtn" label="查看排名" skinName="SkinBtn6" width="180" height="60" bottom="-5" horizontalCenter="0" icon="btn1_2"/>
-		<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-267" y="8" visible="false"/>
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" right="0" visible="false"/>
+		<e:Button id="checkBtn" label="Xem xếp hạng" skinName="SkinBtn6" width="180" height="60" bottom="-5" horizontalCenter="0" icon="btn1_2"/>
+		<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-267" y="8" visible="false"/>
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" right="0" visible="false"/>
 	</e:Group>
 </e:Skin>

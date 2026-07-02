@@ -133,9 +133,9 @@
 
 		<e:Group horizontalCenter="0" id="btnGroup" height="159" bottom="-130">
 			<e:Image source="tongyongline" width="289" horizontalCenter="0" height="1" y="30"/>
-			<e:Button id="spiritBtn" label="附 灵" skinName="SkinBtn1" width="140" height="60" x="0" y="42"/>
+			<e:Button id="spiritBtn" label="Phụ Linh" skinName="SkinBtn1" width="140" height="60" x="0" y="42"/>
 			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" x="121" y="40" visible="false"/>
-			<e:Button id="soulBtn" label="注 魂" skinName="SkinBtn1" width="140" height="60" x="160" y="42"/>
+			<e:Button id="soulBtn" label="Chú Hồn" skinName="SkinBtn1" width="140" height="60" x="160" y="42"/>
 			<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" x="280" y="40"/>
 			<e:Group y="126" horizontalCenter="0">
 				<e:Image source="bantoutiaobg" height="35" scale9Grid="128,2,15,41" width="300" touchEnabled="false" y="0" horizontalCenter="0"/>

@@ -10,7 +10,7 @@
 		<e:Label id="nameLabel" text="Lông Vũ" size="24" x="150" y="30" textColor="0x90f490" fontFamily="Microsoft YaHei"/>
 		<e:Label text="Số lượng：" size="20" x="150" y="79" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="num" text="9" size="20" x="210" y="79" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
-		<e:Label id="description" text="使用后获得1000万角色经验值" size="18" width="320" textAlign="left" x="15" top="160" bottom="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="description" text="Sử dụng để nhận 10.000.000 kinh nghiệm nhân vật" size="18" width="320" textAlign="left" x="15" top="160" bottom="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 
 
 

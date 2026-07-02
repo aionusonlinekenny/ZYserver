@@ -22,7 +22,7 @@
 			<e:HorizontalLayout gap="2"/>
 			</e:layout>
 		</e:Group>
-		<e:Button id="executeBtn" label="升 级" width="213" height="67" horizontalCenter="0" icon="btn1_2" bottom="0" skinName="SkinBtn7"/>
+		<e:Button id="executeBtn" label="Nâng cấp" width="213" height="67" horizontalCenter="0" icon="btn1_2" bottom="0" skinName="SkinBtn7"/>
 		<e:Label id="getTreasureBtn" text="获得至圣玉碟" size="20" height="60" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="192" bottom="6" stroke="0" textColor="0x00ff06"/>
 	</e:Group>
 	<e:Group id="weaponEffect" x="296" y="410">
@@ -49,8 +49,8 @@
 	<e:Label id="armorLevel" y="270" text="n转" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" stroke="1" textAlign="center" left="479"/>
 	<e:Image id="redPoint0" y="216" touchEnabled="false" source="zjmhongdian" x="109" visible="false"/>
 	<e:Image id="redPoint1" y="215" touchEnabled="false" source="zjmhongdian" x="535" visible="false"/>
-	<e:Button id="mixArmorBtn" label="合成" y="286" skinName="SkinBtn7" horizontalCenter="170" visible="false"/>
-	<e:Button id="mixSwordBtn" label="合成" y="286" skinName="SkinBtn7" horizontalCenter="-170" visible="false"/>
+	<e:Button id="mixArmorBtn" label="Hợp thành" y="286" skinName="SkinBtn7" horizontalCenter="170" visible="false"/>
+	<e:Button id="mixSwordBtn" label="Hợp thành" y="286" skinName="SkinBtn7" horizontalCenter="-170" visible="false"/>
 	<e:Component id="grewupAttributes" skinName="GrewupAttributesPanel" horizontalCenter="0" y="472"/>
 	<e:Component id="mixAttributes" skinName="MixAttributesPanel" horizontalCenter="0" bottom="120" visible="false"/>
 	<e:Label id="topLevel" text="Đã đạt cấp tối đa" size="24" horizontalCenter="0" bottom="37" textColor="0xffff00" fontFamily="Microsoft YaHei" stroke="0.7" visible="false"/>

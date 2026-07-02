@@ -3,7 +3,7 @@
 	<w:Config id="1586bde13e1"/>
 	<e:Image left="0" right="0" source="shopitembg" height="101" verticalCenter="0" scale9Grid="33,55,26,6"/>
 	<ns1:ItemIcon id="itemIcon" x="17" verticalCenter="0" skinName="SkinItemIcon"/>
-	<e:Button id="buyBtn" label="购 买" verticalCenter="-1" name="buy" right="18" width="95" height="48" icon="friend_btnbg" skinName="SkinBtn26"/>
+	<e:Button id="buyBtn" label="Mua" verticalCenter="-1" name="buy" right="18" width="95" height="48" icon="friend_btnbg" skinName="SkinBtn26"/>
 
 
 	<e:Label id="money" text="123456" y="57" size="20" fontFamily="Microsoft YaHei" horizontalCenter="-75.5" textAlign="left"/>

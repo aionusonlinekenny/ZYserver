@@ -13,7 +13,7 @@
 		<e:Image anchorOffsetY="0" width="131" height="149" horizontalCenter="0" top="177" source="itemiconbgmax_png"/>
 		<e:Image left="5" right="5" source="tongyong_juanzhou"/>
 		<e:Image source="tongyong_titlebg" width="249" horizontalCenter="0" top="-14"/>
-		<e:Label text="强   化" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-2"/>
+		<e:Label text="Cường hóa" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-2"/>
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" top="37" horizontalCenter="0"/>
 		<e:Image width="487" height="102" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" top="349" source="tongyong_dikuang4" scale9Grid="11,4,58,64"/>
 		<e:Label id="equipName" text="兽丹" size="20" fontFamily="Microsoft YaHei" horizontalCenter="0" top="328"/>
@@ -27,8 +27,8 @@
 			<e:Label id="maxExpTxt" text="强化等级已达到最大值" size="14" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x213847" visible="false"/>
 		</e:Group>
 		<e:Image scale9Grid="40,20,30,30" anchorOffsetY="0" anchorOffsetX="0" height="181" width="518" source="tongyong2_json.tongyong_dikuang3" horizontalCenter="0" verticalCenter="188"/>
-		<e:Button id="departBtn" label="一键分解" skinName="SkinBtn1" horizontalCenter="-152.5" verticalCenter="327"/>
-		<e:Button id="lvUpBtn" label="升   级" skinName="SkinBtn1" verticalCenter="327" horizontalCenter="152.5"/>
+		<e:Button id="departBtn" label="Phân giải nhanh" skinName="SkinBtn1" horizontalCenter="-152.5" verticalCenter="327"/>
+		<e:Button id="lvUpBtn" label="Nâng cấp" skinName="SkinBtn1" verticalCenter="327" horizontalCenter="152.5"/>
 		<e:Image id="rightRed" source="zjmhongdian" touchEnabled="false" right="51" top="712"/>
 		<e:Group width="518" height="181" horizontalCenter="0" top="516">
 			<e:Image width="74" height="74" horizontalCenter="-211" verticalCenter="-41.5" source="quality10" scale9Grid="9,9,59,58"/>
@@ -49,7 +49,7 @@
 			<e:TileLayout requestedRowCount="2" requestedColumnCount="6" horizontalGap="10" verticalGap="10"/>
 			</e:layout>
 		</e:List>
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" right="0" top="2"/>
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" right="0" top="2"/>
 		<ns1:BaseComponent id="attrPanel" skinName="SsEquipAttrItem" horizontalCenter="0" top="349"/>
 		<e:Label text="分解已升级强化等级的装备将全额返还兽元" size="20" bottom="24" fontFamily="Microsoft YaHei" textColor="0x0038ab" horizontalCenter="7.5"/>
 		<e:Image bottom="24" source="gantanhao1" horizontalCenter="-193.5"/>

@@ -55,9 +55,9 @@
 
 
 
-		<e:Button id="changeBtn" label="更 换" bottom="144" y="500" visible.putong="false" label.shenshang="升  阶" skinName="SkinBtn1" width="140" height="55" right="12"/>
-		<e:Button id="hunyuBtn" label="龙 晶" bottom="72" y="510" visible.putong="false" width="140" height="55" skinName="SkinBtn1" right="12"/>
-		<e:Button id="takeoffBtn" label="卸 下" bottom="144" y="510" visible.putong="false" skinName="SkinBtn1" width="140" height="55" left="12"/>
+		<e:Button id="changeBtn" label="Thay đổi" bottom="144" y="500" visible.putong="false" label.shenshang="Thăng bậc" skinName="SkinBtn1" width="140" height="55" right="12"/>
+		<e:Button id="hunyuBtn" label="Long Tinh" bottom="72" y="510" visible.putong="false" width="140" height="55" skinName="SkinBtn1" right="12"/>
+		<e:Button id="takeoffBtn" label="Tháo ra" bottom="144" y="510" visible.putong="false" skinName="SkinBtn1" width="140" height="55" left="12"/>
 		<e:Image id="changeRedPoint" y="383" source="zjmhongdian" visible.putong="false" right="5"/>
 		<e:Image id="forgeRedPoint" y="455" source="zjmhongdian" visible.putong="false" right="5"/>
 	</e:Group>

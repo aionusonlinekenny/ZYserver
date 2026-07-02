@@ -101,13 +101,13 @@
 
 
 		<e:Group id="normal" horizontalCenter="0.5" verticalCenter="136">
-			<e:Button id="upgradeBtn" label="升  级"  horizontalCenter="-112" skinName="SkinBtn1" scaleX="0.8" verticalCenter="0" scaleY="0.8"/>
+			<e:Button id="upgradeBtn" label="Nâng cấp"  horizontalCenter="-112" skinName="SkinBtn1" scaleX="0.8" verticalCenter="0" scaleY="0.8"/>
 			<e:Image id="btnRedPoint0" source="zjmhongdian" x="132" y="0" visible="false"/>
-			<e:Button id="upgradeBtn0" label="一键升级" skinName="SkinBtn1"  horizontalCenter="112" verticalCenter="0" scaleX="0.8" scaleY="0.8"/>
+			<e:Button id="upgradeBtn0" label="Nâng cấp nhanh" skinName="SkinBtn1"  horizontalCenter="112" verticalCenter="0" scaleX="0.8" scaleY="0.8"/>
 			<e:Image id="btnRedPoint1" source="zjmhongdian" x="392" y="0" visible="false"/>
 		</e:Group>
 		<e:Group id="upLv" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="135" visible="false">
-			<e:Button id="upgradeBtn1" label="升  阶" skinName="SkinBtn1"  y="0.4" horizontalCenter="0" scaleX="0.8" scaleY="0.8"/>
+			<e:Button id="upgradeBtn1" label="Thăng bậc" skinName="SkinBtn1"  y="0.4" horizontalCenter="0" scaleX="0.8" scaleY="0.8"/>
 			<e:Image id="btnRedPoint2" source="zjmhongdian" x="122" y="-3"/>
 		</e:Group>
 		<e:Group height="89" horizontalCenter="0" scaleX="1" scaleY="1" verticalCenter="-123" width="500" anchorOffsetY="0">

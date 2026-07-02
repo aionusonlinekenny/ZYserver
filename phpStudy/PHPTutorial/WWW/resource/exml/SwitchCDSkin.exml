@@ -13,5 +13,5 @@
 		<e:Label id="timeDown" size="18" textAlign="center" text="" horizontalCenter="0" verticalCenter="21" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:Label text="即将前往：" includeIn="switch" size="18" horizontalCenter="-50" verticalCenter="-19" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 	</e:Group>
-	<e:Button id="closeBtn" label="关闭" x.switch="361" y.switch="503" x.exit="361" y.exit="503" skinName="SkinBtn6" width="89" horizontalCenter="0" verticalCenter="61" icon="btn2_2" scaleX="0.6" scaleY="0.6" visible.revive="false"/>
+	<e:Button id="closeBtn" label="Đóng" x.switch="361" y.switch="503" x.exit="361" y.exit="503" skinName="SkinBtn6" width="89" horizontalCenter="0" verticalCenter="61" icon="btn2_2" scaleX="0.6" scaleY="0.6" visible.revive="false"/>
 </e:Skin>

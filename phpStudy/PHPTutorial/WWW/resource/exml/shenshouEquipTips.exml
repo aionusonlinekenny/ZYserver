@@ -48,10 +48,10 @@
 		<e:Label horizontalCenter="0.5" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-41" touchEnabled="false" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<ns1:PowerPanel id="powerPanel" y="130" left="18" skinName="Skin2PowerPanel"/>
 		<e:Label id="levelKey" text="Cấp độ：" size="18" fontFamily="Microsoft YaHei" left="112" top="91" textColor="0x6b9baa"/>
-		<e:Label id="career" text="御霄" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" left="172" top="106" visible="false"/>
-		<e:Button id="changeBtn" label="更   换" skinName="SkinBtn3" left="190" top="413" width="124"/>
-		<e:Button id="forgeBtn" label="强   化" skinName="SkinBtn3" left="191" top="476" height="57"/>
-		<e:Button id="takeoffBtn" label="卸   下" skinName="SkinBtn3" left="33" top="413" height="57"/>
+		<e:Label id="career" text="Ngự Tiêu" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" left="172" top="106" visible="false"/>
+		<e:Button id="changeBtn" label="Thay đổi" skinName="SkinBtn3" left="190" top="413" width="124"/>
+		<e:Button id="forgeBtn" label="Cường hóa" skinName="SkinBtn3" left="191" top="476" height="57"/>
+		<e:Button id="takeoffBtn" label="Tháo ra" skinName="SkinBtn3" left="33" top="413" height="57"/>
 		<e:Image id="changeRedPoint" source="zjmhongdian" left="299" top="411"/>
 		<e:Image id="forgeRedPoint" source="zjmhongdian" top="475" left="299"/>
 	</e:Group>

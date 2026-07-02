@@ -10,8 +10,8 @@
 		<e:Label id="labelName" text="Tên có 6 chữ" x="96" y="16" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
 		<e:Label id="labelGuild" text="Tên Tiên Minh bao nhiêu chữ" x="96" y="66" size="18" fontFamily="Microsoft YaHei" textColor="0xec6014" textAlign="left"/>
 		<e:Label id="labelLv" text="Chuyển sinh 12 cấp 100" x="96" y="43" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
-		<e:Button id="btnInfo" label="查看" skinName="SkinBtn3" x="19" y="154" scaleX="0.8" scaleY="0.8"/>
-		<e:Button id="btnRemove" label="移出队伍" skinName="SkinBtn3" x="169" y="154" scaleY="0.8" scaleX="0.8"/>
+		<e:Button id="btnInfo" label="Xem" skinName="SkinBtn3" x="19" y="154" scaleX="0.8" scaleY="0.8"/>
+		<e:Button id="btnRemove" label="Đưa ra khỏi đội" skinName="SkinBtn3" x="169" y="154" scaleY="0.8" scaleX="0.8"/>
 
 		<e:Image source="bantoutiaobg" height="36" scale9Grid="128,2,15,41" width="263" y="232" horizontalCenter="0"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="236" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>

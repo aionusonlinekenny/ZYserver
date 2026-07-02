@@ -7,8 +7,8 @@
 		<e:Image left="0" right="0" top="0" bottom="0" source="tongyong_dikuang2" scale9Grid="27,8,68,66"/>
 		<e:Image left="0" right="0" height="23" y="1" source="tongyong_juanzhou" scale9Grid="226,0,45,22"/>
 		<e:Image width="249" height="41" y="-15" horizontalCenter="0" source="tongyong_titlebg"/>
-		<e:Button id="btnBuy" label="确  定" horizontalCenter="90" skinName="SkinBtn6" y="255" icon="btn3"/>
-		<e:Button id="btnClose" label="取  消" horizontalCenter="-90" skinName="SkinBtn6" y="255" icon="btn3_1"/>
+		<e:Button id="btnBuy" label="Xác nhận" horizontalCenter="90" skinName="SkinBtn6" y="255" icon="btn3"/>
+		<e:Button id="btnClose" label="Hủy" horizontalCenter="-90" skinName="SkinBtn6" y="255" icon="btn3_1"/>
 		<e:Group horizontalCenter="0" y="109">
 			<e:Group y="0" horizontalCenter="0" x="0"  >
 				<e:Label text="当前PK值达到" y="0" size="20"   x="0"   fontFamily="Microsoft YaHei" textColor="0x001828"/>

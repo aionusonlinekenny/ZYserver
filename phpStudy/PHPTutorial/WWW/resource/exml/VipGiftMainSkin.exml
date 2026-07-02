@@ -3,7 +3,7 @@
 	<e:ViewStack id="viewStack" width="600" selectedIndex="0" horizontalCenter="0" top="0" anchorOffsetY="0" bottom="0">
 	</e:ViewStack>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="94.5" height="63" source="bantoumingkuang3_png" visible="false"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="275.5" width="80" height="80" top="39"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="275.5" width="80" height="80" top="39"/>
 	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="102.5">
 		<e:layout>
 		<e:HorizontalLayout gap="-8"/>

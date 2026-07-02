@@ -21,9 +21,9 @@
 	<e:Image id="title" top="10" horizontalCenter="-227.5" source="biaoti_juese_png"/>
 	<e:Group width="600" height="86" horizontalCenter="0" verticalCenter="315">
 		<e:Image id="bg" width="600" height="110" verticalCenter="-3" horizontalCenter="0" anchorOffsetY="0" scale9Grid="6,4,589,54" source="bantoumingkuang3_png"/>
-		<e:Label id="nameTxt" text="名字要六个字" size="20" y="16" x="145.26" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
-		<e:Label id="levelText" text="10转100级" size="20" x="145.26" y="43.92" fontFamily="Microsoft YaHei" textAlign="left" textColor="0x00ff00"/>
-		<e:Label id="guildNameText" text="仙盟名字很长" size="20" x="283.19" y="16" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xffff00"/>
+		<e:Label id="nameTxt" text="Tên phải có 6 chữ" size="20" y="16" x="145.26" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
+		<e:Label id="levelText" text="Chuyển sinh 10 cấp 100" size="20" x="145.26" y="43.92" fontFamily="Microsoft YaHei" textAlign="left" textColor="0x00ff00"/>
+		<e:Label id="guildNameText" text="Tên Tiên Minh rất dài" size="20" x="283.19" y="16" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xffff00"/>
 		<e:Image id="headIcon" source="head_10" width="88" height="88" verticalCenter="-5" horizontalCenter="-226"/>
 		<e:Image source="touxiangkuang0" width="92" height="95" verticalCenter="-4.5" horizontalCenter="-226"/>
 		<e:Image id="jueweiIcon" source="juewei_1_11_png" x="458" verticalCenter="-3" visible="false"/>
@@ -31,8 +31,8 @@
 			<ns1:LadderStarListView id="starInfo" skinName="SkinLadderSratList"/>
 		</e:Group>
 	</e:Group>
-	<e:Button id="friend" label="好友" skinName="SkinBtn3" horizontalCenter="-125" verticalCenter="242.5" visible="false"/>
-	<e:Button id="talk" label="私聊" skinName="SkinBtn3" horizontalCenter="125" verticalCenter="242.5" visible="false"/>
+	<e:Button id="friend" label="Bạn bè" skinName="SkinBtn3" horizontalCenter="-125" verticalCenter="242.5" visible="false"/>
+	<e:Button id="talk" label="Nhắn riêng" skinName="SkinBtn3" horizontalCenter="125" verticalCenter="242.5" visible="false"/>
 	<e:Button id="likeBtn" label="Button" skinName="SkinBtn0" icon="like_btn" horizontalCenter="0" verticalCenter="190" visible="false"/>
 
 </e:Skin>

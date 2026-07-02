@@ -8,7 +8,7 @@
 		<e:Image height="725" y="34" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="14,10,51,33" left="30" right="30"/>
 		<e:Image source="tongyong_juanzhou" horizontalCenter="0" width="580"/>
 		<e:Image source="tongyong_titlebg" width="313" y="-17" horizontalCenter="0"/>
-		<e:Label text="天书总览" size="24" y="-5" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+		<e:Label text="Tổng quan Thiên Thư" size="24" y="-5" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
 		<e:Scroller id="scroller" width="501" horizontalCenter="0" height="715" y="38">
 			<e:Group>
 			<e:List id="list" width="499" itemRendererSkinName="SkinMijiOverViewItem" horizontalCenter="0" top="0">

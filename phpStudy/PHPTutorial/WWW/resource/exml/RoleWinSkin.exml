@@ -23,7 +23,7 @@
 		<e:HorizontalLayout gap="-8" horizontalAlign="center"/>
 		</e:layout>
 	</e:TabBar>
-	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" scaleX="0.8" scaleY="0.8" top="8" horizontalCenter="-281"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" scaleX="0.8" scaleY="0.8" top="8" horizontalCenter="-281"/>
 	<e:Image id="biaoti"  top="10" horizontalCenter="-230" source="biaoti_juese_png"/>
 
 
@@ -39,7 +39,7 @@
 		<e:Image id="redPoint3" touchEnabled="false" bottom="139" horizontalCenter="153" source="zjmhongdian" x="141" y="-24" scaleX="1" scaleY="1"/>
 		<e:Image id="redPoint4" touchEnabled="false" bottom="139" horizontalCenter="264" source="zjmhongdian" x="252" y="-24" scaleX="1" scaleY="1"/>
 	</e:Group>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="273"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="273"/>
 
 
 </e:Skin>

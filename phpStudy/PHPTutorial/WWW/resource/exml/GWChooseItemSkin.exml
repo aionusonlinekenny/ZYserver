@@ -10,7 +10,7 @@
 
 	<e:Label id="attr" text="" y="34" size="18" width="150" x="106" verticalAlign="middle" height="72"  fontFamily="Microsoft YaHei" textColor="0x001828"/>
 	<e:Label id="skill" text="" y="12" size="20" x="103" verticalAlign="middle" bold="true" textColor="0xf8b141" width="220" height="20" textAlign="left"/>
-	<e:Button id="changeBtn" skinName="SkinBtn1" label="更 换" y="38" name="changeBtn" x="286" width="140"/>
+	<e:Button id="changeBtn" skinName="SkinBtn1" label="Thay đổi" y="38" name="changeBtn" x="286" width="140"/>
 	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" y="10" horizontalCenter="-171"/>
 	<e:Image id="best" y="0" touchEnabled="false" source="tuijian2" rotation="90" x="453" visible="false"/>
 

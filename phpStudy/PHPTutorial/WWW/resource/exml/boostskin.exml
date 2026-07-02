@@ -16,8 +16,8 @@
 			</e:layout>
 		</e:Group>
 		<e:Label id="getItemTxt" text="Nhận vật phẩm" size="20" textColor="0x00FF00"   horizontalCenter="170" bottom="10" height="60" verticalAlign="middle" width="100" textAlign="center" visible="false"/>
-		<e:Button id="upGradeBtn" label="强  化" horizontalCenter="0" skinName="SkinBtn6" width="213" icon="btn1_2" height="67" bottom="3"/>
-		<e:Button id="upGradeBtn0" label="一键强化" skinName="SkinBtn1" bottom="14" x="285" visible="false"/>
+		<e:Button id="upGradeBtn" label="Cường hóa" horizontalCenter="0" skinName="SkinBtn6" width="213" icon="btn1_2" height="67" bottom="3"/>
+		<e:Button id="upGradeBtn0" label="Cường hóa nhanh" skinName="SkinBtn1" bottom="14" x="285" visible="false"/>
 	</e:Group>
 
 

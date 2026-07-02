@@ -42,7 +42,7 @@
 		<e:Image y="214" width="280" source="teshuwenzibg" horizontalCenter="0"/>
 		<e:Label text="最后一击" y="222" size="24" horizontalCenter="0" bold="true" textColor="0xf8b141"/>
 		<e:Label id="weidao" text="Tên người chơi 6 chữ" y="264" size="22" horizontalCenter="0" bold="true" textColor="0x2cc2f8"/>
-		<e:Button id="closeBtn" label="离开（20）" horizontalCenter="0" bottom="0" skinName="SkinBtn1"/>
+		<e:Button id="closeBtn" label="Rời đi（20）" horizontalCenter="0" bottom="0" skinName="SkinBtn1"/>
 
 
 

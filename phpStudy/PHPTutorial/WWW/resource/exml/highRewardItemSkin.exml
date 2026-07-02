@@ -15,7 +15,7 @@
 		</e:layout>
 	</e:Group>
 	<e:Image id="lingqu" source="yilingqu" includeIn="done" left="10" verticalCenter="0" rotation="-35"/>
-	<e:Button id="get" label="可领取" includeIn="kelingqu" x="19" skinName="SkinBtn6" verticalCenter="16.5"/>
+	<e:Button id="get" label="Có thể nhận" includeIn="kelingqu" x="19" skinName="SkinBtn6" verticalCenter="16.5"/>
 	<e:List id="list" x="117" anchorOffsetY="0" scaleX="0.8" scaleY="0.8" itemRendererSkinName="SkinItem" anchorOffsetX="0" verticalCenter="-0.5">
 
 		<e:layout>

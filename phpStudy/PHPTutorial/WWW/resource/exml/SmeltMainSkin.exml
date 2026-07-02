@@ -11,7 +11,7 @@
 	<e:Label id="forevet" text="贵族特权:获得铜钱增加30%" textColor="0x20CB30" size="20" horizontalCenter="0" verticalCenter="135" visible="false"/>
 	
 	<e:Group id="btnGroup" horizontalCenter="0.5" bottom="5" width="176" height="69">
-		<e:Button id="smeltBtn" label="熔  炼" height="69" x="0" y="0" width="176" skinName="SkinBtn6" icon="btn2_2"/>
+		<e:Button id="smeltBtn" label="Nung Luyện" height="69" x="0" y="0" width="176" skinName="SkinBtn6" icon="btn2_2"/>
 	</e:Group>
 	<e:Button id="backbtn" label="Button" skinName="SkinBtn0" icon="fanhui" right="10" bottom="49" visible="false"/>
 

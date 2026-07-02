@@ -8,7 +8,7 @@
 			<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="209,2,59,19" top="0"/>
 			<e:Image width="251" scale9Grid="104,0,32,41" horizontalCenter="-0.5" height="42" top="-18" source="tongyong_titlebg"/>
 			<e:Image source="tongyong_dikuang1" scale9Grid="10,14,57,27" top="35" left="23" right="23" bottom="89" />
-			<e:Label text="积分兑换" horizontalCenter="0.5" size="24" fontFamily="Microsoft YaHei" top="-7" textColor="0x39566A"/>
+			<e:Label text="Đổi điểm" horizontalCenter="0.5" size="24" fontFamily="Microsoft YaHei" top="-7" textColor="0x39566A"/>
 			<e:Image source="bantoutiaobg" height="35" width="300" y="666" horizontalCenter="0.5" scale9Grid="182,2,31,30"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="672" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" horizontalCenter="0.5"/>
 		</e:Group>
@@ -43,6 +43,6 @@
 				</e:layout>
 			</e:Group>
 		</e:Group>
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="0" scaleX="0.9" scaleY="0.9" right="0" visible="false"/>
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="0" scaleX="0.9" scaleY="0.9" right="0" visible="false"/>
 	</e:Group>
 </e:Skin>

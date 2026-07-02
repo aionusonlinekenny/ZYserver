@@ -47,7 +47,7 @@
 		</e:Group>
 		<e:Group id="upInfo" bottom.open="0" height="105" horizontalCenter="0" width="600" width.narmal="600" verticalCenter.max="303" anchorOffsetY="0" verticalCenter.open="341" horizontalCenter.narmal="0" height.narmal="64" x="0" y.max="652" y.open="652"  bottom.narmal="0" height.stage="90" bottom.stage="0" bottom="4" visible.open="false">
 			<e:Label id="getItemTxt0" text="Nhận vật phẩm" size="20" textColor="0x00FF00" horizontalCenter.max="235" horizontalCenter.narmal="200" horizontalCenter.open="235" bottom="1" height="60" verticalAlign="middle" width="100" textAlign="center" visible.max="false" right.stage="23" anchorOffsetY.stage="0" bottom.stage="15" height.stage="20" bottom.narmal="15" height.narmal="20" fontFamily.stage="Microsoft YaHei" fontFamily.narmal="Microsoft YaHei" fontFamily="Microsoft YaHei"/>
-			<e:Button id="boostBtn" label="修 炼" width="160" height="60" horizontalCenter="0" bottom="0" label.stage="进 阶" visible.max="false" skinName="SkinBtn6" icon="btn1_2" horizontalCenter.narmal="0" bottom.narmal="-10" bottom.stage="-10" skinName.narmal="SkinBtn7" skinName.stage="SkinBtn7" width.stage="213" height.stage="67" width.narmal="213" height.narmal="67"/>
+			<e:Button id="boostBtn" label="Tu luyện" width="160" height="60" horizontalCenter="0" bottom="0" label.stage="Tiến giai" visible.max="false" skinName="SkinBtn6" icon="btn1_2" horizontalCenter.narmal="0" bottom.narmal="-10" bottom.stage="-10" skinName.narmal="SkinBtn7" skinName.stage="SkinBtn7" width.stage="213" height.stage="67" width.narmal="213" height.narmal="67"/>
 			<e:Group id="costGroup0" bottom="6" left="4" includeIn="narmal,stage">
 				<e:Label id="expendLabel0" text="Tiêu hao: " size="20" textColor="0xFFFFFF" x="0" y="12" fontFamily="Microsoft YaHei" bottom="0" height="40" verticalAlign="middle"/>
 				<e:Image id="icon0" source="200002_png" width="40" height="40" x="42" y="0" bottom="-8"/>
@@ -64,13 +64,13 @@
 			<e:Image touchEnabled="false" horizontalCenter="0" source="longhuntextbg" verticalCenter="-99"/>
 			<e:Label id="sysDescText0" text="无影心法可提升攻击效果" touchEnabled="false" horizontalCenter="0" size="24" bold.max="true" bold.stage="true" bold.narmal="true" text.open="无影心法可提升攻击效果" bold.open="true" textColor="0xfbff90" fontFamily="Microsoft YaHei" verticalAlign="middle" strokeColor="0x974711" stroke="1" verticalCenter="-99" textColor.open="0xf9ff57"/>
 			<e:Label id="sysDescText1" text="4转可学习" touchEnabled="false" horizontalCenter="0.5" size="24" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" strokeColor="0x0c1420" stroke="1" verticalCenter="-53" verticalCenter.open="-48" horizontalCenter.open="0"/>
-			<e:Button id="activeBtn0" label="学  习" horizontalCenter="0.5" height="67" width="213" bottom="50" x="10" skinName="SkinBtn6" icon="btn1_2" verticalCenter.open="51.5" horizontalCenter.open="0" skinName.open="SkinBtn7"/>
+			<e:Button id="activeBtn0" label="Học" horizontalCenter="0.5" height="67" width="213" bottom="50" x="10" skinName="SkinBtn6" icon="btn1_2" verticalCenter.open="51.5" horizontalCenter.open="0" skinName.open="SkinBtn7"/>
 			<e:Image id="redPoint1" source="zjmhongdian" horizontalCenter="81.5" touchEnabled="false" bottom="96" horizontalCenter.open="81.5" bottom.open="103"/>
 		</e:Group>
 		<e:Group width="500" height="60" id="starGroup" scaleX="0.8" scaleY="0.8" horizontalCenter="0" bottom="298" x="100" y="380" horizontalCenter.max="0" bottom.max="297" visible.open="false"/>
-		<e:Button id="leftBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan"  visible.open="false" left.stage="68" left.narmal="68" left.open="68" horizontalCenter="-208.5" verticalCenter="-118" x="58" y="127"/>
+		<e:Button id="leftBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan"  visible.open="false" left.stage="68" left.narmal="68" left.open="68" horizontalCenter="-208.5" verticalCenter="-118" x="58" y="127"/>
 		<e:Image id="redPoint2" source="zjmhongdian" visible.open="false" touchEnabled="false" horizontalCenter="-195.5" horizontalCenter.narmal="-195" verticalCenter.narmal="-145" verticalCenter="-145.5" x="95" y="118" />
-		<e:Button id="rightBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" scaleX="-1" scaleY="1" width="67" visible.open="false" horizontalCenter="211.5" verticalCenter="-119" x="550" y="126"/>
+		<e:Button id="rightBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan" scaleX="-1" scaleY="1" width="67" visible.open="false" horizontalCenter="211.5" verticalCenter="-119" x="550" y="126"/>
 		<e:Image id="redPoint3" source="zjmhongdian" visible.open="false" touchEnabled="false" horizontalCenter="195.5" verticalCenter="-145.5" x="486" y="118" />
 	</e:Group>
 

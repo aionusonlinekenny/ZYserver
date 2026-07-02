@@ -6,7 +6,7 @@
 		<e:Group id="defaultTitle" width="501" horizontalCenter="0" verticalCenter="0" includeIn="title" x="2" y="33"   height="45" height.title="45">
 			<e:Image source="zjmdingtiaobg" y="19" width="335" horizontalCenter="0.5" visible="false"/>
 			<e:Image   width="310" horizontalCenter="0" horizontalCenter.title="0" verticalCenter.title="0" y.title="12" source="huabian" top="15"/>
-			<e:Label id="name1" text="中级天书"   size="22" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" top="15"/>
+			<e:Label id="name1" text="Thiên Thư Trung Cấp"   size="22" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" top="15"/>
 		</e:Group>
 		<e:Group id="mjgroup" width="501" horizontalCenter="0" verticalCenter="0" includeIn="miji" x="2" y="37"   height.miji="116" height="118">
 			<ns1:MijiWithNameItemEx id="item0" x="6" y="0"  skinName="SkinMijiWithNameItem" height="118"/>

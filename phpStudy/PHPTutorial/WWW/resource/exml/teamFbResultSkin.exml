@@ -17,7 +17,7 @@
 			<e:Image horizontalCenter="0" source="huabian" y="-19"/>
 			<e:Label id="lostTxt" text="Tôi muốn mạnh hơn"  size="22" y="7" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
 			<e:Image id="openRole" scaleX="0.9" scaleY="0.9"  width="478" source=""  height="34" horizontalCenter="0" verticalCenter="205"/>
-			<e:Button id="openRole1" label="前往" y="450.62"  skinName="SkinBtn3" horizontalCenter="0" visible="false"/>
+			<e:Button id="openRole1" label="Đi đến" y="450.62"  skinName="SkinBtn3" horizontalCenter="0" visible="false"/>
 			<e:Scroller width="372" height="438" verticalCenter="22.5" horizontalCenter="0" anchorOffsetY="0">
 			<e:List id="list0" y="0" itemRendererSkinName="SkinDefeatItem"   horizontalCenter="0" anchorOffsetY="0" height="438">
 				<e:layout>
@@ -51,8 +51,8 @@
 			<e:Image id="title" y="0" horizontalCenter="28" source="labwin_png"/>
 		</e:Group>
 		<e:Group id="effGroup" touchChildren="false" touchEnabled="false" y="198" horizontalCenter="-12" x="230"  />
-		<e:Button id="closeBtn" label="退出(10s)" skinName="SkinBtn1" horizontalCenter="-154" y="812"/>
-		<e:Button id="challengeBtn" label="继续挑战" skinName="SkinBtn1" horizontalCenter="154" y="812"/>
+		<e:Button id="closeBtn" label="Thoát(10s)" skinName="SkinBtn1" horizontalCenter="-154" y="812"/>
+		<e:Button id="challengeBtn" label="Tiếp tục thách đấu" skinName="SkinBtn1" horizontalCenter="154" y="812"/>
 		<e:Label id="assResultTxt" text="等待队长操作（10s）" y="834" size="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 	</e:Group>
 </e:Skin>

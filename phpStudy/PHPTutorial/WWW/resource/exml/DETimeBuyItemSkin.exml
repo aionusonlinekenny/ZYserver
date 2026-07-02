@@ -24,7 +24,7 @@
 			</e:layout>
 		</e:List>
 	</e:Group>
-	<e:Button id="get" label="购 买" verticalCenter="-8" skinName="SkinBtn25" icon="friend_btnbg" height="50" width="91" horizontalCenter="209"/>
+	<e:Button id="get" label="Mua" verticalCenter="-8" skinName="SkinBtn25" icon="friend_btnbg" height="50" width="91" horizontalCenter="209"/>
 	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="15" verticalCenter="-29" visible="false"/>
 	<e:Image id="iconImg" source="szyuanbao" x="290" touchEnabled="false" y="62"/>
 	<e:Label id="priceLabel" size="20" textAlign="left" text="123123" x="332" touchEnabled="false" y="67" fontFamily="Microsoft YaHei" textColor="0xffffff"/>

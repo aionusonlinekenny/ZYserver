@@ -11,7 +11,7 @@
 	<e:Image id="titleImg" top="10" horizontalCenter="-223.5" source="newFuncNotice_png"/>
 	<e:Image id="activityImg" horizontalCenter="0" verticalCenter="-18.5" source=""/>
 
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="266"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="266"/>
 
 	<e:Group width="211" height="21" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-279.5">
 		<e:Label id="daojishi" text="开启倒计时" y="0" size="22" horizontalCenter="93" fontFamily="Microsoft YaHei" textColor="0xffffff" x="45" scaleX="1" scaleY="1"/>

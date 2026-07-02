@@ -44,7 +44,7 @@
 			</e:Group>
 			<e:Label id="skill" text="" y="118" size="20" width="378" x="123" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
-		<e:Button id="upGradeBtn0" label="激 活" width="176" height="69" horizontalCenter="5" y="704" icon="btn2_2" anchorOffsetX="0" anchorOffsetY="0" skinName="SkinBtn28"/>
+		<e:Button id="upGradeBtn0" label="Kích hoạt" width="176" height="69" horizontalCenter="5" y="704" icon="btn2_2" anchorOffsetX="0" anchorOffsetY="0" skinName="SkinBtn28"/>
 		<e:Image id="redPoint" source="zjmhongdian" y="703" x="357"/>
 		<e:Group id="descGroup" y="778" horizontalCenter="0">
 			<e:Image x="0" y="1" source="gantanhao1"/>

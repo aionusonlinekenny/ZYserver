@@ -14,7 +14,7 @@
 			<e:HorizontalLayout gap="-4" paddingLeft="0"/>
 		</e:layout>
 	</e:List>
-	<e:Button id="actBtn" label="领  取" x="301" y="15" skinName="SkinBtn15" visible.done="false" x.normal="301" y.normal="15"/>
+	<e:Button id="actBtn" label="Nhận" x="301" y="15" skinName="SkinBtn15" visible.done="false" x.normal="301" y.normal="15"/>
 	<e:Label id="scedule" text="10000/10000" includeIn="normal" size="16" right="12" verticalCenter="25" width="94" verticalAlign="middle" textAlign="center"/>
 	<e:Image includeIn="done" x="310" source="yilingqu" rotation="-25" verticalCenter="-1.5"/>
 	<e:Image id="redpoint" source="zjmhongdian" scaleX="0.8" scaleY="0.8" includeIn="normal" x="386" y="11"/>

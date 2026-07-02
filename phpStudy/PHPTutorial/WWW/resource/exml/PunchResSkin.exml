@@ -14,9 +14,9 @@
 		<e:Image left="2" right="3" source="tongyong_juanzhou" anchorOffsetY="0" width="469" height="21" y="29" rotation="0.14" anchorOffsetX="0"/>
 		<e:Image y="12" source="tongyong_titlebg" anchorOffsetX="0" width="281" x="103" height="41"/>
 		<e:Image anchorOffsetX="0" width="281" x="113" height="40" source="bantoutiaobg" top="532"/>
-		<e:Label text="分  解" y="26" size="22" fontFamily="Microsoft YaHei" x="218" textColor="0x084151"/>
+		<e:Label text="Phân giải" y="26" size="22" fontFamily="Microsoft YaHei" x="218" textColor="0x084151"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" y="540" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" horizontalCenter="0"/>
-		<e:Button skinName="SkinBtn6" label="分  解" id="smeltBtn" width="176" height="69" y="435" icon="btn2_2" horizontalCenter="2"/>
+		<e:Button skinName="SkinBtn6" label="Phân giải" id="smeltBtn" width="176" height="69" y="435" icon="btn2_2" horizontalCenter="2"/>
 
 
 

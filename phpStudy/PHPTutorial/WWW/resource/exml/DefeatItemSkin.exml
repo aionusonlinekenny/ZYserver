@@ -12,7 +12,7 @@
 		<e:Image id="icon" verticalCenter="0" x="20" y="3" scaleX="1" scaleY="1" width="66" height="65" source=""/>
 		<e:Label id="iconName" text="首充提升海量战力" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" horizontalCenter="15" verticalCenter="0.5"/>
 		<e:Label id="desc" text="可提升" size="18" width="150" textAlign="center" horizontalCenter="53" textColor="0xf8b141" verticalCenter="0" x="164" y="31" scaleX="1" scaleY="1" visible="false"/>
-		<e:Button id="openRole0" label="前往" width="96" x="271" skinName="SkinBtn6" verticalCenter="0" y="25" scaleX="1" scaleY="1" visible="false"/>
+		<e:Button id="openRole0" label="Đi đến" width="96" x="271" skinName="SkinBtn6" verticalCenter="0" y="25" scaleX="1" scaleY="1" visible="false"/>
 		<e:Image id="method" source="siwangydqh_png" verticalCenter="0" x="55" y="12" scaleX="1" scaleY="1" visible="false"/>
 		<e:Image id="up" source="tongyongup" verticalCenter="0" horizontalCenter="12.5" x="185" y="29" scaleX="1" scaleY="1" visible="false"/>
 		<e:Group right="15" verticalCenter="4.5" x="357" y="37" scaleX="1" scaleY="1">

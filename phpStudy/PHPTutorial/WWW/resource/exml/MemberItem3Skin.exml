@@ -28,8 +28,8 @@
 			<e:Label id="attr" text="99999999" x="91.84" y="89.5" size="16" textColor="0xF7B910" scaleX="1" scaleY="1" visible="false"/>
 
 			<e:Group x="8" y="15">
-				<e:Label id="nameLable" text="微笑宿命" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" horizontalCenter="-51" verticalCenter="0"/>
-				<e:Label id="job" text="【成员】" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="51"/>
+				<e:Label id="nameLable" text="Nụ Cười Định Mệnh" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" horizontalCenter="-51" verticalCenter="0"/>
+				<e:Label id="job" text="【Thành viên】" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="51"/>
 				<e:layout>
 					<e:HorizontalLayout/>
 				</e:layout>
@@ -37,8 +37,8 @@
 		</e:Group>
 	</e:Group>
 	<e:CheckBox id="checkBoxs" skinName="SkinCheckBox0" verticalCenter="1" x="457" y="56" scaleX="1" scaleY="1"/>
-	<e:Button id="btn1" label="按钮" x="326" skinName="SkinBtn0" icon="btn-" verticalCenter="0.5" width="40" height="40" y="54" scaleX="0.8" scaleY="0.8"/>
-	<e:Button id="btn2" label="按钮" x="406" skinName="SkinBtn0" icon="btnadd" verticalCenter="0" width="40" height="40" y="54" scaleX="0.8" scaleY="0.8"/>
+	<e:Button id="btn1" label="Nút bấm" x="326" skinName="SkinBtn0" icon="btn-" verticalCenter="0.5" width="40" height="40" y="54" scaleX="0.8" scaleY="0.8"/>
+	<e:Button id="btn2" label="Nút bấm" x="406" skinName="SkinBtn0" icon="btnadd" verticalCenter="0" width="40" height="40" y="54" scaleX="0.8" scaleY="0.8"/>
 	<e:Image id="inputBg" x="366" width="40" verticalCenter="0" source="shuzibg" scale9Grid="6,6,14,13" height="44" y="50" scaleX="0.8" scaleY="0.75"/>
 	<e:Label id="num1" text="1" x="367.5" width="28" height="29" textAlign="center" verticalCenter="0" y="58" scaleX="1" scaleY="1" anchorOffsetX="0"/>	
 </e:Skin>

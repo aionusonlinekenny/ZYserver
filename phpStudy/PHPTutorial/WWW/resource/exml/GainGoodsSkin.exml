@@ -18,13 +18,13 @@
 				<e:Label text="单价：" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-155" verticalCenter="2.5"/>
 				<e:Image y="180" scale9Grid="6,6,3,3" width="148" height="38" source="shuzibg" horizontalCenter="0"/>
 				<e:TextInput id="countTxt" textColor="0xffffff" text="1" maxChars="6" skinName="skins.SkinTextInput" height="37" horizontalCenter="0" width="68" verticalCenter="47"/>
-				<e:Button id="decBtn" label="按钮" skinName="SkinBtn0" icon="btn-" verticalCenter="48.5" horizontalCenter="-102"/>
-				<e:Button id="addBtn" label="按钮" skinName="SkinBtn0" icon="btnadd" right="80" verticalCenter="48.5"/>
+				<e:Button id="decBtn" label="Nút bấm" skinName="SkinBtn0" icon="btn-" verticalCenter="48.5" horizontalCenter="-102"/>
+				<e:Button id="addBtn" label="Nút bấm" skinName="SkinBtn0" icon="btnadd" right="80" verticalCenter="48.5"/>
 				<e:Button id="dec10Btn" label="-10" skinName="SkinBtn0" icon="btnmax2" rotation="180" verticalCenter="47.5" left="34" width="36"/>
 				<e:Button id="add10Btn" label="+10" skinName="SkinBtn0" icon="btnmax2" right="35" verticalCenter="48.5"/>
 				<ns1:PriceIcon id="totalPrice" skinName="SkinPriceIcon" verticalCenter="0.5" horizontalCenter="131.5"/>
-				<e:Button id="buyBtn" label="购 买" skinName="SkinBtn3" width="124" height="50" right="50" verticalCenter="113.5"/>
-				<e:Button id="topUpBtn" label="充 值" skinName="SkinBtn3" width="124" height="50" left="51" verticalCenter="113.5"/>
+				<e:Button id="buyBtn" label="Mua" skinName="SkinBtn3" width="124" height="50" right="50" verticalCenter="113.5"/>
+				<e:Button id="topUpBtn" label="Nạp" skinName="SkinBtn3" width="124" height="50" left="51" verticalCenter="113.5"/>
 			</e:Group>
 			<e:Group id="listGroup" touchEnabled="false" width="450"   horizontalCenter="0" verticalCenter="-17">
 				<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" horizontalCenter="0" verticalCenter="-111.5"/>
@@ -49,7 +49,7 @@
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" y="487" x="25">
 			<e:Image source="bantoutiaobg" height="35" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="-2"/>
-			<e:Button id="closeBtn" label="按钮" y="-17" skinName="SkinBtn0" right="-10" x="188"   visible="false"/>
+			<e:Button id="closeBtn" label="Nút bấm" y="-17" skinName="SkinBtn0" right="-10" x="188"   visible="false"/>
 		</e:Group>
 		<e:layout>
 			<e:VerticalLayout gap="5" horizontalAlign="center"/>

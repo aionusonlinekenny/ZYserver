@@ -27,10 +27,10 @@
 			<e:Label text="发放个数:" includeIn="send" x="65.67" size="20" width="103" height="23" verticalCenter="42" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Image includeIn="send" width="119" alpha="0.7" horizontalCenter="47" verticalCenter="-39" height="33" source="shuzibg2" scale9Grid="5,5,9,2"/>
 			<e:Image includeIn="send" width="119" alpha="0.7" verticalCenter="41" height="33" horizontalCenter="48" source="shuzibg2" scale9Grid="5,4,8,4"/>
-			<e:Button id="btn1" label="按钮" includeIn="send" x="182.5" skinName="SkinBtn0" icon="btn-" verticalCenter="-38.5"/>
-			<e:Button id="btn3" label="按钮" x="182.5" skinName="SkinBtn0" icon="btn-" includeIn="send" verticalCenter="41.5"/>
-			<e:Button id="btn2" label="按钮" includeIn="send" x="355" skinName="SkinBtn0" icon="btnadd" verticalCenter="-38.5"/>
-			<e:Button id="btn4" label="按钮" includeIn="send" x="355" skinName="SkinBtn0" icon="btnadd" verticalCenter="41.5"/>
+			<e:Button id="btn1" label="Nút bấm" includeIn="send" x="182.5" skinName="SkinBtn0" icon="btn-" verticalCenter="-38.5"/>
+			<e:Button id="btn3" label="Nút bấm" x="182.5" skinName="SkinBtn0" icon="btn-" includeIn="send" verticalCenter="41.5"/>
+			<e:Button id="btn2" label="Nút bấm" includeIn="send" x="355" skinName="SkinBtn0" icon="btnadd" verticalCenter="-38.5"/>
+			<e:Button id="btn4" label="Nút bấm" includeIn="send" x="355" skinName="SkinBtn0" icon="btnadd" verticalCenter="41.5"/>
 			<e:Button id="btn5" includeIn="send" icon="btnmax2" skinName="SkinBtn0" x="397" verticalCenter="-38.5"/>
 			<e:Button id="btn6" includeIn="send" icon="btnmax2" skinName="SkinBtn0" verticalCenter="41.5" x="397"/>
 			<e:Label x="226.86" restrict="0-9" width="118" height="29" visible.rob="false" textAlign="center" verticalCenter="-39" text="" anchorOffsetX="0" anchorOffsetY="0"/>

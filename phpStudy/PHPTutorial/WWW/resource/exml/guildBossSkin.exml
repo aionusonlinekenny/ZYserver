@@ -54,7 +54,7 @@
 		</e:Group>
 		<e:Group id="state" horizontalCenter="0" x="228" scaleX="1" scaleY="1" bottom="30">
 			<e:Image source="gantanhao" bottom="32" horizontalCenter="-57" x="-68" y="-24" scaleX="1" scaleY="1"/>
-			<e:Label text="周日休战" size="30" bottom="30" horizontalCenter="19" x="-41" y="-30" scaleX="1" scaleY="1" textColor="0xe40000" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Chủ nhật nghỉ chiến" size="30" bottom="30" horizontalCenter="19" x="-41" y="-30" scaleX="1" scaleY="1" textColor="0xe40000" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 			<e:HorizontalLayout verticalAlign="middle"/>
 			</e:layout>
@@ -62,7 +62,7 @@
 		<e:Image id="imgRight" horizontalCenter="248" verticalCenter="-41" source="jiantouxuan" scaleX="-1" x="582" y="405" scaleY="1" visible="false"/>
 		<e:Image id="imgleft" verticalCenter="-41" horizontalCenter="-248" source="jiantouxuan" x="19" y="405" scaleX="1" scaleY="1" visible="false"/>
 		<e:Image source="zjmfanhuikuang" horizontalCenter="255" bottom="3"/>
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="zjmfanhui" bottom="7" horizontalCenter="254.5" x="501.00000000000006" y="855.0000000000001" scaleX="1" scaleY="1"/>
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="zjmfanhui" bottom="7" horizontalCenter="254.5" x="501.00000000000006" y="855.0000000000001" scaleX="1" scaleY="1"/>
 	</e:Group>
 
 

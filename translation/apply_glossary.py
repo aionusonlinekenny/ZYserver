@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 """Áp dụng bảng thuật ngữ (glossary JSON: {chinese: vietnamese}) vào các file .exml,
-thay thế chính xác (exact match) trong thuộc tính text="..." / text.xxx="...".
+thay thế chính xác (exact match) trong thuộc tính text="..."/text.xxx="..." VÀ
+label=".../label.xxx="..." (nhãn nút <e:Button label="...">, khác với text=).
 
 Dùng lại cho mọi giai đoạn dịch tiếp theo:
     python3 translation/apply_glossary.py translation/glossary_ui_phase1.json
 """
 import re, glob, sys, json, os
 
-ATTR_PAT = re.compile(r'(text(?:\.\w+)?)="([^"]*)"')
+ATTR_PAT = re.compile(r'((?:text|label)(?:\.\w+)?)="([^"]*)"')
 EXML_DIR = os.path.join(os.path.dirname(__file__), "..", "phpStudy", "PHPTutorial", "WWW", "resource", "exml")
 
 

@@ -64,8 +64,8 @@
 
 
 		</e:Group>
-		<e:Button id="buy1" label="寻宝一次" icon="xb_25" skinName="SkinBtn1"  horizontalCenter="-115.5" bottom="5" scaleX="0.7" scaleY="0.7"/>
-		<e:Button id="buy10" label="寻宝十次" icon="xb_26" skinName="SkinBtn1"  horizontalCenter="114.5" bottom="5" x="10" y="10" scaleX="0.7" scaleY="0.7"/>
+		<e:Button id="buy1" label="Tìm kho báu 1 lần" icon="xb_25" skinName="SkinBtn1"  horizontalCenter="-115.5" bottom="5" scaleX="0.7" scaleY="0.7"/>
+		<e:Button id="buy10" label="Tìm kho báu 10 lần" icon="xb_26" skinName="SkinBtn1"  horizontalCenter="114.5" bottom="5" x="10" y="10" scaleX="0.7" scaleY="0.7"/>
 		<e:Group id="yb"  horizontalCenter="0" anchorOffsetY="0" height="33" verticalCenter="264">
 			<e:Group id="ybHunt10" horizontalCenter="115" bottom="63" x="-9" y="-18" scaleX="1" scaleY="1">
 				<e:Image source="szyuanbao"  scaleX="1" scaleY="1"/>

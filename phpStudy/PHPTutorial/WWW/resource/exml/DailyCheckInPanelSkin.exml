@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="SkinDailyCheckInPanel" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
         height="715" width="600">
-	<e:Button id="help" y="251" skinName="SkinBtn0" x="11" label="按钮"  visible="false"/>
+	<e:Button id="help" y="251" skinName="SkinBtn0" x="11" label="Nút bấm"  visible="false"/>
 	<e:Label id="checkInTitle" text="本月累计签到：" x="130.5" y="13.5" textColor="0xe4bb98" size="16" fontFamily="黑体"  visible="false"/>
 	<e:Label id="checkInLab" text="998天" x="135.5" y="13.5" textColor="0x3cdb02" size="16" fontFamily="黑体"
 	          width="53"  visible="false"/>
@@ -24,6 +24,6 @@
 		<e:Image left="0" right="0" top="0" bottom="0" source="tongyongtip2" scale9Grid="19,19,3,5" visible="false"/>
 		<e:Label id="dayReardText" text="已累计签到（8/10）天，  \n 再签到2天可领取奖励。" size="20" verticalCenter="-7" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="2" left="80"/>
 		<ns1:ItemBase id="rewardItem" x="10" scaleX="0.9" scaleY="0.9" skinName="SkinItem3" top="10"/>
-		<e:Button id="rewardBtn" label="领取奖励" verticalCenter="0" right="16" width="176" height="69" skinName="SkinBtn1"/>
+		<e:Button id="rewardBtn" label="Nhận thưởng" verticalCenter="0" right="16" width="176" height="69" skinName="SkinBtn1"/>
 	</e:Group>
 </e:Skin>

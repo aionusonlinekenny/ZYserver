@@ -21,7 +21,7 @@
 			</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Label size="22" text="我的下注" horizontalCenter="0" fontFamily="Microsoft YaHei" top="6" textColor="0x084151"/>
+		<e:Label size="22" text="Cược của tôi" horizontalCenter="0" fontFamily="Microsoft YaHei" top="6" textColor="0x084151"/>
 		<e:Label id="infoLabel" text="您已下注5场比赛 下注总额：600000筹码  损失：30000筹码" size="20" horizontalCenter="9" bottom="31" fontFamily="Microsoft YaHei" textColor="0x1b3046" anchorOffsetY="0" height="64" anchorOffsetX="0" width="398"/>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-31" x="75" y="646" scaleX="1" scaleY="1">
 		<e:Image height="40" horizontalCenter="0" scale9Grid="128,2,15,41" width="383" verticalCenter="0" source="bantoutiaobg"/>

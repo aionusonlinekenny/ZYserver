@@ -9,7 +9,7 @@
 			<e:Image right="0" left="0" source="tongyong_juanzhou" scale9Grid="204,5,63,18" y="16"/>
 			<e:Image y="0" source="tongyong_titlebg" horizontalCenter="0" scale9Grid="102,0,47,41" width="292"/>
 			<e:Image width="464" height="400" y="50" source="tongyong_dikuang1" scale9Grid="10,10,64,66" horizontalCenter="0" anchorOffsetY.done="0" horizontalCenter.done="0" height.done="339"/>
-			<e:Label id="Title" text="天魔矿工" size="22" text.plunder="天魔矿工(可掠夺)" x.plunder="-48" y.plunder="0" top="13" text.revenge="复 仇" text.done="开采完毕" horizontalCenter.done="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+			<e:Label id="Title" text="天魔矿工" size="22" text.plunder="天魔矿工(可掠夺)" x.plunder="-48" y.plunder="0" top="13" text.revenge="Báo thù" text.done="开采完毕" horizontalCenter.done="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
 			<e:Group includeIn="revenge,done" y="45" horizontalCenter="0" y.done="63" height.done="154" y.revenge="63" height.revenge="100" width="446">
 
 				<e:Image top="0" bottom="0" left="0" right="0" scale9Grid="7,6,12,13" includeIn="revenge,done" source="tongyonglabbg" scale9Grid.revenge="47,10,22,50" bottom.done="0"/>
@@ -106,8 +106,8 @@
 				<e:HorizontalLayout gap="0" horizontalAlign="left" verticalAlign="middle"/>
 			</e:layout>
 			</e:Group>
-			<e:Button id="handleBtn" label="掠夺玉矿" label.revenge="复 仇" label.done="领取奖励" skinName="SkinBtn1" horizontalCenter.revenge="0" horizontalCenter.plunder="0" width="176" height="69" y.plunder="365" y="103" y.done="410" x.done="54" y.revenge="370"/>
-			<e:Button id="double" label="双倍领取" width="176" height="69" skinName="SkinBtn1" includeIn="done" y="410" x="294"/>
+			<e:Button id="handleBtn" label="Cướp Mỏ Ngọc" label.revenge="Báo thù" label.done="Nhận thưởng" skinName="SkinBtn1" horizontalCenter.revenge="0" horizontalCenter.plunder="0" width="176" height="69" y.plunder="365" y="103" y.done="410" x.done="54" y.revenge="370"/>
+			<e:Button id="double" label="Nhận gấp đôi" width="176" height="69" skinName="SkinBtn1" includeIn="done" y="410" x="294"/>
 			<e:Group includeIn="done" y="482" x="339">
 				<e:Image source="szyuanbao" width="40" y="0"  x="0"/>
 				<e:Label id="cost" text="1980" size="20" x="42" y="4"  fontFamily="Microsoft YaHei" textColor="0xffff00"/>
@@ -117,7 +117,7 @@
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" y="332" x="-129" includeIn="plunder,revenge,done" width="399" visible.done="false">
 			<e:Image source="bantoutiaobg" height="36" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="5" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Button id="closeBtn1" label="按钮" y="-17" skinName="SkinBtn0" right="-10" x="188"   visible="false"/>
+			<e:Button id="closeBtn1" label="Nút bấm" y="-17" skinName="SkinBtn0" right="-10" x="188"   visible="false"/>
 		</e:Group>
 		<e:layout>
 			<e:VerticalLayout gap="10" horizontalAlign="center"/>

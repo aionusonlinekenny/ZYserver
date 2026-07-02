@@ -15,7 +15,7 @@
 	</e:ViewStack>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel"
 	             currentState="nohead"  width="600" height="948" horizontalCenter="1" top="0"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="274" top="46"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" scaleX="1" scaleY="1" horizontalCenter="274" top="46"/>
 	<e:Image  horizontalCenter="-227" top="10" source="guild_title1_png"/>
 
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="91" scale9Grid="227,19,149,27"/>

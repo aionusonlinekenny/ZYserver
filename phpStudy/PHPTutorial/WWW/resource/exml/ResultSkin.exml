@@ -17,8 +17,8 @@
 			</e:layout>
 		</e:List>
 		<e:Group y="773.33"   horizontalCenter="0" width="600">
-			<e:Button id="closeBtn" label="退出(10s)"  y="0" skinName="SkinBtn7" scaleX="1" scaleY="1" x="70"/>
-			<e:Button id="rewardBtn" label="双倍领取" skinName="SkinBtn7"  y="0" x="317"/>
+			<e:Button id="closeBtn" label="Thoát(10s)"  y="0" skinName="SkinBtn7" scaleX="1" scaleY="1" x="70"/>
+			<e:Button id="rewardBtn" label="Nhận gấp đôi" skinName="SkinBtn7"  y="0" x="317"/>
 		</e:Group>
 		<e:Group id="biankuang1" width="580" height="363.33" y="389" horizontalCenter="0" anchorOffsetY="0" visible="false">
 			<e:Image width="544" height="353" y="7.829999999999984" horizontalCenter="0" source="bantoutiaobg" scale9Grid="161,10,61,13" x="18" scaleX="1" scaleY="1"/>
@@ -60,7 +60,7 @@
 			<e:Image horizontalCenter="0" verticalCenter="-235.335" source="huabian"/>
 			<e:Label id="lostTxt" text="Tôi muốn mạnh hơn"  size="22" y="7" horizontalCenter="0" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
 			<e:Image id="openRole" scaleX="0.9" scaleY="0.9"  width="478.88888888888886" source=""  height="34.33" horizontalCenter="0" verticalCenter="178.24850000000004"/>
-			<e:Button id="openRole1" label="前往" x="272.05" y="450.62"  width="96" skinName="SkinBtn3" visible="false"/>
+			<e:Button id="openRole1" label="Đi đến" x="272.05" y="450.62"  width="96" skinName="SkinBtn3" visible="false"/>
 			<e:Scroller width="464" height="437" verticalCenter="29.164999999999992" horizontalCenter="0" anchorOffsetY="0" anchorOffsetX="0">
 				<e:List id="list0" y="0" height="392" width="326" itemRendererSkinName="SkinDefeatItem" horizontalCenter="0">
 				<e:layout>

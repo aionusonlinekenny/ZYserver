@@ -17,8 +17,8 @@
 		<e:Label id="cost" text="积分:9999999" textColor="0xd1c28f" size="20" horizontalCenter="100" bottom="82"/>
 		<e:Group id="bossGroup" width="200" height="200" horizontalCenter="-59" bottom="-18"/>
 		<e:Image source="words_kuangshuazhuangbei" horizontalCenter="81" bottom="173" visible.lieyan="false"/>
-		<e:Button id="boss" label="野外BOSS" skinName="SkinBtn1" horizontalCenter="-100" x="202" bottom="20"/>
-		<e:Button id="costbtn" label="积分兑换" skinName="SkinBtn1" horizontalCenter="100" x="212" bottom="20"/>
+		<e:Button id="boss" label="BOSS Ngoài Trời" skinName="SkinBtn1" horizontalCenter="-100" x="202" bottom="20"/>
+		<e:Button id="costbtn" label="Đổi điểm" skinName="SkinBtn1" horizontalCenter="100" x="212" bottom="20"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="169" bottom="60" visible="false"/>
 		<e:Group includeIn="lieyan" horizontalCenter="0" bottom="103">
 			<e:Image includeIn="lieyan" source="gantanhao"/>

@@ -2,6 +2,6 @@
 <e:Skin class="SkinRedBagRenderer" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="350" height="43" >		
 	<e:Image x="216.2" source="szyuanbao" verticalCenter="0.5"/>
 	<e:Label id="num" text="2000" size="24" verticalCenter="0.5" right="-128" textColor="0xffffff" textAlign="left" anchorOffsetX="0" width="212.67"/>
-	<e:Label id="nameLabel" text="玩家名称六字" size="24" width="205" verticalCenter="0" left="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+	<e:Label id="nameLabel" text="Tên người chơi 6 chữ" size="24" width="205" verticalCenter="0" left="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 	<e:Image y="38" scale9Grid="87,1,2,1" source="hongbaoline" horizontalCenter="0" visible="false"/>
 </e:Skin>

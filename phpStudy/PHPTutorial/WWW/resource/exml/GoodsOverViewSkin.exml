@@ -19,7 +19,7 @@
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-67">
 			<e:Image source="bantoutiaobg" height="30" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Button id="closeBtn0" label="按钮" y="-17" skinName="SkinBtn0" right="-10" x="188" visible="false"/>
+			<e:Button id="closeBtn0" label="Nút bấm" y="-17" skinName="SkinBtn0" right="-10" x="188" visible="false"/>
 		</e:Group>
 	</e:Group>
 	<e:Image id="temp" height="948" width="600" alpha="0.5" horizontalCenter="0" verticalCenter="0" source="jipingBg_bmp" locked="true" visible="false"/>

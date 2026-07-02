@@ -9,7 +9,7 @@
 		<e:Image id="titlebg" source="tongyong_juanzhou" width="591" horizontalCenter="-1" top="-15" scale9Grid="221,5,29,8"/>
 		<e:Image id="titlebg0" width="281" horizontalCenter="0" top="-32" x="10" y="10" source="tongyong_titlebg" scale9Grid="118,20,21,13"/>
 
-		<e:Label id="title" text="BOSS信息" size="22" y="-19.5"  textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="0" textColor="0x084151"/>
+		<e:Label id="title" text="Thông tin BOSS" size="22" y="-19.5"  textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="0" textColor="0x084151"/>
 
 		<e:Image id="star" y="219" scale9Grid="10,1,13,33"   x="283" source=""/>
 		<e:Group id="bossinfo" x="31.99" y="26.67" height="385" width="262">
@@ -28,7 +28,7 @@
 			<e:Image x="52.98" y="173" source="jindutiaotou"/>
 			<e:Image x="210.66" y="173" source="jindutiaotou" scaleX="-1"/>
 			<e:Image horizontalCenter="0" scaleX="1" source="tongyongbg9" scale9Grid="25,3,7,18" anchorOffsetY="0" height="26" y="149"/>
-			<e:Label id="bossname" text="名字啊啊啊" size="20" y="152.5" textAlign="center" verticalAlign="middle" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="bossname" text="Tên aaaa" size="20" y="152.5" textAlign="center" verticalAlign="middle" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 			<e:Image id="arrowright" x="170" y="287" source="anwen1" visible="false"/>
 			<e:Image id="arrowleft" x="75" y="287" scaleX="-1" source="anwen1" visible="false"/>
 			<e:Button id="rankBtn" label="" skinName="SkinBtn0" icon="gb_chakanpaihangicon_png" y="287.02" horizontalCenter="1"/>
@@ -37,7 +37,7 @@
 			<e:Image id="paihangbg" x="16" anchorOffsetY="0" height="239" y="0" source="guildpaihang_png"/>
 			<e:Image id="point0" x="52" y="14"   source="tongyongdian2" visible="false"/>
 			<e:Image id="point1" x="160" y="14"   source="tongyongdian2" visible="false"/>
-			<e:Label id="paihangtitle" text="前三仙盟" size="22" y="19.88" horizontalCenter="2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="paihangtitle" text="Top 3 Tiên Minh" size="22" y="19.88" horizontalCenter="2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 
 
 
@@ -63,7 +63,7 @@
 
 
 
-			<e:Label id="harmtitle" text="伤害阶段奖励" size="21" y="237.5" horizontalCenter="4" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label id="harmtitle" text="Thưởng theo giai đoạn sát thương" size="21" y="237.5" horizontalCenter="4" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 
 
 			<e:Image id="bosshpbg5" verticalCenter="160.75" source="jindutiao1" width="258" scale9Grid="80,5,28,14" x="0.67"/>
@@ -94,8 +94,8 @@
 		</e:Group>
 		<e:Group id="killreward" y="438.19" horizontalCenter="0.5" width="518" height="99">
 			<e:Image id="rewardbg"   left="0" top="0" bottom="0" right="0" source="longhuntextbg" scale9Grid="13,6,404,26"/>
-			<e:Label id="rewardtitle" text="击杀奖励" size="20" y="4" verticalAlign="middle" textAlign="center" textColor="0x7e6437" width="26" x="83" visible="false"/>
-			<e:Label id="rewardinfo" text="每周第一次击杀可重新领取" size="20" y="127" verticalAlign="middle" textAlign="center" horizontalCenter="0" textColor="0x444134" fontFamily="Microsoft YaHei" visible="false"/>
+			<e:Label id="rewardtitle" text="Thưởng tiêu diệt" size="20" y="4" verticalAlign="middle" textAlign="center" textColor="0x7e6437" width="26" x="83" visible="false"/>
+			<e:Label id="rewardinfo" text="Lần tiêu diệt đầu tiên mỗi tuần có thể nhận lại" size="20" y="127" verticalAlign="middle" textAlign="center" horizontalCenter="0" textColor="0x444134" fontFamily="Microsoft YaHei" visible="false"/>
 
 			<!--<e:Label id="count0" size="16" y="76" text="999" x="142" textColor="0xD1C28F"/>-->
 
@@ -111,12 +111,12 @@
 			<e:Image y="5" source="jishabiaoti" x="89"/>
 			<!--<e:Label id="count2" size="16" y="76" text="999" x="302" textColor="0xD1C28F"/>-->
 		</e:Group>
-		<e:Button id="chanllage" label="挑  战" skinName="SkinBtn1" width="156" height="60" y="550.32" horizontalCenter="0" scaleX="1.1" scaleY="1.1"/>
-		<e:Button id="chanllageOme" label="一键挑战" skinName="SkinBtn1" width="156" height="60" y="549.65" horizontalCenter="0" scaleX="1.1" scaleY="1.1"/>
+		<e:Button id="chanllage" label="Thách đấu" skinName="SkinBtn1" width="156" height="60" y="550.32" horizontalCenter="0" scaleX="1.1" scaleY="1.1"/>
+		<e:Button id="chanllageOme" label="Thách đấu nhanh" skinName="SkinBtn1" width="156" height="60" y="549.65" horizontalCenter="0" scaleX="1.1" scaleY="1.1"/>
 
-		<e:Label id="chanllagecount" text="今日次数：3/3" size="20" horizontalCenter="175" textColor="0x00842c" fontFamily="Microsoft YaHei" verticalCenter="256"/>
-		<e:Label id="cantchanllage" text="通关前一个BOSS可挑战" size="20" horizontalCenter="-5.5" y="563" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
-		<e:Label id="state" text="周日休战" size="20" horizontalCenter="0" y="592" fontFamily="Microsoft YaHei" textColor="0xe40000" visible="false"/>
+		<e:Label id="chanllagecount" text="Số lần hôm nay：3/3" size="20" horizontalCenter="175" textColor="0x00842c" fontFamily="Microsoft YaHei" verticalCenter="256"/>
+		<e:Label id="cantchanllage" text="Vượt qua BOSS trước mới có thể thách đấu" size="20" horizontalCenter="-5.5" y="563" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+		<e:Label id="state" text="Chủ nhật nghỉ chiến" size="20" horizontalCenter="0" y="592" fontFamily="Microsoft YaHei" textColor="0xe40000" visible="false"/>
 		<e:Image source="bantoutiaobg" height="35" width="383"   horizontalCenter="0" scale9Grid="26,6,110,27" bottom="-56"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20"   textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0" bottom="-47"/>
 

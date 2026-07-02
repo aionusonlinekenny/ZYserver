@@ -11,7 +11,7 @@
 		<e:Image id="tou0" source="tongyong_titlebg" left="162" right="161" top="5"/>
 		<e:Image source="bantoutiaobg" height="30" scale9Grid="128,2,15,41" width="300" touchEnabled="false" y="684" horizontalCenter="0"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" y="687" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" horizontalCenter="0"/>
-		<e:Label text="合 成" y="17" horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+		<e:Label text="Hợp thành" y="17" horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
 		<e:Group id="item" width="420" height="420" horizontalCenter="0" verticalCenter="-36.5">
 			<ns1:ChuanShiItem id="item0" skinName="SkinheirloomItem" y="2" left="-49"/>
 			<ns1:ChuanShiItem id="item1" y="2" skinName="SkinheirloomItem" right="-49"/>
@@ -34,7 +34,7 @@
 				<e:HorizontalLayout horizontalAlign="center" gap="0" verticalAlign="middle"/>
 			</e:layout>
 			</e:Group>
-			<e:Button id="jihuo0" label="合  成" width="175" horizontalCenter="0" height="68" verticalCenter="8" skinName="SkinBtn1"/>
+			<e:Button id="jihuo0" label="Hợp thành" width="175" horizontalCenter="0" height="68" verticalCenter="8" skinName="SkinBtn1"/>
 			<e:Group y="60" right="12">
 			<e:Label id="getItemTxt0" text="获取诛仙橙晶" size="20"  fontFamily="Microsoft YaHei" textColor="0x00ff06" right="0" bottom="0"/>
 			</e:Group>

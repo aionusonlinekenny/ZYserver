@@ -77,7 +77,7 @@
 		<e:Label id="money" text="12345" y="4" size="16" stroke="1" strokeColor="000000" textColor="0xe5d0a7" x="30"/>
 		<e:Image y="0" source="szjinbi" x="0"/>
 		<e:Image source="szexp" y="20" x="-3"/>
-		<e:Button id="praiseBtn" label="按钮" skinName="SkinBtn0" icon="phb_2" horizontalCenter="0" y="-64"/>
+		<e:Button id="praiseBtn" label="Nút bấm" skinName="SkinBtn0" icon="phb_2" horizontalCenter="0" y="-64"/>
 	</e:Group>
 	<e:Label id="state" text="暂时无人上榜" horizontalCenter="0" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-67" visible="false"/>
 	<e:Group id="firstGroup" height="60" width="304" horizontalCenter="-31" anchorOffsetX="0" verticalCenter="-110">
@@ -90,8 +90,8 @@
 		<e:Label id="firstLevelTxt" text="Cấp 100" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="155" textAlign="left" verticalAlign="middle"/>
 		<e:Image id="weiwang" rotation="0" source="prestige_title_8" verticalCenter="0" horizontalCenter="154.5"/>
 	</e:Group>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="47" scaleX="1" scaleY="1" horizontalCenter="276"/>
-	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-273" scaleX="0.9" scaleY="0.9" top="58"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="47" scaleX="1" scaleY="1" horizontalCenter="276"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-273" scaleX="0.9" scaleY="0.9" top="58"/>
 	<e:Image width="100" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="239.5" source="line" height="2" verticalCenter="287"/>
 	<e:Scroller scrollPolicyV="on" scrollPolicyH="off" anchorOffsetY="0" horizontalCenter="234" anchorOffsetX="0" width="136" height="392" verticalCenter="114">
 		<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab3" width="135" height="362" scaleX="1" scaleY="1" y="0" x="2" anchorOffsetX="0" anchorOffsetY="0">

@@ -34,7 +34,7 @@
 				</e:Group>
 			</e:Scroller>
 		</e:Group>
-		<e:Label text="分 解" y="17"   horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+		<e:Label text="Phân giải" y="17"   horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
 	</e:Group>
 
 	

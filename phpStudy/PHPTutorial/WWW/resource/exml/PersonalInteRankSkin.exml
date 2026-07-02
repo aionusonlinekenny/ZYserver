@@ -17,7 +17,7 @@
 		<e:Image scaleX="-1" source="tongyongbg5" width="502" height="713" scaleY="1" horizontalCenter="0" verticalCenter="11.5" anchorOffsetY="0" scale9Grid="13,9,1,1"/>
 		<e:Image source="tongyong_titlebg" width="281" scale9Grid="108,16,37,20" scaleX="1" scaleY="1" horizontalCenter="0" top="-7"/>
 
-		<e:Label id="lastName0" text="上届排行" size="22" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" horizontalCenter="0" top="7" textColor="0x084151"/>
+		<e:Label id="lastName0" text="Xếp hạng kỳ trước" size="22" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" horizontalCenter="0" top="7" textColor="0x084151"/>
 		<e:Group width="496" height="45" scaleX="1" scaleY="1" horizontalCenter="0" top="45">
 		<e:Image source="leibiefengetou" left="0" right="0" scale9Grid="2,0,5,48" top="0" bottom="0"/>
 		<e:Image source="shangjiepaiming_bg_png" alpha="1" scaleX="1" scaleY="1" anchorOffsetX="0" left="0" right="0" top="0" bottom="0" visible="false"/>

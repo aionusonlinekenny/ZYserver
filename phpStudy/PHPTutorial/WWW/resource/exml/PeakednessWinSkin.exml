@@ -33,8 +33,8 @@
 		</e:layout>
 	</e:Group>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" width="600" horizontalCenter="0" top="0"/>
-	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-277" scaleX="1" scaleY="1" top="4"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-277" scaleX="1" scaleY="1" top="4"/>
 	<e:Image horizontalCenter="-202.5" top="11" source="biaoti_dianfengsaiji"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
 	<e:Image source="dianfeng_png" alpha="0.7" visible="false"/>
 </e:Skin>

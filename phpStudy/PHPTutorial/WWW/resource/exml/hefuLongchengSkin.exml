@@ -44,7 +44,7 @@
 			</e:List>
 			<e:Label text="Sở hữu:Chưa bắt đầu" y="110" size="16" id="guild2" horizontalCenter="0" textColor="0x20cb30" bold="true" fontFamily="Microsoft YaHei" visible="false"/>
 		</e:Group>
-		<e:Button id="go" label="前往参加" skinName="SkinBtn1" horizontalCenter="0" bottom="0"/>
+		<e:Button id="go" label="Đi tham gia" skinName="SkinBtn1" horizontalCenter="0" bottom="0"/>
 
 
 

@@ -92,7 +92,7 @@
 		<e:Group id="fightGroup" horizontalCenter="-5" top="67" x="144" y="13" scaleX="1" scaleY="1">
 			<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel"/>
 		</e:Group>
-		<e:Button id="executeBtn0" label="龙元觉醒" skinName="SkinBtn0" icon="gongmingBtn_png" horizontalCenter="-106.5" bottom="10"/>
+		<e:Button id="executeBtn0" label="Long Nguyên Giác Tỉnh" skinName="SkinBtn0" icon="gongmingBtn_png" horizontalCenter="-106.5" bottom="10"/>
 		<e:Label id="getItemTxt0" text="Nhận vật phẩm" size="20" bottom="0" height="60" verticalAlign="middle" width="100" textAlign="center" horizontalCenter="215" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:Button id="xiangxishuxing" label="" horizontalCenter="147" top="67">
 			<e:Skin states="up,down,disabled">
@@ -100,7 +100,7 @@
 			<e:Label id="labelDisplay1" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
 		</e:Button>
-		<e:Button id="executeBtn" label="特殊觉醒" skinName="SkinBtn0" icon="gongmingBtn2_png" horizontalCenter="100" bottom="10"/>
+		<e:Button id="executeBtn" label="Giác Tỉnh Đặc Biệt" skinName="SkinBtn0" icon="gongmingBtn2_png" horizontalCenter="100" bottom="10"/>
 	</e:Group>
 
 

@@ -33,9 +33,9 @@
 		<e:Label id="collectTxt" text="5" x="316" y="10" size="20" fontFamily="黑体" textColor="0xB5B1A6" anchorOffsetX="0" width="33"/>
 		<e:List id="chatList" width="353" height="91" x="1" y="35" anchorOffsetY="0" anchorOffsetX="0" itemRendererSkinName="WJBattleMainUIChatItem1Skin">
 		</e:List>
-		<e:Button id="flag1" label="按钮" skinName="SkinBtn0" icon="wj_red_flag" x="30" y="130.5" scaleX="1" scaleY="1"/>
-		<e:Button id="flag2" label="按钮" skinName="SkinBtn0" icon="wj_green_flag" x="137.5" y="130.5" scaleX="1" scaleY="1"/>
-		<e:Button id="flag3" label="按钮" skinName="SkinBtn0" icon="wj_gray_flag" x="245.5" y="130.5" scaleX="1" scaleY="1"/>
+		<e:Button id="flag1" label="Nút bấm" skinName="SkinBtn0" icon="wj_red_flag" x="30" y="130.5" scaleX="1" scaleY="1"/>
+		<e:Button id="flag2" label="Nút bấm" skinName="SkinBtn0" icon="wj_green_flag" x="137.5" y="130.5" scaleX="1" scaleY="1"/>
+		<e:Button id="flag3" label="Nút bấm" skinName="SkinBtn0" icon="wj_gray_flag" x="245.5" y="130.5" scaleX="1" scaleY="1"/>
 		<e:Label text="占领旗子后，每隔一段时间增加积分" x="33" y="212" size="18" fontFamily="黑体" scaleX="1" scaleY="1" textColor="0xF6D788"/>
 		<e:Rect id="viewArea" width="345" height="29" x="4" y="5" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
 	</e:Group>

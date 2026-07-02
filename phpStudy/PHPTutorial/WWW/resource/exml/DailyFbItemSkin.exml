@@ -6,8 +6,8 @@
 	<ns1:PriceIcon id="price" visible.noChallenge="false" skinName="SkinPriceIcon" horizontalCenter="210" bottom="8"/>
 	<ns1:PriceIcon id="doublePrice" visible.noChallenge="false" skinName="SkinPriceIcon" horizontalCenter="14" bottom="8" visible="false"/>
 	<e:Label id="levelRequire" text="70级开放" size="22" verticalCenter="0.5" bold.canChallenge="true" size.noChallenge="24" text.noChallenge="开服15天并达到5转开启" fontFamily.noChallenge="Microsoft YaHei" textColor.noChallenge="0xffffff" visible.canChallenge="false" fontFamily="Microsoft YaHei" includeIn="noChallenge"  horizontalCenter="130"/>
-	<e:Button id="doubleChallengeBtn" label="双倍扫荡" horizontalCenter="-6" width="168" height="68" skinName="SkinBtn1" bottom="48" visible.canChallenge="false" visible.noChallenge="false" visible="false"/>
-	<e:Button id="challengeBtn" label="挑 战" visible.noChallenge="false" width="168" height="68" horizontalCenter="171.5" icon="btn2_2" bottom="48" skinName="SkinBtn1"/>
+	<e:Button id="doubleChallengeBtn" label="Càn quét gấp đôi" horizontalCenter="-6" width="168" height="68" skinName="SkinBtn1" bottom="48" visible.canChallenge="false" visible.noChallenge="false" visible="false"/>
+	<e:Button id="challengeBtn" label="Thách đấu" visible.noChallenge="false" width="168" height="68" horizontalCenter="171.5" icon="btn2_2" bottom="48" skinName="SkinBtn1"/>
 	<e:Image id="redPoint" x="524" y="42" includeIn="canChallenge" source="zjmhongdian" visible="false"/>
 	<e:Label id="count" size="20" text="今日挑战次数：4次" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" verticalAlign="top" x="373.68" y="11" visible.noChallenge="false"/>
 	<ns1:ItemBase id="item" x="50" y="54" skinName="SkinItem"/>

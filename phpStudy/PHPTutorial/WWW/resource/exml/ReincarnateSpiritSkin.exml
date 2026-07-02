@@ -55,8 +55,8 @@
 		</e:Group>
 		<e:Image source="bantoutiaobg" height="30" scale9Grid="128,2,15,41" width="300" touchEnabled="false" y="684" horizontalCenter="0"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" y="687" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" horizontalCenter="0"/>
-		<e:Label text="附 灵" y="15" horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0x39566A" width="566" textAlign="center" anchorOffsetY="0" height="29" verticalAlign="middle"/>
-		<e:Button id="upBtn" label="附 灵" width="173" height="68" skinName="SkinBtn1" horizontalCenter="0" bottom="57"/>
+		<e:Label text="Phụ Linh" y="15" horizontalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0x39566A" width="566" textAlign="center" anchorOffsetY="0" height="29" verticalAlign="middle"/>
+		<e:Button id="upBtn" label="Phụ Linh" width="173" height="68" skinName="SkinBtn1" horizontalCenter="0" bottom="57"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="78" bottom="109"/>
 	</e:Group>
 	<e:Image width="600" height="948" y="0" x="0" source="fulingbg_bmp" alpha="0.5" locked="true" visible="false"/>

@@ -42,7 +42,7 @@
 	<e:Image source="gantanhao4" width="16" height="22" horizontalCenter="-224" top="598"/>
 
 	<e:Group id="openInfo" horizontalCenter="0" width="578" anchorOffsetY="0" height="119" top="661">
-		<e:Button id="flowPlayer" label="匹配对手" y="40" horizontalCenter="0" icon="btn1_2" width="213" height="67" skinName="SkinBtn7"/>
+		<e:Button id="flowPlayer" label="Ghép đối thủ" y="40" horizontalCenter="0" icon="btn1_2" width="213" height="67" skinName="SkinBtn7"/>
 		<e:Label id="lastNum" text="" y="7" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textAlign="center" textColor="0x00842c"/>
 		<e:Label id="buyTime" text="购买匹配次数" size="20"   fontFamily="Microsoft YaHei" y="63" x="413" textColor="0x00842c"/>
 	</e:Group>

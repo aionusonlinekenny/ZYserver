@@ -12,15 +12,15 @@
 		<ns1:CheckRoleInfoPanel id="roleSelect" skinName="SkinRoleSelectPanel" y="3" x="0"/>
 		<e:Group width="560" height="86" horizontalCenter="0" y="748">
 			<e:Image width="580" height="130" y="-36" source="tongyong_dikuang4" horizontalCenter="0" scale9Grid="10,10,60,60"/>
-			<e:Label id="nameTxt" text="名字要六个字" size="20" y="16" x="112" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label id="levelText" text="10转100级" size="20" x="112" y="50" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
-			<e:Label id="guildNameText" text="仙盟名字很长" size="20" x="259" y="16" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:Label id="nameTxt" text="Tên phải có 6 chữ" size="20" y="16" x="112" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="levelText" text="Chuyển sinh 10 cấp 100" size="20" x="112" y="50" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
+			<e:Label id="guildNameText" text="Tên Tiên Minh rất dài" size="20" x="259" y="16" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:Image id="headIcon" source="head_10" x="24" width="72" height="72" verticalCenter="0"/>
 			<e:Image source="touxiangkuang0" x="20" scale9Grid="4,4,22,22" width="80" height="80" verticalCenter="0"/>
 			<e:Image id="jueweiIcon" bottom="0" source="juewei_1_11_png" x="446"/>
 		</e:Group>
 	</e:Group>
 	<e:Group id="backBtnGroup" width="100" height="100" horizontalCenter="250" bottom="0">
-		<e:Button id="closeBtn1" label="按钮" skinName="SkinBtn0" icon="zjmfanhui" x="10" y="10"/>
+		<e:Button id="closeBtn1" label="Nút bấm" skinName="SkinBtn0" icon="zjmfanhui" x="10" y="10"/>
 	</e:Group>
 </e:Skin>

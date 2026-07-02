@@ -12,13 +12,13 @@
 		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0.5" bottom="-47" width="400"/>
 		<e:Label horizontalCenter="0.5" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" textColor="0xffffff" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="268"/>
 		<e:Label text="获取修为" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" top="-8" textColor="0x39566a"/>
-		<e:Button label="按钮" id="closeBtn" right="4" top="-14" skinName="SkinBtn0" icon="tongyong_btnclose"/>
+		<e:Button label="Nút bấm" id="closeBtn" right="4" top="-14" skinName="SkinBtn0" icon="tongyong_btnclose"/>
 
 		<e:Group id="gr1" width="444" height="122" horizontalCenter="0" top="46">
 			<e:Image source="tongyonglabbg" scale9Grid="40,20,30,30" height="122" horizontalCenter="0" width="444" verticalCenter="0"/>
 			<e:Label id="infoTxt0" text="Tăng" size="22" width="200" height="80" verticalCenter="5" horizontalCenter="-24.5" fontFamily="Microsoft YaHei" textAlign="left" textColor="0x001828" anchorOffsetX="0"/>
 			<e:Label id="toDay0" text="Hôm nay còn có thể đổi" size="18" width="165" textAlign="center" right="8" textColor="0x001828" verticalCenter="-40" fontFamily="Microsoft YaHei"/>
-			<e:Button id="btn0" label="兑  换" verticalCenter="10.5" anchorOffsetX="0" skinName="SkinBtn3" horizontalCenter="142.5" width="130">
+			<e:Button id="btn0" label="Đổi" verticalCenter="10.5" anchorOffsetX="0" skinName="SkinBtn3" horizontalCenter="142.5" width="130">
 			</e:Button>
 			<ns1:ItemBase id="item0" skinName="SkinItem" verticalCenter="0" left="17"/>
 			<e:Image id="redPoint0" y="40" source="zjmhongdian" right="13"/>
@@ -27,7 +27,7 @@
 			<e:Image   source="tongyonglabbg" scale9Grid="40,20,30,30" width="444" height="122" verticalCenter="0" horizontalCenter="0"/>
 			<e:Label id="infoTxt1" text="Tăng" size="22" width="200" height="80" fontFamily="Microsoft YaHei" textColor="0x001828" verticalCenter="5" x="98"/>
 			<e:Label id="toDay1" text="今日还可使用" size="18" width="165" textAlign="center" right="8" verticalCenter="-40" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-			<e:Button id="btn1" label="购买并使用" verticalCenter="10" skinName="SkinBtn3" horizontalCenter="146" width="130"/>
+			<e:Button id="btn1" label="Mua và sử dụng" verticalCenter="10" skinName="SkinBtn3" horizontalCenter="146" width="130"/>
 			<ns1:ItemBase id="item1" skinName="SkinItem" verticalCenter="0" left="17"/>
 			<ns1:PriceIcon2 id="priceIcon1" y="73" skinName="SkinPriceIcon2" horizontalCenter="18"/>
 			<e:Image id="redPoint1" y="38" source="zjmhongdian" right="15"/>
@@ -37,7 +37,7 @@
 			<e:Image   source="tongyonglabbg" scale9Grid="40,20,30,30" horizontalCenter="0" width="444" height="122" verticalCenter="0"/>
 			<e:Label id="infoTxt2" text="Tăng" size="22" width="200" height="80" x="98" y="36" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
 			<e:Label id="toDay2" text="今日还可使用" size="18" width="165" textAlign="center" right="8" verticalCenter="-40" textColor="0x001828" fontFamily="Microsoft YaHei"/>
-			<e:Button id="btn2" label="购买并使用" verticalCenter="10"  skinName="SkinBtn3" horizontalCenter="146" width="130"/>
+			<e:Button id="btn2" label="Mua và sử dụng" verticalCenter="10"  skinName="SkinBtn3" horizontalCenter="146" width="130"/>
 			<ns1:ItemBase id="item2" skinName="SkinItem" verticalCenter="10" left="17"/>
 			<ns1:PriceIcon2 id="priceIcon2" y="73" skinName="SkinPriceIcon2" horizontalCenter="18"/>
 			<e:Image id="redPoint2" y="37" source="zjmhongdian" right="13"/>

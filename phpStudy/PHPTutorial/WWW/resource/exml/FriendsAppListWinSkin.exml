@@ -13,8 +13,8 @@
 					</e:layout>
 				</e:List>
 			</e:Scroller>
-			<e:Button id="btn_allYes" label="一键同意" skinName="SkinBtn1" visible="false"/>
-<e:Button id="btn_allNo" label="一键拒绝" skinName="SkinBtn1" visible="false"/>
+			<e:Button id="btn_allYes" label="Đồng ý tất cả" skinName="SkinBtn1" visible="false"/>
+<e:Button id="btn_allNo" label="Từ chối tất cả" skinName="SkinBtn1" visible="false"/>
 		</e:Group>
 		<e:Label text="GM sẽ không bao giờ hỏi tài khoản, mật khẩu của người chơi dưới bất kỳ hình thức nào, hoặc nhắn tin riêng thông báo trúng thưởng." size="18"   textColor="0xffff00" fontFamily="Microsoft YaHei" horizontalCenter="24.5" bottom="8"/>
 		<e:Image   source="gantanhao4" width="18" height="24" horizontalCenter="-251" bottom="6"/>

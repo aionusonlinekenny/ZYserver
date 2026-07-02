@@ -13,8 +13,8 @@
 		<e:Image id="job" touchEnabled="false" source="op_1" y="16" horizontalCenter="0" />
 
 
-		<e:Button id="leftBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" x="-70"  verticalCenter="0" scaleX="1" scaleY="1"/>
-		<e:Button id="rightBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" right="-70"  scaleX="-1" verticalCenter="0" scaleY="1"/>
+		<e:Button id="leftBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan" x="-70"  verticalCenter="0" scaleX="1" scaleY="1"/>
+		<e:Button id="rightBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan" right="-70"  scaleX="-1" verticalCenter="0" scaleY="1"/>
 
 		<e:Group id="attrGroup" verticalCenter="0" horizontalCenter="0">
 			<e:Label id="attr" text="999999\n999999\n999999\n999999\n999999\n999999" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="123"  x="103" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle"/>

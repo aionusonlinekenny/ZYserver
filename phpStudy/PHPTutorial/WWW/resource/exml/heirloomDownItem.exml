@@ -8,7 +8,7 @@
 	<e:Label id="tip" y="20" text="推荐分解" size="20" fontFamily="Microsoft YaHei" textColor="0x00842c" horizontalCenter="-10"/>
 	<e:Label y="47" text="分解获得：" size="20" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-93"/>
 	<e:Label id="desc" y="75" text="传世宝钻 x100" size="20" fontFamily="Microsoft YaHei" textColor="0xec6014" horizontalCenter="-77"/>
-	<e:Button id="breakDown" skinName="SkinBtn1" label="分  解" name="breakDown" width="173" horizontalCenter="151" height="67" y="30"/>
+	<e:Button id="breakDown" skinName="SkinBtn1" label="Phân giải" name="breakDown" width="173" horizontalCenter="151" height="67" y="30"/>
 	<e:Image source="heirloombg2_bmp" width="600" height="948" y="-274" horizontalCenter="-4" alpha="0.5" visible="false"/>
 	
 	

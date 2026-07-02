@@ -10,13 +10,13 @@
 		<e:Image height="371" width="420" verticalCenter="-12" horizontalCenter="0" anchorOffsetY="0" source="tongyong_dikuang1" scale9Grid="8,9,63,39"/>
 		<e:Image height="23.33" width="481" anchorOffsetY="0" horizontalCenter="0" source="tongyong_juanzhou" top="-59"/>
 		<e:Image height="37.33" width="234" source="tongyong_titlebg" anchorOffsetY="0" horizontalCenter="0" y="-71.33"/>
-		<e:Label text="购买" y="-60" size="24" fontFamily="Microsoft YaHei" textColor="0x39566a" horizontalCenter="0"/>
-		<e:Label text="总价" y="95" size="22" fontFamily="Microsoft YaHei" textColor="0x1b3046" horizontalCenter="0"/>
-		<e:Button id="buyBtn" skinName="SkinBtn1" label="购  买" horizontalCenter="0" width="173" height="65" bottom="17"/>
+		<e:Label text="Mua" y="-60" size="24" fontFamily="Microsoft YaHei" textColor="0x39566a" horizontalCenter="0"/>
+		<e:Label text="Tổng giá" y="95" size="22" fontFamily="Microsoft YaHei" textColor="0x1b3046" horizontalCenter="0"/>
+		<e:Button id="buyBtn" skinName="SkinBtn1" label="Mua" horizontalCenter="0" width="173" height="65" bottom="17"/>
 		<ns1:ItemIcon id="itemIcon" x="90" y="-2" skinName="SkinItemIcon"/>
-		<e:Label id="itemName" text="商品名称占位" y="5" size="20" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="19"/>
-		<e:Label id="itemName0" text="还可购买X次" y="213" size="20" fontFamily="Microsoft YaHei" textColor="0x1b3046" horizontalCenter="0"/>
-		<e:Label id="used" text="（获得宝贝）" y="40" size="20" fontFamily="Microsoft JhengHei" textColor="0xffff00" textAlign="center" horizontalCenter="19"/>
+		<e:Label id="itemName" text="Chỗ trống tên sản phẩm" y="5" size="20" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="19"/>
+		<e:Label id="itemName0" text="Còn có thể mua X lần" y="213" size="20" fontFamily="Microsoft YaHei" textColor="0x1b3046" horizontalCenter="0"/>
+		<e:Label id="used" text="（Nhận báu vật）" y="40" size="20" fontFamily="Microsoft JhengHei" textColor="0xffff00" textAlign="center" horizontalCenter="19"/>
 		<e:Label id="unitPrice" text="1000" y="96" size="20" x="126" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
 		<e:Image id="yuanbao0" x="81" y="89" source="szyuanbao" width="42" height="32"/>
 		<e:Image id="honor0" x="81" y="80" width="42" height="42" source="ZShonor"/>

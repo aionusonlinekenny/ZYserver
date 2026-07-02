@@ -31,8 +31,8 @@
 			<e:HorizontalLayout gap="95"/>
 		</e:layout>
 	</e:Group>
-	<e:Button label="按钮" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-75" width="30" height="30" alpha="0.6" top="10" visible="false"/>
+	<e:Button label="Nút bấm" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-75" width="30" height="30" alpha="0.6" top="10" visible="false"/>
 	<e:Image source="biaoti_duanzao" horizontalCenter="-155" top="6"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
-	<e:Button id="seeRule" label="按钮" icon="wenhao" skinName="SkinBtn0" horizontalCenter="-246" y="8" scaleX="0.9" scaleY="0.9"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
+	<e:Button id="seeRule" label="Nút bấm" icon="wenhao" skinName="SkinBtn0" horizontalCenter="-246" y="8" scaleX="0.9" scaleY="0.9"/>
 </e:Skin>

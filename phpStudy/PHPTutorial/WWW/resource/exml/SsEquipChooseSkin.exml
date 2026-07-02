@@ -8,7 +8,7 @@
 		<e:Image source="tongyong_juanzhou" horizontalCenter="0" width="525" height="23" top="-12"/>
 		<e:Image width="249" horizontalCenter="0" source="tongyong_titlebg" top="-28"/>
 		<e:Image width="461" horizontalCenter="0" x="10" source="tongyong_dikuang1" scale9Grid="10,10,64,66" top="23" height="397"/>
-		<e:Label text="更换装备"   size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-14"/>
+		<e:Label text="Thay trang bị"   size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-14"/>
 
 		<e:Scroller id="scroll" width="444" height="375" horizontalCenter="0" anchorOffsetY="0" top="34">
 			<e:List id="list" x="78" y="241" useVirtualLayout="false" itemRendererSkinName="SsEquipChooseItem" anchorOffsetY="0">

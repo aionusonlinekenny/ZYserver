@@ -11,7 +11,7 @@
 		</e:List>
 		<e:Label id="day" text="Ngày đầu tiên" x="34" y="7" size="24" bold="true" textColor="0xffd93f"/>
 		<e:Group id="buyGroup" verticalCenter="0" right="27">
-			<e:Button id="get" label="购买" skinName="SkinBtn15" x="0" y="0"/>
+			<e:Button id="get" label="Mua" skinName="SkinBtn15" x="0" y="0"/>
 			<e:Label id="daySchedule" text="累充0/3天" y="48" size="18" textColor="0xd1c28f" width="90" verticalAlign="middle" textAlign="center" x="7"/>
 			<e:layout>
 				<e:VerticalLayout verticalAlign="middle" horizontalAlign="center" gap="0"/>

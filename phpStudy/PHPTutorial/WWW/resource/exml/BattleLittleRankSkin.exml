@@ -4,7 +4,7 @@
 	<e:Group width="288" height="198" left="2" top="3">
 		<e:Image left="0" right="0" top="0" bottom="0" x="-35" y="-22" source="tongyong_dikuang4" scale9Grid="6,5,63,67"/>
 
-		<e:Label text="积分排名" x="11" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label text="Xếp hạng điểm" x="11" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Image id="rank0" x="8" y="38" source="paihang1" width="43" height="38"/>
 		<e:Label id="name0" text="布拉格の鑫爷" y="48" size="18" left="55" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
 		<e:Label id="num0" text="36 Trùng Thiên tầng 10" y="48" size="18" textColor="0xFFFF00" fontFamily="Microsoft YaHei" right="14" textAlign="left"/>
@@ -19,7 +19,7 @@
 		<e:Label id="num2" text="1 Trùng Thiên tầng 1" y="126" size="18" textColor="0x00FF00" right="14" fontFamily="Microsoft YaHei" textAlign="left"/>
 		<e:Image y="163" scale9Grid="128,20,4,4" width="288" height="36" source="bantoutiaobg" horizontalCenter="0"/>
 		<e:Label id="rank3" text="15" y="168" size="18" horizontalCenter="-115" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="name3" text="我的积分" y="168" size="18" x="55" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="name3" text="Điểm của tôi" y="168" size="18" x="55" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Label id="num3" text="1 Trùng Thiên tầng 1" y="168" size="18" right="14" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="left"/>
 		<e:Label id="jump" text="Xem xếp hạng" y="10" size="18" textAlign="center" verticalAlign="middle" anchorOffsetX="0" right="14" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 	</e:Group>

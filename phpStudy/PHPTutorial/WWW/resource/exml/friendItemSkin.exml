@@ -10,5 +10,5 @@
 	<e:Image id="imgBg0" x="21" height="70" width="70" verticalCenter="-1.5" source="guildkuangbg"/>
 	<e:Image id="imgHead" source="head_10" x="25" height="64" width="64" verticalCenter="0"/>
 	<e:Image id="imgBg" x="18" height="76" width="76" verticalCenter="0" source="friend_kuang"/>
-	<e:Button id="inviteBtn" skinName="SkinBtn1" label="发送邀请" name="changeBtn" x="308.02" width="140" verticalCenter="-0.5" scaleX="0.7" scaleY="0.7"/>
+	<e:Button id="inviteBtn" skinName="SkinBtn1" label="Gửi lời mời" name="changeBtn" x="308.02" width="140" verticalCenter="-0.5" scaleX="0.7" scaleY="0.7"/>
 </e:Skin>

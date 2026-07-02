@@ -12,7 +12,7 @@
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-35" width="400"/>
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-27" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center"/>
 		<e:Label text="获取劫力" size="24" horizontalCenter="0" textColor="0x39566a" fontFamily="Microsoft YaHei" top="-8" verticalAlign="middle" textAlign="center"/>
-		<e:Button skinName="SkinBtn0" label="按钮" id="closeBtn" right="4" top="-14" icon="tongyong_btnclose"/>
+		<e:Button skinName="SkinBtn0" label="Nút bấm" id="closeBtn" right="4" top="-14" icon="tongyong_btnclose"/>
 		<ns1:PriceIcon2 id="priceIcon0" x="325" y="50" skinName="SkinPriceIcon2" visible="false"/>
 		<e:Group id="gr1" width="444" height="122" horizontalCenter="0" top="46">
 			<e:Image source="tongyonglabbg" scale9Grid="40,20,30,30" left="0" right="0" top="0" bottom="0"/>
@@ -30,7 +30,7 @@
 				</e:layout>
 			</e:Group>
 
-			<e:Button id="btn0" label="兑  换" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
+			<e:Button id="btn0" label="Đổi" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
 			<ns1:ItemBase id="item0" skinName="SkinItem" verticalCenter="0" left="10"/>
 			<e:Image id="redPoint0" source="zjmhongdian" right="10" verticalCenter="-16.5"/>
 			<e:Label id="limit" text="等级大于110级可兑换" size="18" x="257" y="96" textColor="0x001828" fontFamily="Microsoft YaHei"/>
@@ -49,7 +49,7 @@
 				</e:layout>
 			</e:Group>
 
-			<e:Button id="btn1" label="购 买" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
+			<e:Button id="btn1" label="Mua" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
 			<ns1:ItemBase id="item1" skinName="SkinItem" verticalCenter="0" left="10"/>
 			<ns1:PriceIcon2 id="priceIcon1" x="190" skinName="SkinPriceIcon2" top="65"/>
 			<e:Image id="redPoint1" y="38" source="zjmhongdian" right="10"/>
@@ -69,7 +69,7 @@
 			</e:Group>
 			<e:Label id="name2" text="超级轮回丹" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
 
-			<e:Button id="btn2" label="购 买" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
+			<e:Button id="btn2" label="Mua" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
 			<ns1:ItemBase id="item2" skinName="SkinItem" verticalCenter="0" left="10"/>
 			<ns1:PriceIcon2 id="priceIcon2" x="190" skinName="SkinPriceIcon2" top="65"/>
 			<e:Image id="redPoint2" y="34" source="zjmhongdian" right="10"/>

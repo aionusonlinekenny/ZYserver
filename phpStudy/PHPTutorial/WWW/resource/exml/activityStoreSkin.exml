@@ -23,8 +23,8 @@
 
 
 
-	<e:Button id="integralStoreBtn" label="积分商店" width="130" height="50" bottom="16" horizontalCenter="-91" label.integralStore="活动商店" skinName="SkinBtn16"/>
-	<e:Button id="refreshShopBtn" label="刷   新" width="130" height="50" bottom="16" horizontalCenter="91" skinName="SkinBtn16"/>
+	<e:Button id="integralStoreBtn" label="Cửa hàng Điểm" width="130" height="50" bottom="16" horizontalCenter="-91" label.integralStore="Cửa hàng Sự kiện" skinName="SkinBtn16"/>
+	<e:Button id="refreshShopBtn" label="Làm mới" width="130" height="50" bottom="16" horizontalCenter="91" skinName="SkinBtn16"/>
 	<e:Image id="redPoint1" source="zjmhongdian" horizontalCenter="137" bottom="45" includeIn="activityStore"/>
 	<e:Image id="redPoint0" source="zjmhongdian" horizontalCenter="-48" bottom="49" includeIn="activityStore"/>
 

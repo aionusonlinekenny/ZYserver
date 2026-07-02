@@ -23,7 +23,7 @@
 		</e:Group>
 		<e:Label text="图鉴详情" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a" top="-3"/>
 		<e:Label text="Đã đạt cấp tối đa" visible.nomax="false" horizontalCenter="0" visible.noActive="false" y.max="520" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="-16"/>
-		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="fanhui" scaleX="1.2" scaleY="1.2" bottom="18" x="613" visible="false"/>
+		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="fanhui" scaleX="1.2" scaleY="1.2" bottom="18" x="613" visible="false"/>
 		<e:List id="list" height="210" width="495" itemRendererSkinName="SkinItem" visible.max="false" scaleX="0.9" scaleY="0.9" horizontalCenter="-5" y="520" visible="false">
 		<e:layout>
 			<e:TileLayout requestedColumnCount="5" horizontalGap="13" verticalGap="10"/>
@@ -52,6 +52,6 @@
 			</e:layout>
 		</e:Group>
 		<e:Label id="specialAttr" text="" size="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xac00dd" bold="true" verticalCenter="58"/>
-		<e:Button id="btnUp" label="升  星" icon="btn2_2" width="178" height="69" horizontalCenter="0" visible.max="false" label.noActive="激  活" skinName="SkinBtn28" bottom="-36"/>
+		<e:Button id="btnUp" label="Nâng sao" icon="btn2_2" width="178" height="69" horizontalCenter="0" visible.max="false" label.noActive="Kích hoạt" skinName="SkinBtn28" bottom="-36"/>
 	</e:Group>
 </e:Skin>

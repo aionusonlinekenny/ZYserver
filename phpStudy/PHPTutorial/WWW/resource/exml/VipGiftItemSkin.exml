@@ -16,7 +16,7 @@
 			<e:TileLayout requestedRowCount="2" requestedColumnCount="2" horizontalGap="30"/>
 			</e:layout>
 		</e:List>
-		<e:Button id="getBtn" label="100元宝" horizontalCenter="2" bottom="47" skinName="SkinBtn6" icon="btn1_2"/>
+		<e:Button id="getBtn" label="100 Nguyên Bảo" horizontalCenter="2" bottom="47" skinName="SkinBtn6" icon="btn1_2"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="73" bottom="68" visible="false"/>
 	</e:Group>
 	<e:Image horizontalCenter="1" width="600" source="viplibao_bmp" height="948" y="-107.01" alpha="0.5" anchorOffsetY="0" locked="true" visible="false"/>

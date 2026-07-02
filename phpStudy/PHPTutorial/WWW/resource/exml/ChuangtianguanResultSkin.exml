@@ -80,8 +80,8 @@
 			</e:Group>
 		</e:Group>
 		<e:Group horizontalCenter="0" width="600" anchorOffsetY="0" height="62.34" y="785.33" touchEnabled="false">
-			<e:Button id="rewardBtn" label="双倍领取" icon="btn2_2" scaleY="1" scaleX="1" skinName="SkinBtn7" y="-2" x="317" touchEnabled="true"/>
-			<e:Button id="closeBtn" label="退出(10s)" skinName="SkinBtn7" y="-2" x="70" touchEnabled="true"/>
+			<e:Button id="rewardBtn" label="Nhận gấp đôi" icon="btn2_2" scaleY="1" scaleX="1" skinName="SkinBtn7" y="-2" x="317" touchEnabled="true"/>
+			<e:Button id="closeBtn" label="Thoát(10s)" skinName="SkinBtn7" y="-2" x="70" touchEnabled="true"/>
 		</e:Group>
 
 	</e:Group>

@@ -5,7 +5,7 @@
 		<e:Image width="594" scaleX="1" scaleY="1" horizontalCenter="0.5" source="tongyong_juanzhou" scale9Grid="220,0,50,17" verticalCenter="-365.965"/>
 		<e:Image horizontalCenter="0" x="233" scaleX="1" scaleY="1" top="-7" source="tongyong_titlebg" width="281" scale9Grid="114,23,18,13"/>
 		<e:Image scaleX="1" scaleY="1" source="tongyongbg5" scale9Grid="13,9,1,1" horizontalCenter="0" anchorOffsetX="0" width="538" anchorOffsetY="0" height="713" verticalCenter="11.5"/>
-		<e:Label text="个人排名" size="22" textAlign="center" verticalAlign="middle" horizontalCenter="0.5" x="249" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" top="7" textColor="0x084151"/>
+		<e:Label text="Xếp hạng cá nhân" size="22" textAlign="center" verticalAlign="middle" horizontalCenter="0.5" x="249" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" top="7" textColor="0x084151"/>
 		<e:Group width="511" height="507.34" horizontalCenter="1" anchorOffsetY="0" anchorOffsetX="0" top="40">
 
 		<e:Image width="357" horizontalCenter="0" top="-14" source="huabian" scale9Grid="106,40,17,5"/>
@@ -22,7 +22,7 @@
 		<e:Group height="191.99" horizontalCenter="1" bottom="42" anchorOffsetX="0" width="511" anchorOffsetY="0">
 
 		<e:Image width="312" horizontalCenter="-4.5" top="-8" x="76" y="-541.01" scaleX="1" scaleY="1" source="huabian" scale9Grid="112,41,5,5"/>
-			<e:Label text="积分排名奖励" size="22" textAlign="center" horizontalCenter="0" x="193" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" top="13" textColor="0x001828"/>
+			<e:Label text="Thưởng theo xếp hạng điểm" size="22" textAlign="center" horizontalCenter="0" x="193" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" top="13" textColor="0x001828"/>
 		<e:Scroller id="RewardScroller" width="505" horizontalCenter="0" height="140" x="9" scaleX="1" scaleY="1" anchorOffsetY="0" anchorOffsetX="0" verticalCenter="24.004999999999995">
 			<e:List id="list" x="-4" y="0" itemRendererSkinName="SkinPersonRewardRenderer" anchorOffsetX="0" width="509">
 			<e:layout>

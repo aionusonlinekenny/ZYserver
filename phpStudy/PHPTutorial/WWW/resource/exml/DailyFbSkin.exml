@@ -48,7 +48,7 @@
 		<e:Image id="redPoint4" touchEnabled="false" bottom="139" horizontalCenter="264" source="zjmhongdian" x="252" y="-24"/>
 	</e:Group>
 	<e:Image id="biaoti" y="8"  horizontalCenter="-227" source="biaoti_fuben_png"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="chatclose" y="52" 
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="52" 
 	          horizontalCenter="275" />
-	<e:Button id="help" label="按钮" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-264" y="5" scaleX="0.9" scaleY="0.9" visible="false"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-264" y="5" scaleX="0.9" scaleY="0.9" visible="false"/>
 </e:Skin>

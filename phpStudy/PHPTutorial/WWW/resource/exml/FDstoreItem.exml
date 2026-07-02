@@ -4,7 +4,7 @@
 	<e:Image left="0" right="0" top="0" bottom="0" source="scitembg" scale9Grid="54,26,4,1"/>
 	<e:Image height="24" y="83" source="bantoutiaobg2" scale9Grid="44,4,2,8" width="112" horizontalCenter="0"/>
 	<ns1:ItemBase id="itemIcon" verticalCenter="-35" horizontalCenter="4" skinName="SkinItem"/>
-	<e:Button id="buyBtn" label="购 买" name="buy" x="41" y="135" skinName="SkinBtn15" height="40" width="102"/>
+	<e:Button id="buyBtn" label="Mua" name="buy" x="41" y="135" skinName="SkinBtn15" height="40" width="102"/>
 	<e:Group id="discount" x="15" y="1">
 		<e:Image y="0" source="activityStoreDiscountIcon" horizontalCenter="0" anchorOffsetY="0" height="100"/>
 		<e:Label id="limitCount" text="5" x="11" y="43" textColor="0x00ff00" size="20"/>

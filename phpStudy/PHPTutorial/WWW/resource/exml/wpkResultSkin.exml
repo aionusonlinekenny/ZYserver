@@ -46,7 +46,7 @@
 			<e:Image y="230" width="280" horizontalCenter="0" source="huawen"/>
 
 			<e:Label id="weidao" text="Tên người chơi 6 chữ" y="281" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Button id="closeBtn" label="离开（20）" horizontalCenter="0" bottom="11" skinName="SkinBtn1"/>
+			<e:Button id="closeBtn" label="Rời đi（20）" horizontalCenter="0" bottom="11" skinName="SkinBtn1"/>
 			<e:Image y="76" source="shuchupaim_png" horizontalCenter="0"/>
 			<e:Image y="230" source="zuihouyiji_png" horizontalCenter="0"/>
 		</e:Group>

@@ -36,7 +36,7 @@
 			<e:Label id="questDes2" text="火龙之心" y="56" size="18" width="83" textAlign="center" textColor="0x35E62D" verticalAlign="middle" x="216"/>
 			<e:Label id="questNumber" text="25" y="56" size="18" width="40" textAlign="center" x="96" textColor="0x35e62d" verticalAlign="middle"/>
 			</e:Group>
-			<e:Button id="btn2" label="继续任务" skinName="SkinBtn1" horizontalCenter="0" bottom="10"/>
+			<e:Button id="btn2" label="Tiếp tục nhiệm vụ" skinName="SkinBtn1" horizontalCenter="0" bottom="10"/>
 			<e:Image id="skillName" scaleX="0.6" scaleY="0.6" x="25" y="70" source="80001_png" visible="false"/>
 			<e:Group x="20" y="360">
 			<e:Image id="desP0" source="tongyongdian2" x="0" y="7"/>
@@ -106,7 +106,7 @@
 			<e:Group id="button" horizontalCenter="0.5" verticalCenter="267.5">
 			<e:Image id="btn1" source="btn2_2"/>
 			<e:Image id="btnbar" source="btn2" visible="false"/>
-			<e:Label text="挑  战" size="28" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x7e2a00"/>
+			<e:Label text="Thách đấu" size="28" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x7e2a00"/>
 			</e:Group>
 		</e:Group>
 		<e:Group id="taskTip" horizontalCenter="0.5" bottom="40" height="32" width="320" x="86" y="486" visible="false">

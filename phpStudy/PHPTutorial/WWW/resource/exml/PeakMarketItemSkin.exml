@@ -4,7 +4,7 @@
 	<e:Image left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30" source="tongyonglabbg"/>
 
 	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" left="17" top="14"/>
-	<e:Button id="buyBtn" label="购 买" name="buy" right="25"  top="37" skinName="SkinBtn29"/>
+	<e:Button id="buyBtn" label="Mua" name="buy" right="25"  top="37" skinName="SkinBtn29"/>
 	<e:Image id="textBG" x="110" y="44" source="tongyongline2" visible="false"/>
 
 	<e:Label id="money" text="123456" size="22" fontFamily="Microsoft YaHei" left="147" top="63" textColor="0x00842c"/>

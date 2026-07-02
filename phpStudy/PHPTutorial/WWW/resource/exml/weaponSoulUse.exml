@@ -63,7 +63,7 @@
 			</e:Group>
 		<ns1:ItemBase id="material" skinName="SkinItem" y="42" x="300"/>
 		</e:Group>
-		<e:Button id="btntupo" label="使  用" horizontalCenter="0" width="176" height="69" y="428" icon="btn2_2" skinName="SkinBtn6"/>
+		<e:Button id="btntupo" label="Sử dụng" horizontalCenter="0" width="176" height="69" y="428" icon="btn2_2" skinName="SkinBtn6"/>
 		<e:Group id="headGroup" width="394" anchorOffsetY="0" height="149" y="44" x="48">
 			<e:Image id="selectrole3" x="280" source="zijiantou" y="-10"/>
 			<e:Image id="selectrole2" source="zijiantou" y="-10" x="175"/>

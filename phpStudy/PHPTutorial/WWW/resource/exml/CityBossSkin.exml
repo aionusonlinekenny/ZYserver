@@ -13,7 +13,7 @@
 			</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Button id="challengeBtn" label="挑战" skinName="SkinBtn1" horizontalCenter="-58" top="726" height="69"/>
+		<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn1" horizontalCenter="-58" top="726" height="69"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="17.5" top="727"/>
 		<e:Image horizontalCenter="-65" width="284" top="22" source="huabian" height="48" scale9Grid="0,0,214,50"/>
 		<e:Label id="nameTxt" text="BOSS名字70级" horizontalCenter="-65" size="22" top="44" fontFamily="Microsoft YaHei"/>

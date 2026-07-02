@@ -15,7 +15,7 @@
 				         alpha.up="0" visible.disabled="false" x.down="19"  source="guild_title2a_png" right.down="0.6699999999999875" verticalCenter.down="90" x="25" y="180"/>
 				<e:Image visible.disabled="false" y.down="108" x.down="37"  x="37" y="108" source="guildrukou_bg_png"/>
 				<e:Image visible.disabled="false" y.down="119" x.down="67"  x="67" y="119" source="guildgongnengicon_png"/>
-	<e:Label text="活动大厅" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="22" visible.disabled="false" x="73" y="182"/>
+	<e:Label text="Đại sảnh sự kiện" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="22" visible.disabled="false" x="73" y="182"/>
 			</e:Skin>
 		</e:Button>
 		<e:Button id="cityBtn" height="311" verticalCenter="-141.5" horizontalCenter="-95">
@@ -23,7 +23,7 @@
 			<e:Image scaleX="1" scaleY="1" includeIn="up,down,disabled" alpha.up="0" visible.disabled="false" x.down="169" y.down="150.83" source="guild_title3a_png" x="169" y="151"/>
 			<e:Image visible.disabled="false" y.down="70" x.down="157" x="157" y="70" source="guildrukou_bg_png"/>
 			<e:Image visible.disabled="false" y.down="77" x.down="186" x="186" y="77" source="guildwaricon_png"/>
-			<e:Label text="仙宫争霸" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="24" visible.disabled="false" x="193" y="144"/>
+			<e:Label text="Tranh Bá Tiên Cung" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="24" visible.disabled="false" x="193" y="144"/>
 			</e:Skin>
 		</e:Button>
 
@@ -35,7 +35,7 @@
 				<e:Image visible.disabled="false" y.down="5" x.down="-48"  x="-48" y="5" source="guildrukou_bg_png"/>
 
 				<e:Image visible.disabled="false" y.down="20" x.down="-20"  x="-20" y="20" source="guilddatingicon_png"/>
-	<e:Label text="仙盟大殿" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="24.67" visible.disabled="false" x="-13" y="78"/>
+	<e:Label text="Đại Điện Tiên Minh" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="24.67" visible.disabled="false" x="-13" y="78"/>
 			</e:Skin>
 		</e:Button>
 		<e:Button id="shopBtn" horizontalCenter="92.5" height="308" bottom="106">
@@ -43,7 +43,7 @@
 			<e:Image scaleX="1" scaleY="1" includeIn="up,down,disabled" alpha.up="0" visible.disabled="false" x.down="7.5" y.down="166" source="guild_title6a_png" horizontalCenter.disabled="-86" horizontalCenter.up="-86" x="7.5" y="166"/>
 			<e:Image x="183.33" y="140.67" visible.disabled="false" y.down="140.67" x.down="183.33" source="guildrukou_bg_png"/>
 			<e:Image x="211.97" y="155.05" visible.disabled="false" y.down="155.05" x.down="211.97" source="guildbossicon_png"/>
-			<e:Label text="仙盟镇妖" x="219.33" y="212.65" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="22" visible.disabled="false" x.up="219.33" y.up="212.65"/>
+			<e:Label text="Tiên Minh Trấn Yêu" x="219.33" y="212.65" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="22" visible.disabled="false" x.up="219.33" y.up="212.65"/>
 			<e:Label text="BOSS" x="315.31" y="125" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="59.34" scaleX="1" scaleY="1" rotation="89.92" visible.disabled="false" visible="false"/>
 			</e:Skin>
 		</e:Button>
@@ -75,8 +75,8 @@
 			</e:layout>
 		</e:List>
 	</e:Scroller>
-	<e:Label text="本日贡献排行" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-182" bottom="88"/>
+	<e:Label text="Xếp hạng cống hiến hôm nay" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-182" bottom="88"/>
 	<e:Image source="zjmfanhuikuang" horizontalCenter="254" bottom="8"/>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="zjmfanhui" scaleX="1" scaleY="1" horizontalCenter="253.5" bottom="12"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="zjmfanhui" scaleX="1" scaleY="1" horizontalCenter="253.5" bottom="12"/>
 
 </e:Skin>

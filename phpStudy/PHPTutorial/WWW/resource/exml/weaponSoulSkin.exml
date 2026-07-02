@@ -74,7 +74,7 @@
 				<e:Label id="skillname0" text="Tên kỹ năng" size="22" horizontalCenter="0" y="77" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			</e:Group>
 		</e:Group>
-		<e:Button id="active" label="激  活" horizontalCenter="0" skinName="SkinBtn28" icon="btn1_2" width="213" height="67" bottom="5"/>
+		<e:Button id="active" label="Kích hoạt" horizontalCenter="0" skinName="SkinBtn28" icon="btn1_2" width="213" height="67" bottom="5"/>
 		<e:Button id="backBtn" label="Button" skinName="SkinBtn0" icon="icon_wsuse_png" horizontalCenter="244.5" top="57"/>
 		<e:Image id="redPoint1" source="zjmhongdian" height="19" y="51" horizontalCenter="262.5"/>
 		<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="77.5" bottom="51"/>

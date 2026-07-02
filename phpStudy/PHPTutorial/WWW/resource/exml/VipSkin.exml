@@ -18,14 +18,14 @@
 			<e:Image source="viphuizhang" y="0" anchorOffsetX="0"  horizontalCenter="0"/>
 		</e:Group>
 		<e:Label id="titleLabel" text="" size="20" fontFamily="Microsoft YaHei" y="102" textColor="0xffffff" horizontalCenter="-41.5" textAlign="center"/>
-		<e:Button id="topUpBtn" label="立即充值" width="158" height="48" y="67" x="408" skinName="SkinBtn0" icon="czbtn3" scaleX="0.7" scaleY="0.7"/>
+		<e:Button id="topUpBtn" label="Nạp ngay" width="158" height="48" y="67" x="408" skinName="SkinBtn0" icon="czbtn3" scaleX="0.7" scaleY="0.7"/>
 	</e:Group>
 
 	<e:Image id="vipImg0" horizontalCenter="-189" width="174" height="41" anchorOffsetY="0" source="viptequanbg" anchorOffsetX="0" verticalCenter="-223.5"/>
 	<e:Label id="titleText" text="VIP 1 特权" size="26" lineSpacing="10" horizontalCenter="-200" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-223"/>
 	<e:Image id="vipImg" horizontalCenter="1" width="576" height="168" anchorOffsetY="0" verticalCenter="-120" source="vipbn3_png"/>
-	<e:Button id="leftBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" scaleX="1.1" scaleY="1.1" width="60" height="50" horizontalCenter="-240" verticalCenter="84.5"/>
-	<e:Button id="rightBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan" scaleX="-1.1" scaleY="1.1" width="60" height="50" horizontalCenter="238.5" bottom="362" verticalCenter="84.5"/>
+	<e:Button id="leftBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan" scaleX="1.1" scaleY="1.1" width="60" height="50" horizontalCenter="-240" verticalCenter="84.5"/>
+	<e:Button id="rightBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan" scaleX="-1.1" scaleY="1.1" width="60" height="50" horizontalCenter="238.5" bottom="362" verticalCenter="84.5"/>
 	<e:Label id="more" text="" x="47" y="105" size="20"  fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 	<e:Group horizontalCenter="0" anchorOffsetX="0" width="360" anchorOffsetY="0" height="238" verticalCenter="87">
 		<e:Label id="show" x="22" y="85" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff" height="22" verticalAlign="middle" anchorOffsetX="0" width="358"/>
@@ -57,8 +57,8 @@
 			</e:layout>
 		</e:List>
 		</e:Scroller>
-		<e:Button id="suerBtn0" label="领取" width="205" height="58" y="46.34" skinName="SkinBtn0" icon="czbtn2" right="11"/>
+		<e:Button id="suerBtn0" label="Nhận" width="205" height="58" y="46.34" skinName="SkinBtn0" icon="czbtn2" right="11"/>
 	</e:Group>
-	<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="zjmfanhui" horizontalCenter="255" bottom="7" visible="false"/>
-	<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" icon="chatclose"  width="80" height="80" horizontalCenter="274" top="40"/>
+	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="zjmfanhui" horizontalCenter="255" bottom="7" visible="false"/>
+	<e:Button id="closeBtn0" label="Nút bấm" skinName="SkinBtn0" icon="chatclose"  width="80" height="80" horizontalCenter="274" top="40"/>
 </e:Skin>

@@ -10,7 +10,7 @@
 		<e:Label id="description0" text="" size="18" width="320" textAlign="left" x="15" top="143" bottom="76.66000000000003" fontFamily="Microsoft YaHei" textColor="0x6b9baa" anchorOffsetY="0" verticalAlign="middle"/>
 		<e:Image scale9Grid="85,1,6,1" width="304" y="140" horizontalCenter="0" source="tongyongline"/>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="32.03" y="52"/>
-		<e:Label id="nameLabel" text="中级幸运" size="24" x="20" y="20" textColor="0xff9900" fontFamily="Microsoft YaHei"/>
+		<e:Label id="nameLabel" text="May Mắn Trung Cấp" size="24" x="20" y="20" textColor="0xff9900" fontFamily="Microsoft YaHei"/>
 		<e:Label text="Số lượng：" size="20" x="120" y="90" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="num" text="" size="20" x="180" y="90" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label text="Cấp độ：" size="20" x="120" y="66" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>

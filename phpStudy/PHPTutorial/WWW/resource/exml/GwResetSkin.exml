@@ -18,7 +18,7 @@
 
 
 
-		<e:Button id="resetBtn" label="重  置" bottom="23" horizontalCenter="0" width="120" height="50" skinName="SkinBtn3"/>
+		<e:Button id="resetBtn" label="Đặt lại" bottom="23" horizontalCenter="0" width="120" height="50" skinName="SkinBtn3"/>
 
 		<e:Label id="title" text="技能点重置" y="-1" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Image source="bantoutiaobg" height="36" scale9Grid="128,2,15,41" width="389" y="341" horizontalCenter="0" x="50" scaleX="1" scaleY="1"/>

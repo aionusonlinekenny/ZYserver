@@ -21,7 +21,7 @@
 
 				<e:Image left="0" right="0" top="0" bottom="0" source="kaifuhuodongitembg4_png" scale9Grid="29,20,33,7"/>
 				<e:Label id="already0" text="Đã nhận" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
-				<e:Button id="get0" label="立即领取" width="50" verticalCenter="0" height="30" skinName="SkinBtn5" x="425"/>
+				<e:Button id="get0" label="Nhận ngay" width="50" verticalCenter="0" height="30" skinName="SkinBtn5" x="425"/>
 				<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" verticalCenter="-17.5" right="25" visible="false"/>
 
 				<e:List id="reward0" y="11"  itemRendererSkinName="SkinItem2" horizontalCenter="0">
@@ -43,7 +43,7 @@
 			<e:Group y="272" width="538" height="118" x="21">
 				<e:Image left="0" right="0" top="0" bottom="0" source="kaifuhuodongitembg4_png" scale9Grid="29,20,33,7"/>
 				<e:Label id="already1" text="Đã nhận" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
-				<e:Button id="get1" label="立即领取" width="50" verticalCenter="0" height="30" x="425" skinName="SkinBtn5"/>
+				<e:Button id="get1" label="Nhận ngay" width="50" verticalCenter="0" height="30" x="425" skinName="SkinBtn5"/>
 				<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" verticalCenter="-17.5" right="25" visible="false"/>
 				<e:List id="reward1" y="11"  itemRendererSkinName="SkinItem2" horizontalCenter="0">
 				<e:layout>
@@ -55,7 +55,7 @@
 			<e:Group y="282" width="538" height="118" x="31">
 				<e:Image left="0" right="0" top="0" bottom="0" source="kaifuhuodongitembg4_png" scale9Grid="29,20,33,7"/>
 				<e:Label id="already2" text="Đã nhận" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
-				<e:Button id="get2" label="立即领取" width="50" verticalCenter="0" height="30" x="425" skinName="SkinBtn5"/>
+				<e:Button id="get2" label="Nhận ngay" width="50" verticalCenter="0" height="30" x="425" skinName="SkinBtn5"/>
 				<e:Image id="redPoint2" touchEnabled="false" source="zjmhongdian" verticalCenter="-17.5" right="25" visible="false"/>
 				<e:List id="reward2" y="11"  itemRendererSkinName="SkinItem2" horizontalCenter="0">
 				<e:layout>

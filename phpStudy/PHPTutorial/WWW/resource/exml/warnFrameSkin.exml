@@ -7,15 +7,15 @@
 		<e:Image left="109" right="108" source="tongyong_titlebg" y="-15" anchorOffsetX="0" width="249"/>
 		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="206" width="419" scale9Grid="22,20,25,25"/>
 		<e:Label id="title" size="22" text="Thông báo"     horizontalCenter="0" y="-3.35" bold="false" textColor="0x084151" fontFamily="Microsoft YaHei"/>
-		<e:Button id="sureBtn" label="确认" horizontalCenter.sure="0" horizontalCenter.normal="90" horizontalCenter.check="90" horizontalCenter="90" icon="btn3" skinName="SkinBtn6" bottom="42">
+		<e:Button id="sureBtn" label="Xác nhận" horizontalCenter.sure="0" horizontalCenter.normal="90" horizontalCenter.check="90" horizontalCenter="90" icon="btn3" skinName="SkinBtn6" bottom="42">
 		</e:Button>
-		<e:Button id="notBtn" label="取消" visible.sure="false"  horizontalCenter.normal="-90" horizontalCenter.check="-90" horizontalCenter="-90" icon="btn3_1" skinName="SkinBtn6" bottom="42"/>
+		<e:Button id="notBtn" label="Hủy" visible.sure="false"  horizontalCenter.normal="-90" horizontalCenter.check="-90" horizontalCenter="-90" icon="btn3_1" skinName="SkinBtn6" bottom="42"/>
 		<e:Button id="closebtn" width="54" height="54" x="437" skinName="SkinBtn0" icon="tongyong_btnclose" y="-14">
 		</e:Button>
 		<e:Label id="warnLabel" text="当前不是最高品质，是否确认采集？" size="22" textAlign="center" verticalAlign="middle" verticalCenter="-34" horizontalCenter="0" width="332" height="160" textColor="0x213847" fontFamily="Microsoft YaHei"/>
 		<e:Group id="leftGroup" verticalCenter="150" x="97" visible="false">
 			<e:Image id="icon1" width="20" height="20" x="0" y="0" source="zjmyuanbao"/>
-			<e:Label id="label1" text="单元宝" x="30" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="label1" text="Nguyên Bảo đơn" x="30" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:layout>
 				<e:HorizontalLayout/>
 			</e:layout>
@@ -27,6 +27,6 @@
 				<e:HorizontalLayout horizontalAlign="center"/>
 			</e:layout>
 		</e:Group>
-		<e:CheckBox id="cbx" skinName="SkinCheckBox0" height="83" width="166" verticalCenter="45.5" visible.normal="false" visible.sure="false" label="本次登陆不再提示" horizontalCenter="-12" verticalCenter.check="45.5" enabled="true"/>
+		<e:CheckBox id="cbx" skinName="SkinCheckBox0" height="83" width="166" verticalCenter="45.5" visible.normal="false" visible.sure="false" label="Lần đăng nhập này không nhắc lại" horizontalCenter="-12" verticalCenter.check="45.5" enabled="true"/>
 	</e:Group>	
 </e:Skin>

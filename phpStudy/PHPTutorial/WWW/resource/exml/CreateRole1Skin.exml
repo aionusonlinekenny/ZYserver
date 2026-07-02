@@ -40,7 +40,7 @@
 			</e:List>
 		</e:Scroller>
 
-		<e:Label id="timeLab" text="剩余15秒" size="22" horizontalCenter="185" textColor="0xff750f" fontFamily="Microsoft YaHei" x="439" verticalCenter="306"/>
+		<e:Label id="timeLab" text="Còn lại 15 giây" size="22" horizontalCenter="185" textColor="0xff750f" fontFamily="Microsoft YaHei" x="439" verticalCenter="306"/>
 
 
 
@@ -80,17 +80,17 @@
 		<e:Group width="274" height="45" horizontalCenter="0" x="162" verticalCenter="218.5">
 
 			<e:Image scaleX="-1" width="255" height="48.67" horizontalCenter="0.5" verticalCenter="2" anchorOffsetY="0" anchorOffsetX="0" source="zjmgonggaobg" scale9Grid="12,6,381,28"/>
-			<e:EditableText id="nameInput" height="30" width="244" text="输入玩家名称" x="15" y="8" size="25" fontFamily="Microsoft YaHei" textAlign="center"/>
-			<e:Button id="diceBtn" label="按钮" skinName="SkinBtn0" icon="createrole_any_png" height="64" right="19" verticalCenter="2.5"/>
+			<e:EditableText id="nameInput" height="30" width="244" text="Nhập tên người chơi" x="15" y="8" size="25" fontFamily="Microsoft YaHei" textAlign="center"/>
+			<e:Button id="diceBtn" label="Nút bấm" skinName="SkinBtn0" icon="createrole_any_png" height="64" right="19" verticalCenter="2.5"/>
 		</e:Group>
 		<e:Group width="300" height="100" horizontalCenter="0" x="151.00000000000003" verticalCenter="306">
-			<e:Button id="createBtn" label="按钮" y="17" skinName="SkinBtn0" icon="createrole_btn_png" height="60" horizontalCenter="0"/>
+			<e:Button id="createBtn" label="Nút bấm" y="17" skinName="SkinBtn0" icon="createrole_btn_png" height="60" horizontalCenter="0"/>
 			<e:Image id="imgA" y="16" horizontalCenter="-115" source="" visible="false"/>
 		</e:Group>
 		<e:Group id="enterGroup" left="0" right="0" top="0" bottom="0" visible="false">
 			<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
 			<e:Rect height="30" left="0" right="0" strokeColor="0x030306" fillAlpha="0.6" verticalCenter="0"/>
-			<e:Label id="loadText" text="正在进入游戏（50%）" size="20" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei"/>
+			<e:Label id="loadText" text="Đang vào game（50%）" size="20" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group id="dontCreateRole" anchorOffsetY="0" left="0" top="0" bottom="0" right="0" visible="false">
 			<e:Rect left="0" strokeColor="0x000000" right="0" top="0" bottom="0" alpha="0.8"/>
@@ -99,10 +99,10 @@
 			<e:Image source="tongyong_titlebg" anchorOffsetX="0" width="267" horizontalCenter="0.5" verticalCenter="-166"/>
 			<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="260" width="435" scale9Grid="22,20,25,25" horizontalCenter="0" verticalCenter="0"/>
 			<e:Label id="title0" size="22" text="Thông báo" bold="false" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="-162"/>
-			<e:Label id="warnLabel0" text="区服火爆，已关闭角色注册" size="22" textAlign="center" verticalAlign="middle" width="332" height="160" textColor="0x213847" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0"/>
+			<e:Label id="warnLabel0" text="Server quá tải, đã đóng đăng ký nhân vật" size="22" textAlign="center" verticalAlign="middle" width="332" height="160" textColor="0x213847" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0"/>
 			<e:Group id="leftGroup0" verticalCenter="150" x="97" visible="false">
 			<e:Image id="icon0" width="20" height="20" x="0" y="0" source="zjmyuanbao"/>
-			<e:Label id="label0" text="单元宝" x="30" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
+			<e:Label id="label0" text="Nguyên Bảo đơn" x="30" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
 			<e:layout>
 				<e:HorizontalLayout/>
 			</e:layout>

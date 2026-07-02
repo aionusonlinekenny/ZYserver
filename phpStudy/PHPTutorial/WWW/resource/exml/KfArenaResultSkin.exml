@@ -2,7 +2,7 @@
 <e:Skin class="KfArenaResultSkin" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
 	<e:Group horizontalCenter="0" top="39">
-		<e:Button id="sureBtn" label="确  定" width="120" height="50" skinName="SkinBtn1" y="619" x="215"/>
+		<e:Button id="sureBtn" label="Xác nhận" width="120" height="50" skinName="SkinBtn1" y="619" x="215"/>
 		<e:Scroller x="0" y="127">
 			<e:List id="list" y="-1" itemRendererSkinName="KfArenaResultItemSkin">
 			<e:ArrayCollection>
