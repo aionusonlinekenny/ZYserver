@@ -12,8 +12,8 @@
 	</e:Group>
 	<e:Group id="skillGroup" width="600" anchorOffsetY="0" bottom="0" horizontalCenter="0">
 		<e:Image scale9Grid="27,5,8,34" width="580" horizontalCenter="0" source="tongyong_dikuang4" bottom="0" height="260"/>
-		<e:Label id="attr1" text="攻击：1000000000" size="18" textAlign="left" y="80" width="170" anchorOffsetX="0" horizontalCenter="0" textColor="0x9F946D" visible="false"/>
-		<e:Label text="战斗力：10000" y="46" size="20" id="power1" textColor="0xFF9900" bold="true" horizontalCenter="0" visible="false"/>
+		<e:Label id="attr1" text="Công kích：1000000000" size="18" textAlign="left" y="80" width="170" anchorOffsetX="0" horizontalCenter="0" textColor="0x9F946D" visible="false"/>
+		<e:Label text="Chiến lực：10000" y="46" size="20" id="power1" textColor="0xFF9900" bold="true" horizontalCenter="0" visible="false"/>
 		<ns1:GWingItem id="item1" skinName="ShenYuItem" left="121" top="21"/>
 		<ns1:GWingItem id="item2" skinName="ShenYuItem" horizontalCenter="4" top="21"/>
 		<ns1:GWingItem id="item3" skinName="ShenYuItem" left="393" top="21"/>

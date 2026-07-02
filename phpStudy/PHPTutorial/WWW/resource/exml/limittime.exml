@@ -76,7 +76,7 @@
 		</e:Scroller>
 		<e:Group id="title0" height="25" horizontalCenter="0" top="4" x="68" y="5" >
 			<e:Label text="集齐" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-			<e:Label text="全套" x="65" size="21" textColor="0x35e62d" verticalCenter="0" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Trọn bộ" x="65" size="21" textColor="0x35e62d" verticalCenter="0" fontFamily="Microsoft YaHei"/>
 			<e:Label text=" 60级火符，" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="神罚伤害" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="全面大幅上涨" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
@@ -85,7 +85,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Group id="title1" height="25" horizontalCenter="0" top="2" x="70" y="3"  visible="false">
-			<e:Label text="全套" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="Trọn bộ" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="1转" x="65" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label text="火符，PK打怪无压力！" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="神罚加成" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
@@ -95,7 +95,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Group id="title2" height="25" horizontalCenter="0" top="2" x="59" y="3"  visible="false">
-			<e:Label text="全套" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="Trọn bộ" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="3转" x="65" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label text="火符，神罚技能" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="UP" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>

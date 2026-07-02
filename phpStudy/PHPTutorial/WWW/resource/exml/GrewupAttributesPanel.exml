@@ -3,10 +3,10 @@
 	<e:Image width="236" source="huabian" height="50" y="-22" horizontalCenter="-145" scale9Grid="89,0,32,50"/>
 	<e:Image width="236" height="50" y="-22" source="huabian" horizontalCenter="145" scale9Grid="80,0,43,50"/>
 
-	<e:Label text="当前属性" y="2" size="22" fontFamily="Microsoft YaHei" horizontalCenter="-143" textColor="0xffffff"/>
+	<e:Label text="Thuộc tính hiện tại" y="2" size="22" fontFamily="Microsoft YaHei" horizontalCenter="-143" textColor="0xffffff"/>
 	<e:Label text="下级属性" y="2" size="22" fontFamily="Microsoft YaHei" horizontalCenter="144" textColor="0xffffff"/>
-	<e:Label id="curScore" y="34" text="评分：999999" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalAlign="middle" textAlign="center" horizontalCenter="-146.5"/>
-	<e:Label id="nextScore" y="34" text="评分：999999" size="20" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" horizontalCenter="143.5"/>
+	<e:Label id="curScore" y="34" text="Điểm：999999" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalAlign="middle" textAlign="center" horizontalCenter="-146.5"/>
+	<e:Label id="nextScore" y="34" text="Điểm：999999" size="20" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" horizontalCenter="143.5"/>
 	<e:Label id="nextBaseAttr" y="64" text="999999" width="168" size="18" height="80" horizontalCenter="160" verticalAlign="top" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 	<e:Label id="nameAttr" y="64" text="法抗：" size="18" width="107" fontFamily="Microsoft YaHei" height="80" verticalAlign="top" textAlign="right" anchorOffsetX="0" x="-26" textColor="0xffffff"/>
 	<e:Label id="curBaseAttr" y="64" text="100000" size="18" width="168" height="80" anchorOffsetX="0" verticalAlign="top" textAlign="left" x="86" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>

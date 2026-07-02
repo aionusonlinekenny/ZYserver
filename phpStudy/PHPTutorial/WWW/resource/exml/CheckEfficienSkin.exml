@@ -9,7 +9,7 @@
 			<e:Image source="tongyongup" rotation="0" verticalCenter="1" horizontalCenter="0"/>
 			<e:Group verticalCenter="0" horizontalCenter="83">
 				<e:Label id="nextMoney" text="5734285" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
-				<e:Label text="/小时" size="20" x="88" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="/giờ" size="20" x="88" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout/>
 				</e:layout>
@@ -21,7 +21,7 @@
 			<e:Image source="tongyongup" rotation="0" verticalCenter="0" horizontalCenter="0"/>
 			<e:Group horizontalCenter="83" verticalCenter="0">
 				<e:Label id="nextExp" text="2373360" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
-				<e:Label text="/小时" size="20" x="88" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="/giờ" size="20" x="88" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout/>
 				</e:layout>
@@ -32,7 +32,7 @@
 			<e:Group x="164">
 				<e:Image x="18" verticalCenter="0" source="szjinbi" scaleX="0.8" scaleY="0.8"/>
 				<e:Label id="nextInfoMoney" text="5734285" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" verticalCenter="-5.5" height="27" verticalAlign="middle"/>
-				<e:Label text="/小时" size="20" x="88" fontFamily="Microsoft YaHei" textColor="0xffffff" height="27" verticalAlign="middle"/>
+				<e:Label text="/giờ" size="20" x="88" fontFamily="Microsoft YaHei" textColor="0xffffff" height="27" verticalAlign="middle"/>
 				<e:layout>
 					<e:HorizontalLayout/>
 				</e:layout>
@@ -47,7 +47,7 @@
 			<e:Group x="164">
 				<e:Image verticalCenter="0" x="14" source="ZSexp" width="35" height="35"/>
 				<e:Label id="nextInfoExp" text="2373360" size="20" textColor="0x00ff00" fontFamily="Microsoft YaHei" height="35" verticalAlign="middle"/>
-				<e:Label text="/小时" size="20" x="88" fontFamily="Microsoft YaHei" textColor="0xffffff" height="35" verticalAlign="middle"/>
+				<e:Label text="/giờ" size="20" x="88" fontFamily="Microsoft YaHei" textColor="0xffffff" height="35" verticalAlign="middle"/>
 				<e:layout>
 					<e:HorizontalLayout/>
 				</e:layout>

@@ -17,9 +17,9 @@
 		<e:Group id="effGroup"   touchChildren="false" touchEnabled="false" y="120" horizontalCenter="-60" x="230"   locked="true"/>
 		<e:Image id="title" source="win_02" y="113" horizontalCenter="0"/>
 		<e:Group id="winnerGroup"   touchChildren="false" touchEnabled="false" y="217" width="400"   horizontalCenter="0" locked="true">
-			<e:Label text="BOSS归属者：" textColor="0xdfd1b5" size="20" x="0"   verticalCenter="-20"/>
+			<e:Label text="Người sở hữu BOSS：" textColor="0xdfd1b5" size="20" x="0"   verticalCenter="-20"/>
 			<e:ToggleButton id="roleIcon" skinName="SkinRoleToggleBtn" y="-30" icon="yuanhead11" horizontalCenter="0"/>
-			<e:Label id="belongTxt" text="今晚打老虎" y="60" size="20"   textColor="0x35e62d" horizontalCenter="0"/>
+			<e:Label id="belongTxt" text="Săn Hổ Đêm Nay" y="60" size="20"   textColor="0x35e62d" horizontalCenter="0"/>
 		</e:Group>
 
 		<e:Scroller horizontalCenter="0" top="298" height="320">

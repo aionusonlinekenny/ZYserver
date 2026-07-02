@@ -27,7 +27,7 @@
 	</e:Group>
 	<e:Group horizontalCenter="0.5" width="383" height="40" verticalCenter="311">
 		<e:Image touchEnabled="false" source="bantoutiaobg" left="0" right="0" top="3" bottom="-3" scale9Grid="31,4,113,26"/>
-		<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0"/>
 	</e:Group>
 	<e:Image source="guildapply2_png" alpha="0.7" visible="false"/>
 

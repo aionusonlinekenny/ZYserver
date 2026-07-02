@@ -3,7 +3,7 @@
 	<e:Group x="0" y="0" width="280" height="74">
 		<e:Image source="wupingkuangnb3" width="270" horizontalCenter="0" verticalCenter="0" alpha="0.8" scale9Grid="33,3,27,91"/>
 		<e:Image x="110" y="36" width="140" source="tongyongline2" visible="false"/>
-		<e:Label id="itemName" text="技能名称" y="46" size="20" textColor="0xFF6A21" textAlign="left" verticalAlign="middle" x="110.67" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Label id="itemName" text="Tên kỹ năng" y="46" size="20" textColor="0xFF6A21" textAlign="left" verticalAlign="middle" x="110.67" fontFamily="Microsoft YaHei" visible="false"/>
 		<e:Label id="desc" text="拾取了" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="0" horizontalCenter="30"/>
 		<ns1:ItemBase id="item" x="34.4" skinName="SkinItem" scaleX="0.8" scaleY="0.8" verticalCenter="1.5"/>
 	</e:Group> 

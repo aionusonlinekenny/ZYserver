@@ -15,7 +15,7 @@
 		<e:Label text="挑战次数：" size="20" x="15" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="timeTxt" text="" size="20" verticalCenter="0" textAlign="center" width="210" fontFamily="Microsoft YaHei" textColor="0xffffff" x="194"/>
 		<e:Label id="challengeCountTxt" text="" size="20" x="110" textAlign="center" verticalAlign="middle" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="setting" text="提醒设置" size="20" x="444" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="setting" text="Cài đặt nhắc nhở" size="20" x="444" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		<e:Button id="buyBtn" label="" x="165" y="8.5" visible="false">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">

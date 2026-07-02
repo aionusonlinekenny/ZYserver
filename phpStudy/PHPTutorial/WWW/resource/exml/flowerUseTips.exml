@@ -7,13 +7,13 @@
 		<e:Image id="BG"  source="flower_bg_png" horizontalCenter="0" verticalCenter="0"/>
 		<e:Group horizontalCenter="0" touchEnabled="false" touchChildren="false" bottom="-49">
 			<e:Image source="bantoutiaobg" height="40" width="383"/>
-			<e:Label text="点击空白区域关闭窗口" size="20" y="7"  fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="7"  fontFamily="Microsoft YaHei" horizontalCenter="0"/>
 		</e:Group>
 
 
 		<e:Label text="收花人：" size="22" fontFamily="Microsoft YaHei" top="124" left="90"/>
 		<e:Image source="flower_nameBg" anchorOffsetX="0" width="226" height="43" top="114" horizontalCenter="-6.5" scale9Grid="8,6,17,30"/>
-		<e:Label id="selectName" text="玩家名字六字" size="22" fontFamily="Microsoft YaHei" horizontalCenter="-7.5" top="123"/>
+		<e:Label id="selectName" text="Tên người chơi 6 chữ" size="22" fontFamily="Microsoft YaHei" horizontalCenter="-7.5" top="123"/>
 		<e:Group horizontalCenter="0" anchorOffsetY="0" anchorOffsetX="0" width="368" top="180">
 			<e:Button id="sub1Btn" label="" skinName="SkinBtn0" icon="btn-" verticalCenter="0" left="46"/>
 			<e:Button id="add1Btn" label="" skinName="SkinBtn0" icon="btnadd" right="57" verticalCenter="0"/>

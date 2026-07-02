@@ -53,5 +53,5 @@
 		<e:Image id="redPoint1" source="zjmhongdian"  x="157" y="25" touchEnabled="false"/>
 	</e:Group>
 	<e:Label id="leftTime" text="" size="22" bottom="13" fontFamily="Microsoft YaHei" textColor="0xffffff" x="133"/>
-	<e:Label id="remindTpis" text="提醒设置" size="22" horizontalCenter="178" bottom="13" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+	<e:Label id="remindTpis" text="Cài đặt nhắc nhở" size="22" horizontalCenter="178" bottom="13" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 </e:Skin>

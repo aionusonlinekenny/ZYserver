@@ -14,7 +14,7 @@
 			</e:layout>
 		</e:List>
 		<e:Group x="288" verticalCenter="0">
-			<e:Label text="消耗:" size="20" y="2" x="0" textColor="0x7c3416" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Tiêu hao:" size="20" y="2" x="0" textColor="0x7c3416" fontFamily="Microsoft YaHei"/>
 			<e:Image x="90" y="0" source="szyuanbao" width="38" height="28"/>
 			<e:Label id="consnum" text="99999" size="20" y="2" x="116" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:layout>

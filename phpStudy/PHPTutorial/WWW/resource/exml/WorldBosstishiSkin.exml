@@ -5,7 +5,7 @@
 	<e:Group width="450" height="320" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="tongyonglabbg"   scale9Grid="40,20,30,30" left="0" right="0" top="0" bottom="0"/>
 		<e:Image source="tongyongkuang3tou"   y="1" left="0" right="0" scale9Grid="66,18,272,15"/>
-		<e:Label text="提  示" size="24" y="11" textColor="0xfd600d" bold="true" horizontalCenter="0"/>
+		<e:Label text="Thông báo" size="24" y="11" textColor="0xfd600d" bold="true" horizontalCenter="0"/>
 		<e:Image source="zdbossjianglixiaobg" horizontalCenter="0" verticalCenter="16" scaleX="2" scaleY="2"/>
 		<e:Group id="see" y="266" horizontalCenter="0">
 			<e:CheckBox id="check" label="本次挑战不再提示" skinName="SkinCheckBox0" verticalCenter="0.5" left="0"/>

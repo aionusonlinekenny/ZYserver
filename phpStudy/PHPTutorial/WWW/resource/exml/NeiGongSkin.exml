@@ -59,7 +59,7 @@
 		</e:Group>
 		<e:Group id="btnGroup" touchEnabled="false" width="400" horizontalCenter="0" anchorOffsetY="0" bottom="0" height="113">
 			<e:Group id="costInfo" touchEnabled="false"  width="170" horizontalCenter="0" height="30" bottom="72">
-			<e:Label id="cosInfodesc" text="消耗:" size="20" textColor="0x000000" fontFamily="Microsoft YaHei" width="46" x="-22"/>
+			<e:Label id="cosInfodesc" text="Tiêu hao:" size="20" textColor="0x000000" fontFamily="Microsoft YaHei" width="46" x="-22"/>
 			<e:Image x="48" source="coin1"/>
 			<e:Label id="costlable" text="" x="82" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>

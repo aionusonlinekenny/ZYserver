@@ -19,7 +19,7 @@
 		<e:Button id="closebtn" width="54" height="54" skinName="SkinBtn0" icon="tongyong_btnclose" top="0" right="-5"/>
 		<e:Group horizontalCenter="0" x="25"  bottom="0">
 			<e:Image source="bantoutiaobg" touchEnabled="false" y="5" horizontalCenter.initial="0" verticalCenter.initial="2" width.initial="383"/>
-			<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" horizontalCenter="0.5" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" horizontalCenter="0.5" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

@@ -23,7 +23,7 @@
 		<e:Label text="盟主:" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="0" textAlign="left"/>
 		<e:Label id="president" text="道可道道可" x="45" size="20" textColor="0x0000f1" fontFamily="Microsoft YaHei" verticalCenter="0" textAlign="left"/>
 		<e:Label text="  " x="105.5" y="-22.5" size="16" textColor="0x5186FD"/>
-		<e:Label text="人数:" x="148" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="0" textAlign="center"/>
+		<e:Label text="Số người:" x="148" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="0" textAlign="center"/>
 		<e:Label id="member" text="100/100" x="192" size="20" textAlign="center" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="0"/>
 
 		</e:Group>

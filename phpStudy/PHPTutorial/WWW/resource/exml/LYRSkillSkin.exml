@@ -28,7 +28,7 @@
 			<e:Image anchorOffsetY.update="0" scale9Grid="16,13,559,12" source="longhuntextbg2" left.update="0" right.update="0" top.update="0" bottom.update="0" bottom.study="0" right.study="0" right="0" top="0" left="0" bottom="0"/>
 
 
-			<e:Label text="当前属性" size="26" text.study="技能属性" textColor.study="0xffff00" size.study="26" fontFamily="Microsoft YaHei" textColor.update="0xffff00" horizontalCenter.update="0" x.update="138" y.update="15" horizontalCenter.study="0" textColor="0xffff00" textAlign="center" horizontalCenter="0" top="15" verticalAlign.study="middle" top.update="10"/>
+			<e:Label text="Thuộc tính hiện tại" size="26" text.study="技能属性" textColor.study="0xffff00" size.study="26" fontFamily="Microsoft YaHei" textColor.update="0xffff00" horizontalCenter.update="0" x.update="138" y.update="15" horizontalCenter.study="0" textColor="0xffff00" textAlign="center" horizontalCenter="0" top="15" verticalAlign.study="middle" top.update="10"/>
 			<e:Label id="nowLvDesc" text="这个技能就是非常牛逼，描述可以贼鸡巴多，超级长攻击加爆高，防御加爆多，血量涨到爆炸" size="18" textAlign="left" fontFamily="Microsoft YaHei" textColor.study="0xffffff" anchorOffsetY.study="0" anchorOffsetX.study="0" anchorOffsetX="0" textColor.update="0xffffff" x.update="7" left="10" right="10" bottom="15" textColor="0xffffff" bottom.update="10"/>
 		</e:Group>
 		<e:Image width="360" height="230" includeIn="study" source="tongyong_dikuang4" horizontalCenter="115" verticalCenter="70" scale9Grid="10,10,60,60"/>

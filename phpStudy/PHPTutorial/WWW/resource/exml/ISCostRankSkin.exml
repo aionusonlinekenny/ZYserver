@@ -10,8 +10,8 @@
 		<e:Image source="shuxingbg" scale9Grid="77,5,15,34" left="0" right="0" top="15" bottom="15" visible="false"/>
 		<e:Button id="rechargeBtn" label="立即充值" scaleX="0.6" scaleY="0.6" skinName="SkinBtn19" right="12" verticalCenter="0" skinName.none="SkinBtn19"/>
 		<e:Group y="50" x="27">
-		<e:Label text="剩余时间：" size="18" textColor="0xFF9900"  left="0" top="0"/>
-		<e:Label id="actTime" text="6天23小时55分" size="18" textColor="0x00FF00"  top="0" left="90"/>
+		<e:Label text="Thời gian còn lại：" size="18" textColor="0xFF9900"  left="0" top="0"/>
+		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00"  top="0" left="90"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0"/>
 		</e:layout>
@@ -27,22 +27,22 @@
 	</e:Scroller>
 	<e:Group horizontalCenter="-165" width="190" height="50" includeIn="normal" top="300">
 		<e:Image source="bantoutiaobg" left="0" right="0" top="-7" bottom="7" scale9Grid="126,19,3,4"/>
-		<e:Label text="s9999.布拉格の流氓" y="7" id="playName1" size="16" includeIn="normal" textColor="0xd1c28f" horizontalCenter="0"/>
-		<e:Label text="已消费：100000" y="27" id="recharge1" size="16" includeIn="normal" textColor="0xf8b141" bold="true" horizontalCenter="0"/>
+		<e:Label text="s9999.VươngGiả·LưuManh" y="7" id="playName1" size="16" includeIn="normal" textColor="0xd1c28f" horizontalCenter="0"/>
+		<e:Label text="Đã tiêu：100000" y="27" id="recharge1" size="16" includeIn="normal" textColor="0xf8b141" bold="true" horizontalCenter="0"/>
 	</e:Group>
 	<e:Group width="190" height="50" horizontalCenter="0" includeIn="normal" top="274">
 		<e:Image source="bantoutiaobg" left="0" right="0" top="0" bottom="0" scale9Grid="126,19,3,4"/>
-		<e:Label text="s9999.布拉格の流氓" y="7" id="playName0" size="16" includeIn="normal" textColor="0xD1C28F" horizontalCenter="0"/>
-		<e:Label text="已消费：100000" y="27" id="recharge0" size="16" includeIn="normal" textColor="0xF8B141" bold="true" horizontalCenter="0"/>
+		<e:Label text="s9999.VươngGiả·LưuManh" y="7" id="playName0" size="16" includeIn="normal" textColor="0xD1C28F" horizontalCenter="0"/>
+		<e:Label text="Đã tiêu：100000" y="27" id="recharge0" size="16" includeIn="normal" textColor="0xF8B141" bold="true" horizontalCenter="0"/>
 	</e:Group>
 	<e:Group width="190" height="50" horizontalCenter="165" includeIn="normal" top="300">
 		<e:Image source="bantoutiaobg" left="0" right="0" top="0" bottom="0" scale9Grid="126,19,3,4"/>
-		<e:Label text="s9999.布拉格の流氓" y="7" id="playName2" size="16" includeIn="normal" textColor="0xD1C28F" horizontalCenter="0"/>
-		<e:Label text="已消费：100000" y="27" id="recharge2" size="16" includeIn="normal" textColor="0xF8B141" bold="true" horizontalCenter="0"/>
+		<e:Label text="s9999.VươngGiả·LưuManh" y="7" id="playName2" size="16" includeIn="normal" textColor="0xD1C28F" horizontalCenter="0"/>
+		<e:Label text="Đã tiêu：100000" y="27" id="recharge2" size="16" includeIn="normal" textColor="0xF8B141" bold="true" horizontalCenter="0"/>
 	</e:Group>
-	<e:Label text="暂无上榜" size="20" horizontalCenter="-165" bold="true" includeIn="none" textColor="0x9f946d" top="252"/>
-	<e:Label text="暂无上榜" size="20" horizontalCenter="165" bold="true" includeIn="none" textColor="0x9f946d" top="252"/>
-	<e:Label text="暂无上榜" size="20" bold="true" horizontalCenter="0" includeIn="none" textColor="0x9f946d" top="232"/>
+	<e:Label text="Chưa có trên bảng xếp hạng" size="20" horizontalCenter="-165" bold="true" includeIn="none" textColor="0x9f946d" top="252"/>
+	<e:Label text="Chưa có trên bảng xếp hạng" size="20" horizontalCenter="165" bold="true" includeIn="none" textColor="0x9f946d" top="252"/>
+	<e:Label text="Chưa có trên bảng xếp hạng" size="20" bold="true" horizontalCenter="0" includeIn="none" textColor="0x9f946d" top="232"/>
 	<e:Image source="is_first" horizontalCenter="-3.5" top="81"/>
 	<e:Image horizontalCenter="-173.5" top="97" source="is_second"/>
 	<e:Image horizontalCenter="165.5" top="97" source="is_third"/>

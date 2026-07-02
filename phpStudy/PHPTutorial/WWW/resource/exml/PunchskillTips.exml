@@ -8,13 +8,13 @@
 		<e:Image scale9Grid="18,16,4,7" left="0" right="0" top="0" bottom="0" source="quali4"/>
 		<e:Image height="1" horizontalCenter="0" width="300" x="-15" top="143" source="tongyongline"/>
 		<ns1:PunchSkillBaseItemRender id="skillitem" skinName="PunchSkillItem" left="25" top="25"/>
-		<e:Label id="nameLabel" text="技能名称" x="103" y="20" size="22" bold="true" textColor="0x47a4ee" stroke="1" visible="false"/>
+		<e:Label id="nameLabel" text="Tên kỹ năng" x="103" y="20" size="22" bold="true" textColor="0x47a4ee" stroke="1" visible="false"/>
 		<e:Label id="nameLabel0" text="" size="24" stroke="1" fontFamily="Microsoft YaHei" textColor="0xff0000" top="44" left="113" bold="true"/>
 		<e:Label text="神罚技能" size="20" stroke="1" fontFamily="Microsoft YaHei" left="23" textColor="0xec6014" y="100"/>
 		<e:Label id="nameLabel1" text="" size="18" stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="79" left="113"/>
 		<e:Label id="desc0" text="" size="18" stroke="1" width="288" height="60" verticalAlign="middle" textColor="0x6b9baa" fontFamily="Microsoft YaHei" left="25" top="157"/>
 
-		<e:Label id="type" y="44" text="武器" fontFamily="黑体" size="16" x="235" textColor="0xFFFFFF" visible="false"/>
+		<e:Label id="type" y="44" text="Vũ khí" fontFamily="黑体" size="16" x="235" textColor="0xFFFFFF" visible="false"/>
 		<e:Group width="300" top="225" left="19" height="268">
 			<e:Label text="技能效果" size="20"   stroke="1" fontFamily="Microsoft YaHei" textColor="0xec6014" top="0" left="0"/>
 			<e:Label text="神罚加成" size="20"   stroke="1" fontFamily="Microsoft YaHei" textColor="0xec6014" top="105" left="0"/>
@@ -28,6 +28,6 @@
 			<e:Label id="desc8" text="" size="20"   stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="194" left="0"/>
 		</e:Group>
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-41" width="300" x="-25" y="458"  />
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="73" bottom="-35" y="463"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="73" bottom="-35" y="463"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	</e:Group>
 </e:Skin>

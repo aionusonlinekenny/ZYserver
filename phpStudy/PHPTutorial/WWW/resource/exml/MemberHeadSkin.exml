@@ -14,7 +14,7 @@
 		<e:Image x="14" y="1" source="juesetxkxue" scaleX="1" scaleY="1" visible="false"/>
 
 		<e:Label id="num" text="200" size="18" visible.war="false" strokeColor.panel="000000" horizontalCenter="0" x="10" scaleX="1" scaleY="1" textColor="0xffff00" fontFamily="Microsoft YaHei" y="1"/>
-		<e:Label text="玩家名六个字" size="18" textAlign="center" horizontalCenter="2" x="-21" horizontalCenter.panel="0" y.panel="76" horizontalCenter.war="0" y.war="76" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" textColor.war="0xffffff" textColor.panel="0xffffff" y="87" visible="false"/>
-		<e:Label id="roleName" text="玩家名六个字" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" horizontalCenter="0"/>
+		<e:Label text="Tên người chơi 6 chữ" size="18" textAlign="center" horizontalCenter="2" x="-21" horizontalCenter.panel="0" y.panel="76" horizontalCenter.war="0" y.war="76" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" textColor.war="0xffffff" textColor.panel="0xffffff" y="87" visible="false"/>
+		<e:Label id="roleName" text="Tên người chơi 6 chữ" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" horizontalCenter="0"/>
 	</e:Group>	
 </e:Skin>

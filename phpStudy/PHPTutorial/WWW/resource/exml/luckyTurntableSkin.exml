@@ -133,7 +133,7 @@
 		<e:Label text="抽奖消耗：" textColor="0xFFFFFF" size="20" y="5" x="0" fontFamily="Microsoft YaHei"/>
 		<e:Image source="szyuanbao"  left="0" top="0"/>
 		<e:Label id="pay0" text="500" size="20" textColor="0xFFFF00" x="32" y="14"  fontFamily="Microsoft YaHei"/>
-		<e:Label text="或" size="20" textColor="0xFFFFFF" x="189" y="5"  fontFamily="Microsoft YaHei"/>
+		<e:Label text="hoặc" size="20" textColor="0xFFFFFF" x="189" y="5"  fontFamily="Microsoft YaHei"/>
 		<e:Image id="icon" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30" x="215" y="0"  source="szkey"/>
 		<e:Label id="num" text="10" y="0" size="20" x="136.5" textColor="0x00FF00" fontFamily.reset="Microsoft YaHei" fontFamily.unReset="Microsoft YaHei"/>
 		<e:Label id="num2" text="/1" size="20" textColor="0xFFFFFF" x="199" y="15"  fontFamily="Microsoft YaHei"/>

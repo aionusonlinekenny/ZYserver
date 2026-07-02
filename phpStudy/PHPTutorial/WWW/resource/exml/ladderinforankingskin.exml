@@ -4,7 +4,7 @@
 	<w:Config id="159b5e0f988"/>
 	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
 	<e:Image anchorOffsetX="0" width="364" height="35" source="bantoutiaobg" top="814" horizontalCenter="0" scale9Grid="170,5,29,30"/>
-	<e:Label text="点击空白区域关闭窗口" y="820.57" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" textAlign="center" horizontalCenter="0"/> 
+	<e:Label text="Chạm vùng trống để đóng cửa sổ" y="820.57" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" textAlign="center" horizontalCenter="0"/> 
 	<e:Group name="排名" height="668" width="488" horizontalCenter="0" y="131">
 		<e:Image     width="488" height="640" source="tongyong_dikuang2" scale9Grid="29,5,67,64" horizontalCenter="0" bottom="0" anchorOffsetY="0"/>
 		<e:Image y="16" left="0" right="0" source="tongyong_juanzhou" scale9Grid="74,0,265,23"/>
@@ -13,8 +13,8 @@
 		<e:Image y="50" width="420" horizontalCenter="0" source="tongyong_dikuang1" height="553" scale9Grid="8,11,65,30"/>
 
 
-		<e:Label y="63" text="排名" size="20" x="72" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-		<e:Label y="63" text="角色名" size="20" x="228" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label y="63" text="Xếp hạng" size="20" x="72" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label y="63" text="Tên nhân vật" size="20" x="228" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Label y="63" text="净胜场" size="20" x="366" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Scroller width="406" height="492" y="96"  horizontalCenter="0" anchorOffsetY="0">
 		<e:List id="list" x="-3" y="30" itemRendererSkinName="SkinTiantiRankItem" width="406">

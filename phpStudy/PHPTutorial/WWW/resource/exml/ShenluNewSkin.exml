@@ -12,17 +12,17 @@
 			<e:Group width="600" height="103" y="6" horizontalCenter="0">
 				<e:Image id="nextAttBG"  
 				         source="longhuntextbg2" width="600" bottom="-78" horizontalCenter="0" height="103" anchorOffsetY="0" horizontalCenter.open="0" top="10" scale9Grid="45,13,488,12"/>
-				<e:Label id="nextAtt" text="攻击：8000" size="20"  height="90" 
+				<e:Label id="nextAtt" text="Công kích：8000" size="20"  height="90" 
 				         width="213" textAlign="left" verticalAlign="middle" verticalCenter="0.5" horizontalCenter="191.5"  anchorOffsetX="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 				<e:Image id="cursor" source="jiantouyou" verticalCenter="0" horizontalCenter="0" />
-				<e:Label id="curAtt" text="攻击：8000" size="20" height="90" width="230" textAlign="left"
+				<e:Label id="curAtt" text="Công kích：8000" size="20" height="90" width="230" textAlign="left"
 				         verticalCenter="0.5"  x="0" verticalAlign="middle" textColor="0xffffff" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
 			</e:Group>
 			<e:Group width="513" height="40" id="starGroup" scaleX="0.8" scaleY="0.8"  horizontalCenter="0" verticalCenter="-30"/>
 			<e:Button id="upgradeBtn" label="升  级"  horizontalCenter="0" anchorOffsetX="0" verticalCenter="105.5" icon="btn1_2" skinName="SkinBtn7"/>
 			<e:Group id="expGroup" width="361" horizontalCenter="0" verticalCenter="-6"></e:Group>
 			<e:Group id="costGroup" height="30" x="22" y="240">
-				<e:Label text="消耗:" size="20" fontFamily="Microsoft YaHei"/>
+				<e:Label text="Tiêu hao:" size="20" fontFamily="Microsoft YaHei"/>
 				<e:Image width="30" height="30" source="200005_png"/>
 				<e:Label id="material" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" textColor="0xffffff"/>
 				<e:layout>
@@ -34,13 +34,13 @@
 		<e:Group id="maxShowGroup" width="600" height="103" horizontalCenter="0" verticalCenter="114" visible="false">
 			<e:Group width="600" height="103" horizontalCenter="0" verticalCenter="0">
 				<e:Image id="nextAttBG1" scale9Grid="16,13,559,12" source="longhuntextbg2" width="600" height="103" verticalCenter="0" horizontalCenter="0"/>
-				<e:Label id="maxCurAtt" text="攻击：8000" size="18" height="103" width="300" textAlign="left"
+				<e:Label id="maxCurAtt" text="Công kích：8000" size="18" height="103" width="300" textAlign="left"
 				         y="0" verticalAlign="middle" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="100"/>
 			</e:Group>
 		</e:Group>
 
 		<e:Group id="maxLevel" width="158" height="84" horizontalCenter="0" verticalCenter="244">
-			<e:Label text="已满级" size="26" verticalAlign="middle" textAlign="center"
+			<e:Label text="Đã đạt cấp tối đa" size="26" verticalAlign="middle" textAlign="center"
 			         verticalCenter="0" textColor="0xffff00" left="0" right="0" top="0" bottom="0" fontFamily="Microsoft YaHei" stroke="1" strokeColor="0x000000"/>
 		</e:Group>
 		<e:Group id="icon" width="200" height="200" horizontalCenter="100" y="225"/>

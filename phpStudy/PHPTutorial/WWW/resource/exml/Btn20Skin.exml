@@ -2,5 +2,5 @@
 <e:Skin class="SkinBtn20" states="up,down"
         currentState="up" xmlns:e="http://ns.egret.com/eui"  width="119" height="40">
 	<e:Image left.up="0" right.up="0" top.up="0" bottom.up="0" source="btn_border_light" source.up="btn_border_light" verticalCenter.down="0" scaleX.down="0.95" scaleY.down="0.95" source.down="btn_border_light" horizontalCenter.down="2"/>
-	<e:Label size="20" text="按钮" id="labelDisplay" x.down="1" y.down="1" horizontalCenter="9" verticalCenter="0" verticalCenter.down="0" size.down="20" textColor="0x7e2a00" fontFamily="Microsoft YaHei" textColor.up="0x7e2a00" textColor.down="0x7e2a00"/>
+	<e:Label size="20" text="Nút bấm" id="labelDisplay" x.down="1" y.down="1" horizontalCenter="9" verticalCenter="0" verticalCenter.down="0" size.down="20" textColor="0x7e2a00" fontFamily="Microsoft YaHei" textColor.up="0x7e2a00" textColor.down="0x7e2a00"/>
 </e:Skin>

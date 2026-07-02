@@ -32,10 +32,10 @@
 			</e:layout>
 		</e:Group>
 		<e:Group bottom="94" horizontalCenter="-122">
-			<e:Label text="消耗:" x="14" y="-4" size="20"   fontFamily="Microsoft YaHei" stroke="0"/>
+			<e:Label text="Tiêu hao:" x="14" y="-4" size="20"   fontFamily="Microsoft YaHei" stroke="0"/>
 			<e:Label id="yuanbaoNum" text="" x="140" y="-4" size="20"   fontFamily="Microsoft YaHei" textColor="0x00ff06" stroke="0"/>
 			<e:Image source="szyuanbao" x="156" y="-2"   width="40" height="30"/>
-			<e:Label text="或" x="24" y="6" size="20" width="24" textAlign="center" fontFamily="Microsoft YaHei" stroke="0"/>
+			<e:Label text="hoặc" x="24" y="6" size="20" width="24" textAlign="center" fontFamily="Microsoft YaHei" stroke="0"/>
 			<e:CheckBox id="checkBox" label="" x="103" y="-1" skinName="SkinCheckBox0" />
 			<e:Image anchorOffsetX="0" width="36" anchorOffsetY="0" height="40" x="1" y="-18" source="200936_png"/>
 			<e:Label id="num1" text="" y="-18" size="20" x="63.5" textColor="0x00FF00" stroke="0"/>

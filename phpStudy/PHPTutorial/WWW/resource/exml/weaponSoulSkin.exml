@@ -71,7 +71,7 @@
 			<e:Label id="skill" text="" size="18" width="368" x="164" verticalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
 			<e:Group id="upInfo" x="61" anchorOffsetY="0" height="102" anchorOffsetX="0" width="89" y="20">
 				<ns1:WeaponSkillItemRender id="skillicon0" skinName="SkinweaponSkillItem" horizontalCenter="0"/>
-				<e:Label id="skillname0" text="技能名字" size="22" horizontalCenter="0" y="77" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="skillname0" text="Tên kỹ năng" size="22" horizontalCenter="0" y="77" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			</e:Group>
 		</e:Group>
 		<e:Button id="active" label="激  活" horizontalCenter="0" skinName="SkinBtn28" icon="btn1_2" width="213" height="67" bottom="5"/>

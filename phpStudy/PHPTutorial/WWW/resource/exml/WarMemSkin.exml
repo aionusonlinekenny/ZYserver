@@ -12,7 +12,7 @@
 		<e:Image id="vipTitle" x="5.8" y="15.5" source="vipv_png"/>
 		<e:Group id="vip" x="27" y="5.5" width="56" height="40"/>
 		<e:Label id="conLab" text="" x="74" y="50" size="22" textColor="0x00842c" fontFamily="Microsoft YaHei"/>
-		<e:Label text="积分:" x="8.5" y="50" size="22" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label text="Điểm tích lũy:" x="8.5" y="50" size="22" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Label id="attack" text="99999999" x="92" y="89.5" size="16" textColor="0xF7B910" visible="false"/>
 		<e:Label id="nameLab" text="【成员】" x="130" y="17.5" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" visible="false"/>
 		<e:Label id="nameLab0" text="" x="35" y="17" size="22" textColor="0x001828" fontFamily="Microsoft YaHei"/>

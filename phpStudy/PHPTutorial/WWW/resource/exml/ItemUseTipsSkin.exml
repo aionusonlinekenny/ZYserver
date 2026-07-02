@@ -9,19 +9,19 @@
 		<e:Image id="qualityImg" left="0" right="0" anchorOffsetY="0" source="quali3_png" top="0" height="451" scale9Grid="7,8,13,509"/>
 
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="33" y="30" />
-		<e:Label id="nameLabel" text="羽毛" size="22" x="130" y="28"  fontFamily.guildgifts="Microsoft YaHei" size.guildgifts="22" textColor.guildgifts="0x00ff06" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-		<e:Label text="等级：" size="20" x="130" y="62" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="nameLabel" text="Lông Vũ" size="22" x="130" y="28"  fontFamily.guildgifts="Microsoft YaHei" size.guildgifts="22" textColor.guildgifts="0x00ff06" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label text="Cấp độ：" size="20" x="130" y="62" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 
 
 		<e:Label id="lv" text="9" size="20" x="191" y="62"  fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" bold.guildgifts="false" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label text="数量：" size="20" x="130" y="89" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="num" text="1级" size="20" x="190" y="89"  fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Số lượng：" size="20" x="130" y="89" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="num" text="Cấp 1" size="20" x="190" y="89"  fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image source="tongyongline" y="120" left="0" right="0" />
 
 
 		<e:Group horizontalCenter="0" touchEnabled="false" touchChildren="false" bottom="-54">
 			<e:Image source="bantoutiaobg" height="40" width="400" y="0" x="0"  height.rename="35" width.rename="352" horizontalCenter.rename="0"/>
-			<e:Label text="点击空白区域关闭窗口" size="20" x="105" y="8"  fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter.rename="0" y.rename="6.66"/>
+			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" x="105" y="8"  fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter.rename="0" y.rename="6.66"/>
 		</e:Group>
 		<e:Group top="130" bottom="20" left="0" right="0">
 			<e:Group top="130" horizontalCenter="0">

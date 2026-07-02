@@ -2,5 +2,5 @@
 <e:Skin class="SkinDailyDayRewardItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
         height="94" width="84">
 	<ns1:ItemBase id="item" x="6.5" y="10" skinName="SkinItem" />
-	<e:Label id="stateText" text="已领取" x="20" y="63" size="20" touchEnabled="false"  visible="false"/>
+	<e:Label id="stateText" text="Đã nhận" x="20" y="63" size="20" touchEnabled="false"  visible="false"/>
 </e:Skin>

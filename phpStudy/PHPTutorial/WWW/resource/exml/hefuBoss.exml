@@ -10,10 +10,10 @@
 		</e:Group>
 		<e:Group id="infoBg" y="54" horizontalCenter="0" width="540">
 		<e:Image   scale9Grid="77,5,15,34" source="activity_headbg0_png" y="0" horizontalCenter="0" scaleY="1.1"/>
-		<e:Label text="剩余时间：" x="14" y="10" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="actTime" text="6天23小时55分" y="10" size="18" textColor="0x00FF00" fontFamily="Microsoft YaHei" left="104" width="422"/>
+		<e:Label text="Thời gian còn lại：" x="14" y="10" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" y="10" size="18" textColor="0x00FF00" fontFamily="Microsoft YaHei" left="104" width="422"/>
 		<e:Label id="actInfo" text="活动期间成功击杀BOSS可以获得BOSS礼包。" x="104" y="50" size="18" width="422" left="104" fontFamily="Microsoft YaHei" textColor="0xffffff" height="54"/>
-		<e:Label text="活动说明：" x="14" y="50" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label text="Mô tả sự kiện：" x="14" y="50" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 
 		<e:Button id="goBtn" label="前往击杀" skinName="SkinBtn1" horizontalCenter="-113" bottom="20"/>

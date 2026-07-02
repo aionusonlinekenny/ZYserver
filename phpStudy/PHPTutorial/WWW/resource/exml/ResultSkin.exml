@@ -7,9 +7,9 @@
 	<e:Group horizontalCenter="0" width="600" height="948" verticalCenter="0">
 
 		<e:Image id="bg1"   horizontalCenter="28" x="34" y="6" source="labwin_png" visible="false"/>
-		<e:Label id="txt" text="获得奖励如下:" size="20" horizontalCenter="-176.5"   y="288.21" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Label id="labelEmblem" text="获得道具:" size="20" textColor="0xFFFFFF" y="323.21" fontFamily="Microsoft YaHei" textAlign="left" horizontalCenter="-196.5" visible="false"/>
-		<e:Label id="labelItem" text="获得道具:" size="20" textColor="0xFFFFFF" y="358.21" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="-196.5" visible="false"/>
+		<e:Label id="txt" text="Phần thưởng nhận được như sau:" size="20" horizontalCenter="-176.5"   y="288.21" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="labelEmblem" text="Nhận vật phẩm:" size="20" textColor="0xFFFFFF" y="323.21" fontFamily="Microsoft YaHei" textAlign="left" horizontalCenter="-196.5" visible="false"/>
+		<e:Label id="labelItem" text="Nhận vật phẩm:" size="20" textColor="0xFFFFFF" y="358.21" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="-196.5" visible="false"/>
 		<e:List id="listCoin" width="398" x="55" y="313" scaleX="1" scaleY="1"/>
 		<e:List id="listEmblem" y="369.34" x="154.33" width="380">
 			<e:layout>
@@ -44,7 +44,7 @@
 
 			<e:Label text="获得货币：" x="130" y="551" size="20" textColor="0xdfd1b5" width="100" height="20" visible="false"/>
 
-			<e:Label text="获得道具："  y="30" size="20" textColor="0xDFD1B5" height="40" width="398"  visible="false"/>
+			<e:Label text="Nhận vật phẩm："  y="30" size="20" textColor="0xDFD1B5" height="40" width="398"  visible="false"/>
 			<e:List id="listItem" y="1.84" width="395"  x="88.6">
 				<e:layout>
 				<e:TileLayout horizontalAlign="left" verticalAlign="top" horizontalGap="30" verticalGap="5"/>
@@ -58,7 +58,7 @@
 		</e:Scroller>
 		<e:Group width="580" height="484.67" id="defeat"   verticalCenter="44.5" y="216"   horizontalCenter="1" anchorOffsetY="0">
 			<e:Image horizontalCenter="0" verticalCenter="-235.335" source="huabian"/>
-			<e:Label id="lostTxt" text="我要变强"  size="22" y="7" horizontalCenter="0" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="lostTxt" text="Tôi muốn mạnh hơn"  size="22" y="7" horizontalCenter="0" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
 			<e:Image id="openRole" scaleX="0.9" scaleY="0.9"  width="478.88888888888886" source=""  height="34.33" horizontalCenter="0" verticalCenter="178.24850000000004"/>
 			<e:Button id="openRole1" label="前往" x="272.05" y="450.62"  width="96" skinName="SkinBtn3" visible="false"/>
 			<e:Scroller width="464" height="437" verticalCenter="29.164999999999992" horizontalCenter="0" anchorOffsetY="0" anchorOffsetX="0">
@@ -79,9 +79,9 @@
 		<ns1:PriceIcon id="doublePrice" skinName="SkinPriceIcon" horizontalCenter="84.5" verticalCenter="177" x="325" y="624"   visible="false" locked="true"/>
 		<e:Group id="effGroup"   touchChildren="false" touchEnabled="false" y="192" horizontalCenter="0" x="230"  />
 		<e:Group id="winnerGroup"   touchChildren="false" touchEnabled="false" y="294.32" width="400"   horizontalCenter="0" visible="false">
-			<e:Label text="BOSS归属者：" size="20" x="0"   verticalCenter="-20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Người sở hữu BOSS：" size="20" x="0"   verticalCenter="-20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:ToggleButton id="roleIcon" skinName="SkinRoleToggleBtn" y="-30" icon="yuanhead11" horizontalCenter="0"/>
-			<e:Label id="belongTxt" text="今晚打老虎" y="60" size="20"   textColor="0x35e62d" horizontalCenter="0"/>
+			<e:Label id="belongTxt" text="Săn Hổ Đêm Nay" y="60" size="20"   textColor="0x35e62d" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group id="nune" width="400" height="20"   verticalCenter="-198" horizontalCenter="0" x="90" y="257"   visible="false">
 			<e:Label id="nameLabel" text="解锁类型：" y="0" textColor="0xDFD1B5" size="20" x="0"/>

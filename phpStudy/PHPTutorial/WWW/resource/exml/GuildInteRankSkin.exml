@@ -13,10 +13,10 @@
 		<e:Group width="496" height="145"   horizontalCenter="0" top="45">
 			<e:Image source="leibiefengetou" left="0" right="0" scale9Grid="2,0,5,48" top="0" bottom="0"/>
 			<e:Image source="shangjiepaiming_bg_png" alpha="1"   anchorOffsetX="0" left="1" right="-1" y="0"/>
-			<e:Label text="积分" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" bottom="12" horizontalCenter="198"/>
-			<e:Label text="名次" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-197" bottom="12"/>
-			<e:Label text="盟主" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="70" bottom="12"/>
-			<e:Label text="仙盟" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-78" bottom="12"/>
+			<e:Label text="Điểm tích lũy" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" bottom="12" horizontalCenter="198"/>
+			<e:Label text="Thứ hạng" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-197" bottom="12"/>
+			<e:Label text="Minh Chủ" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="70" bottom="12"/>
+			<e:Label text="Tiên Minh" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-78" bottom="12"/>
 			<e:Image source="leibeifengexian" horizontalCenter="144" bottom="2"/>
 			<e:Image source="leibeifengexian" horizontalCenter="-148" bottom="2"/>
 			<e:Image source="leibeifengexian" horizontalCenter="-7" bottom="2"/>

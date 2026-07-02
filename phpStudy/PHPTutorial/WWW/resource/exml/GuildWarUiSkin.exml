@@ -50,7 +50,7 @@
 		<e:Image y="1" source="zjmtouxiangkuang" x="0.4" width="253" height="67"/>
 		<e:Group x="77" y="7.5" height="18" width="140">
 		<e:Label text="目标" size="16" textAlign="center" y="-0.66" x="-1.2" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
-		<e:Label id="belongNameTxt0" text="玩家名称" size="16" textAlign="left" y="-0.66" x="35.2" textColor="0xF0F4FE" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="111.6"/>
+		<e:Label id="belongNameTxt0" text="Tên người chơi" size="16" textAlign="left" y="-0.66" x="35.2" textColor="0xF0F4FE" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="111.6"/>
 		</e:Group>
 		<e:Image id="roleHead0" source="yuanhead10" width="52" height="52" x="2.96" y="5.24" scaleX="1.2" scaleY="1.2"/>
 	</e:Group>
@@ -62,24 +62,24 @@
 
 
 
-			<e:Label id="rankPoint1" text="1人" y="31" size="18" width="54" horizontalCenter="68" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-			<e:Label id="rankPoint2" text="1人" y="56" size="18" width="55" horizontalCenter="68.5" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label id="rankPoint3" text="1人" y="81" size="18" width="54" horizontalCenter="68" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-			<e:Label id="rankName1" text="这是仙盟名称" y="31" size="18" textAlign="center" strokeColor="000000" x="32" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-			<e:Label id="rankName2" text="这是仙盟名称" y="56" size="18" textAlign="center" strokeColor="000000" x="32" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-			<e:Label id="rankName3" text="这是仙盟名称" y="81" size="18" textAlign="center" strokeColor="000000" x="32" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="rankPoint1" text="1 người" y="31" size="18" width="54" horizontalCenter="68" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:Label id="rankPoint2" text="1 người" y="56" size="18" width="55" horizontalCenter="68.5" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="rankPoint3" text="1 người" y="81" size="18" width="54" horizontalCenter="68" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:Label id="rankName1" text="Đây là tên Tiên Minh" y="31" size="18" textAlign="center" strokeColor="000000" x="32" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="rankName2" text="Đây là tên Tiên Minh" y="56" size="18" textAlign="center" strokeColor="000000" x="32" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="rankName3" text="Đây là tên Tiên Minh" y="81" size="18" textAlign="center" strokeColor="000000" x="32" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Button id="seeRank" label="" top="1" alpha="1"  icon="btnshousuo2" skinName="SkinBtn0" left="34"/>
 		</e:Group>
 		<e:Group width="200" height="100" y="0" horizontalCenter="190" x="390" >
 
-			<e:Label id="guildPoint" text="1人" x="133" y="56" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label id="ownPoint" text="1人" x="133" y="81" size="18" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-			<e:Label id="comNum" text="1人" x="133" y="31" size="18" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:Label id="guildPoint" text="1 người" x="133" y="56" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="ownPoint" text="1 người" x="133" y="81" size="18" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:Label id="comNum" text="1 người" x="133" y="31" size="18" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 			<e:Label text="仙盟积分" x="45" y="56" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Label text="我的积分" x="45" y="81" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Label text="本盟战况" y="5" size="20" horizontalCenter="2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 
-			<e:Label id="guid2" text="玩法说明" x="32" y="31" size="16" textColor="0x02FF00" visible="false"/>
+			<e:Label id="guid2" text="Hướng dẫn chơi" x="32" y="31" size="16" textColor="0x02FF00" visible="false"/>
 			<e:Label id="scene" text="当前区域" y="31" size="18" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" x="45"/>
 			<e:Button id="seeMyGuild" label="本帮战况" right="21" top="1" alpha="1"  skinName="SkinBtn0" icon="btnshousuo2"/>
 		</e:Group>
@@ -141,7 +141,7 @@
 
 		<e:Image height="30" left="-4" right="4" source="teshuwenzibg3"/>
 		<e:Button id="refush" label="按钮" x="0" y="1" skinName="SkinBtn0" width="76" visible="false"/>
-		<e:Label text="选择目标" y="6" size="16" strokeColor="000000" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label text="Chọn mục tiêu" y="6" size="16" strokeColor="000000" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:ToggleButton id="btn" touchEnabled="true" label="按钮" right="1" skinName="SkinBtn4" y="1" alpha="0.6" visible="false"/>
 		<e:Group x="0" y="30">
 			<e:Group id="mon" width="103" height="79" x="0" y="0">

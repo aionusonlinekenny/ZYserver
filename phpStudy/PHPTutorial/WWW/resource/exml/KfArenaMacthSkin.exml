@@ -28,7 +28,7 @@
 		<e:Label id="dailyTime" text="5" x="10" y="10" size="20" textColor="0x00FF00"/>
 		<e:Label text="次，最多累计" x="10" y="10" size="20"/>
 		<e:Label id="maxTime" text="10" x="20" y="20" size="20" textColor="0x00FF00"/>
-		<e:Label text="次" x="30" y="30" size="20"/>
+		<e:Label text="lần" x="30" y="30" size="20"/>
 		<e:layout>
 		<e:HorizontalLayout gap="0"/>
 		</e:layout>

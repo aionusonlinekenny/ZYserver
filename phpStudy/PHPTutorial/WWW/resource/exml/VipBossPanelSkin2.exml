@@ -44,9 +44,9 @@
 			<e:Image source="bossvipbg" y="0" horizontalCenter="222"/>
 			<e:Image source="vipvip_png" y="12" horizontalCenter="222.5"/>
 			<e:Image id="vipImg0" y="39" horizontalCenter="223" width="18" height="25" source="vip2_v1_png"/>
-			<e:Label text="开启" y="69" size="18" horizontalCenter="223" width="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Mở" y="69" size="18" horizontalCenter="223" width="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Image x="8" y="99" source="gantanhao4"/>
-			<e:Label text="每2小时刷新1次" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.5"/>
+			<e:Label text="Làm mới mỗi 2 giờ" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.5"/>
 			<e:Image height="105" bottom="0" left="20" right="20" source="bantoutiaobg" scale9Grid="172,7,47,24" anchorOffsetY="0"/>
 			<e:List id="rewardList0" scaleX="0.8" scaleY="0.8" bottom="32" horizontalCenter="-55.5" anchorOffsetY="0" height="82" anchorOffsetX="0" width="514" itemRendererSkinName="SkinItem2">
 				<e:layout>
@@ -63,7 +63,7 @@
 			<e:Image y="12" horizontalCenter="222.5" source="vipvip_png"/>
 			<e:Label id="descText1" text="1转~6转 BOSS 无限击杀" x="8.5" y="41.5" size="20" fontFamily="Microsoft YaHei" textColor="0x00FF06" stroke="0.5"/>
 			<e:Image x="8" y="99" source="gantanhao4"/>
-			<e:Label text="每2小时刷新1次" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00" stroke="0.5"/>
+			<e:Label text="Làm mới mỗi 2 giờ" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00" stroke="0.5"/>
 			<e:Group x="29" y="4">
 				<e:Image y="16" x="155" width="144" height="26" source="BossHome_png"/>
 				<e:Image y="1.33" x="96" width="-29" height="31" source="vip2_v2_png"/>
@@ -73,7 +73,7 @@
 			</e:Group>
 
 			<e:Image id="vipImg1" y="39" horizontalCenter="223" source="vip2_v2_png"/>
-			<e:Label text="开启" y="69" size="18" horizontalCenter="223" width="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
+			<e:Label text="Mở" y="69" size="18" horizontalCenter="223" width="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
 			<e:Image height="105" bottom="0" left="20" right="20" source="bantoutiaobg" scale9Grid="172,7,47,24" anchorOffsetY="0"/>
 			<e:List id="rewardList1" scaleX="0.8" scaleY="0.8" bottom="32" horizontalCenter="-55.5" anchorOffsetY="0" height="82" anchorOffsetX="0" width="514" itemRendererSkinName="SkinItem2">
 				<e:layout>
@@ -89,10 +89,10 @@
 			<e:Image y="0" horizontalCenter="222" source="bossvipbg"/>
 			<e:Image y="12" horizontalCenter="222.5" source="vipvip_png"/>
 			<e:Image id="vipImg2" y="39.5" horizontalCenter="223" source="vip2_v3_png"/>
-			<e:Label text="开启" y="69" size="18" horizontalCenter="223" width="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
+			<e:Label text="Mở" y="69" size="18" horizontalCenter="223" width="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
 			<e:Label id="descText2" text="6转~12转 BOSS 无限击杀" x="8.5" y="41.5" size="20" fontFamily="Microsoft YaHei" textColor="0x00FF06" stroke="0.5"/>
 			<e:Image x="8" y="99" source="gantanhao4"/>
-			<e:Label text="每2小时刷新1次" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00" stroke="0.5"/>
+			<e:Label text="Làm mới mỗi 2 giờ" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00" stroke="0.5"/>
 			<e:Group x="29" y="4">
 				<e:Image y="16" x="155" width="144" height="26" source="BossHome_png"/>
 				<e:Image y="1.33" x="96" width="-29" height="31" source="vip2_v3_png"/>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="SkinPersonRewardRenderer" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="98" height="132">
 	<e:Label id="desc" text="999" width="44" size="20" textAlign="center" verticalAlign="middle" textColor="0xffffff" left="7" verticalCenter="55"/>
-	<e:Label text="积分" size="20" textAlign="left" verticalAlign="middle" bottom="2" textColor="0xffffff" fontFamily="Microsoft YaHei" right="8"/>	
+	<e:Label text="Điểm tích lũy" size="20" textAlign="left" verticalAlign="middle" bottom="2" textColor="0xffffff" fontFamily="Microsoft YaHei" right="8"/>	
 	<e:List id="itemList" scaleX="0.9" scaleY="0.9" horizontalCenter="0" itemRendererSkinName="SkinItem2" verticalCenter="0">
 		<e:layout>
 		<e:HorizontalLayout gap="10"/>

@@ -8,7 +8,7 @@
 		<e:Image scale9Grid="5,5,15,15" touchEnabled="true" width="419" horizontalCenter="0" x="10" source="tongyong_dikuang1" bottom="87" height="206"/>
 		<e:Label text="提示" size="26" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-15"/>
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-40" width="400"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Button id="yesBtn" label="确认" horizontalCenter="80" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3"/>
 		<e:Button id="noBtn" label="取消" horizontalCenter="-80" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3_1"/>
 		<e:CheckBox id="tipsCheckbox" label="本次登录不再提示" y="136" skinName="SkinCheckBox0" horizontalCenter="0" scaleX="0.9" scaleY="0.9"/>

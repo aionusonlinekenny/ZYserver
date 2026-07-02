@@ -19,14 +19,14 @@
 			<e:Image id="enemynamebg" x="369.21" y="50" source="gb_guildname_bg2_png"/>
 			<e:Image id="enemybosshp" y="91.5" rotation="0.11" width="227.5" scale9Grid="106,0,2,17" source="jindutiao1" horizontalCenter="154" anchorOffsetX="0"/>
 			<e:ProgressBar id="ebhpbar" x="361.07" y="93" width="202.6" value="100" height="17" anchorOffsetX="0" skinName="Skinbar8"/>
-			<e:Label id="enemyname" text="前锋" x="424.09" y="60" size="20" textAlign="left" width="150" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="enemyname" text="Tiên Phong" x="424.09" y="60" size="20" textAlign="left" width="150" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 
 			<e:Image id="selfnamebg" x="68.61" y="50" source="gb_guildname_bg1_png"/>
 			<e:Image id="selfbosshp" y="91.5" rotation="0.11" width="228" source="jindutiao1" scale9Grid="106,0,2,17" horizontalCenter="-124" anchorOffsetY="1" anchorOffsetX="1.01"/>
 			<e:ProgressBar id="sbhpbar" x="67.2" y="92.5" width="197.6" value="100" height="17" skinName="Skinbar6" anchorOffsetX="0" scaleY="1" scaleX="1"/>
 			<e:Image y="88" rotation="0.11" source="jiantouxiazuo" x="55.5"/>
 			<e:Image y="88" rotation="0.11" source="jiantouxiazuo" x="575.5" scaleX="-1"/>
-			<e:Label id="selfname" text="前锋" x="22.63" y="60" size="20" textAlign="right" width="176" textColor="0xffff00" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+			<e:Label id="selfname" text="Tiên Phong" x="22.63" y="60" size="20" textAlign="right" width="176" textColor="0xffff00" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
 			<e:Image id="vs" y="102.63" horizontalCenter="12.5" source="gb_vs_png"/>
 
 			<e:Image id="fightframe" y="-27.22" horizontalCenter="6.5" source="gb_zhongjianp1_png"/>

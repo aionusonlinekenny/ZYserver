@@ -7,10 +7,10 @@
 		<e:Image horizontalCenter="0" y="0" source="biaoti_jihuo3hero"/>
 		<e:Group id="infoBg" y="40" horizontalCenter="0" width="540">
 			<e:Image source="shuxingbg"   scale9Grid="77,5,15,34" left="0" right="0" top="0" bottom="0"/>
-			<e:Label text="活动时间：" x="14" y="12" size="18" textColor="0xf8b141"/>
-			<e:Label id="actTime" text="7月30日20:00-20:20(周日)" x="104" y="12" size="18" textColor="0x00ff00"/>
+			<e:Label text="Thời gian sự kiện：" x="14" y="12" size="18" textColor="0xf8b141"/>
+			<e:Label id="actTime" text="20:00-20:20 ngày 30/7 (Chủ nhật)" x="104" y="12" size="18" textColor="0x00ff00"/>
 			<e:Label id="actInfo" text="活动期间首个带领仙盟攻占仙宫的仙盟盟主可获得丰厚的奖励，奖励通过邮件发放。" x="104" y="32" size="18" width="344" bottom="12" top="32" left="104" right="14" textColor="0xdfd1b5"/>
-			<e:Label text="活动说明：" x="14" y="32" size="18" textColor="0xf8b141"/>
+			<e:Label text="Mô tả sự kiện：" x="14" y="32" size="18" textColor="0xf8b141"/>
 		</e:Group>
 
 		<e:Button id="active" label="20000元宝" skinName="SkinBtn1" horizontalCenter="0" bottom="30"/>
@@ -22,6 +22,6 @@
 
 
 		<e:Label id="state" text="再登陆XX天可领取" textColor="0x00FF00" size="20" bottom="8" horizontalCenter="0.5"/>
-		<e:Label id="already" text="已领取" textColor="0x00FF00" size="20" bottom="49" horizontalCenter="0.5" visible="false"/>
+		<e:Label id="already" text="Đã nhận" textColor="0x00FF00" size="20" bottom="49" horizontalCenter="0.5" visible="false"/>
 	</e:Group>		
 </e:Skin>

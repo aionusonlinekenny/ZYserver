@@ -15,7 +15,7 @@
 
 		<e:Image id="winImg" y="63" scale9Grid="25,23,9,22" x="432" source="jjliansheng"/>
 
-		<e:Label text="我的排名:" x="223" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Xếp hạng của tôi:" x="223" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label text="净胜场次:" x="223" y="121" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="winNum" text="" x="324" y="122" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Label id="winNum0" text="" x="325" y="94" size="18" textColor="0xffff00" fontFamily="Microsoft YaHei"/>

@@ -20,7 +20,7 @@
 		</e:Group>
 		<e:Group width="200" height="40" x="727" y="395" visible="false">
 			<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" width="400" x="-100" scaleX="1" scaleY="1" verticalCenter="0"/>
-			<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="0" textColor="0xFFFFFF" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" y="239.9999999999999" scaleX="1" scaleY="1"/>
+			<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="0" textColor="0xFFFFFF" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" y="239.9999999999999" scaleX="1" scaleY="1"/>
 		</e:Group>
 		<e:layout>
 		<e:VerticalLayout gap="-21" horizontalAlign="center"/>

@@ -10,7 +10,7 @@
 	<e:Image id="redPoint" y="5" touchEnabled="false" right="6" source="zjmhongdian" visible="false"/>
 	<e:Group horizontalCenter="0" bottom="0">
 		<e:Image id="lvBg" touchEnabled="false" source="zjmqipao" x="0" y="0"/>
-		<e:Label id="level" text="100级" size="20" textAlign="center" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
+		<e:Label id="level" text="Cấp 100" size="20" textAlign="center" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
 		<e:Label id="openText" text="神品开启" size="20" textAlign="center" horizontalCenter="0" verticalCenter="-1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 	</e:Group>
 	<e:Group id="eff" horizontalCenter="0" verticalCenter="0"/>

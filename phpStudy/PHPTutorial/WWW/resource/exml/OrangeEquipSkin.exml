@@ -34,5 +34,5 @@
 		<e:Component id="equip7" y="292" skinName="EquipItem" x="484"/>
 	</e:Group>
 	<e:Label id="topLevel" text="已升级至满级" size="24" horizontalCenter="0" bottom="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9" visible="false"/>
-	<e:Label id="labelMax" text="已满级" size="24" horizontalCenter="0" bottom="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9" visible="false"/> 
+	<e:Label id="labelMax" text="Đã đạt cấp tối đa" size="24" horizontalCenter="0" bottom="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9" visible="false"/> 
 </e:Skin>

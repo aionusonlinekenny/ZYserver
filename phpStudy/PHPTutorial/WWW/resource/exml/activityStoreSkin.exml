@@ -4,7 +4,7 @@
 	<e:Group id="costGroup" bottom="0" width="270" height="93" horizontalCenter="145" includeIn="activityStore">
 		<e:Image x="-1" source="szyuanbao" y="2" />
 		<e:Label id="price" text="200" x="28" size="20" textColor="0xf8b141" y="3" textAlign="left"/>
-		<e:Label id="or" text="或" x="63" size="20" textColor="0xF8B141" y="3" textAlign="left"/>
+		<e:Label id="or" text="hoặc" x="63" size="20" textColor="0xF8B141" y="3" textAlign="left"/>
 		<e:Image id="refreshItem" x="85" source="szyuanbao" y="2" width="30" height="22"/>
 		<e:Label id="refreshItemNum" text="2" size="20" y="3" textAlign="center" textColor="0x41F843" horizontalCenter="-2"/>
 		<e:Label id="num" text="/1" x="151" size="20" textColor="0xF8B141" y="3" textAlign="left"/>
@@ -28,7 +28,7 @@
 	<e:Image id="redPoint1" source="zjmhongdian" horizontalCenter="137" bottom="45" includeIn="activityStore"/>
 	<e:Image id="redPoint0" source="zjmhongdian" horizontalCenter="-48" bottom="49" includeIn="activityStore"/>
 
-	<e:Label id="noGoods" text=" 商品已全部售完，请刷新" size="24" textColor="0xFF8534" horizontalCenter="0" verticalCenter="0" visible="false"/>
+	<e:Label id="noGoods" text=" Sản phẩm đã bán hết, vui lòng làm mới" size="24" textColor="0xFF8534" horizontalCenter="0" verticalCenter="0" visible="false"/>
 
 
 	<e:Label id="point" text="我的积分：20000" x="105" width="213" size="20"  textAlign="left" bottom="15" visible="false"/>
@@ -48,15 +48,15 @@
 
 		</e:List>
 	</e:Scroller>
-	<e:Label id="goodsOverView" text="极品预览" size="20" bottom="11" verticalAlign="middle" textAlign="center" touchEnabled="true" right="17" textColor="0x35E62D" includeIn="activityStore"/>
+	<e:Label id="goodsOverView" text="Xem trước Cực Phẩm" size="20" bottom="11" verticalAlign="middle" textAlign="center" touchEnabled="true" right="17" textColor="0x35E62D" includeIn="activityStore"/>
 	<e:Image id="title" y="0" horizontalCenter="0" source="biaoti_activityStore"/>
 	<e:Group id="infoBg" left="3" right="3" x="10" y="36" height="116">
 		<e:Image top="0" bottom="0" source="ny_curtain_png" right="0" left="0"/>
 		<e:Group left="28" y="30">
-		<e:Label text="剩余时间：" size="18" textColor="0xFF9900" left="0" top="0"/>
-		<e:Label id="actTime0" text="6天23小时55分" size="18" textColor="0x00FF00" top="0" left="90"/>
-		<e:Label id="actInfo0" text="开服活动期间，率先达到指定等级获得限量奖励。" x="63" y="-14" size="18" width="396" top="20" left="90" textColor="0xDFD1B5" />
-		<e:Label text="活动说明：" size="18" textColor="0xFF9900" left="0" top="20"/>
+		<e:Label text="Thời gian còn lại：" size="18" textColor="0xFF9900" left="0" top="0"/>
+		<e:Label id="actTime0" text="6 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" top="0" left="90"/>
+		<e:Label id="actInfo0" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." x="63" y="-14" size="18" width="396" top="20" left="90" textColor="0xDFD1B5" />
+		<e:Label text="Mô tả sự kiện：" size="18" textColor="0xFF9900" left="0" top="20"/>
 		</e:Group>
 	</e:Group> 
 </e:Skin>

@@ -4,5 +4,5 @@
 	<e:Image top="1" bottom="1" source="tongyongtip1" width="350" scale9Grid="8,7,47,60" horizontalCenter="0" visible="false"/>
 	<e:Image id="bg" top="0" bottom="0" width="350" horizontalCenter="0" source="tongyongtip1" scale9Grid="8,12,43,34"/>
 
-	<e:Label id="desc" text="熔炼装备" size="22" touchEnabled="false" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+	<e:Label id="desc" text="Luyện Hóa Trang Bị" size="22" touchEnabled="false" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 </e:Skin>

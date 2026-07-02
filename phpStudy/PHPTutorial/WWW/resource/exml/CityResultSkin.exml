@@ -13,7 +13,7 @@
 		</e:Group>
 
 		<e:Button id="closeBtn" label="退出(10s)" horizontalCenter="0.5" skinName="SkinBtn7" y="793.36"/>
-		<e:Label id="labelItem" text="获得道具：" y="382" size="20" height="40" verticalAlign="middle" x="101" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="labelItem" text="Nhận vật phẩm：" y="382" size="20" height="40" verticalAlign="middle" x="101" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 
 
 
@@ -39,9 +39,9 @@
 
 		<e:Group id="effGroup"   touchChildren="false" touchEnabled="false" y="198" horizontalCenter="-9.5" x="230"  />
 		<e:Group id="winnerGroup"   touchChildren="false" touchEnabled="false" y="301" width="400"   horizontalCenter="0">
-			<e:Label id="roleTitleLabel" text="BOSS归属者：" size="20" x="0"   verticalCenter="-20" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="roleTitleLabel" text="Người sở hữu BOSS：" size="20" x="0"   verticalCenter="-20" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:ToggleButton id="roleIcon" skinName="SkinRoleToggleBtn" y="-30" icon="yuanhead11" horizontalCenter="0"/>
-			<e:Label id="belongTxt" text="今晚打老虎" y="60" size="20"   textColor="0x35e62d" horizontalCenter="0"/>
+			<e:Label id="belongTxt" text="Săn Hổ Đêm Nay" y="60" size="20"   textColor="0x35e62d" horizontalCenter="0"/>
 		</e:Group>
 		<e:Image id="title" y="5.32" horizontalCenter="28" source="labwin_png"/>
 

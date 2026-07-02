@@ -6,7 +6,7 @@
 		<e:Group id="defaultTitle" width="515" horizontalCenter="0" verticalCenter="0" includeIn="title,nune_lock" x="2" y="33"   height="52" height.title="52" height.nune_lock="52" anchorOffsetY.nune_lock="0" horizontalCenter.nune_lock="0" verticalCenter.nune_lock="-58.5">
 			<e:Image y="13" width="436" horizontalCenter="0.5" source="huawen" scale9Grid="88,1,96,20" width.title="436"/>
 			<e:Image source="shuxingbg4"   width="335" horizontalCenter="0.5" horizontalCenter.title="0" verticalCenter="0" verticalCenter.title="0" y.title="9" visible="false"/>
-			<e:Label id="lbName" text="默认解锁" y="13"   size="22" horizontalCenter="0" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label id="lbName" text="Mặc định mở khóa" y="13"   size="22" horizontalCenter="0" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group id="rune" width="515" horizontalCenter="0" verticalCenter="0" includeIn="rune,nune_lock" x="2" y="37"   height.nune_lock="116" height.rune="115">
 			<ns1:RuneDisplay id="white" x="2" y="0" skinName="SkinRuneItem"  touchEnabled="true"/>

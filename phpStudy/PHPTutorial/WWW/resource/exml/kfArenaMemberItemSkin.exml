@@ -3,10 +3,10 @@
 	xmlns:ns1="*">
 	<e:Group id="vip" scaleX="0" scaleY="0" touchChildren="false" touchEnabled="false"/>
 	<e:Image source="tongyonglabbg" left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30"/>
-	<e:Label id="powerLab" text="战力：999999" x="267" y="19" size="18" textColor="0x9f946d"/>
+	<e:Label id="powerLab" text="Chiến lực：999999" x="267" y="19" size="18" textColor="0x9f946d"/>
 
 	<e:Label id="nameLab" text="名字名字什么" x="130" y="19" size="18" textAlign="left" textColor="0x9f946d"/>
-	<e:Label id="winRateLab" text="胜率： 0" x="269" y="62" size="18" textAlign="left" textColor="0x9F946D"/>
+	<e:Label id="winRateLab" text="Tỷ lệ thắng： 0" x="269" y="62" size="18" textAlign="left" textColor="0x9F946D"/>
 	<e:Label id="scoreLab" text="积分： 0" x="128.2" y="62" size="18" textAlign="left" textColor="0x9F946D"/>
 
 	<e:Image id="face" source="head_11" x="30" width="60" height="60" verticalCenter="0"/>

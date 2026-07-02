@@ -2,9 +2,9 @@
 <e:Skin class="SelectRoleItemSkin" width="400" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Image left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30" x="0" y="0"/>
 	<e:Group x="120" verticalCenter="0">
-		<e:Label id="labelName" text="布拉格の神话" y="0" size="20" textColor="0xf8b141" x="0" bold="true"/>
+		<e:Label id="labelName" text="VươngGiả·HuyềnThoại" y="0" size="20" textColor="0xf8b141" x="0" bold="true"/>
 		<e:Label id="labelLevel" text="等级：4转100级" y="25" size="18" textColor="0xd1c28f" x="0"/>
-		<e:Label id="labelPower" text="战力：999999" y="50" size="18" textColor="0xD1C28F" x="0"/>
+		<e:Label id="labelPower" text="Chiến lực：999999" y="50" size="18" textColor="0xD1C28F" x="0"/>
 		<e:layout>
 			<e:VerticalLayout gap="2"/>
 		</e:layout>

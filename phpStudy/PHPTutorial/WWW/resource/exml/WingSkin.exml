@@ -63,7 +63,7 @@
 			<e:Group id="clearGroup" horizontalCenter="0" top="-32">
 				<e:Label text="祝福值:" y="0" size="18" x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="desc" text="本阶祝福值会在获得后24小时清空。" y="0" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label id="lastTime" text="剩余时间:" y="0" size="18" x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="lastTime" text="Thời gian còn lại:" y="0" size="18" x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="timeLabel" text="23:59:59" y="0" size="18" x="33" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 				<e:layout>
 				<e:HorizontalLayout gap="4"/>

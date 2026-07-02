@@ -16,7 +16,7 @@
 		<e:Image id="method" source="siwangydqh_png" verticalCenter="0" x="55" y="12" scaleX="1" scaleY="1" visible="false"/>
 		<e:Image id="up" source="tongyongup" verticalCenter="0" horizontalCenter="12.5" x="185" y="29" scaleX="1" scaleY="1" visible="false"/>
 		<e:Group right="15" verticalCenter="4.5" x="357" y="37" scaleX="1" scaleY="1">
-			<e:Label id="jump" text="前往" size="20" x="-40" y="-6" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="jump" text="Đi đến" size="20" x="-40" y="-6" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		</e:Group>
 		<e:Image source="tongyongline" y="74" width="370" x="0" scaleX="1" scaleY="1" visible="false"/>
 	</e:Group>

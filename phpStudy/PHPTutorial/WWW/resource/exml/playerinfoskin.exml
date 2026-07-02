@@ -7,9 +7,9 @@
 		<e:Image scale9Grid="19,18,2,5" source="tongyong_juanzhou" left="0" right="0" top="0"/>
 		<e:Image id="imgHead" height="85" width="85" left="96" top="58" source="yuanhead20"/>
 		<e:Image id="imgBg" height="95" width="92" scale9Grid="4,4,5,5" source="guildkuang" left="94" top="54"/>
-		<e:Label id="labelName" text="名字有六个字" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="229" top="64"/>
-		<e:Label id="labelGuild" text="仙盟名字多少" y="118" size="20" left="229" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="labelLv" text="12转100级" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" left="229"/>
+		<e:Label id="labelName" text="Tên có 6 chữ" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="229" top="64"/>
+		<e:Label id="labelGuild" text="Tên Tiên Minh bao nhiêu chữ" y="118" size="20" left="229" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="labelLv" text="Chuyển sinh 12 cấp 100" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" left="229"/>
 		<e:Button id="btnFriend" label="好友" bottom="38" right="77" skinName="SkinBtn3"/>
 		<e:Button id="btnInfo" label="查看" skinName="SkinBtn3" top="169" right="77"/>
 		<e:Button id="btnChat" label="私聊" skinName="SkinBtn3" left="74" top="169"/>

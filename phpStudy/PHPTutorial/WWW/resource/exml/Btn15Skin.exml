@@ -2,5 +2,5 @@
 <e:Skin class="SkinBtn15" states="up,down,disabled"
         currentState="up" xmlns:e="http://ns.egret.com/eui"  width="68" height="41">
 	<e:Image x.down="1" y.down="1" left="0" right="0" top="0" bottom="0" top.down="0" scale9Grid.disabled="16,0,54,40" scale9Grid.down="16,0,54,40" scale9Grid.up="18,0,51,40" bottom.down="0" right.down="0" left.down="0" source="limittimebtn" source.up="limittimebtn" source.down="limittimebtn" source.disabled="limittimebtn"/>
-	<e:Label size="20" text="按钮" id="labelDisplay" x.down="1" y.down="1" horizontalCenter="0" verticalCenter="0" verticalCenter.down="0" size.down="20" fontFamily="Microsoft YaHei" textColor="0x7e2a00" textColor.up="0x7e2a00" textColor.down="0x7e2a00" textColor.disabled="0x7e2a00"/>
+	<e:Label size="20" text="Nút bấm" id="labelDisplay" x.down="1" y.down="1" horizontalCenter="0" verticalCenter="0" verticalCenter.down="0" size.down="20" fontFamily="Microsoft YaHei" textColor="0x7e2a00" textColor.up="0x7e2a00" textColor.down="0x7e2a00" textColor.disabled="0x7e2a00"/>
 </e:Skin>

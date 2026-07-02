@@ -6,10 +6,10 @@
 		<e:Image left="0" right="0" top="0" bottom="0" source="activity_headbg0_png"/>
 		<e:Image source="shuxingbg" scale9Grid="77,5,15,34" left="0" right="0" top="15" bottom="15" visible="false"/>
 		<e:Group verticalCenter="0" left="28">
-		<e:Label text="剩余时间：" size="18" scaleX="1" scaleY="1" left="0" top="0" textColor="0xffffff"/>
-		<e:Label id="actTime1" text="6天23小时55分" size="18" textColor="0x00FF00" scaleX="1" scaleY="1" top="0" left="90"/>
-		<e:Label id="actDesc" text="开服活动期间，率先达到指定等级获得限量奖励。" x="63" y="-14" size="18" width="396" top="20" left="90" scaleX="1" scaleY="1" textColor="0xffffff"/>
-		<e:Label text="活动说明：" size="18" scaleX="1" scaleY="1" left="0" top="20" textColor="0xffff00"/>
+		<e:Label text="Thời gian còn lại：" size="18" scaleX="1" scaleY="1" left="0" top="0" textColor="0xffffff"/>
+		<e:Label id="actTime1" text="6 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" scaleX="1" scaleY="1" top="0" left="90"/>
+		<e:Label id="actDesc" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." x="63" y="-14" size="18" width="396" top="20" left="90" scaleX="1" scaleY="1" textColor="0xffffff"/>
+		<e:Label text="Mô tả sự kiện：" size="18" scaleX="1" scaleY="1" left="0" top="20" textColor="0xffff00"/>
 		</e:Group>
 	</e:Group>
 	<e:Scroller width="540" horizontalCenter="0" top="148" bottom="0">

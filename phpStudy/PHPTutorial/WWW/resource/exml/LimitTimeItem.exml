@@ -13,6 +13,6 @@
 	<e:Button id="goBtn" label="前往" skinName="SkinBtn15" scaleX="1" scaleY="1"   horizontalCenter="91.5" verticalCenter="14"/>
 	<ns1:ItemBase id="taskIcon" skinName="SkinItem" scaleX="1" scaleY="1" verticalCenter="0" left="7" width="68" height="68"/>
 	<e:Image id="redPoint" source="zjmhongdian"  touchEnabled="false" right="1.1699999999999875" top="2.01" visible="false"/>
-	<e:Label id="stateTxt" text="已完成" size="20" textAlign="center"   right="21" bottom="22" fontFamily="Microsoft YaHei" textColor="0x00842c" visible="false"/>
-	<e:Label id="done" text="已完成" size="20" textAlign="center"   fontFamily="Microsoft YaHei" right="21" bottom="22" textColor="0x00842c" visible="false"/>
+	<e:Label id="stateTxt" text="Đã hoàn thành" size="20" textAlign="center"   right="21" bottom="22" fontFamily="Microsoft YaHei" textColor="0x00842c" visible="false"/>
+	<e:Label id="done" text="Đã hoàn thành" size="20" textAlign="center"   fontFamily="Microsoft YaHei" right="21" bottom="22" textColor="0x00842c" visible="false"/>
 </e:Skin>

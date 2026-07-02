@@ -12,7 +12,7 @@
 		</e:ViewStack>
 		<e:Image id="imgleft" width="121" height="44" y="32" left="161" source="tabberhigh_png"/>
 		<e:Image id="imgright" width="121" height="44" y="32" left="282" source="tabberlow_png"/>
-		<e:Label id="labelleft" text="排名" x="205" y="44" fontFamily="Microsoft YaHei" size="22" lineSpacing="0" textColor="0x7e2a00" touchEnabled="false"/>
-		<e:Label id="labelright" text="奖励" x="318" y="44" fontFamily="Microsoft YaHei" size="22" lineSpacing="0" textColor="0x001828" touchEnabled="false"/>
+		<e:Label id="labelleft" text="Xếp hạng" x="205" y="44" fontFamily="Microsoft YaHei" size="22" lineSpacing="0" textColor="0x7e2a00" touchEnabled="false"/>
+		<e:Label id="labelright" text="Phần thưởng" x="318" y="44" fontFamily="Microsoft YaHei" size="22" lineSpacing="0" textColor="0x001828" touchEnabled="false"/>
 	</e:Group>
 </e:Skin>

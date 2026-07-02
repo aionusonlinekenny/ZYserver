@@ -124,7 +124,7 @@
 		<e:Image id="box0" source="200116_png" width="60" height="60" verticalCenter="0" horizontalCenter="0"/>
 		<e:Image source="bantoutiaobg" width="60" height="20" horizontalCenter="0" bottom="0" scale9Grid="121,19,7,7"/>
 		<e:Label id="time0" text="10次" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
-		<e:Label id="done0" text="已领取" size="16" textColor="0x00FF00" bottom="0" horizontalCenter="0" visible="false"/>
+		<e:Label id="done0" text="Đã nhận" size="16" textColor="0x00FF00" bottom="0" horizontalCenter="0" visible="false"/>
 		<e:Image id="boxPoint0" source="zjmhongdian" touchEnabled="false" scaleX="1" scaleY="1" right="0" top="0" visible="false"/>
 		</e:Group>
 		<e:Group x="-468" y="-414">
@@ -132,7 +132,7 @@
 		<e:Image id="box1" horizontalCenter="0" source="200116_png" width="60" height="60"/>
 		<e:Image source="bantoutiaobg" width="60" height="20" horizontalCenter="0" bottom="0" scale9Grid="121,19,7,7"/>
 		<e:Label id="time1" text="20次" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
-		<e:Label id="done1" text="已领取" size="16" textColor="0x00FF00" bottom="0" horizontalCenter="0" visible="false"/>
+		<e:Label id="done1" text="Đã nhận" size="16" textColor="0x00FF00" bottom="0" horizontalCenter="0" visible="false"/>
 		<e:Image id="boxPoint1" source="zjmhongdian" touchEnabled="false" scaleX="1" scaleY="1" right="0" top="0" visible="false"/>
 		</e:Group>
 		<e:Group x="-468" y="-344">
@@ -140,23 +140,23 @@
 		<e:Image id="box2" horizontalCenter="0" source="200116_0_png" width="60" height="60"/>
 		<e:Image source="bantoutiaobg" width="60" height="20" horizontalCenter="0" bottom="0" scale9Grid="121,19,7,7"/>
 		<e:Label id="time2" text="50次" size="16" textColor="0xDFD1B5" horizontalCenter="0" bottom="2"/>
-		<e:Label text="已领取" size="16" textColor="0x00FF00" id="done2" bottom="0" horizontalCenter="0" visible="false"/>
+		<e:Label text="Đã nhận" size="16" textColor="0x00FF00" id="done2" bottom="0" horizontalCenter="0" visible="false"/>
 		<e:Image id="boxPoint2" source="zjmhongdian" touchEnabled="false" scaleX="1" scaleY="1" right="0" top="0" x="36" y="-60" visible="false"/>
 		</e:Group>
 		<e:Group x="-468" y="-274">
 		<e:Image source="touxiangkuang" width="60" height="60" horizontalCenter="0" verticalCenter="0"/>
 		<e:Image id="box3" horizontalCenter="0" source="200116_0_png" width="60" height="60"/>
 		<e:Image source="bantoutiaobg" width="60" height="20" horizontalCenter="0" bottom="0" scale9Grid="121,19,7,7"/>
-		<e:Label id="time3" text="100次" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
-		<e:Label text="已领取" size="16" textColor="0x00FF00" id="done3" bottom="0" horizontalCenter="0" visible="false"/>
+		<e:Label id="time3" text="100 lần" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
+		<e:Label text="Đã nhận" size="16" textColor="0x00FF00" id="done3" bottom="0" horizontalCenter="0" visible="false"/>
 		<e:Image id="boxPoint3" source="zjmhongdian" touchEnabled="false" scaleX="1" scaleY="1" right="0" top="0" x="36" y="-60" visible="false"/>
 		</e:Group>
 		<e:Group x="-458" y="-264">
 		<e:Image source="touxiangkuang" width="60" height="60" horizontalCenter="0" verticalCenter="0"/>
 		<e:Image id="box4" horizontalCenter="0" source="200116_0_png" width="60" height="60"/>
 		<e:Image source="bantoutiaobg" width="60" height="20" horizontalCenter="0" bottom="0" scale9Grid="121,19,7,7"/>
-		<e:Label id="time4" text="100次" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
-		<e:Label text="已领取" size="16" textColor="0x00FF00" id="done4" bottom="0" horizontalCenter="0" visible="false"/>
+		<e:Label id="time4" text="100 lần" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
+		<e:Label text="Đã nhận" size="16" textColor="0x00FF00" id="done4" bottom="0" horizontalCenter="0" visible="false"/>
 		<e:Image id="boxPoint4" source="zjmhongdian" touchEnabled="false" scaleX="1" scaleY="1" right="0" top="0" x="36" y="-60" visible="false"/>
 		</e:Group>
 		<e:layout>

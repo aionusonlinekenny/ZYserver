@@ -14,7 +14,7 @@
 		<e:Image source="leibiefengetou"  scale9Grid="1,0,7,48" y="46" left="0" right="0"/>
 		<e:Image source="leibeifengexian"  bottom="5" horizontalCenter="-93"/>
 		<e:Image source="leibeifengexian"  bottom="5" horizontalCenter="93"/>
-		<e:Label text="角色名" size="22" strokeColor="000000" bottom="19"  textColor="0x001828" fontFamily="Microsoft YaHei" left="72"/>
+		<e:Label text="Tên nhân vật" size="22" strokeColor="000000" bottom="19"  textColor="0x001828" fontFamily="Microsoft YaHei" left="72"/>
 		<e:Label text="历史贡献" size="22" strokeColor="000000" bottom="19"  textColor="0x001828" fontFamily="Microsoft YaHei" right="60"/>
 		<e:Label text="职位" size="22" strokeColor="000000" horizontalCenter="0" bottom="19"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		<e:Label text="仙盟成员" size="24" strokeColor="0x000000" horizontalCenter="0"  fontFamily="Microsoft YaHei" top="10" textColor="0xffff00"/>
@@ -53,9 +53,9 @@
 		<e:Label id="guildName" text="1" y="38" size="20" x="76"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Button id="rename" y="-15" skinName="SkinBtn0" icon="guild_icon1" x="154" width="80" height="80" scaleX="0.8" scaleY="0.8">
 		</e:Button>
-		<e:Label text="等级:" x="16" y="66" size="20" strokeColor="0xe84c4c"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Cấp độ:" x="16" y="66" size="20" strokeColor="0xe84c4c"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		<e:Label id="guildLevel" text="2" x="76" y="66" size="20"  textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Label text="人数:" x="16" y="124" size="20" strokeColor="0x000000"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Số người:" x="16" y="124" size="20" strokeColor="0x000000"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		<e:Label id="guildMember" text="9/10" x="76.29" y="124" size="20"  textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		<e:Label id="checkJoin" text="查看申请" y="160" size="20"  x="64" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 		<e:Label text="资金:" x="15.34" y="95" size="20" strokeColor="000000"  textColor="0x001828" fontFamily="Microsoft YaHei"/>

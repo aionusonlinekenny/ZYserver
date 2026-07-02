@@ -6,7 +6,7 @@
 	         />
 	<e:Group width="450" height="516" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-30" scale9Grid="128,2,15,41" width="300"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bold="true" bottom="-24" textColor="0x7E6437"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bold="true" bottom="-24" textColor="0x7E6437"/>
 		<e:Image source="tongyongkuang3bg" scale9Grid="23,24,3,2"   
 		           left="0" right="0" top="0" bottom="0"/>
 		<e:Image source="tongyonglabbg" y="40" height="368" scale9Grid="40,20,30,30"

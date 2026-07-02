@@ -98,7 +98,7 @@
 			<e:Image source="tongyong_juanzhou" width="484" height="23" scaleY="1" scaleX="1" horizontalCenter="0" verticalCenter="-156"/>
 			<e:Image source="tongyong_titlebg" anchorOffsetX="0" width="267" horizontalCenter="0.5" verticalCenter="-166"/>
 			<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="260" width="435" scale9Grid="22,20,25,25" horizontalCenter="0" verticalCenter="0"/>
-			<e:Label id="title0" size="22" text="提  示" bold="false" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="-162"/>
+			<e:Label id="title0" size="22" text="Thông báo" bold="false" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="-162"/>
 			<e:Label id="warnLabel0" text="区服火爆，已关闭角色注册" size="22" textAlign="center" verticalAlign="middle" width="332" height="160" textColor="0x213847" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0"/>
 			<e:Group id="leftGroup0" verticalCenter="150" x="97" visible="false">
 			<e:Image id="icon0" width="20" height="20" x="0" y="0" source="zjmyuanbao"/>

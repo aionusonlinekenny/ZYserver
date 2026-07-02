@@ -7,7 +7,7 @@
 	<e:Rect id="bgClose" fillAlpha="0.7" left="0" top="0" right="0" bottom="0"/>
 	<e:Group id="anigroup" horizontalCenter="0" width="578" anchorOffsetY="0" height="735" verticalCenter="0">
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="0" width="300"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image anchorOffsetX="0" anchorOffsetY="0" height="688" source="tongyong_dikuang2" scale9Grid="23,13,74,62" width="574" x="0" top="15"/>
 		<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="541" width="516" scale9Grid="22,20,25,25" top="34" horizontalCenter="0"/>
 		<e:Image source="tongyong_juanzhou" scale9Grid="209,0,69,0" left="0" right="0" top="0"/>
@@ -50,9 +50,9 @@
 				<e:Group id="nowFightGroup" horizontalCenter="0" scaleX="0.75" scaleY="0.75" top="128">
 					<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel"/>
 				</e:Group>
-				<e:Label id="attr1Now0" text="攻击：xxx" y="30" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45"/>
-				<e:Label id="attr2Now0" text="攻击：xxx" y="57" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45" visible="false"/>
-				<e:Label id="attr3Now0" text="攻击：xxx" y="84" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45" visible="false"/>
+				<e:Label id="attr1Now0" text="Công kích：xxx" y="30" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45"/>
+				<e:Label id="attr2Now0" text="Công kích：xxx" y="57" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45" visible="false"/>
+				<e:Label id="attr3Now0" text="Công kích：xxx" y="84" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45" visible="false"/>
 				<e:Label id="hunyuNow" text="龙晶数量：5" y="112" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" left="45"/>
 			</e:Group>
 			<e:Group id="nextAttr" anchorOffsetX="0" width="197" horizontalCenter="151.5" top="5">
@@ -62,9 +62,9 @@
 					<ns1:PowerPanel id="powerPanel1" skinName="SkinPowerPanel"/>
 				</e:Group>
 
-				<e:Label id="attr1Next0" text="攻击：xxx" y="30" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30"/>
-				<e:Label id="attr2Next0" text="攻击：xxx" y="57" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30" visible="false"/>
-				<e:Label id="attr3Next0" text="攻击：xxx" y="84" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30" visible="false"/>
+				<e:Label id="attr1Next0" text="Công kích：xxx" y="30" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30"/>
+				<e:Label id="attr2Next0" text="Công kích：xxx" y="57" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30" visible="false"/>
+				<e:Label id="attr3Next0" text="Công kích：xxx" y="84" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30" visible="false"/>
 				<e:Label id="hunyuNext" text="龙晶数量：5" y="112" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffffff" left="30"/>
 			</e:Group>
 		</e:Group>

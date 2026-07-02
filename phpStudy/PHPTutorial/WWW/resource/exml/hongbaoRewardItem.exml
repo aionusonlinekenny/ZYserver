@@ -8,7 +8,7 @@
 	</e:Group>
 
 	<e:Group x="0" y="0" x.owner="51" y.owner="1" x.otherman="48" y.otherman="18">
-		<e:Label id="playerName" text="玩家名字六字" size="18" textColor="0xffd93f" bold.owner="true" top.owner="3" verticalCenter.otherman="0" textColor.otherman="0x5186fd" text.otherman="玩家名字六字" size.otherman="16" left.otherman="52" left.owner="57" x="57" y="0"/>
+		<e:Label id="playerName" text="Tên người chơi 6 chữ" size="18" textColor="0xffd93f" bold.owner="true" top.owner="3" verticalCenter.otherman="0" textColor.otherman="0x5186fd" text.otherman="Tên người chơi 6 chữ" size.otherman="16" left.otherman="52" left.owner="57" x="57" y="0"/>
 		<e:Label id="speaktxt" text="在红包里抢到了" size="16" anchorOffsetX="0" width="312" anchorOffsetY="0" bold.owner="true" left.owner="57" textColor="0xd1c28f" height.owner="32" bottom.owner="2" text.otherman="在红包里抢到了96元宝" width.otherman="200" verticalCenter.otherman="0" textAlign.otherman="left" x.otherman="182" size.otherman="16" verticalAlign.owner="middle" text.owner="手气爆炸，在红包里抢到了500元宝" x="0" y="0" width.owner="291"/>
 		<e:layout.otherman>
 			<e:HorizontalLayout gap="4"/>

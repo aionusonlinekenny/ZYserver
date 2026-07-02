@@ -51,7 +51,7 @@
 
 	<e:Group id="maxLevel" width="158" height="40" horizontalCenter="0" bottom="22" visible="false">
 		<e:Image source="bantoutiaobg" left="0" right="0" top="0" bottom="0"/>
-		<e:Label textColor="0xFFD862" text="已满阶" size="20" width="144" height="84" verticalAlign="middle" textAlign="center" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label textColor="0xFFD862" text="Đã đạt bậc tối đa" size="20" width="144" height="84" verticalAlign="middle" textAlign="center" horizontalCenter="0" verticalCenter="0"/>
 	</e:Group>
 
 	<e:Group y="105" right="20">
@@ -68,13 +68,13 @@
 		<e:Group width="500" height="128" horizontalCenter="0" bottom="142" x="10" y="20" scaleX="1" scaleY="1">
 			<e:Image id="nextAttBG" source="shuxingbg" left="0" right="0" top="0" bottom="0" scale9Grid="50,5,65,34"/>
 			<e:Label id="curAtt" text="攻击：8000\n攻击：8000\n攻击：8000\n攻击：8000" size="18" width="210" textAlign="left" verticalAlign="middle" textColor="0x9f946d" x="15" scaleX="1" scaleY="1" verticalCenter="0"/>
-			<e:Label id="nextAtt" text="攻击：8000" size="18" textColor="0x2ECA22" width="210" textAlign="left" verticalAlign="middle" verticalCenter="0" horizontalCenter="140" x="0" y="0" scaleX="1" scaleY="1"/>
+			<e:Label id="nextAtt" text="Công kích：8000" size="18" textColor="0x2ECA22" width="210" textAlign="left" verticalAlign="middle" verticalCenter="0" horizontalCenter="140" x="0" y="0" scaleX="1" scaleY="1"/>
 
 			<e:Image id="cursor" source="jiantouyou" verticalCenter="0" horizontalCenter="0"/>
 		</e:Group>
 	</e:Group>
 	<e:Group id="maxShowGroup" width="500" height="128" horizontalCenter="0" bottom="152" visible="false">
-		<e:Label id="maxCurAtt" text="攻击：8000" size="18" height="80" width="160" textAlign="left" verticalAlign="middle" textColor="0x9F946D" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label id="maxCurAtt" text="Công kích：8000" size="18" height="80" width="160" textAlign="left" verticalAlign="middle" textColor="0x9F946D" horizontalCenter="0" verticalCenter="0"/>
 
 	</e:Group>
 </e:Skin>

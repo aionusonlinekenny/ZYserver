@@ -58,17 +58,17 @@
 					<e:VerticalLayout horizontalAlign="left" verticalAlign="middle"/>
 				</e:layout>
 			</e:Group>
-			<e:Label id="name1" text="兵魂名称" y="6" size="20" textColor="0x001838" x="218" fontFamily="Microsoft YaHei"/>
+			<e:Label id="name1" text="Tên Binh Hồn" y="6" size="20" textColor="0x001838" x="218" fontFamily="Microsoft YaHei"/>
 			<ns1:WeaponSoulbreakItemRender id="material1" skinName="weaponSoulbreakitem" x="106" y="53"/>
 			<e:Button id="btnjihuo" label="激  活" horizontalCenter="0" width="176" height="69" icon="btn2_2" y="173" skinName="SkinBtn28"/>
 		</e:Group>
 		<e:Group id="lianhua" height="245" width="515" anchorOffsetY="0" horizontalCenter="0.5" top="483">
-			<e:Label id="name2" text="兵魂名称" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001838" y="6"/>
+			<e:Label id="name2" text="Tên Binh Hồn" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001838" y="6"/>
 			<e:Group y="33" left="0" right="0" height="130">
 				<e:Image top="0" bottom="0" anchorOffsetX="0" width="515" source="tongyong_dikuang4" scale9Grid="6,6,12,14" horizontalCenter="0"/>
 				<e:Group width="417" height="83" y="10" horizontalCenter="-22">
 					<e:Group id="attr0" x="6" y="8" width="380">
-					<e:Label id="lhattr0" text="等级" size="20" y="0" textColor="0x001838" fontFamily="Microsoft YaHei" textAlign="right" right="212"/>
+					<e:Label id="lhattr0" text="Cấp độ" size="20" y="0" textColor="0x001838" fontFamily="Microsoft YaHei" textAlign="right" right="212"/>
 					<e:Group x="186" y="0" width="200">
 						<e:Label id="lhattr3" text="" size="20" textAlign="left" y="0" textColor="0x001838" fontFamily="Microsoft YaHei" left="0"/>
 						<e:Image id="lhright1" y="0" rotation="0" width="28" source="tongyongup" horizontalCenter="-6"/>
@@ -115,7 +115,7 @@
 				</e:Group>
 			</e:Group>
 			<e:Group id="costgroup0" x="185" y="133">
-				<e:Label text="消耗:" size="20" x="0" y="2" fontFamily="Microsoft YaHei" textColor="0x001838"/>
+				<e:Label text="Tiêu hao:" size="20" x="0" y="2" fontFamily="Microsoft YaHei" textColor="0x001838"/>
 				<e:Image id="micon0" x="64" width="30" height="30" y="-14" source="200167_png"/>
 				<e:Label id="countLabel1" text="" size="20" x="108" y="2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
@@ -123,11 +123,11 @@
 				</e:layout>
 			</e:Group>
 			<e:Button id="btnlianhua" label="炼 化" horizontalCenter="0" icon="btn2_2" width="176" height="69" y="173" skinName="SkinBtn28"/>
-			<e:Label id="maxdesc0" text="已满级" size="22" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" y="196" visible="false"/>
+			<e:Label id="maxdesc0" text="Đã đạt cấp tối đa" size="22" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" y="196" visible="false"/>
 		</e:Group>
 		<e:Group id="tupo" width="515" height="241" horizontalCenter="0.5" y="481" anchorOffsetY="0" visible="false">
 			<e:Image height="130" scale9Grid="6,5,13,17" width="515" horizontalCenter="0" source="tongyong_dikuang4" y="33"/>
-			<e:Label id="name3" text="兵魂名称" y="6" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="name3" text="Tên Binh Hồn" y="6" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Group x="38" y="57">
 				<e:Group id="g0" y="20" x="11" width="318">
 					<e:Label text="突破等级上限" size="20" x="8" fontFamily="Microsoft YaHei" textColor="0x001828"/>

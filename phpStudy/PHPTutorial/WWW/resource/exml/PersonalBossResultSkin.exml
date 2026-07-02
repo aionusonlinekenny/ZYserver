@@ -7,7 +7,7 @@
 	<e:Group horizontalCenter="0" width="600" height="948" verticalCenter="0">
 
 
-		<e:Label id="txt" text="获得奖励如下:" size="20" textAlign="center" y="288.21"   textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-176.5"/>
+		<e:Label id="txt" text="Phần thưởng nhận được như sau:" size="20" textAlign="center" y="288.21"   textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-176.5"/>
 		<e:Button id="closeBtn" label="退出(10s)" y="778.15" horizontalCenter="-2.5" skinName="SkinBtn7"/>
 		<e:List id="listCoin" y="313" width="150" x="55">
 			<e:layout>
@@ -19,7 +19,7 @@
 			<e:TileLayout/>
 			</e:layout>
 		</e:List>
-		<e:Label id="labelItem" text="获得道具:" y="348.21" size="20" height="40" verticalAlign="middle" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-196.5" visible="false"/>
+		<e:Label id="labelItem" text="Nhận vật phẩm:" y="348.21" size="20" height="40" verticalAlign="middle" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-196.5" visible="false"/>
 
 
 		<e:Image id="title" y="5" horizontalCenter="28" source="labwin_png"/>
@@ -59,7 +59,7 @@
 		<e:Group id="effGroup"   touchChildren="false" touchEnabled="false" y="197.33" horizontalCenter="-11.5" x="230"  />
 		<e:Group width="580" height="463" id="defeat" verticalCenter="33.5" y="216" horizontalCenter="0" x="66" scaleX="1" scaleY="1" anchorOffsetY="0">
 			<e:Image horizontalCenter="0" source="huabian" y="-16"/>
-			<e:Label id="lostTxt0" text="我要变强" size="22" y="7" horizontalCenter="0" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="lostTxt0" text="Tôi muốn mạnh hơn" size="22" y="7" horizontalCenter="0" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
 
 
 			<e:Scroller width="464" height="437" verticalCenter="45" horizontalCenter="0" anchorOffsetY="0" anchorOffsetX="0">

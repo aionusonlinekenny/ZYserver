@@ -14,7 +14,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Group right="75" top="20" x="287" y="17" >
-			<e:Label text="剩余时间：" x="0" size="18" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="Thời gian còn lại：" x="0" size="18" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label id="leftTimeTxt" text="" x="100" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>
 			<e:HorizontalLayout gap="2"/>
@@ -36,7 +36,7 @@
 			<e:Image id="box0" source="200116_png" width="53" height="42" verticalCenter="0" horizontalCenter="0"/>
 
 			<e:Label id="time0" text="10次" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label id="done0" text="已领取" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="done0" text="Đã nhận" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 			<e:Image id="boxPoint0" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" visible="false"/>
 			</e:Group>
 			<e:Group x="-468" y="-414" width="55" height="59">
@@ -44,7 +44,7 @@
 			<e:Image id="box1" horizontalCenter="0" source="200116_png" width="53" height="42" verticalCenter="0"/>
 
 			<e:Label id="time1" text="20次" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label id="done1" text="已领取" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="done1" text="Đã nhận" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 			<e:Image id="boxPoint1" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" visible="false"/>
 			</e:Group>
 			<e:Group x="-468" y="-344" width="55" height="59">
@@ -52,23 +52,23 @@
 			<e:Image id="box2" horizontalCenter="0" source="200116_0_png" width="53" height="42" verticalCenter="0"/>
 
 			<e:Label id="time2" text="50次" size="16" horizontalCenter="0" bottom="-2" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label text="已领取" size="16" id="done2" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label text="Đã nhận" size="16" id="done2" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 			<e:Image id="boxPoint2" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" x="36" y="-60" visible="false"/>
 			</e:Group>
 			<e:Group x="-468" y="-274" width="55" height="59">
 			<e:Image source="touxiangkuang" width="47" height="47" horizontalCenter="0" verticalCenter="0"/>
 			<e:Image id="box3" horizontalCenter="0" source="200116_0_png" width="53" height="42" verticalCenter="0"/>
 
-			<e:Label id="time3" text="100次" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label text="已领取" size="16" id="done3" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="time3" text="100 lần" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="Đã nhận" size="16" id="done3" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 			<e:Image id="boxPoint3" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" x="36" y="-60" visible="false"/>
 			</e:Group>
 			<e:Group x="-458" y="-264" width="55" height="59">
 			<e:Image source="touxiangkuang" width="47" height="47" horizontalCenter="0" verticalCenter="0"/>
 			<e:Image id="box4" horizontalCenter="0" source="200116_0_png" width="53" height="42" verticalCenter="0"/>
 
-			<e:Label id="time4" text="100次" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label text="已领取" size="16" id="done4" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="time4" text="100 lần" size="16" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="Đã nhận" size="16" id="done4" bottom="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 			<e:Image id="boxPoint4" source="zjmhongdian" touchEnabled="false" scaleX="0.9" scaleY="0.9" right="3" top="3" x="36" y="-60" visible="false"/>
 			</e:Group>
 			<e:layout>

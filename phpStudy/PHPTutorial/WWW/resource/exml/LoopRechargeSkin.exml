@@ -6,8 +6,8 @@
 			<e:Group id="infoBg" left="0" right="0" x="10" top="0" bottom="0">
 			<e:Image left="0" right="0" top="0" bottom="0" source="day42_headbg_png"/>
 			<e:Group verticalCenter="8.5" rotation="0.14" left="177" width="364">
-				<e:Label id="actInfo0" text="开服活动期间，率先达到指定等级获得限量奖励。" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="top" anchorOffsetY="0" height="36.99" y="10" left="90" right="-6"/>
-				<e:Label text="活动说明：" size="18"  left="0" fontFamily="Microsoft YaHei" textColor="0xffff00" y="10"/>
+				<e:Label id="actInfo0" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="top" anchorOffsetY="0" height="36.99" y="10" left="90" right="-6"/>
+				<e:Label text="Mô tả sự kiện：" size="18"  left="0" fontFamily="Microsoft YaHei" textColor="0xffff00" y="10"/>
 			</e:Group>
 			<e:Label id="todayRecharge" text="本日累计充值：10000" y="115" size="18" right="30" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="right"/>
 			</e:Group>
@@ -20,7 +20,7 @@
 			<e:Group y="262" width="538" height="118" x="11">
 
 				<e:Image left="0" right="0" top="0" bottom="0" source="kaifuhuodongitembg4_png" scale9Grid="29,20,33,7"/>
-				<e:Label id="already0" text="已领取" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
+				<e:Label id="already0" text="Đã nhận" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
 				<e:Button id="get0" label="立即领取" width="50" verticalCenter="0" height="30" skinName="SkinBtn5" x="425"/>
 				<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" verticalCenter="-17.5" right="25" visible="false"/>
 
@@ -42,7 +42,7 @@
 			</e:Group>
 			<e:Group y="272" width="538" height="118" x="21">
 				<e:Image left="0" right="0" top="0" bottom="0" source="kaifuhuodongitembg4_png" scale9Grid="29,20,33,7"/>
-				<e:Label id="already1" text="已领取" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
+				<e:Label id="already1" text="Đã nhận" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
 				<e:Button id="get1" label="立即领取" width="50" verticalCenter="0" height="30" x="425" skinName="SkinBtn5"/>
 				<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" verticalCenter="-17.5" right="25" visible="false"/>
 				<e:List id="reward1" y="11"  itemRendererSkinName="SkinItem2" horizontalCenter="0">
@@ -54,7 +54,7 @@
 			</e:Group>
 			<e:Group y="282" width="538" height="118" x="31">
 				<e:Image left="0" right="0" top="0" bottom="0" source="kaifuhuodongitembg4_png" scale9Grid="29,20,33,7"/>
-				<e:Label id="already2" text="已领取" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
+				<e:Label id="already2" text="Đã nhận" textColor="0x00FF00" size="24" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="180.5" visible="false"/>
 				<e:Button id="get2" label="立即领取" width="50" verticalCenter="0" height="30" x="425" skinName="SkinBtn5"/>
 				<e:Image id="redPoint2" touchEnabled="false" source="zjmhongdian" verticalCenter="-17.5" right="25" visible="false"/>
 				<e:List id="reward2" y="11"  itemRendererSkinName="SkinItem2" horizontalCenter="0">

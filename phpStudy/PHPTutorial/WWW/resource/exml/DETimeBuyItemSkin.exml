@@ -3,7 +3,7 @@
 	<e:Group left="0" right="0" top="0" bottom="0">
 		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0" source="qiandaobg_png" scale9Grid="25,21,47,74"/>
 		<e:Label id="times" text="可购买: 1/1" size="18" y="76" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" horizontalCenter="209"/>
-		<e:Label id="already" text="已购买" size="20" textColor="0x00ff00" right="30" verticalCenter="-8" visible="false"/>
+		<e:Label id="already" text="Đã mua" size="20" textColor="0x00ff00" right="30" verticalCenter="-8" visible="false"/>
 		<e:Group verticalCenter="-16" x="293">
 			<e:Label text="库存: " size="20" verticalCenter="16" x="0" y="38" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="stock" text="10000" size="20" verticalCenter="16" x="48" y="38" scaleX="1" scaleY="1" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>

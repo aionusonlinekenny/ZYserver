@@ -2,5 +2,5 @@
 <e:Skin class="SkinChallengerHead" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="90">
 	<e:Image id="imgHead" height="62" width="62" horizontalCenter="0" top="4" source="yuanhead10"/>
 	<e:Image id="imgBg" height="70" width="70" source="touxiangkuang0" scale9Grid="4,4,5,5" horizontalCenter="0" top="0"/>
-	<e:Label id="Name" text="名字有六个字" size="18" horizontalCenter="0.5" bottom="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="Name" text="Tên có 6 chữ" size="18" horizontalCenter="0.5" bottom="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 </e:Skin>

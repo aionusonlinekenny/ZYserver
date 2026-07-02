@@ -41,7 +41,7 @@
 		</e:Group>
 		<e:Image id="giveUp" y="11.5" right="10" source="chatclose3"/>
 		<e:Group id="end" x="155" y="69" width="220" height="46" visible="false">
-			<e:Label id="endname" text="玩家名六个字" y="0" size="24" horizontalCenter="0" textColor="0xfffc00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="endname" text="Tên người chơi 6 chữ" y="0" size="24" horizontalCenter="0" textColor="0xfffc00" fontFamily="Microsoft YaHei"/>
 			<e:Label text="点数最高，拿走了奖励！" x="0" y="42.5" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 	</e:Group>

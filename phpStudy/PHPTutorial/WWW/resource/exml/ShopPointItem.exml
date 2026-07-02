@@ -3,10 +3,10 @@
 	<e:Image source="scitembg" left="0" right="0" top="0" bottom="0" scale9Grid="29,26,49,4"/>
 	<e:Button id="buyBtn" label="购  买" skinName="SkinBtn1" verticalCenter="0" name="buy" right="20"/>
 	<e:Image id="textBG" x="100" y="23" source="bantoutiaobg" height="32" width="280"/>
-	<e:Label id="itemName" text="商品名称" x="128" y="28" size="20" fontFamily="Microsoft YaHei" textColor="0xef0000"/>
+	<e:Label id="itemName" text="Tên sản phẩm" x="128" y="28" size="20" fontFamily="Microsoft YaHei" textColor="0xef0000"/>
 	<e:Label id="money" text="1000" y="72" size="20" fontFamily="Microsoft YaHei" left="292" textColor="0xffff00"/>
 	<e:Label id="integration" text="1000" y="72" size="20" fontFamily="Microsoft YaHei" left="172" textColor="0xffff00"/>
-	<e:Label id="used" text="（商品用途）" x="230" y="28" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="used" text="（Công dụng sản phẩm）" x="230" y="28" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	<e:Image x="251" y="70" source="szyuanbao"/>
 	<e:Image x="147" y="70" height="23" width="21" source="szjinbi"/> 
 	<ns1:ItemIcon id="itemIcon" x="21" verticalCenter="0" skinName="SkinItemIcon"/>

@@ -5,14 +5,14 @@
 	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.8" />
 	<e:Group id="mainGroup" width="296" height="594" horizontalCenter="0" verticalCenter="32">
 		<e:Image height="35" width="300"  horizontalCenter="0" bottom="-41" source="bantoutiaobg" scale9Grid="162,5,46,30"/>
-		<e:Label text="点击空白区域关闭窗口" size="20"  horizontalCenter="0" bottom="-31" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20"  horizontalCenter="0" bottom="-31" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image id="bg"  
 		          width="290" horizontalCenter="0" source="tongyongtip1" scale9Grid="9,10,41,9" anchorOffsetY="0" top="3" bottom="3"/>
 		<e:Image id="bg0"   source="tongyongtip2"
 		         scale9Grid="19,18,2,6"  width="296" horizontalCenter="0" top="0" bottom="0"/>
 		<e:Image id="job" touchEnabled="false" source="op_1" y="20" horizontalCenter="0" />
 
-		<e:Label text="战纹属性" size="30" touchEnabled="false" horizontalCenter="0"  textColor="0xffff00" fontFamily="Microsoft YaHei" y="86"/>
+		<e:Label text="Thuộc tính Chiến Văn" size="30" touchEnabled="false" horizontalCenter="0"  textColor="0xffff00" fontFamily="Microsoft YaHei" y="86"/>
 		<e:Button id="leftBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan"  verticalCenter="0" horizontalCenter="-186.5"/>
 		<e:Button id="rightBtn" label="按钮" skinName="SkinBtn0" icon="jiantouxuan"  scaleX="-1" verticalCenter="0" horizontalCenter="186.5"/>
 

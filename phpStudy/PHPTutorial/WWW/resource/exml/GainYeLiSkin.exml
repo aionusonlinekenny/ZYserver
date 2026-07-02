@@ -10,21 +10,21 @@
 		<e:Image source="tongyong_titlebg" width="281" horizontalCenter="0" top="-20"/>
 		<e:Image width="461" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,6,60,42" top="34" anchorOffsetY="0" bottom="32"/>
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-35" width="400"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-27" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-27" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center"/>
 		<e:Label text="获取劫力" size="24" horizontalCenter="0" textColor="0x39566a" fontFamily="Microsoft YaHei" top="-8" verticalAlign="middle" textAlign="center"/>
 		<e:Button skinName="SkinBtn0" label="按钮" id="closeBtn" right="4" top="-14" icon="tongyong_btnclose"/>
 		<ns1:PriceIcon2 id="priceIcon0" x="325" y="50" skinName="SkinPriceIcon2" visible="false"/>
 		<e:Group id="gr1" width="444" height="122" horizontalCenter="0" top="46">
 			<e:Image source="tongyonglabbg" scale9Grid="40,20,30,30" left="0" right="0" top="0" bottom="0"/>
 			<e:Label id="yeli0" text="10000" size="22" x="190" y="26" fontFamily="Microsoft YaHei" textColor="0x0000f1"/>
-			<e:Label text="获得劫力：" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="left" verticalAlign="middle" top="26" x="90"/>
+			<e:Label text="Nhận Kiếp Lực：" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="left" verticalAlign="middle" top="26" x="90"/>
 			<e:Label text="消耗铜钱：" size="20" textColor="0xE2B142" x="98" y="64" visible="false"/>
 			<e:Label id="cost0" text="10000" size="20" x="198" y="64" textColor="0x00ff00" visible="false"/>
 			<e:Label id="yeli4" text="等级兑换：降1级" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
 			<e:Group id="time0" right="10" top="12">
-				<e:Label text="今日还可兑换" size="18" textAlign="center" y="7" right="48" x="11"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label text="Hôm nay còn có thể đổi" size="18" textAlign="center" y="7" right="48" x="11"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
 				<e:Label id="toDay0" text="5" size="18" textAlign="center" y="7" right="36" x="131" textColor="0x0000f1" fontFamily="Microsoft YaHei"/>
-				<e:Label text="次" size="18" textAlign="center" y="7" right="1" x="143"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label text="lần" size="18" textAlign="center" y="7" right="1" x="143"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
 				<e:layout>
 				<e:HorizontalLayout gap="0"/>
 				</e:layout>
@@ -37,13 +37,13 @@
 		</e:Group>
 		<e:Group id="gr2" width="444" height="122" horizontalCenter="0" verticalCenter="2">
 			<e:Image   left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
-			<e:Label text="获得劫力：" size="22" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="26"/>
+			<e:Label text="Nhận Kiếp Lực：" size="22" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="26"/>
 			<e:Label id="yeli1" text="10000" size="22" x="190" textColor="0x0000f1" top="26" fontFamily="Microsoft YaHei"/>
 			<e:Label id="name1" text="高级轮回丹" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
 			<e:Group right="10" top="12">
-				<e:Label text="今日还可兑换" size="18" textAlign="center" y="7" right="48" x="11"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label text="Hôm nay còn có thể đổi" size="18" textAlign="center" y="7" right="48" x="11"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
 				<e:Label id="toDay1" text="5" size="20" textAlign="center" y="7" right="36" x="131"   textColor="0x0000f1" fontFamily="Microsoft YaHei"/>
-				<e:Label text="次" size="18" textAlign="center" y="7" right="16" x="143"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label text="lần" size="18" textAlign="center" y="7" right="16" x="143"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
 				<e:layout>
 				<e:HorizontalLayout gap="0"/>
 				</e:layout>
@@ -57,12 +57,12 @@
 		</e:Group>
 		<e:Group id="gr3" width="444" height="122" horizontalCenter="0" bottom="42">
 			<e:Image   left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
-			<e:Label text="获得劫力：" size="22" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="26"/>
+			<e:Label text="Nhận Kiếp Lực：" size="22" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="26"/>
 			<e:Label id="yeli2" text="10000" size="22" x="190" textColor="0x0000f1" top="26" fontFamily="Microsoft YaHei"/>
 			<e:Group right="10" top="12">
-				<e:Label text="今日还可兑换" size="20" textAlign="center" y="7" right="48" x="11"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label text="Hôm nay còn có thể đổi" size="20" textAlign="center" y="7" right="48" x="11"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
 				<e:Label id="toDay2" text="5" size="20" textAlign="center" y="7" right="36" x="131"   textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
-				<e:Label text="次" size="20" textAlign="center" y="7" right="16" x="143"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label text="lần" size="20" textAlign="center" y="7" right="16" x="143"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
 				<e:layout>
 				<e:HorizontalLayout gap="0"/>
 				</e:layout>

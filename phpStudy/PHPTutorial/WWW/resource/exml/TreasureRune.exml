@@ -26,7 +26,7 @@
 			<e:Label id="boxcount" text="本周累积" size="16" top="28" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Group width="63" height="26" left="19" top="50">
 			<e:BitmapLabel id="times" text="160" top="51" letterSpacing="-8" font="num_g0_fnt" left="22" x="3" y="1"/>
-			<e:Label text="次" size="16" top="54" horizontalCenter="24.5" fontFamily="Microsoft YaHei" textColor="0xffff00" x="47" y="4" visible="false"/>
+			<e:Label text="lần" size="16" top="54" horizontalCenter="24.5" fontFamily="Microsoft YaHei" textColor="0xffff00" x="47" y="4" visible="false"/>
 			<e:layout>
 				<e:HorizontalLayout verticalAlign="middle" gap="3"/>
 			</e:layout>
@@ -45,7 +45,7 @@
 					<e:Image source="bantoutiaobg" width="72" height="29" horizontalCenter="0" x="0" verticalCenter="0"/>
 					<e:BitmapLabel id="time0" text="1890c" letterSpacing="-8" font="num_g0_fnt" verticalCenter="0" horizontalCenter="0"/>
 				</e:Group>
-				<e:Label id="done0" text="已领取" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" visible="false"/>
+				<e:Label id="done0" text="Đã nhận" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" visible="false"/>
 				<e:Image id="boxPoint0" source="zjmhongdian" touchEnabled="false" right="0" top="0" visible="false"/>
 			</e:Group>
 			<e:Group x="-468" y="-414" height="80" width="81">
@@ -55,7 +55,7 @@
 					<e:Image source="bantoutiaobg" width="72" horizontalCenter="0" height="29" x="-5" verticalCenter="0"/>
 					<e:BitmapLabel id="time1" text="160" letterSpacing="-8" font="num_g0_fnt" verticalCenter="0" horizontalCenter="0"/>
 				</e:Group>
-				<e:Label id="done1" text="已领取" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" height="20" visible="false"/>
+				<e:Label id="done1" text="Đã nhận" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" height="20" visible="false"/>
 				<e:Image id="boxPoint1" source="zjmhongdian" touchEnabled="false" right="0" top="0" visible="false"/>
 			</e:Group>
 			<e:Group x="-468" y="-344" height="80" width="81">
@@ -64,7 +64,7 @@
 					<e:Image width="72" height="29" horizontalCenter="0" source="bantoutiaobg" x="-44" verticalCenter="0"/>
 					<e:BitmapLabel id="time2" text="160c" letterSpacing="-8" font="num_g0_fnt" verticalCenter="0" horizontalCenter="0"/>
 				</e:Group>
-				<e:Label text="已领取" size="20" id="done2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" height="16" visible="false"/>
+				<e:Label text="Đã nhận" size="20" id="done2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" height="16" visible="false"/>
 				<e:Image id="boxPoint2" source="zjmhongdian" touchEnabled="false" right="0" top="0" x="36" y="-60" visible="false"/>
 			</e:Group>
 			<e:Group x="-468" y="-274" height="80" width="81">
@@ -74,7 +74,7 @@
 					<e:Image source="bantoutiaobg" width="72" height="29" horizontalCenter="0" x="0" verticalCenter="0"/>
 					<e:BitmapLabel id="time3" text="160" letterSpacing="-8" font="num_g0_fnt" verticalCenter="0" horizontalCenter="0"/>
 				</e:Group>
-				<e:Label text="已领取" size="20" id="done3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" height="20" visible="false"/>
+				<e:Label text="Đã nhận" size="20" id="done3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" height="20" visible="false"/>
 				<e:Image id="boxPoint3" source="zjmhongdian" touchEnabled="false" right="0" top="0" x="36" y="-60" visible="false"/>
 			</e:Group>
 			<e:Group x="-458" y="-264" height="80" width="81">
@@ -83,7 +83,7 @@
 					<e:Image source="bantoutiaobg" width="72" horizontalCenter="0" height="29" bottom="0" x="0" y="0"/>
 					<e:BitmapLabel id="time4" text="160" letterSpacing="-8" font="num_g0_fnt" verticalCenter="0" horizontalCenter="0"/>
 				</e:Group>
-				<e:Label text="已领取" size="20" id="done4" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" height="20" visible="false"/>
+				<e:Label text="Đã nhận" size="20" id="done4" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="55" height="20" visible="false"/>
 				<e:Image id="boxPoint4" source="zjmhongdian" touchEnabled="false" right="0" top="0" x="36" y="-60" visible="false"/>
 			</e:Group>
 			<e:layout>

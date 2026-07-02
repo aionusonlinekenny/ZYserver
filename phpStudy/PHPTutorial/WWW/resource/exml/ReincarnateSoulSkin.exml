@@ -38,7 +38,7 @@
 		<e:Label id="getItemTxt" text="获取材料" size="20" verticalAlign="middle" textAlign="center" scaleX="1" scaleY="1" y="0" x="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 	</e:Group>
 	<e:Button id="soulBtn" label="注 魂" width="210" height="64" horizontalCenter="0" bottom="88" icon="btn1_2" skinName="SkinBtn7"/>
-	<e:Label id="maxLevel" text="已满级" size="30" horizontalCenter="0" bottom="153" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+	<e:Label id="maxLevel" text="Đã đạt cấp tối đa" size="30" horizontalCenter="0" bottom="153" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" width="15" height="15" horizontalCenter="83.5" bottom="137"/>
 	<e:Image scaleX="1" scaleY="1" source="tongyong_dikuang4" scale9Grid="4,5,15,16" anchorOffsetY="0" width="588" horizontalCenter="0" height="211" bottom="190"/>
 	<e:Group height="209" width="573" horizontalCenter="-1" bottom="189">
@@ -54,7 +54,7 @@
 			<e:Group x="100" y="46" height="22">
 				<e:Label id="chainPos" y="0" text="[古魂法链]" size="20" verticalAlign="justify" x="0" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 				<e:Label id="chainAttr" y="0" text="伤害加成" size="20" verticalAlign="justify" x="83" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-				<e:Label id="chainState" y="10" text="增加" size="20" verticalAlign="justify" x="93" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label id="chainState" y="10" text="Tăng" size="20" verticalAlign="justify" x="93" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 				<e:Label id="chainValue" y="20" text="5%" size="20" verticalAlign="justify" x="103" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 				<e:layout>
 				<e:HorizontalLayout gap="0"/>

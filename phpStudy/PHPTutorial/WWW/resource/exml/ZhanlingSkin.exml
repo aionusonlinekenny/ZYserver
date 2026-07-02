@@ -128,7 +128,7 @@
 			<e:Image id="upRedPoint" source="zjmhongdian" x="132" y="0" right.skin_up="20" top.skin_up="0" right.zl_up="20" top.zl_up="0"/>
 			</e:Group>
 			<e:Group id="costGroup" includeIn="zl_up,skin_up" verticalCenter="4" left="15" width="180">
-			<e:Label id="expendLabel" text="消耗：" size="20" bold.zl_max="true" x="0" y="0" textColor="0x001828" fontFamily="Microsoft YaHei" width.skin_max="60"/>
+			<e:Label id="expendLabel" text="Tiêu hao：" size="20" bold.zl_max="true" x="0" y="0" textColor="0x001828" fontFamily="Microsoft YaHei" width.skin_max="60"/>
 			<e:Image id="icon" x="55" width="31" height="31" y="28" source="205003_png" source.skin_up="zl_suit_btn" width.skin_max="36" source.zl_up="tongyongyuanbao2"/>
 			<e:Label id="countLabel" text="12000/100" size="20" textAlign="left" x="94" y="12" textAlign.zl_up="left" textColor="0x001828" fontFamily="Microsoft YaHei" text.zl_up="" text.skin_up="" width="88"/>
 			<e:layout>
@@ -151,7 +151,7 @@
 		</e:Group>
 		<e:Group id="maxLevel" width="158" height="40" includeIn="zl_max,skin_max" y.zl_max="658" bottom="-139" horizontalCenter="0" bottom.zl_max="28" bottom.skin_max="0">
 			<e:Image source="bantoutiaobg" left="0" right="0" top="0" bottom="0" visible.zl_max="false" visible.skin_max="false"/>
-			<e:Label textColor="0xffff00" text="已满阶" size="26" width="144" height="36" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" bottom.skin_max="19" horizontalCenter="0" bottom.zl_max="-10"/>
+			<e:Label textColor="0xffff00" text="Đã đạt bậc tối đa" size="26" width="144" height="36" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" bottom.skin_max="19" horizontalCenter="0" bottom.zl_max="-10"/>
 		</e:Group>
 		<ns1:ItemStage id="lv" skinName="SkinLv" y="116" top="64" left="105"/>
 		<e:Image id="zhanlingName" source="zl_name_1" top="232" left="113" width="27" height="111" source.skin_up="zl_name_1_png"/>

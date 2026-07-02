@@ -6,7 +6,7 @@
 
 		<e:Button id="btnChallenge" label="挑 战" width="160" height="55" visible.free="false" visible.sdfb="false" visible.sdget="false" horizontalCenter="1" horizontalCenter.challenge="0" icon="btn1_2" skinName="SkinBtn6" x="221"  bottom.sdget="47" bottom.sdfb="47" bottom.free="47" verticalCenter.challenge="306.5"/>
 		<e:Label text="今日可挑战次数 :" size="20" visible.free="false" visible.sdget="false" x.challenge="192" includeIn="free,sdget" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="330.67" textAlign="left" verticalAlign="middle"  textColor="0x00ff06" bottom="14" horizontalCenter="85.5"/>
-		<e:Label id="lbTime" text="1" size="20" visible.free="false" visible.sdget="false" horizontalCenter="86" text.challenge="今日可挑战次数：10" horizontalCenter.challenge="0" text.sdfb="今日可挑战次数：10" horizontalCenter.sdfb="1.5" bottom.sdfb="57" fontFamily="Microsoft YaHei" textColor="0x00ff06" x="380"  bottom.sdget="14" bottom.free="14" verticalCenter.challenge="354"/>
+		<e:Label id="lbTime" text="1" size="20" visible.free="false" visible.sdget="false" horizontalCenter="86" text.challenge="Số lần thách đấu hôm nay：10" horizontalCenter.challenge="0" text.sdfb="Số lần thách đấu hôm nay：10" horizontalCenter.sdfb="1.5" bottom.sdfb="57" fontFamily="Microsoft YaHei" textColor="0x00ff06" x="380"  bottom.sdget="14" bottom.free="14" verticalCenter.challenge="354"/>
 
 		<e:Image source="ring_fubenslogen1_png" visible.free="false" visible.sdget="false" width="551" height="85" horizontalCenter="6.5" y.sdget="92" y.sdfb="92" y.free="92" x="31"  horizontalCenter.challenge="6.5" verticalCenter.challenge="-289.5"/>
 		<e:Group width="300" height="100" visible.challenge="false" horizontalCenter="0" x="150" y="676"  visible.sdfb="false" visible.free="false" visible.sdget="false">
@@ -54,7 +54,7 @@
 			<e:BasicLayout/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="lbSweepTime" size="20" visible.free="false" text="今日可挑战次数：10" horizontalCenter.challenge="0"  textColor="0x00ff06" fontFamily="Microsoft YaHei" horizontalCenter="12" visible.challenge="false" y="752" visible.sdfb="false"/>
+		<e:Label id="lbSweepTime" size="20" visible.free="false" text="Số lần thách đấu hôm nay：10" horizontalCenter.challenge="0"  textColor="0x00ff06" fontFamily="Microsoft YaHei" horizontalCenter="12" visible.challenge="false" y="752" visible.sdfb="false"/>
 		<e:Group height="20" horizontalCenter="180" x="480"  visible.sdfb="false" y="876" verticalCenter.challenge="470" includeIn="free,sdfb,sdget">
 			<e:layout>
 			<e:HorizontalLayout gap="0"/>

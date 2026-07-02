@@ -22,7 +22,7 @@
 		<e:Label id="expLabel" strokeColor="0x000000" text="100/100" size="12" verticalAlign="middle" height="18" verticalCenter="1" fontFamily="Microsoft YaHei" textAlign="center" textColor="0x000000" width="460" horizontalCenter="-0.5" visible="false"/>
 		</e:Group>
 		<e:Label text="图鉴详情" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a" top="-3"/>
-		<e:Label text="已满级" visible.nomax="false" horizontalCenter="0" visible.noActive="false" y.max="520" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="-16"/>
+		<e:Label text="Đã đạt cấp tối đa" visible.nomax="false" horizontalCenter="0" visible.noActive="false" y.max="520" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="-16"/>
 		<e:Button id="closeBtn" label="按钮" skinName="SkinBtn0" icon="fanhui" scaleX="1.2" scaleY="1.2" bottom="18" x="613" visible="false"/>
 		<e:List id="list" height="210" width="495" itemRendererSkinName="SkinItem" visible.max="false" scaleX="0.9" scaleY="0.9" horizontalCenter="-5" y="520" visible="false">
 		<e:layout>

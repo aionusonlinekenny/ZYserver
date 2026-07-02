@@ -33,7 +33,7 @@
 		<e:Image right="30"  bottom="50" visible.skill0="false"  source="zjmhongdian" visible="false"/>
 		<e:Image id="redpoint" width="20" height="20" x="283" y="616" source="zjmhongdian"/>
 		<e:Group id="cost" horizontalCenter="0" bottom="24" includeIn="skill1,skill2,skill3,skill4,skill5,skill6" horizontalCenter.skill1="0"  horizontalCenter.skill2="0" horizontalCenter.skill3="-38.5"  horizontalCenter.skill4="0"  horizontalCenter.skill5="0" >
-			<e:Label text="升级消耗:" x="0" y="0" size="30" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Tiêu hao nâng cấp:" x="0" y="0" size="30" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Image id="costImg" width="40" height="40" x="19" y="2" source="200926_png"/>
 			<e:Label id="costNum" text="X 3" x="10" y="10" size="26" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:layout>

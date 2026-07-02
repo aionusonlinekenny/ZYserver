@@ -15,7 +15,7 @@
 		</e:Group>
 		<e:Group width="600" height="483" id="defeat" y="272" horizontalCenter="0" anchorOffsetY="0">
 			<e:Image horizontalCenter="0" source="huabian" y="-19"/>
-			<e:Label id="lostTxt" text="我要变强"  size="22" y="7" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="lostTxt" text="Tôi muốn mạnh hơn"  size="22" y="7" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
 			<e:Image id="openRole" scaleX="0.9" scaleY="0.9"  width="478" source=""  height="34" horizontalCenter="0" verticalCenter="205"/>
 			<e:Button id="openRole1" label="前往" y="450.62"  skinName="SkinBtn3" horizontalCenter="0" visible="false"/>
 			<e:Scroller width="372" height="438" verticalCenter="22.5" horizontalCenter="0" anchorOffsetY="0">

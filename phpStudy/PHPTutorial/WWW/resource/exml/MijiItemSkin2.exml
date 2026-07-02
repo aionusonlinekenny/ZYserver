@@ -6,7 +6,7 @@
 	<e:Image id="lock" height="32" width="31" horizontalCenter="0" verticalCenter="0" source="mijilock" visible="false"/>
 	<e:Image id="icon"  source="mijiicon" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0"/>
 	<e:Image id="itemLock" anchorOffsetX="0" anchorOffsetY="0" source="mijilock" top="7" right="7" width="21" height="22" visible="false"/>
-	<e:Label id="unlearn" text="未学习" size="20" horizontalCenter="0" verticalCenter="0" textColor="0xe40000" fontFamily="Microsoft YaHei" visible="false"/>
+	<e:Label id="unlearn" text="Chưa học" size="20" horizontalCenter="0" verticalCenter="0" textColor="0xe40000" fontFamily="Microsoft YaHei" visible="false"/>
 	<e:Image id="addImg" source="tongyongadd" horizontalCenter="0" verticalCenter="0" width="48" height="50" visible="false"/>
 	<e:Label id="count" size="20" text="1转开启" horizontalCenter="0" verticalCenter="0" textColor="0xe40000" fontFamily="Microsoft YaHei" width="46" textAlign="center" verticalAlign="middle" visible="false"/>
 	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="26" verticalCenter="-29" visible="false"/>

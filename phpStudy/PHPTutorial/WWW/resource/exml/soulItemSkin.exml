@@ -8,7 +8,7 @@
 	</e:Group>
 	<e:Group y="22" horizontalCenter="1.5">
 		<e:Label id="timelabel" text="兵魂名字" size="22" x="0" y="296" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
-		<e:Label id="levellabel" text="X阶" size="22" y="0" x="17" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+		<e:Label id="levellabel" text="Bậc X" size="22" y="0" x="17" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
 		<e:layout>
 			<e:HorizontalLayout gap="4" verticalAlign="middle"/>
 		</e:layout>

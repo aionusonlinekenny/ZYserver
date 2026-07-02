@@ -2,10 +2,10 @@
 <e:Skin class="SkinBattleScoreRank" width="512" height="625" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group width="512" height="625" y="0" x="0">
 		<e:Image scale9Grid="10,5,28,31" x="0" y="0" scaleX="1" scaleY="1" source="tongyong_dikuang4" width="512" height="555"/>
-		<e:Label y="13" text="排名" size="20" x="51" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label y="13" text="Xếp hạng" size="20" x="51" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Label y="13" text="名字" size="20" x="152" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-		<e:Label y="13" text="仙盟" size="20" x="297" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-		<e:Label y="13" text="积分" size="20" x="444" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label y="13" text="Tiên Minh" size="20" x="297" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label y="13" text="Điểm tích lũy" size="20" x="444" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Scroller top="41" bottom="70" scrollPolicyH="off" y="45" scaleX="1" scaleY="1" width="512">
 			<e:List id="list" x="-3" y="30" itemRendererSkinName="SkinBattleScoreRankItem">
 			<e:layout>

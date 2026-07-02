@@ -7,7 +7,7 @@
 		<e:Image id="BG" scale9Grid="11,10,9,10" source="tongyongtip1" horizontalCenter="-0.5" top="3" bottom="3" left="3" right="4"/>
 		<e:Image source="tongyongtip2" left="0" right="0" top="0" bottom="0" scale9Grid="18,18,2,4"/>
 		<ns1:ChuanShiItemIcon id="itemIcon" x="20" y="21" skinName="SkinheirloomItemIcon"/>
-		<e:Label id="nameLabel" text="羽毛" size="24" x="180" y="47" textColor="0x90f490" fontFamily="Microsoft YaHei"/>
+		<e:Label id="nameLabel" text="Lông Vũ" size="24" x="180" y="47" textColor="0x90f490" fontFamily="Microsoft YaHei"/>
 		<e:Group y="131" x="20">
 			<e:Label id="description" text="使用后获得1000万角色经验值" size="20" width="310" y="0" textAlign="left" horizontalCenter="0" x="0"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Group height="15" x="188" y="-3"/>
@@ -17,6 +17,6 @@
 		</e:Group>
 		<e:Image scale9Grid="85,1,6,1" width="340" y="106" horizontalCenter="0" source="tongyongline" height="2"/>
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-35" scale9Grid="128,2,15,41" width="300"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="18" x="30" bottom="-28" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="18" x="30" bottom="-28" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	</e:Group>
 </e:Skin>

@@ -43,7 +43,7 @@
 	</e:Group>
 	<e:Group horizontalCenter="0" x="25"  verticalCenter="367">
 		<e:Image source="bantoutiaobg" touchEnabled="false" width="383" height="40" verticalCenter="0" horizontalCenter="0"/>
-		<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" horizontalCenter="0.5" verticalCenter="-2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" horizontalCenter="0.5" verticalCenter="-2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	</e:Group>
 
 

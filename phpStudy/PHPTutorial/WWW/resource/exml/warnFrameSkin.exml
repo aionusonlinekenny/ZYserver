@@ -6,7 +6,7 @@
 		<e:Image left="0" right="0" source="tongyong_juanzhou" width="481" height="23" scaleY="1" scaleX="1"/>
 		<e:Image left="109" right="108" source="tongyong_titlebg" y="-15" anchorOffsetX="0" width="249"/>
 		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="206" width="419" scale9Grid="22,20,25,25"/>
-		<e:Label id="title" size="22" text="提  示"     horizontalCenter="0" y="-3.35" bold="false" textColor="0x084151" fontFamily="Microsoft YaHei"/>
+		<e:Label id="title" size="22" text="Thông báo"     horizontalCenter="0" y="-3.35" bold="false" textColor="0x084151" fontFamily="Microsoft YaHei"/>
 		<e:Button id="sureBtn" label="确认" horizontalCenter.sure="0" horizontalCenter.normal="90" horizontalCenter.check="90" horizontalCenter="90" icon="btn3" skinName="SkinBtn6" bottom="42">
 		</e:Button>
 		<e:Button id="notBtn" label="取消" visible.sure="false"  horizontalCenter.normal="-90" horizontalCenter.check="-90" horizontalCenter="-90" icon="btn3_1" skinName="SkinBtn6" bottom="42"/>

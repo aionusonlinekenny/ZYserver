@@ -21,7 +21,7 @@
 
 		<e:Image width="440" horizontalCenter="-80" anchorOffsetY="0" anchorOffsetX="0" source="longhuntextbg2" top="591" height="113.7" scale9Grid="0,13,591,12"/>
 
-		<e:Label id="leftText" text="总剩余挑战次数：1次" size="18" horizontalCenter="-57.5" bottom="71" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Label id="leftText" text="Tổng số lần thách đấu còn lại：1 lần" size="18" horizontalCenter="-57.5" bottom="71" fontFamily="Microsoft YaHei" visible="false"/>
 		<e:Image id="stateImage" top="346" horizontalCenter="-2" source="zdbosskejisha_png" visible="false"/>
 		<e:Group horizontalCenter="-81" top="78" x="63" y="115">
 			<e:Label text="击杀" size="18" horizontalCenter="-81.5" top="140" x="-170" fontFamily="Microsoft YaHei" textColor="0xffff00"/>

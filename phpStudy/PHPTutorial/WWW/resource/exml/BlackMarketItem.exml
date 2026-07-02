@@ -17,8 +17,8 @@
 	<e:Image id="discount" horizontalCenter="-232.5" source="shangzk5_png" scaleX="0.7" scaleY="0.7" touchEnabled="false"/>
 	<e:Image id="wuzhe" source="tuijian2" x="399" y="21" touchEnabled="false" scaleX="0.8" scaleY="0.8" visible="false"/>
 	<e:Group width="200" height="25" y="16" anchorOffsetY="0" left="100">
-		<e:Label id="itemName" text="商品名称" y="8" size="20" fontFamily="Microsoft YaHei" x="100" textAlign="left" textColor="0xef0000"/>
-		<e:Label id="level" text="（商品用途）" y="-1" size="20" fontFamily="Microsoft YaHei" x="34" textAlign="left"/>
+		<e:Label id="itemName" text="Tên sản phẩm" y="8" size="20" fontFamily="Microsoft YaHei" x="100" textAlign="left" textColor="0xef0000"/>
+		<e:Label id="level" text="（Công dụng sản phẩm）" y="-1" size="20" fontFamily="Microsoft YaHei" x="34" textAlign="left"/>
 		<e:layout>
 		<e:HorizontalLayout gap="8"/>
 		</e:layout>

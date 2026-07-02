@@ -12,7 +12,7 @@
 
 
 	<e:Label id="nameLab" text="微笑宿命" x="140" y="28.68" size="22" textAlign="left" textColor="0x0038ab" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="200.67"/>
-	<e:Label id="attack" text="战斗力：" x="109" y="75.33" size="18" textColor="0x9f946d" visible="false"/>
+	<e:Label id="attack" text="Chiến lực：" x="109" y="75.33" size="18" textColor="0x9f946d" visible="false"/>
 	<e:Label id="attack0" text="9999999999" x="207.02" y="76.67" size="18" textColor="0xf8b141" visible="false"/>
 	<e:Button id="ok" label="同 意" height="46" width="90" scaleX="0.7" scaleY="0.7" skinName="SkinBtn6" icon="btn2_2" right="45" verticalCenter="-26.5"/>
 	<e:Button id="cancel" label="拒 绝" x="361" y="63.68" scaleX="0.7" scaleY="0.7">

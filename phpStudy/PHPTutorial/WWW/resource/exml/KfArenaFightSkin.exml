@@ -34,7 +34,7 @@
 			</e:layout>
 			</e:Group>
 			<e:Group x="160" y="0">
-			<e:Label text="我的排名：" x="0" y="0" size="18"/>
+			<e:Label text="Xếp hạng của tôi：" x="0" y="0" size="18"/>
 			<e:Label id="rank" text="12" x="80" y="0" size="18" textColor="0x00FF00"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>

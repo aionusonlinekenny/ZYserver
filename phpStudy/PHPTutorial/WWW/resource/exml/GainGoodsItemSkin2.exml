@@ -5,7 +5,7 @@
 
 	<e:Image id="dir" verticalCenter="0" scale9Grid="6,5,9,10" source="jiantouxia" rotation="270" horizontalCenter="161"/>
 	<e:Label id="desc" text="完成任务" size="20" touchEnabled="false" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00842c" textColor.down="0x00842c" textAlign="left" left="38"/>
-	<e:Label id="desc2" text="前往" size="20" touchEnabled="false" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" textColor.down="0x001828" horizontalCenter="115.5"/>
+	<e:Label id="desc2" text="Đi đến" size="20" touchEnabled="false" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" textColor.down="0x001828" horizontalCenter="115.5"/>
 	<e:Group id="stars" verticalCenter="0" left="160" visible="false">
 		<e:Image id="star1" width="32" height="29" x="127" y="4"   source="star_png"/>
 		<e:Image id="star2" width="32" height="29" x="161" y="4"   source="star_png"/>

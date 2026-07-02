@@ -4,7 +4,7 @@
 	<e:Image y="83" horizontalCenter="0"   width="128" height="136" source="tejiekuang"/>
 	<e:Image y="-2" horizontalCenter="0" height="32" width="200" source="tesudi" scale9Grid="0,1,181,31" visible="false"/>
 	<ns1:ItemIcon id="itemIcon" y="110" skinName="SkinItemIcon" x="113"/>
-	<e:Label id="equipName" text="装备名字" y="54" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0" stroke="0"/>
+	<e:Label id="equipName" text="Tên trang bị" y="54" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0" stroke="0"/>
 	<e:Label id="level" y="222" text="Lv.100" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xffff00" stroke="0.8"/>
 	<e:Component id="attributes" skinName="MixAttributesPanel" horizontalCenter="0" bottom="0"/>
 </e:Skin>

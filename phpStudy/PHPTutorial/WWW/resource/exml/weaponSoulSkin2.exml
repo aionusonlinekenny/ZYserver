@@ -21,7 +21,7 @@
 			<e:Image  top="30" width="510" horizontalCenter="0" height="130" source="tongyong_dikuang4" scale9Grid="6,6,9,11"/>
 			<e:Group y="4" x="201">
 				<e:Label id="ringname" text="仙弓名字" size="22" y="-91.5"   x="-98" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0xffff00"/>
-				<e:Label id="levellabel" text="X阶" size="22" y="-91.5" x="-4" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0xffff00"/>
+				<e:Label id="levellabel" text="Bậc X" size="22" y="-91.5" x="-4" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0xffff00"/>
 				<e:layout>
 				<e:HorizontalLayout gap="6"/>
 				</e:layout>
@@ -40,7 +40,7 @@
 			</e:Group>
 			<e:Group id="upInfo" y="37" x="11" anchorOffsetY="0" height="106">
 				<ns1:WeaponSkillItemRender id="skillicon" skinName="SkinweaponSkillItem" horizontalCenter="0"/>
-				<e:Label id="skillname" text="技能名字"   size="22" horizontalCenter="0" y="83" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+				<e:Label id="skillname" text="Tên kỹ năng"   size="22" horizontalCenter="0" y="83" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 			<e:Label id="skill" text="" y="118" size="20" width="378" x="123" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>

@@ -30,7 +30,7 @@
 			<e:HorizontalLayout horizontalAlign="center" gap="42"/>
 		</e:layout>
 	</e:List>
-	<e:Label id="leftText" text="总剩余挑战次数：1次" size="20" horizontalCenter="-57" bottom="78" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xffffff"/>
+	<e:Label id="leftText" text="Tổng số lần thách đấu còn lại：1 lần" size="20" horizontalCenter="-57" bottom="78" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xffffff"/>
 	<e:Group id="juan" height="21" bottom="78" left="4" width="171">
 		<e:Image id="jicon" source="200156_png" width="24" height="24" x="22" y="0"/>
 		<e:Label id="jcount0" text="挑战令" size="18" x="62" y="10" fontFamily="Microsoft YaHei" stroke="0.5" textColor="0xffffff"/>
@@ -43,5 +43,5 @@
 	<e:Image id="stateImage" bottom="287" horizontalCenter="-56.5" source="zdbosskejisha_png"/>
 	<e:Label id="leftCDText" text="挑战CD:999秒" size="22"    bottom="23" horizontalCenter="-56" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	<e:Label id="getItemTxt" text="购买次数" size="20"   bottom="19" fontFamily="Microsoft YaHei" horizontalCenter="-206" stroke="0.5" textColor="0x00842c" visible="false"/>
-	<e:Label id="remindTpis" text="提醒设置" size="20" horizontalCenter="87" bottom="19" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+	<e:Label id="remindTpis" text="Cài đặt nhắc nhở" size="20" horizontalCenter="87" bottom="19" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 </e:Skin>

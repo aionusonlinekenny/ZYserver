@@ -5,9 +5,9 @@
 			<e:Image source="activity_headbg0_png" left="0" right="0" top="0" bottom="0"/>
 			<e:Group y="22" left="11">
 			<e:Label text="剩余时间: " size="20" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="actTime" text="6天23小时55分" size="20" scaleX="1" scaleY="1" top="0" left="93" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label id="actDesc" text="开服活动期间，率先达到指定等级获得限量奖励。" x="63" y="-14" size="20" width="432" top="29" left="93" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label text="活动说明: " size="20" scaleX="1" scaleY="1" left="0" top="29" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="20" scaleX="1" scaleY="1" top="0" left="93" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="actDesc" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." x="63" y="-14" size="20" width="432" top="29" left="93" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Mô tả sự kiện: " size="20" scaleX="1" scaleY="1" left="0" top="29" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 		</e:Group>
 		<e:Image scaleY="1" horizontalCenter="0.5" y="-7" width="214" height="50" x="80" scaleX="1" source="huabian3"/>

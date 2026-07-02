@@ -9,18 +9,18 @@
 	<e:Label id="lvNext" text="Lv.6" size="20" y="4" includeIn="normal" fontFamily="Microsoft YaHei" textColor="0x00ff06" left="372" x="20" scaleX="1" scaleY="1"/>
 
 	<e:Group anchorOffsetX="0" width="163" horizontalCenter.max="0" left="68" verticalCenter="11.5">
-		<e:Label id="attr1Now" text="攻击：9999999" x="0" y="26" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="attr2Now" text="攻击：9999999" x="0" y="51" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="attr3Now" text="攻击：9999999" x="0" y="75" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="attr1Now" text="Công kích：9999999" x="0" y="26" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="attr2Now" text="Công kích：9999999" x="0" y="51" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="attr3Now" text="Công kích：9999999" x="0" y="75" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:layout>
 		<e:VerticalLayout verticalAlign="middle" horizontalAlign="left"/>
 		</e:layout>
 	</e:Group>
 
 	<e:Group anchorOffsetX="0" width="163" includeIn="normal" left="352" verticalCenter="11.5">
-		<e:Label id="attr1Next" text="攻击：9999999" x="0" y="26" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-		<e:Label id="attr2Next" text="攻击：9999999" x="0" y="51" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-		<e:Label id="attr3Next" text="攻击：9999999" x="0" y="75" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="attr1Next" text="Công kích：9999999" x="0" y="26" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="attr2Next" text="Công kích：9999999" x="0" y="51" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="attr3Next" text="Công kích：9999999" x="0" y="75" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:layout>
 		<e:VerticalLayout verticalAlign="middle" horizontalAlign="left"/>
 		</e:layout>

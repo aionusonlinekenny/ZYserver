@@ -23,8 +23,8 @@
 		</e:Group>
 		<e:Group width="223.5" height="123" horizontalCenter="-25.5" verticalCenter="0" anchorOffsetX="0" x="112" y="0" scaleX="1" scaleY="1">
 			<e:Label id="payNum" text="999999" x="74.34" y="50" size="22" textColor="0x00842C" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1"/>
-			<e:Label text="积分:" x="8.340000000000003" y="50" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" scaleX="1" scaleY="1"/>
-			<e:Label text="战斗力：" x="27.840000000000003" y="89.5" size="16" textColor="0x9F946D" scaleX="1" scaleY="1" visible="false"/>
+			<e:Label text="Điểm tích lũy:" x="8.340000000000003" y="50" size="22" fontFamily="Microsoft YaHei" textColor="0x001828" scaleX="1" scaleY="1"/>
+			<e:Label text="Chiến lực：" x="27.840000000000003" y="89.5" size="16" textColor="0x9F946D" scaleX="1" scaleY="1" visible="false"/>
 			<e:Label id="attr" text="99999999" x="91.84" y="89.5" size="16" textColor="0xF7B910" scaleX="1" scaleY="1" visible="false"/>
 
 			<e:Group x="8" y="15">

@@ -5,7 +5,7 @@
 
 	<e:Label id="descLab" text="" x="186" y="62" size="20" verticalAlign="middle" textAlign="left" width="138" fontFamily="Microsoft JhengHei" textColor="0xffffff"/>
 	<e:Label text="需积分" x="114" y="62" size="20" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-	<e:Label id="nameLab" text="装备名字" x="114" y="24" size="20" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+	<e:Label id="nameLab" text="Tên trang bị" x="114" y="24" size="20" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 
 	<ns1:ItemBase id="itemIcon0" x="18" verticalCenter="0" scaleX="1" scaleY="1" skinName="SkinItem"/>
 

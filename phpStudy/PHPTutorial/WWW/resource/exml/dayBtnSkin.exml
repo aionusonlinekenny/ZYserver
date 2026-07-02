@@ -3,7 +3,7 @@
 	<e:Image source="sd_daybtn1_png" source.lock="sd_daybtn2_png" source.unlock="sd_daybtn2_png" x="0" y="0"/>
 	<e:Image x="126" source="yeqian6" scaleX="-1" verticalCenter="0" includeIn="unlockS"/>
 	<e:Image id="dayImg" verticalCenter="0.5" left="5" source="sd_day1_png" visible="false"/>
-	<e:Label id="dayLabel" text="第一天" size="24" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor.unlockS="0x7e2a00"/>
+	<e:Label id="dayLabel" text="Ngày đầu tiên" size="24" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor.unlockS="0x7e2a00"/>
 	<e:Image top="-2" scaleX="1" scaleY="1" scaleX.unlock="1" scaleY.unlock="1" scaleX.lock="1" scaleY.lock="1" scaleX.unlockS="1" scaleY.unlockS="1" source="tjyijihuo2" left="-3" source.lock="tjweijihuo2"/>
 	<e:Image id="redpoint" source="zjmhongdian" right="0" top="0" scaleX="0.8" scaleY="0.8" visible="false"/>	
 </e:Skin>

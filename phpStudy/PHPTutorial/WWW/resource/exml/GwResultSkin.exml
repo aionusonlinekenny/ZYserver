@@ -31,7 +31,7 @@
 			</e:List>
 
 
-			<e:Label id="labelItem" text="获得道具：" x="0" y="-16" size="20" height="40" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="labelItem" text="Nhận vật phẩm：" x="0" y="-16" size="20" height="40" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 			</e:Group>
 	</e:Group>

@@ -15,7 +15,7 @@
 			<e:Image width="350" y.lock="13" top="61" bottom="5" horizontalCenter="0" right="5" left="5" source="ringbg2_png" anchorOffsetY="0"/>
 			<e:Image source="tongyongtip2" left="0" right="0" scale9Grid="18,18,2,4" top="0" bottom="0"  
 			          source.actived="tongyongtip2" visible="false"/>
-			<e:Label id="nameLabel" text="麻痹戒指" size="30" textAlign="center" textColor="0xFF0000" top="10" y="20"
+			<e:Label id="nameLabel" text="Nhẫn Tê Liệt" size="30" textAlign="center" textColor="0xFF0000" top="10" y="20"
 			           horizontalCenter.actived="0" horizontalCenter.active="0" textColor.lock="0xff0000"
 			         top.lock="14" size.lock="30" horizontalCenter.lock="0" horizontalCenter="0" fontFamily="Microsoft YaHei" stroke="1"/>
 			<e:Image y="276" scale9Grid="85,1,6,1" width="340" horizontalCenter.actived="-4" horizontalCenter.active="-4"
@@ -62,7 +62,7 @@
 		</e:Group>
 		<e:Group id="gainListGroup" y="300" width="350" x="0"  includeIn="lock">
 			<e:Group x="0" width="350">
-				<e:Label text="获取途径" size="20" y="15" horizontalCenter="0"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Cách nhận" size="20" y="15" horizontalCenter="0"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Image source="tongyongline" scale9Grid="27,0,166,3" width="272.222" y="0" horizontalCenter="0"
 				          height="1.5" visible="false"/>
 
@@ -79,7 +79,7 @@
 		<e:Group y="218" horizontalCenter="0" height="35">
 			<e:Image source="bantoutiaobg" height="35" touchEnabled="false"  
 			         scale9Grid="128,2,15,41" width="300" y="19.63"  horizontalCenter="0"/>
-			<e:Label text="点击空白区域关闭窗口" size="20" touchEnabled="false" y="25.63" 
+			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" touchEnabled="false" y="25.63" 
 			           fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
 		</e:Group>
 		<!--<e:Group id="powerGroup" x="32" y="143"  height="41" locked="true">

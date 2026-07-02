@@ -9,10 +9,10 @@
 		<e:Group id="infoBg" y="108" horizontalCenter="-0.5">
 			<e:Image source="sevendaytopbg_png" x="0" y="0"/>
 			<e:Group y="70.7" anchorOffsetY="0" height="67" anchorOffsetX="0" width="358" horizontalCenter="100.5">
-			<e:Label text="剩余时间:" size="18" left="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-			<e:Label id="actTime0" text="6天23时10分" size="18" textColor="0x00ff00" fontFamily="Microsoft YaHei" top="0" left="90"/>
-			<e:Label id="actInfo0" text="                 在活动开启7天内完成的活动任务 赚取积分赢最终大奖 " size="18"  anchorOffsetX="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="0" right="1" verticalCenter="10.5" anchorOffsetY="0" height="46"/>
-			<e:Label text="活动说明:" size="18" left="0" top="21" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Thời gian còn lại:" size="18" left="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="actTime0" text="6 ngày 23 giờ 10 phút" size="18" textColor="0x00ff00" fontFamily="Microsoft YaHei" top="0" left="90"/>
+			<e:Label id="actInfo0" text="                 Hoàn thành nhiệm vụ sự kiện trong 7 ngày kể từ khi mở sự kiện để tích điểm và giành giải thưởng lớn " size="18"  anchorOffsetX="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="0" right="1" verticalCenter="10.5" anchorOffsetY="0" height="46"/>
+			<e:Label text="Mô tả sự kiện:" size="18" left="0" top="21" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 			<e:Image x="117" y="8" source="biaoti_qitianle_png"/>
 		</e:Group>

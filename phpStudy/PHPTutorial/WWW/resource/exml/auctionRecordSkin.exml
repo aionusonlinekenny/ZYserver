@@ -5,7 +5,7 @@
 	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
 	<e:Group id="anigroup" width="520" height="700" verticalCenter="-39" horizontalCenter="0">
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-38" scale9Grid="128,2,15,41" width="300"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bold="true" bottom="-32" textColor="0x7E6437"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bold="true" bottom="-32" textColor="0x7E6437"/>
 		<e:Image scale9Grid="17,13,14,24" source="tongyongkuang3bg" left="0" right="0" top="2" bottom="0"/>
 		<e:Image source="tongyongkuang3tou" y="0" left="0" right="0"/>
 

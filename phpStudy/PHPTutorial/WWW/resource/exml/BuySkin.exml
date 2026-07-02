@@ -24,7 +24,7 @@
 		<e:Image id="yuanbao1" x="272" y="89" source="szyuanbao"/>
 		<e:Image id="honor1" x="272" y="80" source="ZShonor" anchorOffsetX="0" width="42" anchorOffsetY="0" height="42"/>
 		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" bottom="-81" scale9Grid="128,2,15,41" width="300" touchEnabled="false"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-73" touchEnabled="false" fontFamily="Microsoft YaHei"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-73" touchEnabled="false" fontFamily="Microsoft YaHei"/>
 
 		<e:Group width="380" height="60" horizontalCenter="0" bottom="147">
 

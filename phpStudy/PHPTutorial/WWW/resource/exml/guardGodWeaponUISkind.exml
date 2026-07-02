@@ -47,8 +47,8 @@
 	<e:Group id="leftTimeGroup" horizontalCenter="0" width="360" height="40" top="6" anchorOffsetY="0">
 		<e:Image left="0" right="0" top="0" bottom="0"  source="Gwshkuang" scale9Grid="2,5,128,17"/>
 		<e:Group y="7" horizontalCenter="0">
-			<e:Label text="剩余时间:" x="0" y="0" size="20"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="lastTime" text="15分00秒" x="111" y="0" size="20" rotation="359.27"  fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:Label text="Thời gian còn lại:" x="0" y="0" size="20"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="lastTime" text="15 phút 00 giây" x="111" y="0" size="20" rotation="359.27"  fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:layout>
 				<e:HorizontalLayout  gap="3"/>
 			</e:layout>
@@ -68,7 +68,7 @@
 			<e:Image source="zdbosshudunxuetiaobg" x="0" y="0" width="315" scale9Grid="15,1,13,3" />
 		</e:Group>
 		<e:Label id="lvTxt" y="27" size="20" text="Lv.2000" x="126" textColor="0xf8b141" width="70" textAlign="right" />
-		<e:Label id="nameTxt" y="26" size="20" text="祖玛教主" x="200" textColor="0xd1c28f" bold="true" />
+		<e:Label id="nameTxt" y="26" size="20" text="Tổ Mã Giáo Chủ" x="200" textColor="0xd1c28f" bold="true" />
 		<e:Button id="tipBtn" label="奖励" x="13" y="100.33" skinName="SkinBtn18"/>
 	</e:Group>
 	<e:Image width="344" height="130" source="zsbg2" scale9Grid="5,4,87,14" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="-16" bottom="161"/>
@@ -78,15 +78,15 @@
 			<e:Group id="cdGroup1" x="50" y="50" touchEnabled="false"/>
 			<e:Image id="costBg1" y="70" scaleY="1" source="Gwshkuang" width="112" horizontalCenter="0"/>
 
-			<e:Label id="skillcostnum1" text="-300积分" y="73" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
-			<e:Label id="skillcost1" text="-       积分" x="10" y="79" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+			<e:Label id="skillcostnum1" text="-300 điểm" y="73" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
+			<e:Label id="skillcost1" text="-       điểm" x="10" y="79" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
 		</e:Group>
 		<e:Group id="skillGroup2" width="100" height="100" x="100" y="0">
 			<e:Button  id="skillBtn2" x="0" y="0" skinName="SkinBtn0" width="100" height="100" icon="GWskill2"/>
 			<e:Group id="cdGroup2" x="50" y="50"  touchEnabled="false"/>
 			<e:Image id="costBg2" width="112" y="70" scale9Grid="33,2,24,17" scaleY="1" source="Gwshkuang" horizontalCenter="0"/>
-			<e:Label id="skillcostnum2" text="-300积分" y="73" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="skillcost2" text="-       积分" x="17" y="79" textColor="0xCDCF8A" size="18" visible="false"/>
+			<e:Label id="skillcostnum2" text="-300 điểm" y="73" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="skillcost2" text="-       điểm" x="17" y="79" textColor="0xCDCF8A" size="18" visible="false"/>
 
 
 
@@ -96,8 +96,8 @@
 			<e:Button  id="skillBtn3" x="0" y="0" skinName="SkinBtn0" width="100" height="100" icon="GWskill3"/>
 			<e:Group id="cdGroup3" x="50" y="50"  touchEnabled="false"/>
 			<e:Image id="costBg3" width="112" y="70" scale9Grid="33,2,24,17" scaleY="1" source="Gwshkuang" horizontalCenter="0"/>
-			<e:Label id="skillcostnum3" text="-300积分" y="73" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="skillcost3" text="-       积分" x="17" y="79" textColor="0xCDCF8A" size="18" fontFamily="Microsoft YaHei" visible="false"/>
+			<e:Label id="skillcostnum3" text="-300 điểm" y="73" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="skillcost3" text="-       điểm" x="17" y="79" textColor="0xCDCF8A" size="18" fontFamily="Microsoft YaHei" visible="false"/>
 
 
 

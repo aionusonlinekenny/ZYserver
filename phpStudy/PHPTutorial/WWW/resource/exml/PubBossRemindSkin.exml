@@ -8,7 +8,7 @@
 		<e:Image y="16" source="tongyong_juanzhou" scale9Grid="199,0,80,23" width="576" x="0"/>
 		<e:Image y="0" scale9Grid="14,3,104,22" source="tongyong_titlebg" width="249" height="41" horizontalCenter="0"/>
 		<e:Image width="532" height="518.5" y="51" source="tongyong_dikuang1" scale9Grid="10,10,64,66" horizontalCenter="0" anchorOffsetY="0"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-33" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-33" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 
 		<e:Label text="BOSS提醒" size="20" y="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
@@ -21,7 +21,7 @@
 		</e:Scroller>
 
 		<e:Label text="BOSS" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-158"/>
-		<e:Label text="等级" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="0"/>
+		<e:Label text="Cấp độ" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="0"/>
 		<e:Label text="提醒状态" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="158"/>
 		<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" right="0" icon="chatclose" top="12"/>
 		<e:CheckBox id="autoChallenge" label="自动挑战" skinName="SkinCheckBox0" scaleX="1" scaleY="1" horizontalCenter="0" bottom="22"/>

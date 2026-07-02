@@ -13,6 +13,6 @@
 		<e:Label id="targetTxt" text="所有出战兽神生效" size="20" textAlign="left" y="67" x="104" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="targetTxt0" text="兽神攻击提升15%，生命提升20%，物抗提升10%，法抗提升10%" size="20" textAlign="left" x="25" anchorOffsetX="0" width="300" anchorOffsetY="0" height="96" lineSpacing="4" top="140" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Image horizontalCenter="0" scale9Grid="128,2,15,41" width="300" touchEnabled="false" top="262" height="34" source="bantoutiaobg"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="25" touchEnabled="false" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="25" touchEnabled="false" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	</e:Group>
 </e:Skin>

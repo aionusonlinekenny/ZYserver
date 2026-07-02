@@ -8,10 +8,10 @@
 				<e:Image source="tongyongtip2" scale9Grid="18,18,2,4" width="394" height="472" horizontalCenter="0" verticalCenter="0" height.unactive="231" height.max="231"/>
 				<e:Image y="10.5" source="shoujilan" width="203" height="30" left="1" x="1" source.unactive="shoujihong"/>
 				<e:Image y="204.5" width="203" height="30" left="1" x="11" includeIn="active" source="shoujihong"/>
-				<e:Label id="state0" text="已激活" size="20" left="12" top="14" x="14" y="14" text.unactive="未激活" bold="true" text.active="已激活" textColor.active="0x00ff00"  textColor.unactive="0xff0000" text.max="已满级" textColor.max="0x00ff00" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+				<e:Label id="state0" text="Đã kích hoạt" size="20" left="12" top="14" x="14" y="14" text.unactive="Chưa kích hoạt" bold="true" text.active="Đã kích hoạt" textColor.active="0x00ff00"  textColor.unactive="0xff0000" text.max="Đã đạt cấp tối đa" textColor.max="0x00ff00" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
 				<e:Label id="name0" text="神羽大师1级" horizontalCenter="0" size="20" top="47" x="117" y="30" fontFamily="Microsoft YaHei" textColor="0xffb400" textAlign="center"/>
-				<e:Label id="content0" width="310" size="18" textAlign="left" horizontalCenter="-24" top="98" x="19" y="71"  text.active="激活属性：仙羽全属性+5%" text.max="激活属性：仙羽全属性+5%" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-				<e:Label id="state1" text="未激活" size="20" left="12" x="24" y="209.5" fontFamily="Microsoft YaHei" includeIn="active" textColor="0xe40000"/>
+				<e:Label id="content0" width="310" size="18" textAlign="left" horizontalCenter="-24" top="98" x="19" y="71"  text.active="Thuộc tính kích hoạt：Toàn thuộc tính Tiên Vũ +5%" text.max="Thuộc tính kích hoạt：Toàn thuộc tính Tiên Vũ +5%" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+				<e:Label id="state1" text="Chưa kích hoạt" size="20" left="12" x="24" y="209.5" fontFamily="Microsoft YaHei" includeIn="active" textColor="0xe40000"/>
 				<e:Label id="name1" text="神羽大师1级" horizontalCenter="0" size="20" x="127" y="242.5" fontFamily="Microsoft YaHei" textColor="0xFFB400" textAlign="center" includeIn="active"/>
 				<e:Label id="content1"  width="310" size="18" textAlign="left" horizontalCenter="-24" x="29" y="289.5" textColor="0x6B9BAA" fontFamily="Microsoft YaHei" includeIn="active"/>
 			</e:Group>
@@ -21,7 +21,7 @@
 		</e:Group>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-57" x="25" y="662">
 			<e:Image source="bantoutiaobg" height="35" y="0" horizontalCenter="0" width="383"/>
-			<e:Label text="点击空白区域关闭窗口" size="20" y="6" horizontalCenter="0.5" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="6" horizontalCenter="0.5" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:layout>
 			<e:BasicLayout/>

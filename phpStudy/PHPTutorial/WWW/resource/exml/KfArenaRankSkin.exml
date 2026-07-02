@@ -5,7 +5,7 @@
 	<e:Group horizontalCenter="0" bottom="10">
 		<e:Image source="bantoutiaoboss" scaleX="-1" height="28" width="150" horizontalCenter="0" verticalCenter="0"/>
 		<e:Group width="146" horizontalCenter="0" verticalCenter="0">
-		<e:Label text="我的排名:" size="20" verticalCenter="0" textColor="0x9F946D" right="47"/>
+		<e:Label text="Xếp hạng của tôi:" size="20" verticalCenter="0" textColor="0x9F946D" right="47"/>
 		<e:Label id="selfPos0" text="未上榜" size="20" verticalCenter="0" textColor="0xF8B141" right="0" textAlign="center"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0" horizontalAlign="right"/>

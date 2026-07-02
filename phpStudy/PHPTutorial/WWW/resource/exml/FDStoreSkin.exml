@@ -30,7 +30,7 @@
 		</e:layout>
 	</e:Group>
 	<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="71" bottom="51" visible="false"/>
-	<e:Label id="noGoods" text=" 商品已全部售完，请刷新" size="24" textColor="0xFF8534" horizontalCenter="0.5" verticalCenter="32" visible="false"/>
+	<e:Label id="noGoods" text=" Sản phẩm đã bán hết, vui lòng làm mới" size="24" textColor="0xFF8534" horizontalCenter="0.5" verticalCenter="32" visible="false"/>
 	<e:Scroller width="552" horizontalCenter="0" height="373" y="154">
 				<e:List id="listView" itemRendererSkinName="FDstoreItem">
 					<e:layout>

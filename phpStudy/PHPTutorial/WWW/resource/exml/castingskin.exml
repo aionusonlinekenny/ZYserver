@@ -12,7 +12,7 @@
 
 
 		<e:Group horizontalCenter="0" height="40" bottom="66">
-			<e:Label text="消耗:" size="20" y="2" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="Tiêu hao:" size="20" y="2" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Image x="64" width="40" height="40" verticalCenter="0" source="200136_png"/>
 			<e:Label id="countLabel" text="" size="20" textAlign="left" x="108" y="2" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 			<e:layout>
@@ -20,7 +20,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Button id="upGradeBtn" label="精  炼" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2" width="213" height="67" bottom="3"/>
-		<e:Label id="getItemTxt" text="获取道具" size="20" horizontalCenter="170" width="100" verticalAlign="middle" textAlign="center" y="72" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="getItemTxt" text="Nhận vật phẩm" size="20" horizontalCenter="170" width="100" verticalAlign="middle" textAlign="center" y="72" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 	</e:Group>
 	<!--<e:Group id="powerGroup" y="140" horizontalCenter="0">
 		<e:Image source="zhandoulibg" x="2" y="10" />

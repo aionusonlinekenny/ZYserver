@@ -57,7 +57,7 @@
 		</e:Group>
 		<e:Group height="36" anchorOffsetX="0" bottom="-38" anchorOffsetY="0" width="461" horizontalCenter="0" x="0" y="429" scaleX="1" scaleY="1">
 			<e:Image scale9Grid="15,15,15,15" width="383" height="40" x="17" source="bantoutiaobg" scaleX="1" scaleY="1" verticalCenter="0"/>
-			<e:Label horizontalCenter="0.5" text="点击空白区域关闭窗口" size="20" x="118" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" bottom="11"/>
+			<e:Label horizontalCenter="0.5" text="Chạm vùng trống để đóng cửa sổ" size="20" x="118" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" bottom="11"/>
 		</e:Group>
 
 

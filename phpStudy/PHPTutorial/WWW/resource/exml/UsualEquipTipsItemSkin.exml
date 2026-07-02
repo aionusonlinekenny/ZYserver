@@ -2,7 +2,7 @@
 <e:Skin class="SkinUsualEquipTipsItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"   xmlns:ns1="*" width="300" >
 
 	<e:Group left="0" top="0">
-		<e:Label id="attrType" y="0" text="基础属性" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+		<e:Label id="attrType" y="0" text="Thuộc tính cơ bản" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
 		<e:Group id="desc1" x="32" y="35">
 			<e:Label y="10" text="" size="18" verticalAlign="justify" x="10" textAlign="left" textColor="0x9F946D" lineSpacing="5" width="22" fontFamily="Microsoft YaHei"/>
 			<e:Label id="suit" y="0" text="攻击：" size="18" verticalAlign="justify" x="0" textAlign="left" lineSpacing="5" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>

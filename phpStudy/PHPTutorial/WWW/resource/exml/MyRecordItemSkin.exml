@@ -3,6 +3,6 @@
 	<e:Rect left="0" right="0" top="0" bottom="0" strokeColor="0x80C0D2" fillColor="0x78B8C1" fillAlpha="0.7" strokeAlpha="1" strokeWeight="1"/>
 	<e:Image bottom="0" horizontalCenter="0" scale9Grid="112,0,4,3" source="wodezhanjiitem_png" alpha="0.7" visible="false"/>
 	<e:Label id="roundInfo" text="本服赛16进8强" size="20" fontFamily="Microsoft YaHei" left="9" textColor="0x1b3046" textAlign="left" anchorOffsetX="0" width="172.5" anchorOffsetY="0" height="48" verticalAlign="middle" verticalCenter="0"/>
-	<e:Label id="enemyLabel" text="包子包子包包" size="20" horizontalCenter="58.5" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x1b3046" textAlign="left" anchorOffsetX="0" width="163" anchorOffsetY="0" height="48" verticalAlign="middle"/>
+	<e:Label id="enemyLabel" text="Bánh Bao Bánh Bao Bao" size="20" horizontalCenter="58.5" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x1b3046" textAlign="left" anchorOffsetX="0" width="163" anchorOffsetY="0" height="48" verticalAlign="middle"/>
 	<e:Label id="result" text="胜利" size="20" verticalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" right="12"/>
 </e:Skin>

@@ -4,10 +4,10 @@
 		<e:Image horizontalCenter="0" source="login_reward_des_jpg" top="-3"/>
 		<e:Image source="shuxingbg" scale9Grid="77,5,15,34" left="0" right="0" top="15" bottom="15" visible="false"/>
 		<e:Group left="14" y="65.5" anchorOffsetX="0">
-		<e:Label text="剩余时间:" size="18"  left="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Label id="actTime" text="6天23时10分" size="18"  top="0" left="90" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
-		<e:Label id="actInfo" text="                 在活动开启7天内完成的活动任务 赚取积分赢最终大奖 " x="63" y="-14" size="18" width="356" top="21" left="1"  textColor="0xffffff" fontFamily="Microsoft YaHei" anchorOffsetX="0" lineSpacing="4"/>
-		<e:Label text="活动说明: " size="18"  left="0" top="21" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Thời gian còn lại:" size="18"  left="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="actTime" text="6 ngày 23 giờ 10 phút" size="18"  top="0" left="90" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="actInfo" text="                 Hoàn thành nhiệm vụ sự kiện trong 7 ngày kể từ khi mở sự kiện để tích điểm và giành giải thưởng lớn " x="63" y="-14" size="18" width="356" top="21" left="1"  textColor="0xffffff" fontFamily="Microsoft YaHei" anchorOffsetX="0" lineSpacing="4"/>
+		<e:Label text="Mô tả sự kiện: " size="18"  left="0" top="21" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 	</e:Group>
 	<e:Image id="title0" horizontalCenter="-87" x="280"  source="is_words_png" top="12"/>

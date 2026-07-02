@@ -81,7 +81,7 @@
 		<e:Button id="btn" label="注   灵" skinName="SkinBtn1" horizontalCenter="0" visible.full="false" top="607"/>
 		<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" horizontalCenter="75" visible.full="false" top="608" horizontalCenter.normal="78"/>
 		<e:Group id="costGroup" visible.full="false" left="15" top="675" left.normal="55">
-			<e:Label id="cosedesc" text="消耗：" x="0" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="cosedesc" text="Tiêu hao：" x="0" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Image id="costicon" x="82" y="5" source="hejisuipian" width="33" height="33"/>
 			<e:Label id="costcount" text="10000/500" x="114" y="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:layout>
@@ -101,9 +101,9 @@
 			</e:layout>
 		</e:Group>
 		<e:Group includeIn="normal" top="675" right="55" width="80">
-			<e:Label id="getItemTxt" text="获取道具" size="20" verticalCenter.full="317" x.normal="-42" scaleX.normal="1" scaleY.normal="1" y.normal="-10" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0" textColor="0x00ff06"/>
+			<e:Label id="getItemTxt" text="Nhận vật phẩm" size="20" verticalCenter.full="317" x.normal="-42" scaleX.normal="1" scaleY.normal="1" y.normal="-10" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0" textColor="0x00ff06"/>
 		</e:Group>
-		<e:Label text="已满级" includeIn="full" size="30" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="626"/>
+		<e:Label text="Đã đạt cấp tối đa" includeIn="full" size="30" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" top="626"/>
 	</e:Group>
 	<!--<ns1:BaseComponent id="roleSelect" skinName="SkinRoleSelectPanel"   width="640" horizontalCenter="0" currentState="nohead"/>-->
 </e:Skin>

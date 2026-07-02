@@ -53,7 +53,7 @@
 	<e:Button id="mixSwordBtn" label="合成" y="286" skinName="SkinBtn7" horizontalCenter="-170" visible="false"/>
 	<e:Component id="grewupAttributes" skinName="GrewupAttributesPanel" horizontalCenter="0" y="472"/>
 	<e:Component id="mixAttributes" skinName="MixAttributesPanel" horizontalCenter="0" bottom="120" visible="false"/>
-	<e:Label id="topLevel" text="已满级" size="24" horizontalCenter="0" bottom="37" textColor="0xffff00" fontFamily="Microsoft YaHei" stroke="0.7" visible="false"/>
+	<e:Label id="topLevel" text="Đã đạt cấp tối đa" size="24" horizontalCenter="0" bottom="37" textColor="0xffff00" fontFamily="Microsoft YaHei" stroke="0.7" visible="false"/>
 	<e:Label text="至圣仙兵" x="47" y="308" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9"/>
 	<e:Label text="至圣仙袍" x="471" y="308" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9"/>
 	<e:Group id="zhisheng" x="296" y="408"/>

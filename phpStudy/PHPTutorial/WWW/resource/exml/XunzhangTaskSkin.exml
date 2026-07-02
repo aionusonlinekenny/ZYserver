@@ -12,5 +12,5 @@
 		<e:Label id="expLabel" strokeColor="0x000000" text="10/100" size="18" verticalAlign="middle" textAlign="center" y="2" textColor="0xd8d0b6" horizontalCenter.goon="0" y.goon="2" horizontalCenter="0" visible="false"/>
 	</e:Group>
 	<e:Label id="nameTF" text="宝石镶嵌" size="20" horizontalCenter="0" width="110" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x001828" top="5" textColor.done="0x001828"/>
-	<e:Label id="done" text="已完成" size="20" horizontalCenter="0" width="105" height="32" verticalAlign="middle" textAlign="center" visible.goon="false" bottom="0" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+	<e:Label id="done" text="Đã hoàn thành" size="20" horizontalCenter="0" width="105" height="32" verticalAlign="middle" textAlign="center" visible.goon="false" bottom="0" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 </e:Skin>

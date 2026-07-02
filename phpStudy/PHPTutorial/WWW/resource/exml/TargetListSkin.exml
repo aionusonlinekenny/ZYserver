@@ -3,7 +3,7 @@
 	<e:Group id="attackGroup0" top="180" right="3" touchEnabled="false">
 		<e:Group x="0" y="0" width="112">
 		<e:Image y="8" source="gongji" horizontalCenter="0"/>
-		<e:Label text="正在攻击" y="10" size="18" textAlign="center" x="14" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+		<e:Label text="Đang tấn công" y="10" size="18" textAlign="center" x="14" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		</e:Group>
 		<e:List id="list1" width="112" height="110" x="0" y="30" itemRendererSkinName="SkinMemberHead">
 		</e:List>
@@ -11,7 +11,7 @@
 	<e:Group id="beAttackGroup0" top="330" touchEnabled="false" right="3">
 		<e:Group x="0" y="0" width="112">
 		<e:Image y="8" source="beigongji" horizontalCenter="0"/>
-		<e:Label text="受到攻击" y="10" size="18" textAlign="center" textColor="0xD6240E" x="14" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Label text="Bị tấn công" y="10" size="18" textAlign="center" textColor="0xD6240E" x="14" fontFamily="Microsoft YaHei" visible="false"/>
 		</e:Group>
 		<e:Scroller id="bar2" width="112" x="0" top="32" height="317" anchorOffsetY="0">
 		<e:List id="list3" x="5" y="6" itemRendererSkinName="SkinMemberHead" touchEnabled="false">

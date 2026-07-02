@@ -3,7 +3,7 @@
 	<e:Group left="0" right="0" top="0" bottom="0">
 		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0" source="qiandaobg_png" scale9Grid="35,26,25,41"/>
 		<e:Label id="times" text="可购买:1/1" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" y="76" textAlign="center" right="22"/>
-		<e:Label id="already" text="已购买" size="20" verticalCenter="0" textColor="0x00ff00" x="441" visible="false"/>
+		<e:Label id="already" text="Đã mua" size="20" verticalCenter="0" textColor="0x00ff00" x="441" visible="false"/>
 		<e:Group id="vip" y="13" x="290">
 			<e:Image source="vipvip_png" x="-3" y="-3" scaleX="1" scaleY="1"/>
 			<e:BitmapLabel id="vipLv" x="48" y="0" text="6" scaleX="1" scaleY="1" font="num_vip_v_fnt"/>

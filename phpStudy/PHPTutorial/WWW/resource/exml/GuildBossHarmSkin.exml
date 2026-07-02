@@ -11,8 +11,8 @@
 		<e:Label id="title" text="伤害排行" size="22" horizontalCenter="0"  fontFamily="Microsoft YaHei" top="-18" textColor="0x084151"/>
 		<e:Group width="496" height="45" scaleX="1" scaleY="1" horizontalCenter="-0.5" top="22" x="34" y="-132">
 			<e:Image source="leibiefengetou" left="0" right="0" scale9Grid="2,0,5,48" top="0" bottom="0"/>
-			<e:Label id="SkinGuildBossHarm" text="贡献" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="191" verticalCenter="-4.5"/>
-			<e:Label text="排名" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-205" verticalCenter="-4.5"/>
+			<e:Label id="SkinGuildBossHarm" text="Cống hiến" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="191" verticalCenter="-4.5"/>
+			<e:Label text="Xếp hạng" size="24" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-205" verticalCenter="-4.5"/>
 			<e:Label text="总伤害" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="60" verticalCenter="-4.5"/>
 			<e:Label text="名称" size="24" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-87" verticalCenter="-4.5"/>
 			<e:Image source="leibeifengexian" horizontalCenter="137" verticalCenter="-1"/>

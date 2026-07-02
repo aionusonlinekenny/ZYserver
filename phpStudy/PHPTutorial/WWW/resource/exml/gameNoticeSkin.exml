@@ -15,7 +15,7 @@
 			</e:layout>
 		</e:List>
 		<e:Label id="gengxinfuli" text="更新福利" textAlign="center" size="22" horizontalCenter="-186.5" verticalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
-		<e:Label id="yilingqu" text="已领取" textAlign="center" size="22" bold="true" horizontalCenter="169.5" verticalCenter="0" textColor="0x20CB30" fontFamily="Microsoft YaHei"/>
+		<e:Label id="yilingqu" text="Đã nhận" textAlign="center" size="22" bold="true" horizontalCenter="169.5" verticalCenter="0" textColor="0x20CB30" fontFamily="Microsoft YaHei"/>
 		<e:Button id="suerBtn" label="领取奖励" horizontalCenter="168.5" verticalCenter="0" skinName="SkinBtn1" width="130" height="50"/>
 
 		<e:Image id="redPoint" source="zjmhongdian" verticalCenter="-21" horizontalCenter="219.5"/>

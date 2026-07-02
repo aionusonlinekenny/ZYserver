@@ -9,8 +9,8 @@
 		<e:Image width="480" height="283" y="27" source="tongyong_dikuang1" scale9Grid="10,10,64,66" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
 
 
-		<e:Label id="nameTxt" text="奖励说明" size="22" y="-10" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
-		<e:Label id="nameTxt0" text="护盾奖励" size="22" horizontalCenter="0" x="127" y="-9" fontFamily="Microsoft YaHei" textColor="0x084151" visible="false"/>
+		<e:Label id="nameTxt" text="Mô tả phần thưởng" size="22" y="-10" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label id="nameTxt0" text="Phần thưởng khiên" size="22" horizontalCenter="0" x="127" y="-9" fontFamily="Microsoft YaHei" textColor="0x084151" visible="false"/>
 
 		<e:Image id="giveUp" y="-12" source="tongyong_btnclose" x="482"/>
 

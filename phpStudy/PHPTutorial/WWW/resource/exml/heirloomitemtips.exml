@@ -15,26 +15,26 @@
 			<e:Label text="转生：" size="20" x="122" y="93" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Label text="3" size="20" x="177" y="93" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Label id="equipName" text="星传世之刃" size="24" x="15" y="9.33" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center"/>
-			<e:Label text="部位：" size="20" x="122" y="68" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-			<e:Label id="slot" text="武器" size="20" x="177" y="68" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-			<e:Label id="power" text="评分：999999" size="20" y="10" textAlign="right" width="200" right="15" x="188" fontFamily="Microsoft YaHei" textColor="0xffff00" height="24"/>
+			<e:Label text="Vị trí：" size="20" x="122" y="68" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="slot" text="Vũ khí" size="20" x="177" y="68" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="power" text="Điểm：999999" size="20" y="10" textAlign="right" width="200" right="15" x="188" fontFamily="Microsoft YaHei" textColor="0xffff00" height="24"/>
 		</e:Group>
 		<ns1:PowerPanel id="powerPanel" y="144" skinName="Skin2PowerPanel" horizontalCenter="0"/>
 		<e:Group id="value" width="396"     x="2" y="190">
-			<e:Label id="value0" text="攻击力+99999" x="55" y="52" size="20" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-			<e:Label id="value1" text="攻击力+99999" x="55" y="76" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-			<e:Label id="value2" text="攻击力+99999" x="55" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-			<e:Label id="value3" text="攻击力+99999" x="55" y="122" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="value0" text="Lực công kích+99999" x="55" y="52" size="20" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="value1" text="Lực công kích+99999" x="55" y="76" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="value2" text="Lực công kích+99999" x="55" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="value3" text="Lực công kích+99999" x="55" y="122" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="skilldesc" text="       技能的描述技能的描述技能的1的描述技能的1" y="297" size="20"  width="325" x="55" fontFamily="Microsoft YaHei" textColor="0x6b9baa" anchorOffsetX="0" anchorOffsetY="0" height="88"/>
-			<e:Label id="value4" text="攻击力+99999" x="55" y="183.33" size="20" fontFamily="Microsoft YaHei" textColor="0xffb400"/>
-			<e:Label id="value5" text="攻击力+99999" x="55" y="206.33" size="20" textColor="0xffb400" fontFamily="Microsoft YaHei"/>
-			<e:Label text="攻击力+99999" x="55" y="228.33" size="20" id="value6" textColor="0xffb400" fontFamily="Microsoft YaHei"/>
+			<e:Label id="value4" text="Lực công kích+99999" x="55" y="183.33" size="20" fontFamily="Microsoft YaHei" textColor="0xffb400"/>
+			<e:Label id="value5" text="Lực công kích+99999" x="55" y="206.33" size="20" textColor="0xffb400" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Lực công kích+99999" x="55" y="228.33" size="20" id="value6" textColor="0xffb400" fontFamily="Microsoft YaHei"/>
 			<e:Label text="  基础属性" size="20" x="13.04" y="21"   id="name0" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Label text="【特殊属性】" size="20" x="13.04" y="154"   id="name1" fontFamily="Microsoft YaHei" textColor="0xffb400"/>
 			<e:Label text="诛仙装备与普通装备可叠加使用" size="20" y="419.33"   id="name3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Label text="【附加技能】" size="20" x="13.04" y="263"   id="name2" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
 		</e:Group>
 		<e:Image source="bantoutiaobg" height="30" scale9Grid="128,2,15,41" width="300"  bottom="-35" horizontalCenter="0"/>
-		<e:Label text="点击空白区域关闭窗口" size="20"  horizontalCenter="0" bottom="-28" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20"  horizontalCenter="0" bottom="-28" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	</e:Group>
 </e:Skin>

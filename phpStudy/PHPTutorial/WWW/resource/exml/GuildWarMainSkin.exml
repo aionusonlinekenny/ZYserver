@@ -57,7 +57,7 @@
 			<e:Label id="guildOwn" text="玩家名称六字" size="18" strokeColor="000000" width="211" textAlign="center" y="34.99"  textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="-0.49500000000000455"/>
 		</e:Group>
 		<e:Group id="none" horizontalCenter="0" x="251"  top="207">
-			<e:Label text="虚位以待" size="24" x="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Vị trí còn trống" size="24" x="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 		<e:Button id="play" horizontalCenter="0" label="杀入战场" width="156" height="60" x="222"  skinName="SkinBtn6" icon="btn1_2" verticalCenter="278"/>
 		<e:Label id="openDesc" text="X月XX日（周X） 22:00开启仙宫争霸" width="600" textAlign="center" size="24" textColor="0xfffefe" fontFamily="Microsoft YaHei" anchorOffsetX="0"  horizontalCenter="0" verticalCenter="343"/>

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="SkinRankItemPower" width="466" height="53" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Label id="level" text="8转250级" size="20" fontFamily="Microsoft YaHei" horizontalCenter="55.5" verticalCenter="0" textColor="0xffff00" textAlign="center"/>
-	<e:Label id="value" text="8转250级" size="20" fontFamily="Microsoft YaHei" horizontalCenter="148.5" verticalCenter="0.5" textColor="0xFFFF00" textAlign="center" visible="false"/>
-	<e:Label id="count" text="8转250级" size="20" fontFamily="Microsoft YaHei" horizontalCenter="151.5" verticalCenter="0" textColor="0xffff00" textAlign="center" visible="false"/>
-	<e:Label id="weiWang" text="8转250级" size="20" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="151.5" verticalCenter="0" textColor="0xffff00" visible="false"/>
+	<e:Label id="level" text="Chuyển sinh 8 cấp 250" size="20" fontFamily="Microsoft YaHei" horizontalCenter="55.5" verticalCenter="0" textColor="0xffff00" textAlign="center"/>
+	<e:Label id="value" text="Chuyển sinh 8 cấp 250" size="20" fontFamily="Microsoft YaHei" horizontalCenter="148.5" verticalCenter="0.5" textColor="0xFFFF00" textAlign="center" visible="false"/>
+	<e:Label id="count" text="Chuyển sinh 8 cấp 250" size="20" fontFamily="Microsoft YaHei" horizontalCenter="151.5" verticalCenter="0" textColor="0xffff00" textAlign="center" visible="false"/>
+	<e:Label id="weiWang" text="Chuyển sinh 8 cấp 250" size="20" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="151.5" verticalCenter="0" textColor="0xffff00" visible="false"/>
 	<e:Label id="power" size="20" text="1000555" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0.5" horizontalCenter="151.5" anchorOffsetX="0" width="162.5" textColor="0xffff00"/>
 	<e:Image id="t3" left="0" right="0" top="0" bottom="0" source="rankitembg" scale9Grid="5,6,80,38"/>
 <!--	<e:Image id="month" source="yk_07" x="289" scaleX="0.8" scaleY="0.8" verticalCenter="-0.3999999999999986"/>

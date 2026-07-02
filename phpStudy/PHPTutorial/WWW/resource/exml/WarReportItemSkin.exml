@@ -5,7 +5,7 @@
 	<e:Group id="infoGroup" left="0" right="0" bottom="0" top="0" visible="false">
 		<e:Label id="roundTxt" text="第1局" size="20" fontFamily="Microsoft YaHei" textColor="0x1b3046" left="51" verticalCenter="0"/>
 		<e:Image anchorOffsetX="0" anchorOffsetY="0" source="peakness_winners" verticalCenter="2" horizontalCenter="-2"/>
-		<e:Label id="player" text="包子包子包包" size="20" textColor="0x1b3046" fontFamily="Microsoft YaHei" right="22" verticalCenter="0" textAlign="center"/>
+		<e:Label id="player" text="Bánh Bao Bánh Bao Bao" size="20" textColor="0x1b3046" fontFamily="Microsoft YaHei" right="22" verticalCenter="0" textAlign="center"/>
 	</e:Group>
 	<e:Image bottom="0" horizontalCenter="0" scale9Grid="112,0,4,3" source="jiluitem_png" alpha="0.7" visible="false"/>
 </e:Skin>

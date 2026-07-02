@@ -6,10 +6,10 @@
 		<e:Group id="infoBg" left="10" right="10" top="40" x="10" y="40" height="110">
 			<e:Image left="0" right="0" top="0" bottom="0" source="recharge_headbg_png"/>
 			<e:Group verticalCenter="0" left="28">
-			<e:Label text="剩余时间：" size="18" textColor="0xFF9900" left="0" top="0"/>
-			<e:Label id="actTime" text="6天23小时55分" size="18" textColor="0x00FF00" top="0" left="90"/>
-			<e:Label id="actDesc" text="开服活动期间，率先达到指定等级获得限量奖励。" x="63" y="-14" size="18" width="396" top="20" left="90" textColor="0xDFD1B5" scaleX="1" scaleY="1"/>
-			<e:Label text="活动说明：" size="18" textColor="0xFF9900" left="0" top="20"/>
+			<e:Label text="Thời gian còn lại：" size="18" textColor="0xFF9900" left="0" top="0"/>
+			<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" top="0" left="90"/>
+			<e:Label id="actDesc" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." x="63" y="-14" size="18" width="396" top="20" left="90" textColor="0xDFD1B5" scaleX="1" scaleY="1"/>
+			<e:Label text="Mô tả sự kiện：" size="18" textColor="0xFF9900" left="0" top="20"/>
 			</e:Group>
 		</e:Group>
 		<e:Image source="teshuwenzibg2" scaleY="-1" horizontalCenter="0" y="50" width="400" height="50" x="80" scaleX="1"/>

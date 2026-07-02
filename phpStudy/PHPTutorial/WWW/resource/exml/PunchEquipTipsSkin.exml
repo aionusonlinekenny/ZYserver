@@ -13,10 +13,10 @@
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" y="99" horizontalCenter="10"/>
 		<!--<ns1:ItemIcon id="itemIcon" x="20" y="20"/>-->
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="20"/>
-		<e:Label id="nameLabel" text="屠龙 " x="120" y="18" size="22" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-		<e:Label id="type" y="44" text="武器" size="16" x="235" textColor="0xFFFFFF" visible="false"/>
-		<e:Label id="lv" y="47" text="评分：123456" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="score" y="71" text="评分：123456" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="nameLabel" text="Đồ Long " x="120" y="18" size="22" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="type" y="44" text="Vũ khí" size="16" x="235" textColor="0xFFFFFF" visible="false"/>
+		<e:Label id="lv" y="47" text="Điểm：123456" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="score" y="71" text="Điểm：123456" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Group id="tupoDesc" width="300" y="360" horizontalCenter="0">
 			<e:Label id="attr0" y="32" text="增加对战士的伤害%  \n增加对战士的伤害%   \n增加对战士的伤害%   \n增加对战士的伤害%   \n增加对战士的伤害%   " size="18" x="20" verticalAlign="justify" width="250" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="bestAtt" y="0" text="极品属性:" size="20"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>

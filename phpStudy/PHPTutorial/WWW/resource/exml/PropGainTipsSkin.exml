@@ -11,9 +11,9 @@
 		<e:Image scale9Grid="85,1,6,1" width="304" y="140" horizontalCenter="0" source="tongyongline"/>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="32.03" y="52"/>
 		<e:Label id="nameLabel" text="中级幸运" size="24" x="20" y="20" textColor="0xff9900" fontFamily="Microsoft YaHei"/>
-		<e:Label text="数量：" size="20" x="120" y="90" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label text="Số lượng：" size="20" x="120" y="90" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="num" text="" size="20" x="180" y="90" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label text="等级：" size="20" x="120" y="66" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label text="Cấp độ：" size="20" x="120" y="66" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="lv" text="" size="20" x="180" y="66" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="power" text="" size="20" y="20" textAlign="right" width="200" right="10" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 
@@ -29,7 +29,7 @@
 
 		<e:Group id="gainListGroup" width="350"  horizontalCenter="0" y="227.33">
 				<e:Group x="0" width="350" height="35">
-					<e:Label text="获取途径" size="20" y="6.33" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+					<e:Label text="Cách nhận" size="20" y="6.33" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 
 
 
@@ -43,7 +43,7 @@
 			</e:List>
 			<e:Group width="350" height="34" horizontalCenter="0" bottom="-35">
 				<e:Image height="35" width="300"   y="0" horizontalCenter="0" source="bantoutiaobg" scale9Grid="190,2,21,38"/>
-				<e:Label text="点击空白区域关闭窗口" size="20" y="6.51" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="6.51" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			</e:Group>
 			<e:layout>
 				<e:VerticalLayout/>

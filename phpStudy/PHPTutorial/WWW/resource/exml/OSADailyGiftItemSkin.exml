@@ -3,7 +3,7 @@
 	<e:Group left="0" right="0" top="0" bottom="0">
 		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0" source="scitembg_png" scale9Grid="51,60,21,18"/>
 		<e:Label id="times" text="可购买：1/1" size="18" verticalCenter="-44" right="30" fontFamily="Microsoft YaHei" textColor="0x7b3316"/>
-		<e:Label id="already" text="已领取" size="24" left="434" verticalCenter="4" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+		<e:Label id="already" text="Đã nhận" size="24" left="434" verticalCenter="4" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 		<e:Button id="get" label="购买" verticalCenter="0.5" right="10" skinName="SkinBtn16"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="9" verticalCenter="-19.5" visible="false"/>
 		<e:Group id="discountSrc" top="4" left="16">

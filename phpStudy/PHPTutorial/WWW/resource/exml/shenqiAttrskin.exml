@@ -3,7 +3,7 @@
 	<e:Rect id="rect" fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
 	<e:Group id="anigroup" width="350" height="240" horizontalCenter="0" verticalCenter="-111">
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-35" scale9Grid="128,2,15,41" width="300"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" bottom="-28" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-28" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image id="bg1"   left="0" right="0" top="1" bottom="1" source="tongyongtip1" scale9Grid="10,9,45,56"/>
 		<e:Image id="bg2"   left="0" right="0" top="0" source="tongyongtip2" scale9Grid="19,18,2,6" bottom="0"/>
 		<e:Image width="260" height="125" horizontalCenter="0" source="zjmqipao" alpha="0.5"  verticalCenter="0" scale9Grid="6,9,9,8"/>

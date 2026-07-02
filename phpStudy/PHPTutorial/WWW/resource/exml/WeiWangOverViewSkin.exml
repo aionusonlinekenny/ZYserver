@@ -19,7 +19,7 @@
 		</e:Scroller>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" x="25" bottom="-38" height="30">
 			<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" width="364" scale9Grid="177,2,29,32" verticalCenter="0"/>
-			<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="0" verticalCenter="-1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" verticalCenter="-1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

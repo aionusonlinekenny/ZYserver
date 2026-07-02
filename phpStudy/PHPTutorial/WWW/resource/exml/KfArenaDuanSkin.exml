@@ -33,6 +33,6 @@
 		</e:layout>
 	</e:Group>
 	<e:Image id="redPoint" source="zjmhongdian" x="480" y="595" visible="false"/>
-	<e:Label id="get" text="已领取" x="438.5" y="622" textColor="0x10e56e" size="20" visible="false"/>
+	<e:Label id="get" text="Đã nhận" x="438.5" y="622" textColor="0x10e56e" size="20" visible="false"/>
 
 </e:Skin>

@@ -11,8 +11,8 @@
 	<e:Label id="num" text="今日可购买20次" size="18" textAlign="right" right="26" bottom="9" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	<e:Image y="50" source="szyuanbao" horizontalCenter="-133"/>
 	<e:Group width="200" height="20" anchorOffsetY="0" left="102" verticalCenter="-24">
-		<e:Label id="itemName" text="商品名称" y="-4" size="20" fontFamily="Microsoft YaHei" textColor="0xef0000" textAlign="left" x="0" scaleX="1" scaleY="1"/>
-		<e:Label id="used" text="（商品用途）" y="-4" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" x="70" scaleX="1" scaleY="1"/>
+		<e:Label id="itemName" text="Tên sản phẩm" y="-4" size="20" fontFamily="Microsoft YaHei" textColor="0xef0000" textAlign="left" x="0" scaleX="1" scaleY="1"/>
+		<e:Label id="used" text="（Công dụng sản phẩm）" y="-4" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" x="70" scaleX="1" scaleY="1"/>
 		<e:layout>
 		<e:HorizontalLayout gap="8"/>
 		</e:layout>

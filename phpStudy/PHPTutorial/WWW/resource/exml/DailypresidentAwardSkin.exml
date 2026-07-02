@@ -9,7 +9,7 @@
 		<e:Image horizontalCenter="0" width="465" source="tongyongbg5" height="259" verticalCenter="-9.5" scale9Grid="5,5,16,9"/>
 		<e:Button id="closeBtn0" label="按钮" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="243.5" top="-21"/>
 		<e:Label id="desc" text="占领仙宫的仙盟盟主的奖励" size="20"   horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" anchorOffsetX="0" width="460" top="55"/>
-		<e:Label text="奖励通过邮件发放" size="20" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" anchorOffsetX="0" width="460" top="86"/>
+		<e:Label text="Phần thưởng gửi qua thư" size="20" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" anchorOffsetX="0" width="460" top="86"/>
 
 		<e:Label y="-10.5" text="盟主奖励" size="22"   horizontalCenter="1.5" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Button id="sure" label="领 取" skinName="SkinBtn1"   horizontalCenter="0" bottom="50" visible="false"/>
@@ -19,7 +19,7 @@
 			</e:layout>
 		</e:List>
 		<e:Image source="bantoutiaobg" height="40" width="383" bottom="-38" horizontalCenter="-1" scale9Grid="44,5,310,30" x="65" y="706" scaleX="1" scaleY="1"/>
-		<e:Label text="点击空白区域关闭窗口" size="20" horizontalCenter="-7.5" bottom="-25" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" x="150" y="713" scaleX="1" scaleY="1"/>
+		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="-7.5" bottom="-25" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" x="150" y="713" scaleX="1" scaleY="1"/>
 
 	</e:Group>
 	<e:Image x="0" y="0" source="hhhzjl_png" fillMode="scale" alpha="0.7" visible="false"/>

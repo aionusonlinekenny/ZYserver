@@ -4,7 +4,7 @@
 	<e:Image  source="tongyonglabbg" left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30"/>
 
 	<e:Label id="descLab" text="99999" x="160" y="63" size="18" verticalAlign="middle" textAlign="left" width="100" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
-	<e:Label id="nameLab" text="装备名字" x="90" y="27" size="18" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+	<e:Label id="nameLab" text="Tên trang bị" x="90" y="27" size="18" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 
 	<e:Label text="需积分：" x="90" y="63" size="18" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 

@@ -93,7 +93,7 @@
 				</e:layout>
 			</e:List>
 			</e:Scroller>
-			<e:Label text="已满级" includeIn="max" horizontalCenter="196" top="385" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Đã đạt cấp tối đa" includeIn="max" horizontalCenter="196" top="385" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 
 
 			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="17" verticalCenter="6" includeIn="nomax"/>

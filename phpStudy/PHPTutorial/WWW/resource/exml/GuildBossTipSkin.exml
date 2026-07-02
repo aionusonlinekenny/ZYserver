@@ -43,17 +43,17 @@
 
 
 			<e:Group id="rankGroup0" y="50" width="190" horizontalCenter="1">
-				<e:Label id="guildname0" text="虚位以待" size="20" y="-0.67"  textAlign="center" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+				<e:Label id="guildname0" text="Vị trí còn trống" size="20" y="-0.67"  textAlign="center" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
 				<e:Image id="bosshpbg0" y="22.3" height="19" source="jindutiao2" scale9Grid="2,2,2,3" left="0" right="0"/>
 				<e:ProgressBar id="hpbar0" y="23.3" value="50" height="17" skinName="Skinbar5" anchorOffsetX="0" left="0" right="0"/>
 			</e:Group>
 			<e:Group id="rankGroup1" y="100" width="190" horizontalCenter="1">
-				<e:Label id="guildname1" text="虚位以待" size="20" y="-0.67" textAlign="center" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+				<e:Label id="guildname1" text="Vị trí còn trống" size="20" y="-0.67" textAlign="center" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
 				<e:Image id="bosshpbg1" y="22.3" height="19" source="jindutiao2" scale9Grid="2,2,2,3" left="0" right="0"/>
 				<e:ProgressBar id="hpbar1" y="23.3" value="50" height="17" skinName="Skinbar5" anchorOffsetX="0" left="0" right="0"/>
 			</e:Group>
 			<e:Group id="rankGroup2" y="150" width="190" horizontalCenter="1">
-				<e:Label id="guildname2" text="虚位以待" size="20" y="-0.67" textAlign="center" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+				<e:Label id="guildname2" text="Vị trí còn trống" size="20" y="-0.67" textAlign="center" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
 				<e:Image id="bosshpbg2" y="22.3" height="19" source="jindutiao2" scale9Grid="2,2,2,3" left="0" right="0"/>
 				<e:ProgressBar id="hpbar2" y="23.3" value="50" height="17" skinName="Skinbar5" anchorOffsetX="0" left="0" right="0"/>
 			</e:Group>
@@ -118,7 +118,7 @@
 		<e:Label id="cantchanllage" text="通关前一个BOSS可挑战" size="20" horizontalCenter="-5.5" y="563" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		<e:Label id="state" text="周日休战" size="20" horizontalCenter="0" y="592" fontFamily="Microsoft YaHei" textColor="0xe40000" visible="false"/>
 		<e:Image source="bantoutiaobg" height="35" width="383"   horizontalCenter="0" scale9Grid="26,6,110,27" bottom="-56"/>
-		<e:Label text="点击空白区域关闭窗口" size="20"   textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0" bottom="-47"/>
+		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20"   textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0" bottom="-47"/>
 
 
 	</e:Group>

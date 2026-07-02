@@ -11,7 +11,7 @@
 		<e:Group width="400" y="-14" height="41" horizontalCenter="0">
 
 			<e:Label id="nameTxt" text="必定掉落" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
-			<e:Label id="nameTxt0" text="护盾奖励" size="24" bold="true" horizontalCenter="0" verticalCenter="0" x="127" y="19" fontFamily="Microsoft YaHei" textColor="0x084151" visible="false"/>
+			<e:Label id="nameTxt0" text="Phần thưởng khiên" size="24" bold="true" horizontalCenter="0" verticalCenter="0" x="127" y="19" fontFamily="Microsoft YaHei" textColor="0x084151" visible="false"/>
 		</e:Group>
 		<e:Image id="giveUp" source="tongyong_btnclose" y="-25" right="-16"/>
 

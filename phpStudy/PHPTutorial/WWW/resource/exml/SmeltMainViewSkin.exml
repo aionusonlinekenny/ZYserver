@@ -5,11 +5,11 @@
 	<e:Rect id="bgClose" right="0" top="0" fillAlpha="0.8" left="0" bottom="0"/>
 	<e:Group id="anigroup" width="484" height="567" anchorOffsetY="0" horizontalCenter="-1" y="184">
 		<e:Image width="383" height="35" y="543" source="bantoutiaobg" horizontalCenter="0" scale9Grid="200,15,20,15"/>
-		<e:Label horizontalCenter="0" text="点击空白区域关闭窗口" size="20" x="30" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="274.5"/>
+		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="274.5"/>
 		<e:Image scale9Grid="40,31,15,15" source="tongyong_dikuang2" width="484" height="513" y="17" x="0"/>
 		<e:Image source="tongyong_juanzhou" width="481" height="23" x="0"/>
 		<e:Image source="tongyong_titlebg" anchorOffsetX="0" width="303" y="-15" horizontalCenter="0"/>
-		<e:Label id="title" size="22" text="熔炼装备" horizontalCenter="0" y="-3.5" bold="false" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label id="title" size="22" text="Luyện Hóa Trang Bị" horizontalCenter="0" y="-3.5" bold="false" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Image source="ronglianbg_png" height="348" width="417" x="33" top="40"/>
 		<e:Image x="116" source="gantanhao1" bottom="153"/>
 		<e:Label text="熔炼功能只回收无用装备" size="20" fontFamily="Microsoft YaHei" textColor="0x0038ab" height="20" verticalAlign="middle" textAlign="center" x="141" bottom="153"/>

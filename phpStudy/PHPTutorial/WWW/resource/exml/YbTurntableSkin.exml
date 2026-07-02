@@ -14,15 +14,15 @@
 			<e:Image id="img_level" x="30" y="100" source="trun_100001" visible="false"/>
 			<e:Group y="93" width="400" height="400" horizontalCenter="0">
 				<e:BitmapLabel id="multiple0" font="num_xvip_4_fnt" text="10倍" y="38" horizontalCenter="0" letterSpacing="-2"/>
-				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="71" id="multiple1" horizontalCenter="90" letterSpacing="-2"/>
-				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="150" id="multiple2" horizontalCenter="142" letterSpacing="-2"/>
-				<e:BitmapLabel text="1.2倍" y="236" id="multiple3" horizontalCenter="142" font="num_xvip_4_fnt" letterSpacing="-2"/>
-				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="320" id="multiple4" horizontalCenter="90" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2 lần" y="71" id="multiple1" horizontalCenter="90" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2 lần" y="150" id="multiple2" horizontalCenter="142" letterSpacing="-2"/>
+				<e:BitmapLabel text="1.2 lần" y="236" id="multiple3" horizontalCenter="142" font="num_xvip_4_fnt" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2 lần" y="320" id="multiple4" horizontalCenter="90" letterSpacing="-2"/>
 				<e:BitmapLabel font="num_xvip_4_fnt" text="0.1" y="355" id="multiple5" horizontalCenter="0" letterSpacing="-2"/>
-				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="320" id="multiple6" horizontalCenter="-90" letterSpacing="-2"/>
-				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="236" id="multiple7" horizontalCenter="-142" letterSpacing="-2"/>
-				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2倍" y="150" id="multiple8" horizontalCenter="-142" letterSpacing="-2"/>
-				<e:BitmapLabel x="80" font="num_xvip_4_fnt" text="1.2倍" y="71" id="multiple9" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2 lần" y="320" id="multiple6" horizontalCenter="-90" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2 lần" y="236" id="multiple7" horizontalCenter="-142" letterSpacing="-2"/>
+				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2 lần" y="150" id="multiple8" horizontalCenter="-142" letterSpacing="-2"/>
+				<e:BitmapLabel x="80" font="num_xvip_4_fnt" text="1.2 lần" y="71" id="multiple9" letterSpacing="-2"/>
 			</e:Group>
 
 			<e:Image id="select" y="-165" source="tttzpselect_png" x="219" scaleX="2" scaleY="2" visible="false"/>

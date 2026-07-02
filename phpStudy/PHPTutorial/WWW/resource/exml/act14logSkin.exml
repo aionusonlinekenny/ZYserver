@@ -15,7 +15,7 @@
 			<e:Image id="arrow0" y="58" source="jiantouyou" width="31" height="29" x="90"/>
 			<e:Image id="arrow7" y="58" x="210" source="jiantouyou" width="31" height="29"/>
 			<e:Image id="arrow8" y="58" x="330" source="jiantouyou" width="31" height="29"/>
-			<e:Label text="第一天" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-180" top="0"/>
+			<e:Label text="Ngày đầu tiên" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-180" top="0"/>
 			<e:Label text="第二天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
 			<e:Label text="第三天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
 			<e:Label text="第四天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>

@@ -22,10 +22,10 @@
 		<e:Group id="infoBg" left="0" right="0" x="3" top="0">
 			<e:Image horizontalCenter="0" source="login_reward_des_jpg" verticalCenter="0"/>
 			<e:Group left="24" y="69.98">
-			<e:Label text="剩余时间:" size="18" left="0" top="0" fontFamily="Microsoft YaHei"/>
-			<e:Label id="actTime1" text="6天23时10分" size="18" top="0" left="90" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
-			<e:Label id="actInfo1" text="                 在活动开启7天内完成的活动任务 赚取积分赢最终大奖 " x="63" y="-14" size="18" width="356" top="21" left="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" anchorOffsetY="0" height="42" lineSpacing="4"/>
-			<e:Label text="活动说明:" size="18" left="0" top="21" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Thời gian còn lại:" size="18" left="0" top="0" fontFamily="Microsoft YaHei"/>
+			<e:Label id="actTime1" text="6 ngày 23 giờ 10 phút" size="18" top="0" left="90" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:Label id="actInfo1" text="                 Hoàn thành nhiệm vụ sự kiện trong 7 ngày kể từ khi mở sự kiện để tích điểm và giành giải thưởng lớn " x="63" y="-14" size="18" width="356" top="21" left="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" anchorOffsetY="0" height="42" lineSpacing="4"/>
+			<e:Label text="Mô tả sự kiện:" size="18" left="0" top="21" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 		</e:Group>
 		<e:Group horizontalCenter="6" anchorOffsetY="0" height="263" anchorOffsetX="0" width="438" x="67" verticalCenter="0">
@@ -52,7 +52,7 @@
 		</e:Group>
 		<e:Image id="title" horizontalCenter="-87" x="280" source="biaoti_qingdiandengluyouli2_png" top="12"/>
 
-		<e:Label id="done" text="已领取" textColor="0x00FF00" size="28" bold="true" bottom="86" y="619" horizontalCenter="181"/>
+		<e:Label id="done" text="Đã nhận" textColor="0x00FF00" size="28" bold="true" bottom="86" y="619" horizontalCenter="181"/>
 		<e:Button id="suerBtn" label="领取奖励" horizontalCenter="184.5" bottom="65" x="200" y="615" scaleX="1.25" scaleY="1.25" icon="btn2_2" skinName="SkinBtn16"/>
 		<e:Label id="daylabel" text="登录天数:  5" size="20" bottom="8" y="624" horizontalCenter="-18.5" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
 		<e:Label id="dayaward" text="第一天奖励详情" size="20" horizontalCenter="-4" bottom="151" x="209" y="478" textColor="0xffff00" fontFamily="Microsoft YaHei"/>

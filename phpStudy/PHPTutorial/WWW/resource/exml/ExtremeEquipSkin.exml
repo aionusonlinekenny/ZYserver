@@ -16,7 +16,7 @@
 				<e:Group id="skill_0_1" x="30" y="125" touchEnabled="false" width="199">
 					<e:Image width="46" height="46" source="jinengkuang"/>
 					<e:Image id="chainImg0" x="2" y="2" width="42" height="42" source="skill_extreme_chain"/>
-					<e:Label id="skillChain0" text="灵魂锁链 Lv.99" size="20" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei" textAlign="left" left="54"/>
+					<e:Label id="skillChain0" text="Linh Hồn Tỏa Liên Lv.99" size="20" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei" textAlign="left" left="54"/>
 				</e:Group>
 				<e:Group id="skill_0_0" x="30" y="173" touchEnabled="false">
 				<e:Image width="46" height="46" anchorOffsetX="0" anchorOffsetY="0" source="jinengkuang"/>
@@ -36,7 +36,7 @@
 				<e:Group id="skill_1_1" x="12" y="125" touchEnabled="false">
 					<e:Image width="46" height="46" source="jinengkuang"/>
 					<e:Image id="chainImg1" x="2" y="2" width="42" height="42" source="skill_extreme_chain"/>
-					<e:Label id="skillChain1" text="灵魂锁链 Lv.99" size="20" textColor="0xffff00" fontFamily="Microsoft YaHei" left="57" verticalCenter="1"/>
+					<e:Label id="skillChain1" text="Linh Hồn Tỏa Liên Lv.99" size="20" textColor="0xffff00" fontFamily="Microsoft YaHei" left="57" verticalCenter="1"/>
 				</e:Group>
 				<e:Group id="skill_1_0" x="12" y="173" touchEnabled="false">
 				<e:Image width="46" height="46" anchorOffsetX="0" anchorOffsetY="0" source="jinengkuang"/>
@@ -73,7 +73,7 @@
 			<e:Group id="skill_2_1" x="180" y="115" touchEnabled="false">
 				<e:Image width="46" height="46" source="jinengkuang"/>
 				<e:Image id="chainImg2" x="3" y="3" width="40" height="40" source="skill_extreme_chain"/>
-				<e:Label id="skillChain2" text="灵魂锁链 Lv.99" x="57" size="20" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+				<e:Label id="skillChain2" text="Linh Hồn Tỏa Liên Lv.99" x="57" size="20" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 			<e:layout>
 				<e:BasicLayout/>
@@ -104,7 +104,7 @@
 	<e:Image id="extremeName" source="extreme_name_00" x="41" y="68"/>
 
 
-	<e:Label id="already" text="已满级" size="20" y="368" x="255" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+	<e:Label id="already" text="Đã đạt cấp tối đa" size="20" y="368" x="255" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 	<e:Button id="updateBtn" label="激 活" skinName="SkinBtn7" icon="btn1_2" width="213" height="67" y="342" horizontalCenter="-10"/>
 	<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="342" horizontalCenter="63.5"/>
 	<e:Group y="366" x="395">

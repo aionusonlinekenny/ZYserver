@@ -8,14 +8,14 @@
 
 	<e:Group id="upInfo" bottom="0" height="110" horizontalCenter="0" width="560">
 		<e:Group id="costGroup" bottom="66" horizontalCenter="8.5">
-			<e:Label id="expendLabel" text="消耗:" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="expendLabel" text="Tiêu hao:" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Image id="icon" x="55" source="200002_png" width="40" height="40" y="28"/>
 			<e:Label id="countLabel" text="" size="20" textAlign="left" x="83" y="12" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:layout>
 				<e:HorizontalLayout verticalAlign="middle" gap="-3"/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="getItemTxt" text="获取道具" size="20" textColor="0x00FF00"   horizontalCenter="170" bottom="10" height="60" verticalAlign="middle" width="100" textAlign="center" visible="false"/>
+		<e:Label id="getItemTxt" text="Nhận vật phẩm" size="20" textColor="0x00FF00"   horizontalCenter="170" bottom="10" height="60" verticalAlign="middle" width="100" textAlign="center" visible="false"/>
 		<e:Button id="upGradeBtn" label="强  化" horizontalCenter="0" skinName="SkinBtn6" width="213" icon="btn1_2" height="67" bottom="3"/>
 		<e:Button id="upGradeBtn0" label="一键强化" skinName="SkinBtn1" bottom="14" x="285" visible="false"/>
 	</e:Group>

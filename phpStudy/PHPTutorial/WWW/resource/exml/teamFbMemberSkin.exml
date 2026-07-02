@@ -6,7 +6,7 @@
 	<e:Image y="3"   source="friend_kuang" horizontalCenter="0"/>
 
 	<e:Image x="13" y="2"   source="juesetxkxue" visible="false"/>
-	<e:Label id="roleName" text="玩家名六个字" size="16" textAlign="center"   horizontalCenter="0" bottom="8" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="roleName" text="Tên người chơi 6 chữ" size="16" textAlign="center"   horizontalCenter="0" bottom="8" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	<e:Label id="num" text="200" y="60" size="16" textColor="0xd1c28f" horizontalCenter="-14.5" visible="false"/>
 	<e:Image id="fuhuoImg" y="52" horizontalCenter="1" rotation="306.78" source="tfb_fuhuo_png" visible="false"/>	
 </e:Skin>

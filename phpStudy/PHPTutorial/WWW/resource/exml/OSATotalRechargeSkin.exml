@@ -11,10 +11,10 @@
 		<e:Group id="infoBg" height="106" width="556" horizontalCenter="0" top="51">
 			<e:Image left="0" right="0" top="0" bottom="0" source="activity_headbg1_png"/>
 			<e:Group left="11" y="10">
-			<e:Label text="剩余时间：" size="20" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
-			<e:Label id="actTime" text="6天23小时55分" size="20" textColor="0x00FF00" scaleX="1" scaleY="1" top="0" left="100" fontFamily="Microsoft YaHei"/>
-			<e:Label id="actDesc" text="开服活动期间，率先达到指定等级获得限量奖励。得限量奖励。得限量奖励。" x="63" y="-14" size="20" width="422" top="28" left="100" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" anchorOffsetX="0" verticalAlign="top"/>
-			<e:Label text="活动说明：" size="20" scaleX="1" scaleY="1" left="0" fontFamily="Microsoft YaHei" textColor="0xFFFF00" top="28"/>
+			<e:Label text="Thời gian còn lại：" size="20" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
+			<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="20" textColor="0x00FF00" scaleX="1" scaleY="1" top="0" left="100" fontFamily="Microsoft YaHei"/>
+			<e:Label id="actDesc" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn. phần thưởng giới hạn. phần thưởng giới hạn." x="63" y="-14" size="20" width="422" top="28" left="100" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" anchorOffsetX="0" verticalAlign="top"/>
+			<e:Label text="Mô tả sự kiện：" size="20" scaleX="1" scaleY="1" left="0" fontFamily="Microsoft YaHei" textColor="0xFFFF00" top="28"/>
 			</e:Group>
 		</e:Group>
 		<e:Image source="body805_0_c_png" x="256" y="75" anchorOffsetX="0" anchorOffsetY="0" width="205.5" height="411" scaleX="-1" visible="false"/>
@@ -26,7 +26,7 @@
 		<e:Group horizontalCenter="0.5" bottom="4" anchorOffsetY="0" height="106">
 			<e:Label id="state" text="已充值0/588888元宝" size="22" scaleX="1" scaleY="1" horizontalCenter="0" top="9" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Button id="getBtn" label="立即领取" skinName="SkinBtn1" scaleX="1" scaleY="1" horizontalCenter="0" bottom="0"/>
-			<e:Label id="already" text="已领取" size="26" scaleX="1" scaleY="1" horizontalCenter="0" y="59" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
+			<e:Label id="already" text="Đã nhận" size="26" scaleX="1" scaleY="1" horizontalCenter="0" y="59" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
 			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" scaleX="1" scaleY="1" horizontalCenter="79" verticalCenter="-10.5" visible="false"/>
 		</e:Group>
 		<e:Group id="process" horizontalCenter="40" bottom="154"/>

@@ -5,17 +5,17 @@
 
 
 	<e:Label id="nameTxt" text="装备名字装备" size="20" fontFamily="Microsoft YaHei" textColor="0xac00dd" textAlign="left" x="16" y="92"/>
-	<e:Label id="power" text="评分：999999" size="20" y="12" x="262.95" fontFamily="Microsoft YaHei" textColor="0x001828" textAlign="center"/>
+	<e:Label id="power" text="Điểm：999999" size="20" y="12" x="262.95" fontFamily="Microsoft YaHei" textColor="0x001828" textAlign="center"/>
 	<e:Image id="upImg" y="38.35" source="tongyongup" width="30" height="24" horizontalCenter="205" rotation="-90"/>
 	<e:Label text="推荐" size="20" y="20" x="280" textColor="0x35e62d" visible="false"/>
-	<e:Label text="基础属性" x="20" y="92" size="18" bold="true" textColor="0x7e6437" visible="false"/>
+	<e:Label text="Thuộc tính cơ bản" x="20" y="92" size="18" bold="true" textColor="0x7e6437" visible="false"/>
 	<e:Label id="attr1" text="攻击力+3000000  攻击力+30000   攻击力+30000   攻击力+30000" y="38" size="18" width="150" x="109" verticalAlign="middle" height="72"  fontFamily="Microsoft YaHei" textColor="0x001828"/>
 	<e:Button id="changeBtn" skinName="SkinBtn1" label="更 换" y="47" name="changeBtn" x="283.19" width="125" height="58"/>
 	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" y="16" horizontalCenter="-169"/>
 	<e:Image id="best" y="44" touchEnabled="false" right="121" source="tuijian2"/>
 	<e:Image source="bantoutiaoboss" x="95" y="62" scaleX="-1" height="20" width="50" visible="false"/>
 	<e:Label id="levelText" text="60级" y="12" size="20" x="166" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
-	<e:Label id="levelStrText" text="等级:" y="12" size="20" x="110" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="levelStrText" text="Cấp độ:" y="12" size="20" x="110" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 	<e:Group id="now" x="-10" y="0" width="100" height="100">
 		<e:Image source="xiejiaotiao" scaleX="1.6" scaleY="1.6" y="0" width="50" height="50" x="10"/>
 		<e:Label text="当前装备" size="26" y="63" fontFamily="Microsoft YaHei" textColor="0xffff00" x="304"/>

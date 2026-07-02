@@ -10,7 +10,7 @@
 	<e:Button id="buyAllItemBtn" label="全部购买" width="120" height="52" horizontalCenter="-75" bottom="1" icon="chat_btnbg" skinName="SkinBtn26"/>
 	<e:Button id="refreshShopBtn" label="刷新" width="120" height="52" icon="chat_btnbg" horizontalCenter="75" bottom="1" skinName="SkinBtn26"/>
 	<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="126" bottom="33" visible="false"/>
-	<e:Label id="noGoods" text=" 商品已全部售完，请刷新" size="28" horizontalCenter="0" verticalCenter="-88" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+	<e:Label id="noGoods" text=" Sản phẩm đã bán hết, vui lòng làm mới" size="28" horizontalCenter="0" verticalCenter="-88" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 
 
 	<e:Label id="point" text="我的积分：20000" x="105" width="213" size="20"  textAlign="left" bottom="15" visible="false"/>
@@ -22,7 +22,7 @@
 			<e:HorizontalLayout gap="3" verticalAlign="middle"/>
 			</e:layout>
 		</e:Group>
-		<e:Label text="或" x="100" size="20" bottom="69" y="10" fontFamily="Microsoft YaHei"/>
+		<e:Label text="hoặc" x="100" size="20" bottom="69" y="10" fontFamily="Microsoft YaHei"/>
 		<e:Group x="122" y="6">
 			<e:Image source="201002_png" x="3" y="-3" anchorOffsetX="0" width="30" anchorOffsetY="0" height="30"/>
 			<e:Label id="keylabel" text="0" x="30" size="20" bottom="70" y="5" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
@@ -42,6 +42,6 @@
 		</e:layout>
 		</e:List>
 	</e:Scroller>
-	<e:Label id="goodsOverView" text="极品预览" size="20" horizontalCenter="189" bottom="20" verticalAlign="middle" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+	<e:Label id="goodsOverView" text="Xem trước Cực Phẩm" size="20" horizontalCenter="189" bottom="20" verticalAlign="middle" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
  
 </e:Skin>

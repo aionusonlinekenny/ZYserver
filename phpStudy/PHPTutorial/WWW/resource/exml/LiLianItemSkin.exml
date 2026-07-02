@@ -5,7 +5,7 @@
 	<e:Label id="descTxt" text="5/5" size="20" touchEnabled="false" verticalCenter="0" textAlign="center" x="200" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 	<e:Label id="liLianNumTxt" text="10历练" size="20" touchEnabled="false" verticalCenter="0" textAlign="center" x="335" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 	<e:Label id="goOnTxt" text="点击前往" size="20" verticalCenter="0" right="13" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
-	<e:Label id="sureImg" text="已完成" size="20" verticalCenter="0" right="13" fontFamily="Microsoft YaHei" textAlign="center" textColor="0x00ff06"/>
+	<e:Label id="sureImg" text="Đã hoàn thành" size="20" verticalCenter="0" right="13" fontFamily="Microsoft YaHei" textAlign="center" textColor="0x00ff06"/>
 
 
 </e:Skin>

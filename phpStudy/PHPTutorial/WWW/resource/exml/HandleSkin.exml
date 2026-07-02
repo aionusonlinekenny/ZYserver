@@ -23,7 +23,7 @@
 					<e:Label id="nameTxt" text="裸体矿工" y="124" size="18"   x="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.8"/>
 				</e:Group>
 
-			<e:Label text="战斗力：" x="123" size="20" textColor="0x9F946D" bottom="20" includeIn="plunder,revenge" text.revenge="战斗力:" fontFamily.revenge="Microsoft YaHei" textColor.revenge="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Chiến lực：" x="123" size="20" textColor="0x9F946D" bottom="20" includeIn="plunder,revenge" text.revenge="Chiến lực:" fontFamily.revenge="Microsoft YaHei" textColor.revenge="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Label id="enemyPower" x="203" size="20" textColor="0xFF9900" bottom="20" includeIn="plunder,revenge" fontFamily.revenge="Microsoft YaHei" textColor.revenge="0x0038ab" x.revenge="196" fontFamily="Microsoft YaHei"/>
 			<e:Label text="掠夺者：" x="123" size="20" textColor="0x9F946D" top="20" includeIn="plunder,revenge" fontFamily.revenge="Microsoft YaHei" text.revenge="掠夺者:" textColor.revenge="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Label id="enemy"  x="203" size="20" textColor="0xFF9900" top="20" includeIn="plunder,revenge" fontFamily.revenge="Microsoft YaHei" textColor.revenge="0x0038ab" x.revenge="196" fontFamily="Microsoft YaHei"/>
@@ -93,7 +93,7 @@
 			<e:Group y="188"  height="122"  width="446" horizontalCenter="0" includeIn="plunder" horizontalCenter.plunder="0.5" y.plunder="189">
 				<e:Image top="0" bottom="0" left="0" right="0" includeIn="plunder" source="tongyonglabbg" scale9Grid="49,7,20,62"/>
 			<e:Label text="玉矿主人:" x="13" y="30" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-			<e:Label text="战斗力:" x="253" y="30" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="Chiến lực:" x="253" y="30" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="主人仙盟:" x="13" y="72" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label id="owner" text="" x="106" y="30" size="20" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
 			<e:Label id="power" text="" x="313" y="30" size="20" x.plunder="322" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
@@ -116,7 +116,7 @@
 		</e:Group>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" y="332" x="-129" includeIn="plunder,revenge,done" width="399" visible.done="false">
 			<e:Image source="bantoutiaobg" height="36" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
-			<e:Label text="点击空白区域关闭窗口" size="20" y="5" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="5" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Button id="closeBtn1" label="按钮" y="-17" skinName="SkinBtn0" right="-10" x="188"   visible="false"/>
 		</e:Group>
 		<e:layout>

@@ -20,9 +20,9 @@
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label id="name0" text="布拉格の冷血" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="guild0" text="布拉格の仙盟" y="84" size="14" horizontalCenter="0" textColor="0x5186fd" visible="false"/>
-			<e:Label id="occupy0" text="点击占领" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="name0" text="VươngGiả·LãnhHuyết" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="guild0" text="VươngGiả·TiênMinh" y="84" size="14" horizontalCenter="0" textColor="0x5186fd" visible="false"/>
+			<e:Label id="occupy0" text="Nhấn để chiếm lĩnh" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		</e:Group>
 		<e:Group x="-81" y="48" scaleX="1" scaleY="1" width="96">
 			<e:Button id="area1"  rotation="360" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
@@ -33,9 +33,9 @@
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label id="name1" text="布拉格の冷血" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="guild1" text="布拉格の仙盟" y="84" size="18" horizontalCenter="0" textColor="0x5186fd" fontFamily="Microsoft YaHei" visible="false"/>
-			<e:Label id="occupy1" text="点击占领" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="name1" text="VươngGiả·LãnhHuyết" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="guild1" text="VươngGiả·TiênMinh" y="84" size="18" horizontalCenter="0" textColor="0x5186fd" fontFamily="Microsoft YaHei" visible="false"/>
+			<e:Label id="occupy1" text="Nhấn để chiếm lĩnh" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		</e:Group>
 		<e:Group x="-71" y="58" scaleX="1" scaleY="1" width="96">
 			<e:Button id="area2" rotation="360" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
@@ -46,9 +46,9 @@
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label id="name2" text="布拉格の冷血" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="guild2" text="布拉格の仙盟" y="84" size="14" horizontalCenter="0" textColor="0x5186fd" visible="false"/>
-			<e:Label id="occupy2" text="点击占领" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="name2" text="VươngGiả·LãnhHuyết" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="guild2" text="VươngGiả·TiênMinh" y="84" size="14" horizontalCenter="0" textColor="0x5186fd" visible="false"/>
+			<e:Label id="occupy2" text="Nhấn để chiếm lĩnh" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		</e:Group>
 		<e:Group x="-61" y="68" scaleX="1" scaleY="1" width="96">
 			<e:Button id="area3" rotation="360" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
@@ -59,9 +59,9 @@
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label id="name3" text="布拉格の冷血" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="guild3" text="布拉格の仙盟" y="84" size="14" horizontalCenter="0" textColor="0x5186fd" visible="false"/>
-			<e:Label id="occupy3" text="点击占领" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="name3" text="VươngGiả·LãnhHuyết" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="guild3" text="VươngGiả·TiênMinh" y="84" size="14" horizontalCenter="0" textColor="0x5186fd" visible="false"/>
+			<e:Label id="occupy3" text="Nhấn để chiếm lĩnh" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		</e:Group>
 		<e:Group x="-51" y="78" scaleX="1" scaleY="1" width="96">
 			<e:Button id="area4" rotation="360" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
@@ -72,9 +72,9 @@
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label id="name4" text="布拉格の冷血" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="guild4" text="布拉格の仙盟" y="84" size="14" horizontalCenter="0" textColor="0x5186fd" visible="false"/>
-			<e:Label id="occupy4" text="点击占领" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="name4" text="VươngGiả·LãnhHuyết" y="80" size="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="guild4" text="VươngGiả·TiênMinh" y="84" size="14" horizontalCenter="0" textColor="0x5186fd" visible="false"/>
+			<e:Label id="occupy4" text="Nhấn để chiếm lĩnh" y="76" size="18" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		</e:Group>
 		<e:layout>
 			<e:HorizontalLayout gap="6"/>
