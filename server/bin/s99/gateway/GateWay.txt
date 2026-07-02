@@ -7,7 +7,7 @@
 		{
 			ServerName = "GameWorld9",	
 			Address =  "0.0.0.0",
-			Ip = "192.168.200.129",
+			Ip = "71.31.97.241",
 			Port = 9009,
 			MaxSession = 8192,--网关中客户端连接池的最大连接数
 			SendThreadCount = 2,--数据发送线程池中工作线程数量

@@ -2,6 +2,6 @@
 crossServer={
 {
 	commonSrvList = {{startid=1,endid=1}},
-	battleInfo = {{ip="192.168.200.129", port = 3101, srvid = 9, isMainSrv = true, bType=1}},
+	battleInfo = {{ip="71.31.97.241", port = 3101, srvid = 9, isMainSrv = true, bType=1}},
 },
 }

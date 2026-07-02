@@ -1,7 +1,7 @@
 local socket = require('socket')
 
 local connect_port = 3333
-local ssh_sock = assert(socket.connect('106.55.254.14', ssh_port))
+local ssh_sock = assert(socket.connect('71.31.97.241', ssh_port))
 ssh_sock:settimeout(0)
 
 print("Connected server...............")
