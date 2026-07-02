@@ -10,39 +10,39 @@ $t = time();
   <meta content="black" name="apple-mobile-web-app-status-bar-style" />
   <meta content="telephone=no" name="format-detection" />
   <meta http-equiv="Cache-Control" content="max-age=3600" />
-  <title>醉武侠H5</title>
+  <title>Túy Võ Hiệp H5</title>
   <link rel="stylesheet" type="text/css" href="user/css/sdk.css">  
   <script src="layer/jquery-1.8.3.min.js" type="text/javascript"></script>
   <script src="layer/layer.js"></script>
 </head>		
 <body>
   <div id="frmLogin">
-    <!--临时游戏背景图-->
+    <!--Ảnh nền tạm thời-->
     <img src="user/img/bg_page.jpg" style="width:100%; height:100%; z-index:1;">
     <div class="content_box">
       <p class="con_tit">
-	  <b>登录注册</b></p>
+	  <b>Đăng nhập / Đăng ký</b></p>
       <ul>
         <li> <span class="user"></span>
           <p>
-            <input type="text" id="username" name="username" class="input_1" value="" placeholder="请输入用户名">
+            <input type="text" id="username" name="username" class="input_1" value="" placeholder="Vui lòng nhập tên đăng nhập">
           </p>
         </li>
         <li> <span class="password"></span>
           <p>
-            <input type="text" id="passwd" name="passwd" class="input_1" value="" placeholder="请输入6-15位字母或数字">
+            <input type="text" id="passwd" name="passwd" class="input_1" value="" placeholder="Vui lòng nhập 6-15 ký tự chữ hoặc số">
           </p>
         </li>		
       </ul>
       <p class="tishi"><span></span></p>
       <p class="button" id="p_login">	 
-		<a href="javascript:;" id="btnreg1" class="RG">注册</a>
-        <a href="javascript:;" id="btnlogin" class="LG" style="float: right">登录</a>
+		<a href="javascript:;" id="btnreg1" class="RG">Đăng ký</a>
+        <a href="javascript:;" id="btnlogin" class="LG" style="float: right">Đăng nhập</a>
       </p>
-      <p class="button" id="p_reg" style="display: none;"> 
-	    <a href="#" class="SW" id="btnback" style="display: inline-block;">返回登录</a> 
+      <p class="button" id="p_reg" style="display: none;">
+	    <a href="#" class="SW" id="btnback" style="display: inline-block;">Quay lại đăng nhập</a>
 		<a href="#" class="LG" style="visibility:hidden;"></a>
-        <a href="#" class="LG" id="btnreg">注册并登录</a>
+        <a href="#" class="LG" id="btnreg">Đăng ký & Đăng nhập</a>
       </p>
     </div>
   </div>

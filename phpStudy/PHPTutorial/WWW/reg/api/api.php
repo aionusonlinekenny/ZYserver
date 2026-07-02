@@ -12,7 +12,7 @@ if ($_POST) {
     if ($row ['account'] == $user && $row ['passwd'] == $pass) {
      $data = array ('code' => '1','msg' => 'success','token' => $pass,'user' => $user );
     } else {
-     $data = array ('code' => '0','msg' => '账号或者密码错误!');
+     $data = array ('code' => '0','msg' => 'Tài khoản hoặc mật khẩu không đúng!');
     }
     exit ( json_encode ( $data ) );
     break;
@@ -26,7 +26,7 @@ if ($_POST) {
      $result = mysql_query ( $sqlcx, $conn );
      $row = mysql_fetch_array ( $result );
      if ($row ['account'] == $user) {
-      $data = array ('code' => '0','msg' => '用户名已被注册!');
+      $data = array ('code' => '0','msg' => 'Tên đăng nhập đã được đăng ký!');
      } else {
       $datetime = date ( 'Y-m-d h:i:s' );
       $sqlcr = "INSERT INTO user(account, passwd, createtime, updatetime) VALUES ('$user', '$pass', '$datetime', '$datetime')";
@@ -34,11 +34,11 @@ if ($_POST) {
       if ($result) {	
        $data = array ('code' => '1','msg' => 'success','token' => $pass,'user' => $user);
       } else {
-       $data = array ('code' => '0','msg' => '注册账号失败!');
+       $data = array ('code' => '0','msg' => 'Đăng ký tài khoản thất bại!');
       }
      }
     } else {
-     $data = array ('code' => '0','msg' => '密码不能空!');
+     $data = array ('code' => '0','msg' => 'Mật khẩu không được để trống!');
     }
     exit ( json_encode ( $data ) );
     break;

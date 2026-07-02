@@ -25,7 +25,7 @@ $(document).ready(function () {
   $("#btnreg1").click(function () {
     $("#type").val("2");
     $("#forget_pwd").hide();
-    $("#username").attr("placeholder", "请输入用户名");
+    $("#username").attr("placeholder", "Vui lòng nhập tên đăng nhập");
     $('#ismobileregister2').show();
     $("#p_login").hide();
     if ($(".p_login_2").length > 0) {
@@ -37,7 +37,7 @@ $(document).ready(function () {
 /** 返回登录页面 */
   $("#btnback").click(function () {
     mvIsMobile = false;
-    $("#username").attr("placeholder", "请输入用户名");
+    $("#username").attr("placeholder", "Vui lòng nhập tên đăng nhập");
     $("#p_login").show();
     if ($(".p_login_2").length > 0) {
       $(".p_login_2").show();
@@ -118,27 +118,27 @@ function checkRegForm() {
     var lvPWD = $("#passwd").val();
     if (lvUsername == "") {
       $(".tishi").show();
-      $(".tishi span").text("请输入用户名！");
+      $(".tishi span").text("Vui lòng nhập tên đăng nhập!");
       return;
     } else if (lvUsername.length < 6) {
       $(".tishi").show();
-      $(".tishi span").text("用户名长度不得小于6位！");
+      $(".tishi span").text("Tên đăng nhập phải có ít nhất 6 ký tự!");
       return;
     } else if (!funcChina(lvUsername)) {
       $(".tishi").show();
-      $(".tishi span").text("用户名不能含有汉字！");
+      $(".tishi span").text("Tên đăng nhập không được chứa chữ Hán!");
       return;
     } else if (checkUserName(lvUsername)) {
       $(".tishi").show();
-      $(".tishi span").text("用户名只能是字母和数字！");
+      $(".tishi span").text("Tên đăng nhập chỉ được chứa chữ và số!");
       return;
-    } else if (lvPWD == "" || lvPWD == "输入密码") {
+    } else if (lvPWD == "" || lvPWD == "Nhập mật khẩu") {
       $(".tishi").show();
-      $(".tishi span").text("输入密码！");
+      $(".tishi span").text("Vui lòng nhập mật khẩu!");
       return;
     } else if (lvPWD.length < 6) {
       $(".tishi").show();
-      $(".tishi span").text("密码长度不得小于6位！");
+      $(".tishi span").text("Mật khẩu phải có ít nhất 6 ký tự!");
       return;
     }
     $("#frmLogin").submit();
@@ -153,27 +153,27 @@ function checkLoginForm() {
     SetCookie('cookie_password', lvPWD);
     if (lvUsername == "") {
       $(".tishi").show();
-      $(".tishi span").text("请输入用户名！");
+      $(".tishi span").text("Vui lòng nhập tên đăng nhập!");
       return false;
     } else if (lvUsername.length < 6) {
       $(".tishi").show();
-      $(".tishi span").text("用户名长度不得小于6位！");
+      $(".tishi span").text("Tên đăng nhập phải có ít nhất 6 ký tự!");
       return false;
     } else if (!funcChina(lvUsername)) {
       $(".tishi").show();
-      $(".tishi span").text("用户名不能含有汉字！");
+      $(".tishi span").text("Tên đăng nhập không được chứa chữ Hán!");
       return false;
     } else if (checkUserName(lvUsername)) {
       $(".tishi").show();
-      $(".tishi span").text("用户名只能是字母和数字！");
+      $(".tishi span").text("Tên đăng nhập chỉ được chứa chữ và số!");
       return false;
-    } else if (lvPWD == "" || lvPWD == "输入密码") {
+    } else if (lvPWD == "" || lvPWD == "Nhập mật khẩu") {
       $(".tishi").show();
-      $(".tishi span").text("输入密码！");
+      $(".tishi span").text("Vui lòng nhập mật khẩu!");
       return false;
     } else if (lvPWD.length < 6) {
       $(".tishi").show();
-      $(".tishi span").text("密码长度不得小于6位！");
+      $(".tishi span").text("Mật khẩu phải có ít nhất 6 ký tự!");
       return false;
     } else {
       return true;

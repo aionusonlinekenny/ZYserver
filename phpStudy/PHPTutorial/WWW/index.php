@@ -1,5 +1,5 @@
 <?php
-	$cdn = "http://192.168.200.129:81";  //资源地址配置
+	$cdn = "http://192.168.200.129:81";  //Cấu hình địa chỉ tài nguyên
 	$key = "4QrcOUm6WauVuBX8gPg";
 	$account = $_REQUEST['uid'];
 	$sign = $_REQUEST['sign'];
@@ -13,7 +13,7 @@
 	//1服
 	$data = array(
 			'id' 		=> 1,
-			'name' 		=> "醉武侠1服",
+			'name' 		=> "Túy Võ Hiệp - Server 1",
 			'state'		=> 1,
 			'mergeId'   => 1,
 			'openTime'  => time(),
@@ -69,7 +69,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>醉武侠H5</title>
+    <title>Túy Võ Hiệp H5</title>
     <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="full-screen" content="true" />
