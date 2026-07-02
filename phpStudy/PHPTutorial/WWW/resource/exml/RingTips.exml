@@ -24,7 +24,7 @@
 			<e:Image id="tips" y="0"  source="tjyijihuo" scaleX="1.2" scaleY="1.2" right="-2" source.lock="tjweijihuo" source.active="tjweijihuo"/>
 			<e:Group y="333.67" horizontalCenter="0.5">
 				<e:Group y="0"    width="325" horizontalCenter="0" x="0">
-					<e:Label y="0" text="【加成属性】" size="20" x="0"   textColor.lock="0x00ffff"
+					<e:Label y="0" text="【Thuộc tính cộng thêm】" size="20" x="0"   textColor.lock="0x00ffff"
 					          fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
 
 					<e:Label id="value0" y="25" text="+1000" size="18" verticalAlign="justify" x="90" textAlign="left" 
@@ -35,19 +35,19 @@
 					           x.active="265" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 					<e:Label id="value3" y="50" text="+1000" size="18" verticalAlign="justify" x="257" textAlign="left" 
 					           x.active="265" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-					<e:Label id="attr0" y="25" text="攻攻击：" size="18" verticalAlign="justify" x="24" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
-					<e:Label id="attr2" y="50" text="攻法抗：" size="18" verticalAlign="justify" x="24" textAlign="left" 
+					<e:Label id="attr0" y="25" text="Công kích：" size="18" verticalAlign="justify" x="24" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+					<e:Label id="attr2" y="50" text="Kháng phép：" size="18" verticalAlign="justify" x="24" textAlign="left" 
 					           fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
-					<e:Label id="attr1" y="25" text="暴击率：" size="18" verticalAlign="justify" textAlign="left"
+					<e:Label id="attr1" y="25" text="Tỷ lệ Bạo kích：" size="18" verticalAlign="justify" textAlign="left"
 					           x="190"  fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
-					<e:Label id="attr3" y="50" text="攻生命：" size="18" verticalAlign="justify" textAlign="left"
+					<e:Label id="attr3" y="50" text="Sinh lực：" size="18" verticalAlign="justify" textAlign="left"
 					           x="190"  fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
 
 				</e:Group>
 				<e:Group y="70"    width="325" horizontalCenter="0" x="0">
-					<e:Label id="specialAttr" y="25" text="       角色攻击时，有几率触发麻痹效果，使目标无法攻击、移动，持续2秒。" size="20" verticalAlign="justify" x="0" textAlign="left"
-					           text.lock="角色攻击时，有几率触发麻痹效果，使目标无法攻击、移动，持续2秒。" width.lock="324"  width="324" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-					<e:Label y="0" text="【极品效果】" size="20" x="0" bold="true"   textColor.lock="0xff0000"
+					<e:Label id="specialAttr" y="25" text="       Khi nhân vật tấn công, có tỷ lệ kích hoạt hiệu ứng Tê Liệt, khiến mục tiêu không thể tấn công, di chuyển, kéo dài 2 giây." size="20" verticalAlign="justify" x="0" textAlign="left"
+					           text.lock="Khi nhân vật tấn công, có tỷ lệ kích hoạt hiệu ứng Tê Liệt, khiến mục tiêu không thể tấn công, di chuyển, kéo dài 2 giây." width.lock="324"  width="324" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+					<e:Label y="0" text="【Hiệu ứng Cực Phẩm】" size="20" x="0" bold="true"   textColor.lock="0xff0000"
 					         textColor="0xff0000"  fontFamily="Microsoft YaHei"/>
 					<e:Image source="tongyongline" y="94.34" width="289" horizontalCenter="0" height="1"/>
 				</e:Group>

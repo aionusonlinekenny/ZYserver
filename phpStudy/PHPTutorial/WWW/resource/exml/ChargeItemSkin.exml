@@ -11,20 +11,20 @@
 	</e:Group>
 	<e:Image id="give" x="22" includeIn="firstUp,fistDown" width="34" height="73" source="shuangbei"/>
 	<e:Image id="giveBg" source="bantoutiaobg2" x="38.8" y="95"   scale9Grid="11,2,70,17"  width="204.4"  height="24.6" includeIn="firstUp,fistDown" visible="false"/>
-	<e:Label id="gain0" text="送1000元宝" x="84.5" y="97.5" size="21" textColor="0xf8b141"  includeIn="firstUp,fistDown" visible="false"/>
-	<e:Label id="gain1" text="送1000元宝" x="42.51" y="10" size="21" textColor="0xF8B141" includeIn="firstUp,fistDown" visible="false"/>
-	<e:Label id="total" text="共获得" size="22" textColor="0xF8B141" bold="true" x="30" includeIn="firstUp,fistDown" visible="false"/>
+	<e:Label id="gain0" text="Tặng 1000 Nguyên Bảo" x="84.5" y="97.5" size="21" textColor="0xf8b141"  includeIn="firstUp,fistDown" visible="false"/>
+	<e:Label id="gain1" text="Tặng 1000 Nguyên Bảo" x="42.51" y="10" size="21" textColor="0xF8B141" includeIn="firstUp,fistDown" visible="false"/>
+	<e:Label id="total" text="Tổng nhận được" size="22" textColor="0xF8B141" bold="true" x="30" includeIn="firstUp,fistDown" visible="false"/>
 	<e:Group bottom="9"   height="26" y="122" horizontalCenter="0">
 
 		<e:Group id="moneyGroup" x="100" y="-1"></e:Group>
-		<e:Label text="元宝" size="24" x="200"  y="1" fontFamily="Microsoft YaHei" textColor="0x790b00"/>
+		<e:Label text="Nguyên Bảo" size="24" x="200"  y="1" fontFamily="Microsoft YaHei" textColor="0x790b00"/>
 		<e:layout>
 			<e:HorizontalLayout/>
 		</e:layout>
 	</e:Group>
 	<e:Label id="pay" text="￥10" size="26"  right="10" y="20" textAlign="right" fontFamily="Microsoft YaHei" textColor="0x790b00"/>
 	<e:Button id="payBtn" label="60 NDT" x="114" skinName="SkinBtn1" verticalCenter="0"  visible="false"/>
-	<e:Label id="desc" text="2000元=20000元宝   首充送20000元宝" x="103" y="88" size="16" textColor="0xDFD1B5" width="144"
+	<e:Label id="desc" text="2000 NDT=20000 Nguyên Bảo   Nạp đầu tặng 20000 Nguyên Bảo" x="103" y="88" size="16" textColor="0xDFD1B5" width="144"
 	          visible="false"/>
 	<e:Image id="priceImg" x="103" y="76" source=""  visible="false"/>
 

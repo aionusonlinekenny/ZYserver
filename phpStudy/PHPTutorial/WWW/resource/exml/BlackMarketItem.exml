@@ -7,7 +7,7 @@
 
 
 	<e:Label id="money" text="123456" y="57" size="20" fontFamily="Microsoft YaHei" horizontalCenter="-75.5" textAlign="left"/>
-	<e:Label id="CEKey" text="评分" y="57" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" horizontalCenter="15"/>
+	<e:Label id="CEKey" text="Điểm" y="57" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" horizontalCenter="15"/>
 	<e:Label id="CEValue" text="123456" y="57" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" horizontalCenter="89.5"/>
 
 	<e:Image id="moneyIcon" y="51" source="szyuanbao" horizontalCenter="-133"/>

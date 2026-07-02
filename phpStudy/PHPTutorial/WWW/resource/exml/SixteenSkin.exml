@@ -247,7 +247,7 @@
 			<e:Image scaleX="-1" right="0" left="0" top="0" bottom="0" source="bantoumingkuang3" scale9Grid="264,5,124,48"/>
 			<e:Group left="0" right="0" top="0" bottom="0">
 				<e:Group x="1" y="0" anchorOffsetY="0" height="97" anchorOffsetX="0" width="120">
-					<e:Label text="第1局" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
+					<e:Label text="Ván 1" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
 					<e:Label id="gameTime1Txt" x="20" y="55" size="20" textColor="0xdaffff" fontFamily="Microsoft YaHei" textAlign="center"/>
 					<e:layout>
 						<e:BasicLayout/>

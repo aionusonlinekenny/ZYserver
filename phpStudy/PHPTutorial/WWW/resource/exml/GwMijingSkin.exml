@@ -21,7 +21,7 @@
 		</e:Group>
 		<e:Button id="challenge" label="Thách đấu" skinName="SkinBtn1" horizontalCenter="0" y="620"/>
 		<e:Label id="countText" text="" horizontalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="695"/>
-		<e:Label id="buyCount" text="购买次数" horizontalCenter="0" bottom="20" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
+		<e:Label id="buyCount" text="Số lần mua" horizontalCenter="0" bottom="20" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
 		<e:Scroller horizontalCenter="0" scaleX="0.9" scaleY="0.9" y="308" height="320">
 			<e:List id="list" itemRendererSkinName="SkinGwMijingItem" anchorOffsetY="0">
 				<e:layout>

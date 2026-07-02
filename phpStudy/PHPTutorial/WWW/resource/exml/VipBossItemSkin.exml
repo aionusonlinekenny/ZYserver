@@ -3,5 +3,5 @@
 	xmlns:ns1="*" states="up,down" >
 	<e:Image id="bg"  scale9Grid="52,0,58,58" source="vipbossb1" horizontalCenter="0" verticalCenter="0"/>
 	<e:Image id="select" left="-6" right="-6" top="-6" bottom="-6" visible.up="false" source="xuanzekuang3" scale9Grid="20,20,5,5"/>
-	<e:Label id="enter" text="点击进入" size="16" visible.down="false" right="14" bottom="14" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+	<e:Label id="enter" text="Nhấn để vào" size="16" visible.down="false" right="14" bottom="14" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 </e:Skin>

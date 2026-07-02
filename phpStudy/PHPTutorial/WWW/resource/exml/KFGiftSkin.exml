@@ -5,7 +5,7 @@
 	<e:Image id="title" source="biaoti_kaifulibao" horizontalCenter="0" x="211" y="0"/>
 	<e:Image source="bantoutiaobg" scale9Grid="127,20,8,5" height="169" anchorOffsetY="0" left="0" right="0" top="39"/>
 	<e:Image id="showbg" horizontalCenter="-160" x="-33" verticalCenter="78" source="kaifushenbingbg_png"/>
-	<e:Label id="actTime" text="0天23小时55分" size="18" textColor="0x00FF00" horizontalCenter="0" bottom="10" x="218" y="591"/>
+	<e:Label id="actTime" text="0 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" horizontalCenter="0" bottom="10" x="218" y="591"/>
 	<e:Group horizontalCenter="0" x="16" top="44">
 		<e:Group id="lhlb" x="0" y="0">
 		<e:Image id="bg0" horizontalCenter="0" y="2" source="cailiaolibao_bg"/>

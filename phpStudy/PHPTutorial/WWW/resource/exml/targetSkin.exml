@@ -11,7 +11,7 @@
 
 		<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="198,0,82,0" top="20"/>
 		<e:Image scale9Grid="40,30,7,1" source="tongyong_titlebg" top="0" horizontalCenter="0"/>
-		<e:Label text="通关奖励" size="22" fontFamily="Microsoft YaHei" textColor="0x084151" horizontalCenter="0" top="12"/>
+		<e:Label text="Thưởng vượt ải" size="22" fontFamily="Microsoft YaHei" textColor="0x084151" horizontalCenter="0" top="12"/>
 		<e:Image scaleX="-1" source="heartmethodBG_png" top="66" horizontalCenter="0.5" width="384" height="290"/>
 		<e:Image scaleX="-1" top="343" horizontalCenter="0" source="heartmethodBG2_png" width="412" height="174"/>
 		<e:Image scaleX="-1" top="11" horizontalCenter="219" width="157" height="489" source="curtain_png"/>
@@ -41,7 +41,7 @@
 			<e:Group x="20" y="360">
 			<e:Image id="desP0" source="tongyongdian2" x="0" y="7"/>
 			<e:Image id="desBg0" source="shuxingbg4"  scaleX="2" x="-30" y="-10" width="155.5"/>
-			<e:Label id="des0" text="集三角色攻击力总和" y="6" size="18" x="15" textColor="0xf8b141"/>
+			<e:Label id="des0" text="Tổng lực công kích của 3 nhân vật" y="6" size="18" x="15" textColor="0xf8b141"/>
 			<e:Image id="desP1" source="tongyongdian2" x="0" y="31"/>
 			<e:Image id="desBg1" source="shuxingbg4"  scaleX="2.2" x="-30" y="14" width="155.46"/>
 			<e:Label id="des1a" text="对玩家造成           的伤害" y="30" size="18" x="15" textColor="0xf8b141"/>

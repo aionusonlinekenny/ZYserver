@@ -36,7 +36,7 @@
 					</e:List>
 				</e:Group>
 			</e:Scroller>
-			<e:Label text="没有可以分解的装备\n试试下面的获取途径" y="145" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" x="116" textColor="0x001828"/>
+			<e:Label text="Không có trang bị nào để phân giải\nHãy thử các cách nhận bên dưới" y="145" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" x="116" textColor="0x001828"/>
 		</e:Group>
 		<e:Label text="Phân giải" y="12"   horizontalCenter="0" size="24" textColor="0x084151" fontFamily="Microsoft YaHei"/>
 		<e:Group bottom="-43" horizontalCenter="0" x="140" y="804">

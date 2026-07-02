@@ -13,7 +13,7 @@
 	<e:Label id="noGoods" text=" Sản phẩm đã bán hết, vui lòng làm mới" size="28" horizontalCenter="0" verticalCenter="-88" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 
 
-	<e:Label id="point" text="我的积分：20000" x="105" width="213" size="20"  textAlign="left" bottom="15" visible="false"/>
+	<e:Label id="point" text="Điểm của tôi：20000" x="105" width="213" size="20"  textAlign="left" bottom="15" visible="false"/>
 	<e:Group id="costGroup" bottom="55" horizontalCenter="93" anchorOffsetX="0" width="210">
 		<e:Group x="12" y="6">
 			<e:Image x="6" bottom="68" source="szyuanbao" y="3"/>

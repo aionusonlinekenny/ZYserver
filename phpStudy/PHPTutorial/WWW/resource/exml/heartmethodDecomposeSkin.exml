@@ -22,10 +22,10 @@
 		</e:Scroller>
 		<e:Group width="531" height="99" horizontalCenter="0.5" verticalCenter="283" x="0" y="516"  anchorOffsetX="0" anchorOffsetY="0">
 
-			<e:Label text="红" size="22" touchEnabled="false" top="4" left="99" textColor="0xe40000" fontFamily="Microsoft YaHei"/>
-			<e:Label text="橙" size="22" touchEnabled="false" top="4" left="217" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
-			<e:Label text="紫" size="22" touchEnabled="false" top="4" left="336" fontFamily="Microsoft YaHei" textColor="0xac00dd"/>
-			<e:Label text="绿" size="22" touchEnabled="false" top="4" left="455" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="Đỏ" size="22" touchEnabled="false" top="4" left="99" textColor="0xe40000" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Cam" size="22" touchEnabled="false" top="4" left="217" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
+			<e:Label text="Tím" size="22" touchEnabled="false" top="4" left="336" fontFamily="Microsoft YaHei" textColor="0xac00dd"/>
+			<e:Label text="Lục" size="22" touchEnabled="false" top="4" left="455" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 
 			<e:CheckBox id="cb0" skinName="SkinCheckBox0" label="   " top="0" left="414"/>
 			<e:CheckBox id="cb1" skinName="SkinCheckBox0" label="   " top="0" left="295"/>

@@ -71,8 +71,8 @@
 		<e:Group id="effGroup"   touchChildren="false" touchEnabled="false" y="194.23" horizontalCenter="-54.5" x="230"  />
 
 		<e:Group id="nune" width="295.5" height="65.33"   verticalCenter="-152.5" horizontalCenter="150" x="90" y="257"   anchorOffsetX="0" anchorOffsetY="0">
-			<e:Label id="nameLabel" text="解锁类型：" size="20" fontFamily="Microsoft YaHei"/>
-			<e:Label id="nuneValue" text="狂暴：头盔属性加成百分比" size="18" textColor="0x20cf30" x="100" y="1" fontFamily="Microsoft YaHei" anchorOffsetY="0" height="65.33" anchorOffsetX="0" width="196.67"/>
+			<e:Label id="nameLabel" text="Loại mở khóa：" size="20" fontFamily="Microsoft YaHei"/>
+			<e:Label id="nuneValue" text="Cuồng Bạo：Phần trăm cộng thêm thuộc tính Mũ" size="18" textColor="0x20cf30" x="100" y="1" fontFamily="Microsoft YaHei" anchorOffsetY="0" height="65.33" anchorOffsetX="0" width="196.67"/>
 			<e:Group id="nuneLock" width="178.67" height="64" x="120" y="1" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Label id="oldValue" text="3" size="18" textColor="0xe2dfd4"/>
 			<e:Label id="newValue" text="4" x="61" textColor="0x20CF30" size="18"/>

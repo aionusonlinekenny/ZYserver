@@ -39,7 +39,7 @@
 	</e:Group>
 	<e:Group horizontalCenter="0" verticalCenter="283">
 		<e:Label text="累计充值" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label text="100元" size="20" x="10" y="10" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label text="100 NDT" size="20" x="10" y="10" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Label text="成为VIP3，马上获得！" size="20" x="20" y="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:layout>
 		<e:HorizontalLayout gap="6"/>

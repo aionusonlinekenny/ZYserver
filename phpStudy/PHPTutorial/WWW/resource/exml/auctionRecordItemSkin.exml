@@ -13,7 +13,7 @@
 
 
 
-	<!--<e:Label id="infoTxt" text="争夺：0人" size="18" lineSpacing="0" y="22" textColor="0x9f946d" horizontalCenter="190"/>-->
+	<!--<e:Label id="infoTxt" text="Tranh giành：0 người" size="18" lineSpacing="0" y="22" textColor="0x9f946d" horizontalCenter="190"/>-->
 	<e:Group x="0" y="0" width="500">
 		<e:Image id="bg" alpha="0.7" scale9Grid="40,20,30,30" source="tongyonglabbg" height="104" width="500" x="0" y="0"/>
 		<ns1:ItemBase id="item" skinName="SkinItem" horizontalCenter="-201" verticalCenter="0"/>

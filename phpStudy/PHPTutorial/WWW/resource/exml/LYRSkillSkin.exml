@@ -22,14 +22,14 @@
 			<e:Image anchorOffsetX="0" anchorOffsetY="0" left="0" top="0" bottom="0" right="0" scaleY="-1" scale9Grid="16,13,559,12" source="longhuntextbg2"/>
 			<e:Label text="下一级属性" size="26" textColor="0xFFFF00" horizontalCenter="0" fontFamily="Microsoft YaHei" x="149" includeIn="update" top="10"/>
 
-			<e:Label id="nextLvDesc" text="这个技能就是非常牛逼，描述可以贼鸡巴多，超级长攻击加爆高，防御加爆多，血量涨到爆炸" x.study="8" size="18" textAlign="left" size.update="18" textColor.update="0xffffff" anchorOffsetX.update="0" fontFamily.update="Microsoft YaHei" anchorOffsetY.update="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="10" right="10" bottom="15" verticalAlign.update="top" bottom.update="10"/>
+			<e:Label id="nextLvDesc" text="Kỹ năng này cực kỳ ngầu, mô tả thì dài vô cùng tận, tăng công kích cực khủng, tăng phòng thủ cực nhiều, máu tăng nổ tung luôn" x.study="8" size="18" textAlign="left" size.update="18" textColor.update="0xffffff" anchorOffsetX.update="0" fontFamily.update="Microsoft YaHei" anchorOffsetY.update="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="10" right="10" bottom="15" verticalAlign.update="top" bottom.update="10"/>
 		</e:Group>
 		<e:Group id="nowLv" anchorOffsetX="0" width="350" anchorOffsetY="0" height="120" y.update="120" width.study="350" height.study="120" height.update="120" width.update="350" right="10" verticalCenter="-200">
 			<e:Image anchorOffsetY.update="0" scale9Grid="16,13,559,12" source="longhuntextbg2" left.update="0" right.update="0" top.update="0" bottom.update="0" bottom.study="0" right.study="0" right="0" top="0" left="0" bottom="0"/>
 
 
 			<e:Label text="Thuộc tính hiện tại" size="26" text.study="技能属性" textColor.study="0xffff00" size.study="26" fontFamily="Microsoft YaHei" textColor.update="0xffff00" horizontalCenter.update="0" x.update="138" y.update="15" horizontalCenter.study="0" textColor="0xffff00" textAlign="center" horizontalCenter="0" top="15" verticalAlign.study="middle" top.update="10"/>
-			<e:Label id="nowLvDesc" text="这个技能就是非常牛逼，描述可以贼鸡巴多，超级长攻击加爆高，防御加爆多，血量涨到爆炸" size="18" textAlign="left" fontFamily="Microsoft YaHei" textColor.study="0xffffff" anchorOffsetY.study="0" anchorOffsetX.study="0" anchorOffsetX="0" textColor.update="0xffffff" x.update="7" left="10" right="10" bottom="15" textColor="0xffffff" bottom.update="10"/>
+			<e:Label id="nowLvDesc" text="Kỹ năng này cực kỳ ngầu, mô tả thì dài vô cùng tận, tăng công kích cực khủng, tăng phòng thủ cực nhiều, máu tăng nổ tung luôn" size="18" textAlign="left" fontFamily="Microsoft YaHei" textColor.study="0xffffff" anchorOffsetY.study="0" anchorOffsetX.study="0" anchorOffsetX="0" textColor.update="0xffffff" x.update="7" left="10" right="10" bottom="15" textColor="0xffffff" bottom.update="10"/>
 		</e:Group>
 		<e:Image width="360" height="230" includeIn="study" source="tongyong_dikuang4" horizontalCenter="115" verticalCenter="70" scale9Grid="10,10,60,60"/>
 		<e:List id="learnList" includeIn="study"  itemRendererSkinName="SkinItem2" top="330" horizontalCenter="113">

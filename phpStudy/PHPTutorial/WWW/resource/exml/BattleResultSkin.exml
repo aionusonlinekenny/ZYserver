@@ -24,7 +24,7 @@
 			<e:Label text="Xếp hạng của tôi：" size="20" x="4" textAlign="left" height="20" y="10" fontFamily="Microsoft YaHei"/>
 			<e:Label text="Nhận thưởng" size="20" x="4" textAlign="left" height="20" y="50" fontFamily="Microsoft YaHei"/>
 			<e:Label id="myScore" text="1200" size="20" x="305" textAlign="left" y="10" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label text="我的积分：" size="20" x="206" textAlign="left" height="20" y="10" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Điểm của tôi：" size="20" x="206" textAlign="left" height="20" y="10" fontFamily="Microsoft YaHei"/>
 			<e:List id="myRewarrd" x="101" itemRendererSkinName="SkinItem2" top="50">
 			<e:layout>
 				<e:HorizontalLayout gap="30"/>
@@ -34,7 +34,7 @@
 		<e:Image scale9Grid="43,9,4,3" y="352" width="580" height="215" horizontalCenter="0" x="10" source="paimingbg_png"/>
 		<e:Group y="382" horizontalCenter="0" width="420" height="20" x="90" >
 			<e:Label text="Thứ hạng" size="20" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label id="NaN" text="玩家" size="20" x="86" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="NaN" text="Người chơi" size="20" x="86" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
 			<e:Label id="guild0" text="Tiên Minh" size="20" x="246" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
 			<e:Label id="score0" text="Điểm tích lũy" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff" x="376"/>
 		</e:Group>

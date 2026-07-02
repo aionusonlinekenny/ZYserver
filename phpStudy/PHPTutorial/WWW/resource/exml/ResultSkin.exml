@@ -84,8 +84,8 @@
 			<e:Label id="belongTxt" text="Săn Hổ Đêm Nay" y="60" size="20"   textColor="0x35e62d" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group id="nune" width="400" height="20"   verticalCenter="-198" horizontalCenter="0" x="90" y="257"   visible="false">
-			<e:Label id="nameLabel" text="解锁类型：" y="0" textColor="0xDFD1B5" size="20" x="0"/>
-			<e:Label id="nuneValue" text="狂暴：头盔属性加成百分比" size="18" textColor="0x20cf30" x="100" y="1"/>
+			<e:Label id="nameLabel" text="Loại mở khóa：" y="0" textColor="0xDFD1B5" size="20" x="0"/>
+			<e:Label id="nuneValue" text="Cuồng Bạo：Phần trăm cộng thêm thuộc tính Mũ" size="18" textColor="0x20cf30" x="100" y="1"/>
 			<e:Group id="nuneLock" width="200" height="18" x="120" y="1">
 			<e:Label id="oldValue" text="3" x="0" y="0" size="18" textColor="0xe2dfd4"/>
 			<e:Label id="newValue" text="4" x="61" y="0" textColor="0x20CF30" size="18"/>

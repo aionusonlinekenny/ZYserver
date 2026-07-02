@@ -6,9 +6,9 @@
 	<e:Group horizontalCenter="1.5" width="347" height="540" verticalCenter="0">
 		<e:Image id="BG" top="0" bottom="0" left="0" right="0" source="tongyongtip1" scale9Grid="9,8,46,57"/>
 		<e:Image source="quali3" left="0" right="0" top="0" bottom="0" scale9Grid="8,7,12,451"/>
-		<e:Label id="nameLabel" text="立羽如壁" size="24" textColor="0xed5f00" fontFamily="Microsoft YaHei" top="13" left="12"/>
-		<e:Label text="仙羽技能" size="22" x="12.5" y="54" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-		<e:Label id="description" text="受击时10%几率触发，受到伤害减免 15%，持续5秒，每次触发间隔60秒" size="20" width="326" y="87" horizontalCenter="3.5" textAlign="left" height="100" verticalAlign="top" anchorOffsetX="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="nameLabel" text="Lập Vũ Như Bích" size="24" textColor="0xed5f00" fontFamily="Microsoft YaHei" top="13" left="12"/>
+		<e:Label text="Kỹ năng Tiên Vũ" size="22" x="12.5" y="54" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+		<e:Label id="description" text="Khi bị đánh có 10% tỷ lệ kích hoạt, giảm 15% sát thương nhận vào, kéo dài 5 giây, mỗi lần kích hoạt cách nhau 60 giây" size="20" width="326" y="87" horizontalCenter="3.5" textAlign="left" height="100" verticalAlign="top" anchorOffsetX="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image scale9Grid="85,1,6,1" y="45.2" left="0" right="0" source="line2"/>
 		<e:Image source="bantoutiaobg" height="40" horizontalCenter="0" bottom="-55" scale9Grid="128,2,15,41" width="383"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" bottom="-44" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>

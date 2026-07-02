@@ -12,7 +12,7 @@
 		<e:Group top="1" width="236" bottom="0" anchorOffsetX="0" x="12" anchorOffsetY="0">
 			<e:Group id="group0" touchEnabled="false" anchorOffsetY="0" height="226" anchorOffsetX="0" width="246">
 				<ns1:PowerPanel id="powerPanel0" y="-12" x="10" skinName="Skin3PowerPanel"/>
-				<e:Label id="attr0" text="攻击：10110\n物抗：1100\n法抗：1000000\n生命：10000000" y="33" size="18" lineSpacing="5" verticalAlign="top" textAlign="left" x="38" fontFamily="Microsoft YaHei"/>
+				<e:Label id="attr0" text="Công kích：10110\nKháng vật lý：1100\nKháng phép：1000000\nSinh lực：10000000" y="33" size="18" lineSpacing="5" verticalAlign="top" textAlign="left" x="38" fontFamily="Microsoft YaHei"/>
 				<e:Group id="skill_0_1" x="30" y="125" touchEnabled="false" width="199">
 					<e:Image width="46" height="46" source="jinengkuang"/>
 					<e:Image id="chainImg0" x="2" y="2" width="42" height="42" source="skill_extreme_chain"/>
@@ -21,7 +21,7 @@
 				<e:Group id="skill_0_0" x="30" y="173" touchEnabled="false">
 				<e:Image width="46" height="46" anchorOffsetX="0" anchorOffsetY="0" source="jinengkuang"/>
 				<e:Image id="skillIcon0" x="2" y="2" anchorOffsetX="0" width="42" anchorOffsetY="0" height="42" source="skill_extreme_kill"/>
-				<e:Label id="skillName0" text="杀戮 写死？Lv.99" size="20" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei" textAlign="left" left="54"/>
+				<e:Label id="skillName0" text="Sát Lục Ghi Chết？Lv.99" size="20" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei" textAlign="left" left="54"/>
 				</e:Group>
 				<e:layout>
 					<e:BasicLayout/>
@@ -32,7 +32,7 @@
 			<e:Image id="arrow" source="jiantouyou" y="90" rotation="0" x="238" width="70" height="60"/>
 			<e:Group id="group1" x="336" touchEnabled="false" anchorOffsetX="0" width="246">
 				<ns1:PowerPanel id="powerPanel1" y="-12" x="-8" skinName="Skin3PowerPanel"/>
-				<e:Label id="attr1" text="攻击：1100\n物抗：1010\n法抗：1000\n生命：10000000" y="33" size="18" lineSpacing="5" verticalAlign="top" textAlign="left" x="21" fontFamily="Microsoft YaHei"/>
+				<e:Label id="attr1" text="Công kích：1100\nKháng vật lý：1010\nKháng phép：1000\nSinh lực：10000000" y="33" size="18" lineSpacing="5" verticalAlign="top" textAlign="left" x="21" fontFamily="Microsoft YaHei"/>
 				<e:Group id="skill_1_1" x="12" y="125" touchEnabled="false">
 					<e:Image width="46" height="46" source="jinengkuang"/>
 					<e:Image id="chainImg1" x="2" y="2" width="42" height="42" source="skill_extreme_chain"/>
@@ -41,7 +41,7 @@
 				<e:Group id="skill_1_0" x="12" y="173" touchEnabled="false">
 				<e:Image width="46" height="46" anchorOffsetX="0" anchorOffsetY="0" source="jinengkuang"/>
 				<e:Image id="skillIcon1" x="2" y="2" anchorOffsetX="0" width="42" anchorOffsetY="0" height="42" source="skill_extreme_kill"/>
-				<e:Label id="skillName1" text="杀戮 Lv.99" size="20" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei" left="57"/>
+				<e:Label id="skillName1" text="Sát Lục Lv.99" size="20" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei" left="57"/>
 				</e:Group>
 				<e:layout>
 					<e:BasicLayout/>
@@ -64,11 +64,11 @@
 		<e:Image width="256" scaleX="-1" touchEnabled="false" anchorOffsetY="0" height="18" source="wuji_xian" horizontalCenter="-3" top="-18" visible="false"/>
 		<e:Group id="group3" x="12" height="207" y="10">
 			<ns1:PowerPanel id="powerPanel2" y="-21" skinName="Skin3PowerPanel" x="159"/>
-			<e:Label id="attr2" text="攻击：1010\n物抗：10100\n法抗：110\n生命：10000000" y="23" size="18" lineSpacing="5" verticalAlign="top" textAlign="left" x="186" fontFamily="Microsoft YaHei"/>
+			<e:Label id="attr2" text="Công kích：1010\nKháng vật lý：10100\nKháng phép：110\nSinh lực：10000000" y="23" size="18" lineSpacing="5" verticalAlign="top" textAlign="left" x="186" fontFamily="Microsoft YaHei"/>
 			<e:Group id="skill_2_0" x="180" y="164" touchEnabled="false">
 				<e:Image width="46" height="46" anchorOffsetX="0" anchorOffsetY="0" source="jinengkuang"/>
 				<e:Image id="skillIcon2" x="3" y="3" anchorOffsetX="0" width="40" anchorOffsetY="0" height="40" source="skill_extreme_kill"/>
-				<e:Label id="skillName2" text="杀戮 Lv.99" x="57" size="18" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+				<e:Label id="skillName2" text="Sát Lục Lv.99" x="57" size="18" verticalCenter="0.5" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 			<e:Group id="skill_2_1" x="180" y="115" touchEnabled="false">
 				<e:Image width="46" height="46" source="jinengkuang"/>
@@ -108,8 +108,8 @@
 	<e:Button id="updateBtn" label="Kích hoạt" skinName="SkinBtn7" icon="btn1_2" width="213" height="67" y="342" horizontalCenter="-10"/>
 	<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="342" horizontalCenter="63.5"/>
 	<e:Group y="366" x="395">
-		<e:Label text="消耗" size="20" fontFamily="Microsoft YaHei"/>
-		<e:Label id="cost" text="焚天神剑" x="10" y="10" size="20" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Tiêu hao" size="20" fontFamily="Microsoft YaHei"/>
+		<e:Label id="cost" text="Phần Thiên Thần Kiếm" x="10" y="10" size="20" fontFamily="Microsoft YaHei"/>
 		<e:Label text=": " x="20" y="20" size="20" fontFamily="Microsoft YaHei"/>
 		<e:Label id="numLabel" text="0/1" x="20" y="20" size="20" fontFamily="Microsoft YaHei"/>
 		<e:layout>

@@ -6,16 +6,16 @@
 
 		<e:Label text="Xếp hạng điểm" x="11" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Image id="rank0" x="8" y="38" source="paihang1" width="43" height="38"/>
-		<e:Label id="name0" text="布拉格の鑫爷" y="48" size="18" left="55" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="name0" text="VươngGiả·KimGia" y="48" size="18" left="55" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
 		<e:Label id="num0" text="36 Trùng Thiên tầng 10" y="48" size="18" textColor="0xFFFF00" fontFamily="Microsoft YaHei" right="14" textAlign="left"/>
 
 		<e:Image id="rank1" x="8" y="78" source="paihang2" width="43" height="38"/>
 
 
-		<e:Label id="name1" text="极光" y="88" size="18" x="55" textColor="0xFF00FF" fontFamily="Microsoft YaHei"/>
-		<e:Label id="num1" text="9重天1层" y="88" size="18" textColor="0xFF00FF" right="14" fontFamily="Microsoft YaHei" textAlign="left"/>
+		<e:Label id="name1" text="Cực Quang" y="88" size="18" x="55" textColor="0xFF00FF" fontFamily="Microsoft YaHei"/>
+		<e:Label id="num1" text="9 Trùng Thiên tầng 1" y="88" size="18" textColor="0xFF00FF" right="14" fontFamily="Microsoft YaHei" textAlign="left"/>
 		<e:Image id="rank2" x="8" y="118" source="paihang3" width="43" height="38"/>
-		<e:Label id="name2" text="梦里画" y="126" size="18" x="55" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="name2" text="Mộng Lý Họa" y="126" size="18" x="55" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
 		<e:Label id="num2" text="1 Trùng Thiên tầng 1" y="126" size="18" textColor="0x00FF00" right="14" fontFamily="Microsoft YaHei" textAlign="left"/>
 		<e:Image y="163" scale9Grid="128,20,4,4" width="288" height="36" source="bantoutiaobg" horizontalCenter="0"/>
 		<e:Label id="rank3" text="15" y="168" size="18" horizontalCenter="-115" fontFamily="Microsoft YaHei" textColor="0xffff00"/>

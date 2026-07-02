@@ -16,7 +16,7 @@
 
 		<e:Group anchorOffsetY="0" height="149.5" left="100" top="80">
 
-			<e:BitmapLabel id="lv" font="num_lv_jie_fnt" text="九十九阶" width="37"  anchorOffsetX="0" height="149" anchorOffsetY="0" verticalCenter="-10.25" horizontalCenter="0.5"/>
+			<e:BitmapLabel id="lv" font="num_lv_jie_fnt" text="Bậc 99" width="37"  anchorOffsetX="0" height="149" anchorOffsetY="0" verticalCenter="-10.25" horizontalCenter="0.5"/>
 		</e:Group>
 		<ns1:PowerPanel id="power" skinName="SkinPowerPanel" horizontalCenter="20" top="10"/>
 		<e:Image id="nameImg" source="ring_title" left="45" top="150"/>

@@ -18,12 +18,12 @@
 				<e:VerticalLayout gap="10"/>
 				</e:layout>
 			</e:Group>
-			<e:Label id="desc" text="获取途径：" size="18" fontFamily="Microsoft YaHei" width="341" left="50" bottom="90" x="0" y="32" scaleX="1" scaleY="1" textColor="0x6b9baa"/>
+			<e:Label id="desc" text="Cách nhận：" size="18" fontFamily="Microsoft YaHei" width="341" left="50" bottom="90" x="0" y="32" scaleX="1" scaleY="1" textColor="0x6b9baa"/>
 		</e:Group>
-		<e:Label text="激活或提升时装：" x="161" size="18" y="370" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
-		<e:Label id="itemname" text="青春岁月" size="18" x="305" y="370" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label text="类别：" x="50" size="18" y="371" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
-		<e:Label id="style" text="人物" size="18" x="108" y="371" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Kích hoạt hoặc nâng cấp Thời Trang：" x="161" size="18" y="370" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+		<e:Label id="itemname" text="Thanh Xuân Tuế Nguyệt" size="18" x="305" y="370" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Loại：" x="50" size="18" y="371" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+		<e:Label id="style" text="Nhân vật" size="18" x="108" y="371" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image source="tongyongline" width="387" horizontalCenter="0.5" top="403"/>
 		<e:Group id="bottomD" horizontalCenter="0" top="220"/>
 		<e:Group id="dressGroup" horizontalCenter="-39" scaleX="1" scaleY="1" top="280" width="0">

@@ -14,7 +14,7 @@
 		</e:List>
 		<e:Image id="tipsnamebg" height="161" top="0" left="2" right="2" scale9Grid="7,6,13,450" anchorOffsetY="0" source="quali4_png"/>
 		<e:Image id="tipsdepartline" source="tongyongline" left="8" right="8" bottom="42" height="1.5"/>
-		<e:Label text="碎片属性" x="23" y="115" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label text="Thuộc tính mảnh vỡ" x="23" y="115" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="getway" size="20" bottom="15" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="partname" x="61" y="18" size="26" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
 		<e:Image left="2" right="2" top="53"  source="bantoutiaobg" scale9Grid="47,5,289,30" height="41"/>

@@ -4,7 +4,7 @@
 
 	<e:Label id="score" y="34" text="999999" size="20" x="144" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 	<e:Label y="34" text="Điểm：" size="20" x="90" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
-	<e:Label id="nameAttr" y="64" text="法抗：" size="18" width="115" fontFamily="Microsoft YaHei" textAlign="right" x="-11" anchorOffsetY="0" height="90" anchorOffsetX="0" verticalAlign="top" textColor="0xffffff"/>
+	<e:Label id="nameAttr" y="64" text="Kháng phép：" size="18" width="115" fontFamily="Microsoft YaHei" textAlign="right" x="-11" anchorOffsetY="0" height="90" anchorOffsetX="0" verticalAlign="top" textColor="0xffffff"/>
 	<e:Label id="randAttr" y="64" text="" size="18" textColor="0x00018a" fontFamily="Microsoft YaHei" textAlign="left" x="265"/>
 	<e:Label id="baseAttr" y="64" text="999999" size="18" width="163" height="90" anchorOffsetY="0" anchorOffsetX="0" fontFamily="Microsoft YaHei" textAlign="left" verticalAlign="top" horizontalCenter="39.5" textColor="0x00ff06"/>
 	<e:Image width="236" height="50" y="-22" horizontalCenter="0" source="huabian"/>

@@ -29,7 +29,7 @@
 			<e:Image source="pailietouline" horizontalCenter="108.5" verticalCenter="0.5"/>
 			<e:Image source="pailietouline" horizontalCenter="-11.5" verticalCenter="0"/>
 			<e:Image source="pailietouline" horizontalCenter="-148.5" verticalCenter="0.5"/>
-			<e:Label id="itemName" text="商品名字" size="20" horizontalCenter="-203" verticalCenter="0" textColor="0xD1C28F"/>
+			<e:Label id="itemName" text="Tên sản phẩm" size="20" horizontalCenter="-203" verticalCenter="0" textColor="0xD1C28F"/>
 			<e:Label id="successPrice" text="成交价" size="20" horizontalCenter="47" verticalCenter="0" textColor="0xD1C28F"/>
 			<e:Label id="playerName" text="成交者" size="20" horizontalCenter="-77" verticalCenter="0" textColor="0xD1C28F"/>
 			<e:Label id="auctionTime" text="成交时间" size="20" horizontalCenter="185" verticalCenter="0" textColor="0xD1C28F"/>

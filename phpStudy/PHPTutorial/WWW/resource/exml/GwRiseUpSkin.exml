@@ -6,13 +6,13 @@
 		<e:Image source="tongyongkuang3tou" y="0" width="400" x="0"/>
 		<e:Label id="descText" text="" textAlign="center" size="24" verticalAlign="middle" horizontalCenter="0.5" bottom="204" textColor="0xf8b141" anchorOffsetY="0"/>
 		<e:Label id="now" text="" textAlign="center" size="18" verticalAlign="middle" horizontalCenter="1" bottom="173" anchorOffsetY="0" textColor="0x35e26d" bold="true"/>
-		<e:Label id="goldText" text="铜钱鼓舞" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="-27" bottom="140" anchorOffsetY="0" bold="true" textColor="0xd1c28f"/>
+		<e:Label id="goldText" text="Cổ Vũ bằng Đồng" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="-27" bottom="140" anchorOffsetY="0" bold="true" textColor="0xd1c28f"/>
 		<e:Image id="goldImg" x="209" touchEnabled="false" source="gold" y="136" width="32" height="32"/>
-		<e:Label id="goldCost" text="10000/次" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="77.5" bottom="139" textColor="0xF8B141" anchorOffsetY="0"/>
+		<e:Label id="goldCost" text="10000/lần" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="77.5" bottom="139" textColor="0xF8B141" anchorOffsetY="0"/>
 		<e:CheckBox id="gold" label="" x="100" y="135" skinName="SkinCheckBox0" scaleX="0.8" scaleY="0.8" anchorOffsetX="0" width="260"/>
-		<e:Label id="yuanbaoText" text="元宝鼓舞" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="-27" bottom="94" textColor="0xD1C28F" anchorOffsetY="0" bold="true"/>
+		<e:Label id="yuanbaoText" text="Cổ Vũ bằng Nguyên Bảo" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="-27" bottom="94" textColor="0xD1C28F" anchorOffsetY="0" bold="true"/>
 		<e:Image id="yuanbaoImg" verticalCenter="48" source="szyuanbao" x="210" touchEnabled="false"/>
-		<e:Label id="yuanbaoCost" text="200/次" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="69" bottom="93" anchorOffsetY="0" textColor="0xf8b141"/>
+		<e:Label id="yuanbaoCost" text="200/lần" textAlign="center" size="16" verticalAlign="middle" horizontalCenter="69" bottom="93" anchorOffsetY="0" textColor="0xf8b141"/>
 		<e:CheckBox id="yuanbao" label="" x="100" y="179" skinName="SkinCheckBox0" scaleX="0.8" scaleY="0.8" anchorOffsetX="0" width="260"/>
 		<e:Button id="sureBtn" skinName="SkinBtn1" label="Cổ vũ" bottom="20" horizontalCenter="80" width="130" height="50"/>
 		<e:Button id="cancelBtn" skinName="SkinBtn1" label="Hủy" bottom="20" horizontalCenter="-80" width="130" height="50"/>

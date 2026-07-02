@@ -16,8 +16,8 @@
 		<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn1" horizontalCenter="-58" top="726" height="69"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="17.5" top="727"/>
 		<e:Image horizontalCenter="-65" width="284" top="22" source="huabian" height="48" scale9Grid="0,0,214,50"/>
-		<e:Label id="nameTxt" text="BOSS名字70级" horizontalCenter="-65" size="22" top="44" fontFamily="Microsoft YaHei"/>
-		<e:Label id="canChallengeTxt" text="80级可挑战" horizontalCenter="-52.5" size="26" fontFamily="Microsoft YaHei" top="750" height="24" textColor="0x00842c"/>
+		<e:Label id="nameTxt" text="Tên BOSS cấp 70" horizontalCenter="-65" size="22" top="44" fontFamily="Microsoft YaHei"/>
+		<e:Label id="canChallengeTxt" text="Cấp 80 có thể thách đấu" horizontalCenter="-52.5" size="26" fontFamily="Microsoft YaHei" top="750" height="24" textColor="0x00842c"/>
 
 		<e:Image width="440" horizontalCenter="-80" anchorOffsetY="0" anchorOffsetX="0" source="longhuntextbg2" top="591" height="113.7" scale9Grid="0,13,591,12"/>
 

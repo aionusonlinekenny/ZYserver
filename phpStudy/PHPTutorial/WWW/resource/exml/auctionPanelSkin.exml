@@ -21,7 +21,7 @@
 		<e:Image source="pailietouline" horizontalCenter="-137.5" verticalCenter="0"/>
 		<e:Image source="pailietouline" horizontalCenter="-137.5" verticalCenter="0"/>
 		<e:Image source="pailietouline" verticalCenter="0" horizontalCenter="20.5"/>
-		<e:Label id="itemName" text="商品名字" size="20" horizontalCenter="-203" verticalCenter="0" textColor="0xD1C28F"/>
+		<e:Label id="itemName" text="Tên sản phẩm" size="20" horizontalCenter="-203" verticalCenter="0" textColor="0xD1C28F"/>
 		<e:Label id="state" text="当前竞价" size="20" horizontalCenter="-61" verticalCenter="0" textColor="0xD1C28F"/>
 		<e:Label id="auctionBtn" text="竞价" size="20" horizontalCenter="145" verticalCenter="0" textColor="0xD1C28F"/>
 	</e:Group>

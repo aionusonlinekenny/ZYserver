@@ -8,20 +8,20 @@
 			<e:Group width="380" y="-22" horizontalCenter="0" x="-29">
 				<ns1:GWingItem id="icon" x="20" y="52" skinName="ShenYuItem" top.max="52" bottom.max="20"/>
 				<e:Label id="state" text="Chưa kích hoạt" textColor="0xFF0000" size="20" y="20" text.unactive="Chưa kích hoạt" text.active="Đã kích hoạt" textColor.active="0x00ff00" textColor.unactive="0xff0000" text.max="Đã đạt cấp tối đa" textColor.max="0x00ff00" right="17" fontFamily="Microsoft YaHei"/>
-				<e:Label id="name1" text="暴风翎羽" size="25" textColor="0xFF9900" x="26" y="20" fontFamily="Microsoft YaHei" textAlign="center" x.active="26"/>
-				<e:Label id="lv" text="等级：1" size="18" x="110" y="55" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label text="激活条件" size="18" textColor="0xFF9900" x="26" y="140" includeIn="unactive" fontFamily="Microsoft YaHei"/>
+				<e:Label id="name1" text="Bạo Phong Linh Vũ" size="25" textColor="0xFF9900" x="26" y="20" fontFamily="Microsoft YaHei" textAlign="center" x.active="26"/>
+				<e:Label id="lv" text="Cấp độ：1" size="18" x="110" y="55" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Điều kiện kích hoạt" size="18" textColor="0xFF9900" x="26" y="140" includeIn="unactive" fontFamily="Microsoft YaHei"/>
 				<e:Label id="content" text="" width="250" size="18" textAlign="left" x="110" y="75" text.active="" text.max="" anchorOffsetX="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label id="condition" text="" size="18" textAlign="left" x="26" anchorOffsetX="0" top="160" bottom="20" includeIn="unactive" textColor="0xff0000" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 			<e:Group width="380" y="-12" horizontalCenter="0" x="-19" includeIn="active">
 				<ns1:GWingItem id="icon0" x="20" y="52" skinName="ShenYuItem"/>
 				<e:Label id="state0" text="Chưa kích hoạt" textColor="0xFF0000" size="20" y="20" right="17" fontFamily="Microsoft YaHei"/>
-				<e:Label id="lv0" text="等级：1" size="18" x="110" y="55" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label text="激活条件" size="18" textColor="0xFF9900" x="26" y="140" fontFamily="Microsoft YaHei"/>
+				<e:Label id="lv0" text="Cấp độ：1" size="18" x="110" y="55" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Điều kiện kích hoạt" size="18" textColor="0xFF9900" x="26" y="140" fontFamily="Microsoft YaHei"/>
 				<e:Label id="content0" text="" width="250" size="18" textAlign="left" x="110" y="75" anchorOffsetX="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label text="" size="18" textAlign="left" x="26" anchorOffsetX="0" top="160" bottom="20" id="condition0" textColor="0xff0000" fontFamily="Microsoft YaHei"/>
-				<e:Label text="下一级" x="26" y="19" size="20" textColor="0xff9900" fontFamily="Microsoft YaHei"/>
+				<e:Label text="Cấp tiếp theo" x="26" y="19" size="20" textColor="0xff9900" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 			<e:layout>
 				<e:VerticalLayout gap="0"/>

@@ -2,8 +2,8 @@
 <e:Skin class="SkinRemindInfo" width="520" height="48" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 
 	<e:Image bottom="0" left="0" right="0" source="rankitembg" top="0" scale9Grid="11,6,66,41"/>
-	<e:Label id="txt" size="20" text="未满足挑战等级" fontFamily="Microsoft YaHei" y="14" horizontalCenter="160" textColor="0xe40000"/>
-	<e:Label id="bossName" text="BOSS名称" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-160" textAlign="center"/>
-	<e:Label id="levelShow" text="3转-12转" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textAlign="left" horizontalCenter="0" textColor="0x00038a"/>
+	<e:Label id="txt" size="20" text="Chưa đạt cấp thách đấu" fontFamily="Microsoft YaHei" y="14" horizontalCenter="160" textColor="0xe40000"/>
+	<e:Label id="bossName" text="Tên BOSS" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-160" textAlign="center"/>
+	<e:Label id="levelShow" text="Chuyển sinh 3-12" size="20" verticalCenter="0" fontFamily="Microsoft YaHei" textAlign="left" horizontalCenter="0" textColor="0x00038a"/>
 	<e:CheckBox id="checkBoxs" label="Nhắc khi hồi sinh" skinName="SkinCheckBox0" verticalCenter="0" horizontalCenter="160"/>
 </e:Skin>

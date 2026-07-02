@@ -8,7 +8,7 @@
 		<e:Image  source="tongyongtip2" scale9Grid="18,17,4,7" left="0" right="0" top="0" bottom="0"/>
 		<e:Image id="iconbg" source="tongyongtip2" scale9Grid="18,17,4,7" width="76" height="76" y="79" horizontalCenter="0"/>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" width="76" height="76" horizontalCenter="0" y="79"/>
-		<e:Label id="nameLabel" text="祝福 lv.1" size="24" horizontalCenter="0" textColor="0xc41200" fontFamily="Microsoft YaHei" y="29"/>
+		<e:Label id="nameLabel" text="Chúc Phúc lv.1" size="24" horizontalCenter="0" textColor="0xc41200" fontFamily="Microsoft YaHei" y="29"/>
 		<e:Group y="187"   horizontalCenter="0">
 			<e:Label id="attrName" text="闪避值:" size="20"    x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="attrValue" text="+15%" size="20"   x="0" y="0" fontFamily="Microsoft YaHei"/>
@@ -16,9 +16,9 @@
 				<e:HorizontalLayout gap="3" horizontalAlign="center" verticalAlign="middle"/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="attrDesc" text="攻击力  + 99999" size="18" width="275" y="200" textAlign="left" x="40" height="215" textColor="0xd1c28f" visible="false"/>
+		<e:Label id="attrDesc" text="Lực công kích  + 99999" size="18" width="275" y="200" textAlign="left" x="40" height="215" textColor="0xd1c28f" visible="false"/>
 		<e:Label text="99999999"  size="20" x="245.33" y="61.67" textColor="0xc78563" bold="true" visible="false"/>
-		<e:Label id="backDesc" text="回收可获得            精华" size="18" x="120" y="60" bold="true" textColor="0xd1c28f" visible="false"/>
+		<e:Label id="backDesc" text="Thu hồi có thể nhận            Tinh Hoa" size="18" x="120" y="60" bold="true" textColor="0xd1c28f" visible="false"/>
 		<e:Image scale9Grid="85,1,6,1" source="tongyongline" left="0" right="0" horizontalCenter="0" top="157" width="300" visible="false"/>
 		<e:Label id="power" text="Điểm：999999" size="20" y="20" textColor="0xffbc00" bold="true" textAlign="right" right="20" visible="false"/>
 		<e:Label text="Thuộc tính Chiến Văn" size="20" x="20" y="170" bold="true" textAlign="right" textColor="0xbd600d"   visible="false"/>

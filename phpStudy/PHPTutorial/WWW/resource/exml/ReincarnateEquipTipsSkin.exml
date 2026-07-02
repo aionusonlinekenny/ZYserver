@@ -21,7 +21,7 @@
 
 		<e:Label y="53" text="Vị trí：" size="18" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="type" y="53" text="" size="18" x="180" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label y="77" text="转生：" size="18" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label y="77" text="Chuyển sinh：" size="18" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="lv" y="77" text="" size="18" x="180" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		<e:Label y="101" text="Nghề nghiệp：" size="18" x="120" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 		<e:Label id="career" y="101" text="" size="18" x="180" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
@@ -37,7 +37,7 @@
 				<e:Label id="attr1" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr2" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr3" y="100" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label y="125" text="神圣伤害：神圣精通：" size="18" verticalAlign="justify" x="22" textAlign="left" width="90" lineSpacing="7"  text.noSpirit1="神圣伤害：" text.doSpirit1="神圣伤害：" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="125" text="神圣伤害：神圣精通：" size="18" verticalAlign="justify" x="22" textAlign="left" width="90" lineSpacing="7"  text.noSpirit1="Sát thương Thần Thánh：" text.doSpirit1="Sát thương Thần Thánh：" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label id="attr4" y="125" text="" size="18" verticalAlign="justify" x="112" textAlign="left"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr5" y="150" text="" size="18" verticalAlign="justify" x="112" textAlign="left"  includeIn="noSpirit0,doSpirit0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="soulAddAttr0" y="25" text="" size="18" verticalAlign="justify" x="237" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
@@ -67,8 +67,8 @@
 			</e:Group>
 			<e:Group id="suitGroup" x="8" y="142"   anchorOffsetY="0" height="170">
 				<e:Group>
-				<e:Label id="suitName" y="0" text="装备" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-				<e:Label id="suitNum" y="0" text="装备" size="18" x="40"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="suitName" y="0" text="Trang bị" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label id="suitNum" y="0" text="Trang bị" size="18" x="40"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
 				</e:layout>

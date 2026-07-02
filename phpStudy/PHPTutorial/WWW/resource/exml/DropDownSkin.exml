@@ -9,7 +9,7 @@
 				<e:VerticalLayout horizontalAlign="left" gap="0"/>
 			</e:layout>
 		</e:List>
-		<e:Label id="value" size="18" text="名字什么的" right.down="40" right.up="40" textColor="0xffffff" fontFamily="Microsoft YaHei" top="12" anchorOffsetX="0" width="154.73" textAlign="left" horizontalCenter="42"/>
+		<e:Label id="value" size="18" text="Tên gì đó" right.down="40" right.up="40" textColor="0xffffff" fontFamily="Microsoft YaHei" top="12" anchorOffsetX="0" width="154.73" textAlign="left" horizontalCenter="42"/>
 		<e:ToggleButton touchEnabled="false" label="" selected.down="true" scaleX="1" scaleY="1" top="8" left="51" icon="btnshousuo2" skinName="SkinBtn0" visible="false">
 		</e:ToggleButton>
 		<e:Button id="btn" label="Button" skinName="SkinBtn0" icon="btnshousuo2" top="8" left="51"/>

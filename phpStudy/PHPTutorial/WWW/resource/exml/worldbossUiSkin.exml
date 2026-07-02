@@ -31,7 +31,7 @@
 	<e:Group id="leftTimeGroup" horizontalCenter="0" y="6" width="260" height="22">
 		<e:Image source="bantoutiaobg" scale9Grid="80,5,86,35" left="0" right="0" top="0" bottom="0" />
 		<e:Group y="2" horizontalCenter="0">
-			<e:Label text="活动剩余时间" x="0" y="0" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Thời gian sự kiện còn lại" x="0" y="0" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="lastTime" text="15 phút 00 giây" x="111" y="0" size="18" rotation="359.27"  fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:layout>
 				<e:HorizontalLayout gap="2" />
@@ -86,7 +86,7 @@
 
 		<e:Image scale9Grid="92,32,5,7" y="1" source="zjmtouxiangkuang" x="0.4" width="253" height="67"/>
 		<e:Group x="77" y="7.5" height="18" width="140">
-			<e:Label text="归属" size="16" textAlign="center" y="-0.6" x="-1.2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Sở hữu" size="16" textAlign="center" y="-0.6" x="-1.2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 			<e:Label id="belongNameTxt" text="Tên người chơi" size="16" textAlign="left" y="-0.6" x="35.2" textColor="0xf0f4fe" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="111.6"/>
 		</e:Group>
 		<e:Image id="roleHead" source="yuanhead10" width="52" height="52" x="3" y="5" scaleX="1.2" scaleY="1.2"/>

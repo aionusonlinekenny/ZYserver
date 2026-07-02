@@ -77,7 +77,7 @@
 			<e:Image id="giftTitle" y="4"   horizontalCenter="0" source="libao_jingdianboss_png"/>
 		</e:Group>
 		<e:Button id="goBtn" label="Đi tiêu diệt" skinName="SkinBtn1" horizontalCenter="0.5" bottom="17"/>
-		<e:Label id="successBtn" text="已击杀" size="30" horizontalCenter="0.5" bottom="37" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="successBtn" text="Đã tiêu diệt" size="30" horizontalCenter="0.5" bottom="37" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian"   horizontalCenter="79" bottom="69"/>
 	</e:Group>		
 </e:Skin>

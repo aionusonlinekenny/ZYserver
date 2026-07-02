@@ -12,20 +12,20 @@
 		</e:Group>
 		<e:Group id="zhuan" x="5" y="32"   visible="false">
 			<e:Image id="zhuanLv" x="0" y="0"   source="attr1_png"/>
-			<e:Label text="转" x="20" y="0" textColor="0xFFFF00" size="20"  />
+			<e:Label text="Chuyển" x="20" y="0" textColor="0xFFFF00" size="20"  />
 		</e:Group>
 		<e:Label id="target" text="Nạp tích lũy 3000 Nguyên Bảo" size="18" scaleX="1" scaleY="1" textColor="0xFF9900" right="13" verticalCenter="-40" visible="false"/>
 		<e:Label id="recharge" text="123456/12345" size="18" verticalCenter="43" horizontalCenter="186.5" fontFamily.already="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x00842c" textAlign="center" textColor.already="0x00842c"/>
 		<e:Group   right="15" verticalCenter="0" verticalCenter.can="0" height="124">
 			<e:Button id="get" label="Nhận" includeIn="can"     verticalCenter="0" horizontalCenter="0" width="176" height="69" icon="btn2_2" skinName="SkinBtn1" scaleX="0.8" scaleY="0.8"/>
 			<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian"   x="121.71" verticalCenter="-18.5" visible="false"/>
-			<e:Label id="num" text="剩余3000份" size="16" includeIn="can"   y="97.06" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+			<e:Label id="num" text="Còn lại 3000 phần" size="16" includeIn="can"   y="97.06" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 		</e:Group>
-		<e:Label id="none" text="被抢光" size="24" includeIn="zero" textColor="0xff0000"   x="432" y="52" fontFamily="Microsoft YaHei"/>
+		<e:Label id="none" text="Đã bị giành hết" size="24" includeIn="zero" textColor="0xff0000"   x="432" y="52" fontFamily="Microsoft YaHei"/>
 		<e:Label id="already" text="Đã nhận" size="24" includeIn="already"   x="428" y="52" fontFamily="Microsoft YaHei" textColor="0x00842c" textAlign="center"/>
 		<e:Group   verticalCenter="0" horizontalCenter="-207.5">
 
-			<e:BitmapLabel id="lvName" width="100" height="25" x="26" y="22" font="num_kaifu_fnt" text="总转生数" textAlign="center"/>
+			<e:BitmapLabel id="lvName" width="100" height="25" x="26" y="22" font="num_kaifu_fnt" text="Tổng số lần chuyển sinh" textAlign="center"/>
 			<e:BitmapLabel id="lvName0" width="100" height="25" x="36" y="32" font="num_kaifu_fnt" text="1200" textAlign="center" letterSpacing="-2"/>
 			<e:layout>
 			<e:VerticalLayout horizontalAlign="center" gap="2"/>

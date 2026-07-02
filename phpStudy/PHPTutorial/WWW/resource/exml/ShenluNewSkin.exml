@@ -7,7 +7,7 @@
 	<e:Image source="chuangtianguanbg_png" width="600" horizontalCenter="0" verticalCenter="-117"/>
 	<e:Image horizontalCenter="12"  top="184" source="ringbg3_png" horizontalCenter.open="8"/>
 	<e:Group width="600" bottom="0" horizontalCenter="0" verticalCenter="28.5" height="671" anchorOffsetY="0">
-		<e:Label id="vipLabel" text="VIP14加成" x="82" y="613" size="16" textColor="0x00ff00"  visible="false"/>
+		<e:Label id="vipLabel" text="Cộng thêm VIP14" x="82" y="613" size="16" textColor="0x00ff00"  visible="false"/>
 		<e:Group id="maxGroup" horizontalCenter="0" width="600" anchorOffsetY="0" height="301" verticalCenter="185">
 			<e:Group width="600" height="103" y="6" horizontalCenter="0">
 				<e:Image id="nextAttBG"  
@@ -50,20 +50,20 @@
 			<e:Button id="leftBtn" label="Button" x="0" y="1" icon="jiantouxuan" skinName="SkinBtn0"/>
 			<e:Button id="rightBtn" label="Button" x="555" y="1" skinName="SkinBtn0" icon="jiantouxuan" scaleX="-1"/>
 		</e:Group>
-		<e:Label id="isHaveLevel" text="还没升级至该阶御器" y="493" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0" visible="false"/>
+		<e:Label id="isHaveLevel" text="Chưa nâng cấp đến bậc Ngự Khí này" y="493" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0" visible="false"/>
 	</e:Group>
 	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="-248"/>
 	<e:Button id="onHorseBtn" label="Ngự Khí" height="74" width="75" icon="zhanqibtn" skinName="SkinBtn0" y="192" horizontalCenter="251.5"/>
 	<e:Button id="huanhua" label="Button" x="514" y="76" skinName="SkinBtn0" icon="btn_huanhua2_png"/>
-	<e:Label id="zhanqilab" text="骑乘" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" border="false" borderColor="0x000000" stroke="1" y="251" horizontalCenter="251"/>
+	<e:Label id="zhanqilab" text="Cưỡi" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" border="false" borderColor="0x000000" stroke="1" y="251" horizontalCenter="251"/>
 	<e:Image id="isQi" y="391" source="yiqishen_png" horizontalCenter="8" visible="false"/>
 	<e:Image id="weijihuo" x="414" y="241" source="weijihuo2" touchEnabled="false" visible="false"/>
 
 <e:Group id="activeGroup" bottom="0" horizontalCenter="0" height="280" width="600" visible="false">
 	<e:Image width="428" height="39" horizontalCenter="0.5" top="0" anchorOffsetY="0" source="longhuntextbg" verticalCenter="-120.5"/>
-	<e:Label id="sysDescText" text="46级可开启" textAlign="center" touchEnabled="false" horizontalCenter="0.5" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-60" strokeColor="0x000000" stroke="1"/>
-	<e:Label id="sysDescText1" text="激活飞行法宝获得大量攻击防御" touchEnabled="false" horizontalCenter="0"
-	         size="24"  text.open="激活飞行法宝获得大量攻击防御" fontFamily="Microsoft YaHei" top="7" textAlign="center" verticalAlign="middle" textColor="0xfaff82" verticalCenter="-121" stroke="1" strokeColor="0x95440f"/>
+	<e:Label id="sysDescText" text="Cấp 46 có thể mở" textAlign="center" touchEnabled="false" horizontalCenter="0.5" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-60" strokeColor="0x000000" stroke="1"/>
+	<e:Label id="sysDescText1" text="Kích hoạt Pháp Bảo Bay để nhận nhiều Công kích và Phòng ngự" touchEnabled="false" horizontalCenter="0"
+	         size="24"  text.open="Kích hoạt Pháp Bảo Bay để nhận nhiều Công kích và Phòng ngự" fontFamily="Microsoft YaHei" top="7" textAlign="center" verticalAlign="middle" textColor="0xfaff82" verticalCenter="-121" stroke="1" strokeColor="0x95440f"/>
 	<e:Button id="activeBtn" label="Kích hoạt"  x.open="51" verticalCenter="12.5" horizontalCenter="0" width="212" x="10" skinName="SkinBtn7"/>
 	<e:Image id="redPoint" width="20" height="20"   source="zjmhongdian" horizontalCenter="82" verticalCenter="-4"/>
 	<e:Group id="activeBtnMc" width="212" height="61" horizontalCenter="0" verticalCenter="12.5" visible="false"/>

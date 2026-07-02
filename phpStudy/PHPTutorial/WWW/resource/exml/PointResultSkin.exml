@@ -23,10 +23,10 @@
 		<e:Image y="300" width="417" height="40" horizontalCenter="0.5" x="82" scaleX="1" scaleY="1" source="tongyongbg7" scale9Grid="7,6,12,10" visible="false"/>
 		<e:Group y="250" scaleX="1" scaleY="1" width="455" horizontalCenter="0" height="20">
 			<e:Label text="Thứ hạng" y="0" size="20" x="1" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label id="NaN" text="玩家" y="0" size="20" x="86" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="NaN" text="Người chơi" y="0" size="20" x="86" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
 			<e:Label text="Tiên Minh" y="0" size="20" x="225" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
 			<e:Label text="Phần thưởng" y="0" size="20" x="330" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label text="经验" y="0" size="20" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xABEBFF" x="415"/>
+			<e:Label text="Kinh nghiệm" y="0" size="20" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xABEBFF" x="415"/>
 		</e:Group>
 		<e:Scroller width="476" height="252" y="274" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
 			<e:Group height="0">

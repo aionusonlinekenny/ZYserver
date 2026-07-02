@@ -4,7 +4,7 @@
 		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0"   scale9Grid="65,27,1,2" source="kaifuhuodongitembg4_png"/>
 		<e:Group id="slimit" y="4" width="230">
 			<e:Image source="bantoutiaoboss" left="0" right="0" top="0" bottom="0" visible="false"/>
-			<e:Label id="limitchange0" text="今日全服可兑换次数：100" size="18" x="6" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="limitchange0" text="Số lần đổi toàn server hôm nay：100" size="18" x="6" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 
 
@@ -21,7 +21,7 @@
 				<e:HorizontalLayout verticalAlign="middle"/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="limitchange1" text="可兑换：10/10" y="90" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" right="18"/>
+		<e:Label id="limitchange1" text="Có thể đổi：10/10" y="90" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" right="18"/>
 		<e:Button id="get" label="Đổi" y="35" skinName="SkinBtn6" width="91" icon="friend_btnbg" height="50" right="11"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" y="34" right="12" visible="false"/>
 

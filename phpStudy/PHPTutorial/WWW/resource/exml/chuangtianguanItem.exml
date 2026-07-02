@@ -5,7 +5,7 @@
 	<e:Image x="0" y="0" pixelHitTest="true" width.up="310" height.up="101" width="310" height="101" y.up="0" source="ta_png"/>
 
 	<e:Image includeIn="down" x="0" y="-4" width="312" height="110" source="xuanzhong_png"/>
-	<e:Label id="passAllTip0" text="99层" size="22" textAlign="center" y="61" x.up="103" horizontalCenter="0" size.down="22" fontFamily="Microsoft YaHei" textColor="0xffff00" textColor.up="0xffff00" textColor.down="0xffff00"/>
+	<e:Label id="passAllTip0" text="Tầng 99" size="22" textAlign="center" y="61" x.up="103" horizontalCenter="0" size.down="22" fontFamily="Microsoft YaHei" textColor="0xffff00" textColor.up="0xffff00" textColor.down="0xffff00"/>
 
 
 </e:Skin>

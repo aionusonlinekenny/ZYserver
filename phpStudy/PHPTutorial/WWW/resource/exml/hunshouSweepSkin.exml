@@ -7,7 +7,7 @@
 		<e:Group id="sweepTips" width="375" height="169" y="44" horizontalCenter="0.5">
 			<e:Label id="sweepFb" size="20" text="扫荡副本：" horizontalCenter="-117.5" textColor="0xBD600D" y="10" fontFamily="Microsoft YaHei"/>
 			<e:Label id="fbName" size="20" text="" y="10" textAlign="left" textColor="0x04FE13" left="123" fontFamily="Microsoft YaHei"/>
-			<e:Label id="rewardTimes" size="20" text="剩余次数：" horizontalCenter="-117.5" y="33" textColor="0xBD600D" fontFamily="Microsoft YaHei"/>
+			<e:Label id="rewardTimes" size="20" text="Số lần còn lại：" horizontalCenter="-117.5" y="33" textColor="0xBD600D" fontFamily="Microsoft YaHei"/>
 			<e:Label id="times" size="20" text="" y="33" textColor="0x04FE13" textAlign="center" horizontalCenter="-41.5" fontFamily="Microsoft YaHei"/>
 			<e:Label id="timesText" size="20" text="lần" y="33" textColor="0x04FE13" textAlign="left" horizontalCenter="-22.5"/>
 			<e:Label id="title4" size="20" text="获得奖励：" horizontalCenter="-117.5" y="55" textColor="0xBD600D" fontFamily="Microsoft YaHei"/>

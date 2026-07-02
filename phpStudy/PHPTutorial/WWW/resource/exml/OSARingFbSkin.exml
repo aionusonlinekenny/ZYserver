@@ -28,7 +28,7 @@
 
 
 		<e:Group includeIn="normal" bottom="112" horizontalCenter="0.5">
-			<e:Label text="奖励：" includeIn="normal" x="0" y="2" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Phần thưởng：" includeIn="normal" x="0" y="2" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image width="35" height="35" includeIn="normal" x="50" y="0" source="200015_png"/>
 			<e:Label id="rewardsCount" text="150" includeIn="normal" x="75" y="2" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:layout>

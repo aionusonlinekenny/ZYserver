@@ -28,7 +28,7 @@
 		<e:Image height="40" horizontalCenter="0" width="383" source="bantoutiaobg" scale9Grid="66,8,244,20" verticalCenter="0"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0"/>
 		</e:Group>
-		<e:Label text="5战3胜制" x="204" y="540" size="20" textColor="0x00ff00" visible="false"/>
+		<e:Label text="Đánh 5 thắng 3" x="204" y="540" size="20" textColor="0x00ff00" visible="false"/>
 		<e:Label text="每日最多点赞3次" size="20" bottom="53" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		<e:Button id="closebtn" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="221" top="-9" x="448" y="-164" scaleX="1" scaleY="1"/>
 	</e:Group>

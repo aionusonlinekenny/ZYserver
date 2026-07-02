@@ -36,11 +36,11 @@
 			<e:Image id="rankImg0" x="10" y="47" source="paihang1" width="25" height="25"/>
 			<e:Image id="rankImg1" x="10" y="84" source="paihang2" width="25" height="25"/>
 			<e:Image id="rankImg2" x="10" y="121" source="paihang3" width="25" height="25"/>
-			<e:Label id="name0" text="布拉格の鑫爷" y="47" size="18" left="50" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="name0" text="VươngGiả·KimGia" y="47" size="18" left="50" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Label id="num0" text="36 Trùng Thiên tầng 10" y="47" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" x="187" textAlign="left"/>
-			<e:Label id="name1" text="极光" y="87" size="18" x="50" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label id="num1" text="9重天1层" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0xabebff" x="187" textAlign="left"/>
-			<e:Label id="name2" text="梦里画" y="123" size="16" x="50" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="name1" text="Cực Quang" y="87" size="18" x="50" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="num1" text="9 Trùng Thiên tầng 1" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0xabebff" x="187" textAlign="left"/>
+			<e:Label id="name2" text="Mộng Lý Họa" y="123" size="16" x="50" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
 			<e:Label id="num2" text="1 Trùng Thiên tầng 1" y="123" size="18" textColor="0x00ff00" x="187" fontFamily="Microsoft YaHei" textAlign="left"/>
 			<e:Label id="jump" text="Xem xếp hạng" x="169" size="18" width="150" textAlign="center" height="34" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		</e:Group>
@@ -58,7 +58,7 @@
 
 
 			<e:Image source="suowen3" width="66" horizontalCenter="0" height="68"/>
-				<e:Label id="noOpenTF" text="第X个战纹槽" size="18" verticalAlign="middle" touchEnabled="false" strokeColor="0x080708" textAlign="center" y="77" horizontalCenter="1" x="11" fontFamily="Microsoft YaHei"/>
+				<e:Label id="noOpenTF" text="Ô Chiến Văn thứ X" size="18" verticalAlign="middle" touchEnabled="false" strokeColor="0x080708" textAlign="center" y="77" horizontalCenter="1" x="11" fontFamily="Microsoft YaHei"/>
 			</e:Group>
 		</e:Group>
 		<e:Group id="buttomGroup" width="270" height="190" y="207">
@@ -83,7 +83,7 @@
 
 				<e:Image source="ZSexp"   width="62" height="62.5" horizontalCenter="0" top="3"/>
 				<e:Group width="80" height="15" y="73" horizontalCenter="0">
-					<e:Label id="nameTxt" size="15" textAlign="center" text="经验" strokeColor="0x111111" stroke="0" fontFamily="Microsoft YaHei" textColor="0x00ff00" y="-1.5"/>
+					<e:Label id="nameTxt" size="15" textAlign="center" text="Kinh nghiệm" strokeColor="0x111111" stroke="0" fontFamily="Microsoft YaHei" textColor="0x00ff00" y="-1.5"/>
 					<e:Label id="expText" text="300000" x="30" y="-1.5" size="15" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
 					<e:layout>
 						<e:HorizontalLayout gap="0" horizontalAlign="center"/>

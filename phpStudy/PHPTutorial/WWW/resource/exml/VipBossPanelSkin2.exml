@@ -21,10 +21,10 @@
 		</e:Scroller>
 		<e:Group y="142.01" width="554" height="80" horizontalCenter="0">
 			<e:Image  width="248" height="48.5" horizontalCenter="0" source="huabian" anchorOffsetY="0" scale9Grid="97,6,22,42" y="-10"/>
-			<e:Label id="titleText" text="妖帝天宫 1 层" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" verticalAlign="middle" y="12"/>
-			<e:Label id="vipTipTxt" text="VIP1无限挑战" size="20"  y="50" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" horizontalCenter="-217"/>
-			<e:Label id="timeTxt" text="刷新倒计时：/n" size="20"  horizontalCenter="0" y="50" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center"/>
-			<e:Label id="setting" text="BOSS提醒设置" size="20"  y="50" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="right" horizontalCenter="211"/>
+			<e:Label id="titleText" text="Yêu Đế Thiên Cung tầng 1" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" verticalAlign="middle" y="12"/>
+			<e:Label id="vipTipTxt" text="VIP1 thách đấu vô hạn" size="20"  y="50" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left" horizontalCenter="-217"/>
+			<e:Label id="timeTxt" text="Đếm ngược làm mới：/n" size="20"  horizontalCenter="0" y="50" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center"/>
+			<e:Label id="setting" text="Cài đặt nhắc nhở BOSS" size="20"  y="50" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="right" horizontalCenter="211"/>
 		</e:Group>
 	</e:Group>
 	<e:Group id="rukou" width="564" height="698" y="17" horizontalCenter="0" anchorOffsetY="0">
@@ -39,7 +39,7 @@
 				</e:layout>
 			</e:Group>
 
-			<e:Label id="descText0" text="30级~1转 BOSS 无限击杀" x="8.68" y="41.38" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" stroke="0.5"/>
+			<e:Label id="descText0" text="Cấp 30~Chuyển sinh 1 BOSS tiêu diệt vô hạn" x="8.68" y="41.38" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" stroke="0.5"/>
 			<e:Image verticalCenter="-1" source="bossbg1_png" width="259" height="218" right="4"/>
 			<e:Image source="bossvipbg" y="0" horizontalCenter="222"/>
 			<e:Image source="vipvip_png" y="12" horizontalCenter="222.5"/>
@@ -61,7 +61,7 @@
 			<e:Image verticalCenter="0" width="259" height="218" right="4" source="bossbg2_png"/>
 			<e:Image y="0" horizontalCenter="222" source="bossvipbg"/>
 			<e:Image y="12" horizontalCenter="222.5" source="vipvip_png"/>
-			<e:Label id="descText1" text="1转~6转 BOSS 无限击杀" x="8.5" y="41.5" size="20" fontFamily="Microsoft YaHei" textColor="0x00FF06" stroke="0.5"/>
+			<e:Label id="descText1" text="Chuyển sinh 1~6 BOSS tiêu diệt vô hạn" x="8.5" y="41.5" size="20" fontFamily="Microsoft YaHei" textColor="0x00FF06" stroke="0.5"/>
 			<e:Image x="8" y="99" source="gantanhao4"/>
 			<e:Label text="Làm mới mỗi 2 giờ" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00" stroke="0.5"/>
 			<e:Group x="29" y="4">
@@ -90,7 +90,7 @@
 			<e:Image y="12" horizontalCenter="222.5" source="vipvip_png"/>
 			<e:Image id="vipImg2" y="39.5" horizontalCenter="223" source="vip2_v3_png"/>
 			<e:Label text="Mở" y="69" size="18" horizontalCenter="223" width="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
-			<e:Label id="descText2" text="6转~12转 BOSS 无限击杀" x="8.5" y="41.5" size="20" fontFamily="Microsoft YaHei" textColor="0x00FF06" stroke="0.5"/>
+			<e:Label id="descText2" text="Chuyển sinh 6~12 BOSS tiêu diệt vô hạn" x="8.5" y="41.5" size="20" fontFamily="Microsoft YaHei" textColor="0x00FF06" stroke="0.5"/>
 			<e:Image x="8" y="99" source="gantanhao4"/>
 			<e:Label text="Làm mới mỗi 2 giờ" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00" stroke="0.5"/>
 			<e:Group x="29" y="4">

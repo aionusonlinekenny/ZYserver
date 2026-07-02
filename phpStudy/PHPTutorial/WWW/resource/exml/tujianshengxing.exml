@@ -21,7 +21,7 @@
 			<e:Image id="barBg0" verticalCenter="0" right="0" source="progress1" width="24" scaleX="-1"/>
 		<e:Label id="expLabel" strokeColor="0x000000" text="100/100" size="12" verticalAlign="middle" height="18" verticalCenter="1" fontFamily="Microsoft YaHei" textAlign="center" textColor="0x000000" width="460" horizontalCenter="-0.5" visible="false"/>
 		</e:Group>
-		<e:Label text="图鉴详情" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a" top="-3"/>
+		<e:Label text="Chi tiết Đồ Giám" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a" top="-3"/>
 		<e:Label text="Đã đạt cấp tối đa" visible.nomax="false" horizontalCenter="0" visible.noActive="false" y.max="520" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="-16"/>
 		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="fanhui" scaleX="1.2" scaleY="1.2" bottom="18" x="613" visible="false"/>
 		<e:List id="list" height="210" width="495" itemRendererSkinName="SkinItem" visible.max="false" scaleX="0.9" scaleY="0.9" horizontalCenter="-5" y="520" visible="false">
@@ -42,11 +42,11 @@
 
 			</e:Group>
 		</e:Group>
-		<e:Label id="info" text="获取图鉴经验" size="20" right="-18" bottom="-23" visible.max="false" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
+		<e:Label id="info" text="Nhận kinh nghiệm Đồ Giám" size="20" right="-18" bottom="-23" visible.max="false" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
 		<e:Image id="xiangqing" x="406" y="47" source="tongyongxiangxi" visible="false"/>
 		<e:Group id="need" includeIn="noActive" horizontalCenter="0" bottom="40" visible="false">
-			<e:Label text="需要：" x="0" y="0" size="20" fontFamily="Microsoft YaHei"/>
-			<e:Label id="SkinTujian" text="触龙神图鉴*1" y="0" size="20" textColor="0xf3311e" left="0" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Cần：" x="0" y="0" size="20" fontFamily="Microsoft YaHei"/>
+			<e:Label id="SkinTujian" text="Đồ Giám Xúc Long Thần*1" y="0" size="20" textColor="0xf3311e" left="0" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 				<e:HorizontalLayout/>
 			</e:layout>

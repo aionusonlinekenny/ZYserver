@@ -21,7 +21,7 @@
 		<e:Image horizontalCenter="0" anchorOffsetX="0" y="445" source="tfb_rewardtitle_png"/>
 		<e:Label id="fbName" text="子鼠宫" horizontalCenter="0" size="26" fontFamily="Microsoft YaHei" textColor="0xffff00" top="-48"/>
 		<e:Label id="infoText" text="" horizontalCenter="0.5" bottom="38" size="26" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="passTxt" text="已通关" horizontalCenter="0" bottom="36" fontFamily="Microsoft YaHei" textColor="0x00ff06" size="28"/>
+		<e:Label id="passTxt" text="Đã vượt ải" horizontalCenter="0" bottom="36" fontFamily="Microsoft YaHei" textColor="0x00ff06" size="28"/>
 	</e:Group>
 	<e:Group id="backBtnGroup" width="66" height="71" horizontalCenter="248" verticalCenter="402">
 		<e:Button id="closeBtn0" label="Nút bấm" skinName="SkinBtn0" icon="tuichu" y="0" horizontalCenter="0"/>

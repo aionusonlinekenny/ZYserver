@@ -5,5 +5,5 @@
 	<e:Button id="grewUpAllBtn" skinName="SkinBtn6" icon.down="btn2_2" scaleX="0.8" scaleY="0.8" icon="btn2_2" icon.up="btn2" icon.disabled="btn2" verticalCenter="0" horizontalCenter="9.5"/>
 	<e:Image id="bg0" top="4" bottom="4" source="yeqian6" visible.up="false" visible.disabled="false" touchEnabled="false" left="0"/>
 	<e:Image id="redPoint" source="zjmhongdian" right="0" top="0" visible="false"/>
-	<e:Label id="btnText" text="70级" size="24" verticalCenter="0" horizontalCenter="20" textColor="0xeaeaea" textColor.disabled="0x595959" rotation="0" anchorOffsetX="0" width="69.85" textColor.down="0x7e2a00" fontFamily.up="Microsoft YaHei" fontFamily.down="Microsoft YaHei" fontFamily.disabled="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor.up="0x1b3046" visible.disabled="false"/>
+	<e:Label id="btnText" text="Cấp 70" size="24" verticalCenter="0" horizontalCenter="20" textColor="0xeaeaea" textColor.disabled="0x595959" rotation="0" anchorOffsetX="0" width="69.85" textColor.down="0x7e2a00" fontFamily.up="Microsoft YaHei" fontFamily.down="Microsoft YaHei" fontFamily.disabled="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor.up="0x1b3046" visible.disabled="false"/>
 </e:Skin>

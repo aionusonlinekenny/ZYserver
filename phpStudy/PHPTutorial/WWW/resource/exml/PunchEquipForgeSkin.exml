@@ -46,7 +46,7 @@
 		</e:Group>
 
 		<e:Group left="50" top="531">
-			<e:Label id="attr0" text="攻击+10000" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="attr0" text="Công kích+10000" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image id="arrow0" x="139" y="1" rotation="0" source="tongyongup" visible.full="false"/>
 			<e:Label id="addAttr0" text="22222" size="20" textAlign="center" x="124" y="0" visible.full="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>
@@ -54,7 +54,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Group top="531" left="310">
-			<e:Label id="attr1" text="生命+10000" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="attr1" text="Sinh lực+10000" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image id="arrow1" source="tongyongup" x="139" y="1" rotation="0" visible.full="false"/>
 			<e:Label id="addAttr1" text="222222" size="20" textAlign="center" x="126" y="0" visible.full="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>
@@ -62,7 +62,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Group left="50" top="556">
-			<e:Label id="attr2" text="法抗 +100" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="attr2" text="Kháng phép +100" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image id="arrow2" source="tongyongup" x="139" y="1" rotation="0" visible.full="false"/>
 			<e:Label id="addAttr2" text="2222" size="20" textAlign="center" x="124" y="0" visible.full="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>
@@ -70,7 +70,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Group top="556" left="310">
-			<e:Label id="attr3" text="物抗 +100" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="attr3" text="Kháng vật lý +100" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image id="arrow3" source="tongyongup" x="139" y="1" rotation="0" visible.full="false"/>
 			<e:Label id="addAttr3" text="2222" size="20" textAlign="center" x="126" y="0" visible.full="false" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>
@@ -91,11 +91,11 @@
 		<e:Group horizontalCenter.full="0" top="473" horizontalCenter="0">
 			<e:Image x="16" source="zhulingdashi"/>
 
-			<e:Label id="exattr0" text="神罚伤害减免 5%" size="19" textAlign="center" x="115" y="3" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="exattr0" text="Giảm 5% sát thương Thần Phạt" size="19" textAlign="center" x="115" y="3" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Image id="arrow4" x="272.98" y="5.5" rotation="0" source="tongyongup" includeIn="normal" height="22"/>
 			<e:Label id="exattr1" text="6%" size="19" textAlign="center" x="282" y="3" includeIn="normal" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 
-			<e:Label id="exattr2" text="(全部位等级达到 20/40)" x="315" y="3" size="19" includeIn="normal" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="exattr2" text="(Tất cả bộ phận đạt cấp 20/40)" x="315" y="3" size="19" includeIn="normal" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:layout>
 				<e:HorizontalLayout gap="2" horizontalAlign="center" verticalAlign="middle"/>
 			</e:layout>

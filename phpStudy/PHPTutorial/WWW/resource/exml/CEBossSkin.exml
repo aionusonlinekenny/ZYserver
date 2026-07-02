@@ -14,7 +14,7 @@
 		</e:Group>
 		<e:Image source="teshuwenzibg2" scaleY="-1" horizontalCenter="0" y="50" width="400" height="50" x="80" scaleX="1"/>
 		<e:Image id="title" horizontalCenter="0" x="211" source="biaoti_lianchong" source.lieyan="biaoti_jifenduihuan"/>
-		<e:Label id="cost" text="积分:9999999" textColor="0xd1c28f" size="20" horizontalCenter="100" bottom="82"/>
+		<e:Label id="cost" text="Điểm:9999999" textColor="0xd1c28f" size="20" horizontalCenter="100" bottom="82"/>
 		<e:Group id="bossGroup" width="200" height="200" horizontalCenter="-59" bottom="-18"/>
 		<e:Image source="words_kuangshuazhuangbei" horizontalCenter="81" bottom="173" visible.lieyan="false"/>
 		<e:Button id="boss" label="BOSS Ngoài Trời" skinName="SkinBtn1" horizontalCenter="-100" x="202" bottom="20"/>
@@ -23,8 +23,8 @@
 		<e:Group includeIn="lieyan" horizontalCenter="0" bottom="103">
 			<e:Image includeIn="lieyan" source="gantanhao"/>
 			<e:Image includeIn="lieyan" y="25" source="gantanhao"/>
-			<e:Label text="击杀的BOSS等级越高积分奖励越丰厚" includeIn="lieyan" x="25" y="2" size="18" bold="true" textColor="0xf8b141"/>
-			<e:Label text="BOSS归属者将获得更多积分" includeIn="lieyan" x="27" y="27" size="18" textColor="0xF8B141" bold="true"/>
+			<e:Label text="Cấp BOSS bị tiêu diệt càng cao thì thưởng điểm càng nhiều" includeIn="lieyan" x="25" y="2" size="18" bold="true" textColor="0xf8b141"/>
+			<e:Label text="Người sở hữu BOSS sẽ nhận thêm điểm" includeIn="lieyan" x="27" y="27" size="18" textColor="0xF8B141" bold="true"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

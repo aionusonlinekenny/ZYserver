@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="KfArenaResultItemSkin" width="550" height="60" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Label id="rankTxt" text="1" size="18" verticalCenter="0" horizontalCenter="-259.5"/>
-	<e:Label id="nameTxt" text="玩家的长名字" size="18" verticalCenter="0" horizontalCenter="-180"/>
+	<e:Label id="nameTxt" text="Tên dài của người chơi" size="18" verticalCenter="0" horizontalCenter="-180"/>
 	<e:Label id="kaTxt" text="500/100" x="161" size="18" verticalCenter="0"/>
 	<e:Label id="collectionTxt" text="100" x="236" size="18" verticalCenter="0"/>
 	<e:Label id="scoreTxt" text="1000" x="286" size="18" verticalCenter="0"/>

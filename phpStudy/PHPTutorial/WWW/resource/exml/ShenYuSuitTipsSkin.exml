@@ -9,10 +9,10 @@
 				<e:Image y="10.5" source="shoujilan" width="203" height="30" left="1" x="1" source.unactive="shoujihong"/>
 				<e:Image y="204.5" width="203" height="30" left="1" x="11" includeIn="active" source="shoujihong"/>
 				<e:Label id="state0" text="Đã kích hoạt" size="20" left="12" top="14" x="14" y="14" text.unactive="Chưa kích hoạt" bold="true" text.active="Đã kích hoạt" textColor.active="0x00ff00"  textColor.unactive="0xff0000" text.max="Đã đạt cấp tối đa" textColor.max="0x00ff00" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
-				<e:Label id="name0" text="神羽大师1级" horizontalCenter="0" size="20" top="47" x="117" y="30" fontFamily="Microsoft YaHei" textColor="0xffb400" textAlign="center"/>
+				<e:Label id="name0" text="Đại Sư Tiên Vũ cấp 1" horizontalCenter="0" size="20" top="47" x="117" y="30" fontFamily="Microsoft YaHei" textColor="0xffb400" textAlign="center"/>
 				<e:Label id="content0" width="310" size="18" textAlign="left" horizontalCenter="-24" top="98" x="19" y="71"  text.active="Thuộc tính kích hoạt：Toàn thuộc tính Tiên Vũ +5%" text.max="Thuộc tính kích hoạt：Toàn thuộc tính Tiên Vũ +5%" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 				<e:Label id="state1" text="Chưa kích hoạt" size="20" left="12" x="24" y="209.5" fontFamily="Microsoft YaHei" includeIn="active" textColor="0xe40000"/>
-				<e:Label id="name1" text="神羽大师1级" horizontalCenter="0" size="20" x="127" y="242.5" fontFamily="Microsoft YaHei" textColor="0xFFB400" textAlign="center" includeIn="active"/>
+				<e:Label id="name1" text="Đại Sư Tiên Vũ cấp 1" horizontalCenter="0" size="20" x="127" y="242.5" fontFamily="Microsoft YaHei" textColor="0xFFB400" textAlign="center" includeIn="active"/>
 				<e:Label id="content1"  width="310" size="18" textAlign="left" horizontalCenter="-24" x="29" y="289.5" textColor="0x6B9BAA" fontFamily="Microsoft YaHei" includeIn="active"/>
 			</e:Group>
 			<e:layout>

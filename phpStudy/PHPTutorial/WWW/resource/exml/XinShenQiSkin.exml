@@ -69,7 +69,7 @@
 		<e:Image id="tipsnamebg" height="71" source="quali3"  
 		         top="2" left="2" right="2"  scale9Grid="7,6,14,510"/>
 		<e:Image id="tipsdepartline" source="tongyongline" left="0" right="0" bottom="36" />
-		<e:Label text="碎片属性" x="23" y="115" size="20"  textColor="0x6b9baa"/>
+		<e:Label text="Thuộc tính mảnh vỡ" x="23" y="115" size="20"  textColor="0x6b9baa"/>
 		<e:Label id="getway" text="通关1.落霞村获得" size="20" horizontalCenter="0"  left="45"
 		         right="45" bottom="9" verticalAlign="middle" textAlign="center" bold="true"  textColor="0x6b9baa"/>
 		<e:Label id="partname" text="神器碎片一" x="61" y="18" size="26" verticalAlign="middle" textAlign="center"

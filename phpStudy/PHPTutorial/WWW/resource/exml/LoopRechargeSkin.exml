@@ -50,7 +50,7 @@
 					<e:HorizontalLayout gap="6"/>
 				</e:layout>
 				</e:List>
-				<e:Label id="target1" text="累计1天（0/1）充值10000元宝" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xFFFF00" anchorOffsetX="0" width="189" anchorOffsetY="0" height="42" verticalCenter="0" textAlign="center" lineSpacing="2"/>
+				<e:Label id="target1" text="Tích lũy 1 ngày（0/1）nạp 10000 Nguyên Bảo" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xFFFF00" anchorOffsetX="0" width="189" anchorOffsetY="0" height="42" verticalCenter="0" textAlign="center" lineSpacing="2"/>
 			</e:Group>
 			<e:Group y="282" width="538" height="118" x="31">
 				<e:Image left="0" right="0" top="0" bottom="0" source="kaifuhuodongitembg4_png" scale9Grid="29,20,33,7"/>
@@ -62,7 +62,7 @@
 					<e:HorizontalLayout gap="6"/>
 				</e:layout>
 				</e:List>
-				<e:Label id="target2" text="累计1天（0/1）充值10000元宝" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xFFFF00" anchorOffsetX="0" width="189" anchorOffsetY="0" height="42" verticalCenter="0" textAlign="center" lineSpacing="2"/>
+				<e:Label id="target2" text="Tích lũy 1 ngày（0/1）nạp 10000 Nguyên Bảo" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xFFFF00" anchorOffsetX="0" width="189" anchorOffsetY="0" height="42" verticalCenter="0" textAlign="center" lineSpacing="2"/>
 			</e:Group>
 
 

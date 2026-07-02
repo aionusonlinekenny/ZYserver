@@ -7,7 +7,7 @@
 	<e:Label id="timeTxt" text="01:01:55" size="18" textAlign="center"
 	         y="28.33"  horizontalCenter="10" size.up="18" horizontalCenter.up="10" y.up="28.33" size.down="18" y.down="28.33" fontFamily="Microsoft YaHei" textColor.down="0x7e2a00" horizontalCenter.down="10" textColor="0x1b3046" textColor.up="0x1b3046"/>
 
-	<e:Label id="titleText" text="70级" size="20"  horizontalCenter="10" fontFamily="Microsoft YaHei" verticalCenter="-10" horizontalCenter.down="10" verticalCenter.down="-10" textColor.down="0x7e2a00" textAlign.down="center" horizontalCenter.up="10" textColor="0x1b3046" textColor.up="0x1b3046"/>
+	<e:Label id="titleText" text="Cấp 70" size="20"  horizontalCenter="10" fontFamily="Microsoft YaHei" verticalCenter="-10" horizontalCenter.down="10" verticalCenter.down="-10" textColor.down="0x7e2a00" textAlign.down="center" horizontalCenter.up="10" textColor="0x1b3046" textColor.up="0x1b3046"/>
 	<e:Image id="killedImg" scaleX="0.7" scaleY="0.7" y="0" source="zdbosskejisha3_png" left="16"/>
 	<e:Image id="killImg" right.down="0" right.up="0" source.up="zdbosskejisha2_png" source="zdbosskejisha2_png" scaleX="0.7" scaleY="0.7" right="0" y="0" visible="false"/>
 </e:Skin>

@@ -33,7 +33,7 @@
 		<e:Group id="attrGroup" width="600" height="266" horizontalCenter="0" includeIn="open" verticalCenter="183" visible="false">
 		<e:Image id="attrBg" source="yuyitongyongbg2" left="0" right="0" top="0" bottom="0"/>
 		<e:Image width="597" height="26" source="shuxingbiankuang_png" horizontalCenter="0.5" top="-16"/>
-		<e:Label id="Explain" text="三角色双防+300，双防+1%" size="20" width="400" horizontalCenter="0" verticalAlign="middle" textAlign="center" height="30.67" fontFamily="Microsoft YaHei" anchorOffsetY="0" top="52" textColor="0x001828"/>
+		<e:Label id="Explain" text="3 nhân vật Song Kháng+300, Song Kháng+1%" size="20" width="400" horizontalCenter="0" verticalAlign="middle" textAlign="center" height="30.67" fontFamily="Microsoft YaHei" anchorOffsetY="0" top="52" textColor="0x001828"/>
 		<e:Label id="attrLabel" size="20" height="120" width="174" text="攻击:00000\n攻击:00000\n攻击:00000\n攻击:00000" verticalAlign="top" verticalCenter="33" wordWrap="true" multiline="true" fontFamily="Microsoft YaHei" horizontalCenter="-67" textColor="0x001828"/>
 		<e:Label id="nextAttrLabel" size="20" height="120" width="177" text="法抗：00000 000000000000000" verticalAlign="top" verticalCenter="33" multiline="true" wordWrap="true" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="118.5"/>
 		<e:Image id="arrows" source="jiantouyou" horizontalCenter="-6" verticalCenter="0" width="30" height="40" visible="false"/>
@@ -55,7 +55,7 @@
 		</e:Group>
 		<e:Group width="456" includeIn="disable,wait" horizontalCenter="-65" verticalCenter="250" >
 		<e:Label id="openLevelDesc" text="达到XXX级后特戒开启飞升" size="20" horizontalCenter="0" bottom="81" textColor="0xbd600d" bold="true" visible="false"/>
-		<e:Label id="Explain0" text="三角色双防+300，双防+1%" verticalAlign="middle" size="20" anchorOffsetY="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" textAlign="center" verticalCenter="-39.5" horizontalCenter="0" height="45" textColor="0xffffff" left="0" right="0"/>
+		<e:Label id="Explain0" text="3 nhân vật Song Kháng+300, Song Kháng+1%" verticalAlign="middle" size="20" anchorOffsetY="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" textAlign="center" verticalCenter="-39.5" horizontalCenter="0" height="45" textColor="0xffffff" left="0" right="0"/>
 		</e:Group>
 		<ns1:LevelImage id="stageImg" width="40" height="109" skinName="Skinjieji" horizontalCenter="-236" top="130" visible="false"/>
 		<e:Group id="btnGroup" width="450" height="120" horizontalCenter="0" includeIn="open" visible.open="true" bottom="169" visible="false">

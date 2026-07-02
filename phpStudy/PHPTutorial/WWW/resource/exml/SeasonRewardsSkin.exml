@@ -6,8 +6,8 @@
 				<e:Image source="peakness_danfusai" verticalCenter="0" left="38"/>
 				<e:Image verticalCenter="18" left="0" source="lineyellow"/>
 				<e:Image verticalCenter="0" left="13" source="togglered"/>
-				<e:Label text="奖 励" verticalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="-12"/>
-				<e:Label text="领取方式" verticalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="205"/>
+				<e:Label text="Phần thưởng" verticalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="-12"/>
+				<e:Label text="Cách nhận" verticalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="205"/>
 			</e:Group>
 		<e:List id="curServList" x="0" y="42" itemRendererSkinName="SkinSeasonRewardsItem" width="600">
 		<e:layout>
@@ -18,8 +18,8 @@
 				<e:Image verticalCenter="0" source="peakness_kuafusai" left="38"/>
 				<e:Image verticalCenter="18" left="0" source="lineyellow"/>
 				<e:Image verticalCenter="0" left="13" source="togglered"/>
-				<e:Label text="奖 励" verticalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="-12"/>
-				<e:Label text="领取方式" verticalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="205"/>
+				<e:Label text="Phần thưởng" verticalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="-12"/>
+				<e:Label text="Cách nhận" verticalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="205"/>
 			</e:Group>
 			<e:List id="kfServList" x="0" y="684" itemRendererSkinName="SkinSeasonRewardsItem" width="600">
 				<e:layout>

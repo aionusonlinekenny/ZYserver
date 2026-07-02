@@ -98,7 +98,7 @@
 		</e:layout>
 	</e:Group>
 	<e:Button id="suerBtn" label="Nhận thưởng" horizontalCenter="0" height="56" bottom="5" width="180"  skinName="SkinBtn6" icon="btn2_2"/>
-	<e:Label id="daylabel" text="登陆天数:13" size="20" bottom="18" fontFamily="Microsoft YaHei" left="45"/>
+	<e:Label id="daylabel" text="Số ngày đăng nhập:13" size="20" bottom="18" fontFamily="Microsoft YaHei" left="45"/>
 	<e:Label id="dayaward" text="  第一天奖励详情" size="18" bottom="117" fontFamily="Microsoft YaHei" left="12" width="78"/>
 
 

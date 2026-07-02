@@ -19,16 +19,16 @@
 		<e:Label text="万仙杀劫" horizontalCenter="0" top="-6" size="24" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Group x="44" y="51">
 
-			<e:Label text="活动描述：" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Mô tả sự kiện：" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 
-		<e:Label id="desc" text="       夜晚的比奇迷人又充满了神秘的气息。在夜黑风高的时候进去一探究竟吧，你一定会大呼过瘾的。" y="86" size="20" width="380" lineSpacing="10" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x001828" x="44"/>
+		<e:Label id="desc" text="       Bỉ Kỳ về đêm quyến rũ và đầy bí ẩn. Hãy vào khám phá lúc đêm tối gió lộng, chắc chắn bạn sẽ vô cùng phấn khích." y="86" size="20" width="380" lineSpacing="10" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x001828" x="44"/>
 		<e:Group x="44" y="181">
 
-			<e:Label text="活动规则：" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Luật chơi sự kiện：" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 
-		<e:Label id="rule" text="1.活动时间：|C:0x00ff00&amp;T:每周一、三、五 20:30-20:45|\n2.参与活动即可获得|C:0x00ff00&amp;T:功勋|奖励\n3.进入活动后玩家随机分配成|C:0x00ff00&amp;T:2个对立阵营|，每|C：0x00ff00&amp;T:5分钟|重新分配阵营\n4.击败玩家、助攻、杀怪、持续参与活动都可以获得积分，个人积分越高，奖励越丰厚\n5.活动结束后根据玩家综合表现发放排名奖励\n|C:0x5186fd&amp;T:PS：血战比奇城待得越久，获得的功勋越多|" size="20" width="380" lineSpacing="10" top="209" bottom="109" fontFamily="Microsoft YaHei" textColor="0x001828" x="44"/>
+		<e:Label id="rule" text="1.Thời gian sự kiện：|C:0x00ff00&amp;T:Thứ 2, 4, 6 hàng tuần 20:30-20:45|\n2.Tham gia sự kiện là nhận được|C:0x00ff00&amp;T:Công Huân|phần thưởng\n3.Sau khi vào sự kiện người chơi sẽ được chia ngẫu nhiên thành|C:0x00ff00&amp;T:2 phe đối lập|，mỗi|C：0x00ff00&amp;T:5 phút|sẽ phân lại phe\n4.Đánh bại người chơi, hỗ trợ, giết quái, tham gia liên tục đều nhận được điểm, điểm cá nhân càng cao thì thưởng càng nhiều\n5.Sau khi sự kiện kết thúc sẽ phát thưởng xếp hạng theo biểu hiện tổng hợp của người chơi\n|C:0x5186fd&amp;T:PS：Càng ở lâu trong Huyết Chiến Bỉ Kỳ Thành thì càng nhận nhiều Công Huân|" size="20" width="380" lineSpacing="10" top="209" bottom="109" fontFamily="Microsoft YaHei" textColor="0x001828" x="44"/>
 
 
 

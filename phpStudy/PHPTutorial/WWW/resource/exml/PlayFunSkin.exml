@@ -12,10 +12,10 @@
 			<e:Label id="goldTxt" text="0" y="4.5" size="18" textAlign="center" width="82" x="343" textColor="0xffffff" verticalAlign="middle"/>
 			<e:Label id="ybTxt" text="0" y="4.5" size="18" textAlign="center" width="82" x="484" textColor="0xffffff" verticalAlign="bottom"/>
 			<e:Group width="260" height="30" x="295" y="37.5">
-			<e:Label id="mapName0" text="第3600关" size="18" backgroundColor="0x000000" x="22.52" y="2.65" scaleX="1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="mapName0" text="Ải 3600" size="18" backgroundColor="0x000000" x="22.52" y="2.65" scaleX="1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Group id="expGroup" y="-0.5" x="111.69" width="190">
 				<e:Image x="20" y="-2" source="ZSexp" scaleX="1" width="24" height="24"/>
-				<e:Label id="expTxt" text="999999/小时" size="18" backgroundColor="0x000000" x="67" y="0.5" fontFamily="Microsoft YaHei" height="24" verticalAlign="middle" textColor="0xffff00"/>
+				<e:Label id="expTxt" text="999999/giờ" size="18" backgroundColor="0x000000" x="67" y="0.5" fontFamily="Microsoft YaHei" height="24" verticalAlign="middle" textColor="0xffff00"/>
 				<e:layout>
 					<e:HorizontalLayout/>
 				</e:layout>
@@ -27,8 +27,8 @@
 		</e:Group>
 		<e:Group y="0" horizontalCenter="-170" x="0" scaleX="1" scaleY="1" height="125" width="284" anchorOffsetX="0">
 			<e:Image pixelHitTest="true" x="16" y="0" touchEnabled="false" width="317" anchorOffsetX="0" source="zjmtouxiangkuang2"/>
-			<e:Label id="nameTxt" text="包子包子包子" y="40" size="18" textAlign="left" x="110" touchEnabled="false" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
-			<e:Label id="lvTxt" text="99转999级" y="40" size="18" textAlign="center" x="220" touchEnabled="false" width="110" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="nameTxt" text="Bánh Bao Bánh Bao Bánh Bao" y="40" size="18" textAlign="left" x="110" touchEnabled="false" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
+			<e:Label id="lvTxt" text="Chuyển sinh 99 cấp 999" y="40" size="18" textAlign="center" x="220" touchEnabled="false" width="110" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
 			<e:Group id="flameGroup" y="2" width="186" x="97" anchorOffsetX="0">
 				<e:Image id="fightImg" anchorOffsetX="0" scaleX="1" scaleY="1" source="zjmzhandouli2" left="6"/>
 			</e:Group>
@@ -73,7 +73,7 @@
 	<e:Group id="downGroup" touchEnabled="false" left="0" right="0" top="0" bottom="0">
 		<e:Group id="taskTraceBtn" bottom="144" horizontalCenter="0" x="150" y="701" scaleX="1" scaleY="1" width="198">
 			<e:Image horizontalCenter="0" source="zjmgonggaobg" width="198" height="64" scale9Grid="3,5,394,26"/>
-			<e:Label id="taskTraceName" text="任务名字(10/20)" y="10" size="18" width="280" horizontalCenter="-0.5" textAlign="center" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="taskTraceName" text="Tên nhiệm vụ(10/20)" y="10" size="18" width="280" horizontalCenter="-0.5" textAlign="center" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 			<e:Label id="taskTraceAwards" text="Thưởng:Đồ Long Bảo Đao" y="35" size="18" width="280" horizontalCenter="1" textAlign="center" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group id="groupGuanqia" height="176" right="-4" bottom="151" width="132" x="452" y="646" scaleX="1" scaleY="1">
@@ -93,7 +93,7 @@
 	<e:Group id="rightGroup" touchEnabled="false" left="0" right="0" top="100" bottom="0">
 		<e:Group id="newBossRelive" touchChildren="false" touchEnabled="false" right="90" x="250" scaleX="1" scaleY="1" bottom="320">
 		<e:Image source="zjmyindao" scale9Grid="12,6,11,38" alpha="0.9" x="0" y="0"/>
-		<e:Label id="reliveBossLab" text="红尘劫·巨灵刷新了！" size="18" textAlign="center" horizontalCenter="-7.5" verticalCenter="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="166.67" textColor="0x440d07"/>
+		<e:Label id="reliveBossLab" text="Hồng Trần Kiếp·Cự Linh đã hồi sinh!" size="18" textAlign="center" horizontalCenter="-7.5" verticalCenter="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="166.67" textColor="0x440d07"/>
 	</e:Group>
 </e:Group>
 	<e:Image id="warmImage" left="0" right="0" top="0" bottom="0" touchEnabled="false"  height="1048" width="528" source="black02_png"  visible="false"/>

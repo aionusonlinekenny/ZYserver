@@ -9,7 +9,7 @@
 
 			<e:Label text="Thời gian sự kiện：" x="14" y="14" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="actTime" text="20:00-20:20 ngày 30/7 (Chủ nhật)" x="104" y="14" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label id="actInfo" text="活动期间首个带领仙盟攻占仙宫的仙盟盟主可获得丰厚的奖励，奖励通过邮件发放。" x="104" y="42" size="18" width="344" left="104" right="14" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0" lineSpacing="5"/>
+			<e:Label id="actInfo" text="Trong thời gian sự kiện, Minh Chủ đầu tiên dẫn dắt Tiên Minh chiếm được Tiên Cung sẽ nhận phần thưởng hậu hĩnh, phần thưởng gửi qua thư." x="104" y="42" size="18" width="344" left="104" right="14" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0" lineSpacing="5"/>
 			<e:Label text="Mô tả sự kiện：" x="14" y="42" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 
@@ -51,6 +51,6 @@
 
 
 
-		<e:Label id="over" text="已结束" textColor="0x00FF00" size="30" horizontalCenter="0" fontFamily="Microsoft YaHei" bottom="15" visible="false"/>
+		<e:Label id="over" text="Đã kết thúc" textColor="0x00FF00" size="30" horizontalCenter="0" fontFamily="Microsoft YaHei" bottom="15" visible="false"/>
 	</e:Group>		
 </e:Skin>

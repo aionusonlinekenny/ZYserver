@@ -10,7 +10,7 @@
 		<e:Image x="36" y="75" source="coin"/>
 		<e:Image y="160" width="430" source="tongyongline" x="10"/>
 		<e:Label text="关注游戏赢元宝" x="120" y="96" size="20" textColor="0xd1c28f"/>
-		<e:Label text="奖励：" x="40" y="185" size="20" textColor="0xffd93f"/>
+		<e:Label text="Phần thưởng：" x="40" y="185" size="20" textColor="0xffd93f"/>
 		<e:List id="reward" top="215" bottom="59" itemRendererSkinName="SkinItem" width="360" horizontalCenter="0">
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>

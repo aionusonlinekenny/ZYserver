@@ -123,7 +123,7 @@
 		<e:Image source="touxiangkuang" width="60" height="60" horizontalCenter="0" verticalCenter="0"/>
 		<e:Image id="box0" source="200116_png" width="60" height="60" verticalCenter="0" horizontalCenter="0"/>
 		<e:Image source="bantoutiaobg" width="60" height="20" horizontalCenter="0" bottom="0" scale9Grid="121,19,7,7"/>
-		<e:Label id="time0" text="10次" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
+		<e:Label id="time0" text="10 lần" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
 		<e:Label id="done0" text="Đã nhận" size="16" textColor="0x00FF00" bottom="0" horizontalCenter="0" visible="false"/>
 		<e:Image id="boxPoint0" source="zjmhongdian" touchEnabled="false" scaleX="1" scaleY="1" right="0" top="0" visible="false"/>
 		</e:Group>
@@ -131,7 +131,7 @@
 		<e:Image source="touxiangkuang" width="60" height="60" horizontalCenter="0" verticalCenter="0" x="2" y="70" scaleX="1" scaleY="1"/>
 		<e:Image id="box1" horizontalCenter="0" source="200116_png" width="60" height="60"/>
 		<e:Image source="bantoutiaobg" width="60" height="20" horizontalCenter="0" bottom="0" scale9Grid="121,19,7,7"/>
-		<e:Label id="time1" text="20次" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
+		<e:Label id="time1" text="20 lần" size="16" textColor="0xDFD1B5" bottom="2" horizontalCenter="0"/>
 		<e:Label id="done1" text="Đã nhận" size="16" textColor="0x00FF00" bottom="0" horizontalCenter="0" visible="false"/>
 		<e:Image id="boxPoint1" source="zjmhongdian" touchEnabled="false" scaleX="1" scaleY="1" right="0" top="0" visible="false"/>
 		</e:Group>
@@ -139,7 +139,7 @@
 		<e:Image source="touxiangkuang" width="60" height="60" horizontalCenter="0" verticalCenter="0"/>
 		<e:Image id="box2" horizontalCenter="0" source="200116_0_png" width="60" height="60"/>
 		<e:Image source="bantoutiaobg" width="60" height="20" horizontalCenter="0" bottom="0" scale9Grid="121,19,7,7"/>
-		<e:Label id="time2" text="50次" size="16" textColor="0xDFD1B5" horizontalCenter="0" bottom="2"/>
+		<e:Label id="time2" text="50 lần" size="16" textColor="0xDFD1B5" horizontalCenter="0" bottom="2"/>
 		<e:Label text="Đã nhận" size="16" textColor="0x00FF00" id="done2" bottom="0" horizontalCenter="0" visible="false"/>
 		<e:Image id="boxPoint2" source="zjmhongdian" touchEnabled="false" scaleX="1" scaleY="1" right="0" top="0" x="36" y="-60" visible="false"/>
 		</e:Group>

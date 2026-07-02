@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="SDProjectItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  width="427" height="128" states="normal,done" >
 	<e:Image right="0" left="0" top="0" bottom="0" source="tongyongbg13" scale9Grid="4,4,4,4"/>
-	<e:Label id="pName" text="累计登录1天" x="7" y="7" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+	<e:Label id="pName" text="Đăng nhập tích lũy 1 ngày" x="7" y="7" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 	<e:List id="list" x="22.99" y="38.48" anchorOffsetY="0" scaleX="0.85" scaleY="0.85" itemRendererSkinName="SkinItem3">
 		<e:layout>
 			<e:HorizontalLayout gap="50" paddingLeft="0"/>

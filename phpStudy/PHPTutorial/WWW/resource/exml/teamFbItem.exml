@@ -2,7 +2,7 @@
 <e:Skin class="SkinTeamFbItem" currentState="normal" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*" xmlns:ns1="*" height="130" width="575" states="normal,zhankai"  height.zhankai="262">
 	<e:Group id="zhankai" y="0" horizontalCenter="0" height="130" width="575" horizontalCenter.zhankai="0" y.zhankai="131" visible.normal="false">
 		<e:Image scale9Grid="25,8,1,2" left="0" top="0" bottom="0" right="0" source="rankitembg"/>
-		<e:Label id="done" text="已通关" size="22" textColor="0x00ff06" verticalCenter="0" fontFamily="Microsoft YaHei" x="472"/>
+		<e:Label id="done" text="Đã vượt ải" size="22" textColor="0x00ff06" verticalCenter="0" fontFamily="Microsoft YaHei" x="472"/>
 		<e:Button id="createRoomBtn" label="Thách đấu" skinName="SkinBtn3" verticalCenter="0.5" right="6"/>
 		<e:Image width="96" height="96" x="15" y="10" source="kuangdi_bg"/>
 		<e:Image id="head" width="64" height="64" x="19" y="14" scaleX="1.4" scaleY="1.4" source="monhead1032_png"/>
@@ -20,6 +20,6 @@
 		<e:Image id="unlock" source="tjyijihuo" x="509" y="0" touchEnabled="false"/>
 		<e:Image id="lock" source="tjweijihuo" x="509" y="0" touchEnabled="false"/>
 		<e:Image id="redPoint" source="zjmhongdian" width="20" height="20" x="556" y="0" touchEnabled="false"/>
-		<e:Label id="gonglveTxt" text="查看攻略" x="200" y="21" size="20" touchEnabled.normal="true" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="gonglveTxt" text="Xem hướng dẫn" x="200" y="21" size="20" touchEnabled.normal="true" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 	</e:Group>
 </e:Skin>

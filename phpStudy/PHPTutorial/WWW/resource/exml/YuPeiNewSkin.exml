@@ -112,7 +112,7 @@
 		</e:Group>
 		<e:Group height="89" horizontalCenter="0" scaleX="1" scaleY="1" verticalCenter="-123" width="500" anchorOffsetY="0">
 
-			<e:Label id="curAtt" text="攻击：800\n攻击：800201\n攻击：8000" size="20" textAlign="left" verticalAlign="middle" scaleX="1" scaleY="1" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="-174.5" textColor="0xffffff"/>
+			<e:Label id="curAtt" text="Công kích：800\nCông kích：800201\nCông kích：8000" size="20" textAlign="left" verticalAlign="middle" scaleX="1" scaleY="1" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="-174.5" textColor="0xffffff"/>
 			<e:Label id="nextAtt" text="Công kích：800\nCông kích：8000\nCông kích：8000" size="20" textAlign="left" verticalAlign="middle" verticalCenter="0" y="0" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" right="0" textColor="0xffffff"/>
 			<e:Image id="cursor" source="jiantouyou" verticalCenter="0" horizontalCenter="0"/>
 

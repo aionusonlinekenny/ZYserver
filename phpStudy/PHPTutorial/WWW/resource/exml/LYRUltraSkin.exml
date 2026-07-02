@@ -8,15 +8,15 @@
 
 		<e:Image source="tongyong_juanzhou" width="430" horizontalCenter="0" top="15"/>
 		<e:Image source="tongyong_titlebg" width="281" horizontalCenter="-1.5" verticalCenter="-171" scale9Grid="66,14,117,11"/>
-		<e:Label id="abilityName" text="仙灵祝福" size="22" fontFamily="Microsoft YaHei" top="10" horizontalCenter="0" textColor="0x084151"/>
-		<e:Label text="祝福效果" size="20" textColor="0x0038ab" fontFamily="Microsoft YaHei" horizontalCenter="-119" top="157"/>
-		<e:Label text="仙灵祝福" size="20" textColor="0x0038ab" fontFamily="Microsoft YaHei" top="69" horizontalCenter="-119"/>
-		<e:Label id="abilityDesc" text="   灌注神力后炎煌灵凤所有基础属性 将额外提高5%" size="20" height="58" anchorOffsetX="0" width="322" horizontalCenter="1" verticalAlign="middle" anchorOffsetY="0" top="173" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="abilityName" text="Tiên Linh Chúc Phúc" size="22" fontFamily="Microsoft YaHei" top="10" horizontalCenter="0" textColor="0x084151"/>
+		<e:Label text="Hiệu ứng Chúc Phúc" size="20" textColor="0x0038ab" fontFamily="Microsoft YaHei" horizontalCenter="-119" top="157"/>
+		<e:Label text="Tiên Linh Chúc Phúc" size="20" textColor="0x0038ab" fontFamily="Microsoft YaHei" top="69" horizontalCenter="-119"/>
+		<e:Label id="abilityDesc" text="   Sau khi truyền Thần Lực, toàn bộ thuộc tính cơ bản của Viêm Hoàng Linh Phụng sẽ tăng thêm 5%" size="20" height="58" anchorOffsetX="0" width="322" horizontalCenter="1" verticalAlign="middle" anchorOffsetY="0" top="173" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Group horizontalCenter="-2.5" anchorOffsetY="0" height="54.67" anchorOffsetX="0" width="370.67" top="92">
-			<e:Label text="   使用              后可将             晋升为" y="1" size="20" anchorOffsetY="0" width="325.67" anchorOffsetX="0" x="28.77" textColor="0x001828" fontFamily="Microsoft YaHei" height="54"/>
-			<e:Label text="仙煌灵凤" y="21.99" size="20" anchorOffsetY="0" anchorOffsetX="0" x="48.68" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
-			<e:Label text="炎煌灵凤" y="1.34" size="20" anchorOffsetY="0" x="229.06" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
-			<e:Label id="itemName" text="仙灵魂石" y="0.67" size="20" x="87.06" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+			<e:Label text="   Sử dụng              sau đó có thể thăng cấp             thành" y="1" size="20" anchorOffsetY="0" width="325.67" anchorOffsetX="0" x="28.77" textColor="0x001828" fontFamily="Microsoft YaHei" height="54"/>
+			<e:Label text="Tiên Hoàng Linh Phụng" y="21.99" size="20" anchorOffsetY="0" anchorOffsetX="0" x="48.68" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+			<e:Label text="Viêm Hoàng Linh Phụng" y="1.34" size="20" anchorOffsetY="0" x="229.06" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+			<e:Label id="itemName" text="Tiên Linh Hồn Thạch" y="0.67" size="20" x="87.06" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
 		</e:Group>
 		<e:Group id="ring0eff" y="92" width="32" height="32"  left="64" visible="false">
 		</e:Group>

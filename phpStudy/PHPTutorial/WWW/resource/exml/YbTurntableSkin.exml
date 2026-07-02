@@ -13,7 +13,7 @@
 
 			<e:Image id="img_level" x="30" y="100" source="trun_100001" visible="false"/>
 			<e:Group y="93" width="400" height="400" horizontalCenter="0">
-				<e:BitmapLabel id="multiple0" font="num_xvip_4_fnt" text="10倍" y="38" horizontalCenter="0" letterSpacing="-2"/>
+				<e:BitmapLabel id="multiple0" font="num_xvip_4_fnt" text="10 lần" y="38" horizontalCenter="0" letterSpacing="-2"/>
 				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2 lần" y="71" id="multiple1" horizontalCenter="90" letterSpacing="-2"/>
 				<e:BitmapLabel font="num_xvip_4_fnt" text="1.2 lần" y="150" id="multiple2" horizontalCenter="142" letterSpacing="-2"/>
 				<e:BitmapLabel text="1.2 lần" y="236" id="multiple3" horizontalCenter="142" font="num_xvip_4_fnt" letterSpacing="-2"/>
@@ -35,7 +35,7 @@
 			<e:Button id="choujiangBtn" skinName="SkinBtn0" horizontalCenter="0" verticalCenter="3" width="94" height="99" icon="xyzpstart_png"/>
 			<e:Group y="371" horizontalCenter="0">
 				<e:Image y="0" width="262" x="0" height="39" source="zhuanpanbg2_png"/>
-				<e:Label id="label_needCharge" text="额外充值999999元宝可激活" size="18" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="label_needCharge" text="Nạp thêm 999999 Nguyên Bảo để kích hoạt" size="18" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			</e:Group>
 			<e:Group horizontalCenter="0" y="340" touchEnabled="false" touchThrough="true" touchChildren="false">
 
@@ -51,7 +51,7 @@
 		<e:Image scaleY="1" horizontalCenter="0" y="-7" width="214" height="50" source="huabian3"/>
 
 		<e:Image id="title" y="11" horizontalCenter="0" source="biaoti_ybzp_png"/>
-		<e:Label id="actTime" text="剩余时间：20时20分20秒" size="20" y="53" x="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="actTime" text="Thời gian còn lại：20 giờ 20 phút 20 giây" size="20" y="53" x="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 
 

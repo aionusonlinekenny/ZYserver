@@ -45,8 +45,8 @@
 
 	<e:Image id="armorIcon" width="63" height="63" source="rx_body_png" horizontalCenter="211" verticalCenter="-110.5"/>
 	<e:Image id="swordIcon" width="63" height="63" source="rx_weapon_png" horizontalCenter="-213" verticalCenter="-110.5"/>
-	<e:Label id="swordLevel" y="270" text="n转" size="20" textColor="0xffffff" textAlign="center" stroke="1" fontFamily="Microsoft YaHei" left="55"/>
-	<e:Label id="armorLevel" y="270" text="n转" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" stroke="1" textAlign="center" left="479"/>
+	<e:Label id="swordLevel" y="270" text="Chuyển sinh n" size="20" textColor="0xffffff" textAlign="center" stroke="1" fontFamily="Microsoft YaHei" left="55"/>
+	<e:Label id="armorLevel" y="270" text="Chuyển sinh n" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" stroke="1" textAlign="center" left="479"/>
 	<e:Image id="redPoint0" y="216" touchEnabled="false" source="zjmhongdian" x="109" visible="false"/>
 	<e:Image id="redPoint1" y="215" touchEnabled="false" source="zjmhongdian" x="535" visible="false"/>
 	<e:Button id="mixArmorBtn" label="Hợp thành" y="286" skinName="SkinBtn7" horizontalCenter="170" visible="false"/>

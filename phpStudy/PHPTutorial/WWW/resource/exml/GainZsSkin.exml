@@ -26,22 +26,22 @@
 		<e:Group id="gr2" width="444" height="122" horizontalCenter="0" verticalCenter="2">
 			<e:Image   source="tongyonglabbg" scale9Grid="40,20,30,30" width="444" height="122" verticalCenter="0" horizontalCenter="0"/>
 			<e:Label id="infoTxt1" text="Tăng" size="22" width="200" height="80" fontFamily="Microsoft YaHei" textColor="0x001828" verticalCenter="5" x="98"/>
-			<e:Label id="toDay1" text="今日还可使用" size="18" width="165" textAlign="center" right="8" verticalCenter="-40" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="toDay1" text="Hôm nay còn có thể dùng" size="18" width="165" textAlign="center" right="8" verticalCenter="-40" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Button id="btn1" label="Mua và sử dụng" verticalCenter="10" skinName="SkinBtn3" horizontalCenter="146" width="130"/>
 			<ns1:ItemBase id="item1" skinName="SkinItem" verticalCenter="0" left="17"/>
 			<ns1:PriceIcon2 id="priceIcon1" y="73" skinName="SkinPriceIcon2" horizontalCenter="18"/>
 			<e:Image id="redPoint1" y="38" source="zjmhongdian" right="15"/>
-			<e:Label id="vipLb1" text="VIP1可购买" x="315.67" y="96.99" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="vipLb1" text="VIP1 có thể mua" x="315.67" y="96.99" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 		<e:Group id="gr3" width="444" height="122" horizontalCenter="0" bottom="42">
 			<e:Image   source="tongyonglabbg" scale9Grid="40,20,30,30" horizontalCenter="0" width="444" height="122" verticalCenter="0"/>
 			<e:Label id="infoTxt2" text="Tăng" size="22" width="200" height="80" x="98" y="36" textColor="0x001828" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
-			<e:Label id="toDay2" text="今日还可使用" size="18" width="165" textAlign="center" right="8" verticalCenter="-40" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label id="toDay2" text="Hôm nay còn có thể dùng" size="18" width="165" textAlign="center" right="8" verticalCenter="-40" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Button id="btn2" label="Mua và sử dụng" verticalCenter="10"  skinName="SkinBtn3" horizontalCenter="146" width="130"/>
 			<ns1:ItemBase id="item2" skinName="SkinItem" verticalCenter="10" left="17"/>
 			<ns1:PriceIcon2 id="priceIcon2" y="73" skinName="SkinPriceIcon2" horizontalCenter="18"/>
 			<e:Image id="redPoint2" y="37" source="zjmhongdian" right="13"/>
-			<e:Label id="vipLb2" text="VIP1可购买" x="313.34" y="97.32" size="20"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="vipLb2" text="VIP1 có thể mua" x="313.34" y="97.32" size="20"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 
 	</e:Group>

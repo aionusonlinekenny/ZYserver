@@ -12,7 +12,7 @@
 
 
 
-		<e:Label text="挑战次数：" size="20" x="15.36" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0"/>
+		<e:Label text="Số lần thách đấu：" size="20" x="15.36" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0"/>
 		<e:Label id="challengeCountTxt" text="12/20" size="20" x="110.36" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0"/>
 		<e:Label id="timeTxt" text="24:24:24后恢复" size="20" textAlign="center" width="210" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0" horizontalCenter="22"/>
 
@@ -29,7 +29,7 @@
 		</e:Button>
 		<e:Group id="juan" height="25.67" x="-15.49" y="-24" anchorOffsetY="0">
 			<e:Image id="jicon" scaleX="1" scaleY="1" source="200156_png" width="27" height="27" x="22" y="-1"/>
-			<e:Label text="野外挑战令" size="20" scaleX="1" scaleY="1" x="-1" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Lệnh Thách Đấu Ngoài Trời" size="20" scaleX="1" scaleY="1" x="-1" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label text="X" size="20" scaleX="1" scaleY="1" x="9" y="10" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:Label id="jcount" text="100" size="20" scaleX="1" scaleY="1" y="0" horizontalCenter="-38" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>

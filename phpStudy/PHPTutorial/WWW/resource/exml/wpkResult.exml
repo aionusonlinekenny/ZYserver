@@ -11,7 +11,7 @@
 		</e:Group>
 		<e:Group y="30" horizontalCenter="0">
 			<e:Label text="击杀BOSS耗时：" y="0" size="18" textAlign="center" textColor="0xbd600d" x="0"/>
-			<e:Label id="time" text="10分59秒" y="0" size="18" textAlign="center" x="0" textColor="0xf8b141"/>
+			<e:Label id="time" text="10 phút 59 giây" y="0" size="18" textAlign="center" x="0" textColor="0xf8b141"/>
 			<e:layout>
 				<e:HorizontalLayout/>
 			</e:layout>
@@ -19,11 +19,11 @@
 		<e:Label text="Phần thưởng gửi qua thư" size="18" horizontalCenter="0" textAlign="center" bottom="69" textColor="0x9f946d" visible="false"/>
 
 		<e:Group id="lucky" horizontalCenter="0" bottom="100">
-			<e:Label text="在所有参与人中抽奖获得" y="30" size="18" textAlign="center" textColor="0x9f946d" horizontalCenter="0"/>
+			<e:Label text="Quay thưởng ngẫu nhiên trong số người tham gia" y="30" size="18" textAlign="center" textColor="0x9f946d" horizontalCenter="0"/>
 			<e:Group y="0" horizontalCenter="0">
 				<e:Label id="luckyName" text="Tên người chơi 6 chữ" y="0" size="20" textAlign="center" x="0" textColor="0x2cc2f8"/>
-				<e:Label text="人品爆发，获得" y="0" size="20" textAlign="center" x="0" textColor="0xd1c28f"/>
-				<e:Label id="luckyGift" text="2转红色装备" y="0" size="20" textAlign="center" x="0" textColor="0xf3311e"/>
+				<e:Label text="Vận may bùng nổ, nhận được" y="0" size="20" textAlign="center" x="0" textColor="0xd1c28f"/>
+				<e:Label id="luckyGift" text="Trang bị Đỏ Chuyển sinh 2" y="0" size="20" textAlign="center" x="0" textColor="0xf3311e"/>
 				<e:layout>
 				<e:HorizontalLayout/>
 				</e:layout>
@@ -40,7 +40,7 @@
 			</e:layout>
 		</e:List>
 		<e:Image y="214" width="280" source="teshuwenzibg" horizontalCenter="0"/>
-		<e:Label text="最后一击" y="222" size="24" horizontalCenter="0" bold="true" textColor="0xf8b141"/>
+		<e:Label text="Đòn cuối cùng" y="222" size="24" horizontalCenter="0" bold="true" textColor="0xf8b141"/>
 		<e:Label id="weidao" text="Tên người chơi 6 chữ" y="264" size="22" horizontalCenter="0" bold="true" textColor="0x2cc2f8"/>
 		<e:Button id="closeBtn" label="Rời đi（20）" horizontalCenter="0" bottom="0" skinName="SkinBtn1"/>
 

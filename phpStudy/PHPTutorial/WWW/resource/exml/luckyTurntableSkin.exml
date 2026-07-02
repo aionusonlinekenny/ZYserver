@@ -113,7 +113,7 @@
 	</e:Group>
 
 	<e:Group horizontalCenter="0" top="51">
-		<e:Label id="actTime" text="剩余时间：20时20分20秒" size="18" y="0" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="actTime" text="Thời gian còn lại：20 giờ 20 phút 20 giây" size="18" y="0" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:layout>
 		<e:HorizontalLayout/>
 		</e:layout>

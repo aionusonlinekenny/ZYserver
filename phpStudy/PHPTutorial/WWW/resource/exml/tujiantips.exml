@@ -11,13 +11,13 @@
 		<e:Label id="nameLabel" text="" size="20" textAlign="left" textColor="0x90f490" y="20" x="20" fontFamily="Microsoft YaHei"/>
 		<e:Group y="68"  width="138" x="124">
 			<e:Label id="qualTxt" y="0" text="" size="18" x="54" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label y="0" text="品质：" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label y="0" text="Phẩm chất：" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="lvTxt" y="27" text="" size="18" x="54" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label y="27" text="星级：" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		</e:Group>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="52" />
 		<ns1:PowerPanel id="powerPanel" y="130"  skinName="Skin2PowerPanel" horizontalCenter="0"/>
-		<e:Label id="threeLabel" y="150.52" text="（三角色时）" size="20" textColor="0xFF9900" fontFamily="Microsoft YaHei" right="1" verticalAlign="middle"/>
+		<e:Label id="threeLabel" y="150.52" text="（khi có 3 nhân vật）" size="20" textColor="0xFF9900" fontFamily="Microsoft YaHei" right="1" verticalAlign="middle"/>
 		<e:Image id="iconBg" y="193" horizontalCenter="0" source="tujian260001_png" visible="false"/>
 		<e:List id="tujianlist" horizontalCenter="0" itemRendererSkinName="SkinTujianState" y="194">
 			<e:layout>

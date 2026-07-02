@@ -18,7 +18,7 @@
 		<e:Group height="150" verticalCenter="129" width="600" horizontalCenter="0">
 			<e:Label id="desc" text="点击骰子移动" size="18" textColor="0xF8B141" textAlign="center" anchorOffsetX="0" width="266" anchorOffsetY="0" height="27" verticalAlign="middle" scaleX="1" scaleY="1" x="35" y="123" visible="false"/>
 			<e:Button id="go" label="Button" skinName="SkinBtn0" icon="btn2" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" verticalCenter="0" left="75"/>
-			<e:Label id="y1" text="元宝" size="24" anchorOffsetX="0" width="55" anchorOffsetY="0" height="26" scaleX="1" scaleY="1" horizontalCenter="-180.5" fontFamily="Microsoft YaHei" textColor="0x1b3046" verticalCenter="2"/>
+			<e:Label id="y1" text="Nguyên Bảo" size="24" anchorOffsetX="0" width="55" anchorOffsetY="0" height="26" scaleX="1" scaleY="1" horizontalCenter="-180.5" fontFamily="Microsoft YaHei" textColor="0x1b3046" verticalCenter="2"/>
 			<e:Label id="paycount" text="500" size="24" anchorOffsetX="0" width="45" anchorOffsetY="0" height="20" scaleX="1" scaleY="1" horizontalCenter="-85.5" fontFamily="Microsoft YaHei" textColor="0x1b3046" verticalCenter="1"/>
 			<e:Image id="y2" source="szyuanbao" scaleX="0.8" scaleY="0.8" horizontalCenter="-130" verticalCenter="1"/>
 			<e:Button id="autoGo" label="Tự động lắc xúc xắc" icon="btn2" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" skinName="SkinBtn1" verticalCenter="0" right="75"/>

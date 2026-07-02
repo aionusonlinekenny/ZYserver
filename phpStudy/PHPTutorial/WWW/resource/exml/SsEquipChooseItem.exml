@@ -25,7 +25,7 @@
 		<e:HorizontalLayout verticalAlign="middle"/>
 		</e:layout>
 	</e:Group>
-	<e:Label text="品质：" size="20" fontFamily="Microsoft YaHei" left="100" top="11" textColor="0x001828"/>
+	<e:Label text="Phẩm chất：" size="20" fontFamily="Microsoft YaHei" left="100" top="11" textColor="0x001828"/>
 	<e:Label id="quality" text="" size="20" fontFamily="Microsoft YaHei" left="162" top="11"/>
 	<e:Label id="power" text="" size="18" fontFamily="Microsoft YaHei" textColor="0x001828" top="15" right="16"/>
 	<e:Button id="changeBtn" label="Thay đổi" name="changeBtn" skinName="SkinBtn3" height="49" right="7" top="48"/>

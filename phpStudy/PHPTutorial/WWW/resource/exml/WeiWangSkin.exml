@@ -65,7 +65,7 @@
 			<e:Label text="当前：" size="20" horizontalCenter="-80" fontFamily="Microsoft YaHei" textColor="0xffffff" top="10"/>
 			<e:Label id="info" text="每日0点回收1000威望" size="18" y="38" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image id="myTitle" source="prestige_title_2" left="75" top="5" width="111" height="30"/>
-			<e:Label id="overViewTxt" text="威望预览" size="20" verticalAlign="middle" textAlign="center" touchEnabled="true" horizontalCenter="95" fontFamily="Microsoft YaHei" textColor="0x00ff06" top="10"/>
+			<e:Label id="overViewTxt" text="Xem trước Uy Vọng" size="20" verticalAlign="middle" textAlign="center" touchEnabled="true" horizontalCenter="95" fontFamily="Microsoft YaHei" textColor="0x00ff06" top="10"/>
 		</e:Group>
 		<e:Image width="580" horizontalCenter="0" source="tongyong_dikuang4" scale9Grid="10,10,60,60" anchorOffsetY="0" x="10" height="200" y="427.04"/>
 		<e:Image width="253" source="huabian" horizontalCenter="0.5" scale9Grid="71,0,67,50" verticalCenter="78"/>

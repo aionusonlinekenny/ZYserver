@@ -106,20 +106,20 @@
 			<e:HorizontalLayout gap="22"/>
 		</e:layout>
 	</e:Group>
-	<e:Label id="refreshHints" text="距离下一波出现还有" size="20" bottom="267" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="refreshHints" text="Còn lại đến đợt tiếp theo" size="20" bottom="267" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	<e:Label id="refreshHints0" text="(15/15)" size="20" textColor="0x05FE03" bottom="267" horizontalCenter="-130" fontFamily="Microsoft YaHei"/>
-	<e:Label id="refreshHints1" text="9秒" size="20" textColor="0x3BFE03" bottom="267" horizontalCenter="108.5" fontFamily="Microsoft YaHei"/>
+	<e:Label id="refreshHints1" text="9 giây" size="20" textColor="0x3BFE03" bottom="267" horizontalCenter="108.5" fontFamily="Microsoft YaHei"/>
 	<e:Group id="missionInformation" width="126" height="73" right="4" top="687">
 		<e:Image width="126" height="73" x="0" y="0" scale9Grid="7,11,4,5" source="zsbg2"/>
 		<e:Image width="120" y="36" height="2" source="line6" horizontalCenter="0"/>
 
-		<e:Label id="dangqianbo" text="第    波：    只" x="10" y="11" size="18" textColor="0xCDCF8A" visible="false"/>
+		<e:Label id="dangqianbo" text="Đợt    ：    con" x="10" y="11" size="18" textColor="0xCDCF8A" visible="false"/>
 		<e:Label id="dangqianbo1" text="10" y="11" size="18" textColor="0x2EFC02" horizontalCenter="-27.5" visible="false"/>
 		<e:Label id="dangqianbo2" text="10" y="11" size="18" textColor="0x2EFC02" horizontalCenter="25.5" visible="false"/>
-		<e:Label id="zongshu" text="总怪物:    只" x="0" y="18" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
-		<e:Label id="zongshu2" text="总怪物:10只" y="10" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="10"/>
-		<e:Label id="jifen" text="积分：" x="27" y="64" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
-		<e:Label text="积分:100" y="45" size="20" id="zongshu0" fontFamily="Microsoft YaHei" textColor="0xffffff" left="10"/>
+		<e:Label id="zongshu" text="Tổng quái vật:    con" x="0" y="18" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Label id="zongshu2" text="Tổng quái vật:10 con" y="10" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="10"/>
+		<e:Label id="jifen" text="Điểm：" x="27" y="64" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Label text="Điểm:100" y="45" size="20" id="zongshu0" fontFamily="Microsoft YaHei" textColor="0xffffff" left="10"/>
 	</e:Group>
 	<e:Button id="luckyBossBtn" label="" skinName="SkinBtn0" icon="luckyBossBtn" right="10" y="590"/>
 	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" scaleX="0.9" scaleY="0.9" bottom="128" right="17"/>

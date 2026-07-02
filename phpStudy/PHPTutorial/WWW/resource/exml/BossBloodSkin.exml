@@ -14,7 +14,7 @@
 			<e:Group id="hudun" width="176" y="73" x="91" height="28">
 			<e:Image source="zdbosshudunxuetiaobg"/>
 			<e:ProgressBar id="hudunbloodBar" value="100" width="177" x="1" height="8" y="2" skinName="Skinbar9"/>
-				<e:Label id="proLab" text="护盾归0时触发抽奖" y="10" size="16" horizontalCenter="-3" fontFamily="Microsoft YaHei" x="80"/>
+				<e:Label id="proLab" text="Khiên về 0 sẽ kích hoạt quay thưởng" y="10" size="16" horizontalCenter="-3" fontFamily="Microsoft YaHei" x="80"/>
 			</e:Group>
 			<e:Image y="29.91" x="76" source="rolenamebg"/>
 			<e:Image x="66.46" y="29.51" source="bosstouxiangjinbian"/>

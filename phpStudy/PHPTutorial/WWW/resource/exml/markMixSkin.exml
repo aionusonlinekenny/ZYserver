@@ -15,7 +15,7 @@
 		<e:Image horizontalCenter="-1" source="tongyong_juanzhou" width="580" scale9Grid="0,0,481,17" top="3"/>
 		<e:Image width="516" height="440" fillMode="scale" alpha="1" anchorOffsetY="0" source="tongyongbg5" scale9Grid="4,5,17,9" horizontalCenter="-1" verticalCenter="5.5"/>
 		<e:Button id="closeBtn2" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="263" top="-1"/>
-		<e:Label text="材料合成" size="24" bold="true" y="-6" horizontalCenter="0" textColor="0xf8b141" visible="false"/>
+		<e:Label text="Hợp thành nguyên liệu" size="24" bold="true" y="-6" horizontalCenter="0" textColor="0xf8b141" visible="false"/>
 		<e:Scroller id="scroll" width="516" height="440" horizontalCenter="-1" anchorOffsetY="0" verticalCenter="5.5">
 		<e:List id="list" x="78" y="241" useVirtualLayout="false" anchorOffsetY="0" height="440" itemRendererSkinName="SkinmarkMixItem">
 			<e:layout>
@@ -25,7 +25,7 @@
 		</e:Scroller>
 		<e:Image source="tongyong_titlebg" width="249" horizontalCenter="-4.5" top="-15" scale9Grid="114,21,21,15"/>
 		<e:Image horizontalCenter="-3.5" top="-5" source="ring_biaoti3" visible="false"/>
-		<e:Label text="材料合成" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="-3" top="-2"/>
+		<e:Label text="Hợp thành nguyên liệu" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="-3" top="-2"/>
 
 	</e:Group>
 	<e:Image source="cailiaohecheng_png" alpha="0.7" x="0" y="0" visible="false"/>

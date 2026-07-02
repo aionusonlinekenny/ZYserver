@@ -20,10 +20,10 @@
 	<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn1" bottom="3" horizontalCenter="-58"/>
 
 
-	<e:Label id="canChallengeTxt" text="80级可挑战" horizontalCenter="-54" size="24" bottom="25" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+	<e:Label id="canChallengeTxt" text="Cấp 80 có thể thách đấu" horizontalCenter="-54" size="24" bottom="25" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 	<e:Group y="14.38" horizontalCenter="-65" visible="false">
-		<e:Label text="上次归属：" y="0" size="22" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
-		<e:Label text="玩家名六个字（仙盟名六个字）" y="0" size="22" x="90" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xffffff"/>
+		<e:Label text="Sở hữu lần trước：" y="0" size="22" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
+		<e:Label text="Tên người chơi 6 chữ（Tên Tiên Minh 6 chữ）" y="0" size="22" x="90" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xffffff"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0"/>
 		</e:layout>
@@ -45,7 +45,7 @@
 
 	<e:Image id="stateImage" source="zdbosskejisha" bottom="287" horizontalCenter="-56.5"/>
 	<e:Image width="248" height="48.67" source="huabian" anchorOffsetY="0" scale9Grid="97,6,22,42" y="25" horizontalCenter="-65"/>
-	<e:Label id="nameTxt" text="BOSS名字70级" size="22" textAlign="center" fontFamily="Microsoft YaHei" height="25" width="170" textColor="0xffffff" y="46" horizontalCenter="-65"/>
+	<e:Label id="nameTxt" text="Tên BOSS cấp 70" size="22" textAlign="center" fontFamily="Microsoft YaHei" height="25" width="170" textColor="0xffffff" y="46" horizontalCenter="-65"/>
 
 
 

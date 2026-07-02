@@ -13,11 +13,11 @@
 		<e:Group id="yuanbaoGroup" horizontalCenter="0" y="191.35" scaleX="1" scaleY="1" width="456">
 			<e:Group id="numGroup" scaleX="1" scaleY="1" x="177" y="0">
 				<e:Image id="yuanbaoImg" x="5" y="0" source="szyuanbao" scaleX="1" scaleY="1"/>
-				<e:Label id="num" text="2元宝" x="57.329999999999984" y="1.990000000000009" size="28" textColor="0xfde45c" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1"/>
+				<e:Label id="num" text="2 Nguyên Bảo" x="57.329999999999984" y="1.990000000000009" size="28" textColor="0xfde45c" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1"/>
 			</e:Group>
 		</e:Group>
 		<e:Group width="95" horizontalCenter="1.5" verticalCenter="-48" x="191" y="264" scaleX="1" scaleY="1">
-			<e:Label text="详情" size="24" horizontalCenter="0" verticalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Chi tiết" size="24" horizontalCenter="0" verticalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Image left="-76" verticalCenter="2" source="huawen4"/>
 			<e:Image right="-76" verticalCenter="2" source="huawen4" scaleY="1" scaleX="-1"/>
 		</e:Group>

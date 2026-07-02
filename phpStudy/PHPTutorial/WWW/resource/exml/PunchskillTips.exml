@@ -10,14 +10,14 @@
 		<ns1:PunchSkillBaseItemRender id="skillitem" skinName="PunchSkillItem" left="25" top="25"/>
 		<e:Label id="nameLabel" text="Tên kỹ năng" x="103" y="20" size="22" bold="true" textColor="0x47a4ee" stroke="1" visible="false"/>
 		<e:Label id="nameLabel0" text="" size="24" stroke="1" fontFamily="Microsoft YaHei" textColor="0xff0000" top="44" left="113" bold="true"/>
-		<e:Label text="神罚技能" size="20" stroke="1" fontFamily="Microsoft YaHei" left="23" textColor="0xec6014" y="100"/>
+		<e:Label text="Kỹ năng Thần Phạt" size="20" stroke="1" fontFamily="Microsoft YaHei" left="23" textColor="0xec6014" y="100"/>
 		<e:Label id="nameLabel1" text="" size="18" stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="79" left="113"/>
 		<e:Label id="desc0" text="" size="18" stroke="1" width="288" height="60" verticalAlign="middle" textColor="0x6b9baa" fontFamily="Microsoft YaHei" left="25" top="157"/>
 
 		<e:Label id="type" y="44" text="Vũ khí" fontFamily="黑体" size="16" x="235" textColor="0xFFFFFF" visible="false"/>
 		<e:Group width="300" top="225" left="19" height="268">
 			<e:Label text="技能效果" size="20"   stroke="1" fontFamily="Microsoft YaHei" textColor="0xec6014" top="0" left="0"/>
-			<e:Label text="神罚加成" size="20"   stroke="1" fontFamily="Microsoft YaHei" textColor="0xec6014" top="105" left="0"/>
+			<e:Label text="Cộng thêm Thần Phạt" size="20"   stroke="1" fontFamily="Microsoft YaHei" textColor="0xec6014" top="105" left="0"/>
 			<e:Label text="对玩家造成伤害" size="20"   stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="28" left="0"/>
 
 			<e:Label text="对怪物造成伤害" size="20"   stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="53" left="0"/>

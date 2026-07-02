@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="OSASeriesBigRewardItem" width="90" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" height="100">
 	<ns1:ItemBaseNoTap id="reward" skinName="SkinItem" horizontalCenter="0" top="2"/>
-	<e:Label id="days" text="累充0/3天" size="18" bottom="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="days" text="Nạp liên tục 0/3 ngày" size="18" bottom="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	<e:Image id="select" top="-5" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="xuanzekuang3" scale9Grid="18,14,7,8" width="88" height="88" visible="false"/>
 	<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" scaleX="1" scaleY="1" y="-5" right="0" visible="false"/>
 	<e:Image id="state" source="yilingqu"  horizontalCenter="0" verticalCenter="-15"/>

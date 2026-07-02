@@ -10,7 +10,7 @@
 	<e:Image touchEnabled="false" anchorOffsetY="0" anchorOffsetX="0" scaleY="-1" height="92" horizontalCenter="0" width="548" alpha="1" top="448" source="tongyong_dikuang4" scale9Grid="17,14,47,55"/>
 	<e:Group anchorOffsetY="0" height="80" anchorOffsetX="0" width="356" horizontalCenter="0" top="452">
 		<e:Group width="178" height="40" horizontalCenter="-89" top="0">
-			<e:Label text="攻击:" size="20" x="41" y="12" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle" textAlign="center"/>
+			<e:Label text="Công kích:" size="20" x="41" y="12" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle" textAlign="center"/>
 			<e:Label id="attr1" text="" size="20" x="96" y="12" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle" textAlign="center"/>
 			<e:layout>
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>

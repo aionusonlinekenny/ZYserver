@@ -19,10 +19,10 @@
 		<e:CheckBox id="cb2" x="180" skinName="SkinCheckBox0" label="   "  y="8"/>
 		<e:CheckBox id="cb3" x="90" skinName="SkinCheckBox0" label="   "  y="8"/>
 		<e:CheckBox id="cb4" skinName="SkinCheckBox0"  label="   "  y="8"/>
-		<e:Label text="红" x="128" size="22" touchEnabled="false"  y="12" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
-		<e:Label text="橙" x="218" size="22" touchEnabled="false"  y="12" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
-		<e:Label text="绿" x="398" size="22" touchEnabled="false"  fontFamily="Microsoft YaHei" y="12" textColor="0x00ff06"/>
-		<e:Label text="紫" x="308" size="22" touchEnabled="false"  fontFamily="Microsoft YaHei" y="12" textColor="0xac00dd"/>
+		<e:Label text="Đỏ" x="128" size="22" touchEnabled="false"  y="12" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+		<e:Label text="Cam" x="218" size="22" touchEnabled="false"  y="12" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
+		<e:Label text="Lục" x="398" size="22" touchEnabled="false"  fontFamily="Microsoft YaHei" y="12" textColor="0x00ff06"/>
+		<e:Label text="Tím" x="308" size="22" touchEnabled="false"  fontFamily="Microsoft YaHei" y="12" textColor="0xac00dd"/>
 		<e:Label text="金" x="38" size="22" touchEnabled="false"  fontFamily="Microsoft YaHei" y="12" textColor="0xffff00"/>
 
 		<e:Group bottom="27" left="184">

@@ -5,6 +5,6 @@
 	<e:Image id="vip" x="96" source="xvip_v2_png" verticalCenter="0"/>
 	<e:Image id="rankImg" verticalCenter="0" width="54" height="48" left="18" source="paihang1"/>
 	<e:Label id="rank" text="1" size="20" x="40" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" visible="false"/>
-	<e:Label id="nameLabel" text="狂拽酷炫叼去" size="20" textAlign="left" verticalCenter="0" x="136" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="nameLabel" text="Ngầu Chất Đỉnh Cao" size="20" textAlign="left" verticalCenter="0" x="136" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 	<e:Label id="cengNum" size="20" text="36 Trùng Thiên tầng 10" textAlign="center" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="119"/>
 </e:Skin>

@@ -24,7 +24,7 @@
 	</e:Group>
 	<e:Group id="needLv" horizontalCenter="204" y="42" visible="false">
 
-		<e:Label id="levelRequire" text="70级开放" size="18" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
+		<e:Label id="levelRequire" text="Mở ở cấp 70" size="18" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
 	</e:Group>
 	<e:Image source="bantoutiaoboss" x="4" height="101" width="37"/>
 	<e:List id="list" scaleX="0.9" scaleY="0.9" horizontalCenter="-0.5" width="268" height="61" verticalCenter="-2.5">

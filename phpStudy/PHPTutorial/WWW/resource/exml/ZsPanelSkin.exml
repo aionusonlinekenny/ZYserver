@@ -7,7 +7,7 @@
 
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="88"/>
 		<e:Group id="group" horizontalCenter="0" width="500" anchorOffsetY="0" height="132" x="50" scaleX="1" scaleY="1" verticalCenter="296">
-			<e:Label id="link" text="获得修为" size="20" width="120" height="40" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" right="30" top="78" textColor="0x00ff06"/>
+			<e:Label id="link" text="Nhận Tu Vi" size="20" width="120" height="40" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" right="30" top="78" textColor="0x00ff06"/>
 			<e:Button id="getBtn" label="Chuyển sinh" skinName="SkinBtn1" horizontalCenter="0" scaleX="0.9" scaleY="0.9" bottom="0" height="70"/>
 			<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="76" top="64"/>
 			<e:Group width="447" anchorOffsetY="0" height="20" anchorOffsetX="0" horizontalCenter="0" top="30">
@@ -18,34 +18,34 @@
 
 			<e:Label id="useTxt" text="90000" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetX="0" top="0" bottom="0" left="0" right="0" textAlign="center"/>
 			</e:Group>
-			<e:Label id="sx" text="转生对所有角色生效" size="20" horizontalCenter="0" x="158" fontFamily="Microsoft YaHei" strokeColor="0x750000" top="14" textColor="0xffff00" visible="false"/>
+			<e:Label id="sx" text="Chuyển sinh có hiệu lực cho tất cả nhân vật" size="20" horizontalCenter="0" x="158" fontFamily="Microsoft YaHei" strokeColor="0x750000" top="14" textColor="0xffff00" visible="false"/>
 		</e:Group>
 		<e:Group id="normalGroup" width="576" height="130" horizontalCenter="0" x="18" scaleX="1" scaleY="1" top="474">
 			<e:Image scaleX="1" scaleY="1" source="tongyong_dikuang4" scale9Grid="11,11,59,53" top="0" bottom="0" left="0" right="0"/>
 			<e:Image width="75" height="70" scaleX="1" scaleY="1" source="jiantouyou" horizontalCenter="0" verticalCenter="0"/>
 
 
-			<e:Label id="curAtt" text="攻击  +1000" size="18" width="200" left="60" verticalAlign="middle" textAlign="left" textColor="0xffffff" fontFamily="Microsoft YaHei" top="0" anchorOffsetX="0" bottom="0"/>
-			<e:Label id="nextAtt" text="攻击  +1000" size="18" verticalAlign="middle" width="200" right="0" top="0" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff06" anchorOffsetX="0" bottom="0"/>
+			<e:Label id="curAtt" text="Công kích  +1000" size="18" width="200" left="60" verticalAlign="middle" textAlign="left" textColor="0xffffff" fontFamily="Microsoft YaHei" top="0" anchorOffsetX="0" bottom="0"/>
+			<e:Label id="nextAtt" text="Công kích  +1000" size="18" verticalAlign="middle" width="200" right="0" top="0" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff06" anchorOffsetX="0" bottom="0"/>
 		</e:Group>
 		<e:Group id="maxGroup" horizontalCenter="0" width="576" height="126" bottom="30" x="50" y="556" scaleX="1" scaleY="1" anchorOffsetY="0" visible="false">
 			<e:Image scaleX="1" scaleY="1" source="tongyong_dikuang4" scale9Grid="11,11,59,53" top="0" bottom="35" left="0" right="0"/>
 
 			<e:Group left="115" width="200" top="15">
-			<e:Label id="attr0" text="攻击+10000" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" textAlign="left" width="250" y="0" x="0"/>
+			<e:Label id="attr0" text="Công kích+10000" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" textAlign="left" width="250" y="0" x="0"/>
 			</e:Group>
 			<e:Group right="15" width="200" top="15">
-			<e:Label id="attr1" text="生命+10000" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff" width="200" textAlign="left"/>
+			<e:Label id="attr1" text="Sinh lực+10000" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff" width="200" textAlign="left"/>
 			</e:Group>
 			<e:Group right="15" width="200" top="53">
-			<e:Label id="attr3" text="物抗 +100" size="20" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff" width="250" x="0" textAlign="left"/>
+			<e:Label id="attr3" text="Kháng vật lý +100" size="20" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff" width="250" x="0" textAlign="left"/>
 			</e:Group>
 			<e:Group width="200" left="115" top="53">
-			<e:Label id="attr2" text="法抗 +100" size="20" textAlign="left" x="0" y="0" textColor="0xffffff" fontFamily="Microsoft YaHei" width="200"/>
+			<e:Label id="attr2" text="Kháng phép +100" size="20" textAlign="left" x="0" y="0" textColor="0xffffff" fontFamily="Microsoft YaHei" width="200"/>
 			</e:Group>
-			<e:Label id="maxTxt" text="转生等级已满" size="20" horizontalCenter="0" bottom="-4" stroke="0" strokeColor="0x750000" fontFamily="Microsoft YaHei" textColor="0xffe500"/>
+			<e:Label id="maxTxt" text="Cấp chuyển sinh đã đạt tối đa" size="20" horizontalCenter="0" bottom="-4" stroke="0" strokeColor="0x750000" fontFamily="Microsoft YaHei" textColor="0xffe500"/>
 		</e:Group>
-		<e:Label id="curZsLv" text="当前转生：0转" size="22" horizontalCenter="15" fontFamily="Microsoft YaHei" top="38" textColor="0xffff00"/>
+		<e:Label id="curZsLv" text="Chuyển sinh hiện tại：Chuyển sinh 0" size="22" horizontalCenter="15" fontFamily="Microsoft YaHei" top="38" textColor="0xffff00"/>
 	</e:Group>
 
 

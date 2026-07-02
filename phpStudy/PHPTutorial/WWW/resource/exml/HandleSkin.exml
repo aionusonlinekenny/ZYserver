@@ -20,7 +20,7 @@
 					<e:Image id="worker"  width="77"  height="78" y="50" horizontalCenter="-4" source="kuanggong0_png" />
 					</e:Group>
 
-					<e:Label id="nameTxt" text="裸体矿工" y="124" size="18"   x="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.8"/>
+					<e:Label id="nameTxt" text="Thợ Mỏ Khỏa Thân" y="124" size="18"   x="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.8"/>
 				</e:Group>
 
 			<e:Label text="Chiến lực：" x="123" size="20" textColor="0x9F946D" bottom="20" includeIn="plunder,revenge" text.revenge="Chiến lực:" fontFamily.revenge="Microsoft YaHei" textColor.revenge="0x001828" fontFamily="Microsoft YaHei"/>
@@ -33,7 +33,7 @@
 			</e:Group>
 			<e:Label id="reward" text="" includeIn="done" size="20"   width="182" horizontalCenter="32" top="40" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label id="minus" text="" includeIn="done" size="20"   textColor="0xff0000" width="100" horizontalCenter="188" top="40" fontFamily="Microsoft YaHei"/>
-				<e:Label id="nameTxt1" text="裸体矿工" size="20"   includeIn="done" y="124" x="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.8" visible="false"/>
+				<e:Label id="nameTxt1" text="Thợ Mỏ Khỏa Thân" size="20"   includeIn="done" y="124" x="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.8" visible="false"/>
 
 			<e:Group x="150" y="19" includeIn="plunder,revenge">
 				<e:layout>
@@ -100,7 +100,7 @@
 			<e:Label id="gang" text="" x="106" y="72" size="20" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 			<e:Label id="noGang" text="暂未加入仙盟" x="113" y="55" size="20" textColor="0x9F946D" visible="false"/>
 			</e:Group>
-			<e:Label id="workNum" text="剩余次数：2/3" y="2" size="20"   text.revenge="复仇成功可双倍取回资源并全服公告" y.revenge="328" text.plunder="剩余次数：2/3" horizontalCenter.done="0" bottom.done="78" includeIn="plunder,revenge" horizontalCenter.revenge="0" horizontalCenter.plunder="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" y.plunder="327"/>
+			<e:Label id="workNum" text="Số lần còn lại：2/3" y="2" size="20"   text.revenge="复仇成功可双倍取回资源并全服公告" y.revenge="328" text.plunder="Số lần còn lại：2/3" horizontalCenter.done="0" bottom.done="78" includeIn="plunder,revenge" horizontalCenter.revenge="0" horizontalCenter.plunder="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" y.plunder="327"/>
 			<e:Group y.done="278" horizontalCenter="0.5" x="95"   horizontalCenter.revenge="1" bottom.revenge="68" bottom.plunder="68" horizontalCenter.plunder="0" includeIn="revenge">
 			<e:layout>
 				<e:HorizontalLayout gap="0" horizontalAlign="left" verticalAlign="middle"/>

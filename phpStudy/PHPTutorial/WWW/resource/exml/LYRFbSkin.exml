@@ -11,8 +11,8 @@
 		<e:Image source="ring_fubenslogen1_png" visible.free="false" visible.sdget="false" width="551" height="85" horizontalCenter="6.5" y.sdget="92" y.sdfb="92" y.free="92" x="31"  horizontalCenter.challenge="6.5" verticalCenter.challenge="-289.5"/>
 		<e:Group width="300" height="100" visible.challenge="false" horizontalCenter="0" x="150" y="676"  visible.sdfb="false" visible.free="false" visible.sdget="false">
 			<e:Button id="btnSD" label="Càn quét" skinName="SkinBtn1" width="160" height="55" y="14" horizontalCenter="0" visible="false"/>
-			<e:Label id="lbVip" text="VIP10可额外挑战1次" y="72" horizontalCenter="0" x="14" textColor="0x35e62b" size="20" visible.sdfb="false" visible="false"/>
-			<e:Label id="lbVip0" text="今日可扫荡次数10次" y="72" horizontalCenter="0" x="24" textColor="0x35E62B" size="20" includeIn="sdfb" visible="false"/>
+			<e:Label id="lbVip" text="VIP10 được thách đấu thêm 1 lần" y="72" horizontalCenter="0" x="14" textColor="0x35e62b" size="20" visible.sdfb="false" visible="false"/>
+			<e:Label id="lbVip0" text="Số lần càn quét hôm nay 10 lần" y="72" horizontalCenter="0" x="24" textColor="0x35E62B" size="20" includeIn="sdfb" visible="false"/>
 		</e:Group>
 
 		<e:Group bottom="0"  width="600" horizontalCenter.sdget="0" horizontalCenter.sdfb="0" horizontalCenter.challenge="0" top="0" visible.challenge="false" horizontalCenter.free="0" top.free="0" width.free="600">
@@ -20,7 +20,7 @@
 
 			<e:Group id="g0" width="184" height="223"  horizontalCenter="-195" verticalCenter="25.5">
 			<e:Image scale9Grid="38,21,50,22" source="lcfbjsdk" left="0" verticalCenter="0"/>
-			<e:Label id="lbFree" text="（免费）" y="121.5" size="20" horizontalCenter="0" visible.sdget="false" textColor="0x00842c" fontFamily="Microsoft YaHei" visible.sdfb="false"/>
+			<e:Label id="lbFree" text="（Miễn phí）" y="121.5" size="20" horizontalCenter="0" visible.sdget="false" textColor="0x00842c" fontFamily="Microsoft YaHei" visible.sdfb="false"/>
 			<e:Image source="fb1bei" horizontalCenter="0" top="20"/>
 			<e:Label id="lbExp0" text="200" size="20" horizontalCenter="29" top="75" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 			<e:Button id="btnGet0" label="Nhận" width="120" height="50" horizontalCenter="0" bottom="16" label.sdget="Càn quét nhanh"  icon="btn3" skinName="SkinBtn6"/>

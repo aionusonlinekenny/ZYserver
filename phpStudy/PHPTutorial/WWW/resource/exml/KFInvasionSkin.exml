@@ -69,7 +69,7 @@
 	<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn1" width="150" height="60" horizontalCenter="0" bottom="237"/>
 	<e:Group horizontalCenter="0" top="70">
 		<e:Image source="bantoutiaobg2" height="32" width="210" x="5" y="0" scale9Grid="45,9,1,1"/>
-		<e:Label text="每日复活时间：" x="12" size="20" textColor="0xff9900" y="6"/>
+		<e:Label text="Thời gian hồi sinh hàng ngày：" x="12" size="20" textColor="0xff9900" y="6"/>
 		<e:Label id="refreshTime" text="19:30" x="152" size="20" textColor="0x00ff00" y="6"/>
 	</e:Group>
 

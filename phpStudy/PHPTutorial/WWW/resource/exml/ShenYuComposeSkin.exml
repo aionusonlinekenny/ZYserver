@@ -11,15 +11,15 @@
 		<e:Label id="attr0" text="" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" horizontalCenter="18" top="87" textColor="0xffffff" visible="false"/>
 		<e:Label id="power0" text="" size="20" textColor="0xFF9900" bold="true" top="52" horizontalCenter="0" visible="false"/>
 		<e:Image id="powerImage0" width="83" height="27" y="50" source="wingzhanli" x="221.15" visible="false"/>
-		<e:Label id="state0" text="合成预览" size="22" horizontalCenter="0" top="16" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+		<e:Label id="state0" text="Xem trước hợp thành" size="22" horizontalCenter="0" top="16" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		<e:Image id="powerImage1" width="83" height="27" source="wingzhanli" left="71" top="51" visible="false"/>
 		<e:Label id="attr1" text="" size="19" textAlign="left" width="170" anchorOffsetX="0" left="75" top="88" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
-		<e:Label id="power1" text="战斗力：5" x="100" y="53" size="20" textColor="0xFF9900" visible="false"/>
-		<e:Label text="升阶前" size="22" id="state1" fontFamily="Microsoft YaHei" left="118" top="16" textColor="0xffff00" visible="false"/>
+		<e:Label id="power1" text="Chiến lực：5" x="100" y="53" size="20" textColor="0xFF9900" visible="false"/>
+		<e:Label text="Trước thăng bậc" size="22" id="state1" fontFamily="Microsoft YaHei" left="118" top="16" textColor="0xffff00" visible="false"/>
 		<e:Image id="powerImage2" width="83" height="27" source="wingzhanli" left="368" top="51" visible="false"/>
 		<e:Label id="attr2" text="" size="19" textAlign="left" y="87.4" width="170" anchorOffsetX="0" x="372" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
 		<e:Label id="power2" text="" x="211" y="76" size="20" textColor="0xFF9900" bold="true" visible="false"/>
-		<e:Label text="升阶后" size="22" id="state2" fontFamily="Microsoft YaHei" top="16" textColor="0xffff00" right="118" visible="false"/>
+		<e:Label text="Sau thăng bậc" size="22" id="state2" fontFamily="Microsoft YaHei" top="16" textColor="0xffff00" right="118" visible="false"/>
 		<e:Image id="arrows" source="jiantouyou" horizontalCenter="-5.5" verticalCenter="-53" visible="false"/>
 	</e:Group>
 	<e:Image anchorOffsetY="0" height="96" width="600" y="7" anchorOffsetX="0" scale9Grid="80,10,150,5" source="tongyongbg3" horizontalCenter="0"/>

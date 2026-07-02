@@ -4,6 +4,6 @@
 		<e:ProgressBar id="progressBar" maximum="100" value="40" skinName="CollectionBarSkin" slideDuration="0" height="16" left="18" right="18" verticalCenter="0" anchorOffsetX="0"/>
 		<e:Group id="effGroup" width="264" anchorOffsetY="0" height="19" y="12" x="18"/>
 		<e:Image id="barBg1" left="0" right="0" verticalCenter="0" source="col_progress" scale9Grid="47,0,1,38"/>
-		<e:Label id="state" text="正在采集战旗..." size="20" horizontalCenter="0" top="-15" textColor="0xD1C28F"/>
+		<e:Label id="state" text="Đang thu thập Chiến Kỳ..." size="20" horizontalCenter="0" top="-15" textColor="0xD1C28F"/>
 	</e:Group>
 </e:Skin>

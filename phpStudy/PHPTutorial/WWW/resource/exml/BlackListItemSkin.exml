@@ -9,6 +9,6 @@
 		<e:Image id="headBg" scale9Grid="5,5,3,3" height="69" y="0" width="66" x="0" source="friend_kuang"/>
 	</e:Group>
 	<e:Label id="label_name" text="{data.name}" size="20" x="88" y="30" textColor="0xabebff" fontFamily="Microsoft YaHei"/>
-	<e:Label id="labelGuild" text="帮会名六个字" size="18" y="60" x="88" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+	<e:Label id="labelGuild" text="Tên Bang Hội 6 chữ" size="18" y="60" x="88" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 	<e:Button id="btn_delete" label="Xóa" width="91" height="50" icon="friend_btnbg" x="426" y="26" skinName="SkinBtn26"/>
 </e:Skin>

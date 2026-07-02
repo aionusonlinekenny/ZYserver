@@ -35,10 +35,10 @@
 			<e:Label id="openTxt2" text="8阶开启" size="17" horizontalCenter="2.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
 			<ns1:WingSkillItemRender id="itemicon3" skinName="SkinWingSkillItem" horizontalCenter="111.5" y="145"/>
 			<e:Image id="nameBg3" width="76" height="24" horizontalCenter="109" y="208" source=""/>
-			<e:Label id="openTxt3" text="10阶开启" size="17" horizontalCenter="109" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<e:Label id="openTxt3" text="Mở ở bậc 10" size="17" horizontalCenter="109" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
 			<ns1:WingSkillItemRender id="itemicon4" skinName="SkinWingSkillItem" horizontalCenter="216" y="145"/>
 			<e:Image id="nameBg4" width="76" height="24" horizontalCenter="218" y="208" source=""/>
-			<e:Label id="openTxt4" text="10阶开启" size="17" horizontalCenter="218" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<e:Label id="openTxt4" text="Mở ở bậc 10" size="17" horizontalCenter="218" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
 			<e:Group id="infoGroup" anchorOffsetX="0" width="512" height="90" anchorOffsetY="0" horizontalCenter="0" top="50">
 				<e:Group id="attrGroup" anchorOffsetX="0" width="257" top="0" bottom="0" left="0">
 				<e:Label id="attrLabel" text="" y="36" size="19" horizontalCenter="-100" height="90" verticalAlign="middle" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xffffff"/>

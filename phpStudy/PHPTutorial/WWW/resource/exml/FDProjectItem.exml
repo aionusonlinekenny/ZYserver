@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="FDProjectItem" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  width="410" height="90" states="normal,done" >
 	<e:Image source="recharge_headbg_png" right="0" left="0" top="0" bottom="0"/>
-	<e:Label id="pName" text="累计登录1天" size="20" bold="true" fontFamily="SimHei" verticalCenter="10" textColor="0xffd93f" left="7"/>
+	<e:Label id="pName" text="Đăng nhập tích lũy 1 ngày" size="20" bold="true" fontFamily="SimHei" verticalCenter="10" textColor="0xffd93f" left="7"/>
 	<e:List id="list" x="158" anchorOffsetY="0" itemRendererSkinName="SkinItem" verticalCenter="0.5" scaleX="0.8" scaleY="0.8">
 		<e:ArrayCollection>
 			<e:Array>

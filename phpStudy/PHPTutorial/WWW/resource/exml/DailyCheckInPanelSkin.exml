@@ -3,7 +3,7 @@
         height="715" width="600">
 	<e:Button id="help" y="251" skinName="SkinBtn0" x="11" label="Nút bấm"  visible="false"/>
 	<e:Label id="checkInTitle" text="本月累计签到：" x="130.5" y="13.5" textColor="0xe4bb98" size="16" fontFamily="黑体"  visible="false"/>
-	<e:Label id="checkInLab" text="998天" x="135.5" y="13.5" textColor="0x3cdb02" size="16" fontFamily="黑体"
+	<e:Label id="checkInLab" text="998 ngày" x="135.5" y="13.5" textColor="0x3cdb02" size="16" fontFamily="黑体"
 	          width="53"  visible="false"/>
 	<e:Label id="remainComplementTitle" text="剩余补签次数：" x="225.5" y="13.5" textColor="0xE4BB98" size="16" fontFamily="黑体"  visible="false"/>
 	<e:Label id="remainComplementLab" text="98次" x="337.5" y="13.5" textColor="0x3CDB02" size="16" fontFamily="黑体"

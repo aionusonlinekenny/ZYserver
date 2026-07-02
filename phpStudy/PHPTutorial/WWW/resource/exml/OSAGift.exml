@@ -13,7 +13,7 @@
 		<e:Group y="11.69" right="0" width="365" height="48" visible="false">
 
 		<e:Image y="0" left="0" right="0" source="kaifubantoumingkuang_png" scale9Grid="209,5,36,34"/>
-		<e:Label id="desc01" text="累积充值" horizontalCenter="0" verticalCenter="0" size="20" textColor="0xd1c28f"/>
+		<e:Label id="desc01" text="Nạp tích lũy" horizontalCenter="0" verticalCenter="0" size="20" textColor="0xd1c28f"/>
 		<e:Label id="desc111" text="123" horizontalCenter="-80" verticalCenter="0.5" size="20" textColor="0xff9900"/>
 		<e:Group id="desc1111" verticalCenter="0" horizontalCenter="0">
 			<e:Label id="desc21" text="Chi phí" horizontalCenter="-80" verticalCenter="0.5" size="20" textColor="0xd1c28f" fontFamily="Microsoft YaHei"/>
@@ -27,7 +27,7 @@
 		</e:Group>
 		<e:Group y="11.69" right="-9" width="365" height="48">
 			<e:Image y="3" left="0" right="0" source="kaifubantoumingkuang_png" scale9Grid="209,5,36,34"/>
-			<e:Label id="desc0" text="累积充值" horizontalCenter="0" verticalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+			<e:Label id="desc0" text="Nạp tích lũy" horizontalCenter="0" verticalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 			<e:Label id="desc1" text="123" horizontalCenter="-80" verticalCenter="0.5" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 			<e:Group id="desc" verticalCenter="0" horizontalCenter="0" height="27">
 			<e:Label id="desc2" text="Chi phí" horizontalCenter="-80" verticalCenter="0.5" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="bottom" height="22"/>
@@ -58,7 +58,7 @@
 		</e:layout>
 		</e:Group>
 	</e:Group>
-	<e:Label id="actTime" text="0天23小时55分" size="18" textColor="0x00FF00" horizontalCenter="174" x="218" y="612" fontFamily="Microsoft YaHei"/>
+	<e:Label id="actTime" text="0 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" horizontalCenter="174" x="218" y="612" fontFamily="Microsoft YaHei"/>
 	<e:Group y="653" horizontalCenter="0" visible="false">
 		<e:Label id="ybTxt0" text="当前元宝：" size="18" horizontalCenter="0" bottom="7" x="-55" y="8" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" textColor="0xffff00"/>
 		<e:Image  x="20" y="9" source="szyuanbao" width="35" height="25"/>

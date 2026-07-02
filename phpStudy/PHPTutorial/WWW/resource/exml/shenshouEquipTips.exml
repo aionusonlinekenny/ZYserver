@@ -41,7 +41,7 @@
 			<e:Label id="starAttr1" y="25" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="starAttr2" y="50" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="starAttr3" y="75" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-			<e:Label y="0" text="星级属性" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label y="0" text="Thuộc tính cấp sao" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		</e:Group>
 		<e:Label id="lv" text="Cấp 100" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" left="172" top="91"/>
 		<e:Image height="35" horizontalCenter="0.5" bottom="-50" scale9Grid="128,2,15,41" width="300" touchEnabled="false" source="bantoutiaobg"/>

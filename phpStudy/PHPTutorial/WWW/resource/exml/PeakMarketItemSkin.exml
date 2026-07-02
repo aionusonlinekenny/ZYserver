@@ -17,10 +17,10 @@
 	<e:Image id="discountIcon" x="21" y="21" scaleX=".8" scaleY=".8" source="" visible="false"/>
 
 	<e:Image id="wuzhe" source="tuijian2" x="490" y="12" touchEnabled="false" visible="false"/>
-	<e:Label id="myTimes" text="永久限购：0/5" size="18" fontFamily="Microsoft YaHei" right="13" top="12" textColor="0x1b3046"/>
+	<e:Label id="myTimes" text="Giới hạn mua vĩnh viễn：0/5" size="18" fontFamily="Microsoft YaHei" right="13" top="12" textColor="0x1b3046"/>
 	<e:Group left="102" top="25">
 		<e:Label id="itemName" text="Tên sản phẩm" x="0" y="0" size="22" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
-		<e:Label id="usage" text="（合成升级热血装备）" y="0" size="22" x="120" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+		<e:Label id="usage" text="（Hợp thành nâng cấp trang bị Nhiệt Huyết）" y="0" size="22" x="120" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
 		<e:layout>
 			<e:HorizontalLayout gap="3"/>
 		</e:layout>

@@ -13,7 +13,7 @@
 
 		<e:Image id="myhead" y="160" width="100" height="100" x="90" source="bigyuanhead30"/>
 		<e:Label id="enterTime" text="" y="12" size="28" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0" textAlign="center"/>
-		<e:Label id="ingImg" text="匹配中..." y="419" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00" strokeColor="0xff6332" stroke="0.8" x="238" textAlign="center"/>
+		<e:Label id="ingImg" text="Đang ghép trận..." y="419" size="24" fontFamily="Microsoft YaHei" textColor="0xffff00" strokeColor="0xff6332" stroke="0.8" x="238" textAlign="center"/>
 		<e:Label id="myname" text="" y="106" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" width="120" horizontalCenter="-158" height="20"/>
 		<e:Label id="othername" text="" y="136" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" width="120" horizontalCenter="168" height="20"/>
 		<e:Label id="mylv" text="" y="283" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei" textAlign="center" x="100"/>

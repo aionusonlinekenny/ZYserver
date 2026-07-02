@@ -20,16 +20,16 @@
 		<e:Image id="huawen0" height="50" anchorOffsetX="0" right="167" width="268.67" top="-5" source="huabian" scale9Grid="96,6,15,42" visible="false"/>
 		<e:Label id="attr0" text="Công kích：1000000000" size="19" width="170" anchorOffsetX="0" horizontalCenter="10" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0" height="90" visible="false"/>
 		<e:Label id="power0" text="Chiến lực：10000" size="20" textColor="0xFF9900" bold="true" horizontalCenter="-5" top="51" textAlign="center" visible="false"/>
-		<e:Label id="state0" text="合成预览" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" top="14" textColor="0xffff00" visible="false"/>
+		<e:Label id="state0" text="Xem trước hợp thành" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" top="14" textColor="0xffff00" visible="false"/>
 		<e:Label id="attr3" text="Công kích：1000000000" size="19" textAlign="left" width="170" anchorOffsetX="0" horizontalCenter="10" verticalCenter="-17" fontFamily="Microsoft YaHei" textColor="0xffffff" height="90" visible="false"/>
 		<e:Label id="power3" text="Chiến lực：10000" size="20" textColor="0xFF9900" bold="true" horizontalCenter="-3" top="51" visible="false"/>
 		<e:Label id="state3" text="Đã đạt bậc tối đa" size="22" horizontalCenter="2" fontFamily="Microsoft YaHei" top="15" textColor="0xffff00" visible="false"/>
 		<e:Label id="attr1" text="攻击：100\n物抗：1000\法抗：1000\n闪避：20%\n命中：1.2%" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" left="76" top="86" verticalAlign="middle" height="90" textColor="0xffffff" visible="false"/>
-		<e:Label id="power1" text="战斗力：5" size="20" textColor="0xFF9900" left="72" top="50" visible="false"/>
-		<e:Label text="升阶前" size="22" id="state1" fontFamily="Microsoft YaHei" left="117" top="17" textColor="0xffff00" visible="false"/>
+		<e:Label id="power1" text="Chiến lực：5" size="20" textColor="0xFF9900" left="72" top="50" visible="false"/>
+		<e:Label text="Trước thăng bậc" size="22" id="state1" fontFamily="Microsoft YaHei" left="117" top="17" textColor="0xffff00" visible="false"/>
 		<e:Label id="attr2" text="攻击：100物抗：1000法抗：1000闪避：20%命中：1.2%" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" height="90" right="58" top="86" textColor="0xffffff" visible="false"/>
 		<e:Label id="power2" text="Chiến lực：10000" size="20" textColor="0xFF9900" bold="true" right="88" top="52" visible="false"/>
-		<e:Label text="升阶后" size="22" id="state2" fontFamily="Microsoft YaHei" right="119" top="17" textColor="0xffff00" visible="false"/>
+		<e:Label text="Sau thăng bậc" size="22" id="state2" fontFamily="Microsoft YaHei" right="119" top="17" textColor="0xffff00" visible="false"/>
 		<e:Image id="arrows" source="jiantouyou" horizontalCenter="-5" verticalCenter="-16" visible="false"/>
 		<e:Image id="powerImage0" width="83" height="27" y="48" source="wingzhanli" x="221" visible="false"/>
 		<e:Image id="powerImage2" width="83" height="27" y="50" source="wingzhanli" x="368" visible="false"/>

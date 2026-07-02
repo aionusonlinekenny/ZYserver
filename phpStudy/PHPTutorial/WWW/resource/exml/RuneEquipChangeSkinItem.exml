@@ -13,14 +13,14 @@
 
 	<e:Group id="tag" x="413" includeIn="all,now" visible.all="false" visible="false">
 		<e:Image source="xiejiaotiao" x="17" y="-14" rotation="45" width="90" scale9Grid="21,2,1,17"  />
-		<e:Label text="当前镶嵌" x="25" y="-1" rotation="45" size="15"  />
+		<e:Label text="Đang khảm" x="25" y="-1" rotation="45" size="15"  />
 	</e:Group>
 	<e:Button id="changeBtn" label="Thay thế" includeIn="all" icon="btn2_2" width="176" height="69" verticalCenter="0" skinName="SkinBtn1" horizontalCenter="152.5"/>
 	<e:Button id="changeBtn0" label="Khảm" visible.all="false" includeIn="all" icon="btn2_2" width="176" height="69" verticalCenter="0" horizontalCenter="152.5" skinName="SkinBtn1" visible="false"/>
 	<e:Button id="getBtn" skinName="SkinBtn1" label="Nhận Tiên Văn" includeIn="get" verticalCenter="0" horizontalCenter="0"/>
 	<ns1:RuneDisplay id="itemIcon" skinName="SkinRuneItem" includeIn="all,now" height="100" width="101" horizontalCenter="-190" verticalCenter="3"/>
 
-	<e:Label id="now" text="当前镶嵌" size="20" verticalCenter="0" includeIn="now" fontFamily="Microsoft YaHei" textColor.all="0x00842c" textColor.now="0x00842c" x.now="392" textColor="0x00842c" horizontalCenter="152.5"/>
+	<e:Label id="now" text="Đang khảm" size="20" verticalCenter="0" includeIn="now" fontFamily="Microsoft YaHei" textColor.all="0x00842c" textColor.now="0x00842c" x.now="392" textColor="0x00842c" horizontalCenter="152.5"/>
 	<e:Label id="already" text="已有属性" size="20" verticalCenter="0" textColor="0xf3311e" includeIn="all,now" horizontalCenter="152.5" fontFamily="Microsoft YaHei" visible="false"/>
 	<e:Group width="200" height="87" verticalCenter="0" y="8" horizontalCenter="-24.5" anchorOffsetY="0" includeIn="all,now">
 		<e:Label id="runeName" text="自然 lv.1" textColor="0x001828" size="20" left="101" includeIn="all,now" y="31.35" x="101" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" height="20"/>

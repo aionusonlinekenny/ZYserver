@@ -12,5 +12,5 @@
 		</e:ArrayCollection>
 	</e:List>
 	<e:Image id="dwImg" scaleX="0.4" scaleY="0.4" source="ladder_rank_3" horizontalCenter="-207" verticalCenter="0"/>
-	<e:Label id="dwName" text="黄金段位" horizontalCenter="-57.5" verticalCenter="0" textColor="0xf2a00c"/>
+	<e:Label id="dwName" text="Bậc Vàng" horizontalCenter="-57.5" verticalCenter="0" textColor="0xf2a00c"/>
 </e:Skin>

@@ -5,14 +5,14 @@
 	<e:Group width="554" horizontalCenter="0" height="30" top="28">
 		<e:Group id="juan" height="26" x="-15.5" y="-24" anchorOffsetY="0">
 			<e:Image id="jicon" source="200156_png" width="27" height="27" x="22" y="-1"/>
-			<e:Label text="野外挑战令" size="20" x="-1" y="0" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
+			<e:Label text="Lệnh Thách Đấu Ngoài Trời" size="20" x="-1" y="0" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
 			<e:Label text="X" size="20" x="9" y="10" fontFamily="Microsoft YaHei" textColor="0x00FF00"/>
 			<e:Label id="jcount" text="100" size="20" y="0" horizontalCenter="-38" fontFamily="Microsoft YaHei" textColor="0x00FF06"/>
 			<e:layout>
 			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="4"/>
 			</e:layout>
 		</e:Group>
-		<e:Label text="挑战次数：" size="20" x="15" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Số lần thách đấu：" size="20" x="15" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="timeTxt" text="" size="20" verticalCenter="0" textAlign="center" width="210" fontFamily="Microsoft YaHei" textColor="0xffffff" x="194"/>
 		<e:Label id="challengeCountTxt" text="" size="20" x="110" textAlign="center" verticalAlign="middle" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="setting" text="Cài đặt nhắc nhở" size="20" x="444" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>

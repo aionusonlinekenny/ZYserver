@@ -13,7 +13,7 @@
 	<e:Image id="suoImg" horizontalCenter="0" includeIn="disabled" source="suowen2" verticalCenter="0"/>
 
 	<e:Image horizontalCenter="0" verticalCenter="0" source="lingchongkuang" width.up="77" height.up="80" source.up="guildkuang"/>
-	<e:Label id="openLv" size="16" textAlign="center" text="第X天或VIP5开启" verticalAlign="middle" width="56" strokeColor="0x000000" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0" textColor="0xffff00" stroke="1"/>
+	<e:Label id="openLv" size="16" textAlign="center" text="Mở vào ngày X hoặc VIP5" verticalAlign="middle" width="56" strokeColor="0x000000" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalCenter="0" textColor="0xffff00" stroke="1"/>
 	<e:Image id="redPoint" source="zjmhongdian"   horizontalCenter="31.5" verticalCenter="-25.915"/>
 	<e:Image id="actTxt" horizontalCenter="0.3299999999999983" bottom="9.159999999999997" source="kejihuo2"/>
 </e:Skin>

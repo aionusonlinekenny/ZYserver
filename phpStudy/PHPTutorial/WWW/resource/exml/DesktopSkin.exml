@@ -8,13 +8,13 @@
 		<e:Image y="178" x="367" source="num_20_png" y.android="181"/>
 		<e:Image y="134" x="366" source="num_20_png"/>
 		<e:Image y="335.35" x="142.35" source="weixin_desktop_png"/>
-		<e:Label text="点击 “右上角三个点”" x="65" y="301.5" textColor="0x531700" size="20" fontFamily="Microsoft YaHei"/>
-		<e:Label text="点击" x="411.68" y="421.82" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
-		<e:Label text="“添加到桌面”" x="362.36" y="451.52" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" text.ios="“添加到我的小程序”" x.ios="332.36"/>
-		<e:Label text="点击" x="146.33" y="540.48" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" text.ios="点击“关闭圈圈”" x.ios="83.69"/>
-		<e:Label text="“自动添加”" x="106.35" y="570.18" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" visible.ios="false"/>
-		<e:Label text="在桌面点击“自动添加”" x="69.33" y="713.15" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" text.ios="点击我的小程序" x.ios="96.33"/>
-		<e:Label text="即可开始游戏" x="109.34" y="742.85" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" text.ios="开始游戏" x.ios="183.34"/>
+		<e:Label text="Nhấn “3 chấm góc trên bên phải”" x="65" y="301.5" textColor="0x531700" size="20" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Nhấn" x="411.68" y="421.82" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
+		<e:Label text="“Thêm vào màn hình chính”" x="362.36" y="451.52" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" text.ios="“Thêm vào Mini Program của tôi”" x.ios="332.36"/>
+		<e:Label text="Nhấn" x="146.33" y="540.48" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" text.ios="Nhấn “Đóng vòng tròn”" x.ios="83.69"/>
+		<e:Label text="“Tự động thêm”" x="106.35" y="570.18" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" visible.ios="false"/>
+		<e:Label text="Trên màn hình nhấn “Tự động thêm”" x="69.33" y="713.15" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" text.ios="Nhấn vào Mini Program của tôi" x.ios="96.33"/>
+		<e:Label text="là có thể bắt đầu chơi" x="109.34" y="742.85" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" text.ios="Bắt đầu chơi" x.ios="183.34"/>
 		<e:Image x="95.3" y="823.64" source="desktopdesc_png"/>
 		<e:Image width="20" height="20" x="172.01" y="574.32" source="weixin_close_png" includeIn="ios"/>
 		<e:Image id="gameName_1" alpha="1" visible.android="false" y="745" x="95.14" source="desktop_name1_png"/>

@@ -3,7 +3,7 @@
 	<e:Group width="512" height="625" y="0" x="0">
 		<e:Image scale9Grid="10,5,28,31" x="0" y="0" scaleX="1" scaleY="1" source="tongyong_dikuang4" width="512" height="555"/>
 		<e:Label y="13" text="Xếp hạng" size="20" x="51" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-		<e:Label y="13" text="名字" size="20" x="152" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label y="13" text="Tên" size="20" x="152" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Label y="13" text="Tiên Minh" size="20" x="297" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Label y="13" text="Điểm tích lũy" size="20" x="444" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Scroller top="41" bottom="70" scrollPolicyH="off" y="45" scaleX="1" scaleY="1" width="512">
@@ -13,9 +13,9 @@
 			</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Label id="myRank" text="我的排名：100" size="20" left="78" bottom="20" x="115" y="618" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="myRank" text="Xếp hạng của tôi：100" size="20" left="78" bottom="20" x="115" y="618" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Group bottom="20" left="258">
-			<e:Label text="我的积分：" size="20" horizontalCenter="115" bottom="20" x="6" y="12" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Điểm của tôi：" size="20" horizontalCenter="115" bottom="20" x="6" y="12" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="myScore" text="10000" size="20" horizontalCenter="115" bottom="20" x="28" y="12" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>

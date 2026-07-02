@@ -11,7 +11,7 @@
 		<e:Group left="186" right="10" y="75" anchorOffsetX="0">
 
 			<e:Label text="Mô tả sự kiện：" x="3" size="18" scaleX="1" scaleY="1" top="5"  fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label id="actDesc" text="即日起每日充值任意金额，即可领取豪礼，每隔6天还可以领取海量元宝。" size="18" scaleX="1" scaleY="1"
+			<e:Label id="actDesc" text="Từ hôm nay, nạp bất kỳ số tiền nào mỗi ngày là nhận được quà hào phóng, cứ mỗi 6 ngày còn được nhận thêm nhiều Nguyên Bảo." size="18" scaleX="1" scaleY="1"
 			         anchorOffsetX="0" height="61" y="5" right="0" left="90"  fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetY="0"/>
 		</e:Group>
 

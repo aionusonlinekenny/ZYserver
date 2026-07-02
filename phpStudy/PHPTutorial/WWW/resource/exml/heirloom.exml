@@ -39,7 +39,7 @@
 
 
 		<e:Group y="14" x="29">
-			<e:Label id="desc0" text="攻击:" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="desc0" text="Công kích:" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="attr0" text="+123456" size="20" x="70" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>
 		<e:Group y="14" x="317">

@@ -8,7 +8,7 @@
 		<e:Image id="bg2"   left="0" right="0" top="0" bottom="0" source="quali4_png" scale9Grid="9,18,8,500"/>
 
 		<e:Label id="GwName" text="" size="24" touchEnabled="false" horizontalCenter="0" y="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label text="神兵等级和圣物镶嵌属性总和" size="18" touchEnabled="false" horizontalCenter="0.5" y="211" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Tổng cấp Thần Binh và thuộc tính khảm Thánh Vật" size="18" touchEnabled="false" horizontalCenter="0.5" y="211" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 		<e:List id="list" width="240" itemRendererSkinName="SkinshenQiAttrDesc" horizontalCenter="0" height="100" y="80">
 			<e:layout>

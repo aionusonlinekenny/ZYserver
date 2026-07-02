@@ -11,7 +11,7 @@
 		<e:Image width="461" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,6,60,42" top="34" anchorOffsetY="0" bottom="32"/>
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-35" width="400"/>
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-27" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center"/>
-		<e:Label text="获取劫力" size="24" horizontalCenter="0" textColor="0x39566a" fontFamily="Microsoft YaHei" top="-8" verticalAlign="middle" textAlign="center"/>
+		<e:Label text="Nhận Kiếp Lực" size="24" horizontalCenter="0" textColor="0x39566a" fontFamily="Microsoft YaHei" top="-8" verticalAlign="middle" textAlign="center"/>
 		<e:Button skinName="SkinBtn0" label="Nút bấm" id="closeBtn" right="4" top="-14" icon="tongyong_btnclose"/>
 		<ns1:PriceIcon2 id="priceIcon0" x="325" y="50" skinName="SkinPriceIcon2" visible="false"/>
 		<e:Group id="gr1" width="444" height="122" horizontalCenter="0" top="46">

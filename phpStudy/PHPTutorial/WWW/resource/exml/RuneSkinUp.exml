@@ -9,11 +9,11 @@
 			<e:Image width="557" height="102" y="0" source="tongyong_dikuang4" scale9Grid="11,9,52,49" anchorOffsetY="0" horizontalCenter="0"/>
 			<e:Group height="96" horizontalCenter="0" y="0" width="520" anchorOffsetY="0">
 			<ns1:RuneDisplay id="rune8" x="30" skinName="SkinRuneItem" height="88" width="100" y="-2"/>
-			<e:Label id="nuneName" text="狂暴 lv.3" x="145" y="10" size="20" textColor="0xd242fb" fontFamily="Microsoft YaHei"/>
+			<e:Label id="nuneName" text="Cuồng Bạo lv.3" x="145" y="10" size="20" textColor="0xd242fb" fontFamily="Microsoft YaHei"/>
 			<e:Group x="145" y="38">
-				<e:Label id="addAttr" text="武器基础属性" x="17.5" size="18" y="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="addAttr" text="Thuộc tính cơ bản Vũ khí" x="17.5" size="18" y="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Image id="arrow" y="0" x="0" source="tongyongup"/>
-				<e:Label id="attrDesc" text="攻击力 +9999" x="262.5" size="18" y="21" fontFamily="Microsoft YaHei" textColor="0x00ff03"/>
+				<e:Label id="attrDesc" text="Lực công kích +9999" x="262.5" size="18" y="21" fontFamily="Microsoft YaHei" textColor="0x00ff03"/>
 				<e:layout>
 				<e:HorizontalLayout verticalAlign="middle" gap="6"/>
 				</e:layout>
@@ -45,7 +45,7 @@
 			<ns1:RuneDisplay id="rune5" y="253" skinName="SkinRuneItem" x="68"/>
 			<ns1:RuneDisplay id="rune6" y="370" skinName="SkinRuneItem" x="97"/>
 			<ns1:RuneDisplay id="rune7" y="410" skinName="SkinRuneItem" horizontalCenter="6"/>
-			<e:Label id="levelsay" text="通过X层开启下一凹槽" x="169.33" y="529.57" visible="false"/>
+			<e:Label id="levelsay" text="Vượt qua tầng X sẽ mở ô tiếp theo" x="169.33" y="529.57" visible="false"/>
 			<e:Image id="bookBtn" source="zhanwenjiacheng" y="21" x="-17"/>
 		</e:Group>
 
@@ -70,11 +70,11 @@
 			</e:Group>
 		</e:Group>
 		<e:Group id="Activation" horizontalCenter="0" bottom="6" visible="false">
-			<e:Label id="activeTipsTxt" text="1转可激活战纹" size="22" y="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="activeTipsTxt" text="Chuyển sinh 1 có thể kích hoạt Chiến Văn" size="22" y="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Button id="UplevelBtn1" label="Kích hoạt Chiến Văn" skinName="SkinBtn1" y="42" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group id="linkGroup" width="500" height="96" horizontalCenter="0" bottom="12" visible="false">
-			<e:Label text="可以通过以下方式获得仙纹" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="74"/>
+			<e:Label text="Có thể nhận Tiên Văn qua các cách sau" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="74"/>
 			<e:Button id="btn1" label="Tìm kho báu Tiên Văn" skinName="SkinBtn1" horizontalCenter="-120" bottom="0" scaleX="0.8" scaleY="0.8"/>
 			<e:Button id="btn2" label="Tháp Hạo Thiên" skinName="SkinBtn1" horizontalCenter="120" bottom="0" scaleX="0.8" scaleY="0.8"/>
 		</e:Group>

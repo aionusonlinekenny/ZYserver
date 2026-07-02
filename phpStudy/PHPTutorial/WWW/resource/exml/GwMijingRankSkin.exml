@@ -10,7 +10,7 @@
 		<e:Group y="56" width="520" height="41" horizontalCenter="0">
 			<e:Image id="titlebar" y="0" left="0" right="0"  source="pailietoubg2" scale9Grid="11,0,17,40"/>
 			<e:Label id="titlerank" text="Xếp hạng" size="20" y="11"  fontFamily="Microsoft YaHei" x="11" textColor="0x001828"/>
-			<e:Label id="titlename" text="挑战者" size="20" y="11"  fontFamily="Microsoft YaHei" textColor="0x001828" x="138"/>
+			<e:Label id="titlename" text="Người thách đấu" size="20" y="11"  fontFamily="Microsoft YaHei" textColor="0x001828" x="138"/>
 			<e:Label id="titleStorey" text="S级通关层数" size="20" y="11"  fontFamily="Microsoft YaHei" textColor="0x001828" x="272"/>
 			<e:Label id="titletime" text="时间" size="20" y="11" fontFamily="Microsoft YaHei" textColor="0x001828" x="451"/>
 		</e:Group>

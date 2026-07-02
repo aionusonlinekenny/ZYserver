@@ -3,6 +3,6 @@
 	<e:Group id="textGroup" top="1" bottom="1" left="2" right="2">
 		<e:Image id="type" x="6" source="lt_02"/>
 		<e:Image id="bg" scale9Grid="86,1,4,1" bottom="0" left="0" right="0" source="tongyongline" height="1" visible="false"/>
-		<e:Label id="str" text="聊天内容很长很长，最多40个字" size="20" fontFamily="Microsoft YaHei" textColor="0xabebff" y="5" x="63"/>
+		<e:Label id="str" text="Nội dung chat rất dài, tối đa 40 chữ" size="20" fontFamily="Microsoft YaHei" textColor="0xabebff" y="5" x="63"/>
 	</e:Group>
 </e:Skin>

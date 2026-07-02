@@ -15,7 +15,7 @@
 		</e:Scroller>
 		<e:Image id="result" y="49"   source="labwin_png" horizontalCenter="28"/>
 		<ns1:LadderStarListView id="starList" y="310" skinName="SkinLadderSratList" horizontalCenter="0"/>
-		<e:Label text="挑战奖励：" y="586" fontFamily="Microsoft YaHei" size="20" x="106"/>
+		<e:Label text="Thưởng thách đấu：" y="586" fontFamily="Microsoft YaHei" size="20" x="106"/>
 		<e:Button id="sureBtn" label="Nhận thưởng" width="213" horizontalCenter="0" y="690" skinName="SkinBtn7" height="67"/>
 		<e:Group id="upStar" width="237" height="50" y="498"   x="106">
 			<e:Label text="星级奖励：" x="0" y="17" size="20" fontFamily="Microsoft YaHei"/>

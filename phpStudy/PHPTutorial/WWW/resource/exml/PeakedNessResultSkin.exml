@@ -6,14 +6,14 @@
 		<e:Image id="resultImg" y="267.95" horizontalCenter="-13.5" source="peakness_win_png"/>
 		<e:Group id="win" y="577.96" horizontalCenter="0">
 			<e:Label text="成功击败对手：" y="0" fontFamily="Microsoft YaHei" size="20" lineSpacing="10" x="0" textColor="0xffffff"/>
-			<e:Label id="winPlayer" text="布拉格の白炽[s101]" y="0" fontFamily="Microsoft YaHei" size="20" x="230" textColor="0x00ff00"/>
+			<e:Label id="winPlayer" text="VươngGiả·BạchXí[s101]" y="0" fontFamily="Microsoft YaHei" size="20" x="230" textColor="0x00ff00"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>
 			</e:layout>
 		</e:Group>
 		<e:Group id="lose" y="579.96" horizontalCenter="0" visible="false">
 			<e:Label text="您被玩家" y="0" fontFamily="Microsoft YaHei" size="20" lineSpacing="10" x="0" textColor="0xff0000"/>
-			<e:Label id="losePlayer" text="布拉格の白炽[s101]" y="0" fontFamily="Microsoft YaHei" size="20" x="230" textColor="0x00ff00"/>
+			<e:Label id="losePlayer" text="VươngGiả·BạchXí[s101]" y="0" fontFamily="Microsoft YaHei" size="20" x="230" textColor="0x00ff00"/>
 			<e:Label text="击败" y="30" fontFamily="Microsoft YaHei" size="20" x="233" textColor="0xff0000"/>
 			<e:layout>
 				<e:HorizontalLayout/>

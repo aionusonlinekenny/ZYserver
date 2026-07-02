@@ -10,7 +10,7 @@
 		<e:Image source="zhandoulibg" x="39.5" width="269" alpha="0.4" height="44.33"   scale9Grid="130,26,31,16" verticalCenter="-139"/>
 		<e:Image source="zjmzhandouli" x="42.5" verticalCenter="-140.5"/>
 		<e:Image width="240" height="199" horizontalCenter="0" verticalCenter="18.5" source="shuzibg" scale9Grid="4,4,15,14" />
-		<e:Label text="图鉴总属性" size="20" textColor="0xFFB82A" touchEnabled="false" y="18" bold="true" horizontalCenter="0"/>
+		<e:Label text="Tổng thuộc tính Đồ Giám" size="20" textColor="0xFFB82A" touchEnabled="false" y="18" bold="true" horizontalCenter="0"/>
 		<e:Label id="attrs" text="" size="18" textColor="0xDFD1B5" lineSpacing="10" touchEnabled="false" textAlign="left" y="149" width="200" horizontalCenter="-1"  height="184"/>
 	</e:Group>
 </e:Skin>

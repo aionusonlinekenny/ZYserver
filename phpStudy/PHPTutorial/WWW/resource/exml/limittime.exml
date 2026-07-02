@@ -27,7 +27,7 @@
 			<e:Button id="viewBtn" label="Xem Hỏa Phù" width="124" height="57" horizontalCenter="0" icon="btn3" top="245" skinName="SkinBtn3"/>
 			<e:Group width="287" height="180" top="57" horizontalCenter="132.5">
 			<e:Label text="火符套装效果（三角色时）" y="10" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-			<e:Label id="link2" text="1转" size="20" x="16" fontFamily="Microsoft YaHei" textColor="0xffff00" top="8" visible="false"/>
+			<e:Label id="link2" text="Chuyển sinh 1" size="20" x="16" fontFamily="Microsoft YaHei" textColor="0xffff00" top="8" visible="false"/>
 			<e:Label id="link13" text="火符套装效果" size="20" x="61" fontFamily="Microsoft YaHei" textColor="0xffff00" top="8" visible="false"/>
 			<e:Label id="link9" text="+400%" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" top="35" right="0" visible="false"/>
 			<e:Label id="link10" text="+40%" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" top="87" right="0" visible="false"/>
@@ -86,9 +86,9 @@
 		</e:Group>
 		<e:Group id="title1" height="25" horizontalCenter="0" top="2" x="70" y="3"  visible="false">
 			<e:Label text="Trọn bộ" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-			<e:Label text="1转" x="65" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="Chuyển sinh 1" x="65" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label text="火符，PK打怪无压力！" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-			<e:Label text="神罚加成" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="Cộng thêm Thần Phạt" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label text="带你飞！" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:layout>
 			<e:HorizontalLayout gap="0" verticalAlign="bottom"/>
@@ -96,7 +96,7 @@
 		</e:Group>
 		<e:Group id="title2" height="25" horizontalCenter="0" top="2" x="59" y="3"  visible="false">
 			<e:Label text="Trọn bộ" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-			<e:Label text="3转" x="65" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="Chuyển sinh 3" x="65" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label text="火符，神罚技能" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="UP" x="328" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label text="！体验一击制敌的快感！" size="21" x="22" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>

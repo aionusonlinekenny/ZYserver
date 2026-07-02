@@ -4,15 +4,15 @@
 	<e:Group id="anigroup" horizontalCenter="0" verticalCenter="0">
 		<e:Image id="background0" source="tongyongtip1" scale9Grid="7,6,11,12" left="0" right="0" top="0" bottom="0" x="-3" y="1" scaleX="1" scaleY="1"/>
 		<e:Image source="tongyongtip2" left="0" right="0" top="0" scale9Grid="18,18,2,4" bottom="0" scaleX="1" scaleY="1"/>
-		<e:Label text="参与奖" size="22" bold="true" x="10" y="18" scaleX="1" scaleY="1" textColor="0x00ff00"/>
+		<e:Label text="Thưởng tham gia" size="22" bold="true" x="10" y="18" scaleX="1" scaleY="1" textColor="0x00ff00"/>
 		<e:Group left="10" right="10" top="50" bottom="10">
-			<e:Label text="参与者同仙盟在场景内成员可获得：" size="18" bold="true" x="0" y="0" scaleX="1" scaleY="1" textColor="0x00ff00"/>
+			<e:Label text="Thành viên cùng Tiên Minh với người tham gia trong khu vực có thể nhận：" size="18" bold="true" x="0" y="0" scaleX="1" scaleY="1" textColor="0x00ff00"/>
 			<e:List id="belongReward" x="2" y="25" itemRendererSkinName="SkinItem" width="380" scaleX="0.8" scaleY="0.8">
 				<e:layout>
 					<e:TileLayout/>
 				</e:layout>
 			</e:List>
-			<e:Label text="参与者仙盟几率获得拍卖品：" size="18" bold="true" x="0" y="190" scaleX="1" scaleY="1" textColor="0xffff00"/>
+			<e:Label text="Tiên Minh của người tham gia có tỷ lệ nhận vật phẩm đấu giá：" size="18" bold="true" x="0" y="190" scaleX="1" scaleY="1" textColor="0xffff00"/>
 			<e:List id="saleReward" x="2" y="25" itemRendererSkinName="SkinItem" scaleX="0.8" scaleY="0.8" width="380">
 				<e:layout>
 				<e:TileLayout/>

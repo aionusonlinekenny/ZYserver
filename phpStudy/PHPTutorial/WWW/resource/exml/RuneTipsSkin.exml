@@ -7,10 +7,10 @@
 		<e:Image top="1" bottom="1" left="0" right="0" width="303"  height="340.67" source="tongyongtip1" scale9Grid="9,6,8,8"/>
 		<e:Image  source="tongyongtip2" scale9Grid="18,17,4,7" left="0" right="0" top="0" bottom="0"/>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" width="76" height="76" horizontalCenter="0" top="69"/>
-		<e:Label id="nameLabel" text="祝福 lv.1" size="22" horizontalCenter="0" textColor="0xc41200" top="20" fontFamily="Microsoft YaHei"/>
-		<e:Label id="attrDesc" text="攻击力  + 99999" size="18" width="275" y="200" textAlign="left" x="40" height="215" textColor="0xd1c28f" visible="false"/>
+		<e:Label id="nameLabel" text="Chúc Phúc lv.1" size="22" horizontalCenter="0" textColor="0xc41200" top="20" fontFamily="Microsoft YaHei"/>
+		<e:Label id="attrDesc" text="Lực công kích  + 99999" size="18" width="275" y="200" textAlign="left" x="40" height="215" textColor="0xd1c28f" visible="false"/>
 		<e:Label text="99999999"  size="20" x="245.33" y="61.67" textColor="0xc78563" bold="true" visible="false"/>
-		<e:Label id="backDesc" text="回收可获得            精华" size="18" x="120" y="60" bold="true" textColor="0xd1c28f" visible="false"/>
+		<e:Label id="backDesc" text="Thu hồi có thể nhận            Tinh Hoa" size="18" x="120" y="60" bold="true" textColor="0xd1c28f" visible="false"/>
 		<e:Group id="runeAttr" width="350" height="33" horizontalCenter="0" verticalCenter="26.5">
 			<e:Label id="attrName" text="闪避值" size="20"   x="101" y="1" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="attrValue" text="+15%" size="20"   x="193" y="1" fontFamily="Microsoft YaHei"/>

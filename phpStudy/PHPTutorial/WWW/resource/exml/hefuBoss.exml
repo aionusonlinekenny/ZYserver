@@ -12,13 +12,13 @@
 		<e:Image   scale9Grid="77,5,15,34" source="activity_headbg0_png" y="0" horizontalCenter="0" scaleY="1.1"/>
 		<e:Label text="Thời gian còn lại：" x="14" y="10" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" y="10" size="18" textColor="0x00FF00" fontFamily="Microsoft YaHei" left="104" width="422"/>
-		<e:Label id="actInfo" text="活动期间成功击杀BOSS可以获得BOSS礼包。" x="104" y="50" size="18" width="422" left="104" fontFamily="Microsoft YaHei" textColor="0xffffff" height="54"/>
+		<e:Label id="actInfo" text="Trong thời gian sự kiện tiêu diệt thành công BOSS sẽ nhận được Gói Quà BOSS." x="104" y="50" size="18" width="422" left="104" fontFamily="Microsoft YaHei" textColor="0xffffff" height="54"/>
 		<e:Label text="Mô tả sự kiện：" x="14" y="50" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 
 		<e:Button id="goBtn" label="Đi tiêu diệt" skinName="SkinBtn1" horizontalCenter="-113" bottom="20"/>
 		<e:Label id="time" text="7月1日 20:30 开启" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" y="175" x="54"/>
-		<e:Label id="successBtn" text="已击杀" size="26" horizontalCenter="0" bottom="45" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
+		<e:Label id="successBtn" text="Đã tiêu diệt" size="26" horizontalCenter="0" bottom="45" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian"   horizontalCenter="-34" bottom="70" visible="false"/>
 
 

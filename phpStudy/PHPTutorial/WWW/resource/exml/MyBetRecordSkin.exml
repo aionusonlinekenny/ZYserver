@@ -11,8 +11,8 @@
 			<e:Image scaleX="-1" top="0" bottom="0" source="bantoumingkuang3" right="0"/>
 		</e:Group>
 		<e:Group width="419" horizontalCenter="0" top="60" anchorOffsetY="0" height="38.5">
-			<e:Label text="场次" size="20" horizontalCenter="-127.5" textColor="0x1b3046" fontFamily="Microsoft YaHei" verticalCenter="0"/>
-			<e:Label text="下注详情" size="20" verticalCenter="0" horizontalCenter="76.5" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
+			<e:Label text="Trận đấu" size="20" horizontalCenter="-127.5" textColor="0x1b3046" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+			<e:Label text="Chi tiết đặt cược" size="20" verticalCenter="0" horizontalCenter="76.5" fontFamily="Microsoft YaHei" textColor="0x1b3046"/>
 		</e:Group>
 		<e:Scroller id="scrollerList" scrollPolicyH="off" scaleX="1" scaleY="1" height="327" width="406" verticalCenter="-10.5" horizontalCenter="1" anchorOffsetY="0">
 			<e:List id="list" x="-3" y="30" itemRendererSkinName="SkinMyBetRecordItem">
@@ -22,7 +22,7 @@
 			</e:List>
 		</e:Scroller>
 		<e:Label size="22" text="Cược của tôi" horizontalCenter="0" fontFamily="Microsoft YaHei" top="6" textColor="0x084151"/>
-		<e:Label id="infoLabel" text="您已下注5场比赛 下注总额：600000筹码  损失：30000筹码" size="20" horizontalCenter="9" bottom="31" fontFamily="Microsoft YaHei" textColor="0x1b3046" anchorOffsetY="0" height="64" anchorOffsetX="0" width="398"/>
+		<e:Label id="infoLabel" text="Bạn đã đặt cược 5 trận Tổng cược：600000 chip  Thua：30000 chip" size="20" horizontalCenter="9" bottom="31" fontFamily="Microsoft YaHei" textColor="0x1b3046" anchorOffsetY="0" height="64" anchorOffsetX="0" width="398"/>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-31" x="75" y="646" scaleX="1" scaleY="1">
 		<e:Image height="40" horizontalCenter="0" scale9Grid="128,2,15,41" width="383" verticalCenter="0" source="bantoutiaobg"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="0"/>

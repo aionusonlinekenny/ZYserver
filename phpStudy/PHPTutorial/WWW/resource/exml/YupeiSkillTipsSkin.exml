@@ -9,7 +9,7 @@
 			<e:Image id="deter0" y="7" anchorOffsetX="0" anchorOffsetY="0" source="icon_deter" scaleX="1" scaleY="1" horizontalCenter="0"/>
 		</e:Group>
 		<e:Image source="yupei_wssh_png" x="20" y="20"/>
-		<e:Label id="content" text="每次攻击有10%概率触发，伤害提升1.5倍，暴击时触发疾风斩，简直爆炸！" size="18" textAlign="left" y="64" scaleX="1" scaleY="1" anchorOffsetX="0" right="20" left="110" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="content" text="Mỗi lần tấn công có 10% tỷ lệ kích hoạt, tăng 1.5 lần sát thương, khi bạo kích sẽ kích hoạt Tật Phong Trảm, cực kỳ mạnh!" size="18" textAlign="left" y="64" scaleX="1" scaleY="1" anchorOffsetX="0" right="20" left="110" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-44" x="40" y="533" scaleX="1" scaleY="1">
 			<e:Image source="bantoutiaobg" height="34" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="5" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>

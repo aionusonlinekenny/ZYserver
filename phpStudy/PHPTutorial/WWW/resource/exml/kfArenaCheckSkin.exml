@@ -6,9 +6,9 @@
 		<e:Image source="tongyongkuang3tou" left="0" right="0" scale9Grid="72,18,264,29"/>
 		<e:Label id="title" size="24" text="Thông báo"     horizontalCenter="0" y="11" bold="true" textColor="0xbd600d"/>
 		<e:Label id="powerLab" text="Chiến lực：999999" x="240" y="77" size="18" textColor="0x9f946d"/>
-		<e:Label id="nameLab" text="名字名字什么" x="114" y="77" size="18" textColor="0x9f946d"/>
+		<e:Label id="nameLab" text="Tên tên gì đó" x="114" y="77" size="18" textColor="0x9f946d"/>
 		<e:Label id="winRateLab" text="Tỷ lệ thắng： 0" x="240" y="120" size="18" textAlign="left" textColor="0x9F946D"/>
-		<e:Label id="scoreLab" text="积分： 0" x="114" y="120" size="18" textColor="0x9F946D"/>
+		<e:Label id="scoreLab" text="Điểm： 0" x="114" y="120" size="18" textColor="0x9F946D"/>
 		<e:Image id="face" source="head_11" x="30" width="60" height="60" verticalCenter="-46"/>
 		<e:Image id="headBG" x="25" source="touxiangkuang0" width="70" height="70" scale9Grid="6,6,1,1" verticalCenter="-46"/>
 

@@ -9,7 +9,7 @@
 <!--	<e:Image id="month" source="yk_07" x="289" scaleX="0.8" scaleY="0.8" verticalCenter="-0.3999999999999986"/>
 	<e:Image id="vipTitle" source="rank_2" x="248" width="14" height="19" scaleX="0.9" scaleY="0.9" y="23"/>-->
 	<e:Label id="pos" text="100" size="36" textAlign="center" verticalCenter="0" horizontalCenter="-192" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-	<e:Label id="player" text="战力排行名字" size="20" verticalCenter="1" fontFamily="Microsoft YaHei" horizontalCenter="-39" textAlign="left" textColor="0x213847"/>
+	<e:Label id="player" text="Tên xếp hạng chiến lực" size="20" verticalCenter="1" fontFamily="Microsoft YaHei" horizontalCenter="-39" textAlign="left" textColor="0x213847"/>
 	<e:Image id="t1" source="paihang2" horizontalCenter="-190" verticalCenter="1"/>
 	<e:Image id="t10" rotation="0" source="phb_9" right="30" verticalCenter="0" height="50" visible="false"/>
 	<e:Image id="vip" source="xvip_v2_png" verticalCenter="0" horizontalCenter="-129.5" height="22" width="35"/>

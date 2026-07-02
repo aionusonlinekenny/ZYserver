@@ -7,7 +7,7 @@
 		<e:Label id="nameLabel" text="法宝资质丹" size="20" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="20" top="20"/>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" left="20" top="52"/>
 		<e:Label id="num" text="9" size="20" x="180" y="90" bold="true" textColor="0xFFD9B5" visible="false"/>
-		<e:Label text="当前使用：" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="100" top="66"/>
+		<e:Label text="Đang sử dụng：" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="100" top="66"/>
 		<e:Label id="use" text="" size="20" fontFamily="Microsoft YaHei" left="200" top="66" textColor="0xffffff"/>
 		<e:Group id="info" left="100" top="100">
 			<e:Label text="（法宝达到" size="16" x="0" y="0" textColor="0xFF0000" fontFamily="Microsoft YaHei"/>
@@ -21,7 +21,7 @@
 		<e:Label text="使用后法宝属性：" size="18" width="320" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="20" top="149"/>
 		<e:Label id="attr" text="" size="18" width="320" lineSpacing="7" top="175" bottom="51" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="20" anchorOffsetY="0" verticalAlign="top" height="113"/>
 		<e:Group bottom="20" left="20">
-			<e:Label text="可在" size="18" y="0" textAlign="left" x="81" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label text="Có thể ở" size="18" y="0" textAlign="left" x="81" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label text="法宝" size="18" y="10" textAlign="left" x="81" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
 			<e:Label text="界面使用为法宝提升属性" size="18" y="20" textAlign="left" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:layout>
