@@ -37,7 +37,7 @@
 				<e:Label id="attr1" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr2" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr3" y="100" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label y="125" text="神圣伤害：神圣精通：" size="18" verticalAlign="justify" x="22" textAlign="left" width="90" lineSpacing="7"  text.noSpirit1="Sát thương Thần Thánh：" text.doSpirit1="Sát thương Thần Thánh：" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="125" text="Sát thương Thần Thánh：Tinh Thông Thần Thánh：" size="18" verticalAlign="justify" x="22" textAlign="left" width="90" lineSpacing="7"  text.noSpirit1="Sát thương Thần Thánh：" text.doSpirit1="Sát thương Thần Thánh：" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label id="attr4" y="125" text="" size="18" verticalAlign="justify" x="112" textAlign="left"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr5" y="150" text="" size="18" verticalAlign="justify" x="112" textAlign="left"  includeIn="noSpirit0,doSpirit0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="soulAddAttr0" y="25" text="" size="18" verticalAlign="justify" x="237" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
@@ -49,7 +49,7 @@
 			</e:Group>
 			<e:Group id="spiritGroup" x="-2" y="132"   includeIn="doSpirit0,doSpirit1">
 				<e:Group>
-				<e:Label y="0" text="附灵" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label y="0" text="Phụ Linh" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 				<e:Label id="spiritLv" y="0" text="" size="18" x="40"   fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 				<e:Label id="spiritCost" y="10" text="" size="18" x="50"   includeIn="noSpirit0,doSpirit0,noSpirit1,doSpirit1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
@@ -73,18 +73,18 @@
 					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
 				</e:layout>
 				</e:Group>
-				<e:Label id="suitState" y="25" text="属性" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="suitState" y="25" text="Thuộc tính" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label id="attrDesc" y="50" text="Công kích：Sinh lực：Kháng vật lý：Kháng phép：" size="18" verticalAlign="justify" x="22" textAlign="left" width="54" lineSpacing="7"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 				<e:Label id="attr12" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 				<e:Label id="attr13" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr14" y="100" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr15" y="125" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label id="attrDesc1" y="150" text="神罚伤害减免：" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label id="attrDesc1" y="150" text="Giảm sát thương Thần Phạt：" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label id="attr16" y="150" text="" size="18" verticalAlign="justify" x="148" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0x00ff00" text.doSpirit1="3%"/>
 			</e:Group>
 			<e:Group id="chainGroup" x="18" y="152">
 				<e:Group>
-				<e:Label id="chainName" y="0" text="【灵魂锁链" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="chainName" y="0" text="【Linh Hồn Tỏa Liên" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 					<e:Label id="chainLv" y="10" text="" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
@@ -103,13 +103,13 @@
 			</e:Group>
 			<e:Group id="soulGroup" x="28" y="162">
 				<e:Group>
-				<e:Label id="soulName" y="0" text="【魔化" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="soulName" y="0" text="【Ma Hóa" size="20" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="soulLv" y="10" text="" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
 				</e:layout>
 				</e:Group>
-				<e:Label y="25" text="       为当前部位注入上古魔魂，提升基础属性至" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" width="279" fontFamily="Microsoft YaHei" textColor="0xbe79ff"/>
+				<e:Label y="25" text="       Truyền Thượng Cổ Ma Hồn vào bộ phận hiện tại, tăng thuộc tính cơ bản lên" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" width="279" fontFamily="Microsoft YaHei" textColor="0xbe79ff"/>
 				<e:Label id="soulAttr" y="50" text="550%" size="18" verticalAlign="justify" x="133" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0xbe79ff"/>
 			</e:Group>
 			<e:layout>

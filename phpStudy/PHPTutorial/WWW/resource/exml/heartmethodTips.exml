@@ -11,7 +11,7 @@
 		<e:Image scale9Grid="1,355,393,157" horizontalCenter="0" source="heartmethodbookbg_png" verticalCenter="0"/>
 
 
-		<e:Label id="nameLabel" text="无影·上篇" size="30" textAlign="left" top="10" y="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xff0000"/>
+		<e:Label id="nameLabel" text="Vô Ảnh·Thượng Thiên" size="30" textAlign="left" top="10" y="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xff0000"/>
 			<e:Group width="344" height="60" id="starGroup" scaleX="0.8" scaleY="0.8" horizontalCenter="0" top="47"/>
 		<e:Image y="288" width="340" x="5" source="longhuntextbg"/>
 			<e:Group id="ModelGroup"  horizontalCenter="0" verticalCenter="-113">
@@ -21,7 +21,7 @@
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="34"/>
 		<e:Group horizontalCenter="0" verticalCenter="114">
 			<e:Group y="0" width="325" horizontalCenter="0" x="0" height="116">
-			<e:Label id="attr" text="生       命：\n攻       击：\n物       防：\n魔       防：" size="20" verticalAlign="justify" x="41" textAlign="left" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+			<e:Label id="attr" text="Sinh       lực：\nCông       kích：\nPhòng       vật：\nPhòng       phép：" size="20" verticalAlign="justify" x="41" textAlign="left" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
 			<e:Label id="value" text="+1000\n+2000\n+3000\n+4000" size="20" verticalAlign="justify" x="141" textAlign="left" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 
@@ -32,7 +32,7 @@
 			<e:Image source="tongyongline" y="117" width="289" horizontalCenter="0" scale9Grid="109,0,12,3" height="1"/>
 			</e:Group>
 			<e:Group y="120" width="325" horizontalCenter="0" x="0" height="30">
-			<e:Label id="cost" y="-10" text="消耗 xxx x1" size="20" x="8" fontFamily="Microsoft YaHei" textColor="0x00ffff" verticalAlign="middle" textAlign="left"/>
+			<e:Label id="cost" y="-10" text="Tiêu hao xxx x1" size="20" x="8" fontFamily="Microsoft YaHei" textColor="0x00ffff" verticalAlign="middle" textAlign="left"/>
 
 
 

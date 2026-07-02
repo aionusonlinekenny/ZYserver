@@ -2,8 +2,8 @@
 <e:Skin class="SkinOrangeEquipNotice" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="337" height="97">
 	<e:Group x="0" y="0" width="337" height="97">
 		<e:Image horizontalCenter="0" verticalCenter="0" alpha="0.8" source="wupingkuangnb3" width="337" height="97" scale9Grid="34,15,22,68"/>
-		<e:Label id="itemName" text="橙色装备名称" size="20" textAlign="left" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" textColor="0xffffff" left="119"/>
-		<e:Label id="desc" text="传说物品！" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" top="26" horizontalCenter="3.5" visible="false"/>
+		<e:Label id="itemName" text="Tên trang bị Cam" size="20" textAlign="left" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" textColor="0xffffff" left="119"/>
+		<e:Label id="desc" text="Vật phẩm Truyền Thuyết!" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" top="26" horizontalCenter="3.5" visible="false"/>
 		<e:Image alpha="0.8" width="73" height="73" scale9Grid="34,15,22,68" left="33" source="jinengkuang" verticalCenter="0.5"/>
 		<ns1:ItemBase id="item" skinName="SkinItem" scaleY="1" verticalCenter="0.5" left="34.5" width="69" height="69"/>
 	</e:Group> 

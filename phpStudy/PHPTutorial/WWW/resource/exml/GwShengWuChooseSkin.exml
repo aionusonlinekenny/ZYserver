@@ -19,7 +19,7 @@
 		</e:Scroller>
 
 
-		<e:Label id="tipLabel2" text="没有可镶嵌的圣物" horizontalCenter="0" verticalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="tipLabel2" text="Không có Thánh Vật nào để khảm" horizontalCenter="0" verticalCenter="0" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Button id="btnClose" label="Button" x="456" y="-1" skinName="SkinBtn0" icon="tongyong_btnclose"/>
 
 	</e:Group>

@@ -7,11 +7,11 @@
 
 
 
-		<e:Label id="jieduan" text="一阶" y="4" size="20" x="8" fontFamily="Microsoft YaHei" textColor="0xffb400" verticalAlign="middle"/>
-		<e:Label text="套装件数：" x="60" y="4" size="20" fontFamily="Microsoft YaHei" textColor="0xffb400" verticalAlign="middle"/>
+		<e:Label id="jieduan" text="Bậc 1" y="4" size="20" x="8" fontFamily="Microsoft YaHei" textColor="0xffb400" verticalAlign="middle"/>
+		<e:Label text="Số món trong bộ：" x="60" y="4" size="20" fontFamily="Microsoft YaHei" textColor="0xffb400" verticalAlign="middle"/>
 		<e:Label id="num" text="3" x="160" y="4" size="20" fontFamily="Microsoft YaHei" textColor="0xffb400" verticalAlign="middle"/>
 		<e:Label id="suitNum" text="2/3" x="192" y="4" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
-		<e:Label id="activated" text="已集齐" y="3" size="22"   fontFamily="Microsoft YaHei" horizontalCenter="136.5" textAlign="center" textColor="0x00ff00"/>
+		<e:Label id="activated" text="Đã sưu tầm đủ" y="3" size="22"   fontFamily="Microsoft YaHei" horizontalCenter="136.5" textAlign="center" textColor="0x00ff00"/>
 		<e:Label id="value0" text="" x="50" y="53" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="value1" text="" x="207" y="53" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="value2" text="" x="50" y="83" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>

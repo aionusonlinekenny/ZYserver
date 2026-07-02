@@ -15,11 +15,11 @@
 		<e:Label id="txt" text="" size="20" textColor="0xdfd1b5" verticalCenter="-239" horizontalCenter="0" textAlign="center" x="220" y="229"   visible="false"/>
 		<e:Button id="closeBtn" label="Thoát(10)" horizontalCenter="0" bottom="148" skinName="SkinBtn7" visible="false"/>
 		<e:Button id="closenoget" label="Thoát" horizontalCenter="130" bottom="148" skinName="SkinBtn7"/>
-		<e:Label id="noget" text="不领奖不扣次数" size="18" horizontalCenter="130" textAlign="center" x="240" fontFamily="Microsoft YaHei" textColor="0xffff00" y="806"/>
+		<e:Label id="noget" text="Không nhận thưởng sẽ không trừ lượt" size="18" horizontalCenter="130" textAlign="center" x="240" fontFamily="Microsoft YaHei" textColor="0xffff00" y="806"/>
 		<e:Button id="get" label="Nhận thưởng" horizontalCenter="-140" bottom="148" skinName="SkinBtn7"/>
 		<e:Image id="rank" horizontalCenter="0" y="278" scaleX="1.2" scaleY="1.2" source="godweapon_rank1_png"/>
 		<e:Image id="titleImg" horizontalCenter="28" y="0" source="labwin_png"/>
-		<e:Label id="timeTitle" text="消耗时间：" size="20" textAlign="center" x="100" y="386" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="timeTitle" text="Thời gian tiêu hao：" size="20" textAlign="center" x="100" y="386" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="time" text="" size="20" textAlign="left" x="206" y="386" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		<e:Label id="gaptime" text="" size="20" x="280" y="386" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Group id="listGroup" width="414"   anchorOffsetY="0" height="242" x="100" y="430">

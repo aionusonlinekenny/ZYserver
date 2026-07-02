@@ -6,7 +6,7 @@
 	<e:Group id="anigroup" horizontalCenter="0" verticalCenter="0">
 		<e:Image id="qualityImg" left="3" right="3"  source="tongyongtip1" scale9Grid="17,7,36,47" top="3" bottom="3"/>
 		<e:Image source="tongyongtip2" left="0" right="0" top="0"  bottom="0" scale9Grid="18,18,43,26"/>
-		<e:Label id="nameLabel" text="传奇之路套装加成" size="30"  horizontalCenter="0" y="25" fontFamily="Microsoft YaHei" textColor="0xfffc00"/>
+		<e:Label id="nameLabel" text="Cộng thêm Bộ Con Đường Huyền Thoại" size="30"  horizontalCenter="0" y="25" fontFamily="Microsoft YaHei" textColor="0xfffc00"/>
 		<e:List id="suitlist" width="385" itemRendererSkinName="SkinTuJianSuitItem" horizontalCenter="0" y="96">
 			<e:layout>
 			<e:VerticalLayout gap="5" paddingBottom="50" paddingTop="10"/>

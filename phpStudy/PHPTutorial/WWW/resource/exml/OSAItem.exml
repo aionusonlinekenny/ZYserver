@@ -14,7 +14,7 @@
 			</e:layout>
 		</e:List>
 		<e:Group anchorOffsetX="0" width="87.33" left.putong="232" y.putong="53" verticalCenter.putong="0" width.hefus="166" horizontalCenter.hefus="186" verticalCenter.hefus="-37">
-			<e:BitmapLabel id="num"  y="-1" text="累计充值11天" scaleX="0.9" scaleY="0.9" letterSpacing="-1" horizontalCenter="28.5" anchorOffsetX="0" textAlign="center"  font="num_chongzhi_fnt"/>
+			<e:BitmapLabel id="num"  y="-1" text="Nạp tích lũy 11 ngày" scaleX="0.9" scaleY="0.9" letterSpacing="-1" horizontalCenter="28.5" anchorOffsetX="0" textAlign="center"  font="num_chongzhi_fnt"/>
 			<e:layout>
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="1"/>
 			</e:layout>

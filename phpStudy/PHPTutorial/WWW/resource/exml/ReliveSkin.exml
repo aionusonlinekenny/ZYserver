@@ -5,7 +5,7 @@
 		<e:Group width="350" height="42" y="10" horizontalCenter="0">
 		<e:Label id="reliveTxt" text="Tự động hồi sinh" size="20" textColor="0x7E6437" x="152.99" y="22"/>
 		<e:Label id="reliveTimesTxt" text="180s" size="20" textColor="0xF8B141" x="105.66" y="22.34"/>
-		<e:Label id="killTips" text="您被干死了" y="0" textAlign="center" size="18" horizontalCenter="0" textColor="0xB5A592"/>
+		<e:Label id="killTips" text="Bạn đã bị tiêu diệt" y="0" textAlign="center" size="18" horizontalCenter="0" textColor="0xB5A592"/>
 		<e:Image source="gantanhao" x="50.83" y="-1.17"/>
 		</e:Group>
 		<e:Image source="shuxingbg2" y="-30.67" scale9Grid="52,18,15,7" width="170.33" horizontalCenter="-111"/>

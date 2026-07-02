@@ -2,8 +2,8 @@
 <e:Skin class="SkinDressItem" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" height="132" width="110">
 	<e:Image width="74" height="77" horizontalCenter="0" y="2" source="quality0"/>
 	<e:Image id="imgIcon" width="68" height="71" source="101001_png" horizontalCenter="0" y="5.33" anchorOffsetY="0"/>
-	<e:Label id="imageName" text="装扮名称" size="18" textAlign="center" horizontalCenter="0" bottom="29" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-	<e:Label id="timelabel" text="7天13时10分" size="18" horizontalCenter="0.5" bottom="7" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="center"/>
+	<e:Label id="imageName" text="Tên Trang Điểm" size="18" textAlign="center" horizontalCenter="0" bottom="29" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+	<e:Label id="timelabel" text="7 ngày 13 giờ 10 phút" size="18" horizontalCenter="0.5" bottom="7" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="center"/>
 	<e:Label id="levellabel" text="Cấp 1" size="18" textAlign="right" width="60" y="58" fontFamily="Microsoft YaHei" x="25" textColor="0xffffff"/>
 	<e:Image id="selectImage" width="87" height="88" source="xuanzekuang3" horizontalCenter="0.5" anchorOffsetY="0" y="-4" scale9Grid="20,20,5,5"/>
 	<e:Image id="redPoint0" source="zjmhongdian" y="1" x="72" visible="false"/>

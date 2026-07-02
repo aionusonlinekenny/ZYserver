@@ -39,7 +39,7 @@
 		</e:Scroller>
 		<e:Group id="timerGroup" horizontalCenter="161" x="393" scaleX="1" scaleY="1" bottom="57">
 			<e:Label id="info" text="5" y="8" textColor="0x00ff00" size="18" horizontalCenter="172" x="37" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei"/>
-			<e:Label text="秒退出聚灵" y="8" textColor="0x00FF00" size="18" horizontalCenter="172" x="37" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei"/>
+			<e:Label text="giây thoát Tụ Linh" y="8" textColor="0x00FF00" size="18" horizontalCenter="172" x="37" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 			<e:HorizontalLayout gap="1"/>
 			</e:layout>

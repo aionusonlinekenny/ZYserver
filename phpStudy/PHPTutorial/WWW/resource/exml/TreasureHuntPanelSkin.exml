@@ -50,7 +50,7 @@
 				</e:layout>
 			</e:Group>
 			<e:Button id="buy10" label="Tìm kho báu 10 lần" icon="btn1_2"  skinName="SkinBtn7" horizontalCenter="0" verticalCenter="8"/>
-			<e:Label text="必得神装" fontFamily="Microsoft YaHei" size="18" bottom="3" y="695"  horizontalCenter="0" bold="true" textColor="0xff0000" visible="false"/>
+			<e:Label text="Chắc chắn nhận Thần Trang" fontFamily="Microsoft YaHei" size="18" bottom="3" y="695"  horizontalCenter="0" bold="true" textColor="0xff0000" visible="false"/>
 			<e:Image source="bideshenzhuang_png" x="108.36" y="92"/>
 		</e:Group>
 		<e:Group width="280" height="115" bottom="0" left="20">

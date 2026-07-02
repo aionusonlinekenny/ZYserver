@@ -8,8 +8,8 @@
 		<e:Group width="588" horizontalCenter="0" height="164" y="563" x="40">
 			<e:Image width="580" horizontalCenter="0" top="0" height="164" source="tongyong_dikuang4" scale9Grid="9,6,64,65"/>
 			<e:Image width="230" height="50" y="-6" source="huabian" anchorOffsetX="0" scale9Grid="67,0,72,50" horizontalCenter="0"/>
-			<e:Label text="属性预览" y="19" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
-			<e:Label text="所有仙弓属性累加" y="130" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" horizontalCenter="0" textColor="0x00ff00"/>
+			<e:Label text="Xem trước thuộc tính" y="19" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0"/>
+			<e:Label text="Tổng cộng dồn thuộc tính Tiên Cung" y="130" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" horizontalCenter="0" textColor="0x00ff00"/>
 			<e:Group y="66" width="150" horizontalCenter="-102" height="20">
 			<e:Label id="attr0" text="" size="20" y="0" fontFamily="Microsoft YaHei" left="0" right="0" verticalAlign="middle" textColor="0xffffff"/>
 			</e:Group>
@@ -52,7 +52,7 @@
 			</e:layout>
 		</e:List>
 		</e:Scroller>
-		<e:Label id="nothingTips" text="该角色尚未激活仙弓之灵" size="24" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" y="462" visible="false"/>
+		<e:Label id="nothingTips" text="Nhân vật này chưa kích hoạt Tiên Cung Chi Linh" size="24" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" y="462" visible="false"/>
 		<e:Image id="nothingtrue" width="172" height="129" y="318" source="wpstai" horizontalCenter="0" visible="false"/>
 		<e:Image id="leftbtn0" source="jiantouxuan" horizontalCenter="-244.5" y="300"/>
 		<e:Image id="rightbtn0" source="jiantouxuan" scaleX="-1" horizontalCenter="244.5" y="300"/>

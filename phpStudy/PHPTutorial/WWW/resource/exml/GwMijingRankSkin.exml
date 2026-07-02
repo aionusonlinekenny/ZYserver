@@ -6,13 +6,13 @@
 		<e:Image id="titlebg" y="16" left="0" right="0"  source="tongyong_juanzhou" scale9Grid="207,0,73,23"/>
 		<e:Image width="249" height="41" source="tongyong_titlebg" horizontalCenter="0" top="0"/>
 		<e:Image width="532" height="554" y="52" source="tongyong_dikuang1" scale9Grid="10,10,64,66" horizontalCenter="0"/>
-		<e:Label id="title" text="秘境通关排行" size="20" y="14" horizontalCenter="0"  fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+		<e:Label id="title" text="Xếp hạng vượt ải Bí Cảnh" size="20" y="14" horizontalCenter="0"  fontFamily="Microsoft YaHei" textColor="0x39566a"/>
 		<e:Group y="56" width="520" height="41" horizontalCenter="0">
 			<e:Image id="titlebar" y="0" left="0" right="0"  source="pailietoubg2" scale9Grid="11,0,17,40"/>
 			<e:Label id="titlerank" text="Xếp hạng" size="20" y="11"  fontFamily="Microsoft YaHei" x="11" textColor="0x001828"/>
 			<e:Label id="titlename" text="Người thách đấu" size="20" y="11"  fontFamily="Microsoft YaHei" textColor="0x001828" x="138"/>
-			<e:Label id="titleStorey" text="S级通关层数" size="20" y="11"  fontFamily="Microsoft YaHei" textColor="0x001828" x="272"/>
-			<e:Label id="titletime" text="时间" size="20" y="11" fontFamily="Microsoft YaHei" textColor="0x001828" x="451"/>
+			<e:Label id="titleStorey" text="Số tầng vượt ải hạng S" size="20" y="11"  fontFamily="Microsoft YaHei" textColor="0x001828" x="272"/>
+			<e:Label id="titletime" text="Thời gian" size="20" y="11" fontFamily="Microsoft YaHei" textColor="0x001828" x="451"/>
 		</e:Group>
 		<e:Scroller width="520" height="498" y="98"   scrollPolicyH="off" anchorOffsetY="0" horizontalCenter="0">
 			<e:List id="list" width="520" height="460"   itemRendererSkinName="SkinGwMijingRankItem">

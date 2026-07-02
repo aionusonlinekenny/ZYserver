@@ -21,6 +21,6 @@
 
 	</e:Group>
 	<e:Label id="addNameLb" text="" y="116" size="18" horizontalCenter="0" textColor="0x00842c" fontFamily="Microsoft YaHei"/>
-	<e:Label text="圣物品级：" x="106" y="11" size="18" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label text="Phẩm cấp Thánh Vật：" x="106" y="11" size="18" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 	<e:Label id="quality" text="" x="193" y="11" size="18" fontFamily="Microsoft YaHei"/>
 </e:Skin>

@@ -5,7 +5,7 @@
 		<e:Image left="0" right="0" bottom="0" top="0" source="tongyongtip2" scale9Grid="12,15,37,33"/>
 		<e:Image left="2" right="2" top="2" bottom="2" source="tongyongtip1" scale9Grid="20,13,31,29"/>
 
-		<e:Label y="11" text="更新提醒" size="24" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label y="11" text="Nhắc cập nhật" size="24" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 
 
 		<e:Group horizontalCenter="0" bottom="-44">

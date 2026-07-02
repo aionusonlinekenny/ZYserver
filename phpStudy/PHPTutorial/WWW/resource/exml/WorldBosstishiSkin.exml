@@ -15,7 +15,7 @@
 			<e:Button id="giveUp" skinName="SkinBtn6" label="Hủy" width="130" height="50" x="0" y="0" icon="btn3_1"/>
 		</e:Group>
 		<e:Group y="120" horizontalCenter="0">
-			<e:Label id="tipsTxt" text="确定需要消耗" size="22" width="350" textAlign="center" textColor="0xc6bca9"/>
+			<e:Label id="tipsTxt" text="Xác nhận cần tiêu hao" size="22" width="350" textAlign="center" textColor="0xc6bca9"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

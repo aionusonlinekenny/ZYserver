@@ -4,8 +4,8 @@
 	<e:Group id="anigroup" width="500" horizontalCenter="0" touchEnabled="false" top="22" height="756">
 		<e:Image source="tongyongtip2" left="0" top="0" touchEnabled="false" right="0" bottom="0" scale9Grid="18,18,2,4"/>
 		<e:Image id="background" source="tongyongtip1" left="4" right="4" top="4" touchEnabled="false" bottom="4" scale9Grid="16,12,28,6"/>
-		<e:Label text="激活或提升战灵幻形：" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" top="285" left="30"/>
-		<e:Label id="itemname" text="东皇战魂" size="18" horizontalCenter="0" textColor="0xe40000" fontFamily="Microsoft YaHei" top="285"/>
+		<e:Label text="Kích hoạt hoặc nâng cấp Ảo Hình Chiến Linh：" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" top="285" left="30"/>
+		<e:Label id="itemname" text="Đông Hoàng Chiến Hồn" size="18" horizontalCenter="0" textColor="0xe40000" fontFamily="Microsoft YaHei" top="285"/>
 		<e:Group scaleX="1" scaleY="1" touchEnabled="false" touchChildren="true" top="311" left="15" right="15">
 			<e:Image scale9Grid="8,8,48,48" width="78" height="78" source="touxiangkuang" verticalCenter="0" left="18"/>
 			<e:Image id="skillIcon0" width="70" height="70" touchEnabled="true" source="yupei_skill_0" left="22" verticalCenter="0"/>

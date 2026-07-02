@@ -24,9 +24,9 @@
 				<ns1:ItemBase id="item4" y="0" skinName="SkinItem" right="100" scaleX="0.8" scaleY="0.8"/>
 				<e:Group id="tipsGroup" top="10" left="99" width="90">
 				<e:Group y="0" width="90" horizontalCenter="0">
-					<e:Label text="再提升" size="20" y="0" horizontalCenter="0" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+					<e:Label text="Tiếp tục nâng" size="20" y="0" horizontalCenter="0" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 					<e:Label id="targetLevel" text="1" size="20" y="0" horizontalCenter="12" textAlign="center" textColor="0x00ff00" x="43" fontFamily="Microsoft YaHei"/>
-					<e:Label text="层" size="20" y="10" horizontalCenter="0" textAlign="center" x="10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+					<e:Label text="tầng" size="20" y="10" horizontalCenter="0" textAlign="center" x="10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 					<e:layout>
 					<e:HorizontalLayout gap="0" horizontalAlign="center"/>
 					</e:layout>
@@ -73,12 +73,12 @@
 
 
 			<e:Image includeIn="nomax" source="jueweiattr" top="366" left="148"/>
-			<e:Label text="消耗历练：" top="396" fontFamily="Microsoft YaHei" left="8" textColor="0xffffff" size="20" includeIn="nomax"/>
+			<e:Label text="Tiêu hao Lịch Luyện：" top="396" fontFamily="Microsoft YaHei" left="8" textColor="0xffffff" size="20" includeIn="nomax"/>
 			<e:Group width="591" height="38" includeIn="nomax,max" top="448" horizontalCenter.max="0" horizontalCenter="0" top.max="448" top.nomax="448">
 
-			<e:Label text="任务名称" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" left="41"/>
-				<e:Label text="次数" x="200" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-				<e:Label text="单次奖励" x="331" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="Tên nhiệm vụ" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" left="41"/>
+				<e:Label text="Số lần" x="200" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label text="Thưởng mỗi lần" x="331" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="Thao tác" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" right="50"/>
 
 

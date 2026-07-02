@@ -18,7 +18,7 @@
 		<e:Label text="Thưởng thách đấu：" y="586" fontFamily="Microsoft YaHei" size="20" x="106"/>
 		<e:Button id="sureBtn" label="Nhận thưởng" width="213" horizontalCenter="0" y="690" skinName="SkinBtn7" height="67"/>
 		<e:Group id="upStar" width="237" height="50" y="498"   x="106">
-			<e:Label text="星级奖励：" x="0" y="17" size="20" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Thưởng cấp sao：" x="0" y="17" size="20" fontFamily="Microsoft YaHei"/>
 			<ns1:LadderStarView id="star1" x="96" y="4" skinName="SkinLadderSrat"/>
 			<ns1:LadderStarView id="star2" x="136" y="4" skinName="SkinLadderSrat"/>
 		</e:Group>

@@ -8,8 +8,8 @@
 			<e:Image horizontalCenter="0" source="login_reward_des_jpg" top="-3" includeIn="cost"/>
 			<e:Group left="22" anchorOffsetX="0" left.default="15" y.cost="65.5" left.cost="22" verticalCenter.default="0">
 				<e:Label text="Thời gian còn lại:" size="18" scaleX="1" scaleY="1" left="0" top="0" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" size.default="20"/>
-				<e:Label id="actTime0" text="6 ngày 23 giờ 10 phút" size="18" scaleX="1" scaleY="1" top="0" left="90" textColor="0x00FF00" fontFamily="Microsoft YaHei" textColor.default="0x00ff00" size.default="20" text.default="200级"/>
-				<e:Label id="actInfo0" text="                 Hoàn thành nhiệm vụ sự kiện trong 7 ngày kể từ khi mở sự kiện để tích điểm và giành giải thưởng lớn " x="63" y="-14" size="18" width="356" top="21" left="1" scaleX="1" scaleY="1" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" lineSpacing="4" size.default="20" left.default="89" top.default="28" width.default="428.5" text.default="开服活动期间，达到指定等级可领取对应奖励" text.cost="                 活动期间，消费满足要求上榜后可获得对应珍稀奖励"/>
+				<e:Label id="actTime0" text="6 ngày 23 giờ 10 phút" size="18" scaleX="1" scaleY="1" top="0" left="90" textColor="0x00FF00" fontFamily="Microsoft YaHei" textColor.default="0x00ff00" size.default="20" text.default="Cấp 200"/>
+				<e:Label id="actInfo0" text="                 Hoàn thành nhiệm vụ sự kiện trong 7 ngày kể từ khi mở sự kiện để tích điểm và giành giải thưởng lớn " x="63" y="-14" size="18" width="356" top="21" left="1" scaleX="1" scaleY="1" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" anchorOffsetX="0" lineSpacing="4" size.default="20" left.default="89" top.default="28" width.default="428.5" text.default="Trong thời gian sự kiện mở server, đạt cấp chỉ định sẽ nhận thưởng tương ứng" text.cost="                 Trong thời gian sự kiện, tiêu đủ yêu cầu để lên bảng xếp hạng sẽ nhận thưởng quý hiếm tương ứng"/>
 				<e:Label text="Mô tả sự kiện: " size="18" scaleX="1" scaleY="1" left="0" top="21" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" textColor.default="0xffff00" size.default="20" left.default="0" top.default="28"/>
 			</e:Group>
 		</e:Group>
@@ -24,7 +24,7 @@
 
 
 			<e:Group verticalCenter="0" horizontalCenter="0" horizontalCenter.cost="-39.5" verticalCenter.cost="-5">
-				<e:Label id="attr" text="Tổng điểm trang bị của tôi：" size="22" x="-7" scaleX="1" scaleY="1" verticalCenter="0.5" y="-12" fontFamily="Microsoft YaHei" textColor="0xffffff" size.cost="20" textColor.cost="0xffff00" text.cost="我的消费:   "/>
+				<e:Label id="attr" text="Tổng điểm trang bị của tôi：" size="22" x="-7" scaleX="1" scaleY="1" verticalCenter="0.5" y="-12" fontFamily="Microsoft YaHei" textColor="0xffffff" size.cost="20" textColor.cost="0xffff00" text.cost="Tiêu dùng của tôi:   "/>
 				<e:Label id="myAttrValue" text="30" size="22" x="163" scaleX="1" scaleY="1" verticalCenter="0.5" y="-12" fontFamily="Microsoft YaHei" textColor="0x00ff00" textColor.cost="0xffff00" size.cost="20"/>
 				<e:layout>
 					<e:HorizontalLayout gap="0" verticalAlign="middle"/>

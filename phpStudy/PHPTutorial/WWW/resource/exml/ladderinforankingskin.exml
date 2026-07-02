@@ -9,13 +9,13 @@
 		<e:Image     width="488" height="640" source="tongyong_dikuang2" scale9Grid="29,5,67,64" horizontalCenter="0" bottom="0" anchorOffsetY="0"/>
 		<e:Image y="16" left="0" right="0" source="tongyong_juanzhou" scale9Grid="74,0,265,23"/>
 		<e:Image width="249" height="41" horizontalCenter="0" source="tongyong_titlebg" y="0"/>
-		<e:Label id="titleDesc" y="14" text="本周排名" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label id="titleDesc" y="14" text="Xếp hạng tuần này" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Image y="50" width="420" horizontalCenter="0" source="tongyong_dikuang1" height="553" scale9Grid="8,11,65,30"/>
 
 
 		<e:Label y="63" text="Xếp hạng" size="20" x="72" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Label y="63" text="Tên nhân vật" size="20" x="228" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-		<e:Label y="63" text="净胜场" size="20" x="366" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label y="63" text="Số trận thắng ròng" size="20" x="366" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Scroller width="406" height="492" y="96"  horizontalCenter="0" anchorOffsetY="0">
 		<e:List id="list" x="-3" y="30" itemRendererSkinName="SkinTiantiRankItem" width="406">
 			<e:layout>
@@ -24,8 +24,8 @@
 		</e:List>
 		</e:Scroller>
 
-		<e:Label id="rankDesc" text="我的战绩:" x="38" y="622" size="20" rotation="359.95" textColor="0xffffff" fontFamily="Microsoft YaHei" stroke="0.2"/>
-		<e:Label id="myRank" text="排名：100" y="622" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0.2"/>
+		<e:Label id="rankDesc" text="Chiến tích của tôi:" x="38" y="622" size="20" rotation="359.95" textColor="0xffffff" fontFamily="Microsoft YaHei" stroke="0.2"/>
+		<e:Label id="myRank" text="Xếp hạng：100" y="622" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0.2"/>
 		<e:Label id="WinNum" text="" y="622" size="20" x="329" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0.2"/>
 
 

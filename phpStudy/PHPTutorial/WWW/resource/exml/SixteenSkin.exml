@@ -2,7 +2,7 @@
 <e:Skin class="SkinSixteen" width="600" height="728" currentState="kf" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="bf,kf_four,kf" >
 	<e:Group id="sixteenGroup" top="0" bottom="0" width="600" horizontalCenter="0">
 		<e:Image source="peakness_bg_png" horizontalCenter="0" verticalCenter="-13"/>
-		<e:Label id="singleTimeInfoLabel" text="12月12日（周日）21:00 16进8第2场" size="20" textAlign="center" horizontalCenter.kf_four="0.5" y.kf_four="561" horizontalCenter="0" bottom="160" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="singleTimeInfoLabel" text="21:00 ngày 12/12（Chủ nhật） Trận 2 vòng 16 vào 8" size="20" textAlign="center" horizontalCenter.kf_four="0.5" y.kf_four="561" horizontalCenter="0" bottom="160" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 		<e:Image id="competition_name" source="peakness_type_single" horizontalCenter="0" horizontalCenter.bf="0" includeIn="bf,kf" source.kf="peakness_type_final" horizontalCenter.kf="0" y="683" y.bf="683"/>
 		
 		<e:Group id="content" horizontalCenter="0" width="600" verticalCenter="-88">
@@ -230,7 +230,7 @@
 				<e:Rect width="100" height="98" horizontalCenter="0" verticalCenter="8" strokeColor="0x143445" fillColor="0x143445"/>
 				<e:Image id="championFace" source="head_11" width="103" height="98" horizontalCenter="0" verticalCenter="8"/>
 				<e:Image source="peakness_champion_kuang" verticalCenter="8.8" horizontalCenter="0"/>
-				<e:Label id="championNameLabel" text="布拉格の地狱" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="0"/>
+				<e:Label id="championNameLabel" text="VươngGiả·ĐịaNgục" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="0"/>
 			</e:Group>
 		</e:Group>
 		<e:Group id="groupMatch" includeIn="kf_four" horizontalCenter="0" bottom="5" width="402" height="97">
@@ -254,28 +254,28 @@
 					</e:layout>
 				</e:Group>
 				<e:Group x="61" y="0" width="120" height="97">
-					<e:Label text="第2局" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
+					<e:Label text="Ván 2" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
 					<e:Label id="gameTime2Txt" x="20" y="55" size="20" fontFamily="Microsoft YaHei" textColor="0xdaffff" textAlign="center"/>
 					<e:layout>
 						<e:BasicLayout/>
 					</e:layout>
 				</e:Group>
 				<e:Group x="122" y="0" width="120" height="97">
-					<e:Label text="第3局" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
+					<e:Label text="Ván 3" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
 					<e:Label id="gameTime3Txt" x="20" y="55" size="20" textColor="0xdaffff" fontFamily="Microsoft YaHei" textAlign="center"/>
 					<e:layout>
 						<e:BasicLayout/>
 					</e:layout>
 				</e:Group>
 				<e:Group x="183" y="0" width="120" height="97">
-					<e:Label text="第4局" x="30" y="25" size="22" fontFamily="Microsoft YaHei" textColor="0xdaffff"/>
+					<e:Label text="Ván 4" x="30" y="25" size="22" fontFamily="Microsoft YaHei" textColor="0xdaffff"/>
 					<e:Label id="gameTime4Txt" x="20" y="55" size="20" fontFamily="Microsoft YaHei" textColor="0xdaffff" textAlign="center"/>
 					<e:layout>
 						<e:BasicLayout/>
 					</e:layout>
 				</e:Group>
 				<e:Group x="244" y="0" width="120" height="97">
-					<e:Label text="第5局" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
+					<e:Label text="Ván 5" x="30" y="25" size="22" textColor="0xdaffff" fontFamily="Microsoft YaHei"/>
 					<e:Label id="gameTime5Txt" x="20" y="55" size="20" fontFamily="Microsoft YaHei" textColor="0xdaffff" textAlign="center"/>
 					<e:layout>
 						<e:BasicLayout/>

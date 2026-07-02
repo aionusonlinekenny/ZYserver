@@ -28,14 +28,14 @@
 		</e:Scroller>
 		<e:Group y.quicly="119" y.tejie8="119" horizontalCenter="-60" top="10" width="340" height="39" includeIn="disable,wait,open">
 		<e:Image bottom="0" source="diwen6" horizontalCenter="0"/>
-		<e:Label id="ringname" size="24" x="71" horizontalCenter="0" top="5" textColor="0x001828" verticalAlign="middle" textAlign="center" text="灵宠的名字" fontFamily="Microsoft YaHei"/>
+		<e:Label id="ringname" size="24" x="71" horizontalCenter="0" top="5" textColor="0x001828" verticalAlign="middle" textAlign="center" text="Tên Linh Thú" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group id="attrGroup" width="600" height="266" horizontalCenter="0" includeIn="open" verticalCenter="183" visible="false">
 		<e:Image id="attrBg" source="yuyitongyongbg2" left="0" right="0" top="0" bottom="0"/>
 		<e:Image width="597" height="26" source="shuxingbiankuang_png" horizontalCenter="0.5" top="-16"/>
 		<e:Label id="Explain" text="3 nhân vật Song Kháng+300, Song Kháng+1%" size="20" width="400" horizontalCenter="0" verticalAlign="middle" textAlign="center" height="30.67" fontFamily="Microsoft YaHei" anchorOffsetY="0" top="52" textColor="0x001828"/>
-		<e:Label id="attrLabel" size="20" height="120" width="174" text="攻击:00000\n攻击:00000\n攻击:00000\n攻击:00000" verticalAlign="top" verticalCenter="33" wordWrap="true" multiline="true" fontFamily="Microsoft YaHei" horizontalCenter="-67" textColor="0x001828"/>
-		<e:Label id="nextAttrLabel" size="20" height="120" width="177" text="法抗：00000 000000000000000" verticalAlign="top" verticalCenter="33" multiline="true" wordWrap="true" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="118.5"/>
+		<e:Label id="attrLabel" size="20" height="120" width="174" text="Công kích:00000\nCông kích:00000\nCông kích:00000\nCông kích:00000" verticalAlign="top" verticalCenter="33" wordWrap="true" multiline="true" fontFamily="Microsoft YaHei" horizontalCenter="-67" textColor="0x001828"/>
+		<e:Label id="nextAttrLabel" size="20" height="120" width="177" text="Kháng phép：00000 000000000000000" verticalAlign="top" verticalCenter="33" multiline="true" wordWrap="true" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="118.5"/>
 		<e:Image id="arrows" source="jiantouyou" horizontalCenter="-6" verticalCenter="0" width="30" height="40" visible="false"/>
 		<e:Image id="arrowsup" x="227" source="tongyongup" verticalCenter="-29" visible="false"/>
 		<e:Image x="227" id="arrowsup0" source="tongyongup" verticalCenter="-10" visible="false"/>
@@ -47,23 +47,23 @@
 		<e:Group width="456" includeIn="disable,wait" horizontalCenter="-65" height="260" bottom="0">
 		<e:Image id="attrBg0" includeIn="disable,wait" source="tongyong_dikuang4" scale9Grid="10,10,60,60" width="456" horizontalCenter="0" height="170" top="0"  />
 
-		<e:Label id="attrLabel0" size="20" width.open="136" width.disable="136" text="攻击:00000 \n攻击:00000\n攻击:00000\n攻击:00000" verticalAlign.open="middle" verticalAlign.disable="middle" horizontalCenter="0" text.wait="攻击:00000  攻击:00000\n攻击:00000 攻击:00000" verticalCenter.wait="0" verticalCenter.disable="0" anchorOffsetX.wait="0" horizontalCenter.wait="0" top="67" anchorOffsetX="0" width="312.99" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
-		<e:Label id="attrLabel1" text="攻击+123" size="20" x.open="80" y.disable="12" x.disable="138" y.wait="16" verticalCenter="-17" fontFamily="Microsoft YaHei" anchorOffsetX="0" textAlign="left" textColor="0xffffff"  left="80"/>
-		<e:Label id="attrLabel2" text="物抗+123" size="20" x.disable="325" y.disable="12" y.wait="42" verticalCenter="7" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xffffff"   left="80"/>
-		<e:Label id="attrLabel3" text="法抗+123" size="20" x.disable="63" y.disable="29" y.wait="16" verticalCenter="-17" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xffffff"  left="285"/>
-		<e:Label id="attrLabel4" text="生命+123" size="20" x.disable="450" y.disable="-47" y.wait="42" fontFamily="Microsoft YaHei" textAlign="left" verticalCenter="7" textColor="0xffffff"  left="285"/>
+		<e:Label id="attrLabel0" size="20" width.open="136" width.disable="136" text="Công kích:00000 \nCông kích:00000\nCông kích:00000\nCông kích:00000" verticalAlign.open="middle" verticalAlign.disable="middle" horizontalCenter="0" text.wait="Công kích:00000  Công kích:00000\nCông kích:00000 Công kích:00000" verticalCenter.wait="0" verticalCenter.disable="0" anchorOffsetX.wait="0" horizontalCenter.wait="0" top="67" anchorOffsetX="0" width="312.99" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+		<e:Label id="attrLabel1" text="Công kích+123" size="20" x.open="80" y.disable="12" x.disable="138" y.wait="16" verticalCenter="-17" fontFamily="Microsoft YaHei" anchorOffsetX="0" textAlign="left" textColor="0xffffff"  left="80"/>
+		<e:Label id="attrLabel2" text="Kháng vật lý+123" size="20" x.disable="325" y.disable="12" y.wait="42" verticalCenter="7" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xffffff"   left="80"/>
+		<e:Label id="attrLabel3" text="Kháng phép+123" size="20" x.disable="63" y.disable="29" y.wait="16" verticalCenter="-17" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xffffff"  left="285"/>
+		<e:Label id="attrLabel4" text="Sinh lực+123" size="20" x.disable="450" y.disable="-47" y.wait="42" fontFamily="Microsoft YaHei" textAlign="left" verticalCenter="7" textColor="0xffffff"  left="285"/>
 		</e:Group>
 		<e:Group width="456" includeIn="disable,wait" horizontalCenter="-65" verticalCenter="250" >
-		<e:Label id="openLevelDesc" text="达到XXX级后特戒开启飞升" size="20" horizontalCenter="0" bottom="81" textColor="0xbd600d" bold="true" visible="false"/>
+		<e:Label id="openLevelDesc" text="Đạt cấp XXX Nhẫn Đặc Biệt sẽ mở Phi Thăng" size="20" horizontalCenter="0" bottom="81" textColor="0xbd600d" bold="true" visible="false"/>
 		<e:Label id="Explain0" text="3 nhân vật Song Kháng+300, Song Kháng+1%" verticalAlign="middle" size="20" anchorOffsetY="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" textAlign="center" verticalCenter="-39.5" horizontalCenter="0" height="45" textColor="0xffffff" left="0" right="0"/>
 		</e:Group>
 		<ns1:LevelImage id="stageImg" width="40" height="109" skinName="Skinjieji" horizontalCenter="-236" top="130" visible="false"/>
 		<e:Group id="btnGroup" width="450" height="120" horizontalCenter="0" includeIn="open" visible.open="true" bottom="169" visible="false">
 		<e:Button id="uplevel" label="Nâng sao" skinName="SkinBtn1" width="180" height="60" horizontalCenter="0" bottom="0"/>
 		<e:Button id="upgradebtn" label="Thăng bậc" skinName="SkinBtn1" width="180" horizontalCenter="0" bottom="0" height="60"/>
-		<e:Label id="ringget" text="碎片获取" textColor="0x56e22d" size="20" right="30" bottom="22"/>
+		<e:Label id="ringget" text="Nhận Mảnh Vỡ" textColor="0x56e22d" size="20" right="30" bottom="22"/>
 		<e:Group horizontalCenter="0" bottom="67">
-			<e:Label id="countTxt" y="0" text="消耗特戒碎片:" size="20" x="0" textColor="0xd1c28f"/>
+			<e:Label id="countTxt" y="0" text="Tiêu hao Mảnh Nhẫn Đặc Biệt:" size="20" x="0" textColor="0xd1c28f"/>
 			<e:Label id="useTxt" y="0" text="0/10" size="20" x="136" textAlign="left" textColor="0xd1c28f"/>
 			<e:layout>
 			<e:HorizontalLayout/>
@@ -71,8 +71,8 @@
 		</e:Group>
 		</e:Group>
 		<e:Group id="aciveGroup" includeIn="disable" height="170" verticalCenter="228.5" anchorOffsetX="0" width="456" left="10">
-		<e:Label id="Explain1" text="效果说明效果说明效果说明效果说明效果说明" includeIn="disable" size="20" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetY="0" textAlign="left" height="170" width="456" verticalCenter="-17" verticalAlign="middle" horizontalCenter="90"/>
-		<e:Label id="openDesc" text="第X天开启" includeIn="disable" size="26" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" strokeColor="0xec6014" textAlign="center" verticalAlign="middle" verticalCenter="135"/>
+		<e:Label id="Explain1" text="Mô tả hiệu ứng Mô tả hiệu ứng Mô tả hiệu ứng Mô tả hiệu ứng Mô tả hiệu ứng" includeIn="disable" size="20" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetY="0" textAlign="left" height="170" width="456" verticalCenter="-17" verticalAlign="middle" horizontalCenter="90"/>
+		<e:Label id="openDesc" text="Mở vào ngày X" includeIn="disable" size="26" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" strokeColor="0xec6014" textAlign="center" verticalAlign="middle" verticalCenter="135"/>
 			<e:Image id="openDeimage" scaleX="1" scaleY="1" source="ringlabel2_png" bottom="-93" horizontalCenter="51" visible="false"/>
 
 		</e:Group>
@@ -80,7 +80,7 @@
 		<e:Group y.quicly="74" y.tejie8="74"  horizontalCenter.quicly="1" horizontalCenter.tejie8="1" width="456" height="42"  includeIn="disable,wait,open"  verticalCenter="165" horizontalCenter="-65">
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" x.wait="0" x="-10" visible="false"/>
 		<e:Image includeIn="disable,wait" source="shuxingbg4" anchorOffsetX="0" width="190" y.wait="537" horizontalCenter.disable="6" width.disable="200" width.wait="200"  horizontalCenter="0" verticalCenter="0" visible="false"/>
-		<e:Label id="skillname" text="不破金身" scaleX="1" scaleY="1" y="496" horizontalCenter="0" verticalCenter="0" size="26" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="skillname" text="Bất Phá Kim Thân" scaleX="1" scaleY="1" y="496" horizontalCenter="0" verticalCenter="0" size="26" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 		<e:Group id="lieyanRing" includeIn="tejie8" anchorOffsetY="0" anchorOffsetX="0" width="600" horizontalCenter="0" top="0" bottom="0">
 
@@ -92,7 +92,7 @@
 			<e:Image x="-12.33" y="184.99" source="lclianxiandian"/>
 			<e:Image y="-1" source="jinengkuang" x="50"/>
 			<e:Image smoothing="true" y="-26" source="tejie04" x="41.66"/>
-			<e:Label size="20" textAlign="center" y="76.4" text="止戈灵瓶" x="48.2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label size="20" textAlign="center" y="76.4" text="Chỉ Qua Linh Bình" x="48.2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 		<e:Group id="ring1" anchorOffsetX="0" width="168" anchorOffsetY="0" height="154" horizontalCenter="-127" includeIn="tejie8" verticalCenter="-200.5">
 			<e:Image x="74" y="38.4" width="77.99" anchorOffsetX="0" source="lclianxian" scale9Grid="3,2,5,5"/>
@@ -100,7 +100,7 @@
 			<e:Image x="137" y="32.5" source="lclianxiandian"/>
 			<e:Image y="2" x="1" source="jinengkuang"/>
 			<e:Image smoothing="true" source="tejie02" x="-8.28" y="-14.1"/>
-			<e:Label size="20" textAlign="center" y="78.97" text="武曲灵卷" x="-0.39" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label size="20" textAlign="center" y="78.97" text="Vũ Khúc Linh Quyển" x="-0.39" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group id="ring2" anchorOffsetX="0" width="170" horizontalCenter="-122" includeIn="tejie8" verticalCenter="-15.5">
 			<e:Image x="70.2" y="54.18" width="106.2" source="lclianxian" scale9Grid="3,2,4,5" anchorOffsetX="0"/>
@@ -108,7 +108,7 @@
 			<e:Image x="160" y="47" source="lclianxiandian"/>
 			<e:Image y="14.98" x="0.33" source="jinengkuang"/>
 			<e:Image smoothing="true" y="-6.66" x="-7.66" source="tejie03"/>
-			<e:Label size="20" textAlign="center" y="92.62" text="回春灵莲" x="-1.7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label size="20" textAlign="center" y="92.62" text="Hồi Xuân Linh Liên" x="-1.7" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 		<e:Group id="ring3" anchorOffsetX="0" width="161" horizontalCenter="103.5" includeIn="tejie8" verticalCenter="38.5">
 			<e:Image x="59" y="-29.34" width="51" source="lclianxian" scale9Grid="3,2,5,5"/>
@@ -116,7 +116,7 @@
 			<e:Image x="46.53" y="-34.67" source="lclianxiandian"/>
 			<e:Image y="12.5" x="62.5" source="jinengkuang"/>
 			<e:Image smoothing="true" y="-19.37" x="54" source="tejie06"/>
-			<e:Label size="20" textAlign="center" y="89" text="天罚灵剑" x="61.5" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label size="20" textAlign="center" y="89" text="Thiên Phạt Linh Kiếm" x="61.5" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group id="ring4" anchorOffsetY="0" height="171" anchorOffsetX="0" width="213" horizontalCenter="154.5" includeIn="tejie8" verticalCenter="-97">
 			<e:Image x="68" y="87" scale9Grid="1,1,6,6" width="51" source="lclianxian" visible="false"/>
@@ -125,7 +125,7 @@
 			<e:Image x="57.01" y="36.01" source="lclianxiandian"/>
 			<e:Image y="0" x="113" source="jinengkuang"/>
 			<e:Image smoothing="true" y="-19.34" x="105.02" source="tejie05"/>
-			<e:Label size="20" textAlign="center" y="77.5" text="不灭灵囊" x="111" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label size="20" textAlign="center" y="77.5" text="Bất Diệt Linh Nang" x="111" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 		<e:Image source="bantoumingkuang3" anchorOffsetY="0" left="0" bottom="1" width="281" scale9Grid="34,41,210,6" anchorOffsetX="0" height="130" visible="false"/>
 		<e:Image scaleX="-1" source="bantoumingkuang3" width="276" anchorOffsetY="0" right="1" bottom="1" scale9Grid="34,39,210,6" height="130" visible="false"/>
@@ -143,7 +143,7 @@
 		<ns1:PriceIcon id="price0" skinName="SkinPriceIcon" horizontalCenter="0" bottom="96"/>
 		<e:Label text="Triệu hồi" size="26" touchEnabled="false" horizontalCenter="0" bottom="45" fontFamily="Microsoft YaHei"/>
 		<e:Button id="remix" label="Dung hợp" x="87" skinName="SkinBtn1" bottom="16" visible="false"/>
-		<e:Label id="remixText" text="完成任务可免费融合 (0/5)" size="20" textColor="0x9f946d" bold="true" horizontalCenter="0" bottom="115" visible="false"/>
+		<e:Label id="remixText" text="Hoàn thành nhiệm vụ được dung hợp miễn phí (0/5)" size="20" textColor="0x9f946d" bold="true" horizontalCenter="0" bottom="115" visible="false"/>
 		<e:Image id="ringName" source="ring_title" verticalCenter="-281" horizontalCenter="-255"/>
 		<e:Image source="lyr_fuse_award0_png" horizontalCenter="0" verticalCenter="175"/>
 		</e:Group>
@@ -154,7 +154,7 @@
 		<e:Image includeIn="quicly" source="ring_img2_png" horizontalCenter="0" top="42"/>
 		<e:Image includeIn="quicly" horizontalCenter="0" top="221" source=""/>
 		<e:Button id="quicklyOpen" label="Button" skinName="SkinBtn0" icon="btnshouchong_png" horizontalCenter="0" top="623"/>
-		<e:Label id="quicklyOpenText" text="快速融合" bold="true" x="220" top="663" touchEnabled="false" textColor="0xffd93f"/>
+		<e:Label id="quicklyOpenText" text="Dung hợp nhanh" bold="true" x="220" top="663" touchEnabled="false" textColor="0xffd93f"/>
 		<ns1:PriceIcon id="price" skinName="SkinPriceIcon" horizontalCenter="0.5" top="612"/>
 		</e:Group>
 		<e:Image x="0" y="0" source="lcjh_png" alpha="0.7"  visible="false"/>

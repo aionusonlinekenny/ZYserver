@@ -9,7 +9,7 @@
 
 			<e:Image id="arrow" source="jiantouyou" horizontalCenter="0.5" y="30"/>
 			<e:Label id="nowAttr" text="Công kích：10" anchorOffsetY="0" size="20" width="160" height="94" verticalAlign="middle" textAlign="left" fontFamily="Microsoft YaHei" horizontalCenter="-120" top="20" textColor="0xffffff"/>
-			<e:Label id="nextAttr" text="攻击：12" anchorOffsetY="0" size="20" width="160" height="93.5" verticalAlign="middle" textAlign="left" fontFamily="Microsoft YaHei" horizontalCenter="151" top="18" textColor="0xffffff"/>
+			<e:Label id="nextAttr" text="Công kích：12" anchorOffsetY="0" size="20" width="160" height="93.5" verticalAlign="middle" textAlign="left" fontFamily="Microsoft YaHei" horizontalCenter="151" top="18" textColor="0xffffff"/>
 
 		</e:Group>
 
@@ -24,11 +24,11 @@
 		<e:Group id="effGroup" width="361" height="293" y="69" horizontalCenter="0"/>
 
 		<e:Button id="checkBtn" label="Button" skinName="SkinBtn0" icon="ability_all"  right="20" top="80"/>
-		<e:Label id="info" text="5阶解锁戒指外显" size="16" stroke="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" strokeColor="0x75706d" verticalAlign="bottom" textAlign="center" right="0" top="165"/>
+		<e:Label id="info" text="Bậc 5 mở khóa hiển thị Nhẫn" size="16" stroke="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" strokeColor="0x75706d" verticalAlign="bottom" textAlign="center" right="0" top="165"/>
 
 
 		<e:Group horizontalCenter="0" anchorOffsetX="0" width="193.5" anchorOffsetY="0" bottom="75" height="34">
-			<e:Label id="costTitle" text="消耗 : " size="20" x="0" y="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="costTitle" text="Tiêu hao : " size="20" x="0" y="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image id="costImg" source="200015_png" x="63" y="-1" scaleX="0.5" scaleY="0.5"/>
 			<e:Label id="costCount" text="1335/300" size="20" x="101.5" y="2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:layout>

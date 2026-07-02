@@ -13,8 +13,8 @@
 	<e:Image id="title" y="12" horizontalCenter="0" x="212" scaleX="1" scaleY="1" source="biaoti_chongzhifanli_png"/>
 	<e:Button id="pay0" label="Nạp ￥100" bottom="60" horizontalCenter="-130" skinName="SkinBtn1"/>
 	<e:Button label="Nạp ￥500" id="pay1" bottom="60" horizontalCenter="130" skinName="SkinBtn1"/>
-	<e:Label id="paytxt0" text="额外赠送2000元宝" size="20" horizontalCenter="-130" bottom="30" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
-	<e:Label text="额外赠送10000元宝" size="20" horizontalCenter="130" id="paytxt1" bottom="30" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
+	<e:Label id="paytxt0" text="Tặng thêm 2000 Nguyên Bảo" size="20" horizontalCenter="-130" bottom="30" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
+	<e:Label text="Tặng thêm 10000 Nguyên Bảo" size="20" horizontalCenter="130" id="paytxt1" bottom="30" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
 	<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" verticalCenter="213" horizontalCenter="-56" visible="false"/>
 	<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" verticalCenter="213" horizontalCenter="186" visible="false"/>
 </e:Skin>

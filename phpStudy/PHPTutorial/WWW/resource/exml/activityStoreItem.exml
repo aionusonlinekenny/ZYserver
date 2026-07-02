@@ -28,7 +28,7 @@
 		</e:layout>
 	</e:Group>
 	<e:Group id="jifen" y="108" horizontalCenter="0" visible="false">
-		<e:Label id="jifenxiaohao" text="消耗积分:" y="0" size="20" x="0" height="20" textColor="0x35E62D"/>
+		<e:Label id="jifenxiaohao" text="Tiêu hao điểm:" y="0" size="20" x="0" height="20" textColor="0x35E62D"/>
 		<e:Label id="jifenNum" text="111111" y="0" size="20" x="0" height="20" textColor="0x35E62D"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0"/>

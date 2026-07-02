@@ -20,7 +20,7 @@
 		</e:List>
 		<e:Button id="advance" label="Nâng cao phẩm chất" icon="xb_25" skinName="SkinBtn1" bottom="12" x="70"/>
 		<e:Button id="start" label="Bắt đầu thu thập" icon="xb_25" skinName="SkinBtn1" bottom="12" x="364"/>
-		<e:Label text="祝福值提升成功几率，满值必定成功，成功后祝福值清空" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" stroke="0" y="648"/>
+		<e:Label text="Điểm Chúc Phúc tăng tỷ lệ thành công, đầy điểm chắc chắn thành công, thành công sẽ reset điểm Chúc Phúc" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" stroke="0" y="648"/>
 		<e:Group horizontalCenter="0" y="678" anchorOffsetX="0" width="445">
 			<e:Image width="81" height="28" x="30" y="17" source="wkzfj_png"/>
 			<e:Group id="barGroup" width="362" height="40" horizontalCenter="41.5" y="11" x="43"   anchorOffsetX="0" visible="false">

@@ -6,7 +6,7 @@
 	<e:Image id="lvBg" source="heirjiao" height="44" width="37" horizontalCenter="19.5" verticalCenter="-24"/>
 	<e:Image id="lv" source="heir_01" horizontalCenter="26" verticalCenter="-34"/>
 	<e:Image id="selectIcon" width="90" height="90" horizontalCenter="0" source="xuanzekuang3" anchorOffsetY="0" verticalCenter="-10.5" scale9Grid="20,20,5,5" visible="false"/>
-	<e:Label id="equipName" text="诛仙神剑" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="40"/>
+	<e:Label id="equipName" text="Chu Tiên Thần Kiếm" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="40"/>
 	<e:Group id="redPoint" right="16" y="4" visible="false">
 		<e:Image   source="zjmhongdian"/>
 	</e:Group>

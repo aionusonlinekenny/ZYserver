@@ -28,63 +28,63 @@
 			</e:Group>-->
 			<e:Group x="0" y="28" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0"/>
-				<e:Label text="攻       击：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Công       kích：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="56" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="物       防：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Phòng       vật：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="84" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="法       防：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Phòng       phép：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="112" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="武器属性：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Thuộc tính Vũ khí：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="140" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="头盔属性：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Thuộc tính Mũ：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="168" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="衣服属性：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Thuộc tính Áo：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="196" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="手镯属性：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Thuộc tính Vòng tay：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="224" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="护腕属性：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Thuộc tính Bao cổ tay：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="252" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="护腿属性：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Thuộc tính Bao chân：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="280" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="戒指属性：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
+				<e:Label text="Thuộc tính Nhẫn：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9f946d"/>
 			</e:Group>
 			<e:Group x="0" y="308" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="鞋子属性：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
+				<e:Label text="Thuộc tính Giày：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
 			</e:Group>
 			<e:Group x="0" y="336" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="伤       害：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
+				<e:Label text="Sát       thương：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
 			</e:Group>
 			<e:Group x="0" y="364" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="免       伤：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
+				<e:Label text="Miễn       thương：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
 			</e:Group>
 			<e:Group x="0" y="392" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="经验收益：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
+				<e:Label text="Thu nhập kinh nghiệm：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
 			</e:Group>
 			<e:Group x="0" y="420" visible="false">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="铜钱收益：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
+				<e:Label text="Thu nhập Đồng：" size="18" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  x="15" textColor="0x9F946D"/>
 			</e:Group>
 		</e:Group>
 	</e:Group>

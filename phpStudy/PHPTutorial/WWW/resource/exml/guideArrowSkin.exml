@@ -3,7 +3,7 @@
         states="right,left,down"  width.right="194" height.right="71">
 	<e:Group id="bg" y.right="-40" x.left="-200" y.left="-38">
 		<e:Image source="zjmyindao" scaleX.right="-1" horizontalCenter.left="0" scale9Grid="13,0,9,50" source.left="zjmyindao" y.right="0" verticalCenter.left="0" verticalCenter="0" horizontalCenter="0" x.right="0" horizontalCenter.down="0" verticalCenter.down="0" source.down="zjmyindao2"/>
-		<e:Label id="lab" text="选择目标攻击击杀增加积分" size="20"  height="20"  width="150" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" verticalCenter.right="-3.5" verticalCenter.left="-3" textAlign.left="center" textAlign.right="center" x.right="28" size.right="20" height.right="20" right.left="36" height.left="20" horizontalCenter="-10" textAlign="center" textColor="0x440d07" horizontalCenter.right="10" verticalCenter.down="-12" textAlign.down="center" height.down="20" horizontalCenter.down="0"/>
+		<e:Label id="lab" text="Chọn mục tiêu tấn công tiêu diệt để tăng điểm" size="20"  height="20"  width="150" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" verticalCenter.right="-3.5" verticalCenter.left="-3" textAlign.left="center" textAlign.right="center" x.right="28" size.right="20" height.right="20" right.left="36" height.left="20" horizontalCenter="-10" textAlign="center" textColor="0x440d07" horizontalCenter.right="10" verticalCenter.down="-12" textAlign.down="center" height.down="20" horizontalCenter.down="0"/>
 	</e:Group>
 
 

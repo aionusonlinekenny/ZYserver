@@ -2,8 +2,8 @@
 <e:Skin class="SkinRuneExchangeItem" width="560" height="114" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<w:Config id="15a59527d66"/>
 	<e:Image  source="tongyonglabbg" left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30" width="567"/>
-	<e:Label id="descLab" text="减少伤害+5%" size="18" width="270" height="58" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x001828" left="110" top="35"/>
-	<e:Label id="descLab1" text="昊天塔9999关解锁" size="18" fontFamily="Microsoft YaHei" textColor="0x0038ab" top="19" horizontalCenter="-25"/>
+	<e:Label id="descLab" text="Giảm sát thương+5%" size="18" width="270" height="58" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x001828" left="110" top="35"/>
+	<e:Label id="descLab1" text="Tháp Hạo Thiên mở khóa ở ải 9999" size="18" fontFamily="Microsoft YaHei" textColor="0x0038ab" top="19" horizontalCenter="-25"/>
 	<ns1:RuneDisplay id="icon" x="10" skinName="SkinRuneItem" top="-4"/>
 	<e:Group id="effpos" x="60" y="44" scaleX="1.2" scaleY="1.1"/>
 	<e:Button id="goBtn" label="Đổi" skinName="SkinBtn6" x="400" width="130" height="50" verticalCenter="10" icon="btn3"/>

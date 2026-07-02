@@ -4,7 +4,7 @@
 	<e:Group id="monthGroup" left="0" right="0" top="0" bottom="0">
 		<e:Image width="573" top="243" horizontalCenter="0" source="specialcard_bg_png"/>
 		<e:Image width="426" top="-60" source="yueka0" horizontalCenter="3"/>
-		<e:Label id="first" text="现在购买，额外赠送 8800 元宝" size="20" horizontalCenter="0" textAlign="left" verticalCenter="230" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="first" text="Mua ngay, tặng thêm 8800 Nguyên Bảo" size="20" horizontalCenter="0" textAlign="left" verticalCenter="230" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:Label text="Mua Thẻ Tháng không tính vào VIP và nạp đầu" size="20" top="210" fontFamily="Microsoft YaHei" left="164" textColor="0xffff00"/>
 		<e:Label id="feng" text="Trong giai đoạn thử nghiệm chưa mở tính năng Thẻ Tháng" size="24" horizontalCenter="0" bottom="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		<e:Button id="btn1" label="Mua ngay 88 NDT" verticalCenter="283" horizontalCenter="0" icon="btn2_2" skinName="SkinBtn1"/>

@@ -15,9 +15,9 @@
 
 
 		<e:Group x="25" y="226">
-			<e:Label text="1、击杀怪物波次越多，奖励越好。" size="18" height="20" x="0.009999999999990905" y="0" textColor="0x9f946d"/>
-			<e:Label text="2、击杀BOSS有机会获得心法残页。" size="18" textColor="0x9F946D" height="20" x="0" y="24"/>
-			<e:Label text="3、幸运BOSS高几率掉落心法残页。" size="18" textColor="0x9F946D" height="20" x="0.009999999999990905" y="47.66999999999996"/>
+			<e:Label text="1. Tiêu diệt càng nhiều đợt quái, thưởng càng tốt." size="18" height="20" x="0.009999999999990905" y="0" textColor="0x9f946d"/>
+			<e:Label text="2. Tiêu diệt BOSS có cơ hội nhận Trang Tâm Pháp." size="18" textColor="0x9F946D" height="20" x="0" y="24"/>
+			<e:Label text="3. BOSS May Mắn tỷ lệ cao rơi Trang Tâm Pháp." size="18" textColor="0x9F946D" height="20" x="0.009999999999990905" y="47.66999999999996"/>
 			<e:layout>
 				<e:VerticalLayout gap="2"/>
 			</e:layout>
@@ -39,7 +39,7 @@
 
 
 
-			<e:Label text="随机掉落以下奖励" x="100" y="2" textColor="0xD1C28F" size="24"/>
+			<e:Label text="Ngẫu nhiên rơi các phần thưởng sau" x="100" y="2" textColor="0xD1C28F" size="24"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

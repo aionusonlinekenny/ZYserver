@@ -8,11 +8,11 @@
 		<e:Image width="560" height="140" x="0" y="378" source="bantoumingkuang3" scale9Grid="2,2,18,18" anchorOffsetY="0"/>
 		<e:Button id="matchBtn" label="Ghép đối thủ" skinName="SkinBtn1" y="582" x="209"/>
 		<e:CheckBox id="autoCheckBox" label="Không đủ người sẽ tự động nới giới hạn chuyển sinh" x="133" y="657" skinName="SkinCheckBox0"/>
-		<e:Label id="timeLabel" text="每天12:00:-13:00,20:00-20:30 开启战场匹配" x="82" y="6" size="20" fontFamily="黑体" textColor="0xE8E3AE"/>
+		<e:Label id="timeLabel" text="Mở ghép Chiến Trường mỗi ngày 12:00-13:00, 20:00-20:30" x="82" y="6" size="20" fontFamily="黑体" textColor="0xE8E3AE"/>
 		<e:Button id="getAwardBtn" label="Nhận" x="417" y="428" skinName="SkinBtn3"/>
-		<e:Label id="standardLabel" text="本周参与战场累计获得荣誉5000点（500/5000）" x="13" y="384" size="20" fontFamily="黑体" textColor="0xe8e3ae"/>
-		<e:Label id="shopLink" text="功勋商店" size="20" textColor="0x35E62D" x="387" y="612"/>
-		<e:Label id="timesLabel" text="剩余参与次数：6次" size="20" textColor="0x35E62D" x="194" y="540"/>
+		<e:Label id="standardLabel" text="Tham gia Chiến Trường tuần này tích lũy nhận 5000 điểm Vinh Dự（500/5000）" x="13" y="384" size="20" fontFamily="黑体" textColor="0xe8e3ae"/>
+		<e:Label id="shopLink" text="Cửa hàng Công Huân" size="20" textColor="0x35E62D" x="387" y="612"/>
+		<e:Label id="timesLabel" text="Số lần tham gia còn lại：6 lần" size="20" textColor="0x35E62D" x="194" y="540"/>
 		<e:Scroller width="380" height="97" x="12" y="408" anchorOffsetY="0" anchorOffsetX="0">
 			<e:List id="awardList" width="377" height="97" x="1.9" y="8" itemRendererSkinName="SkinItem" anchorOffsetY="0" anchorOffsetX="0">
 			<e:layout>

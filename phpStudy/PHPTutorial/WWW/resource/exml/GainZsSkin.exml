@@ -11,7 +11,7 @@
 		<e:Image width="461" height="414" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="10,6,60,42" verticalCenter="2" top="34" anchorOffsetY="0"/>
 		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0.5" bottom="-47" width="400"/>
 		<e:Label horizontalCenter="0.5" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" textColor="0xffffff" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="268"/>
-		<e:Label text="获取修为" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" top="-8" textColor="0x39566a"/>
+		<e:Label text="Nhận Tu Vi" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" top="-8" textColor="0x39566a"/>
 		<e:Button label="Nút bấm" id="closeBtn" right="4" top="-14" skinName="SkinBtn0" icon="tongyong_btnclose"/>
 
 		<e:Group id="gr1" width="444" height="122" horizontalCenter="0" top="46">

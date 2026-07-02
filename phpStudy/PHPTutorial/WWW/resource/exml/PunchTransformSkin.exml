@@ -10,21 +10,21 @@
 
 
 
-		<e:Label text="火珠转换" y="25" size="22" fontFamily="Microsoft YaHei" textAlign="center" left="0" right="0" textColor="0x084151"/>
+		<e:Label text="Chuyển đổi Hỏa Châu" y="25" size="22" fontFamily="Microsoft YaHei" textAlign="center" left="0" right="0" textColor="0x084151"/>
 		<e:Button id="transformBtn" label="Chuyển đổi nhanh" y="297" skinName="SkinBtn3" left="90"/>
 		<e:Button id="quicklytransformBtn" label="Chuyển đổi" y="297" skinName="SkinBtn3" right="90"/>
 		<e:Image source="jiantouyou" x="205" y="130" height="70"/>
 		<e:Group id="seniorPiece" height="114" left="65" top="85">
 			<e:Image source="quality0" anchorOffsetX="0" width="74" anchorOffsetY="0" height="74" scale9Grid="8,8,48,48" horizontalCenter="0" bottom="0"/>
 			<e:Image source="hejisuipian1" width="74" height="74" horizontalCenter="0" bottom="0" scaleX="1" scaleY="1"/>
-			<e:Label text="神火宝珠" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0" top="0"/>
+			<e:Label text="Thần Hỏa Bảo Châu" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0" top="0"/>
 			<e:Image width="73" height="20" source="bantoutiaobg2" scale9Grid="11,2,70,17" horizontalCenter="0" bottom="0"/>
 			<e:Label id="count0" text="99999" size="18" textColor="0xd1c28f" bottom="0" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group id="basePiece" y="85" height="114" right="65">
 			<e:Image source="quality0" width="74" height="74" scale9Grid="8,8,48,48" horizontalCenter="0" bottom="0"/>
 			<e:Image width="74" height="74" source="hejisuipian" horizontalCenter="0" bottom="0"/>
-			<e:Label text="烈火之珠" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0" top="0" textAlign="center" verticalAlign="middle"/>
+			<e:Label text="Liệt Hỏa Chi Châu" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="0" top="0" textAlign="center" verticalAlign="middle"/>
 			<e:Image width="73" height="20" source="bantoutiaobg2" scale9Grid="11,2,70,17" horizontalCenter="0" bottom="0"/>
 			<e:Label text="99999" size="18" horizontalCenter="0" id="count1" textColor="0xD1C28F" bottom="0"/>
 		</e:Group>
@@ -43,7 +43,7 @@
 		<e:Button id="minus" label="Button" y="230" skinName="SkinBtn0" icon="btn-" x="95"/>
 		<e:Button id="add" label="Button" y="230" skinName="SkinBtn0" icon="btnadd" x="356"/>
 		<e:Image width="14" height="20" source="gantanhao1" bottom="70" horizontalCenter="-145"/>
-		<e:Label text="烈火之珠无法转换为神火宝珠" size="20" fontFamily="Microsoft YaHei" textColor="0x0000f1" bottom="70" verticalAlign="middle" horizontalCenter="0"/>
+		<e:Label text="Liệt Hỏa Chi Châu không thể chuyển thành Thần Hỏa Bảo Châu" size="20" fontFamily="Microsoft YaHei" textColor="0x0000f1" bottom="70" verticalAlign="middle" horizontalCenter="0"/>
 		<e:Image height="30" scale9Grid="128,2,15,41" width="300" horizontalCenter="0" bottom="1" touchEnabled="false" source="bantoutiaobg"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" bottom="8" touchEnabled="false" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 	</e:Group>

@@ -130,7 +130,7 @@
 			<e:Label id="name3" text="Tên Binh Hồn" y="6" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Group x="38" y="57">
 				<e:Group id="g0" y="20" x="11" width="318">
-					<e:Label text="突破等级上限" size="20" x="8" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+					<e:Label text="Đột phá giới hạn cấp độ" size="20" x="8" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 					<e:Label id="tpattr1" text="" size="20" textAlign="right" y="0" fontFamily="Microsoft YaHei" textColor="0x001828" right="148"/>
 					<e:Image id="tpright0" y="0" rotation="0" source="tongyongup" horizontalCenter="38"/>
 					<e:Label id="tpattr2" text="" size="20" textAlign="left" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00" left="218"/>

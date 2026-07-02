@@ -8,12 +8,12 @@
 		<e:Image y="178" x="367" source="num_20_png"/>
 		<e:Image y="134" x="366" source="num_20_png"/>
 		<e:Image y="335.35" x="142.35" source="weixin_desktop_png" visible="false"/>
-		<e:Label text="从桌面快捷方式进游戏，方可领取奖励;" x="65" y="312.5" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" text.android="从桌面快捷方式进游戏，方可领取奖励"/>
-		<e:Label text="安卓机器有对生成桌面快捷方式做权限限制，" x="51.68" y="421.82" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
-		<e:Label text="如生成失败，可先检查是否开启权限;" x="52.36" y="451.52" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
-		<e:Label text="若不知如何开启权限，" x="56.33" y="557.48" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
-		<e:Label text="点击下方聊天窗口" x="56.35" y="593.18" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
-		<e:Label text="点击客服-输入问题" x="56.35" y="625.18" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
+		<e:Label text="Vào game qua lối tắt màn hình chính mới có thể nhận thưởng;" x="65" y="312.5" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" text.android="Vào game qua lối tắt màn hình chính mới có thể nhận thưởng"/>
+		<e:Label text="Máy Android có giới hạn quyền tạo lối tắt màn hình chính," x="51.68" y="421.82" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
+		<e:Label text="Nếu tạo thất bại, hãy kiểm tra đã bật quyền chưa;" x="52.36" y="451.52" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
+		<e:Label text="Nếu không biết cách bật quyền," x="56.33" y="557.48" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
+		<e:Label text="Nhấn vào khung chat bên dưới" x="56.35" y="593.18" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
+		<e:Label text="Nhấn CSKH - nhập câu hỏi" x="56.35" y="625.18" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1"/>
 		<e:Label text="Trên màn hình nhấn “Tự động thêm”" x="69.33" y="713.15" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" visible="false"/>
 		<e:Label text="là có thể bắt đầu chơi" x="109.34" y="742.85" textColor="0x531700" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scrollV="1" visible="false"/>
 		<e:Image x="95.3" y="823.64" source="desktopdesc_png"/>

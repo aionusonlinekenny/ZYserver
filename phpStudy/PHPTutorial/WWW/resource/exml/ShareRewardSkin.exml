@@ -4,9 +4,9 @@
 		<e:Image horizontalCenter="0.5" y="-8" source="shareRewardBg_png"/>
 		<e:Image horizontalCenter="0" source="huabian3" top="-6"/>
 		<e:Group height="18" x="102.5" y="144">
-			<e:Label text="已分享：" size="18" fontFamily="Microsoft YaHei"/>
-			<e:Label id="shareNum" text="0次" size="18" fontFamily="Microsoft YaHei" anchorOffsetX="0" textColor="0x1ff804" textAlign="center"/>
-			<e:Label id="shareTime" text="（冷却时间：00：00：00）" size="18" fontFamily="Microsoft YaHei" anchorOffsetX="0" textAlign="center" textColor="0xffffff"/>
+			<e:Label text="Đã chia sẻ：" size="18" fontFamily="Microsoft YaHei"/>
+			<e:Label id="shareNum" text="0 lần" size="18" fontFamily="Microsoft YaHei" anchorOffsetX="0" textColor="0x1ff804" textAlign="center"/>
+			<e:Label id="shareTime" text="（Thời gian hồi：00：00：00）" size="18" fontFamily="Microsoft YaHei" anchorOffsetX="0" textAlign="center" textColor="0xffffff"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>
 			</e:layout>

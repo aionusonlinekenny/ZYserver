@@ -16,9 +16,9 @@
 			<e:Image id="arrow7" y="58" x="210" source="jiantouyou" width="31" height="29"/>
 			<e:Image id="arrow8" y="58" x="330" source="jiantouyou" width="31" height="29"/>
 			<e:Label text="Ngày đầu tiên" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-180" top="0"/>
-			<e:Label text="第二天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
-			<e:Label text="第三天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
-			<e:Label text="第四天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
+			<e:Label text="Ngày thứ 2" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
+			<e:Label text="Ngày thứ 3" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
+			<e:Label text="Ngày thứ 4" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
 
 
 
@@ -36,10 +36,10 @@
 				<e:Image id="arrow9" y="58" x="90" source="jiantouyou" width="31" height="29"/>
 				<e:Image id="arrow10" y="58" x="210" source="jiantouyou" width="31" height="29"/>
 				<e:Image id="arrow11" y="58" x="330" source="jiantouyou" width="31" height="29"/>
-				<e:Label text="第五天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-180"/>
-				<e:Label text="第六天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
-				<e:Label text="第七天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
-				<e:Label text="第八天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
+				<e:Label text="Ngày thứ 5" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-180"/>
+				<e:Label text="Ngày thứ 6" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
+				<e:Label text="Ngày thứ 7" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
+				<e:Label text="Ngày thứ 8" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
 
 
 
@@ -57,10 +57,10 @@
 				<e:Image id="arrow12" y="58" x="90" source="jiantouyou" width="31" height="29"/>
 				<e:Image id="arrow13" y="58" x="210" source="jiantouyou" width="31" height="29"/>
 				<e:Image id="arrow14" y="58" x="330" source="jiantouyou" width="31" height="29"/>
-				<e:Label text="第十二天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
-				<e:Label text="第十一天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
-				<e:Label text="第十天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
-				<e:Label text="第九天" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-180"/>
+				<e:Label text="Ngày thứ 12" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="180"/>
+				<e:Label text="Ngày thứ 11" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="60"/>
+				<e:Label text="Ngày thứ 10" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-60"/>
+				<e:Label text="Ngày thứ 9" fontFamily="Microsoft YaHei" size="18" top="0" horizontalCenter="-180"/>
 
 
 
@@ -76,8 +76,8 @@
 			</e:Group>
 			<e:Group x="-5" y="-54" height="135">
 				<e:Image id="arrow17" y="58" x="90" source="jiantouyou" width="31" height="29"/>
-				<e:Label text="第十三天" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-180" top="0"/>
-				<e:Label text="第十四天" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-60" top="0"/>
+				<e:Label text="Ngày thứ 13" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-180" top="0"/>
+				<e:Label text="Ngày thứ 14" fontFamily="Microsoft YaHei" size="18" horizontalCenter="-60" top="0"/>
 
 
 
@@ -99,7 +99,7 @@
 	</e:Group>
 	<e:Button id="suerBtn" label="Nhận thưởng" horizontalCenter="0" height="56" bottom="5" width="180"  skinName="SkinBtn6" icon="btn2_2"/>
 	<e:Label id="daylabel" text="Số ngày đăng nhập:13" size="20" bottom="18" fontFamily="Microsoft YaHei" left="45"/>
-	<e:Label id="dayaward" text="  第一天奖励详情" size="18" bottom="117" fontFamily="Microsoft YaHei" left="12" width="78"/>
+	<e:Label id="dayaward" text="  Chi tiết thưởng ngày 1" size="18" bottom="117" fontFamily="Microsoft YaHei" left="12" width="78"/>
 
 
 	<e:Image id="redPoint" width="20" height="20" horizontalCenter="77" source="zjmhongdian" bottom="53"/>

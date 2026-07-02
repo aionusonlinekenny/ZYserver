@@ -9,7 +9,7 @@
 
 		<e:Button id="opraBtn" label="Nâng cấp" label.study="Học" x.update="285" icon="btn1_2" width="213" right="90" bottom.update="0" height.update="67" bottom.study="50" bottom="0" skinName="SkinBtn7"/>
 		<e:Group id="updateGroup" includeIn="update" anchorOffsetX="0" anchorOffsetY="0" right="90" bottom="80" height="110" width="213">
-			<e:Label id="cost" text="消耗 :0/1" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="0" right="0" textAlign="center" bottom="0"/>
+			<e:Label id="cost" text="Tiêu hao :0/1" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="0" right="0" textAlign="center" bottom="0"/>
 			<ns1:ItemBase id="needItem" x="72.01" y="4.69" anchorOffsetY="0" skinName="SkinItem"/>
 
 			<e:layout>
@@ -20,7 +20,7 @@
 		<e:Group id="nextLv" width="350" y.study="307" x.study="200" x.update="200" verticalCenter.study="21" right="10" height="120" verticalCenter="80" visible.study="false">
 
 			<e:Image anchorOffsetX="0" anchorOffsetY="0" left="0" top="0" bottom="0" right="0" scaleY="-1" scale9Grid="16,13,559,12" source="longhuntextbg2"/>
-			<e:Label text="下一级属性" size="26" textColor="0xFFFF00" horizontalCenter="0" fontFamily="Microsoft YaHei" x="149" includeIn="update" top="10"/>
+			<e:Label text="Thuộc tính cấp tiếp theo" size="26" textColor="0xFFFF00" horizontalCenter="0" fontFamily="Microsoft YaHei" x="149" includeIn="update" top="10"/>
 
 			<e:Label id="nextLvDesc" text="Kỹ năng này cực kỳ ngầu, mô tả thì dài vô cùng tận, tăng công kích cực khủng, tăng phòng thủ cực nhiều, máu tăng nổ tung luôn" x.study="8" size="18" textAlign="left" size.update="18" textColor.update="0xffffff" anchorOffsetX.update="0" fontFamily.update="Microsoft YaHei" anchorOffsetY.update="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="10" right="10" bottom="15" verticalAlign.update="top" bottom.update="10"/>
 		</e:Group>
@@ -28,7 +28,7 @@
 			<e:Image anchorOffsetY.update="0" scale9Grid="16,13,559,12" source="longhuntextbg2" left.update="0" right.update="0" top.update="0" bottom.update="0" bottom.study="0" right.study="0" right="0" top="0" left="0" bottom="0"/>
 
 
-			<e:Label text="Thuộc tính hiện tại" size="26" text.study="技能属性" textColor.study="0xffff00" size.study="26" fontFamily="Microsoft YaHei" textColor.update="0xffff00" horizontalCenter.update="0" x.update="138" y.update="15" horizontalCenter.study="0" textColor="0xffff00" textAlign="center" horizontalCenter="0" top="15" verticalAlign.study="middle" top.update="10"/>
+			<e:Label text="Thuộc tính hiện tại" size="26" text.study="Thuộc tính kỹ năng" textColor.study="0xffff00" size.study="26" fontFamily="Microsoft YaHei" textColor.update="0xffff00" horizontalCenter.update="0" x.update="138" y.update="15" horizontalCenter.study="0" textColor="0xffff00" textAlign="center" horizontalCenter="0" top="15" verticalAlign.study="middle" top.update="10"/>
 			<e:Label id="nowLvDesc" text="Kỹ năng này cực kỳ ngầu, mô tả thì dài vô cùng tận, tăng công kích cực khủng, tăng phòng thủ cực nhiều, máu tăng nổ tung luôn" size="18" textAlign="left" fontFamily="Microsoft YaHei" textColor.study="0xffffff" anchorOffsetY.study="0" anchorOffsetX.study="0" anchorOffsetX="0" textColor.update="0xffffff" x.update="7" left="10" right="10" bottom="15" textColor="0xffffff" bottom.update="10"/>
 		</e:Group>
 		<e:Image width="360" height="230" includeIn="study" source="tongyong_dikuang4" horizontalCenter="115" verticalCenter="70" scale9Grid="10,10,60,60"/>
@@ -49,8 +49,8 @@
 		</e:Group>
 
 
-		<e:Label id="nobook" text="背包内没有可学习的技能书" includeIn="study" size="20" bottom="161" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="102" visible="false"/>
-		<e:Label text="请选择技能学习" y.update="274" size="20" horizontalCenter="105" horizontalCenter.study="105" size.study="22" fontFamily="Microsoft YaHei" textColor="0xffff00" textColor.study="0xffff00" visible.update="false" bottom="85" height.study="20" bottom.study="132" includeIn="study"/>
+		<e:Label id="nobook" text="Túi đồ không có Sách Kỹ Năng để học" includeIn="study" size="20" bottom="161" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="102" visible="false"/>
+		<e:Label text="Vui lòng chọn kỹ năng để học" y.update="274" size="20" horizontalCenter="105" horizontalCenter.study="105" size.study="22" fontFamily="Microsoft YaHei" textColor="0xffff00" textColor.study="0xffff00" visible.update="false" bottom="85" height.study="20" bottom.study="132" includeIn="study"/>
 		<e:Image id="updateRp" source="zjmhongdian" includeIn="update" bottom="40" height="19" horizontalCenter="180"/>
 
 

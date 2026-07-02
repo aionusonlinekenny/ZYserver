@@ -40,7 +40,7 @@
 	</e:List>
 
 	<e:Label id="leftText" text="Tổng số lần thách đấu còn lại：1 lần" size="18" horizontalCenter="-55" y="633" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
-	<e:Label text="1~2转可挑战" size="24" horizontalCenter="-56" bottom="24" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+	<e:Label text="Chuyển sinh 1~2 có thể thách đấu" size="24" horizontalCenter="-56" bottom="24" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 
 
 	<e:Image id="stateImage" source="zdbosskejisha" bottom="287" horizontalCenter="-56.5"/>

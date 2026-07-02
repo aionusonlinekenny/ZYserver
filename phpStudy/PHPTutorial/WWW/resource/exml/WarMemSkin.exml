@@ -18,7 +18,7 @@
 		<e:Label id="nameLab0" text="" x="35" y="17" size="22" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 	</e:Group>
 	<e:Group width="159.5" height="123" anchorOffsetX="0" right="3" verticalCenter="0">
-		<e:Label id="onLine" text="仙宫城门" size="22" verticalCenter="-0.5" x="48" fontFamily="Microsoft YaHei" textColor="0x001828" y="50"/>
+		<e:Label id="onLine" text="Cổng thành Tiên Cung" size="22" verticalCenter="-0.5" x="48" fontFamily="Microsoft YaHei" textColor="0x001828" y="50"/>
 		<e:Image source="tongyongzuobiao" x="12.5" verticalCenter="2" y="50"/>
 	</e:Group>
 </e:Skin>

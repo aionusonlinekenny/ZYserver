@@ -14,8 +14,8 @@
 		<e:Label id="nameTxt" text="Đồ Long " size="24" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xed5f00" left="12" top="15"/>
 		<e:Label id="buwei" y="58" text="Vị trí：" size="20" x="105" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="toubuhungu" y="58" text="Hồn Cốt Đầu" size="20" x="165" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="pinjie" y="82" text="品阶：" size="20" x="105" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="fanpin" y="82" text="凡品" size="20" x="165" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="pinjie" y="82" text="Phẩm bậc：" size="20" x="105" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="fanpin" y="82" text="Phàm Phẩm" size="20" x="165" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="zhiye" y="106" text="Nghề nghiệp：" size="20" x="106" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="tongyong" y="106" text="Thông dụng" size="20" x="166" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Group id="baseAttr" y="183" left="24">
@@ -46,7 +46,7 @@
 			<e:Label id="starAttr0" y="25" text="Công kích：100" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="starAttr1" y="50" text="Công kích：100" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="starAttr2" y="75" text="Công kích：100" size="20" verticalAlign="justify" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-			<e:Label y="0" text="Thuộc tính cấp sao" size="20" x="0" text.shenshang="魂玉属性" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label y="0" text="Thuộc tính cấp sao" size="20" x="0" text.shenshang="Thuộc tính Hồn Ngọc" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 
 		<e:Image source="bantoutiaobg" horizontalCenter="0" bottom="0" touchEnabled="false" horizontalCenter.putong="0" bottom.putong="-43"/>

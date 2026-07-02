@@ -6,15 +6,15 @@
 	<e:Group id="tongtianta" width="180" height="30" y="10" horizontalCenter="0">
 		<e:Rect left="0" right="0" top="0" bottom="0" ellipseWidth="10" ellipseHeight="10" fillAlpha="0.2" visible="false"/>
 		<e:Image left="0" right="0" alpha="1" source="Gwshkuang" height="30" y="0" scale9Grid="21,0,82,30"/>
-		<e:Label text="下层" y="28" size="14" textColor="0xb2b2b2" x="10" visible="false"/>
+		<e:Label text="Tầng dưới" y="28" size="14" textColor="0xb2b2b2" x="10" visible="false"/>
 		<e:Group y="4" horizontalCenter="0">
-			<e:Label text="通关倒计时:" y="0" size="18"  x="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Đếm ngược vượt ải:" y="0" size="18"  x="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Label id="time" text="3:00" x="80" y="0" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:layout>
 				<e:HorizontalLayout gap="2"/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="levelLimit" text="20转200级" y="28" size="14" textColor="0xffc15b" x="41" visible="false"/>
+		<e:Label id="levelLimit" text="Chuyển sinh 20 cấp 200" y="28" size="14" textColor="0xffc15b" x="41" visible="false"/>
 		<e:List id="list" y="61" itemRendererSkinName="SkinItem" horizontalCenter="0" visible="false">
 			<e:layout>
 			<e:HorizontalLayout gap="-12" horizontalAlign="center"/>

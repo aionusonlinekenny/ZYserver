@@ -8,7 +8,7 @@
 		<e:Image left="0" right="0" source="tongyong_juanzhou"/>
 		<e:Image y="-16" source="tongyong_titlebg" horizontalCenter="0"/>
 		<e:Image width="436" height="429" y="39" source="tongyong_dikuang1" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" scale9Grid="10,10,64,66"/>
-		<e:Label text="邀请好友" size="22" y="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label text="Mời bạn bè" size="22" y="-2" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Scroller id="scroll" width="420" height="410" horizontalCenter="0" anchorOffsetY="0" y="48">
 		<e:List id="list" x="78" y="241" useVirtualLayout="false" anchorOffsetY="0" height="434" itemRendererSkinName="SkinFriendItem">
 			<e:layout>

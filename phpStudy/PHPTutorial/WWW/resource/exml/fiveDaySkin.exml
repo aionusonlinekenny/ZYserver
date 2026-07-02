@@ -13,7 +13,7 @@
 			</e:Group>
 			<e:Button id="shopBtn" label="Button" x="468" y="22" skinName="SkinBtn0" icon="zjmshangcheng"/>
 			<e:Image id="redPointImg" source="zjmhongdian" horizontalCenter="256" bottom="74"/>
-			<e:Label id="refreshTime" text="3:59:59后刷新" x="459" y="93" size="14" textColor="0x00ff00"/>
+			<e:Label id="refreshTime" text="Làm mới sau 3:59:59" x="459" y="93" size="14" textColor="0x00ff00"/>
 		</e:Group>
 		<e:Group top="156" bottom="88" anchorOffsetY="0" width="558" horizontalCenter="0">
 			<e:Image id="bgD" width="141" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="4,4,7,6" bottom="0" top="0" y="69" left="0" source="sd_projectbg"/>

@@ -169,7 +169,7 @@
 	</e:Group>
 	<e:Group horizontalCenter="-260" verticalCenter="-250">
 			<e:Image source="jiejikuang2_png" scaleX="1" scaleY="1" left="0" right="0" top="5" bottom="5" scale9Grid="1,22,37,4" visible="false"/>
-			<e:BitmapLabel id="lv" font="num_lv_jie_fnt" text="五阶十级" width="25" scaleX="1" scaleY="1" horizontalCenter="0" top="15" bottom="15"/>
+			<e:BitmapLabel id="lv" font="num_lv_jie_fnt" text="Bậc 5 cấp 10" width="25" scaleX="1" scaleY="1" horizontalCenter="0" top="15" bottom="15"/>
 		</e:Group>
 
 

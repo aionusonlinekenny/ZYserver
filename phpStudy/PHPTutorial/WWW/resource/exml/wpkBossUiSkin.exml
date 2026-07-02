@@ -28,7 +28,7 @@
 	<e:Group id="leftTimeGroup" horizontalCenter="0" y="3" width="340" height="33">
 		<e:Image left="0" right="0" top="0" bottom="0"  source="Gwshkuang" scale9Grid="23,5,81,19"/>
 		<e:Group y="6" horizontalCenter="0">
-			<e:Label text="活动剩余时间:" x="0" y="0" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Thời gian sự kiện còn lại:" x="0" y="0" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="lastTime" text="15 phút 00 giây" x="111" y="0" size="18" rotation="359.27"  fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:layout>
 				<e:HorizontalLayout gap="2" />
@@ -58,7 +58,7 @@
 
 		<e:Label id="lvTxt" y="28" size="20" text="Lv.600" x="96" width="65" textAlign="right"  fontFamily="Microsoft YaHei" anchorOffsetX="0" textColor="0xffff00"/>
 		<e:Label id="nameTxt" y="28" size="18" text="Tổ Mã Giáo Chủ" x="162"  fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
-		<e:Label id="myTxt" y="30" size="16" text="自己: 10" x="288" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="myTxt" y="30" size="16" text="Bản thân: 10" x="288" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Button id="tipBtn" label="Phần thưởng" x="31" y="98" skinName="SkinBtn0" icon="bosstouxiangbtn" visible="false"/>
 	</e:Group>
 
@@ -91,7 +91,7 @@
 				</e:layout>
 			</e:Group>
 			<e:Group id="countGroup" x="84" y="2">
-				<e:Label text="鼓舞次数：" size="18" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Số lần Cổ Vũ：" size="18" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="guwutime" text="0/20" size="18" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 				<e:HorizontalLayout gap="-4"/>
@@ -101,7 +101,7 @@
 				<e:HorizontalLayout verticalAlign="middle" gap="8"/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="guwuNum" text="攻击:10000+20000\n攻击:0+10%" size="18" x="102" y="41" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="4"/>
+		<e:Label id="guwuNum" text="Công kích:10000+20000\nCông kích:0+10%" size="18" x="102" y="41" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="4"/>
 
 		<e:Button id="guwu" skinName="SkinBtn0" icon="guwu" x="0" y="-3"/>
 	</e:Group>

@@ -9,6 +9,6 @@
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" top="7"/>
 		</e:Group>
 		<e:Image id="title" x="15" y="17" source="prestige_top_0"/>
-		<e:Label id="content" text="效果：攻击威望值低于自己的玩家时，伤害增加" y="57" textColor="0x00ff00" size="18" width="310" horizontalCenter="-0.5" textAlign="left" fontFamily="Microsoft YaHei"/>
+		<e:Label id="content" text="Hiệu ứng：Khi tấn công người chơi có Uy Vọng thấp hơn mình, tăng sát thương" y="57" textColor="0x00ff00" size="18" width="310" horizontalCenter="-0.5" textAlign="left" fontFamily="Microsoft YaHei"/>
 	</e:Group>
 </e:Skin>

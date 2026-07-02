@@ -18,9 +18,9 @@
 			<e:Image source="tongyonglabbg" scale9Grid="40,20,30,30" left="0" right="0" top="0" bottom="0"/>
 			<e:Label id="yeli0" text="10000" size="22" x="190" y="26" fontFamily="Microsoft YaHei" textColor="0x0000f1"/>
 			<e:Label text="Nhận Kiếp Lực：" size="22" textColor="0x001828" fontFamily="Microsoft YaHei" textAlign="left" verticalAlign="middle" top="26" x="90"/>
-			<e:Label text="消耗铜钱：" size="20" textColor="0xE2B142" x="98" y="64" visible="false"/>
+			<e:Label text="Tiêu hao Đồng：" size="20" textColor="0xE2B142" x="98" y="64" visible="false"/>
 			<e:Label id="cost0" text="10000" size="20" x="198" y="64" textColor="0x00ff00" visible="false"/>
-			<e:Label id="yeli4" text="等级兑换：降1级" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
+			<e:Label id="yeli4" text="Đổi cấp：giảm 1 cấp" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
 			<e:Group id="time0" right="10" top="12">
 				<e:Label text="Hôm nay còn có thể đổi" size="18" textAlign="center" y="7" right="48" x="11"  textColor="0x001828" fontFamily="Microsoft YaHei"/>
 				<e:Label id="toDay0" text="5" size="18" textAlign="center" y="7" right="36" x="131" textColor="0x0000f1" fontFamily="Microsoft YaHei"/>
@@ -33,13 +33,13 @@
 			<e:Button id="btn0" label="Đổi" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
 			<ns1:ItemBase id="item0" skinName="SkinItem" verticalCenter="0" left="10"/>
 			<e:Image id="redPoint0" source="zjmhongdian" right="10" verticalCenter="-16.5"/>
-			<e:Label id="limit" text="等级大于110级可兑换" size="18" x="257" y="96" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label id="limit" text="Cấp trên 110 có thể đổi" size="18" x="257" y="96" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Group id="gr2" width="444" height="122" horizontalCenter="0" verticalCenter="2">
 			<e:Image   left="0" right="0" top="0" bottom="0" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
 			<e:Label text="Nhận Kiếp Lực：" size="22" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="26"/>
 			<e:Label id="yeli1" text="10000" size="22" x="190" textColor="0x0000f1" top="26" fontFamily="Microsoft YaHei"/>
-			<e:Label id="name1" text="高级轮回丹" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
+			<e:Label id="name1" text="Luân Hồi Đan Cao Cấp" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
 			<e:Group right="10" top="12">
 				<e:Label text="Hôm nay còn có thể đổi" size="18" textAlign="center" y="7" right="48" x="11"   textColor="0x001828" fontFamily="Microsoft YaHei"/>
 				<e:Label id="toDay1" text="5" size="20" textAlign="center" y="7" right="36" x="131"   textColor="0x0000f1" fontFamily="Microsoft YaHei"/>
@@ -67,7 +67,7 @@
 				<e:HorizontalLayout gap="0"/>
 				</e:layout>
 			</e:Group>
-			<e:Label id="name2" text="超级轮回丹" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
+			<e:Label id="name2" text="Luân Hồi Đan Siêu Cấp" size="20" x="90" textColor="0x001828" fontFamily="Microsoft YaHei" top="72"/>
 
 			<e:Button id="btn2" label="Mua" verticalCenter="5.5" right="11" skinName="SkinBtn3" width="130"/>
 			<ns1:ItemBase id="item2" skinName="SkinItem" verticalCenter="0" left="10"/>
