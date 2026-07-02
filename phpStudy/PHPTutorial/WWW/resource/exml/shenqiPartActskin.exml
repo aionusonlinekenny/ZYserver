@@ -8,7 +8,7 @@
 		<e:Label id="labelName" text="" size="28" y="10" textColor="0xC41200" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
 		<e:Image id="departline0" source="tongyongline" left="8" right="8" bottom="73" height="1.5"/>
 		<e:Group y="332" left="18">
-			<e:Label id="tipsDes2" text="收集饰品可获得大量属性" size="20" y="27" textAlign="left" verticalAlign="top" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="tipsDes2" text="Sưu tầm trang sức để nhận nhiều thuộc tính" size="20" y="27" textAlign="left" verticalAlign="top" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="labelInfo" text="" size="20" y="0" textAlign="left" verticalAlign="top" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		</e:Group>
 		<e:Image id="imgArtifact" y="50" source="sq_11_png" width="100" height="100" horizontalCenter="0.5"/>

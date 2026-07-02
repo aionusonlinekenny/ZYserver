@@ -4,6 +4,6 @@
 	<e:Image left="0" right="0" bottom="0" source="rankitembg" scale9Grid="13,15,59,31" top="0"/>
 	<e:Label id="time" text="" size="20"   left="18" verticalCenter="-19" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
 	<e:Label id="des" text="" size="20" verticalAlign="middle"   verticalCenter="15" left="18" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-	<e:Label id="revenge" text="我要复仇" right="16" size="20" verticalCenter="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+	<e:Label id="revenge" text="Tôi muốn báo thù" right="16" size="20" verticalCenter="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 
 </e:Skin>

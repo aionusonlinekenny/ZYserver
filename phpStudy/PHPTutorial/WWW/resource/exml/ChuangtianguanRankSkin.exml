@@ -5,11 +5,11 @@
 		<e:Image width="486" horizontalCenter="0" source="tongyong_dikuang2" scale9Grid="20,6,81,71" height="682" verticalCenter="15.5"/>
 		<e:Image source="tongyong_juanzhou" width="481" horizontalCenter="0" top="20" scale9Grid="195,3,91,12"/>
 		<e:Image source="tongyong_titlebg" width="249" horizontalCenter="0" top="0"/>
-		<e:Label id="titleDesc" text="通天榜" size="20" horizontalCenter="0" top="12" textColor="0x084151" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle"/>
+		<e:Label id="titleDesc" text="Bảng Thông Thiên" size="20" horizontalCenter="0" top="12" textColor="0x084151" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle"/>
 		<e:Image width="436" horizontalCenter="0" scale9Grid="10,6,60,42" height="599" top="53" source="tongyong_dikuang1"/>
 		<e:Label text="Xếp hạng" size="20" top="65" fontFamily="Microsoft YaHei" textColor="0x1b3046" left="55"/>
 		<e:Label text="Tên" size="20" top="65" fontFamily="Microsoft YaHei" textColor="0x1b3046" left="192"/>
-		<e:Label text="层数" size="20" top="65" fontFamily="Microsoft YaHei" left="351" textColor="0x1b3046"/>
+		<e:Label text="Số tầng" size="20" top="65" fontFamily="Microsoft YaHei" left="351" textColor="0x1b3046"/>
 		<e:Scroller width="425" height="548" horizontalCenter="0" top="97">
 		<e:List id="list0" itemRendererSkinName="SkinChuangtianguanRankItem">
 			<e:layout>

@@ -9,7 +9,7 @@
 			<e:Image left="0" right="0" source="tongyong_juanzhou" scale9Grid="215,0,51,23" y="16"/>
 			<e:Image y="0" source="tongyong_titlebg" horizontalCenter="0"/>
 			<e:Image width="488" height="506" y="66" scale9Grid="6,6,36,37" horizontalCenter="0" source="tongyong_dikuang1"/>
-			<e:Label text="掠夺记录" size="22" horizontalCenter="0" y="15" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+			<e:Label text="Lịch sử cướp bóc" size="22" horizontalCenter="0" y="15" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 			<e:Scroller width="476" height="492" y="73"  horizontalCenter="0" scrollPolicyV="on" scrollPolicyH="off">
 			<e:List id="record" left="0" top="0" bottom="0" itemRendererSkinName="SkinPlunderRecordItem" right="0">
 				<e:layout>

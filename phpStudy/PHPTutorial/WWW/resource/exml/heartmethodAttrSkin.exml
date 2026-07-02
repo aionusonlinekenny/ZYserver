@@ -18,7 +18,7 @@
 
 		<e:Group id="attrGroup" verticalCenter="0" horizontalCenter="0">
 			<e:Label id="attr" text="999999\n999999\n999999\n999999\n999999\n999999" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="123"  x="103" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle"/>
-			<e:Label id="attrName" text="生       命 攻       击 物       抗 魔       防 魔       防 魔       防 " size="20" lineSpacing="10" touchEnabled="false" y="0" width="123" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="0" verticalAlign="middle"/>
+			<e:Label id="attrName" text="Sinh       lực Công       kích Kháng       vật lý Phòng       phép Phòng       phép Phòng       phép " size="20" lineSpacing="10" touchEnabled="false" y="0" width="123" fontFamily="Microsoft YaHei" textColor="0x6b9baa" left="0" verticalAlign="middle"/>
 
 
 

@@ -2,13 +2,13 @@
 <e:Skin class="SkinDailyCheckInPanel" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
         height="715" width="600">
 	<e:Button id="help" y="251" skinName="SkinBtn0" x="11" label="Nút bấm"  visible="false"/>
-	<e:Label id="checkInTitle" text="本月累计签到：" x="130.5" y="13.5" textColor="0xe4bb98" size="16" fontFamily="黑体"  visible="false"/>
+	<e:Label id="checkInTitle" text="Điểm danh tích lũy tháng này：" x="130.5" y="13.5" textColor="0xe4bb98" size="16" fontFamily="黑体"  visible="false"/>
 	<e:Label id="checkInLab" text="998 ngày" x="135.5" y="13.5" textColor="0x3cdb02" size="16" fontFamily="黑体"
 	          width="53"  visible="false"/>
-	<e:Label id="remainComplementTitle" text="剩余补签次数：" x="225.5" y="13.5" textColor="0xE4BB98" size="16" fontFamily="黑体"  visible="false"/>
-	<e:Label id="remainComplementLab" text="98次" x="337.5" y="13.5" textColor="0x3CDB02" size="16" fontFamily="黑体"
+	<e:Label id="remainComplementTitle" text="Số lần bù điểm danh còn lại：" x="225.5" y="13.5" textColor="0xE4BB98" size="16" fontFamily="黑体"  visible="false"/>
+	<e:Label id="remainComplementLab" text="98 lần" x="337.5" y="13.5" textColor="0x3CDB02" size="16" fontFamily="黑体"
 	          width="53"  visible="false"/>
-	<e:Label text="签到奖励每个月1号重置" y="566" textColor="0xe4bb98" size="16" fontFamily="黑体" horizontalCenter="0"  visible="false"/>
+	<e:Label text="Thưởng điểm danh reset vào ngày 1 mỗi tháng" y="566" textColor="0xe4bb98" size="16" fontFamily="黑体" horizontalCenter="0"  visible="false"/>
 	<e:Group id="itemGroup" width="397" height="412" y="45"   horizontalCenter="0"
 	          visible="false"/>
 	<e:Scroller id="cardScroller"
@@ -22,7 +22,7 @@
 	<e:Group id="rewardGroup" bottom="0" horizontalCenter="10" width="524" height="100">
 		<e:Image left="0" right="0" top="0" bottom="0" source="tongyongtip1" scale9Grid="3,3,19,19" visible="false"/>
 		<e:Image left="0" right="0" top="0" bottom="0" source="tongyongtip2" scale9Grid="19,19,3,5" visible="false"/>
-		<e:Label id="dayReardText" text="已累计签到（8/10）天，  \n 再签到2天可领取奖励。" size="20" verticalCenter="-7" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="2" left="80"/>
+		<e:Label id="dayReardText" text="Đã điểm danh tích lũy（8/10）ngày,  \n điểm danh thêm 2 ngày là có thể nhận thưởng." size="20" verticalCenter="-7" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="2" left="80"/>
 		<ns1:ItemBase id="rewardItem" x="10" scaleX="0.9" scaleY="0.9" skinName="SkinItem3" top="10"/>
 		<e:Button id="rewardBtn" label="Nhận thưởng" verticalCenter="0" right="16" width="176" height="69" skinName="SkinBtn1"/>
 	</e:Group>

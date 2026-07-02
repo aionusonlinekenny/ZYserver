@@ -7,6 +7,6 @@
 			<e:HorizontalLayout gap="30"/>
 		</e:layout>
 	</e:List>
-	<e:Label id="receiveNum" text="累计展示1次" x="434" y="16.5" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center" anchorOffsetX="0" width="111.5"/>
+	<e:Label id="receiveNum" text="Hiển thị tích lũy 1 lần" x="434" y="16.5" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center" anchorOffsetX="0" width="111.5"/>
 	<e:Label id="receive" text="Đã nhận" x="464.5" y="54.5" size="18" fontFamily="Microsoft YaHei" textAlign="center" anchorOffsetX="0" textColor="0xffff00"/>
 </e:Skin>

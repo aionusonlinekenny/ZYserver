@@ -11,13 +11,13 @@
 			<e:Label id="nameTxt0" text="Phần thưởng khiên" size="24" bold="true" textColor="0xD1C28F" horizontalCenter="0" verticalCenter="0" x="127" y="19" visible="false"/>
 		</e:Group>
 		<e:Image id="giveUp" y="-25.5" right="-9" source="tongyong_btnclose"/>
-		<e:Label text="1.首个对BOSS造成伤害的玩家可以获得归属" size="18" height="20"   bottom="88" includeIn="normal,gwboss,tower" textColor="0x1b3046" fontFamily="Microsoft YaHei" textAlign="left" anchorOffsetX="0"  left="26"/>
-		<e:Label text="2.当归属的玩家被其他玩家击败，移交归属权" size="18" height="20"   bottom="60" includeIn="normal,gwboss,tower" textColor="0x1b3046" fontFamily="Microsoft YaHei" textAlign="left" anchorOffsetX="0"  left="26"/>
-		<e:Label text="3.BOSS死亡时最终归属的玩家获得归属奖励" size="18" height="20"   bottom="32" includeIn="normal,gwboss,tower" textAlign="left" anchorOffsetX="0" textColor="0x1b3046" fontFamily="Microsoft YaHei" left.hideboss="26" left.tower="26" left.gwboss="26" x.normal="97" left="26" left.normal="26"/>
+		<e:Label text="1.Người đầu tiên gây sát thương lên BOSS sẽ được quyền sở hữu" size="18" height="20"   bottom="88" includeIn="normal,gwboss,tower" textColor="0x1b3046" fontFamily="Microsoft YaHei" textAlign="left" anchorOffsetX="0"  left="26"/>
+		<e:Label text="2.Khi người sở hữu bị người chơi khác đánh bại, quyền sở hữu sẽ chuyển giao" size="18" height="20"   bottom="60" includeIn="normal,gwboss,tower" textColor="0x1b3046" fontFamily="Microsoft YaHei" textAlign="left" anchorOffsetX="0"  left="26"/>
+		<e:Label text="3.Khi BOSS chết, người sở hữu cuối cùng sẽ nhận thưởng sở hữu" size="18" height="20"   bottom="32" includeIn="normal,gwboss,tower" textAlign="left" anchorOffsetX="0" textColor="0x1b3046" fontFamily="Microsoft YaHei" left.hideboss="26" left.tower="26" left.gwboss="26" x.normal="97" left="26" left.normal="26"/>
 		<e:Group width="475" height="126" y="28.5" horizontalCenter="0.5">
 			<e:Image left="0" right="0" top="0" bottom="0" x="-5" y="-70"   source="tongyongbg5" scale9Grid="9,7,9,4"/>
 
-			<e:Label text="归属奖励" size="20" textColor="0xf8b141" width="20" verticalCenter="0" x="10.69" bold="true" text.hideboss="Phần thưởng" visible="false"/>
+			<e:Label text="Thưởng sở hữu" size="20" textColor="0xf8b141" width="20" verticalCenter="0" x="10.69" bold="true" text.hideboss="Phần thưởng" visible="false"/>
 			<ns1:ItemBase id="belongItem" horizontalCenter="-141.5" verticalCenter="7" skinName="SkinItem2"/>
 
 			<e:Label text="Chắc chắn rơi" size="18" x="33" y="29" rotation="-45" textColor="0xd1c28f" includeIn="normal,gwboss,tower" visible="false"/>
@@ -30,7 +30,7 @@
 				</e:List>
 			</e:Group>
 			</e:Scroller>
-			<e:Label text="机率掉落" size="16" x="100" y="22.5" width="17" textColor="0xd1c28f" bold="true" visible="false"/>
+			<e:Label text="Tỷ lệ rơi" size="16" x="100" y="22.5" width="17" textColor="0xd1c28f" bold="true" visible="false"/>
 			<e:Group x="57.5" y="12.5" includeIn="normal" visible="false">
 				<e:Label text="lần tỷ lệ" size="16" x="19" y="6" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 				<e:Image x="0" y="0" source="jl05_png"/>

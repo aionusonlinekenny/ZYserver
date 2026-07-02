@@ -11,10 +11,10 @@
 		<e:Group id="top" width="396" height="138" y="3" x="2">
 			<ns1:ChuanShiItem id="equipItem" x="10" y="40.34" skinName="SkinheirloomItem"/>
 			<e:Label text="Loại：" size="20" x="122" y="43" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-			<e:Label text="诛仙" size="20" x="177" y="43" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Chu Tiên" size="20" x="177" y="43" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Label text="Chuyển sinh：" size="20" x="122" y="93" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Label text="3" size="20" x="177" y="93" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-			<e:Label id="equipName" text="星传世之刃" size="24" x="15" y="9.33" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center"/>
+			<e:Label id="equipName" text="Sao Truyền Thế Chi Nhận" size="24" x="15" y="9.33" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center"/>
 			<e:Label text="Vị trí：" size="20" x="122" y="68" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Label id="slot" text="Vũ khí" size="20" x="177" y="68" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:Label id="power" text="Điểm：999999" size="20" y="10" textAlign="right" width="200" right="15" x="188" fontFamily="Microsoft YaHei" textColor="0xffff00" height="24"/>
@@ -25,14 +25,14 @@
 			<e:Label id="value1" text="Lực công kích+99999" x="55" y="76" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="value2" text="Lực công kích+99999" x="55" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="value3" text="Lực công kích+99999" x="55" y="122" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-			<e:Label id="skilldesc" text="       技能的描述技能的描述技能的1的描述技能的1" y="297" size="20"  width="325" x="55" fontFamily="Microsoft YaHei" textColor="0x6b9baa" anchorOffsetX="0" anchorOffsetY="0" height="88"/>
+			<e:Label id="skilldesc" text="       Mô tả kỹ năng Mô tả kỹ năng Mô tả kỹ năng 1 Mô tả kỹ năng 1" y="297" size="20"  width="325" x="55" fontFamily="Microsoft YaHei" textColor="0x6b9baa" anchorOffsetX="0" anchorOffsetY="0" height="88"/>
 			<e:Label id="value4" text="Lực công kích+99999" x="55" y="183.33" size="20" fontFamily="Microsoft YaHei" textColor="0xffb400"/>
 			<e:Label id="value5" text="Lực công kích+99999" x="55" y="206.33" size="20" textColor="0xffb400" fontFamily="Microsoft YaHei"/>
 			<e:Label text="Lực công kích+99999" x="55" y="228.33" size="20" id="value6" textColor="0xffb400" fontFamily="Microsoft YaHei"/>
-			<e:Label text="  基础属性" size="20" x="13.04" y="21"   id="name0" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-			<e:Label text="【特殊属性】" size="20" x="13.04" y="154"   id="name1" fontFamily="Microsoft YaHei" textColor="0xffb400"/>
-			<e:Label text="诛仙装备与普通装备可叠加使用" size="20" y="419.33"   id="name3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label text="【附加技能】" size="20" x="13.04" y="263"   id="name2" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
+			<e:Label text="  Thuộc tính cơ bản" size="20" x="13.04" y="21"   id="name0" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label text="【Thuộc tính đặc biệt】" size="20" x="13.04" y="154"   id="name1" fontFamily="Microsoft YaHei" textColor="0xffb400"/>
+			<e:Label text="Trang bị Chu Tiên có thể dùng chồng với trang bị thường" size="20" y="419.33"   id="name3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="【Kỹ năng bổ sung】" size="20" x="13.04" y="263"   id="name2" fontFamily="Microsoft YaHei" textColor="0xe40000"/>
 		</e:Group>
 		<e:Image source="bantoutiaobg" height="30" scale9Grid="128,2,15,41" width="300"  bottom="-35" horizontalCenter="0"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20"  horizontalCenter="0" bottom="-28" fontFamily="Microsoft YaHei" textColor="0xffffff"/>

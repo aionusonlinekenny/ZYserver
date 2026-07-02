@@ -13,6 +13,6 @@
 		<e:EditableText id="input" text="" size="20" verticalAlign="top" promptColor="0x848282" anchorOffsetX="0" anchorOffsetY="0" lineSpacing="2" fontFamily="Microsoft YaHei" textColor="0x213847" width="408" height="180" y="46" horizontalCenter="0"/>
 		<e:Button id="friendInviteBtn" label="Lời mời kết bạn" skinName="SkinBtn3" bottom="15" horizontalCenter="-98"/>
 		<e:Button id="worldInviteBtn" label="Mời cả server" skinName="SkinBtn3" bottom="15" horizontalCenter="98"/>
-		<e:Label text="组队邀请" y="-1" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label text="Mời lập đội" y="-1" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 	</e:Group>
 </e:Skin>

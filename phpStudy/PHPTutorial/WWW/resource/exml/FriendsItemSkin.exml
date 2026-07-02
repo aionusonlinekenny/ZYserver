@@ -19,7 +19,7 @@
 	</e:Group>
 	<e:Group width="289" height="50" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="-40" verticalCenter="3">
 		<e:Label id="label_name" text="{data.name}" size="20" y="-116" x="-2" fontFamily="Microsoft YaHei" textColor="0xabebff" scaleX="1" scaleY="1"/>
-		<e:Label id="labelGuild" text="帮会名" size="18" y="-86" x="-2" fontFamily="Microsoft YaHei" textColor="0x00ff06" scaleX="1" scaleY="1"/>
+		<e:Label id="labelGuild" text="Tên Bang Hội" size="18" y="-86" x="-2" fontFamily="Microsoft YaHei" textColor="0x00ff06" scaleX="1" scaleY="1"/>
 		<e:layout>
 			<e:VerticalLayout verticalAlign="middle"/>
 		</e:layout>

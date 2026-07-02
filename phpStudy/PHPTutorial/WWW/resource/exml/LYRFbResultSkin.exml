@@ -7,7 +7,7 @@
 		<e:Button id="btnGet" label="Đi nhận(10)"    horizontalCenter="0" scaleX="1" scaleY="1" anchorOffsetX="0" y="200" skinName="SkinBtn6" icon="btn2_2"/>
 		<e:Image source="fbljjy" y="6.33" horizontalCenter="2.5"/>
 		<e:Image source="r09_png" verticalCenter="-31" horizontalCenter="8" visible="false"/>
-		<e:Label text="点击前往灵宠副本领取宠物碎片" size="20" horizontalCenter="-1" textColor="0xffffff" fontFamily="Microsoft YaHei" y="265"/>
+		<e:Label text="Nhấn để đến Phó Bản Linh Thú nhận Mảnh Thú Cưng" size="20" horizontalCenter="-1" textColor="0xffffff" fontFamily="Microsoft YaHei" y="265"/>
 		<e:Label id="numtext" text="9" size="30" horizontalCenter="47.5" fontFamily="Microsoft YaHei" y="105" textColor="0x00ff06"/>
 		<e:Image x="224.66" y="80.34" scaleX="1" scaleY="1" source="200015_png"/>
 		<e:Image x="59" y="9" source="fbresulthuawen_png"/>

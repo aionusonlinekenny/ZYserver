@@ -10,7 +10,7 @@
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" width="76" height="76" horizontalCenter="0" y="79"/>
 		<e:Label id="nameLabel" text="Chúc Phúc lv.1" size="24" horizontalCenter="0" textColor="0xc41200" fontFamily="Microsoft YaHei" y="29"/>
 		<e:Group y="187"   horizontalCenter="0">
-			<e:Label id="attrName" text="闪避值:" size="20"    x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="attrName" text="Điểm Né tránh:" size="20"    x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="attrValue" text="+15%" size="20"   x="0" y="0" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 				<e:HorizontalLayout gap="3" horizontalAlign="center" verticalAlign="middle"/>

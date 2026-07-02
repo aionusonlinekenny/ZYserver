@@ -18,13 +18,13 @@
 		<e:Image id="xiangqing" x="504" verticalCenter="0" source="" visible="false"/>
 		<e:Group height="50" verticalCenter="4" anchorOffsetX="0" width="334" horizontalCenter="106">
 			<e:Image source="tujianexp" verticalCenter="-0.5" x="-10"/>
-			<e:Label text="图鉴经验：" y="14" size="18" x="27" fontFamily="Microsoft YaHei" textColor="0x000000"/>
+			<e:Label text="Kinh nghiệm Đồ Giám：" y="14" size="18" x="27" fontFamily="Microsoft YaHei" textColor="0x000000"/>
 			<e:Label id="expValue" text="12345678" y="14" size="18"   x="112" fontFamily="Microsoft YaHei" textColor="0x000000"/>
 			<e:Group width="127" height="50" horizontalCenter="86.5" verticalCenter="-3">
 
 				<e:Group y="16" horizontalCenter="0.5">
 					<e:Group id="eff" horizontalCenter="1" verticalCenter="0"/>
-					<e:Label id="resolve" text="分解多余图鉴" size="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x00ff00" horizontalCenter="0" verticalCenter="0"/>
+					<e:Label id="resolve" text="Phân giải Đồ Giám dư" size="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x00ff00" horizontalCenter="0" verticalCenter="0"/>
 				</e:Group>
 			</e:Group>
 		</e:Group>

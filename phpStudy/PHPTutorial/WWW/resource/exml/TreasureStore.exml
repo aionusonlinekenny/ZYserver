@@ -18,7 +18,7 @@
 				</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Label text="寻宝仓库" size="24" horizontalCenter="0" textColor="0x084151" fontFamily="Microsoft YaHei" top="-4"/>
+		<e:Label text="Kho Tìm Kho Báu" size="24" horizontalCenter="0" textColor="0x084151" fontFamily="Microsoft YaHei" top="-4"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" bottom="-39" height="24" textColor="0xffffff"/>
 		<e:Button id="closeBtn0" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" right="3" top="-16"/>
 	</e:Group>

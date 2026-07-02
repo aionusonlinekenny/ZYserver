@@ -22,7 +22,7 @@
 	</e:Group>
 
 	<e:Image id="vipImg0" horizontalCenter="-189" width="174" height="41" anchorOffsetY="0" source="viptequanbg" anchorOffsetX="0" verticalCenter="-223.5"/>
-	<e:Label id="titleText" text="VIP 1 特权" size="26" lineSpacing="10" horizontalCenter="-200" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-223"/>
+	<e:Label id="titleText" text="Đặc quyền VIP 1" size="26" lineSpacing="10" horizontalCenter="-200" fontFamily="Microsoft YaHei" textColor="0xffff00" verticalCenter="-223"/>
 	<e:Image id="vipImg" horizontalCenter="1" width="576" height="168" anchorOffsetY="0" verticalCenter="-120" source="vipbn3_png"/>
 	<e:Button id="leftBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan" scaleX="1.1" scaleY="1.1" width="60" height="50" horizontalCenter="-240" verticalCenter="84.5"/>
 	<e:Button id="rightBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan" scaleX="-1.1" scaleY="1.1" width="60" height="50" horizontalCenter="238.5" bottom="362" verticalCenter="84.5"/>
@@ -37,7 +37,7 @@
 
 	<e:Group horizontalCenter="0" width="570" height="141" anchorOffsetY="0" verticalCenter="282.5">
 		<e:Image width="133" x="18.34" height="34" scale9Grid="0,3,58,18" y="-3" source="viplibao" anchorOffsetY="0"/>
-		<e:Label text="VIP礼包" size="24" bold="true" x="20" textColor="0xf8b141" visible="false"/>
+		<e:Label text="Gói Quà VIP" size="24" bold="true" x="20" textColor="0xf8b141" visible="false"/>
 		<e:Scroller id="scrollerlist" width="342" anchorOffsetX="0" horizontalCenter="-102" height="108" verticalCenter="8.5" scrollPolicyH="off" scrollPolicyV="off">
 		<e:List id="list" anchorOffsetX="0" width="339.33" x="17" y="-1" height="108" anchorOffsetY="0" itemRendererSkinName="SkinItem2">
 			<e:layout>
@@ -49,7 +49,7 @@
 	</e:Group>
 	<e:Group width="570" horizontalCenter="0" height="141" verticalCenter="281.5" visible="false">
 
-		<e:Label text="每周礼包" size="22" x="42" y="4.33" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label text="Gói Quà hàng tuần" size="22" x="42" y="4.33" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Scroller scaleX="0.9" scaleY="0.9" y="27.01" width="342" horizontalCenter="-121" height="113">
 		<e:List id="list0" itemRendererSkinName="SkinItem">
 			<e:layout>

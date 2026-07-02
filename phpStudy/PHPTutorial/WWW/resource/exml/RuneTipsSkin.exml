@@ -12,9 +12,9 @@
 		<e:Label text="99999999"  size="20" x="245.33" y="61.67" textColor="0xc78563" bold="true" visible="false"/>
 		<e:Label id="backDesc" text="Thu hồi có thể nhận            Tinh Hoa" size="18" x="120" y="60" bold="true" textColor="0xd1c28f" visible="false"/>
 		<e:Group id="runeAttr" width="350" height="33" horizontalCenter="0" verticalCenter="26.5">
-			<e:Label id="attrName" text="闪避值" size="20"   x="101" y="1" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="attrName" text="Điểm Né tránh" size="20"   x="101" y="1" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="attrValue" text="+15%" size="20"   x="193" y="1" fontFamily="Microsoft YaHei"/>
-			<e:Label id="randomAttr" text="战纹槽用于镶嵌战纹，战纹槽越多，可镶嵌战纹越多，属性越强！" y="1" size="20"   width="320" height="100" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
+			<e:Label id="randomAttr" text="Ô Chiến Văn dùng để khảm Chiến Văn, càng nhiều ô càng khảm được nhiều Chiến Văn, thuộc tính càng mạnh!" y="1" size="20"   width="320" height="100" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Image scale9Grid="85,1,6,1" source="tongyongline" top="157" height="1.5" horizontalCenter="0" left="35" right="35" visible="false"/>
 		<e:Label id="power" text="Điểm：999999" size="20" y="20" textColor="0xffbc00" bold="true" textAlign="right" right="20" visible="false"/>

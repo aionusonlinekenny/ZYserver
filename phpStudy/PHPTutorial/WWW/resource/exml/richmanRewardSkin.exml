@@ -9,7 +9,7 @@
 		<e:Image id="tipsnamebg" scale9Grid="6,6,15,508" top="0" left="0" right="0" source="quali4" bottom="41"/>
 
 		<e:Image id="tipsdepartline" source="tongyongline" left="4" right="4" top="257" height="1"/>
-		<e:Label id="partname" text="第三圈奖励" size="24" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" horizontalCenter="0" textColor="0xfffc00" top="32"/>
+		<e:Label id="partname" text="Thưởng vòng 3" size="24" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" horizontalCenter="0" textColor="0xfffc00" top="32"/>
 		<ns1:ItemBase id="itemIcon" scaleX="1" scaleY="1" horizontalCenter="0" skinName="SkinItem2" top="102"/>
 		<e:Group horizontalCenter="0.5" bottom="50" anchorOffsetY="0" height="62">
 			<e:Image id="getreward" scaleX="1" scaleY="1" source="btn3" height="57" width="124" horizontalCenter="0" verticalCenter="0"/>
@@ -17,7 +17,7 @@
 		</e:Group>
 
 		<e:Group id="counttext" left="0" right="0" top="277">
-			<e:Label text="再完成      圈可领取" size="20" y="0" width="312" verticalAlign="middle" textAlign="center" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+			<e:Label text="Hoàn thành thêm      vòng là có thể nhận" size="20" y="0" width="312" verticalAlign="middle" textAlign="center" textColor="0xffffff" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
 			<e:Label id="count" text="49" size="20" y="1" width="38" verticalAlign="middle" textAlign="center" x="124" fontFamily="Microsoft YaHei" textColor="0x18ff00"/>
 		</e:Group>
 		<e:Group bottom="-3" left="0" right="0" anchorOffsetY="0" height="40">

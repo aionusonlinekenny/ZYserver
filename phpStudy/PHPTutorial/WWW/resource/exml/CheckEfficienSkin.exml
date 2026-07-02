@@ -2,7 +2,7 @@
 <e:Skin class="SkinCheckEfficien" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="600" height="948">
 	<e:Group id="mainGroup" height="111" width="400" horizontalCenter="0" verticalCenter="0">
 		<e:Image top="0" bottom="0" left="0" right="0" source="bantoutiaobg" scale9Grid="169,9,63,19" width="383" height="111"/>
-		<e:Label id="descTxt" text="关卡效率提升" size="20" y="10" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="descTxt" text="Tăng hiệu suất ải" size="20" y="10" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Group id="groupGold" width="300" y="40" horizontalCenter="0" anchorOffsetY="0" height="27">
 			<e:Image verticalCenter="0" source="szjinbi" scaleX="0.8" scaleY="0.8" left="8"/>
 			<e:Label id="curMoney" text="5734285" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0" textAlign="left" verticalAlign="middle" left="50"/>

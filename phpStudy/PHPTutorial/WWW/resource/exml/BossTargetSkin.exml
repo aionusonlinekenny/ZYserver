@@ -7,4 +7,4 @@
 	<e:ProgressBar id="bloodBar" x="52" y="12" width="150" skinName="Skinbar2" value="100"/>
 	<e:Image x="7" y="1" source="touxiangkuang" width="56" height="56"/>
 	<e:Image id="head" x="4" y="-6" source="uihead10_png" width="60" height="60"/>
-	<e:Label id="nameLabel" text="玩家名字七个字" x="62" y="30" size="16" textColor="0xDFD1B5" textAlign="left"/> </e:Skin>
+	<e:Label id="nameLabel" text="Tên người chơi 7 chữ" x="62" y="30" size="16" textColor="0xDFD1B5" textAlign="left"/> </e:Skin>

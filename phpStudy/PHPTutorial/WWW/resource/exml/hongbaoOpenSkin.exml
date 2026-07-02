@@ -16,7 +16,7 @@
 	<e:Image width="180" height="25" y="144" source="bantoutiaobg2" scale9Grid="11,2,70,17" horizontalCenter="0"/>
 	<e:Label id="playerName" text="Tên người chơi 6 chữ" y="146" size="20" textColor="0xffd93f" bold="true" horizontalCenter="0"/>
 	<e:Image id="speakbg" width="280" y="179" source="xn_hongbaoUnder" anchorOffsetY="0" scale9Grid="3,0,6,141" height="114" horizontalCenter="0"/>
-	<e:Label id="speaktxt" text="恭祝大家在新的一年里，欧气十足，天天爆红装" y="184" size="22" anchorOffsetX="0" width="268" anchorOffsetY="0" height="104" bold="true" textColor="0xd1c28f" horizontalCenter="0"/>
+	<e:Label id="speaktxt" text="Chúc mọi người năm mới may mắn tràn đầy, ngày ngày nổ đồ đỏ" y="184" size="22" anchorOffsetX="0" width="268" anchorOffsetY="0" height="104" bold="true" textColor="0xd1c28f" horizontalCenter="0"/>
 	<e:Button id="hbbtn" label="Button" y="302" skinName="SkinBtn0" icon="hongbaobtn_png" horizontalCenter="0"/>
 	<e:Image id="hhbtnlabel" y="354" source="qianghongbao" touchEnabled="false" horizontalCenter="0"/>
 	<e:Image id="title" source="hongbao_title1000" y="16" horizontalCenter="0"/>

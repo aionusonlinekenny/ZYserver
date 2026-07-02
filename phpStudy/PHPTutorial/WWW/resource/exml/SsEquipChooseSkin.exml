@@ -17,7 +17,7 @@
 				</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Label id="tipLabel2" text="背包中没有可穿戴的装备" horizontalCenter="0" verticalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="tipLabel2" text="Túi đồ không có trang bị để mặc" horizontalCenter="0" verticalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:Button id="closeBtn" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" top="-24" horizontalCenter="229"/>
 		<e:Group width="377" height="34" horizontalCenter="0" bottom="-44">
 			<e:Image scaleX="1" scaleY="1" left="0" bottom="0" right="0" top="0" source="bantoutiaobg"/>

@@ -12,7 +12,7 @@
 
 
 
-		<e:Label text="道藏分解" y="14" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label text="Phân giải Đạo Tạng" y="14" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Scroller id="itemScroller" horizontalCenter="0.5" height="527" scrollPolicyH="off" scrollPolicyV="auto" width="509" x="24"  top="73" anchorOffsetY="0">
 			<e:List id="itemList" itemRendererSkinName="SkinheartmethodItem" useVirtualLayout="false" horizontalCenter="0" verticalCenter="2.5" anchorOffsetY="0" height="553">
 			<e:layout>

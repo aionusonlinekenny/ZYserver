@@ -20,7 +20,7 @@
 		<e:Group width="510" height="160" horizontalCenter="0" y="532" anchorOffsetY="0">
 			<e:Image  top="30" width="510" horizontalCenter="0" height="130" source="tongyong_dikuang4" scale9Grid="6,6,9,11"/>
 			<e:Group y="4" x="201">
-				<e:Label id="ringname" text="仙弓名字" size="22" y="-91.5"   x="-98" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0xffff00"/>
+				<e:Label id="ringname" text="Tên Tiên Cung" size="22" y="-91.5"   x="-98" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0xffff00"/>
 				<e:Label id="levellabel" text="Bậc X" size="22" y="-91.5" x="-4" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0xffff00"/>
 				<e:layout>
 				<e:HorizontalLayout gap="6"/>
@@ -48,7 +48,7 @@
 		<e:Image id="redPoint" source="zjmhongdian" y="703" x="357"/>
 		<e:Group id="descGroup" y="778" horizontalCenter="0">
 			<e:Image x="0" y="1" source="gantanhao1"/>
-			<e:Label id="desc" text="使用后将激活仙弓的技能效果" y="0" size="18" x="27" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
+			<e:Label id="desc" text="Sử dụng sẽ kích hoạt hiệu ứng kỹ năng Tiên Cung" y="0" size="18" x="27" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="10"/>
 			</e:layout>

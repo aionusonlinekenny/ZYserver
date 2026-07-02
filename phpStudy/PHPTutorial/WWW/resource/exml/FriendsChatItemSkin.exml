@@ -3,14 +3,14 @@
 	<w:Config id="158483085e3"/>
 	<e:Group width="160" height="18" x.s0="0" x="0" top="0">
 		<e:Image source="bantoutiaobg2" left="0" right="0" top="0" bottom="0" source.s0="zjmgonggaobg" scale9Grid="5,5,34,149" visible="false"/>
-		<e:Label id="label_date" size="18" textAlign="left" verticalAlign="top" text="11月11日11：11：11" verticalCenter="0" textColor="0x6b9baa" x="0" top.s0="2" fontFamily="Microsoft YaHei"/>
+		<e:Label id="label_date" size="18" textAlign="left" verticalAlign="top" text="11:11:11 ngày 11/11" verticalCenter="0" textColor="0x6b9baa" x="0" top.s0="2" fontFamily="Microsoft YaHei"/>
 	</e:Group>
 	<e:Group>
 		<e:Group width="62" height="60" x.s0="12" y="4"   left.s0="12" right.s1="12" visible="false">
 			<e:Image id="img_userIcon" source="{data.userIcon}" scaleX="0.63" scaleY="0.63" verticalCenter="0" horizontalCenter="0" visible="false"/>
 		</e:Group>
 		<e:Group id="group_bubble" y="21">
-			<e:Label id="label_msg" size="18" text="发言发言发言发言发言" fontFamily="Microsoft YaHei"  x="0" y="2" textColor="0xffffff" wordWrap="true" width="450"/>
+			<e:Label id="label_msg" size="18" text="phát ngôn phát ngôn phát ngôn phát ngôn phát ngôn" fontFamily="Microsoft YaHei"  x="0" y="2" textColor="0xffffff" wordWrap="true" width="450"/>
 		</e:Group>
 	</e:Group>
 

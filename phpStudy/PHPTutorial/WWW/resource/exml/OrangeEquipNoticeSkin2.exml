@@ -4,7 +4,7 @@
 		<e:Image source="wupingkuangnb3" horizontalCenter="0" verticalCenter="0" alpha="0.8" width="337" height="97" scale9Grid="38,16,20,69"/>
 
 		<e:Label id="skillName" text="Tên kỹ năng" size="20" verticalAlign="middle" fontFamily="Microsoft YaHei" textAlign="left" verticalCenter="0" textColor="0xffffff" horizontalCenter="30"/>
-		<e:Label id="desc" text="领悟新技能" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" top="24" left="119" visible="false"/>
+		<e:Label id="desc" text="Lĩnh ngộ kỹ năng mới" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" top="24" left="119" visible="false"/>
 		<e:Image alpha="0.8" width="73" source="jinengkuang" height="73" verticalCenter="0.5" left="33"/>
 		<ns1:ItemBase id="item" skinName="SkinItem" scaleX="1" scaleY="1" verticalCenter="0.5" left="34.5" width="69" height="69"/>
 	</e:Group> 

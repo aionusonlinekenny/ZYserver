@@ -19,7 +19,7 @@
 
 
 
-	<e:Label id="integralTips" text="活动商店每消耗1元宝获得1积分\n\n活动结束后清空积分" size="20" bottom="25" textAlign="center" verticalAlign="middle" width="290" height="61" visible.activityStore="false" right="2" textColor="0xF8B141"/>
+	<e:Label id="integralTips" text="Cửa hàng sự kiện: mỗi 1 Nguyên Bảo tiêu hao nhận 1 điểm\n\nSau khi sự kiện kết thúc điểm sẽ được reset" size="20" bottom="25" textAlign="center" verticalAlign="middle" width="290" height="61" visible.activityStore="false" right="2" textColor="0xF8B141"/>
 
 
 
@@ -34,7 +34,7 @@
 	<e:Label id="point" text="Điểm của tôi：20000" x="105" width="213" size="20"  textAlign="left" bottom="15" visible="false"/>
 
 	<e:Group id="integral" horizontalCenter="-122" width="86" height="22" bottom="67">
-		<e:Label id="integralName" text="当前积分：" x="0" size="20" y="0" textColor="0x35E62D" verticalAlign="middle"/>
+		<e:Label id="integralName" text="Điểm hiện tại：" x="0" size="20" y="0" textColor="0x35E62D" verticalAlign="middle"/>
 		<e:Label id="integralNum" text="2000" x="0" size="20" y="0" textColor="0x35E62D"/>
 		<e:layout>
 			<e:HorizontalLayout gap="-6"/>

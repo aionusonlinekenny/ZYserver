@@ -8,8 +8,8 @@
 		<e:Image source="tongyongbg5" width="419" height="375" horizontalCenter="1.5" verticalCenter="-27.5" scale9Grid="9,5,10,9" x="41" y="109" scaleX="1" scaleY="1"/>
 		<e:Group horizontalCenter="0.5" width="419" top="58">
 			<e:Label y="6" text="Trận đấu" size="20" horizontalCenter="-125.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
-			<e:Label y="6" text="对手" size="20" horizontalCenter="37.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
-			<e:Label y="6" text="胜负" size="20" horizontalCenter="171.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
+			<e:Label y="6" text="Đối thủ" size="20" horizontalCenter="37.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
+			<e:Label y="6" text="Thắng bại" size="20" horizontalCenter="171.5" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Scroller id="scrollerList" scrollPolicyH="off" scaleX="1" scaleY="1" height="331.33" width="406" horizontalCenter="1.5" verticalCenter="-8.5" anchorOffsetY="0">
 		<e:List id="list" x="-3" y="30" itemRendererSkinName="SkinMyRecordItem">
@@ -28,7 +28,7 @@
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="0"/>
 		</e:Group>
 		<e:Label id="competionType" text="Đánh 5 thắng 3" size="30" bottom="63" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
-		<e:Label id="competionInfo" text="胜利3场可晋级，每场间隔5分钟" size="20" bottom="32" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="competionInfo" text="Thắng 3 trận sẽ thăng cấp, mỗi trận cách nhau 5 phút" size="20" bottom="32" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		<e:Button id="closebtn" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="221" top="-8" x="441" y="-155" scaleX="1" scaleY="1"/>
 	</e:Group>
 	<e:Image source="wodezhanji_png" alpha="0.7" visible="false"/>

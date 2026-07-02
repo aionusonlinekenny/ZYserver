@@ -21,8 +21,8 @@
 
 
 			<e:Group width="272.5" height="25" y="151" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0">
-				<e:Label text="内完成    个任务" x="83.01" y="-3" size="26" fontFamily="Microsoft YaHei" textColor="0x001828" scaleX="1" scaleY="1" italic="true"/>
-				<e:Label text="36小时" x="0" y="-3" size="26" fontFamily="Microsoft YaHei" italic="true" textColor="0x0038ab" scaleX="1" scaleY="1"/>
+				<e:Label text="hoàn thành    nhiệm vụ trong" x="83.01" y="-3" size="26" fontFamily="Microsoft YaHei" textColor="0x001828" scaleX="1" scaleY="1" italic="true"/>
+				<e:Label text="36 giờ" x="0" y="-3" size="26" fontFamily="Microsoft YaHei" italic="true" textColor="0x0038ab" scaleX="1" scaleY="1"/>
 				<e:Label text="8" x="170" y="-3" size="26" fontFamily="Microsoft YaHei" italic="true" textColor="0x0038ab" textAlign="center"/>
 			</e:Group>
 

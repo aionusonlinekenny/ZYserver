@@ -4,8 +4,8 @@
 	<e:Image left="0" right="0" top="0" bottom="0" scale9Grid="65,29,2,1" source="tongyonglabbg"/>
 	<e:Image source="tongyongline5" horizontalCenter="0" y="75.75"/>
 	<e:Label id="chooseNum" y="48" text="00/50" size="16" textColor="0x00842c" fontFamily="Microsoft YaHei" left="200" textAlign="left"/>
-	<e:Label y="48" text="已分配奖励:" size="16" x="112.75" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-	<e:Label id="boxname" y="18.5" text="玛法宝箱" size="20" x="113.5" textColor="0xec6014" fontFamily="Microsoft YaHei"/>
+	<e:Label y="48" text="Đã phân phối thưởng:" size="16" x="112.75" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+	<e:Label id="boxname" y="18.5" text="Rương Mã Pháp" size="20" x="113.5" textColor="0xec6014" fontFamily="Microsoft YaHei"/>
 	<ns1:ItemBase id="goods" y="6" skinName="SkinItem" scaleX="0.8" scaleY="0.8" x="28"/>
 	<e:Button id="choosePeople" x="342.5" y="15.5" label="Chọn thành viên" icon="zjmzidong" scaleX="1" width="116" height="47">
 		<e:skinName>

@@ -8,7 +8,7 @@
 	<e:Image width="520" height="2" x="45" y="626" source="tongyongline4" visible="false"/>
 	<e:Group anchorOffsetY="0" height="102" width="600" horizontalCenter="0" bottom="0">
 		<e:Group id="costNum" horizontalCenter="0" bottom="74">
-			<e:Label text="消耗神装结晶:" size="20" x="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label text="Tiêu hao Tinh Thể Thần Trang:" size="20" x="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label id="cur" text="120" size="20" x="122" verticalCenter="0" textAlign="right" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label id="need" text="/100" size="20" x="180" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:layout>
@@ -18,7 +18,7 @@
 		<e:Group id="btnGroup" width="213" height="67" horizontalCenter="0" bottom="0">
 			<e:Button id="executeBtn" label="Nâng cấp" width="213" height="67" y="0" horizontalCenter="0" icon="btn1_2" skinName="SkinBtn7"/>
 		</e:Group>
-		<e:Label id="getTreasureBtn" text="获得神装结晶" size="20" height="60" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="192" bottom="6" stroke="0" textColor="0x00ff06"/>
+		<e:Label id="getTreasureBtn" text="Nhận Tinh Thể Thần Trang" size="20" height="60" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="192" bottom="6" stroke="0" textColor="0x00ff06"/>
 
 	</e:Group>
 	<e:Component id="grewupPanel" y="120" skinName="GrewupOrangePanel" horizontalCenter="0"/>
@@ -33,6 +33,6 @@
 		<e:Component id="equip5" y="193" skinName="EquipItem" x="484"/>
 		<e:Component id="equip7" y="292" skinName="EquipItem" x="484"/>
 	</e:Group>
-	<e:Label id="topLevel" text="已升级至满级" size="24" horizontalCenter="0" bottom="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9" visible="false"/>
+	<e:Label id="topLevel" text="Đã nâng cấp đến tối đa" size="24" horizontalCenter="0" bottom="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9" visible="false"/>
 	<e:Label id="labelMax" text="Đã đạt cấp tối đa" size="24" horizontalCenter="0" bottom="50" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9" visible="false"/> 
 </e:Skin>

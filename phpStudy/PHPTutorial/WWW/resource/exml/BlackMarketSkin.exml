@@ -4,7 +4,7 @@
 
 
 
-	<e:Label id="tip" text="免费刷新：" size="20" width="280" textAlign="center" horizontalCenter="118" fontFamily="Microsoft YaHei" bottom="119"/>
+	<e:Label id="tip" text="Làm mới miễn phí：" size="20" width="280" textAlign="center" horizontalCenter="118" fontFamily="Microsoft YaHei" bottom="119"/>
 
 
 	<e:Button id="buyAllItemBtn" label="Mua tất cả" width="120" height="52" horizontalCenter="-75" bottom="1" icon="chat_btnbg" skinName="SkinBtn26"/>

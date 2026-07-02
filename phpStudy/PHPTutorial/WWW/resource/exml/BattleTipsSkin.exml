@@ -16,7 +16,7 @@
 		<e:Image top="0" scale9Grid="198,5,14,37" left="0" right="0" source="tongyong_juanzhou"/>
 		<e:Image source="tongyong_titlebg" width="249" y="-18" horizontalCenter="0"/>
 		<e:Image width="401" horizontalCenter="0" source="tongyong_dikuang4" height="490" scale9Grid="10,10,60,60" bottom="100"/>
-		<e:Label text="万仙杀劫" horizontalCenter="0" top="-6" size="24" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label text="Vạn Tiên Sát Kiếp" horizontalCenter="0" top="-6" size="24" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Group x="44" y="51">
 
 			<e:Label text="Mô tả sự kiện：" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>

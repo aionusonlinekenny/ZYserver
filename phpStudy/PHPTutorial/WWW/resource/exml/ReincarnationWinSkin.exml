@@ -10,26 +10,26 @@
 		<e:Image scaleX="1" scaleY="1" horizontalCenter="2" top="172" source="lunhui_progress_png"/>
 
 		<e:Image id="huawenImage" scaleX="1" horizontalCenter="0" source="huabian" verticalCenter="105"/>
-		<e:Label id="nameTxt" text="飞升属性" size="22" textAlign="center" width="140" horizontalCenter="0" fontFamily="Microsoft YaHei" top="465" textColor="0xffffff"/>
+		<e:Label id="nameTxt" text="Thuộc tính Phi Thăng" size="22" textAlign="center" width="140" horizontalCenter="0" fontFamily="Microsoft YaHei" top="465" textColor="0xffffff"/>
 
 		<e:Group width="500" horizontalCenter="0" height="163" x="112" scaleX="1" scaleY="1" bottom="81">
 			<e:Group id="attrGroup0" horizontalCenter="30" width="227" y="13.3" x="137" scaleX="1" scaleY="1" visible="false">
 			<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel" scaleX="0.75" scaleY="0.75" y="0" x="0"/>
-			<e:Label id="attr0" text="攻击：1000000\n物抗：10000000\n法抗：10000000\n生命：10000000\n神圣伤害：10000000" x="7" y="23" size="20" lineSpacing="5" verticalAlign="top" textAlign="left" fontFamily="Microsoft YaHei"  textColor="0xffffff"/>
+			<e:Label id="attr0" text="Công kích：1000000\nKháng vật lý：10000000\nKháng phép：10000000\nSinh lực：10000000\nSát thương Thần Thánh：10000000" x="7" y="23" size="20" lineSpacing="5" verticalAlign="top" textAlign="left" fontFamily="Microsoft YaHei"  textColor="0xffffff"/>
 			<e:layout>
 				<e:VerticalLayout horizontalAlign="center" gap="-5"/>
 			</e:layout>
 			</e:Group>
 			<e:Group id="attrGroup1" y="13.3" left="30">
 			<ns1:PowerPanel id="powerPanel1" skinName="SkinPowerPanel" scaleX="0.75" scaleY="0.75" top="0" y="8" horizontalCenter="0"/>
-			<e:Label id="attr1" text="攻击：10000000\n物抗：10000000\n法抗：10000000\n生命：10000000\n神罚神圣伤害：1000000" size="20" lineSpacing="5" verticalAlign="top" y="47" scaleX="1" scaleY="1" horizontalCenter="71" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="attr1" text="Công kích：10000000\nKháng vật lý：10000000\nKháng phép：10000000\nSinh lực：10000000\nSát thương Thần Phạt Thần Thánh：1000000" size="20" lineSpacing="5" verticalAlign="top" y="47" scaleX="1" scaleY="1" horizontalCenter="71" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:VerticalLayout gap="-5" horizontalAlign="center"/>
 				</e:layout>
 			</e:Group>
 			<e:Group id="attrGroup2" y="13.3" right="-30">
 			<ns1:PowerPanel id="powerPanel2" skinName="SkinPowerPanel" scaleX="0.75" scaleY="0.75" horizontalCenter="0" top="0"/>
-			<e:Label id="attr2" text="攻击：10000000\n物抗：10000000\n法抗：10000000\n生命：10000000\n神罚神圣伤害：10000000" y="58" size="20" lineSpacing="5" verticalAlign="middle" textAlign="left" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="attr2" text="Công kích：10000000\nKháng vật lý：10000000\nKháng phép：10000000\nSinh lực：10000000\nSát thương Thần Phạt Thần Thánh：10000000" y="58" size="20" lineSpacing="5" verticalAlign="middle" textAlign="left" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:VerticalLayout gap="-5" horizontalAlign="center"/>
 				</e:layout>
@@ -44,7 +44,7 @@
 		</e:Group>
 		<e:Group top="5" left="20" width="39" height="300" x="62" y="-307" scaleX="1" scaleY="1">
 			<e:Image height="143" source="lunhui_name_bg" width="39" left="0" top="0"/>
-			<e:BitmapLabel id="lunhuiLv" font="lunhui_lv_fnt" text="人仙·修凡" width="24" horizontalCenter="0" top="20"/>
+			<e:BitmapLabel id="lunhuiLv" font="lunhui_lv_fnt" text="Nhân Tiên·Tu Phàm" width="24" horizontalCenter="0" top="20"/>
 		</e:Group>
 		<e:Group scaleX="1" scaleY="1" horizontalCenter="-28" top="178">
 			<e:Image x="0" y="0" source="lunhui_progress_gray"/>

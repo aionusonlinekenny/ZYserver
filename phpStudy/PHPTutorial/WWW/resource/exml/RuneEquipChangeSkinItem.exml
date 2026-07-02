@@ -2,14 +2,14 @@
 <e:Skin class="SkinRuneEquipChangeItem" width="505" height="108" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="all,dis,get,now"  width.all="505" height.all="108" width.now="505" height.now="108" width.get="505" height.get="108">
 	<w:Config id="1586b1c98a7"/>
 	<e:Image   source="tongyonglabbg" left="0" right="0" top="0" bottom="0" scale9Grid="40,20,30,30" width.all="502" height.all="108" width.dis="505" height.dis="108" width.get="502" height.get="108" width="502"/>
-	<e:Label id="nameLab" text="战纹名称 LVx" textColor="0xca8a00" x.dis="20" text.dis="Trang bị hiện tại" visible="false"/>
-	<e:Label id="back" text="回收可得精华123" y="16" size="16" textAlign="center" includeIn="all" right="22" fontFamily="Microsoft YaHei" textColor="0x000000" visible="false"/>
+	<e:Label id="nameLab" text="Tên Chiến Văn LVx" textColor="0xca8a00" x.dis="20" text.dis="Trang bị hiện tại" visible="false"/>
+	<e:Label id="back" text="Thu hồi nhận Tinh Hoa123" y="16" size="16" textAlign="center" includeIn="all" right="22" fontFamily="Microsoft YaHei" textColor="0x000000" visible="false"/>
 
 	<e:Group width="220" height="18" includeIn="all" y="68"   left="101" visible="false">
 		<e:Label id="attrValue" text="+6708" size="18" textColor="0xe2dfd4"   includeIn="all,now" y.all="0" x.all="40" scaleX.all="1" scaleY.all="1"/>
-		<e:Label id="attrName" text="生命" textColor="0xd1c28f" size="18"   includeIn="all,now" y.all="0" x.all="0" scaleX.all="1" scaleY.all="1"/>
+		<e:Label id="attrName" text="Sinh lực" textColor="0xd1c28f" size="18"   includeIn="all,now" y.all="0" x.all="0" scaleX.all="1" scaleY.all="1"/>
 	</e:Group>
-	<e:Label text="当前没有镶嵌战纹" x="100" size="24" width="230" height="80" verticalCenter="0" verticalAlign="middle" textAlign="center" includeIn="dis" textColor="0xFFFF00" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
+	<e:Label text="Hiện chưa khảm Chiến Văn" x="100" size="24" width="230" height="80" verticalCenter="0" verticalAlign="middle" textAlign="center" includeIn="dis" textColor="0xFFFF00" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
 
 	<e:Group id="tag" x="413" includeIn="all,now" visible.all="false" visible="false">
 		<e:Image source="xiejiaotiao" x="17" y="-14" rotation="45" width="90" scale9Grid="21,2,1,17"  />
@@ -21,10 +21,10 @@
 	<ns1:RuneDisplay id="itemIcon" skinName="SkinRuneItem" includeIn="all,now" height="100" width="101" horizontalCenter="-190" verticalCenter="3"/>
 
 	<e:Label id="now" text="Đang khảm" size="20" verticalCenter="0" includeIn="now" fontFamily="Microsoft YaHei" textColor.all="0x00842c" textColor.now="0x00842c" x.now="392" textColor="0x00842c" horizontalCenter="152.5"/>
-	<e:Label id="already" text="已有属性" size="20" verticalCenter="0" textColor="0xf3311e" includeIn="all,now" horizontalCenter="152.5" fontFamily="Microsoft YaHei" visible="false"/>
+	<e:Label id="already" text="Thuộc tính đã có" size="20" verticalCenter="0" textColor="0xf3311e" includeIn="all,now" horizontalCenter="152.5" fontFamily="Microsoft YaHei" visible="false"/>
 	<e:Group width="200" height="87" verticalCenter="0" y="8" horizontalCenter="-24.5" anchorOffsetY="0" includeIn="all,now">
-		<e:Label id="runeName" text="自然 lv.1" textColor="0x001828" size="20" left="101" includeIn="all,now" y="31.35" x="101" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" height="20"/>
-		<e:Label id="attr" text="攻击 +999" size="18" width="230" textColor="0x001828" verticalAlign="middle" includeIn="all,now" x="101" y="51" anchorOffsetY="0" fontFamily="Microsoft YaHei"/>
+		<e:Label id="runeName" text="Tự Nhiên lv.1" textColor="0x001828" size="20" left="101" includeIn="all,now" y="31.35" x="101" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" height="20"/>
+		<e:Label id="attr" text="Công kích +999" size="18" width="230" textColor="0x001828" verticalAlign="middle" includeIn="all,now" x="101" y="51" anchorOffsetY="0" fontFamily="Microsoft YaHei"/>
 		<e:layout>
 		<e:VerticalLayout verticalAlign="middle" horizontalAlign="left" gap="10"/>
 		</e:layout>

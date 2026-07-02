@@ -24,10 +24,10 @@
 		<e:Label id="attr3" text="Công kích：1000000000" size="19" textAlign="left" width="170" anchorOffsetX="0" horizontalCenter="10" verticalCenter="-17" fontFamily="Microsoft YaHei" textColor="0xffffff" height="90" visible="false"/>
 		<e:Label id="power3" text="Chiến lực：10000" size="20" textColor="0xFF9900" bold="true" horizontalCenter="-3" top="51" visible="false"/>
 		<e:Label id="state3" text="Đã đạt bậc tối đa" size="22" horizontalCenter="2" fontFamily="Microsoft YaHei" top="15" textColor="0xffff00" visible="false"/>
-		<e:Label id="attr1" text="攻击：100\n物抗：1000\法抗：1000\n闪避：20%\n命中：1.2%" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" left="76" top="86" verticalAlign="middle" height="90" textColor="0xffffff" visible="false"/>
+		<e:Label id="attr1" text="Công kích：100\nKháng vật lý：1000\Kháng phép：1000\nNé tránh：20%\nChính xác：1.2%" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" left="76" top="86" verticalAlign="middle" height="90" textColor="0xffffff" visible="false"/>
 		<e:Label id="power1" text="Chiến lực：5" size="20" textColor="0xFF9900" left="72" top="50" visible="false"/>
 		<e:Label text="Trước thăng bậc" size="22" id="state1" fontFamily="Microsoft YaHei" left="117" top="17" textColor="0xffff00" visible="false"/>
-		<e:Label id="attr2" text="攻击：100物抗：1000法抗：1000闪避：20%命中：1.2%" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" height="90" right="58" top="86" textColor="0xffffff" visible="false"/>
+		<e:Label id="attr2" text="Công kích：100 Kháng vật lý：1000 Kháng phép：1000 Né tránh：20% Chính xác：1.2%" size="19" textAlign="left" width="170" anchorOffsetX="0" fontFamily="Microsoft YaHei" height="90" right="58" top="86" textColor="0xffffff" visible="false"/>
 		<e:Label id="power2" text="Chiến lực：10000" size="20" textColor="0xFF9900" bold="true" right="88" top="52" visible="false"/>
 		<e:Label text="Sau thăng bậc" size="22" id="state2" fontFamily="Microsoft YaHei" right="119" top="17" textColor="0xffff00" visible="false"/>
 		<e:Image id="arrows" source="jiantouyou" horizontalCenter="-5" verticalCenter="-16" visible="false"/>
@@ -45,13 +45,13 @@
 		</e:layout>
 	</e:Group>
 	<e:Group width="600" height="123.32" horizontalCenter="0" anchorOffsetY="0" bottom="3">
-		<e:Label id="getItemTxt" text="获取神羽" size="20" bottom="-10" height="60" verticalAlign="middle" width="100" textAlign="center" right="49" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:Label id="getItemTxt" text="Nhận Thần Vũ" size="20" bottom="-10" height="60" verticalAlign="middle" width="100" textAlign="center" right="49" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 		<e:Button id="replace" label="Trang bị Thần Vũ" skinName="SkinBtn1" horizontalCenter="116" bottom="40"/>
 		<e:Image id="redPointReplace" touchEnabled="false" source="zjmhongdian" horizontalCenter="186" bottom="86"/>
 		<e:Button id="replace0" label="Hợp thành nhanh" skinName="SkinBtn1" horizontalCenter="-116" bottom="40"/>
 		<e:Image id="costImg0" width="20" height="20" x="0" y="0" source="601000_png" visible="false"/>
 		<e:Group horizontalCenter="-164.5" bottom="10">
-			<e:Label id="costName" text="神羽(1阶):" x="18" y="16" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="costName" text="Thần Vũ (bậc 1):" x="18" y="16" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="cost0" text="99/99" size="20" textAlign="left" x="28" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:layout>
 			<e:HorizontalLayout gap="5" verticalAlign="middle"/>

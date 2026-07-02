@@ -5,7 +5,7 @@
 		<e:Image source="tongyong_dikuang2" height="708" width="573" scale9Grid="31,15,52,49"/>
 		<e:Image source="tongyong_juanzhou" width="573" horizontalCenter="0"/>
 		<e:Image y="-18" width="249" source="tongyong_titlebg" horizontalCenter="0"/>
-		<e:Label id="titleDesc" y="-6" text="杀劫积分榜" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label id="titleDesc" y="-6" text="Bảng điểm Sát Kiếp" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:ViewStack id="viewStack" width="512" horizontalCenter="0" selectedIndex="1" bottom="0" top="83">
 			<ns1:BattleRankOfScorePanel  xmlns:ns1="*" id="runePanel0" name="排名" left="0" right="0" top="0" bottom="0" skinName="SkinBattleScoreRank"/>
 			<ns1:BattleRewardsPanel  xmlns:ns1="*" id="decomPanel0" name="奖励" left="0" right="0" top="0" bottom="0" skinName="SkinBattleScoreRewarrd" visible="false"/>

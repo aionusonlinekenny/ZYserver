@@ -8,12 +8,12 @@
 		<e:Image horizontalCenter="0" anchorOffsetY="0" height="178" source="tongyong_dikuang1" width="415" scale9Grid="10,6,60,42" y="52"/>
 		<e:Image width="259" height="41" y="-2" source="tongyong_titlebg" horizontalCenter="0"/>
 		<e:Image width="370" height="20" x="60" y="181" source="diwen6"/>
-		<e:Label id="title" text="请选择使用角色" size="20" y="12" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x084151" horizontalCenter="0"/>
+		<e:Label id="title" text="Vui lòng chọn nhân vật sử dụng" size="20" y="12" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x084151" horizontalCenter="0"/>
 		<e:Group id="tupo" width="417" height="178" horizontalCenter="-1" anchorOffsetX="0" y="238">
 			<e:Image left="0" right="0" height="178" y="0" scale9Grid="5,4,14,12" source="tongyong_dikuang4"/>
 			<e:Group horizontalCenter="-65" anchorOffsetY="0" height="154" anchorOffsetX="0" width="253" y="10">
 				<e:Group id="g0" y="20" x="11">
-					<e:Label text="使用数量" size="20" x="40" y="50" textColor="0x001838" fontFamily="Microsoft YaHei"/>
+					<e:Label text="Số lượng sử dụng" size="20" x="40" y="50" textColor="0x001838" fontFamily="Microsoft YaHei"/>
 					<e:Label id="curUse" text="" size="20" textAlign="center" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0x001838"/>
 					<e:Image id="dir" x="48" y="2" rotation="0" source="tongyongup"/>
 					<e:Label id="nextUse" text="" size="20" textAlign="center" x="52" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>

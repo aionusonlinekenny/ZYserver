@@ -31,7 +31,7 @@
 			<e:ProgressBar id="bar" height="18" skinName="Skinbar5" verticalCenter="0.5" value="50" width="410" enabled="false" left="75"/>
 			<e:Image source="touxiangkuang" x="2" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0.5"/>
 			<e:Image source="star2" verticalCenter="0" left="22"/>
-			<e:Label id="state" text="已经达成几天" y="10" size="20" scaleX="1" scaleY="1" horizontalCenter="-108.5" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
+			<e:Label id="state" text="Đã đạt được mấy ngày" y="10" size="20" scaleX="1" scaleY="1" horizontalCenter="-108.5" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
 			<ns1:OSATarget3BigRewardItemRender id="gift0" skinName="OSASeriesBigRewardItem" scaleX="0.9" scaleY="0.9" horizontalCenter="0.5" verticalCenter="5"/>
 			<ns1:OSATarget3BigRewardItemRender id="gift1" skinName="OSASeriesBigRewardItem" scaleX="0.9" scaleY="0.9" verticalCenter="5" horizontalCenter="204.5"/>
 		</e:Group>

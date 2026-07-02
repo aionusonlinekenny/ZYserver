@@ -10,24 +10,24 @@
 			<e:Image anchorOffsetY="0" width="580" height="280" bottom="0" source="tongyong_dikuang4" scale9Grid="18,21,45,45" horizontalCenter="0"/>
 			<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" top="384"/>
 			<e:Image horizontalCenter="0" source="huabian" height="50" verticalCenter="103" scale9Grid="92,0,32,50" width="300"/>
-			<e:Label text="当前火符套装" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" top="465" textColor="0xffffff"/>
+			<e:Label text="Bộ Hỏa Phù hiện tại" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" top="465" textColor="0xffffff"/>
 			<e:Scroller width="437" touchEnabled="false" height="208" anchorOffsetY="0" top="504" left="38">
 			<e:Group horizontalCenter="14" verticalCenter="0" height="182" anchorOffsetX="0" width="424">
-				<e:Label id="currTitleText" text="60级套装 (3/8)" size="20" y="125" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label id="preViewText" text="更多套装预览" size="20" y="125" x="200" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-				<e:Label id="currText0" text="杜    开    休    生    死    伤    景    惊" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="370" textColor="0xffffff" horizontalCenter="-12.5" bottom="10"/>
+				<e:Label id="currTitleText" text="Bộ cấp 60 (3/8)" size="20" y="125" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="preViewText" text="Xem thêm bộ trang bị" size="20" y="125" x="200" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+				<e:Label id="currText0" text="Đỗ    Khai    Hưu    Sinh    Tử    Thương    Cảnh    Kinh" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="370" textColor="0xffffff" horizontalCenter="-12.5" bottom="10"/>
 				<e:Label id="currText3" text="Bộ 3 món：Tăng sát thương Thần Phạt" size="20" x="22" y="30" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label id="currText1say" text="装备3件火符大幅增强对怪物的伤害" size="20" x="22" y="30" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+				<e:Label id="currText1say" text="Trang bị 3 món Hỏa Phù tăng mạnh sát thương lên quái vật" size="20" x="22" y="30" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
 				<e:Label id="currText5" text="Bộ 5 món：Tăng sát thương Thần Phạt" size="20" x="22" y="58" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label id="currText2say" text="装备5件火符大幅增强对玩家的伤害" size="20" x="22" y="58" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+				<e:Label id="currText2say" text="Trang bị 5 món Hỏa Phù tăng mạnh sát thương lên người chơi" size="20" x="22" y="58" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
 				<e:Label id="currText8" text="Bộ 8 món：Tăng sát thương Thần Phạt" size="20" x="22" y="89" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label id="currText3say" text="装备8件火符大幅减少神罚冷却时间" size="20" horizontalCenter="-29.5" bottom="95" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
-				<e:Label id="nextTitleText" text="套装名称" x="0" size="18" y="110" textColor="0xd04cc1" fontFamily="Microsoft YaHei" visible="false"/>
-				<e:Label id="nextText0" text="乾  巽  坎  艮  坤  震  离  兑" x="0" size="18" y="130" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+				<e:Label id="currText3say" text="Trang bị 8 món Hỏa Phù giảm mạnh thời gian hồi Thần Phạt" size="20" horizontalCenter="-29.5" bottom="95" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
+				<e:Label id="nextTitleText" text="Tên bộ trang bị" x="0" size="18" y="110" textColor="0xd04cc1" fontFamily="Microsoft YaHei" visible="false"/>
+				<e:Label id="nextText0" text="Càn  Tốn  Khảm  Cấn  Khôn  Chấn  Ly  Đoài" x="0" size="18" y="130" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
 				<e:Label id="nextText1" text="Bộ 3 món：Tăng sát thương Thần Phạt" x="0" size="18" y="155" textColor="0xffffff" fontFamily="Microsoft YaHei" visible="false"/>
 				<e:Label id="nextText2" text="Bộ 5 món：Tăng sát thương Thần Phạt" x="0" size="18" y="175" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" visible="false"/>
 				<e:Label id="nextText3" text="Bộ 8 món：Tăng sát thương Thần Phạt" x="0" size="18" y="195" textColor="0xFFFFFF" fontFamily="Microsoft YaHei" visible="false"/>
-				<e:Label text="火符套装累计加成（三角色时）" size="20" y="0" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Cộng thêm tích lũy Bộ Hỏa Phù（khi có 3 nhân vật）" size="20" y="0" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Image source="tongyongdian2" y="63" x="4"/>
 				<e:Image source="tongyongdian2" x="4" y="91"/>
 				<e:Image source="tongyongdian2" y="35" x="4"/>
@@ -83,12 +83,12 @@
 			<e:Image x="0" y="68" source="star_png" width="21" height="20"/>
 			<e:Image x="0" source="star_png" width="21" height="20" y="102"/>
 			<e:Label text="Tổng lực công kích của 3 nhân vật" y="0" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label text="对玩家造成         的伤害" y="34" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Gây         sát thương lên người chơi" y="34" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label text="480%" y="34" size="20" x="125" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label text="1050%" y="68" size="20" x="124" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label text="对怪物造成           的伤害" y="68" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Gây           sát thương lên quái vật" y="68" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label text="Cấp 60" y="102" size="20" x="24" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label text="开启神罚火符装备" y="102" size="20" x="68" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Mở trang bị Hỏa Phù Thần Phạt" y="102" size="20" x="68" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			</e:Group>
 			<e:Image width="76" source="jinengkuang_png" left="80" top="597" height="76"/>
 			<e:Image id="skillIcon" horizontalCenter="-182" bottom="58" source="71000_png" width="70" height="70"/>
@@ -96,12 +96,12 @@
 
 			<e:Image id="skillName" horizontalCenter="29" source="80001_png" bottom="172" visible="false"/>
 			<e:Image y="-9" scale9Grid="11,2,70,17" width="214" height="50" horizontalCenter="0" source="huabian"/>
-			<e:Label text="技能预览" y="14" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" size="22"/>
+			<e:Label text="Xem trước kỹ năng" y="14" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" size="22"/>
 		</e:Group>
 		<e:Group id="Activation" x="0" scaleX="1" scaleY="1" height="728" width="600" verticalCenter="0" visible="false">
 			<e:Group left="0" right="0" top="0" bottom="0">
 			<e:Image horizontalCenter="0" y="92" source="hejibg2_png"/>
-			<e:Label id="activeTipsTxt" text="闯关达到 第5关 即可开启神罚技能" horizontalCenter="0" size="22" y="34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="activeTipsTxt" text="Vượt qua Ải 5 là có thể mở kỹ năng Thần Phạt" horizontalCenter="0" size="22" y="34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 
 

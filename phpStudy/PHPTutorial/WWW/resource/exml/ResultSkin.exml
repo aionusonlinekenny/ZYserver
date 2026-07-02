@@ -42,7 +42,7 @@
 
 
 
-			<e:Label text="获得货币：" x="130" y="551" size="20" textColor="0xdfd1b5" width="100" height="20" visible="false"/>
+			<e:Label text="Nhận tiền tệ：" x="130" y="551" size="20" textColor="0xdfd1b5" width="100" height="20" visible="false"/>
 
 			<e:Label text="Nhận vật phẩm："  y="30" size="20" textColor="0xDFD1B5" height="40" width="398"  visible="false"/>
 			<e:List id="listItem" y="1.84" width="395"  x="88.6">

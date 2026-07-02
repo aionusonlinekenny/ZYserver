@@ -3,7 +3,7 @@
 	<w:Config id="15a59527d66"/>
 	<e:Image left="3" right="3" top="3" bottom="3" source="tongyonglabbg" scale9Grid="40,20,30,30"/>
 
-	<e:Label id="label" text="不可被掠夺" size="18" x="394" y="7" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
+	<e:Label id="label" text="Không thể bị cướp" size="18" x="394" y="7" fontFamily="Microsoft YaHei" textColor="0xec6014"/>
 
 	<e:Image id="arrow"  right="14" verticalCenter="0" source="jiantouxuan"/>
 	<e:Image id="selectedImg" left="-1" right="-1" top="-1" bottom="-1" source="xuanzekuang3" scale9Grid="20,20,5,5" visible="false"/>

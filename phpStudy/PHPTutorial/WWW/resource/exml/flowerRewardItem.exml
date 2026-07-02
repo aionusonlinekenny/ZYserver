@@ -7,7 +7,7 @@
 
 	<e:Group horizontalCenter="0" left="0" right="0" top="0" bottom="0">
 		<e:Label id="playerName" text="Tên người chơi 6 chữ" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="flowerCount" text="被你的魅力折服，送上了【999】朵泣血神花" size="18" anchorOffsetX="0" anchorOffsetY="0" x="100" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="flowerCount" text="Bị sức hút của bạn chinh phục, tặng 【999】bông Khấp Huyết Thần Hoa" size="18" anchorOffsetX="0" anchorOffsetY="0" x="100" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:layout>
 			<e:HorizontalLayout verticalAlign="middle" horizontalAlign="left"/>
 		</e:layout>

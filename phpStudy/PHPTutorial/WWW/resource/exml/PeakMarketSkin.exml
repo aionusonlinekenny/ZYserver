@@ -13,12 +13,12 @@
 
 
 		<e:Group verticalCenter="0" horizontalCenter="8">
-			<e:Label text="我的巅峰令：" x="-34" size="20" textAlign="left" y="4" fontFamily="Microsoft YaHei" textColor="0xffff06"/>
+			<e:Label text="Lệnh Đỉnh Phong của tôi：" x="-34" size="20" textAlign="left" y="4" fontFamily="Microsoft YaHei" textColor="0xffff06"/>
 		<e:Label id="myLabel" text="30" size="20" x="163" scaleX="1" scaleY="1" verticalCenter="0.5" y="-12" textColor="0xffff06" fontFamily="Microsoft YaHei"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0" verticalAlign="middle"/>
 		</e:layout>
 		</e:Group>
-		<e:Label id="getWay" text="获取巅峰令" size="20" textAlign="left" textColor="0x00ff00" left="380" verticalCenter="0" visible="false"/>
+		<e:Label id="getWay" text="Nhận Lệnh Đỉnh Phong" size="20" textAlign="left" textColor="0x00ff00" left="380" verticalCenter="0" visible="false"/>
 	</e:Group> 
 </e:Skin>

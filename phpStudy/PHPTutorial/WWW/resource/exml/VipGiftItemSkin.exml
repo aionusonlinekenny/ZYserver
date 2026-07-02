@@ -9,7 +9,7 @@
 		<e:Image id="txt" source="vipgifttxt01_png" left="13" verticalCenter="7"/>
 		<e:Group width="320" height="30" horizontalCenter="0" bottom="6">
 			<e:Image source="bantoutiaobg" left="0" right="0" top="0" bottom="0" scale9Grid="50,5,138,35" visible="false"/>
-			<e:Label text="VIP等级越高 奖励越丰富" size="20" verticalCenter="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Cấp VIP càng cao thưởng càng nhiều" size="20" verticalCenter="0" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 		<e:List id="reward" right="4" verticalCenter="29" itemRendererSkinName="SkinItem2">
 			<e:layout>

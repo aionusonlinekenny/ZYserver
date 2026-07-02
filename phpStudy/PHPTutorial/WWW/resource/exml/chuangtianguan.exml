@@ -17,7 +17,7 @@
 		<e:Image touchEnabled="false" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-7.5" source="tading_png" y="-20"/>
 
 
-		<e:Label id="nameLabel" text="三十六重天" size="22"   y="13" horizontalCenter="-8" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center"/>
+		<e:Label id="nameLabel" text="Ba Mươi Sáu Trùng Thiên" size="22"   y="13" horizontalCenter="-8" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center"/>
 	</e:Group>
 
 
@@ -30,7 +30,7 @@
 			<e:Image anchorOffsetY="0" anchorOffsetX="0" width="306" height="161" left="2" source="tongyong_dikuang4" scale9Grid="26,15,33,42" top="0"/>
 
 			<e:Image y="1" height="28" width="263" left="2" source="bantoutiaobg6"/>
-			<e:Label text="通关排名" x="48" size="20" y="5" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Xếp hạng vượt ải" x="48" size="20" y="5" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 
 
 			<e:Image id="rankImg0" x="10" y="47" source="paihang1" width="25" height="25"/>
@@ -49,9 +49,9 @@
 			<e:Image width="308" y="2" horizontalCenter="23" source="fuentitlebg2" scale9Grid="38,0,17,13"/>
 			<e:Image width="79" height="17" y="-2" horizontalCenter="18" source="fuentitlebg"/>
 
-			<e:Label id="openDesc" text="通关三十六重天" size="20" y="21" x="85" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="openDesc" text="Vượt qua Ba Mươi Sáu Trùng Thiên" size="20" y="21" x="85" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<ns1:BagItemBase id="itemicon" y="90" skinName="SkinItem2" horizontalCenter="21"/>
-			<e:Label id="unlock" text="解锁新类型仙纹" y="53" size="18" horizontalCenter="19" fontFamily="Microsoft YaHei" textAlign="center"/>
+			<e:Label id="unlock" text="Mở khóa loại Tiên Văn mới" y="53" size="18" horizontalCenter="19" fontFamily="Microsoft YaHei" textAlign="center"/>
 			<ns1:BaseComponent id="runeItem" width="100" height="110" y="75.5" skinName="SkinRuneItem" x="106" visible="false"/>
 			<e:Group id="runeLock" width="100" height="105" y="92" horizontalCenter="21">
 			<e:Image horizontalCenter="0" source="zwfwbg_png"/>
@@ -75,7 +75,7 @@
 				<e:HorizontalLayout horizontalAlign="center"/>
 			</e:layout>
 			</e:List>
-			<e:Label id="nowrawed" text="通关X层奖励" size="20" y="9" horizontalCenter="10" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center"/>
+			<e:Label id="nowrawed" text="Thưởng vượt tầng X" size="20" y="9" horizontalCenter="10" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center"/>
 
 
 			<e:Group width="90" height="96" horizontalCenter="-73" verticalCenter="-5">
@@ -99,10 +99,10 @@
 
 	<e:Button id="challengeBtn" label="Thách đấu" skinName="SkinBtn1" horizontalCenter="131" width="177" height="65" verticalCenter="305.5"/>
 	<e:Button id="challengeBtn0" label="Thưởng hàng ngày" skinName="SkinChuangtianguanDayrewardbtn" horizontalCenter="-204.5" verticalCenter="285.5"/>
-	<e:Label id="limit" text="1转X级可继续挑战" size="24"   horizontalCenter="134" bottom="39" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
+	<e:Label id="limit" text="Chuyển sinh 1 cấp X có thể tiếp tục thách đấu" size="24"   horizontalCenter="134" bottom="39" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 
-	<e:Label id="dailyGift" text="（可领取）" size="18"   horizontalCenter="-204.5" x="86" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x00ff00" verticalCenter="343" textAlign="center"/>
-	<e:Label id="dailyGift0" text="每通关10层可抽奖" size="18" horizontalCenter="-46" x="96" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" textColor="0x00ff00" verticalCenter="343"/>
+	<e:Label id="dailyGift" text="（Có thể nhận）" size="18"   horizontalCenter="-204.5" x="86" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x00ff00" verticalCenter="343" textAlign="center"/>
+	<e:Label id="dailyGift0" text="Vượt mỗi 10 tầng có thể quay thưởng" size="18" horizontalCenter="-46" x="96" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" textColor="0x00ff00" verticalCenter="343"/>
 	<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" horizontalCenter="-175.5" x="157" verticalCenter="258.5"/>
 	<e:Button id="choujiang" label="" skinName="SkinBtn0" icon="tttlucky_png" horizontalCenter="-46" verticalCenter="287"/>
 	<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" horizontalCenter="-36.5" x="167" verticalCenter="259.5"/>

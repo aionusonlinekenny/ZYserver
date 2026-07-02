@@ -60,14 +60,14 @@
 		<e:Image y="57" source="yupei_wssh" scaleX="1" scaleY="1" horizontalCenter="0"/>
 	</e:Group>
 	<e:Group id="maxGroup" horizontalCenter="0" bottom="10">
-		<e:Label id="material" text="消耗：998/9999" size="20" y="177" textColor="0xD1C28F" horizontalCenter="0"/>
+		<e:Label id="material" text="Tiêu hao：998/9999" size="20" y="177" textColor="0xD1C28F" horizontalCenter="0"/>
 		<e:Group width="500" height="60" id="starGroup" scaleX="0.8" scaleY="0.8" x="36" y="-59"/>
 		<e:Button id="upgradeBtn" label="Nâng cấp" skinName="SkinBtn1" width="180" height="60" bottom="10" horizontalCenter="0"/>
 		<e:Image id="redPoint" source="zjmhongdian" horizontalCenter="78" bottom="46"/>
 
 		<e:Group width="500" height="128" horizontalCenter="0" bottom="142" x="10" y="20" scaleX="1" scaleY="1">
 			<e:Image id="nextAttBG" source="shuxingbg" left="0" right="0" top="0" bottom="0" scale9Grid="50,5,65,34"/>
-			<e:Label id="curAtt" text="攻击：8000\n攻击：8000\n攻击：8000\n攻击：8000" size="18" width="210" textAlign="left" verticalAlign="middle" textColor="0x9f946d" x="15" scaleX="1" scaleY="1" verticalCenter="0"/>
+			<e:Label id="curAtt" text="Công kích：8000\nCông kích：8000\nCông kích：8000\nCông kích：8000" size="18" width="210" textAlign="left" verticalAlign="middle" textColor="0x9f946d" x="15" scaleX="1" scaleY="1" verticalCenter="0"/>
 			<e:Label id="nextAtt" text="Công kích：8000" size="18" textColor="0x2ECA22" width="210" textAlign="left" verticalAlign="middle" verticalCenter="0" horizontalCenter="140" x="0" y="0" scaleX="1" scaleY="1"/>
 
 			<e:Image id="cursor" source="jiantouyou" verticalCenter="0" horizontalCenter="0"/>

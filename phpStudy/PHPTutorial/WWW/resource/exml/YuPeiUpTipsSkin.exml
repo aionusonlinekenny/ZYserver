@@ -10,25 +10,25 @@
 		<e:Label text="Đang sử dụng：" size="20" x="120" y="66" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="use" text="10/100" size="20" x="220" y="66" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Group id="info" y="130" left="13">
-			<e:Label text="（法阵达到" size="16" x="0" y="0" textColor="0xFF0000" fontFamily="Microsoft YaHei"/>
-			<e:Label id="num0" text="30阶10级" size="16" x="60" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
-			<e:Label text="后增加使用上限）" size="16" x="10" y="10" textColor="0xFF0000" fontFamily="Microsoft YaHei"/>
+			<e:Label text="（Pháp Trận đạt" size="16" x="0" y="0" textColor="0xFF0000" fontFamily="Microsoft YaHei"/>
+			<e:Label id="num0" text="Bậc 30 cấp 10" size="16" x="60" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:Label text="sau đó tăng giới hạn sử dụng）" size="16" x="10" y="10" textColor="0xFF0000" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 			<e:HorizontalLayout gap="0"/>
 			</e:layout>
 		</e:Group>
-		<e:Label text="使用后法阵属性：" size="18" width="320" y="160" textAlign="left" x="15" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="attr" text="攻击+100\n暴击附加伤害+10100\n暴击附加伤害+1000\n暴击附加伤害+1000" size="18" width="320" textAlign="left" x="15" lineSpacing="7" top="185" bottom="45" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label text="Thuộc tính Pháp Trận sau khi dùng：" size="18" width="320" y="160" textAlign="left" x="15" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Label id="attr" text="Công kích+100\nSát thương Bạo kích cộng thêm+10100\nSát thương Bạo kích cộng thêm+1000\nSát thương Bạo kích cộng thêm+1000" size="18" width="320" textAlign="left" x="15" lineSpacing="7" top="185" bottom="45" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		<e:Group x="15" bottom="15">
 			<e:Label text="Có thể ở" size="18" y="0" textAlign="left" x="81" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-			<e:Label text="炼阵" size="18" y="10" textAlign="left" x="81" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
-			<e:Label text="界面使用为法阵提升属性" size="18" y="20" textAlign="left" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label text="Luyện Trận" size="18" y="10" textAlign="left" x="81" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Dùng giao diện để nâng thuộc tính Pháp Trận" size="18" y="20" textAlign="left" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:layout>
 			<e:HorizontalLayout gap="0"/>
 			</e:layout>
 		</e:Group>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="52"/>
-		<e:Label id="nameLabel" text="初级温养丹" size="20" textAlign="left" y="20" x="20" textColor="0xff9900" fontFamily="Microsoft YaHei"/>
+		<e:Label id="nameLabel" text="Ôn Dưỡng Đan Sơ Cấp" size="20" textAlign="left" y="20" x="20" textColor="0xff9900" fontFamily="Microsoft YaHei"/>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" x="100" scaleX="1" scaleY="1" bottom="-30">
 		<e:Image source="bantoutiaobg" height="30" y="0" horizontalCenter="0" scale9Grid="128,2,15,41" width="300"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" y="4" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>

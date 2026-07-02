@@ -9,5 +9,5 @@
 	<e:Group id="redPoint" alpha.disabled="0.5" right="2" top="2" visible="false">
 		<e:Image x="0" y="0" source="zjmhongdian"/>
 	</e:Group>
-	<e:Label id="viptxt" text="V1礼包" fontFamily="Microsoft YaHei" size="18" horizontalCenter="0" textAlign="center" stroke="0.1" textColor="0xffffff" textColor.down="0x921526" textColor.up="0xffffff" bottom="6"/>
+	<e:Label id="viptxt" text="Gói Quà V1" fontFamily="Microsoft YaHei" size="18" horizontalCenter="0" textAlign="center" stroke="0.1" textColor="0xffffff" textColor.down="0x921526" textColor.up="0xffffff" bottom="6"/>
 </e:Skin>

@@ -2,7 +2,7 @@
 <e:Skin class="kfBossSceneSkin" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<e:Group right="10" anchorOffsetY="0" height="49" verticalCenter="-439.5">
 		<e:Image anchorOffsetY="0" source="tongyongtip1" left="0" right="0" top="0" bottom="0" scale9Grid="26,26,13,21" visible="false"/>
-		<e:Label id="nameTxt" text="S241跨服战场" y="16" size="20" horizontalCenter="1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="nameTxt" text="Chiến Trường liên server S241" y="16" size="20" horizontalCenter="1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		<e:Group y="34" horizontalCenter="0">
 		<e:layout>
 			<e:HorizontalLayout gap="0" horizontalAlign="center" verticalAlign="middle"/>

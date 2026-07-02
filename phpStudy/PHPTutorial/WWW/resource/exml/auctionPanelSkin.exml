@@ -22,8 +22,8 @@
 		<e:Image source="pailietouline" horizontalCenter="-137.5" verticalCenter="0"/>
 		<e:Image source="pailietouline" verticalCenter="0" horizontalCenter="20.5"/>
 		<e:Label id="itemName" text="Tên sản phẩm" size="20" horizontalCenter="-203" verticalCenter="0" textColor="0xD1C28F"/>
-		<e:Label id="state" text="当前竞价" size="20" horizontalCenter="-61" verticalCenter="0" textColor="0xD1C28F"/>
-		<e:Label id="auctionBtn" text="竞价" size="20" horizontalCenter="145" verticalCenter="0" textColor="0xD1C28F"/>
+		<e:Label id="state" text="Giá đấu hiện tại" size="20" horizontalCenter="-61" verticalCenter="0" textColor="0xD1C28F"/>
+		<e:Label id="auctionBtn" text="Đấu giá" size="20" horizontalCenter="145" verticalCenter="0" textColor="0xD1C28F"/>
 	</e:Group>
 	<e:Button id="btn" skinName="SkinBtn3" label="Lịch sử giao dịch" horizontalCenter="201" bottom="10"/>
 	<e:Group id="add" width="218" height="60" horizontalCenter="0" bottom="5" x="-190" y="0">
@@ -32,7 +32,7 @@
 		<e:Image width="100" height="50" source="shuzibg" verticalCenter="0" horizontalCenter="0" scale9Grid="8,4,10,14"/>
 		<e:Label id="pageTxt" text="1/10" horizontalCenter="0.5" size="20" verticalCenter="0" textColor="0x7E6437"/>
 	</e:Group>
-	<e:Label id="null" text="当前没有正在拍卖的商品" horizontalCenter="0" verticalCenter="-37" size="24" textColor="0x7E6437" visible="false"/>
+	<e:Label id="null" text="Hiện không có sản phẩm nào đang đấu giá" horizontalCenter="0" verticalCenter="-37" size="24" textColor="0x7E6437" visible="false"/>
 
 
 </e:Skin>

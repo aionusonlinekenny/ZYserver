@@ -12,7 +12,7 @@
 		<e:Image height="23" y="17" source="tongyong_juanzhou" scale9Grid="216,0,53,23" left="0" right="0"/>
 		<e:Image source="tongyong_titlebg" width="282" height="41" anchorOffsetX="0" horizontalCenter="0" top="0"/>
 		<e:Image width="556" height="590" source="tongyong_dikuang1" scale9Grid="10,6,60,42" horizontalCenter="0" top="60"/>
-		<e:Label text="火符兑换" size="22" fontFamily="Microsoft YaHei" textAlign="center" left="0" right="0" top="13" textColor="0x084151"/>
+		<e:Label text="Đổi Hỏa Phù" size="22" fontFamily="Microsoft YaHei" textAlign="center" left="0" right="0" top="13" textColor="0x084151"/>
 
 
 
@@ -44,7 +44,7 @@
 			<e:Image width="26" height="26" source="hejisuipian" scaleX="1" scaleY="1" left="10" verticalCenter="0"/>
 			<e:Label id="suipian" text="2000" size="22" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" height="22" verticalCenter="0" width="90" right="0" textAlign="center"/>
 		</e:Group>
-		<e:Label id="goturn" text="材料转换" size="22" fontFamily="Microsoft YaHei" bottom="22" textColor="0x00ff06" anchorOffsetX="0" border="false" italic="false" lineSpacing="0" multiline="false" stroke="0" right="50"/>
+		<e:Label id="goturn" text="Chuyển đổi nguyên liệu" size="22" fontFamily="Microsoft YaHei" bottom="22" textColor="0x00ff06" anchorOffsetX="0" border="false" italic="false" lineSpacing="0" multiline="false" stroke="0" right="50"/>
 
 
 		<e:Image height="30" scale9Grid="128,2,15,41" width="300" horizontalCenter="0" bottom="-40" touchEnabled="false" source="bantoutiaobg"/>

@@ -32,8 +32,8 @@
 			<e:Rect width="390" height="16" y="25" fillAlpha="0.4" horizontalCenter="0"/>
 			<e:ProgressBar id="bar2" width="382" height="15" y="25" skinName="Skinbar1" value="0" horizontalCenter="0"/>
 			<e:Image id="questScheduleFrame" width="394" y="21" source="jingyantiao6" scale9Grid="21,8,17,7" horizontalCenter="0"/>
-			<e:Label id="questDes1" text="再完成     个任务领取                开启神罚技能" y="56" size="18" width="456" horizontalCenter="0" verticalAlign="middle" textAlign="center" textColor="0xf8b141"/>
-			<e:Label id="questDes2" text="火龙之心" y="56" size="18" width="83" textAlign="center" textColor="0x35E62D" verticalAlign="middle" x="216"/>
+			<e:Label id="questDes1" text="Hoàn thành thêm     nhiệm vụ để nhận                mở kỹ năng Thần Phạt" y="56" size="18" width="456" horizontalCenter="0" verticalAlign="middle" textAlign="center" textColor="0xf8b141"/>
+			<e:Label id="questDes2" text="Hỏa Long Chi Tâm" y="56" size="18" width="83" textAlign="center" textColor="0x35E62D" verticalAlign="middle" x="216"/>
 			<e:Label id="questNumber" text="25" y="56" size="18" width="40" textAlign="center" x="96" textColor="0x35e62d" verticalAlign="middle"/>
 			</e:Group>
 			<e:Button id="btn2" label="Tiếp tục nhiệm vụ" skinName="SkinBtn1" horizontalCenter="0" bottom="10"/>
@@ -44,11 +44,11 @@
 			<e:Label id="des0" text="Tổng lực công kích của 3 nhân vật" y="6" size="18" x="15" textColor="0xf8b141"/>
 			<e:Image id="desP1" source="tongyongdian2" x="0" y="31"/>
 			<e:Image id="desBg1" source="shuxingbg4"  scaleX="2.2" x="-30" y="14" width="155.46"/>
-			<e:Label id="des1a" text="对玩家造成           的伤害" y="30" size="18" x="15" textColor="0xf8b141"/>
+			<e:Label id="des1a" text="Gây           sát thương lên người chơi" y="30" size="18" x="15" textColor="0xf8b141"/>
 			<e:Label id="des1b" text="480%" y="30" size="18" x="109" textColor="0x20CB30"/>
 			<e:Image id="desP2" source="tongyongdian2" x="0" y="55"/>
 			<e:Image id="desBg2" source="shuxingbg4"  scaleX="2.3" x="-20" y="37" width="152.18"/>
-			<e:Label id="des2a" text="对怪物造成             的伤害" y="54" size="18" x="15" textColor="0xf8b141"/>
+			<e:Label id="des2a" text="Gây             sát thương lên quái vật" y="54" size="18" x="15" textColor="0xf8b141"/>
 			<e:Label id="des2b" text="1050%" y="54" size="18" textColor="0x20CB30" x="109"/>
 			</e:Group>
 		</e:Group>
@@ -66,11 +66,11 @@
 
 				<e:Group  x="0.67" y="-15" anchorOffsetY="0">
 					<e:Image id="desP3" x="0" y="-14.35" source="tongyongdian4"/>
-					<e:Label id="des1" text="再收集" y="-479.35" size="18" x="-288" fontFamily="Microsoft YaHei" textColor="0xffffff" scaleX="1" scaleY="1"/>
+					<e:Label id="des1" text="Sưu tầm thêm" y="-479.35" size="18" x="-288" fontFamily="Microsoft YaHei" textColor="0xffffff" scaleX="1" scaleY="1"/>
 					<e:Label id="number1" text="8" y="-16.35" size="18" x="79"  verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-					<e:Label id="des2" text="个饰品可邀约仙侣" y="-469.35" size="18" x="-278" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" scaleX="1" scaleY="1"/>
-					<e:Label id="artifactname" text="修罗斧" y="-479.35" size="18" x="-67"  verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffff00" scaleX="1" scaleY="1"/>
-					<e:Label id="des3" text="同行" y="-469.35" size="18" x="-278" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" scaleX="1" scaleY="1"/>
+					<e:Label id="des2" text="trang sức có thể mời Tiên Lữ" y="-469.35" size="18" x="-278" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" scaleX="1" scaleY="1"/>
+					<e:Label id="artifactname" text="Tu La Phủ" y="-479.35" size="18" x="-67"  verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xffff00" scaleX="1" scaleY="1"/>
+					<e:Label id="des3" text="Đồng hành" y="-469.35" size="18" x="-278" fontFamily="Microsoft YaHei" textColor="0xFFFFFF" scaleX="1" scaleY="1"/>
 					<e:layout>
 						<e:HorizontalLayout gap="5"/>
 					</e:layout>
@@ -80,7 +80,7 @@
 			<e:Image id="dexP4" x="0" y="10.96" source="tongyongdian4"/>
 
 
-			<e:Label id="des1a1" text="仙侣同行后，攻杀术 天雷术 镇魔咒伤害系数暴涨 20%镇魔咒伤害系数暴涨 20% " size="18" x="23.65" fontFamily="Microsoft YaHei" y="8.96" width="370" anchorOffsetX="0" lineSpacing="2" textColor="0xffffff"/>
+			<e:Label id="des1a1" text="Sau khi Tiên Lữ đồng hành, hệ số sát thương Công Sát Thuật Thiên Lôi Thuật Trấn Ma Chú tăng vọt 20%hệ số sát thương Trấn Ma Chú tăng vọt 20% " size="18" x="23.65" fontFamily="Microsoft YaHei" y="8.96" width="370" anchorOffsetX="0" lineSpacing="2" textColor="0xffffff"/>
 			</e:Group>
 			<e:Group id="guanqiaSchedule" horizontalCenter="0.5" anchorOffsetY="0" height="63" verticalCenter="191.5">
 				<e:Image width="410" y="11" scale9Grid="26,0,13,0" source="jindutiao1" horizontalCenter="0"/>
@@ -89,10 +89,10 @@
 				<e:Image source="jindutiaotou" verticalCenter="-11.5" right="7" rotation="180"/>
 				<e:Label id="lvText" text="Label" x="-2" y="36" width="450" size="20" fontFamily="Microsoft YaHei" textAlign="center"/>
 				<e:Group id="textPane" width="440" height="22" anchorOffsetY="0" horizontalCenter="0" verticalCenter="14.5">
-				<e:Label id="guanqiaDes1" text="再战             " size="20" width="45" horizontalCenter="0" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0" x="-128" y="1" scaleX="1" scaleY="1" textColor="0xffffff"/>
+				<e:Label id="guanqiaDes1" text="Đấu tiếp             " size="20" width="45" horizontalCenter="0" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0" x="-128" y="1" scaleX="1" scaleY="1" textColor="0xffffff"/>
 				<e:Label id="guanqiaDes2" text="15" size="20" textAlign="center" x="8" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" y="1" scaleX="1" scaleY="1" textColor="0xffff00"/>
-				<e:Label id="guanqiaDes0" text="关  获得                    " size="20" horizontalCenter="-12.5" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="-1" x="-118" y="11" scaleX="1" scaleY="1" anchorOffsetX="0" textColor="0xffffff" width="79"/>
-				<e:Label id="artifactName1" text="修罗碎片①" size="20" textAlign="center" x="120" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" y="1" scaleX="1" scaleY="1" textColor="0xffff00"/>
+				<e:Label id="guanqiaDes0" text="Ải  nhận được                    " size="20" horizontalCenter="-12.5" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="-1" x="-118" y="11" scaleX="1" scaleY="1" anchorOffsetX="0" textColor="0xffffff" width="79"/>
+				<e:Label id="artifactName1" text="Mảnh Tu La①" size="20" textAlign="center" x="120" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" y="1" scaleX="1" scaleY="1" textColor="0xffff00"/>
 				<e:layout>
 					<e:HorizontalLayout gap="2" horizontalAlign="center"/>
 				</e:layout>
@@ -111,7 +111,7 @@
 		</e:Group>
 		<e:Group id="taskTip" horizontalCenter="0.5" bottom="40" height="32" width="320" x="86" y="486" visible="false">
 			<e:Image left="0" right="0" top="0" bottom="0" alpha="0.8" source="tongyongbg2" scale9Grid="7,8,34,32"/>
-			<e:Label id="taskTipText0" text="提示文字什么的" size="18" horizontalCenter="0" verticalCenter="1" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="taskTipText0" text="Chữ nhắc nhở gì đó" size="18" horizontalCenter="0" verticalCenter="1" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

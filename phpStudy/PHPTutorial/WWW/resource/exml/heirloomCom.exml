@@ -36,7 +36,7 @@
 			</e:Group>
 			<e:Button id="jihuo0" label="Hợp thành" width="175" horizontalCenter="0" height="68" verticalCenter="8" skinName="SkinBtn1"/>
 			<e:Group y="60" right="12">
-			<e:Label id="getItemTxt0" text="获取诛仙橙晶" size="20"  fontFamily="Microsoft YaHei" textColor="0x00ff06" right="0" bottom="0"/>
+			<e:Label id="getItemTxt0" text="Nhận Chu Tiên Cam Tinh" size="20"  fontFamily="Microsoft YaHei" textColor="0x00ff06" right="0" bottom="0"/>
 			</e:Group>
 		</e:Group>
 	</e:Group>

@@ -32,8 +32,8 @@
 			</e:List>
 		</e:Scroller>
 		<e:Label id="worldInvite" text="Mời cả server" textColor="0x00ff00" size="20" horizontalCenter="186" bottom="33"/>
-		<e:Label id="noPlayer" text="暂无满足条件玩家在线" textColor="0x00FF00" size="20" horizontalCenter="-3" bottom="390"/>
-		<e:Label text="只显示当前在线、积分相差200、未组队、有次数的玩家" textColor="0x00FF00" size="20" horizontalCenter="-3" bottom="68"/>
+		<e:Label id="noPlayer" text="Chưa có người chơi nào đủ điều kiện online" textColor="0x00FF00" size="20" horizontalCenter="-3" bottom="390"/>
+		<e:Label text="Chỉ hiển thị người chơi đang online, chênh lệch điểm 200, chưa lập đội, còn lượt" textColor="0x00FF00" size="20" horizontalCenter="-3" bottom="68"/>
 	</e:Group>
 	<e:Group id="backBtnGroup" width="100" height="100" horizontalCenter="250" bottom="4">
 		<e:Button id="closeBtn0" label="Nút bấm" skinName="SkinBtn0" icon="zjmfanhui" x="10" y="10"/>

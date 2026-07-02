@@ -11,7 +11,7 @@
 
 
 
-		<e:Label text="能力一览" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="0" top="-3"/>
+		<e:Label text="Tổng quan năng lực" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" horizontalCenter="0" top="-3"/>
 
 		<e:Image width="516" height="638" fillMode="scale" alpha="1" anchorOffsetY="0" source="tongyongbg5" scale9Grid="4,5,17,9" horizontalCenter="0" verticalCenter="5"/>
 

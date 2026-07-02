@@ -8,7 +8,7 @@
 	<e:Image id="quality0" touchEnabled="false" pixelHitTest="true" width="189" height="222" horizontalCenter="0" verticalCenter="0" source="tujian_1c_png"/>
 	<e:Image source="zhandouli2" verticalCenter="91.5" left="65"/>
 	<e:Group id="pownGP" verticalCenter="81" horizontalCenter="3.5"/>
-	<e:Label id="labelName" text="图鉴名称" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" left="5" anchorOffsetY="0" height="150.5" anchorOffsetX="0" width="28" verticalCenter="0" textAlign="center" verticalAlign="middle"/>
+	<e:Label id="labelName" text="Tên Đồ Giám" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" left="5" anchorOffsetY="0" height="150.5" anchorOffsetX="0" width="28" verticalCenter="0" textAlign="center" verticalAlign="middle"/>
 	<e:Image id="quality" touchEnabled="false" pixelHitTest="true" source="tujian_1a" y="12" x="9.6" x.notactive="9.6" y.notactive="11.5"/>
 	<e:Group y="10"   horizontalCenter="17.5">
 		<e:Image id="imgStar0" x="0" y="0" rotation="0.48" source="star3" width="14" height="14"/>

@@ -9,7 +9,7 @@
 				<e:Label id="actInfo0" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="top" anchorOffsetY="0" height="36.99" y="10" left="90" right="-6"/>
 				<e:Label text="Mô tả sự kiện：" size="18"  left="0" fontFamily="Microsoft YaHei" textColor="0xffff00" y="10"/>
 			</e:Group>
-			<e:Label id="todayRecharge" text="本日累计充值：10000" y="115" size="18" right="30" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="right"/>
+			<e:Label id="todayRecharge" text="Nạp tích lũy hôm nay：10000" y="115" size="18" right="30" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="right"/>
 			</e:Group>
 			<e:Image id="title" y="10" horizontalCenter="-18.5" source="biaoti_sanrilianchong_png" x="196" />
 		</e:Group>
@@ -38,7 +38,7 @@
 					</e:ArrayCollection>
 
 				</e:List>
-				<e:Label id="target0" text="累计1天（0/1）\n 充值10000元宝" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xffff00" anchorOffsetX="0" width="189" anchorOffsetY="0" height="42" verticalCenter="0" textAlign="center" lineSpacing="2"/>
+				<e:Label id="target0" text="Tích lũy 1 ngày（0/1）\n nạp 10000 Nguyên Bảo" size="20" x="10" fontFamily="Microsoft YaHei" textColor="0xffff00" anchorOffsetX="0" width="189" anchorOffsetY="0" height="42" verticalCenter="0" textAlign="center" lineSpacing="2"/>
 			</e:Group>
 			<e:Group y="272" width="538" height="118" x="21">
 				<e:Image left="0" right="0" top="0" bottom="0" source="kaifuhuodongitembg4_png" scale9Grid="29,20,33,7"/>

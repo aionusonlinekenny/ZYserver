@@ -8,7 +8,7 @@
 	<e:Label id="equipName" text="Tên trang bị" size="20" fontFamily="Microsoft YaHei" verticalCenter="-29" textAlign="left" x="112" textColor="0x00842c"/>
 	<e:Label id="tip" text="Đề xuất phân giải" size="20" fontFamily="Microsoft YaHei" textColor="0x00842c" horizontalCenter="173.5" verticalCenter="-36"/>
 	<e:Label text="Phân giải nhận được：" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="-3" textAlign="left" x="112"/>
-	<e:Label id="desc" text="神装碎片 x100" size="20" fontFamily="Microsoft YaHei" textAlign="left" verticalCenter="23" x="112" textColor="0xec6014"/>
+	<e:Label id="desc" text="Mảnh Thần Trang x100" size="20" fontFamily="Microsoft YaHei" textAlign="left" verticalCenter="23" x="112" textColor="0xec6014"/>
 	<e:Button id="breakDown" label="Phân giải" name="breakDown" width="124" height="57" icon="btn3" horizontalCenter="173.5" verticalCenter="6.5" skinName="SkinBtn3"/>
 	
 	

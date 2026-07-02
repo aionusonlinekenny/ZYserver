@@ -8,7 +8,7 @@
 		<e:Image id="head" width="64" height="64" x="19" y="14" scaleX="1.4" scaleY="1.4" source="monhead1032_png"/>
 		<e:Image source="bosstouxiangk2" width="103" height="105" x="12.5" y="10"/>
 		<e:Label id="nameTxt" text="" size="20" textColor="0xffffff" fontFamily="Microsoft YaHei" x="-1" y="103" textAlign="center" verticalAlign="top" width="128"/>
-		<e:Label text="奖励预览:" x="128" y="10" size="20" textColor="0xffff00" fontFamily.zhankai="Microsoft YaHei" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Xem trước thưởng:" x="128" y="10" size="20" textColor="0xffff00" fontFamily.zhankai="Microsoft YaHei" fontFamily="Microsoft YaHei"/>
 		<e:List id="Rewardlist" x="128" y="42" itemRendererSkinName="SkinItem" scaleX="0.8" scaleY="0.8" anchorOffsetX="0" width="380" itemRendererSkinName.zhankai="SkinItem2">
 		<e:layout>
 			<e:HorizontalLayout paddingLeft="0" gap="25" gap.zhankai="14"/>

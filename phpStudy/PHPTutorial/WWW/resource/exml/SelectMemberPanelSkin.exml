@@ -3,7 +3,7 @@
 	<e:Rect id="bgClose" left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
 	<e:Group width="575" height="645" verticalCenter="0" horizontalCenter="0">
 		<e:Image width="570" height="552" horizontalCenter="0.5" verticalCenter="-2.5" source="tongyong_dikuang2" x="-9" y="-53" scale9Grid="34,20,52,49"/>
-		<e:Label id="chooseNum" text="已选择: 3/4" size="18" horizontalCenter="0" bottom="149" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="chooseNum" text="Đã chọn: 3/4" size="18" horizontalCenter="0" bottom="149" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		<e:Image width="571" horizontalCenter="1" top="27" source="tongyong_juanzhou" scale9Grid="220,0,50,17" x="-9" y="-150"/>
 		<e:Image horizontalCenter="0" x="147" top="10" source="tongyong_titlebg" width="287" y="-166" scale9Grid="114,23,27,13"/>
 		<e:Image source="tongyongbg5" scale9Grid="5,5,16,9" bottom="177" horizontalCenter="0.5" anchorOffsetX="0" width="512" anchorOffsetY="0" height="405" x="18" y="50.66999999999996"/>

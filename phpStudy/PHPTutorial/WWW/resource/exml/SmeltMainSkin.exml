@@ -7,8 +7,8 @@
 			<e:TileLayout requestedColumnCount="3"  requestedRowCount="3" paddingLeft="60" horizontalGap="36" verticalGap="2" paddingTop="24"/>
 		</e:layout>
 	</e:List>
-	<e:Label id="smeltLable" text="贵族增加30%铜钱" size="18" textColor="0x20CB30"   horizontalCenter="128.5" verticalCenter="197" visible="false"/>
-	<e:Label id="forevet" text="贵族特权:获得铜钱增加30%" textColor="0x20CB30" size="20" horizontalCenter="0" verticalCenter="135" visible="false"/>
+	<e:Label id="smeltLable" text="Quý Tộc tăng 30% Đồng" size="18" textColor="0x20CB30"   horizontalCenter="128.5" verticalCenter="197" visible="false"/>
+	<e:Label id="forevet" text="Đặc quyền Quý Tộc:nhận Đồng tăng 30%" textColor="0x20CB30" size="20" horizontalCenter="0" verticalCenter="135" visible="false"/>
 	
 	<e:Group id="btnGroup" horizontalCenter="0.5" bottom="5" width="176" height="69">
 		<e:Button id="smeltBtn" label="Nung Luyện" height="69" x="0" y="0" width="176" skinName="SkinBtn6" icon="btn2_2"/>

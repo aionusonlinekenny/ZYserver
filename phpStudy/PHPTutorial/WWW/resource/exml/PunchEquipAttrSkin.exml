@@ -7,13 +7,13 @@
 		<e:Image source="tongyongtip2" left="1" right="1" top="0" bottom="0" scale9Grid="18,17,3,6" width="344" anchorOffsetX="0"/>
 		<e:Image source="bantoutiaobg" height="40" horizontalCenter="0" width="383" bottom="-52"/>
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" textColor="0xffffff" verticalAlign="middle" bottom="-40" fontFamily="Microsoft YaHei"/>
-		<e:Label text="火符属性" verticalAlign="justify" textAlign="center" size="32" textColor="0xffff00" top="11" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+		<e:Label text="Thuộc tính Hỏa Phù" verticalAlign="justify" textAlign="center" size="32" textColor="0xffff00" top="11" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
 
-		<e:Label id="currText0" text="(对三角色生效)" verticalAlign="justify" textAlign="left" size="21" textColor="0xffb400" top="53" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+		<e:Label id="currText0" text="(Có hiệu lực với 3 nhân vật)" verticalAlign="justify" textAlign="left" size="21" textColor="0xffb400" top="53" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
 
 
 		<e:Group top="126" left="18">
-			<e:Label id="baseAttr" text="攻击： 麻痹： 麻痹： 几率： 麻痹:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" x="0" verticalAlign="middle" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="baseAttr" text="Công kích： Tê Liệt： Tê Liệt： Tỷ lệ： Tê Liệt:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" x="0" verticalAlign="middle" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Label id="extAttr" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="140" x="0" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 
 			<e:layout>

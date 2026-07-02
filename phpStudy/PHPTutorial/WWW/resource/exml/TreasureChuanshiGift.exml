@@ -7,9 +7,9 @@
 		<e:Image anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" width="434" scale9Grid="22,20,25,25" horizontalCenter="0" top="37" bottom="89"/>
 		<e:Image source="tongyong_juanzhou" width="481" horizontalCenter="0" top="0"/>
 		<e:Image left="109" right="108" source="tongyong_titlebg" anchorOffsetX="0" width="249" top="-15"/>
-		<e:Label text="礼包选择" size="22" horizontalCenter="0" x="144" top="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label text="Chọn Gói Quà" size="22" horizontalCenter="0" x="144" top="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Label id="already" text="Đã nhận" size="22" horizontalCenter="0" x="213" fontFamily="Microsoft YaHei" textColor="0x00ff06" bottom="37"/>
-		<e:Label id="choose" y="47" text="请从以下道具中选择一种" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="choose" y="47" text="Vui lòng chọn 1 trong các vật phẩm sau" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:List id="gift" horizontalCenter="0" itemRendererSkinName="TreasureChuanshiItem" height="200" verticalCenter="-39.5">
 			<e:layout>
 				<e:TileLayout requestedRowCount="4" requestedColumnCount="4"/>

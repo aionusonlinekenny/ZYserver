@@ -33,7 +33,7 @@
         </e:List>
     </e:Scroller>
 	<e:Group horizontalCenter="1" top="68">
-		<e:Label text="参与万魔祖地有概率获得神羽" size="20" x="53" y="-9" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Tham gia Vạn Ma Tổ Địa có tỷ lệ nhận Thần Vũ" size="20" x="53" y="-9" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:layout>
 			<e:HorizontalLayout verticalAlign="middle" gap="6"/>
 		</e:layout>

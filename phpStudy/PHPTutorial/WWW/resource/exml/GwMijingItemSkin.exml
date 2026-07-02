@@ -15,5 +15,5 @@
 		<e:Image id="rankbg" source="godweapon_rankbg" x="-1" y="0"/>
 		<e:Image id="rankImg" horizontalCenter="-8" y="2" source="godweapon_rank1_png"/>
 	</e:Group>
-	<e:Label id="storeyCount" text="第1层" x="59" verticalCenter="0" fontFamily="Microsoft YaHei" size="22" textColor="0xffffff" stroke="1"/>
+	<e:Label id="storeyCount" text="Tầng 1" x="59" verticalCenter="0" fontFamily="Microsoft YaHei" size="22" textColor="0xffffff" stroke="1"/>
 </e:Skin>

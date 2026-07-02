@@ -14,7 +14,7 @@
 			</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Label id="charmCount" text="你的魅力提高了 4999 点" size="20" y="231" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="charmCount" text="Sức hút của bạn tăng thêm 4999 điểm" size="20" y="231" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		<e:Button id="closeBtn" label="Trẫm biết rồi" icon="btn2_2" y="307" horizontalCenter="-5.5" skinName="SkinBtn6" width="176" height="59"/>
 		<e:Button id="closeBtn0" label="" icon="flower_closeBtn" skinName="SkinBtn0" top="17" right="36"/>
 

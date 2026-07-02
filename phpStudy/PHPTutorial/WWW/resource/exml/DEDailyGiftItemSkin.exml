@@ -2,7 +2,7 @@
 <e:Skin class="SkinDEDailyGiftItem" width="548" height="112" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
 	<e:Group left="0" right="0" top="0" bottom="0">
 		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0" source="qiandaobg_png" scale9Grid="35,26,25,41"/>
-		<e:Label id="times" text="可购买:1/1" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" y="76" textAlign="center" right="22"/>
+		<e:Label id="times" text="Có thể mua:1/1" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" y="76" textAlign="center" right="22"/>
 		<e:Label id="already" text="Đã mua" size="20" verticalCenter="0" textColor="0x00ff00" x="441" visible="false"/>
 		<e:Group id="vip" y="13" x="290">
 			<e:Image source="vipvip_png" x="-3" y="-3" scaleX="1" scaleY="1"/>
@@ -13,10 +13,10 @@
 			</e:layout>
 		</e:Group>
 		<e:Group y="47" x="297">
-			<e:Label text="原价: " size="20" x="0" y="0" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Giá gốc: " size="20" x="0" y="0" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="original" text="10000" size="20" x="48" y="0" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="now" text="10000" size="20" x="48" y="28" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label text="现价: " size="20" x="0" y="28" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Giá hiện tại: " size="20" x="0" y="28" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image source="tongyongline2" x="-6" verticalCenter="-12" y="19"/>
 		</e:Group>
 		<e:Button id="get" label="Mua" skinName="SkinBtn25" icon="friend_btnbg" y="24" width="91" height="50" right="22"/>
@@ -26,7 +26,7 @@
 		<e:Group id="discountSrc" x="0" y="0">
 			<e:Image y="0" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="activezhekoudi"/>
 			<e:BitmapLabel id="discountNum" y="1" font="num_xvip_4_fnt" text="58" letterSpacing="-1" horizontalCenter="0" scaleX="0.8" scaleY="0.8" visible="false"/>
-			<e:Label id="zhevalue2" text="78折" size="19" fontFamily="Microsoft YaHei" strokeColor="0xe32a06" stroke="1" rotation="-45" horizontalCenter="-9" top="0" textColor="0xf9ff5d"/>
+			<e:Label id="zhevalue2" text="Giảm 22%" size="19" fontFamily="Microsoft YaHei" strokeColor="0xe32a06" stroke="1" rotation="-45" horizontalCenter="-9" top="0" textColor="0xf9ff5d"/>
 		</e:Group>
 		<e:List id="reward" x="60" itemRendererSkinName="SkinItem2" y="6">
 			<e:layout>

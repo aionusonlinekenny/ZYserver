@@ -9,7 +9,7 @@
 		<e:Group width="511" height="507.34" horizontalCenter="1" anchorOffsetY="0" anchorOffsetX="0" top="40">
 
 		<e:Image width="357" horizontalCenter="0" top="-14" source="huabian" scale9Grid="106,40,17,5"/>
-			<e:Label text="个人积分排名奖励" size="22" textAlign="center" verticalAlign="middle" horizontalCenter="0" x="173" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" top="9" textColor="0x001828"/>
+			<e:Label text="Thưởng xếp hạng điểm cá nhân" size="22" textAlign="center" verticalAlign="middle" horizontalCenter="0" x="173" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" top="9" textColor="0x001828"/>
 		<e:Scroller scaleX="1" scaleY="1" left="0" right="0" top="39" bottom="5.339999999999975" anchorOffsetY="0">
 			<e:List id="list1" x="3" y="4" itemRendererSkinName="SkinGuildInteRewardItem">
 			<e:layout>

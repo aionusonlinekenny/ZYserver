@@ -5,7 +5,7 @@
 
 	<e:Image id="roleHead" source="yuanhead10" width="66" height="66" y="38"   horizontalCenter="0"/>
 	<e:Image y="32" horizontalCenter="0" source="friend_kuang" width="77" height="80"/>
-	<e:Label id="roleName" text="玩家名" size="20" textAlign="center"   horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0.8" y="117"/>
+	<e:Label id="roleName" text="Tên người chơi" size="20" textAlign="center"   horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" stroke="0.8" y="117"/>
 	<e:Image id="targetSelect" width="101" height="100" scale9Grid="76,21,28,9" horizontalCenter="0.5" y="23" source="zwxuanzhong" scaleX="0.96" scaleY="0.96"/>
 	<e:Label id="targetName" text="Đang tấn công" size="18" y="0" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" stroke="0.8"/>	
 </e:Skin>

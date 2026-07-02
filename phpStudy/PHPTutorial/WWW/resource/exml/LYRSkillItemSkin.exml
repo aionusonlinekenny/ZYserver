@@ -5,7 +5,7 @@
 
 
 	<e:Image y.learn="8" x.learn="6.02" x.unlearn="6.02" y.unlearn="8" x.lock="6.02" y.lock="8" width="76" height="76" scale9Grid="8,8,48,48" source="jinengkuang" left="11" verticalCenter="2"/>
-	<e:Label id="skillName" text="初级威能" size="20" y.learn="18.99" x.learn="85.32" x.unlearn="85.69" y.unlearn="18.99" text.unlearn="Chưa học" x.lock="85.69" y.lock="18.99" text.lock="多少解锁" textColor="0x0038ab" fontFamily="Microsoft YaHei" horizontalCenter="31" verticalCenter="-14" horizontalCenter.unlearn="20.5" verticalCenter.unlearn="0" textColor.unlearn="0x001828"/>
+	<e:Label id="skillName" text="Uy Năng Sơ Cấp" size="20" y.learn="18.99" x.learn="85.32" x.unlearn="85.69" y.unlearn="18.99" text.unlearn="Chưa học" x.lock="85.69" y.lock="18.99" text.lock="Bao nhiêu mở khóa" textColor="0x0038ab" fontFamily="Microsoft YaHei" horizontalCenter="31" verticalCenter="-14" horizontalCenter.unlearn="20.5" verticalCenter.unlearn="0" textColor.unlearn="0x001828"/>
 	<e:Image id="skillImg" width="68" height="68" source="ability_1N" source.lock="suowen" width.lock="31" x.learn="13.02" width.learn="68" height.learn="68" x.unlearn="22.02" height.lock="32" source.unlearn="tongyongadd3" width.unlearn="44" height.unlearn="43" y.learn="15" y.unlearn="24" y.lock="30" x.lock="29" left="15" verticalCenter="2" left.unlearn="27" verticalCenter.unlearn="2.5" left.lock="34" verticalCenter.lock="5"/>
 	<ns1:PriceIcon id="price" skinName="SkinPriceIcon" includeIn="lock" horizontalCenter="29.5" verticalCenter="22"/>
 	<e:Label id="skillLv" text="Lv.100" size="22" includeIn="learn" textColor="0x00842c" fontFamily="Microsoft YaHei" horizontalCenter="21.5" verticalCenter="24"/>

@@ -8,8 +8,8 @@
     <e:Label id="showText" text="" maxWidth="260" size="16"               wordWrap="true" x.other="98" textColor="0x7e6437" y.other="29" y.self="30" textColor.other="0xd1c28f" verticalCenter.sys="0" size.sys="18" verticalCenter.self="9" x.sys="58" right.self="97" verticalCenter="0" text.other="" verticalCenter.other="9" text.self="" text.sys="" textColor.self="0x19160b"/>
     <e:Image id="monthcard" x="80" y="4" scaleX="0.8" scaleY="0.8"  source="yueka_png" visible="false"/>
     <e:Group id="nameGrotup" x="140" visible.sys="false"  right.self="70"  x.other="80"  touchEnabled="false" touchChildren="false" y.other="4" y.self="4">
-			<e:Label id="labelName" text="玩家名字要长" x="2" y="5" size="16" textColor="0x16B2FF"   visible.sys="false" textColor.other="0x9f946d" textColor.self="0x9f946d" size.other="16" size.self="16"/>
-			<e:Label id="labelTitle" text="称号" x="12" y="15" size="16" textColor="0x16B2FF"   size.other="16" size.self="16"/>
+			<e:Label id="labelName" text="Tên người chơi cần dài" x="2" y="5" size="16" textColor="0x16B2FF"   visible.sys="false" textColor.other="0x9f946d" textColor.self="0x9f946d" size.other="16" size.self="16"/>
+			<e:Label id="labelTitle" text="Danh hiệu" x="12" y="15" size="16" textColor="0x16B2FF"   size.other="16" size.self="16"/>
 			<e:Image id="vipImg" x.sys="85" x.other="185" y="12" scaleX="0.7" scaleY="0.8" visible.sys="false" right.self="254" y.other="1" y.self="10" source="zjmvipzi" scaleX.other="0.6" scaleX.self="0.6"/>
 			<e:Group id="vip" height="25" scaleX="0.7" scaleY="0.7"  width="20">
 				<e:layout>

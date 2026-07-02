@@ -6,8 +6,8 @@
 		<e:Image y="0" left="0" right="0" source="tongyong_juanzhou"/>
 		<e:Image y="-17" width="249" height="41" horizontalCenter="0" source="tongyong_titlebg"/>
 		<e:Image y="34" source="sjts_06_png" width="411" horizontalCenter="0"/>
-		<e:Label id="titleTxt" horizontalCenter="0" y="-3" text="我要升级" size="22" x="20" fontFamily="Microsoft YaHei" textColor="0x084151"/>
-		<e:Label text="无论在线或离线，自动挂机升级永不停歇" size="20" horizontalCenter="0" bottom="12" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="titleTxt" horizontalCenter="0" y="-3" text="Tôi muốn nâng cấp" size="22" x="20" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label text="Dù online hay offline, tự động cày cấp không ngừng nghỉ" size="20" horizontalCenter="0" bottom="12" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:List id="gainList" y="355" horizontalCenter="0" itemRendererSkinName="SkinGainGoodsItem2">
 			<e:layout>
 				<e:VerticalLayout gap="-1"/>

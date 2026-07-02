@@ -18,7 +18,7 @@
 
 		<e:Group y="463.74" right="10">
 
-			<e:Label id="leftTimeTxt" text="3天10时05分00秒" x="100" size="20" y="10.67" fontFamily="Microsoft YaHei"/>
+			<e:Label id="leftTimeTxt" text="3 ngày 10 giờ 05 phút 00 giây" x="100" size="20" y="10.67" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 			<e:HorizontalLayout gap="2"/>
 			</e:layout>

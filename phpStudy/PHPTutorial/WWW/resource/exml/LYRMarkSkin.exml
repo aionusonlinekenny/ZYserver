@@ -50,7 +50,7 @@
 
 		<ns1:LyMarkSkillItem id="skill0" skinName="SkinmarkSkillItem" top="114" right.normal="19" top.normal="114" top.max="114" right="19"/>
 
-		<e:Label id="mixItemTxt" text="合成材料" size="20" bottom="15" touchEnabled="true" textColor="0x00ff06" fontFamily="Microsoft YaHei" visible.max="false" right="80"/>
+		<e:Label id="mixItemTxt" text="Nguyên liệu hợp thành" size="20" bottom="15" touchEnabled="true" textColor="0x00ff06" fontFamily="Microsoft YaHei" visible.max="false" right="80"/>
 		<e:Label text="Đã đạt cấp tối đa" includeIn="max" textColor="0xffd93f" bottom="18" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
 		<e:Group id="effGroup" width="361" height="293" y="69" horizontalCenter="0" x="120" />
 

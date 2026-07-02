@@ -20,10 +20,10 @@
 
 
 
-		<e:Label id="text2" text="一口价成交" size="20" textAlign="center" y="67" stroke="1" textColor="0xFFD93F" horizontalCenter="48" visible="false"/>
-		<e:Label id="text1" text="竞拍价成交" size="20" textAlign="center" y="67" stroke="1" textColor="0xFFD93F" horizontalCenter="48"/>
-		<e:Label id="successTime" text="2月26日 22:20" size="20" textAlign="center" stroke="1" textColor="0xFFD93F" horizontalCenter="181.5" verticalCenter="0"/>
-		<e:Label id="playerName" text="玩家名字多长" size="20" textAlign="center" stroke="1" horizontalCenter="-77" textColor="0x20CB30" verticalCenter="0"/>
+		<e:Label id="text2" text="Giao dịch giá mua ngay" size="20" textAlign="center" y="67" stroke="1" textColor="0xFFD93F" horizontalCenter="48" visible="false"/>
+		<e:Label id="text1" text="Giao dịch giá đấu" size="20" textAlign="center" y="67" stroke="1" textColor="0xFFD93F" horizontalCenter="48"/>
+		<e:Label id="successTime" text="22:20 ngày 26/2" size="20" textAlign="center" stroke="1" textColor="0xFFD93F" horizontalCenter="181.5" verticalCenter="0"/>
+		<e:Label id="playerName" text="Tên người chơi dài bao nhiêu" size="20" textAlign="center" stroke="1" horizontalCenter="-77" textColor="0x20CB30" verticalCenter="0"/>
 		<e:Label id="price" text="49800" size="20" textColor="0xF8B141" scaleX="1" scaleY="1" horizontalCenter="60.5" verticalCenter="1"/>
 		<e:Image source="szyuanbao" width="30" scaleX="1" scaleY="1" horizontalCenter="17" verticalCenter="0"/>
 		<e:Image source="pailietouline" horizontalCenter="-148.5" verticalCenter="1" height="90"/>

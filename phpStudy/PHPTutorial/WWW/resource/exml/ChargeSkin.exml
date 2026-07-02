@@ -30,7 +30,7 @@
 			</e:Group>
 
 			<e:Group horizontalCenter="-41.5" bottom="20">
-				<e:Label text="再充值" id="tipsText" size="20" fontFamily="Microsoft YaHei" textAlign="center"/>
+				<e:Label text="Nạp thêm" id="tipsText" size="20" fontFamily="Microsoft YaHei" textAlign="center"/>
 				<e:layout>
 					<e:HorizontalLayout gap="2"/>
 				</e:layout>

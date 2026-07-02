@@ -23,9 +23,9 @@
 	<e:Group width="560" height="80" horizontalCenter="0" bottom="125">
 		<e:Image width="280" x="0" top="0" bottom="0" source="bantoumingkuang3"/>
 		<e:Image width="280" scaleX="-1" top="0" bottom="0" right="0" source="bantoumingkuang3"/>
-		<e:Label text="剩余采旗次数：" size="20" textColor="0x9f946d" left="30" verticalCenter="0"/>
+		<e:Label text="Số lần thu cờ còn lại：" size="20" textColor="0x9f946d" left="30" verticalCenter="0"/>
 		<e:Label id="flagTimes" text="6" size="20" textColor="0x00ff00" left="170" verticalCenter="0"/>
-		<e:Label text="剩余BOSS归属次数：" size="20" textColor="0x9F946D" left="300" verticalCenter="0"/>
+		<e:Label text="Số lần sở hữu BOSS còn lại：" size="20" textColor="0x9F946D" left="300" verticalCenter="0"/>
 		<e:Label id="bossTimes" text="6" size="20" textColor="0x00FF00" left="496" verticalCenter="0"/>
 	</e:Group>
 	<e:Image top="123" horizontalCenter="13" source="kf_boss_line_seven_png" source.5="kf_boss_line_five_png" source.6="kf_boss_line_six_png"/>

@@ -22,12 +22,12 @@
 		</e:List>
 	</e:Scroller>
 	<e:Group x="11" y="595" width="560" height="80">
-		<e:Label text="当前段位的每日奖励：" x="0" y="7"/>
+		<e:Label text="Thưởng hàng ngày của bậc hiện tại：" x="0" y="7"/>
 		<e:List id="rewardList" x="422" y="5" itemRendererSkinName="SkinItem" height="69"/>
 	</e:Group>
 	<e:Group y="681" horizontalCenter="0">
-		<e:Label text="我的当前段位：" x="0" y="0"/>
-		<e:Label id="dw" text="黄金" x="0" y="0" textColor="0x00FF00"/>
+		<e:Label text="Bậc hiện tại của tôi：" x="0" y="0"/>
+		<e:Label id="dw" text="Vàng" x="0" y="0" textColor="0x00FF00"/>
 		<e:layout>
 		<e:HorizontalLayout gap="0"/>
 		</e:layout>

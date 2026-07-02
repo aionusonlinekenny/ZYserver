@@ -6,7 +6,7 @@
 
 	</e:Group>
 	<e:Label id="zsLimit" text="" size="20" horizontalCenter="1" fontFamily="Microsoft YaHei" textColor="0xe40000" y="106" stroke="0"/>
-	<e:Label id="max" text="当前已通关" size="20" horizontalCenter="1" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="104" stroke="0"/>
+	<e:Label id="max" text="Hiện đã vượt ải" size="20" horizontalCenter="1" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="104" stroke="0"/>
 	<e:Image y="82" source="huawen2" width="339" height="18" scale9Grid="27,0,7,18" horizontalCenter="0"/>
 	<e:Image id="bossName" y="78" horizontalCenter="0" visible="false"/>
 
@@ -31,12 +31,12 @@
 
 	<e:Button id="btnChallenge" label="Thách đấu" width="209" skinName="SkinBtn7" bottom="162" height="67" x="334"/>
 	<e:Button id="btnSweep" label="Càn quét" width="209" height="67" skinName="SkinBtn7" x="62" bottom="162"/>
-	<e:Label text="剩余奖励次数：" size="20" horizontalCenter="-10" fontFamily="Microsoft YaHei" y="691" stroke="0" textColor="0x00ff00"/>
+	<e:Label text="Số lần nhận thưởng còn lại：" size="20" horizontalCenter="-10" fontFamily="Microsoft YaHei" y="691" stroke="0" textColor="0x00ff00"/>
 	<e:Label id="lbTime" text="" size="20" fontFamily="Microsoft YaHei" y="691" x="358" textAlign="left" stroke="0" textColor="0x00ff00"/>
 		<e:Scroller id="notice" horizontalCenter="-149" bottom="257">
 
 		</e:Scroller>
 	<e:Label id="sweepInfo" text="" size="18" horizontalCenter="-56.5" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="485" textAlign="center"/>
-	<e:Label id="sweepInfoText" text="（扫荡第    层，可获得龙元黄玉）" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" y="484"/>
+	<e:Label id="sweepInfoText" text="（Càn quét tầng    , có thể nhận Long Nguyên Hoàng Ngọc）" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" y="484"/>
 
 </e:Skin>

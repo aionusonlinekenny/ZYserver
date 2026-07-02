@@ -3,7 +3,7 @@
 	<e:Button id="child_btn" label="" skinName="SkinBtn14" width="140" height="40" horizontalCenter="0" verticalCenter="0"/>
 	<e:Image id="chosen" source="xuanzhongkuang3" scale9Grid="8,8,1,1" touchEnabled="false" width="140" height="40" horizontalCenter="0" verticalCenter="0" visible="false"/>
 	<e:Group horizontalCenter="0" verticalCenter="0" touchEnabled="false">
-		<e:Label id="lv" text="10转" size="18" horizontalCenter="0" verticalCenter="0" touchEnabled="false" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
+		<e:Label id="lv" text="Chuyển sinh 10" size="18" horizontalCenter="0" verticalCenter="0" touchEnabled="false" textColor="0x1b3046" fontFamily="Microsoft YaHei"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0"/>
 		</e:layout>

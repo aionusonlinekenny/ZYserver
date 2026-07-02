@@ -23,16 +23,16 @@
 			<e:Group id="skillGroup" anchorOffsetY="0" horizontalCenter="0" width="600" height="415" bottom="1">
 			<e:Image anchorOffsetY="0" width="580" horizontalCenter="0" source="tongyong_dikuang4" scale9Grid="18,15,46,51" height="240" top="0"/>
 			<e:Image id="huawenImage" width="272" scaleX="1" top="-10" horizontalCenter="0" source="huabian" scale9Grid="94,0,21,50"/>
-			<e:Label id="nameTxt" text="1阶仙羽" size="22" textAlign="center" width="140" horizontalCenter="0" fontFamily="Microsoft YaHei" top="10" textColor="0xffff00" verticalAlign="middle"/>
+			<e:Label id="nameTxt" text="Tiên Vũ bậc 1" size="22" textAlign="center" width="140" horizontalCenter="0" fontFamily="Microsoft YaHei" top="10" textColor="0xffff00" verticalAlign="middle"/>
 			<ns1:WingSkillItemRender id="itemicon0" skinName="SkinWingSkillItem" horizontalCenter="-213.5" y="145"/>
 			<e:Image id="nameBg0" width="76" height="24" horizontalCenter="-215" y="208" source=""/>
-			<e:Label id="openTxt0" text="4阶开启" size="17" horizontalCenter="-213.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<e:Label id="openTxt0" text="Mở ở bậc 4" size="17" horizontalCenter="-213.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
 			<ns1:WingSkillItemRender id="itemicon1" skinName="SkinWingSkillItem" horizontalCenter="-106.5" y="145"/>
 			<e:Image id="nameBg1" width="76" height="24" horizontalCenter="-107" y="208" source=""/>
-			<e:Label id="openTxt1" text="6阶开启" size="17" horizontalCenter="-105.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<e:Label id="openTxt1" text="Mở ở bậc 6" size="17" horizontalCenter="-105.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
 			<ns1:WingSkillItemRender id="itemicon2" skinName="SkinWingSkillItem" horizontalCenter="0" y="145"/>
 			<e:Image id="nameBg2" width="76" height="24" horizontalCenter="1" y="208" source=""/>
-			<e:Label id="openTxt2" text="8阶开启" size="17" horizontalCenter="2.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
+			<e:Label id="openTxt2" text="Mở ở bậc 8" size="17" horizontalCenter="2.5" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
 			<ns1:WingSkillItemRender id="itemicon3" skinName="SkinWingSkillItem" horizontalCenter="111.5" y="145"/>
 			<e:Image id="nameBg3" width="76" height="24" horizontalCenter="109" y="208" source=""/>
 			<e:Label id="openTxt3" text="Mở ở bậc 10" size="17" horizontalCenter="109" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="185"/>
@@ -59,10 +59,10 @@
 			<e:Button id="boostBtn0" label="Thăng bậc nhanh" skinName="SkinBtn1" horizontalCenter="117" verticalCenter="-22" scaleX="0.9" scaleY="0.9"/>
 			<e:Button id="boostBtn1" label="Thăng bậc" horizontalCenter="-92" verticalCenter="-22" skinName="SkinBtn1" scaleX="0.9" scaleY="0.9"/>
 			<ns1:PriceIcon id="boostPrice1" skinName="SkinPriceIcon" bottom="23" left="86"/>
-			<e:Label id="noclean" text="本阶祝福值不清空" size="18" horizontalCenter="5" textColor="0xffffff" fontFamily="Microsoft YaHei" top="-32"/>
+			<e:Label id="noclean" text="Điểm Chúc Phúc bậc này không reset" size="18" horizontalCenter="5" textColor="0xffffff" fontFamily="Microsoft YaHei" top="-32"/>
 			<e:Group id="clearGroup" horizontalCenter="0" top="-32">
-				<e:Label text="祝福值:" y="0" size="18" x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label id="desc" text="本阶祝福值会在获得后24小时清空。" y="0" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Điểm Chúc Phúc:" y="0" size="18" x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="desc" text="Điểm Chúc Phúc bậc này sẽ reset sau 24 giờ kể từ khi nhận." y="0" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="lastTime" text="Thời gian còn lại:" y="0" size="18" x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="timeLabel" text="23:59:59" y="0" size="18" x="33" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 				<e:layout>
@@ -98,7 +98,7 @@
 		<e:Image id="dor2" width="294" scaleX="1"  source="wingbg2_2_png" height="500" x="302" y="166"/>
 
 		<e:Button id="openStatusBtn" label="Kích hoạt Tiên Vũ" width="200" height="70"  horizontalCenter="1"  skinName="SkinBtn6" icon="btn1_2" y="696"/>
-		<e:Label id="jihuolv" text="16级可激活" size="20" horizontalCenter="0" bottom="70" textColor="0x7e6437" visible="false"/>
+		<e:Label id="jihuolv" text="Cấp 16 có thể kích hoạt" size="20" horizontalCenter="0" bottom="70" textColor="0x7e6437" visible="false"/>
 		<e:Rect id="shan" fillColor="0xeee9e3" left="0" right="0" top="0" bottom="0" visible="false"/>
 	</e:Group>
 </e:Skin>

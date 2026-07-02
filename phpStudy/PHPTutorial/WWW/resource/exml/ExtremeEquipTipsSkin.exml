@@ -6,13 +6,13 @@
 		<e:Image id="quali" left="0" right="0" scale9Grid="9,0,10,54" top="2" source="quali5_png"/>
 		<e:Image source="tongyongtip2" left="0" right="0" top="0" bottom="0" scale9Grid="18,18,2,4" touchEnabled="false"/>
 		<e:Image y="137" width="340" horizontalCenter="0" source="bantoutiaobg" height="45" scale9Grid="153,12,58,15"/>
-		<e:Label id="nameLabel" text="至尊神剑" size="22" textAlign="left" y="15" x="20" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="nameLabel" text="Chí Tôn Thần Kiếm" size="22" textAlign="left" y="15" x="20" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 		<e:Label y="53" text="Vị trí：" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="pos" y="53" text="Vũ khí" size="20" x="180" fontFamily="Microsoft YaHei"/>
 		<e:Label y="77" text="Cấp độ：" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="lv" y="77" text="无级别" size="20" x="180" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="lv" y="77" text="Không cấp bậc" size="20" x="180" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
 		<e:Label y="101" text="Nghề nghiệp：" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="career" y="101" text="全职业" size="20" x="180" fontFamily="Microsoft YaHei"/>
+		<e:Label id="career" y="101" text="Toàn bộ nghề" size="20" x="180" fontFamily="Microsoft YaHei"/>
 		<ns1:ItemIcon id="itemIcon" xmlns:ns1="*" skinName="SkinItemIcon" x="20" y="47"/>
 		<ns1:PowerPanel id="powerPanel" xmlns:ns1="*" y="126" skinName="Skin2PowerPanel" horizontalCenter="0"/>
 		<e:Group top="190" bottom="10" horizontalCenter="0">
@@ -26,14 +26,14 @@
 		</e:Group>
 		<e:Group id="chainGroup" x="18" y="152">
 			<e:Group>
-			<e:Label id="chainName" text="杀戮" size="20" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="chainName" text="Sát Lục" size="20" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
 			<e:Label id="chainLv" y="10" text="Lv1" size="20" x="10" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 				<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
 			</e:layout>
 			</e:Group>
 			<e:Group x="22" y="25">
-			<e:Label id="chainPos" text="[魔魂面甲]" size="20" verticalAlign="justify" textAlign="left" lineSpacing="7" textColor="0xFFFF00" width="280" fontFamily="Microsoft YaHei"/>
+			<e:Label id="chainPos" text="[Ma Hồn Diện Giáp]" size="20" verticalAlign="justify" textAlign="left" lineSpacing="7" textColor="0xFFFF00" width="280" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>
 			</e:layout>
@@ -41,13 +41,13 @@
 		</e:Group>
 		<e:Group id="soulGroup" x="28" y="162">
 			<e:Group>
-			<e:Label id="soulName" text="灵魂锁链" size="20" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="soulName" text="Linh Hồn Tỏa Liên" size="20" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
 			<e:Label id="soulLv" y="10" text="Lv1" size="20" x="10" textColor="0xFFFF00" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 				<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
 			</e:layout>
 			</e:Group>
-			<e:Label id="soulAttr" y="25" text="为当前部位注入上古魔魂，提升基础属性至" size="20" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" textColor="0xFFFF00" width="280" fontFamily="Microsoft YaHei"/>
+			<e:Label id="soulAttr" y="25" text="Truyền Thượng Cổ Ma Hồn vào bộ phận hiện tại, tăng thuộc tính cơ bản lên" size="20" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" textColor="0xFFFF00" width="280" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:layout>
 			<e:VerticalLayout gap="5" horizontalAlign="left"/>

@@ -7,8 +7,8 @@
 		<e:Label id="title" size="24" text="Thông báo"     horizontalCenter="0" y="11" bold="true" textColor="0xbd600d"/>
 		<e:Label id="nameLabel" size="20" text="Bậc： Vàng" y="71" bold="true" textColor="0x35E62D" x="59"/>
 	<e:Label id="scoreLabel" size="20" text="Điểm：1000" y="122" bold="true" textColor="0x35E62D" x="59"/>
-		<e:Label size="20" text="邀请您前往参加天梯3v3跨服匹配，\n是否前往？" horizontalCenter="13.5" y="171" bold="true" textColor="0x35E62D"/>
-	<e:Label id="powerLabel" size="20" text="战力： 10000" y="71" bold="true" textColor="0x35E62D" x="221"/>
+		<e:Label size="20" text="Mời bạn tham gia ghép trận Thiên Thê 3v3 liên server,\nCó muốn đến không?" horizontalCenter="13.5" y="171" bold="true" textColor="0x35E62D"/>
+	<e:Label id="powerLabel" size="20" text="Chiến lực： 10000" y="71" bold="true" textColor="0x35E62D" x="221"/>
 	<e:Label id="winRateLabel" size="20" text="Tỷ lệ thắng： 0" y="122" bold="true" textColor="0x35E62D" anchorOffsetY="0" height="21" x="221"/>
 		<e:Button id="sureBtn" label="Đi đến" bottom="20" horizontalCenter="92" width="120" height="50" skinName="SkinBtn6" icon="btn3"/>
 		<e:Button id="notBtn" label="Hủy" bottom="20" horizontalCenter="-67" width="120" height="50" skinName="SkinBtn6" icon="btn3_1"/>

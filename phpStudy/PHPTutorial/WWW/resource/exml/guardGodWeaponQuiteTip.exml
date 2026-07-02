@@ -10,8 +10,8 @@
 		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="206" width="419" scale9Grid="22,20,25,25"/>
 
 
-		<e:Label text="退出提示" size="24" y="-3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
-		<e:Label id="desc" text="将按当前击杀波数发放奖励\n\n是否继续退出？" size="20" y="88" width="304" height="73" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x213847"/>
+		<e:Label text="Nhắc nhở thoát" size="24" y="-3" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label id="desc" text="Sẽ phát thưởng theo số đợt đã tiêu diệt hiện tại\n\nCó tiếp tục thoát không?" size="20" y="88" width="304" height="73" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x213847"/>
 		<e:Image scale9Grid="85,1,6,1" y="336" source="bantoutiaobg" width="360" horizontalCenter="0" height="36"/>
 
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-30" fontFamily="Microsoft YaHei" textColor="0xffffff"/>

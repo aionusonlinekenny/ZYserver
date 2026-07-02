@@ -37,22 +37,22 @@
 			<e:Button id="dressBtn2" label="Cởi ra" skinName="SkinBtn1"  horizontalCenter="47" width="149" bottom="15" visible="false"/>
 			<e:Image id="background" width="269" height="124"  left="-1" anchorOffsetY="0" anchorOffsetX="0" bottom="27" source="tongyongbg7" scale9Grid="8,4,12,16"/>
 
-			<e:Label text="幻化属性可累加" x="7" size="20"  fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="2"/>
-			<e:Label id="dressName" text="属性-烈焰" y="104" size="20" textColor="0xFFF300" width="150" textAlign="center"
+			<e:Label text="Thuộc tính Ảo Hóa có thể cộng dồn" x="7" size="20"  fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="2"/>
+			<e:Label id="dressName" text="Thuộc tính-Liệt Diễm" y="104" size="20" textColor="0xFFF300" width="150" textAlign="center"
 			          visible="false"/>
-			<e:Label id="attrLabel" x="6" size="18" width="130" text="攻击:123\n攻击:345\n攻击:10\n攻击:12" lineSpacing="10"
+			<e:Label id="attrLabel" x="6" size="18" width="130" text="Công kích:123\nCông kích:345\nCông kích:10\nCông kích:12" lineSpacing="10"
 			         height="107" textAlign="left"  verticalAlign="top" anchorOffsetX="0" fontFamily="Microsoft YaHei" anchorOffsetY="0" y="159"/>
-			<e:Label id="attrLv" x="126.98" y="159" size="18" width="180" text="升级+123\n升级+345\n升级+10\n升级+12" lineSpacing="10" height="107" textAlign="left" verticalAlign="top" textColor="0x1AFF00" anchorOffsetY="0" fontFamily="Microsoft YaHei"/>
+			<e:Label id="attrLv" x="126.98" y="159" size="18" width="180" text="Nâng cấp+123\nNâng cấp+345\nNâng cấp+10\nNâng cấp+12" lineSpacing="10" height="107" textAlign="left" verticalAlign="top" textColor="0x1AFF00" anchorOffsetY="0" fontFamily="Microsoft YaHei"/>
 
 			<e:Group id="itemGroup" x="425" y="194.34">
 
-				<e:Label id="itemName" text="道具名称x1" size="20" textAlign="center" y="-3" textColor="0x00ff00" fontFamily="Microsoft YaHei" x="24" width="140"/>
+				<e:Label id="itemName" text="Tên vật phẩm x1" size="20" textAlign="center" y="-3" textColor="0x00ff00" fontFamily="Microsoft YaHei" x="24" width="140"/>
 				<e:layout>
 					<e:BasicLayout/>
 				</e:layout>
 
 			</e:Group>
-			<!--<e:Label id="attrPower" text="战力:12345" y="270" size="20" textColor="0xffb82a" width="160" textAlign="center"
+			<!--<e:Label id="attrPower" text="Chiến lực:12345" y="270" size="20" textColor="0xffb82a" width="160" textAlign="center"
 			         horizontalCenter="0" bold="true" />-->
 			<e:Image id="expBarBg" x="189" y="229" scale9Grid="12,10,6,4" width="100"  source="" visible="false"/>
 			<e:ProgressBar id="expBar" skinName="Skinbar1" maximum="100" value="10" x="193" y="233" width="100"  visible="false"/>
@@ -60,7 +60,7 @@
 			         verticalAlign="middle" textAlign="center"  visible="false"/>
 		</e:Group>
 		<e:Group id="unSelectGroup" horizontalCenter="0" verticalCenter="162" visible="false">
-			<e:Label text="请选择下列装扮试穿" size="20"  fontFamily="Microsoft YaHei" stroke="1" textColor="0xffff00"/>
+			<e:Label text="Vui lòng chọn trang phục bên dưới để thử" size="20"  fontFamily="Microsoft YaHei" stroke="1" textColor="0xffff00"/>
 		</e:Group>
 
 

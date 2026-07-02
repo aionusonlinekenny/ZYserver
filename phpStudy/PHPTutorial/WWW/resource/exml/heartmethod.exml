@@ -11,7 +11,7 @@
 			<e:Group y="17" height="158" visible.open="false" anchorOffsetY="0" left="20" height.narmal="158" anchorOffsetX="0" width="90">
 				<ns1:LevelImage id="heartmethodStage" width="40" height="109" skinName="Skinjieji" top="3" left="0"/>
 
-			<e:Label id="xinfaName" text="无影心法" italic="false" width="24" size="24" verticalCenter="22" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" verticalCenter.narmal="22" horizontalCenter="23"/>
+			<e:Label id="xinfaName" text="Vô Ảnh Tâm Pháp" italic="false" width="24" size="24" verticalCenter="22" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" verticalCenter.narmal="22" horizontalCenter="23"/>
 				<e:layout>
 					<e:BasicLayout/>
 				</e:layout>
@@ -38,7 +38,7 @@
 			</e:Button>
 		</e:Group>
 
-		<e:Label id="countLabel" text="心法已满阶" size="26" horizontalCenter="0" bottom="71" visible.open="false" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" stroke="1" horizontalCenter.max="0" bottom.max="30" visible.stage="false" x="235" y="629"  visible.narmal="false"/>
+		<e:Label id="countLabel" text="Tâm Pháp đã đạt bậc tối đa" size="26" horizontalCenter="0" bottom="71" visible.open="false" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" stroke="1" horizontalCenter.max="0" bottom.max="30" visible.stage="false" x="235" y="629"  visible.narmal="false"/>
 		<e:Group id="shuxingbianhua" width="581" height="141" horizontalCenter="0" verticalCenter="215" visible.open="false" x="0" y="506"  horizontalCenter.max="0.5" verticalCenter.max="225.5" horizontalCenter.stage="0.5" verticalCenter.stage="225.5" horizontalCenter.narmal="0.5" verticalCenter.narmal="225.5">
 			<e:Image id="nextAttBG0" left.narmal="0" right.narmal="0" top.narmal="0" bottom.narmal="-7" verticalCenter="0" horizontalCenter="0" width.max="581" height.max="141" top="0" bottom="0" left="0" right="0" source="tongyong_dikuang4" scale9Grid="13,8,55,60" scale9Grid.narmal="15,8,52,57" scale9Grid.max="15,8,48,54"/>
 			<e:Label id="nextAtt0" text="Sinh lực：xxx\nCông kích：xxx\nKháng vật lý：xxx\nKháng phép：xxx\nSát thương truy mệnh：xxx" size="20" width="160" textAlign="left" verticalAlign="middle" horizontalCenter="140" visible.max="false" text.narmal="Sinh lực：xxx\nCông kích：xxx\nKháng vật lý：xxx\nKháng phép：xxx\nSát thương truy mệnh：xxx" height.narmal="92" horizontalCenter.narmal="155" verticalCenter.narmal="0" top="0" bottom="0" textColor="0x00ff06" fontFamily="Microsoft YaHei" width.narmal="199" verticalCenter.stage="0" width.stage="170" anchorOffsetX.narmal="0" top.narmal="0" bottom.narmal="0"/>
@@ -57,13 +57,13 @@
 				</e:layout>
 			</e:Group>
 
-			<e:Label id="conditionDesc" text="集齐5个道藏篇章开启修炼" includeIn="narmal" size="18" textColor="0xffffff" textAlign="left" fontFamily="Microsoft YaHei" left="5" bottom="43" anchorOffsetX="0"/>
+			<e:Label id="conditionDesc" text="Sưu tầm đủ 5 Đạo Tạng Thiên Chương để mở Tu Luyện" includeIn="narmal" size="18" textColor="0xffffff" textAlign="left" fontFamily="Microsoft YaHei" left="5" bottom="43" anchorOffsetX="0"/>
 			<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" horizontalCenter="80.5" bottom="42" visible.max="false" horizontalCenter.narmal="81.5" bottom.narmal="39" horizontalCenter.stage="82.5" bottom.stage="38"/>
 		</e:Group>
 		<e:Group id="jihuoGroup" bottom.stage="37" bottom.narmal="37" height="190" visible.narmal="false" visible.stage="false" horizontalCenter.open="0" verticalCenter.max="241" visible.max="false" bottom.max="44" horizontalCenter="0" anchorOffsetY="0" bottom="-50" height.open="280" x="86" y="586" >
 			<e:Image touchEnabled="false" horizontalCenter="0" source="longhuntextbg" verticalCenter="-99"/>
 			<e:Label id="sysDescText0" text="Vô Ảnh Tâm Pháp có thể tăng hiệu quả tấn công" touchEnabled="false" horizontalCenter="0" size="24" bold.max="true" bold.stage="true" bold.narmal="true" text.open="Vô Ảnh Tâm Pháp có thể tăng hiệu quả tấn công" bold.open="true" textColor="0xfbff90" fontFamily="Microsoft YaHei" verticalAlign="middle" strokeColor="0x974711" stroke="1" verticalCenter="-99" textColor.open="0xf9ff57"/>
-			<e:Label id="sysDescText1" text="4转可学习" touchEnabled="false" horizontalCenter="0.5" size="24" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" strokeColor="0x0c1420" stroke="1" verticalCenter="-53" verticalCenter.open="-48" horizontalCenter.open="0"/>
+			<e:Label id="sysDescText1" text="Chuyển sinh 4 có thể học" touchEnabled="false" horizontalCenter="0.5" size="24" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" strokeColor="0x0c1420" stroke="1" verticalCenter="-53" verticalCenter.open="-48" horizontalCenter.open="0"/>
 			<e:Button id="activeBtn0" label="Học" horizontalCenter="0.5" height="67" width="213" bottom="50" x="10" skinName="SkinBtn6" icon="btn1_2" verticalCenter.open="51.5" horizontalCenter.open="0" skinName.open="SkinBtn7"/>
 			<e:Image id="redPoint1" source="zjmhongdian" horizontalCenter="81.5" touchEnabled="false" bottom="96" horizontalCenter.open="81.5" bottom.open="103"/>
 		</e:Group>

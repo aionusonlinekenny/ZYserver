@@ -9,10 +9,10 @@
 	<e:Image left="0" right="0" top="0" bottom="0" source="tongyongdi6" scale9Grid="5,4,35,33"/>
 
 	<e:Group verticalCenter="0" height="142" anchorOffsetX="0" width="290.67" horizontalCenter="-22.5">
-		<e:Label id="limitLv" text="烈焰印记1~30级升级材料每消耗1个可以提升5点印记经验" y="0" size="18" width="277" x="0" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" lineSpacing="8" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label id="limitLv" text="Nguyên liệu nâng cấp Liệt Diễm Ấn Ký 1~30, mỗi lần tiêu hao 1 cái tăng 5 điểm kinh nghiệm Ấn Ký" y="0" size="18" width="277" x="0" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" lineSpacing="8" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 
-		<e:Label id="cost" text="合成消耗：初级魔印 X3" y="46" size="18" width="273.67" x="0" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-		<e:Label id="stock" text="当前拥有：1000" y="68" size="18" width="273" x="1" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="cost" text="Tiêu hao hợp thành：Ma Ấn Sơ Cấp X3" y="46" size="18" width="273.67" x="0" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+		<e:Label id="stock" text="Hiện có：1000" y="68" size="18" width="273" x="1" verticalAlign="middle" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 		<e:layout>
 			<e:VerticalLayout horizontalAlign="left" verticalAlign="middle" gap="8"/>
 		</e:layout>

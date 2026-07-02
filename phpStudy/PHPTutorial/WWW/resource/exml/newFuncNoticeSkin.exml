@@ -14,7 +14,7 @@
 	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="266"/>
 
 	<e:Group width="211" height="21" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-279.5">
-		<e:Label id="daojishi" text="开启倒计时" y="0" size="22" horizontalCenter="93" fontFamily="Microsoft YaHei" textColor="0xffffff" x="45" scaleX="1" scaleY="1"/>
+		<e:Label id="daojishi" text="Đếm ngược mở" y="0" size="22" horizontalCenter="93" fontFamily="Microsoft YaHei" textColor="0xffffff" x="45" scaleX="1" scaleY="1"/>
 		<e:Label id="daojishi0" text="00:00:00" y="0" size="22" textColor="0x00FF00" horizontalCenter="0" fontFamily="Microsoft YaHei" x="163" scaleX="1" scaleY="1"/>
 		<e:layout>
 			<e:HorizontalLayout gap="12" horizontalAlign="center"/>

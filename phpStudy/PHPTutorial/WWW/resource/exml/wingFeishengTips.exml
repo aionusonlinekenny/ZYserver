@@ -78,7 +78,7 @@
 		<e:Label y="50" text="Vị trí：" size="18" x="111" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label y="75" text="Cấp độ：" size="18" x="111" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label y="100" text="Nghề nghiệp：" size="18" x="111" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label text="羽化" size="20" x="25" y="16" textColor="0xf8b141" fontFamily="Microsoft YaHei" textAlign="center"/>
+		<e:Label text="Vũ Hóa" size="20" x="25" y="16" textColor="0xf8b141" fontFamily="Microsoft YaHei" textAlign="center"/>
 		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" bottom="-45" scale9Grid="128,2,15,41" width="300"/>
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" textColor="0xffffff" fontFamily="Microsoft YaHei" bottom="-36"/>
 		<e:Image x="22" y="45" source="quality3" width="76" height="76" scale9Grid="26,40,8,4"/>
@@ -90,7 +90,7 @@
 
 		<e:Image scaleX="-1" anchorOffsetX="0" width="260" bottom="92" horizontalCenter="0" height="1" source="tongyongline"/>
 		<e:Label text="Tiêu hao Vũ Hóa Cổ Tịch có thể tăng theo % thuộc tính cơ bản Tiên Vũ" size="14" fontFamily="Microsoft YaHei" textColor.normal="0xffff00" y.normal="450" horizontalCenter.normal="0" textColor="0xffff00" bottom="121" horizontalCenter="0" text.normal="Tiêu hao Vũ Hóa Cổ Tịch có thể tăng theo % thuộc tính cơ bản Tiên Vũ"/>
-		<e:Label id="maxLvDesc" text="当前仙羽飞升最大等级可提升至 20 级" size="14" text.normal="" text.maxLv="" text.noitem="" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="102" horizontalCenter="0.5"/>
+		<e:Label id="maxLvDesc" text="Cấp Phi Thăng tối đa của Tiên Vũ hiện tại có thể nâng lên đến cấp 20" size="14" text.normal="" text.maxLv="" text.noitem="" fontFamily="Microsoft YaHei" textColor="0xffff00" bottom="102" horizontalCenter="0.5"/>
 		<e:Group includeIn="noitem" horizontalCenter="0" bottom="27">
 			<e:Label text="Tiêu hao nâng cấp:" includeIn="noitem" x="0" y="7" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image id="itemImg" width="32" height="32" includeIn="noitem" x="94" y="0" source="200239_png"/>

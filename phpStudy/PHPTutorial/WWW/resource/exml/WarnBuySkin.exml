@@ -6,14 +6,14 @@
 		<e:Image scale9Grid="5,5,15,15" touchEnabled="true" width="481" source="tongyong_juanzhou" horizontalCenter="0" top="-8" height="23"/>
 		<e:Image scale9Grid="5,5,15,15" touchEnabled="true" width="249" horizontalCenter="0" top="-26" height="41" source="tongyong_titlebg"/>
 		<e:Image scale9Grid="5,5,15,15" touchEnabled="true" width="419" horizontalCenter="0" x="10" source="tongyong_dikuang1" bottom="87" height="206"/>
-		<e:Label text="提示" size="26" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-15"/>
+		<e:Label text="Thông báo" size="26" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-15"/>
 		<e:Image source="bantoutiaobg" height="30" horizontalCenter="0" bottom="-40" width="400"/>
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Button id="yesBtn" label="Xác nhận" horizontalCenter="80" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3"/>
 		<e:Button id="noBtn" label="Hủy" horizontalCenter="-80" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3_1"/>
 		<e:CheckBox id="tipsCheckbox" label="Lần đăng nhập này không nhắc lại" y="136" skinName="SkinCheckBox0" horizontalCenter="0" scaleX="0.9" scaleY="0.9"/>
 		<e:Group horizontalCenter="0" top="71">
-			<e:Label id="desTxt" size="20" y="59" horizontalCenter="0" text="是否消耗" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="desTxt" size="20" y="59" horizontalCenter="0" text="Có tiêu hao" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>
 			</e:layout>

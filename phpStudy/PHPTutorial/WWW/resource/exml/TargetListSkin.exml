@@ -21,7 +21,7 @@
 	<e:Group id="canAttackGroup0" top="208" touchEnabled="false" left="3">
 		<e:Group x="0" y="0" width="112">
 		<e:Image y="8" source="keyigongji" horizontalCenter="0"/>
-		<e:Label text="可以攻击" y="10" size="18" textAlign="center" x="14" textColor="0x00FF00" fontFamily="Microsoft YaHei" visible="false"/>
+		<e:Label text="Có thể tấn công" y="10" size="18" textAlign="center" x="14" textColor="0x00FF00" fontFamily="Microsoft YaHei" visible="false"/>
 		</e:Group>
 		<e:Scroller id="bar1" width="112" x="0" height="500" anchorOffsetY="0" y="32">
 		<e:List id="list2" x="5" y="6" itemRendererSkinName="SkinMemberHead" touchEnabled="false">

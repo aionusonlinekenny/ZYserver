@@ -2,5 +2,5 @@
 <e:Skin class="SkinBtn12" states="up,down,disabled"
         currentState="up" xmlns:e="http://ns.egret.com/eui" width.up="88" height.up="35">
 	<e:Image scale9Grid="32,15,7,5" source.up="zjmzidong" source="zjmzidong" source.down="zjmzidong" y.up="0" x.up="0" visible.disabled="false"/>
-	<e:Label id="labelDisplay" size="16" verticalAlign="middle" textAlign="center" textColor="0xFFF2BE" x.down="9" y.down="8.5" size.down="18" y.up="8.5" textAlign.down="center" visible.down="true" text.up="自动战斗" x.up="7" size.up="18" textColor.up="0x7e2a00" bold.up="false" text.down="自动中..." textColor.down="0x7e2a00" bold.down="false" fontFamily.up="Microsoft YaHei" fontFamily.down="Microsoft YaHei" text=""/>
+	<e:Label id="labelDisplay" size="16" verticalAlign="middle" textAlign="center" textColor="0xFFF2BE" x.down="9" y.down="8.5" size.down="18" y.up="8.5" textAlign.down="center" visible.down="true" text.up="Tự động chiến đấu" x.up="7" size.up="18" textColor.up="0x7e2a00" bold.up="false" text.down="Đang tự động..." textColor.down="0x7e2a00" bold.down="false" fontFamily.up="Microsoft YaHei" fontFamily.down="Microsoft YaHei" text=""/>
 </e:Skin>

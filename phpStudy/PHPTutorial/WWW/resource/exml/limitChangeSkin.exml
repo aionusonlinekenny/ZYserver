@@ -8,9 +8,9 @@
 		<e:Group x="15" y="20">
 		<e:Label text="Thời gian còn lại：" size="18" y="0" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="actTime0" text="6 ngày 23 giờ 55 phút" size="18" x="90" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-		<e:Label id="actInfo0" text="活动说明待补" x="90" y="24" size="18" width="400" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="actInfo0" text="Mô tả sự kiện đang cập nhật" x="90" y="24" size="18" width="400" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label text="Mô tả sự kiện：" size="18" x="0" y="24" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label text="当前拥有：" size="18" y="49" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Hiện có：" size="18" y="49" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Label id="num" text="99999" size="18" y="50" x="120" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Image width="28" height="24" x="90" y="48" source="szyuanbao"/>
 		</e:Group>

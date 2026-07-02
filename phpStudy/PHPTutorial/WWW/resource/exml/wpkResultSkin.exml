@@ -18,7 +18,7 @@
 			</e:layout>
 			</e:Group>
 			<e:Group y="26" horizontalCenter="0">
-			<e:Label text="击杀BOSS耗时: " y="0" size="22" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label text="Thời gian tiêu diệt BOSS: " y="0" size="22" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
 			<e:Label id="time" text="10 phút 59 giây" y="0" size="22" textAlign="center" x="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:layout>
 				<e:HorizontalLayout/>

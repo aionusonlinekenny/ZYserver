@@ -22,7 +22,7 @@
 		<e:Image  source="bantoutiaobg2" scale9Grid="41,5,7,12" left="0" right="0" top="0" bottom="0" visible="false"/>
 
 		<e:Image id="killNumImg" y="6" horizontalCenter="-50" scaleX="0.6" scaleY="0.6" source="" visible="false"/>
-		<e:Label id="lbNum0" text="击杀怪物的数量：" y="5" size="20" horizontalCenter="-54" fontFamily="Microsoft YaHei"/>
+		<e:Label id="lbNum0" text="Số lượng quái vật tiêu diệt：" y="5" size="20" horizontalCenter="-54" fontFamily="Microsoft YaHei"/>
 		<e:Label id="lbNum" text="100/100" y="5" size="20" horizontalCenter="63" fontFamily="Microsoft YaHei" textAlign="left"/>
 	</e:Group>
 	<e:Group id="GwRankGroup" bottom="175" horizontalCenter="15.5" anchorOffsetX="0" visible="false">
@@ -31,15 +31,15 @@
 		<e:Image id="rank" scaleX="0.8" scaleY="0.8" x="28" verticalCenter="4.5" source=""/>
 		<e:Image id="schedule" source="godweapon_rankschedule" y="22" x="3"/>
 		<e:Image x="2" y="93" source="godpfwaikuang_png"/>
-		<e:Label id="requireTime" text="120秒内通关将保持S评价" x="112" y="43" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="requireTime" text="Vượt ải trong 120 giây sẽ giữ đánh giá S" x="112" y="43" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
-		<e:Label text="奖励神兵经验:" x="112" y="68" size="18" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Thưởng kinh nghiệm Thần Binh:" x="112" y="68" size="18" fontFamily="Microsoft YaHei"/>
 
 		<e:Label id="rewardExp" text="10000000" x="228" y="69" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		<e:Label id="time" text="00:00:00" x="112" y="92" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 	</e:Group>
 	<e:Group id="riseupBtn" y="551" right="11" visible="false">
 		<e:Button id="riseup" label="Button" x="11" y="20" skinName="SkinBtn0" icon="guwu" anchorOffsetX="0" anchorOffsetY="0"/>
-		<e:Label id="addLabel" text="鼓舞    攻击+10%" x="0" y="0" size="12" textColor="0x35e26d"/>
+		<e:Label id="addLabel" text="Cổ Vũ    Công kích+10%" x="0" y="0" size="12" textColor="0x35e26d"/>
 	</e:Group>
 </e:Skin>

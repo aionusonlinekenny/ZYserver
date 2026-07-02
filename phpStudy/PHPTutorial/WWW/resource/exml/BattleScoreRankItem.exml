@@ -4,6 +4,6 @@
 	<e:Image id="rankImg" verticalCenter="0" source="paihang1" horizontalCenter="-178"/>
 	<e:Label id="rank" text="1" size="36" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" textAlign="center" horizontalCenter="-178"/>
 	<e:Label id="nameLabel" text="Ngầu Chất Đỉnh Cao" size="20" textAlign="center" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-75"/>
-	<e:Label id="nameGuild" text="布拉格大部落" size="20" textAlign="center" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="70"/>
+	<e:Label id="nameGuild" text="VươngGiả Đại Bộ Lạc" size="20" textAlign="center" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="70"/>
 	<e:Label id="score" size="20" text="100000" textAlign="center" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" horizontalCenter="218"/>
 </e:Skin>

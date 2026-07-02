@@ -3,7 +3,7 @@
 	<w:Config id="1586b3cda3a"/>
 	<e:Image scale9Grid="18,17,11,9" source="xianwenfenjiebg_png" width="171" height="192" y="0" x="0"/>
 	<ns1:RuneDisplay id="itemIcon" skinName="SkinRuneItem" scaleX="1" scaleY="1" y="1" x="35"/>
-	<e:Label id="power" text="武器 +30.00% \n衣服 +20.00 \n 装备 +20.00%" y="131" size="16" height="51" fontFamily="Microsoft YaHei" textColor="0x001828" verticalAlign="middle" width="168" textAlign="center" anchorOffsetY="0" x="2" lineSpacing="1"/>
+	<e:Label id="power" text="Vũ khí +30.00% \nÁo +20.00 \n Trang bị +20.00%" y="131" size="16" height="51" fontFamily="Microsoft YaHei" textColor="0x001828" verticalAlign="middle" width="168" textAlign="center" anchorOffsetY="0" x="2" lineSpacing="1"/>
 	<e:Image id="arrowIcon" x="80" y="80" source="tongyongup" width="22" height="18" visible="false"/>
 	<e:Image source="suowen" top="0" right="10" visible="false"/>
 	<e:CheckBox id="cb" skinName="SkinCheckBox0" y="9" x="130"/>

@@ -13,12 +13,12 @@
 		<e:Image id="background" source="tongyongtip1" scale9Grid="7,6,11,12" right="0" bottom="0" touchEnabled="false" scaleX="1" scaleY="1" left="0" top="0" x="0" y="-546" visible="false"/>
 
 		<e:Group horizontalCenter="8" verticalCenter="0">
-			<e:Label text="我的筹码：" x="-34" size="20" textAlign="left" y="4" fontFamily="Microsoft YaHei" textColor="0xffff06"/>
+			<e:Label text="Chip của tôi：" x="-34" size="20" textAlign="left" y="4" fontFamily="Microsoft YaHei" textColor="0xffff06"/>
 		<e:Label id="myLabel" text="30" size="20" x="163" scaleX="1" scaleY="1" verticalCenter="0.5" y="-12" fontFamily="Microsoft YaHei" textColor="0xffff06"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0" verticalAlign="middle"/>
 		</e:layout>
 		</e:Group>
-		<e:Label id="getWay" text="获取筹码" size="20" textAlign="left" textColor="0x00ff00" left="380" verticalCenter="-9.5" visible="false"/>
+		<e:Label id="getWay" text="Nhận Chip" size="20" textAlign="left" textColor="0x00ff00" left="380" verticalCenter="-9.5" visible="false"/>
 	</e:Group> 
 </e:Skin>

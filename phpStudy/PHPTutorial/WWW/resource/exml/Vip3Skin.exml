@@ -12,8 +12,8 @@
 	<e:Image source="biaoti_lingqumb_png" verticalCenter="-407" horizontalCenter="-156.5" touchEnabled="false"/>
 	<e:Image id="libaobg" verticalCenter="-136" horizontalCenter="0" source="viplibaobg_png"/>
 	<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" horizontalCenter="0" verticalCenter="-38"/>
-	<e:Label text="极品效果：攻击时有几率定身目标      ，　　　　　使目标无法攻击、移动。" size="20" lineSpacing="10" horizontalCenter="0.5" width="370" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle" verticalCenter="12"/>
-	<e:Label text="2秒" size="20" lineSpacing="10" horizontalCenter="136" fontFamily="Microsoft YaHei" textColor="0x76ff00" textAlign="right" verticalCenter="-3"/>
+	<e:Label text="Hiệu ứng Cực Phẩm：Khi tấn công có tỷ lệ Choáng mục tiêu      , 　　　　　khiến mục tiêu không thể tấn công, di chuyển." size="20" lineSpacing="10" horizontalCenter="0.5" width="370" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="middle" verticalCenter="12"/>
+	<e:Label text="2 giây" size="20" lineSpacing="10" horizontalCenter="136" fontFamily="Microsoft YaHei" textColor="0x76ff00" textAlign="right" verticalCenter="-3"/>
 	<e:Group id="mcGroup" horizontalCenter="0" verticalCenter="-150"/>
 	<e:Group horizontalCenter="0" verticalCenter="150">
 		<e:Image source="vip3bg2_png" scale9Grid="0,39,0,16" top="0" bottom="0" left="0" right="0" height="220"/>
@@ -38,9 +38,9 @@
 		<ns1:PowerPanel id="power2" skinName="Skin3PowerPanel" bottom="-10"  left="0"/>		
 	</e:Group>
 	<e:Group horizontalCenter="0" verticalCenter="283">
-		<e:Label text="累计充值" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Nạp tích lũy" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label text="100 NDT" size="20" x="10" y="10" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label text="成为VIP3，马上获得！" size="20" x="20" y="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Trở thành VIP3, nhận ngay!" size="20" x="20" y="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:layout>
 		<e:HorizontalLayout gap="6"/>
 		</e:layout>

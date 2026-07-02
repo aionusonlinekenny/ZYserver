@@ -3,7 +3,7 @@
 	<e:Group top="0" left="0" right="0" bottom="0">
 		<e:Image width="1" height="422" source="chat_line_png" rotation="90" horizontalCenter="-16" bottom="32"/>
 		<e:Group id="group_shenqing" horizontalCenter="-12" verticalCenter="-20" visible="false">
-			<e:Label text="暂时没有任何申请" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Hiện chưa có đơn xin nào" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 		</e:Group>
 		<e:Group width="542" height="303" horizontalCenter="-19" top="8">
 			<e:Scroller width="542" anchorOffsetY="0" height="303" horizontalCenter="0" top="0">

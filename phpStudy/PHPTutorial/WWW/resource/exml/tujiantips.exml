@@ -13,7 +13,7 @@
 			<e:Label id="qualTxt" y="0" text="" size="18" x="54" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label y="0" text="Phẩm chất：" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="lvTxt" y="27" text="" size="18" x="54" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label y="27" text="星级：" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label y="27" text="Cấp sao：" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		</e:Group>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="52" />
 		<ns1:PowerPanel id="powerPanel" y="130"  skinName="Skin2PowerPanel" horizontalCenter="0"/>
@@ -26,7 +26,7 @@
 		</e:List>
 		<e:Button id="btnUse" label="Sử dụng" skinName="SkinBtn1" horizontalCenter="0" y="602"/>
 		<e:Group x="24" y="425">
-			<e:Label id="specialAttr" text="特殊属性：所有角色伤害减免 +5%" y="0" size="20" textColor="0xD242FB" bold="true" x="0"   visible="false"/>
+			<e:Label id="specialAttr" text="Thuộc tính đặc biệt：Tất cả nhân vật giảm sát thương +5%" y="0" size="20" textColor="0xD242FB" bold="true" x="0"   visible="false"/>
 			<e:Group x="0" y="0"  >
 				<e:Label y="0" text="Thuộc tính cơ bản" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Group width="200" x="0" y="25"  >
@@ -36,9 +36,9 @@
 					<e:Label id="attr4" y="75" size="18" verticalAlign="justify" x="22" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				</e:Group>
 				<e:Group x="0" y="120"  >
-					<e:Label id="belong0" y="0" text="所属系列：" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-					<e:Label id="belong" y="0" text="神州大地 神兵天成 法宝有灵  " size="18" x="90"  fontFamily="Microsoft YaHei" anchorOffsetX="0" width="234" textColor="0xff9900"/>
-					<e:Label id="belong1" y="25.54" text=" ※可激活以上系列任意一张图鉴※" size="18" fontFamily="Microsoft YaHei" anchorOffsetX="0" horizontalCenter="0.5" textColor="0xffff00"/>
+					<e:Label id="belong0" y="0" text="Thuộc series：" size="18" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+					<e:Label id="belong" y="0" text="Thần Châu Đại Địa Thần Binh Thiên Thành Pháp Bảo Hữu Linh  " size="18" x="90"  fontFamily="Microsoft YaHei" anchorOffsetX="0" width="234" textColor="0xff9900"/>
+					<e:Label id="belong1" y="25.54" text=" ※Có thể kích hoạt bất kỳ Đồ Giám nào trong series trên※" size="18" fontFamily="Microsoft YaHei" anchorOffsetX="0" horizontalCenter="0.5" textColor="0xffff00"/>
 				</e:Group>
 				<e:layout>
 					<e:VerticalLayout gap="5"/>

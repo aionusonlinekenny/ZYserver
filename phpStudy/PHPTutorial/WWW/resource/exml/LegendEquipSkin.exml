@@ -15,7 +15,7 @@
 	<e:Image x="466" y="213" source="quality9"/>
 	<e:Group horizontalCenter="0" height="102" width="600" bottom="0">
 		<e:Group id="costGroup" horizontalCenter="0" bottom="74">
-			<e:Label text="消耗至圣玉碟:" size="20" x="0" verticalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Tiêu hao Chí Thánh Ngọc Điệp:" size="20" x="0" verticalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Label id="cur" text="99999" size="20" x="115" textAlign="right" y="8" textColor="0x00ff06"/>
 			<e:Label id="need" text="/99999" size="20" x="179" y="8" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:layout>
@@ -23,7 +23,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Button id="executeBtn" label="Nâng cấp" width="213" height="67" horizontalCenter="0" icon="btn1_2" bottom="0" skinName="SkinBtn7"/>
-		<e:Label id="getTreasureBtn" text="获得至圣玉碟" size="20" height="60" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="192" bottom="6" stroke="0" textColor="0x00ff06"/>
+		<e:Label id="getTreasureBtn" text="Nhận Chí Thánh Ngọc Điệp" size="20" height="60" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="192" bottom="6" stroke="0" textColor="0x00ff06"/>
 	</e:Group>
 	<e:Group id="weaponEffect" x="296" y="410">
 
@@ -54,8 +54,8 @@
 	<e:Component id="grewupAttributes" skinName="GrewupAttributesPanel" horizontalCenter="0" y="472"/>
 	<e:Component id="mixAttributes" skinName="MixAttributesPanel" horizontalCenter="0" bottom="120" visible="false"/>
 	<e:Label id="topLevel" text="Đã đạt cấp tối đa" size="24" horizontalCenter="0" bottom="37" textColor="0xffff00" fontFamily="Microsoft YaHei" stroke="0.7" visible="false"/>
-	<e:Label text="至圣仙兵" x="47" y="308" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9"/>
-	<e:Label text="至圣仙袍" x="471" y="308" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9"/>
+	<e:Label text="Chí Thánh Tiên Binh" x="47" y="308" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9"/>
+	<e:Label text="Chí Thánh Tiên Bào" x="471" y="308" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" stroke="0.9"/>
 	<e:Group id="zhisheng" x="296" y="408"/>
 
 
