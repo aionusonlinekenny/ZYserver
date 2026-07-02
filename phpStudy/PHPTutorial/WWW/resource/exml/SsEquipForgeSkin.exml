@@ -16,7 +16,7 @@
 		<e:Label text="Cường hóa" size="24" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x084151" top="-2"/>
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" top="37" horizontalCenter="0"/>
 		<e:Image width="487" height="102" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" top="349" source="tongyong_dikuang4" scale9Grid="11,4,58,64"/>
-		<e:Label id="equipName" text="兽丹" size="20" fontFamily="Microsoft YaHei" horizontalCenter="0" top="328"/>
+		<e:Label id="equipName" text="Thú Đan" size="20" fontFamily="Microsoft YaHei" horizontalCenter="0" top="328"/>
 		<e:Group id="iconGroup" horizontalCenter="6" top="202" width="74" height="74">
 			<ns1:ItemBase id="itemIcon" horizontalCenter="-1" verticalCenter="1" skinName="SkinItem"/>
 		</e:Group>
@@ -24,7 +24,7 @@
 			<e:Image width="448" source="jingyantiao1" anchorOffsetX="0" scale9Grid="27,4,11,18" horizontalCenter="0" verticalCenter="0"/>
 			<e:ProgressBar id="exp" width="415" skinName="Skinbar1" value="100" verticalCenter="0" horizontalCenter="0"/>
 			<e:Image id="maxExpImg" width="416" anchorOffsetX="0" height="18" source="jingyantiao3" scale9Grid="1,4,15,9" horizontalCenter="0" verticalCenter="0" visible="false"/>
-			<e:Label id="maxExpTxt" text="强化等级已达到最大值" size="14" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x213847" visible="false"/>
+			<e:Label id="maxExpTxt" text="Cấp Cường Hóa đã đạt tối đa" size="14" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x213847" visible="false"/>
 		</e:Group>
 		<e:Image scale9Grid="40,20,30,30" anchorOffsetY="0" anchorOffsetX="0" height="181" width="518" source="tongyong2_json.tongyong_dikuang3" horizontalCenter="0" verticalCenter="188"/>
 		<e:Button id="departBtn" label="Phân giải nhanh" skinName="SkinBtn1" horizontalCenter="-152.5" verticalCenter="327"/>
@@ -51,7 +51,7 @@
 		</e:List>
 		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" right="0" top="2"/>
 		<ns1:BaseComponent id="attrPanel" skinName="SsEquipAttrItem" horizontalCenter="0" top="349"/>
-		<e:Label text="分解已升级强化等级的装备将全额返还兽元" size="20" bottom="24" fontFamily="Microsoft YaHei" textColor="0x0038ab" horizontalCenter="7.5"/>
+		<e:Label text="Phân giải trang bị đã nâng cấp Cường Hóa sẽ hoàn trả toàn bộ Thú Nguyên" size="20" bottom="24" fontFamily="Microsoft YaHei" textColor="0x0038ab" horizontalCenter="7.5"/>
 		<e:Image bottom="24" source="gantanhao1" horizontalCenter="-193.5"/>
 		<e:Label id="forgelv" y="259" fontFamily="Microsoft YaHei" size="14" width="48" textAlign="right" horizontalCenter="14" stroke="1"/>
 	</e:Group>

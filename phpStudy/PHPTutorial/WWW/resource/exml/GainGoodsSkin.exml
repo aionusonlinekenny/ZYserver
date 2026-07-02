@@ -8,14 +8,14 @@
 			<e:Image source="tongyong_juanzhou" horizontalCenter="0" top="0" scale9Grid="198,2,84,19"/>
 			<e:Image id="tou"   source="tongyong_titlebg" width="281" horizontalCenter="0" top="-20"/>
 			<e:Image width="417" source="tongyong_dikuang1" height="499" scale9Grid="10,6,60,42" horizontalCenter="0" verticalCenter="9"/>
-			<e:Label id="titleTxt" horizontalCenter="1" y="50" text="道具不足" size="20" x="180"   fontFamily="Microsoft YaHei" textColor="0x0038ab" textAlign="center"/>
-			<e:Label horizontalCenter="0" y="-8" text="获取材料方式" size="22" x="190" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+			<e:Label id="titleTxt" horizontalCenter="1" y="50" text="Không đủ vật phẩm" size="20" x="180"   fontFamily="Microsoft YaHei" textColor="0x0038ab" textAlign="center"/>
+			<e:Label horizontalCenter="0" y="-8" text="Cách nhận nguyên liệu" size="22" x="190" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 			<e:Group id="goodsGroup" touchEnabled="false" width="400" height="303"   horizontalCenter="0" verticalCenter="-27">
 				<e:Image source="teshuwenzibg" y="-18"   horizontalCenter="0" visible="false"/>
-				<e:Label text="商城购买" size="20" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="-159.5"/>
+				<e:Label text="Mua ở Cửa Hàng" size="20" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="-159.5"/>
 				<ns1:PriceIcon id="price" skinName="SkinPriceIcon" horizontalCenter="-91.5" verticalCenter="0.5"/>
-				<e:Label text="总价：" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="2.5" horizontalCenter="63"/>
-				<e:Label text="单价：" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-155" verticalCenter="2.5"/>
+				<e:Label text="Tổng giá：" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" verticalCenter="2.5" horizontalCenter="63"/>
+				<e:Label text="Đơn giá：" size="20" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="-155" verticalCenter="2.5"/>
 				<e:Image y="180" scale9Grid="6,6,3,3" width="148" height="38" source="shuzibg" horizontalCenter="0"/>
 				<e:TextInput id="countTxt" textColor="0xffffff" text="1" maxChars="6" skinName="skins.SkinTextInput" height="37" horizontalCenter="0" width="68" verticalCenter="47"/>
 				<e:Button id="decBtn" label="Nút bấm" skinName="SkinBtn0" icon="btn-" verticalCenter="48.5" horizontalCenter="-102"/>
@@ -28,7 +28,7 @@
 			</e:Group>
 			<e:Group id="listGroup" touchEnabled="false" width="450"   horizontalCenter="0" verticalCenter="-17">
 				<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" horizontalCenter="0" verticalCenter="-111.5"/>
-				<e:Label id="nameTxt" text="强化石啊" size="20" textAlign="center" horizontalCenter="0" textColor="0xac00dd" fontFamily="Microsoft YaHei" verticalCenter="-60.5"/>
+				<e:Label id="nameTxt" text="Đá Cường Hóa à" size="20" textAlign="center" horizontalCenter="0" textColor="0xac00dd" fontFamily="Microsoft YaHei" verticalCenter="-60.5"/>
 				<e:Group id="gainListGroup" width="450"  verticalCenter="200" horizontalCenter="0">
 				<e:Group x="6">
 					<e:Label text="Cách nhận" size="20" fontFamily="Microsoft YaHei" textColor="0x001828" verticalCenter="7.5" horizontalCenter="21.5"/>

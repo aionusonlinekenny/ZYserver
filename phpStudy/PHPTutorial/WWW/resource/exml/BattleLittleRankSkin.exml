@@ -27,7 +27,7 @@
 		<e:Image id="giftBtn" source="220008_png" scaleX="1.1" scaleY="1.1" touchEnabled="true" horizontalCenter="0" y="6"/>
 		<e:Image source="bantoutiaobg" scale9Grid="119,18,5,6" anchorOffsetY="0" bottom="3" height="30" width="120" horizontalCenter="0"/>
 
-		<e:Label id="scoreTxt" text="战绩:100" y="62" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0" visible="false"/>
+		<e:Label id="scoreTxt" text="Chiến tích:100" y="62" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0" visible="false"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="27" y="8"/>
 		<e:Group y="63" horizontalCenter="0">
 		<e:Label text="Điểm tích lũy:" x="2" y="-26" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
@@ -50,16 +50,16 @@
 	</e:Group>
 	<e:Group width="130" top="5" right="0">
 		<e:Image x="0" y="0" width="130" height="50" source="chat_jianbianbg" scale9Grid="6,5,98,12"/>
-		<e:Label text="玩法剩余时间:" y="6" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
-		<e:Label id="wholeLeftTime" text="14分30秒" y="28" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label text="Thời gian chơi còn lại:" y="6" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="wholeLeftTime" text="14 phút 30 giây" y="28" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		<e:layout>
 		<e:BasicLayout/>
 		</e:layout>
 	</e:Group>
 	<e:Group id="assignPer" width="130" right="0" top="55" height="50">
 		<e:Image left="0" right="0" top="0" bottom="0" x="-10" y="-61" source="chat_jianbianbg" scale9Grid="6,5,98,12"/>
-		<e:Label text="阵营更换时间:" y="6" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
-		<e:Label id="campLeftTime0" text="03分30秒" y="28" size="18" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label text="Thời gian đổi phe:" y="6" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="campLeftTime0" text="3 phút 30 giây" y="28" size="18" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		<e:layout>
 		<e:BasicLayout/>
 		</e:layout>

@@ -2,7 +2,7 @@
 <e:Skin class="SkinBattleResultItem" width="420" height="40" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group width="420" height="40" x="0" verticalCenter="0">
 		<e:Label id="ranking" text="20" size="20" scaleX="1" scaleY="1" textAlign="center" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" y="0" horizontalCenter="-190"/>
-		<e:Label id="roleName" text="布拉格の沉默" size="20" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0" horizontalCenter="-102"/>
+		<e:Label id="roleName" text="VươngGiả·TrầmMặc" size="20" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="0" horizontalCenter="-102"/>
 		<e:Label id="guild" text="VươngGiả·TruyềnThuyết" size="20" scaleX="1" scaleY="1" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" y="0" horizontalCenter="57"/>
 		<e:Label id="score" text="1000" size="20" scaleX="1" scaleY="1" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" y="0" textAlign="center" horizontalCenter="187"/>
 		<e:Image id="rankImage" width="40" height="35" horizontalCenter="-190" verticalCenter="0"/>

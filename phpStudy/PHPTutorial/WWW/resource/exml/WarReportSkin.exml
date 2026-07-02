@@ -6,7 +6,7 @@
 		<e:Image width="481" top="8" horizontalCenter="-1.5" source="tongyong_juanzhou" scale9Grid="224,5,32,8" x="2" y="-211"/>
 		<e:Image width="249" top="-9" horizontalCenter="-1.5" source="tongyong_titlebg" scale9Grid="118,16,18,13" x="118" y="-228"/>
 		<e:Image source="tongyongbg5" width="419" height="348" horizontalCenter="0.5" verticalCenter="-23" scale9Grid="9,5,10,9" x="36" y="39"/>
-		<e:Label size="22" text="战 报" horizontalCenter="0" textColor="0x084151" fontFamily="Microsoft YaHei" top="6"/>
+		<e:Label size="22" text="Chiến báo" horizontalCenter="0" textColor="0x084151" fontFamily="Microsoft YaHei" top="6"/>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="11" x="75" y="646">
 		<e:Image source="bantoutiaobg" height="40" horizontalCenter="0" width="383" verticalCenter="0"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalCenter="0"/>

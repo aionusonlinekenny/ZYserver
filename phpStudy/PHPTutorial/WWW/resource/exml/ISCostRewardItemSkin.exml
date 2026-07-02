@@ -3,7 +3,7 @@
 	<e:Image id="bg" left="0" right="0" top="0" bottom="0" x="0" y="0" source="tongyongbg13" scale9Grid="5,5,2,2"/>
 	<e:Label id="pos" text="50-60" size="30" textAlign="center" verticalCenter="0" left="3" textColor="0xFFFF00" fontFamily="Microsoft YaHei" width="85"/>
 	<e:Image id="number1" source="paihang1" verticalCenter="0" left="15"/>
-	<e:Label id="need" text="(消费≥400000元宝 即可参与本排行）" size="18" verticalCenter="-5" width="184" right="0" verticalAlign="justify" textAlign="center" textColor="0xffff00" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
+	<e:Label id="need" text="(Tiêu ≥400000 Nguyên Bảo là có thể tham gia bảng xếp hạng này）" size="18" verticalCenter="-5" width="184" right="0" verticalAlign="justify" textAlign="center" textColor="0xffff00" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
 	<e:List id="reward" itemRendererSkinName="SkinItem" left="94" verticalCenter="0">
 		<e:layout>
 			<e:HorizontalLayout gap="15"/>

@@ -2,10 +2,10 @@
 <e:Skin class="SkinDETimeBuyItem" width="548" height="112" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
 	<e:Group left="0" right="0" top="0" bottom="0">
 		<e:Image left="0" right="0" top="0" bottom="0" x="0" y="0" source="qiandaobg_png" scale9Grid="25,21,47,74"/>
-		<e:Label id="times" text="可购买: 1/1" size="18" y="76" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" horizontalCenter="209"/>
+		<e:Label id="times" text="Có thể mua: 1/1" size="18" y="76" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" horizontalCenter="209"/>
 		<e:Label id="already" text="Đã mua" size="20" textColor="0x00ff00" right="30" verticalCenter="-8" visible="false"/>
 		<e:Group verticalCenter="-16" x="293">
-			<e:Label text="库存: " size="20" verticalCenter="16" x="0" y="38" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Tồn kho: " size="20" verticalCenter="16" x="0" y="38" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="stock" text="10000" size="20" verticalCenter="16" x="48" y="38" scaleX="1" scaleY="1" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 				<e:HorizontalLayout gap="2"/>
@@ -16,7 +16,7 @@
 		<e:Group id="discountSrc" x="0" y="0">
 			<e:Image y="0" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" source="activezhekoudi" x="0"/>
 			<e:BitmapLabel id="discountNum" y="1" font="num_xvip_4_fnt" text="58" letterSpacing="-1" horizontalCenter="0" scaleX="0.8" scaleY="0.8" visible="false"/>
-			<e:Label id="zhevalue" text="72折" size="19" fontFamily="Microsoft YaHei" strokeColor="0xe32a06" stroke="1" rotation="-45" horizontalCenter="-9" top="0" textColor="0xf9ff5d"/>
+			<e:Label id="zhevalue" text="Giảm 28%" size="19" fontFamily="Microsoft YaHei" strokeColor="0xe32a06" stroke="1" rotation="-45" horizontalCenter="-9" top="0" textColor="0xf9ff5d"/>
 		</e:Group>
 		<e:List id="reward" x="60" itemRendererSkinName="SkinItem2" y="6">
 			<e:layout>

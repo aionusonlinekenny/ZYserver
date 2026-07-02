@@ -6,7 +6,7 @@
 		<e:Image left="0" right="0" source="tongyong_juanzhou" width="481" height="23" scaleY="1" scaleX="1"/>
 		<e:Image left="109" right="108" source="tongyong_titlebg" y="-15" anchorOffsetX="0" width="249"/>
 		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="172" width="419" scale9Grid="22,20,25,25"/>
-		<e:Label id="title" size="22" text="开启背包"     horizontalCenter="0.5" y="-3.35" bold="false" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label id="title" size="22" text="Mở túi đồ"     horizontalCenter="0.5" y="-3.35" bold="false" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Button id="decBtn" label="Nút bấm" skinName="SkinBtn0" icon="btn-" width="36" height="37" y="98" x="134"/>
 		<e:Button id="addBtn" label="Nút bấm" skinName="SkinBtn0" icon="btnadd" width="36" height="37" y="98" x="311"/>
 		<e:Image width="131" height="38" scale9Grid="6,6,3,3" source="shuzibg" y="97" x="175"/>
@@ -18,7 +18,7 @@
 
 		</e:Button>
 		<e:Group  y="217" anchorOffsetY="0" horizontalCenter="0">
-			<e:Label id="count0" text="消耗元宝：" textAlign="center" size="22" height="38" verticalAlign="middle" y="-113" fontFamily="Microsoft YaHei" x="-49" scaleX="1" scaleY="1" textColor="0xffff00"/>
+			<e:Label id="count0" text="Tiêu hao Nguyên Bảo：" textAlign="center" size="22" height="38" verticalAlign="middle" y="-113" fontFamily="Microsoft YaHei" x="-49" scaleX="1" scaleY="1" textColor="0xffff00"/>
 			<ns1:PriceIcon id="price" skinName="SkinPriceIcon" y="0" x="50" scaleX="1" scaleY="1"/>
 			<e:layout>
 				<e:HorizontalLayout horizontalAlign="center"/>

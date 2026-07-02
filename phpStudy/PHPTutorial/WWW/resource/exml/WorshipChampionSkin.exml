@@ -2,8 +2,8 @@
 <e:Skin class="SkinWorshipChampion" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="600" height="728">
 
 	<e:Image width="600" horizontalCenter="0" height="702" source="worshipbg_png" top="0"/>
-	<e:Label id="countLabel" text="剩余次数：1/10" size="18" textColor="0x00FF00" textAlign="center" horizontalCenter="0" verticalCenter="350.5"/>
-	<e:Label id="chipLabel" text="筹码：1000" size="20" textAlign="center" verticalCenter="244.5" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xffff06"/>
+	<e:Label id="countLabel" text="Số lần còn lại：1/10" size="18" textColor="0x00FF00" textAlign="center" horizontalCenter="0" verticalCenter="350.5"/>
+	<e:Label id="chipLabel" text="Chip：1000" size="20" textAlign="center" verticalCenter="244.5" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xffff06"/>
 	<e:Group id="praiseGroup0" horizontalCenter="0" scaleX="0.75" scaleY="0.75" verticalCenter="-105">
 		<e:Image id="wingImg0" horizontalCenter="44" scaleX="0.8" scaleY="0.8" source="wing00_png" verticalCenter="-68.5"/>
 		<e:Image id="weaponImg0" horizontalCenter="-203" source="weapon101_0_c_png" scaleX="0.8" scaleY="0.8" verticalCenter="78.5"/>
@@ -32,7 +32,7 @@
 		<e:Group y="16.25" horizontalCenter="-9" x="296" scaleX="1.25" scaleY="1.25" visible="false">
 		<e:Group horizontalCenter="0" verticalCenter="0" height="48" width="165">
 			<e:Image source="bantoutiaobg" scale9Grid="126,21,4,5" left="0" top="0" right="0" bottom="0"/>
-			<e:Label id="name2" text="布拉格の厉害" size="18" textColor="0xF8B141" bold="true" horizontalCenter="0" bottom="5"/>
+			<e:Label id="name2" text="VươngGiả·LợiHại" size="18" textColor="0xF8B141" bold="true" horizontalCenter="0" bottom="5"/>
 		</e:Group>
 		<e:layout>
 			<e:VerticalLayout horizontalAlign="center" gap="-2"/>
@@ -54,7 +54,7 @@
 		<e:Group y="16.25" horizontalCenter="-6" x="292.5" scaleX="1.25" scaleY="1.25" visible="false">
 		<e:Group horizontalCenter="0" verticalCenter="0" height="48" width="165">
 			<e:Image source="bantoutiaobg" scale9Grid="126,21,4,5" left="0" top="0" right="0" bottom="0"/>
-			<e:Label id="name1" text="布拉格の梦想" size="18" textColor="0xF8B141" bold="true" horizontalCenter="0" bottom="5"/>
+			<e:Label id="name1" text="VươngGiả·MơƯớc" size="18" textColor="0xF8B141" bold="true" horizontalCenter="0" bottom="5"/>
 		</e:Group>
 		<e:layout>
 			<e:VerticalLayout horizontalAlign="center" gap="-2"/>
@@ -65,7 +65,7 @@
 	<e:Group id="titleGroup" verticalCenter="-237.5" horizontalCenter="-78">
 		<e:Group height="32" width="165" verticalCenter="0" x="149" visible="false">
 			<e:Image source="bantoutiaobg" scale9Grid="126,21,4,5" left="0" top="0" right="0" bottom="0"/>
-			<e:Label id="name0" text="布拉格の冲动" size="18" textColor="0xF8B141" bold="true" verticalCenter="0" horizontalCenter="0"/>
+			<e:Label id="name0" text="VươngGiả·BốcĐồng" size="18" textColor="0xF8B141" bold="true" verticalCenter="0" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group id="titleMcGroup" anchorOffsetX="0" anchorOffsetY="0" x="235" top="-12"/>
 	</e:Group>

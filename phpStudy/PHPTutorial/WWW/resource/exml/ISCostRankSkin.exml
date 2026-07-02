@@ -49,7 +49,7 @@
 	<e:Group bottom="0" height="50" horizontalCenter="0" width="460">
 		<e:Image left="-20" right="-20" top="-5" bottom="5" scale9Grid="35,20,2,1" source="tongyongranking_bg"/>
 		<e:Group left="3" verticalCenter="0" visible="false">
-		<e:Label text="我消费的元宝：" size="22" x="0" textColor="0x9F946D" y="2"/>
+		<e:Label text="Nguyên Bảo tôi đã tiêu：" size="22" x="0" textColor="0x9F946D" y="2"/>
 		<e:Label id="myNumber" text="300 0000" size="22" x="170" textColor="0xF8B141" y="0"/>
 		<ns1:BaseComponent width="20" height="20" x="251" y="8"/>
 		<e:layout>
@@ -57,12 +57,12 @@
 		</e:layout>
 		</e:Group>
 		<e:Group width="213" left="24" verticalCenter="-10">
-		<e:Label text="排名：" size="18" textColor="0x9F946D" x="0" y="2"/>
-		<e:Label id="myRanking" text="100名以后" size="18" textColor="0xF8B141" x="108" y="0"/>
+		<e:Label text="Xếp hạng：" size="18" textColor="0x9F946D" x="0" y="2"/>
+		<e:Label id="myRanking" text="Sau hạng 100" size="18" textColor="0xF8B141" x="108" y="0"/>
 		<e:layout>
 			<e:HorizontalLayout verticalAlign="middle" gap="0"/>
 		</e:layout>
 		</e:Group>
-		<e:Label text="消费到指定金额可以领取对应奖励" size="18" textColor="0x9F946D" x="23" y="27"/>
+		<e:Label text="Tiêu đến số tiền chỉ định là có thể nhận thưởng tương ứng" size="18" textColor="0x9F946D" x="23" y="27"/>
 	</e:Group>
 </e:Skin>

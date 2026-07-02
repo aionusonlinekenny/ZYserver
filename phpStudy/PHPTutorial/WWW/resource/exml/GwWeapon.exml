@@ -9,7 +9,7 @@
 			<e:Image id="expball" y="0" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="205,66,13,5" width="506" source="rena_png" horizontalCenter="0"/>
 			<e:Rect id="maskRect" width="118" height="118" x="69" y="113" anchorOffsetX="60" anchorOffsetY="112" visible="false"/>
 			<e:Label id="expcount" text="" y="52" size="16" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="-187" width="106" textAlign="center"/>
-			<e:Label id="expText" text="神兵经验" y="68" size="16" fontFamily="Microsoft YaHei" textColor="0xffff00" x="36.35"/>
+			<e:Label id="expText" text="Kinh nghiệm Thần Binh" y="68" size="16" fontFamily="Microsoft YaHei" textColor="0xffff00" x="36.35"/>
 			<e:Rect id="clickRect" width="106" height="106" x="62" y="105" anchorOffsetX="48" anchorOffsetY="96" fillAlpha="0"/>
 			<e:Group id="shengwu" x="176" y="0" scaleX="1" scaleY="1">
 			<ns1:GweaponshengwuItem id="shengwu1" skinName="SkinGwShengWu"/>
@@ -51,7 +51,7 @@
 			<e:Image id="rpImg1" x="298" y="10" source="zjmhongdian"/>
 			<e:Image id="rpImg2" x="418" y="10" source="zjmhongdian"/>
 		</e:Group>
-		<e:Label id="reset" text="重置技能点" includeIn="active" size="18" touchEnabled="true" textColor="0x00ff06" fontFamily="Microsoft YaHei" y="76" x="481"/>
+		<e:Label id="reset" text="Đặt lại điểm kỹ năng" includeIn="active" size="18" touchEnabled="true" textColor="0x00ff06" fontFamily="Microsoft YaHei" y="76" x="481"/>
 	
 	</e:Group>
 </e:Skin>

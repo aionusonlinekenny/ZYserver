@@ -22,8 +22,8 @@
 		</e:Scroller>
 		<e:Group top="330" left="8" width="99" x="8" y="332">
 			<e:Image source="runemoregiftbg" anchorOffsetX="0" anchorOffsetY="0" width="87" horizontalCenter="0" top="0" height="99"/>
-			<e:Label text="额外奖励" size="16" top="9" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label id="boxcount" text="本周累积" size="16" top="28" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Thưởng thêm" size="16" top="9" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="boxcount" text="Tích lũy tuần này" size="16" top="28" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Group width="63" height="26" left="19" top="50">
 			<e:BitmapLabel id="times" text="160" top="51" letterSpacing="-8" font="num_g0_fnt" left="22" x="3" y="1"/>
 			<e:Label text="lần" size="16" top="54" horizontalCenter="24.5" fontFamily="Microsoft YaHei" textColor="0xffff00" x="47" y="4" visible="false"/>
@@ -91,7 +91,7 @@
 			</e:layout>
 			</e:Group>
 		</e:Group>
-		<e:Label id="leftTime" text="累计重置剩余时间：6天 04:23:01" size="18" right="13" top="464" textColor="0xf8b141" visible="false" x="321" y="464"/>
+		<e:Label id="leftTime" text="Thời gian còn lại reset tích lũy：6 ngày 04:23:01" size="18" right="13" top="464" textColor="0xf8b141" visible="false" x="321" y="464"/>
 		<e:Label id="hope" text="500" size="18" top="578" x="66" y="578" visible="false"/>
 		<e:Group horizontalCenter="140" top="451" x="332" y="475">
 			<e:Group top="478" x="5" y="8">
@@ -101,7 +101,7 @@
 				<e:HorizontalLayout gap="7" verticalAlign="middle"/>
 			</e:layout>
 			</e:Group>
-			<e:Label id="Descri" text="祝福值越高，获得高级仙纹的几率就越大！祝福值满，必定获得一个已解锁的金色仙纹！" anchorOffsetX="0" width="216" size="18" textAlign="left" top="512" x="5" y="42" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="6"/>
+			<e:Label id="Descri" text="Điểm Chúc Phúc càng cao, tỷ lệ nhận Tiên Văn cao cấp càng lớn! Đầy điểm Chúc Phúc chắc chắn nhận 1 Tiên Văn Vàng đã mở khóa!" anchorOffsetX="0" width="216" size="18" textAlign="left" top="512" x="5" y="42" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="6"/>
 			<e:layout>
 			<e:VerticalLayout horizontalAlign="center" gap="18"/>
 			</e:layout>
@@ -139,7 +139,7 @@
 				</e:layout>
 			</e:Group>
 			<e:Button id="buy10" label="Tìm kho báu 10 lần" icon="btn1_2" skinName="SkinBtn7" horizontalCenter="0" verticalCenter="8"/>
-			<!--<e:Label text="寻宝十次必得神装" fontFamily="Microsoft YaHei" textColor="0xffff00" size="16" bottom="0" y="695" horizontalCenter="0"/>-->
+			<!--<e:Label text="Tìm kho báu 10 lần chắc chắn nhận Thần Trang" fontFamily="Microsoft YaHei" textColor="0xffff00" size="16" bottom="0" y="695" horizontalCenter="0"/>-->
 		</e:Group>
 	</e:Group>
 </e:Skin>

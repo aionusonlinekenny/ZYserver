@@ -43,7 +43,7 @@
 		</e:Group>
 		<e:Image horizontalCenter="-149" top="32" source="biaoti_qirikuanghuan_png" touchEnabled="false"/>
 		<e:Group horizontalCenter="-1" bottom="107" anchorOffsetX="0" width="506" anchorOffsetY="0" height="110.5">
-			<e:Label text="全目标终极奖励" size="16" bold="true" textColor="0xf8b141" top="16" right="94" visible="false"/>
+			<e:Label text="Thưởng tối thượng toàn mục tiêu" size="16" bold="true" textColor="0xf8b141" top="16" right="94" visible="false"/>
 			<e:Group id="bar" verticalCenter="6.164999999999999" horizontalCenter="-23">
 				<e:Image width="438" source="progress2" scale9Grid="26,3,33,11" y="-0.4"/>
 				<e:ProgressBar id="schedule" width="415.5" x="10.7" y="0.8" value="100" skinName="Skinbar5" height="18"/>

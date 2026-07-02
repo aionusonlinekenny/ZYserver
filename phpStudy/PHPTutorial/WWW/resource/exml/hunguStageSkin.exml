@@ -16,7 +16,7 @@
 		<e:Image id="youBG" source="hunguuplevelbg_png" top="70" right="65"/>
 
 
-		<e:Label text="龙元升阶" size="22" horizontalCenter="0" top="-3" fontFamily="Microsoft YaHei" textColor="0x084151"/>
+		<e:Label text="Thăng bậc Long Nguyên" size="22" horizontalCenter="0" top="-3" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 
 
 
@@ -46,7 +46,7 @@
 
 			<e:Group id="nowAttr" anchorOffsetX="0" width="197" horizontalCenter="-129.5" height="180" top="5">
 
-				<e:Label id="attrNowText" text="当 前" y="0" size="20" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+				<e:Label id="attrNowText" text="Hiện tại" y="0" size="20" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 				<e:Group id="nowFightGroup" horizontalCenter="0" scaleX="0.75" scaleY="0.75" top="128">
 					<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel"/>
 				</e:Group>
@@ -57,7 +57,7 @@
 			</e:Group>
 			<e:Group id="nextAttr" anchorOffsetX="0" width="197" horizontalCenter="151.5" top="5">
 
-				<e:Label id="attrNextText" text="下一阶" y="0" size="20" horizontalCenter="-26.5" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+				<e:Label id="attrNextText" text="Bậc tiếp theo" y="0" size="20" horizontalCenter="-26.5" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 				<e:Group id="nextFightGroup" horizontalCenter="0" top="128" scaleX="0.75" scaleY="0.75">
 					<ns1:PowerPanel id="powerPanel1" skinName="SkinPowerPanel"/>
 				</e:Group>
@@ -77,7 +77,7 @@
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="30"/>
 				</e:layout>
 			</e:List>
-			<e:Label id="costText" text="升阶消耗" size="20" horizontalCenter="-77.5" verticalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="costText" text="Tiêu hao thăng bậc" size="20" horizontalCenter="-77.5" verticalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 
 

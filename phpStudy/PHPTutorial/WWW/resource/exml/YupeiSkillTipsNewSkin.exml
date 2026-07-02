@@ -6,7 +6,7 @@
 		<e:Image source="tongyongtip2" left="0" right="0" top="0" scale9Grid="18,18,2,4" bottom="0" scaleX="1" scaleY="1" x="270" y="458" visible="false"/>
 		<e:Image source="tongyongline" scale9Grid="62,0,378,2" height="1" width="291" horizontalCenter="0" top="80"/>
 		<e:Image width="346" height="540" x="0" y="0" source="quali4" scale9Grid="9,7,11,516"/>
-		<e:Label id="nameLabel" text="灵魂爆炸" size="24" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xff0000" top="26" left="26"/>
+		<e:Label id="nameLabel" text="Linh Hồn Bạo Phát" size="24" fontFamily="Microsoft YaHei" textAlign="left" textColor="0xff0000" top="26" left="26"/>
 		<e:Label id="description" text="Mỗi lần tấn công có 10% tỷ lệ kích hoạt, tăng 1.5 lần sát thương, khi bạo kích sẽ kích hoạt Tật Phong Trảm, cực kỳ mạnh!" size="20" textAlign="left" scaleX="1" scaleY="1" anchorOffsetX="0" lineSpacing="5" width="290" fontFamily="Microsoft YaHei" textColor="0x6b9baa" horizontalCenter="4" top="106"/>
 		<e:Group id="tipGroup" touchChildren="false" touchEnabled="false" horizontalCenter="0" bottom="-44" x="40" y="533" scaleX="1" scaleY="1">
 			<e:Image source="bantoutiaobg" height="35" y="0" horizontalCenter="0" width="346" scale9Grid="178,2,30,30"/>

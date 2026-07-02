@@ -9,7 +9,7 @@
 
 	<e:Group x="8" verticalCenter="0.5" verticalCenter.kelingqu="-16.5" visible.done="false">
 		<e:Label id="count" text="350" x="0" y="1" size="18" textColor="0x00ff00"/>
-		<e:Label text="嗨积分" x="48" y="0" size="18" textColor="0xd1c28f" bold="true"/>
+		<e:Label text="Điểm Hi" x="48" y="0" size="18" textColor="0xd1c28f" bold="true"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0"/>
 		</e:layout>

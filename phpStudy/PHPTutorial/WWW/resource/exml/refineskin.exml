@@ -124,7 +124,7 @@
 
 </e:Group>
 
-<e:Label id="maxDesc" text="聚灵已满级"   size="24"
+<e:Label id="maxDesc" text="Tụ Linh đã đạt cấp tối đa"   size="24"
           horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" top="671" bottom="35" visible="false"/>
 	<e:Group width="280" height="138" horizontalCenter="0" top="304">
 		<e:Group y="0" x="10" width="270">

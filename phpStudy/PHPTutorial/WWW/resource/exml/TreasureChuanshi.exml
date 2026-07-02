@@ -7,7 +7,7 @@
 		<e:Image horizontalCenter="0" width="585" height="435" x="7"  top="4" scale9Grid="10,8,9,9" source="tongyong_dikuang4"/>
 		<e:Image width="585" horizontalCenter="0" x="8"  height="187" bottom="99" scale9Grid="10,8,9,9" source="tongyong_dikuang4"/>
 		<e:Group left="25" top="20" x="25" y="17" >
-			<e:Label text="本周抽奖次数：" x="0" size="18" y="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Số lần quay thưởng tuần này：" x="0" size="18" y="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Label id="times" text="20" x="10" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
 			<e:layout>
 			<e:HorizontalLayout gap="2"/>
@@ -142,11 +142,11 @@
 			<e:Image id="maxHopeValue0"  anchorOffsetX="0" anchorOffsetY="0" width="80" source="luckvalue_png" top="0" height="80" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group  height="28" anchorOffsetX="0" anchorOffsetY="0" width="218" top="235" horizontalCenter="49" x="261" y="209">
-			<e:Label id="Descri0" text="当前祝福值：" size="18" textAlign="center" x="2" fontFamily="Microsoft YaHei" lineSpacing="4"  y="4" textColor="0xffff00"/>
+			<e:Label id="Descri0" text="Điểm Chúc Phúc hiện tại：" size="18" textAlign="center" x="2" fontFamily="Microsoft YaHei" lineSpacing="4"  y="4" textColor="0xffff00"/>
 			<e:BitmapLabel id="hopeValue0" font="num_g0_fnt" text="10000" letterSpacing="-10" lineSpacing="0" anchorOffsetX="0" anchorOffsetY="0" top="2" left="105"/>
 		</e:Group>
 		<e:Group top="267" y="238"  left="238">
-			<e:Label id="Descri" text="祝福值越高，获得诛仙珍宝盒的机会就越大！祝福值满，必定获得一个诛仙珍宝盒！" width="224" size="16" textAlign="left" top="512" x="5" y="42" fontFamily="Microsoft YaHei" textColor="0xffffff" height="64" lineSpacing="4"/>
+			<e:Label id="Descri" text="Điểm Chúc Phúc càng cao, cơ hội nhận Hộp Báu Vật Chu Tiên càng lớn! Đầy điểm Chúc Phúc chắc chắn nhận 1 Hộp Báu Vật Chu Tiên!" width="224" size="16" textAlign="left" top="512" x="5" y="42" fontFamily="Microsoft YaHei" textColor="0xffffff" height="64" lineSpacing="4"/>
 			<e:layout>
 			<e:VerticalLayout horizontalAlign="left"/>
 			</e:layout>

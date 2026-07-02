@@ -8,8 +8,8 @@
 		<e:Label text="Xem trước Uy Vọng" size="26" horizontalCenter="0" textColor="0x084151" fontFamily="Microsoft YaHei" top="-16"/>
 		<e:Image height="586" width="434" horizontalCenter="0" top="22" source="tongyongbg5" scale9Grid="5,3,14,13"/>
 		<e:Image height="39" horizontalCenter="0" top="26" width="431" source="paihangtou2" scale9Grid="5,4,31,31"/>
-		<e:Label text="威 望" size="21" horizontalCenter="100" fontFamily="Microsoft YaHei" textColor="0x001828" top="34"/>
-		<e:Label text="等 级" size="21" horizontalCenter="-100" fontFamily="Microsoft YaHei" textColor="0x001828" top="34"/>
+		<e:Label text="Uy Vọng" size="21" horizontalCenter="100" fontFamily="Microsoft YaHei" textColor="0x001828" top="34"/>
+		<e:Label text="Cấp độ" size="21" horizontalCenter="-100" fontFamily="Microsoft YaHei" textColor="0x001828" top="34"/>
 		<e:Scroller top="67" bottom="30" horizontalCenter="0" width="420">
 			<e:List id="list" y="0" x="45.5" itemRendererSkinName="SkinWeiWangItem" anchorOffsetY="0" height="522" width="393">
 			<e:layout>

@@ -11,8 +11,8 @@
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="renwuchushi" text="每次只能领取一个任务" horizontalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="93"/>
-		<e:Label id="quanbuwancheng" text="全部任务已完成" horizontalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="93" visible="false"/>
+		<e:Label id="renwuchushi" text="Mỗi lần chỉ nhận được 1 nhiệm vụ" horizontalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="93"/>
+		<e:Label id="quanbuwancheng" text="Tất cả nhiệm vụ đã hoàn thành" horizontalCenter="0" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="93" visible="false"/>
 		<e:Label id="renwuneirong" text="1.xxxxxxxxxxxxxxxxxxxxxx" horizontalCenter="0" bottom="93" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
 		<e:Group id="showSkill0" width="563" height="118" y="107" horizontalCenter="0">
 			<e:Image id="bg0" width="563" scale9Grid="40,20,30,30" source="tongyonglabbg" horizontalCenter="0" top="0" bottom="0"/>

@@ -14,9 +14,9 @@
 		<e:Image source="wordsbg" left="30" right="0" scale9Grid="0,0,115,29" y="28"/>
 		<e:Image y="0" x="0" source="icon_wakuang"/>
 		<e:Group x="66" y="33">
-			<e:Label text="采集中" size="20" verticalCenter="0" left="50" x="-53" y="-10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label text="Đang thu thập" size="20" verticalCenter="0" left="50" x="-53" y="-10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="time" text="" size="20" x="0" y="-10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="quickFinish" text=" 快速完成" size="20" x="23" y="-12" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="quickFinish" text=" Hoàn thành nhanh" size="20" x="23" y="-12" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>
 			</e:layout>

@@ -6,7 +6,7 @@
 		<e:Image left="1" right="-1" source="tongyong_juanzhou" scale9Grid="24,0,443,17" top="0" x="-75" y="-129" scaleX="1" scaleY="1"/>
 		<e:Image height="526" source="tongyongbg5" width="405" horizontalCenter="0.5" verticalCenter="-23.5" scale9Grid="4,4,18,11" x="-11.999999999999993" y="36" scaleX="1" scaleY="1"/>
 		<e:Image source="tongyong_titlebg" horizontalCenter="-2.5" top="-18" width="249" scale9Grid="69,14,112,8" x="86" y="-146" scaleX="1" scaleY="1"/>
-		<e:Label id="nametxt" text="任务积分大礼" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" top="-6" horizontalCenter="0"/>
+		<e:Label id="nametxt" text="Đại Lễ Điểm Nhiệm Vụ" size="22" textColor="0x084151" fontFamily="Microsoft YaHei" top="-6" horizontalCenter="0"/>
 
 
 
@@ -17,9 +17,9 @@
 
 		<e:Group horizontalCenter="13" bottom="13" anchorOffsetY="0" height="53.33" anchorOffsetX="0" width="328">
 			<e:Image x="10" y="0" source="gantanhao4"/>
-			<e:Label text="积分大礼只发放最高档次的奖励！" size="18" x="30.64" y="0.67" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Đại Lễ Điểm chỉ phát thưởng ở mức cao nhất!" size="18" x="30.64" y="0.67" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 			<e:Image x="10" y="30" source="gantanhao4"/>
-			<e:Label text="奖励将在活动结束后通过邮件发放!" size="18" x="30.64" y="32.04" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Thưởng sẽ được gửi qua thư sau khi sự kiện kết thúc!" size="18" x="30.64" y="32.04" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 
 

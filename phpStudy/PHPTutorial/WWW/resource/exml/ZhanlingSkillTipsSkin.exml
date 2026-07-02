@@ -9,7 +9,7 @@
 				<e:Image scaleX="1" scaleY="1" top="16" left="5" source="shoujilan" source.unactive="shoujihong" width.unactive="206" height.unactive="30"/>
 				<e:Label id="skillName0" text="Chiến Thần Phụ Thể Lv1" size="20" top="20" y="30" scaleX="1" scaleY="1" textColor="0xff0000" textColor.max="0x00ff00" textColor.active="0x00ff00" textColor.unactive="0xff0000" fontFamily="Microsoft YaHei" left="12" text.active="Chiến Thần Phụ Thể Lv1"/>
 				<e:Group top="55" left="13" height="56" height.active="87" height.unactive="89">
-					<e:Label id="skillDesc0" text="战灵出现时，10%概率附体到角色上，让三角色刀刀致命一击，持续3秒" size="20" textAlign="left" y="0" scaleX="1" scaleY="1" width="355" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa" lineSpacing="12" text.unactive="战灵出现时，10%概率附体到角色上，击杀几率提升，让三角色刀刀致命一击，持续3秒"/>
+					<e:Label id="skillDesc0" text="Khi Chiến Linh xuất hiện, có 10% tỷ lệ nhập vào nhân vật, khiến 3 nhân vật đòn nào cũng chí mạng, kéo dài 3 giây" size="20" textAlign="left" y="0" scaleX="1" scaleY="1" width="355" x="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa" lineSpacing="12" text.unactive="Khi Chiến Linh xuất hiện, có 10% tỷ lệ nhập vào nhân vật, tăng tỷ lệ tiêu diệt, khiến 3 nhân vật đòn nào cũng chí mạng, kéo dài 3 giây"/>
 					<e:layout>
 						<e:VerticalLayout gap="10"/>
 					</e:layout>
@@ -24,7 +24,7 @@
 				<e:Image scaleX="1" scaleY="1" source="shoujihong" height="30" width="206" top="151" left="5" visible.unactive="false" includeIn="active"/>
 				<e:Label id="skillName1" text="Chiến Thần Phụ Thể Lv1" size="20" top="155" y="30" scaleX="1" scaleY="1" textColor="0xff0000" fontFamily="Microsoft YaHei" left="12" visible.unactive="false" includeIn="active"/>
 				<e:Group top="190" left="13" height="89" width="350" visible.unactive="false" includeIn="active">
-					<e:Label id="skillDesc1" text="战灵出现时，10%概率附体到角色上，暴击几率增加5%，让三角色刀刀致命一击，持续3秒" size="20" textAlign="left" y="0" scaleX="1" scaleY="1" width="350" x="0" textColor="0x6b9baa" fontFamily="Microsoft YaHei" lineSpacing="12"/>
+					<e:Label id="skillDesc1" text="Khi Chiến Linh xuất hiện, có 10% tỷ lệ nhập vào nhân vật, tăng 5% tỷ lệ Bạo kích, khiến 3 nhân vật đòn nào cũng chí mạng, kéo dài 3 giây" size="20" textAlign="left" y="0" scaleX="1" scaleY="1" width="350" x="0" textColor="0x6b9baa" fontFamily="Microsoft YaHei" lineSpacing="12"/>
 					<e:layout>
 					<e:VerticalLayout gap="10"/>
 					</e:layout>

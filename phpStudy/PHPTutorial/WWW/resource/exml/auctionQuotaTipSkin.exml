@@ -13,20 +13,20 @@
 		          left="6" right="6" visible="false"/>
 		<e:Image width="412" height="187" y="151" source="bantoutiaobg" scale9Grid="124,18,9,6" horizontalCenter="3"/>
 		<e:Image source="tongyongkuang3tou" scale9Grid="71,5,267,37"   left="0" right="0"/>
-		<e:Label text="您在拍卖系统的可花费额度不足，无法竞拍" size="20" id="tipText0" textAlign="center" y="85" horizontalCenter="1" textColor="0xD1C28F"/>
+		<e:Label text="Hạn mức chi tiêu ở hệ thống đấu giá không đủ, không thể đấu giá" size="20" id="tipText0" textAlign="center" y="85" horizontalCenter="1" textColor="0xD1C28F"/>
 		<e:Image source="teshuwenzibg" y="151" horizontalCenter="0.5" width="239"/>
 
-		<e:Label text="可通过以下途径获取额度" size="18" id="tipText1" textAlign="center" y="162" horizontalCenter="0.5" textColor="0xD1C28F"/>
+		<e:Label text="Có thể nhận hạn mức qua các cách sau" size="18" id="tipText1" textAlign="center" y="162" horizontalCenter="0.5" textColor="0xD1C28F"/>
 		<e:Image y="201" source="gantanhao" left="37"/>
-		<e:Label text="每充值1元宝，获得1元宝可购买额度" size="18" id="tipText2" textAlign="left" y="204" textColor="0xD1C28F" verticalAlign="justify" left="65"/>
+		<e:Label text="Mỗi lần nạp 1 Nguyên Bảo, nhận 1 Nguyên Bảo hạn mức mua" size="18" id="tipText2" textAlign="left" y="204" textColor="0xD1C28F" verticalAlign="justify" left="65"/>
 		<e:Image source="gantanhao" y="227" left="37"/>
-		<e:Label text="每1点活跃度，可转化为10元宝购买额度" size="18" id="tipText3" textAlign="left" y="230" textColor="0xD1C28F" verticalAlign="justify" left="64"/>
+		<e:Label text="Mỗi 1 điểm Hoạt Náo, có thể chuyển thành 10 Nguyên Bảo hạn mức mua" size="18" id="tipText3" textAlign="left" y="230" textColor="0xD1C28F" verticalAlign="justify" left="64"/>
 		<e:Image source="gantanhao" y="254" left="37"/>
-		<e:Label text="活跃累计额度上限50000，消耗后可继续累计" size="18" id="tipText4" textAlign="left" y="256" textColor="0xD1C28F" verticalAlign="justify" left="62"/>
-		<e:Label id="text" text="（竞拍时优先使用活跃额度）" size="20" horizontalCenter="0" bottom="187" x="20" y="20" textColor="0x9F946D"/>
-		<e:Label text="竞拍提示" size="24" y="10" textColor="0xbd600d" bold="true"  horizontalCenter="0"/>
-		<e:Label id="rechargeQuota" text="充值剩余额度：" size="20" horizontalCenter="-21" bottom="93" textColor="0x20CB30"/>
-		<e:Label id="positiveQuota" text="活跃剩余额度：" size="20" horizontalCenter="-21" bottom="123" textColor="0x20CB30"/>
+		<e:Label text="Hạn mức Hoạt Náo tích lũy tối đa 50000, dùng hết có thể tích lũy tiếp" size="18" id="tipText4" textAlign="left" y="256" textColor="0xD1C28F" verticalAlign="justify" left="62"/>
+		<e:Label id="text" text="（Khi đấu giá ưu tiên dùng hạn mức Hoạt Náo）" size="20" horizontalCenter="0" bottom="187" x="20" y="20" textColor="0x9F946D"/>
+		<e:Label text="Nhắc nhở đấu giá" size="24" y="10" textColor="0xbd600d" bold="true"  horizontalCenter="0"/>
+		<e:Label id="rechargeQuota" text="Hạn mức nạp còn lại：" size="20" horizontalCenter="-21" bottom="93" textColor="0x20CB30"/>
+		<e:Label id="positiveQuota" text="Hạn mức Hoạt Náo còn lại：" size="20" horizontalCenter="-21" bottom="123" textColor="0x20CB30"/>
 		<e:Label id="rechargeQuotaNum" text="10000" size="20" textColor="0x20CB30" horizontalCenter="72" bottom="93" textAlign="left"/>
 		<e:Label id="positiveQuotaNum" text="50000" size="20" textColor="0x20CB30" horizontalCenter="73" bottom="123" x="10" y="10"/>
 

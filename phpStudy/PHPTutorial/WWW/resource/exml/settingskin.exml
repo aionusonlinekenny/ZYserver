@@ -6,7 +6,7 @@
 		<e:Image id="tou" source="tongyong_juanzhou" width="481" horizontalCenter="0.5" top="20"/>
 		<e:Image width="249" horizontalCenter="0" top="0" source="tongyong_titlebg"/>
 		<e:Image width="419" horizontalCenter="0" source="tongyong_dikuang1" scale9Grid="22,20,25,25" anchorOffsetY="0" top="62" bottom="58"/>
-		<e:Label id="titleTxt" text="设置" size="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" top="13" textColor="0x001828"/>
+		<e:Label id="titleTxt" text="Cài đặt" size="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" top="13" textColor="0x001828"/>
 
 		<e:Group horizontalCenter="0" bottom="-18">
 			<e:Image source="bantoutiaobg" height="40" scale9Grid="128,2,15,41" width="300" x="0" top="0"/>

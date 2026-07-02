@@ -8,7 +8,7 @@
 		<e:Image y="-23.03" horizontalCenter="0" source="tongyong_titlebg" width="281"/>
 		<e:Image horizontalCenter="1" width="465" source="tongyongbg5" height="285" verticalCenter="2.5" scale9Grid="5,5,16,9"/>
 		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="243.5" top="-21"/>
-		<e:Label id="desc" text="占领仙宫的仙盟成员可领取每日奖励" size="20" horizontalCenter="0.5" textColor="0x001828" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" anchorOffsetX="0" width="460" top="55"/>
+		<e:Label id="desc" text="Thành viên Tiên Minh chiếm Tiên Cung có thể nhận thưởng hàng ngày" size="20" horizontalCenter="0.5" textColor="0x001828" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" anchorOffsetX="0" width="460" top="55"/>
 		<e:Label text="Thưởng hàng ngày" size="22" horizontalCenter="1" fontFamily="Microsoft YaHei" top="-10" textColor="0x084151"/>
 		<e:List id="list" scaleX="1" scaleY="1" itemRendererSkinName="SkinItem2" verticalCenter="-13" anchorOffsetX="0" horizontalCenter="-0.5" anchorOffsetY="0">
 			<e:layout>

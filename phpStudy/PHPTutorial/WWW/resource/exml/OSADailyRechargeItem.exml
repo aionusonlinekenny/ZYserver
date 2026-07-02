@@ -9,6 +9,6 @@
 		</e:List>
 		<e:Button id="getBtn" label="Nhận" verticalCenter="10.5" width="140" height="55" skinName="SkinBtn5" horizontalCenter="157.5"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" right="56" verticalCenter="-7.5" visible="false"/>
-		<e:BitmapLabel id="info"  y="20" text="累计充值50000元宝" font="num_chongzhi_fnt" scaleX="0.7" scaleY="0.7" horizontalCenter="157.5"/>
+		<e:BitmapLabel id="info"  y="20" text="Nạp tích lũy 50000 Nguyên Bảo" font="num_chongzhi_fnt" scaleX="0.7" scaleY="0.7" horizontalCenter="157.5"/>
 	</e:Group>
 </e:Skin>

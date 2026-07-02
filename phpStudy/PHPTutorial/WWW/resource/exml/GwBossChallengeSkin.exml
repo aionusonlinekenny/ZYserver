@@ -8,7 +8,7 @@
 		<e:Image height="206" y="38" source="tongyong_dikuang1" scale9Grid="17,15,45,55" width="436" horizontalCenter="0"/>
 		<e:Label id="title" size="22" text="BOSS rơi đồ" horizontalCenter="0" y="-1" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Group id="zwHunt" y="198" scaleX="1" scaleY="1" horizontalCenter="0">
-			<e:Label text="进入条件: " x="1" y="2" size="20" fontFamily="Microsoft YaHei" textColor="0x213847"/>
+			<e:Label text="Điều kiện vào: " x="1" y="2" size="20" fontFamily="Microsoft YaHei" textColor="0x213847"/>
 			<e:Image source="szyuanbao" width="40" scaleX="1" scaleY="1" left="0" top="0" height="30"/>
 			<e:Label id="yuanbao" text="" size="20" x="32" y="14" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:Label text="hoặc" size="20" x="189" y="5" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x213847"/>

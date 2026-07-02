@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="SkinWarReportItem" width="406" height="48" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Rect left="0" right="0" top="0" bottom="0" strokeColor="0x80C0D2" fillColor="0x78B8C1" fillAlpha="0.7" strokeAlpha="1" strokeWeight="1"/>
-	<e:Label id="noOpen" text="未开始" size="20" horizontalCenter="0" textColor="0xe40000" fontFamily="Microsoft YaHei" verticalCenter="2"/>
+	<e:Label id="noOpen" text="Chưa bắt đầu" size="20" horizontalCenter="0" textColor="0xe40000" fontFamily="Microsoft YaHei" verticalCenter="2"/>
 	<e:Group id="infoGroup" left="0" right="0" bottom="0" top="0" visible="false">
 		<e:Label id="roundTxt" text="Ván 1" size="20" fontFamily="Microsoft YaHei" textColor="0x1b3046" left="51" verticalCenter="0"/>
 		<e:Image anchorOffsetX="0" anchorOffsetY="0" source="peakness_winners" verticalCenter="2" horizontalCenter="-2"/>

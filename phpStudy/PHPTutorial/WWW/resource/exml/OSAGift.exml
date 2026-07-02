@@ -60,7 +60,7 @@
 	</e:Group>
 	<e:Label id="actTime" text="0 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" horizontalCenter="174" x="218" y="612" fontFamily="Microsoft YaHei"/>
 	<e:Group y="653" horizontalCenter="0" visible="false">
-		<e:Label id="ybTxt0" text="当前元宝：" size="18" horizontalCenter="0" bottom="7" x="-55" y="8" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" textColor="0xffff00"/>
+		<e:Label id="ybTxt0" text="Nguyên Bảo hiện tại：" size="18" horizontalCenter="0" bottom="7" x="-55" y="8" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" textColor="0xffff00"/>
 		<e:Image  x="20" y="9" source="szyuanbao" width="35" height="25"/>
 		<e:Label id="ybTxt" text="1000000000000" size="18" horizontalCenter="0" bottom="7" x="-65" y="-2" fontFamily="Microsoft YaHei" textColor="0xffff00" scaleX="1" scaleY="1"/>
 		<e:layout>

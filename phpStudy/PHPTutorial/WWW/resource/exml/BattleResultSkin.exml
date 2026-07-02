@@ -48,7 +48,7 @@
 
 		<e:Group id="timerGroup" y="625" horizontalCenter="154" x="403" >
 			<e:Label id="info" text="5" y="8" textColor="0x00ff00" size="18" horizontalCenter="172" x="37" />
-			<e:Label text="秒退出杀劫" y="8" textColor="0x00FF00" size="18" horizontalCenter="172" x="37" fontFamily="Microsoft YaHei"/>
+			<e:Label text="giây thoát Sát Kiếp" y="8" textColor="0x00FF00" size="18" horizontalCenter="172" x="37" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 			<e:HorizontalLayout gap="1"/>
 			</e:layout>

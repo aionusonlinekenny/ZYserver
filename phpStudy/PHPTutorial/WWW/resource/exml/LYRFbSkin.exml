@@ -5,7 +5,7 @@
 		<e:Image source="lyr_fuben_bg_png" anchorOffsetY="0" anchorOffsetX="0"  horizontalCenter.sdget="0" horizontalCenter.sdfb="0" horizontalCenter.free="0" horizontalCenter.challenge="0" verticalCenter.challenge="-67" verticalCenter.free="-40" verticalCenter.sdfb="-40" verticalCenter.sdget="-40"/>
 
 		<e:Button id="btnChallenge" label="Thách đấu" width="160" height="55" visible.free="false" visible.sdfb="false" visible.sdget="false" horizontalCenter="1" horizontalCenter.challenge="0" icon="btn1_2" skinName="SkinBtn6" x="221"  bottom.sdget="47" bottom.sdfb="47" bottom.free="47" verticalCenter.challenge="306.5"/>
-		<e:Label text="今日可挑战次数 :" size="20" visible.free="false" visible.sdget="false" x.challenge="192" includeIn="free,sdget" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="330.67" textAlign="left" verticalAlign="middle"  textColor="0x00ff06" bottom="14" horizontalCenter="85.5"/>
+		<e:Label text="Số lần thách đấu hôm nay :" size="20" visible.free="false" visible.sdget="false" x.challenge="192" includeIn="free,sdget" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="330.67" textAlign="left" verticalAlign="middle"  textColor="0x00ff06" bottom="14" horizontalCenter="85.5"/>
 		<e:Label id="lbTime" text="1" size="20" visible.free="false" visible.sdget="false" horizontalCenter="86" text.challenge="Số lần thách đấu hôm nay：10" horizontalCenter.challenge="0" text.sdfb="Số lần thách đấu hôm nay：10" horizontalCenter.sdfb="1.5" bottom.sdfb="57" fontFamily="Microsoft YaHei" textColor="0x00ff06" x="380"  bottom.sdget="14" bottom.free="14" verticalCenter.challenge="354"/>
 
 		<e:Image source="ring_fubenslogen1_png" visible.free="false" visible.sdget="false" width="551" height="85" horizontalCenter="6.5" y.sdget="92" y.sdfb="92" y.free="92" x="31"  horizontalCenter.challenge="6.5" verticalCenter.challenge="-289.5"/>
@@ -47,7 +47,7 @@
 
 		</e:Group>
 		<e:Group width="338.33" height="43" horizontalCenter="-1" anchorOffsetY="0" anchorOffsetX="0" x="130"  visible.sdfb="false" visible.free="false" bottom.sdget="125" bottom.sdfb="125" bottom.free="125" height.challenge="31" horizontalCenter.challenge="0" verticalCenter.challenge="251.5" visible.sdget="false">
-			<e:Label id="lbdesc" text="可获得：" size="20" verticalCenter="0.5" x="76.5" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
+			<e:Label id="lbdesc" text="Có thể nhận：" size="20" verticalCenter="0.5" x="76.5" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
 			<e:Image x="161.9" width="35" height="31" verticalCenter="0" source="200015_png" height.challenge="35"/>
 			<e:Label id="lbExp" text="64500" size="20" verticalCenter="0.5" x="206.4" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 			<e:layout>

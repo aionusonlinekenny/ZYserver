@@ -19,7 +19,7 @@
 				<e:Image scale9Grid="0,16,275,4" height="388" source="kaifuzhuzaobangbg_png" anchorOffsetY="0" width="307" horizontalCenter="0.5" y="-14"/>
 				<e:Image source="zhandoulibg" bottom="0" left="0" right="0" scale9Grid="0,16,275,4" height="35" visible="false"/>
 				<e:Image width="240" y="44" horizontalCenter="-1" source="kaifuzhuzaobangbg2_png"/>
-				<e:Label text="第一名" size="20" textColor="0xffff00" horizontalCenter="0" y="18" fontFamily="Microsoft YaHei" textAlign="center"/>
+				<e:Label text="Hạng 1" size="20" textColor="0xffff00" horizontalCenter="0" y="18" fontFamily="Microsoft YaHei" textAlign="center"/>
 				<e:List id="reward0" horizontalCenter="0" itemRendererSkinName="SkinItem2" top="138">
 					<e:layout>
 						<e:HorizontalLayout gap="16"/>
@@ -38,10 +38,10 @@
 						<e:TileLayout requestedRowCount="1" horizontalGap="0" horizontalGap.hefu="6"/>
 						</e:layout>
 					</e:List>
-					<e:Label text="Hạng 2" size="20" textColor="0xffff00" y="20" text.kaifu="Hạng 2" text.hefu="第2-3名" x.hefu="10" fontFamily="Microsoft YaHei" left="26" textAlign="left" strokeColor="0xe34032" stroke="0" left.hefu="8"/>
+					<e:Label text="Hạng 2" size="20" textColor="0xffff00" y="20" text.kaifu="Hạng 2" text.hefu="Hạng 2-3" x.hefu="10" fontFamily="Microsoft YaHei" left="26" textAlign="left" strokeColor="0xe34032" stroke="0" left.hefu="8"/>
 					<e:Label text="VươngGiả·HuyềnThoại" id="name1" size="20" y="50" fontFamily="Microsoft YaHei" textAlign.kaifu="left" textColor="0x7e2a00" size.hefu="18" width.hefu="108" x.hefu="3" x="26" textAlign.hefu="left"/>
 					<e:Label id="name11" text="VươngGiả·HuyềnThoại" size="20" visible.kaifu="false" x.hefu="3" fontFamily="Microsoft YaHei" y="80" textAlign="left" textColor="0x7e2a00" size.hefu="18" x="26"/>
-					<e:Label id="attrValue1" text="Chuyển sinh 3 cấp 100" size="20" scaleX="1" scaleY="1" y="80" size.hefu="16" y.hefu="70" text.hefu="要求" x.hefu="10" fontFamily="Microsoft YaHei" left="26" textAlign="left" textColor="0x00842c" visible.hefu="false"/>
+					<e:Label id="attrValue1" text="Chuyển sinh 3 cấp 100" size="20" scaleX="1" scaleY="1" y="80" size.hefu="16" y.hefu="70" text.hefu="Yêu cầu" x.hefu="10" fontFamily="Microsoft YaHei" left="26" textAlign="left" textColor="0x00842c" visible.hefu="false"/>
 				</e:Group>
 				<e:Group x="-99" y="42" width="263" height="121">
 					<e:Image anchorOffsetY="0" scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0" source="scitembg_png" scale9Grid="50,63,18,16"/>
@@ -50,7 +50,7 @@
 						<e:TileLayout requestedRowCount="1" horizontalGap="0" horizontalGap.hefu="6"/>
 						</e:layout>
 					</e:List>
-					<e:Label text="第3名" size="20" textColor="0xffff00" y="20" text.hefu="第4-5名" x.hefu="10" fontFamily="Microsoft YaHei" left="26" textAlign="left" strokeColor="0xe34032" stroke="0" left.hefu="8"/>
+					<e:Label text="Hạng 3" size="20" textColor="0xffff00" y="20" text.hefu="Hạng 4-5" x.hefu="10" fontFamily="Microsoft YaHei" left="26" textAlign="left" strokeColor="0xe34032" stroke="0" left.hefu="8"/>
 					<e:Label text="VươngGiả·HuyềnThoại" id="name2" size="18" scaleX="1" scaleY="1" y="50" x.hefu="3" fontFamily="Microsoft YaHei" textAlign="left" textColor="0x7e2a00" x="26"/>
 					<e:Label id="name21" text="VươngGiả·HuyềnThoại" size="18" scaleX="1" scaleY="1" y="80" visible.kaifu="false" x.hefu="3" fontFamily="Microsoft YaHei" textAlign="left" textColor="0x7e2a00" x="26"/>
 					<e:Label id="attrValue2" text="Chuyển sinh 3 cấp 100" size="20" scaleX="1" scaleY="1" y="80" x.hefu="10" size.hefu="16" y.hefu="70" visible.hefu="false" fontFamily="Microsoft YaHei" left="26" textColor="0x00842c" textAlign="left"/>
@@ -62,7 +62,7 @@
 						<e:TileLayout requestedRowCount="1" horizontalGap="0" horizontalGap.hefu="6"/>
 						</e:layout>
 					</e:List>
-					<e:Label text="第4-20名" size="20" textColor="0xffff00" verticalCenter.kaifu="0" text.hefu="第6-20名" x.hefu="10" left="26" fontFamily="Microsoft YaHei" strokeColor="0xe34032" stroke="0" left.hefu="8" y.hefu="20"/>
+					<e:Label text="Hạng 4-20" size="20" textColor="0xffff00" verticalCenter.kaifu="0" text.hefu="Hạng 6-20" x.hefu="10" left="26" fontFamily="Microsoft YaHei" strokeColor="0xe34032" stroke="0" left.hefu="8" y.hefu="20"/>
 					<e:Label id="attrValue3" text="Chuyển sinh 3 cấp 100" size="16" scaleX="1" scaleY="1" textColor="0xFF9900" x="10" y="50" includeIn="hefu" visible="false"/>
 				</e:Group>
 				<e:layout>
@@ -82,7 +82,7 @@
 			</e:Group>
 			<e:Group verticalCenter="0" right="20">
 				<e:Label text="Xếp hạng của tôi：" size="20" x="0" y="2" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label id="myRanking" text="20名以后" size="20" x="108" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label id="myRanking" text="Sau hạng 20" size="20" x="108" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 				<e:layout>
 					<e:HorizontalLayout verticalAlign="middle"/>
 				</e:layout>

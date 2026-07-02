@@ -21,7 +21,7 @@
 
 
 
-		<e:Label id="state" text="再登陆XX天可领取" textColor="0x00FF00" size="20" bottom="8" horizontalCenter="0.5"/>
+		<e:Label id="state" text="Đăng nhập thêm XX ngày là có thể nhận" textColor="0x00FF00" size="20" bottom="8" horizontalCenter="0.5"/>
 		<e:Label id="already" text="Đã nhận" textColor="0x00FF00" size="20" bottom="49" horizontalCenter="0.5" visible="false"/>
 	</e:Group>		
 </e:Skin>

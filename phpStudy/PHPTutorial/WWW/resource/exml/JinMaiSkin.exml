@@ -52,12 +52,12 @@
 
 		<e:Image source="jiantouyou" y="166" rotation="90" horizontalCenter="0" width="56" height="50"/>
 		<e:Label id="attr" text="" size="20" lineSpacing="6" textAlign="left" y="66" fontFamily="Microsoft YaHei" textColor="0xffffff" left="16"/>
-		<e:Label text="当前加成" y="36" size="20" fontFamily="Microsoft YaHei" textColor="0xffe500" horizontalCenter="0"/>
-		<e:Label y="230" text="下级加成" size="20" horizontalCenter="0" textColor="0xffe500" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Cộng thêm hiện tại" y="36" size="20" fontFamily="Microsoft YaHei" textColor="0xffe500" horizontalCenter="0"/>
+		<e:Label y="230" text="Cộng thêm cấp tiếp theo" size="20" horizontalCenter="0" textColor="0xffe500" fontFamily="Microsoft YaHei"/>
 		<e:Label id="nextAttr" text="" size="20" lineSpacing="6" textAlign="left" y="262" fontFamily="Microsoft YaHei" textColor="0x00ff00" left="16"/>
 	</e:Group>
 
-	<e:Label id="countLabel" text="经脉已满阶" size="20" textAlign="center" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" height="20" verticalCenter="278"/>
+	<e:Label id="countLabel" text="Kinh Mạch đã đạt bậc tối đa" size="20" textAlign="center" horizontalCenter="0" textColor="0x001828" fontFamily="Microsoft YaHei" height="20" verticalCenter="278"/>
 	<e:Button id="boostBtn" label="Tẩy Tủy" width="221" horizontalCenter="0" icon="btn1_2" anchorOffsetY="0" height="54" skinName="SkinBtn6" verticalCenter="330"/>
 	<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" horizontalCenter="74" height="19" verticalCenter="315.5"/>
 

@@ -10,7 +10,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Group y="30" horizontalCenter="0">
-			<e:Label text="击杀BOSS耗时：" y="0" size="18" textAlign="center" textColor="0xbd600d" x="0"/>
+			<e:Label text="Thời gian tiêu diệt BOSS：" y="0" size="18" textAlign="center" textColor="0xbd600d" x="0"/>
 			<e:Label id="time" text="10 phút 59 giây" y="0" size="18" textAlign="center" x="0" textColor="0xf8b141"/>
 			<e:layout>
 				<e:HorizontalLayout/>
@@ -30,7 +30,7 @@
 			</e:Group>
 		</e:Group>
 		<e:Image y="76" width="280" source="teshuwenzibg" horizontalCenter="0"/>
-		<e:Label text="输出排名" y="84" size="24" horizontalCenter="0" bold="true" textColor="0xf8b141"/>
+		<e:Label text="Xếp hạng sát thương" y="84" size="24" horizontalCenter="0" bold="true" textColor="0xf8b141"/>
 
 
 

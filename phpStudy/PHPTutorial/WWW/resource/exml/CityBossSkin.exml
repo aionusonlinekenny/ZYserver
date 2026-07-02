@@ -24,9 +24,9 @@
 		<e:Label id="leftText" text="Tổng số lần thách đấu còn lại：1 lần" size="18" horizontalCenter="-57.5" bottom="71" fontFamily="Microsoft YaHei" visible="false"/>
 		<e:Image id="stateImage" top="346" horizontalCenter="-2" source="zdbosskejisha_png" visible="false"/>
 		<e:Group horizontalCenter="-81" top="78" x="63" y="115">
-			<e:Label text="击杀" size="18" horizontalCenter="-81.5" top="140" x="-170" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label id="bossName" text="猪妖王" size="18" horizontalCenter="-81.5" top="140" x="-160" y="10" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
-			<e:Label text="达到目标数量可在主城刷新" size="18" horizontalCenter="-81.5" top="140" x="-150" y="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label text="Tiêu diệt" size="18" horizontalCenter="-81.5" top="140" x="-170" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="bossName" text="Trư Yêu Vương" size="18" horizontalCenter="-81.5" top="140" x="-160" y="10" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Đạt số lượng mục tiêu có thể làm mới ở thành chính" size="18" horizontalCenter="-81.5" top="140" x="-150" y="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:layout>
 			<e:HorizontalLayout gap="3"/>
 			</e:layout>
@@ -36,7 +36,7 @@
 			<e:ProgressBar id="killProgressBar" width="211" skinName="Skinbar5" value="0" horizontalCenter="-0.5" x="1" verticalCenter="-0.25"/>
 		</e:Group>
 		<e:Image top="12" source="yuangu_xianshihuodong_png" y="10" horizontalCenter="-74.5"/>
-		<e:Label id="nextTime" text="最快将于2018年12月12日（周二） 12:12刷新" size="18" textColor="0x00ff00" horizontalCenter="-81.5" top="138" fontFamily="Microsoft YaHei" x="33" y="166"/>
+		<e:Label id="nextTime" text="Sớm nhất sẽ làm mới lúc 12:12 ngày 12/12/2018（Thứ 3）" size="18" textColor="0x00ff00" horizontalCenter="-81.5" top="138" fontFamily="Microsoft YaHei" x="33" y="166"/>
 
 		<e:Image  y="567" horizontalCenter="-69" source="yuangu_diaoluo_png"/>
 		<e:Scroller width="340" horizontalCenter="-69" top="605" height="107">

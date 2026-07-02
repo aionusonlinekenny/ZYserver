@@ -22,7 +22,7 @@
 
 
 		<e:Image x="150" y="403" source="gantanhao1"/>
-		<e:Label text="只会分解无用的火符" size="20" y="403" fontFamily="Microsoft YaHei" x="172" width="180" textColor="0x0000f1"/>
+		<e:Label text="Chỉ phân giải Hỏa Phù vô dụng" size="20" y="403" fontFamily="Microsoft YaHei" x="172" width="180" textColor="0x0000f1"/>
 		<e:Image width="419" height="328" x="36" y="64" source="tongyong_dikuang1" scale9Grid="10,6,60,42"/>
 		<e:List id="itemList" height="284" itemRendererSkinName="SkinItem" width="335" x="80" y="87">
 			<e:layout>

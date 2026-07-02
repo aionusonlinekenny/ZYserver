@@ -5,7 +5,7 @@
 	<e:Image id="vipTitle" x="100.54" y="10" scaleX="1" scaleY="1" source="vipv_png"/>
 	<e:Label id="labelName" text="Tên có 6 chữ" x="133" y="12" size="22" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
 	<e:Label id="labelGuild" text="Tên Tiên Minh bao nhiêu chữ" x="168.67" y="73" size="22" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
-	<e:Label text="仙盟：" x="102" y="73" size="22" fontFamily="Microsoft YaHei" textColor="0x39566A"/>
+	<e:Label text="Tiên Minh：" x="102" y="73" size="22" fontFamily="Microsoft YaHei" textColor="0x39566A"/>
 	<e:Label id="labelLv" text="Chuyển sinh 12 cấp 100" x="102" size="22" fontFamily="Microsoft YaHei" y="44" textColor="0x00842c"/>
 	<e:Image id="imgBg0" x="21" height="70" width="70" verticalCenter="-1.5" source="guildkuangbg"/>
 	<e:Image id="imgHead" source="head_10" x="25" height="64" width="64" verticalCenter="0"/>

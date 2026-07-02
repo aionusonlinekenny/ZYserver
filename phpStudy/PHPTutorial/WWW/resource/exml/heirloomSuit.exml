@@ -13,7 +13,7 @@
 		</e:Group>
 		<e:Group width="500" height="280" verticalCenter="-150" horizontalCenter="0">
 
-			<e:Label id="name0" text="星★传世套装" size="24" x="20" y="4" textColor="0x2899f9" fontFamily="Microsoft YaHei"/>
+			<e:Label id="name0" text="Sao★Bộ Truyền Thế" size="24" x="20" y="4" textColor="0x2899f9" fontFamily="Microsoft YaHei"/>
 			<e:Label id="num0" text="（1/8）" y="4" size="20" x="169" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Label id="informationname0" text="Vũ khí  Mũ  Áo  Vòng tay  Bao cổ tay  Bao chân  Nhẫn  Giày " y="36" size="20" x="47" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Group id="cgroup0" y="90" x="49">
@@ -52,7 +52,7 @@
 		</e:Group>
 		<e:Group width="500" height="280" verticalCenter="150" horizontalCenter="0">
 
-			<e:Label id="name1" text="月￠传世套装" y="4" size="24" x="20" textColor="0xff0000" fontFamily="Microsoft YaHei"/>
+			<e:Label id="name1" text="Nguyệt￠Bộ Truyền Thế" y="4" size="24" x="20" textColor="0xff0000" fontFamily="Microsoft YaHei"/>
 			<e:Label id="num1" text="（1/8）" y="4" size="20" x="169" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Label id="informationname1" text="Vũ khí  Mũ  Áo  Vòng tay  Bao cổ tay  Bao chân  Nhẫn  Giày " x="47" y="36" size="20" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 			<e:Group id="ngroup0" y="90" x="49" width="194">

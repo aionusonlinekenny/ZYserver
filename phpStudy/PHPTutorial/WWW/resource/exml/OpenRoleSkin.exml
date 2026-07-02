@@ -41,11 +41,11 @@
 		<e:Image y="13.5" source="biaoti_kaiqijuese" horizontalCenter="0" x="223" scaleX="1" scaleY="1"/>
 		<e:Button id="leftBtn" label="Mở khóa nhân vật" width="160" height="60" horizontalCenter="-246" bottom="287" icon="opxuanzhuan" skinName="SkinBtn0" scaleX="-1" x="134" y="601" scaleY="1"/>
 		<e:Button id="rightBtn" label="Mở khóa nhân vật" width="160" height="60" horizontalCenter="246" bottom="287" icon="opxuanzhuan" skinName="SkinBtn0" scaleX="1" x="466" y="601" scaleY="1"/>
-		<e:Label id="needTxt" text="开启需求：" size="22" horizontalCenter="0" bottom="176" textColor="0xffffff" fontFamily="Microsoft YaHei" x="245.00000000000003" y="750" scaleX="1" scaleY="1"/>
+		<e:Label id="needTxt" text="Yêu cầu mở：" size="22" horizontalCenter="0" bottom="176" textColor="0xffffff" fontFamily="Microsoft YaHei" x="245.00000000000003" y="750" scaleX="1" scaleY="1"/>
 		<e:Image source="opbn_png" horizontalCenter="0" scaleY="1" scaleX="1" bottom="215" x="52" y="705"/>
 		<e:ToggleButton id="sexBtn0" label="Nút bấm" skinName="SkinMaleBtn" horizontalCenter="-70" verticalCenter="180" x="188.00000000000003" y="612" scaleX="1" scaleY="1" visible="false"/>
 		<e:ToggleButton id="sexBtn1" label="Nút bấm" skinName="SkinFemaleBtn" verticalCenter="180" horizontalCenter="70" x="370" y="654.0000000000001" scaleX="1" scaleY="1" visible="false"/>
-		<e:Label id="openLable" text="已开启" size="30" horizontalCenter="0" bottom="117" fontFamily="Microsoft YaHei" x="245.00000000000003" y="750" scaleX="1" scaleY="1" textColor="0x00ff00"/>
+		<e:Label id="openLable" text="Đã mở" size="30" horizontalCenter="0" bottom="117" fontFamily="Microsoft YaHei" x="245.00000000000003" y="750" scaleX="1" scaleY="1" textColor="0x00ff00"/>
 		<e:Button id="openBtn" label="Mở khóa nhân vật" skinName="SkinBtn1" width="160" height="60" horizontalCenter="0" bottom="100" x="220.00000000000003" y="788" scaleX="1" scaleY="1"/>
 	</e:Group>
 </e:Skin>

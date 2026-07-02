@@ -8,7 +8,7 @@
 	<e:Image width="580" anchorOffsetY="0" source="tongyong_dikuang4" scale9Grid="3,5,16,16" horizontalCenter="0" height="270" verticalCenter="229"/>
 
 	<e:Image horizontalCenter="0" anchorOffsetY="0" source="huabian" scale9Grid="93,0,20,50" verticalCenter="109"/>
-	<e:Label text="副本奖励" size="22" horizontalCenter="0" includeIn="challenge" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="117"/>
+	<e:Label text="Thưởng Phó Bản" size="22" horizontalCenter="0" includeIn="challenge" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalCenter="117"/>
 
 
 

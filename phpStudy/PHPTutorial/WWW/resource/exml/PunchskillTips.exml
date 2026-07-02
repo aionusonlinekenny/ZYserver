@@ -16,11 +16,11 @@
 
 		<e:Label id="type" y="44" text="Vũ khí" fontFamily="黑体" size="16" x="235" textColor="0xFFFFFF" visible="false"/>
 		<e:Group width="300" top="225" left="19" height="268">
-			<e:Label text="技能效果" size="20"   stroke="1" fontFamily="Microsoft YaHei" textColor="0xec6014" top="0" left="0"/>
+			<e:Label text="Hiệu ứng kỹ năng" size="20"   stroke="1" fontFamily="Microsoft YaHei" textColor="0xec6014" top="0" left="0"/>
 			<e:Label text="Cộng thêm Thần Phạt" size="20"   stroke="1" fontFamily="Microsoft YaHei" textColor="0xec6014" top="105" left="0"/>
-			<e:Label text="对玩家造成伤害" size="20"   stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="28" left="0"/>
+			<e:Label text="Gây sát thương lên người chơi" size="20"   stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="28" left="0"/>
 
-			<e:Label text="对怪物造成伤害" size="20"   stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="53" left="0"/>
+			<e:Label text="Gây sát thương lên quái vật" size="20"   stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="53" left="0"/>
 			<e:Label text="1050%" size="20"   stroke="1" textColor="0x20cb30" fontFamily="Microsoft YaHei" top="53" left="141"/>
 			<e:Label text="480%" size="20"   stroke="1" textColor="0x20CB30" fontFamily="Microsoft YaHei" top="29" left="140"/>
 			<e:Label id="desc3" text="" size="20" stroke="1" textColor="0x6b9baa" fontFamily="Microsoft YaHei" top="134" left="0"/>

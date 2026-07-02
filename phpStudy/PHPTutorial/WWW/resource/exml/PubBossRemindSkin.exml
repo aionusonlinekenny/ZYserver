@@ -11,7 +11,7 @@
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-33" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 
-		<e:Label text="BOSS提醒" size="20" y="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
+		<e:Label text="Nhắc nhở BOSS" size="20" y="16" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x39566a"/>
 		<e:Scroller horizontalCenter="0" width="520" anchorOffsetY="0" height="467.47" y="95">
 			<e:List id="list0" itemRendererSkinName="SkinRemindInfo" y="23" useVirtualLayout="false" width="520">
 			<e:layout>
@@ -22,12 +22,12 @@
 
 		<e:Label text="BOSS" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="-158"/>
 		<e:Label text="Cấp độ" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="0"/>
-		<e:Label text="提醒状态" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="158"/>
+		<e:Label text="Trạng thái nhắc nhở" size="20" y="64" fontFamily="Microsoft YaHei" textColor="0x001828" horizontalCenter="158"/>
 		<e:Button id="closeBtn0" label="Nút bấm" skinName="SkinBtn0" right="0" icon="chatclose" top="12"/>
 		<e:CheckBox id="autoChallenge" label="Tự động thách đấu" skinName="SkinCheckBox0" scaleX="1" scaleY="1" horizontalCenter="0" bottom="22"/>
 		<e:Group id="franchise"  height="20" anchorOffsetY="0" bottom="28" horizontalCenter="0">
 			<e:Image  x="143" y="9" source="gantanhao1"/>
-			<e:Label text="特权月卡开启自动挑战" size="20" x="0" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" y="0" textColor="0x00038a"/>
+			<e:Label text="Thẻ Tháng Đặc Quyền mở Tự động thách đấu" size="20" x="0" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" y="0" textColor="0x00038a"/>
 			<e:layout>
 				<e:HorizontalLayout horizontalAlign="center"/>
 			</e:layout>

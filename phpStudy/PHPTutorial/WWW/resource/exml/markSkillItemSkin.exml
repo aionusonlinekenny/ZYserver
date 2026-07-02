@@ -10,6 +10,6 @@
 
 	<e:Image source="wingskillbg" horizontalCenter="0" bottom="7"/>
 	<e:Image id="lock" horizontalCenter="0" source="suowen3" top="4"/>
-	<e:Label id="skillName" text="御珠灵术" size="18" horizontalCenter="0" bottom="11" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+	<e:Label id="skillName" text="Ngự Châu Linh Thuật" size="18" horizontalCenter="0" bottom="11" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 	<e:Image id="redpoint" source="zjmhongdian" right="5" top="4"/>
 </e:Skin>

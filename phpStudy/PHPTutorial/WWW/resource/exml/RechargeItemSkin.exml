@@ -3,5 +3,5 @@
 	<e:Button id="rewardBtn" skinName="SkinBtn6" y="29" label="￥6" x="314"/>
 	<e:Image source="quality0" x="20" y="13"/>
 	<e:Image source="coin" x="27" y="20"/>
-	<e:Label text="60元宝  首充送180元宝" x="99" y="54" fontFamily="黑体" size="18" textColor="0xDFD1B5" width="215" height="23"/>
+	<e:Label text="60 Nguyên Bảo  Nạp đầu tặng 180 Nguyên Bảo" x="99" y="54" fontFamily="黑体" size="18" textColor="0xDFD1B5" width="215" height="23"/>
 </e:Skin>

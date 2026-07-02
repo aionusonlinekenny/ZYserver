@@ -10,7 +10,7 @@
 
 	<e:Image id="position" y="30" touchEnabled="false" source="tfb_leader_png" horizontalCenter="7.5"/>
 
-	<e:Label id="onlineLabel" text="离线" y="39" size="18" horizontalCenter="7.5" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
+	<e:Label id="onlineLabel" text="Ngoại tuyến" y="39" size="18" horizontalCenter="7.5" fontFamily="Microsoft YaHei" textColor="0x00ff06" visible="false"/>
 	<e:Group id="fbRole" y="366" horizontalCenter="0" scaleX="0.9" scaleY="0.9"/>
 	<e:Label id="roleName" text="Tên người chơi 6 chữ" y="38" size="18" horizontalCenter="18" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" width="108"/>
 

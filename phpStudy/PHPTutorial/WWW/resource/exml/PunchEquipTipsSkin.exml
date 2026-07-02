@@ -18,12 +18,12 @@
 		<e:Label id="lv" y="47" text="Điểm：123456" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Label id="score" y="71" text="Điểm：123456" size="20" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Group id="tupoDesc" width="300" y="360" horizontalCenter="0">
-			<e:Label id="attr0" y="32" text="增加对战士的伤害%  \n增加对战士的伤害%   \n增加对战士的伤害%   \n增加对战士的伤害%   \n增加对战士的伤害%   " size="18" x="20" verticalAlign="justify" width="250" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-			<e:Label id="bestAtt" y="0" text="极品属性:" size="20"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="attr0" y="32" text="Tăng % sát thương lên Chiến Sĩ  \nTăng % sát thương lên Chiến Sĩ   \nTăng % sát thương lên Chiến Sĩ   \nTăng % sát thương lên Chiến Sĩ   \nTăng % sát thương lên Chiến Sĩ   " size="18" x="20" verticalAlign="justify" width="250" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="bestAtt" y="0" text="Thuộc tính Cực Phẩm:" size="20"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		</e:Group>
 		<e:Group id="baseDesc" width="300" y="150" horizontalCenter="0">
-			<e:Label id="attr1" y="30" text="攻击：100 +100\n生命：100 +100\n生命：100 +100\n生命：100 +100" size="18" x="20" verticalAlign="justify" width="250" lineSpacing="7" wordWrap="true" multiline="true" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-			<e:Label id="desc1" text="基础属性:" size="20" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="attr1" y="30" text="Công kích：100 +100\nSinh lực：100 +100\nSinh lực：100 +100\nSinh lực：100 +100" size="18" x="20" verticalAlign="justify" width="250" lineSpacing="7" wordWrap="true" multiline="true" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="desc1" text="Thuộc tính cơ bản:" size="20" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 		<e:Button id="forgeGroup" label="Thay đổi" width="156" height="60" skinName="SkinBtn1" horizontalCenter="0" bottom="10"/>
 	</e:Group>

@@ -15,8 +15,8 @@
 		</e:Group>
 
 
-		<e:Label text="拍卖记录(全服)" y="10" size="24" bold="true" horizontalCenter="0" textColor="0xA67D44" visible="false"/>
-		<e:Label id="curAuction" text="拍卖记录(仙盟)" y="10" size="24" bold="true" horizontalCenter="0" textColor="0xA67D44"/>
+		<e:Label text="Lịch sử đấu giá (Toàn server)" y="10" size="24" bold="true" horizontalCenter="0" textColor="0xA67D44" visible="false"/>
+		<e:Label id="curAuction" text="Lịch sử đấu giá (Tiên Minh)" y="10" size="24" bold="true" horizontalCenter="0" textColor="0xA67D44"/>
     <e:Scroller id="itemScroller" width="500" horizontalCenter="0"  height="526" y="96">
         <e:List itemRendererSkinName="SkinAuctionRecordItem" id="list" verticalCenter="1" horizontalCenter="0">
             <e:layout>
@@ -30,11 +30,11 @@
 			<e:Image source="pailietouline" horizontalCenter="-11.5" verticalCenter="0"/>
 			<e:Image source="pailietouline" horizontalCenter="-148.5" verticalCenter="0.5"/>
 			<e:Label id="itemName" text="Tên sản phẩm" size="20" horizontalCenter="-203" verticalCenter="0" textColor="0xD1C28F"/>
-			<e:Label id="successPrice" text="成交价" size="20" horizontalCenter="47" verticalCenter="0" textColor="0xD1C28F"/>
-			<e:Label id="playerName" text="成交者" size="20" horizontalCenter="-77" verticalCenter="0" textColor="0xD1C28F"/>
-			<e:Label id="auctionTime" text="成交时间" size="20" horizontalCenter="185" verticalCenter="0" textColor="0xD1C28F"/>
+			<e:Label id="successPrice" text="Giá giao dịch" size="20" horizontalCenter="47" verticalCenter="0" textColor="0xD1C28F"/>
+			<e:Label id="playerName" text="Người giao dịch" size="20" horizontalCenter="-77" verticalCenter="0" textColor="0xD1C28F"/>
+			<e:Label id="auctionTime" text="Thời gian giao dịch" size="20" horizontalCenter="185" verticalCenter="0" textColor="0xD1C28F"/>
 		</e:Group>
-		<e:Label id="null" text="成交记录为空" horizontalCenter="0" verticalCenter="0" size="24" textColor="0x7E6437" visible="false"/>
+		<e:Label id="null" text="Chưa có lịch sử giao dịch" horizontalCenter="0" verticalCenter="0" size="24" textColor="0x7E6437" visible="false"/>
 
 
 

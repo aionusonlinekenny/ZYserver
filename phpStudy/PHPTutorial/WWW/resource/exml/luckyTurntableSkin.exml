@@ -80,10 +80,10 @@
 
 		<e:Image source="touxiangkuang" anchorOffsetX="0" width="75" anchorOffsetY="0" height="75" horizontalCenter="-225"/>
 
-		<e:Label text="已抽次数" y="24" size="14"  horizontalCenter="-225" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Số lần đã quay" y="24" size="14"  horizontalCenter="-225" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="turntime" text="25" y="41" size="22" textColor="0x00FF00" textAlign="center" horizontalCenter="-225.5"/>
 		<e:Group y="6" width="56" horizontalCenter="-73">
-		<e:Label id="turntime0" text="抽奖4次" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="turntime0" text="Quay thưởng 4 lần" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<ns1:ItemBase id="gift0" skinName="SkinItem" scaleX="0.8" scaleY="0.8"/>
 		<e:Group id="eff0" scaleX="0.8" scaleY="0.8" y="30" x="34"/>
 		<e:Group id="isget0" width="90" height="96" scaleX="0.8" scaleY="0.8"/>
@@ -92,7 +92,7 @@
 		<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" x="50" y="-8" scaleX="0.8" scaleY="0.8"/>
 		</e:Group>
 		<e:Group y="6" width="56" horizontalCenter="73">
-		<e:Label id="turntime1" text="抽奖10次" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="turntime1" text="Quay thưởng 10 lần" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 		<ns1:ItemBase id="gift1" skinName="SkinItem" scaleX="0.8" scaleY="0.8"/>
 		<e:Group id="eff1" scaleX="0.8" scaleY="0.8" x="34" y="30"/>
@@ -101,7 +101,7 @@
 		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" x="50" y="-8" scaleX="0.8" scaleY="0.8"/>
 		</e:Group>
 		<e:Group y="6" width="56" horizontalCenter="213">
-		<e:Label id="turntime2" text="抽奖20次" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="turntime2" text="Quay thưởng 20 lần" size="18" y="60" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<ns1:ItemBase id="gift2" skinName="SkinItem" scaleX="0.8" scaleY="0.8"/>
 		<e:Group id="eff2" scaleX="0.8" scaleY="0.8" x="34" y="30"/>
 		<e:Group id="isget2" height="96" scaleX="0.8" scaleY="0.8" width="90"/>
@@ -119,7 +119,7 @@
 		</e:layout>
 	</e:Group>
 
-	<e:Label id="getkey" text="获取钥匙" size="20" right="60" textColor="0x20cb30" bottom="111" visible="false"/>
+	<e:Label id="getkey" text="Nhận Chìa Khóa" size="20" right="60" textColor="0x20cb30" bottom="111" visible="false"/>
 
 	<e:Scroller id="barList" bounces="false" bottom="92" top="454" left="0" scrollPolicyV="on" left.resetWithKey="3" top.resetWithKey="522" bottom.resetWithKey="74" anchorOffsetX.resetWithKey="0"  anchorOffsetY.resetWithKey="0" left.reset="3" top.reset="473" bottom.reset="92" left.unReset="3" anchorOffsetY.reset="0">
 		<e:List id="list" x="0" y="-2" itemRendererSkinName="SkinHuntListRenderer" scaleX="0.7" scaleY="0.7" anchorOffsetY.reset="0" height.reset="189.05" anchorOffsetY.resetWithKey="0" height.resetWithKey="205.71" x.resetWithKey="0" y.resetWithKey="-68">
@@ -130,7 +130,7 @@
 	</e:Scroller>
 	<e:Group y.reset="480" y.unReset="480" horizontalCenter="0" verticalCenter.resetWithKey="308.5" verticalCenter="227.5" horizontalCenter.resetWithKey="0">
 		<e:Group y="0" height="30" y.resetWithKey="0">
-		<e:Label text="抽奖消耗：" textColor="0xFFFFFF" size="20" y="5" x="0" fontFamily="Microsoft YaHei"/>
+		<e:Label text="Tiêu hao quay thưởng：" textColor="0xFFFFFF" size="20" y="5" x="0" fontFamily="Microsoft YaHei"/>
 		<e:Image source="szyuanbao"  left="0" top="0"/>
 		<e:Label id="pay0" text="500" size="20" textColor="0xFFFF00" x="32" y="14"  fontFamily="Microsoft YaHei"/>
 		<e:Label text="hoặc" size="20" textColor="0xFFFFFF" x="189" y="5"  fontFamily="Microsoft YaHei"/>
