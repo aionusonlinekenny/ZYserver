@@ -392,12 +392,24 @@ Từ ảnh chụp màn hình test thực tế, thấy menu dưới cùng, tên k
 - **Đã làm**: viết `translation/apply_json_glossary.py` (escape đúng chuẩn JSON qua `json.dumps`, không dùng lại cách escape của Lua/exml). Dịch field `"name"` bằng 614 mục (456 sinh tự động qua morpheme + 158 dịch tay các tên đứng độc lập/quái/sách kỹ năng). Áp vào `config.json`: **18.825/22.987 lượt name đã dịch (81,9%)**, còn lại **4.162 lượt / 2.897 tên riêng biệt** chưa dịch. Đã xác minh JSON vẫn hợp lệ (`json.load` không lỗi) sau khi sửa.
 - **Chưa làm**: field `"desc"` (mô tả dài, ước tính chiếm phần lớn trong 188.173 ký tự Hán còn lại của `config.json`), `resource/config1/config0-6.json`, và `data/config/language/lang/*.config` (11.068 dòng, hệ thống riêng).
 
+### 8.4.4. Round 2 dịch field "name" trong config.json (2026-07-03)
+
+- Mở rộng generator ghép từ (`morpheme_gen2.py`): thêm 3 tên phái mới (天外/太初/太上) + bậc mới 仙 (Tiên) → khớp thêm **57 tên mới** (không trùng round 1).
+- Thêm 2 generator theo mẫu chuỗi cố định (script `round2_all.py`):
+  - Mẫu tiến độ nhiệm vụ `"[Tên hoạt động]|C:0x00ff00&T:[số]|[đơn vị]"` (giữ nguyên rich-text tag `|C:...|`) — 17 tên hoạt động cơ bản × đơn vị (次→lần, 天→ngày, 圈→vòng, 个→cái).
+  - Mẫu `"[màu]色N级装备"` (trang bị theo màu+cấp) — 5 màu (红/紫/蓝/橙/绿 → Đỏ/Tím/Xanh/Cam/Lục).
+  - ~90 tên dịch tay cho quái/boss/vật phẩm đứng độc lập không khớp mẫu nào (北阴骨精, 天元神机, các dòng quái "元" theo cụm 5 hành...).
+- Gộp tất cả (257 mục, không trùng round 1) vào `translation/glossary_config_names2.json`, kiểm tra `bad quotes: 0` trước khi áp dụng (theo quy ước an toàn).
+- Áp bằng `apply_json_glossary.py` → **1.002 lượt thay thế** trong `config.json` (1 tên có thể xuất hiện ở nhiều item khác nhau). Xác minh lại `json.load()` không lỗi.
+- Kết quả field `"name"`: còn **3.160 lượt / 2.640 tên riêng biệt** chưa dịch (giảm từ 4.162/2.897 sau round 1). Tổng ký tự Hán còn lại trong toàn file `config.json` (gồm cả `desc`): **183.535** (giảm từ ~188.173).
+- **Bài học lưu để không lặp sai lầm**: khi gộp nhiều nguồn glossary (generator ghép từ + generator mẫu chuỗi + dịch tay) cho cùng 1 round, phải **merge tất cả vào 1 file rồi mới kiểm tra bad-quotes 1 lần cuối** trước khi `apply_json_glossary.py` — tránh áp nhiều lần rời rạc dễ quên bước kiểm tra ở 1 trong các nguồn.
+
 **Tổng kết thực tế tại thời điểm này**: việc dịch game này có **6+ lớp nội dung tách biệt**, quy mô lớn hơn nhiều so với ước tính ban đầu ("Giai đoạn 5 và 6"):
 1. exml UI (Giai đoạn 1-4) — ĐÃ XONG 100% (nhưng phải vá thủ công vào `default.thm_70915153.js` vì exml không được build lại)
 2. `main.min_d7aad928.js` code logic — còn ~16.500 ký tự, RỦI RO CAO (có thể phá logic nếu dịch nhầm)
 3. `data/language/zh-cn/*.txt` server (Giai đoạn 5) — còn ~14.682 chuỗi / 100 file
 4. `data/config/language/lang/*.config` server (11.068 dòng) — CHƯA khảo sát
-5. `resource/config/config.json` + `config1/*.json` client (Giai đoạn 6 mở rộng) — còn ~188K ký tự (`desc` là phần lớn)
+5. `resource/config/config.json` + `config1/*.json` client (Giai đoạn 6 mở rộng) — field "name" còn 2.640 tên riêng biệt / tổng file còn ~183.5K ký tự Hán (`desc` là phần lớn)
 6. `data/config/**/*.config` server (401 file, Giai đoạn 6 gốc) — CHƯA bắt đầu, có thể trùng lặp một phần với mục 4/5
 
 ### 8.5. Lưu ý triển khai
