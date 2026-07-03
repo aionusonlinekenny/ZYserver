@@ -606,6 +606,15 @@ Sau khi `desc` bước vào phần đuôi dài khó tận dụng generator (8.4.
 - Kết quả: tổng ký tự Hán còn lại trong `config.json` giảm **113.840 → 92.593** (giảm 21.247 ký tự chỉ từ 212 giá trị duy nhất — hiệu quả trên mỗi bản dịch cao hơn hẳn phần đuôi dài của `desc`).
 - **Còn lại lớn nhất trong `config.json`**: `desc` phần đuôi dài (~1.100 giá trị duy nhất), `bulletDesc` (500 giá trị duy nhất/500 lượt — không có đòn bẩy lặp lại, cần dịch tay từng cái), `skillDesc` (433 giá trị duy nhất/475 lượt), `text` (39 giá trị duy nhất nhưng dài — hướng dẫn cơ chế game, ~6.393 ký tự).
 
+### 8.4.7g. Dịch field `skillDesc` trong `config.json` bằng generator theo mẫu (2026-07-03)
+
+`skillDesc` có 433 giá trị duy nhất / 475 lượt xuất hiện. Chuẩn hoá bằng cách thay số bằng `#` để nhóm mẫu → phát hiện 1 mẫu duy nhất "灵宠的灵力进一步加强，三角色...攻击/物抗/法抗/生命..." (buff Linh Thú 4 chỉ số) chiếm **357/433 giá trị (82%)**, cùng 10 mẫu nhỏ hơn (kỹ năng Linh Châu, Thiên Nhãn, Cấp Huyết Linh Thuật, Phản Thương Linh Thuật...). Một số mẫu ban đầu regex không khớp do 2 mã màu khác nhau cho cùng 1 câu văn bản (`0x00ff00` vs `0x18ff00`) — sửa regex theo đúng mã màu thật trong file sau khi in ra các giá trị "0 match" để so sánh trực tiếp.
+
+- 11 generator → **432/433 giá trị duy nhất khớp** (99.8%, chỉ còn 1 giá trị lẻ không theo mẫu nào).
+- Kiểm tra: 0 dấu ngoặc kép thẳng, 0 lỗi escape newline, đối chiếu 100% key với text thô của file thật trước khi áp.
+- Áp bằng `apply_json_glossary_field.py skillDesc` → **474/475 lượt khớp**. `json.load()` xác nhận hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **92.593 → 82.796**.
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
