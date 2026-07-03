@@ -411,7 +411,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong 5 file nhỏ tiếp theo (tổng 78 chuỗi): **`wyyj.txt`** (13, phó bản Vạn Yêu Di Tích — 4/13 tái sử dụng tên boss từ `monstername.txt`), **`exchange.txt`** (17, hệ thống đổi thưởng chiến công/vinh dự/điểm sự kiện), **`event.txt`** (32, nhãn nút UI nhiệm vụ + hệ thống kết hôn/ly hôn/tiệc cưới), **`routinequest.txt`** (8, nhiệm vụ hàng ngày + quay số), **`awards.txt`** (13, thưởng đăng nhập trực tuyến/tích lũy + Tụ Bảo Bồn). Tất cả `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 44/109 file, 5.705 chuỗi đã dịch** (39 file trước + 5 file mới, 78 chuỗi).
+- Đã dịch xong **`weixin.txt`** (8 chuỗi, hướng dẫn theo dõi WeChat lấy mã kích hoạt — phát hiện lỗi khớp do nhầm dấu ngoặc kép cong "" trong chuỗi gốc thành ngoặc thẳng khi gõ key glossary, đã sửa lại đúng ký tự cong) và **`rank.txt`** (42 chuỗi, hệ thống bảng xếp hạng: tọa kỵ/bạn đồng hành/cánh/tinh linh/thú cưng/chiến lực/cấp độ/thành tựu/sức hút theo tuần, cùng 15 danh hiệu thứ hạng như Độc Cô Cầu Bại, Võ Lâm Chí Tôn, Bế Nguyệt Tu Hoa...). `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 46/109 file, 5.755 chuỗi đã dịch** (44 file trước + `weixin.txt` 8 + `rank.txt` 42).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
