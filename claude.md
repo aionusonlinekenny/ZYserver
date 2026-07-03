@@ -751,6 +751,27 @@ Tiếp tục rà soát sau 8.4.7r, phát hiện thêm 2 bảng tra cứu 1 chi�
 - Kết quả: `main.min_d7aad928.js` giảm tiếp **5.484 → 5.378** ký tự Hán còn lại (từ đầu 8.4.7r đến giờ: 5.831 → 5.378, giảm 453 ký tự qua 4 glossary nhỏ nhưng tác động hiển thị rất lớn vì đều là nhãn lặp lại khắp game).
 - `default.thm_70915153.js` không có chuỗi nào trong các bảng này (giữ nguyên 184 ký tự Hán còn lại, không đổi).
 
+### 8.4.7t. ⚠️ PHÁT HIỆN BUG NGHIÊM TRỌNG: script `apply_js_literal_glossary.py` bị "desync" trên file `main.min` lớn, âm thầm bỏ sót hàng chục chuỗi đã coi là "đã dịch" — sửa toàn bộ (2026-07-03)
+
+Người dùng gửi thêm 2 ảnh chụp màn hình (màn hình chính, màn Pháp Thuật) cho thấy 1 hộp thoại quan trọng "网络已断开，点击确定重新连接" (mạng đã ngắt, bấm xác nhận để kết nối lại) và 1 vài mô tả kỹ năng vẫn hiện tiếng Trung dù đã claim dịch xong nhiều đợt trước.
+
+- Tìm nguồn `WarnView.show("网络已断开...")` — khớp đúng mẫu **đã xác nhận an toàn từ đầu phiên** (`WarnView.show(`). Quét rộng hơn toàn bộ các cuộc gọi `WarnView.show(`/`.showTips(`/`.setBtnLabel(` còn tiếng Trung → tìm được **63 chuỗi mới** (thông báo lỗi, xác nhận thoát, tooltip...).
+- **Khi áp bằng `apply_js_literal_glossary.py` (script dùng suốt phiên), chỉ 23/68 khớp** — bất thường vì các lần áp trước luôn khớp 100%. Điều tra: `content.count('"元宝不足"')` tìm thấy **5 lần xuất hiện thật** trong file, nhưng `pat.finditer(toàn bộ nội dung file)` bằng đúng regex của script lại tìm thấy **0 lần** — trong khi cũng regex đó chạy trên 1 đoạn nhỏ trích ra từ đúng vị trí đó thì lại khớp bình thường.
+- **Kết luận: regex quét chuỗi bị "desync" (lệch pha) ở đâu đó SỚM HƠN trong file `main.min` dài 3,8MB dạng 1 dòng duy nhất** (nhiều khả năng do 1 literal regex JS `/.../ ` chứa dấu ngoặc kép không escape mà regex quét chuỗi hiểu nhầm là mở 1 chuỗi mới), khiến việc nhận diện ranh giới chuỗi bị sai lệch từ điểm đó trở đi — dẫn tới bỏ sót các chuỗi ở SAU điểm desync dù chúng khớp hoàn hảo khi xét độc lập.
+- **Hệ quả nghiêm trọng**: bug này có khả năng đã ảnh hưởng ÂM THẦM đến MỌI lần chạy `apply_js_literal_glossary.py` trên `main.min` xuyên suốt phiên làm việc (kể cả các đợt trước tuyên bố "khớp 100%" — vì báo cáo tổng khớp/tổng glossary khớp đúng KHÔNG chứng minh từng key riêng lẻ đã khớp, chỉ chứng minh SỐ LƯỢNG khớp bằng số lượng key, có thể trùng hợp).
+- **Quét lại toàn bộ TẤT CẢ glossary JS đã tạo trong suốt phiên** (không chỉ đợt này) đối chiếu bằng `content.count()` (an toàn, không qua regex) → phát hiện thêm:
+  - 27 key từ `glossary_js_main_safe.json` (glossary 1354 mục từ đầu phiên) chưa từng được áp thật (dù báo cáo "khớp 100%" trước đó) — gồm hậu tố đơn vị hiển thị số (级/转/秒/阶/次/星/个/剩余...) và vài câu thông báo.
+  - 3 key từ `glossary_js_mixed_verified.json` (领取/激 活/升 级).
+  - 3 key từ `glossary_js_charnames.json` (chính 御霄/落樱/长歌 — tên 3 nhân vật!).
+  - 46/68 key từ đợt 63 chuỗi mới trong đợt này.
+- **Sửa bằng str.replace ranh giới ngoặc kép chính xác** (`content.replace('"key"', '"value"')`) thay vì regex quét toàn file — an toàn tuyệt đối vì chỉ khớp đúng chuỗi có dấu ngoặc kép ngay trước/sau, không có vấn đề desync. Áp lại toàn bộ các key bị bỏ sót.
+- **Phát hiện phụ khi rà lại `glossary_js_thm_safe.json` trên `main.min`** (glossary này vốn dành cho `default.thm`, nhưng 16 chuỗi trùng cũng tồn tại trong `main.min`): kiểm tra riêng từng chuỗi trước khi áp, phát hiện `跨服战场` **CHÍNH LÀ 1 trong 6 chuỗi đã chủ động bỏ qua từ mục 8.4.7c** vì có so sánh `"跨服战场"==n.sceneName` (tên cảnh do SERVER gửi) — **loại trừ đúng, không áp**; 15 chuỗi còn lại (装备/仙纹/圣物合成/神装/仙盟/全服/天地妖冢/妖帝天宫/成员/修法静室/好 友/帮 派/飞升/2 câu thông báo dài) xác minh an toàn, áp bình thường.
+- Tiện thể dịch thêm 1 bảng lỗi mã số `errorCode={...}` (21 mã lỗi liên quan chức năng đổi túi quà/mã kích hoạt) và 6 chức danh Tiên Minh còn thiếu (精英→Tinh Anh, 堂主→Đường Chủ, 护法→Hộ Pháp, 长老→Trưởng Lão, 副盟主→Phó Minh Chủ, 盟主→Minh Chủ) tìm thấy trong cùng khu vực code.
+- **Đã sửa `translation/apply_js_literal_glossary.py`**: thêm bước fallback tự động sau lần quét regex — với các key regex báo "không khớp", tự động thử lại bằng `str.replace` ranh giới ngoặc kép chính xác. Từ nay script tự bảo vệ khỏi bug desync mà không cần nhớ chạy fallback thủ công.
+- **Xác minh cuối cùng**: quét lại TOÀN BỘ 8 file glossary JS từng tạo trong phiên đối chiếu bằng `content.count()` trên cả `main.min` và `default.thm` → chỉ còn đúng 1 kết quả sót lại là `跨服战场` (2 lần, cố ý không dịch). `node -c` hợp lệ.
+- Kết quả tổng: `main.min_d7aad928.js` giảm từ **5.831 → 4.194** ký tự Hán còn lại (giảm 1.637 ký tự chỉ trong lượt kiểm tra/sửa bug này — phần lớn là do các đợt TRƯỚC ĐÓ trong phiên thực ra chưa áp hết như tưởng).
+- **Bài học quan trọng cho các lần sửa JS minified lớn sau này**: KHÔNG được chỉ tin vào con số "X/Y khớp" do script tự báo cáo khi X == Y trùng khớp số lượng — phải xác minh bằng `content.count('"key"')` (str thuần, không qua regex) SAU khi áp để chắc chắn 0 chuỗi Trung còn sót, đặc biệt với file > 1MB dạng minified 1 dòng.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
