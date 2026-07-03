@@ -352,6 +352,26 @@ Bằng chứng: `default.thm_70915153.js` chứa các dòng như `generateEUI.pa
 
 **⚠️ QUAN TRỌNG CHO CÁC LẦN SAU**: từ giờ, **file cần copy về server không phải `resource/exml/*.exml` nữa** (dù vẫn giữ dịch song song 2 nơi để nhất quán/dễ đối chiếu) — mà là **`phpStudy/PHPTutorial/WWW/js/default.thm_70915153.js`**. Nếu dịch thêm chuỗi UI mới, phải chạy `apply_glossary.py` (cho exml) **VÀ** `apply_js_glossary.py` (cho file JS đã biên dịch) với cùng glossary, rồi copy cả 2 nơi.
 
+### 8.4.2. Phát hiện thêm: `main.min_d7aad928.js` cũng có rất nhiều chữ Hán chưa dịch — và RỦI RO CAO hơn hẳn
+
+Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hiện phân tích ở Giai đoạn 1 rằng "`main.min_*.js`/`game.min_*.js` không có chữ Hán" **cũng SAI** — do lệnh `grep -P` với Unicode bị lỗi âm thầm trả về `0` giả (đã gặp lỗi tương tự với bash grep trước đây, xem mục 7). Kiểm tra lại đúng bằng Python thì:
+
+| File (đang được `manifest.json` load thật) | Số ký tự Hán còn lại |
+|---|---|
+| `js/game.min_45aa06f6.js` | 0 (thật sự sạch) |
+| `js/egret.min_df45737.js` | 653 (code framework Egret, không phải nội dung game — **không nên đụng vào**) |
+| `js/eui.min_506ce9f.js` | 564 (code framework EUI — tương tự, không đụng) |
+| `js/default.thm_70915153.js` | 888 (đã xử lý ở mục 8.4.1) |
+| **`js/main.min_d7aad928.js`** | **16.556** (file logic game chính — đây là vấn đề lớn) |
+
+**Khác biệt quan trọng so với `default.thm`**: `default.thm_*.js` chỉ chứa định nghĩa UI (skin) nên MỌI chuỗi `"..."` trong đó chắc chắn là text hiển thị, dịch thoải mái. Nhưng `main.min_d7aad928.js` là **code logic thật** (~3.8MB, biên dịch từ TypeScript) — trong đó chuỗi tiếng Trung có thể là:
+- Text hiển thị thật (an toàn dịch): `UserTips.ins().showTips("...")`, `WarnView.show("...")`, `.setBtnLabel("...","...")`, `.text=`/`.label=` (kể cả dạng không có khoảng trắng `.text="..."`, khác với `default.thm`), và các nhánh ternary ngay sau `.label=`/`.text=`.
+- **Định danh dùng để SO SÁNH LOGIC trong code** (ví dụ gặp thực tế: `"神兽"==this.infoModel...`) — **dịch nhầm các chuỗi này sẽ làm hỏng logic game** (so sánh sai → tính năng chạy sai), không chỉ là vấn đề hiển thị.
+
+**Đã làm (an toàn)**: viết `translation/apply_js_glossary.py` (mở rộng thêm `.text="..."` không khoảng trắng) và `translation/apply_js_safe_calls.py` (chỉ khớp chuỗi nằm trong `showTips()`, `setBtnLabel()`, `WarnView.show()`, và ternary ngay sau `.label=`/`.text=`) — áp **8 bảng thuật ngữ đã kiểm chứng sẵn có** (không tự dịch chuỗi mới). Kết quả: 17.512 → 16.556 (mới giảm được ~956 ký tự, vì phần lớn 16.556 còn lại là chuỗi **hoàn toàn mới**, chưa từng xuất hiện trong `.exml`/UI đã dịch trước đó — không có trong glossary cũ nên chưa được đụng tới, đúng theo thiết kế an toàn).
+
+**Việc còn lại (chưa làm, cần cẩn trọng)**: phần lớn 16.556 ký tự còn lại là nội dung MỚI (chat mẫu, thông báo hệ thống, mô tả tính năng, có thể cả định danh nội bộ) cần **đọc từng ngữ cảnh để phân loại an toàn/rủi ro trước khi dịch**, không thể áp ẩu như đã làm với `.exml`/`default.thm`. Đây là công việc rủi ro cao hơn hẳn, cần thời gian đáng kể và cẩn thận hơn nữa so với mọi phần đã làm trước đó.
+
 - 🔶 **Giai đoạn 5 (đang làm)** — 2026-07-02: khảo sát lại cho thấy quy mô thật là **15.148 chuỗi tiếng Trung riêng biệt** trong 109 file (không phải ~1.400 như Giai đoạn 1-4) — nội dung là **văn xuôi/lời thoại nhiều câu** (tiểu sử nhân vật kiếm hiệp, hội thoại NPC, mô tả sự kiện có mã màu `<font>`), không phải nhãn ngắn, nên cần dịch cẩn thận hơn nhiều so với UI.
   - Tin tốt: `data/language` của s1 và s99 **giống hệt nhau** (chỉ khác 5 file config nhỏ ở Giai đoạn 6) → chỉ cần dịch 1 lần rồi copy, đã tự động đồng bộ sang s99 sau mỗi đợt.
   - Tooling: `translation/extract_lang_strings.py` (trích chuỗi) + `translation/apply_lang_glossary.py` (áp glossary, thay đúng nội dung trong `"..."`).
