@@ -415,7 +415,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong **`monsersay.txt`** (4 chuỗi, lời thoại boss rừng), **`root.txt`** (60 chuỗi: 19 tên linh thú thần thoại cho hình tượng linh căn — Nguyệt Hồ, Thiên Lang, Bạch Trạch, Trùng Minh, Giải Trãi..., 8 loại linh căn ngũ hành+băng/lôi/phong, 9 danh hiệu tình duyên vợ chồng, 9 chỉ số nhân vật, 8 huyệt đạo theo "đoạn" tiến triển linh căn kiểu Trung y: Thần Đình, Toàn Cơ, Thần Phong, Khúc Trì, Thiếu Thương, Thiên Khu, Túc Tam Lý, Dũng Tuyền), và **`platform.txt`** (10 chuỗi, hướng dẫn nền tảng Ái Ngoạn — 7/10 tái sử dụng từ `weixin.txt`; phát hiện lỗi kỹ thuật: dùng `python3 -c "..."` với dấu ngoặc kép bash thay vì heredoc khiến `\\n` bị bash làm mất 1 lớp escape thành newline thật trong JSON key, phải viết script riêng để khôi phục lại chuỗi `\n` đúng 2 ký tự — **quy tắc mới**: luôn dùng heredoc `<<'PYEOF'` (single-quote, không interpolate) cho mọi script Python xây glossary có chứa `\n`/`\\`, không bao giờ dùng `python3 -c "..."` (double-quote) cho các chuỗi này). Tất cả `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 49/109 file, 5.829 chuỗi đã dịch** (46 file trước + `monsersay.txt` 4 + `root.txt` 60 + `platform.txt` 10).
+- Đã dịch xong **`scintroduction.txt`** (29 chuỗi, bảng chú giải phím tắt thao tác) và **`market.txt`** (24 chuỗi, nhãn phân loại vật phẩm cửa hàng). `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 51/109 file, 5.882 chuỗi đã dịch** (49 file trước + `scintroduction.txt` 29 + `market.txt` 24).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
