@@ -388,6 +388,13 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 **Tổng Giai đoạn 5: 13/109 file, 1.755 chuỗi đã dịch** (12 file trước + `activityname.txt` 259 chuỗi hoàn thành 100%).
 
+### 8.4.9. Đang dịch `achievename.txt` (574 dòng — tên/mô tả thành tựu), 2026-07-03
+
+- Cấu trúc: 8 `groupNameNNN` (tên nhóm phân loại), 255 `nameNNN` (tên thành tựu, ngắn 2-6 chữ mang tính thành ngữ/mỹ từ), 255 `descNNN` (mô tả điều kiện đạt thành tựu).
+- **Đã xong field `groupName` (8/8) + `name` (252/252 tên riêng biệt, 255 lượt)**: dùng 2 generator — (a) cảnh giới tu luyện × `小成`/`巅峰` (17 cảnh giới × 2 hậu tố = 34 tổ hợp, dùng lại đúng tên cảnh giới đã chuẩn hoá từ `fubenname.txt`), (b) mẫu `"{tên cơ sở}（N）"` lặp lại nhiều lần với hậu tố số thứ tự (35 tên cơ sở × nhiều mức, ví dụ `坚持签到（1-4）`→"Kiên Trì Điểm Danh (1-4)"). Còn lại ~180 tên đứng độc lập dịch tay (thành ngữ/mỹ từ 4 chữ kiểu 百发百中, 倾国倾城...).
+- **Đang làm field `desc`**: 255 mô tả điều kiện, chưa bắt đầu — dự kiến ngắn hơn nhiều so với `activityname.txt` (thường 1 câu điều kiện, ví dụ "累计充值达到...", không phải văn xuôi dài kèm rich-text).
+- `luac5.3 -p` pass, 0 tiếng Trung còn trong field `name`/`groupName`. Đồng bộ s1->s99.
+
 ### 8.4.8. Đang dịch `activityname.txt` (786 dòng — tên + mô tả hoạt động sự kiện), 2026-07-03
 
 - File có 2 field xen kẽ: `nameNNNNN` (tên hoạt động, 87 chuỗi riêng biệt) và `descNNNNN` (mô tả dài, 172 chuỗi riêng biệt, nhiều chuỗi có rich-text `<font color=...>`, link `<a href=...><IOBJ .../></a>`, biến `%s`/`$item$`, ký tự xuống dòng LITERAL `\n` (2 ký tự backslash+n, không phải newline thật — xem lưu ý bên dưới).
