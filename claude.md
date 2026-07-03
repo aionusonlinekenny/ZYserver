@@ -582,6 +582,17 @@ Sau khi xác nhận bug ảnh chụp màn hình đã sửa xong (8.4.7c), tiếp
 - File `config.json` chỉ có **1 bản duy nhất** trong repo (không có bản sao ở `resource/config1/` hay s99/s1) nên không cần bước đồng bộ.
 - **Còn lại**: ~1.260 giá trị `desc` duy nhất chưa dịch (khoảng 1.313 lượt xuất hiện chưa khớp, phần đuôi dài tail ít lặp lại hơn) + các field lớn khác của `config.json` chưa đụng tới: `context` (11.115 ký tự), `bulletDesc` (11.000), `skillDesc` (9.818), `text` (6.393), `stageDesc` (3.232), `head` (3.146), `skillName` (1.952), `trainName` (1.802)...
 
+### 8.4.7e. Round 2 dịch field "desc" trong `config.json` — phần đuôi dài (long tail), 2026-07-03
+
+Sau round 1 (8.4.7d), phần `desc` còn lại chủ yếu là mô tả kỹ năng/nhiệm vụ **xuất hiện đúng 1 lần** (1.266 giá trị duy nhất / 1.313 lượt xuất hiện — tỉ lệ gần 1:1, khác hẳn phần trước vốn có nhiều giá trị lặp lại hàng trăm lần).
+
+- Nhóm lại các giá trị theo mẫu chuẩn hoá (thay mọi số bằng `#`) để tìm cụm còn lặp lại ≥3 lần → 26 nhóm mẫu (ví dụ "Đạo Tâm Thông Minh" 20 biến thể theo %/giây, "Luân Hồi Kiếm Chú" 10 biến thể, thưởng BOSS theo dải chuyển sinh...), viết generator regex-with-backreference cho từng nhóm, dịch xong áp cho toàn bộ biến thể cùng lúc → **142 giá trị**.
+- Dịch tay thêm 21 giá trị đứng độc lập tần suất cao còn lại (6 tên cung kích hoạt/đột phá, 15 mô tả hoạt động sự kiện) → gộp thành **163 giá trị** cho round này.
+- Xác minh: 0 trùng lặp với round 1, 0 dấu ngoặc kép thẳng trong value, 0 key còn ký tự xuống dòng thật, và **đối chiếu từng key với text thô của file thật bằng `"desc":"<key>"` — 100% khớp (0 key thiếu)** trước khi áp, để tránh lặp lại bug escape đã gặp nhiều lần.
+- Áp bằng `apply_json_glossary_field.py desc` → **210/210 lượt khớp** (163 giá trị × trung bình ~1.3 lượt lặp). `json.load()` xác nhận file vẫn hợp lệ.
+- Kết quả: **117.579 → 113.840** ký tự Hán còn lại trong `config.json`.
+- **Còn lại ~1.100 giá trị `desc` duy nhất**, gần như toàn bộ là mô tả kỹ năng nhân vật/BOSS/trang bị không lặp lại — sẽ cần dịch tay từng câu ở các round tiếp theo (không còn nhiều mẫu lặp để tận dụng generator).
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
