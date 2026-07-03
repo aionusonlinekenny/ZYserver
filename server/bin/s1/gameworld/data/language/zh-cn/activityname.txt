@@ -540,26 +540,26 @@ ActivityName=
 
   desc00460= "Trong thời gian hoạt động Kỷ Niệm Thịnh Thế, mỗi ngày lúc <font color='#66FF66'>11:00, 16:30, 18:00, 22:30</font>, một đàn Nguyệt Linh Thất Tịch âm thầm mang theo trọng bảo giáng lâm bất kỳ vị trí nào ở Bắc Băng Nguyên và Lôi Hạ Trạch, bắt được chúng sẽ nhận được vật phẩm quý <font color='#FFF000'>Rương Tiên Cảnh, Bảo Hộ Phù Trung Cấp, Đá Cường Hóa Trung Cấp, Đá Cường Hóa Cao Cấp, Bảo Thạch cấp 3, Ngọc Bảo Hộ Trưởng Thành Trung Cấp, Ngọc Bảo Hộ Ngộ Tính Trung Cấp</font>.",  
   
-  desc00461= "活动期间，每日可通过天元城<font color='#FFF000'>盛世老人</font>处进入盛世副本御剑墟,每天可进入<font color='#FFF000'>2</font>次，副本中可掉落各类珍品游戏道具,还等什么？一起来冒险吧！<br><a href='m天元城:65:58'>盛世老人</a><IOBJ class='TeleportButton' href='f天元城:65:58'/>", 
+  desc00461= "Trong thời gian hoạt động, mỗi ngày có thể vào Phó Bản Kỷ Niệm Ngự Kiếm Khư từ <font color='#FFF000'>Lão Nhân Thịnh Thế</font> tại Thiên Nguyên Thành, mỗi ngày vào được <font color='#FFF000'>2</font> lần, phó bản rớt các loại vật phẩm game quý hiếm, còn chờ gì nữa? Cùng phiêu lưu thôi!<br><a href='m天元城:65:58'>Lão Nhân Thịnh Thế</a><IOBJ class='TeleportButton' href='f天元城:65:58'/>", 
 
-  desc00462= "限时抢购，惊喜不断；限时抢购活动中，各物品每日限购1个。活动结束后，将无法购买。活动中，将有启灵石、高级保护符、宠物装备材料礼盒、宠物悟性成长包等你来抢，请各位仙友抓紧活动时间，走过路过，不要错过哦。",
+  desc00462= "Săn hàng giới hạn thời gian, bất ngờ liên tục; trong hoạt động săn hàng giới hạn thời gian, mỗi vật phẩm mỗi ngày giới hạn mua 1. Sau khi hoạt động kết thúc sẽ không thể mua nữa. Trong hoạt động có Khải Linh Thạch, Bảo Hộ Phù Cao Cấp, Hộp Nguyên Liệu Trang Bị Thú Cưng, Gói Trưởng Thành Ngộ Tính Thú Cưng đang chờ bạn săn, mời các tiên hữu tranh thủ thời gian hoạt động, đừng bỏ lỡ nhé.",
  
-  desc00463= "活动期间内，将出战宠物身上，所携带的宠物装备达到特定的品质星级要求，即可获得对应的宠物装备礼包。注：若活动期间外，其宠物装备已达到活动条件，只需要将其身上的宠物装备再强化一次，就能获得对应的宠物装备礼包。",
+  desc00463= "Trong thời gian hoạt động, trang bị thú cưng đang mang trên thú cưng xuất trận đạt yêu cầu phẩm chất/số sao nhất định sẽ nhận được Gói Trang Bị Thú Cưng tương ứng. Chú ý: nếu ngoài thời gian hoạt động trang bị thú cưng đã đạt điều kiện, chỉ cần cường hóa thêm 1 lần là nhận được Gói Trang Bị Thú Cưng tương ứng.",
   awardsDesc00463= "<(c0xFFFFF000)任意2件宠物装备，达到绿色品质5星>",
   awardsDesc10463= "<(c0xFFFFF000)任意2件宠物装备，达到蓝色品质5星>", 
   awardsDesc20463= "<(c0xFFFFF000)任意2件宠物装备，达到紫色品质5星>",
 
 
-  desc00464= "活动期间内，玩家收集一定数量的周年勋章，可在活动界面处兑换炫酷的盛世周年活动道具，点击周年兑换即可打开活动兑换界面。周年勋章只能通过开启仙境宝箱而获得。",
+  desc00464= "Trong thời gian hoạt động, người chơi thu thập đủ số lượng Huy Chương Kỷ Niệm nhất định có thể đổi vật phẩm hoạt động Kỷ Niệm Thịnh Thế cực ngầu tại giao diện hoạt động, nhấn đổi kỷ niệm là mở được giao diện đổi thưởng. Huy Chương Kỷ Niệm chỉ có thể nhận được bằng cách mở Rương Tiên Cảnh.",
   
-  desc00465= "在活动期间内,凡是达到55~59级、60级~69级、70级~80级的玩家可对应领取感恩勇士礼包，感恩大师礼包，感恩斗师礼包；注：角色达到条件等级，即可领取对应的盛世感恩礼包，但活动期间，只能领取感恩礼包中的一份，请玩家谨慎选择。",
+  desc00465= "Trong thời gian hoạt động, người chơi đạt cấp 55~59, 60~69, 70~80 có thể tương ứng nhận Gói Tri Ân Dũng Sĩ, Gói Tri Ân Đại Sư, Gói Tri Ân Đấu Sư; chú ý: nhân vật đạt cấp điều kiện là nhận được Gói Tri Ân Thịnh Thế tương ứng, nhưng trong thời gian hoạt động chỉ được nhận 1 trong các gói tri ân, mời người chơi chọn cẩn thận.",
   awardsDesc00465= "<(c0xFFFFF000)感恩勇士礼包>",
   awardsDesc10465= "<(c0xFFFFF000)感恩大师礼包>", 
   awardsDesc20465= "<(c0xFFFFF000)感恩斗师礼包>", 
   
   --开学献礼
 
-  desc00466= "活动期间,角色等级<font color='#FFF000'>大于等于31级</font>的仙友，每天登陆游戏即可获得开学献礼节日登陆礼包奖励。且累积登陆<font color='#FFF000'>2天、4天、6天</font>还可额外获得一份累积登陆礼包;累积登陆礼包内,更有时尚<font color='#FFF000'>学园默示录</font>时装道具噢！",
+  desc00466= "Trong thời gian hoạt động, tiên hữu <font color='#FFF000'>cấp 31 trở lên</font> mỗi ngày đăng nhập game sẽ nhận được thưởng Gói Đăng Nhập Lễ Khai Giảng. Đăng nhập tích lũy <font color='#FFF000'>2 ngày, 4 ngày, 6 ngày</font> còn nhận thêm 1 Gói Đăng Nhập Tích Lũy; gói tích lũy còn có Thời Trang <font color='#FFF000'>Học Viện Mặc Thị Lục</font> thời thượng nữa nhé!",
   awardsDesc00466= "<(c0xFFFFF000)每日登陆可领取>",
   awardsDesc10466= "<(c0xFFFFF000)累积登陆2天可领取         您已累积登陆$winner$天>",
   awardsDesc20466= "<(c0xFFFFF000)累积登陆4天可领取         您已累积登陆$winner$天>",
@@ -570,20 +570,20 @@ ActivityName=
   awardsDesc10467= "<(c0xFFFFF000)开学缤纷礼包       20:30-21:30可领取>",
   awardsDesc20467= "<(c0xFFFFF000)开学酷爽礼包       21:30-22:30可领取>",  
   
-  desc00468= "限时抢购，惊喜不断；限时抢购活动中，各物品每日限购1个。活动结束后，将无法购买。活动中，将有启灵石、高级保护符、宠物装备材料礼盒、宠物悟性成长包等你来抢，请各位仙友抓紧活动时间，走过路过，不要错过哦。",
+  desc00468= "Săn hàng giới hạn thời gian, bất ngờ liên tục; trong hoạt động săn hàng giới hạn thời gian, mỗi vật phẩm mỗi ngày giới hạn mua 1. Sau khi hoạt động kết thúc sẽ không thể mua nữa. Trong hoạt động có Khải Linh Thạch, Bảo Hộ Phù Cao Cấp, Hộp Nguyên Liệu Trang Bị Thú Cưng, Gói Trưởng Thành Ngộ Tính Thú Cưng đang chờ bạn săn, mời các tiên hữu tranh thủ thời gian hoạt động, đừng bỏ lỡ nhé.",
   
-  desc00469= "每天<font color='#FFF000'>10:00、14:00、18:00、22:30</font>福星携带重宝降临至天元城中的任意区域。活动期间,寻找到福星的仙友可免费向福星领取福星礼包。福星降临天元城一段时间后将重返仙宫,大家快一起去寻找福星,领取福星礼包吧。注：双击礼包，随机获得下列道具中的其中一个",  
+  desc00469= "Mỗi ngày lúc <font color='#FFF000'>10:00, 14:00, 18:00, 22:30</font> Phúc Tinh mang theo trọng bảo giáng lâm bất kỳ khu vực nào trong Thiên Nguyên Thành. Trong thời gian hoạt động, tiên hữu nào tìm được Phúc Tinh có thể nhận miễn phí Gói Phúc Tinh từ Phúc Tinh. Sau một thời gian giáng lâm Thiên Nguyên Thành, Phúc Tinh sẽ quay về tiên cung, mọi người mau cùng đi tìm Phúc Tinh, nhận gói quà thôi. Chú ý: nhấn đúp gói quà, ngẫu nhiên nhận được 1 trong các vật phẩm bên dưới",  
   awardsDesc00469= "<(c0xFFFFF000)福星礼包>",
   
   --致敬恩师
-  desc00470= "活动期间,角色等级<font color='#FFF000'>大于等于31级</font>的仙友，每天登陆游戏即可获得教师节节日登陆礼包奖励。且累计登陆<font color='#FFF000'>2天、4天</font>还可额外获得一份累积登陆礼包;累积礼包内,更有时尚<font color='#FFF000'>麻辣教师</font>时装道具噢！",
+  desc00470= "Trong thời gian hoạt động, tiên hữu <font color='#FFF000'>cấp 31 trở lên</font> mỗi ngày đăng nhập game sẽ nhận được thưởng Gói Đăng Nhập Ngày Nhà Giáo. Đăng nhập tích lũy <font color='#FFF000'>2 ngày, 4 ngày</font> còn nhận thêm 1 Gói Đăng Nhập Tích Lũy; gói tích lũy còn có Thời Trang <font color='#FFF000'>Giáo Viên Cay Nồng</font> thời thượng nữa nhé!",
   awardsDesc00470= "<(c0xFFFFF000)每日登陆可领取>",
   awardsDesc10470= "<(c0xFFFFF000)累积登陆2天可领取         您已累积登陆$winner$天>",
   awardsDesc20470= "<(c0xFFFFF000)累积登陆4天可领取         您已累积登陆$winner$天>",
   
-  desc00471= "限时抢购，惊喜不断！活动中，将有<font color='#FFF000'>声望丹、启灵石、高级保护符、宠物装备材料、高级羽翼技能卷</font>等你来抢！其中<font color='#FFF000'>教师节礼包</font>每天可购买<font color='#FFF000'>5</font>份；<font color='#FFF000'>高级羽翼技能礼包</font>每天可购买<font color='#FFF000'>2</font>份！请各位仙友抓紧活动时间，走过路过，不要错过哦。",
+  desc00471= "Săn hàng giới hạn thời gian, bất ngờ liên tục! Trong hoạt động có <font color='#FFF000'>Đan Danh Vọng, Khải Linh Thạch, Bảo Hộ Phù Cao Cấp, Nguyên Liệu Trang Bị Thú Cưng, Cuộn Kỹ Năng Cánh Cao Cấp</font> đang chờ bạn săn! Trong đó <font color='#FFF000'>Gói Ngày Nhà Giáo</font> mỗi ngày mua được <font color='#FFF000'>5</font> phần; <font color='#FFF000'>Gói Kỹ Năng Cánh Cao Cấp</font> mỗi ngày mua được <font color='#FFF000'>2</font> phần! Mời các tiên hữu tranh thủ thời gian hoạt động, đừng bỏ lỡ nhé.",
 
-  desc00472= "教师节活动期间,每天<font color='#66FF66'>11:00、16:30、18:00、22:30</font>,一群瑶宫月灵携带重宝悄悄降临至北冰原和雷夏泽任意位置，捕获它们即可获得<font color='#FFF000'>中级保护符、中级强化石、高级强化石、3级宝石、中级成长保护珠、中级悟性保护珠</font>等精品道具。",  
+  desc00472= "Trong thời gian hoạt động Ngày Nhà Giáo, mỗi ngày lúc <font color='#66FF66'>11:00, 16:30, 18:00, 22:30</font>, một đàn Nguyệt Linh Dao Cung âm thầm mang theo trọng bảo giáng lâm bất kỳ vị trí nào ở Bắc Băng Nguyên và Lôi Hạ Trạch, bắt được chúng sẽ nhận được vật phẩm quý <font color='#FFF000'>Bảo Hộ Phù Trung Cấp, Đá Cường Hóa Trung Cấp, Đá Cường Hóa Cao Cấp, Bảo Thạch cấp 3, Ngọc Bảo Hộ Trưởng Thành Trung Cấp, Ngọc Bảo Hộ Ngộ Tính Trung Cấp</font>.",  
 
   --月满中秋
   desc00473= "活动期间,角色等级<font color='#FFF000'>大于等于31级</font>的仙友，每天登陆游戏即可获得中秋登陆礼包奖励。且累积登陆<font color='#FFF000'>2天、4天、6天</font>还可额外获得一份累积登陆礼包！累积登陆礼包内,更有高尚<font color='#FFF000'>金玉满堂</font>时装道具噢！",
@@ -649,7 +649,7 @@ ActivityName=
 
   desc00490= "活动期间，重阳糕每天可抢购<font color='#FFF000'>3个</font>，高级羽翼技能礼包、超值宠物装备礼包每天可抢购<font color='#FFF000'>2个</font>，高级保护符礼包每天可抢购<font color='#FFF000'>1个</font>。请各位仙友抓紧活动时间，不要错过哦。注：重阳糕双击使用,可随机获得20000声望丹、坐骑进阶豪华礼包、启灵石*3中的任意一种奖励！",
  
-  desc00491= "每天<font color='#FFF000'>10:00、14:00、18:00、22:30</font>福星携带重宝降临至天元城中的任意区域。活动期间,寻找到福星的仙友可免费向福星领取福星礼包。福星降临天元城一段时间后将重返仙宫,大家快一起去寻找福星,领取福星礼包吧。注：双击礼包，随机获得下列道具中的其中一个",  
+  desc00491= "Mỗi ngày lúc <font color='#FFF000'>10:00, 14:00, 18:00, 22:30</font> Phúc Tinh mang theo trọng bảo giáng lâm bất kỳ khu vực nào trong Thiên Nguyên Thành. Trong thời gian hoạt động, tiên hữu nào tìm được Phúc Tinh có thể nhận miễn phí Gói Phúc Tinh từ Phúc Tinh. Sau một thời gian giáng lâm Thiên Nguyên Thành, Phúc Tinh sẽ quay về tiên cung, mọi người mau cùng đi tìm Phúc Tinh, nhận gói quà thôi. Chú ý: nhấn đúp gói quà, ngẫu nhiên nhận được 1 trong các vật phẩm bên dưới",  
   awardsDesc00491= "<(c0xFFFFF000)福星礼包>",
   
   desc00492= "活动结束后,每周魅力排行榜前5名的玩家,可获得相应的<font color='#FFF000'>魅力排名礼包</font>。每周魅力排行榜以<font color='#FFF000'>10月20日23:59</font>的榜上数据为准，争榜的玩家最好请提前1小时送花。<br>注:本榜第1的玩家若本周魅力值未达2000以上，活动结束后领取奖励获得的是<font color='#FFF000'>排名第2的奖励</font>",  
