@@ -593,6 +593,19 @@ Sau round 1 (8.4.7d), phần `desc` còn lại chủ yếu là mô tả kỹ nă
 - Kết quả: **117.579 → 113.840** ký tự Hán còn lại trong `config.json`.
 - **Còn lại ~1.100 giá trị `desc` duy nhất**, gần như toàn bộ là mô tả kỹ năng nhân vật/BOSS/trang bị không lặp lại — sẽ cần dịch tay từng câu ở các round tiếp theo (không còn nhiều mẫu lặp để tận dụng generator).
 
+### 8.4.7f. Dịch các field nhỏ nhưng có độ lặp cực cao trong `config.json`: `trainName`, `head`, `context`, `skillName`, `stageDesc` (2026-07-03)
+
+Sau khi `desc` bước vào phần đuôi dài khó tận dụng generator (8.4.7e), rà soát các field lớn còn lại theo tỉ lệ (số giá trị duy nhất / số ký tự) để tìm đòn bẩy cao nhất tiếp theo — phát hiện 5 field có rất ít giá trị duy nhất nhưng chiếm hàng nghìn ký tự do lặp lại nhiều lần trong toàn bộ vật phẩm/thư mail:
+
+- `trainName` (11 giá trị duy nhất / 901 lượt / 1.802 ký tự): tên cảnh giới tu luyện chuẩn tiên hiệp (练气→Luyện Khí, 筑基→Trúc Cơ, 金丹→Kim Đan, 元婴→Nguyên Anh, 化神→Hóa Thần, 大乘→Đại Thừa, 渡劫→Độ Kiếp, 飞仙→Phi Tiên, 金仙→Kim Tiên, 大罗→Đại La, 入门→Nhập Môn).
+- `head` (22 giá trị duy nhất / 472 lượt / 3.146 ký tự): tiêu đề mail thông báo nhận thưởng theo sự kiện (nạp tích lũy, lễ hội...).
+- `context` (22 giá trị duy nhất / 474 lượt / 11.115 ký tự — đòn bẩy cao nhất trong đợt này): nội dung mail thông báo tương ứng với `head`.
+- `skillName` (56 giá trị duy nhất / 488 lượt / 1.952 ký tự): 8 tên kỹ năng linh năng chung + 48 tên kỹ năng riêng theo 3 vũ khí nhân vật (kiếm/tản/cầm — cùng bộ 3 nhân vật đã dịch ở round `desc` trước: Ngự Tiêu, Lạc Anh, Trường Ca), dịch theo phong cách Hán Việt nhất quán với tên kỹ năng đã dịch trước đó.
+- `stageDesc` (101 giá trị duy nhất / 808 lượt / 3.232 ký tự): mẫu thuần túy "X阶Y星" (X, Y là số Hán từ 零-十) — viết generator ánh xạ số Hán sang số Ả Rập, sinh tự động cả 101 tổ hợp bằng 1 regex, dịch thành "Bậc N Sao M". Khớp **101/101**.
+- Áp bằng `apply_json_glossary_field.py` chạy riêng cho từng field (dùng chung 1 file glossary 111 mục cho 4 field text + 1 file glossary riêng 101 mục cho `stageDesc`) → tổng **3.143 lượt thay thế khớp đúng số lượt kỳ vọng của từng field** (901+472+474+488+808). `json.load()` xác nhận file vẫn hợp lệ, 0 dấu ngoặc kép thẳng, 0 lỗi escape newline.
+- Kết quả: tổng ký tự Hán còn lại trong `config.json` giảm **113.840 → 92.593** (giảm 21.247 ký tự chỉ từ 212 giá trị duy nhất — hiệu quả trên mỗi bản dịch cao hơn hẳn phần đuôi dài của `desc`).
+- **Còn lại lớn nhất trong `config.json`**: `desc` phần đuôi dài (~1.100 giá trị duy nhất), `bulletDesc` (500 giá trị duy nhất/500 lượt — không có đòn bẩy lặp lại, cần dịch tay từng cái), `skillDesc` (433 giá trị duy nhất/475 lượt), `text` (39 giá trị duy nhất nhưng dài — hướng dẫn cơ chế game, ~6.393 ký tự).
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
