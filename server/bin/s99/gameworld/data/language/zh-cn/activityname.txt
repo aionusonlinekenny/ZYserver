@@ -2,34 +2,34 @@ ActivityName=
 {
 --日常活动
   name00001= "Đại Tiệc Bàn Đào",
-  desc00001= "加入帮派,便可每天19：00返回帮派领地品尝蟠桃,教训偷蟠桃的灵猴,获得大量经验、灵气。",
+  desc00001= "Gia nhập bang phái, mỗi ngày 19:00 quay về lãnh địa bang phái thưởng thức Bàn Đào, trừng trị linh hầu trộm đào, nhận được lượng lớn kinh nghiệm, Linh Khí.",
   
   name00002= "Tiên Linh Phong Ấn",
-  desc00002= "仙灵封印到时间后将会自动开启,将仙灵重新封印将获得大量经验，金币，和帮贡。",
+  desc00002= "Tiên Linh Phong Ấn đến giờ sẽ tự động mở, phong ấn lại Tiên Linh sẽ nhận được lượng lớn kinh nghiệm, Kim Tệ và Bang Cống.",
   
   name00003= "Thiên Nguyên Chi Chiến",
-  desc00003= "相约周日,仙界争雄,只要参加便可获得大量经验和金币,第一名帮派帮主更可获得成为天元之主的殊荣。\n<点击了解天元之战/@@showSysWin,13>",
+  desc00003= "Hẹn nhau chủ nhật, tranh hùng tiên giới, chỉ cần tham gia là nhận được lượng lớn kinh nghiệm và Kim Tệ, Bang Chủ của bang phái hạng nhất còn nhận được vinh dự trở thành Chủ Nhân Thiên Nguyên.\n<Nhấn để tìm hiểu Thiên Nguyên Chi Chiến/@@showSysWin,13>",
   
   name00004= "Thí Luyện Phe",
-  desc00004= "上古禁地,阵营之战,活动开启后,点击活动图标便可直接进入\阵营试练战场,参加阵营试练,可获得大量经验和金币。",
+  desc00004= "Cấm địa thượng cổ, chiến tranh phe phái, sau khi hoạt động mở, nhấn biểu tượng hoạt động là có thể vào thẳng chiến trường Thí Luyện Phe, tham gia Thí Luyện Phe có thể nhận được lượng lớn kinh nghiệm và Kim Tệ.",
   
   name00005= "Hộ Tống Vui Vẻ",
-  desc00005= "九天仙女,谪落凡尘,每天15:30-16:30护送仙女有1.5倍加成的奖励（提交护送任务才能获取到加成的奖励）。",
+  desc00005= "Cửu Thiên Tiên Nữ giáng phàm, mỗi ngày 15:30-16:30 hộ tống Tiên Nữ sẽ được cộng thêm 1.5 lần thưởng (phải nộp nhiệm vụ hộ tống mới nhận được thưởng cộng thêm).",
   
   name00006= "Linh Tuyền Tiên Dục",
-  desc00006= "在活动场景内,每15秒即可获得经验和灵气；与其他玩家互动打泡泡、戏水可获得更多的经验和灵气奖励！",
+  desc00006= "Trong cảnh hoạt động, mỗi 15 giây sẽ nhận được kinh nghiệm và Linh Khí; tương tác đánh bong bóng, đùa nước với người chơi khác sẽ nhận được nhiều thưởng kinh nghiệm và Linh Khí hơn!",
   
   name00007= "Bát Quái Địa Cung",
-  desc00007= "伏羲遗留八卦地宫,珍宝无数。<(c0xFF00FF00)完成目标可获得大量奖励>。更有地宫宝箱、地宫BOSS等你来抢,每天两场,场场精彩,切不可错过！\n<(c0xffff0000)开服第三天首次开启>",
+  desc00007= "Bát Quái Địa Cung do Phục Hy để lại, trân bảo vô số. <(c0xFF00FF00)Hoàn thành mục tiêu sẽ nhận được lượng lớn thưởng>. Còn có Rương Địa Cung, BOSS Địa Cung đang chờ bạn tranh đoạt, mỗi ngày 2 trận, trận nào cũng hấp dẫn, đừng bỏ lỡ!\n<(c0xffff0000)Mở lần đầu vào ngày thứ 3 sau khi mở server>",
   
   name00008= "Bát Quái Địa Cung",
-  desc00008= "伏羲遗留八卦地宫,珍宝无数。<(c0xFF00FF00)完成目标可获得大量奖励>。更有地宫宝箱、地宫BOSS等你来抢,每天两场,场场精彩,切不可错过！\n<(c0xffff0000)开服第三天首次开启>",
+  desc00008= "Bát Quái Địa Cung do Phục Hy để lại, trân bảo vô số. <(c0xFF00FF00)Hoàn thành mục tiêu sẽ nhận được lượng lớn thưởng>. Còn có Rương Địa Cung, BOSS Địa Cung đang chờ bạn tranh đoạt, mỗi ngày 2 trận, trận nào cũng hấp dẫn, đừng bỏ lỡ!\n<(c0xffff0000)Mở lần đầu vào ngày thứ 3 sau khi mở server>",
   
   name00009= "Đấu Trường Tự Do",
-  desc00009= "参加胜利后获得积分,累积积分到周四晚上20:40活动结束后,根据积分排名领取荣誉奖励。<荣誉可兑换珍贵物品/@@showSysWin,18,2>\n<(c0xffff0000)开服第二周后,每周二,四开启>",
+  desc00009= "Tham gia và chiến thắng sẽ nhận được điểm, tích lũy điểm đến khi hoạt động kết thúc vào 20:40 tối thứ 5, dựa theo xếp hạng điểm để nhận thưởng Vinh Dự. <Vinh Dự có thể đổi vật phẩm quý giá/@@showSysWin,18,2>\n<(c0xffff0000)Sau tuần thứ 2 kể từ khi mở server, mở vào thứ 3, thứ 5 hàng tuần>",
   
   name00010= "Tiên Đạo Tranh Bá",
-  desc00010= "至尊仙王,谁与争锋！最强16人热血争霸,名次越前,获得的最终奖励越好！\n<(c0xffff0000)开服第二周后,每周六开启>",
+  desc00010= "Chí Tôn Tiên Vương, ai dám tranh phong! Tranh bá nhiệt huyết 16 người mạnh nhất, thứ hạng càng cao, thưởng cuối cùng càng tốt!\n<(c0xffff0000)Sau tuần thứ 2 kể từ khi mở server, mở vào thứ 7 hàng tuần>",
   
   name00011= "Tiên Đạo Tranh Bá",
   desc00011= "",
@@ -93,121 +93,121 @@ ActivityName=
   
 --副本
   name00101= "Phó Bản Lịch Luyện",
-  desc00101= "历练副本乃修仙者历练之所,击杀里面的怪物可获得历练值,而历练值可兑换极品套装和套装升级材料。",
+  desc00101= "Phó Bản Lịch Luyện là nơi người tu tiên trải nghiệm rèn luyện, tiêu diệt quái vật trong đó sẽ nhận được điểm Lịch Luyện, điểm Lịch Luyện có thể đổi bộ trang bị cực phẩm và nguyên liệu nâng cấp bộ trang bị.",
   
   name00102= "Phó Bản Treo Thưởng",
-  desc00102= "修仙者非不爱财,取之有道。赏金副本连斩越多,获得金币越多；击败财神,还可以接取满天的金钱获得大量金币。",
+  desc00102= "Người tu tiên không phải không yêu tiền tài, chỉ là lấy có đạo. Phó Bản Treo Thưởng chém liên tục càng nhiều, nhận được Kim Tệ càng nhiều; đánh bại Thần Tài còn có thể hứng tiền đầy trời nhận lượng lớn Kim Tệ.",
   
   name00103= "Tru Tiên Trận",
-  desc00103= "诛仙阵乃考验必杀技之阵,海量经验和珍贵宝石无数,怒气一满,释放必杀技,这些都属于你。",
+  desc00103= "Tru Tiên Trận là trận pháp thử thách tuyệt kỹ, kinh nghiệm khổng lồ và bảo thạch quý giá vô số, nộ khí đầy là thi triển tuyệt kỹ, tất cả đều thuộc về bạn.",
 
   name00104= "Thâm Hải Chi Luyến",
-  desc00104= "解救被困于深海的紫霞仙子后,在同心树下与同伴打坐双修可获得大量经验和灵气！",
+  desc00104= "Sau khi giải cứu Tử Hà Tiên Tử bị mắc kẹt dưới biển sâu, đả tọa Song Tu cùng bạn đồng hành dưới Cây Đồng Tâm sẽ nhận được lượng lớn kinh nghiệm và Linh Khí!",
  
   name00105= "Tâm Ma Huyễn Cảnh",
-  desc00105= "心魔幻境共有19层,每层的小怪和BOSS都掉落升级40级防御套装材料。",
+  desc00105= "Tâm Ma Huyễn Cảnh có tổng cộng 19 tầng, quái nhỏ và BOSS mỗi tầng đều rớt nguyên liệu nâng cấp bộ Phòng Ngự cấp 40.",
   
   name00106= "Cổng Ma Giới",
-  desc00106= "魔界入口封印被打开,魔族源源不绝冲向凡间,击杀魔族可获得海量经验。",
+  desc00106= "Phong ấn Cổng Ma Giới bị mở, Ma Tộc không ngừng xông vào nhân gian, tiêu diệt Ma Tộc sẽ nhận được kinh nghiệm khổng lồ.",
   
   name00107= "Đảo Thú Cưng",
-  desc00107= "宠物岛乃是天元城为了提升修仙同道的实力而开启,修仙者皆可进入宠物岛捕捉宠物。",
+  desc00107= "Đảo Thú Cưng do Thiên Nguyên Thành mở ra nhằm nâng cao thực lực cho các đồng đạo tu tiên, người tu tiên đều có thể vào Đảo Thú Cưng để bắt thú cưng.",
   
   name00108= "Huyễn Thiên Bí Cảnh",
-  desc00108= "幻天秘境乃是上古仙人洞府,被魔族霸占,若能除去它们,便可获得珍贵的翅膀道具和坐骑道具。",
+  desc00108= "Huyễn Thiên Bí Cảnh vốn là động phủ của tiên nhân thượng cổ, bị Ma Tộc chiếm đóng, nếu trừ được chúng sẽ nhận được vật phẩm Cánh và Tọa Kỵ quý giá.",
   
   name00109= "Huyền Thiên Phong Ấn",
-  desc00109= "上古炎魔重生,玄天封印被破,拯救昔日故人,获得上古封印的材料法宝晶石,可提升法宝。",
+  desc00109= "Viêm Ma thượng cổ tái sinh, Huyền Thiên Phong Ấn bị phá, cứu lấy cố nhân xưa, nhận được Pháp Bảo Tinh Thạch nguyên liệu phong ấn thượng cổ, có thể nâng cấp Pháp Bảo.",
   
   name00110= "Thiên Ma Tháp",
-  desc00110= "上古仙人以大法力封印域外天魔,如今封印不稳,速去诛除天魔,获得40级升到60级装备升级材料。",
+  desc00110= "Tiên nhân thượng cổ dùng đại pháp lực phong ấn Thiên Ma ngoài cõi, nay phong ấn không ổn, mau đi tiêu diệt Thiên Ma, nhận nguyên liệu nâng cấp trang bị từ cấp 40 lên cấp 60.",
   
   name00111= "Luyện Ngục Huyễn Giới",
-  desc00111= "幻界无常，炼狱熔魂,挑战此副本可获得60级升到70级装备升级材料。",
+  desc00111= "Huyễn Giới vô thường, Luyện Ngục Dung Hồn, thử thách phó bản này sẽ nhận được nguyên liệu nâng cấp trang bị từ cấp 60 lên cấp 70.",
   
   name00155= "Tiên Cảnh Trừ Ma",
-  desc00155= "仙子谪凡,魔物侵袭,挑战此副本可获得80级装备升级材料。",
+  desc00155= "Tiên tử giáng phàm, ma vật xâm nhập, thử thách phó bản này sẽ nhận được nguyên liệu nâng cấp trang bị cấp 80.",
 --------------------------------------------------------------------------------------------------------------------世界BOSS的描述
   name00201= "BOSS Thế Giới<b> · </b>Chúa Tể Vực Sâu",
-  desc00201= "愚蠢的人类，别动我的女人！否则，你们将付出沉重的代价！",
+  desc00201= "Loài người ngu ngốc, đừng động vào nữ nhân của ta! Nếu không, các ngươi sẽ phải trả giá đắt!",
   
   name00202= "BOSS Thế Giới<b> · </b>Yết Vương",
-  desc00202= "杀光阻拦我前进的所有人，最后满身是血的来到你面前，那时，我只求一死，被你杀死",
+  desc00202= "Giết sạch những kẻ cản đường ta, cuối cùng toàn thân đẫm máu đến trước mặt ngươi, lúc đó, ta chỉ cầu một cái chết, bị ngươi giết chết",
   
   name00203= "BOSS Thế Giới<b> · </b>Hắc Long Sa Đọa",
-  desc00203= "无耻的人类，卑微的存在，来看看是你们的脸皮厚，还是我的盔甲更厚！",
+  desc00203= "Loài người vô sỉ, tồn tại thấp hèn, thử xem mặt các ngươi dày hay giáp của ta dày hơn!",
   
   name00204= "BOSS Tinh Anh<b> · </b>Tuyết Yêu",
-  desc00204= "要是被它的外表所欺骗，那可是要吃大苦头的！",
+  desc00204= "Nếu bị vẻ ngoài của nó lừa gạt, thì sẽ phải chịu khổ lớn đấy!",
   
    name00205= "BOSS Tinh Anh<b> · </b>Ma Giao Nhân",
-   desc00205= "追求对猎物一击即杀的快感，被其盯上的目标无一幸免！", 
+   desc00205= "Theo đuổi khoái cảm hạ gục con mồi chỉ trong một đòn, mục tiêu bị nó ngắm trúng không ai thoát được!", 
 
    name00206= "BOSS Tinh Anh<b> · </b>Vạn Độc Chu",
-   desc00206= "喜欢藏在风沙之下，待对手放松之际，便是它出动之时！", 
+   desc00206= "Thích ẩn nấp dưới cát bụi, chờ đối thủ mất cảnh giác chính là lúc nó ra tay!", 
 
    name00207= "BOSS Tinh Anh<b> · </b>Nham Thạch Cự Nhân",
-   desc00207= "憨厚外表下隐藏着一颗冷酷的心，喜欢把敌人撕成碎片！", 
+   desc00207= "Dưới vẻ ngoài hiền lành ẩn giấu một trái tim lạnh lùng, thích xé nát kẻ địch thành từng mảnh!", 
 
    name00208= "BOSS Tinh Anh<b> · </b>Long Ưng",
-   desc00208= "身具真龙血脉，因魔气侵蚀而变得通体暗红。", 
+   desc00208= "Mang trong mình huyết mạch Chân Long, do bị ma khí xâm thực mà toàn thân chuyển thành màu đỏ thẫm.", 
    
-   desc00209= "对BOSS造成伤害<font color='#ffff00'>排名前$c1$</font>，且，<font color='#ffff00'>伤害值</font>达到<font color='#ffff00'>$c2$点</font>玩家获得<font color='#ffff00'>排名奖励</font>，<font color='#ffff00'>$c3$名以后</font>的玩家获得<font color='#ffff00'>参与奖励</font>",
-   desc00210= "对BOSS造成伤害<font color='#ffff00'>排名前$c1$</font>，且，<font color='#ffff00'>伤害值</font>达到<font color='#ffff00'>$c2$点</font>玩家获得<font color='#ffff00'>排名奖励</font>",
+   desc00209= "Người chơi gây sát thương lên BOSS <font color='#ffff00'>xếp hạng trong top $c1$</font>, và <font color='#ffff00'>giá trị sát thương</font> đạt <font color='#ffff00'>$c2$ điểm</font> sẽ nhận <font color='#ffff00'>thưởng xếp hạng</font>, người chơi <font color='#ffff00'>từ hạng $c3$ trở đi</font> nhận <font color='#ffff00'>thưởng tham gia</font>",
+   desc00210= "Người chơi gây sát thương lên BOSS <font color='#ffff00'>xếp hạng trong top $c1$</font>, và <font color='#ffff00'>giá trị sát thương</font> đạt <font color='#ffff00'>$c2$ điểm</font> sẽ nhận <font color='#ffff00'>thưởng xếp hạng</font>",
    
 
 
   
 --圣诞活动
   name00301= "Hoàn Trả Nạp Thẻ",
-  desc00301= "迎双旦,充值大返利,累积返还最高可达50%元宝。本次推出的元宝大返利,只需要累积的元宝达到下方任意一种就可以获得元宝返利,累积的数额越大,获赠返还的元宝就越多,还在等什么,赶快参加吧！",  
+  desc00301= "Đón Song Đán, hoàn trả nạp thẻ lớn, tích lũy hoàn trả tối đa lên đến 50% Nguyên Bảo. Đợt hoàn trả Nguyên Bảo lần này, chỉ cần Nguyên Bảo tích lũy đạt bất kỳ mốc nào bên dưới là nhận được hoàn trả, số tiền tích lũy càng lớn, Nguyên Bảo hoàn trả càng nhiều, còn chờ gì nữa, mau tham gia thôi!",  
   
   name00302= "Đăng Nhập Có Quà",
-  desc00302= "活动时间内,31级以上的玩家只要每天登陆游戏即可获得新年每日登陆礼包奖励,游戏更新之后连续登陆3天和7天还可各获得一份连续登陆礼包（每种连续登陆礼包只可领取1次,七日礼包内更有靓丽圣诞礼服时装噢！）",  
+  desc00302= "Trong thời gian hoạt động, người chơi cấp 31 trở lên chỉ cần đăng nhập game mỗi ngày là nhận được thưởng Gói Đăng Nhập Hàng Ngày Năm Mới, sau khi cập nhật game đăng nhập liên tục 3 ngày và 7 ngày còn nhận thêm mỗi loại 1 Gói Đăng Nhập Liên Tục (mỗi loại gói chỉ nhận 1 lần, gói 7 ngày còn có Thời Trang Lễ Phục Giáng Sinh xinh đẹp nữa nhé!)",  
   
   name00303= "Săn Đồ Giáng Sinh",
-  desc00303= "活动期间,点击天元城中心圣诞树来摇一摇进行淘宝,一次消耗一个圣诞袜,也可使用元宝代替,可获得超值珍宝哦！更有超稀有巨萌熊猫装,圣诞专属熊猫宠物等你拿！行动起来,大家一起摇吧！！！\n\n<a href='m天元城:0:0:圣诞树'>圣诞树</a><IOBJ class='TeleportButton' href='f天元城:0:0:圣诞树'/>",  
+  desc00303= "Trong thời gian hoạt động, nhấn vào Cây Giáng Sinh ở trung tâm Thiên Nguyên Thành để lắc cây săn đồ, mỗi lần tốn 1 Tất Giáng Sinh, cũng có thể dùng Nguyên Bảo thay thế, sẽ nhận được trân bảo siêu giá trị đó! Còn có Trang Phục Gấu Trúc siêu hiếm cực dễ thương, Thú Cưng Gấu Trúc riêng của Giáng Sinh đang chờ bạn! Hành động ngay, mọi người cùng lắc nào!!!\n\n<a href='m天元城:0:0:圣诞树'>Cây Giáng Sinh</a><IOBJ class='TeleportButton' href='f天元城:0:0:圣诞树'/>",  
   
   name00304= "Tinh Linh Tập Kích",
-  desc00304= "圣诞来临之际,每天11:00,15:30,18:00,22:00一群麋鹿小精灵携带重宝降临北冰原和雷夏泽,捕获它们即可获得丰厚的奖励！每天的16:00雪人BOSS会在神农渊出现,见证雪人BOSS死亡,即可获得大量经验。且击杀BOSS的玩家及其小队,有机会可以获得超稀有的圣诞节熊猫装（BOSS每天只会刷新一只哦）",  
+  desc00304= "Khi Giáng Sinh đến gần, mỗi ngày lúc 11:00, 15:30, 18:00, 22:00 một đàn Tinh Linh Tuần Lộc mang theo trọng bảo giáng lâm Bắc Băng Nguyên và Lôi Hạ Trạch, bắt được chúng sẽ nhận được thưởng hậu hĩnh! Mỗi ngày lúc 16:00 BOSS Người Tuyết sẽ xuất hiện ở Thần Nông Uyên, chứng kiến BOSS Người Tuyết chết sẽ nhận được lượng lớn kinh nghiệm. Người chơi và đội của người tiêu diệt BOSS còn có cơ hội nhận được Trang Phục Gấu Trúc Giáng Sinh siêu hiếm (BOSS mỗi ngày chỉ làm mới 1 con thôi nhé)",  
   
   
   name00305= "Phó Bản Giáng Sinh",
-  desc00305= "活动期间,可从天元城圣诞娃娃处进入副本,每天可进入2次喔,副本中掉落各种超值游戏道具,并有几率获得超萌宠物,还等什么？赶快进入冒险吧！\n\n<a href='m天元城:0:0:圣诞娃娃'>圣诞娃娃</a><IOBJ class='TeleportButton' href='f天元城:0:0:圣诞娃娃'/>", 
+  desc00305= "Trong thời gian hoạt động, có thể vào phó bản từ Búp Bê Giáng Sinh tại Thiên Nguyên Thành, mỗi ngày vào được 2 lần nhé, phó bản rớt các loại vật phẩm game siêu giá trị, còn có tỷ lệ nhận được thú cưng cực dễ thương, còn chờ gì nữa? Mau vào phiêu lưu thôi!\n\n<a href='m天元城:0:0:圣诞娃娃'>Búp Bê Giáng Sinh</a><IOBJ class='TeleportButton' href='f天元城:0:0:圣诞娃娃'/>", 
   
 --新年活动
   name00306= "Hoàn Trả Tiêu Dùng",
-  desc00306= "喜迎蛇年,消费大返还。活动期间累积消费返还最高可达<font color='#FFF000'>150000元宝</font>。本次推出的元宝大返利,只需要再下方任意消费一种元宝套餐,就可获得对应的超值返利,还在等什么,赶快抢购吧！",  
+  desc00306= "Mừng đón năm Rắn, hoàn trả tiêu dùng lớn. Trong thời gian hoạt động, tích lũy hoàn trả tiêu dùng tối đa lên đến <font color='#FFF000'>150000 Nguyên Bảo</font>. Đợt hoàn trả Nguyên Bảo lần này, chỉ cần tiêu bất kỳ gói Nguyên Bảo nào bên dưới là nhận được hoàn trả siêu giá trị tương ứng, còn chờ gì nữa, mau săn thôi!",  
   
   name00307= "Đăng Nhập Có Quà",
-  desc00307= "活动期间,每天登陆游戏即可获得新年每日登陆礼包奖励。且累计登陆3天、7天、12天还可额外获得一份累积登陆礼包（每种累积登陆礼包限领1次,7、12日累积礼包内更有豪华新春贺喜时装噢！）",
+  desc00307= "Trong thời gian hoạt động, mỗi ngày đăng nhập game là nhận được thưởng Gói Đăng Nhập Hàng Ngày Năm Mới. Đăng nhập tích lũy 3, 7, 12 ngày còn nhận thêm 1 Gói Đăng Nhập Tích Lũy (mỗi loại gói giới hạn nhận 1 lần, gói tích lũy 7, 12 ngày còn có Thời Trang Mừng Xuân sang trọng nữa nhé!)",
   
   name00308= "Tiêu Dùng Hàng Ngày",
-  desc00308= "活动期间,凡每日累计消费达到98元宝,就可以领取一份新年每日消费礼包。开启礼包,可获得<font color='#FFF000'>招财神符、中级强化石、精装生命药水、中级法力包、中级宠物长生丹</font>稀有道具,并有一定概率额外获得<font color='#FFF000'>焚离珠</font>一个。欢庆新年,蛇年消费送豪礼,不可错过噢！",  
+  desc00308= "Trong thời gian hoạt động, mỗi ngày tiêu dùng tích lũy đạt 98 Nguyên Bảo là nhận được 1 Gói Tiêu Dùng Hàng Ngày Năm Mới. Mở gói sẽ nhận được vật phẩm hiếm <font color='#FFF000'>Bùa Chiêu Tài, Đá Cường Hóa Trung Cấp, Thuốc Sinh Lực Cao Cấp, Gói Pháp Lực Trung Cấp, Trường Sinh Đan Thú Cưng Trung Cấp</font>, và có tỷ lệ nhận thêm 1 <font color='#FFF000'>Phần Ly Châu</font>. Mừng năm mới, tiêu dùng năm Rắn tặng quà hào phóng, đừng bỏ lỡ nhé!",  
   
   name00309= "Ước Nguyện Năm Mới",
-  desc00309= "活动期间,点击天元城中心新年许愿树,来进行许愿淘宝,一次消耗一个许愿币,也可使用元宝代替。许愿树中,放置着奇珍珍宝哦！更有超稀有巨萌熊猫装,新年专属熊猫装等你拿！大家行动起来,一起来许愿吧！！！\n\n<a href='m天元城:62:48'>新年许愿树</a><IOBJ class='TeleportButton' href='f天元城:0:0:新年许愿树'/>",  
+  desc00309= "Trong thời gian hoạt động, nhấn vào Cây Ước Nguyện Năm Mới ở trung tâm Thiên Nguyên Thành để ước nguyện săn đồ, mỗi lần tốn 1 Tiền Xu Ước Nguyện, cũng có thể dùng Nguyên Bảo thay thế. Trong Cây Ước Nguyện có đặt trân bảo kỳ lạ đó! Còn có Trang Phục Gấu Trúc siêu hiếm cực dễ thương, Trang Phục Gấu Trúc riêng của Năm Mới đang chờ bạn! Mọi người hành động ngay, cùng ước nguyện nào!!!\n\n<a href='m天元城:62:48'>Cây Ước Nguyện Năm Mới</a><IOBJ class='TeleportButton' href='f天元城:0:0:新年许愿树'/>",  
  
   name00310= "Niên Thú Tập Kích",
-  desc00310= "新年来临之际,每天<font color='#66FF66'>11:00</font>,<font color='#66FF66'>15:30</font>,<font color='#66FF66'>18:00</font>,<font color='#66FF66'>22:00</font>,一群戏狮灵童携带重宝降临北冰原和雷夏泽,捕获它们即可获得丰厚的奖励！每天的<font color='#66FF66'>16:00</font>,年兽BOSS会在神农渊出现,见证年兽BOSS死亡,即可获得大量经验。且击杀年兽BOSS的玩家及其小队,有机会可以获得超稀有的新年熊猫时装！<font color='#66FF66'>（注：BOSS每天只会刷新一只）</font>",  
+  desc00310= "Khi Năm Mới đến gần, mỗi ngày lúc <font color='#66FF66'>11:00</font>, <font color='#66FF66'>15:30</font>, <font color='#66FF66'>18:00</font>, <font color='#66FF66'>22:00</font>, một đàn Tiên Đồng Múa Sư Tử mang theo trọng bảo giáng lâm Bắc Băng Nguyên và Lôi Hạ Trạch, bắt được chúng sẽ nhận được thưởng hậu hĩnh! Mỗi ngày lúc <font color='#66FF66'>16:00</font>, BOSS Niên Thú sẽ xuất hiện ở Thần Nông Uyên, chứng kiến BOSS Niên Thú chết sẽ nhận được lượng lớn kinh nghiệm. Người chơi và đội của người tiêu diệt BOSS Niên Thú còn có cơ hội nhận được Thời Trang Gấu Trúc Năm Mới siêu hiếm! <font color='#66FF66'>(Chú ý: BOSS mỗi ngày chỉ làm mới 1 con)</font>",  
      
   name00311= "Phó Bản Năm Mới",
-  desc00311= "活动期间,可通过天元城戏狮灵童处进入副本,每天可进入2次喔.副本中可掉落各类珍品游戏道具,并有几率获得超萌宠物,还等什么？赶快进入冒险吧！\n\n<a href='m天元城:65:58'>戏狮灵童</a><IOBJ class='TeleportButton' href='f天元城:65:58'/>", 
+  desc00311= "Trong thời gian hoạt động, có thể vào phó bản từ Tiên Đồng Múa Sư Tử tại Thiên Nguyên Thành, mỗi ngày vào được 2 lần nhé. Phó bản rớt các loại vật phẩm game quý hiếm, còn có tỷ lệ nhận được thú cưng cực dễ thương, còn chờ gì nữa? Mau vào phiêu lưu thôi!\n\n<a href='m天元城:65:58'>Tiên Đồng Múa Sư Tử</a><IOBJ class='TeleportButton' href='f天元城:65:58'/>", 
 
   name00312= "Sưu Tập Câu Đối Xuân",
-  desc00312= "活动期间,通过击杀特定新春副本、戏狮灵童及新年世界BOSS怪物,即有概率获得春联道具。春联道具的相关合成规则：“张灯结彩迎新春”+“欢天喜地庆佳节”=新春佳节礼包、“福如东海滔滔至”+“财似春潮滚滚来”=招财进宝礼包、“花开富贵家家乐”+“灯照吉祥岁岁欢”=富贵吉祥礼包。",  
+  desc00312= "Trong thời gian hoạt động, tiêu diệt các phó bản Tết đặc biệt, Tiên Đồng Múa Sư Tử và quái BOSS Thế Giới Năm Mới sẽ có tỷ lệ nhận được vật phẩm Câu Đối Xuân. Quy tắc ghép Câu Đối Xuân: “Treo Đèn Kết Hoa Đón Xuân Mới” + “Hân Hoan Mừng Ngày Lễ” = Gói Tết Xuân Mới, “Phúc Như Đông Hải Cuồn Cuộn Đến” + “Tài Như Xuân Triều Cuộn Cuộn Về” = Gói Chiêu Tài Tấn Bảo, “Hoa Nở Phú Quý Nhà Nhà Vui” + “Đèn Soi Cát Tường Năm Năm Vui” = Gói Phú Quý Cát Tường.",  
 
   name00313= "Đếm Ngược Giao Thừa",
-  desc00313= "除夕跨年夜零点时,天元城、不周山、北冰原等地将出现火树银花不夜天的烟火场景。同时免费赠予全服玩家新春贺岁信一封,信中包含了我们对大家的深情祝福及丰富的奖励,让我们携手共度2013跨年之夜吧。",  
+  desc00313= "Đêm giao thừa lúc 0 giờ, Thiên Nguyên Thành, Bất Chu Sơn, Bắc Băng Nguyên và các nơi khác sẽ xuất hiện cảnh pháo hoa rực rỡ không đêm. Đồng thời tặng miễn phí cho toàn bộ người chơi 1 Thư Mừng Xuân Mới, trong thư chứa lời chúc chân thành và phần thưởng phong phú của chúng tôi, hãy cùng nhau đón đêm giao thừa 2013 nhé.",  
 
   name00314= "Thần Tài Năm Mới",
-  desc00314= "蛇年财神送大礼,每天<font color='#66FF66'>10:00</font>,<font color='#66FF66'>14:00</font>,<font color='#66FF66'>18:00</font>,<font color='#66FF66'>22:00</font>财神携带重宝降临至天元城中的任意区域中。活动期间,寻找到财神的仙友,可免费向财神领取新年红包一份。财神降临天元城一段时间后,将重返仙宫,<font color='#FF66cc'>大家快一起去寻找财神,领取红包吧。注：开启财神红包后,可随机获得奖励预览界面的其中一个珍品道具。</font>",  
+  desc00314= "Năm Rắn Thần Tài tặng đại lễ, mỗi ngày lúc <font color='#66FF66'>10:00</font>, <font color='#66FF66'>14:00</font>, <font color='#66FF66'>18:00</font>, <font color='#66FF66'>22:00</font> Thần Tài mang theo trọng bảo giáng lâm bất kỳ khu vực nào trong Thiên Nguyên Thành. Trong thời gian hoạt động, tiên hữu nào tìm được Thần Tài có thể nhận miễn phí 1 Bao Lì Xì Năm Mới từ Thần Tài. Sau một thời gian giáng lâm Thiên Nguyên Thành, Thần Tài sẽ quay về tiên cung, <font color='#FF66cc'>mọi người mau cùng đi tìm Thần Tài, nhận bao lì xì thôi. Chú ý: sau khi mở Bao Lì Xì Thần Tài, sẽ ngẫu nhiên nhận được 1 trong các vật phẩm quý ở giao diện xem trước thưởng.</font>",  
 
   name00315= "Cửa Hàng Bí Ẩn",
-  desc00315= "最大限时抢购,新春颠覆回馈。活动期间,众仙友可进入限时神秘商店购买到超值优惠的新年特价商品。有几率刷出<font color='#FFF000'>高级保护符仅售36元宝、4级宝石仅售88元宝、5级宝石仅售328元宝、功夫熊猫仅售2588元宝。</font>更多特惠商品,等您来参加,想不到的折扣,看得到的实惠,全民疯抢GO！",  
+  desc00315= "Săn hàng giới hạn thời gian lớn nhất, hoàn trả đảo lộn mừng xuân. Trong thời gian hoạt động, các tiên hữu có thể vào Cửa Hàng Bí Ẩn Giới Hạn Thời Gian để mua hàng giá đặc biệt năm mới siêu ưu đãi. Có tỷ lệ xuất hiện <font color='#FFF000'>Bảo Hộ Phù Cao Cấp chỉ 36 Nguyên Bảo, Bảo Thạch cấp 4 chỉ 88 Nguyên Bảo, Bảo Thạch cấp 5 chỉ 328 Nguyên Bảo, Trang Phục Gấu Trúc Kungfu chỉ 2588 Nguyên Bảo.</font> Còn nhiều hàng khuyến mãi hơn đang chờ bạn tham gia, giảm giá không ngờ tới, ưu đãi nhìn thấy rõ, toàn dân tranh mua GO!",  
 
   name00316= "Tiền Lì Xì",
-  desc00316= "钟打五更又一年,儿孙长高开笑颜,分食枣糕与橘荔,更喜遍赐压岁钱。活动期间,每天通过游戏中的<font color='#FFF000'>压岁钱</font>图标,点击即可免费领取压岁钱一份。压岁钱可随机获得<font color='#FFF000'>焚离珠、幽煌珠、精良·精灵龙、精灵·小龙女、切糕、中级强化石、中级保护符、3级宝石、高级经验丹、高级灵气丹</font>等稀有道具的其中一个。",  
+  desc00316= "Chuông điểm canh năm lại một năm, con cháu lớn khôn rạng rỡ nụ cười, chia nhau bánh táo cùng quýt vải, càng vui khi được lì xì khắp nơi. Trong thời gian hoạt động, mỗi ngày nhấn vào biểu tượng <font color='#FFF000'>Tiền Lì Xì</font> trong game là nhận miễn phí 1 phần lì xì. Tiền lì xì có thể ngẫu nhiên nhận được 1 trong các vật phẩm hiếm <font color='#FFF000'>Phần Ly Châu, U Hoàng Châu, Tinh Lương·Tinh Linh Long, Tinh Linh·Tiểu Long Nữ, Bánh Cắt, Đá Cường Hóa Trung Cấp, Bảo Hộ Phù Trung Cấp, Bảo Thạch cấp 3, Đan Kinh Nghiệm Cao Cấp, Đan Linh Khí Cao Cấp</font>.",  
  
  
 --情人节活动
