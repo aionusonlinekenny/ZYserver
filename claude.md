@@ -558,6 +558,18 @@ Người dùng gửi 3 ảnh chụp màn hình cho thấy nhãn tab dưới cùn
 
 **⚠️ NHẮC LẠI QUAN TRỌNG (đã ghi ở 8.5 nhưng dễ quên)**: repo này là bản làm việc cục bộ, KHÔNG tự đồng bộ với server Windows thật đang chạy (71.31.97.241 trong ảnh chụp màn hình người dùng gửi). Sau khi dịch xong ở đây, phải **copy thủ công** `main.min_d7aad928.js` và `default.thm_70915153.js` (cùng mọi file `.txt`/`.json` khác đã sửa) sang đúng đường dẫn trên server thật rồi **restart service** mới thấy thay đổi — nếu không, ảnh chụp màn hình lần sau vẫn sẽ giống hệt ảnh cũ dù code trong repo đã đúng.
 
+### 8.4.7c. Dịch tiếp 30 chuỗi MIXED/RISKY đã xác minh kỹ + xác nhận nhãn tab trong ảnh chụp đã sửa xong (2026-07-03)
+
+Tiếp tục xử lý phần còn lại của `main.min_d7aad928.js` sau 8.4.7b. Với 35 chuỗi RISKY/MIXED còn lại, kiểm tra thủ công từng chuỗi bằng cách trích toàn bộ ngữ cảnh (50-70 ký tự trước/sau) của MỌI lần xuất hiện trong file:
+
+- **30 chuỗi xác nhận AN TOÀN** (gộp `translation/glossary_js_mixed_verified.json`): mẫu `this.xxxBtn.label="X"` (gán) đi kèm `"X"==this.xxxBtn.label` (so sánh) trong cùng file — thay thế nhất quán cả 2 vị trí cùng lúc nên không lệch pha. Gồm nhãn nút trạng thái (挑战中/停止/升阶/装扮...), enum `DressTypeName` (角色→Nhân Vật, 武器→Vũ Khí — đã xác minh 8.4.7b chỉ tra cứu 1 chiều), và 1 chuỗi thêm phát hiện qua liên kết ternary (`扫 荡`→Càn Quét, dùng chung ternary với `挑 战`).
+- **6 chuỗi CHỦ ĐỘNG BỎ QUA** vì rủi ro xác nhận thật: `神兽` (so sánh với `infoModel.name` — có thể là tên quái vật từ dữ liệu SERVER, không tìm thấy nơi gán trong file này), `跨服战场` (so sánh với `n.sceneName` — tên cảnh SERVER-gửi, đã xác nhận `scenename.txt` có bản dịch riêng "Chiến Trường Liên Server" nhưng không chắc server thật đã deploy bản đó, dịch nhầm 1 bên sẽ lệch), `使用`/`购买`/`充点小钱`/`骑乘` (chỉ tìm thấy dạng so sánh `"X"==label`, KHÔNG tìm thấy nơi gán label="X" ở bất kỳ đâu trong cả `main.min` lẫn `default.thm` — nghĩa là giá trị gán đến từ nguồn không xác định được, không đủ tin cậy để dịch).
+- Áp bằng `apply_js_literal_glossary.py` → **74 lượt thay thế, 30/30 khớp**. `node -c` hợp lệ.
+- **Xác nhận trực tiếp bằng cách dò lại đúng class `SkinRoleWin` trong `default.thm_70915153.js`** (nơi biên dịch `RoleWinSkin.exml`): cả 5 nhãn tab dưới cùng trong ảnh chụp màn hình người dùng gửi đều đã đúng: `t.name = "Nhân Vật"`, `"Thần Phạt"`, `"Chuyển Sinh"`, `"Tiên Vũ"`, `"Phi Thăng"` — **đây chính là bug gốc gây ra ảnh chụp màn hình, nay đã sửa xong**.
+- **Xác nhận riêng phần nhãn icon dưới cùng và lưới icon** (法术/炼器/仙侣/历练/背包, 封神/灵宠/神御/仙纹/诛仙/幻化 trong ảnh thứ 3): tìm bằng chuỗi chính xác trong cả `main.min` và `default.thm` → **0 kết quả cả 2 file** — xác nhận đây là chữ vẽ sẵn trong bitmap icon (đúng như quy tắc dự án đã có: bỏ qua text nhúng trong ảnh bitmap, không thể sửa bằng chỉnh sửa text).
+- Kết quả `main.min_d7aad928.js`: **6.029 → 5.831 ký tự Hán còn lại**. `default.thm_70915153.js` giữ nguyên **184** (không có chuỗi nào trong đợt này thuộc file đó).
+- **Còn lại thật sự trong `main.min_d7aad928.js`**: ~591 chuỗi UNKNOWN (chưa phân tích ngữ cảnh) + 6 chuỗi RISKY chủ động bỏ qua ở trên — phần UNKNOWN cần thời gian đọc từng chuỗi để phân loại (không có cờ an toàn/rủi ro rõ ràng qua script tự động), độ ưu tiên thấp hơn `resource/config/config.json` vì tổng ký tự ít hơn nhiều (5.8K so với 178K).
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
