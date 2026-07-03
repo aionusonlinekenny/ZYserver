@@ -417,7 +417,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong **`scintroduction.txt`** (29 chuỗi, bảng chú giải phím tắt thao tác) và **`market.txt`** (24 chuỗi, nhãn phân loại vật phẩm cửa hàng). `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 51/109 file, 5.882 chuỗi đã dịch** (49 file trước + `scintroduction.txt` 29 + `market.txt` 24).
+- Đã dịch xong **`qqmgr.txt`** (7 chuỗi, đặc quyền QQ Vệ Sĩ/Lam Cương/Hoàng Cương/hội viên) và **`achievemedal.txt`** (52 chuỗi, tên huy hiệu thành tựu dạng thành ngữ 4 chữ). ⚠️ Phát hiện lại lỗi tương tự `platform.txt`: dùng heredoc `<<'PYEOF'` (đúng quy tắc) nhưng bên trong script Python gõ `\n` (1 gạch chéo) thay vì `\\n` (2 gạch chéo) cho các chuỗi cần giữ nguyên ký hiệu xuống dòng `\n` của game — Python hiểu `\n` là ký tự xuống dòng thật, làm sai lệch key/value. Đã viết script sửa riêng để khôi phục `\n` thành đúng 2 ký tự. **Quy tắc nhấn mạnh lại**: bất kỳ chuỗi glossary nào cần giữ `\n` hoặc `\\` làm ký tự xuống dòng của game (không phải Python), PHẢI gõ `\\n` hoặc `\\\\` trong mã nguồn Python (kể cả trong heredoc single-quote) — không được gõ `\n`/`\\` trực tiếp. Sau khi áp dụng, luôn chạy lại kiểm tra "remaining chinese NOT after --" để bắt lỗi này sớm. `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 53/109 file, 5.941 chuỗi đã dịch** (51 file trước + `qqmgr.txt` 7 + `achievemedal.txt` 52).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
