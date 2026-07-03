@@ -414,12 +414,23 @@ Từ ảnh chụp màn hình test thực tế, thấy menu dưới cùng, tên k
 - Kết quả field `"name"`: còn **2.396 lượt / 2.279 tên riêng biệt** chưa dịch (giảm từ 3.160/2.640). Tổng ký tự Hán còn lại toàn file: **180.160** (giảm từ 183.535).
 - **Bài học**: khi thấy 1 tên xuất hiện nhiều lần với hậu tố lặp lại y hệt nhau (vd `的香囊`, `的项链`...) → luôn kiểm tra xem có phải "N tên nhân vật × M loại phụ kiện cố định" không trước khi dịch tay từng dòng, vì tiết kiệm công rất lớn (11×8=88 chỉ cần dịch 11 tên).
 
+### 8.4.6. Round 4 dịch field "name" trong config.json (2026-07-03)
+
+- Generator vật liệu nâng cấp: **"{phái}{hậu tố vật liệu}"** — 6 phái (金雀/破月/葬神/坠日 mới + 霞羽/寒潭 đã có ở round 3) × 9 hậu tố cố định (晶铁/之魂/封灵/之火/水晶/之羽/纹石/之光/仙弓) → sinh 54 tổ hợp.
+- Mở rộng generator "{tên nhân vật}的{phụ kiện}" (round 3) thêm 15 tên nhân vật mới, và phát hiện biến thể tiền tố **"收集{tên}的{phụ kiện}"** (dạng tên nhiệm vụ "thu thập") → dùng lại bản dịch phụ kiện, thêm tiền tố "Thu thập ".
+- Generator kỹ năng có tầng: **"{tên kỹ năng}（N层）"** (嚎叫/利爪/兽王之怒/神兽庇佑/震耳咆哮) → "{tên} (tầng N)".
+- Generator kỹ năng có cấp: **"{tên kỹ năng}lv/LvN"** (致命屠戮/万物回春/法宝加身) → "{tên} cấp N".
+- Generator tiền tố cường luyện: **"{陷/绝/戮}·诛仙{bộ vị}"** (dùng lại 8 bộ vị 诛仙 đã dịch ở round 3) → "{Hãm/Tuyệt/Lục}·Tru Tiên {bộ vị}".
+- Dịch tay thêm ~35 tên boss/NPC/bí cảnh.
+- Gộp 396 mục vào `translation/glossary_config_names4.json`, `bad quotes: 0`. Áp dụng → **340 lượt thay thế**. `json.load()` hợp lệ.
+- Kết quả field `"name"`: còn **2.056 tên riêng biệt** chưa dịch (giảm từ 2.396/2.279). Tổng ký tự Hán còn lại toàn file: **178.596**.
+
 **Tổng kết thực tế tại thời điểm này**: việc dịch game này có **6+ lớp nội dung tách biệt**, quy mô lớn hơn nhiều so với ước tính ban đầu ("Giai đoạn 5 và 6"):
 1. exml UI (Giai đoạn 1-4) — ĐÃ XONG 100% (nhưng phải vá thủ công vào `default.thm_70915153.js` vì exml không được build lại)
 2. `main.min_d7aad928.js` code logic — còn ~16.500 ký tự, RỦI RO CAO (có thể phá logic nếu dịch nhầm)
 3. `data/language/zh-cn/*.txt` server (Giai đoạn 5) — còn ~14.682 chuỗi / 100 file
 4. `data/config/language/lang/*.config` server (11.068 dòng) — CHƯA khảo sát
-5. `resource/config/config.json` + `config1/*.json` client (Giai đoạn 6 mở rộng) — field "name" còn 2.279 tên riêng biệt / tổng file còn ~180K ký tự Hán (`desc` là phần lớn)
+5. `resource/config/config.json` + `config1/*.json` client (Giai đoạn 6 mở rộng) — field "name" còn 2.056 tên riêng biệt / tổng file còn ~178.6K ký tự Hán (`desc` là phần lớn)
 6. `data/config/**/*.config` server (401 file, Giai đoạn 6 gốc) — CHƯA bắt đầu, có thể trùng lặp một phần với mục 4/5
 
 ### 8.5. Lưu ý triển khai
