@@ -1,535 +1,535 @@
 ﻿--这里放副本的名称和副本的描述，比如fname0001表示这个副本的名字为“副本测试1”
 FubenName = 
 {
-fname0001 = "石洞",
-fdesc0001 = "石洞",
+fname0001 = "Thạch Động",
+fdesc0001 = "Thạch Động",
 
-fname0002 = "神机阁",
-fdesc0002 = "神机阁",
+fname0002 = "Thần Cơ Các",
+fdesc0002 = "Thần Cơ Các",
 
-fname0003 = "万妖殿",
-fdesc0003 = "万妖殿",
+fname0003 = "Vạn Yêu Điện",
+fdesc0003 = "Vạn Yêu Điện",
 
-fname0004 = "浪漫沙滩",
-fdesc0004 = "浪漫沙滩",
+fname0004 = "Bãi Biển Lãng Mạn",
+fdesc0004 = "Bãi Biển Lãng Mạn",
 
-fname0005 = "武神台",
-fdesc0005 = "武神台",
+fname0005 = "Đài Võ Thần",
+fdesc0005 = "Đài Võ Thần",
 
-fname0006 = "万妖遗迹",
-fdesc0006 = "万妖遗迹",
+fname0006 = "Vạn Yêu Di Tích",
+fdesc0006 = "Vạn Yêu Di Tích",
 
-fname0007 = "一骑绝尘",
-fdesc0007 = "一骑绝尘",
+fname0007 = "Nhất Kỵ Tuyệt Trần",
+fdesc0007 = "Nhất Kỵ Tuyệt Trần",
 
-fname0008 = "才高八斗",
-fdesc0008 = "才高八斗",
+fname0008 = "Tài Cao Bát Đẩu",
+fdesc0008 = "Tài Cao Bát Đẩu",
 
-fname0009 = "炼气一阶",
-fdesc0009 = "炼气一阶",
+fname0009 = "Luyện Khí bậc 1",
+fdesc0009 = "Luyện Khí bậc 1",
 
-fname0010 = "炼气二阶",
-fdesc0010 = "炼气二阶",
+fname0010 = "Luyện Khí bậc 2",
+fdesc0010 = "Luyện Khí bậc 2",
 
-fname0011 = "炼气三阶",
-fdesc0011 = "炼气三阶",
+fname0011 = "Luyện Khí bậc 3",
+fdesc0011 = "Luyện Khí bậc 3",
 
-fname0012 = "炼气四阶",
-fdesc0012 = "炼气四阶",
+fname0012 = "Luyện Khí bậc 4",
+fdesc0012 = "Luyện Khí bậc 4",
 
-fname0013 = "炼气五阶",
-fdesc0013 = "炼气五阶",
+fname0013 = "Luyện Khí bậc 5",
+fdesc0013 = "Luyện Khí bậc 5",
 
-fname0014 = "筑基一阶",
-fdesc0014 = "筑基一阶",
+fname0014 = "Trúc Cơ bậc 1",
+fdesc0014 = "Trúc Cơ bậc 1",
 
-fname0015 = "筑基二阶",
-fdesc0015 = "筑基二阶",
+fname0015 = "Trúc Cơ bậc 2",
+fdesc0015 = "Trúc Cơ bậc 2",
 
-fname0016 = "筑基三阶",
-fdesc0016 = "筑基三阶",
+fname0016 = "Trúc Cơ bậc 3",
+fdesc0016 = "Trúc Cơ bậc 3",
 
-fname0017 = "筑基四阶",
-fdesc0017 = "筑基四阶",
+fname0017 = "Trúc Cơ bậc 4",
+fdesc0017 = "Trúc Cơ bậc 4",
 
-fname0018 = "筑基五阶",
-fdesc0018 = "筑基五阶",
+fname0018 = "Trúc Cơ bậc 5",
+fdesc0018 = "Trúc Cơ bậc 5",
 
-fname0019 = "开光一阶",
-fdesc0019 = "开光一阶",
+fname0019 = "Khai Quang bậc 1",
+fdesc0019 = "Khai Quang bậc 1",
 
-fname0020 = "开光二阶",
-fdesc0020 = "开光二阶",
+fname0020 = "Khai Quang bậc 2",
+fdesc0020 = "Khai Quang bậc 2",
 
-fname0021 = "开光三阶",
-fdesc0021 = "开光三阶",
+fname0021 = "Khai Quang bậc 3",
+fdesc0021 = "Khai Quang bậc 3",
 
-fname0022 = "开光四阶",
-fdesc0022 = "开光四阶",
+fname0022 = "Khai Quang bậc 4",
+fdesc0022 = "Khai Quang bậc 4",
 
-fname0023 = "开光五阶",
-fdesc0023 = "开光五阶",
+fname0023 = "Khai Quang bậc 5",
+fdesc0023 = "Khai Quang bậc 5",
 
-fname0024 = "融合一阶",
-fdesc0024 = "融合一阶",
+fname0024 = "Dung Hợp bậc 1",
+fdesc0024 = "Dung Hợp bậc 1",
 
-fname0025 = "融合二阶",
-fdesc0025 = "融合二阶",
+fname0025 = "Dung Hợp bậc 2",
+fdesc0025 = "Dung Hợp bậc 2",
 
-fname0026 = "融合三阶",
-fdesc0026 = "融合三阶",
+fname0026 = "Dung Hợp bậc 3",
+fdesc0026 = "Dung Hợp bậc 3",
 
-fname0027 = "融合四阶",
-fdesc0027 = "融合四阶",
+fname0027 = "Dung Hợp bậc 4",
+fdesc0027 = "Dung Hợp bậc 4",
 
-fname0028 = "融合五阶",
-fdesc0028 = "融合五阶",
+fname0028 = "Dung Hợp bậc 5",
+fdesc0028 = "Dung Hợp bậc 5",
 
-fname0029 = "心动一阶",
-fdesc0029 = "心动一阶",
+fname0029 = "Tâm Động bậc 1",
+fdesc0029 = "Tâm Động bậc 1",
 
-fname0030 = "心动二阶",
-fdesc0030 = "心动二阶",
+fname0030 = "Tâm Động bậc 2",
+fdesc0030 = "Tâm Động bậc 2",
 
-fname0031 = "心动三阶",
-fdesc0031 = "心动三阶",
+fname0031 = "Tâm Động bậc 3",
+fdesc0031 = "Tâm Động bậc 3",
 
-fname0032 = "心动四阶",
-fdesc0032 = "心动四阶",
+fname0032 = "Tâm Động bậc 4",
+fdesc0032 = "Tâm Động bậc 4",
 
-fname0033 = "心动五阶",
-fdesc0033 = "心动五阶",
+fname0033 = "Tâm Động bậc 5",
+fdesc0033 = "Tâm Động bậc 5",
 
-fname0034 = "金丹一阶",
-fdesc0034 = "金丹一阶",
+fname0034 = "Kim Đan bậc 1",
+fdesc0034 = "Kim Đan bậc 1",
 
-fname0035 = "金丹二阶",
-fdesc0035 = "金丹二阶",
+fname0035 = "Kim Đan bậc 2",
+fdesc0035 = "Kim Đan bậc 2",
 
-fname0036 = "金丹三阶",
-fdesc0036 = "金丹三阶",
+fname0036 = "Kim Đan bậc 3",
+fdesc0036 = "Kim Đan bậc 3",
 
-fname0037 = "金丹四阶",
-fdesc0037 = "金丹四阶",
+fname0037 = "Kim Đan bậc 4",
+fdesc0037 = "Kim Đan bậc 4",
 
-fname0038 = "金丹五阶",
-fdesc0038 = "金丹五阶",
+fname0038 = "Kim Đan bậc 5",
+fdesc0038 = "Kim Đan bậc 5",
 
-fname0039 = "元婴一阶",
-fdesc0039 = "元婴一阶",
+fname0039 = "Nguyên Anh bậc 1",
+fdesc0039 = "Nguyên Anh bậc 1",
 
-fname0040 = "元婴二阶",
-fdesc0040 = "元婴二阶",
+fname0040 = "Nguyên Anh bậc 2",
+fdesc0040 = "Nguyên Anh bậc 2",
 
-fname0041 = "元婴三阶",
-fdesc0041 = "元婴三阶",
+fname0041 = "Nguyên Anh bậc 3",
+fdesc0041 = "Nguyên Anh bậc 3",
 
-fname0042 = "元婴四阶",
-fdesc0042 = "元婴四阶",
+fname0042 = "Nguyên Anh bậc 4",
+fdesc0042 = "Nguyên Anh bậc 4",
 
-fname0043 = "元婴五阶",
-fdesc0043 = "元婴五阶",
+fname0043 = "Nguyên Anh bậc 5",
+fdesc0043 = "Nguyên Anh bậc 5",
 
-fname0044 = "出窍一阶",
-fdesc0044 = "出窍一阶",
+fname0044 = "Xuất Khiếu bậc 1",
+fdesc0044 = "Xuất Khiếu bậc 1",
 
-fname0045 = "出窍二阶",
-fdesc0045 = "出窍二阶",
+fname0045 = "Xuất Khiếu bậc 2",
+fdesc0045 = "Xuất Khiếu bậc 2",
 
-fname0046 = "出窍三阶",
-fdesc0046 = "出窍三阶",
+fname0046 = "Xuất Khiếu bậc 3",
+fdesc0046 = "Xuất Khiếu bậc 3",
 
-fname0047 = "出窍四阶",
-fdesc0047 = "出窍四阶",
+fname0047 = "Xuất Khiếu bậc 4",
+fdesc0047 = "Xuất Khiếu bậc 4",
 
-fname0048 = "出窍五阶",
-fdesc0048 = "出窍五阶",
+fname0048 = "Xuất Khiếu bậc 5",
+fdesc0048 = "Xuất Khiếu bậc 5",
 
-fname0049 = "分神一阶",
-fdesc0049 = "分神一阶",
+fname0049 = "Phân Thần bậc 1",
+fdesc0049 = "Phân Thần bậc 1",
 
-fname0050 = "分神二阶",
-fdesc0050 = "分神二阶",
+fname0050 = "Phân Thần bậc 2",
+fdesc0050 = "Phân Thần bậc 2",
 
-fname0051 = "分神三阶",
-fdesc0051 = "分神三阶",
+fname0051 = "Phân Thần bậc 3",
+fdesc0051 = "Phân Thần bậc 3",
 
-fname0052 = "分神四阶",
-fdesc0052 = "分神四阶",
+fname0052 = "Phân Thần bậc 4",
+fdesc0052 = "Phân Thần bậc 4",
 
-fname0053 = "分神五阶",
-fdesc0053 = "分神五阶",
+fname0053 = "Phân Thần bậc 5",
+fdesc0053 = "Phân Thần bậc 5",
 
-fname0054 = "合体一阶",
-fdesc0054 = "合体一阶",
+fname0054 = "Hợp Thể bậc 1",
+fdesc0054 = "Hợp Thể bậc 1",
 
-fname0055 = "合体二阶",
-fdesc0055 = "合体二阶",
+fname0055 = "Hợp Thể bậc 2",
+fdesc0055 = "Hợp Thể bậc 2",
 
-fname0056 = "合体三阶",
-fdesc0056 = "合体三阶",
+fname0056 = "Hợp Thể bậc 3",
+fdesc0056 = "Hợp Thể bậc 3",
 
-fname0057 = "合体四阶",
-fdesc0057 = "合体四阶",
+fname0057 = "Hợp Thể bậc 4",
+fdesc0057 = "Hợp Thể bậc 4",
 
-fname0058 = "合体五阶",
-fdesc0058 = "合体五阶",
+fname0058 = "Hợp Thể bậc 5",
+fdesc0058 = "Hợp Thể bậc 5",
 
-fname0059 = "洞虚一阶",
-fdesc0059 = "洞虚一阶",
+fname0059 = "Động Hư bậc 1",
+fdesc0059 = "Động Hư bậc 1",
 
-fname0060 = "洞虚二阶",
-fdesc0060 = "洞虚二阶",
+fname0060 = "Động Hư bậc 2",
+fdesc0060 = "Động Hư bậc 2",
 
-fname0061 = "洞虚三阶",
-fdesc0061 = "洞虚三阶",
+fname0061 = "Động Hư bậc 3",
+fdesc0061 = "Động Hư bậc 3",
 
-fname0062 = "洞虚四阶",
-fdesc0062 = "合体四阶",
+fname0062 = "Động Hư bậc 4",
+fdesc0062 = "Hợp Thể bậc 4",
 
-fname0063 = "洞虚五阶",
-fdesc0063 = "洞虚五阶",
+fname0063 = "Động Hư bậc 5",
+fdesc0063 = "Động Hư bậc 5",
 
-fname0064 = "大乘一阶",
-fdesc0064 = "大乘一阶",
+fname0064 = "Đại Thừa bậc 1",
+fdesc0064 = "Đại Thừa bậc 1",
 
-fname0065 = "大乘二阶",
-fdesc0065 = "大乘二阶",
+fname0065 = "Đại Thừa bậc 2",
+fdesc0065 = "Đại Thừa bậc 2",
 
-fname0066 = "大乘三阶",
-fdesc0066 = "大乘三阶",
+fname0066 = "Đại Thừa bậc 3",
+fdesc0066 = "Đại Thừa bậc 3",
 
-fname0067 = "大乘四阶",
-fdesc0067 = "大乘四阶",
+fname0067 = "Đại Thừa bậc 4",
+fdesc0067 = "Đại Thừa bậc 4",
 
-fname0068 = "大乘五阶",
-fdesc0068 = "大乘五阶",
+fname0068 = "Đại Thừa bậc 5",
+fdesc0068 = "Đại Thừa bậc 5",
 
-fname0069 = "缘定三生",
-fdesc0069 = "星空边缘，你我相守，誓言天荒地老。",
+fname0069 = "Duyên Định Tam Sinh",
+fdesc0069 = "Bên bờ vực tinh không, ta và người bên nhau, thề nguyện trường tồn mãi mãi.",
 
-fname0070 = "血战长空(45级)",
-fdesc0070 = "来，战个痛快！",
+fname0070 = "Huyết Chiến Trường Không (cấp 45)",
+fdesc0070 = "Đến đây, chiến một trận cho thỏa chí!",
 
-fname0071 = "自由赛",
-fdesc0071 = "参与仙道会自由赛，与三服玩家同台竞技。众多奖励随手可得！",
-fdesctime0071 = "每周一、三9:10-9:40开启",
+fname0071 = "Đấu Tự Do",
+fdesc0071 = "Tham gia Đấu Tự Do Tiên Đạo Hội, tranh tài cùng người chơi 3 server. Vô số phần thưởng dễ dàng đạt được!",
+fdesctime0071 = "Mở vào thứ 2, thứ 4 hàng tuần lúc 9:10-9:40",
 
-fname0072 = "争霸赛",
-fdesc0072 = "参与仙道会争霸赛，围观吐槽，乐享盛宴，轻松赢大把金币！",
-fdesctime0072 = "每周五9:10-9:45开启",
+fname0072 = "Đấu Tranh Bá",
+fdesc0072 = "Tham gia Đấu Tranh Bá Tiên Đạo Hội, xem và bình luận, tận hưởng bữa tiệc, dễ dàng giành nhiều Kim Tệ!",
+fdesctime0072 = "Mở vào thứ 6 hàng tuần lúc 9:10-9:45",
 
-fname0073 = "帮派领地",
-fdesc0073 = "帮派领地",
+fname0073 = "Lãnh Địa Bang Phái",
+fdesc0073 = "Lãnh Địa Bang Phái",
 
-fname0074 = "四灵血阵",
-fdesc0074 = "祭四灵，血溅九幽，启上古之秘。",
+fname0074 = "Tứ Linh Huyết Trận",
+fdesc0074 = "Tế Tứ Linh, máu vấy Cửu U, mở bí mật thượng cổ.",
 
-fname0075 = "热血战场",
-fdesc0075 = "热血战场",
+fname0075 = "Chiến Trường Nhiệt Huyết",
+fdesc0075 = "Chiến Trường Nhiệt Huyết",
 
-fname0076 = "逍遥宝库",
-fdesc0076 = "本想宝库捞一把，没料到却遇同行，同行如仇岂能容？",
+fname0076 = "Bảo Khố Tiêu Dao",
+fdesc0076 = "Vốn định vơ vét kho báu, không ngờ gặp đồng nghiệp, đồng nghiệp như kẻ thù sao có thể dung thứ?",
 
-fname0077 = "王城争夺",
-fdesc0077 = "王城争夺",
+fname0077 = "Tranh Đoạt Vương Thành",
+fdesc0077 = "Tranh Đoạt Vương Thành",
 
-fname0078 = "营救小伙伴",
-fdesc0078 = "古老的秘阵开启，小伙伴落入其中，据说谁救就跟谁。",
+fname0078 = "Giải Cứu Bạn Đồng Hành",
+fdesc0078 = "Trận pháp cổ xưa mở ra, bạn đồng hành rơi vào trong đó, nghe nói ai cứu thì theo người đó.",
 
-fname0079 = "第一卦.乾",
-fdesc0079 = "第一卦.乾",
+fname0079 = "Quẻ 1.Càn",
+fdesc0079 = "Quẻ 1.Càn",
 
-fname0080 = "第二卦.兑",
-fdesc0080 = "第二卦.兑",
+fname0080 = "Quẻ 2.Đoài",
+fdesc0080 = "Quẻ 2.Đoài",
 
-fname0081 = "第三卦.离",
-fdesc0081 = "第三卦.离",
+fname0081 = "Quẻ 3.Ly",
+fdesc0081 = "Quẻ 3.Ly",
 
-fname0082 = "第四卦.震",
-fdesc0082 = "第四卦.震",
+fname0082 = "Quẻ 4.Chấn",
+fdesc0082 = "Quẻ 4.Chấn",
 
-fname0083 = "第五卦.巽",
-fdesc0083 = "第五卦.巽",
+fname0083 = "Quẻ 5.Tốn",
+fdesc0083 = "Quẻ 5.Tốn",
 
-fname0084 = "第六卦.坎",
-fdesc0084 = "第六卦.坎",
+fname0084 = "Quẻ 6.Khảm",
+fdesc0084 = "Quẻ 6.Khảm",
 
-fname0085 = "第七卦.艮",
-fdesc0085 = "第七卦.艮",
+fname0085 = "Quẻ 7.Cấn",
+fdesc0085 = "Quẻ 7.Cấn",
 
-fname0086 = "第八卦.坤",
-fdesc0086 = "第八卦.坤",
+fname0086 = "Quẻ 8.Khôn",
+fdesc0086 = "Quẻ 8.Khôn",
 
-fname0087 = "琴棋书画",
-fdesc0087 = "迷失的古韵之境，寻找上古失落之宝。",
+fname0087 = "Cầm Kỳ Thư Họa",
+fdesc0087 = "Cảnh giới cổ vận lạc lối, tìm kiếm bảo vật thất lạc thượng cổ.",
 
-fname0088 = "帮派宴会",
-fdesc0088 = "帮派嘉年华",
+fname0088 = "Yến Tiệc Bang Phái",
+fdesc0088 = "Hội Hoa Đăng Bang Phái",
 
-fname0089 = "疯狂挂机",
-fdesc0089 = "历经百炼终成仙",
+fname0089 = "Treo Máy Cuồng Nhiệt",
+fdesc0089 = "Trải qua trăm luyện cuối cùng thành tiên",
 
-fname0090 = "精英boss",
-fdesc0090 = "吾被囚禁了一万年，现在是你们付出代价的时候了！",
+fname0090 = "BOSS Tinh Anh",
+fdesc0090 = "Ta bị giam cầm một vạn năm, giờ là lúc các ngươi phải trả giá!",
 
-fname0091 = "血焰炼狱一层",
-fdesc0091 = "血焰炼狱一层",
+fname0091 = "Huyết Diễm Luyện Ngục tầng 1",
+fdesc0091 = "Huyết Diễm Luyện Ngục tầng 1",
 
-fname0092 = "血焰炼狱二层",
-fdesc0092 = "血焰炼狱二层",
+fname0092 = "Huyết Diễm Luyện Ngục tầng 2",
+fdesc0092 = "Huyết Diễm Luyện Ngục tầng 2",
 
-fname0093 = "血焰炼狱三层",
-fdesc0093 = "血焰炼狱三层",
+fname0093 = "Huyết Diễm Luyện Ngục tầng 3",
+fdesc0093 = "Huyết Diễm Luyện Ngục tầng 3",
 
-fname0094 = "血焰炼狱四层",
-fdesc0094 = "血焰炼狱四层",
+fname0094 = "Huyết Diễm Luyện Ngục tầng 4",
+fdesc0094 = "Huyết Diễm Luyện Ngục tầng 4",
 
-fname0095 = "血焰炼狱五层",
-fdesc0095 = "血焰炼狱五层",
+fname0095 = "Huyết Diễm Luyện Ngục tầng 5",
+fdesc0095 = "Huyết Diễm Luyện Ngục tầng 5",
 
-fname0096 = "血焰炼狱六层",
-fdesc0096 = "血焰炼狱六层",
+fname0096 = "Huyết Diễm Luyện Ngục tầng 6",
+fdesc0096 = "Huyết Diễm Luyện Ngục tầng 6",
 
-fname0097 = "血焰炼狱七层",
-fdesc0097 = "血焰炼狱七层",
+fname0097 = "Huyết Diễm Luyện Ngục tầng 7",
+fdesc0097 = "Huyết Diễm Luyện Ngục tầng 7",
 
-fname0098 = "血焰炼狱八层",
-fdesc0098 = "血焰炼狱八层",
+fname0098 = "Huyết Diễm Luyện Ngục tầng 8",
+fdesc0098 = "Huyết Diễm Luyện Ngục tầng 8",
 
-fname0099 = "血焰炼狱九层",
-fdesc0099 = "血焰炼狱九层",
+fname0099 = "Huyết Diễm Luyện Ngục tầng 9",
+fdesc0099 = "Huyết Diễm Luyện Ngục tầng 9",
 
-fname0100 = "万妖遗迹二层",
-fdesc0100 = "万妖遗迹二层",
+fname0100 = "Vạn Yêu Di Tích tầng 2",
+fdesc0100 = "Vạn Yêu Di Tích tầng 2",
 
-fname0101 = "封神坛",
-fdesc0101 = "封神坛",
+fname0101 = "Phong Thần Đàn",
+fdesc0101 = "Phong Thần Đàn",
 
-fname0102 = "诛魔台",
-fdesc0102 = "诛魔台",
+fname0102 = "Đài Trảm Ma",
+fdesc0102 = "Đài Trảm Ma",
 
-fname0103 = "报名区",
-fdesc0103 = "报名区",
+fname0103 = "Khu Đăng Ký",
+fdesc0103 = "Khu Đăng Ký",
 
-fname0104 = "皇城争霸",
-fdesc0104 = "皇城争霸",
+fname0104 = "Hoàng Thành Tranh Bá",
+fdesc0104 = "Hoàng Thành Tranh Bá",
 
-fname0105 = "长空之战",
-fdesc0105 = "长空之战",
+fname0105 = "Trận Chiến Trường Không",
+fdesc0105 = "Trận Chiến Trường Không",
 
-fname0106 = "渡劫一阶",
-fdesc0106 = "渡劫一阶",
+fname0106 = "Độ Kiếp bậc 1",
+fdesc0106 = "Độ Kiếp bậc 1",
 
-fname0107 = "渡劫二阶",
-fdesc0107 = "渡劫二阶",
+fname0107 = "Độ Kiếp bậc 2",
+fdesc0107 = "Độ Kiếp bậc 2",
 
-fname0108 = "渡劫三阶",
-fdesc0108 = "渡劫三阶",
+fname0108 = "Độ Kiếp bậc 3",
+fdesc0108 = "Độ Kiếp bậc 3",
 
-fname0109 = "渡劫四阶",
-fdesc0109 = "渡劫四阶",
+fname0109 = "Độ Kiếp bậc 4",
+fdesc0109 = "Độ Kiếp bậc 4",
 
-fname0110 = "渡劫五阶",
-fdesc0110 = "渡劫五阶",
+fname0110 = "Độ Kiếp bậc 5",
+fdesc0110 = "Độ Kiếp bậc 5",
 
-fname0111 = "散仙六阶",
-fdesc0111 = "散仙六阶",
+fname0111 = "Tán Tiên bậc 6",
+fdesc0111 = "Tán Tiên bậc 6",
 
-fname0112 = "散仙七阶",
-fdesc0112 = "散仙七阶",
+fname0112 = "Tán Tiên bậc 7",
+fdesc0112 = "Tán Tiên bậc 7",
 
-fname0113 = "散仙八阶",
-fdesc0113 = "散仙八阶",
+fname0113 = "Tán Tiên bậc 8",
+fdesc0113 = "Tán Tiên bậc 8",
 
-fname0114 = "散仙九阶",
-fdesc0114 = "散仙九阶",
+fname0114 = "Tán Tiên bậc 9",
+fdesc0114 = "Tán Tiên bậc 9",
 
-fname0115 = "散仙十阶",
-fdesc0115 = "散仙十阶",
+fname0115 = "Tán Tiên bậc 10",
+fdesc0115 = "Tán Tiên bậc 10",
 
-fname0116 = "真仙一阶",
-fdesc0116 = "真仙一阶",
+fname0116 = "Chân Tiên bậc 1",
+fdesc0116 = "Chân Tiên bậc 1",
 
-fname0117 = "真仙二阶",
-fdesc0117 = "真仙二阶",
+fname0117 = "Chân Tiên bậc 2",
+fdesc0117 = "Chân Tiên bậc 2",
 
-fname0118 = "真仙三阶",
-fdesc0118 = "真仙三阶",
+fname0118 = "Chân Tiên bậc 3",
+fdesc0118 = "Chân Tiên bậc 3",
 
-fname0119 = "真仙四阶",
-fdesc0119 = "真仙四阶",
+fname0119 = "Chân Tiên bậc 4",
+fdesc0119 = "Chân Tiên bậc 4",
 
-fname0120 = "真仙五阶",
-fdesc0120 = "真仙五阶",
+fname0120 = "Chân Tiên bậc 5",
+fdesc0120 = "Chân Tiên bậc 5",
 
-fname0121 =	"血战长空(55级)",
-fdesc0121 =	"来，战个痛快！",
+fname0121 =	"Huyết Chiến Trường Không (cấp 55)",
+fdesc0121 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0122 =	"血战长空(65级)",
-fdesc0122 =	"来，战个痛快！",
+fname0122 =	"Huyết Chiến Trường Không (cấp 65)",
+fdesc0122 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0123 =	"血战长空(75级)",
-fdesc0123 =	"来，战个痛快！",
+fname0123 =	"Huyết Chiến Trường Không (cấp 75)",
+fdesc0123 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0124 =	"血战长空(85级)",
-fdesc0124 =	"来，战个痛快！",
+fname0124 =	"Huyết Chiến Trường Không (cấp 85)",
+fdesc0124 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0125 =	"血战长空(95级)",
-fdesc0125 =	"来，战个痛快！",
+fname0125 =	"Huyết Chiến Trường Không (cấp 95)",
+fdesc0125 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0126 =	"血战长空(105级)",
-fdesc0126 =	"来，战个痛快！",
+fname0126 =	"Huyết Chiến Trường Không (cấp 105)",
+fdesc0126 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0127 =	"血战长空(115级)",
-fdesc0127 =	"来，战个痛快！",
+fname0127 =	"Huyết Chiến Trường Không (cấp 115)",
+fdesc0127 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0128 =	"血战长空(125级)",
-fdesc0128 =	"来，战个痛快！",
+fname0128 =	"Huyết Chiến Trường Không (cấp 125)",
+fdesc0128 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0129 =	"血战长空(135级)",
-fdesc0129 =	"来，战个痛快！",
+fname0129 =	"Huyết Chiến Trường Không (cấp 135)",
+fdesc0129 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0130 =	"血战长空(145级)",
-fdesc0130 =	"来，战个痛快！",
+fname0130 =	"Huyết Chiến Trường Không (cấp 145)",
+fdesc0130 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0131 =	"诛魔殿",
-fdesc0131 =	"诛魔殿",
+fname0131 =	"Điện Trảm Ma",
+fdesc0131 =	"Điện Trảm Ma",
 
-fname0132 =	"诛魔殿1层",
-fdesc0132 =	"诛魔殿1层",
+fname0132 =	"Điện Trảm Ma tầng 1",
+fdesc0132 =	"Điện Trảm Ma tầng 1",
 
-fname0133 =	"诛魔殿2层",
-fdesc0133 =	"诛魔殿2层",
+fname0133 =	"Điện Trảm Ma tầng 2",
+fdesc0133 =	"Điện Trảm Ma tầng 2",
 
-fname0134 =	"诛魔殿3层",
-fdesc0134 =	"诛魔殿3层",
+fname0134 =	"Điện Trảm Ma tầng 3",
+fdesc0134 =	"Điện Trảm Ma tầng 3",
 
-fname0135 =	"诛魔殿4层",
-fdesc0135 =	"诛魔殿4层",
+fname0135 =	"Điện Trảm Ma tầng 4",
+fdesc0135 =	"Điện Trảm Ma tầng 4",
 
-fname0136 =	"诛魔殿5层",
-fdesc0136 =	"诛魔殿5层",
+fname0136 =	"Điện Trảm Ma tầng 5",
+fdesc0136 =	"Điện Trảm Ma tầng 5",
 
-fname0137 =	"诛魔殿6层",
-fdesc0137 =	"诛魔殿6层",
+fname0137 =	"Điện Trảm Ma tầng 6",
+fdesc0137 =	"Điện Trảm Ma tầng 6",
 
-fname0138 =	"诛魔殿7层",
-fdesc0138 =	"诛魔殿7层",
+fname0138 =	"Điện Trảm Ma tầng 7",
+fdesc0138 =	"Điện Trảm Ma tầng 7",
 
-fname0139 =	"诛魔殿8层",
-fdesc0139 =	"诛魔殿8层",
+fname0139 =	"Điện Trảm Ma tầng 8",
+fdesc0139 =	"Điện Trảm Ma tầng 8",
 
-fname0140 =	"诛魔殿9层",
-fdesc0140 =	"诛魔殿9层",
+fname0140 =	"Điện Trảm Ma tầng 9",
+fdesc0140 =	"Điện Trảm Ma tầng 9",
 
-fname0141 =	"诛魔殿10层",
-fdesc0141 =	"诛魔殿10层",
+fname0141 =	"Điện Trảm Ma tầng 10",
+fdesc0141 =	"Điện Trảm Ma tầng 10",
 
-fname0142 =	"诛魔殿11层",
-fdesc0142 =	"诛魔殿11层",
+fname0142 =	"Điện Trảm Ma tầng 11",
+fdesc0142 =	"Điện Trảm Ma tầng 11",
 
-fname0143 =	"天仙一阶",
-fdesc0143 =	"天仙一阶",
+fname0143 =	"Thiên Tiên bậc 1",
+fdesc0143 =	"Thiên Tiên bậc 1",
 
-fname0144 =	"天仙二阶",
-fdesc0144 =	"天仙二阶",
+fname0144 =	"Thiên Tiên bậc 2",
+fdesc0144 =	"Thiên Tiên bậc 2",
 
-fname0145 =	"天仙三阶",
-fdesc0145 =	"天仙三阶",
+fname0145 =	"Thiên Tiên bậc 3",
+fdesc0145 =	"Thiên Tiên bậc 3",
 
-fname0146 =	"天仙四阶",
-fdesc0146 =	"天仙四阶",
+fname0146 =	"Thiên Tiên bậc 4",
+fdesc0146 =	"Thiên Tiên bậc 4",
 
-fname0147 =	"天仙五阶",
-fdesc0147 =	"天仙五阶",
+fname0147 =	"Thiên Tiên bậc 5",
+fdesc0147 =	"Thiên Tiên bậc 5",
 
-fname0148 =	"玄仙一阶",
-fdesc0148 =	"玄仙一阶",
+fname0148 =	"Huyền Tiên bậc 1",
+fdesc0148 =	"Huyền Tiên bậc 1",
 
-fname0149 =	"玄仙二阶",
-fdesc0149 =	"玄仙二阶",
+fname0149 =	"Huyền Tiên bậc 2",
+fdesc0149 =	"Huyền Tiên bậc 2",
 
-fname0150 =	"玄仙三阶",
-fdesc0150 =	"玄仙三阶",
+fname0150 =	"Huyền Tiên bậc 3",
+fdesc0150 =	"Huyền Tiên bậc 3",
 
-fname0151 =	"玄仙四阶",
-fdesc0151 =	"玄仙四阶",
+fname0151 =	"Huyền Tiên bậc 4",
+fdesc0151 =	"Huyền Tiên bậc 4",
 
-fname0152 =	"玄仙五阶",
-fdesc0152 =	"玄仙五阶",
+fname0152 =	"Huyền Tiên bậc 5",
+fdesc0152 =	"Huyền Tiên bậc 5",
 
-fname0153 =	"血战长空",
-fdesc0153 =	"来，战个痛快！",
+fname0153 =	"Huyết Chiến Trường Không",
+fdesc0153 =	"Đến đây, chiến một trận cho thỏa chí!",
 
-fname0154 =	"黑暗神殿",
-fdesc0154 =	"堕落的神魔，战个痛快！",
+fname0154 =	"Hắc Ám Thần Điện",
+fdesc0154 =	"Thần ma sa đọa, chiến một trận cho thỏa chí!",
 
-fname0155 =	"黑暗神殿",
-fdesc0155 =	"堕落的神魔，战个痛快！",
+fname0155 =	"Hắc Ám Thần Điện",
+fdesc0155 =	"Thần ma sa đọa, chiến một trận cho thỏa chí!",
 
-fname0156 =	"豪华结婚大厅",
-fdesc0156 =	"百年好合，永结同心！",
+fname0156 =	"Đại Sảnh Kết Hôn Cao Cấp",
+fdesc0156 =	"Trăm năm hạnh phúc, mãi mãi đồng lòng!",
 
-fname0157 =	"结婚大厅",
-fdesc0157 =	"百年好合，永结同心！",
+fname0157 =	"Đại Sảnh Kết Hôn",
+fdesc0157 =	"Trăm năm hạnh phúc, mãi mãi đồng lòng!",
 
-fname0158 =	"妖王巢穴",
-fdesc0158 =	"妖王的老巢，击杀妖王能够获得妖王的宝物。",
+fname0158 =	"Sào Huyệt Yêu Vương",
+fdesc0158 =	"Sào huyệt của Yêu Vương, tiêu diệt Yêu Vương có thể nhận được bảo vật của Yêu Vương.",
 
-fname0159 =	"妖王巢穴",
-fdesc0159 =	"妖皇的老巢，击杀妖王能够获得妖王的宝物。",
+fname0159 =	"Sào Huyệt Yêu Vương",
+fdesc0159 =	"Sào huyệt của Yêu Hoàng, tiêu diệt Yêu Vương có thể nhận được bảo vật của Yêu Vương.",
 
-fname0160 =	"云虚秘境",
-fdesc0160 =	"充满灵气的秘境，可以获得大量经验。",
+fname0160 =	"Bí Cảnh Vân Hư",
+fdesc0160 =	"Bí cảnh tràn đầy Linh Khí, có thể nhận được lượng lớn kinh nghiệm.",
 
-fname0161 =	"真仙洞府",
-fdesc0161 =	"真仙洞府  上古真仙遗留下来的洞府，藏有无数宝物。",
+fname0161 =	"Chân Tiên Động Phủ",
+fdesc0161 =	"Chân Tiên Động Phủ  động phủ do Chân Tiên thượng cổ để lại, cất giấu vô số bảo vật.",
 
-fname0162 =	"神装BOSS一层",
-fdesc0162 =	"神装BOSS一层",
+fname0162 =	"BOSS Thần Trang tầng 1",
+fdesc0162 =	"BOSS Thần Trang tầng 1",
 
-fname0163 =	"神装BOSS二层",
-fdesc0163 =	"神装BOSS二层",
+fname0163 =	"BOSS Thần Trang tầng 2",
+fdesc0163 =	"BOSS Thần Trang tầng 2",
 
-fname0164 =	"神装BOSS三层",
-fdesc0164 =	"神装BOSS三层",
+fname0164 =	"BOSS Thần Trang tầng 3",
+fdesc0164 =	"BOSS Thần Trang tầng 3",
 
-fname0165 =	"神装BOSS四层",
-fdesc0165 =	"神装BOSS四层",
+fname0165 =	"BOSS Thần Trang tầng 4",
+fdesc0165 =	"BOSS Thần Trang tầng 4",
 
-fname0166 =	"神装BOSS五层",
-fdesc0166 =	"神装BOSS五层",
+fname0166 =	"BOSS Thần Trang tầng 5",
+fdesc0166 =	"BOSS Thần Trang tầng 5",
 
-fname0167 =	"神装BOSS六层",
-fdesc0167 =	"神装BOSS六层",
+fname0167 =	"BOSS Thần Trang tầng 6",
+fdesc0167 =	"BOSS Thần Trang tầng 6",
 
-fname0168 =	"神装BOSS七层",
-fdesc0168 =	"神装BOSS七层",
+fname0168 =	"BOSS Thần Trang tầng 7",
+fdesc0168 =	"BOSS Thần Trang tầng 7",
 
-fname0169 =	"神装BOSS八层",
-fdesc0169 =	"神装BOSS八层",
+fname0169 =	"BOSS Thần Trang tầng 8",
+fdesc0169 =	"BOSS Thần Trang tầng 8",
 
-fname0170 =	"黑暗神殿三层",
-fdesc0170 =	"黑暗神殿三层",
+fname0170 =	"Hắc Ám Thần Điện tầng 3",
+fdesc0170 =	"Hắc Ám Thần Điện tầng 3",
 
 
 
 
 
 --以下是翅膀副本【奇门八卦】中刷新的传送点的名称
-bagua001="通往第二卦▪兑",
-bagua002="通往第三卦▪离",
-bagua003="通往第四卦▪震",
-bagua004="通往第五卦▪巽",
-bagua005="通往第六卦▪坎",
-bagua006="通往第七卦▪艮",
-bagua007="通往第八卦▪坤",
+bagua001="Đến Quẻ 2 ▪ Đoài",
+bagua002="Đến Quẻ 3 ▪ Ly",
+bagua003="Đến Quẻ 4 ▪ Chấn",
+bagua004="Đến Quẻ 5 ▪ Tốn",
+bagua005="Đến Quẻ 6 ▪ Khảm",
+bagua006="Đến Quẻ 7 ▪ Cấn",
+bagua007="Đến Quẻ 8 ▪ Khôn",
 
---fTitleName001 ="单人副本",
---fTitleName002 ="队伍副本(普通)",
---fTitleName003 ="队伍副本(英雄)",
---fSubTitle001 ="副本列表",
+--fTitleName001 ="Phó Bản Đơn Nhân",
+--fTitleName002 ="Phó Bản Đội (Thường)",
+--fTitleName003 ="Phó Bản Đội (Anh Hùng)",
+--fSubTitle001 ="Danh Sách Phó Bản",
 --fSubTitle002 =" ",
 
 
