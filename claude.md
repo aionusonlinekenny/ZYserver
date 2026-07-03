@@ -780,6 +780,15 @@ Người dùng gửi thêm 2 ảnh chụp màn hình (màn hình chính, màn Ph
 - Áp bằng `apply_json_glossary_field.py desc` → **7/7 lượt khớp**. `json.load()` hợp lệ.
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **49.891 → 49.736**. Đồng bộ config1 (1 lượt).
 
+### 8.4.7v. Dịch nốt bảng `NAME_CURRENCY` (tên loại tiền tệ/tài nguyên) trong `main.min` (2026-07-03)
+
+Tìm thấy bảng `t.NAME_CURRENCY={0:"经验",1:"Đồng Tiền",2:"Nguyên Bảo",...}` — đã dịch sẵn 1 vài mục từ trước nhưng còn sót 13 mục (经验/声望/仙盟贡献/仙盟资金/功勋/成就/仙纹精髓/仙纹碎片/烈火之珠/神火宝珠/神兵经验/筹码/兽元) khi rà soát tiếp theo hướng "经验" (kinh nghiệm) xuất hiện trong ảnh chụp màn hình dạng text nổi lúc nâng cấp kỹ năng. Dùng lại đúng thuật ngữ đã thiết lập xuyên suốt phiên cho các mục trùng tên hệ thống khác (Mảnh Tiên Văn, Thú Nguyên, Công Huân...); riêng `声望` dịch thành "Danh Vọng" để phân biệt với `威望`="Uy Vọng" đã dùng ở nơi khác (2 khái niệm khác nhau trong game dù cùng nghĩa gốc).
+
+- Xác minh 0 so sánh ngược, 0 bracket-key cho cả 15 mục.
+- Áp bằng str.replace ranh giới ngoặc kép chính xác (theo đúng bài học từ 8.4.7t) → **23/23 lượt khớp, 15/15 khớp key**. `node -c` hợp lệ.
+- Kết quả: `main.min_d7aad928.js` giảm **4.194 → 4.130** ký tự Hán còn lại.
+- **Tổng tiến độ `main.min_d7aad928.js` cả phiên**: **5.831 → 4.130** ký tự Hán còn lại (giảm 29%, riêng trong đợt rà soát theo ảnh chụp màn hình lần 2 này).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
