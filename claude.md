@@ -651,6 +651,16 @@ Tiếp tục quét field theo đòn bẩy (ít giá trị duy nhất, nhiều l�
 - Áp bằng `apply_json_glossary_field.py bulletDesc` → **500/500 lượt khớp**. `json.load()` xác nhận hợp lệ, 0 dấu ngoặc kép thẳng.
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **75.786 → 64.786** (giảm 11.000 ký tự chỉ từ 1 generator).
 
+### 8.4.7k. Round 6 dịch tiếp field "name" bằng generator (2026-07-03)
+
+Quay lại field `name` (baseline từ round 1-5 phiên trước: 3.511 → 1.925 giá trị duy nhất chưa dịch, ~9.4K ký tự). Chuẩn hoá số → `#` tìm được **42 nhóm mẫu ≥3 thành viên, phủ 283 giá trị** — chủ yếu tên vật phẩm/rương/tinh thể rồng theo cấp/chuyển sinh/bậc (兵魂N, 通关第N关, 3 loại 龙晶N级×~8 mã màu, N转神装宝箱, 至尊金/银箱(N转), N阶官印/仙羽, N转宝箱...). Viết 27 generator riêng, khớp đúng **283/283**.
+
+- Phát hiện phụ: một số giá trị `name` không phải tên vật phẩm mà là **nhãn NPC quái vật trong dữ liệu Tiên Cung** (id/atk/def/hp/level/avatar) mang định dạng như tên người chơi có tiền tố chức vụ, ví dụ `"|S:14&C:0x00FF00&T:仙宫[长老]|\n|C:0xffffff&T:一生风雪|"` — xác nhận qua ngữ cảnh xung quanh (record có đủ field thống kê quái vật) đây là NPC được thiết kế mang tên thơ mộng giả-người-chơi cho không khí Tiên Cung, không phải dữ liệu người chơi thật, nên **có thể dịch như tên quái vật/NPC thông thường** (chưa dịch trong đợt này, để dành đợt sau).
+- Xác minh: 0 dấu ngoặc kép thẳng, 0 lỗi escape newline, đối chiếu 100% key với text thô.
+- Áp bằng `apply_json_glossary_field.py name` → **283/283 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **64.786 → 63.544**.
+- **Tổng tiến độ `config.json` cả phiên**: **178.028 → 63.544** ký tự Hán còn lại (giảm 64%, qua 10 round dịch 8.4.7d→8.4.7k).
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
