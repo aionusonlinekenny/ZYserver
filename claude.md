@@ -386,14 +386,14 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 - Đã dịch xong file thứ 10: **`system.txt`** (443 chuỗi duy nhất, 450 dòng — thông báo hệ thống hiển thị liên tục khi chơi: lỗi kỹ năng, giao dịch, bang phái, hộp thư...), đồng bộ sang s99.
 - Đã dịch xong file thứ 11: **`guild.txt`** (389 chuỗi duy nhất, 431 lượt trong file — toàn bộ hệ thống bang phái: tạo/giải tán/mời/đàn hặc/kho bang/福地之战/幽冥魔域/thần thú hộ bang/王城争夺/皇城争霸/帮派盛宴, cả lời thoại NPC liên quan). Đã kiểm tra trước khi áp (đếm số dấu `"` chẵn + không có match nào chứa `\n`, theo quy tắc mới ở mục 8.4.5), dùng generator cho 4 mẫu lặp có số (`N阶Boss`, `N级` giới hạn kỹ năng, `N绑定金币`, tổ hợp `人数上限/帮派等级/仓库`), còn lại dịch tay. `luac5.3 -p` pass, 0 tiếng Trung còn sót trong `"..."`, đồng bộ sang s99. - Đã dịch xong file thứ 12: **`fubenname.txt`** (198 chuỗi duy nhất, 354 lượt trong file — tên/mô tả phó bản: cảnh giới tu luyện x N阶 (炼气/筑基/开光/融合/心动/金丹/元婴/出窍/分神/合体/洞虚/大乘/渡劫/散仙/真仙/天仙/玄仙), 血战长空 theo cấp, 诛魔殿/神装BOSS theo tầng, 8 quẻ Bát Quái, và các phó bản sự kiện đặc biệt). **146/198 (74%) tái sử dụng được từ glossary các file trước** (tên cảnh giới, tên phó bản đã xuất hiện ở `achievename`/`config.json`/`guild.txt`...) — chỉ cần dịch tay 52 mục còn lại. `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 13/109 file, 1.755 chuỗi đã dịch** (12 file trước + `activityname.txt` 259 chuỗi hoàn thành 100%).
+**Tổng Giai đoạn 5: 14/109 file, 2.269 chuỗi đã dịch** (13 file trước + `achievename.txt` 514 chuỗi hoàn thành 100%).
 
 ### 8.4.9. Đang dịch `achievename.txt` (574 dòng — tên/mô tả thành tựu), 2026-07-03
 
 - Cấu trúc: 8 `groupNameNNN` (tên nhóm phân loại), 255 `nameNNN` (tên thành tựu, ngắn 2-6 chữ mang tính thành ngữ/mỹ từ), 255 `descNNN` (mô tả điều kiện đạt thành tựu).
 - **Đã xong field `groupName` (8/8) + `name` (252/252 tên riêng biệt, 255 lượt)**: dùng 2 generator — (a) cảnh giới tu luyện × `小成`/`巅峰` (17 cảnh giới × 2 hậu tố = 34 tổ hợp, dùng lại đúng tên cảnh giới đã chuẩn hoá từ `fubenname.txt`), (b) mẫu `"{tên cơ sở}（N）"` lặp lại nhiều lần với hậu tố số thứ tự (35 tên cơ sở × nhiều mức, ví dụ `坚持签到（1-4）`→"Kiên Trì Điểm Danh (1-4)"). Còn lại ~180 tên đứng độc lập dịch tay (thành ngữ/mỹ từ 4 chữ kiểu 百发百中, 倾国倾城...).
-- **Đang làm field `desc`**: 255 mô tả điều kiện, chưa bắt đầu — dự kiến ngắn hơn nhiều so với `activityname.txt` (thường 1 câu điều kiện, ví dụ "累计充值达到...", không phải văn xuôi dài kèm rich-text).
-- `luac5.3 -p` pass, 0 tiếng Trung còn trong field `name`/`groupName`. Đồng bộ s1->s99.
+- ✅ **HOÀN THÀNH 100% field `desc`** (254 chuỗi duy nhất, 255 lượt) — đúng như dự đoán, ngắn hơn nhiều so với `activityname.txt`, hầu hết là 1 câu điều kiện đơn giản. Dùng **~55 generator regex→template** cho các mẫu số lặp lại nhiều lần (`累计签到N次`, `武器强化至+N`, `坐骑进阶至N阶M星`, `帮派贡献达到N`, `一骑绝尘活动中累计被美女诱惑N次`...) + generator cảnh giới×`章节所有关卡2/3星通关` (34 tổ hợp, dùng lại REALM dict) + 2 generator nhỏ (phẩm chất trang bị, màu bạn đồng hành) + ~55 mục dịch tay cho câu không theo mẫu số.
+- ✅ **HOÀN THÀNH 100% `achievename.txt`** (514 chuỗi: 8 groupName + 252 name + 254 desc). `luac5.3 -p` pass, 0 tiếng Trung còn trong bất kỳ chuỗi `"..."` nào. Đồng bộ s1->s99.
 
 ### 8.4.8. Đang dịch `activityname.txt` (786 dòng — tên + mô tả hoạt động sự kiện), 2026-07-03
 
