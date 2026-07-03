@@ -388,6 +388,12 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 **Tổng Giai đoạn 5: 15/109 file, 2.329 chuỗi đã dịch** (14 file trước + `fbtalk.txt` 60 chuỗi hoàn thành 100% — lời thoại phó bản: Đồ Long Sơn Cốc, Ngũ Linh Huyền Thiên Trận, Phi Đao Môn, và 8 lore+chiến thuật boss thế giới huyễn cảnh: Băng Hỏa Ma, Bạch Phát Ma Sư, Tam Vĩ Diễm Hồ, U Minh Ma Quân, Diễm Vũ Phượng Hoàng, Kim Khải Huyền Vũ, Hắc Minh Ma Dực, Hỗn Độn Kiếm Ma, Thái Cổ Cùng Kỳ, Diệt Hồn Thiên Ma, Hồng Hoang Yêu Vu, Song Thân Ma Thần, Hình Thiên).
 
+### 8.4.10. Đang dịch `kuafuzudui.txt` (136 dòng — thông báo Vạn Tiên Tranh Hoàng liên server), 2026-07-03
+
+- 80 chuỗi duy nhất: thông báo tiến trình đấu (海选赛/小组赛/地榜-天榜争霸赛各vòng), thư thưởng theo hạng, và đặc biệt là **2 rulebook rất dài** giải thích luật chơi "Tiên Thành Chi Chiến" (仙城争夺, 4508 ký tự) và "Thánh Nguyên Thành Chi Chiến" (圣元城之战, 847 ký tự).
+- **Đã dịch xong 78/80 chuỗi** (69 thông báo ngắn + 9 tóm tắt luật theo tuần), còn lại đúng 2 chuỗi rulebook dài nhất — đang dịch tiếp, dùng thuật ngữ nhất quán đã lập: 仙城=Tiên Thành, 青龙/白虎/朱雀/玄武/圣元城=Thanh Long/Bạch Hổ/Chu Tước/Huyền Vũ/Thánh Nguyên Thành, 城主=Thành Chủ, 资源塔=Tháp Tài Nguyên, 六强争霸赛=Đấu Tranh Bá Lục Cường, 仙城攻坚赛=Đấu Công Kiên Tiên Thành, 士气值=điểm Sĩ Khí, 如意锦囊=Túi Gấm Như Ý, 仙城俸禄=Bổng Lộc Tiên Thành.
+- `luac5.3 -p` pass, đồng bộ s1->s99.
+
 ### 8.4.9. Đang dịch `achievename.txt` (574 dòng — tên/mô tả thành tựu), 2026-07-03
 
 - Cấu trúc: 8 `groupNameNNN` (tên nhóm phân loại), 255 `nameNNN` (tên thành tựu, ngắn 2-6 chữ mang tính thành ngữ/mỹ từ), 255 `descNNN` (mô tả điều kiện đạt thành tựu).
