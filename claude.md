@@ -710,6 +710,15 @@ Dịch `explain`, `tabName`, `showName`, `headTxt`, `btn_name`, `suitTname`, `de
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **59.462 → 53.069** (giảm 6.393 ký tự — khớp đúng dự tính). Đồng bộ `config1/config6.json` (1 lượt).
 - **Tổng tiến độ `config.json` cả phiên**: **178.028 → 53.069** ký tự Hán còn lại (giảm 70%).
 
+### 8.4.7p. Round 3 dịch `desc` — 166 giá trị ngắn còn lại (≤20 ký tự), 2026-07-03
+
+Sau các round trước, toàn bộ `desc` còn lại là **1.103 giá trị duy nhất, mỗi giá trị chỉ xuất hiện đúng 1 lần** (không còn gì để tận dụng generator/lặp lại). Lọc ra 166 giá trị ngắn (≤20 ký tự — chủ yếu điều kiện nhiệm vụ/thành tựu ngắn như "参与王者争霸8次", tên chức vụ Thần Chức viên mãn, mô tả vật phẩm 1 dòng) để dịch tay trước vì hiệu suất cao (nhiều giá trị, ít công sức mỗi giá trị).
+
+- Dịch tay toàn bộ 166 giá trị, đối chiếu 100% với text thô trước khi áp.
+- Áp bằng `apply_json_glossary_field.py desc` → **166/166 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **53.069 → 51.667**. Đồng bộ config1 (10 lượt trên 5 file).
+- **Còn lại ~937 giá trị `desc` dài hơn 20 ký tự**, chủ yếu mô tả kỹ năng nhân vật/BOSS chi tiết — cần tiếp tục dịch tay từng round.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
