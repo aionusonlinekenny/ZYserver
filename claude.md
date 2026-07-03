@@ -405,7 +405,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong file thứ 25: **`tasktalk.txt`** (347 chuỗi duy nhất, 385 lượt trong file, hoàn thành 100%) — toàn bộ thông báo hệ thống server-wide cho các sự kiện lớn: phúc lợi ngày (gấp đôi kinh nghiệm/cộng tu vi/quay số/Hang Thiên Tàm tĩnh tu), Bàn Đào Thịnh Yến, Hoa Sơn Luận Kiếm (giải đấu PK theo tuần), Thiên Nguyên Chi Chiến (tranh đoạt Tiêu Diêu Thành giữa bang phái), hệ thống BOSS thế giới/BOSS tinh anh/BOSS liên server (bao gồm cơ chế "tiện thi" — đánh xác BOSS sau khi chết), chiến phe phái (liên chém/tháp thủ hộ), phó bản Cửa Vào Ma Giới, phó bản bảo vệ Cửu Thiên Huyền Nữ, phó bản chuyển sinh, và minigame "tìm bạn nhỏ". ⚠️ Phát hiện quy ước xuống dòng **hỗn hợp trong cùng 1 file**: 25/27 chuỗi dùng double-backslash (giống `target.txt`), nhưng đúng 1 chuỗi (quy tắc xếp hạng luận kiếm, dòng cuối file) dùng single-backslash-n — xác nhận lại nguyên tắc phải kiểm tra từng chuỗi riêng lẻ khi trích xuất `STR_PAT`, không chỉ đếm tổng toàn file. `luac5.3 -p` pass, 0 tiếng Trung còn sót. Đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 25/109 file, 5.495 chuỗi đã dịch** (24 file trước + `tasktalk.txt` 347 chuỗi hoàn thành 100%).
+- Đã dịch xong file thứ 26: **`miji.txt`** (52 chuỗi duy nhất, 184 lượt trong file, hoàn thành 100%) — hệ thống "Bí Tịch" (秘籍, sách bí kíp tăng cường kỹ năng rơi từ Trấn Yêu Tháp): 27 mô tả hiệu ứng bí tịch theo template (tăng % sát thương kỹ năng + hiệu ứng đặc biệt riêng cho từng trong 24 tên kỹ năng như Đột Lôi/Hóa Nguyên Trảm/Vạn Kiếm Quy Tông/Tru Tâm Tiên Thương...), 3 khối hướng dẫn dài (gắn bí tịch/nâng cấp bí tịch/Tiên Pháp Dung Luyện), và các thông báo lỗi UI. `luac5.3 -p` pass, 0 tiếng Trung còn sót. Đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 26/109 file, 5.547 chuỗi đã dịch** (25 file trước + `miji.txt` 52 chuỗi hoàn thành 100%).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
