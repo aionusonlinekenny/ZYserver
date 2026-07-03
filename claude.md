@@ -661,6 +661,17 @@ Quay lại field `name` (baseline từ round 1-5 phiên trước: 3.511 → 1.92
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **64.786 → 63.544**.
 - **Tổng tiến độ `config.json` cả phiên**: **178.028 → 63.544** ký tự Hán còn lại (giảm 64%, qua 10 round dịch 8.4.7d→8.4.7k).
 
+### 8.4.7l. Phát hiện quan trọng: `resource/config1/config0-6.json` là bản sao CHƯA đồng bộ của `config.json` — đã đồng bộ (2026-07-03)
+
+Trước khi dịch tiếp, kiểm tra `resource/config1/config0.json`...`config6.json` (7 file, ~11.4MB) xem có phải dữ liệu trùng với `config/config.json` hay không (việc còn treo từ đầu phiên). Kết quả:
+
+- **Xác nhận bằng cách so sánh trực tiếp**: cả 7 file gộp lại có đúng 336 key top-level, **trùng khớp 100% với 336 key top-level của `config/config.json`** (0 key lệch) — đây là CÙNG một bộ dữ liệu, chỉ chia nhỏ ra 7 file (rất có thể để giảm kích thước từng request khi client tải).
+- Vì các file `config1/*.json` **không được dịch cùng lúc** với `config/config.json` trong toàn bộ phiên làm việc này (chỉ chỉnh sửa `config/config.json`), nên đến giờ chúng vẫn giữ dữ liệu tiếng Trung gốc — đã xác nhận trực tiếp: item id `180160` trong `config/config.json` có `"name":"Thần Khí-Thiết Họa Ngân Câu"` (đã dịch) trong khi cùng id đó trong `config1/config0.json` vẫn là `"name":"神器-铁画银钩"` (chưa dịch).
+- Viết `translation/sync_config1_from_config.py`: với mỗi file `config1/configN.json`, so từng key top-level với `config/config.json` (file gốc/chủ, đã dịch), nếu khác thì **ghi đè toàn bộ giá trị của key đó** từ file gốc sang — không cần áp lại từng glossary riêng lẻ cho từng chunk, an toàn hơn nhiều vì lấy nguyên khối dữ liệu đã dịch và đã qua `json.load()`.
+- Kết quả: **73/336 tổng số lượt key thay đổi** trên cả 7 file (các key không đổi là do chưa dịch phần đó hoặc dữ liệu vốn không có tiếng Trung). Tổng ký tự Hán còn lại cộng dồn cả 7 file **= 63.544**, **khớp chính xác** với số ký tự Hán còn lại của `config/config.json` — xác nhận đồng bộ đúng và đầy đủ.
+- `json.load()` xác nhận cả 7 file vẫn hợp lệ sau khi ghi.
+- **Lưu ý cho các round dịch tiếp theo của `config.json`**: phải chạy lại `sync_config1_from_config.py` sau mỗi lần dịch thêm để giữ 2 nơi nhất quán (khác với việc đồng bộ s1/s99 vốn là 2 bộ dữ liệu server độc lập — ở đây `config1/*` chỉ là "bản chia nhỏ" của đúng 1 nguồn `config.json`, nên luôn đồng bộ 1 chiều từ `config.json` sang).
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
