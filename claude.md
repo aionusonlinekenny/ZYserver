@@ -570,6 +570,18 @@ Tiếp tục xử lý phần còn lại của `main.min_d7aad928.js` sau 8.4.7b.
 - Kết quả `main.min_d7aad928.js`: **6.029 → 5.831 ký tự Hán còn lại**. `default.thm_70915153.js` giữ nguyên **184** (không có chuỗi nào trong đợt này thuộc file đó).
 - **Còn lại thật sự trong `main.min_d7aad928.js`**: ~591 chuỗi UNKNOWN (chưa phân tích ngữ cảnh) + 6 chuỗi RISKY chủ động bỏ qua ở trên — phần UNKNOWN cần thời gian đọc từng chuỗi để phân loại (không có cờ an toàn/rủi ro rõ ràng qua script tự động), độ ưu tiên thấp hơn `resource/config/config.json` vì tổng ký tự ít hơn nhiều (5.8K so với 178K).
 
+### 8.4.7d. Round 1 dịch field "desc" trong `config.json` (2026-07-03)
+
+Sau khi xác nhận bug ảnh chụp màn hình đã sửa xong (8.4.7c), tiếp tục theo yêu cầu người dùng "tiếp tục làm tiếp phần còn lại". Chọn field `desc` của `resource/config/config.json` vì đây là khối chữ Hán CHƯA đụng tới lớn nhất còn lại (4.273 lượt xuất hiện, 2.283 giá trị duy nhất, 102.550 ký tự Hán — lớn hơn hẳn các field khác như `context`/`bulletDesc`/`skillDesc`).
+
+- **Phương pháp**: kết hợp generator theo mẫu (regex + backreference cho các nhóm ≥3 giá trị cùng khuôn dạng, chỉ khác số — vd bảng 495 dòng cho "khảm nhận thuộc tính kỹ năng" của 3 vũ khí × 3 nhân vật × 45 tên kỹ năng) với dịch tay cho mô tả rương/vật phẩm và 100 mô tả đứng độc lập tần suất cao nhất (nhãn cấp độ trang bị, văn án bùa lửa thần phạt, kích hoạt cung, chất lượng bộ phận rồng...). Tổng **1.023 giá trị duy nhất** được dịch trong đợt này.
+- **Bug lặp lại lần nữa (giống các lần trước)**: sau khi gộp 2 batch generator + manual, phát hiện **564/1.023 key** chứa ký tự xuống dòng THẬT (0x0A) thay vì chuỗi `\n` 2 ký tự — vì nhiều giá trị `desc` là mô tả rương nhiều dòng. Khác với các file `.txt`/Lua, script áp dụng cho JSON (`apply_json_glossary_field.py`, viết mới, tổng quát hoá từ `apply_json_glossary.py` để nhận field bất kỳ thay vì chỉ `"name"`) khớp bằng regex trên **text thô** của file JSON, nên **key vẫn phải dùng `\n` 2 ký tự thô** như trong file (đã xác nhận bằng cách `grep` trực tiếp file thật, thấy `"desc":"...\\n..."` với `\n` 2 ký tự) — chỉ có **value** (đầu vào cho `json.dumps()` khi ghi ra) mới cần ký tự xuống dòng thật để `json.dumps` tự escape lại đúng chuẩn. Sửa bằng cách thay `\n`/`\t`/`\r\n` thật trong TỪNG KEY thành chuỗi thoát 2 ký tự tương ứng, giữ nguyên value — không có xung đột (collision) key sau khi sửa.
+- Kiểm tra dấu ngoặc kép thẳng (`"`) trong toàn bộ 1.023 value: **0 vi phạm** (đúng quy tắc dùng ngoặc cong " ").
+- Áp bằng `translation/apply_json_glossary_field.py desc <config.json> <glossary>` → **2.960/4.273 lượt thay thế khớp** (69%). `json.load()` xác nhận file vẫn hợp lệ sau khi ghi.
+- Kết quả: tổng ký tự Hán còn lại trong `config.json` giảm **178.028 → 117.579** (giảm 60.449 ký tự, gần đúng bằng số ký tự Hán ước tính của phần `desc` đã dịch).
+- File `config.json` chỉ có **1 bản duy nhất** trong repo (không có bản sao ở `resource/config1/` hay s99/s1) nên không cần bước đồng bộ.
+- **Còn lại**: ~1.260 giá trị `desc` duy nhất chưa dịch (khoảng 1.313 lượt xuất hiện chưa khớp, phần đuôi dài tail ít lặp lại hơn) + các field lớn khác của `config.json` chưa đụng tới: `context` (11.115 ký tự), `bulletDesc` (11.000), `skillDesc` (9.818), `text` (6.393), `stageDesc` (3.232), `head` (3.146), `skillName` (1.952), `trainName` (1.802)...
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
