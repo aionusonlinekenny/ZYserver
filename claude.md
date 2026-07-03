@@ -399,7 +399,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong file thứ 22: **`normaltalk.txt`** (132 chuỗi duy nhất, 146 lượt trong file, hoàn thành 100%) — lời thoại NPC quan trọng có tên riêng gắn liền cốt truyện: Chỉ Vân/Cửu Thiên Huyền Nữ tại Tiêu Diêu Thành, cây già Đạp Vân Hồ tộc kể về Huyền Thiên Tông/Xích La Môn/Vạn Kiếm Sầu, các NPC phát nhiệm vụ tại từng khu vực/phó bản theo mốc cấp độ (kèm gợi ý `<(c0xFF00FF00)...>`), và các đoạn hoài niệm/độc thoại nội tâm mang màu sắc thơ cổ điển của nhiều nhân vật (Y Nhi, Liên Tinh, Thanh Nhi, Tố Trinh...). Cũng có thông báo lễ hội theo mùa (Quốc Khánh, Giáng Sinh, Thất Tịch, Thanh Minh) và mô tả 10 thần khí thượng cổ. Dịch tay toàn bộ. `luac5.3 -p` pass, 0 tiếng Trung còn sót. Đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 22/109 file, 3.432 chuỗi đã dịch** (21 file trước + `normaltalk.txt` 132 chuỗi hoàn thành 100%).
+- Đã dịch xong file thứ 23: **`monstername.txt`** (740 chuỗi duy nhất, 749 lượt trong file, hoàn thành 100%) — toàn bộ tên quái vật/boss/NPC chiến đấu trong game. Cấu trúc đặc biệt: 386 tên cơ sở + 354 biến thể đánh số hậu tố (`红石巨人`/`红石巨人2`/`红石巨人3`...) dùng chung 65 tên gốc → dịch 386 tên cơ sở (23/386 tái sử dụng trực tiếp từ `pet.txt` do trùng tên thú cưng bắt được ở "Đảo Thú Cưng") + 17 tên chỉ tồn tại dạng có hậu tố (không có bản không hậu tố trong file, ví dụ `一阶心魔`.."十阶心魔"), rồi dùng script tự động ghép hậu tố số y hệt bản gốc cho toàn bộ 354 biến thể còn lại. Bao gồm: quái thường theo khu vực (机关/幽冥宫/九阴宗/沙漠/远古龙/护宝-盗宝hệ thống Vạn Bảo/8 quẻ Bát Quái + Trấn Thủ Giả, 4 Linh Thú Tứ Tượng Huyền Vũ/Bạch Hổ/Chu Tước/Thanh Long, dàn NPC "文房四宝" 琴棋书画, quái lễ hội Trung Thu/Quốc Khánh/hôn lễ), và boss thế giới (`远古巨人.一~.八`, `轮回之主`, `万木之祖`...). `luac5.3 -p` pass, 0 tiếng Trung còn sót. Đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 23/109 file, 4.172 chuỗi đã dịch** (22 file trước + `monstername.txt` 740 chuỗi hoàn thành 100%).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
