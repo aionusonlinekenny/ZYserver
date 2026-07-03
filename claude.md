@@ -528,6 +528,36 @@ Từ ảnh chụp màn hình test thực tế, thấy menu dưới cùng, tên k
 5. `resource/config/config.json` + `config1/*.json` client (Giai đoạn 6 mở rộng) — field "name" còn 1.925 tên riêng biệt / tổng file còn ~178K ký tự Hán (`desc` là phần lớn, chưa đụng tới)
 6. `data/config/**/*.config` server (401 file, Giai đoạn 6 gốc) — CHƯA bắt đầu, có thể trùng lặp một phần với mục 4/5
 
+### 8.4.7b. Dịch có hệ thống `main.min_d7aad928.js` + `default.thm_70915153.js` bằng phương pháp phân loại an toàn (2026-07-03)
+
+Người dùng gửi 3 ảnh chụp màn hình cho thấy nhãn tab dưới cùng (角色/神罚/转生/仙羽/飞升), nhãn icon (法术/炼器/仙侣/历练/背包), và nhãn thuộc tính trong panel (战斗力/生命/攻击/物抗/法抗/强化属性) vẫn tiếng Trung, và nghi ngờ đúng: phần dịch `.txt` server không đụng tới phần này. Điều tra xác nhận `resource/exml/*.exml` **không được client load trực tiếp** (như đã ghi ở 8.4.1) — nhãn tab `name="角色"` chỉ tồn tại dưới dạng đã biên dịch trong `main.min_d7aad928.js`.
+
+**Rủi ro cốt lõi**: chuỗi tiếng Trung trong `main.min_d7aad928.js` (code logic, không phải file skin thuần UI như `default.thm`) có thể đóng 3 vai trò khác nhau cho cùng 1 chuỗi y hệt:
+1. Text hiển thị thuần túy (an toàn dịch)
+2. Key trong enum TypeScript đã biên dịch, dạng `t[t["X"]=N]="X"` (an toàn dịch NẾU chỉ tra cứu 1 chiều số→chuỗi để hiển thị, như đã xác minh với `DressTypeName[t.pos]`)
+3. Giá trị so sánh trạng thái, dạng `"X"==this.btn.label` (an toàn dịch NẾU thay thế **nhất quán toàn bộ file** — vì gán và so sánh dùng chung 1 literal)
+
+**Phương pháp đã dùng** (script mới `translation/classify_js_strings.py`): trích mọi chuỗi có chữ Hán trong file bằng regex JS string literal, với MỖI chuỗi duy nhất quét toàn bộ các lần xuất hiện trong file để gắn cờ theo ngữ cảnh xung quanh (trước/sau 25 ký tự):
+- Cờ RỦI RO nếu xuất hiện trong mẫu enum `[t[`, so sánh `==`/`===`, `case "X":`, hoặc bracket-key access
+- Cờ AN TOÀN nếu xuất hiện sau `name=`/`text=`/`label=`/`showTips(`/nối chuỗi `+`
+- Phân loại: SAFE (chỉ có cờ an toàn) / RISKY (chỉ có cờ rủi ro) / MIXED (có cả 2) / UNKNOWN (không cờ nào)
+
+Đã xác minh thêm bằng tay: không có chuỗi tiếng Trung nào được dùng làm key tra cứu vào `GlobalConfig.*[...]` hay trong lệnh gọi `regNetMsg`/`send` (giao thức mạng) — loại trừ rủi ro nghiêm trọng nhất (đồng bộ với dữ liệu server/config.json chưa dịch).
+
+**Kết quả `main.min_d7aad928.js`** (1980 chuỗi Hán duy nhất, 3356 lượt): SAFE 1354 / RISKY 23 / MIXED 12 / UNKNOWN 591. Dịch tay toàn bộ 1354 chuỗi SAFE (gộp tại `translation/glossary_js_main_safe.json`), áp bằng script mới `translation/apply_js_literal_glossary.py` (thay thế MỌI literal JS string khớp glossary, khác với `apply_js_safe_calls.py` cũ chỉ khớp trong 1 số hàm gọi cố định — **giữ cả 2 script vì dùng cho 2 phương pháp khác nhau, không ghi đè lẫn nhau**). Kết quả: **2419 lượt thay thế, 16.556 → 6.029 ký tự Hán còn lại** (giảm ~64%). `node -c` xác nhận cú pháp JS vẫn hợp lệ sau khi sửa.
+
+**Kết quả `default.thm_70915153.js`**: phát hiện thêm 147 chuỗi SAFE chưa được các đợt exml/UI trước dịch tới (bao gồm chính xác `神罚`/`转生`/`仙羽`/`飞升`/`角色` — nhãn tab trong ảnh chụp màn hình!). Dịch và áp (`translation/glossary_js_thm_safe.json`) → **181 lượt thay thế, 888 → 184 ký tự Hán còn lại**. `node -c` hợp lệ.
+
+**⚠️ Lỗi lặp lại nhiều lần trong phiên này**: khi gõ chuỗi glossary chứa `\n` (ký hiệu xuống dòng JS) trong Python heredoc, gõ nhầm 1 gạch chéo (`\n` → Python hiểu là ký tự xuống dòng thật) thay vì 2 gạch chéo (`\\n` → literal 2 ký tự đúng như JS cần). Đã viết script dò `apply_lang_glossary.py` báo lỗi tương tự trước đó cho file `.txt`, nay lặp lại y hệt với file `.js`. **Bài học tổng quát, áp dụng cho MỌI ngôn ngữ đích (Lua/JSON/JS)**: sau khi build glossary, luôn `json.load()` lại và kiểm tra `'\n' in k` (ký tự xuống dòng thật) — nếu có, đó luôn là dấu hiệu lỗi double-escape, không phải nội dung hợp lệ.
+
+**CÒN LẠI, CHƯA ĐỤNG TỚI (rủi ro cao hơn, cần thời gian riêng)**:
+- `main.min_d7aad928.js`: 626 chuỗi duy nhất (23 RISKY + 12 MIXED + 591 UNKNOWN) — trong đó MIXED bao gồm chính xác nhãn tab `角色`/`神罚`/`转生`/`仙羽`/`飞升` mà ảnh chụp màn hình cho thấy (dùng trong enum `DressTypeName` xác nhận an toàn, nhưng cũng dùng trong `e.name="角色"` và nối chuỗi động — cần dịch **nhất quán đồng thời cả 3 vị trí trong cùng 1 lần sửa** để không lệch pha).
+- `resource/config/config.json` + `config1/*.json`: field `desc` hoàn toàn chưa đụng, field `name` còn 1.925 tên riêng biệt (xem 8.4.3-8.4.7) — nguồn còn lại lớn nhất (~178K ký tự Hán).
+- `data/config/language/lang/*.config` (11.068 dòng) — chưa khảo sát.
+- `data/config/**/*.config` (401 file) — chưa bắt đầu.
+
+**⚠️ NHẮC LẠI QUAN TRỌNG (đã ghi ở 8.5 nhưng dễ quên)**: repo này là bản làm việc cục bộ, KHÔNG tự đồng bộ với server Windows thật đang chạy (71.31.97.241 trong ảnh chụp màn hình người dùng gửi). Sau khi dịch xong ở đây, phải **copy thủ công** `main.min_d7aad928.js` và `default.thm_70915153.js` (cùng mọi file `.txt`/`.json` khác đã sửa) sang đúng đường dẫn trên server thật rồi **restart service** mới thấy thay đổi — nếu không, ảnh chụp màn hình lần sau vẫn sẽ giống hệt ảnh cũ dù code trong repo đã đúng.
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
