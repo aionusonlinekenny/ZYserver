@@ -855,6 +855,17 @@ Dịch 50/69 giá trị `desc` trong khoảng 70-110 ký tự: 2 generator (hộ
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **43.158 → 41.254**. Đồng bộ config1 (2 lượt).
 - **Tổng tiến độ `config.json` cả phiên**: **178.028 → 41.254** ký tự Hán còn lại (giảm 77%). Còn lại `desc`: ~565 giá trị duy nhất, độ dài trung vị ~230 ký tự (mô tả kỹ năng/lore dài, phần khó nhất còn lại).
 
+### 8.4.7zc. Sửa layout thật đầu tiên: nhãn "Lv.N" đè lên tên kỹ năng trong `SkillItem.exml` (default.thm), 2026-07-03
+
+Người dùng chụp ảnh màn hình Pháp Thuật (法术) cho thấy tên kỹ năng (vd "Nghê Phi Tản Vũ") đè chồng lên chữ "Lv.200" ngay cạnh — do tên tiếng Việt dài hơn hẳn tên gốc 2-4 chữ Hán. Đây là lần đầu trong phiên **xác định chính xác được component gây lỗi** (khác các lần trước không lần ra được) và sửa trực tiếp layout (không chỉ dịch chữ):
+
+- **Cách lần ra**: từ `e.skillName.text=s.name+""` và `e.lv.text="Lv."+s.lv` trong `main.min_d7aad928.js` xác nhận đây là 2 Label RIÊNG BIỆT (không phải 1 chuỗi nối). Tìm cặp `_proto.skillName_i`/`_proto.lv_i` gần nhau (trong khoảng 3000 ký tự) trong `default.thm_70915153.js` — chỉ có đúng 1 cặp khớp trong số 10 `skillName_i` × 20 `lv_i` có trong file. Xác nhận class chứa bằng cách tìm `generateEUI.paths['resource/exml/SkillItem.exml']` gần nhất (khác `window.SkinXXX = (function` — quy ước đặt tên class không nhất quán 100% qua các skin nên phải thử nhiều mẫu tìm kiếm).
+- **Cấu trúc hàng danh sách `SkillItem`** (width tổng 582px): `icon` (x=25,w=69) → `skillName` (x=115, không giới hạn width, canh trái) → `lv` (x=259 CŨ, đây là nguồn gây đè) → `skillDesc` (x=108,y=47, dòng dưới) → `costAll`/`grewUpAllBtn` (x=454-483, nút "Tối Đa"/"Nâng cấp").
+- **Sửa**: `lv.x` từ `259` → `400` (dời phải 141px, dùng khoảng trống thật giữa vùng tên kỹ năng và vùng nút/giá ở x=454+ mà không đụng gì khác); đồng thời thêm `skillName.width = 275` làm giới hạn an toàn phụ (khoảng cách 115→390, đủ chứa tên dài nhất hiện tại "Tứ Phương Linh Động" ước tính ~250px ở cỡ chữ 22).
+- Xác nhận bằng cách trích in lại đúng 2 hàm sau khi sửa — khớp giá trị mong muốn. `node -c` hợp lệ.
+- **Vẫn chưa thể xác nhận bằng mắt** vì thay đổi này chưa deploy lên server thật — cần người dùng deploy rồi chụp lại màn hình để xác nhận đã hết đè chữ, hoặc báo nếu cần dời thêm.
+- **Đây là khuôn mẫu để xử lý các trường hợp đè chữ khác sau này**: (1) tìm 2 property Label riêng trong `main.min` set qua `.text=`, (2) tìm skin class chứa cặp đó trong `default.thm` qua tên hàm `_proto.<tên>_i` gần nhau, (3) xác nhận đúng class qua `generateEUI.paths['resource/exml/...']`, (4) đối chiếu toàn bộ layout hàng đó để biết khoảng trống thật sự an toàn trước khi dời x.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
