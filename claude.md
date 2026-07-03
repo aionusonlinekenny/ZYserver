@@ -421,7 +421,13 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong **`chat.txt`** (23 chuỗi, hệ thống kênh chat: 9 tên kênh + thông báo cấm chat/giới hạn cấp độ) và **`expwarmtips.txt`** (8 chuỗi, gợi ý mốc cấp độ đầu game 4-30). `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 55/109 file, 5.972 chuỗi đã dịch** (53 file trước + `chat.txt` 23 + `expwarmtips.txt` 8).
+- Đã dịch xong **`actorsys.txt`** (28 chuỗi, floating-text hệ thống: nhận/mất tiền tệ, kinh nghiệm, lịch luyện, vinh dự, danh vọng, cống hiến phe phái + cảnh báo chống nghiện game). ⚠️ Lại phát hiện lỗi quy ước xuống dòng: file này dùng **double-backslash** (`\\`) cho `\<...>` (xác nhận `double_bs=5` khi kiểm tra byte thô ban đầu), nhưng khi gõ tay chuỗi cảnh báo chống nghiện dài trong heredoc, chỉ gõ 1 gạch chéo (`\<`) thay vì 2 (`\\<`) — không khớp key. Đã dùng `open(...,'rb')` đọc byte thô để xác nhận chính xác số lượng backslash thật trong chuỗi gốc rồi sửa lại key/value cho khớp. `luac5.3 -p` pass, 0 tiếng Trung còn sót (3 cụm còn lại chỉ nằm trong comment dòng 39). Đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 56/109 file, 6.000 chuỗi đã dịch** (55 file trước + `actorsys.txt` 28).
+
+### Tóm tắt phiên làm việc này (2026-07-03, tiếp tục không dừng theo yêu cầu người dùng)
+
+Đã dịch xong **30 file mới** trong phiên này (từ `pet.txt` đến `actorsys.txt`), nâng tổng tiến độ Giai đoạn 5 từ 18/109 lên **56/109 file (51%)**, từ 2.630 lên **~6.000 chuỗi đã dịch**. Các file lớn còn lại chưa đụng tới: `talk.txt` (60K+ ký tự Hán), `item.txt` (42K), `skill.txt` (35K), `scripttips.txt` (25K), `quest.txt` (14K) — đây là 5 file khổng lồ cần một phiên riêng biệt với chiến lược trích xuất/dịch theo lô lớn. Còn khoảng 30+ file cỡ trung bình khác (guide.txt 455, friend.txt 424, betaactivity.txt 422, guild.txt đã xong, question.txt 369, team.txt 347, slave.txt 345, xianshi.txt 338, superexptime.txt 338, chatmsg.txt 299, storyline.txt 291, anheishendian.txt 291, fightvalue.txt 283, cross.txt 278...) chưa dịch. Ngoài Giai đoạn 5 còn tồn: `config.json` field desc (~176K ký tự), `main.min_d7aad928.js` (~16K), `data/config/language/lang/*.config` (11K dòng, chưa khám phá), và 438 file `data/config/**/*.config` (Giai đoạn 6 gốc, chưa bắt đầu).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
