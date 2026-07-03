@@ -629,6 +629,21 @@ Quét lại toàn bộ file theo field để tìm field nào còn nhiều ký t�
 - Áp riêng từng field bằng `apply_json_glossary_field.py` → tổng **752 lượt thay thế**, đúng số lượt kỳ vọng từng field (393+134+35+12+45+133). `json.load()` xác nhận hợp lệ.
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **82.796 → 78.886**.
 
+### 8.4.7i. Dịch tiếp loạt field nhỏ: `help`, `acDesc`, `condition`, `describe`, `funName`, `chainDesc`, `abilityDesc`, `des`, `dec`, `funcDesc` (2026-07-03)
+
+Tiếp tục quét field theo đòn bẩy (ít giá trị duy nhất, nhiều lượt lặp) — dịch 10 field cùng lúc:
+
+- `help` (4, hướng dẫn Tiên Cung Tranh Bá — dài, dịch tay đầy đủ; **rút kinh nghiệm: lần đầu vô tình chỉ copy bản `repr(...)[:150]` bị cắt ngắn khi in ra terminal làm 3 key không khớp — phát hiện qua bước đối chiếu key với text thô, sửa lại bằng cách trích xuất lại full string qua `json.dumps` không giới hạn độ dài**).
+- `acDesc` (15), `condition` (24), `describe` (15), `funName` (45): dịch tay toàn bộ, đều là văn bản mô tả/tiêu đề ngắn không lặp lại.
+- `chainDesc` (32): mẫu `[tên trang bị Vô Cực]|C:...&T:mô tả thuộc tính N%|` — bảng ánh xạ 8 tên trang bị × 8 loại thuộc tính, generator ghép khớp **32/32**.
+- `abilityDesc` (17): 1 mẫu lặp 10 lần ("tiêu hao Tiên Linh Hồn Thạch...tăng N%") + 7 giá trị đứng lẻ dịch tay.
+- `des` (21), `dec` (19): mỗi field có 2-3 mẫu số học đơn giản ("rơi trang bị dưới chuyển sinh/cấp N", "Công Kích+N Vật Kháng+N...", "Long Nguyên各部位+N%"...) — generator phủ **100%** cả 2 field.
+- `funcDesc` (28): toàn bộ là mô tả buff/kỹ năng đứng lẻ, dịch tay toàn bộ.
+- Xác minh trước khi áp: 0 dấu ngoặc kép thẳng, 0 lỗi escape newline, đối chiếu 100% key với text thô — phát hiện và sửa lỗi cắt chuỗi ở `help` trước khi áp.
+- Áp riêng từng field → tổng **234 lượt thay thế**, khớp đúng số lượt kỳ vọng từng field (4+25+24+15+45+32+17+24+20+28). `json.load()` xác nhận hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **78.886 → 75.786**.
+- **Tổng tiến độ `config.json` trong phiên này**: từ **178.028 → 75.786** ký tự Hán còn lại (giảm 57%, qua 9 round dịch liên tiếp 8.4.7d→8.4.7i). Còn lại lớn nhất: `desc` phần đuôi dài (~1.100 giá trị duy nhất, ~38K ký tự), `bulletDesc` (500 giá trị duy nhất/500 lượt, 11K ký tự, không có đòn bẩy lặp — cần dịch tay), `name` (1.925 giá trị duy nhất còn lại từ round trước, ~9.4K ký tự), `text` (39 giá trị nhưng dài, ~6.4K ký tự — hướng dẫn cơ chế game).
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
