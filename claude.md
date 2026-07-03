@@ -801,6 +801,17 @@ Theo yêu cầu người dùng: vì tiếng Việt luôn DÀI HƠN tiếng Trung
 - **Quy tắc áp dụng từ nay cho các bản dịch MỚI**: với nhãn nút/tab/label ngắn (nguyên gốc Hán ≤4 ký tự, ngữ cảnh rõ ràng là UI chật — nút hành động, trạng thái, tab), ưu tiên phương án tiếng Việt ngắn nhất còn giữ được nghĩa rõ ràng (2 từ trở xuống nếu được), thay vì dịch đầy đủ/trang trọng. Với mô tả/flavor text dài (skill desc, lore, hướng dẫn hệ thống) thì không cần rút gọn vì các vùng đó vốn đã linh hoạt độ dài.
 - **Vẫn cần người dùng tiếp tục chụp màn hình các chỗ cụ thể bị tràn/lệch** vì không có cách nào tôi tự kiểm chứng bằng mắt khi chưa deploy — đây là kênh phản hồi hiệu quả nhất hiện có.
 
+### 8.4.7x. Round 5 dịch `desc` — 79 giá trị 46-70 ký tự (generator + lore quái vật) (2026-07-03)
+
+Tiếp tục phần đuôi dài `desc`, xử lý 79/107 giá trị trong khoảng 46-70 ký tự:
+
+- 9 generator template (30 giá trị): thẻ đồ giám theo bộ+màu (佳人如画/盛世奇观/修仙圣地 × 5 màu), thưởng theo bậc Vương Giả Tranh Bá, hộp chọn trang bị Thoát Phàm/Tam Sơn × Tiên Thúc/Pháp Liên, đá Uy Năng theo cấp, vật phẩm tăng Tu Vi Chuyển Sinh/Kiếp Lực, mô tả BOSS phong ấn theo dải cấp.
+- 49 giá trị dịch tay: kỹ năng phụ trợ nhân vật, mô tả rương/vật phẩm, và đặc biệt **lore quái vật cổ điển Thần Ma (Sa Tăng, Rắn Độc, Nhện Ảo Ảnh, Tổ Mã Giáo, Ốc Mã Giáo, Xích Nguyệt Ác Ma...)** — văn phong tường thuật dài, giữ đúng sắc thái kể chuyện gốc.
+- **Rút kinh nghiệm ngay từ round này**: generator dùng dấu ngoặc kép thẳng `"` để mô phỏng dấu ngoặc kép Trung trong tên bộ đồ giám (`"佳人如画"`) — kiểm tra bắt được 12 lỗi, sửa bằng hàm tự động đổi cặp ngoặc thẳng thành ngoặc cong " " theo đúng thứ tự mở/đóng.
+- Đối chiếu 100% key với text thô, 0 ký tự Hán sót trong giá trị dịch.
+- Áp bằng `apply_json_glossary_field.py desc` → **79/79 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **49.736 → 47.233**. Đồng bộ config1 (3 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
