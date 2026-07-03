@@ -5,8 +5,8 @@
 --请在后面标注这个话的ID
 MonserSay = 
 {
-"就算清泉井可以解掉我的剧毒，你也无法活着回去",      -- 0
-"谁让你们闯进森林里来！既然来了，想跑就不那么容易了！看招！",    --1
-"嘶~嘶~",--2
-"你们！准备迎接死亡吧",--3
+"Cho dù Thanh Tuyền Tỉnh có thể giải được kịch độc của ta, ngươi cũng không thể sống mà trở về",      -- 0
+"Ai cho các ngươi xông vào rừng này! Đã đến rồi, muốn chạy đâu có dễ vậy! Xem chiêu!",    --1
+"Xì~ xì~",--2
+"Các ngươi! Chuẩn bị đón nhận cái chết đi",--3
 }

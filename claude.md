@@ -413,7 +413,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong **`weixin.txt`** (8 chuỗi, hướng dẫn theo dõi WeChat lấy mã kích hoạt — phát hiện lỗi khớp do nhầm dấu ngoặc kép cong "" trong chuỗi gốc thành ngoặc thẳng khi gõ key glossary, đã sửa lại đúng ký tự cong) và **`rank.txt`** (42 chuỗi, hệ thống bảng xếp hạng: tọa kỵ/bạn đồng hành/cánh/tinh linh/thú cưng/chiến lực/cấp độ/thành tựu/sức hút theo tuần, cùng 15 danh hiệu thứ hạng như Độc Cô Cầu Bại, Võ Lâm Chí Tôn, Bế Nguyệt Tu Hoa...). `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 46/109 file, 5.755 chuỗi đã dịch** (44 file trước + `weixin.txt` 8 + `rank.txt` 42).
+- Đã dịch xong **`monsersay.txt`** (4 chuỗi, lời thoại boss rừng), **`root.txt`** (60 chuỗi: 19 tên linh thú thần thoại cho hình tượng linh căn — Nguyệt Hồ, Thiên Lang, Bạch Trạch, Trùng Minh, Giải Trãi..., 8 loại linh căn ngũ hành+băng/lôi/phong, 9 danh hiệu tình duyên vợ chồng, 9 chỉ số nhân vật, 8 huyệt đạo theo "đoạn" tiến triển linh căn kiểu Trung y: Thần Đình, Toàn Cơ, Thần Phong, Khúc Trì, Thiếu Thương, Thiên Khu, Túc Tam Lý, Dũng Tuyền), và **`platform.txt`** (10 chuỗi, hướng dẫn nền tảng Ái Ngoạn — 7/10 tái sử dụng từ `weixin.txt`; phát hiện lỗi kỹ thuật: dùng `python3 -c "..."` với dấu ngoặc kép bash thay vì heredoc khiến `\\n` bị bash làm mất 1 lớp escape thành newline thật trong JSON key, phải viết script riêng để khôi phục lại chuỗi `\n` đúng 2 ký tự — **quy tắc mới**: luôn dùng heredoc `<<'PYEOF'` (single-quote, không interpolate) cho mọi script Python xây glossary có chứa `\n`/`\\`, không bao giờ dùng `python3 -c "..."` (double-quote) cho các chuỗi này). Tất cả `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 49/109 file, 5.829 chuỗi đã dịch** (46 file trước + `monsersay.txt` 4 + `root.txt` 60 + `platform.txt` 10).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
