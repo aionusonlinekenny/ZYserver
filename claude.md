@@ -719,6 +719,15 @@ Sau các round trước, toàn bộ `desc` còn lại là **1.103 giá trị duy
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **53.069 → 51.667**. Đồng bộ config1 (10 lượt trên 5 file).
 - **Còn lại ~937 giá trị `desc` dài hơn 20 ký tự**, chủ yếu mô tả kỹ năng nhân vật/BOSS chi tiết — cần tiếp tục dịch tay từng round.
 
+### 8.4.7q. Round 4 dịch `desc` — 87 giá trị độ dài trung bình (21-45 ký tự), 2026-07-03
+
+Tiếp tục phần đuôi dài của `desc`, dịch tay 87/204 giá trị trong khoảng 21-45 ký tự — gồm mô tả kỹ năng chiêu thức nhân vật (Ngự Tiêu/Lạc Anh/Trường Ca), mô tả vật phẩm (rương, mảnh, tinh phách), buff Long Nguyên, và mô tả lore quái vật (mèo cào, bọ sừng, rồng đen, Ốc Mã Giáo...). Bỏ qua 9 dòng chứa ghi chú nội bộ của dev không phù hợp dịch nguyên văn (dạng "...--装逼专用卡组，只能花钱得（此条5毛，括号内删除）") để xử lý riêng sau nếu cần.
+
+- Đối chiếu 100% key với text thô, 0 ký tự Hán sót trong giá trị dịch, 0 dấu ngoặc kép thẳng.
+- Áp bằng `apply_json_glossary_field.py desc` → **87/87 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **51.667 → 49.891**. Đồng bộ config1 (3 lượt).
+- **Tổng tiến độ `config.json` cả phiên**: **178.028 → 49.891** ký tự Hán còn lại (giảm 72%).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
