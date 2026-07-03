@@ -1,5 +1,5 @@
 <?php
-	$cdn = "http://71.31.97.241:81";  //Cấu hình địa chỉ tài nguyên
+	$cdn = "http://71.31.97.241";  //Cấu hình địa chỉ tài nguyên
 	$key = "4QrcOUm6WauVuBX8gPg";
 	$account = $_REQUEST['uid'];
 	$sign = $_REQUEST['sign'];

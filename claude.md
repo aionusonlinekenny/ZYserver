@@ -44,6 +44,9 @@ Khởi động bằng các file `.bat` ở gốc repo:
 - `0.一键打开所有修改的文件.bat` → mở sẵn (bằng Notepad++) đúng 6 file cần sửa IP khi đổi server — chính là kim chỉ nam cho phần phân tích bên dưới.
 
 ### B. Website (PHP, thư mục `phpStudy/PHPTutorial/WWW`)
+
+> ⚠️ **Đã cập nhật 2026-07-03**: phân tích ban đầu bên dưới (dựa trên cấu hình mẫu trong repo) suy đoán có "2 port song song" 80+81. Test thực tế cho thấy **chỉ port 80 được dùng** — Nginx tự phục vụ hết, không cần Apache:81. Đã sửa `$cdn`/`$clientip` bỏ `:81`, xem chi tiết & lý do ở mục 3.3–3.4.
+
 Chạy trên **phpStudy** (gói XAMPP-like cho Windows), gồm:
 - **Nginx** (`phpStudy/PHPTutorial/nginx`) — nghe **port 80**, proxy PHP qua FastCGI `127.0.0.1:9000`. Đây là web chính (trang chủ / vào game / đăng ký).
 - **Apache** (`phpStudy/PHPTutorial/Apache`) — nghe **port 81** (`Listen 81` trong `httpd.conf`), cùng trỏ `DocumentRoot` vào **cùng thư mục WWW**. Port 81 được dùng làm **"CDN"** — nơi client game (JS/H5) tải tài nguyên (`js/*.js`, `resource/*`) và cũng là URL client được redirect tới sau khi đăng nhập.
@@ -139,14 +142,16 @@ battleInfo ip = "192.168.200.129"  →  "127.0.0.1"  (khuyến nghị, vì s99 t
 
 ### 3.3. Website (`phpStudy/PHPTutorial/WWW/`)
 
+> ✅ **CẬP NHẬT 2026-07-03 (đã xác nhận từ test thực tế của bạn)**: web thực tế chỉ chạy **port 80 duy nhất** (Nginx phục vụ trực tiếp toàn bộ `DocumentRoot` gồm cả `WWW/js`, `WWW/resource`, `WWW/reg` — không cần Apache:81 ở giữa, xem mục 3.4). Port `:81` trong `$cdn`/`$clientip` là **sai/thừa** so với cách server đang chạy thật — đã bỏ hẳn, không dùng phương án "giữ 2 port song song" nữa.
+
 **`index.php`** (dòng 2)
 ```php
-$cdn = "http://192.168.200.129:81";  →  $cdn = "http://71.31.97.241:81";
+$cdn = "http://192.168.200.129:81";  →  $cdn = "http://71.31.97.241";   // đã bỏ :81
 ```
 
 **`reg/api/config.php`** (dòng ~14)
 ```php
-$clientip = 'http://192.168.200.129:81';  →  $clientip = 'http://71.31.97.241:81';
+$clientip = 'http://192.168.200.129:81';  →  $clientip = 'http://71.31.97.241';   // đã bỏ :81
 ```
 
 **`reg/server.php`** dùng biến `$clientip` từ file trên (đã tự động đổi theo, không cần sửa thêm).
@@ -155,21 +160,15 @@ $clientip = 'http://192.168.200.129:81';  →  $clientip = 'http://71.31.97.241:
 
 ### 3.4. Web server config (phpStudy)
 
-**`phpStudy/PHPTutorial/Apache/conf/httpd.conf`**
-```
-Listen 81            → giữ nguyên (đã đúng ý định "port 81 cho CDN/client entry")
-ServerName localhost  → có thể đổi thành 71.31.97.241 (không bắt buộc, chỉ ảnh hưởng header trả về khi lỗi)
-```
-
-**`phpStudy/PHPTutorial/nginx/conf/nginx.conf`**
+**`phpStudy/PHPTutorial/nginx/conf/nginx.conf`** — đây là service thực tế phục vụ toàn bộ web (port 80), `root` trỏ thẳng vào `WWW/` nên tự phục vụ luôn cả `WWW/js/`, `WWW/resource/` (phần trước đây tưởng lầm là cần Apache:81 riêng để "tải resource game"). PHP được xử lý qua FastCGI nội bộ (port 9000), không qua Apache.
 ```
 listen 80;            → giữ nguyên (đúng yêu cầu "port 80 cho web")
 server_name localhost; → có thể đổi thành 71.31.97.241 (không bắt buộc)
 ```
 
-> ⚠️ **Điểm quan trọng cần lưu ý:** Hệ thống này dùng **2 port web song song**: `80` (Nginx – trang chủ, đăng ký) và `81` (Apache – tải tài nguyên game + trang loader client, được `index.php`/`reg/api/config.php` trỏ cứng tới). Nếu bạn chỉ mở port 80 mà **không mở port 81**, người chơi sẽ vào được trang chủ nhưng **không tải được resource game / không vào được game** (link `$cdn` và `$clientip` sẽ chết). Có 2 lựa chọn:
-> 1. **Giữ nguyên kiến trúc gốc**: mở cả port 80 và 81, trỏ cả 2 về `71.31.97.241`. (khuyến nghị — ít thay đổi nhất, đúng với thiết kế gốc của server)
-> 2. **Gộp về 1 port 80 duy nhất**: sửa `$cdn`/`$clientip` thành `http://71.31.97.241` (bỏ `:81`), đồng thời cấu hình lại Apache/Nginx sao cho toàn bộ traffic (kể cả phần hiện đang ở port 81) đi qua port 80 (ví dụ dùng Nginx làm reverse-proxy `location` riêng cho phần CDN, tắt hẳn Apache). Cách này cần sửa thêm nginx.conf và test kỹ, rủi ro cao hơn.
+**`phpStudy/PHPTutorial/Apache/conf/httpd.conf`** (`Listen 81`) — **không cần mở ra internet nữa** vì thực tế không dùng đến (Nginx đã tự phục vụ hết trên port 80). Có thể giữ nguyên cấu hình này chạy nội bộ (không ảnh hưởng gì nếu không mở firewall port 81) hoặc tắt hẳn service Apache nếu muốn gọn — không bắt buộc phải làm ngay.
+
+> ⚠️ **Bài học rút ra**: phần phân tích ban đầu (mục cũ) suy đoán từ code có "2 port song song" (80 cho web, 81 cho CDN resource) dựa theo cấu hình mẫu trong repo, nhưng **thực tế vận hành của bạn chỉ dùng 1 port 80** — Nginx đã đủ phục vụ mọi thứ. Đây là ví dụ cho thấy cần **luôn ưu tiên xác nhận qua test thực tế** thay vì chỉ suy luận từ file cấu hình, vì có thể có sai khác giữa cấu hình mẫu và cách server thực sự chạy.
 
 ### 3.5. MySQL
 `phpStudy/PHPTutorial/MySQL/my.ini` — không có `bind-address` (mặc định nghe mọi interface tuỳ version). **Không cần/không nên** đổi gì ở đây — MySQL chỉ được các service nội bộ (game server, web) gọi qua `127.0.0.1`, **không cần và không nên mở port 3306 ra internet** (rủi ro bảo mật cao — dễ bị brute-force/tấn công database).
@@ -182,8 +181,7 @@ server_name localhost; → có thể đổi thành 71.31.97.241 (không bắt bu
 
 | Port | Giao thức | Dịch vụ | Ghi chú |
 |---|---|---|---|
-| **80** | TCP | Nginx — website chính (trang chủ, đăng ký/đăng nhập) | Theo yêu cầu của bạn |
-| **81** | TCP | Apache — CDN tài nguyên game + trang loader client | Bắt buộc nếu giữ kiến trúc gốc (xem mục 3.4) |
+| **80** | TCP | Nginx — website chính + CDN tài nguyên game + trang loader client (phục vụ hết trên 1 port) | Đã xác nhận qua test thực tế — **không cần mở port 81** |
 | **9001** | TCP | Gateway server **s1** — client game kết nối trực tiếp | |
 | **9009** | TCP | Gateway server **s99** (khu liên server) — client game kết nối trực tiếp | Chỉ cần nếu người chơi có thể vào thẳng khu s99 |
 | **10101** | TCP | "LoginServer" mà GameWorld s1 kết nối tới | Chỉ mở nếu có service thật sự lắng nghe port này (xem lưu ý bên dưới) |
@@ -208,13 +206,12 @@ Các port này chỉ nên bind `127.0.0.1` hoặc `0.0.0.0` **nhưng bị chặn
 
 ## 5. Checklist thực hiện khi go-live
 
-1. **Trên máy chủ (Windows)**: mở Windows Firewall (hoặc firewall của nhà cung cấp VPS) cho các port bắt buộc ở mục 4 — chiều **Inbound TCP**: 80, 81, 9001, 9009 (và 10101/7001 nếu xác nhận có service lắng nghe).
+1. **Trên máy chủ (Windows)**: mở Windows Firewall (hoặc firewall của nhà cung cấp VPS) cho các port bắt buộc ở mục 4 — chiều **Inbound TCP**: 80, 9001, 9009 (và 10101/7001 nếu xác nhận có service lắng nghe). **Không cần mở port 81** (xem mục 3.4).
 2. Nếu máy chủ nằm sau NAT/router (không có IP `71.31.97.241` gắn trực tiếp vào máy), cần **port forward** các port trên từ router tới IP LAN thật của máy Windows.
-3. Sửa 8 điểm cấu hình liệt kê ở mục 3.1–3.3 (đổi `106.55.254.14` / `192.168.200.129` → `71.31.97.241`, giữ nguyên mọi chỗ `127.0.0.1`).
+3. Sửa các điểm cấu hình liệt kê ở mục 3.1–3.3 (đổi `106.55.254.14` / `192.168.200.129` → `71.31.97.241`, bỏ `:81` khỏi `$cdn`/`$clientip`, giữ nguyên mọi chỗ `127.0.0.1`).
 4. Restart toàn bộ service: chạy `99.停止所有.bat` rồi `2.启动基础服务.bat` → `3.启动 1 区服务.bat` → `4.启动跨服区服务.bat`.
 5. Test từ **một máy khác** (ngoài mạng LAN, ví dụ điện thoại 4G):
-   - Mở `http://71.31.97.241` → trang chủ web load được (test port 80).
-   - Mở `http://71.31.97.241:81` → trang loader game load được, không lỗi tải resource (test port 81).
+   - Mở `http://71.31.97.241` → trang chủ web load được, resource game (`js/`, `resource/`) cũng load được qua cùng port 80 (test port 80 duy nhất).
    - Đăng ký/đăng nhập tài khoản qua `reg/` → được redirect đúng, vào được client game (test toàn luồng + port 9001/9009).
 6. Kiểm tra log server (`server/bin/s{n}/gameworld/scripterror.txt`, `db_dbg.txt`) xem GameWorld có báo lỗi kết nối LoginServer/LogServer (`106.55.254.14`/`192.168.200.129` cũ) hay không — nếu còn sót IP cũ ở đâu, log sẽ báo "connect failed" tới IP đó.
 7. **Bảo mật**: đổi các mật khẩu MySQL đang hardcode dạng plain-text trong repo (`0987abc123`, `123456`, `root`...) trước khi public server — đây là rủi ro bảo mật thực sự khi source này lộ ra internet.

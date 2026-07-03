@@ -11,7 +11,7 @@ $conn = @mysql_connect ( '127.0.0.1', 'root', '0987abc123' ) or die ( "Kết n�
 mysql_select_db ( 'globaldata', $conn );
 mysql_query ( "SET NAMES utf8" );
 //==============
-$clientip = 'http://71.31.97.241:81';
+$clientip = 'http://71.31.97.241';
 //==============
 // 公共函数调用
 function getstr($str) {
