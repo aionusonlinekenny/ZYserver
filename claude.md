@@ -404,12 +404,22 @@ Từ ảnh chụp màn hình test thực tế, thấy menu dưới cùng, tên k
 - Kết quả field `"name"`: còn **3.160 lượt / 2.640 tên riêng biệt** chưa dịch (giảm từ 4.162/2.897 sau round 1). Tổng ký tự Hán còn lại trong toàn file `config.json` (gồm cả `desc`): **183.535** (giảm từ ~188.173).
 - **Bài học lưu để không lặp sai lầm**: khi gộp nhiều nguồn glossary (generator ghép từ + generator mẫu chuỗi + dịch tay) cho cùng 1 round, phải **merge tất cả vào 1 file rồi mới kiểm tra bad-quotes 1 lần cuối** trước khi `apply_json_glossary.py` — tránh áp nhiều lần rời rạc dễ quên bước kiểm tra ở 1 trong các nguồn.
 
+### 8.4.5. Round 3 dịch field "name" trong config.json (2026-07-03)
+
+- Phát hiện thêm 1 mẫu ghép từ rất lớn: **"{Tên nhân vật}的{loại phụ kiện}"** — 8 loại phụ kiện cố định (香囊/项链/玉佩/玉簪/手镯/耳坠/戒指/镜子, đã có bản dịch chuẩn từ round 2: Túi Hương/Dây Chuyền/Ngọc Bội/Ngọc Trâm/Vòng Tay/Bông Tai/Nhẫn/Gương) nhân với 11 tên nhân vật khác nhau (璃渝, 伞中仙, 玄霄, 白淑, 诗缘, 紫霓衫, 璃絮, 奚佳瑶, 舞伞, 蓝不归, 栾九霄) → sinh tự động **88 mục** chỉ bằng cách dịch tên nhân vật, giữ nguyên format "{phụ kiện} {tên}" đã dùng nhất quán từ round 2.
+- Thêm 2 generator mẫu chuỗi mới: `[màu]色N转装备` (giống "N级装备" ở round 2 nhưng dùng chữ "转" — chuyển) và `累计充值|C:...|元` / `金币消耗|C:...|万` (dùng lại cấu trúc rich-text tag `|C:...|` như các mẫu trước).
+- Dịch tay thêm ~250 tên: chủ yếu địa danh (山/塔/宫/殿/阁/台/岛/域/关/谷...), thành ngữ/cụm 4 chữ mang tính mỹ từ (乘风破浪, 国色天香, 沉鱼落雁...) dùng cho các item "thời trang/vẻ đẹp", và tên quái/boss thêm.
+- Gộp 361 mục (không trùng round 1+2) vào `translation/glossary_config_names3.json`, `bad quotes: 0`.
+- Áp bằng `apply_json_glossary.py` → **764 lượt thay thế**. Xác minh `json.load()` hợp lệ.
+- Kết quả field `"name"`: còn **2.396 lượt / 2.279 tên riêng biệt** chưa dịch (giảm từ 3.160/2.640). Tổng ký tự Hán còn lại toàn file: **180.160** (giảm từ 183.535).
+- **Bài học**: khi thấy 1 tên xuất hiện nhiều lần với hậu tố lặp lại y hệt nhau (vd `的香囊`, `的项链`...) → luôn kiểm tra xem có phải "N tên nhân vật × M loại phụ kiện cố định" không trước khi dịch tay từng dòng, vì tiết kiệm công rất lớn (11×8=88 chỉ cần dịch 11 tên).
+
 **Tổng kết thực tế tại thời điểm này**: việc dịch game này có **6+ lớp nội dung tách biệt**, quy mô lớn hơn nhiều so với ước tính ban đầu ("Giai đoạn 5 và 6"):
 1. exml UI (Giai đoạn 1-4) — ĐÃ XONG 100% (nhưng phải vá thủ công vào `default.thm_70915153.js` vì exml không được build lại)
 2. `main.min_d7aad928.js` code logic — còn ~16.500 ký tự, RỦI RO CAO (có thể phá logic nếu dịch nhầm)
 3. `data/language/zh-cn/*.txt` server (Giai đoạn 5) — còn ~14.682 chuỗi / 100 file
 4. `data/config/language/lang/*.config` server (11.068 dòng) — CHƯA khảo sát
-5. `resource/config/config.json` + `config1/*.json` client (Giai đoạn 6 mở rộng) — field "name" còn 2.640 tên riêng biệt / tổng file còn ~183.5K ký tự Hán (`desc` là phần lớn)
+5. `resource/config/config.json` + `config1/*.json` client (Giai đoạn 6 mở rộng) — field "name" còn 2.279 tên riêng biệt / tổng file còn ~180K ký tự Hán (`desc` là phần lớn)
 6. `data/config/**/*.config` server (401 file, Giai đoạn 6 gốc) — CHƯA bắt đầu, có thể trùng lặp một phần với mục 4/5
 
 ### 8.5. Lưu ý triển khai
