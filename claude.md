@@ -644,6 +644,13 @@ Tiếp tục quét field theo đòn bẩy (ít giá trị duy nhất, nhiều l�
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **78.886 → 75.786**.
 - **Tổng tiến độ `config.json` trong phiên này**: từ **178.028 → 75.786** ký tự Hán còn lại (giảm 57%, qua 9 round dịch liên tiếp 8.4.7d→8.4.7i). Còn lại lớn nhất: `desc` phần đuôi dài (~1.100 giá trị duy nhất, ~38K ký tự), `bulletDesc` (500 giá trị duy nhất/500 lượt, 11K ký tự, không có đòn bẩy lặp — cần dịch tay), `name` (1.925 giá trị duy nhất còn lại từ round trước, ~9.4K ký tự), `text` (39 giá trị nhưng dài, ~6.4K ký tự — hướng dẫn cơ chế game).
 
+### 8.4.7j. Dịch toàn bộ field `bulletDesc` bằng 1 generator duy nhất (2026-07-03)
+
+`bulletDesc` có 500 giá trị duy nhất / 500 lượt (không lặp lại theo văn bản gốc, nhưng **toàn bộ 500 giá trị hoá ra cùng chung đúng 1 khuôn mẫu** khi chuẩn hoá số → `#`: "mỗi Linh Châu sẽ gây N% công kích lực Linh Châu + N sát thương (công kích lực Linh Châu: N)"). Viết 1 regex generator duy nhất, khớp và dịch **500/500 (100%)** trong một bước.
+
+- Áp bằng `apply_json_glossary_field.py bulletDesc` → **500/500 lượt khớp**. `json.load()` xác nhận hợp lệ, 0 dấu ngoặc kép thẳng.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **75.786 → 64.786** (giảm 11.000 ký tự chỉ từ 1 generator).
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
