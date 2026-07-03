@@ -866,6 +866,22 @@ Người dùng chụp ảnh màn hình Pháp Thuật (法术) cho thấy tên k�
 - **Cập nhật sau khi người dùng deploy và test thật (2026-07-03)**: `lv.x=400` hết đè lên tên nhưng lại đè sang icon đồng tiền/giá nâng cấp (`costAll`, cùng hàng y≈15) bên phải — thử `lv.x=355` + `skillName.width=230`, nhưng người dùng phản hồi **không cần giới hạn width cho tên, chỉ cần dời `lv.x` về 360 là đã ổn**. Chốt cấu hình cuối: bỏ hẳn `skillName.width` (quay lại tự động co giãn theo nội dung như bản gốc), chỉ giữ `lv.x = 360`. Đây là quy trình lặp thực tế do không thể xem trực tiếp UI đã deploy: sửa → người dùng deploy+chụp ảnh → tinh chỉnh tiếp theo phản hồi — đã lặp 3 lần (259 gốc → 400 → 355+width230 → 360 không width) để ra vị trí người dùng xác nhận ổn.
 - **Đây là khuôn mẫu để xử lý các trường hợp đè chữ khác sau này**: (1) tìm 2 property Label riêng trong `main.min` set qua `.text=`, (2) tìm skin class chứa cặp đó trong `default.thm` qua tên hàm `_proto.<tên>_i` gần nhau, (3) xác nhận đúng class qua `generateEUI.paths['resource/exml/...']`, (4) đối chiếu toàn bộ layout hàng đó để biết khoảng trống thật sự an toàn trước khi dời x.
 
+### 8.4.7zd. Round 10 dịch `desc` — 19 giá trị 70-110 ký tự + thống kê toàn dự án (2026-07-03)
+
+Dịch 19 giá trị `desc` còn lại trong khoảng 70-110 ký tự (5 qua generator cho bộ "大寂灭道首/上/中/下/终篇", 14 dịch tay: hộp quà Lạp Bát Tiết, kỹ năng Linh Châu, thánh hồn Thần Binh, mở khóa kỹ năng theo bậc...).
+
+- Áp bằng `apply_json_glossary_field.py desc` → **19/19 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **41.254 → 40.643**. Đồng bộ config1 (2 lượt).
+
+**Thống kê toàn dự án theo yêu cầu người dùng (2026-07-03)** — tổng ký tự Hán còn lại theo từng khu vực (tính trên `s1`, đồng bộ sang `s99` sau khi dịch xong):
+- `config.json` (client): 40.643 (`desc` còn ~546 giá trị, `name` còn ~1.642 giá trị)
+- `main.min_d7aad928.js` (client logic): 4.130
+- `default.thm_70915153.js` (client skin): 184
+- `data/language/zh-cn/*.txt` (server, Phase 5, 111 file): ~220.883 trong 54/111 file — 5 file khổng lồ chưa đụng: talk.txt, item.txt, skill.txt, scripttips.txt, quest.txt (~177K, chiếm 80% phần còn lại)
+- `data/config/**/*.config` (server, Phase 6, 422 file, không tính language/lang): ~259.072 trong 385 file — **chưa bắt đầu**. Xác nhận đây là nguồn màn "竞技" (Đấu Trường) người dùng chụp ảnh (file `teamfuben.config` chứa đúng chuỗi mô tả cảnh "碧海仙境摇摇欲坠..." nhìn thấy trong ảnh)
+- `data/config/language/lang/*.config` (server, hệ thống dịch động thứ 2, 16 file): ~135.748 — **chưa bắt đầu**
+- **TỔNG toàn dự án còn lại: ~661.000 ký tự Hán**
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
