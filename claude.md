@@ -687,6 +687,18 @@ Dịch tiếp `middleDesc`, `giftName`, `buttonDesc`, `record`, `finishwarning`,
 - File repo này (Claude Code session) là **bản làm việc**, không tự động đồng bộ với máy chủ Windows thật đang chạy — sau khi dịch xong từng giai đoạn ở đây, cần copy file đã dịch sang đúng đường dẫn tương ứng trên máy chủ thật rồi restart service liên quan để áp dụng.
 - Nên giữ 1 file glossary (bảng thuật ngữ) dùng chung xuyên suốt các giai đoạn để thuật ngữ game (tên hệ thống, đơn vị, chức danh...) nhất quán, tránh mỗi giai đoạn dịch một kiểu khác nhau.
 
+### 8.4.7n. Dịch tiếp loạt field nhỏ vòng 4 + đồng bộ config1 (2026-07-03)
+
+Dịch `explain`, `tabName`, `showName`, `headTxt`, `btn_name`, `suitTname`, `description`, `guideText` (8 field, 115 giá trị duy nhất):
+
+- `showName` (20): tên cảnh giới Phi Thăng × giai đoạn (脱凡境/三山境/九霄境/飞升境/仙人境/大罗境 × 破妄/大乘) — dùng lại "Cửu Tiêu" đã thiết lập, thêm 4 cảnh giới mới (Thoát Phàm/Tam Sơn/Phi Thăng/Tiên Nhân/Đại La Cảnh) và giai đoạn Phá Vọng.
+- `headTxt` (4), `btn_name` (23), `suitTname` (10): generator số học đơn giản, phủ gần hết.
+- `description` (10): mô tả đặc quyền VIP nhiều dòng — viết bộ 14 quy tắc regex theo TỪNG DÒNG (tách bằng `\n`, dịch từng dòng rồi ghép lại) thay vì cố khớp cả khối, vì các dòng lặp lại xen kẽ không theo thứ tự cố định giữa 10 giá trị; **bắt lỗi khi rule đầu tiên dùng backreference tĩnh cho số La Mã Hán (一/二/三) mà quên đổi sang số Ả Rập** — phát hiện qua bước kiểm tra "còn ký tự Hán trong value đã dịch" (dò thấy `|C:...&T:一|` sót lại), sửa bằng hàm thay thế động thay vì template tĩnh.
+- `guideText` (32): tooltip chiến thuật đánh BOSS Thiên Địa Yêu Trủng — dịch tay toàn bộ, dùng lại tên quái đã dịch ở round trước (Ma Tẫn Cự Linh, Bạch Vô Thường, Lan Lộ Tu Sĩ, Tam Thủ Diễm Báo).
+- Áp riêng từng field → **157 lượt thay thế**, đúng số lượt kỳ vọng. `json.load()` hợp lệ, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót trong giá trị dịch.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **61.649 → 59.462**. Chạy lại `sync_config1_from_config.py` đồng bộ 4 file chunk.
+- **Tổng tiến độ `config.json` cả phiên**: **178.028 → 59.462** ký tự Hán còn lại (giảm 67%).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
