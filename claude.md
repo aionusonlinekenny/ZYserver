@@ -846,6 +846,15 @@ Dịch 60 giá trị `desc` ngắn còn sót (≤70 ký tự):
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **44.488 → 43.158**. Đồng bộ config1 (1 lượt).
 - **Tổng tiến độ `config.json` cả phiên**: **178.028 → 43.158** ký tự Hán còn lại (giảm 76%).
 
+### 8.4.7zb. Round 9 dịch `desc` — 50 giá trị 70-110 ký tự (2026-07-03)
+
+Dịch 50/69 giá trị `desc` trong khoảng 70-110 ký tự: 2 generator (hộp ma thuật theo số mảnh Chủ Tể tăng dần, thưởng theo mốc điểm Tiên Cung Tranh Bá) phủ 9 giá trị; 41 giá trị dịch tay (thánh hồn kích hoạt Thần Binh, tiên văn tuỳ chọn, thẻ đồ giám kim trang, rương Phá Nguyệt Tiên Cung, lore quái Kiềm Trùng...). Bắt lỗi nhỏ tự sửa: sót ký tự "卡" (thẻ) chưa dịch trong 2 câu tên vật phẩm ghép — sửa thành "Thẻ" trước khi áp.
+
+- Đối chiếu 100% key với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py desc` → **50/50 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **43.158 → 41.254**. Đồng bộ config1 (2 lượt).
+- **Tổng tiến độ `config.json` cả phiên**: **178.028 → 41.254** ký tự Hán còn lại (giảm 77%). Còn lại `desc`: ~565 giá trị duy nhất, độ dài trung vị ~230 ký tự (mô tả kỹ năng/lore dài, phần khó nhất còn lại).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
