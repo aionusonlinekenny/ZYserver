@@ -672,6 +672,15 @@ Trước khi dịch tiếp, kiểm tra `resource/config1/config0.json`...`config
 - `json.load()` xác nhận cả 7 file vẫn hợp lệ sau khi ghi.
 - **Lưu ý cho các round dịch tiếp theo của `config.json`**: phải chạy lại `sync_config1_from_config.py` sau mỗi lần dịch thêm để giữ 2 nơi nhất quán (khác với việc đồng bộ s1/s99 vốn là 2 bộ dữ liệu server độc lập — ở đây `config1/*` chỉ là "bản chia nhỏ" của đúng 1 nguồn `config.json`, nên luôn đồng bộ 1 chiều từ `config.json` sang).
 
+### 8.4.7m. Dịch tiếp loạt field nhỏ vòng 3 + đồng bộ config1 (2026-07-03)
+
+Dịch tiếp `middleDesc`, `giftName`, `buttonDesc`, `record`, `finishwarning`, `tips`, `use`, `suitCondition`, `showLevel`, `showText`, `startwarning`, `monName` (12 field, tổng 159 giá trị duy nhất, hầu hết dịch tay + 2 generator nhỏ cho `showText`/`suitCondition`). `suitCondition` dùng lại đúng 9/10 tên bộ nguyên liệu Hán Việt đã thiết lập ở round `desc` (Lãng Đào/Phúc Hải/Đông Lai/Vạn Lý/Man Hoang/Huyết Hải/Đồ Lục/Công Đức/Minh Huỳnh), riêng "九霄" (khác "九天" đã dùng ở nơi khác) dịch độc lập thành "Cửu Tiêu" vì đây là chuỗi khác trong dữ liệu gốc.
+
+- Xác minh: 0 dấu ngoặc kép thẳng, 0 lỗi escape newline, 100% key khớp text thô.
+- Áp riêng từng field → **352 lượt thay thế**, đúng số lượt kỳ vọng. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **63.544 → 61.649**.
+- Chạy lại `sync_config1_from_config.py` ngay sau đó để đồng bộ `config1/*.json` (15 lượt key cập nhật trên 4 file).
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
