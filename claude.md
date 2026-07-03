@@ -397,7 +397,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong file thứ 21: **`npctalk.txt`** (138 chuỗi duy nhất, 138 lượt trong file, hoàn thành 100%) — lời thoại phiếm (ambient chatter) của NPC thường dân/tiểu yêu rải rác khắp bản đồ: gồm 2 nhóm chính — (a) ~65 câu ngạn ngữ/danh ngôn triết lý nhân sinh không liên quan cốt truyện (kiểu random flavor text), và (b) ~70 câu lời thoại theo bối cảnh khu vực cụ thể (Giao Nhân tộc, Long tộc, Cửu Âm Tông, Cửu U, Dược Vương Cung, cổ tiên bí tàng...) cùng 4 chuỗi dài thông báo lịch bang chiến 王城争夺/皇城争霸. Dịch tay toàn bộ (0% tái sử dụng glossary cũ do nội dung độc lập). `luac5.3 -p` pass, 0 tiếng Trung còn sót. Đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 21/109 file, 3.300 chuỗi đã dịch** (20 file trước + `npctalk.txt` 138 chuỗi hoàn thành 100%).
+- Đã dịch xong file thứ 22: **`normaltalk.txt`** (132 chuỗi duy nhất, 146 lượt trong file, hoàn thành 100%) — lời thoại NPC quan trọng có tên riêng gắn liền cốt truyện: Chỉ Vân/Cửu Thiên Huyền Nữ tại Tiêu Diêu Thành, cây già Đạp Vân Hồ tộc kể về Huyền Thiên Tông/Xích La Môn/Vạn Kiếm Sầu, các NPC phát nhiệm vụ tại từng khu vực/phó bản theo mốc cấp độ (kèm gợi ý `<(c0xFF00FF00)...>`), và các đoạn hoài niệm/độc thoại nội tâm mang màu sắc thơ cổ điển của nhiều nhân vật (Y Nhi, Liên Tinh, Thanh Nhi, Tố Trinh...). Cũng có thông báo lễ hội theo mùa (Quốc Khánh, Giáng Sinh, Thất Tịch, Thanh Minh) và mô tả 10 thần khí thượng cổ. Dịch tay toàn bộ. `luac5.3 -p` pass, 0 tiếng Trung còn sót. Đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 22/109 file, 3.432 chuỗi đã dịch** (21 file trước + `normaltalk.txt` 132 chuỗi hoàn thành 100%).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
