@@ -1,0 +1,9 @@
+{
+"琴音具备治愈能力，令目标每秒恢复|C:0x00842C&T:8%攻击+%s%|点生命，持续|C:0x00842C&T:10|秒": "Cầm âm có khả năng trị liệu, khiến mục tiêu mỗi giây hồi phục |C:0x00842C&T:8% công kích+%s%| điểm sinh lực, kéo dài |C:0x00842C&T:10| giây",
+"幻化凤凰之火灼烧目标，使其每秒减少|C:0x00842C&T:55%攻击+%s%|点生命，持续|C:0x00842C&T:3|秒": "Hóa hình lửa Phượng Hoàng thiêu đốt mục tiêu, khiến mỗi giây giảm |C:0x00842C&T:55% công kích+%s%| điểm sinh lực, kéo dài |C:0x00842C&T:3| giây",
+"斩出数道轮形剑气，造成|C:0x00842C&T:100%攻击+%s%|点伤害和|C:0x00842C&T:1.5|秒眩晕": "Chém ra nhiều đạo kiếm khí hình vòng, gây |C:0x00842C&T:100% công kích+%s%| điểm sát thương và |C:0x00842C&T:1.5| giây choáng",
+"幻化灵伞并汇聚为无形的灵盾，减免|C:0x00842C&T:%s%|伤害，减免上限为攻击的|C:0x00842C&T:95%|": "Hóa hình Linh Tản và hội tụ thành Linh Thuẫn vô hình, giảm |C:0x00842C&T:%s%| sát thương, mức giảm tối đa là |C:0x00842C&T:95%| công kích",
+"乐曲振荡灵力环绕周，增加双抗各|C:0x00842C&T:%s%|点，持续|C:0x00842C&T:30|秒": "Nhạc khúc chấn động linh lực bao quanh, tăng song kháng mỗi loại |C:0x00842C&T:%s%| điểm, kéo dài |C:0x00842C&T:30| giây",
+"伞掷至半空爆射出秘剑剑气，对周围敌人造成|C:0x00842C&T:95%攻击+%s%|点伤害": "Ném tản lên không trung bắn ra bí kiếm kiếm khí, gây |C:0x00842C&T:95% công kích+%s%| điểm sát thương cho kẻ địch xung quanh",
+"如同幻影的伞舞，攻击波及多个目标，造成|C:0x00842C&T:65%攻击+%s%|点伤害": "Như tản vũ ảo ảnh, tấn công lan tới nhiều mục tiêu, gây |C:0x00842C&T:65% công kích+%s%| điểm sát thương"
+}

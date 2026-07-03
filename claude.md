@@ -772,6 +772,14 @@ Người dùng gửi thêm 2 ảnh chụp màn hình (màn hình chính, màn Ph
 - Kết quả tổng: `main.min_d7aad928.js` giảm từ **5.831 → 4.194** ký tự Hán còn lại (giảm 1.637 ký tự chỉ trong lượt kiểm tra/sửa bug này — phần lớn là do các đợt TRƯỚC ĐÓ trong phiên thực ra chưa áp hết như tưởng).
 - **Bài học quan trọng cho các lần sửa JS minified lớn sau này**: KHÔNG được chỉ tin vào con số "X/Y khớp" do script tự báo cáo khi X == Y trùng khớp số lượng — phải xác minh bằng `content.count('"key"')` (str thuần, không qua regex) SAU khi áp để chắc chắn 0 chuỗi Trung còn sót, đặc biệt với file > 1MB dạng minified 1 dòng.
 
+### 8.4.7u. Dịch 7 mô tả kỹ năng chính (active skill) còn sót của Lạc Anh/Trường Ca (2026-07-03)
+
+Ảnh chụp màn hình "法术" (Pháp Thuật) của người dùng cho thấy 2 kỹ năng chính của Lạc Anh (Tản Trung Bí Kiếm, Tứ Phương Linh Động) vẫn hiện mô tả tiếng Trung dù các kỹ năng khác cùng dạng đã dịch. Tìm bằng cách lọc tất cả giá trị `desc` còn sót chứa mã màu `0x00842C` (mã màu riêng cho mô tả 5 kỹ năng chính trang bị của mỗi nhân vật — rất nhiều người chơi nhìn thấy vì luôn hiện ở màn hình kỹ năng chính) → tìm được đúng 7 giá trị còn sót (7/15 tổng kỹ năng chính 3 nhân vật, 8/15 đã dịch từ round trước đó trùng mã màu này).
+
+- Dịch tay toàn bộ 7 giá trị, đối chiếu 100% key với text thô trước khi áp.
+- Áp bằng `apply_json_glossary_field.py desc` → **7/7 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **49.891 → 49.736**. Đồng bộ config1 (1 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
