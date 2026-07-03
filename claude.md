@@ -615,6 +615,20 @@ Sau khi `desc` bước vào phần đuôi dài khó tận dụng generator (8.4.
 - Áp bằng `apply_json_glossary_field.py skillDesc` → **474/475 lượt khớp**. `json.load()` xác nhận hợp lệ.
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **92.593 → 82.796**.
 
+### 8.4.7h. Dịch loạt field nhỏ có đòn bẩy cao: `gName`, `type`, `str`, `blessWord`, `lockDesc`, `skillname` (2026-07-03)
+
+Quét lại toàn bộ file theo field để tìm field nào còn nhiều ký tự Hán nhưng ít giá trị duy nhất (đòn bẩy cao) — dịch 1 loạt field nhỏ cùng lúc:
+
+- `gName` (20 giá trị / 393 lượt): tên nhóm hoạt động (Nhật Thường, Thiên Địa Yêu Trủng, BOSS Dã Ngoại...).
+- `type` (15 giá trị / 134 lượt): danh xưng nhân vật (Thiên Binh, Minh Ty, Linh Tú... + các loại danh hiệu).
+- `str` (8 giá trị / 35 lượt): câu mô tả chọn vật phẩm/kích hoạt chiến lực.
+- `blessWord` (1 giá trị / 12 lượt): câu chúc mừng sự kiện.
+- `lockDesc` (27 giá trị / 45 lượt): tooltip mở khoá kỹ năng nhân vật (Ngự Tiêu/Lạc Anh/Trường Ca) — dùng nhất quán các tên kỹ năng đã dịch ở field `skillName` trước đó (8.4.7f).
+- `skillname` (chữ thường, field khác với `skillName` chữ hoa — 49 giá trị / 133 lượt): tên kỹ năng linh thú và các cấp độ buff (致命一击·N级, 焚天诀N层...).
+- Xác minh trước khi áp: 0 dấu ngoặc kép thẳng, 0 lỗi escape newline, **0 key không khớp với bất kỳ field mục tiêu nào trong text thô của file thật**.
+- Áp riêng từng field bằng `apply_json_glossary_field.py` → tổng **752 lượt thay thế**, đúng số lượt kỳ vọng từng field (393+134+35+12+45+133). `json.load()` xác nhận hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **82.796 → 78.886**.
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
