@@ -821,6 +821,19 @@ Dịch hết 28 giá trị `desc` còn lại trong khoảng 46-70 ký tự: 4 ge
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **47.233 → 46.404**. Đồng bộ config1 (2 lượt).
 - **Tổng tiến độ `config.json` cả phiên**: **178.028 → 46.404** ký tự Hán còn lại (giảm 74%). Còn lại trong `desc`: 736 giá trị duy nhất, hầu hết >70 ký tự (mô tả kỹ năng/lore dài).
 
+### 8.4.7z. Round 7 dịch `desc` — toàn bộ 61 thẻ ngoại hình/danh hiệu ("战力：..." template), 2026-07-03
+
+Dịch hết nhóm 61 giá trị `desc` bắt đầu bằng `|S:27&T:战力：|` — thẻ vật phẩm kích hoạt ngoại hình/trang phục nhân vật và thẻ danh hiệu xếp hạng, tất cả cùng khung "Chiến Lực：N + nguồn nhận + tên hiệu ứng":
+
+- 21 giá trị qua 3 generator con (nguồn hoạt động đơn giản, biến thể dấu `！`/`!`).
+- 14 giá trị qua 2 generator riêng cho **bảng xếp hạng mở server** (vĩnh viễn) và **mùa giải đỉnh phong liên server** (14 ngày) — ánh xạ đúng tên 7 bảng xếp hạng mở server + 7 mốc xếp hạng liên server (Top 4/8/16/32/64, Á Quân, Vô Địch) sang tên danh hiệu tiếng Việt tương ứng.
+- 26 giá trị dịch tay (nguồn nhận đa dạng: sự kiện Giáng Sinh, nạp tích lũy N ngày, Ma Giới Xâm Lược, Tiên Cung Tranh Bá, VIP5, đỉnh phong liên server theo hạng...).
+- **Phát hiện lỗi ngay sau khi áp generator**: 21/61 giá trị vẫn còn sót tên ngoại hình bằng tiếng Trung — vì generator chỉ dịch phần khung câu, KHÔNG dịch phần tên riêng chèn vào (capture group `name` được chèn thẳng không qua tra cứu). Sửa bằng cách trích xuất 21 tên ngoại hình còn sót (梦幻金装, 龙翔九天, 时空刺客...), dịch bổ sung, rồi thay thế lại trong toàn bộ giá trị đã dịch trước khi áp — **bài học: khi build generator có capture-group chèn thẳng text gốc (không qua template cố định), luôn phải kiểm tra lại "còn ký tự Hán trong value" SAU KHI gộp, không chỉ kiểm tra khớp key với file gốc**.
+- Đối chiếu 100% key với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót (sau khi sửa).
+- Áp bằng `apply_json_glossary_field.py desc` → **61/61 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **46.404 → 44.488**. Đồng bộ config1 (1 lượt).
+- **Tổng tiến độ `config.json` cả phiên**: **178.028 → 44.488** ký tự Hán còn lại (giảm 75%).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
