@@ -728,6 +728,19 @@ Tiếp tục phần đuôi dài của `desc`, dịch tay 87/204 giá trị trong
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **51.667 → 49.891**. Đồng bộ config1 (3 lượt).
 - **Tổng tiến độ `config.json` cả phiên**: **178.028 → 49.891** ký tự Hán còn lại (giảm 72%).
 
+### 8.4.7r. Dịch bảng tên thuộc tính (AttributeType label lookup) trong `main.min_d7aad928.js` — sửa lỗi hiển thị "生命/攻击/物抗/法抗" khắp mọi màn hình (2026-07-03)
+
+Người dùng gửi 3 ảnh chụp màn hình mới (Tiên Vũ, Thuộc Tính trang bị, Chuyển Sinh) cho thấy nhãn chỉ số **"生命" (Sinh Lực), "攻击" (Công Kích), "物抗" (Vật Kháng), "法抗" (Pháp Kháng)** vẫn hiện tiếng Trung ở HẦU HẾT các màn hình thống kê nhân vật/trang bị — dù các field liên quan trong `config.json` đã dịch xong, các nhãn này KHÔNG đến từ `config.json` mà từ 1 bảng tra cứu riêng trong JS logic.
+
+- Tìm ra nguồn gốc: hàm `function(t){var e="";switch(t){case AttributeType.atXXX:e="nhãn tiếng Trung";break;...}return e}` trong `main.min_d7aad928.js` — bảng tra cứu enum `AttributeType`→tên hiển thị, dùng ở MỌI nơi hiện thống kê (bảng nhân vật, tooltip trang bị, so sánh trước/sau khi nâng cấp...). Tìm được **69 cặp case→nhãn** (61 nhãn duy nhất do một số enum trùng nhãn, vd `atMaxHp`/`atAttack`/`atDef`/`atRes` xuất hiện 2 lần với 2 bộ nhãn khác nhau dùng ở 2 nơi khác nhau trong code, cộng thêm 1 biến thể "生       命" có khoảng trắng canh chỉnh dùng riêng).
+- **Xác minh an toàn theo đúng phương pháp đã thiết lập** (8.4.7b): quét toàn bộ file tìm `=="nhãn"` (so sánh ngược) → 0 kết quả; tìm truy cập bracket-key `obj["nhãn"]` → 0 kết quả; tìm `case "nhãn":` (dùng làm key switch khác) → 0 kết quả; đối chiếu số lần xuất hiện của mỗi nhãn trong toàn file khớp CHÍNH XÁC với số lần xuất hiện trong bảng `case AttributeType...e="..."` → xác nhận không có nơi nào khác dùng lại đúng chuỗi này cho mục đích khác. Đây là bảng tra cứu 1 chiều thuần hiển thị, an toàn tuyệt đối để dịch.
+- Áp bằng `apply_js_literal_glossary.py` → **70/70 lượt khớp, 61/61 glossary key khớp**. `node -c` hợp lệ.
+- Tìm thêm 10 nhãn "Chiến Lực/Cấp của tôi:..." dùng trong màn so sánh bảng xếp hạng (`我的等级:`, `我的仙羽等阶:`, `我的图鉴战力:`...) — mỗi nhãn chỉ xuất hiện đúng 1 lần trong toàn file, 0 so sánh ngược → an toàn, dịch và áp tiếp **10/10 lượt khớp**.
+- **Xác nhận riêng banner "战斗力:N"** (thanh ngang màu cam/đỏ hiện trong cả 3 ảnh chụp): tìm chuỗi `"战斗力"` trong CẢ HAI file JS đã biên dịch → **0 kết quả** (chỉ có "战力" xuất hiện trong 1 ngữ cảnh khác không liên quan — "我的图鉴战力:"). Vì banner có nền đồ hoạ nghệ thuật đặc trưng và text luôn cố định "战斗力:" + số động, kết luận đây là **chữ vẽ sẵn trong bitmap banner**, không thể sửa qua chỉnh sửa text — giữ nguyên theo đúng quy tắc bỏ qua bitmap của dự án.
+- **Xác nhận lại nhãn dãy icon dưới cùng** (法术/炼器/仙侣/历练/背包, 封神/灵宠/神御/仙纹/诛仙/幻化, và cả nhãn tiêu đề tab 属性/转生 xuất hiện trong 3 ảnh chụp): tìm lại từng chuỗi trong CẢ HAI file JS → **0 kết quả tất cả** — xác nhận lại (giống kết luận 8.4.7c trước đó) đây đều là chữ vẽ sẵn trong bitmap icon/banner, không có trong text để sửa.
+- Kết quả: `main.min_d7aad928.js` giảm **5.831 → 5.484** ký tự Hán còn lại.
+- **Đây là fix có tác động hiển thị RẤT LỚN** dù số ký tự ít — nhãn "Sinh Lực/Công Kích/Vật Kháng/Pháp Kháng" xuất hiện lặp lại hàng chục lần trên gần như MỌI màn hình thống kê nhân vật, trang bị, kỹ năng trong game.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
