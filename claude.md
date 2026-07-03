@@ -789,6 +789,18 @@ Tìm thấy bảng `t.NAME_CURRENCY={0:"经验",1:"Đồng Tiền",2:"Nguyên B�
 - Kết quả: `main.min_d7aad928.js` giảm **4.194 → 4.130** ký tự Hán còn lại.
 - **Tổng tiến độ `main.min_d7aad928.js` cả phiên**: **5.831 → 4.130** ký tự Hán còn lại (giảm 29%, riêng trong đợt rà soát theo ảnh chụp màn hình lần 2 này).
 
+### 8.4.7w. Bắt đầu quy tắc "dịch ngắn gọn cho vùng UI chật" — sửa 2 nhãn nút bị tràn chữ (2026-07-03)
+
+Theo yêu cầu người dùng: vì tiếng Việt luôn DÀI HƠN tiếng Trung (tiếng Trung 1 chữ = nhiều nghĩa, tiếng Việt cần nhiều từ hơn), một số bản dịch trước đây quá dài so với ô chữ cố định (button/tab) gây tràn/lệch UI (vd nút hiện "Đã đạt cấp tối đa" bị ngắt 2 dòng chật trong ảnh chụp trước đó).
+
+- **Giới hạn khả năng thực tế**: đây là bundle JS đã biên dịch từ EXML, vị trí/kích thước hầu hết là số cố định gắn với từng skin — chỉnh sửa layout thật (đổi width/x/y/fontSize) rủi ro cao và **không thể kiểm chứng bằng mắt** vì code trong repo này chưa deploy lên server thật (71.31.97.241 chỉ phản ánh bản ĐÃ deploy trước đó, không phản ánh thay đổi mới). Vì vậy hướng tiếp cận thực tế nhất là: **ưu tiên dịch ngắn gọn ngay từ đầu cho các nhãn nút/tab/label không gian chật**, và sửa từng trường hợp cụ thể người dùng chụp màn hình chỉ ra.
+- Quét toàn bộ glossary JS đã áp cho `main.min`/`default.thm`, lọc các cặp gốc-Hán ≤4 ký tự nhưng bản dịch ≥12 ký tự (khả năng cao dùng trong nút/tab hẹp) → xác nhận 2 trường hợp thực sự có vấn đề (không tính các tên riêng/tên quái/tên hoạt động vì các trường đó hiển thị ở vùng text linh hoạt, không phải nút cố định):
+  - `已满级`/`已达到最大等级` (nút trạng thái "đã đạt cấp tối đa" của kỹ năng — chính là nút bị tràn 2 dòng trong ảnh chụp trước) : "Đã đạt cấp tối đa" (17-18 ký tự) → rút gọn còn **"Tối Đa"** (6 ký tự).
+  - `申请` (nút xin gia nhập bang hội): "Xin gia nhập" (12 ký tự) → rút gọn còn **"Gia Nhập"** (8 ký tự).
+- Áp bằng str.replace ranh giới ngoặc kép trên cả 2 file → **33/33 lượt khớp** (14 trong main.min, 19 trong default.thm). `node -c` hợp lệ cả 2 file. Đồng bộ luôn 2 glossary nguồn (`glossary_js_main_safe.json`, `glossary_js_thm_safe.json`) để nhất quán cho các lần đối chiếu sau.
+- **Quy tắc áp dụng từ nay cho các bản dịch MỚI**: với nhãn nút/tab/label ngắn (nguyên gốc Hán ≤4 ký tự, ngữ cảnh rõ ràng là UI chật — nút hành động, trạng thái, tab), ưu tiên phương án tiếng Việt ngắn nhất còn giữ được nghĩa rõ ràng (2 từ trở xuống nếu được), thay vì dịch đầy đủ/trang trọng. Với mô tả/flavor text dài (skill desc, lore, hướng dẫn hệ thống) thì không cần rút gọn vì các vùng đó vốn đã linh hoạt độ dài.
+- **Vẫn cần người dùng tiếp tục chụp màn hình các chỗ cụ thể bị tràn/lệch** vì không có cách nào tôi tự kiểm chứng bằng mắt khi chưa deploy — đây là kênh phản hồi hiệu quả nhất hiện có.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
