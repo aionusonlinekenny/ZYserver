@@ -391,7 +391,7 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 - Đã dịch xong file thứ 15: **`fbtalk.txt`** (60 chuỗi, hoàn thành 100%) — lời thoại phó bản: Đồ Long Sơn Cốc, Ngũ Linh Huyền Thiên Trận, Phi Đao Môn, và 13 lore+chiến thuật boss thế giới huyễn cảnh (Băng Hỏa Ma, Bạch Phát Ma Sư, Tam Vĩ Diễm Hồ, U Minh Ma Quân, Diễm Vũ Phượng Hoàng, Kim Khải Huyền Vũ, Hắc Minh Ma Dực, Hỗn Độn Kiếm Ma, Thái Cổ Cùng Kỳ, Diệt Hồn Thiên Ma, Hồng Hoang Yêu Vu, Song Thân Ma Thần, Hình Thiên).
 - Đã dịch xong file thứ 16: **`kuafuzudui.txt`** (80 chuỗi, hoàn thành 100%) — bao gồm cả 2 rulebook rất dài (4508 + 847 ký tự) giải thích chi tiết luật "Tranh Đoạt Tiên Thành" và "Thánh Nguyên Thành Chi Chiến".
 
-**Tổng Giai đoạn 5: 17/109 file, 2.534 chuỗi đã dịch** (16 file trước + `target.txt` 125 chuỗi hoàn thành 100%).
+**Tổng Giai đoạn 5: 18/109 file, 2.630 chuỗi đã dịch** (17 file trước + `plot.txt` 96 chuỗi hoàn thành 100% — toàn bộ cốt truyện chính: Huyên Nhi/kiếm linh Hiên Viên Kiếm, Xi Vưu, và các nhánh truyện phụ Mộ Dung Ngọc Tiên/Vạn Kiếm Sầu, Xích Hà/Tiểu Thiến/Lão Ma, Vân Tiêu/Băng Nhi, Nam Chiếu Vương/Thanh Nhi/Bái Nguyệt, Nữ Oa Thạch/chị Linh, Thiên Nhưỡng Kiếp Ma).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
