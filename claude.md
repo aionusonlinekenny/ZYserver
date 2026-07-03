@@ -686,3 +686,18 @@ Dịch tiếp `middleDesc`, `giftName`, `buttonDesc`, `record`, `finishwarning`,
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
 - File repo này (Claude Code session) là **bản làm việc**, không tự động đồng bộ với máy chủ Windows thật đang chạy — sau khi dịch xong từng giai đoạn ở đây, cần copy file đã dịch sang đúng đường dẫn tương ứng trên máy chủ thật rồi restart service liên quan để áp dụng.
 - Nên giữ 1 file glossary (bảng thuật ngữ) dùng chung xuyên suốt các giai đoạn để thuật ngữ game (tên hệ thống, đơn vị, chức danh...) nhất quán, tránh mỗi giai đoạn dịch một kiểu khác nhau.
+
+## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
+
+Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
+
+**Đã xoá (18 file/thư mục, ~78MB), đã xác minh không bị tham chiếu ở bất kỳ đâu**:
+- 10 file JS đã biên dịch cũ trong `phpStudy/PHPTutorial/WWW/js/` (~20MB): `default.thm_f0b18827.js`, `default.thm_f547f824.js`, `main.min_65c7a74d.js`, `main.min_bbfb355d.js`, `main.min_e4f407b1.js`, `egret.min_15d92046.js`, `egret.web.min_376471c7.js`, `eui.min_493403ce.js`, `game.min_16249d0f.js`, `jszip.min_aa236aee.js`. Xác nhận: `phpStudy/PHPTutorial/WWW/manifest.json` (file DUY NHẤT được `index.php` load qua `fetch`/`xhr`) chỉ liệt kê đúng 9 file `initial` + 2 file `game` với hash KHÁC hoàn toàn các file này — đây là output của lần build trước, đã bị thay thế.
+- `phpStudy/PHPTutorial/WWW/manifest_0.05.json` và `manifest_0.05_2.json` (giống hệt nhau, không file nào trong repo tham chiếu tới, và nội dung bên trong trỏ tới CDN ngoài `https://hscdn.wxmolegames.com/...` chứ không phải asset local) — cấu hình chết của một cơ chế tải từ CDN từ xa không còn dùng.
+- `phpStudy/DownLoad/Update.exe.old` — bản backup cũ của updater (khác hash với `phpStudy/Update.exe` đang dùng).
+- `server/bin/centerserver/CenterServer.txt.bak` — file backup thủ công, không có process nào đọc.
+- Thư mục `环境/` (58MB): 3 file cài đặt môi trường dev một lần (`1.安装常用运行库合集.exe` — bộ cài runtime VC++, `2.安装N++.exe` — cài Notepad++, `5.数据库管理工具.zip` — công cụ quản lý DB, trùng chức năng với `phpStudy/PHPTutorial/SQL-Front/SQL-Front.exe` đã có sẵn trong bộ cài chính). Không có gì trong `server/` hay `phpStudy/` gọi tới các file này.
+
+**CHƯA xoá, cần người dùng quyết định (rủi ro cao hơn)**:
+- `phpStudy/PHPTutorial/WWW/resource/exml/` (840 file, ~4MB): file nguồn UI Egret (`.exml`). Repo **không có** công cụ build Egret nào đi kèm (`package.json`/`tsconfig.json`/`egretProperties.json` — đều không tồn tại), nhưng file JS đã biên dịch (`default.thm_70915153.js`, `main.min_d7aad928.js`) có thời gian sửa gần đây nhất repo → khả năng cao có một pipeline build Egret chạy ở NGOÀI repo này (máy dev khác) vẫn dùng các file `.exml` này làm nguồn. Xoá có thể làm mất khả năng sửa UI qua Egret Wing sau này — **giữ nguyên, không xoá**.
+- MySQL data file `phpStudy/PHPTutorial/MySQL/data/actors/actors_copy.*` và `actors9/actors_copy.*` (~16KB, bảng rỗng): đây là file dữ liệu MyISAM thật của MySQL đang chạy — xoá trực tiếp file (thay vì `DROP TABLE` đúng cách qua SQL) có thể làm hỏng engine MySQL nếu server đang chạy hoặc sẽ chạy lại từ đúng thư mục này. **Không tự ý xoá**, để người dùng tự chạy `DROP TABLE actors_copy;` nếu thật sự không cần.
