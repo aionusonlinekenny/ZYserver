@@ -699,6 +699,17 @@ Dịch `explain`, `tabName`, `showName`, `headTxt`, `btn_name`, `suitTname`, `de
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **61.649 → 59.462**. Chạy lại `sync_config1_from_config.py` đồng bộ 4 file chunk.
 - **Tổng tiến độ `config.json` cả phiên**: **178.028 → 59.462** ký tự Hán còn lại (giảm 67%).
 
+### 8.4.7o. Dịch toàn bộ field `text` — 39 đoạn hướng dẫn cơ chế hệ thống dài (2026-07-03)
+
+`text` chứa 39 giá trị duy nhất, mỗi giá trị là 1 đoạn hướng dẫn nhiều dòng giải thích cơ chế 1 hệ thống trong game (Chiến Trường Liên Server, Phi Thăng, Long Nguyên, Tiên Cung Tranh Bá, Vương Giả Tranh Bá, Đấu Trường loại trực tiếp 16/64 mạnh, Pháp Bảo, Uy Vọng, Đấu Giá, tìm kho báu Trang Bị/Tiên Văn/Tru Tiên, thông báo chào mừng server mới...) — không có mẫu lặp lại, phải dịch tay toàn bộ 39 đoạn (tổng 6.393 ký tự Hán), giữ nguyên định dạng `|C:mã màu&T:...|` và số thứ tự dòng.
+
+- Dùng lại nhất quán các thuật ngữ đã thiết lập trước đó trong phiên (tên 6 cảnh giới Phi Thăng, tên bộ phận Long Nguyên, tên 4 tứ tượng Thanh Long/Bạch Hổ/Chu Tước/Huyền Vũ...).
+- Bắt lỗi dấu ngoặc kép thẳng: câu `由"问心"开始...` dùng ngoặc kép thẳng bao quanh tên giai đoạn trong bản dịch nháp đầu — kiểm tra tự động phát hiện, sửa lại bằng ngoặc cong `" "` đúng quy tắc dự án.
+- Đối chiếu 100% key với text thô, 0 giá trị dịch còn sót ký tự Hán.
+- Áp bằng `apply_json_glossary_field.py text` → **40/40 lượt khớp** (39 giá trị, 1 giá trị xuất hiện 2 lần trong file). `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **59.462 → 53.069** (giảm 6.393 ký tự — khớp đúng dự tính). Đồng bộ `config1/config6.json` (1 lượt).
+- **Tổng tiến độ `config.json` cả phiên**: **178.028 → 53.069** ký tự Hán còn lại (giảm 70%).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
