@@ -834,6 +834,18 @@ Dịch hết nhóm 61 giá trị `desc` bắt đầu bằng `|S:27&T:战力：|`
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **46.404 → 44.488**. Đồng bộ config1 (1 lượt).
 - **Tổng tiến độ `config.json` cả phiên**: **178.028 → 44.488** ký tự Hán còn lại (giảm 75%).
 
+### 8.4.7za. Round 8 dịch `desc` — thẻ dev-placeholder + thẻ Vô Cực + 31 giá trị lẻ (2026-07-03)
+
+Dịch 60 giá trị `desc` ngắn còn sót (≤70 ký tự):
+
+- 21 "thẻ khoe hàng" nội bộ dev (`"...--装逼专用卡组，只能花钱得（此条5毛，括号内删除）"`) — dịch NGUYÊN VĂN kể cả ghi chú nội bộ (không xoá/sửa nội dung placeholder, chỉ dịch đúng nghĩa gốc kể cả phần "chỉ có thể mua bằng tiền thật, dòng này 5 hào, xoá phần trong ngoặc") vì đây là dữ liệu thật trong file, không phải quyết định thiết kế của mình.
+- 8 thẻ kích hoạt trang bị Vô Cực (神剑/头盔/神甲/手镯/护腕/戒指/护腿/鞋子) — dùng lại tên đã thiết lập.
+- 31 giá trị dịch tay: vật phẩm rương/kinh nghiệm, đá luyện trận, ngọc điệp chí thánh, thẻ chuyển sinh...
+- Đối chiếu 100% key với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py desc` → **60/60 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **44.488 → 43.158**. Đồng bộ config1 (1 lượt).
+- **Tổng tiến độ `config.json` cả phiên**: **178.028 → 43.158** ký tự Hán còn lại (giảm 76%).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
