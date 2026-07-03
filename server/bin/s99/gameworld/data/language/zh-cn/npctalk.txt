@@ -1,143 +1,143 @@
 ﻿NpcTalk = {
 
-"外界来了许多人，神木林怕是要不安宁了。",--0
-"近日眼皮直跳，不知是不是有大事发生？",--1
-"江湖险恶，实力强大才不会吃亏！",--2
-"出门在外，吃饱穿暖才是硬道理！",--3
-"大叔最大的理想就是减肥！不知有没有希望实现！",--4
-"听说后山有宝贝，在哪呢？",--5
-"这里好闷，好想到人类的世界看看。",--6
-"跟我们一起玩吧！",--7
-"甘如蜜饯，甜过初恋！卖糖葫芦~~",--8
-"以后这里就是你的家了！",--9
-"靠山山会倒，靠水水会流，靠自己永远不倒。",--10
-"大王叫我来巡山哪啊，咿儿哟~呀咿儿咿儿哟~~~",--11
-"刁蛮任性又怎样，我乐于助人！",--12
-"山上虎狼众多，我真不该独自出来！",--13
-"听闻此山有得道仙人，要是能拜入仙门就不用天天砍柴了！",--14
-"在家靠父母，出门靠小弟。",--15
-"修仙，需要机缘，仙缘是修仙的关键。",--16
-"所谓精英，不过是比其他弟子多付出十倍的汗水和努力。",--17
-"如今云虚宗人才凋零，大不如前了！",--18
-"如今妖魔纵横，百姓的生活大不如前了！",--19
-"磨刀不误砍柴工，普通的猎刀已经对付不了这里的变异的野兽了！",--20
-"人在山外觉山小，人进山中知山深！",--21
-"生容易，活容易，生活不容易!",--22
-"大陆纷争不息，人族各势力应该团结起来！",--23
-"等赚够了银子，就请红娘给我娶个俏媳妇！",--24
-"不知何故，这逍遥城近日来了不少陌生人。",--25
-"武林纷争，本就是江湖的一大特色！",--26
-"书山有路勤为径，学海无涯苦作舟！",--27
-"垂钓是一门技艺，需要用心去学习！",--28
-"我最大的愿望就是天下有情人终成眷属！",--29
-"同是天涯沦落人，相逢何必曾相识！",--30
-"独在异乡为异客，每逢佳节倍思亲！",--31
-"读万卷书，行万里路！",--32
-"记忆本是枷锁，无法回首半生坎坷路！",--33
-"从无到有，是件令人快乐的事！",--34
-"蛮不讲理，欺压弱势群体是我一大快事！",--35
-"人在山外觉山小，人进山中知山深",--36
-"明知山有虎，偏向虎山行。",--37
-"万事莫如亲下手。 ",--38
-"荆条编小篮，看着容易做着难。 ",--39
-"不见不识，不做不会。 ",--40
-"不下水，一辈子不会游泳；不扬帆，一辈子不会撑船。 ",--41
-"不爬崎岖的高山，不知大地的平坦。 ",--42
-"见识，见识，不见不识。 ",--43
-"天平是轻重的衡量器，实践是是非的试金石。 ",--44
-"发一回水，澄一次泥；经一回事，长一回智。 ",--45
-"有钱难买经验多。 ",--46
-"有知识不会运用，如同耕耘而不播种。",--47
-"大多数人都想改造这个世界，但却罕有人想改造自己。",--48
-"未曾失败的人恐怕也未曾成功过。",--49
-"人生伟业的建立，不在能知，乃在能行。",--50
-"挫折其实就是迈向成功所应缴的学费。",--51
-"任何的限制，都是从自己的内心开始的。",--52
-"忘掉失败，不过要牢记失败中的教训。",--53
-"不是境况造就人，而是人造就境况。",--54
-"含泪播种的人一定能含笑收获。",--55
-"君子喻于义，小人喻于利。",--56
-"最可怕的敌人，就是没有坚强的信念。",--57
-"富贵不淫贫贱乐，男儿到此是豪雄。",--58
-"毋意，毋必，毋固，毋我。",--59
-"要体验人生，就要把握现实，相信现实。",--60
-"生命不等于是呼吸，生命是活动。",--61
-"许多伟大的真理开始的时候都被认为是亵渎行为。",--62
-"生命，那是自然付给人类去雕琢的宝石。",--63
-"希望是厄运的忠实的姐妹。 ",--64
-"不奋苦而求速效，只落得少日浮夸，老来窘隘而已。",--65
-"阴谋陷害别人的人，自己会首先遭到不幸。",--66
-"人生至高无上的幸福，莫过于确信自己被人所爱。",--67
-"辛勤的蜜蜂永没有时间悲哀。",--68
-"知人者智，自知者明。",--69
-"人生不是一种享乐，而是一桩十分沉重的工作。",--70
-"决定一个人的一生，以及整个命运的，只是一瞬之间。",--71
-"人生最终的价值在于觉醒和思考的能力，而不只在于生存。",--72
-"人生只有在斗争中才有价值;受过痛苦，才能得到报酬",--73
-"人生的价值，并不是用时间，而是用深度量去衡量的。",--74
-"人的一生是短的，但如果卑劣地过这一生，就太长了。",--75
-"生命是一条艰险的峡谷，只有勇敢的人才能通过。",--76
-"生命在闪光中现出绚烂，在平凡中现出真实。",--77
-"生命如同寓言，其价值不在与长短，而在与内容。",--78
-"人的生命，似洪水奔流，不遇着岛屿和暗礁，难以激起美丽的浪花。",--79
-"人生欲念千千万，且莫图利忘教子。",--80
-"谁若游戏人生，他就一事无成；谁不能主宰自己，便永远是一个奴隶。",--81
-"人生只有一生一死，要生得有意义，死得有价值。",--82
-"一路舟车劳顿，可先把行囊寄放于此处，再到城中一游。",--83
-"誓死守护鲛人族圣地！",--84
-"真理总是掌握在拳头最硬的人手中！",--85
-"何时才能重现远古龙族的辉煌呐?",--86
-"我不是坏人，我只是做了坏事的好人！",--87
-"今日之异，预兆着明日之乱。",--88
-"我不是什么高人，我就是一个只知道采药小孩子。",--89
-"老夫修炼至此有数十年，什么风浪没见过！",--90
-"只要用心聆听，就可以听到风的轻语！",--91
-"如果东西放在我这里都不安全，那天下就没有安全的地方了。",--92
-"天下熙熙皆为利来，天下攘攘皆为利往！",--93
-"五行宫统一大陆指日可待，就让你们这些宵小再蹦跶些许日子。",--94
-"化魔石乃我门宝物，就算耗尽九阴宗的最后一份力量也要找出来。",--95
-"老朽有不详的预感，此番大动干戈怕是要无功而返了。",--96
-"作为九阴宗的门人，就要为宗门的荣誉流尽最后一滴血！",--97
-"哪来的愣头青，竟敢擅闯九幽重地？",--98
-"只要能成功召唤出九幽大人的分身，这次危机就无忧了。",--99
-"桀桀~~尽情的享受蚀骨毒雾的盛宴吧。",--100
-"不知阁下想去何处，我这便开启传送阵送你一程！",--101
-"阵法一途博大精深，老夫虽研究阵法数十载，但也不过是管中窥豹，所知寥寥。",--102
-"该干嘛干嘛去，别拦着大爷看美眉！",--103
-"要是今生能有机会再到鲲溟海一游就好了！",--104
-"能使所爱的人儿快乐，便是得到了报酬。",--105
-"别看我人小，就以为我什么都不懂。",--106
-"沧海月明珠有泪，蓝田日暖玉生烟。",--107
-"为了秉持先人的遗训，本王做错了吗？",--108
-"当光明褪去，大地的黑暗终将到来。",--109
-"我鲛人族作为海的主人传承无数岁月，想不到竟让人欺上门来。",--110
-"身为侍卫长，却没有保护好女王，我等罪该万死。",--111
-"誓死夺回族中圣物。",--112
-"此地风沙甚大，一片荒芜，怎么看都不像是有古仙秘藏。",--113
-"此地的怪物怎会如此强悍？！",--114
-"阿弥陀佛！看来此地又有一场血雨腥风啊！",--115
-"事出反常必有妖，你们还是小心为上的好！",--116
-"此地甚是怪异，你们必定要小心为上，切莫贪功。",--117
-"多日不见，小侠的功力有涨了不少啊！",--118
-"如果不想让对手赢你，那就不要让他有机会成为你的对手。",--119
-"各门派都想着夺取古仙秘藏，完全忘记了昔日门派间的友谊。",--120
-"古仙秘藏最终必定属于我们的。",--121
-"吾药王宫虽力量微薄，也愿为铲除妖人献上一份力量。",--122
-"想不到那些妖人竟然躲在如何隐蔽的地方。",--123
-"此地妖人甚是厉害，不知事后还有多少师兄弟能幸存。",--124
-"只要抓到这些为非作歹的妖魔，时间就太平了。",--125
-"龙族遭逢大劫，希望人族能出手援助。",--126
-"一直被坏蛋关在牢笼里，闷都快闷死了。",--127
-"想起自己的所作所为，真是丢光了身为龙族的尊严。",--128
-"多谢人族的鼎力相助。",--129
-"誓死守护龙族的荣耀!",--130
-"龙族的衰败难道真的要在我手上发生了吗？",--131
-"天下真的要大乱了吗？",--132
-"希望事情还不会太糟糕，一切都还来得及！",--133
-"本服帮派战【王城争夺】每周6晚19:30举行\n王城争夺第一名的帮派将成为逍遥王帮，并在逍遥城为城主设立雕像！", --134，这个是没有城主的时候，城主雕像说的话
-"本服帮派战【王城争夺】每周6晚19:30举行\n以吾命护吾兄弟之情，以吾血捍我帮会之谊！以义为先，为了帮派！\n想要挑战孤王及本帮的统治，不怕死的就来吧！",  --135，这个是有城主的时候，城主雕像说的话
-"连服帮派战【皇城争霸】每周日晚19:30举行\n皇城争霸第一名的帮派将成为逍遥皇帮，并在连服皇城为皇主设立雕像！", --136，这个是没有皇主的时候，城主雕像说的话
-"连服帮派战【皇城争霸】每周日晚19:30举行\n以吾命护吾兄弟之情，以吾血捍我帮会之谊！以义为先，为了帮派！\n想要挑战寡人及本帮的统治，不怕死的就来吧！",  --137，这个是有皇主的时候，皇主雕像说的话
+"Bên ngoài có nhiều người kéo đến, e rằng Thần Mộc Lâm sẽ không còn yên tĩnh nữa.",--0
+"Mấy hôm nay mí mắt cứ giật, không biết có phải sắp có chuyện lớn xảy ra không?",--1
+"Giang hồ hiểm ác, thực lực mạnh mới không bị thiệt thòi!",--2
+"Ra ngoài xa nhà, ăn no mặc ấm mới là đạo lý thực tế nhất!",--3
+"Ước mơ lớn nhất của đại thúc chính là giảm cân! Không biết có hy vọng thực hiện được không!",--4
+"Nghe nói sau núi có bảo bối, ở đâu vậy nhỉ?",--5
+"Ở đây ngột ngạt quá, thật muốn đến thế giới loài người xem thử.",--6
+"Cùng chơi với chúng ta đi!",--7
+"Ngọt như mứt trái cây, ngọt hơn cả mối tình đầu! Bán hồ lô đường~~",--8
+"Từ nay về sau nơi đây chính là nhà của ngươi rồi!",--9
+"Dựa núi núi sẽ đổ, dựa nước nước sẽ trôi, chỉ có dựa vào chính mình mới không bao giờ đổ.",--10
+"Đại vương sai ta đi tuần núi đây nè, ơ ơ dô~ dô ơ ơ dô~~~",--11
+"Ngang bướng tùy tiện thì sao chứ, ta thích giúp đỡ người khác!",--12
+"Trên núi hổ sói nhiều vô số, ta thật không nên đi một mình ra ngoài!",--13
+"Nghe nói núi này có tiên nhân đắc đạo, nếu có thể bái vào tiên môn thì khỏi phải ngày ngày đốn củi rồi!",--14
+"Ở nhà dựa cha mẹ, ra ngoài dựa huynh đệ.",--15
+"Tu tiên cần có cơ duyên, tiên duyên là then chốt của việc tu tiên.",--16
+"Cái gọi là tinh anh, chẳng qua là bỏ ra nhiều hơn đệ tử khác gấp mười lần mồ hôi và nỗ lực.",--17
+"Vân Hư Tông ngày nay nhân tài suy tàn, chẳng còn được như xưa nữa!",--18
+"Ngày nay yêu ma hoành hành, cuộc sống bách tính chẳng còn được như trước nữa!",--19
+"Mài dao không lỡ việc đốn củi, dao săn bình thường đã không đối phó nổi loài dã thú biến dị ở đây nữa rồi!",--20
+"Người ở ngoài núi thấy núi nhỏ, người vào trong núi mới biết núi sâu!",--21
+"Sinh dễ, sống dễ, cuộc sống chẳng dễ chút nào!",--22
+"Đại lục tranh chấp không ngừng, các thế lực nhân tộc nên đoàn kết lại với nhau!",--23
+"Đợi kiếm đủ bạc, sẽ nhờ bà mối cưới cho một cô vợ xinh đẹp!",--24
+"Không biết vì sao, Tiêu Diêu Thành này gần đây có không ít người lạ mặt kéo đến.",--25
+"Tranh chấp võ lâm, vốn dĩ là một nét đặc sắc của giang hồ!",--26
+"Trên núi sách có đường lấy cần cù làm lối, biển học vô bờ lấy khổ luyện làm thuyền!",--27
+"Câu cá là một môn nghệ thuật, cần phải chuyên tâm học hỏi!",--28
+"Ước nguyện lớn nhất của ta chính là mong những người yêu nhau trên đời đều thành đôi!",--29
+"Cùng là kẻ lưu lạc chân trời, gặp nhau đâu cần phải quen biết từ trước!",--30
+"Một mình nơi đất khách làm khách lạ, mỗi khi đến ngày lễ càng thêm nhớ người thân!",--31
+"Đọc vạn quyển sách, đi vạn dặm đường!",--32
+"Ký ức vốn là xiềng xích, không thể ngoảnh đầu nhìn lại nửa đời gian truân!",--33
+"Từ không thành có, là một chuyện khiến người ta vui sướng!",--34
+"Ngang ngược vô lý, ức hiếp kẻ yếu thế là một niềm vui lớn của ta!",--35
+"Người ở ngoài núi thấy núi nhỏ, người vào trong núi mới biết núi sâu",--36
+"Biết rõ núi có hổ, vẫn cứ đi vào núi có hổ.",--37
+"Vạn sự chẳng bằng tự tay làm.",--38
+"Đan giỏ bằng cành gai, nhìn thì dễ làm mới khó.",--39
+"Không thấy không biết, không làm không giỏi.",--40
+"Không xuống nước, cả đời không biết bơi; không giương buồm, cả đời không biết chèo thuyền.",--41
+"Không trèo núi cao gập ghềnh, không biết đất bằng phẳng ra sao.",--42
+"Kiến thức, kiến thức, không thấy thì không biết.",--43
+"Cái cân là công cụ đo lường nặng nhẹ, thực tiễn là hòn đá thử vàng của đúng sai.",--44
+"Một trận lũ, lắng một lần bùn; trải một lần việc, khôn thêm một phần trí.",--45
+"Có tiền khó mua được nhiều kinh nghiệm.",--46
+"Có kiến thức mà không biết vận dụng, chẳng khác nào cày ruộng mà không gieo hạt.",--47
+"Đa số người ta đều muốn cải tạo thế giới này, nhưng hiếm ai muốn cải tạo chính mình.",--48
+"Người chưa từng thất bại có lẽ cũng chưa từng thành công.",--49
+"Sự nghiệp vĩ đại của đời người được xây dựng không phải ở chỗ biết, mà ở chỗ làm được.",--50
+"Vấp ngã thực ra chỉ là học phí phải nộp trên con đường đi đến thành công.",--51
+"Mọi giới hạn, đều bắt đầu từ chính nội tâm mình.",--52
+"Quên đi thất bại, nhưng phải ghi nhớ bài học trong thất bại.",--53
+"Không phải hoàn cảnh tạo nên con người, mà chính con người tạo nên hoàn cảnh.",--54
+"Người gieo hạt trong nước mắt nhất định sẽ gặt hái trong nụ cười.",--55
+"Người quân tử coi trọng nghĩa, kẻ tiểu nhân coi trọng lợi.",--56
+"Kẻ thù đáng sợ nhất, chính là không có niềm tin kiên định.",--57
+"Giàu sang không dâm loạn, nghèo hèn vẫn vui vẻ, nam nhi đến vậy mới là hào kiệt.",--58
+"Đừng suy đoán tùy tiện, đừng khăng khăng, đừng cố chấp, đừng chỉ nghĩ đến bản thân.",--59
+"Muốn trải nghiệm cuộc đời, phải nắm bắt hiện thực, tin tưởng hiện thực.",--60
+"Sinh mệnh không chỉ là hơi thở, sinh mệnh là hoạt động.",--61
+"Nhiều chân lý vĩ đại lúc mới xuất hiện đều bị coi là hành vi báng bổ.",--62
+"Sinh mệnh, đó là viên đá quý mà tự nhiên trao cho loài người để mài giũa.",--63
+"Hy vọng là người chị em trung thành của vận rủi.",--64
+"Không khổ luyện mà cầu mong thành quả nhanh chóng, chỉ chuốc lấy sự khoe khoang phù phiếm lúc trẻ, rồi túng quẫn lúc về già mà thôi.",--65
+"Kẻ âm mưu hãm hại người khác, chính mình sẽ là người gặp bất hạnh trước tiên.",--66
+"Hạnh phúc tối thượng của đời người, không gì hơn việc tin chắc rằng mình được người khác yêu thương.",--67
+"Chú ong cần mẫn không bao giờ có thời gian để bi thương.",--68
+"Biết người là trí, biết mình là sáng suốt.",--69
+"Đời người không phải là để hưởng lạc, mà là một công việc vô cùng nặng nhọc.",--70
+"Quyết định cả một đời người, cùng toàn bộ số phận, chỉ trong một khoảnh khắc.",--71
+"Giá trị cuối cùng của đời người nằm ở khả năng tỉnh thức và suy nghĩ, chứ không chỉ ở việc tồn tại.",--72
+"Đời người chỉ có giá trị trong đấu tranh; có trải qua đau khổ, mới có thể nhận được phần thưởng",--73
+"Giá trị của đời người, không đo bằng thời gian, mà đo bằng chiều sâu.",--74
+"Đời người tuy ngắn ngủi, nhưng nếu sống một cách hèn hạ thì lại quá dài.",--75
+"Sinh mệnh là một hẻm núi hiểm trở, chỉ những người dũng cảm mới có thể vượt qua.",--76
+"Sinh mệnh hiện ra rực rỡ trong tia sáng lóe lên, hiện ra chân thực trong sự bình dị.",--77
+"Sinh mệnh cũng như một câu chuyện ngụ ngôn, giá trị không nằm ở dài ngắn, mà nằm ở nội dung.",--78
+"Đời người tựa như dòng nước lũ cuồn cuộn, nếu không gặp đảo và ghềnh đá thì khó lòng tung lên những đợt sóng đẹp.",--79
+"Ham muốn của đời người có ngàn vạn thứ, nhưng chớ vì ham lợi mà quên dạy con.",--80
+"Ai coi đời người là trò đùa, kẻ đó sẽ chẳng làm nên trò trống gì; ai không thể làm chủ chính mình, sẽ mãi mãi là một nô lệ.",--81
+"Đời người chỉ có một lần sống một lần chết, phải sống có ý nghĩa, chết có giá trị.",--82
+"Một chặng đường xe thuyền vất vả, xin hãy gửi lại hành lý nơi đây, rồi hãy vào thành dạo chơi.",--83
+"Thề chết bảo vệ thánh địa của tộc Giao Nhân!",--84
+"Chân lý luôn nằm trong tay kẻ có nắm đấm cứng rắn nhất!",--85
+"Đến khi nào mới có thể tái hiện vinh quang của long tộc thời viễn cổ đây?",--86
+"Ta không phải người xấu, ta chỉ là một người tốt đã làm chuyện xấu!",--87
+"Điều dị thường hôm nay, chính là điềm báo cho loạn lạc ngày mai.",--88
+"Ta chẳng phải cao nhân gì, ta chỉ là một đứa trẻ biết hái thuốc mà thôi.",--89
+"Lão phu tu luyện đến nay đã mấy chục năm, sóng gió nào chưa từng trải qua!",--90
+"Chỉ cần chuyên tâm lắng nghe, sẽ có thể nghe được tiếng thì thầm của gió!",--91
+"Nếu đồ vật đặt ở chỗ ta mà còn không an toàn, thì thiên hạ này chẳng còn nơi nào an toàn nữa.",--92
+"Thiên hạ tấp nập đều vì lợi mà đến, thiên hạ nhộn nhịp đều vì lợi mà đi!",--93
+"Ngũ Hành Cung thống nhất đại lục chỉ còn là chuyện sớm muộn, cứ để bọn tiểu nhân các ngươi nhảy nhót thêm vài ngày nữa.",--94
+"Hóa Ma Thạch là bảo vật của môn phái ta, dù có dốc cạn sức lực cuối cùng của Cửu Âm Tông cũng phải tìm ra bằng được.",--95
+"Lão hủ có linh cảm chẳng lành, phen động binh lớn này e là sẽ trở về tay không.",--96
+"Là môn nhân của Cửu Âm Tông, phải vì vinh dự của tông môn mà đổ đến giọt máu cuối cùng!",--97
+"Đâu ra cái tên trẻ ranh này, dám cả gan xông vào trọng địa Cửu U?",--98
+"Chỉ cần triệu hoán thành công phân thân của Cửu U đại nhân, phen nguy cơ này sẽ không còn gì đáng lo nữa.",--99
+"Kặc kặc~~ cứ tận hưởng bữa tiệc sương độc ăn mòn xương thịt đi.",--100
+"Không biết các hạ muốn đến nơi nào, ta đây liền mở trận truyền tống đưa ngươi một chặng!",--101
+"Con đường trận pháp uyên thâm khôn lường, lão phu tuy nghiên cứu trận pháp mấy chục năm, nhưng cũng chỉ như nhìn báo qua ống, biết chẳng được bao nhiêu.",--102
+"Nên làm gì thì làm đi, đừng cản đại gia ngắm mỹ nhân!",--103
+"Giá như kiếp này có cơ hội được đến Côn Minh Hải dạo chơi một lần thì tốt biết mấy!",--104
+"Có thể khiến người mình yêu vui vẻ, chính là đã nhận được phần thưởng rồi.",--105
+"Đừng thấy ta nhỏ bé mà nghĩ rằng ta chẳng biết gì cả.",--106
+"Trăng sáng biển xanh châu rơi lệ, ngày ấm Lam Điền ngọc bốc khói.",--107
+"Vì giữ vững di huấn của tiền nhân, bản vương đã làm sai sao?",--108
+"Khi ánh sáng lụi tàn, bóng tối của đại địa cuối cùng cũng sẽ đến.",--109
+"Tộc Giao Nhân ta là chủ nhân của biển cả đã truyền thừa vô số năm tháng, không ngờ lại để người ta khinh nhờn đến tận cửa.",--110
+"Là thị vệ trưởng, lại không bảo vệ được nữ vương chu toàn, bọn ta tội đáng muôn chết.",--111
+"Thề chết đoạt lại thánh vật của tộc.",--112
+"Nơi đây gió cát rất lớn, một mảnh hoang vu, nhìn kiểu gì cũng không giống có cổ tiên bí tàng.",--113
+"Quái vật ở nơi đây sao lại mạnh mẽ đến vậy?!",--114
+"A di đà phật! Xem ra nơi đây lại sắp có một trận mưa máu gió tanh nữa rồi!",--115
+"Việc xảy ra bất thường ắt có yêu quái, các ngươi vẫn nên cẩn thận thì hơn!",--116
+"Nơi đây kỳ dị vô cùng, các ngươi nhất định phải cẩn thận, chớ có tham công.",--117
+"Bao ngày không gặp, công lực của tiểu hiệp đã tăng tiến không ít đấy!",--118
+"Nếu không muốn để đối thủ thắng ngươi, thì đừng cho hắn cơ hội trở thành đối thủ của ngươi.",--119
+"Các môn phái đều nghĩ cách đoạt lấy cổ tiên bí tàng, hoàn toàn quên mất tình bạn giữa các môn phái ngày trước.",--120
+"Cổ tiên bí tàng cuối cùng nhất định sẽ thuộc về chúng ta.",--121
+"Dược Vương Cung ta tuy sức lực nhỏ bé, cũng nguyện góp một phần công sức để trừ diệt yêu nhân.",--122
+"Không ngờ đám yêu nhân đó lại trốn ở một nơi kín đáo như vậy.",--123
+"Yêu nhân ở nơi đây quá mức lợi hại, không biết sau việc này còn bao nhiêu sư huynh đệ có thể sống sót.",--124
+"Chỉ cần bắt được đám yêu ma làm điều ác này, thiên hạ sẽ thái bình.",--125
+"Long tộc gặp phải đại kiếp, hy vọng nhân tộc có thể ra tay tương trợ.",--126
+"Cứ bị lũ xấu xa nhốt trong lồng cũi mãi, ngột ngạt sắp chết đến nơi rồi.",--127
+"Nghĩ lại những việc mình đã làm, thật là mất hết cả tôn nghiêm của một long tộc.",--128
+"Đa tạ nhân tộc đã hết lòng tương trợ.",--129
+"Thề chết bảo vệ vinh quang của long tộc!",--130
+"Chẳng lẽ sự suy tàn của long tộc thật sự sẽ xảy ra trong tay ta sao?",--131
+"Thiên hạ thật sự sắp đại loạn rồi sao?",--132
+"Hy vọng mọi chuyện sẽ không quá tệ, vẫn còn kịp cứu vãn tất cả!",--133
+"Bang chiến máy chủ này 【Tranh Đoạt Vương Thành】diễn ra 19:30 tối thứ 7 hàng tuần\nBang phái đạt hạng nhất Tranh Đoạt Vương Thành sẽ trở thành Tiêu Diêu Vương Bang, và được dựng tượng cho Thành Chủ tại Tiêu Diêu Thành!", --134，这个是没有城主的时候，城主雕像说的话
+"Bang chiến máy chủ này 【Tranh Đoạt Vương Thành】diễn ra 19:30 tối thứ 7 hàng tuần\nLấy mạng ta bảo vệ tình huynh đệ, lấy máu ta giữ vững nghĩa bang hội! Lấy nghĩa làm đầu, vì bang phái!\nMuốn thách thức cô vương cùng sự thống trị của bổn bang, kẻ nào không sợ chết thì cứ đến đây!",  --135，这个是有城主的时候，城主雕像说的话
+"Bang chiến liên server 【Tranh Bá Hoàng Thành】diễn ra 19:30 tối chủ nhật hàng tuần\nBang phái đạt hạng nhất Tranh Bá Hoàng Thành sẽ trở thành Tiêu Diêu Hoàng Bang, và được dựng tượng cho Hoàng Chủ tại Hoàng Thành liên server!", --136，这个是没有皇主的时候，城主雕像说的话
+"Bang chiến liên server 【Tranh Bá Hoàng Thành】diễn ra 19:30 tối chủ nhật hàng tuần\nLấy mạng ta bảo vệ tình huynh đệ, lấy máu ta giữ vững nghĩa bang hội! Lấy nghĩa làm đầu, vì bang phái!\nMuốn thách thức quả nhân cùng sự thống trị của bổn bang, kẻ nào không sợ chết thì cứ đến đây!",  --137，这个是有皇主的时候，皇主雕像说的话
 
 
 }
