@@ -1,0 +1,10 @@
+{
+ "您所拥有的元宝或物品数量不足开启双倍奖励": "Số lượng Nguyên Bảo hoặc vật phẩm bạn có không đủ để mở thưởng gấp đôi",
+ "您已完成了所有的日常任务": "Bạn đã hoàn thành tất cả nhiệm vụ hàng ngày",
+ "您的背包不足，日常任务抽奖得到的物品现以邮件的形式发放，请注意查收": "Hành trang của bạn không đủ chỗ, vật phẩm quay số nhiệm vụ hàng ngày sẽ được gửi qua thư, xin hãy chú ý kiểm tra",
+ "开启自动双倍奖励需要仙尊等级达到3": "Mở tự động thưởng gấp đôi cần đạt cấp Tiên Tôn 3",
+ "请完成20次日常任务再来抽奖": "Vui lòng hoàn thành 20 lần nhiệm vụ hàng ngày rồi hãy quay số",
+ "您已经使用完今天的抽奖次数了，请明天再来": "Bạn đã dùng hết số lần quay số hôm nay, xin hãy quay lại vào ngày mai",
+ "您还没有完成任务，无法完成任务": "Bạn chưa hoàn thành nhiệm vụ, không thể hoàn thành nhiệm vụ",
+ "恭喜%s完成所有的日常任务后得到 %s ! <我也要/@@showSysWin,45,0>": "Chúc mừng %s sau khi hoàn thành tất cả nhiệm vụ hàng ngày đã nhận được %s! <Tôi cũng muốn/@@showSysWin,45,0>"
+}

@@ -1,0 +1,15 @@
+{
+ "今日的在线奖励已经领取完成。": "Thưởng trực tuyến hôm nay đã nhận xong.",
+ "本次在线奖励领取时间未到。": "Chưa đến thời gian nhận thưởng trực tuyến lần này.",
+ "背包空格不足，无法领取礼包。": "Không đủ ô hành trang, không thể nhận túi quà.",
+ "没有每日奖励的相关配置": "Không có cấu hình liên quan đến thưởng hàng ngày",
+ "没有首次奖励的相关配置": "Không có cấu hình liên quan đến thưởng lần đầu",
+ "没有累计登陆奖励的相关配置": "Không có cấu hình liên quan đến thưởng đăng nhập tích lũy",
+ "该奖励无法领取": "Không thể nhận thưởng này",
+ "等级不足": "Cấp độ không đủ",
+ "点金次数不足": "Không đủ số lần điểm kim",
+ "活动已结束": "Hoạt động đã kết thúc",
+ "元宝不足": "Không đủ Nguyên Bảo",
+ "亲爱的玩家，这您在上一月中未领取的累计登陆奖励": "Người chơi thân mến, đây là thưởng đăng nhập tích lũy tháng trước bạn chưa nhận",
+ " %s 在聚宝盆中投入了50元宝，人品爆发获得 %s 倍返利，轻松到手 %s 绑定元宝！ <#c0xFF00FE00#我也试试/@@showSysWin,58>！": " %s  đã bỏ 50 Nguyên Bảo vào Tụ Bảo Bồn, vận khí bùng nổ nhận được hoàn tiền gấp %s  lần, dễ dàng có được %s  Nguyên Bảo khóa! <#c0xFF00FE00#Tôi cũng thử/@@showSysWin,58>!"
+}

@@ -409,7 +409,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong 13 file nhỏ liên tiếp (mỗi file 2-15 chuỗi, tổng 80 chuỗi): **`medal.txt`** (4 huy chương hài hước), **`recenttarget.txt`** (2), **`answertip.txt`** (2, gợi ý dùng tính năng hét tên bản đồ để truyền tống), **`liudao.txt`** (5, hệ thống Lục Đạo/thương điếm), **`userbag.txt`** (3, mở rộng hành trang), **`userdepot.txt`** (3, mở rộng kho — phát hiện 1 lỗi khớp do khoảng trắng cuối chuỗi, đã sửa), **`retrieve.txt`** (3, tìm lại tài nguyên), **`lianfu.txt`** (5, liên server Hoàng Thành), **`liveness.txt`** (4, thưởng hoạt độ), **`cangbaoge.txt`** (4, Tàng Bảo Các mua sắm giới hạn thời gian), **`mail.txt`** (15, hệ thống thư gồm 6 loại tài nguyên đính kèm), **`flower.txt`** (8, tặng hoa vợ chồng), **`plotname.txt`** (30 tên nhân vật/vật phẩm cốt truyện — tái sử dụng đúng các tên đã chuẩn hoá từ `plot.txt`/`normaltalk.txt` trong phiên trước: Mộ Dung Ngọc Tiên, Vạn Kiếm Sầu, Xích Hà, Tiểu Thiến, Vân Tiêu, Bái Nguyệt, Nam Chiếu Vương, Thanh Nhi, Tố Trinh, Chỉ Vân, Nữ Oa Thạch, Thiên Nhưỡng Kiếp Ma...). Tất cả `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 39/109 file, 5.627 chuỗi đã dịch** (26 file lớn trước + 13 file nhỏ mới, 80 chuỗi).
+- Đã dịch xong 5 file nhỏ tiếp theo (tổng 78 chuỗi): **`wyyj.txt`** (13, phó bản Vạn Yêu Di Tích — 4/13 tái sử dụng tên boss từ `monstername.txt`), **`exchange.txt`** (17, hệ thống đổi thưởng chiến công/vinh dự/điểm sự kiện), **`event.txt`** (32, nhãn nút UI nhiệm vụ + hệ thống kết hôn/ly hôn/tiệc cưới), **`routinequest.txt`** (8, nhiệm vụ hàng ngày + quay số), **`awards.txt`** (13, thưởng đăng nhập trực tuyến/tích lũy + Tụ Bảo Bồn). Tất cả `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 44/109 file, 5.705 chuỗi đã dịch** (39 file trước + 5 file mới, 78 chuỗi).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 

@@ -1,21 +1,21 @@
 Awards =
 {
 	--err day
-	ed001 = "今日的在线奖励已经领取完成。",
-	ed002 = "本次在线奖励领取时间未到。",
-	ed003 = "背包空格不足，无法领取礼包。",
+	ed001 = "Thưởng trực tuyến hôm nay đã nhận xong.",
+	ed002 = "Chưa đến thời gian nhận thưởng trực tuyến lần này.",
+	ed003 = "Không đủ ô hành trang, không thể nhận túi quà.",
 
-	err001 = "没有每日奖励的相关配置",
-	err002 = "没有首次奖励的相关配置",
-	err003 = "没有累计登陆奖励的相关配置",
-	err004 = "该奖励无法领取",
-	err005 = "等级不足",
+	err001 = "Không có cấu hình liên quan đến thưởng hàng ngày",
+	err002 = "Không có cấu hình liên quan đến thưởng lần đầu",
+	err003 = "Không có cấu hình liên quan đến thưởng đăng nhập tích lũy",
+	err004 = "Không thể nhận thưởng này",
+	err005 = "Cấp độ không đủ",
 
-	err006 = "点金次数不足",
-	err007 = "活动已结束",
-	err008 = "元宝不足",
+	err006 = "Không đủ số lần điểm kim",
+	err007 = "Hoạt động đã kết thúc",
+	err008 = "Không đủ Nguyên Bảo",
 
-	mail001 = "亲爱的玩家，这您在上一月中未领取的累计登陆奖励",
+	mail001 = "Người chơi thân mến, đây là thưởng đăng nhập tích lũy tháng trước bạn chưa nhận",
 
-	b001 = " %s 在聚宝盆中投入了50元宝，人品爆发获得 %s 倍返利，轻松到手 %s 绑定元宝！ <#c0xFF00FE00#我也试试/@@showSysWin,58>！",
+	b001 = " %s  đã bỏ 50 Nguyên Bảo vào Tụ Bảo Bồn, vận khí bùng nổ nhận được hoàn tiền gấp %s  lần, dễ dàng có được %s  Nguyên Bảo khóa! <#c0xFF00FE00#Tôi cũng thử/@@showSysWin,58>!",
 }
