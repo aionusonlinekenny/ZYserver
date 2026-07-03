@@ -586,27 +586,27 @@ ActivityName=
   desc00472= "Trong thời gian hoạt động Ngày Nhà Giáo, mỗi ngày lúc <font color='#66FF66'>11:00, 16:30, 18:00, 22:30</font>, một đàn Nguyệt Linh Dao Cung âm thầm mang theo trọng bảo giáng lâm bất kỳ vị trí nào ở Bắc Băng Nguyên và Lôi Hạ Trạch, bắt được chúng sẽ nhận được vật phẩm quý <font color='#FFF000'>Bảo Hộ Phù Trung Cấp, Đá Cường Hóa Trung Cấp, Đá Cường Hóa Cao Cấp, Bảo Thạch cấp 3, Ngọc Bảo Hộ Trưởng Thành Trung Cấp, Ngọc Bảo Hộ Ngộ Tính Trung Cấp</font>.",  
 
   --月满中秋
-  desc00473= "活动期间,角色等级<font color='#FFF000'>大于等于31级</font>的仙友，每天登陆游戏即可获得中秋登陆礼包奖励。且累积登陆<font color='#FFF000'>2天、4天、6天</font>还可额外获得一份累积登陆礼包！累积登陆礼包内,更有高尚<font color='#FFF000'>金玉满堂</font>时装道具噢！",
+  desc00473= "Trong thời gian hoạt động, tiên hữu <font color='#FFF000'>cấp 31 trở lên</font> mỗi ngày đăng nhập game sẽ nhận được thưởng Gói Đăng Nhập Trung Thu. Đăng nhập tích lũy <font color='#FFF000'>2 ngày, 4 ngày, 6 ngày</font> còn nhận thêm 1 Gói Đăng Nhập Tích Lũy! Gói tích lũy còn có Thời Trang <font color='#FFF000'>Kim Ngọc Mãn Đường</font> sang trọng nữa nhé!",
   awardsDesc00473= "<(c0xFFFFF000)每日登陆可领取>",
   awardsDesc10473= "<(c0xFFFFF000)累积登陆2天可领取         您已累积登陆$winner$天>",
   awardsDesc20473= "<(c0xFFFFF000)累积登陆4天可领取         您已累积登陆$winner$天>",
   awardsDesc30473= "<(c0xFFFFF000)累积登陆6天可领取         您已累积登陆$winner$天>",
   
-  desc00474= "中秋狂欢,消费大返还。活动期间累积消费返还最高可达<font color='#FFF000'>150000元宝</font>。本次推出的元宝大返利,只需要再下方任意消费一种元宝套餐,就可获得对应的超值返利,还在等什么,赶快抢购吧！注：团购不参与此活动消费统计。",
+  desc00474= "Cuồng hoan Trung Thu, hoàn trả tiêu dùng lớn. Trong thời gian hoạt động, tích lũy hoàn trả tiêu dùng tối đa lên đến <font color='#FFF000'>150000 Nguyên Bảo</font>. Đợt hoàn trả Nguyên Bảo lần này, chỉ cần tiêu bất kỳ gói Nguyên Bảo nào bên dưới là nhận được hoàn trả siêu giá trị tương ứng, còn chờ gì nữa, mau săn thôi! Chú ý: mua theo nhóm không tính vào thống kê tiêu dùng của hoạt động này.",
   
-  desc00475= "活动期间,每天的<font color='#FFFF00'>19:30-20:30、20:30-21:30、21:30-22:30</font>内凡登陆或在线,即可免费领取相应时间段的中秋在线礼包。注：请及时领取各时间内的在线礼包,若某一时间内的在线礼包未领取,当该活动时间段结束后将无法领取相关的在线礼包。",
+  desc00475= "Trong thời gian hoạt động, mỗi ngày đăng nhập hoặc trực tuyến trong khung <font color='#FFFF00'>19:30-20:30, 20:30-21:30, 21:30-22:30</font> là nhận miễn phí Gói Trực Tuyến Trung Thu của khung giờ tương ứng. Chú ý: vui lòng nhận gói kịp thời trong từng khung giờ, nếu không nhận trong khung giờ đó thì sau khi khung giờ hoạt động kết thúc sẽ không thể nhận được nữa.",
   awardsDesc00475= "<(c0xFFFFF000)中秋幸福礼包       19:30-20:30可领取>",
   awardsDesc10475= "<(c0xFFFFF000)中秋美满礼包       20:30-21:30可领取>",
   awardsDesc20475= "<(c0xFFFFF000)中秋团圆礼包       21:30-22:30可领取>",
   
-  desc00476= "活动期间,每日累计消费达到<font color='#FFF000'>98</font>元宝,可领取1份节日消费礼盒。开启礼包,可获得<font color='#FFF000'>招财神符、中级保护符、至尊生命药水、中级法力包、中级宠物长生丹</font>稀有道具,并有概率额外获得<font color='#FFF000'>宝灵玉</font>一个。注：团购不参与此活动消费统计。",
+  desc00476= "Trong thời gian hoạt động, mỗi ngày tiêu dùng tích lũy đạt <font color='#FFF000'>98</font> Nguyên Bảo là nhận được 1 Hộp Tiêu Dùng Ngày Lễ. Mở gói sẽ nhận được vật phẩm hiếm <font color='#FFF000'>Bùa Chiêu Tài, Bảo Hộ Phù Trung Cấp, Thuốc Sinh Lực Chí Tôn, Gói Pháp Lực Trung Cấp, Trường Sinh Đan Thú Cưng Trung Cấp</font>, và có tỷ lệ nhận thêm 1 <font color='#FFF000'>Bảo Linh Ngọc</font>. Chú ý: mua theo nhóm không tính vào thống kê tiêu dùng của hoạt động này.",
   awardsDesc00476= "<(c0xFFFFF000)消费礼盒 （礼包内有几率获得如下珍品道具）>",
   
-  desc00477= "活动期间,点击天元城中心<font color='#FFF000'>幸福团圆树</font>可摇晃团圆树,1次消耗1个中秋月饼,也可使用元宝代替。幸福团圆树中,放置着奇珍异宝哦！更有<font color='#FFF000'>灵宠完美·小哪吒、神级技能礼包、至尊仙衣</font>等您来拿！\n\n<a href='m天元城:62:48'>幸福团圆树</a><IOBJ class='TeleportButton' href='f天元城:0:0:幸福团圆树'/>",
+  desc00477= "Trong thời gian hoạt động, nhấn vào <font color='#FFF000'>Cây Đoàn Viên Hạnh Phúc</font> ở trung tâm Thiên Nguyên Thành để lắc cây, mỗi lần tốn 1 Bánh Trung Thu, cũng có thể dùng Nguyên Bảo thay thế. Trong Cây Đoàn Viên có đặt trân bảo kỳ lạ đó! Còn có <font color='#FFF000'>Linh Sủng Hoàn Mỹ·Tiểu Na Tra, Gói Kỹ Năng Thần Cấp, Bảo Y Chí Tôn</font> đang chờ bạn!\n\n<a href='m天元城:62:48'>Cây Đoàn Viên Hạnh Phúc</a><IOBJ class='TeleportButton' href='f天元城:0:0:幸福团圆树'/>",
 
-  desc00478= "活动期间每日<font color='#66FF66'>16:00</font>中秋BOSS兔仙将在神农渊出现,见证中秋BOSS兔仙死亡即可获得海量经验。击杀中秋BOSS兔仙的玩家及其小队,有机会可获得稀有灵宠：<font color='#FFF000'>卓越·兔小仙</font>！",
+  desc00478= "Trong thời gian hoạt động, mỗi ngày lúc <font color='#66FF66'>16:00</font> BOSS Trung Thu Thỏ Tiên sẽ xuất hiện ở Thần Nông Uyên, chứng kiến BOSS Thỏ Tiên chết sẽ nhận được kinh nghiệm khổng lồ. Người chơi và đội của người tiêu diệt BOSS Thỏ Tiên còn có cơ hội nhận được Linh Sủng hiếm: <font color='#FFF000'>Trác Việt·Thỏ Tiểu Tiên</font>!",
 
-  desc00479= "活动结束后,每周魅力排行榜前5名的玩家,可获得相应的<font color='#FFF000'>魅力排名礼包</font>。每周魅力排行榜以<font color='#FFF000'>9月22日23:59</font>的榜上数据为准，争榜的玩家最好请提前1小时送花。<br>注:本榜第1的玩家若本周魅力值未达2000以上，活动结束后领取奖励获得的是<font color='#FFF000'>排名第2的奖励</font>",  
+  desc00479= "Sau khi hoạt động kết thúc, 5 người chơi đứng đầu Bảng Xếp Hạng Sức Hút hàng tuần sẽ nhận được <font color='#FFF000'>Gói Xếp Hạng Sức Hút</font> tương ứng. Bảng Xếp Hạng Sức Hút hàng tuần chốt số liệu vào <font color='#FFF000'>23:59 ngày 22/9</font>, người chơi tranh hạng nên tặng hoa trước 1 giờ. <br>Chú ý: người chơi hạng 1 nếu chưa đạt trên 2000 điểm sức hút tuần này, sau khi hoạt động kết thúc thưởng nhận được sẽ là <font color='#FFF000'>thưởng của hạng 2</font>",  
   awardsDesc00479= "<(c0xFFFFC000)每周魅排行榜第1名 （需本周魅力值2000以上）>  <(c0xFFFFC000)获得者：> $winner$",
   awardsDesc10479= "<(c0xFFFFC000)每周魅排行榜第2名>	   		               <(c0xFFFFC000)获得者：> $winner$",
   awardsDesc20479= "<(c0xFFFFC000)每周魅排行榜第3名>			               <(c0xFFFFC000)获得者：> $winner$",  
@@ -614,45 +614,45 @@ ActivityName=
   awardsDesc40479= "<(c0xFFFFC000)每周魅排行榜第5名>			               <(c0xFFFFC000)获得者：> $winner$", 
   
   --国庆盛典
-  desc00480= "国庆盛典活动时间内,活动双修打坐、仙女护送、灵泉仙浴、蟠桃盛宴、仙灵封印、阵营试炼全部<font color='#FFF000'>双倍经验</font>，升级无压力！更多经验、更多灵气、更多欢乐等您来拿！~",
+  desc00480= "Trong thời gian hoạt động Lễ Hội Quốc Khánh, đả tọa Song Tu, hộ tống Tiên Nữ, Linh Tuyền Tiên Dục, Đại Tiệc Bàn Đào, Tiên Linh Phong Ấn, Thí Luyện Phe tất cả đều <font color='#FFF000'>gấp đôi kinh nghiệm</font>, lên cấp không áp lực! Nhiều kinh nghiệm hơn, nhiều Linh Khí hơn, nhiều niềm vui hơn đang chờ bạn!~",
   awardsDesc00480= "<font color='#FFFF00'><b>活动1:</b></font><font color='#33CC33'>双修打坐</font> 经验加成100%,活动期间全天有效<br><br><font color='#FFFF00'><b>活动2:</b></font><font color='#33CC33'>仙女护送</font> 经验加成100%,活动期间全天有效<br><br><font color='#FFFF00'><b>活动3:</b></font><font color='#33CC33'>灵泉仙浴</font> 经验加成100%,持续时间12:30-13:00<br><br><font color='#FFFF00'><b>活动4:</b></font><font color='#33CC33'>蟠桃盛宴</font> 经验加成100%,持续时间19:00-19:20<br><br><font color='#FFFF00'><b>活动5:</b></font><font color='#33CC33'>仙灵封印</font> 经验加成100%,持续时间19:30-20:00<br><br><font color='#FFFF00'><b>活动6:</b></font><font color='#33CC33'>阵营试炼</font> 经验加成100%,持续时间20:10-20:40",
 
   desc00481= "Trong thời gian hoạt động, mỗi ngày tiêu dùng tích lũy đạt <font color='#FFF000'>98</font> Nguyên Bảo là nhận được 1 Gói Tiêu Dùng Ngày Lễ. Mở gói sẽ nhận được vật phẩm hiếm <font color='#FFF000'>Bùa Chiêu Tài, Đá Cường Hóa Trung Cấp, Thuốc Sinh Lực Chí Tôn, Gói Pháp Lực Trung Cấp, Trường Sinh Đan Thú Cưng Trung Cấp</font>, và có tỷ lệ nhận thêm 1 <font color='#FFF000'>Phần Ly Châu</font>. Chú ý: mua theo nhóm không tính vào thống kê tiêu dùng của hoạt động này.",
   awardsDesc00481= "<(c0xFFFFF000)国庆消费礼盒 （礼包内有几率获得如下珍品道具）>",
   
-  desc00482= "活动期间,角色等级<font color='#FFF000'>大于等于31级</font>的仙友，每天登陆游戏即可获得国庆登陆礼包奖励。且累积登陆<font color='#FFF000'>2天、4天、6天</font>还可额外获得一份累积登陆礼包！累积登陆礼包内,更有高尚<font color='#FFF000'>金玉满堂</font>时装道具噢！",
+  desc00482= "Trong thời gian hoạt động, tiên hữu <font color='#FFF000'>cấp 31 trở lên</font> mỗi ngày đăng nhập game sẽ nhận được thưởng Gói Đăng Nhập Quốc Khánh. Đăng nhập tích lũy <font color='#FFF000'>2 ngày, 4 ngày, 6 ngày</font> còn nhận thêm 1 Gói Đăng Nhập Tích Lũy! Gói tích lũy còn có Thời Trang <font color='#FFF000'>Kim Ngọc Mãn Đường</font> sang trọng nữa nhé!",
   awardsDesc00482= "<(c0xFFFFF000)每日登陆可领取>",
   awardsDesc10482= "<(c0xFFFFF000)累积登陆2天可领取         您已累积登陆$winner$天>",
   awardsDesc20482= "<(c0xFFFFF000)累积登陆4天可领取         您已累积登陆$winner$天>",
   awardsDesc30482= "<(c0xFFFFF000)累积登陆6天可领取         您已累积登陆$winner$天>",
   
-  desc00483= "活动期间,每天的<font color='#FFFF00'>19:30-20:30、20:30-21:30、21:30-22:30</font>内凡登陆或在线,即可免费领取相应时间段的国庆节日在线礼包。注：请及时领取各时间内的在线礼包,若某一时间内的在线礼包未领取,当该活动时间段结束后将无法领取相关的在线礼包。",
+  desc00483= "Trong thời gian hoạt động, mỗi ngày đăng nhập hoặc trực tuyến trong khung <font color='#FFFF00'>19:30-20:30, 20:30-21:30, 21:30-22:30</font> là nhận miễn phí Gói Trực Tuyến Quốc Khánh của khung giờ tương ứng. Chú ý: vui lòng nhận gói kịp thời trong từng khung giờ, nếu không nhận trong khung giờ đó thì sau khi khung giờ hoạt động kết thúc sẽ không thể nhận được nữa.",
   awardsDesc00483= "<(c0xFFFFF000)节日欢庆礼包       19:30-20:30可领取>",
   awardsDesc10483= "<(c0xFFFFF000)节日辉煌礼包       20:30-21:30可领取>",
   awardsDesc20483= "<(c0xFFFFF000)节日盛世礼包       21:30-22:30可领取>",
 
-  desc00484= "活动期间,点击天元城中心<font color='#FFF000'>幸运淘宝树</font>可摇晃淘宝树,1次消耗1个<font color='#FFF000'>国庆幸运币</font>,也可使用元宝代替。幸运淘宝树树中,放置着奇珍异宝哦！更有<font color='#FFF000'>灵宠完美·乔巴、完美·皮卡丘,神级技能包和时空旅行者、幻月之华、灵狐天舞时装</font>等稀世珍宝您来拿！\n\n<a href='m天元城:62:48'>幸运淘宝树</a><IOBJ class='TeleportButton' href='f天元城:0:0:幸运淘宝树'/>",
+  desc00484= "Trong thời gian hoạt động, nhấn vào <font color='#FFF000'>Cây Săn Đồ May Mắn</font> ở trung tâm Thiên Nguyên Thành để lắc cây, mỗi lần tốn 1 <font color='#FFF000'>Tiền Xu May Mắn Quốc Khánh</font>, cũng có thể dùng Nguyên Bảo thay thế. Trong Cây Săn Đồ May Mắn có đặt trân bảo kỳ lạ đó! Còn có <font color='#FFF000'>Linh Sủng Hoàn Mỹ·Chopper, Hoàn Mỹ·Pikachu, Gói Kỹ Năng Thần Cấp và Thời Trang Lữ Khách Thời Không, Huyễn Nguyệt Chi Hoa, Linh Hồ Thiên Vũ</font> quý hiếm đang chờ bạn!\n\n<a href='m天元城:62:48'>Cây Săn Đồ May Mắn</a><IOBJ class='TeleportButton' href='f天元城:0:0:幸运淘宝树'/>",
 
-  desc00485= "国庆节活动期间,每天<font color='#66FF66'>11:00、16:30、18:00、22:30</font>,一群瑶宫仙灵携带重宝悄悄降临至北冰原和雷夏泽任意位置，捕获它们即可获得<font color='#FFF000'>仙境宝箱、中级保护符、中级强化石、高级强化石、3级宝石、中级成长保护珠、中级悟性保护珠</font>等精品道具。",  
+  desc00485= "Trong thời gian hoạt động Quốc Khánh, mỗi ngày lúc <font color='#66FF66'>11:00, 16:30, 18:00, 22:30</font>, một đàn Tiên Linh Dao Cung âm thầm mang theo trọng bảo giáng lâm bất kỳ vị trí nào ở Bắc Băng Nguyên và Lôi Hạ Trạch, bắt được chúng sẽ nhận được vật phẩm quý <font color='#FFF000'>Rương Tiên Cảnh, Bảo Hộ Phù Trung Cấp, Đá Cường Hóa Trung Cấp, Đá Cường Hóa Cao Cấp, Bảo Thạch cấp 3, Ngọc Bảo Hộ Trưởng Thành Trung Cấp, Ngọc Bảo Hộ Ngộ Tính Trung Cấp</font>.",  
 
-  desc00486= "活动期间，每日可通过天元城<font color='#FFF000'>国庆使者</font>处进入国庆副本<font color='#FFF000'>逍遥境</font>,每天可进入<font color='#FFF000'>2</font>次，副本中可掉落各类珍品游戏道具,还等什么？一起来冒险吧！<br><a href='m天元城:65:58'>国庆使者</a><IOBJ class='TeleportButton' href='f天元城:65:58'/>", 
+  desc00486= "Trong thời gian hoạt động, mỗi ngày có thể vào Phó Bản Quốc Khánh <font color='#FFF000'>Tiêu Dao Cảnh</font> từ <font color='#FFF000'>Sứ Giả Quốc Khánh</font> tại Thiên Nguyên Thành, mỗi ngày vào được <font color='#FFF000'>2</font> lần, phó bản rớt các loại vật phẩm game quý hiếm, còn chờ gì nữa? Cùng phiêu lưu thôi!<br><a href='m天元城:65:58'>Sứ Giả Quốc Khánh</a><IOBJ class='TeleportButton' href='f天元城:65:58'/>", 
 
-  desc00487= "限时抢购，惊喜不断；活动中，高级羽翼技能礼包、超值宠物装备礼包可抢购2个，高级保护符礼包、启灵石礼包限购一个。请各位仙友抓紧活动时间，走过路过，不要错过哦。",
+  desc00487= "Săn hàng giới hạn thời gian, bất ngờ liên tục; trong hoạt động, Gói Kỹ Năng Cánh Cao Cấp, Gói Trang Bị Thú Cưng Siêu Giá Trị mua được 2, Gói Bảo Hộ Phù Cao Cấp, Gói Khải Linh Thạch giới hạn mua 1. Mời các tiên hữu tranh thủ thời gian hoạt động, đừng bỏ lỡ nhé.",
  
-  desc00488= "活动期间内，玩家收集一定数量的周年勋章，可在活动界面处兑换炫酷的国庆盛典活动道具，点击国庆兑换即可打开活动兑换界面。周年勋章只能通过开启仙境宝箱而获得。",
+  desc00488= "Trong thời gian hoạt động, người chơi thu thập đủ số lượng Huy Chương Kỷ Niệm nhất định có thể đổi vật phẩm hoạt động Lễ Hội Quốc Khánh cực ngầu tại giao diện hoạt động, nhấn đổi Quốc Khánh là mở được giao diện đổi thưởng. Huy Chương Kỷ Niệm chỉ có thể nhận được bằng cách mở Rương Tiên Cảnh.",
   
   --九九重阳
-  desc00489= "活动期间,角色等级<font color='#FFF000'>大于等于31级</font>的仙友，每天登陆游戏即可获得重阳登陆礼包奖励。且累积登陆<font color='#FFF000'>3天、5天</font>还可额外获得一份累积登陆礼包！累积登陆礼包内,更有休闲<font color='#FFF000'>竹影飘羽</font>时装道具噢！",
+  desc00489= "Trong thời gian hoạt động, tiên hữu <font color='#FFF000'>cấp 31 trở lên</font> mỗi ngày đăng nhập game sẽ nhận được thưởng Gói Đăng Nhập Trùng Dương. Đăng nhập tích lũy <font color='#FFF000'>3 ngày, 5 ngày</font> còn nhận thêm 1 Gói Đăng Nhập Tích Lũy! Gói tích lũy còn có Thời Trang <font color='#FFF000'>Trúc Ảnh Phiêu Vũ</font> thư thái nữa nhé!",
   awardsDesc00489= "<(c0xFFFFF000)每日登陆可领取>",
   awardsDesc10489= "<(c0xFFFFF000)累积登陆3天可领取         您已累积登陆$winner$天>",
   awardsDesc20489= "<(c0xFFFFF000)累积登陆5天可领取         您已累积登陆$winner$天>",
 
-  desc00490= "活动期间，重阳糕每天可抢购<font color='#FFF000'>3个</font>，高级羽翼技能礼包、超值宠物装备礼包每天可抢购<font color='#FFF000'>2个</font>，高级保护符礼包每天可抢购<font color='#FFF000'>1个</font>。请各位仙友抓紧活动时间，不要错过哦。注：重阳糕双击使用,可随机获得20000声望丹、坐骑进阶豪华礼包、启灵石*3中的任意一种奖励！",
+  desc00490= "Trong thời gian hoạt động, Bánh Trùng Dương mỗi ngày mua được <font color='#FFF000'>3 cái</font>, Gói Kỹ Năng Cánh Cao Cấp, Gói Trang Bị Thú Cưng Siêu Giá Trị mỗi ngày mua được <font color='#FFF000'>2 cái</font>, Gói Bảo Hộ Phù Cao Cấp mỗi ngày mua được <font color='#FFF000'>1 cái</font>. Mời các tiên hữu tranh thủ thời gian hoạt động, đừng bỏ lỡ nhé. Chú ý: nhấn đúp Bánh Trùng Dương để dùng, ngẫu nhiên nhận được 1 trong các thưởng: 20000 Đan Danh Vọng, Gói Hào Hoa Tiến Giai Tọa Kỵ, Khải Linh Thạch*3!",
  
   desc00491= "Mỗi ngày lúc <font color='#FFF000'>10:00, 14:00, 18:00, 22:30</font> Phúc Tinh mang theo trọng bảo giáng lâm bất kỳ khu vực nào trong Thiên Nguyên Thành. Trong thời gian hoạt động, tiên hữu nào tìm được Phúc Tinh có thể nhận miễn phí Gói Phúc Tinh từ Phúc Tinh. Sau một thời gian giáng lâm Thiên Nguyên Thành, Phúc Tinh sẽ quay về tiên cung, mọi người mau cùng đi tìm Phúc Tinh, nhận gói quà thôi. Chú ý: nhấn đúp gói quà, ngẫu nhiên nhận được 1 trong các vật phẩm bên dưới",  
   awardsDesc00491= "<(c0xFFFFF000)福星礼包>",
   
-  desc00492= "活动结束后,每周魅力排行榜前5名的玩家,可获得相应的<font color='#FFF000'>魅力排名礼包</font>。每周魅力排行榜以<font color='#FFF000'>10月20日23:59</font>的榜上数据为准，争榜的玩家最好请提前1小时送花。<br>注:本榜第1的玩家若本周魅力值未达2000以上，活动结束后领取奖励获得的是<font color='#FFF000'>排名第2的奖励</font>",  
+  desc00492= "Sau khi hoạt động kết thúc, 5 người chơi đứng đầu Bảng Xếp Hạng Sức Hút hàng tuần sẽ nhận được <font color='#FFF000'>Gói Xếp Hạng Sức Hút</font> tương ứng. Bảng Xếp Hạng Sức Hút hàng tuần chốt số liệu vào <font color='#FFF000'>23:59 ngày 20/10</font>, người chơi tranh hạng nên tặng hoa trước 1 giờ. <br>Chú ý: người chơi hạng 1 nếu chưa đạt trên 2000 điểm sức hút tuần này, sau khi hoạt động kết thúc thưởng nhận được sẽ là <font color='#FFF000'>thưởng của hạng 2</font>",  
   awardsDesc00492= "<(c0xFFFFC000)每周魅排行榜第1名 （需本周魅力值2000以上）>  <(c0xFFFFC000)获得者：> $winner$",
   awardsDesc10492= "<(c0xFFFFC000)每周魅排行榜第2名>                           <(c0xFFFFC000)获得者：> $winner$",
   awardsDesc20492= "<(c0xFFFFC000)每周魅排行榜第3名>                           <(c0xFFFFC000)获得者：> $winner$",  
@@ -660,21 +660,21 @@ ActivityName=
   awardsDesc40492= "<(c0xFFFFC000)每周魅排行榜第5名>                           <(c0xFFFFC000)获得者：> $winner$", 
 
   --万圣狂欢
-  desc00493= "活动期间,角色等级<font color='#FFF000'>大于等于31级</font>的仙友，每天登陆游戏即可获得万圣节登陆礼包奖励。且累积登陆<font color='#FFF000'>2天、4天、6天</font>还可额外获得一份累积登陆礼包！累积登陆礼包内,更有休闲<font color='#FFF000'>竹影飘羽</font>时装道具噢！",
+  desc00493= "Trong thời gian hoạt động, tiên hữu <font color='#FFF000'>cấp 31 trở lên</font> mỗi ngày đăng nhập game sẽ nhận được thưởng Gói Đăng Nhập Vạn Thánh Tiết. Đăng nhập tích lũy <font color='#FFF000'>2 ngày, 4 ngày, 6 ngày</font> còn nhận thêm 1 Gói Đăng Nhập Tích Lũy! Gói tích lũy còn có Thời Trang <font color='#FFF000'>Trúc Ảnh Phiêu Vũ</font> thư thái nữa nhé!",
  
-  desc00494= "活动期间,点击天元城中心<font color='#FFF000'>万圣南瓜树</font>可摇晃南瓜树,1次消耗1个<font color='#FFF000'>南瓜糖</font>,也可使用元宝代替。万圣南瓜树中,放置着<font color='#FFF000'>幻梦神兽蛋、神级技能如意包、万圣仙衣</font>等稀世珍宝随您来淘！<font color='#FFF000'>注：因系统升级南瓜树活动于29~31号暂时关闭，11月1日0点准时开启。</font>\n\n<a href='m天元城:62:48'>万圣南瓜树</a><IOBJ class='TeleportButton' href='f天元城:0:0:万圣南瓜树'/>",
+  desc00494= "Trong thời gian hoạt động, nhấn vào <font color='#FFF000'>Cây Bí Ngô Vạn Thánh</font> ở trung tâm Thiên Nguyên Thành để lắc cây, mỗi lần tốn 1 <font color='#FFF000'>Kẹo Bí Ngô</font>, cũng có thể dùng Nguyên Bảo thay thế. Trong Cây Bí Ngô Vạn Thánh có đặt <font color='#FFF000'>Trứng Thần Thú Huyễn Mộng, Gói Kỹ Năng Thần Cấp Như Ý, Tiên Y Vạn Thánh</font> quý hiếm cho bạn săn! <font color='#FFF000'>Chú ý: do nâng cấp hệ thống, hoạt động Cây Bí Ngô tạm đóng từ ngày 29~31, mở lại đúng 0 giờ ngày 1/11.</font>\n\n<a href='m天元城:62:48'>Cây Bí Ngô Vạn Thánh</a><IOBJ class='TeleportButton' href='f天元城:0:0:万圣南瓜树'/>",
   
-  desc00495= "活动期间，每日可通过天元城<font color='#FFF000'>魅惑使者</font>处进入万圣节副本<font color='#FFF000'>虚幻境</font>,每天可进入<font color='#FFF000'>2</font>次，副本中可掉落各类珍品游戏道具,还等什么？一起来冒险吧！<br><a href='m天元城:65:58'>魅惑使者</a><IOBJ class='TeleportButton' href='f天元城:65:58'/>", 
+  desc00495= "Trong thời gian hoạt động, mỗi ngày có thể vào Phó Bản Vạn Thánh <font color='#FFF000'>Hư Huyễn Cảnh</font> từ <font color='#FFF000'>Sứ Giả Mị Hoặc</font> tại Thiên Nguyên Thành, mỗi ngày vào được <font color='#FFF000'>2</font> lần, phó bản rớt các loại vật phẩm game quý hiếm, còn chờ gì nữa? Cùng phiêu lưu thôi!<br><a href='m天元城:65:58'>Sứ Giả Mị Hoặc</a><IOBJ class='TeleportButton' href='f天元城:65:58'/>", 
 
-  desc00496= "活动期间,每日累计消费达到<font color='#FFF000'>98</font>元宝,可领取1份万圣消费礼包。开启礼包,可获得<font color='#FFF000'>招财神符、中级保护符、至尊生命药水、中级法力包、中级宠物长生丹</font>稀有道具,并有概率额外获得<font color='#FFF000'>宝灵玉</font>一个。注：团购不参与此活动消费统计。",
+  desc00496= "Trong thời gian hoạt động, mỗi ngày tiêu dùng tích lũy đạt <font color='#FFF000'>98</font> Nguyên Bảo là nhận được 1 Gói Tiêu Dùng Vạn Thánh. Mở gói sẽ nhận được vật phẩm hiếm <font color='#FFF000'>Bùa Chiêu Tài, Bảo Hộ Phù Trung Cấp, Thuốc Sinh Lực Chí Tôn, Gói Pháp Lực Trung Cấp, Trường Sinh Đan Thú Cưng Trung Cấp</font>, và có tỷ lệ nhận thêm 1 <font color='#FFF000'>Bảo Linh Ngọc</font>. Chú ý: mua theo nhóm không tính vào thống kê tiêu dùng của hoạt động này.",
   awardsDesc00496= "<(c0xFFFFF000)万圣消费礼包 （礼包内有几率获得如下珍品道具）>",
 
-  desc00497= "限时抢购，惊喜不断；活动中，万圣抢购礼包可抢购3个，高级羽翼技能礼包、启灵石礼包可抢购2个，高级保护符礼包限购一个。请各位仙友抓紧活动时间，走过路过，不要错过哦。",
+  desc00497= "Săn hàng giới hạn thời gian, bất ngờ liên tục; trong hoạt động, Gói Săn Hàng Vạn Thánh mua được 3, Gói Kỹ Năng Cánh Cao Cấp, Gói Khải Linh Thạch mua được 2, Gói Bảo Hộ Phù Cao Cấp giới hạn mua 1. Mời các tiên hữu tranh thủ thời gian hoạt động, đừng bỏ lỡ nhé.",
 
-  desc00498= "每天<font color='#FFF000'>10:00、14:00、18:00、22:30</font>万圣福星携带重宝降临至天元城中的任意区域活动期间,寻找到福星的仙友可免费向福星领取<font color='#FFF000'>南瓜灯</font>。福星降临天元城一段时间后将重返仙宫,大家快一起去寻找福星,领取南瓜灯吧。注：双击南瓜灯，随机获得下列道具中的其中一个",  
+  desc00498= "Mỗi ngày lúc <font color='#FFF000'>10:00, 14:00, 18:00, 22:30</font> Phúc Tinh Vạn Thánh mang theo trọng bảo giáng lâm bất kỳ khu vực nào trong Thiên Nguyên Thành. Trong thời gian hoạt động, tiên hữu nào tìm được Phúc Tinh có thể nhận miễn phí <font color='#FFF000'>Đèn Bí Ngô</font> từ Phúc Tinh. Sau một thời gian giáng lâm Thiên Nguyên Thành, Phúc Tinh sẽ quay về tiên cung, mọi người mau cùng đi tìm Phúc Tinh, nhận Đèn Bí Ngô thôi. Chú ý: nhấn đúp Đèn Bí Ngô, ngẫu nhiên nhận được 1 trong các vật phẩm bên dưới",  
   
   --光棍节
-  desc00499= "单身狂欢,消费大返还。活动期间累积消费返还最高可达<font color='#FFF000'>150000元宝</font>。本次推出的元宝大返利,只需要再下方任意消费一种元宝套餐,就可获得对应的超值返利,还在等什么,赶快抢购吧！注：团购、跨服仙城相关消费不参与此活动消费统计。",
+  desc00499= "Cuồng hoan Độc Thân, hoàn trả tiêu dùng lớn. Trong thời gian hoạt động, tích lũy hoàn trả tiêu dùng tối đa lên đến <font color='#FFF000'>150000 Nguyên Bảo</font>. Đợt hoàn trả Nguyên Bảo lần này, chỉ cần tiêu bất kỳ gói Nguyên Bảo nào bên dưới là nhận được hoàn trả siêu giá trị tương ứng, còn chờ gì nữa, mau săn thôi! Chú ý: mua theo nhóm và tiêu dùng liên quan Tiên Thành liên server không tính vào thống kê tiêu dùng của hoạt động này.",
 
   desc00500= "活动期间,角色等级<font color='#FFF000'>大于等于31级</font>的仙友，每天登陆游戏即可获得单身登陆礼包奖励。且累积登陆<font color='#FFF000'>3天、6天、9天</font>还可额外获得一份累积登陆礼包！累积登陆礼包内,更有炫酷<font color='#FFF000'>仙侠问情</font>时装道具噢！",
 
