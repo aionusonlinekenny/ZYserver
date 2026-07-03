@@ -1,5 +1,5 @@
 UserDepot = {
-	tip001 = "仓库已经扩展到最大，不能扩展了",
-	tip002 = "扩展仓库失败，需要花费 %d 元宝 ",
-	tip003 = "成功将仓库扩大 %d 格 ",
+	tip001 = "Kho đã mở rộng đến mức tối đa, không thể mở rộng thêm",
+	tip002 = "Mở rộng kho thất bại, cần tốn %d Nguyên Bảo ",
+	tip003 = "Đã mở rộng kho thành công thêm %d ô",
 }

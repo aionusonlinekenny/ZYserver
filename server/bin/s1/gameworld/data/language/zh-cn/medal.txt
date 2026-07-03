@@ -1,7 +1,7 @@
 AchieveMedal = 
 {
-	name001 = "贱人勋章",
-	name002 = "坏人勋章",
-	name003 = "好人勋章",
-	name004 = "好淫勋章",
+	name001 = "Huy Chương Tiện Nhân",
+	name002 = "Huy Chương Người Xấu",
+	name003 = "Huy Chương Người Tốt",
+	name004 = "Huy Chương Háo Sắc",
 }

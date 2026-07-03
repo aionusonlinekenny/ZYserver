@@ -1,7 +1,7 @@
 Liveness = {
-	ln001 = "你已领取过该奖励。",
-	ln002 = "当前活跃度不够，无法领取该奖励。",
-	ln003 = "包裹空间不足，现以邮件的形式发送奖励，请及时验收",
-	ln004 = "你的包裹空间不足，活跃度的奖励现以邮件的形式发送，请及时领取。",
+	ln001 = "Bạn đã nhận thưởng này rồi.",
+	ln002 = "Hoạt độ hiện tại chưa đủ, không thể nhận thưởng này.",
+	ln003 = "Không đủ không gian hành trang, thưởng sẽ được gửi qua thư, vui lòng nhận kịp thời",
+	ln004 = "Hành trang của bạn không đủ chỗ, thưởng hoạt độ sẽ được gửi qua thư, vui lòng nhận kịp thời.",
 	
 }

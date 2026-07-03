@@ -1,11 +1,11 @@
 ﻿Flower=
 {
-	f001 = "收花人不在线，无法赠送",
-	f002 = "好感动啊！谢谢你送的花，希望还能再次收到你的玫瑰！",
-	f003 = "您拥有的玫瑰花数量不足",
-	f005 = "哇！<(c0xFF399DF2)%s>魅力无限！获得<(c0xFF399DF2)%s>赠送的<(c0xFFFF8432)%d朵玫瑰>，真是羡煞旁人啊！",
-	f006 = "某神秘人",
-	f007 = "赠送成功",
-	f008 = "不能给自己赠送鲜花 ",
-	f009 = "夫妻间赠送了 %d 朵玫瑰，获得了 %d 点情缘值",
+	f001 = "Người nhận hoa không trực tuyến, không thể tặng",
+	f002 = "Thật cảm động! Cảm ơn hoa bạn tặng, hy vọng sẽ lại được nhận hoa hồng của bạn!",
+	f003 = "Số lượng hoa hồng bạn có không đủ",
+	f005 = "Ồ! <(c0xFF399DF2)%s> quyến rũ vô hạn! Nhận được <(c0xFFFF8432)%d bông hoa hồng> do <(c0xFF399DF2)%s> tặng, thật khiến người người ghen tị!",
+	f006 = "Một người bí ẩn",
+	f007 = "Tặng thành công",
+	f008 = "Không thể tặng hoa cho chính mình ",
+	f009 = "Vợ chồng đã tặng nhau %d bông hoa hồng, nhận được %d điểm tình duyên",
 }

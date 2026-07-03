@@ -1,0 +1,17 @@
+{
+ "背包已满,无法提取物品": "Hành trang đã đầy, không thể lấy vật phẩm",
+ "信件删除成功": "Xóa thư thành công",
+ "你禁止发送邮件": "Bạn bị cấm gửi thư",
+ "邮资金币不足": "Không đủ Kim Tệ cước phí",
+ "收信人不能是自己": "Người nhận không thể là chính mình",
+ "邮件内容不能为空": "Nội dung thư không được để trống",
+ "收信人不存在": "Người nhận không tồn tại",
+ "有敏感词无法发送": "Có từ nhạy cảm, không thể gửi",
+ "你的邮件中有可充值数据，只能在本服领取": "Trong thư của bạn có dữ liệu nạp, chỉ có thể nhận tại server này",
+ "经验": "Kinh nghiệm",
+ "灵气": "Linh khí",
+ "声望": "Danh vọng",
+ "帮贡": "Cống hiến bang",
+ "战功": "Chiến công",
+ "荣誉": "Vinh dự"
+}

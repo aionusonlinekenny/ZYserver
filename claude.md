@@ -407,7 +407,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong file thứ 26: **`miji.txt`** (52 chuỗi duy nhất, 184 lượt trong file, hoàn thành 100%) — hệ thống "Bí Tịch" (秘籍, sách bí kíp tăng cường kỹ năng rơi từ Trấn Yêu Tháp): 27 mô tả hiệu ứng bí tịch theo template (tăng % sát thương kỹ năng + hiệu ứng đặc biệt riêng cho từng trong 24 tên kỹ năng như Đột Lôi/Hóa Nguyên Trảm/Vạn Kiếm Quy Tông/Tru Tâm Tiên Thương...), 3 khối hướng dẫn dài (gắn bí tịch/nâng cấp bí tịch/Tiên Pháp Dung Luyện), và các thông báo lỗi UI. `luac5.3 -p` pass, 0 tiếng Trung còn sót. Đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 26/109 file, 5.547 chuỗi đã dịch** (25 file trước + `miji.txt` 52 chuỗi hoàn thành 100%).
+- Đã dịch xong 13 file nhỏ liên tiếp (mỗi file 2-15 chuỗi, tổng 80 chuỗi): **`medal.txt`** (4 huy chương hài hước), **`recenttarget.txt`** (2), **`answertip.txt`** (2, gợi ý dùng tính năng hét tên bản đồ để truyền tống), **`liudao.txt`** (5, hệ thống Lục Đạo/thương điếm), **`userbag.txt`** (3, mở rộng hành trang), **`userdepot.txt`** (3, mở rộng kho — phát hiện 1 lỗi khớp do khoảng trắng cuối chuỗi, đã sửa), **`retrieve.txt`** (3, tìm lại tài nguyên), **`lianfu.txt`** (5, liên server Hoàng Thành), **`liveness.txt`** (4, thưởng hoạt độ), **`cangbaoge.txt`** (4, Tàng Bảo Các mua sắm giới hạn thời gian), **`mail.txt`** (15, hệ thống thư gồm 6 loại tài nguyên đính kèm), **`flower.txt`** (8, tặng hoa vợ chồng), **`plotname.txt`** (30 tên nhân vật/vật phẩm cốt truyện — tái sử dụng đúng các tên đã chuẩn hoá từ `plot.txt`/`normaltalk.txt` trong phiên trước: Mộ Dung Ngọc Tiên, Vạn Kiếm Sầu, Xích Hà, Tiểu Thiến, Vân Tiêu, Bái Nguyệt, Nam Chiếu Vương, Thanh Nhi, Tố Trinh, Chỉ Vân, Nữ Oa Thạch, Thiên Nhưỡng Kiếp Ma...). Tất cả `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 39/109 file, 5.627 chuỗi đã dịch** (26 file lớn trước + 13 file nhỏ mới, 80 chuỗi).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 

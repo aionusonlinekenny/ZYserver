@@ -1,0 +1,6 @@
+{
+ "元宝不足，无法立即刷新藏宝阁": "Không đủ Nguyên Bảo, không thể làm mới Tàng Bảo Các ngay",
+ "包裹空间不足，无法购买物品": "Không đủ không gian hành trang, không thể mua vật phẩm",
+ "限时藏宝阁，感恩大回馈！恭喜 %s 以 %d 元宝的价格购买了 %s！<藏宝阁寻宝/@@showSysWin,60,0>": "Tàng Bảo Các giới hạn thời gian, tri ân đại hồi báo! Chúc mừng %s đã mua %s với giá %d Nguyên Bảo!<Tàng Bảo Các Tìm Báu Vật/@@showSysWin,60,0>",
+ "限时藏宝阁，感恩大回馈！恭喜 %s 以 %d 金币的价格购买了 %s！<藏宝阁寻宝/@@showSysWin,60,0>": "Tàng Bảo Các giới hạn thời gian, tri ân đại hồi báo! Chúc mừng %s đã mua %s với giá %d Kim Tệ!<Tàng Bảo Các Tìm Báu Vật/@@showSysWin,60,0>"
+}

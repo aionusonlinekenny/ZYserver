@@ -1,5 +1,5 @@
 ﻿AnswerTip = {
 
-a00001 = "大喊地图名字即可传送。",
-a00002 = "点击传送，选择地图，再点击确定。",   
+a00001 = "Hét to tên bản đồ là có thể truyền tống.",
+a00002 = "Nhấn truyền tống, chọn bản đồ, rồi nhấn xác nhận.",   
 }
