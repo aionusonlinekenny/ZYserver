@@ -393,7 +393,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong file thứ 19: **`pet.txt`** (264 chuỗi duy nhất, 270 lượt trong file, hoàn thành 100%) — toàn bộ hệ thống bạn đồng hành (伙伴)/thú cưng (宠物): thông báo lỗi UI, ~24 tên bạn đồng hành/thú cưng (小钻风, 嘟嘟鱼, 雪狐...), câu thoại hài hước/meme cho từng con, 6 gia tộc màu sắc + 3 hệ kỹ năng, 8 linh thú huyền thoại (神龙/火凤/冰凤/麒麟/猛虎/夜鹰/灵猴/仙雀) mỗi con kèm mô tả văn phong cổ điển gắn với 1 chỉ số, 8 tính cách (勇敢/坚强/坚韧/固执/专注/冷静/机敏/诚实) dùng chung 1 template `{0}-{7}`, 5 cấp bậc thú (元兽→圣兽), ~30 câu "cố vấn" thú cưng nói với chủ nhân (giữ nguyên mã `%N` hậu tố), và toàn bộ hệ thống "Thú Cưng Vượt Ải" (闯关/扫荡/珍宝囊) + hướng dẫn hợp thành/升星/trọng chú/nâng cấp trang bị thú cưng. Xác nhận quy ước xuống dòng: single-backslash-n (24 lượt, giống `activityname.txt`). `luac5.3 -p` pass, 0 tiếng Trung còn sót trong `"..."` (91 cụm tiếng Trung còn lại đều nằm trong comment `--` dành cho dev, đã xác minh bằng script kiểm tra vị trí `--` trước mọi ký tự Hán). Đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 19/109 file, 2.894 chuỗi đã dịch** (18 file trước + `pet.txt` 264 chuỗi hoàn thành 100%).
+- Đã dịch xong file thứ 20: **`mount.txt`** (268 chuỗi duy nhất, 292 lượt trong file, hoàn thành 100%) — toàn bộ hệ thống tọa kỵ: thông báo UI (喂养/进阶/强化/骑乘...), 12 tên tọa kỵ (啸天狼, 夜影豹, 雪月虎, 破甲黑犀, 熔甲苍熊, 幽炎影狮, 獠刃暴龙兽, 诛天血麟兽, 冰天琉璃凤, 帝御乾坤龙, 天馋玄龟, 双子貔貅) kèm 10 đoạn lore, 8 tên kỹ năng proc (碎盾/折戟/断刃/撕裂/迟钝/残忍/追击/天罚), và 2 khối text giới thiệu thần đan/thánh đan. Dùng generator cho: 120 tổ hợp `Bậc N sao M` (N=1-10, M=0-10, tái sử dụng quy ước "Bậc"/"sao" đã có sẵn từ Phase 4 UI glossary `一阶`→`Bậc 1`), 50 chuỗi thuộc tính dạng `{tên chỉ số} tăng N` (5 nhóm × 10), 10 chuỗi `被攻击时...伤害减免 N%`, và 9 chuỗi `坐骑进阶至N阶0星自动激活`. `luac5.3 -p` pass, 0 tiếng Trung thật còn sót (chỉ còn trong comment `--`). Đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 20/109 file, 3.162 chuỗi đã dịch** (19 file trước + `mount.txt` 268 chuỗi hoàn thành 100%).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
