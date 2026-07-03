@@ -741,6 +741,16 @@ Người dùng gửi 3 ảnh chụp màn hình mới (Tiên Vũ, Thuộc Tính t
 - Kết quả: `main.min_d7aad928.js` giảm **5.831 → 5.484** ký tự Hán còn lại.
 - **Đây là fix có tác động hiển thị RẤT LỚN** dù số ký tự ít — nhãn "Sinh Lực/Công Kích/Vật Kháng/Pháp Kháng" xuất hiện lặp lại hàng chục lần trên gần như MỌI màn hình thống kê nhân vật, trang bị, kỹ năng trong game.
 
+### 8.4.7s. Dịch tiếp bảng tên vị trí trang bị + tên 3 nhân vật gốc trong `main.min_d7aad928.js` (2026-07-03)
+
+Tiếp tục rà soát sau 8.4.7r, phát hiện thêm 2 bảng tra cứu 1 chiều an toàn khác đang hiện tiếng Trung trên ảnh chụp màn hình (mục "Vị trí：护腿", "Nghề nghiệp：落樱"):
+
+- **Bảng tên vị trí trang bị**: mảng `e.typeNumberToName=[...]` + 3 khối `switch(EquipPos...)`/`switch(HeirloomSlot...)` dùng chung 12 nhãn (头盔/衣服/手镯/护腕/护腿/戒指/鞋子/法令/灵佩/法链/仙束/天守) — dùng lại ĐÚNG các tên Hán Việt đã thiết lập nhất quán từ round `chainDesc`/`name` field trước đó trong `config.json` (Đầu Khôi, Y Phục, Thủ Trạc, Hộ Uyển, Hộ Thối, Giới Chỉ, Hài Tử, Pháp Lệnh, Linh Bội, Pháp Liên, Tiên Thúc, Thiên Thủ). Xác minh 0 so sánh ngược, 0 bracket-key, số lần xuất hiện mỗi nhãn trong toàn file khớp đúng số ngữ cảnh tìm được → áp **33/33 lượt khớp**.
+- **Tên gốc 3 nhân vật** (`御霄`/`落樱`/`长歌`/`通用`) dùng trong nhiều mảng/object literal rải rác khắp file (danh sách AI, danh sách săn boss, màn hình đồ giám, tooltip kích hoạt...) — đây là chuỗi CÓ TÁC ĐỘNG HIỂN THỊ LỚN NHẤT trong cả 2 đợt vì xuất hiện ở rất nhiều màn hình khác nhau. Xác minh 0 so sánh ngược cho cả 4 chuỗi → áp **20/20 lượt khớp**, dùng tên đã thiết lập xuyên suốt phiên (Ngự Tiêu/Lạc Anh/Trường Ca/Thông Dụng).
+- `node -c` hợp lệ sau cả 2 lần áp.
+- Kết quả: `main.min_d7aad928.js` giảm tiếp **5.484 → 5.378** ký tự Hán còn lại (từ đầu 8.4.7r đến giờ: 5.831 → 5.378, giảm 453 ký tự qua 4 glossary nhỏ nhưng tác động hiển thị rất lớn vì đều là nhãn lặp lại khắp game).
+- `default.thm_70915153.js` không có chuỗi nào trong các bảng này (giữ nguyên 184 ký tự Hán còn lại, không đổi).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
