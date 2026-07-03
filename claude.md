@@ -391,13 +391,13 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 - Đã dịch xong file thứ 15: **`fbtalk.txt`** (60 chuỗi, hoàn thành 100%) — lời thoại phó bản: Đồ Long Sơn Cốc, Ngũ Linh Huyền Thiên Trận, Phi Đao Môn, và 13 lore+chiến thuật boss thế giới huyễn cảnh (Băng Hỏa Ma, Bạch Phát Ma Sư, Tam Vĩ Diễm Hồ, U Minh Ma Quân, Diễm Vũ Phượng Hoàng, Kim Khải Huyền Vũ, Hắc Minh Ma Dực, Hỗn Độn Kiếm Ma, Thái Cổ Cùng Kỳ, Diệt Hồn Thiên Ma, Hồng Hoang Yêu Vu, Song Thân Ma Thần, Hình Thiên).
 - Đã dịch xong file thứ 16: **`kuafuzudui.txt`** (80 chuỗi, hoàn thành 100%) — bao gồm cả 2 rulebook rất dài (4508 + 847 ký tự) giải thích chi tiết luật "Tranh Đoạt Tiên Thành" và "Thánh Nguyên Thành Chi Chiến".
 
-**Tổng Giai đoạn 5: 16/109 file, 2.409 chuỗi đã dịch.**
+**Tổng Giai đoạn 5: 17/109 file, 2.534 chuỗi đã dịch** (16 file trước + `target.txt` 125 chuỗi hoàn thành 100%).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
 - ⚠️ **Phát hiện quan trọng**: file này dùng **2 dấu `\` liên tiếp (double-backslash)** làm ký hiệu xuống dòng hiển thị trong game, KHÁC với `activityname.txt`/`kuafuzudui.txt` (dùng `\n` — 1 dấu `\` + chữ "n"). Đã xác nhận qua đọc byte thô (`open(...,'rb')`) — `target.txt` có 164 lượt double-backslash, 0 lượt `\n`; ngược lại `activityname.txt`/`kuafuzudui.txt` có `\n` nhưng 0 double-backslash. **Quy tắc bắt buộc**: trước khi dịch bất kỳ file `.txt` MỚI nào có xuống dòng trong chuỗi, phải kiểm tra bằng lệnh đếm byte thô này để biết dùng quy ước nào, không được giả định giống file trước đó.
 - 125 chuỗi duy nhất: 36 chuỗi dạng `N级`/`N级可以做什么` (dùng generator, đã xong) + 89 chuỗi hướng dẫn dài theo mốc cấp độ (1-58) và theo hệ thống (nhiệm vụ, treo máy, PK, phó bản...).
-- Đã dịch xong 30/89 chuỗi dài (từ mốc chào mừng đến cấp 58 và 2 chuỗi hướng dẫn tân thủ) — còn 59 chuỗi (giới thiệu hệ thống: nhiệm vụ, treo máy, mục tiêu, tăng cường trang bị, PK, phó bản, khinh công, ký gửi, đấu đài, bang phái...) đang tiếp tục dịch.
+- ✅ **HOÀN THÀNH 100% `target.txt`** (125/125 chuỗi: 36 dạng `N级` + 89 chuỗi hướng dẫn dài). Batch cuối: khu vực khuyên dùng theo cấp, phó bản Diêm Vương Trại/Hoàng Tuyền Trại/Tùng Môn Khẩu, và toàn bộ 10 mục giới thiệu hệ thống (Nhiệm Vụ, Treo Máy, Mục Tiêu Của Tôi, Cường Hóa Trang Bị, PK, Phó Bản, Khinh Công, Ký Gửi, Đấu Đài, Bang Phái). Đã xác minh bằng script loại trừ `/M[^>]*>` (định danh cảnh NPC nội bộ, cùng quy ước với `href`) — 0 chuỗi thật sự còn tiếng Trung.
 - `luac5.3 -p` pass, đồng bộ s1->s99.
 
 ### 8.4.10. Đang dịch `kuafuzudui.txt` (136 dòng — thông báo Vạn Tiên Tranh Hoàng liên server), 2026-07-03
