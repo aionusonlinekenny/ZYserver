@@ -380,6 +380,26 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
   - **Còn lại: 14.682 chuỗi / 100 file**, trong đó riêng 5 file lớn nhất (`item.txt` 3.855 dòng, `scripttips.txt` 2.499, `skill.txt` 2.401, `talk.txt` 1.449, `quest.txt` 1.290) chiếm phần lớn khối lượng còn lại — đây là mô tả vật phẩm/kỹ năng và hội thoại nhiệm vụ, khối lượng công việc tương đương nhiều lần toàn bộ Giai đoạn 1-4 cộng lại.
 - ⬜ Giai đoạn 6 (config game — `data/config/**/*.config`, 401 file có chữ Hán nhúng trực tiếp trong tên/mô tả) — chưa bắt đầu, rủi ro cao nhất do cần tránh sửa nhầm field không phải text.
 
+### 8.4.3. Phát hiện thêm nữa (2026-07-03): dữ liệu tên item/skill/quái nằm ở file JSON riêng phía CLIENT — không phải exml, không phải server Lua
+
+Từ ảnh chụp màn hình test thực tế, thấy menu dưới cùng, tên kỹ năng ("霓帔伞舞"...), tên vật phẩm ("辟邪圣伞"), nhãn thuộc tính ("武器", "生命", "攻击") vẫn tiếng Trung dù `default.thm`/`main.min` đã vá. Điều tra thì phát hiện:
+
+- **Menu icon dưới cùng** (法术/炼器/仙侣/历练/背包...): tìm khắp exml/JS/config không thấy — nhiều khả năng chữ được **vẽ sẵn trong hình bitmap** của icon, không phải text động → **theo yêu cầu, bỏ qua, không cố dịch phần này**.
+- **Tên item/skill/quái**: nằm trong **`phpStudy/PHPTutorial/WWW/resource/config/config.json`** — file **12,8MB**, được `default.res3.json`/`default.res4.json` (manifest hợp lệ) tham chiếu nên **client có load và dùng thật**. Đây là bản dữ liệu cục bộ phía client (khác với dữ liệu server gửi runtime), cấu trúc `{"id":102401,"name":"辟邪圣伞","icon":102002,"descIndex":98}`.
+  - Quy mô: **249.477 ký tự Hán**, riêng field `"name"` có **22.987 lượt / 3.511 tên duy nhất**. File này còn có `resource/config1/config0-6.json` đi kèm (chưa khảo sát kỹ).
+  - Còn có **`server/bin/s1/gameworld/data/config/language/lang/*.config`** (16 file, 11.068 dòng) — một hệ thống "language" THỨ HAI ở server, tách biệt hoàn toàn khỏi `data/language/zh-cn/` (Giai đoạn 5 đang làm) — **chưa khảo sát/dịch**.
+- Phát hiện mẫu hình: rất nhiều tên item ghép từ **[Tên phái/vùng 2 chữ] + [Bậc 1 chữ: 玄/灵/圣] + [Loại trang bị 1 chữ: 剑/腕/镯/甲/腿/盔/戒/鞋/伞/琴]** (vd 辟邪+玄+剑, 太虚+灵+腕) — dùng chung 18 tên phái xuyên suốt cả `item.config` (server) lẫn `config.json` (client). Đã viết generator ghép từ (`translation/glossary_config_names1.json`) để dịch tự động theo tổ hợp thay vì gõ tay từng cái — tiết kiệm rất nhiều công.
+- **Đã làm**: viết `translation/apply_json_glossary.py` (escape đúng chuẩn JSON qua `json.dumps`, không dùng lại cách escape của Lua/exml). Dịch field `"name"` bằng 614 mục (456 sinh tự động qua morpheme + 158 dịch tay các tên đứng độc lập/quái/sách kỹ năng). Áp vào `config.json`: **18.825/22.987 lượt name đã dịch (81,9%)**, còn lại **4.162 lượt / 2.897 tên riêng biệt** chưa dịch. Đã xác minh JSON vẫn hợp lệ (`json.load` không lỗi) sau khi sửa.
+- **Chưa làm**: field `"desc"` (mô tả dài, ước tính chiếm phần lớn trong 188.173 ký tự Hán còn lại của `config.json`), `resource/config1/config0-6.json`, và `data/config/language/lang/*.config` (11.068 dòng, hệ thống riêng).
+
+**Tổng kết thực tế tại thời điểm này**: việc dịch game này có **6+ lớp nội dung tách biệt**, quy mô lớn hơn nhiều so với ước tính ban đầu ("Giai đoạn 5 và 6"):
+1. exml UI (Giai đoạn 1-4) — ĐÃ XONG 100% (nhưng phải vá thủ công vào `default.thm_70915153.js` vì exml không được build lại)
+2. `main.min_d7aad928.js` code logic — còn ~16.500 ký tự, RỦI RO CAO (có thể phá logic nếu dịch nhầm)
+3. `data/language/zh-cn/*.txt` server (Giai đoạn 5) — còn ~14.682 chuỗi / 100 file
+4. `data/config/language/lang/*.config` server (11.068 dòng) — CHƯA khảo sát
+5. `resource/config/config.json` + `config1/*.json` client (Giai đoạn 6 mở rộng) — còn ~188K ký tự (`desc` là phần lớn)
+6. `data/config/**/*.config` server (401 file, Giai đoạn 6 gốc) — CHƯA bắt đầu, có thể trùng lặp một phần với mục 4/5
+
 ### 8.5. Lưu ý triển khai
 
 - Vì `s1` và `s99` mỗi khu có **bản sao riêng** của `data/language` và `data/config` (không dùng chung), nên dịch xong 1 bên cần **đồng bộ/copy sang bên kia** (hoặc dịch song song cả 2) để 2 khu nhất quán.
