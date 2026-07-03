@@ -3,21 +3,21 @@ ExpWarmTips =
 {
 	
 	--等级温馨提示语
-	[4] = "恭喜您升至4级，不妨跟阵营活动NPC及同层另一名NPC对话，会有好福利等着您去领取哦！",
+	[4] = "Chúc mừng bạn đã lên cấp 4, hãy thử trò chuyện với NPC hoạt động phe phái và một NPC khác cùng tầng, sẽ có phúc lợi tốt đang chờ bạn nhận đó!",
 
-	[5] = "恭喜您升至5级，别忘了打开背包中的“成长礼包”，里面有丰厚奖励哦！",
+	[5] = "Chúc mừng bạn đã lên cấp 5, đừng quên mở “Túi Quà Trưởng Thành” trong hành trang, bên trong có thưởng hậu hĩnh đó!",
 
-	[10] = "10级喇！当您在路上遇见黄名字的盗宝贼，记得击杀之。会掉落大量经验及绑定金币，有可能掉落1、2级宝石",
+	[10] = "Cấp 10 rồi! Khi trên đường gặp tên trộm báu vật có tên màu vàng, nhớ tiêu diệt nó. Sẽ rơi ra lượng lớn kinh nghiệm và Kim Tệ khóa, có thể rơi bảo thạch cấp 1, 2",
 
 --[[
-	[11] = "恭喜您又成长了，11级后新手保护消除，赶紧提高实力保护自己吧",
+	[11] = "Chúc mừng bạn lại trưởng thành hơn, sau cấp 11 bảo hộ tân thủ sẽ mất, mau nâng cao thực lực để tự bảo vệ mình",
 
-	[15] = "恭喜您升至15级，先将坐骑放置身上，Shift+D实现上马/下马快捷操作",
+	[15] = "Chúc mừng bạn đã lên cấp 15, hãy trang bị tọa kỵ lên người trước, dùng Shift+D để lên/xuống tọa kỵ nhanh",
 
-	[25] = "恭喜您升至25级，您可以进入擂台申请打擂台啦。擂台霸主，看您的！",	
+	[25] = "Chúc mừng bạn đã lên cấp 25, bạn có thể vào Lôi Đài xin đấu Lôi Đài rồi đó. Bá chủ Lôi Đài, xem bạn thể hiện!",	
 ]]
 
-	[20] = "恭喜您升至20级，建议进行主线任务快速升级",
+	[20] = "Chúc mừng bạn đã lên cấp 20, khuyên bạn nên làm nhiệm vụ chính để lên cấp nhanh",
 
-	[30] = "很渴望建立自己的势力吧？30级后您就可以创建自己的帮派了；您还可以与志同道合的朋友一起义结金兰，领悟结拜技能呢。",
+	[30] = "Rất muốn xây dựng thế lực của riêng mình phải không? Sau cấp 30 bạn có thể tạo bang phái của riêng mình; bạn còn có thể cùng những người bạn chí hướng kết nghĩa kim lan, lĩnh ngộ kỹ năng kết nghĩa nữa đó.",
 }	

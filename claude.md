@@ -419,7 +419,9 @@ Khi kiểm tra khả năng viết tool build lại `.exml` → `.js`, phát hi�
 
 - Đã dịch xong **`qqmgr.txt`** (7 chuỗi, đặc quyền QQ Vệ Sĩ/Lam Cương/Hoàng Cương/hội viên) và **`achievemedal.txt`** (52 chuỗi, tên huy hiệu thành tựu dạng thành ngữ 4 chữ). ⚠️ Phát hiện lại lỗi tương tự `platform.txt`: dùng heredoc `<<'PYEOF'` (đúng quy tắc) nhưng bên trong script Python gõ `\n` (1 gạch chéo) thay vì `\\n` (2 gạch chéo) cho các chuỗi cần giữ nguyên ký hiệu xuống dòng `\n` của game — Python hiểu `\n` là ký tự xuống dòng thật, làm sai lệch key/value. Đã viết script sửa riêng để khôi phục `\n` thành đúng 2 ký tự. **Quy tắc nhấn mạnh lại**: bất kỳ chuỗi glossary nào cần giữ `\n` hoặc `\\` làm ký tự xuống dòng của game (không phải Python), PHẢI gõ `\\n` hoặc `\\\\` trong mã nguồn Python (kể cả trong heredoc single-quote) — không được gõ `\n`/`\\` trực tiếp. Sau khi áp dụng, luôn chạy lại kiểm tra "remaining chinese NOT after --" để bắt lỗi này sớm. `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
 
-**Tổng Giai đoạn 5: 53/109 file, 5.941 chuỗi đã dịch** (51 file trước + `qqmgr.txt` 7 + `achievemedal.txt` 52).
+- Đã dịch xong **`chat.txt`** (23 chuỗi, hệ thống kênh chat: 9 tên kênh + thông báo cấm chat/giới hạn cấp độ) và **`expwarmtips.txt`** (8 chuỗi, gợi ý mốc cấp độ đầu game 4-30). `luac5.3 -p` pass, 0 tiếng Trung còn sót, đồng bộ s1->s99.
+
+**Tổng Giai đoạn 5: 55/109 file, 5.972 chuỗi đã dịch** (53 file trước + `chat.txt` 23 + `expwarmtips.txt` 8).
 
 ### 8.4.11. Đang dịch `target.txt` (165 dòng — hướng dẫn mục tiêu theo cấp độ), 2026-07-03
 
