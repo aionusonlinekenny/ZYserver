@@ -1033,6 +1033,20 @@ Phát hiện họ tên thứ 3 dạng ngọc/phù/đồ theo 10 bậc phẩm ch�
 - Áp bằng `apply_json_glossary_field.py name` → **45/45 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **476 → 431** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **6.611 → 6.344**. Đồng bộ config1.
 
+### 8.4.7zv. Round 11 (file round13) dịch `name` — 431 giá trị cuối cùng, HOÀN TẤT field `name` (2026-07-04)
+
+Rà toàn bộ 431 giá trị `name` còn sót — không còn family combinatorial lớn nào nữa, dịch tay từng giá trị (vật phẩm/quái/NPC/địa danh/danh hiệu rải rác), tái dùng tối đa từ vựng đã thiết lập xuyên suốt dự án (khe trang bị, màu sắc, cấp bậc, tên phái...). Một số nhóm nhỏ đáng chú ý phát hiện thêm trong lúc dịch:
+- Cặp "X之书"/"X天书" (11 cặp: 刚正/断魂/杀道/气运/观天/诡道/非攻/天罚/化神/回春/攻伐 → Chi Thư/Thiên Thư).
+- Họ màu+羽 (5 màu 晚霞/晴空/紫旭/赤霄/青天 × 4 hậu tố 神羽/羽卡/羽灵/羽魂 = 20 giá trị).
+- Cặp "X劫·Y" (5 loại Kiếp × 2 = 10: 天地劫/山海劫/红尘劫/风云劫/仙凡劫).
+- Địa danh kinh điển kiểu "热血传奇": 沃玛→Ốc Mã, 蜈蚣洞→Hang Ngô Công, 赤月→Xích Nguyệt, 比奇→Bỉ Kỳ, 落霞→Lạc Hà.
+- Chuỗi danh hiệu danh vọng tăng dần (初露头角/小有名望/威名远播/名动一方/家喻户晓/举世盛名/享誉八方/赫赫有名/名不虚传/遐迩闻名/默默无闻...).
+- "神器-X" (8 vũ khí thần thoại: 乌木剑/屠龙/无极棍/血饮/裁决/银蛇/魔杖/龙血宝石).
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót, 0 giá trị output trùng lặp.
+- Áp bằng `apply_json_glossary_field.py name` → **431/431 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: **field `name` của `config.json` đã dịch xong 100%** (1.642 → 0 giá trị Hán còn sót qua 11 round liên tiếp trong phiên này). Ký tự Hán còn lại trong toàn bộ `config.json` giảm **6.344 → 4.437** (phần còn lại thuộc các field nhỏ khác: `context`, `bulletDesc`, `skillDesc`, v.v — chưa rà). Đồng bộ config1 (config2/3/4/6.json).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
