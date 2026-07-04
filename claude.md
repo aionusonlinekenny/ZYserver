@@ -961,6 +961,14 @@ Phân tích tần suất ký tự trong 1.583 giá trị `name` còn lại: phá
 - Áp bằng `apply_json_glossary_field.py name` → **315/315 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **1.583 → 1.268** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **12.644 → 10.846**. Đồng bộ config1.
 
+### 8.4.7zn. Round 3 dịch `name` — họ tên "{Tier} {khe trang bị}·{nhân vật}" (216 giá trị) (2026-07-04)
+
+Phát hiện họ tên thứ 2: mẫu `{cấp bậc}{khe trang bị}·{tên nhân vật}` — 6 cấp bậc (三山→Tam Sơn, 九霄→Cửu Tiêu, 仙人→Tiên Nhân, 大罗→Đại La, 脱凡→Thoát Phàm, 飞升→Phi Thăng) × 4 khe trang bị (仙束/天守/法链/灵佩, tái dùng Tiên Thúc/Thiên Thủ/Pháp Liên/Linh Bội đã có) × 9 tên nhân vật (tái dùng 御霄→Ngự Tiêu, 落樱→Lạc Anh, 长歌→Trường Ca đã có từ trước; dịch mới 神樱→Thần Anh, 神歌→Thần Ca, 神霄→Thần Tiêu, 道樱→Đạo Anh, 道歌→Đạo Ca, 道霄→Đạo Tiêu theo đúng cách ghép chữ đã dùng cho 3 tên gốc) = 6×4×9 = 216, khớp tự động **216/216**.
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót, 0 giá trị output trùng lặp.
+- Áp bằng `apply_json_glossary_field.py name` → **216/216 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **1.268 → 1.052** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **10.846 → 9.550**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
