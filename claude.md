@@ -926,6 +926,14 @@ Bucket 200-249 ký tự của `desc` (209 giá trị) hầu hết vẫn thuộc 
 - Áp bằng `apply_json_glossary_field.py desc` → **209/209 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: ký tự Hán còn lại trong toàn bộ `config.json` giảm mạnh **32.651 → 23.182** (desc còn 403 → 194 giá trị duy nhất). Đồng bộ config1 (config0.json 1 lượt).
 
+### 8.4.7zj. Round 16 dịch `desc` — 158 giá trị 250-299 ký tự, generator `desc_star_template.py` khớp gần như toàn bộ (2026-07-04)
+
+Bucket 250-299 ký tự (158 giá trị) — generator dùng chung từ round 15 (`desc_star_template.py`, xử lý cả 4 tier 内蕴天地/焚天诀/浩然正气/天地寂灭 và số dòng thuộc tính biến động) khớp tự động **157/158** không cần sửa gì thêm, chứng tỏ gần như toàn bộ phần dài còn lại của `desc` đều thuộc cùng 1 họ mẫu thẻ trang bị. 1 giá trị còn lại là bản mở rộng thêm nữa của thẻ Tiên Văn (thêm dòng 聚宝→Tụ Bảo, "tỉ lệ cộng thêm thu nhập Đồng Tiền") — dịch tay nối tiếp chuỗi mẫu đã có từ round 14/15.
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py desc` → **158/158 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: ký tự Hán còn lại trong toàn bộ `config.json` giảm mạnh **23.182 → 15.471** (desc còn 194 → **36** giá trị duy nhất — gần hết). Đồng bộ config1 (config0.json 1 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
