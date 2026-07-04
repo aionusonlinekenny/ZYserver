@@ -915,6 +915,17 @@ Rà bucket 150-200 ký tự của `desc` (58 giá trị). 50/58 khớp một m�
 - Áp bằng `apply_json_glossary_field.py desc` → **58/58 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: ký tự Hán còn lại trong toàn bộ `config.json` giảm **37.554 → 32.651** (desc còn 461 → 403 giá trị duy nhất). Đồng bộ config1 (config0.json 1 lượt).
 
+### 8.4.7zi. Round 15 dịch `desc` — 209 giá trị 200-249 ký tự, mở rộng generator thêm tier "天地寂灭" (2026-07-04)
+
+Bucket 200-249 ký tự của `desc` (209 giá trị) hầu hết vẫn thuộc family template ở round 14. Mở rộng generator (`desc_star_template.py`, thay cho bản cũ trong `build_desc_round14.py`) để xử lý tổng quát hơn:
+- Số dòng thuộc tính cơ bản không cố định 2 dòng nữa mà có thể là 2/3/4 dòng (thêm biến thể có 物抗+N và 法抗+N chen giữa) → regex đổi sang khớp danh sách dòng thuộc tính bất kỳ rồi dịch từng dòng qua bảng từ vựng.
+- Phát hiện tier thứ 4 chưa gặp trước đây: **天地寂灭 → Thiên Địa Tịch Diệt** (đi kèm thuộc tính mới 寂灭伤害 → Sát Thương Tịch Diệt, hiệu ứng "mỗi N lần tấn công gây thêm X% sát thương + Y điểm sát thương cố định").
+- Generator tự động khớp **207/209** giá trị. 2 giá trị còn lại dịch tay: 1 bản mở rộng (thêm 万卷→Vạn Quyển, dòng "kinh nghiệm thu nhập tăng %") của thẻ Tiên Văn đã dịch ở round 14, 1 bản tăng số liệu của thẻ buff Tiên Vũ đã có mẫu từ round 11 (tái dùng nguyên văn mẫu, chỉ đổi số).
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py desc` → **209/209 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: ký tự Hán còn lại trong toàn bộ `config.json` giảm mạnh **32.651 → 23.182** (desc còn 403 → 194 giá trị duy nhất). Đồng bộ config1 (config0.json 1 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
