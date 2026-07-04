@@ -1063,6 +1063,14 @@ Field `guide` (187 giá trị, 1.122 ký tự) hóa ra chỉ có **đúng 1 mẫ
 - Áp bằng `apply_json_glossary_field.py guide` → **187/187 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: **field `guide` đã dịch xong 100%**. Ký tự Hán còn lại trong toàn bộ `config.json` giảm **3.018 → 1.896**. Đồng bộ config1.
 
+### 8.4.7zy. Dịch field `fbName` — HOÀN TẤT 100% (2026-07-04)
+
+Field `fbName` (90 giá trị, 570 ký tự) — mẫu `"第N关 {tier}元{quái}"`, 6 tier (天/死/神/苍/荒/魔 → Thiên/Tử/Thần/Thương/Hoang/Ma Nguyên) × 30 tên quái duy nhất (dịch mới toàn bộ theo Hán Việt: 三首金龙→Tam Thủ Kim Long, 不老僧→Bất Lão Tăng, 冥后→Minh Hậu, 剥夺者→Kẻ Tước Đoạt, 勾魂吏→Câu Hồn Lại, 古尸→Cổ Thi, 天煞→Thiên Sát, 巨神→Cự Thần, 恶戮→Ác Lục, 恶灵→Ác Linh, 挪山公→Na Sơn Công, 擎天猿→Kình Thiên Viên, 死屠→Tử Đồ, 灵尸→Linh Thi, 焚刑鬼→Phần Hình Quỷ, 牛魔→Ngưu Ma, 玄龟→Huyền Quy, 白熊将→Bạch Hùng Tướng, 真灵→Chân Linh, 祖海王→Tổ Hải Vương, 神机→Thần Cơ, 神祀→Thần Tự, 紫龙→Tử Long, 葬傀→Táng Khôi, 蛇将→Xà Tướng, 蛮王→Man Vương, 金卫→Kim Vệ, 铁爪→Thiết Trảo, 雀卫→Tước Vệ, 霸斧→Bá Phủ) — generator khớp máy **90/90**.
+
+- Đối chiếu 100% key với text thô, 0 dấu ngoặc kép thẳng.
+- Áp bằng `apply_json_glossary_field.py fbName` → **90/90 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: **field `fbName` đã dịch xong 100%**. Ký tự Hán còn lại trong toàn bộ `config.json` giảm **1.896 → 1.326**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
