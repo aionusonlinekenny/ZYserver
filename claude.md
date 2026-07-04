@@ -906,6 +906,15 @@ Rà lại toàn bộ `desc` theo độ dài, phát hiện 57 giá trị ngắn (
 - Áp bằng `apply_json_glossary_field.py desc` → **57/57 lượt khớp**. `json.load()` hợp lệ.
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **39.009 → 37.554**. Đồng bộ config1 (3 lượt).
 
+### 8.4.7zh. Round 14 dịch `desc` — 58 giá trị 150-200 ký tự, bộ thẻ "Nội Uẩn Thiên Địa/Phần Thiên Quyết/Hạo Nhiên Chính Khí" (2026-07-04)
+
+Rà bucket 150-200 ký tự của `desc` (58 giá trị). 50/58 khớp một mẫu template lặp lại (thẻ trang bị hiển thị: "当前星级...基础属性...战斗力...[内蕴天地/焚天诀/浩然正气]N级(màu 5件激活)" + hiệu ứng tương ứng) — viết generator regex dịch tự động dựa trên từ vựng cố định đã có sẵn (生命→Sinh Lực, 攻击→Công Kích, 焚火伤害→Sát Thương Phần Hỏa, 仙罡罡气→Tiên Cương Cương Khí [ghép từ 仙罡→Tiên Cương + 罡气→Cương Khí đã có], 内蕴天地→Nội Uẩn Thiên Địa, 焚天诀→Phần Thiên Quyết, 浩然正气→Hạo Nhiên Chính Khí, 战斗力→Chiến Lực, các màu 绿色/紫色/橙色/红色→Xanh Lục/Tím/Cam/Đỏ), số liệu (sao/số/%) giữ nguyên. 8 giá trị còn lại dịch tay: 4 tier "道藏秘法——《焚天诀》散落的篇章" (xanh/tím/cam/đỏ, kèm mô tả "获取途径" tăng độ hiếm theo tier), 1 rương BOSS sự kiện Long Đài Đầu (dùng lại tên loại BOSS đã có: BOSS Cá Nhân/BOSS Dã Ngoại/BOSS Bí Cảnh/BOSS Thần Vực/BOSS Chi Gia/Thần Binh Thánh Vực), 1 bản mở rộng của thẻ "开启后必然获得" round 11 (500W kinh nghiệm Thần Binh, 18 viên ngọc — 9 viên 帝-tier dịch song song với 9 viên 王-tier đã có ở round 11 bằng cách đổi Vương→Đế), 1 mô tả Tiên Văn theo tầng, 1 thẻ hiệu ứng kích hoạt Tiên Cung.
+
+- Phát hiện bug trong `apply_json_glossary_field.py`: script khớp trên **text thô chưa giải mã** của file (nhóm regex capture `\n` dạng 2 ký tự thô, không phải ký tự xuống dòng thật), trong khi glossary xây từ `json.load()` có khoá chứa ký tự xuống dòng thật (đã giải mã) → 0 lượt khớp dù nội dung đúng. Khắc phục bằng cách chuyển đổi lại khoá glossary qua `json.dumps(k, ensure_ascii=False)[1:-1]` trước khi ghi file glossary, để khoá khớp đúng dạng thô trong file gốc (giữ nguyên quy ước có từ các round trước — glossary key luôn ở dạng escape thô).
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót trong giá trị dịch.
+- Áp bằng `apply_json_glossary_field.py desc` → **58/58 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: ký tự Hán còn lại trong toàn bộ `config.json` giảm **37.554 → 32.651** (desc còn 461 → 403 giá trị duy nhất). Đồng bộ config1 (config0.json 1 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
