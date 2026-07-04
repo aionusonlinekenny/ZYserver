@@ -898,6 +898,14 @@ Dịch tay 13 giá trị: bộ ngọc Vương/Đế 3 vũ khí (Kiếm/Tản/C�
 - Áp bằng `apply_json_glossary_field.py desc` → **13/13 lượt khớp**. `json.load()` hợp lệ.
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **39.808 → 39.009**. Đồng bộ config1 (1 lượt).
 
+### 8.4.7zg. Round 13 dịch `desc` — 57 giá trị ngắn còn sót (≤49 ký tự), 2026-07-03
+
+Rà lại toàn bộ `desc` theo độ dài, phát hiện 57 giá trị ngắn (≤49 ký tự) chưa từng được dịch ở các round trước (chủ yếu mô tả điều kiện sự kiện lễ hội — Tết Dương Lịch/Giáng Sinh/Lạp Bát, mốc xếp hạng top 20, mô tả vật phẩm ngắn). Dịch tay toàn bộ 57 giá trị.
+
+- Đối chiếu 100% key với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py desc` → **57/57 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **39.009 → 37.554**. Đồng bộ config1 (3 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
