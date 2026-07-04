@@ -890,6 +890,14 @@ Dịch tay 15 giá trị `desc`: hộp chọn thưởng Kim Tước Tiên Cung/t
 - Áp bằng `apply_json_glossary_field.py desc` → **15/15 lượt khớp**. `json.load()` hợp lệ.
 - Kết quả: ký tự Hán còn lại trong `config.json` giảm **40.643 → 39.808**. Đồng bộ config1 (2 lượt).
 
+### 8.4.7zf. Round 12 dịch `desc` — 13 giá trị 100-150 ký tự (2026-07-03)
+
+Dịch tay 13 giá trị: bộ ngọc Vương/Đế 3 vũ khí (Kiếm/Tản/Cầm), 3 cây Tiên Cung tự chọn nguyên liệu (Trụy Nhật/Phá Nguyệt/Táng Thần — 8 nguyên liệu mỗi cây), 3 kỹ năng huấn luyện Linh Thú, 2 thẻ đồ giám kích hoạt kim trang, hộp Linh Thú 3 sao, rương may mắn Yêu Trủng.
+
+- Đối chiếu 100% key với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py desc` → **13/13 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **39.808 → 39.009**. Đồng bộ config1 (1 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
