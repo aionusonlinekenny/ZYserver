@@ -989,6 +989,16 @@ Tiếp tục họ tên ngọc quý dạng `{tier}{vũ khí}{2 chữ}{hậu tố}
 - Áp bằng `apply_json_glossary_field.py name` → **180/180 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **956 → 776** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **8.951 → 8.051**. Đồng bộ config1.
 
+### 8.4.7zq. Round 6 (file lưu là round7 do round6 đã bị chiếm bởi phiên cũ) dịch `name` — 78 giá trị vật phẩm/mốc cấp độ chứa "级" (2026-07-04)
+
+Lưu ý: file `translation/glossary_config_name_round6.json` đã tồn tại từ phiên trước (283 mục, không liên quan nội dung round này) nên lưu batch này vào `glossary_config_name_round7.json` để tránh ghi đè.
+
+Dịch tay 78 giá trị chứa "级" — nhóm hỗn hợp gồm: 13 mốc "N级mở/thêm mới X" (vd 20级开启个人BOSS→Cấp 20 mở BOSS Cá Nhân), bộ vật phẩm 4 cấp bậc Sơ/Trung/Cao/Đỉnh Cấp (盒/箱/袋/卡/瓶/石/元/令 — Hộp Chủ Tể, Hộp Kích Sát, Rương May Mắn, Túi Khôi Thủ, Thẻ/Bình Kinh Nghiệm, Luyện Trận Thạch, Thú Nguyên, Lệnh Triệu Hoán — tái dùng quy ước hậu tố "X Cấp" đã có từ trước, và đối chiếu quy ước cũ **低级 dịch giống 初级 = Sơ Cấp** đã dùng nhất quán trong round14), 8 giá trị "灵火·[休/伤/开/惊/景/杜/死/生]·60级" (tương ứng Bát Môn Kỳ Môn Độn Giáp, giữ phiên âm Hán Việt từng chữ), và vài giá trị lẻ (至尊金/银箱, 超级/高级飞升丹, 等级直升丹...).
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py name` → **78/78 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **776 → 698** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **8.051 → 7.644**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
