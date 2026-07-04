@@ -1343,6 +1343,8 @@ Người dùng gửi ảnh popup "Thu nhập offline": 2 cột "Thu nhập offli
 - Đã tính toán bề rộng ước lượng cho nhãn dài nhất ("Kinh nghiệm:") ở cỡ 16 vẫn nằm gọn trong ngân sách left=10→120 (110px); nếu lệch vài px thực tế trên máy, gửi ảnh để mình tinh chỉnh tiếp (không có công cụ render UI trực tiếp trong phiên này nên phải ước lượng rồi canh chỉnh theo ảnh chụp thực tế).
 - `node -c` qua được. Theo đúng quy ước ở 8.9: đổi tên `default.thm_46501425.js` → `default.thm_c31ead90.js`, cập nhật `manifest.json`, bump `index.php` dòng `manifest.json?v=` → `c31ead90`.
 
+Cập nhật thêm (cùng ngày): người dùng xác nhận layout đã ổn, yêu cầu đổi tiêu đề cột 2 từ `"Thu nhập thêm từ Thẻ Tháng"` (dài, dễ tràn) thành `"Thêm từ Thẻ Tháng"` (ngắn gọn hơn) trong `label1_i` — đã sửa, đổi tên `default.thm_c31ead90.js` → `default.thm_6d6f7b59.js` + cập nhật `manifest.json`/`index.php` theo đúng quy ước.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
