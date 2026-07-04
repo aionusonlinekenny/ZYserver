@@ -1329,6 +1329,20 @@ e.prototype.timeEnd = function (t) {
 - **Theo đúng quy ước mới ở 8.9**: đổi tên `main.min_8e343ef1.js` → `main.min_4cb265d1.js`, cập nhật `manifest.json`, bump `index.php` dòng `manifest.json?v=` → `4cb265d1`, cùng 1 commit với sửa code.
 - Người dùng cần test lại bằng tab ẩn danh/thiết bị mới sau khi copy đủ 4 file (`index.php`, `manifest.json`, `js/default.thm_46501425.js`, `js/main.min_4cb265d1.js`) lên server thật.
 
+## 8.11. Sửa chồng chéo số liệu trong popup "Thu nhập offline" (ảnh IMG_0392, 2026-07-04)
+
+Người dùng gửi ảnh popup "Thu nhập offline": 2 cột "Thu nhập offline" và "Thu nhập thêm từ Thẻ Tháng", mỗi cột có các dòng Đồng/Kinh nghiệm/Trang bị/Tinh Luyện — nhãn tiếng Việt dài hơn hẳn tiếng Trung gốc nên đè lên số liệu phía sau (vd "Kinh nghiệm：530" bị dính chữ vào số).
+
+**Vị trí code**: `default.thm_*.js`, class `SkinOfflineReward` (`OfflineRewardSkin.exml`). Cấu trúc gốc mỗi dòng: nhãn ở `left=10` (không set `width` nên tự co giãn theo độ dài chữ), số liệu ở `left=70` cố định — ngân sách chỉ 60px giữa 2 mốc này. Với nhãn ngắn kiểu Trung "经验：" thì vừa, nhưng "Kinh nghiệm："/"Tinh Luyện：" tiếng Việt cần ước tính ~130-150px ở cỡ chữ 20 → đè thẳng vào số liệu.
+
+**Đã sửa** (áp dụng cho cả 6 nhãn + 6 số liệu, 2 cột, class `SkinOfflineReward`):
+- Cỡ chữ nhãn (Đồng/Kinh nghiệm/Trang bị/Tinh Luyện, cả 2 cột): 20 → 16.
+- Đổi dấu hai chấm full-width "：" (chiếm ~1 chữ cái bề ngang) sang dấu hai chấm thường ":" (hẹp hơn nhiều) trong text nhãn.
+- Số liệu: `left` 70 → 120 (nhường thêm ~50px cho nhãn), `width` 88 → 67 (vẫn đủ hiển thị số 6 chữ số ở cỡ chữ 20 gốc, không đổi cỡ chữ số để giữ độ nổi bật).
+- Cột 2 (`label3_i`/`label5_i`, vốn có `textAlign="center"` nhưng thiếu `width` nên vô tác dụng — đúng quirk `eui.Label` đã ghi ở các mục trước) nay thêm `width=67` để `textAlign="center"` thực sự có tác dụng, số hiện giữa hộp đẹp hơn.
+- Đã tính toán bề rộng ước lượng cho nhãn dài nhất ("Kinh nghiệm:") ở cỡ 16 vẫn nằm gọn trong ngân sách left=10→120 (110px); nếu lệch vài px thực tế trên máy, gửi ảnh để mình tinh chỉnh tiếp (không có công cụ render UI trực tiếp trong phiên này nên phải ước lượng rồi canh chỉnh theo ảnh chụp thực tế).
+- `node -c` qua được. Theo đúng quy ước ở 8.9: đổi tên `default.thm_46501425.js` → `default.thm_c31ead90.js`, cập nhật `manifest.json`, bump `index.php` dòng `manifest.json?v=` → `c31ead90`.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
