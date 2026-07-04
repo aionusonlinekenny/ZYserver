@@ -1192,6 +1192,14 @@ Người dùng yêu cầu trực tiếp bỏ bớt chữ "Hôm nay" ở dòng "H
 - `node -c` qua được.
 - **Chưa xác nhận trực quan** — cần deploy + xem lại hàng 2/3 lúc chưa có vật phẩm trong túi để xác nhận icon-vàng+giá đã canh giữa đúng theo nút Mua.
 
+### 8.6.9. Tinh chỉnh nhỏ theo yêu cầu: nhích icon-vàng+giá lên 3px để canh giữa khoảng trống giữa đáy nút Mua và cạnh dưới hàng (2026-07-04)
+
+Ảnh xác nhận canh giữa theo chiều ngang (8.6.8) đã đúng theo tâm nút Mua. Người dùng yêu cầu tinh chỉnh thêm theo chiều dọc: nhích `priceIcon1`/`priceIcon2` lên 2-3px để nằm giữa khoảng trống (đáy nút Mua → cạnh dưới khung hàng), thay vì hơi lệch xuống dưới như hiện tại.
+
+- Đổi `t.top = 96` → **`t.top = 93`** (nhích lên 3px) cho cả `priceIcon1_i`/`priceIcon2_i`. Không đổi `horizontalCenter`.
+- `node -c` qua được.
+- **Chưa xác nhận trực quan** — cần deploy + xem lại xác nhận đã canh giữa đẹp theo cả 2 chiều.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
