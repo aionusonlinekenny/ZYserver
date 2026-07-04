@@ -1084,6 +1084,39 @@ Trích toàn bộ 191 giá trị chuỗi (bất kỳ field nào) còn chứa ký
 - Áp bằng `apply_json_glossary_anyfield.py` → **190/190 giá trị khớp, 229 lượt thay thế** (một số giá trị lặp lại ở nhiều field/object). `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - **Kết quả: `config.json` đã dịch xong ~100%** — chỉ còn duy nhất 7 occurrence của `跨服战场` (28 ký tự) được giữ nguyên có chủ đích vì lý do kỹ thuật. Ký tự Hán còn lại trong toàn bộ `config.json` giảm **1.326 → 28**. Đồng bộ config1 (config2/3/4/5/6.json).
 
+### 8.4.10. TRẠNG THÁI TỔNG QUAN dịch thuật + việc cần làm tiếp theo (cập nhật 2026-07-04)
+
+**Đã hoàn tất 100% (không còn ký tự Hán, trừ ngoại lệ có chủ đích):**
+- `resource/config/config.json` + 7 file `resource/config1/config0-6.json` (bản sao đồng bộ) — **~100%**, chỉ còn 7 occurrence `跨服战场` giữ nguyên có chủ đích (xem 8.4.7zz).
+- Toàn bộ field lớn: `desc`, `name`, `skilldesc`/`skillDesc`, `guide`, `fbName`, `text`, `bulletDesc`, và ~50 field nhỏ rải rác khác.
+
+**Còn tồn đọng — thứ tự ưu tiên gợi ý cho phiên sau:**
+1. **`js/main.min_d7aad928.js`** — còn khoảng **4.130 ký tự Hán** (số liệu tại thời điểm kiểm tra gần nhất, 8.4.7zd) rải rác trong logic hiển thị, cần dùng lại quy trình `apply_js_literal_glossary.py` (đã vá lỗi desync ở 8.4.7t — **luôn dùng bản đã vá**) + kiểm tra an toàn (không đụng chuỗi bị so sánh `==` với giá trị server, vd `跨服战场`).
+2. **Giai đoạn 5 — `data/language/zh-cn/*.txt`**: 5 file khổng lồ chưa đụng tới `talk.txt` (~60K ký tự Hán), `item.txt` (~42K), `skill.txt` (~35K), `scripttips.txt` (~25K), `quest.txt` (~14K), cộng ~30 file cỡ trung bình khác (guide.txt, friend.txt, betaactivity.txt, question.txt, team.txt, slave.txt, xianshi.txt, superexptime.txt, chatmsg.txt, storyline.txt, anheishendian.txt, fightvalue.txt, cross.txt...).
+3. **Giai đoạn 6 — `data/config/**/*.config`**: 422 file server-side Lua-style, xác nhận là nguồn dữ liệu flavor-text cho các màn hình (vd `teamfuben.config` cho màn "竞技"/Đấu Trường) — chưa bắt đầu, cần làm song song cho cả `s1` và `s99`.
+4. **`data/config/language/lang/*.config`**: 16 file (lang.config, fuwen.config, achieve.config, fuben.config, item.config, shop.config, spequip.config, vip.config, chapter.config, character.config, monster.config, scripttips.config, friend.config, system.config, mail.config, boss.config) — hệ thống dịch nội dung động thứ 2, chưa khám phá kỹ, chưa bắt đầu.
+
+**Quy ước bắt buộc giữ nguyên cho mọi round dịch tiếp theo** (đã kiểm chứng qua ~30 round trong dự án):
+- Dấu ngoặc kép trong giá trị dịch: luôn dùng ngoặc cong `"…"`, không bao giờ dùng `"` thẳng chưa escape.
+- Bỏ qua chữ Hán nhúng trong bitmap ảnh (không thể sửa bằng text edit) — đã xác nhận nhiều biểu ngữ/icon dùng bitmap.
+- Luôn đối chiếu 100% key (dạng escape thô, có xử lý `\/`) với text thô của file gốc trước khi áp, kiểm tra 0 dấu ngoặc kép thẳng + 0 ký tự Hán sót trong giá trị dịch sau khi build glossary.
+- `apply_json_glossary_field.py` dùng cho field cố định; `apply_json_glossary_anyfield.py` (mới, 8.4.7zz) dùng khi field rải rác trên nhiều tên khác nhau.
+- Sau mỗi lần sửa `config.json`: luôn chạy `python3 translation/sync_config1_from_config.py` để đồng bộ 7 file `config1/configN.json`.
+- Luôn cập nhật `claude.md` trước khi commit; mỗi round dịch = 1 commit riêng (code + docs cùng lúc), push lên `claude/repo-analysis-deployment-1dtmin` sau mỗi commit.
+- Với sửa layout UI trong `default.thm_70915153.js`/`main.min_d7aad928.js`: vì không thể render trực tiếp để kiểm tra, luôn xin ảnh chụp màn hình của người dùng sau khi họ deploy để xác nhận trước khi coi là xong (xem 8.6 bên dưới — quy trình đã áp dụng nhiều lần).
+
+## 8.6. Sửa lỗi layout UI phát hiện qua ảnh chụp màn hình người dùng
+
+### 8.6.1. Căn giữa lại 2 dòng ghi chú trong popup "Luyện Hóa Trang Bị" (SmeltMainViewSkin) bị lệch phải do dịch dài hơn bản gốc (2026-07-04)
+
+Người dùng gửi ảnh chụp cho thấy 2 dòng chú thích dưới khung 9 ô trang bị trong popup Nung Luyện — dòng xanh "Chức năng Nung Luyện chỉ thu hồi trang bị vô dụng" và dòng vàng "(Thẻ Tháng Đặc Quyền mở Nung Luyện nhanh)" — bị lệch hẳn qua phải, tràn ra ngoài mép khung.
+
+- Truy vết: cả 2 dòng nằm trong `SkinSmeltMainView` (`generateEUI.paths['resource/exml/SmeltMainViewSkin.exml']`) trong `default.thm_70915153.js`, là `_Label2_i`/`_Label3_i`, con của `eui.Group` (`anigroup`, width=484) — cùng cấp với `title_i` ("Luyện Hóa Trang Bị") và các Image nền dùng `horizontalCenter = 0` để tự căn giữa.
+- **Nguyên nhân gốc**: 2 Label này KHÔNG dùng `horizontalCenter`, mà dùng toạ độ cố định `t.x = 141` (không set `width`) — với text tiếng Hán gốc ngắn (`熔炼功能只回收无用装备` = 11 ký tự) thì trùng hợp gần giữa khung, nhưng bản dịch tiếng Việt dài hơn nhiều (50 và 42 ký tự) nên hộp text tự phình rộng về bên phải kể từ mốc x=141 cố định → tràn khỏi khung dù đã có `textAlign="center"` (thuộc tính này vô nghĩa khi hộp tự co theo nội dung, không có `width` cố định).
+- **Sửa**: thay `t.x = 141` bằng `t.horizontalCenter = 0` (đúng theo mẫu các sibling component khác trong cùng group) + thêm `t.width = 417` (khớp bề rộng nền panel `ronglianbg_png`) cho cả `_Label2_i` và `_Label3_i`, để `textAlign="center"` phát huy tác dụng thật sự trong 1 hộp cố định được căn giữa theo panel.
+- Xác minh: khối code sửa là duy nhất trong toàn file (`content.count(old_block)==1`), `node -c` qua được, không có bản sao trong `main.min_d7aad928.js`.
+- **Chưa xác nhận trực quan** (không có cách render/kiểm tra hình ảnh trực tiếp) — cần người dùng deploy lên server thật và gửi ảnh chụp xác nhận, theo đúng quy trình lặp đã dùng ở 8.4.7zc (SkillItem fix, 3 vòng phản hồi mới ra kết quả đúng).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
