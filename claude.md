@@ -1047,6 +1047,14 @@ Rà toàn bộ 431 giá trị `name` còn sót — không còn family combinator
 - Áp bằng `apply_json_glossary_field.py name` → **431/431 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: **field `name` của `config.json` đã dịch xong 100%** (1.642 → 0 giá trị Hán còn sót qua 11 round liên tiếp trong phiên này). Ký tự Hán còn lại trong toàn bộ `config.json` giảm **6.344 → 4.437** (phần còn lại thuộc các field nhỏ khác: `context`, `bulletDesc`, `skillDesc`, v.v — chưa rà). Đồng bộ config1 (config2/3/4/6.json).
 
+### 8.4.7zw. Dịch field `skilldesc`/`skillDesc` — HOÀN TẤT 100% (2026-07-04)
+
+Chuyển sang field nhỏ hơn `skilldesc` (86 giá trị, 1.398 ký tự — field lớn nhất trong các field còn lại sau `desc`/`name`). Toàn bộ là mô tả hiệu ứng kỹ năng theo ~11 mẫu template cố định chỉ khác số liệu (% sát thương, điểm sát thương, giây...) — viết generator regex khớp tự động **78/86**, dịch tay 8 giá trị còn lại (biến thể theo tier 陷/戮/绝 của "诛仙刃"/"诛仙甲", tái dùng Tru Tiên đã có, dịch mới 陷→Hãm, 戮→Lục). Đồng thời xử lý luôn field `skillDesc` (viết hoa D, chỉ 1 giá trị).
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py skilldesc` → **86/86 lượt khớp**, `skillDesc` → **1/1 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: **field `skilldesc`/`skillDesc` đã dịch xong 100%**. Ký tự Hán còn lại trong toàn bộ `config.json` giảm **4.437 → 3.018**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
