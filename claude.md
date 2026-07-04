@@ -1154,6 +1154,18 @@ Khác với các bug layout trước (đều là toạ độ tĩnh trong skin `d
 - Xác minh: cả 8 khối sửa (`getItemTxt_i`, `_Label3_i`, `yeli0_i`, `_Label7_i`, `yeli1_i`, `_Label10_i`, `yeli2_i`, và cặp Group+HorizontalLayout×3) đều duy nhất trong file trước khi sửa (đối chiếu bằng khối code lớn kèm ngữ cảnh xung quanh vì tên hàm `_Label3_i`/`_Group2_i`/`_HorizontalLayoutN_i` bị trùng tên ở hàng chục class khác trong cùng file). `node -c` qua được.
 - **Chưa xác nhận trực quan** — cần deploy + gửi ảnh lại đúng: (1) link "Nhận Kiếp Lực" dưới nút Phi Thăng có còn 1 dòng không, (2) cả 3 dòng trong popup đổi Kiếp Lực đã hết đè số, (3) dòng "Hôm nay còn có thể đổi X lần" đã có khoảng trắng.
 
+### 8.6.5. Người dùng phản hồi: thay vì rút gọn "Nhận Kiếp Lực：" → đổi sang xuống dòng (giữ nguyên chữ đầy đủ) (2026-07-04)
+
+Sau khi xem lại, người dùng đề nghị không rút gọn chữ mà đưa số tiền thưởng xuống dòng riêng — khớp đúng nguyên tắc ưu tiên đã thống nhất từ đầu dự án (di dời/mở rộng trước, chỉ rút gọn khi thật sự bắt buộc). Rà lại thấy vẫn đủ khoảng trống dọc để làm theo cách này mà **không cần rút gọn**: khoảng cách gốc giữa dòng nhãn (top=26) và dòng thông tin kế tiếp (yeli4/name, top=72) là 46px — dư đủ để chèn thêm 1 dòng số ở giữa.
+
+- Đảo ngược lại chữ: `"Kiếp Lực："` → **`"Nhận Kiếp Lực："`** (giữ nguyên bản đầy đủ) cho cả 3 dòng (`_Label3_i`/`_Label7_i`/`_Label10_i`).
+- Đưa số tiền (`yeli0`/`yeli1`/`yeli2`) xuống dòng riêng ngay dưới nhãn: đổi từ `x=210,top=26` (cùng dòng, sát nhãn) sang **`x=90,top=50`** (dòng mới, thẳng hàng lề trái với nhãn phía trên) — nhãn ở top=26 không đổi.
+- Dời dòng thông tin kế tiếp (`yeli4`/`name1`/`name2`, vốn là "Đổi cấp：giảm 1 cấp" hoặc tên vật phẩm) từ `top=72` xuống **`top=76`** (né dòng số mới chèn vào, cách 26px sau dòng số — đủ 1 dòng chữ size 22).
+- Dời `limit_i` ("Cấp trên 110 có thể đổi", chỉ có ở hàng 1) từ `y=96` xuống **`y=100`** để giữ đúng khoảng cách tương đối 24px so với dòng phía trên (như bản gốc `96-72=24`).
+- Tổng cộng mỗi hàng giờ có 3 dòng dọc (nhãn → số → thông tin kế) thay vì 2 dòng chật chội trước đó, không đổi chữ, không tăng chiều cao khung tổng thể (vẫn nằm trong `height=122` của mỗi hàng, có kiểm tra khoảng hở giữa các khung `gr1/gr2/gr3` đủ dư phòng trường hợp dòng cuối hàng 1 sát mép dưới).
+- Đối chiếu: mọi khối sửa (bao gồm `yeli0_i`/`_Label3_i`/`yeli4_i`/`limit_i`/`_Label7_i`/`yeli1_i`/`name1_i`/`_Label10_i`/`yeli2_i`/`name2_i`) đều xác nhận duy nhất trong file trước khi sửa. `node -c` qua được.
+- **Chưa xác nhận trực quan** — cần deploy + gửi ảnh lại cả 3 dòng phần thưởng trong popup "Nhận Kiếp Lực" để xác nhận đã xuống dòng gọn gàng, không đè chữ, và hàng 1 (có thêm dòng "Cấp trên 110 có thể đổi") không bị tràn xuống dưới khung.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
