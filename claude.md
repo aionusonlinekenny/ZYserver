@@ -1095,7 +1095,7 @@ Trích toàn bộ 191 giá trị chuỗi (bất kỳ field nào) còn chứa ký
 **Còn tồn đọng — thứ tự ưu tiên gợi ý cho phiên sau:**
 1. **`js/main.min_d7aad928.js`** — còn khoảng **4.130 ký tự Hán** (số liệu tại thời điểm kiểm tra gần nhất, 8.4.7zd) rải rác trong logic hiển thị, cần dùng lại quy trình `apply_js_literal_glossary.py` (đã vá lỗi desync ở 8.4.7t — **luôn dùng bản đã vá**) + kiểm tra an toàn (không đụng chuỗi bị so sánh `==` với giá trị server, vd `跨服战场`).
 2. **Giai đoạn 5 — `data/language/zh-cn/*.txt`**: 5 file khổng lồ chưa đụng tới `talk.txt` (~60K ký tự Hán), `item.txt` (~42K), `skill.txt` (~35K), `scripttips.txt` (~25K), `quest.txt` (~14K), cộng ~30 file cỡ trung bình khác (guide.txt, friend.txt, betaactivity.txt, question.txt, team.txt, slave.txt, xianshi.txt, superexptime.txt, chatmsg.txt, storyline.txt, anheishendian.txt, fightvalue.txt, cross.txt...).
-3. **Giai đoạn 6 — `data/config/**/*.config`**: 422 file server-side Lua-style, xác nhận là nguồn dữ liệu flavor-text cho các màn hình (vd `teamfuben.config` cho màn "竞技"/Đấu Trường) — chưa bắt đầu, cần làm song song cho cả `s1` và `s99`.
+3. **Giai đoạn 6 — `data/config/**/*.config`**: 422 file server-side Lua-style, xác nhận là nguồn dữ liệu flavor-text cho các màn hình (vd `teamfuben.config` cho màn "竞技"/Đấu Trường) — **đã bắt đầu**: `notice/notice.config` (379 dòng thông báo hệ thống/kênh 综合) đã dịch xong 100% (xem 8.13), còn lại ~421 file khác trong Giai đoạn 6 chưa đụng tới.
 4. **`data/config/language/lang/*.config`**: 16 file (lang.config, fuwen.config, achieve.config, fuben.config, item.config, shop.config, spequip.config, vip.config, chapter.config, character.config, monster.config, scripttips.config, friend.config, system.config, mail.config, boss.config) — hệ thống dịch nội dung động thứ 2, chưa khám phá kỹ, chưa bắt đầu.
 
 **Quy ước bắt buộc giữ nguyên cho mọi round dịch tiếp theo** (đã kiểm chứng qua ~30 round trong dự án):
@@ -1355,6 +1355,27 @@ Người dùng gửi ảnh: banner nổi trên màn chơi (không phải popup) 
 
 **Đã sửa**: tăng `width` của cả `taskTraceName_i` và `taskTraceAwards_i` từ 280 → 460 (cả 2 đều đã `horizontalCenter` sẵn nên tăng width vẫn giữ canh giữa đúng, ảnh nền `_Image6_i` (198px) chỉ là hình trang trí phía sau, chữ vốn đã tràn ra ngoài khung ảnh nền từ trước nên không có giới hạn cắt (clip) nào ngăn việc mở rộng thêm).
 - `node -c` qua được. Đổi tên `default.thm_6d6f7b59.js` → `default.thm_0d1590b8.js`, cập nhật `manifest.json`/`index.php` theo đúng quy ước cache ở 8.9.
+
+## 8.13. Dịch toàn bộ `notice.config` (thông báo hệ thống ở kênh 综合/chat) — mở đầu Giai đoạn 6 (2026-07-04)
+
+Người dùng gửi ảnh 2 màn chat (IMG_0453/IMG_0454) hỏi về các dòng thông báo kiểu `[系统] 恭喜宛若黎雷超凡入圣，成功突破脱凡境·破妄，战力大增` và `[系统] BOSS霸武白熊出现在魔界入侵！` hiện trong kênh "综合" — yêu cầu tìm và dịch phần này.
+
+**Vị trí phát hiện**: đây KHÔNG nằm trong client (`phpStudy/PHPTutorial/WWW/`) mà là dữ liệu **server-side**, file `server/bin/s1/gameworld/data/config/notice/notice.config` (và bản sao y hệt ở `server/bin/s99/gameworld/data/config/notice/notice.config` — `diff` xác nhận 2 file giống hệt byte-for-byte). File này chính là 1 trong 422 file thuộc **Giai đoạn 6** đã ghi nhận từ trước nhưng chưa từng đụng tới — lần đầu tiên mở Giai đoạn 6.
+
+**Cấu trúc file**: Lua table `NoticeConfig = {[id] = {id=.., type=.., content="..."}, ...}` — mỗi entry chỉ có field `content` chứa text hiển thị (kèm markup riêng `|C:0xRRGGBB&T:...|` để tô màu từng đoạn, và `%s`/`%d`/`[s%d]` là placeholder được server điền số liệu/tên người chơi khi phát broadcast). Các field `id`/`type` là số liệu logic, không đụng tới.
+
+**Đã làm**:
+- Trích xuất toàn bộ 379 dòng `content = "..."` (356 chuỗi không trùng lặp, một số id dùng chung 1 câu).
+- Dịch toàn bộ 356 chuỗi sang tiếng Việt, giữ nguyên 100% cấu trúc `|C:...&T:...|` (số lượng dấu `|` phải khớp) và thứ tự xuất hiện của mọi `%s`/`%d` (Lua `string.format` điền theo thứ tự, không được đảo vị trí đối số dù được đổi tự do phần chữ xung quanh).
+- Dùng lại thuật ngữ Hán Việt đã có sẵn trong glossary/config trước đó để nhất quán xuyên game: `Thoát Phàm Cảnh/Tam Sơn Cảnh/Cửu Tiêu Cảnh/Phi Thăng Cảnh/Tiên Nhân Cảnh/Đại La Cảnh` (6 đại cảnh giới), `Thẻ Tháng`, `Tiên Minh`, `Chiến Thần`, `Lực chiến`...
+- Phát hiện thêm **7 tên tiểu giai đoạn tu luyện chưa từng dịch** (`蒙尘/问心/求真/破妄/修法/历劫/大乘`, dùng ghép với 6 đại cảnh giới ở trên thành các mốc kiểu "脱凡境·蒙尘") nằm trong `resource/config/config.json` field `"state":[...]` — dịch bổ sung luôn: `Mông Trần/Vấn Tâm/Cầu Chân/Phá Vọng/Tu Pháp/Lịch Kiếp/Đại Thừa`.
+- Danh hiệu "威望" (danh vọng) 11 bậc dịch thành thang: Vô Danh → Lộ Diện → Có Chút Danh Tiếng → Danh Động Một Phương → Danh Bất Hư Truyền → Hách Hách Hữu Danh → Uy Danh Viễn Bá → Ai Ai Cũng Biết → Danh Tiếng Khắp Nơi → Vang Danh Bốn Phương → Danh Chấn Thiên Hạ.
+- Xác minh bằng script trước khi ghi file: mỗi cặp gốc/dịch phải khớp đúng số lượng `%s`, `%d`, và `|` — 0 sai lệch trên 356 chuỗi.
+- Áp dụng cho **cả `s1` và `s99`** (áp cùng 1 dict, `diff` xác nhận vẫn giống hệt nhau sau khi sửa).
+- Xác minh bằng chính trình thông dịch **Lua thật** (`lua -e "loadfile('notice.config')()"`) — load thành công, đếm đúng 379 entries — mạnh hơn kiểm tra cú pháp thông thường vì đây là Lua, không phải JS/JSON.
+- Chuỗi `跨服战场` xuất hiện trong file này **đã được dịch** (thành "liên server chiến trường") vì đây chỉ là text hiển thị thuần tuý trong 1 dòng chat broadcast, không liên quan gì tới quy tắc giữ nguyên `跨服战场` đã ghi ở 8.4.7zz (quy tắc đó chỉ áp dụng cho chuỗi bị so sánh `==` với `sceneName` từ server trong `main.min.js` — hoàn toàn khác ngữ cảnh).
+
+**Việc tiếp theo (chưa làm)**: còn 421 file khác trong `data/config/**/*.config` (item.config, monster.config, quest tên/mô tả nhúng thẳng, v.v.) chưa đụng tới — đây là phần lớn nhất còn lại của Giai đoạn 6.
 
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
