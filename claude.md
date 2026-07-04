@@ -952,6 +952,15 @@ Chuyển sang field `name` của `config.json` (1.642 giá trị duy nhất còn
 - Áp bằng `apply_json_glossary_field.py name` → **59/59 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **1.642 → 1.583** giá trị duy nhất. Đồng bộ config1 (config2/3/5/6.json, tổng 8 lượt).
 
+### 8.4.7zm. Round 2 dịch `name` — phát hiện & giải mã họ tên "绝剑/绝伞/绝琴" (315 giá trị), dịch máy theo Hán Việt từng chữ (2026-07-04)
+
+Phân tích tần suất ký tự trong 1.583 giá trị `name` còn lại: phát hiện 1 họ tên chiếm khối lượng lớn nhất — mẫu `绝{剑|伞|琴}{2 chữ tuỳ ý}{1 chữ hậu tố}` (bộ ngọc quý "Tuyệt"-tier, song song với bộ "帝"/"王"-tier đã dịch ở round 11/14), khớp đúng **315/324** giá trị chứa 绝. Trích ra 243 "từ giữa" 2 chữ độc nhất + 9 ký tự hậu tố (玉/钰/炁/气/石/心/珠/镜/璟/碟) + 3 loại vũ khí (剑/伞/琴, tái dùng Kiếm/Tản/Cầm đã có).
+
+- Dịch thủ công toàn bộ 243 từ giữa + 9 hậu tố theo phiên âm Hán Việt từng chữ (đúng phong cách đã dùng cho các tên ngọc quý trước đó, vd 轮回→Luân Hồi, 摄魂→Nhiếp Hồn), viết generator ghép `Tuyệt {Kiếm/Tản/Cầm} {từ giữa} {hậu tố}` → khớp tự động **315/315**, không trùng giá trị output.
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py name` → **315/315 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **1.583 → 1.268** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **12.644 → 10.846**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
