@@ -1377,6 +1377,26 @@ Người dùng gửi ảnh 2 màn chat (IMG_0453/IMG_0454) hỏi về các dòng
 
 **Việc tiếp theo (chưa làm)**: còn 421 file khác trong `data/config/**/*.config` (item.config, monster.config, quest tên/mô tả nhúng thẳng, v.v.) chưa đụng tới — đây là phần lớn nhất còn lại của Giai đoạn 6.
 
+## 8.14. Dịch tên Boss/NPC/quái vật (`lang/monster.config`, `monsters.config`, `lang/boss.config`) bằng chuyển tự Hán-Việt theo ký tự (2026-07-04)
+
+Người dùng gửi ảnh (IMG_0457/IMG_0458) báo vẫn còn thấy nhiều tiếng Trung, và yêu cầu dịch thêm tên Boss/NPC/quái. 2 phát hiện quan trọng:
+
+**1. Phân biệt tin nhắn CŨ vs MỚI trong ảnh IMG_0457**: các dòng `[系统] 恭喜宛若黎雷超凡入圣...`/`聚灵夺阵活动将于3分钟后开启...` trong ảnh là tin nhắn **đã phát trước khi server được nạp lại `notice.config` mới** — 1 khi tin nhắn đã hiện trong khung chat thì nó là text tĩnh, sửa config sau đó không hồi tố các dòng cũ. Bằng chứng: ảnh IMG_0458 (chụp cùng lúc) cho thấy tin nhắn MỚI hơn ("BOSS 彼岸仙灵xuất hiện tại s1 liên server chiến t...") đã dùng ĐÚNG bản dịch tiếng Việt mới — chỉ riêng TÊN BOSS (`彼岸仙灵`) là còn tiếng Trung vì tên quái nằm ở nguồn dữ liệu khác (`monsters.config`/`lang/monster.config`), tách biệt hoàn toàn khỏi `notice.config` mà lượt trước chỉ sửa phần câu thông báo. → xác nhận bản dịch `notice.config` ở 8.13 **hoạt động đúng**, không phải lỗi.
+
+**2. Tìm & dịch tên Boss/NPC/quái**: xác nhận đây chính là hệ thống "dịch nội dung động thứ 2" đã ghi nhận từ trước (`data/config/language/lang/*.config`, 16 file, chưa khám phá) — `monsters.config` (id, hp, atk...) hầu hết không chứa tên trực tiếp mà tham chiếu `name = LAN.MON.mXXXXX`, và `LAN.MON` được định nghĩa trong `data/config/language/lang/monster.config` (`MON = {mXXXXX = "tên", ...}`).
+
+**Chiến lược dịch — chuyển tự Hán-Việt theo từng ký tự** (khác hẳn cách dịch theo câu/cụm từ của `notice.config`): tên quái/boss trong game kiếm hiệp/tu tiên thường là ghép 2-4 chữ Hán (VD "白野猪王", "黑野猪", "妖狐战士") mà quy ước dịch chuẩn cho thể loại này là đọc Hán Việt trực tiếp theo đúng thứ tự chữ gốc (không dịch nghĩa/đảo ngữ) — đúng cách toàn bộ danh xưng/địa danh trong game này đã được dịch xuyên suốt từ đầu dự án (`至尊天龙`→Chí Tôn Thiên Long, `蒙尘`→Mông Trần...). Đã:
+- Trích xuất toàn bộ ký tự Hán duy nhất xuất hiện trong `lang/monster.config` (455 ký tự) + phần tên trực tiếp trong `monsters.config` (thêm 31 ký tự) = 486 ký tự.
+- Xây bảng tra âm Hán Việt cho từng ký tự (dựa vào kiến thức Hán Việt chuẩn, đối chiếu cách đọc phổ biến trong tiểu thuyết/game kiếm hiệp tiếng Việt).
+- Viết script tách chuỗi thành 3 loại token (Hán / chữ-số Latin / ký tự khác), Hán → nối các âm Hán Việt cách nhau bằng khoảng trắng, tự thêm khoảng trắng giữa 2 token "từ" liền kề (vd tránh lỗi `Hạnh VậnBOSS` → sửa thành `Hạnh Vận BOSS`), chuẩn hoá ngoặc full-width `（）` → `()`.
+- Áp dụng cho **`data/config/language/lang/monster.config`** (1688 entries, bảng tên quái chính) cho cả `s1`/`s99`.
+- Áp dụng cho **445 tên viết trực tiếp** (không qua LAN.MON) trong `data/config/monster/monsters.config` — gồm các boss sự kiện/phó bản như `至尊天龙`→Chí Tôn Thiên Long, `九尾冥仙`→Cửu Vĩ Minh Tiên, `彼岸仙灵`→Bỉ Ngạn Tiên Linh, chuỗi boss "元" (死元/魔元/苍元/天元/荒元 + tên) — cho cả `s1`/`s99`.
+- Nhân tiện dịch nốt **`data/config/language/lang/boss.config`** (10 dòng thông báo UI lúc đánh Boss, vd "Cấp độ không đủ, cần cấp %d") cho cả `s1`/`s99`.
+- Không tìm thấy file NPC riêng — NPC trong engine này dùng chung cơ chế `monsters.config`/`LAN.MON` (phân biệt qua field `type`), nên đã được bao phủ trong lượt dịch này.
+- Xác minh: 0 ký tự Hán sót lại (đã bổ sung đủ 486 ký tự vào bảng tra), số lượng dấu `"` chẵn ở cả 3 file, `s1`/`s99` giữ nguyên giống hệt nhau (`diff` sạch). Lưu ý: cả `monster.config`/`boss.config` (thư mục `lang/`) có 1 dấu `,` thừa sau dấu `}` đóng bảng ở cuối file khiến `lua loadfile()` báo lỗi cú pháp nếu load riêng lẻ — đã xác nhận đây là **quirk có sẵn từ trước** (kiểm tra bản gốc trước khi sửa cũng lỗi y hệt), không phải do sửa gây ra; game server chắc chắn có cơ chế nạp riêng (khác `loadfile` thẳng) vì các tên quái này đã hiển thị đúng trong game từ trước.
+
+**Việc tiếp theo (chưa làm)**: `character.config` (2886 dòng — hỗn hợp nhiều loại dữ liệu: tên quái test, tên skill nhân vật, nhãn "N阶仙羽"...), `item.config`/`achieve.config`/`fuwen.config`/... (14 file còn lại trong `lang/`), phần lớn `data/config/**/*.config` (Giai đoạn 6 gốc, 421 file còn lại).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
