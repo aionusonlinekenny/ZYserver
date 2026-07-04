@@ -1009,6 +1009,14 @@ Hai family mới:
 - Áp bằng `apply_json_glossary_field.py name` → **101/101 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **698 → 597** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **7.644 → 7.215**. Đồng bộ config1.
 
+### 8.4.7zs. Round 8 (file round10) dịch `name` — họ "Bát Môn" lửa nguyên tố theo chuyển (48 giá trị) + khe trang bị theo chuyển (15 giá trị) (2026-07-04)
+
+Family "{tên lửa 2-4 chữ}·{Bát Môn}·N转" — 6 tên lửa theo từng mốc chuyển sinh (青焰→Thanh Diễm[chuyển 1], 碧澜烈焰→Bích Lam Liệt Diễm[3], 玄莲蚀火→Huyền Liên Thực Hỏa[4], 焚骨恶火→Phần Cốt Ác Hỏa[5], 大日煌炎→Đại Nhật Hoàng Viêm[6], 金莲天焰→Kim Liên Thiên Diễm[7]) × 8 cổng Bát Môn Độn Giáp đã có (休/伤/开/惊/景/杜/死/生) = 48 giá trị, cộng 8 giá trị "N转{khe trang bị}（神）" (7/8转 × 仙束/天守/法链/灵佩, tái dùng khe đã có) + 7 giá trị lẻ (九转神将→Cửu Chuyển Thần Tướng, 同转橙/紫装, 圣/神·灵佩（9转）, 转生{仙}飞升礼盒→Hộp Quà Chuyển Sinh {Tiên} Phi Thăng).
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót, 0 giá trị output trùng lặp.
+- Áp bằng `apply_json_glossary_field.py name` → **63/63 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **597 → 534** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **7.215 → 6.878**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
