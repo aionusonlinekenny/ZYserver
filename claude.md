@@ -944,6 +944,14 @@ Bucket 250-299 ký tự (158 giá trị) — generator dùng chung từ round 15
 - Áp bằng `apply_json_glossary_field.py desc` → **36/36 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: **field `desc` của `config.json` đã dịch xong 100%** (461 → 403 → 194 → 36 → **0** giá trị Hán còn sót qua 4 round liên tiếp 14-17). Ký tự Hán còn lại trong toàn bộ `config.json` giảm **15.471 → 12.644** (phần còn lại thuộc các field khác, chủ yếu `name`). Đồng bộ config1 (config0.json 1 lượt).
 
+### 8.4.7zl. Bắt đầu dịch `name` — round 1: tái dùng 59 giá trị đã có sẵn trong glossary cũ (2026-07-04)
+
+Chuyển sang field `name` của `config.json` (1.642 giá trị duy nhất còn tiếng Hán, đa số ngắn 2-3 ký tự — tên vật phẩm/nguyên liệu/NPC/quái). Quét toàn bộ `translation/glossary_*.json` đã có từ các phase trước, tìm giao với tập `name` còn sót → tìm được **59 giá trị trùng khớp chính xác** (đã dịch ở nơi khác trong dự án, ví dụ 帝君→Đế Quân, 昊天塔→Tháp Hạo Thiên, 焚火伤害→Sát Thương Phần Hỏa, 夺天灵术→Đoạt Thiên Linh Thuật...), áp lại trực tiếp không cần dịch mới.
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py name` → **59/59 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **1.642 → 1.583** giá trị duy nhất. Đồng bộ config1 (config2/3/5/6.json, tổng 8 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
