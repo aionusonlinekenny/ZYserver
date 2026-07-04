@@ -1292,6 +1292,43 @@ Người dùng báo lại (kèm ảnh `IMG_0442`): màn chọn server ("Túy Võ
 
 **Việc người dùng cần làm khi test lại**: mở bằng tab ẩn danh (private/incognito) hoặc 1 thiết bị/mạng khác chưa từng load trang trước đó, để loại trừ hoàn toàn khả năng cache cũ can thiệp — vì lần này tên file đã thực sự đổi nên bất kỳ tầng cache nào cũng buộc phải tải bản mới.
 
+## 8.10. TÌM RA NGUYÊN NHÂN THẬT SỰ của bug chồng chéo màn chọn server / loading — không phải race condition ở 8.7, không phải cache ở 8.9, mà là 1 dòng code LUÔN LUÔN chạy sai (2026-07-04)
+
+Sau khi sửa cache ở 8.9, người dùng test lại và **vẫn thấy chồng chéo** (ảnh `IMG_0446`): thanh chọn server ("Túy Võ Hiệp - Server 1" + nút "Chọn máy chủ"/"Bắt Đầu" — đã có ảnh dịch sẵn) đè lên màn loading phía sau đang hiện "Đang giải nén cấu hình..." + "Không thể vào game, vui lòng nhấn Tải lại" + thanh progress ở 100%.
+
+**Truy tận gốc lần này tìm ra nguyên nhân thật, không phải 2 giả thuyết trước**:
+
+Hàm `GameLoadingUI.prototype.timeEnd(t)` được gọi tự động 500ms sau MỖI LẦN `HttpProperty.setLoadProgress(t, msg)` chạy xong hiệu ứng thanh progress (xem `setProgress`: `...call(this.timeEnd,this,[t])`). Code gốc:
+
+```js
+e.prototype.timeEnd = function (t) {
+    50 == t && (
+        "dev" == SDkMsg.GetInstance().channelid
+            ? window.HttpPropertyload
+            : window.ARGS
+                ? window.HttpPropertyload || (GameSelectServeUI.GetInstance().show(this.parent), this.setProgressPane(!1))
+                : window.HttpPropertyload
+    )
+}
+```
+
+- Server này cấu hình `channelid="abc"` (không phải `"dev"`), và `window.ARGS` LUÔN có giá trị (được gán thẳng trong `index.php`: `var ARGS = "<?php echo $args?>";`) → luôn rơi vào nhánh giữa: `window.HttpPropertyload||(GameSelectServeUI.GetInstance().show(this.parent),this.setProgressPane(!1))`.
+- Đã `grep` **toàn bộ** `main.min.js` (15 lần xuất hiện `HttpPropertyload`) — biến này **CHỈ ĐƯỢC ĐỌC, KHÔNG BAO GIỜ ĐƯỢC GÁN GIÁ TRỊ** ở bất kỳ đâu trong toàn repo (không trong `main.min.js`, không trong `index.php`, không trong bất kỳ file JS nào khác). Biến này chỉ có ý nghĩa khi có 1 "adapter" SDK bên thứ 3 tự gán `window.HttpPropertyload=true` (dành cho các kênh phát hành nhúng SDK riêng) — server này dùng cấu hình mặc định (`agentId:"abc"`), không có adapter nào như vậy, nên biến này **VĨNH VIỄN `undefined` (falsy)**.
+- Hệ quả: `window.HttpPropertyload||(...)` → do vế trái luôn falsy → **vế phải LUÔN LUÔN chạy** → `GameSelectServeUI.GetInstance().show(this.parent)` **luôn được gọi lại, hiện lại y nguyên màn chọn server**, mỗi khi thanh loading chạy xong hiệu ứng ở mốc đúng `t=50`. Tra thêm thấy mốc `t=50` được dùng chính xác ở bước `HttpProperty.setLoadProgress(50,"(Đang đăng nhập vào game)")` — tức là **BƯỚC BÌNH THƯỜNG, LUÔN XẢY RA** trong mọi lượt đăng nhập thành công, không phải bước lỗi/hiếm gặp. Vào lúc hàm này chạy, người dùng chắc chắn ĐÃ chọn xong server rồi (đó là điều kiện cần để luồng đăng nhập tiến tới bước này) — nên việc hiện lại màn chọn server ở đây **luôn luôn sai**, 100% lần nào cũng xảy ra, không phải ngẫu nhiên.
+- Đây giải thích tại sao bug "vẫn thấy" dù đã sửa race condition ở 8.7 (đúng nhưng không phải nguyên nhân chính) và dù đã sửa cache ở 8.9 (đúng và cần thiết nhưng không giải quyết được bug này, vì bug này không liên quan gì tới cache — code cũ hay mới đều có lỗi y hệt).
+
+**Đã sửa**: bỏ hành động `GameSelectServeUI.GetInstance().show(this.parent),this.setProgressPane(!1)` ở nhánh `window.ARGS` (vì với cấu hình server này không bao giờ có lý do hợp lệ để hiện lại màn chọn server ở bước này), giữ nguyên cấu trúc rẽ nhánh (không đụng nhánh `"dev"` hay hành vi đọc `window.HttpPropertyload` cho các cấu hình adapter khác nếu sau này có dùng tới):
+
+```js
+e.prototype.timeEnd = function (t) {
+    50 == t && ("dev" == SDkMsg.GetInstance().channelid ? window.HttpPropertyload : window.ARGS ? window.HttpPropertyload : window.HttpPropertyload)
+}
+```
+
+- Xác minh khối cũ là duy nhất trong file trước khi sửa, `node -c` qua được.
+- **Theo đúng quy ước mới ở 8.9**: đổi tên `main.min_8e343ef1.js` → `main.min_4cb265d1.js`, cập nhật `manifest.json`, bump `index.php` dòng `manifest.json?v=` → `4cb265d1`, cùng 1 commit với sửa code.
+- Người dùng cần test lại bằng tab ẩn danh/thiết bị mới sau khi copy đủ 4 file (`index.php`, `manifest.json`, `js/default.thm_46501425.js`, `js/main.min_4cb265d1.js`) lên server thật.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
