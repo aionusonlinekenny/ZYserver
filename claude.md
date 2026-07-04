@@ -1411,6 +1411,30 @@ Nhân tiện phát hiện và dịch luôn **tên các tab chat phía dưới** 
 
 `node -c` qua được. Đổi tên `main.min_4cb265d1.js` → `main.min_5c17a033.js`, cập nhật `manifest.json`/`index.php` theo đúng quy ước cache ở 8.9.
 
+## 8.16. Bug thật trong hệ thống chat: bấm "Gửi" không có phản hồi khi server từ chối tin nhắn (2026-07-04)
+
+Người dùng báo: gõ chat được nhưng bấm "Gửi" không thấy gửi được (không có gì xảy ra, không lỗi, không tin nhắn).
+
+**Truy vết toàn bộ luồng**:
+- Client (`main.min.js`, `ChatsSystem`): bấm Gửi → `sendChatsInfo(7, text)` gửi gói `CMD_Chat` lên server (kênh `7` khớp đúng hằng số `ciChannelAll` bên server, không phải lỗi kênh).
+- Server (`server/bin/s{1,99}/gameworld/data/functions/systems/actorsystem/chat.lua`, hàm `sendGlobalMsg`): kiểm tra tuần tự — độ dài tin nhắn (`chatLen=160`), cooldown (`chatCd`), đang bị cấm chat (`shutup`), cấp độ tối thiểu (`openLevel=1`), và số lượt chat còn lại trong ngày theo bậc lực chiến (`ChatLevelConfig`, dựa vào `total_power`). Nếu bất kỳ điều kiện nào không đạt → trả `false` qua gói `ChatMsgResult` (sub-command 3).
+- Client nhận `ChatMsgResult`: `doIsSendSuccess=function(t){t.readBoolean()&&this.postSendInfoSuccess()}` — **CHỈ xử lý khi server báo `true`** (xoá ô nhập). Khi server báo `false` (bị từ chối) — **không làm gì cả, không có thông báo lỗi nào hiện ra** → đây chính là nguyên nhân "bấm Gửi không thấy gì".
+- Đối chiếu phía server: trong 5 nhánh từ chối của `sendGlobalMsg`, chỉ có DUY NHẤT 1 nhánh (hết lượt chat/ngày) có gọi `sendSystemTips(actor,1,2,"没有发言次数")` để báo cho người chơi (tin này còn tiếng Trung); 4 nhánh còn lại (tin quá dài, chat quá nhanh/cooldown, đang bị cấm chat, cấp độ chưa đủ) chỉ `print()` ra log server — người chơi không thấy gì cả.
+
+**Xác nhận cơ chế hiển thị đã có sẵn và hoạt động đúng** (không cần sửa client): server gọi `sendSystemTips(actor, level, pos, tips)` → gửi gói `Tipmsg` (sub-command 4) → client `doMessageOfSystem_a94` nhận và gọi `UserTips.ins().showCenterTips(s)` khi `pos=2` (banner giữa màn hình) — cơ chế này vốn ĐÃ hoạt động đúng cho nhánh "hết lượt chat" từ trước, chỉ cần server gọi tới cho các nhánh còn lại.
+
+**Đã sửa** (`chat.lua`, cả `s1` và `s99`): thêm `sendSystemTips(actor,1,2,"<thông báo tiếng Việt>")` ngay trước mỗi `return false` còn thiếu:
+- Tin quá dài (`utf8len(msg) > global_chat_char_len`) → "Nội dung chat quá dài"
+- Cooldown (`var.global_chat_cd > os.time()`) → "Bạn thao tác quá nhanh, vui lòng thử lại sau"
+- Đang bị cấm chat (`var.shutup > os.time()`) → "Bạn đang bị cấm chat, vui lòng thử lại sau"
+- Cấp độ chưa đủ (`level < global_chat_send_level`) → "Cấp độ chưa đủ để chat"
+- Lỗi cấu hình chat (`conf == nil`, nhánh phòng thủ hầu như không xảy ra trong thực tế vì `ChatLevelConfig[1].power=0`) → "Lỗi hệ thống chat, vui lòng thử lại"
+- Dịch nốt tin có sẵn "没有发言次数" → "Đã hết lượt chat trong ngày"
+
+Không đụng tới bất kỳ điều kiện logic nào (ngưỡng level/power/cooldown giữ nguyên 100%), chỉ thêm dòng gọi thông báo lỗi vào đúng chỗ code đã có sẵn cơ chế nhưng bị bỏ sót. Xác minh cú pháp bằng `lua loadfile()` cho cả 2 file, `diff` xác nhận `s1`/`s99` giống hệt nhau.
+
+**Lưu ý cho người dùng**: cần restart server game (không phải chỉ copy file, vì đây là code Lua được nạp lúc khởi động) để áp dụng bản sửa này.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).

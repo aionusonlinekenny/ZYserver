@@ -205,37 +205,42 @@ function sendGlobalMsg(actor,channe,msg)
 		return false
 	end
 	msg = System.filterText(msg)
-	if utf8len(msg) > global_chat_char_len then 
+	if utf8len(msg) > global_chat_char_len then
 		print("char len error ")
+		sendSystemTips(actor,1,2,"Nội dung chat quá dài")
 		return false
 	end
-	if channe == nil or (channe ~= ciChannelAll) then 
+	if channe == nil or (channe ~= ciChannelAll) then
 		return false
 	end
-	local var = getData(actor) 
-	if channe == ciChannelAll and var.global_chat_cd > os.time() then 
+	local var = getData(actor)
+	if channe == ciChannelAll and var.global_chat_cd > os.time() then
 		print("global chat cd " .. (os.time() - var.global_chat_cd))
+		sendSystemTips(actor,1,2,"Bạn thao tác quá nhanh, vui lòng thử lại sau")
 		return false
 	end
-	if var.shutup > os.time() then 
+	if var.shutup > os.time() then
 		print("shutup  " .. (var.shutup - os.time()))
+		sendSystemTips(actor,1,2,"Bạn đang bị cấm chat, vui lòng thử lại sau")
 		return false
 	end
 
 	local level = LActor.getZhuanShengLevel(actor) * 1000
 	level = level + LActor.getLevel(actor)
-	if level < global_chat_send_level then 
+	if level < global_chat_send_level then
 		print("global chat level")
+		sendSystemTips(actor,1,2,"Cấp độ chưa đủ để chat")
 		return false
 	end
-	local conf = getConfig(actor) 
-	if conf == nil then 
+	local conf = getConfig(actor)
+	if conf == nil then
 		print(LActor.getActorId(actor) .. "  chat not has conf ")
+		sendSystemTips(actor,1,2,"Lỗi hệ thống chat, vui lòng thử lại")
 		return false
 	end
 	local var = getData(actor)
-	if var.chat_size >= conf.chatSize then 
-		sendSystemTips(actor,1,2,"没有发言次数")
+	if var.chat_size >= conf.chatSize then
+		sendSystemTips(actor,1,2,"Đã hết lượt chat trong ngày")
 		return false
 	end
 	local npack = LDataPack.allocPacket()
