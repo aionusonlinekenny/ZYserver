@@ -1345,6 +1345,17 @@ Người dùng gửi ảnh popup "Thu nhập offline": 2 cột "Thu nhập offli
 
 Cập nhật thêm (cùng ngày): người dùng xác nhận layout đã ổn, yêu cầu đổi tiêu đề cột 2 từ `"Thu nhập thêm từ Thẻ Tháng"` (dài, dễ tràn) thành `"Thêm từ Thẻ Tháng"` (ngắn gọn hơn) trong `label1_i` — đã sửa, đổi tên `default.thm_c31ead90.js` → `default.thm_6d6f7b59.js` + cập nhật `manifest.json`/`index.php` theo đúng quy ước.
 
+## 8.12. Sửa wrap chữ ở banner "Cấp X mở <tên phó bản> (Đã hoàn thành)" trên màn hình chính (ảnh IMG_0451, 2026-07-04)
+
+Người dùng gửi ảnh: banner nổi trên màn chơi (không phải popup) hiện "Cấp 26 mở Phó Bản Tụ Linh (Đã hoàn thành)" bị wrap xuống dòng giữa chừng ("(Đã hoàn" xuống dòng, "thành)" đè lên dòng mô tả bên dưới "Thử thách quan ải để nhanh chóng lên cấp" — dòng này cũng bị wrap tương tự.
+
+**Vị trí code**: class `MainView` trong `main.min.js` — hàm `changeTaskTrace_a94` gán `this.taskTraceName.textFlow=TextFlowMaker.generateTextFlow(e.name+"|C:0x35e62d&T: (Đã hoàn thành)|")` (dòng 1, tên nhiệm vụ + trạng thái) và `this.taskTraceAwards.text=e.desc` (dòng 2, mô tả — nội dung "Thử thách quan ải để nhanh chóng lên cấp" lấy từ `resource/config/config.json`, không phải hardcode). Vì gán qua `.textFlow` (rich text), Egret tự động wrap chữ theo đúng `width` của Label — không cần cờ `wordWrap` riêng.
+
+**Nguyên nhân**: nhãn `taskTraceName_i`/`taskTraceAwards_i` (skin `default.thm.js`) có `width=280`, nhưng câu tiếng Việt (~40 ký tự) ở cỡ chữ 18 cần khoảng 380-420px → vượt quá 280px nên bị wrap.
+
+**Đã sửa**: tăng `width` của cả `taskTraceName_i` và `taskTraceAwards_i` từ 280 → 460 (cả 2 đều đã `horizontalCenter` sẵn nên tăng width vẫn giữ canh giữa đúng, ảnh nền `_Image6_i` (198px) chỉ là hình trang trí phía sau, chữ vốn đã tràn ra ngoài khung ảnh nền từ trước nên không có giới hạn cắt (clip) nào ngăn việc mở rộng thêm).
+- `node -c` qua được. Đổi tên `default.thm_6d6f7b59.js` → `default.thm_0d1590b8.js`, cập nhật `manifest.json`/`index.php` theo đúng quy ước cache ở 8.9.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
