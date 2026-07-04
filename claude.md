@@ -882,6 +882,14 @@ Dịch 19 giá trị `desc` còn lại trong khoảng 70-110 ký tự (5 qua gen
 - `data/config/language/lang/*.config` (server, hệ thống dịch động thứ 2, 16 file): ~135.748 — **chưa bắt đầu**
 - **TỔNG toàn dự án còn lại: ~661.000 ký tự Hán**
 
+### 8.4.7ze. Round 11 dịch `desc` — 15 giá trị 70-130 ký tự (2026-07-03)
+
+Dịch tay 15 giá trị `desc`: hộp chọn thưởng Kim Tước Tiên Cung/trang bị Linh Thú (3 màu)/thiên thư Hạo Khí Chân Giải, thưởng BOSS Tiên Minh theo % máu, đá Vô Cực chí bảo, thưởng top 5 Tiên Cung Tranh Bá (3 hạng), vật phẩm Uy Vọng/Tiên Vũ, mở khóa kỹ năng bậc 19.
+
+- Đối chiếu 100% key với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py desc` → **15/15 lượt khớp**. `json.load()` hợp lệ.
+- Kết quả: ký tự Hán còn lại trong `config.json` giảm **40.643 → 39.808**. Đồng bộ config1 (2 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
