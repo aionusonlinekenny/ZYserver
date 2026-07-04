@@ -1025,6 +1025,14 @@ Family "{tên lửa 2-4 chữ}·{Bát Môn}·N转" — 6 tên lửa theo từng 
 - Áp bằng `apply_json_glossary_field.py name` → **58/58 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **534 → 476** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **6.878 → 6.611**. Đồng bộ config1.
 
+### 8.4.7zu. Round 10 (file round12) dịch `name` — họ "10 phẩm cấp linh thú" (45 giá trị) (2026-07-04)
+
+Phát hiện họ tên thứ 3 dạng ngọc/phù/đồ theo 10 bậc phẩm chất: `{2 chữ tên bậc}{灵晶/符箓/铭图/[thú]魂}(N品)` — 9 bậc còn thiếu (bậc 6/蛮荒 đã dịch ở round9): 一品浪涛→Lãng Đào, 二品覆海→Phú Hải, 三品冥荧→Minh Huỳnh, 四品东来→Đông Lai, 五品万里→Vạn Lý, 七品血海→Huyết Hải(đã có), 八品屠戮→Đồ Lục(đã có), 九品九天→Cửu Thiên, 十品功德→Công Đức(đã có) — mỗi bậc có 3 vật phẩm cố định (灵晶→Linh Tinh, 符箓→Phù Lục, 铭图→Minh Đồ, đều đã có) + 1 linh thú riêng theo bậc (狐→Hồ, 狼→Lang, 蟒→Mãng, 熊→Hùng, 鹰→Ưng, 蛟→Giao, 魔→Ma, 凤→Phượng, 龙→Long). Số phẩm giữ nguyên số Hán trong key gốc (五品 chứ không phải 5品) nhưng dịch value dùng số Ả Rập "(phẩm N)". Cộng 9 giá trị lẻ dạng "极品/珍品/精品" (圣魂 chiến binh 3 lớp, v.v).
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót, 0 giá trị output trùng lặp.
+- Áp bằng `apply_json_glossary_field.py name` → **45/45 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **476 → 431** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **6.611 → 6.344**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
