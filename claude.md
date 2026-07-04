@@ -1017,6 +1017,14 @@ Family "{tên lửa 2-4 chữ}·{Bát Môn}·N转" — 6 tên lửa theo từng 
 - Áp bằng `apply_json_glossary_field.py name` → **63/63 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **597 → 534** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **7.215 → 6.878**. Đồng bộ config1.
 
+### 8.4.7zt. Round 9 (file round11) dịch `name` — 16 quái "上古" + họ "荒古{màu}{bộ phận}" (24) + linh tinh Man Hoang/Cổ Hồn (18) (2026-07-04)
+
+58 giá trị: 16 tên quái/boss `上古XXX` (tái dùng Thượng Cổ đã có, dịch mới 16 tên: 刀仙→Đao Tiên, 天灵→Thiên Linh, 天魔→Thiên Ma, 屠僧→Đồ Tăng, 山王→Sơn Vương, 机巧→Cơ Xảo, 枯骨→Khô Cốt, 海魔→Hải Ma, 火君→Hỏa Quân, 牛魔→Ngưu Ma, 狐媚→Hồ Mị, 石灵→Thạch Linh, 神傀→Thần Khôi, 羽民→Vũ Dân, 蛮主→Man Chủ, 魔佛→Ma Phật); họ ngọc rồng biến thể mới `荒古{màu}{bộ phận}` (24 giá trị, tái dùng bộ màu+bộ phận đã có từ round7, tiền tố mới 荒古→Hoang Cổ); và 18 giá trị lẻ liên quan 蛮荒(Man Hoang, đã có)/古魂(Cổ Hồn)/古仙/古剑/古籍.
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót, 0 giá trị output trùng lặp.
+- Áp bằng `apply_json_glossary_field.py name` → **58/58 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **534 → 476** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **6.878 → 6.611**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
