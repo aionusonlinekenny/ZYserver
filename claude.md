@@ -981,6 +981,14 @@ Ngoài ra dịch 12 giá trị lẻ còn sót cùng chứa "层": `石墓/祖玛
 - Áp bằng `apply_json_glossary_field.py name` → **96/96 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **1.052 → 956** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **9.550 → 8.951**. Đồng bộ config1 (config2/6.json).
 
+### 8.4.7zp. Round 5 dịch `name` — hoàn tất họ ngọc quý 4 tier "名/君/帝/王" (180 giá trị) (2026-07-04)
+
+Tiếp tục họ tên ngọc quý dạng `{tier}{vũ khí}{2 chữ}{hậu tố}` (cùng family với round2 "绝"): phát hiện 4 tier còn lại **名→Danh, 君→Quân, 帝→Đế, 王→Vương** (45 giá trị mỗi tier × 4 = 180), dùng 27 từ giữa (18 đã có sẵn từ round 11/14: 七巧/万劫/仙鸣/八方/凤鸣/摄魂/擎天/汲灵/汲血/破劫/破道/花杀/莲开/绝斩/轮回/魔灵/龙灵 + 9 từ mới dịch theo Hán Việt: 归元→Quy Nguyên, 炼神→Luyện Thần, 真守→Chân Thủ, 破天→Phá Thiên, 破灵→Phá Linh, 神守→Thần Thủ, 诛仙→Tru Tiên, 还虚→Hoàn Hư, 陨日→Vẫn Nhật) và 4 hậu tố (玉/石/气/镜 đã có). Generator khớp tự động **180/180**, không trùng giá trị output.
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py name` → **180/180 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **956 → 776** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **8.951 → 8.051**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
