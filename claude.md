@@ -1183,6 +1183,15 @@ Người dùng yêu cầu trực tiếp bỏ bớt chữ "Hôm nay" ở dòng "H
 - `node -c` qua được.
 - **Chưa xác nhận trực quan** — cần deploy + xem lại xác nhận đã đổi thành "Còn có thể đổi N lần".
 
+### 8.6.8. Theo yêu cầu người dùng: dời icon-vàng+giá (priceIcon1/priceIcon2) sang canh giữa theo nút Mua thay vì thẳng lề trái với tên vật phẩm (2026-07-04)
+
+Ở 8.6.6 đã đưa `priceIcon1`/`priceIcon2` xuống dòng riêng, thẳng lề trái `x=90` (cùng cột với tên vật phẩm). Người dùng yêu cầu đổi sang canh giữa theo chiều ngang của nút "Mua" (`btn1`/`btn2`) thay vì lề trái.
+
+- Tính vị trí tâm nút Mua trong nhóm cha `gr2`/`gr3` (rộng 444): nút neo `right=11, width=130` → tâm nút = 444-11-130/2 = 368. Tâm nhóm cha (rộng 444, `horizontalCenter=0`) nằm ở 222. Lệch giữa 2 tâm = 368-222 = **146**.
+- Đổi `t.x = 90` → **`t.horizontalCenter = 146`** cho cả `priceIcon1_i`/`priceIcon2_i` — dùng `horizontalCenter` (canh theo tâm phần tử, không phụ thuộc bề rộng thật của `PriceIcon2` mà ta không đo chính xác được) thay vì tính `x` cố định, đảm bảo canh giữa đúng theo tâm nút bất kể icon+số rộng bao nhiêu. Giữ nguyên `top=96` (đã xác nhận nằm dưới tên vật phẩm ở 8.6.6, cũng đã nằm dưới nút Mua theo ước tính chiều cao nút).
+- `node -c` qua được.
+- **Chưa xác nhận trực quan** — cần deploy + xem lại hàng 2/3 lúc chưa có vật phẩm trong túi để xác nhận icon-vàng+giá đã canh giữa đúng theo nút Mua.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
