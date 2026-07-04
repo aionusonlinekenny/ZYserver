@@ -1175,6 +1175,14 @@ Sau khi xem lại, người dùng đề nghị không rút gọn chữ mà đưa
 - Đối chiếu: cả 2 khối `priceIcon1_i`/`priceIcon2_i` xác nhận duy nhất trong đúng class `SkinGainYeLi` trước khi sửa (file có 1 cặp `priceIcon1_i`/`priceIcon2_i` trùng tên khác thuộc class khác, đã loại trừ bằng cách đối chiếu toàn bộ nội dung khối). `node -c` qua được.
 - **Chưa xác nhận trực quan** — cần deploy + xem lại hàng 2 và 3 khi CHƯA có vật phẩm trong túi (để icon-vàng+giá hiển thị) xác nhận đã xuống dòng, hết đè lên tên vật phẩm.
 
+### 8.6.7. Rút gọn chữ theo yêu cầu người dùng: "Hôm nay còn có thể đổi" → "Còn có thể đổi" trong popup Nhận Kiếp Lực (2026-07-04)
+
+Người dùng yêu cầu trực tiếp bỏ bớt chữ "Hôm nay" ở dòng "Hôm nay còn có thể đổi N lần" cho gọn (không phải do thiếu chỗ, đơn thuần muốn ngắn hơn) — sửa cả 3 dòng (`_Label5_i`/`_Label8_i`/`_Label11_i` trong `SkinGainYeLi`, đúng 3 dòng dùng chung với `_HorizontalLayout1/2/3_i` đã sửa `gap` ở 8.6.4).
+
+- Xác nhận có tổng cộng 4 chuỗi "Hôm nay còn có thể đổi" trong `default.thm`, nhưng chỉ sửa đúng 3 chuỗi thuộc `SkinGainYeLi` (đối chiếu duy nhất bằng khối code đầy đủ); chuỗi thứ 4 thuộc 1 class/popup hoàn toàn khác (biến `toDay0` dùng khác kiểu ở đó) — không đụng vào vì không có bằng chứng đây cũng đang lỗi, và người dùng chỉ đề cập popup "Nhận Kiếp Lực".
+- `node -c` qua được.
+- **Chưa xác nhận trực quan** — cần deploy + xem lại xác nhận đã đổi thành "Còn có thể đổi N lần".
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
