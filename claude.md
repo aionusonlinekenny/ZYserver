@@ -1200,6 +1200,36 @@ Người dùng yêu cầu trực tiếp bỏ bớt chữ "Hôm nay" ở dòng "H
 - `node -c` qua được.
 - **Chưa xác nhận trực quan** — cần deploy + xem lại xác nhận đã canh giữa đẹp theo cả 2 chiều.
 
+### 8.6.10. Tinh chỉnh thêm: `top=93` → `top=88` cho icon-vàng+giá (2026-07-04)
+
+Người dùng xác nhận hướng đúng, chỉ cần nhích lên thêm chút nữa. Đổi `t.top = 93` → **`t.top = 88`** cho cả `priceIcon1_i`/`priceIcon2_i` trong `SkinGainYeLi`. `node -c` qua được.
+
+## 8.7. Bug thật trong logic đăng nhập (không phải UI skin): màn chọn server không biến mất sau khi bấm "进入游戏", đè lên màn loading kế tiếp — lỗi ngẫu nhiên do race condition (2026-07-04)
+
+Người dùng phát hiện: sau khi bấm nút "进入游戏" (Vào Game) ở màn chọn server (`Túy Võ Hiệp - Server 1`), đúng ra màn này phải biến mất để lộ màn loading "登录即送" (thưởng đăng nhập) phía sau, nhưng **có lúc nó biến mất, có lúc không** — khi không biến mất thì đè chồng lên màn loading.
+
+**Truy vết**: đây không phải UI skin (`default.thm`) mà là logic thật trong `main.min_d7aad928.js`, class `GameSelectServeUI` (view chọn server, xác nhận qua các hàm `setServerList`/`onClickInGame`/`userInServer` khớp đúng dữ liệu `serverList` truyền từ `index.php`). Hàm dọn dẹp/đóng view của chính nó:
+
+```js
+e.prototype.callBack = function () {
+    this.stage && ( // ⚠️ TOÀN BỘ logic dọn dẹp bị gói trong điều kiện này
+        ReportMessage.GetInstance().sendReport(...),
+        this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.OnAddStage, this),
+        this.stage.removeEventListener(egret.Event.RESIZE, this.OnSetWin, this),
+        ...(4 dòng removeEventListener khác)...,
+        this.parent && (this.parent.removeChild(this), ResourceMgr.ins().destroyWin()), // dòng THỰC SỰ xoá view khỏi màn hình
+        GameLogin.ins().notifySeletedServ()
+    )
+};
+```
+
+**Nguyên nhân gốc**: `callBack()` được gọi bất đồng bộ (sau khi server phản hồi đăng nhập thành công, qua `SDkMsg.GetInstance().setLoginCallBack(this.callBack,this)`). Toàn bộ thân hàm — kể cả dòng quan trọng nhất `this.parent.removeChild(this)` (dòng thực sự làm màn chọn server biến mất) — bị đặt phía sau điều kiện `this.stage&&`. Nếu phản hồi đăng nhập về **quá nhanh** (trước khi thuộc tính `.stage` của view kịp được engine gán — một thời điểm phụ thuộc tốc độ mạng/thiết bị, giải thích chính xác vì sao "có lúc bị có lúc không"), `this.stage` đọc ra `null`/`undefined` tại thời điểm đó → toàn bộ nhánh dọn dẹp bị bỏ qua hoàn toàn → `removeChild` không bao giờ được gọi → màn chọn server ở lại vĩnh viễn trên màn hình, đè lên các scene sau.
+
+**Sửa**: bỏ điều kiện bọc ngoài `this.stage&&(...)` (không còn lý do gì để toàn bộ việc dọn dẹp phụ thuộc vào việc `.stage` đã kịp gán hay chưa), chỉ giữ lại kiểm tra null-safe đúng chỗ cần: đổi dòng `this.stage.removeEventListener(...)` (dòng DUY NHẤT thật sự cần `.stage` tồn tại, nếu không sẽ ném lỗi `Cannot read property của null`) thành `this.stage&&this.stage.removeEventListener(...)`. Toàn bộ các dòng còn lại (kể cả `this.parent&&(this.parent.removeChild(this),...)` — đã tự có guard `this.parent&&` sẵn, đúng điều kiện cần) giờ luôn chạy không điều kiện, đảm bảo view luôn được gỡ bỏ đúng lúc đăng nhập xong bất kể tốc độ phản hồi nhanh hay chậm.
+- Xác minh khối `callBack` sửa là duy nhất trong file. `node -c` qua được.
+- Đây là **bug có sẵn trong code gốc** (không liên quan dịch thuật), thuộc dạng race-condition kinh điển (thứ tự thực thi phụ thuộc thời gian phản hồi mạng) — giải thích chính xác hành vi "ngẫu nhiên" người dùng mô tả.
+- **Chưa xác nhận trực quan** — cần deploy + test lại nhiều lần (thử cả mạng nhanh/chậm nếu có thể) để xác nhận màn chọn server luôn biến mất sau khi bấm "进入游戏", không còn đè lên màn loading kế tiếp.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
