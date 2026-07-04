@@ -1071,6 +1071,19 @@ Field `fbName` (90 giá trị, 570 ký tự) — mẫu `"第N关 {tier}元{quái
 - Áp bằng `apply_json_glossary_field.py fbName` → **90/90 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: **field `fbName` đã dịch xong 100%**. Ký tự Hán còn lại trong toàn bộ `config.json` giảm **1.896 → 1.326**. Đồng bộ config1.
 
+### 8.4.7zz. `config.json` HOÀN TẤT ~100% — dịch nốt ~50 field nhỏ rải rác còn lại (2026-07-04)
+
+Sau khi các field lớn (desc/name/skilldesc/guide/fbName) đã xong, phần còn lại (1.326 ký tự) rải rác trên ~50 tên field khác nhau (`paydesc`, `news`, `openTips`, `runeName`, `dangerLv`, `套装属性`...) — áp riêng từng field không còn hiệu quả. Viết script tổng quát mới **`translation/apply_json_glossary_anyfield.py`**: khớp trên `"KEY":"value"` với KEY bất kỳ (thay vì field cố định), áp dụng y hệt cơ chế escape/replace của `apply_json_glossary_field.py`.
+
+Trích toàn bộ 191 giá trị chuỗi (bất kỳ field nào) còn chứa ký tự Hán trong `config.json`, dịch tay toàn bộ (đơn/song âm tiết Tiên Văn đã có, tên NPC/quái/套装 mới, mốc nạp thẻ "N元"→"N NDT", chuỗi combat log %s/{0} placeholder, đoạn văn bản dài VIP/đấu giá/守护神剑...). Phát hiện và sửa 1 lỗi sót từ round trước: chuỗi `condition` của `TitleConf.1` đã dịch phần lớn nhưng còn sót từ "玩法" giữa câu tiếng Việt — sửa thành "chế độ".
+
+**Loại trừ có chủ đích 1 giá trị**: `跨服战场` (field `sceneName` trong `ConfigCrossBoss`) — xác nhận lại đây chính là giá trị được so sánh trực tiếp `"跨服战场"==n.sceneName` trong `main.min.js` (đã phát hiện từ trước, xem 8.4.7t/u); dịch giá trị này trong config.json sẽ làm hỏng logic nhận diện scene phía client vì literal JS vẫn giữ nguyên tiếng Hán. Giữ nguyên 7 occurrence.
+
+- Phát hiện thêm 1 bug nhỏ trong bản thân pipeline: 1 key chứa `/` được PHP `json_encode` escape thành `\/` trong file gốc nhưng `json.dumps()` (Python) không tự escape `/` khi tái tạo lại key thô → thêm bước fallback thử escape `/` → `\/` khi so khớp key không tìm thấy.
+- Đối chiếu 100% key (dạng escape thô, có xử lý `\/`) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót (trừ giá trị bị loại trừ có chủ đích).
+- Áp bằng `apply_json_glossary_anyfield.py` → **190/190 giá trị khớp, 229 lượt thay thế** (một số giá trị lặp lại ở nhiều field/object). `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- **Kết quả: `config.json` đã dịch xong ~100%** — chỉ còn duy nhất 7 occurrence của `跨服战场` (28 ký tự) được giữ nguyên có chủ đích vì lý do kỹ thuật. Ký tự Hán còn lại trong toàn bộ `config.json` giảm **1.326 → 28**. Đồng bộ config1 (config2/3/4/5/6.json).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
