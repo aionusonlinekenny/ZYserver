@@ -1435,6 +1435,14 @@ Không đụng tới bất kỳ điều kiện logic nào (ngưỡng level/power
 
 **Lưu ý cho người dùng**: cần restart server game (không phải chỉ copy file, vì đây là code Lua được nạp lúc khởi động) để áp dụng bản sửa này.
 
+## 8.17. Dịch nốt tag "［仙盟］" thành "[Tiên Minh]" (2026-07-04)
+
+Người dùng báo tag `［仙盟］` (hiện trước tin nhắn kênh chat Tiên Minh/guild) vẫn còn tiếng Trung, dù đã sửa `[系统]`→`[Hệ Thống]` trước đó — cùng loại bug, khác chỗ trong cùng class `GuildMessageItem`-kiểu render item chat.
+
+**Vị trí**: `main.min.js`, 2 chỗ (`dataChanged`/`delayChangedData`) đều có nhánh `if(t instanceof GuildMessage)i="|C:0xff965c&T:[仙盟]|"` (và biến thể có khoảng trắng `"[仙盟] |"`) — y hệt cấu trúc đã sửa ở 8.15 cho `ChatsSystemData`/`[系统]`, chỉ khác đây là nhánh `GuildMessage`. Đổi cả 2 thành `[Tiên Minh]` (khớp tên đã dùng cho tab/tính năng 仙盟 xuyên suốt game).
+
+`node -c` qua được, xác nhận 0 occurrence `[仙盟]` còn sót. Đổi tên `main.min_5c17a033.js` → `main.min_0427b4b1.js`, cập nhật `manifest.json`/`index.php` theo quy ước cache ở 8.9.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
