@@ -934,6 +934,16 @@ Bucket 250-299 ký tự (158 giá trị) — generator dùng chung từ round 15
 - Áp bằng `apply_json_glossary_field.py desc` → **158/158 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: ký tự Hán còn lại trong toàn bộ `config.json` giảm mạnh **23.182 → 15.471** (desc còn 194 → **36** giá trị duy nhất — gần hết). Đồng bộ config1 (config0.json 1 lượt).
 
+### 8.4.7zk. Round 17 dịch `desc` — 36 giá trị cuối cùng, HOÀN TẤT field `desc` (2026-07-04)
+
+36 giá trị `desc` cuối cùng còn sót (300-725 ký tự), gồm 2 nhóm:
+- 26 giá trị vẫn thuộc family template thẻ trang bị (khớp tự động 100% bằng `desc_star_template.py`, biến thể có 4 dòng thuộc tính: 物抗+法抗+生命/攻击+寂灭伤害).
+- 10 giá trị là chuỗi lồng nhau tăng dần của thẻ "loại Tiên Văn hiện đã mở khóa" (mỗi giá trị dài hơn giá trị trước 1 dòng, tổng cộng leo từ 3 dòng lên tới 15 dòng loại Tiên Văn). Viết generator ghép chuỗi (`build_desc_round17_tienvan.py`) dựa trên 15 cặp tên+hiệu ứng, tái dùng toàn bộ tên Tiên Văn đã có sẵn trong glossary cũ (斩龙→Trảm Long, 无懈→Vô Giải, 天命→Thiên Mệnh, 万卷→Vạn Quyển, 聚宝→Tụ Bảo, 绝武→Tuyệt Vũ, 全知→Toàn Tri, 仙佑→Tiên Hựu, 穿云→Xuyên Vân, 猛击→Mãnh Kích, 舞火→Vũ Hỏa, 逐日→Trục Nhật, 迅捷→Tấn Tiệp, 破灭→Phá Diệt, 不朽→Bất Hủ), chỉ cần dịch mới 2 tên khe trang bị chưa từng gặp theo phong cách Hán Việt nhất quán với các khe khác: **项链→Hạng Liên, 腰带→Yêu Đái**.
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py desc` → **36/36 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: **field `desc` của `config.json` đã dịch xong 100%** (461 → 403 → 194 → 36 → **0** giá trị Hán còn sót qua 4 round liên tiếp 14-17). Ký tự Hán còn lại trong toàn bộ `config.json` giảm **15.471 → 12.644** (phần còn lại thuộc các field khác, chủ yếu `name`). Đồng bộ config1 (config0.json 1 lượt).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
