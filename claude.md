@@ -1166,6 +1166,15 @@ Sau khi xem lại, người dùng đề nghị không rút gọn chữ mà đưa
 - Đối chiếu: mọi khối sửa (bao gồm `yeli0_i`/`_Label3_i`/`yeli4_i`/`limit_i`/`_Label7_i`/`yeli1_i`/`name1_i`/`_Label10_i`/`yeli2_i`/`name2_i`) đều xác nhận duy nhất trong file trước khi sửa. `node -c` qua được.
 - **Chưa xác nhận trực quan** — cần deploy + gửi ảnh lại cả 3 dòng phần thưởng trong popup "Nhận Kiếp Lực" để xác nhận đã xuống dòng gọn gàng, không đè chữ, và hàng 1 (có thêm dòng "Cấp trên 110 có thể đổi") không bị tràn xuống dưới khung.
 
+### 8.6.6. Xác nhận 8.6.5 OK (phần nhãn/số đẹp rồi). Sửa tiếp: dòng tên vật phẩm + icon giá vàng đè nhau ở hàng 2/3 (Phi Thăng Đan/Kim Đan Phi Thăng) (2026-07-04)
+
+Ảnh xác nhận phần trên (nhãn "Nhận Kiếp Lực：" + số xuống dòng riêng) đã đẹp. Còn sót: ở hàng 2 và 3 (chỉ hiện khi người chơi chưa có sẵn vật phẩm trong túi), tên vật phẩm ("Phi Thăng Đan"/"Kim Đan Phi Thăng", `name1`/`name2`, x=90 top=76) và cụm icon-vàng+giá (`priceIcon1`/`priceIcon2`, component `PriceIcon2` cao 36, vốn đặt `x=190, top=65` — cùng hàng với tên) đè lên nhau, y hệt kiểu lỗi "2 phần tử cùng hàng cố định vị trí, chữ dịch dài hơn bản gốc nên tràn vào nhau" đã gặp nhiều lần.
+
+- **Sửa theo đúng hướng người dùng đã chọn ở 8.6.5 (xuống dòng thay vì rút gọn)**: đưa `priceIcon1`/`priceIcon2` xuống dòng riêng bên dưới tên vật phẩm — đổi `top=65,x=190` → **`top=96,x=90`** (thẳng lề trái với các dòng phía trên, cách dòng tên khoảng 20px).
+- Đã tính toán khoảng trống dọc còn lại trong khung hàng (cao 122, có ~13px đệm trước khi chạm khung hàng kế tiếp — đo được từ vị trí tuyệt đối của `gr1`/`gr2`/`gr3` trong `anigroup`) để đảm bảo `priceIcon` (cao 36) kết thúc ở y≈132, nằm trong biên an toàn (122+13=135).
+- Đối chiếu: cả 2 khối `priceIcon1_i`/`priceIcon2_i` xác nhận duy nhất trong đúng class `SkinGainYeLi` trước khi sửa (file có 1 cặp `priceIcon1_i`/`priceIcon2_i` trùng tên khác thuộc class khác, đã loại trừ bằng cách đối chiếu toàn bộ nội dung khối). `node -c` qua được.
+- **Chưa xác nhận trực quan** — cần deploy + xem lại hàng 2 và 3 khi CHƯA có vật phẩm trong túi (để icon-vàng+giá hiển thị) xác nhận đã xuống dòng, hết đè lên tên vật phẩm.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
