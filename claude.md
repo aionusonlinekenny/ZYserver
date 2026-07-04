@@ -969,6 +969,18 @@ Phát hiện họ tên thứ 2: mẫu `{cấp bậc}{khe trang bị}·{tên nhâ
 - Áp bằng `apply_json_glossary_field.py name` → **216/216 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **1.268 → 1.052** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **10.846 → 9.550**. Đồng bộ config1.
 
+### 8.4.7zo. Round 4 dịch `name` — hệ thống "Kinh Mạch" 12 tầng (84 giá trị) + 12 giá trị lẻ tầng phó bản (2026-07-04)
+
+Lưu ý đặt tên file: dự án đã có sẵn `glossary_config_names1-5.json` + `glossary_config_name_round6.json` (283 mục) từ phiên trước 2026-07-03 — các file `glossary_config_name_round1/2/3.json` tạo trong phiên này (mục 8.4.7zl-zn) là làm tiếp theo trình tự đó dù tên file không nối số trực tiếp; không có xung đột nội dung, chỉ là quy ước đặt tên khác nhau giữa 2 phiên.
+
+Phát hiện field `name` thuộc `ConfigJingMaiStage` (hệ thống tu luyện "Kinh Mạch/Dịch Cân Kinh", 12 tầng) theo mẫu `{số Hán đại tự}层·{câu triết lý Phật/Đạo 3-7 chữ}` (vd "壹层·须菩提" = tầng 1 - "Tu Bồ Đề"). Dịch tay toàn bộ 12 tầng × 7 câu = 84 câu triết lý cổ theo phiên âm Hán Việt (giữ nguyên phong cách thuật ngữ Phật/Đạo giáo đã dùng trong dự án, vd 行住坐卧→Hành Trụ Tọa Ngọa, 出神入定→Xuất Thần Nhập Định, 须菩提→Tu Bồ Đề). Số tầng đổi từ số Hán đại tự (壹贰叁肆伍陆柒捌玖壹拾壹拾壹壹拾贰) sang số Ả Rập theo đúng quy ước "tầng N" đã dùng xuyên suốt dự án.
+
+Ngoài ra dịch 12 giá trị lẻ còn sót cùng chứa "层": `石墓/祖玛` (phó bản, tái dùng Tổ Mã đã có) 1-5 tầng, và 4 giá trị "通关昊天塔N重天第M层" (đối chiếu lại quy ước đa số trong glossary — **Hạo Thiên Tháp** và **Trùng Thiên** phổ biến hơn "Tháp Hạo Thiên"/"Trọng Thiên" từng dùng lẻ tẻ ở round6 cũ — thống nhất theo đa số).
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py name` → **96/96 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **1.052 → 956** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **9.550 → 8.951**. Đồng bộ config1 (config2/6.json).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
