@@ -1055,6 +1055,14 @@ Chuyển sang field nhỏ hơn `skilldesc` (86 giá trị, 1.398 ký tự — fi
 - Áp bằng `apply_json_glossary_field.py skilldesc` → **86/86 lượt khớp**, `skillDesc` → **1/1 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: **field `skilldesc`/`skillDesc` đã dịch xong 100%**. Ký tự Hán còn lại trong toàn bộ `config.json` giảm **4.437 → 3.018**. Đồng bộ config1.
 
+### 8.4.7zx. Dịch field `guide` — HOÀN TẤT 100% (2026-07-04)
+
+Field `guide` (187 giá trị, 1.122 ký tự) hóa ra chỉ có **đúng 1 mẫu duy nhất**: `"通关第N关获得"` (N từ 4 đến 940) → generator regex khớp máy **187/187** không cần dịch tay giá trị nào.
+
+- Đối chiếu 100% key với text thô, 0 dấu ngoặc kép thẳng.
+- Áp bằng `apply_json_glossary_field.py guide` → **187/187 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: **field `guide` đã dịch xong 100%**. Ký tự Hán còn lại trong toàn bộ `config.json` giảm **3.018 → 1.896**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
