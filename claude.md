@@ -999,6 +999,16 @@ Dịch tay 78 giá trị chứa "级" — nhóm hỗn hợp gồm: 13 mốc "N�
 - Áp bằng `apply_json_glossary_field.py name` → **78/78 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
 - Kết quả: `name` còn lại **776 → 698** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **8.051 → 7.644**. Đồng bộ config1.
 
+### 8.4.7zr. Round 7 (file round8) dịch `name` — số Hán "N重天" (59 giá trị, parser số) + họ "{màu}龙{bộ phận}" (42 giá trị) (2026-07-04)
+
+Hai family mới:
+- 59 giá trị `N重天` dùng số Hán thường (一/二/三.../十/二十/三十...六十, khác kiểu số đại tự 壹贰叁 đã gặp ở round4) — viết hàm `cn2num()` nhỏ chuyển số Hán → số Ả Rập rồi ghép `"{N} Trùng Thiên"` (đúng quy ước đa số đã chốt ở round4), khớp máy 100%.
+- 42 giá trị họ "{2 chữ màu}龙{1 chữ bộ phận rồng}" — 5 màu (幽紫→U Tử, 橙枫→Cam Phong, 湛蓝→Trạm Lam, 红血→Hồng Huyết, 绿碧→Lục Bích) × 8 bộ phận (尾→Vĩ, 玺→Tỷ, 珠→Châu, 角→Giác, 骨→Cốt, 魂→Hồn, 鳍→Kỳ, 鳞→Lân) = 40 giá trị khớp máy, cộng 2 giá trị lẻ dịch tay (碧海龙珠→Bích Hải Long Châu, 碧霄龙鸟→Bích Tiêu Long Điểu).
+
+- Đối chiếu 100% key (dạng escape thô) với text thô, 0 dấu ngoặc kép thẳng, 0 ký tự Hán sót.
+- Áp bằng `apply_json_glossary_field.py name` → **101/101 lượt khớp**. `json.load()` hợp lệ, 336 top-level keys nguyên vẹn.
+- Kết quả: `name` còn lại **698 → 597** giá trị duy nhất. Ký tự Hán còn lại trong `config.json` giảm **7.644 → 7.215**. Đồng bộ config1.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
