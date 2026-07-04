@@ -10,6 +10,7 @@ Tài liệu này ghi lại (1) việc sẽ làm cho repo, (2) phân tích kiến
 - **Mỗi đợt việc = 1 commit duy nhất.** Không được tách "commit code thay đổi" rồi commit riêng "Update claude.md" ngay sau đó — gộp chung thay đổi code + cập nhật tiến độ trong `claude.md` (nếu có) vào **cùng một commit**. Lý do: người dùng dựa vào lịch sử commit trên GitHub để biết chính xác đợt nào cần copy file gì về máy chủ thật; tách commit làm khó theo dõi cái nào đi với cái nào.
 - Trước khi commit, luôn kiểm tra `git status --short` để không bỏ sót file cần add hoặc để sót file rác (vd: file `.bak` tạm) chưa được dọn.
 - Khi dịch nội dung trong file Lua/`.txt` dùng chuỗi `"..."` làm delimiter: **không được dùng dấu ngoặc kép thẳng `"`** bên trong nội dung dịch vì sẽ kết thúc sớm chuỗi và làm hỏng cú pháp file — dùng dấu ngoặc kép cong `" "` thay thế (xem thêm mục 8.4, phần "Bug đã gặp và đã vá"). Script `translation/apply_lang_glossary.py` đã có cơ chế tự chặn lỗi này.
+- **BẮT BUỘC: mỗi khi sửa nội dung `js/main.min_*.js` hoặc `js/default.thm_*.js`, phải ĐỔI TÊN file sang hash mới + cập nhật `manifest.json` (mảng `game`) + bump query `?v=` khi fetch `manifest.json` trong `index.php` — tất cả trong CÙNG 1 commit.** Lý do: 2 file này có tên chứa hash tĩnh, được nạp qua `<script src="./js/xxx_hash.js">` KHÔNG có query cache-busting, và Apache của server (`httpd.conf`) đang tắt `mod_expires` nhưng vẫn có thể bị cache dài hạn bởi trình duyệt di động / CDN / proxy trung gian vì URL không đổi dù nội dung đổi — sửa file mà giữ nguyên tên sẽ khiến một số máy/mạng tiếp tục thấy bug cũ dù code đã vá đúng (xem 8.9 để biết vụ việc thực tế đã xảy ra).
 
 ## Việc sẽ làm cho repo này
 
@@ -1266,6 +1267,30 @@ Người dùng hỏi: background, nút bấm, tiếng Trung ở 2 màn (màn ch�
 Xác minh: mỗi chuỗi đếm đúng số lần xuất hiện dự kiến trước khi thay (dùng `content.count()` qua Python), không có ký tự `'`/`"` lạ lẫn trong giá trị tiếng Việt, `node -c` qua được sau khi sửa.
 
 **Ảnh nền màn 1 chưa xác định được file cụ thể**: nền núi hồng "Say Môn Giang Hồ" ở màn đầu tiên (trước khi bấm vào game) không khớp với `loading.jpg` và chưa xác minh được có phải 1 trong các file `loading0.jpg`/`loading1.jpg`/`loading2.jpg`/`loading3.jpg` hay không (có phát hiện pattern code `this.cdnUrl+"agentAssets/"+t+"/loading.jpg"` cho phép override theo agent nhưng chưa kiểm tra file thực tế trên đĩa) — nếu người dùng cần dịch chữ trong ảnh đó, cần hỏi lại để xác định đúng file trước.
+
+## 8.9. Bug ở 8.7 "tái xuất hiện" sau khi đã vá — hoá ra là do CACHE FILE TĨNH, không phải code sai (2026-07-04)
+
+Người dùng báo lại (kèm ảnh `IMG_0442`): màn chọn server ("Túy Võ Hiệp - Server 1  点击选区" + nút "进入游戏") vẫn còn hiện, đè lên màn loading "登录即送" phía sau (đang ở 64%, có thông báo lỗi resource "Không thể vào game, vui lòng nhấn Tải lại") — đúng hiện tượng đã sửa ở mục 8.7, nhưng "Giờ lại thấy bị lại".
+
+**Kiểm tra lại code trước khi nghi ngờ gì khác**: đọc lại nguyên văn `e.prototype.callBack` hiện tại trong `main.min_d7aad928.js` — xác nhận bản vá ở 8.7 **vẫn đúng, vẫn còn nguyên trong file**, dòng `this.parent&&(this.parent.removeChild(this),ResourceMgr.ins().destroyWin())` vẫn chạy vô điều kiện (không bị `this.stage&&` bọc ngoài nữa). Vậy code hiện tại là ĐÚNG — vấn đề không phải do sửa sai hay sửa thiếu.
+
+**Truy thêm luồng gọi `callBack`**: `SDkMsg.entryType` trong `index.php` là `"js"` → `SDkMsg.sdkType="js"`. Trong `GameSelectServeUI.userInServer()`, với điều kiện thực tế của server này (`HttpProperty.openID` đã có sẵn giá trị hợp lệ trước khi vào màn chọn server), nhánh chạy là gọi `this.callBack()` **đồng bộ, ngay trong cùng lệnh gọi hàm xử lý click nút "进入游戏"** — không phải một callback bất đồng bộ chờ phản hồi mạng như giả định ban đầu ở 8.7. Vì gọi đồng bộ ngay trong click handler, `this.parent`/`this.stage` chắc chắn khác `null` tại thời điểm đó → hàm `callBack()` chắc chắn chạy đúng, `removeChild` chắc chắn được gọi.
+
+**Vậy vì sao người dùng vẫn thấy bug?** → **Nguyên nhân thật: cache file JS tĩnh, không phải lỗi logic.**
+- `js/main.min_d7aad928.js` và `js/default.thm_70915153.js` có tên file chứa **hash cố định trong tên** (kiểu file "build 1 lần rồi không đổi tên nữa").
+- `index.php` nạp các file này qua `<script src="./js/xxx_hash.js">` (dựng động từ `manifest.json`) **không có query string cache-busting nào** — xem hàm `loadSingleScript` (index.php dòng ~199-210): `s.src = "./" + src` (không có `?v=...`).
+- `manifest.json` bản thân nó được fetch với `?v=2555a410` cố định (index.php dòng 213) — hằng số này **chưa từng đổi**, nên các CDN/proxy trung gian (hoặc cache HTTP của trình duyệt di động) có thể tiếp tục phục vụ bản `manifest.json` VÀ bản `main.min_d7aad928.js`/`default.thm_70915153.js` **CŨ** dù nội dung trên server đã được ghi đè, vì đối với các tầng cache này, "URL không đổi" = "không cần tải lại", bất kể nội dung phía sau URL đó thực sự đã đổi.
+- Điều này giải thích chính xác pattern người dùng gặp: "Vẫn thấy nha, đã chép đè và clean cache rồi" → "Thấy đỡ bị rồi" (cache tự hết hạn/đổi ở 1 vài lớp) → "Giờ lại thấy bị lại" (một lớp cache khác — CDN, nhà mạng, hoặc chính thiết bị test — vẫn còn giữ bản cũ). Đây là hệ quả tất yếu của việc sửa file mà **giữ nguyên tên file**, không phải do bản vá race-condition ở 8.7 sai.
+
+**Đã sửa (lần này sửa tận gốc vấn đề cache, không đụng lại logic code)**:
+- Đổi tên `js/main.min_d7aad928.js` → `js/main.min_8e343ef1.js`.
+- Đổi tên `js/default.thm_70915153.js` → `js/default.thm_46501425.js`.
+- Cập nhật `manifest.json` (mảng `game`) trỏ đúng 2 tên file mới.
+- Bump `index.php` dòng fetch `manifest.json?v=2555a410` → `manifest.json?v=8e343ef1` để đảm bảo bản thân `manifest.json` cũng bị buộc tải lại (nếu không, dù đã đổi tên 2 file JS, trình duyệt/CDN vẫn có thể phục vụ `manifest.json` cache cũ trỏ về tên file cũ đã không còn tồn tại → lỗi 404 khi vào game).
+- Đã thêm **quy ước bắt buộc mới** vào đầu file (mục "Quy ước làm việc"): từ nay, MỌI lần sửa `js/main.min_*.js` hoặc `js/default.thm_*.js` đều phải đổi tên file sang hash mới + cập nhật `manifest.json` + bump `?v=` trong `index.php`, cùng 1 commit — để tránh lặp lại đúng vấn đề này ở các lần sửa UI/logic sau này (kể cả các lần sửa skin ở mục 8.6 trước đây, dù người dùng xác nhận đã thấy đúng, vẫn tiềm ẩn rủi ro cache tương tự cho các máy/mạng khác chưa test tới).
+- Xác minh: `grep` toàn repo không còn tên file cũ nào bị tham chiếu sót (chỉ `manifest.json` tham chiếu 2 file này, đã cập nhật đủ); dùng `git mv` để giữ lịch sử file.
+
+**Việc người dùng cần làm khi test lại**: mở bằng tab ẩn danh (private/incognito) hoặc 1 thiết bị/mạng khác chưa từng load trang trước đó, để loại trừ hoàn toàn khả năng cache cũ can thiệp — vì lần này tên file đã thực sự đổi nên bất kỳ tầng cache nào cũng buộc phải tải bản mới.
 
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
