@@ -1397,6 +1397,20 @@ Người dùng gửi ảnh (IMG_0457/IMG_0458) báo vẫn còn thấy nhiều ti
 
 **Việc tiếp theo (chưa làm)**: `character.config` (2886 dòng — hỗn hợp nhiều loại dữ liệu: tên quái test, tên skill nhân vật, nhãn "N阶仙羽"...), `item.config`/`achieve.config`/`fuwen.config`/... (14 file còn lại trong `lang/`), phần lớn `data/config/**/*.config` (Giai đoạn 6 gốc, 421 file còn lại).
 
+## 8.15. Dịch tag "［系统］" thành "[Hệ Thống]" + dịch nốt tên các tab chat (2026-07-04)
+
+Người dùng yêu cầu dịch tag `［系统］` (hiện trước mỗi tin nhắn hệ thống trong khung chat) thành `[Hệ Thống]` để phân biệt rõ với chat thường.
+
+**Vị trí**: `main.min.js`, class `ChatsWin` (khung chat) — chuỗi `"|C:0xff965c&T:[系统]|"`/`"|C:0xff965c&T:[系统] |"` được gán làm tiền tố màu cam khi tin nhắn là `ChatsSystemData` (tin hệ thống). Đã đổi cả 2 thành `"|C:0xff965c&T:[Hệ Thống]|"`/`"|C:0xff965c&T:[Hệ Thống] |"`.
+
+Nhân tiện phát hiện và dịch luôn **tên các tab chat phía dưới** (đã thấy trong mọi ảnh chụp màn hình suốt cả phiên: `综合 世界 Tiên Minh 系统 客服`, chỉ có "Tiên Minh" từng được dịch, 4 tab còn lại vẫn tiếng Trung) — hàm dựng mảng tab `["综合",t,"Tiên Minh","系统"]` + `.push("客服")`:
+- `综合` → `Tổng Hợp`
+- `世界` → `Thế Giới` (trong hàm `getWorldStr()`; nhánh liên server đã có sẵn "Liên server" từ trước, giữ nguyên)
+- `系统` → `Hệ Thống`
+- `客服` → `Hỗ Trợ`
+
+`node -c` qua được. Đổi tên `main.min_4cb265d1.js` → `main.min_5c17a033.js`, cập nhật `manifest.json`/`index.php` theo đúng quy ước cache ở 8.9.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
