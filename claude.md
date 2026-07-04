@@ -1230,6 +1230,43 @@ e.prototype.callBack = function () {
 - Đây là **bug có sẵn trong code gốc** (không liên quan dịch thuật), thuộc dạng race-condition kinh điển (thứ tự thực thi phụ thuộc thời gian phản hồi mạng) — giải thích chính xác hành vi "ngẫu nhiên" người dùng mô tả.
 - **Trạng thái xác nhận (2026-07-04)**: người dùng test lại sau khi deploy + clear cache, báo "vẫn thấy" 1 lần nhưng ngay sau đó xác nhận "thấy đỡ bị rồi" (tần suất giảm rõ rệt). Vì đây là race condition, việc còn xảy ra không thường xuyên sau khi sửa là **kỳ vọng đúng** (đã giảm nguy cơ, không phải bảo đảm tuyệt đối 100% nếu vẫn còn đường khác dẫn tới cùng hiện tượng) — cần tiếp tục theo dõi thêm, đặc biệt chú ý thời điểm thanh loading đạt đúng 100% xem màn chọn server có tự biến mất không. Tạm coi là cải thiện đáng kể, chưa đóng hẳn mục này cho đến khi có xác nhận ổn định qua nhiều lần thử.
 
+## 8.8. Vị trí background/nút bấm/tiếng Trung ở màn chọn server + màn loading "登录即送", và dịch các chuỗi text thật (2026-07-04)
+
+Người dùng hỏi: background, nút bấm, tiếng Trung ở 2 màn (màn chọn server sau khi đăng nhập, và màn loading "登录即送" hiện ra sau khi bấm "进入游戏") nằm ở đâu trong code, và nhờ dịch nút đăng nhập/chọn server sang tiếng Việt.
+
+**Lưu ý quan trọng**: cả 2 màn này KHÔNG dùng skin/exml (không nằm trong `default.thm_70915153.js`) mà được dựng **hoàn toàn bằng code** (tạo trực tiếp `new eui.Image()`, `new eui.Button()`... rồi gán thuộc tính bằng tay) trong `main.min_d7aad928.js`.
+
+**Vị trí từng phần**:
+- Class `GameSelectServeUI` (`main.min_d7aad928.js`): dựng màn chọn server (danh sách server, nút "进入游戏", nút "点击选区"...).
+- Class `GameLoadingUI`: dựng UI của màn loading (thanh progress, link "重新加载" khi lỗi).
+- Class `GameLoadingShowBg`: load ảnh nền cho màn loading.
+- Class `GameloadMgr`: phát ra các thông báo tiến trình loading (`HttpProperty.setLoadProgress(...)`).
+- Ảnh nằm ở `resource/eui/loading/`: `startBtn.png` (nút "进入游戏"), `selectServerBtnBg.png` (nút "点击选区"), `statemessage.png` (3 nhãn trạng thái "新服"/"火爆"/"维护"), `selecServerBg.png` (thanh nền xám, không chữ), `sverBg.png` (nền popup danh sách server đầy đủ, có chữ "选择服务器" — popup con khác, không phải màn chính trong ảnh chụp), `loading.jpg` (nền toàn màn cho màn "登录即送": có "登录即送"/"监兵白虎"/"高级天书盒").
+
+**GIỚI HẠN QUAN TRỌNG — 2 nút người dùng yêu cầu dịch KHÔNG dịch được bằng code**: nút "进入游戏" (`startBtn.png`) và nút "点击选区" (`selectServerBtnBg.png`) đều là **ảnh bitmap đã bake sẵn chữ Trung Quốc vào pixel** (xác nhận bằng cách xem trực tiếp file ảnh + xác nhận trong code gán qua `.icon=` chứ không phải `.label=`/`.text=`). Muốn dịch 2 nút này bắt buộc phải **vẽ lại ảnh** (Photoshop/design tool), không thể sửa bằng sửa text/code trong phiên làm việc này (không có công cụ tạo/sửa ảnh). Tương tự, nền `loading.jpg` của màn "登录即送" cũng là bitmap bake sẵn chữ, không dịch được bằng code.
+
+**Đã dịch được (chuỗi text thật, không phải bitmap)** trong `main.min_d7aad928.js`:
+| Chuỗi gốc | Vị trí | Bản dịch |
+|---|---|---|
+| `无法进入游戏请点击 ` | `GameLoadingUI`, `loadGameText1.text` | `Không thể vào game, vui lòng nhấn ` |
+| `<font color='#00FF00'><u>重新加载</u></font>` | `GameLoadingUI`, `loadGameText.textFlow` | `<font color='#00FF00'><u>Tải lại</u></font>` |
+| `解压配置中，此过程不产生流量` | `GameloadMgr` | `Đang giải nén cấu hình, quá trình này không phát sinh lưu lượng` |
+| `(正在加载游戏必要资源)` (2 chỗ) | `GameloadMgr` | `(Đang tải tài nguyên cần thiết của game)` |
+| `(正在登录游戏中)` (3 chỗ) | `GameloadMgr` | `(Đang đăng nhập vào game)` |
+| `开服时间未到` | `GameSelectServeUI`, `MsgBox.show` | `Chưa đến giờ mở server` |
+| `最近登陆` | `GameSelectServeUI`, nhãn nhóm server | `Đăng nhập gần đây` |
+| `服务器正在维护中` | `GameSelectServeUI`, `MsgBox.show` | `Server đang bảo trì` |
+| `本服为测试服` | `GameSelectServeUI`, `MsgBox.show` | `Đây là server thử nghiệm` |
+| `正在登录中，请稍等` | `GameSelectServeUI`, `this.setTips` | `Đang đăng nhập, vui lòng chờ` |
+| `登录失败，请稍等重试` | `GameSelectServeUI`, `this.setTips` | `Đăng nhập thất bại, vui lòng chờ và thử lại` |
+| `请求登录中，请稍等` | `GameSelectServeUI`, `this.setTips` (trước login WeChat) | `Đang yêu cầu đăng nhập, vui lòng chờ` |
+
+**Cố ý bỏ qua**: `授权失败`/`授权成功` (chỉ nằm trong `console.log()`, không hiện ra UI, không có giá trị dịch); hậu tố `"区"` trong `o[0]+"-"+o[1]+"区"` (ghép chuỗi logic nhóm server, hiện không dùng tới vì `index.php` chỉ có 1 server nên tính năng nhóm >10 server đang không hoạt động — sửa sẽ cần đổi logic code chứ không phải thay chuỗi đơn thuần).
+
+Xác minh: mỗi chuỗi đếm đúng số lần xuất hiện dự kiến trước khi thay (dùng `content.count()` qua Python), không có ký tự `'`/`"` lạ lẫn trong giá trị tiếng Việt, `node -c` qua được sau khi sửa.
+
+**Ảnh nền màn 1 chưa xác định được file cụ thể**: nền núi hồng "Say Môn Giang Hồ" ở màn đầu tiên (trước khi bấm vào game) không khớp với `loading.jpg` và chưa xác minh được có phải 1 trong các file `loading0.jpg`/`loading1.jpg`/`loading2.jpg`/`loading3.jpg` hay không (có phát hiện pattern code `this.cdnUrl+"agentAssets/"+t+"/loading.jpg"` cho phép override theo agent nhưng chưa kiểm tra file thực tế trên đĩa) — nếu người dùng cần dịch chữ trong ảnh đó, cần hỏi lại để xác định đúng file trước.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
