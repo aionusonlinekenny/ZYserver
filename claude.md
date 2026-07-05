@@ -1663,6 +1663,10 @@ Người dùng gửi popup chi tiết vật phẩm "Ảo Hình Chiến Linh" ("�
 
 Đổi tên `main.min_ac0f2ca2.js`→`main.min_c4a54e04.js`, `default.thm_1d41e70d.js`→`default.thm_c92d98a7.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file JS.
 
+Cập nhật thêm (ảnh IMG_0532, 2026-07-05): người dùng xác nhận layout đã hết chồng chéo, "Liên Server BOSS" đã đúng, nhưng chỉ ra thêm "2阶习得技能"/"5阶习得技能" (bị đọc/gõ nhầm thành "5防得技" trong tin nhắn) v.v. còn sót tiếng Trung. Đây là chữ ghép động trong `main.min.js`: số cấp (`c[0]`, giá trị 2/5/8/10 tuỳ kỹ năng) nối trực tiếp với chuỗi cố định `"阶习得技能"` rồi mới tới tên kỹ năng màu xanh trong 【】. Đã sửa bằng cách viết lại thứ tự ghép chuỗi cho tự nhiên theo tiếng Việt: `c[0]+"阶习得技能|C:...&T:【"+l.name+...`→`"Kỹ năng học được ở cấp "+c[0]+"|C:...&T:【"+l.name+...` (đưa cụm từ lên trước, số cấp ra sau, khớp văn phong tiếng Việt "Kỹ năng học được ở cấp 2 【Bất Phá Kim Thuẫn】" thay vì giữ nguyên thứ tự Hán "2 [cấp] học được kỹ năng"). Xác nhận không còn chuỗi "阶习得技能" nào sót lại trong `main.min.js`.
+
+Đổi tên `main.min_c4a54e04.js`→`main.min_cab37fd0.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
