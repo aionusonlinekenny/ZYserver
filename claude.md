@@ -1515,6 +1515,17 @@ Nhân tiện trả lời câu hỏi "sao không dùng instance như boss ở hì
 
 Đã verify 100% điểm walkable bằng script, `lua -e loadfile(...)` qua được cho cả `crossbossconfig.config` và `crossbossfb.lua` ở cả 2 vùng, file s1/s99 giống hệt nhau.
 
+Cập nhật thêm (ảnh IMG_0495/IMG_0496, 2026-07-05): người dùng báo **cả 2 nhóm map (435 lẫn 411) đều bị lại** dù đã verify walkable bằng script. Người dùng gợi ý đúng trọng tâm: "sao không lấy toạ độ của boss nào đã từng được load ở map này, mà dùng chứ tự tính/đoán như vậy không work".
+
+**Nhận ra vấn đề cốt lõi**: kiểm tra lại thấy ảnh IMG_0495 có chữ xanh "安全" (Vùng An Toàn) hiện ở góc bản đồ — `ConfigScenes[7004]` có field `area` chia bản đồ thành nhiều vùng đa giác với `attr.type` khác nhau (một vùng có `type=0` — nhiều khả năng là "vùng an toàn/cấm giao chiến"). Việc chỉ kiểm tra `grids` (đi được hay không) **hoàn toàn không phản ánh được các vùng cấm giao chiến này** — tức toạ độ có thể đi được nhưng vẫn không đánh nhau được nếu rơi vào vùng an toàn, hoặc do một ràng buộc ẩn khác của engine mà việc đọc dữ liệu tĩnh không suy ra được.
+
+**Đã đổi hoàn toàn cách tiếp cận theo đúng góp ý của người dùng** — thay vì tự tính/đoán toạ độ, dò lại toàn bộ `instance.config` tìm những map đã có quái/boss **thật sự được load và test trong game** (field `monsterGroup`/`bossjrd` của các fbid dungeon chương hồi/cốt truyện, ví dụ fbid=1..10 dùng `scenes={1}` hay `scenes={3}` với toạ độ cụ thể như `monsterGroup={{...posX=31,posY=26}}` và `bossjrd={34,18}` — đây là toạ độ CHẮC CHẮN đã hoạt động vì hàng trăm fbid khác (132,133,259,260,...) vẫn đang dùng lại đúng các toạ độ này cho nhiều bậc chương khác nhau):
+- Nhóm 7 zone "跨服BOSS" (trước dùng map435/scene 7011): đổi hẳn sang **scene 1 (map001, 79×63)** — dùng 8 toạ độ đã proven từ 4 fbid chương đầu (`monsterGroup`: (31,26),(50,17),(67,34),(46,41); `bossjrd`: (34,18),(60,21),(35,32),(41,42)). Boss lấy cố định điểm đầu (31,26); `flagPos` lấy 4 điểm `bossjrd` (đều là vị trí boss cuối màn đã proven).
+- Zone 8 "破界岛BOSS" (trước dùng map411/scene 7004): đổi hẳn sang **scene 3 (map003, 79×71)** — dùng 12 toạ độ proven từ 6 fbid chương khác. Boss lấy cố định điểm đầu (18,48).
+- `instance.config`: `scenes={7011}`→`scenes={1}` (7 fbid), `scenes={7013}`→ (đã là `{7004}` từ lần trước) →`scenes={3}` (1 fbid). **Lưu ý sự cố nhỏ khi thực hiện**: dùng `sed` thay theo giá trị số (`scenes = {7004},`→`scenes = {3},`) đã vô tình khớp luôn cả 2 dòng KHÔNG liên quan tới crossboss (fbid=50004 "激情泡点" gốc vốn dùng sẵn `scenes={7004}`, và fbid=51001 "巅峰赛季" gốc vốn dùng sẵn `scenes={7011}`) — phát hiện ngay qua `git diff` (thấy 2 chỗ đổi thay vì 1/7 như dự kiến) và đã khôi phục lại đúng 2 dòng đó về giá trị gốc trước khi commit, chỉ giữ lại đúng 8 thay đổi thuộc về crossboss.
+
+Không cần sửa gì thêm ở `crossbossfb.lua` (đã đúng từ lần trước: `conf.enterPos[1]` cố định, giờ trỏ vào toạ độ đã proven thay vì toạ độ tự đoán). `lua -e loadfile(...)` qua được, `diff` xác nhận s1/s99 giống hệt nhau và không có thay đổi ngoài ý muốn nào khác trong `instance.config`.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
