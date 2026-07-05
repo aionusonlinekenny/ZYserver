@@ -1632,6 +1632,16 @@ Kiểm tra `KFInvasionItemSkin.states` thấy state `"down"` (đúng là state c
 
 Đổi tên `default.thm_8763dc5f.js`→`default.thm_8f4ad5a3.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
 
+## 8.23. Tên vật phẩm trong hàng "BOSS rơi đồ" tràn đè lên nhau — lỗi ở skin item DÙNG CHUNG toàn game (ảnh IMG_0524/0525/0527, 2026-07-05)
+
+Người dùng báo tiếp: hàng "BOSS rơi đồ" (4 icon vật phẩm rớt ra, hiện ở mọi màn xem trước boss — đã thấy y hệt từ rất nhiều ảnh trước đó trong phiên làm việc này) có tên vật phẩm tràn ngang đè lên nhau ("Kết Tinh Thà" đè "Đồng Tiềnn", "Đông Lai Mi" đè "Du Long Ngọc Phiến"). Người dùng nhấn mạnh: đã copy đúng file `default.thm` mới nhất (bản sửa `KFInvasionItemSkin` ở mục 8.22) nhưng lỗi này vẫn còn — đúng vậy, vì đây **không phải cùng 1 skin**.
+
+**Vị trí thật**: `default.thm.js`, `SkinItem` (`resource/exml/ItemSkin.exml`) — đây là skin GỐC dùng cho `ItemBase`, hiển thị **MỌI icon vật phẩm trong toàn bộ game** (túi đồ, shop, phần thưởng, rương, v.v — không riêng gì màn boss). `nameTxt_i()` bị đúng lỗi kinh điển đã gặp nhiều lần trong phiên này: `left=5` nhưng **không đặt `width`**, nên tên dài tự do tràn ngang qua khỏi ô 76×76 của icon, đè lên icon kế bên.
+
+**Đã sửa**: đổi `t.left=5` thành `t.horizontalCenter=0` + thêm `t.width=76` (khớp đúng kích thước ô icon 76×76) — tên ngắn (đa số trường hợp: số cấp, "999", v.v.) hiển thị y hệt như cũ vì vẫn vừa 1 dòng trong 76px; chỉ tên dài (như tên vật phẩm rơi ra ở đây) mới tự động xuống dòng, không còn tràn qua ô bên cạnh nữa. Vì đây là skin dùng chung toàn game nên bản sửa này có phạm vi ảnh hưởng RỘNG hơn các lần trước (sửa tận gốc, áp dụng nhất quán ở mọi nơi hiển thị icon vật phẩm), nhưng an toàn vì chỉ ảnh hưởng trường hợp tên đã tràn từ trước (vốn đã là lỗi hiển thị), không thay đổi cách hiển thị tên ngắn vẫn đang đúng.
+
+Đổi tên `default.thm_8f4ad5a3.js`→`default.thm_05e00531.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
