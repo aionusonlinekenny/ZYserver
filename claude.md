@@ -1614,6 +1614,18 @@ Giải nén `version1.me` (thực chất là 1 file **ZIP** đội lốt đuôi 
 
 **Lưu ý cho người dùng**: file `resource/version1.me` này cũng cần copy sang máy chủ thật giống mọi file khác — đây là file NHỊ PHÂN (zip), không phải text nên không xem được trực tiếp qua diff nhưng vẫn copy y như các file khác. `default.res.json`/`default.res2.json` (file rời) vẫn giữ nguyên các chỉnh sửa cũ trong repo cho nhất quán/dễ đối chiếu nội dung, nhưng không cần lo nếu chúng không khớp 100% với `version1.me` — file rời không phải nguồn dữ liệu thật client dùng.
 
+**Người dùng xác nhận đã hoạt động đúng** (boss preview khớp boss thực tế, ảnh tiêu đề hiện đúng) — coi như hoàn tất mục 跨服BOSS/魔界入侵 boss-preview-mismatch.
+
+## 8.22. Sửa 2 lỗi hiển thị skin "魔界入侵" (Ma Giới Xâm Nhập): số đè chữ + tên boss tràn ô (ảnh IMG_0514/IMG_0516, 2026-07-05)
+
+Người dùng báo 2 lỗi UI trên cùng màn "魔界入侵":
+
+1. **Dòng "Thời gian hồi sinh hàng ngày：" bị số đếm ngược đè lên chữ** (hiện dính "20 130" chồng lên chữ "ngày"). Vị trí: `default.thm.js`, skin `KFInvasionSkin` (`DevildomWindow` dùng skin này), `_Group5_i()` chứa 3 phần: nền `_Image12` (width=210), nhãn chữ `_Label1` ("Thời gian hồi sinh hàng ngày：", x=12), và số đếm `refreshTime` (x=152, cố định). `refreshTime.x=152` được tính cho bản gốc tiếng Trung ngắn hơn nhiều — chữ Việt dài hơn hẳn nên tràn qua đúng vị trí cố định của số, gây đè chồng. Đã sửa: `_Image12.width` 210→400 (nền đủ rộng chứa cả câu), `refreshTime.x` 152→350 (đặt hẳn sau khi câu chữ kết thúc).
+
+2. **Tên boss trong danh sách chọn (4 icon tròn) tràn ngang đè lên tên boss kế bên** (ảnh IMG_0516: "Uyên Ma Quân", "Nhãn Ma Quân", "Quốc Long Ma Quân", "Huyết Ma Quân" chữ dính chồng lên nhau). Vị trí: `default.thm.js`, skin `KFInvasionItemSkin` (dùng cho item renderer `DevildomBossToTab`, mỗi ô chỉ rộng `width=82`) — `nameLabel_i()` **không hề đặt `width`** cho nhãn tên, nên tên dài (nhiều từ Hán-Việt) chỉ hiện 1 dòng và tự do tràn ngang ra khỏi ô 82px, đè lên ô icon kế tiếp. Đã sửa: thêm `t.width=82` (khớp đúng bề rộng ô, ép chữ tự động xuống dòng khi vượt quá), thêm `t.textAlign="center"` (căn giữa từng dòng sau khi xuống dòng), giảm `size` 16→13 (chữ nhỏ lại một chút để 2 dòng vừa vặn hơn trong ô hẹp).
+
+Đổi tên `default.thm_4c3508c6.js`→`default.thm_8763dc5f.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được. Chưa có ảnh xác nhận kết quả cuối — nếu tên boss 2 dòng vẫn hơi sát viền ô icon phía trên (do ô cao cố định 82 mà 2 dòng chữ chiếm nhiều chỗ hơn 1 dòng), có thể cần chỉnh thêm `size`/`bottom` ở vòng sau theo phản hồi thực tế.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
