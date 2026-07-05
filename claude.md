@@ -1466,6 +1466,8 @@ Cập nhật thêm (ảnh IMG_0472, 2026-07-05): người dùng muốn khôi ph�
 
 `node -c` qua được. Đổi tên `default.thm_08883ec6.js` → `default.thm_ff4f9153.js`, cập nhật `manifest.json`/`index.php`.
 
+Cập nhật thêm (ảnh IMG_0473, 2026-07-05): người dùng thấy nút "Đang tự động..." rộng dư khá nhiều (180) so với chữ, muốn thu hẹp lại chỉ chừa khoảng đệm ~2 ký tự mỗi bên. Đã giảm state `"down"`: `_Image1`/component `width` 180→145, `labelDisplay width` 170→135 (giữ nguyên `height=35`, `horizontalCenter=0`). State `"up"` (nút gọn khi chưa bấm) không đổi. `node -c` qua được. Đổi tên `default.thm_ff4f9153.js` → `default.thm_3dccea26.js`, cập nhật `manifest.json`/`index.php`.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
