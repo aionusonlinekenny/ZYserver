@@ -222,7 +222,7 @@ local function refreshBossTimer(id)
 	local ins = instancesystem.getInsByHdl(fbInfo.fbHandle)
 	if ins then
 		local bossId = getBossId(conf)
-		local bossX, bossY = crossbosssystem.getRandomPoint(conf)
+		local bossX, bossY = conf.enterPos[1].posX, conf.enterPos[1].posY
 		local monster = Fuben.createMonster(ins.scene_list[1], bossId, bossX, bossY)
 		if not monster then print("crossbossfb.refreshBossTimer:monster nil, id:"..tostring(bossId)) return end
 
