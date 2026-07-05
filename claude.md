@@ -1592,6 +1592,18 @@ Từ giờ preview sẽ **tự động hiện đúng ảnh của bossId đang ac
 
 Đổi tên `main.min_4290f466.js`→`main.min_ac0f2ca2.js`, cập nhật `manifest.json`/`index.php`. `node -c` và `lua -e loadfile(...)` đều qua được, s1/s99 giống hệt nhau.
 
+Cập nhật thêm (ảnh IMG_0510/IMG_0511, 2026-07-05): người dùng copy code mới + restart server sạch nhưng vẫn thấy "Bỉ Ngạn Tiên Linh" khi preview ghi "ĐẾ QUÂN" — bản sửa ở trên vẫn CHƯA đủ, do bỏ sót một tầng trung gian trong kiến trúc nhiều server:
+
+Màn hình preview (`KFBossShowWin`) được hiển thị **trong lúc người chơi vẫn còn đang kết nối ở s1** (luồng đã xác định từ mục 8.19: chỉ khi bấm "Thách đấu" mới thực sự chuyển sang s99). Nhưng `ins.data.bossId` (nơi bản sửa trước đọc dữ liệu) chỉ tồn tại trong bộ nhớ của **chính s99** — s99 là nơi Fuben instance thật sự được tạo (`instancesystem`), s1 hoàn toàn không tra được `instancesystem.getInsByHdl(...)` cho một handle được tạo trên máy chủ khác. Vì vậy bản sửa trước, khi chạy trên s1 (chỗ user đang đứng lúc xem preview), luôn nhận `ins=nil` → gửi `bossId=0` → client rơi về nhánh fallback (bossId tĩnh) → coi như KHÔNG có gì thay đổi.
+
+**Đã sửa đúng theo đúng luồng đồng bộ 2 chiều s99↔s1 sẵn có của hệ thống** (thay vì tra instance runtime):
+- `crossbossfb.lua` (cả s1, s99), `refreshBossTimer`: thêm `fbInfo.bossId = bossId` — lưu thẳng vào record `bossList[id]` (đúng như comment thiết kế gốc ở đầu file đã ghi chú sẵn field `bossId` trong `bossList[id]` nhưng chưa từng có dòng code nào thực sự gán nó — lỗ hổng có sẵn từ gốc, không phải do sửa lần trước gây ra).
+- `crossbossfb.lua`, `sendBossInfo` (hàm đồng bộ dữ liệu boss từ s99 sang s1 qua `CrossSrvCmd.SCCrossBossCmd`/`SCBossCmd_RefreshBoss`, chỉ chạy khi ở s99 — `if not System.isCommSrv()`): thêm `LDataPack.writeInt(npack, fbInfo.bossId or 0)` vào cuối gói tin.
+- `crossbosssystem.lua` (cả s1, s99), `onRefreshBoss` (hàm NHẬN gói đồng bộ trên ở phía s1): đọc thêm `local bossId = LDataPack.readInt(dp)` và lưu `data.bossList[id].bossId = bossId` vào bản sao cục bộ của s1.
+- `crossbosssystem.lua`, `sendBossData` (hàm gửi dữ liệu boss cho CLIENT thật, chạy trên bất kỳ server nào client đang kết nối): bỏ hẳn `instancesystem.getInsByHdl(...)`, đọc thẳng `info.bossId or 0` — giờ đúng cả 2 nguồn dữ liệu (`getGlobalData()` bản sao trên s1, và `crossbossfb.getGlobalData()` bản gốc trên s99) đều đã có sẵn field này.
+
+`lua -e loadfile(...)` qua được cho cả 4 file, s1/s99 giống hệt nhau ở từng file. Đây là bản sửa hoàn chỉnh của luồng đồng bộ bossId — không cần sửa thêm gì ở client nữa (mục trên đã đúng), chỉ là thiếu mắt xích truyền dữ liệu qua lại giữa 2 server.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).

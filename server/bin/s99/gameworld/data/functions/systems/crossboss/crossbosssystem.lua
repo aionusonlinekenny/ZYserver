@@ -231,12 +231,11 @@ function sendBossData(actor)
 	LDataPack.writeShort(npack, table.getnEx(data.bossList))
 
 	for id, info in pairs(data.bossList or {}) do
-		local ins = instancesystem.getInsByHdl(info.fbHandle)
 		LDataPack.writeShort(npack, id)
 		LDataPack.writeShort(npack, info.srvId)
 		LDataPack.writeInt(npack, (info.bossRefreshTime or 0) - System.getNowTime() > 0 and (info.bossRefreshTime or 0) - System.getNowTime() or 0)
 		LDataPack.writeInt(npack, (info.flagRefreshTime or 0) - System.getNowTime() > 0 and (info.flagRefreshTime or 0) - System.getNowTime() or 0)
-		LDataPack.writeInt(npack, ins and ins.data.bossId or 0)
+		LDataPack.writeInt(npack, info.bossId or 0)
 	end
 
 	if actor then
@@ -388,6 +387,7 @@ local function onRefreshBoss(sId, sType, dp)
 	local handle = LDataPack.readUInt(dp)
 	local bossRefreshTime = LDataPack.readInt(dp)
 	local flagRefreshTime = LDataPack.readInt(dp)
+	local bossId = LDataPack.readInt(dp)
 
 	local data = getGlobalData()
 	if not data.bossList then data.bossList = {} end
@@ -398,6 +398,7 @@ local function onRefreshBoss(sId, sType, dp)
 	data.bossList[id].bossRefreshTime = bossRefreshTime
 	data.bossList[id].flagRefreshTime = flagRefreshTime
 	data.bossList[id].fbHandle = handle
+	data.bossList[id].bossId = bossId
 
 	print("crossbosssystem.onRefreshBoss:receive boss info success. id:"..tostring(id)..", srvId:"..tostring(srvId))
 end

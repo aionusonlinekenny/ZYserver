@@ -122,6 +122,7 @@ local function sendBossInfo(id, sId)
 		LDataPack.writeUInt(npack, fbInfo.fbHandle)
 		LDataPack.writeInt(npack, fbInfo.bossRefreshTime or 0)
 		LDataPack.writeInt(npack, fbInfo.flagRefreshTime or 0)
+		LDataPack.writeInt(npack, fbInfo.bossId or 0)
 		System.sendPacketToAllGameClient(npack, sId or 0)
 	else
 		crossbosssystem.sendBossData(nil)
@@ -227,6 +228,7 @@ local function refreshBossTimer(id)
 		if not monster then print("crossbossfb.refreshBossTimer:monster nil, id:"..tostring(bossId)) return end
 
 		ins.data.bossId = bossId
+		fbInfo.bossId = bossId
 
 		fbInfo.monster = monster
 		fbInfo.bossRefreshTime = 0
