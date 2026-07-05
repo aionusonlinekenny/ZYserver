@@ -1468,6 +1468,31 @@ Cập nhật thêm (ảnh IMG_0472, 2026-07-05): người dùng muốn khôi ph�
 
 Cập nhật thêm (ảnh IMG_0473, 2026-07-05): người dùng thấy nút "Đang tự động..." rộng dư khá nhiều (180) so với chữ, muốn thu hẹp lại chỉ chừa khoảng đệm ~2 ký tự mỗi bên. Đã giảm state `"down"`: `_Image1`/component `width` 180→145, `labelDisplay width` 170→135 (giữ nguyên `height=35`, `horizontalCenter=0`). State `"up"` (nút gọn khi chưa bấm) không đổi. `node -c` qua được. Đổi tên `default.thm_ff4f9153.js` → `default.thm_3dccea26.js`, cập nhật `manifest.json`/`index.php`.
 
+## 8.19. Bug treo màn "Đang chuyển server.." khi vào Liên Server / 跨服BOSS — thiếu tài nguyên bản đồ client (2026-07-05)
+
+Người dùng báo (ảnh IMG_0474→IMG_0478): vào "Liên Server" → "跨服BOSS" → chọn 1 trong các khu vực (ví dụ "5chuyển-12chuyển") → bấm "Thách đấu" → màn hình treo cứng vĩnh viễn ở overlay "Đang chuyển server..".
+
+**Điều tra client (`main.min.js`)**: lần theo toàn bộ luồng `KFBossShowWin` (bấm "Thách đấu" → `KFBossSys.ins().sendEnter(fbId)`) → s1 phản hồi gói lệnh 9 (Login protocol) `doSwitchServer_a94` → mở popup "Đang chuyển server.." (`linkingKFState(true)`) → client kết nối sang `kfIp:kfPort` (s99) → `sendKFLogin()`. Popup chỉ đóng khi client nhận được gói "EnterGame thành công" (lệnh 5, `RoleMgr.doEnterGame`, dùng chung cho cả login thường lẫn login liên server).
+
+**Bằng chứng quyết định**: người dùng gửi ảnh Console trình duyệt (F12) lúc bị treo, cho thấy lỗi JS thật:
+```
+Uncaught TypeError: Cannot read properties of undefined (reading 'jumpData')
+Hàm lỗi: t.parser
+```
+Đối chiếu `main.min.js`: đây là `GameMap.parser` (xử lý gói vào bản đồ từ server) — dòng `var i=this.getFileName(), s=this.mapZip[i]; s.jumpData...` bị crash vì `s` (`this.mapZip[i]`) là `undefined`, tức **dữ liệu bản đồ không tồn tại trong `mapZip`** (được nạp 1 lần lúc khởi động game từ `resource/scene/maps.json`, xem log console "Đã tải xong cấu hình bản đồ").
+
+Đối chiếu với log server thật (dòng `EnterScene name:????,id:4097,fubenId:51003,sceneId:7012,...`) xác nhận server xử lý vào bản đồ **hoàn toàn thành công** ở `sceneId:7012` — bug nằm 100% ở phía client, không phải do s99/kết nối mạng (giả thuyết s99 chưa chạy ở lượt kiểm tra trước đó đã bị loại bỏ, s99 hoàn toàn khoẻ).
+
+**Nguyên nhân gốc**: `ConfigScenes[7012].mapfilename="map419"` và `ConfigScenes[7013].mapfilename="map420"` (2 bản đồ dùng cho toàn bộ 8 khu vực boss liên server, theo `instance.config`) — **cả 2 hoàn toàn không tồn tại phía client**: không có trong `resource/scene/maps.json`, không có thư mục `resource/scene/map419|map420/` (trong khi mọi map khác đều có đủ `mapXXX.json` + `image/` + `small.jpg`), và không được khai báo trong `default.res.json`/`default.res2.json`. Đã rà soát toàn bộ repo (kể cả giải nén `mdata.txt` phía server bằng zlib) — server chỉ có dữ liệu lưới va chạm nhị phân độc quyền (định dạng riêng của engine, không phải định dạng client), hoàn toàn không có ảnh nền/tileset — nghĩa là **không thể tự phục hồi map419/map420 từ bất kỳ dữ liệu nào có trong repo**. Đây là lỗ hổng tài nguyên có từ khi đóng gói client, không phải lỗi do các lần sửa trước đó gây ra.
+
+**Đã áp dụng giải pháp tạm** (theo yêu cầu người dùng "dùng tạm thử", chờ tìm được gói tài nguyên client gốc đầy đủ hơn): trỏ tạm 2 scene bị thiếu sang 2 scene khác đã có đủ tài nguyên, không đụng tới field `sceneName` (chuỗi `"跨服战场"`/`"破界岛"` — vẫn được bảo toàn nguyên vẹn vì có thể bị so sánh `==` ở nơi khác trong `main.min.js`):
+- `instance/instance.config` (cả s1, s99): fbid 51003–51009 (7 khu vực "跨服BOSS", scene cũ 7012/map419) → đổi `scenes={7012}` thành `scenes={7011}` (map435, 32×24, đã dùng ổn định cho tính năng "Đỉnh Phong Mùa Giải"). fbid 51002 (khu "破界岛BOSS", scene cũ 7013/map420) → đổi `scenes={7013}` thành `scenes={7004}` (map411, 37×31, đã dùng ổn định cho "激情泡点").
+- `crossboss/crossbossconfig.config` (cả s1, s99): toạ độ `enterPos`/`flagPos` gốc được tính riêng cho địa hình map419/map420 (vượt quá biên map435/map411 mới, có thể gây lỗi vị trí ngoài bản đồ) → đã thay bằng toạ độ mới nằm an toàn trong biên của map435 (entry 1-7) và map411 (entry 8), giữ cùng kiểu bố trí theo cụm như bản gốc.
+
+Xác minh: `lua -e loadfile(...)` qua được cho `crossbossconfig.config` ở cả 2 vùng (file `instance.config` có lỗi cú pháp tiền tồn tại ở dòng 145526, không liên quan tới vùng vừa sửa — đã xác nhận lỗi này tồn tại y hệt ở git HEAD gốc, không phải do sửa lần này gây ra). File s1/s99 sau khi sửa vẫn giống hệt nhau (`diff` rỗng).
+
+**Hạn chế đã biết của giải pháp tạm**: bối cảnh trận đấu (nền/tileset) sẽ hiển thị theo hình ảnh của map435/map411 thay vì hình ảnh "跨服战场"/"破界岛" như thiết kế gốc — thuần tuý là khác biệt hình ảnh, không ảnh hưởng logic thách đấu/thưởng/deo boss. Nếu sau này tìm được gói tài nguyên client gốc có đủ `map419`/`map420` (ảnh nền + `mapXXX.json` + `small.jpg`), nên phục hồi lại đúng `scenes={7012}`/`scenes={7013}` và toạ độ `enterPos`/`flagPos` gốc (đã lưu nguyên trong lịch sử git trước commit này).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
