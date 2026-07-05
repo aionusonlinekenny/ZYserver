@@ -590,7 +590,8 @@ local function createFb(id, curTime, isInit)
 			return
 		end
 
-		local monster = Fuben.createMonster(ins.scene_list[1], bossId)
+		local bossX, bossY = conf.enterPos[1].posX, conf.enterPos[1].posY
+		local monster = Fuben.createMonster(ins.scene_list[1], bossId, bossX, bossY)
 		if not monster then print("devilbossfb.createFb:monster nil, id:"..tostring(bossId)) return end
 
 		data.bossList[id] = {}

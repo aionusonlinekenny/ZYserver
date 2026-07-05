@@ -1532,6 +1532,21 @@ Cập nhật thêm (ảnh IMG_0490/IMG_0491/IMG_0498/IMG_0499, 2026-07-05): đá
 
 **Kết luận**: không thể sửa để preview hiển thị ĐÚNG boss mốc 30 (thiếu ảnh, không tự vẽ ra được). Nên chọn hướng ngược lại — làm boss THỰC TẾ luôn khớp với boss ĐÃ CÓ ảnh preview (mốc 1), thay vì cố hiện ảnh cho boss không có tài nguyên. Sửa `crossbossconfig.config` (cả s1, s99): đổi giá trị mốc 30 trong `openBossList` trùng với mốc 1 — `{[1]=85028,[30]=85004}`→`{[1]=85028,[30]=85028}` (7 zone nhóm 1), `{[1]=85027,[30]=85003}`→`{[1]=85027,[30]=85027}` (zone 8). Hàm `getBossId(conf)` trong `crossbossfb.lua` (đọc theo "số ngày mở server", không đổi code) giờ luôn trả về đúng ID có ảnh bất kể server đã mở bao lâu — preview và boss thực tế vĩnh viễn trùng nhau, không cần đụng tới `main.min.js`/client. `lua -e loadfile(...)` qua được, s1/s99 giống hệt nhau.
 
+## 8.20. Bug treo tương tự ở tab "魔界入侵" (Ma Giới Xâm Nhập) — cùng nguyên nhân thiếu map, đã sửa ngay bằng bài học từ 8.19 (ảnh IMG_0500/IMG_0501, 2026-07-05)
+
+Người dùng báo tab "魔界入侵" (cũng thuộc nhóm Liên Server, khác với 跨服BOSS) bị treo khi bấm "Thách đấu" vào map (ảnh IMG_0501: vào được scene nhưng không thấy boss/nút tấn công, số liệu HP/mana hiển thị sai "138281 / 2").
+
+**Chẩn đoán nhanh nhờ kinh nghiệm từ 8.19**: tra `devilboss.config`/`devilbossfb.lua` (module riêng cho tính năng này, boss "烛龙魔君" khớp đúng ảnh người dùng gửi, `fbid=51029`). `instance.config` cho 4 fbid 51027-51030 đều dùng `scenes = {7023}` → `ConfigScenes[7023].mapfilename = "map425"` → xác nhận **map425 hoàn toàn không tồn tại phía client** (không có trong `maps.json`, không có thư mục, không khai báo resource manifest) — **giống hệt** tình trạng map419/420 ở mục 8.19. Đồng thời `devilbossfb.lua` dòng ~593 cũng có đúng bug y hệt `crossbossfb.lua` trước khi sửa: `Fuben.createMonster(ins.scene_list[1], bossId)` tạo boss **không truyền toạ độ x,y**.
+
+**Đã sửa ngay bằng cách tiếp cận đã học được (không lặp lại chu trình dò-lỗi nhiều vòng như 8.19)**:
+- `instance.config` (cả s1, s99): cả 4 fbid 51027/51028/51029/51030 đổi `scenes = {7023}` → `scenes = {1}` (dùng lại scene 1/map001 đã dùng cho nhóm 跨服BOSS 1-7, sed giới hạn phạm vi từng block `[fbid]...},` để tránh lặp lại sự cố sed thay nhầm ở 8.19).
+- `devilboss.config` (cả s1, s99, cả 4 entry id 1-4 dùng chung 1 danh sách `enterPos`): thay `enterPos` gốc (11 điểm tính riêng cho map425) bằng đúng 8 toạ độ đã proven từng dùng cho crossboss scene 1 (`monsterGroup`/`bossjrd` của các dungeon chương 1-4: (31,26),(50,17),(67,34),(46,41),(34,18),(60,21),(35,32),(41,42)) — không tự đoán/tính từ lưới va chạm nữa, học đúng bài học từ 8.19.
+- `devilbossfb.lua` (cả s1, s99), hàm `createFb`: thêm `local bossX, bossY = conf.enterPos[1].posX, conf.enterPos[1].posY` rồi truyền vào `Fuben.createMonster(ins.scene_list[1], bossId, bossX, bossY)` — boss luôn spawn ở điểm đã proven, giống pattern cuối cùng đã ổn định ở `crossbossfb.lua`.
+
+`devilboss.config`'s `openBossList` mỗi id chỉ có đúng 1 mốc (`{[1]=87091}` v.v., không có mốc 30) nên KHÔNG bị vấn đề preview-lệch-thực-tế như crossboss (mục trên) — không cần sửa gì thêm cho phần đó.
+
+Verify: `lua -e loadfile(...)` qua được cho `devilboss.config`/`devilbossfb.lua` (file `instance.config` vẫn còn lỗi cú pháp tiền tồn tại ở dòng 145526, đã xác nhận từ 8.19 là không liên quan/có sẵn từ git HEAD). `git diff` xác nhận `instance.config` chỉ đổi đúng 4 dòng liên quan tới fbid 51027-51030, không đụng entry nào khác. s1/s99 giống hệt nhau ở cả 3 file.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
