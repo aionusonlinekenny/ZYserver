@@ -1642,6 +1642,14 @@ Người dùng báo tiếp: hàng "BOSS rơi đồ" (4 icon vật phẩm rớt r
 
 Đổi tên `default.thm_8f4ad5a3.js`→`default.thm_05e00531.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
 
+Cập nhật thêm (ảnh IMG_0530, 2026-07-05): 2 dòng chữ xuống dòng đúng như sửa (không còn tràn/đè nữa) nhưng người dùng thấy XẤU (chữ 2-3 dòng đè lên icon, rối mắt). Yêu cầu đổi hướng: bỏ hẳn hiển thị tên mặc định, chỉ hiện icon; xem tên/thông tin đầy đủ khi bấm vào item (đã có sẵn cơ chế `showDetail()`/mở popup chi tiết khi click, không cần làm thêm).
+
+Kiểm tra `ItemBase` thấy có sẵn 3 hàm public đều dùng để ẩn tên theo từng trường hợp cụ thể (`isShowName(t)`, `hideName()`, `setNameVisible(t)` — đều set `nameTxt.visible`), nghĩa là mặc định gốc của skin là HIỆN tên, và các nơi khác trong code chỉ chủ động ẩn khi cần — không có nơi nào chủ động BẬT hiện tên, nên đổi mặc định của skin sang ẩn sẽ không đụng tới logic hiện có ở bất kỳ đâu khác (an toàn).
+
+Đã sửa `SkinItem.nameTxt_i()`: thêm `t.visible=false` (giữ nguyên `width=76`/`horizontalCenter=0` đã sửa ở trên — không cần revert, phòng trường hợp có nơi nào chủ động bật `visible=true` sau này thì vẫn tự động xuống dòng đúng thay vì tràn). Tên vật phẩm giờ ẩn mặc định trên toàn bộ game (đúng yêu cầu, áp dụng nhất quán mọi nơi dùng `ItemBase`/`SkinItem`), người chơi bấm vào icon vẫn xem được đầy đủ tên qua popup chi tiết như trước giờ.
+
+Đổi tên `default.thm_05e00531.js`→`default.thm_1d41e70d.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
