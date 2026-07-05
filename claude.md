@@ -1443,6 +1443,20 @@ Người dùng báo tag `［仙盟］` (hiện trước tin nhắn kênh chat Ti
 
 `node -c` qua được, xác nhận 0 occurrence `[仙盟]` còn sót. Đổi tên `main.min_5c17a033.js` → `main.min_0427b4b1.js`, cập nhật `manifest.json`/`index.php` theo quy ước cache ở 8.9.
 
+## 8.18. Nới rộng nút "Tự động" (SkinBtn12) để không bị tràn chữ "Đang tự động..." (ảnh IMG_0468/IMG_0469, 2026-07-05)
+
+Người dùng gửi ảnh nút "Đang tự động…" cạnh thanh "Vượt Ải" bị tràn chữ (nút hẹp hơn chữ cần hiển thị).
+
+**Vị trí**: `default.thm.js`, `SkinBtn12` (`Btn12Skin.exml`) — skin dùng chung cho nút `autoPkBoss` (toggle "Tự động thách đấu"/"Tự động chiến đấu"/"Đang tự động..." tuỳ trạng thái up/down). Nút chỉ có 1 nơi dùng skin này: `pkBossBtnGroup_i` (`horizontalCenter=0` trong group cha) → nới rộng sẽ giãn đều 2 bên, không lệch layout.
+
+Nguyên bản: `width=88` (đặt ở state "up", không đổi lại ở "down" nên áp dụng chung cho cả nút), trong khi cả 2 câu chữ tiếng Việt ("Tự động chiến đấu" 18 ký tự, "Đang tự động..." 15 ký tự) đều dài hơn nhiều so với chữ Hán gốc 2-4 ký tự.
+
+**Đã sửa**:
+- Tăng `width` của nút (thuộc tính `""` = chính component) từ 88 → 180 (ảnh nền `_Image1` có `scale9Grid` nên co giãn an toàn, không vỡ hình).
+- Cả 2 state up/down: đổi `labelDisplay` từ định vị bằng `x` cố định sang `horizontalCenter=0` + thêm `width=170` + `textAlign="center"` — đúng theo quy tắc `eui.Label` cần `width` tường minh thì `textAlign="center"` mới thực sự canh giữa (state "down" trước đó đã có sẵn `textAlign="center"` nhưng vô tác dụng vì thiếu `width`, đúng quirk đã ghi nhận nhiều lần trong dự án).
+
+`node -c` qua được. Đổi tên `default.thm_0d1590b8.js` → `default.thm_5b46d2b9.js`, cập nhật `manifest.json`/`index.php` theo quy ước cache ở 8.9.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
