@@ -1671,6 +1671,24 @@ Cập nhật thêm (ảnh IMG_0534/IMG_0535, 2026-07-05): người dùng chỉ t
 
 Đây là data JSON thuần (không phải file JS), không cần đổi tên/cache-bust theo quy ước `default.thm`/`main.min` — nhưng vẫn cần người dùng copy 2 file này lên server thật để có hiệu lực (và làm mới cache trình duyệt nếu file JSON có bị cache riêng).
 
+## 8.25. Sửa chồng chéo tên item/"Điểm:" trong popup Ảo Hình Chiến Linh + dịch nốt vài chữ Hán còn sót (ảnh IMG_0536, 2026-07-05)
+
+Người dùng gửi popup chi tiết item mới ("Đông Lai Minh Đồ"), báo tên item và dòng "Điểm： 38880" đè chồng lên nhau không đọc được.
+
+**Vị trí thật**: `default.thm.js`, skin `SkinUsualEquipTips` (`EquipTipsBase`) — đây LÀ skin đúng cho popup này (đã xác minh bằng cách lần theo `window.SkinUsualEquipTips = (function` trong file, KHÔNG phải các chỗ `nameLabel`/`score` với placeholder "Đồ Long "/"Điểm：" giống hệt nằm ở 3 skin khác hoàn toàn không liên quan — `MixAttributesPanel.exml`, `guardGodWeaponUISkind.exml`, `MijiTipSkin.exml` — do cả 4 skin dùng chung 1 khuôn đặt tên biến/placeholder mặc định khi build từ Egret Wing, cần đối chiếu đúng theo exml-path để không sửa nhầm skin). `nameLabel` (tên item, `textAlign=left`, không có `width`) và `score` (dòng Điểm, `right=20,textAlign=right`, cùng `y` với `nameLabel`) được thiết kế để nằm CHUNG 1 HÀNG, chia trái/phải — đúng cho tên ngắn tiếng Trung gốc, nhưng tên tiếng Việt dài hơn nhiều nên tràn thẳng qua nửa bên phải, đè lên dòng Điểm.
+
+Đã sửa: tách `nameLabel` và `score` thành 2 dòng riêng thay vì chung 1 hàng chia trái/phải — `nameLabel` giữ `x=20,y=20` nhưng giảm `size` 20→16 và thêm `width=330` (ép tự động xuống dòng nếu quá dài, thay vì tràn vô hạn); `score` bỏ `right=20/textAlign=right/width=200`, chuyển thành `x=20,y=40,textAlign=left,size=18→16` (xuống hẳn dòng dưới, canh trái khớp `nameLabel`). Đồng thời đẩy `_Group2` (chứa icon + khối loại/cấp) từ `y=52` xuống `y=64` để chừa đủ chỗ cho 2 dòng tên+điểm phía trên thay vì 1 dòng như trước.
+
+**Dịch nốt chữ Hán còn sót** trong hàm `ZhanLingItemTipsInfo` (`main.min.js`, build dữ liệu cho popup này) và config liên quan:
+- `"无级别"` (hiện khi item chưa có cấp) → `"Vô cấp bậc"`.
+- `"部位：\n等级："` (nhãn 2 dòng bên trái) → `"Vị trí：\n Cấp bậc："`.
+- `"基础属性："` (tiêu đề nhóm thuộc tính cơ bản) → `"Thuộc tính cơ bản："`.
+- Dấu phân cách `、` giữa các tên vị trí trang bị trong danh sách liệt kê màu → đổi thành `", "` cho đúng văn phong liệt kê tiếng Việt.
+- `"法宝基础属性增加+"` → `"Thuộc tính cơ bản Pháp Bảo tăng thêm +"`.
+- `GlobalConfig.ConfigZhanLing.zlEquipName` (mảng tên 4 loại trang bị Ảo Hình Chiến Linh, dùng chung nhiều nơi) — dịch âm Hán-Việt: `铭图→Minh Đồ, 灵晶→Linh Tinh, 符箓→Phù Lục, 器魂→Khí Hồn`. Sửa ở CẢ 2 nơi lưu cùng data này: `resource/config/config.json` (định dạng pretty-print nhiều dòng) và `resource/config1/config6.json` (định dạng compact 1 dòng) — verify JSON hợp lệ cả 2 file sau khi sửa.
+
+Đổi tên `default.thm_c92d98a7.js`→`default.thm_422bc511.js`, `main.min_cab37fd0.js`→`main.min_a570d6e7.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file JS.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
