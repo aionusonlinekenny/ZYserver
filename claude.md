@@ -1457,6 +1457,8 @@ Nguyên bản: `width=88` (đặt ở state "up", không đổi lại ở "down"
 
 `node -c` qua được. Đổi tên `default.thm_0d1590b8.js` → `default.thm_5b46d2b9.js`, cập nhật `manifest.json`/`index.php` theo quy ước cache ở 8.9.
 
+Cập nhật thêm (ảnh IMG_0471, 2026-07-05): sau khi nới `width` của nút, chữ đã canh giữa/đủ rộng nhưng **hình nền nút (`_Image1`, ảnh "zjmzidong") không giãn theo** — chữ tràn ra ngoài 1 hình nền vẫn nhỏ như cũ. Nguyên nhân: `_Image1_i()` không hề set `width`/`height` cho ảnh nền, nên dù thuộc tính `width` của cả nút (component) đã tăng lên 180, ảnh nền vẫn vẽ theo kích thước gốc của bitmap (không tự giãn theo logical width của component cha) — `scale9Grid` đã khai báo sẵn nhưng vô tác dụng vì chưa có `width`/`height` tường minh để nó co giãn theo. Đã sửa: thêm `t.width=180; t.height=35;` thẳng vào `_Image1_i()` để ảnh nền luôn vẽ đúng kích thước mới, tận dụng đúng `scale9Grid` sẵn có để không vỡ hình. `node -c` qua được. Đổi tên `default.thm_5b46d2b9.js` → `default.thm_08883ec6.js`, cập nhật `manifest.json`/`index.php`.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
