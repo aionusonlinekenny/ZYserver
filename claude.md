@@ -1689,6 +1689,13 @@ Người dùng gửi popup chi tiết item mới ("Đông Lai Minh Đồ"), báo
 
 Đổi tên `default.thm_c92d98a7.js`→`default.thm_422bc511.js`, `main.min_cab37fd0.js`→`main.min_a570d6e7.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file JS.
 
+Cập nhật thêm (ảnh IMG_0537, 2026-07-05): sau khi hết chồng chéo, người dùng báo dòng "Giảm Sát Thương Chí Mạng Nhất Kích: 2%" quá dài, vẫn tràn khỏi khung (dù không còn đè lên dòng khác). Yêu cầu rút gọn còn "Giảm sát thương chí mạng" và rút gọn luôn dòng "Thuộc tính cơ bản Pháp Bảo tăng thêm" còn "Thuộc tính cơ bản Pháp Bảo tăng".
+
+- `"Giảm Sát Thương Chí Mạng Nhất Kích"` (tên thuộc tính `atDeadLyResist`, trả về từ hàm dùng chung `AttributeData.getAttrStrByType` trong `main.min.js` — dùng làm nhãn ở MỌI nơi hiển thị thuộc tính này trong game, không riêng popup này) → rút gọn thành `"Giảm sát thương chí mạng"`.
+- `"Thuộc tính cơ bản Pháp Bảo tăng thêm +"` (chuỗi cục bộ trong `ZhanLingItemTipsInfo`, chỉ dùng riêng cho popup Ảo Hình Chiến Linh) → rút gọn thành `"Thuộc tính cơ bản Pháp Bảo tăng +"`.
+
+Đổi tên `main.min_a570d6e7.js`→`main.min_cd7a75d1.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
