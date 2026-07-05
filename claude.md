@@ -1650,6 +1650,19 @@ Kiểm tra `ItemBase` thấy có sẵn 3 hàm public đều dùng để ẩn tê
 
 Đổi tên `default.thm_05e00531.js`→`default.thm_1d41e70d.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
 
+## 8.24. Sửa chồng chéo nhãn "Kích hoạt hoặc nâng cấp..." + tên item, và dịch nốt vài chữ Hán còn sót (ảnh IMG_0531, 2026-07-05)
+
+Người dùng gửi popup chi tiết vật phẩm "Ảo Hình Chiến Linh" ("仙引古灯"/Tiên Dẫn Cổ Đăng), báo dòng nhãn "Kích hoạt hoặc nâng cấp Ảo Hình Chiến Linh:" và tên item cụ thể (ví dụ "Đông Hoàng Chiến Hồn" — placeholder mặc định trong skin) chồng đè lên nhau không đọc được, hỏi có cách nào chia lại skin cho đủ chỗ. Đồng thời chỉ ra vài chữ Hán còn sót không phải ảnh, cần dịch.
+
+**1. Lỗi chồng chéo**: `default.thm.js`, skin `SkinZhanlingZBTips` (`ZhanlingZBTipView`) — `_Label1` ("Kích hoạt hoặc nâng cấp...:", `left=30,top=285`) và `itemname` (tên cụ thể, `horizontalCenter=0,top=285`) **đặt CÙNG toạ độ top**, chỉ khác X — do `_Label1` là câu rất dài (đã tự dịch dài hơn nhiều bản Hán gốc) nên tràn ngang tới tận giữa dòng, đè thẳng lên `itemname` đang canh giữa. Khung chứa chỉ chừa đúng 26px chiều cao giữa dòng nhãn này (top=285) và hàng icon kỹ năng đầu tiên bên dưới (`_Group1.top=311`) — không đủ chỗ để tách 2 dòng riêng nếu giữ nguyên cỡ chữ 18. Đã sửa: giảm cỡ chữ cả 2 nhãn 18→14, xếp `itemname` xuống MỘT DÒNG RIÊNG bên dưới `_Label1` thay vì canh giữa cùng hàng (`_Label1.top=282`, `itemname.left=30,top=300` — thẳng hàng trái với nhau, đúng vừa trong khoảng trống 26px sẵn có, không cần đụng tới `_Group1` hay bất kỳ phần nào bên dưới nên không ảnh hưởng phần còn lại của popup).
+
+**2. Dịch nốt chữ Hán còn sót** (đã phân biệt ảnh vs chữ thật bằng cách grep trực tiếp trong `main.min.js`/`default.thm.js`/resource json):
+- "仙引古灯" (chữ dọc cạnh hình ngọn đèn) — **là ảnh bitmap** (không tìm thấy trong bất kỳ file JS/resource text nào) — không sửa được bằng code, cần vẽ lại ảnh như các trường hợp tương tự trước đây (kf_name_*, biaoti_*).
+- "激活后获得强力天赋：" — chữ thật trong `main.min.js` (nối trực tiếp với phần mô tả tiếng Việt đã dịch từ config, chỉ riêng phần tiền tố này bị bỏ sót) → dịch thành "Sau khi kích hoạt nhận thiên phú mạnh mẽ:".
+- "跨服BOSS" (dòng "Cách nhận" ở cuối popup) — chữ thật, nằm trong data client `resource/config/config.json` và `resource/config1/config4.json` (field `gainWay` của item, dùng chung cho mọi item có nguồn gốc từ 跨服BOSS) → dịch thành "Liên Server BOSS" (khớp cách gọi tính năng này xuyên suốt phiên làm việc). Đã verify JSON hợp lệ sau khi sửa cả 2 file.
+
+Đổi tên `main.min_ac0f2ca2.js`→`main.min_c4a54e04.js`, `default.thm_1d41e70d.js`→`default.thm_c92d98a7.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file JS.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
