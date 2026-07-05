@@ -1564,6 +1564,16 @@ this.killTips.textFlow = TextFlowMaker.generateTextFlow1("Bạn bị|C:2343978&T
 
 Đổi tên `main.min_0427b4b1.js`→`main.min_4290f466.js`, `default.thm_3dccea26.js`→`default.thm_1c7c2f9f.js`, cập nhật `manifest.json`/`index.php` theo quy ước cache ở mục 8.9.
 
+Cập nhật thêm (2026-07-05): người dùng tự chỉnh thêm vài chữ trực tiếp trong `default.thm.js` rồi gửi lại file để đồng bộ lên git — đã áp dụng nguyên văn theo đúng nội dung người dùng gửi, không tự ý sửa thêm gì khác:
+- Nút "Người sở hữu tấn công" → "Sở hữu Boss" (2 nơi: 1 trong state `eui.SetProperty`, 1 trong hàm khởi tạo `_i()` mặc định).
+- "Tôi là người sở hữu" → "Tôi sở hữu" (2 nơi, cùng state list).
+- "Đang tấn công BOSS" → "Tấn công BOSS".
+- `killTips_i()`: `size` 19→23 (người dùng tự đổi lại, giữ nguyên `width=400` đã sửa ở trên).
+
+Đổi tên `default.thm_1c7c2f9f.js`→`default.thm_4c3508c6.js`, cập nhật `manifest.json`/`index.php` theo quy ước cache. `node -c` qua được.
+
+**Quay lại logic gốc boss-theo-mốc-ngày cho 跨服BOSS** (đảo ngược phần đã sửa ở trên): người dùng cho biết sẽ tự tạo ảnh tiêu đề còn thiếu (`kf_name_85004.png`/`kf_name_85003.png`) sau, nên muốn khôi phục cơ chế `openBossList` gốc thay vì ép boss thực tế luôn trùng boss mốc 1. Đã revert `crossbossconfig.config` (cả s1, s99) về đúng giá trị ban đầu: `{[1]=85028,[30]=85028}`→`{[1]=85028,[30]=85004}` (7 zone nhóm 1), `{[1]=85027,[30]=85027}`→`{[1]=85027,[30]=85003}` (zone 8). Boss thực tế sẽ lại hiện đúng theo số ngày mở server (85004/85003 từ ngày 30 trở đi) như thiết kế gốc; preview lobby sẽ tiếp tục hiện ảnh mốc 1 (85028/85027) cho tới khi có ảnh `kf_name_85004`/`kf_name_85003` — người dùng đã biết và chấp nhận việc này tạm thời, sẽ bổ sung ảnh sau. `lua -e loadfile(...)` qua được, s1/s99 giống hệt nhau.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
