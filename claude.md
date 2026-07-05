@@ -1667,6 +1667,10 @@ Cập nhật thêm (ảnh IMG_0532, 2026-07-05): người dùng xác nhận layo
 
 Đổi tên `main.min_c4a54e04.js`→`main.min_cab37fd0.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
 
+Cập nhật thêm (ảnh IMG_0534/IMG_0535, 2026-07-05): người dùng chỉ thêm nốt "活动" (chữ vàng trong khung "Cách nhận") còn sót tiếng Trung. Cùng field `gainWay` như "跨服BOSS" đã dịch ở mục trên — rà toàn bộ `resource/config/config.json` và `resource/config1/config4.json` thấy `"活动"` xuất hiện đúng 10 lần mỗi file (10 item khác nhau đều ghi nguồn gốc "hoạt động"). Dịch đồng loạt cả 10 chỗ mỗi file thành "Hoạt động" (khớp văn phong đã dùng cho "Hoạt động chưa mở" ở `boss.config` mục 8.19). Verify JSON hợp lệ sau khi sửa cả 2 file.
+
+Đây là data JSON thuần (không phải file JS), không cần đổi tên/cache-bust theo quy ước `default.thm`/`main.min` — nhưng vẫn cần người dùng copy 2 file này lên server thật để có hiệu lực (và làm mới cache trình duyệt nếu file JSON có bị cache riêng).
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
