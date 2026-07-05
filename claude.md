@@ -1547,6 +1547,23 @@ Người dùng báo tab "魔界入侵" (cũng thuộc nhóm Liên Server, khác 
 
 Verify: `lua -e loadfile(...)` qua được cho `devilboss.config`/`devilbossfb.lua` (file `instance.config` vẫn còn lỗi cú pháp tiền tồn tại ở dòng 145526, đã xác nhận từ 8.19 là không liên quan/có sẵn từ git HEAD). `git diff` xác nhận `instance.config` chỉ đổi đúng 4 dòng liên quan tới fbid 51027-51030, không đụng entry nào khác. s1/s99 giống hệt nhau ở cả 3 file.
 
+## 8.21. Sửa lỗi thiếu khoảng trắng ở thông báo "Bạn bị Boss ... đánh bại" (ảnh IMG_0502, 2026-07-05)
+
+Người dùng báo popup "Nhắc nhở hồi sinh" hiện "Bạn bịBossBá Vũ Bạch Hùngđánh bại" dính liền không có khoảng trắng, bị tràn xuống 2 dòng và ngắt giữa từ ("Bạch H" / "ùng"). Yêu cầu: thêm khoảng trắng đúng chỗ ("bị Boss", "Boss Bá", trước "đánh bại") và gói gọn trên 1 dòng, cẩn thận không phá vỡ logic.
+
+**Vị trí**: `main.min.js`, hàm `setWin_a94` — dùng chung cho 3 cửa sổ hồi sinh gần giống nhau (world boss, khu vực chờ hồi sinh, và `KFBossReliveWin` dùng cho cả 跨服BOSS lẫn 魔界入侵). Code gốc:
+```js
+s = i instanceof CustomActorRole ? i.infoModel.name : (i.infoModel.masterHandle && n ? ""+n.infoModel.name : "Boss"+i.infoModel.name);
+this.killTips.textFlow = TextFlowMaker.generateTextFlow1("Bạn bị|C:2343978&T:"+s+"|đánh bại");
+```
+`"Boss"+i.infoModel.name` nối liền không khoảng trắng, và chuỗi bọc ngoài `"Bạn bị|C:...&T:"+s+"|đánh bại"` cũng không có khoảng trắng quanh phần tên được tô màu — ghép lại thành "Bạn bịBossTên...đánh bại" dính liền hoàn toàn.
+
+**Đã sửa** (3 chỗ giống hệt nhau, dùng đúng 1 lần thay thế cho cả 3 vì cùng 1 khuôn mẫu): `"Boss"+i.infoModel.name` → `"Boss "+i.infoModel.name`; `"Bạn bị|C:2343978&T:"` → `"Bạn bị |C:2343978&T:"`; `"|đánh bại"` → `"| đánh bại"`. Chỉ thêm khoảng trắng vào literal string nối chuỗi, không đổi biến/điều kiện logic nào — không ảnh hưởng hành vi xác định tên boss. `node -c` qua được.
+
+Đồng thời để câu (dài hơn ra do thêm 3 khoảng trắng, cộng với tên boss Hán-Việt thường dài hơn bản Hán gốc) có cơ hội gói gọn 1 dòng: `default.thm.js`, skin `SkinWorldBossGold`, phần `killTips_i()` — tăng `width` 246→400 (vẫn nằm trong biên ảnh nền `_Image2` rộng 419, không bị lồi ra ngoài khung) và giảm `size` 23→19 để chữ dài vừa khít hơn trên 1 dòng.
+
+Đổi tên `main.min_0427b4b1.js`→`main.min_4290f466.js`, `default.thm_3dccea26.js`→`default.thm_1c7c2f9f.js`, cập nhật `manifest.json`/`index.php` theo quy ước cache ở mục 8.9.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
