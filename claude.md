@@ -1459,6 +1459,13 @@ Nguyên bản: `width=88` (đặt ở state "up", không đổi lại ở "down"
 
 Cập nhật thêm (ảnh IMG_0471, 2026-07-05): sau khi nới `width` của nút, chữ đã canh giữa/đủ rộng nhưng **hình nền nút (`_Image1`, ảnh "zjmzidong") không giãn theo** — chữ tràn ra ngoài 1 hình nền vẫn nhỏ như cũ. Nguyên nhân: `_Image1_i()` không hề set `width`/`height` cho ảnh nền, nên dù thuộc tính `width` của cả nút (component) đã tăng lên 180, ảnh nền vẫn vẽ theo kích thước gốc của bitmap (không tự giãn theo logical width của component cha) — `scale9Grid` đã khai báo sẵn nhưng vô tác dụng vì chưa có `width`/`height` tường minh để nó co giãn theo. Đã sửa: thêm `t.width=180; t.height=35;` thẳng vào `_Image1_i()` để ảnh nền luôn vẽ đúng kích thước mới, tận dụng đúng `scale9Grid` sẵn có để không vỡ hình. `node -c` qua được. Đổi tên `default.thm_5b46d2b9.js` → `default.thm_08883ec6.js`, cập nhật `manifest.json`/`index.php`.
 
+Cập nhật thêm (ảnh IMG_0472, 2026-07-05): người dùng muốn khôi phục đúng hành vi gốc — nút gọn (chỉ hiện "Tự động") khi CHƯA bấm, và **tự giãn rộng** ra khi bấm để hiện "Đang tự động...". Bản sửa trước làm nút LUÔN rộng 180 ở cả 2 trạng thái (mất tính "giãn theo text" của thiết kế gốc). Đã sửa lại đúng theo yêu cầu — tách riêng kích thước theo từng state thay vì fix cứng 1 kích thước dùng chung:
+- State `"up"` (chưa bấm): text đổi lại thành `"Tự động"` (ngắn gọn, không phải "Tự động chiến đấu" nữa), `_Image1` + component đều `width=100,height=35`, `labelDisplay width=90`.
+- State `"down"` (đã bấm): giữ text `"Đang tự động..."`, `_Image1` + component đều `width=180,height=35`, `labelDisplay width=170` — khi chuyển sang state này, ảnh nền + độ rộng nút tự giãn ra đúng như hành vi gốc.
+- `_Image1_i()` (giá trị khởi tạo mặc định trước khi state áp dụng): đổi về `width=100,height=35` khớp với state "up" (trạng thái mặc định `currentState="up"`).
+
+`node -c` qua được. Đổi tên `default.thm_08883ec6.js` → `default.thm_ff4f9153.js`, cập nhật `manifest.json`/`index.php`.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
