@@ -1626,6 +1626,12 @@ Người dùng báo 2 lỗi UI trên cùng màn "魔界入侵":
 
 Đổi tên `default.thm_4c3508c6.js`→`default.thm_8763dc5f.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được. Chưa có ảnh xác nhận kết quả cuối — nếu tên boss 2 dòng vẫn hơi sát viền ô icon phía trên (do ô cao cố định 82 mà 2 dòng chữ chiếm nhiều chỗ hơn 1 dòng), có thể cần chỉnh thêm `size`/`bottom` ở vòng sau theo phản hồi thực tế.
 
+Cập nhật thêm (ảnh IMG_0517, 2026-07-05): người dùng xác nhận tiêu đề boss liên server đã hiện đúng ("BỈ NGẠN HOA LINH" — mục 8.19/8.20 coi như hoàn tất). Yêu cầu tiếp: với danh sách item tên boss vừa sửa 2 dòng ở trên, khi 1 item đang ĐƯỢC CHỌN (state "down") thì vẫn phải hiện tên ĐẦY ĐỦ, không bị ép gọn/2 dòng như các item chưa chọn.
+
+Kiểm tra `KFInvasionItemSkin.states` thấy state `"down"` (đúng là state chọn — dựa vào `selectIcon` chỉ ẩn ở state "up"/"disabled", mặc định hiện ở "down") đang để trống, chưa hề override gì. Đã thêm 2 `SetProperty` riêng cho state "down": `nameLabel.width` 82→300 (đủ rộng để tên dài hiện trên 1 dòng, không còn bị ép xuống dòng/cắt như state mặc định), `nameLabel.size` 13→16 (khôi phục cỡ chữ gốc dễ đọc hơn cho item đang được chọn). Item chưa chọn (state "up") vẫn giữ nguyên `width=82,size=13` 2 dòng như bản sửa trước — chỉ riêng item đang chọn mới "phình" ra hiện đầy đủ tên, đúng yêu cầu.
+
+Đổi tên `default.thm_8763dc5f.js`→`default.thm_8f4ad5a3.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
