@@ -1696,6 +1696,12 @@ Cập nhật thêm (ảnh IMG_0537, 2026-07-05): sau khi hết chồng chéo, ng
 
 Đổi tên `main.min_a570d6e7.js`→`main.min_cd7a75d1.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
 
+Cập nhật thêm (ảnh IMG_0538, 2026-07-05): người dùng báo toàn bộ khối info của item (tên, điểm, icon+vị trí/cấp bậc, Lục Chiến, khối thuộc tính) bị lệch phải trong khung — lề trái dư trong khi lề phải thiếu (chữ dòng "Thuộc tính cơ bản Pháp Bảo tăng: 16%" sát mép phải). Yêu cầu dời toàn bộ sang trái 10px.
+
+Các phần tử con của `anigroup` chịu trách nhiệm hiển thị info đều neo theo `x`/`left` tuyệt đối tính từ mép trái khung 350px (`nameLabel.x=20`, `score.x=20`, `_Group2.x=20` [icon+vị trí/cấp bậc], `powerPanel.x=24` [thanh Lục Chiến], `content.left=24` [khối "Thuộc tính cơ bản"/"Thuộc Tính Bộ Trang Bị"]) — trong khi nền/viền khung (`background`, `quali`) trải đều `left=0,right=0`. Đã giảm đồng loạt 10px ở cả 5 chỗ neo trên (`x=20→10`, `x=24→14`, `left=24→14`) để dịch toàn bộ nội dung info sang trái, không đụng tới nền/viền khung hay các phần tử canh giữa khác (`_Image1` tiêu đề banner, `_Group3` dòng "Chạm vùng trống để đóng cửa sổ", `changeBtn` nút đổi trang bị).
+
+Đổi tên `default.thm_422bc511.js`→`default.thm_d87127bf.js`, cập nhật `manifest.json`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
