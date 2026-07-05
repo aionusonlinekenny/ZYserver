@@ -231,10 +231,12 @@ function sendBossData(actor)
 	LDataPack.writeShort(npack, table.getnEx(data.bossList))
 
 	for id, info in pairs(data.bossList or {}) do
+		local ins = instancesystem.getInsByHdl(info.fbHandle)
 		LDataPack.writeShort(npack, id)
 		LDataPack.writeShort(npack, info.srvId)
 		LDataPack.writeInt(npack, (info.bossRefreshTime or 0) - System.getNowTime() > 0 and (info.bossRefreshTime or 0) - System.getNowTime() or 0)
 		LDataPack.writeInt(npack, (info.flagRefreshTime or 0) - System.getNowTime() > 0 and (info.flagRefreshTime or 0) - System.getNowTime() or 0)
+		LDataPack.writeInt(npack, ins and ins.data.bossId or 0)
 	end
 
 	if actor then
