@@ -2059,3 +2059,19 @@ Codebase đã có sẵn đúng cơ chế xử lý ca này: `server/bin/s1/gamewo
 **Đã sửa** `gmquery.php`'s case `'renameplayer'`: sau khi `UPDATE actors SET actorname=...` thành công, chèn thêm 1 dòng `INSERT INTO gmcmd(serverid,cmd,param1) VALUES ('{$srvid}','setActorDataValid','{$actorid}')` để báo cho server đang chạy làm mới cache của nhân vật đó — từ giờ tên mới sẽ được đọc lại đúng ở lần đăng nhập kế tiếp.
 
 `php -l` sạch. Không thay đổi `deleteplayer` (đã dùng đúng `clientdeletecharactor` — 1 stored procedure của chính engine, nên không có vấn đề cache tương tự) hay các thao tác khác.
+
+## 18. `setActorDataValid` không đủ - phải thêm hẳn 1 lệnh GM mới đổi tên qua đúng API game (2026-07-06)
+
+Người dùng test lại: đổi tên báo thành công, nhưng đăng nhập lại vẫn thấy tên cũ y hệt lần trước — nghĩa là gửi `setActorDataValid` (mục 17) không giải quyết được vấn đề. Nguyên nhân nhiều khả năng: hàm native `System.setActorDataValid(...)` không thực sự ép đọc lại từ DB như suy đoán ban đầu (không có mã nguồn để xác nhận chính xác, tên hàm chỉ là suy luận từ chú thích "sửa lỗi cache" trong code), hoặc tên hiển thị trong game lấy từ 1 bản dữ liệu khác không bị ảnh hưởng bởi lệnh này.
+
+Đã hỏi người dùng test thử "Cấm chat" để xác minh cơ chế hàng đợi `gmcmd` (nơi mọi lệnh GM đi qua) có hoạt động không — người dùng xác nhận **gửi quà vẫn nhận bình thường** (cũng đi qua đúng `gmcmd` với `cmd='sendMail'`), nghĩa là cơ chế `gmcmd` chạy tốt, vấn đề chỉ nằm ở việc chưa có lệnh GM đúng để đổi tên.
+
+**Giải pháp đúng gốc**: thêm hẳn 1 lệnh GM mới `renameActor` vào `server/bin/s1/gameworld/data/functions/systems/gm/gmdccmdhandler.lua`, gọi đúng API mà bản thân game dùng khi người chơi tự đổi tên bằng thẻ đổi tên (`LActor.setEntityName`, xem `changename.lua:100`) trên đối tượng actor đang online (lấy qua `LActor.getActorById(actorid, true, true)` — cùng cách `kick` handler đã dùng). Cách này giống hệt luồng đổi tên chính chủ của game nên tự động đúng luôn cả việc autosave sau đó ghi đúng tên mới xuống DB, không còn bị cache ghi đè ngược lại tên cũ.
+
+`gmquery.php`'s `renameplayer` giờ gửi cả `renameActor` (đổi ngay nếu đang online) lẫn `setActorDataValid` (giữ lại phòng hờ, không hại gì) sau khi `UPDATE`.
+
+**QUAN TRỌNG - việc người dùng cần làm**: đây là thay đổi trong mã nguồn Lua của GameWorld (`gmdccmdhandler.lua`), không phải PHP. Tiến trình GameWorld hiện đang chạy **không tự nhận code Lua mới** trừ khi được khởi động lại (trừ khi hệ thống của bạn có cơ chế hot-reload riêng cho các file trong `systems/gm/`, thứ tôi không có cách nào xác nhận từ đây) — **cần khởi động lại (restart) tiến trình GameWorld của server 1 thì lệnh `renameActor` mới có tác dụng**. Trước khi restart, đổi tên cho nhân vật đang online sẽ vẫn không thấy hiệu quả như 2 lần test trước.
+
+Sau khi restart: đổi tên 1 nhân vật ĐANG ONLINE sẽ thấy tên đổi ngay lập tức trong game, không cần đăng xuất/đăng nhập lại. Nếu đổi tên cho nhân vật đang OFFLINE, vẫn có khả năng gặp lại đúng vấn đề cache khi họ đăng nhập lại (vì lúc đó không có actor online để gọi `renameActor` được, chỉ còn UPDATE thẳng DB + `setActorDataValid` như cũ) — nếu vẫn gặp lại tình huống này, báo lại để tìm hướng khác (ví dụ: chỉ cho phép đổi tên khi nhân vật đang online, ẩn nút Đổi tên với nhân vật offline).
+
+`luac -p` qua được cho file Lua đã sửa.

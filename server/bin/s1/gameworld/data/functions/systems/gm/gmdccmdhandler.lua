@@ -105,6 +105,18 @@ gmDcCmdHandlers.setActorDataValid = function(dp)
 	System.setActorDataValid(System.getServerId(), acotr_id, true)
 end
 
+--GM đổi tên nhân vật: nếu đang online thì đổi ngay qua đúng API game dùng (LActor.setEntityName),
+--hiện tên mới ngay lập tức không cần đăng nhập lại, và autosave định kỳ sẽ tự ghi đúng tên mới
+--xuống DB (không còn bị cache ghi đè lại tên cũ như khi tool GM chỉ UPDATE thẳng bảng actors).
+gmDcCmdHandlers.renameActor = function(dp)
+	local actorid = tonumber(LDataPack.readString(dp))
+	local name = LDataPack.readString(dp)
+	if not actorid or not name or name == "" then return end
+	local actor = LActor.getActorById(actorid, true, true)
+	if not actor then return end
+	LActor.setEntityName(actor, name)
+end
+
 --设置禁言
 gmDcCmdHandlers.shutup = function(dp)
 	local acotr_id = tonumber(LDataPack.readString(dp))

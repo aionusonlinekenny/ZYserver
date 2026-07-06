@@ -548,15 +548,18 @@ if($_POST){
 			}
 			mysqli_query($conn,"UPDATE actors SET actorname='{$newnameEsc}' WHERE actorid='{$actorid}' AND serverindex='{$srvid}'");
 			// DBServer giữ 1 bản cache riêng của actor này trong bộ nhớ và tự autosave đè lại actorname
-			// theo cache đó, nên chỉ UPDATE thẳng vào bảng actors là chưa đủ - nếu nhân vật vừa online
-			// gần đây, lần autosave kế tiếp sẽ ghi đè tên mới bằng tên cũ trong cache. Bắn thêm lệnh
-			// gmcmd 'setActorDataValid' (cơ chế có sẵn của engine, dùng để "sửa lỗi người chơi không
-			// đăng nhập được do cache") để GameWorld làm mới cache của đúng actor này.
+			// theo cache đó, nên chỉ UPDATE thẳng vào bảng actors là chưa đủ. Nếu nhân vật đang online,
+			// gmcmd 'renameActor' (tự thêm ở gmdccmdhandler.lua) sẽ đổi tên qua đúng API game dùng
+			// (LActor.setEntityName) - hiện ngay lập tức, autosave định kỳ sau đó tự ghi đúng tên mới.
+			// 'setActorDataValid' gửi kèm để phòng trường hợp nhân vật đang offline nhưng vẫn còn bản
+			// ghi trong cache đọc (cơ chế có sẵn của engine, dùng để "sửa lỗi người chơi không đăng
+			// nhập được do cache").
+			mysqli_query($conn,"INSERT INTO gmcmd(serverid,cmd,param1,param2) VALUES ('{$srvid}','renameActor','{$actorid}','{$newnameEsc}')");
 			mysqli_query($conn,"INSERT INTO gmcmd(serverid,cmd,param1) VALUES ('{$srvid}','setActorDataValid','{$actorid}')");
 			mysqli_close($conn);
 			$return=array(
 				'errcode'=>0,
-				'info'=>'Đã đổi tên nhân vật thành công. Lưu ý: nếu nhân vật đang online, cần đăng nhập lại để cập nhật tên hiển thị trong game.',
+				'info'=>'Đã đổi tên nhân vật. Nếu đang online sẽ đổi ngay; nếu offline có thể cần đăng nhập lại (và server đã áp dụng bản vá renameActor) để tên mới hiển thị đúng.',
 			);
 			exit(json_encode($return));
 			break;
