@@ -2047,3 +2047,15 @@ Người dùng gửi ảnh chụp 1 hộp thoại lỗi JS hiện ngay trên tr�
 **Bài học áp dụng cho các lần sửa JS minify sau này**: khi thay thế 1 đoạn text nằm sát 1 từ khoá JS (`else`, `return`, `in`, `of`, `typeof`, `instanceof`, `new`, `delete`, `void`...) trong file đã minify (không khoảng trắng), phải tự kiểm tra ký tự ngay trước/sau chỗ thay có phải chữ/số/`_`/`$` không — nếu có, phải chủ động thêm 1 khoảng trắng ở ranh giới đó, vì `node -c`/`php -l` chỉ bắt lỗi cú pháp chứ không bắt được kiểu "2 token dính thành 1 định danh hợp lệ nhưng sai nghĩa" như thế này.
 
 Vẫn giữ nguyên khung log debug trên màn hình (`data-show-log="true"`) và file log `gm/pay_debug.log` thêm 1 vòng test nữa để xác nhận dứt điểm việc nạp tiền chạy đúng, trước khi tắt lại 2 công cụ chẩn đoán này.
+
+## 17. Đổi tên nhân vật trong GM tool: DB đổi rồi nhưng vào game vẫn tên cũ (2026-07-06)
+
+Người dùng xác nhận: bấm "Đổi tên" trong GM tool báo thành công, tự tải lại danh sách người chơi cũng thấy tên mới — nhưng đăng xuất/đăng nhập lại nhân vật trong game vẫn hiện tên cũ.
+
+**Nguyên nhân** (điều tra qua agent đọc log runtime + chuỗi ký tự trong binary `dbserver64_debug.exe`, vì phần đọc/ghi actor thật nằm trong engine đã compile, không có mã nguồn Lua): tiến trình `DBServer` giữ 1 bản cache riêng trong bộ nhớ (`CDBDataCache`) cho mỗi nhân vật đã từng load, và cứ khoảng 10 giây tự động `autosave` — chính engine tự chạy `update actors set actorname="...",... where actorid=...` từ dữ liệu trong cache đó, ghi đè lại lên đúng dòng mà GM tool vừa sửa. Cột `actorname` không phải là 1 chỉ mục tra cứu thụ động — chính engine "sở hữu" và tự ghi lại cột này, nên sửa thẳng bằng `UPDATE` từ bên ngoài chỉ có tác dụng tạm thời cho tới lần autosave kế tiếp (hoặc bị bỏ qua hoàn toàn nếu nhân vật đang được cache).
+
+Codebase đã có sẵn đúng cơ chế xử lý ca này: `server/bin/s1/gameworld/data/functions/systems/gm/gmdccmdhandler.lua:102-106` có handler `gmDcCmdHandlers.setActorDataValid`, chú thích ngay trong code là "sửa lỗi người chơi không đăng nhập được do cache" — gọi native `System.setActorDataValid(serverId, actorid, true)` để buộc GameWorld làm mới cache của đúng actor đó. Đây là lệnh được gửi qua hàng đợi `gmcmd` (giống hệt cơ chế mail/cấm chat/mở cấm chat đang dùng), không phải gọi trực tiếp.
+
+**Đã sửa** `gmquery.php`'s case `'renameplayer'`: sau khi `UPDATE actors SET actorname=...` thành công, chèn thêm 1 dòng `INSERT INTO gmcmd(serverid,cmd,param1) VALUES ('{$srvid}','setActorDataValid','{$actorid}')` để báo cho server đang chạy làm mới cache của nhân vật đó — từ giờ tên mới sẽ được đọc lại đúng ở lần đăng nhập kế tiếp.
+
+`php -l` sạch. Không thay đổi `deleteplayer` (đã dùng đúng `clientdeletecharactor` — 1 stored procedure của chính engine, nên không có vấn đề cache tương tự) hay các thao tác khác.

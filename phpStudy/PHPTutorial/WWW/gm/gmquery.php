@@ -547,6 +547,12 @@ if($_POST){
 				exit(json_encode($return));
 			}
 			mysqli_query($conn,"UPDATE actors SET actorname='{$newnameEsc}' WHERE actorid='{$actorid}' AND serverindex='{$srvid}'");
+			// DBServer giữ 1 bản cache riêng của actor này trong bộ nhớ và tự autosave đè lại actorname
+			// theo cache đó, nên chỉ UPDATE thẳng vào bảng actors là chưa đủ - nếu nhân vật vừa online
+			// gần đây, lần autosave kế tiếp sẽ ghi đè tên mới bằng tên cũ trong cache. Bắn thêm lệnh
+			// gmcmd 'setActorDataValid' (cơ chế có sẵn của engine, dùng để "sửa lỗi người chơi không
+			// đăng nhập được do cache") để GameWorld làm mới cache của đúng actor này.
+			mysqli_query($conn,"INSERT INTO gmcmd(serverid,cmd,param1) VALUES ('{$srvid}','setActorDataValid','{$actorid}')");
 			mysqli_close($conn);
 			$return=array(
 				'errcode'=>0,
