@@ -1989,3 +1989,27 @@ Khối "Khu & tài khoản" (chọn khu + ô tài khoản game) nằm ngoài tab
 Đã bỏ 4 handler JS chết từ trước (`#zhfhbtn`/`#fhbtn`/`#zhjfbtn`/`#jfbtn` — phong/giải phong tài khoản kiểu cũ) vì không có nút HTML nào gắn với chúng kể cả trước khi tôi động vào, dọn code thay vì mang theo qua lần viết lại này.
 
 `php -l` sạch cho `gm.php`/`gmquery.php`/`itemquery.php` sau khi sửa, đã test render `gm.php` qua CLI (đủ 3 tab, không còn tham chiếu `item.txt`) và test `itemquery.php` qua CLI (tìm "Nguyên" trả về đúng tên Việt + icon path hợp lệ, file ảnh xác nhận tồn tại trên đĩa).
+
+## 13. Sửa lỗi gốc: bấm "Mua/Nạp" trong game không phản ứng gì dù bật/tắt công tắc PayPal (2026-07-06)
+
+### 13.1. Nguyên nhân thật sự
+
+Người dùng báo: dù để trống (tắt) cả 2 công tắc "Bắt buộc trả tiền" trong GM tool, bấm mua/nạp trong game vẫn không thấy gì xảy ra. Không phải lỗi ở PHP hay ở công tắc — lỗi nằm ở chỗ **client game chưa từng thật sự gọi tới luồng `PayMoneyByBrowser` mà tôi đã nối vào `gm/pay_create_order.php` ở mục 10.2.**
+
+Hàm điều phối thanh toán trong `SDkMsg.prototype.PayMoney` có nhánh:
+```js
+"browser"===this.sdkType ? this.PayMoneyByBrowser(e) : this.PayMoneyByClient(e)
+```
+`this.sdkType` được gán bằng giá trị `entryType` lấy từ config server trả về (`index.php`: `'config'=>array('entryType'=>"js", ...)`), tức **`sdkType` thực tế luôn là `"js"`, không phải `"browser"`**. So sánh `===` ở đây là so khớp tuyệt đối nên luôn sai → mọi lần bấm mua đều rơi vào `PayMoneyByClient`, hàm này gọi tiếp `CallNaviga` để bắn message qua cầu nối SDK gốc (`window.wxadapter`/`window.adapter.platform`/`window.JsInterface`) — không cái nào tồn tại khi chạy thẳng trên trình duyệt thường (không phải app WebView/SDK đối tác) → toàn bộ chuỗi gọi lặng lẽ không làm gì cả, không có request mạng nào được gửi, không có lỗi nào hiện ra. Đây là lý do bấm mua "im lặng" bất kể trạng thái 2 công tắc, vì code còn chưa chạm tới được `pay_create_order.php`.
+
+Class này đã có sẵn 1 hàm `IsBrowser()` coi cả `"browser"` lẫn `"js"` là môi trường trình duyệt/web (dùng ở chỗ khác để quyết định luồng đăng nhập), nên sửa bằng cách dùng lại đúng hàm đó cho luồng thanh toán thay vì so sánh cứng:
+```js
+this.IsBrowser() ? this.PayMoneyByBrowser(e) : this.PayMoneyByClient(e)
+```
+Đây là sửa tối thiểu, đúng ngay tại chỗ gãy, không đụng tới `entryType` trong `index.php` (đổi cái đó có thể ảnh hưởng dây chuyền tới các luồng khác đang dựa vào `"js"===this.sdkType`, ví dụ `InitJsSdk`/`SendLogin`/`NavigaCallBack`).
+
+### 13.2. Việc đã làm
+
+Sửa `js/main.min_13338353.js` → đổi tên thành `js/main.min_726885d6.js` (cache-bust), cập nhật `manifest.json` + `index.php`'s `?v=`. `node -c` qua được. Không đụng gì khác trong file.
+
+**Người dùng cần làm gì tiếp theo**: thử lại nút mua/nạp trong game (nhớ tải lại trang / xoá cache trình duyệt vì tên file JS đã đổi). Nếu để trống công tắc sẽ hiện popup xác nhận "Đồng ý/Huỷ" rồi cộng nguyên bảo; nếu bật công tắc sẽ chuyển sang trang PayPal (cần đã điền Client ID/Secret hợp lệ trong tab Quản lý Payment trước).
