@@ -2019,3 +2019,21 @@ Sửa `js/main.min_13338353.js` → đổi tên thành `js/main.min_726885d6.js`
 Khi truy cập `http://<domain>/gm/` (không kèm tên file), PHP/Apache tự phục vụ `gm/index.php` làm trang mặc định của thư mục — nhưng file này là 1 trang GM đời cũ, còn nguyên tiếng Trung, gọi tới `playerquery.php` (file **không tồn tại** trong `gm/`) nên vốn đã hỏng/không hoạt động, chỉ là rác còn sót lại chứ không phải trang panel đang dùng thật (`gm/gm.php`, đã có đăng nhập qua `login.php`).
 
 Đã thay toàn bộ nội dung `gm/index.php` bằng 1 dòng redirect `header('Location: login.php'); exit;`. Giờ vào `/gm/` sẽ tự chuyển sang trang đăng nhập ngay lập tức.
+
+## 15. Bấm "Nạp" trong game vẫn không có phản ứng gì sau khi sửa mục 13 (2026-07-06)
+
+Người dùng test lại (màn hình "Nạp lần đầu" 10/20/30/100 NDT) vẫn không thấy gì xảy ra khi bấm. Đã lần theo toàn bộ đường đi của nút này trong `main.min.js` để loại trừ các khả năng:
+
+- Nút gọi `Recharge.ins().showReChargeInfo(cash)` → hàm này có 1 chỗ có thể **âm thầm không làm gì cả, không cả hiện tip lỗi**: nếu `SDkMsg.isShowRecharge==0` thì toàn bộ thân hàm bị bỏ qua. Đã kiểm tra: cờ này mặc định `=1` và chỉ bị set về `0` trong nhánh dành riêng cho WeChat tiểu trình (`window.wxadapter`) — không áp dụng cho triển khai chạy thẳng trên trình duyệt này, nên loại trừ được khả năng này.
+- `showReChargeInfo` còn có 1 điều kiện mở hệ thống `OpenSystBase.ins().checkSysOpen(SystemType.FIRSTCHARGE)` — nếu false sẽ hiện tip "Nạp thẻ đã bị chặn" (không phải im lặng hoàn toàn). Đối chiếu với `resource/config/config.json`'s `ConfigOpenSystem[1]` (`FIRSTCHARGE`): yêu cầu nhân vật cấp ≥5, không phải chặn cứng theo kênh (`pfid`) như nhánh dự phòng của hàm này — nên với nhân vật đã lên cấp cao trong ảnh chụp màn hình trước đó, điều kiện này gần như chắc chắn đã mở.
+- Nếu qua được các điều kiện trên, hàm gọi `SDkMsg.GetInstance().PayMoney(t)` → sau bản vá mục 13, sẽ luôn đi vào `PayMoneyByBrowser` → gọi `gm/pay_create_order.php` bằng `egret.HttpRequest`.
+
+Vì không thể truy cập trực tiếp trình duyệt/server thật của người dùng để xem console log hoặc network request, đã thêm 2 công cụ chẩn đoán từ xa:
+
+1. **Bật log debug trên màn hình game**: `index.php` đổi `data-show-log="false"` → `data-show-log="true"` (thuộc tính có sẵn của Egret runtime, hiện đè 1 khung log nhỏ ngay trên màn hình game, không cần mở devtools). Sau khi xác định xong vấn đề nên đổi lại `false` để không lộ log cho người chơi thường.
+2. **Ghi log phía server**: `gm/pay_create_order.php` thêm hàm `pco_log()` ghi từng bước (request nhận được, lý do fail nếu có, kết quả free/paypal nếu thành công) vào file `gm/pay_debug.log` (dùng `file_put_contents(...,FILE_APPEND)`, không phá vỡ luồng response JSON hiện có). Đây là log tạm phục vụ chẩn đoán, nên xoá bỏ (cả hàm `pco_log`/`pco_fail` log call lẫn các dòng gọi nó) sau khi vấn đề được xác nhận đã hết.
+
+**Việc cần làm tiếp**: người dùng bấm "Nạp" lại 1 lần trên trình duyệt điện thoại, sau đó:
+- Xem khung log nhỏ hiện trên màn hình game ngay lúc đó (sẽ thấy dòng `[sdk] Pay money success resp = ...` nếu đã gọi đúng `pay_create_order.php`, hoặc dòng `Dữ liệu nạp thẻ` nếu vẫn rơi vào nhánh SDK gốc cũ — nếu thấy dòng này nghĩa là trình duyệt đang chạy bản JS cũ do cache, cần xoá cache/tải lại hẳn).
+- Mở thêm `http://71.31.97.241/gm/pay_debug.log` để xem log phía server (sẽ cho biết request có tới nơi không, và nếu tới thì dừng ở bước nào/lỗi gì).
+Gửi lại nội dung 2 chỗ này để xác định chính xác nút đang kẹt ở đâu.

@@ -16,9 +16,22 @@ include 'config.php';
 include 'paypal_lib.php';
 include 'recharge_tiers.php';
 
+// Log tạm để chẩn đoán "bấm nạp không thấy gì" - xoá khối này (và các lời gọi pco_log bên dưới)
+// sau khi xác nhận luồng thanh toán chạy đúng.
+function pco_log($label, $data = null) {
+	$line = '[' . date('Y-m-d H:i:s') . '] ' . $label;
+	if ($data !== null) {
+		$line .= ' ' . json_encode($data);
+	}
+	@file_put_contents(__DIR__ . '/pay_debug.log', $line . "\n", FILE_APPEND);
+}
+
 function pco_fail($msg) {
+	pco_log('FAIL', $msg);
 	exit(json_encode(array('mode' => 'error', 'message' => $msg)));
 }
+
+pco_log('REQUEST', $_GET);
 
 $dataParam = isset($_GET['data']) ? $_GET['data'] : '';
 if ($dataParam === '') {
@@ -78,6 +91,7 @@ if (!$requirePayment) {
 	// hiện popup Đồng ý/Huỷ rồi gọi pay_free_finalize.php mới thực sự được cộng tiền.
 	mysqli_query($conn, "INSERT INTO payment_orders(order_id,serverid,account,actor_id,yuanbao_amount,is_free_mode,status) VALUES ('{$orderIdEsc}','{$serveridEsc}','{$accountEsc}','{$actorIdEsc}','{$yuanbaoAmount}',1,'pending_confirm') ON DUPLICATE KEY UPDATE status='pending_confirm'");
 	mysqli_close($conn);
+	pco_log('FREE_MODE_OK', array('orderId' => $orderId, 'yuanbaoAmount' => $yuanbaoAmount));
 	exit(json_encode(array(
 		'mode' => 'free',
 		'orderId' => $orderId,
@@ -108,4 +122,5 @@ if (!$order) {
 mysqli_query($conn, "INSERT INTO payment_orders(order_id,serverid,account,actor_id,yuanbao_amount,is_free_mode,status) VALUES ('{$orderIdEsc}','{$serveridEsc}','{$accountEsc}','{$actorIdEsc}','{$yuanbaoAmount}',0,'created') ON DUPLICATE KEY UPDATE status='created'");
 mysqli_close($conn);
 
+pco_log('PAYPAL_MODE_OK', array('orderId' => $orderId, 'approveUrl' => $order['approveUrl']));
 exit(json_encode(array('mode' => 'paypal', 'approveUrl' => $order['approveUrl'])));
