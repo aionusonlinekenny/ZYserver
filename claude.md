@@ -1754,6 +1754,22 @@ Dọn thêm 5 chỗ `fontFamily="黑体"` còn sót ở màn hình đăng nhập
 
 Đổi tên `main.min_d8f18f55.js`→`main.min_bbcd1e2a.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
 
+## 8.29. Dịch tiếp đợt 4 (`main.min.js`): xuống còn 127 cụm — chủ yếu là debug/dead-code/tên ngẫu nhiên (2026-07-05)
+
+Theo yêu cầu "cứ tiếp tục nha", tiếp tục rà từ 217 cụm còn lại của mục 8.28.
+
+**Đã dịch thêm ~90 cụm**: bao gồm nhiều bản sao lặp lại của các khái niệm đã dịch trước đó nhưng nằm ở function/class KHÁC (nút Mua thứ 2 trong hệ thống Chuyển Sinh `advanceUpgrade_a94`/`btn2` — xác nhận cùng quy ước nhãn "Mua" với `btn1` đã sửa ở đợt trước), Huân Chương/Thần Khí/Danh Hiệu/Kỹ Năng Tiên Minh/Tổng Trang Bị/Điểm Trang Bị/Hai Chiếc Nhẫn (bản sao khác của mục đã dịch ở 8.26/8.27), Nhiệm Vụ Giới Hạn, Chí Thánh Trang Bị, Chu Tiên Trân Bảo Hạp, hệ thống nạp VIP/nguyên bảo, các thông báo "Không đủ X, nhận qua các cách sau" (nguyên liệu/tiền tệ/tinh hoa/công huân/điểm thành tựu/uy vọng), hệ thống chuyển sinh (Tu Vi/đổi cấp), `getUnLockStage` (tên mốc ring: đổi từ chữ Hán "一/五/十/二十/四十/六十/八十" thành số Ả Rập thường "1/5/10/20/40/60/80" — nhất quán với cách đơn giản hoá `makeTextByNum`/`NumberToChinese` ở mục 8.26), v.v.
+
+**Kết quả**: `main.min.js` giảm từ 217 xuống còn **127 cụm riêng biệt** (245 lượt) — kiểm tra kỹ cho thấy phần còn lại HẦU HẾT không phải lỗi thiếu dịch mà là:
+- Chuỗi debug/console.log/ErrLog.trace/DebugUtils.warn chỉ dev nhìn thấy (không hiển thị cho người chơi) — cố tình giữ nguyên.
+- Dữ liệu số Hán (`chnNumCharCN`/`chnUnitChar`/`chnUnitSection`) — đã thành dead code từ khi đơn giản hoá `NumberToChinese` ở mục 8.26, không còn ảnh hưởng hiển thị.
+- 1 chỗ so sánh tên `"神兽"==this.infoModel.name` — không tìm thấy monster/pet nào trong config thực sự tên "神兽", nhiều khả năng là điều kiện chết/không bao giờ đúng, không phải text hiển thị.
+- Danh sách ~40 tên nhân vật ngẫu nhiên kiểu thơ/ngôn tình Trung Quốc (`紫廖歌`,`半瓶泉水`,`何时苏醒`,...) dùng làm gợi ý đặt tên khi tạo nhân vật — **CẦN NGƯỜI DÙNG QUYẾT ĐỊNH**: giữ nguyên (nhiều game Việt vẫn giữ tên kiểu này như một nét "ngôn tình" quen thuộc), dịch nghĩa, phiên âm Hán-Việt, hay thay hẳn bằng danh sách tên Việt mới.
+
+Với kết quả này, `main.min.js` có thể coi là **về cơ bản đã dịch xong phần văn bản hiển thị cho người chơi** — phần còn sót chủ yếu là các quyết định thẩm mỹ (danh sách tên) hoặc không ảnh hưởng người chơi (debug/dead code). Bước tiếp theo hợp lý là chuyển sang rà `resource/config/*.json` (còn ~134 cụm ở `config.json` + ~140 cụm ở `config1/config2,4,5.json`, theo khảo sát mục 8.26).
+
+Đổi tên `main.min_bbcd1e2a.js`→`main.min_6b83ec7f.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
