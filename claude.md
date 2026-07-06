@@ -2013,3 +2013,9 @@ this.IsBrowser() ? this.PayMoneyByBrowser(e) : this.PayMoneyByClient(e)
 Sửa `js/main.min_13338353.js` → đổi tên thành `js/main.min_726885d6.js` (cache-bust), cập nhật `manifest.json` + `index.php`'s `?v=`. `node -c` qua được. Không đụng gì khác trong file.
 
 **Người dùng cần làm gì tiếp theo**: thử lại nút mua/nạp trong game (nhớ tải lại trang / xoá cache trình duyệt vì tên file JS đã đổi). Nếu để trống công tắc sẽ hiện popup xác nhận "Đồng ý/Huỷ" rồi cộng nguyên bảo; nếu bật công tắc sẽ chuyển sang trang PayPal (cần đã điền Client ID/Secret hợp lệ trong tab Quản lý Payment trước).
+
+## 14. Vào thẳng `/gm/` hiện trang cũ tiếng Trung thay vì đăng nhập (2026-07-06)
+
+Khi truy cập `http://<domain>/gm/` (không kèm tên file), PHP/Apache tự phục vụ `gm/index.php` làm trang mặc định của thư mục — nhưng file này là 1 trang GM đời cũ, còn nguyên tiếng Trung, gọi tới `playerquery.php` (file **không tồn tại** trong `gm/`) nên vốn đã hỏng/không hoạt động, chỉ là rác còn sót lại chứ không phải trang panel đang dùng thật (`gm/gm.php`, đã có đăng nhập qua `login.php`).
+
+Đã thay toàn bộ nội dung `gm/index.php` bằng 1 dòng redirect `header('Location: login.php'); exit;`. Giờ vào `/gm/` sẽ tự chuyển sang trang đăng nhập ngay lập tức.
