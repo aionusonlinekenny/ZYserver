@@ -3,21 +3,15 @@ error_reporting(0);
 header("Content-type: text/html; charset=utf-8");
 ini_set('date.timezone','Asia/Shanghai');
 if($_POST){
+	require 'auth.php';
+	gm_require_login_or_json();
 	include 'config.php';
 	include 'paypal_lib.php';
-	$gmcode=trim($_POST['checknum']);
-	if($gmcode!='syymw.com'){
-		$return=array(
-			'errcode'=>1,
-			'info'=>'GM码错误',
-		);
-		exit(json_encode($return));
-	}
 	$quid=trim($_POST['qu']);
 	if($quid==''){
 		$return=array(
 			'errcode'=>1,
-			'info'=>'区号错误',
+			'info'=>'Sai số khu',
 		);
 		exit(json_encode($return));
 	}
@@ -25,7 +19,7 @@ if($_POST){
 	if(!$qu['ip']){
 		$return=array(
 			'errcode'=>1,
-			'info'=>'区配置不存在',
+			'info'=>'Chưa cấu hình khu này',
 		);
 		exit(json_encode($return));
 	}
@@ -33,7 +27,7 @@ if($_POST){
 	if($uid==''){
 		$return=array(
 			'errcode'=>1,
-			'info'=>'角色ID错误',
+			'info'=>'Sai ID nhân vật',
 		);
 		exit(json_encode($return));
 	}
@@ -45,22 +39,22 @@ if($_POST){
 			if(!$num){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'充值数量错误',
+					'info'=>'Sai số lượng nạp',
 				);
 				exit(json_encode($return));
 			}
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
-            #判断是否连接成功
+            # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
-            //选择数据库
+            // Chọn cơ sở dữ liệu
             mysqli_select_db($conn,$qu['db']);
-            //准备sql语句
+            // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.accountname = '{$uid}'";
 			
 /* 			$sql="SELECT players.dbid FROM players WHERE players.account = '{$uid}'"; */
@@ -70,7 +64,7 @@ if($_POST){
 			mysqli_close($conn);
 				$return=array(
 					'errcode'=>0,
-					'info'=>'账号不存在！',
+					'info'=>'Tài khoản không tồn tại!',
 				);
 				exit(json_encode($return));
             }else{
@@ -84,7 +78,7 @@ if($_POST){
 			}
 				$return=array(
 					'errcode'=>0,
-					'info'=>'充值成功！',
+					'info'=>'Nạp tiền thành công!',
 				);
 				exit(json_encode($return));
 			break;
@@ -95,22 +89,22 @@ if($_POST){
 			if(!$num){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数量错误',
+					'info'=>'Sai số lượng',
 				);
 				exit(json_encode($return));
 			}
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
-            #判断是否连接成功
+            # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
-            //选择数据库
+            // Chọn cơ sở dữ liệu
             mysqli_select_db($conn,$qu['db']);
-            //准备sql语句
+            // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.accountname = '{$uid}'";
 			
 			/* $sql="SELECT players.dbid FROM players WHERE players.account = '{$uid}'"; */
@@ -120,34 +114,34 @@ if($_POST){
 			mysqli_close($conn);
 				$return=array(
 					'errcode'=>0,
-					'info'=>'账号不存在！',
+					'info'=>'Tài khoản không tồn tại!',
 				);
 				exit(json_encode($return));
             }else{
 			$uid=$row['actorid'];
-			$sql="INSERT INTO gmcmd (serverid,cmdid,cmd,param1,param2,param3,param4,param5) VALUES ('{$srvid}','1','sendMail','御剑伏魔录GM邮件', '御剑伏魔录GM邮件','{$uid}','{$type},{$itemid},{$num}','')";
+			$sql="INSERT INTO gmcmd (serverid,cmdid,cmd,param1,param2,param3,param4,param5) VALUES ('{$srvid}','1','sendMail','Túy Võ Hiệp GM Mail', 'Túy Võ Hiệp GM Mail','{$uid}','{$type},{$itemid},{$num}','')";
 /* 			$sql="INSERT INTO gmcmd(serverid,cmd,param1,param2,param3,param4) VALUES ('{$srvid}','mail','{$uid}','{$type}','{$itemid}','{$num}')"; */            $obj = mysqli_query($conn,$sql);
 			mysqli_close($conn);
 			}
 				$return=array(
 					'errcode'=>0,
-					'info'=>'发送成功！',
+					'info'=>'Gửi thành công!',
 				);
 				exit(json_encode($return));
 			break;
 			case 'zhfh':
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
-            #判断是否连接成功
+            # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
-            //选择数据库
+            // Chọn cơ sở dữ liệu
             mysqli_select_db($conn,$qu['db']);
-            //准备sql语句
+            // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.accountname = '{$uid}'";
             $obj = mysqli_query($conn,$sql);
             $row = mysqli_fetch_assoc($obj);
@@ -155,7 +149,7 @@ if($_POST){
 			mysqli_close($conn);
 				$return=array(
 					'errcode'=>0,
-					'info'=>'账号不存在！',
+					'info'=>'Tài khoản không tồn tại!',
 				);
 				exit(json_encode($return));
             }else{
@@ -167,23 +161,23 @@ if($_POST){
 			}
 				$return=array(
 					'errcode'=>0,
-					'info'=>'封禁成功！',
+					'info'=>'Khóa tài khoản thành công!',
 				);
 				exit(json_encode($return));
 			break;
 		case 'fh':
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
-            #判断是否连接成功
+            # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
-            //选择数据库
+            // Chọn cơ sở dữ liệu
             mysqli_select_db($conn,$qu['db']);
-            //准备sql语句
+            // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.actorname = '{$uid}'";
             $obj = mysqli_query($conn,$sql);
             $row = mysqli_fetch_assoc($obj);
@@ -191,7 +185,7 @@ if($_POST){
 			mysqli_close($conn);
 				$return=array(
 					'errcode'=>0,
-					'info'=>'账号不存在！',
+					'info'=>'Tài khoản không tồn tại!',
 				);
 				exit(json_encode($return));
             }else{
@@ -203,23 +197,23 @@ if($_POST){
 			}
 				$return=array(
 					'errcode'=>0,
-					'info'=>'封禁成功！',
+					'info'=>'Khóa tài khoản thành công!',
 				);
 				exit(json_encode($return));
 			break;
 		case 'zhjf':
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
-            #判断是否连接成功
+            # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
-            //选择数据库
+            // Chọn cơ sở dữ liệu
             mysqli_select_db($conn,$qu['db']);
-            //准备sql语句
+            // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.actorname = '{$uid}'";
             $obj = mysqli_query($conn,$sql);
             $row = mysqli_fetch_assoc($obj);
@@ -227,7 +221,7 @@ if($_POST){
 			mysqli_close($conn);
 				$return=array(
 					'errcode'=>0,
-					'info'=>'账号不存在！',
+					'info'=>'Tài khoản không tồn tại!',
 				);
 				exit(json_encode($return));
             }else{
@@ -239,23 +233,23 @@ if($_POST){
 			}
 				$return=array(
 					'errcode'=>0,
-					'info'=>'解封成功！',
+					'info'=>'Mở khóa tài khoản thành công!',
 				);
 				exit(json_encode($return));
 			break;
 		case 'jf':
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
-            #判断是否连接成功
+            # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
-            //选择数据库
+            // Chọn cơ sở dữ liệu
             mysqli_select_db($conn,$qu['db']);
-            //准备sql语句
+            // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.actorname = '{$uid}'";
             $obj = mysqli_query($conn,$sql);
             $row = mysqli_fetch_assoc($obj);
@@ -263,7 +257,7 @@ if($_POST){
 			mysqli_close($conn);
 				$return=array(
 					'errcode'=>0,
-					'info'=>'账号不存在！',
+					'info'=>'Tài khoản không tồn tại!',
 				);
 				exit(json_encode($return));
             }else{
@@ -275,23 +269,23 @@ if($_POST){
 			}
 				$return=array(
 					'errcode'=>0,
-					'info'=>'解封成功！',
+					'info'=>'Mở khóa tài khoản thành công!',
 				);
 				exit(json_encode($return));
 			break;
 		case 'jy':
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
-            #判断是否连接成功
+            # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
-            //选择数据库
+            // Chọn cơ sở dữ liệu
             mysqli_select_db($conn,$qu['db']);
-            //准备sql语句
+            // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.actorname = '{$uid}'";
             $obj = mysqli_query($conn,$sql);
             $row = mysqli_fetch_assoc($obj);
@@ -299,7 +293,7 @@ if($_POST){
 			mysqli_close($conn);
 				$return=array(
 					'errcode'=>0,
-					'info'=>'账号不存在！',
+					'info'=>'Tài khoản không tồn tại!',
 				);
 				exit(json_encode($return));
             }else{
@@ -311,23 +305,23 @@ if($_POST){
 			}
 				$return=array(
 					'errcode'=>0,
-					'info'=>'禁言成功！',
+					'info'=>'Cấm chat thành công!',
 				);
 				exit(json_encode($return));
 			break;
 		case 'jj':
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
-            #判断是否连接成功
+            # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
-            //选择数据库
+            // Chọn cơ sở dữ liệu
             mysqli_select_db($conn,$qu['db']);
-            //准备sql语句
+            // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.actorname = '{$uid}'";
             $obj = mysqli_query($conn,$sql);
             $row = mysqli_fetch_assoc($obj);
@@ -335,7 +329,7 @@ if($_POST){
 			mysqli_close($conn);
 				$return=array(
 					'errcode'=>0,
-					'info'=>'账号不存在！',
+					'info'=>'Tài khoản không tồn tại!',
 				);
 				exit(json_encode($return));
             }else{
@@ -347,7 +341,7 @@ if($_POST){
 			}
 				$return=array(
 					'errcode'=>0,
-					'info'=>'解禁成功！',
+					'info'=>'Gỡ cấm chat thành công!',
 				);
 				exit(json_encode($return));
 			break;
@@ -369,13 +363,13 @@ if($_POST){
 					file_put_contents($vipfile,json_encode($vipjson));
 					$return=array(
 						'errcode'=>0,
-						'info'=>'加入VIP成功.'
+						'info'=>'Thêm VIP thành công.'
 					);
 					exit(json_encode($return));
 				}else{
 					$return=array(
 						'errcode'=>1,
-						'info'=>'该角色已经是VIP了',
+						'info'=>'Nhân vật này đã là VIP rồi',
 					);
 					exit(json_encode($return));
 				}
@@ -385,7 +379,7 @@ if($_POST){
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
@@ -406,7 +400,7 @@ if($_POST){
             if(!$conn){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'数据库连接失败！',
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
 				);
 				exit(json_encode($return));
             }
@@ -433,10 +427,137 @@ if($_POST){
 			);
 			exit(json_encode($return));
 			break;
+		case 'playerlist':
+            $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
+            if(!$conn){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
+				);
+				exit(json_encode($return));
+            }
+            mysqli_select_db($conn,$qu['db']);
+			$keyword=mysqli_real_escape_string($conn,trim($_POST['keyword']));
+			$page=max(1,intval($_POST['page']));
+			$pageSize=20;
+			$offset=($page-1)*$pageSize;
+			$where="WHERE serverindex='{$srvid}'";
+			if($keyword!==''){
+				$where.=" AND (accountname LIKE '%{$keyword}%' OR actorname LIKE '%{$keyword}%')";
+			}
+			$countObj=mysqli_query($conn,"SELECT COUNT(*) AS cnt FROM actors {$where}");
+			$countRow=mysqli_fetch_assoc($countObj);
+			$total=intval($countRow['cnt']);
+			$obj=mysqli_query($conn,"SELECT actorid,accountname,actorname,level,vip_level,totalpower FROM actors {$where} ORDER BY actorid DESC LIMIT {$pageSize} OFFSET {$offset}");
+			$list=array();
+			while($row=mysqli_fetch_assoc($obj)){
+				$list[]=$row;
+			}
+			mysqli_close($conn);
+			$return=array(
+				'errcode'=>0,
+				'info'=>'OK',
+				'list'=>$list,
+				'total'=>$total,
+				'page'=>$page,
+				'pageSize'=>$pageSize,
+			);
+			exit(json_encode($return));
+			break;
+		case 'deleteplayer':
+			$actorid=intval($_POST['actorid']);
+			if($actorid<=0){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Thiếu ID nhân vật.',
+				);
+				exit(json_encode($return));
+			}
+            $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
+            if(!$conn){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
+				);
+				exit(json_encode($return));
+            }
+            mysqli_select_db($conn,$qu['db']);
+			$obj=mysqli_query($conn,"SELECT accountname FROM actors WHERE actorid='{$actorid}' AND serverindex='{$srvid}'");
+			$row=mysqli_fetch_assoc($obj);
+			if(!$row){
+				mysqli_close($conn);
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Không tìm thấy nhân vật.',
+				);
+				exit(json_encode($return));
+			}
+			$accountname=$row['accountname'];
+			// Dùng stored procedure gốc của server để xoá đầy đủ dữ liệu liên quan (bang hội, vật phẩm, thư, bạn bè...)
+			// thay vì tự DELETE FROM actors (sẽ để sót dữ liệu ở các bảng khác).
+			$ok=mysqli_query($conn,"CALL clientdeletecharactor('{$actorid}','{$accountname}')");
+			mysqli_close($conn);
+			if($ok){
+				$return=array(
+					'errcode'=>0,
+					'info'=>'Đã xoá nhân vật thành công.',
+				);
+			}else{
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Xoá nhân vật thất bại (stored procedure clientdeletecharactor có thể chưa tồn tại trên DB này).',
+				);
+			}
+			exit(json_encode($return));
+			break;
+		case 'renameplayer':
+			$actorid=intval($_POST['actorid']);
+			$newname=trim($_POST['newname']);
+			if($actorid<=0 || $newname===''){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Thiếu ID nhân vật hoặc tên mới.',
+				);
+				exit(json_encode($return));
+			}
+			if(mb_strlen($newname)>16){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Tên nhân vật quá dài (tối đa 16 ký tự).',
+				);
+				exit(json_encode($return));
+			}
+            $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
+            if(!$conn){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Kết nối cơ sở dữ liệu thất bại!',
+				);
+				exit(json_encode($return));
+            }
+            mysqli_select_db($conn,$qu['db']);
+			$newnameEsc=mysqli_real_escape_string($conn,$newname);
+			$dupObj=mysqli_query($conn,"SELECT actorid FROM actors WHERE actorname='{$newnameEsc}' AND serverindex='{$srvid}'");
+			if(mysqli_fetch_assoc($dupObj)){
+				mysqli_close($conn);
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Tên nhân vật đã tồn tại.',
+				);
+				exit(json_encode($return));
+			}
+			mysqli_query($conn,"UPDATE actors SET actorname='{$newnameEsc}' WHERE actorid='{$actorid}' AND serverindex='{$srvid}'");
+			mysqli_close($conn);
+			$return=array(
+				'errcode'=>0,
+				'info'=>'Đã đổi tên nhân vật thành công. Lưu ý: nếu nhân vật đang online, cần đăng nhập lại để cập nhật tên hiển thị trong game.',
+			);
+			exit(json_encode($return));
+			break;
 		default:
 			$return=array(
 				'errcode'=>1,
-				'info'=>'数据错误',
+				'info'=>'Dữ liệu lỗi',
 			);
 			exit(json_encode($return));
 			break;
@@ -444,7 +565,7 @@ if($_POST){
 }else{
 	$return=array(
 		'errcode'=>1,
-		'info'=>'提交错误',
+		'info'=>'Lỗi gửi yêu cầu',
 	);
 	exit(json_encode($return));
 }

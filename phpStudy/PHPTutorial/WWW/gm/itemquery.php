@@ -1,7 +1,7 @@
 <?php
 if($_POST){
 	$key=trim($_POST['keyword']);
-	$return=array(array('key'=>0,'val'=>'请选择'));
+	$return=array(array('key'=>0,'val'=>'Vui lòng chọn'));
     $file = fopen("item.txt", "r");
 	if($key==''){
 		while(!feof($file))
@@ -36,6 +36,6 @@ if($_POST){
     fclose($file);
 	echo(json_encode($return));
 }else{
-	$return=array(array('key'=>0,'val'=>'请选择'));
+	$return=array(array('key'=>0,'val'=>'Vui lòng chọn'));
 	echo(json_encode($return));
 }

@@ -1921,3 +1921,43 @@ Vì "thanh toán thành công" ở hệ thống này chỉ là 1 dòng insert v�
 Khi chạy `gm/sql/payment_config.sql`, một số bản MySQL/MariaDB cũ (thường gặp trên MySQL đi kèm phpStudy) báo lỗi 1067 vì cột kiểu `DATETIME` không hỗ trợ `DEFAULT CURRENT_TIMESTAMP`/`ON UPDATE CURRENT_TIMESTAMP` — khả năng này chỉ có sẵn ở kiểu `TIMESTAMP`, MySQL mới thêm cho `DATETIME` từ bản 5.6.5. Do `CREATE TABLE` thất bại toàn bộ nên bảng `payment_config` (và có thể cả `payment_orders`) chưa được tạo.
 
 Đã đổi `updated_at` (trong `payment_config`) và `created_at` (trong `payment_orders`) từ `DATETIME` sang `TIMESTAMP`, giữ nguyên hành vi tự động điền giờ hiện tại. File vẫn idempotent (`CREATE TABLE IF NOT EXISTS` + `INSERT ... ON DUPLICATE KEY UPDATE`) nên chạy lại toàn bộ file từ đầu là an toàn.
+
+## 11. Dịch giao diện GM tool sang tiếng Việt + đăng nhập thật + quản lý người chơi (2026-07-06)
+
+### 11.1. Dịch toàn bộ tiếng Trung còn sót trong `/gm/`
+
+Panel `gm/gm.php` trước đó vẫn hiển thị 100% nhãn/tiêu đề/thông báo bằng tiếng Trung (title, các label, placeholder, nút bấm, toàn bộ `alert()` trong JS) dù các trang khác trong game đã được dịch — lý do là công cụ này chưa từng nằm trong phạm vi dịch trước đây. Đã dịch toàn bộ sang tiếng Việt trong `gm/gm.php`, `gm/gmquery.php` (message trả về JSON: lỗi kết nối DB, tài khoản không tồn tại, nạp/gửi/khoá/mở khoá/cấm chat thành công...), và `gm/itemquery.php`. Cũng đổi tên mail sender/title hardcode `御剑伏魔录GM邮件` (tên một game khác, có vẻ sót lại từ template gốc) thành `Túy Võ Hiệp GM Mail`.
+
+Chưa dịch: `gm/item.txt` (1227 tên vật phẩm tiếng Trung dùng để tra cứu gửi thư) — đây là dữ liệu game (tên vật phẩm), không phải giao diện, khối lượng lớn nên để riêng nếu người dùng muốn dịch tiếp.
+
+### 11.2. Thiết kế lại giao diện `gm.php` chuyên nghiệp hơn
+
+Giao diện cũ là các `<div>` xếp thẳng hàng, không CSS thật (chỉ vài dòng inline). Đã viết lại thành layout dạng card (header gradient, các khối card bo góc/đổ bóng, form field căn chỉnh đều, nút bấm phân loại màu theo mức độ nguy hiểm — xanh dương cho thao tác thường, đỏ cho thao tác nguy hiểm như cấm chat/xoá nhân vật, xám cho thao tác phụ), có `viewport` meta để hiển thị tốt trên điện thoại (ảnh chụp màn hình người dùng gửi là từ Safari iPhone). Toàn bộ id phần tử HTML gốc được giữ nguyên nên JS xử lý nghiệp vụ cũ không đổi hành vi.
+
+Tiện thể sửa 1 lỗi nhỏ có sẵn trong code gốc: 3 phần tử khác nhau (dòng chú thích "PS", dòng "nạp X kích hoạt thẻ tháng", và mô tả vật phẩm khi chọn) đều dùng chung `id='maildesc'` — khi chọn vật phẩm, mô tả sẽ ghi đè lên dòng chú thích PS thay vì hiển thị đúng chỗ. Nay mỗi phần tử có id riêng, mô tả vật phẩm hiển thị đúng ở trường "Mô tả vật phẩm".
+
+### 11.3. Thay cơ chế "mã GM" cố định bằng đăng nhập thật
+
+Trước đây mọi thao tác chỉ cần gõ đúng 1 chuỗi bí mật hardcode trong code (`$gmcode=='syymw.com'`) — không có tài khoản/mật khẩu, không phân quyền, ai biết chuỗi đó (kể cả nhìn thấy trong response lỗi hoặc source cũ) đều thao tác được.
+
+Đã thêm:
+- `gm/auth.php`: hằng số `GM_ADMIN_USER`/`GM_ADMIN_PASS` (mặc định `admingame`/`eban150892` theo yêu cầu), quản lý PHP session (`gm_is_logged_in()`, `gm_require_login_or_redirect()` dùng cho trang HTML, `gm_require_login_or_json()` dùng cho `gmquery.php`).
+- `gm/login.php`: trang đăng nhập riêng (thiết kế đồng bộ với `gm.php`), redirect về `gm.php` nếu đã đăng nhập, hiện lỗi nếu sai tài khoản/mật khẩu.
+- `gm/logout.php`: huỷ session, quay về `login.php`.
+- `gm.php` yêu cầu đăng nhập ngay đầu file (`gm_require_login_or_redirect()`), có nút "Đăng xuất" trên header. Đã bỏ hẳn ô nhập "Mã xác thực GM" và biến `checknum` khỏi JS (11 chỗ) vì đăng nhập qua session rồi, không cần gõ lại mỗi request.
+- `gmquery.php` thay khối so sánh `$gmcode!='syymw.com'` bằng `gm_require_login_or_json()`.
+
+**Lưu ý bảo mật quan trọng**: mật khẩu hiện đang là hằng số dạng plain-text ngay trong `gm/auth.php` (không hash) — dễ đọc nếu ai đó truy cập được file trên server. Nên đổi mật khẩu mặc định và cân nhắc chuyển sang lưu hash (`password_hash`/`password_verify`) trước khi đưa ra ngoài production thật.
+
+### 11.4. Tính năng quản lý người chơi (danh sách, xoá, đổi tên, tặng quà)
+
+Thêm case mới trong `gmquery.php` (đều yêu cầu đăng nhập qua `gm_require_login_or_json()` như các case khác):
+
+- `playerlist`: liệt kê người chơi theo khu (`serverindex`), có tìm kiếm theo tài khoản/tên nhân vật (`LIKE`) và phân trang (20 dòng/trang). Cột hiển thị: tài khoản, tên nhân vật, cấp độ, VIP, lực chiến — lấy từ bảng `actors` (cột `accountname`, `actorname`, `level`, `vip_level`, `totalpower`, xác nhận có tồn tại qua tham chiếu trong `server/bin/s1/gameworld/data/actormgr/actormgr.txt`, vì repo không có file dump schema SQL cho bảng `actors`).
+- `renameplayer`: đổi tên nhân vật — tự kiểm tra trùng tên trong cùng server trước khi `UPDATE actors SET actorname=...`. Đây là ghi thẳng vào DB, **không** đi qua luồng kiểm tra tên (ký tự cấm, độ dài chuẩn theo game) mà server Lua (`changename.lua`) áp dụng cho nhân vật đang online — nếu nhân vật đang online, có thể cần đăng nhập lại để tên mới hiển thị đúng.
+- `deleteplayer`: xoá nhân vật bằng cách gọi `CALL clientdeletecharactor(actorid, accountname)` — đây là stored procedure mà chính engine game gốc dùng để xoá nhân vật (dọn cả bang hội/vật phẩm/thư/bạn bè liên quan), tham chiếu thấy trong `actormgr.txt` nhưng không có script tạo procedure này trong repo (chắc được tạo sẵn trong DB lúc cài game gốc). **Nếu server thực tế của bạn không có sẵn stored procedure này, thao tác xoá sẽ báo lỗi rõ ràng thay vì tự ý `DELETE FROM actors` (tránh để sót dữ liệu mồ côi ở các bảng khác)** — nếu gặp lỗi này khi test, cho tôi biết để đổi cách tiếp cận khác.
+- Tặng quà: không thêm case mới — nút "Tặng quà" ở mỗi dòng trong danh sách chỉ tự động điền tài khoản vào ô "Tài khoản game" ở khối "Khu & tài khoản", dùng lại nguyên luồng "Gửi vật phẩm qua thư" (case `mail`) đã có sẵn.
+
+Giao diện: thêm card "Danh sách người chơi" trong `gm.php` (bảng + ô tìm kiếm + nút trang trước/sau), mỗi dòng có 3 link thao tác Tặng quà/Đổi tên/Xoá (Xoá có `confirm()` cảnh báo trước, Đổi tên dùng `prompt()` nhập tên mới).
+
+`php -l` sạch cho toàn bộ 6 file PHP mới/sửa (`gm.php`, `gmquery.php`, `itemquery.php`, `auth.php`, `login.php`, `logout.php`).
