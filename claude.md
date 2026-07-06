@@ -1824,6 +1824,20 @@ Cập nhật thêm (2026-07-06): người dùng phản hồi 2 việc — (1) b�
 
 Đổi tên `default.thm_6b79ccee.js`→`default.thm_1fa434bf.js`, `main.min_379445bf.js`→`main.min_acec48fa.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
 
+## 8.34. Tách tên item ra khỏi dòng mô tả, đặt trên icon; đổi màu dòng "Còn lại X cái" thành xanh lá (ảnh IMG_0559, 2026-07-06)
+
+Người dùng yêu cầu tái cấu trúc layout 2 dòng "Chuyển Sinh Đan"/"Chuyển Sinh Tiên Đan" trong popup Nhận Tu Vi (`GainZsView`, skin `SkinGainZs`): tách tên item ra khỏi câu mô tả, đặt PHÍA TRÊN icon viên đan; phần "Còn lại X cái" giữ nguyên vị trí cũ trong câu nhưng đổi màu xanh lá.
+
+**Điều tra trước khi sửa**: kiểm tra `ItemBase.dataChanged()` xem icon có sẵn ô số lượng ("count" badge góc dưới-phải, vị trí x=45,y=56 trong `SkinItem`) tự động hiển thị không — phát hiện nhánh xử lý khi `.data` là số ID thuần (đúng trường hợp dùng ở đây: `this.items[1].data=a`) KHÔNG gọi `setCount(...)`, nghĩa là badge số lượng này không hoạt động ở đây (đang trống). Do đó "vị trí cũ của số 12" được hiểu là vị trí hiện tại của cụm "Còn lại 12 cái" NGAY TRONG câu text (không phải một badge riêng trên icon) — chỉ cần bỏ phần tên item phía trước nó và đổi màu, không cần đụng tới cơ chế `count` dùng chung của `ItemBase`.
+
+**`default.thm.js`, skin `SkinGainZs`**: thêm 2 Label mới `nameTxt1`/`nameTxt2` (thêm vào `skinParts`, tạo hàm `nameTxt1_i()`/`nameTxt2_i()`, thêm vào `elementsContent` của `gr2_i()`/`gr3_i()`) — đặt `left=17` (khớp lề trái icon), `width=76` (khớp bề rộng icon 76×76 của `SkinItem`), `top=2`, `textAlign=center`, `size=13` — nằm ở dải trên cùng của hàng (icon dùng `verticalCenter=0` nên có khoảng trống phía trên đủ chỗ đặt caption nhỏ).
+
+**`main.min.js`, class `GainZsView`**: sau khi set `this.items[1].data=a`/`this.items[2].data=a`, gán thêm `this.nameTxt1.text=r.name` / `this.nameTxt2.text=r.name` (tên item lấy từ `GlobalConfig.ConfigItem`, hiện phía trên icon). Đồng thời bỏ phần `r.name+"："` ra khỏi `infoTxts[1]/[2].textFlow`, chỉ còn `"Tăng thêm X Tu Vi\n"` + (nếu có hàng tồn kho) `"Còn lại X cái"` bọc trong `<font color="#00a007">` (xanh lá) — giữ nguyên vị trí trong câu (dòng thứ 2, sau "Tu Vi"), chỉ đổi màu và bỏ tiền tố tên.
+
+Lưu ý: chưa có ảnh xác nhận kết quả thực tế — tên item dài ("Chuyển Sinh Tiên Đan", 20 ký tự) ở size 13/width 76 có thể phải xuống 2 dòng, hơi sát mép trên của icon; nếu bị chật/đè lên icon khi xem ảnh thật, vòng sau sẽ giảm thêm size hoặc đẩy icon xuống thấp hơn.
+
+Đổi tên `default.thm_1fa434bf.js`→`default.thm_edd8b686.js`, `main.min_acec48fa.js`→`main.min_57c06de4.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
