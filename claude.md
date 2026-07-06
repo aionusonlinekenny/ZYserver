@@ -1799,6 +1799,27 @@ Sau khi `main.min.js` cơ bản hoàn thành (mục 8.30), chuyển sang rà 8 f
 
 **Xác minh file nào THỰC SỰ được client load** (bài học từ vụ `version1.me` ở mục 8.20 — không phải file nào giống tên cũng được dùng): grep `default.res3.json` (manifest gốc, xác nhận đang dùng thật) thấy đúng entry `"config/config.json?1546506039"` (resource id `config_json`) — xác nhận `config/config.json` (file rời, vừa dịch) CHÍNH LÀ file thật được client tải. Ngược lại, `config.me`/`config1.me` (2 file zip nén cùng thư mục) chỉ được tham chiếu trong `default.res1.json`/`version.json` — 2 manifest KHÔNG xuất hiện trong danh sách file mà `main.min.js` thực sự gọi tới khi runtime (chỉ gọi `default.res2/3/4.json` + `version1.me`/`version.txt`, không có "res1"/"version.json" số ít) → đây là tàn dư từ một cơ chế versioning CŨ trước khi đổi sang hệt thống res2/res3/res4+version1.me hiện tại, không ảnh hưởng bản dịch. Tương tự, `config1/config0-6.json` (7 file đã dịch đồng bộ ở trên) không được `default.res3.json` hay bất kỳ đâu trong `main.min.js`/`default.thm.js` tham chiếu tới — cũng là file chết, việc dịch chúng chỉ mang tính nhất quán dữ liệu chứ không có tác dụng thực tế với client (không cần copy lên server thật, nhưng cũng vô hại nếu có copy).
 
+## 8.32. Icon "封神/灵宠/神御/仙纹/诛仙/幻化" là chữ vẽ trong ảnh — không sửa bằng code được (ảnh IMG_0554, 2026-07-06)
+
+Người dùng hỏi dãy 6 icon chức năng (hiện trong màn Nhân Vật) lấy từ đâu, có sửa được không.
+
+**Xác định nguồn**: các icon này là 6 nút bấm trong `_Group2_i()` của skin `SkinRoleInfo` (`resource/exml/RoleInfoSkin.exml`, biên dịch vào `default.thm.js`) — biến `orange`/`bless`/`shenlu`/`rune`/`Skinheirloom`/`shuzhuang`, dùng icon lần lượt `juese_chengzhuang`/`juese_tejie`/`juese_baowu`/`juese_zhanwen`/`juese_chuanshi`/`juese_zhuangban`. Các icon này là frame cắt ra từ 1 texture atlas dùng chung: `resource/eui/ui/tj6.json` (bản đồ toạ độ) + `resource/eui/ui/tj6.png` (ảnh gộp). Mở `tj6.png` xác nhận chữ Hán (封神/灵宠/神御/仙纹/诛仙/幻化, cùng nhiều icon khác dùng chung sheet như "能力一览"/"套装效果"/"神罚技能"/"分解"/"属性详情"/"注灵"/"兑换") được **VẼ TRỰC TIẾP VÀO BITMAP**, không phải text trong code/JSON — giống hệt trường hợp `kf_name_*`/`biaoti_*` đã gặp trước đây. Vì vậy KHÔNG dịch được bằng cách sửa code — cần vẽ lại icon mới (chữ Việt) đè đúng toạ độ trong `tj6.json`, hoặc bỏ chữ khỏi icon và thêm `eui.Label` riêng đè lên (cần sửa `default.thm.js`). Đã báo người dùng, chưa xử lý (chờ quyết định hướng làm hoặc ảnh mới).
+
+## 8.33. Sửa dòng "Hôm nay còn có thể đổi...次" còn sót chữ Hán + dòng trống thừa trong popup Nhận Tu Vi (ảnh IMG_0557, 2026-07-06)
+
+Người dùng báo popup "Nhận Tu Vi" (đổi Tu Vi bằng EXP/Chuyển Sinh Đan) còn sót chữ Hán "次" (lần) ở dòng "Hôm nay còn có thể đổi...次", và dòng "Đổi cấp： giảm 1 cấp" bị cách 1 dòng trống phía trên (mất cân đối) — yêu cầu đưa lên liền dòng, đồng thời các dòng tương tự khác (Chuyển Sinh Đan/Chuyển Sinh Tiên Đan) cũng bị trống dòng tương tự cần sửa đồng bộ.
+
+**Vị trí**: `main.min.js`, class `GainZsView` (skin `SkinGainZs`) — hàm build data cho 3 dòng đổi thưởng:
+- `"次"` còn sót nguyên văn ở CẢ 3 dòng `toDay0/1/2` (`"Hôm nay còn có thể đổi"+t+"</font>次"`) — dịch thành `"</font> lần"`.
+- Dòng trống thừa: `infoTxt0/1/2` dùng `"...Tu Vi\n\nĐổi cấp：..."` / `"...Tu Vi\n\n"+r.name+"：..."` — **2 dấu xuống dòng liên tiếp (`\n\n`)** giữa tên phần thưởng và dòng mô tả cách đổi, y nguyên từ bản gốc tiếng Trung (lúc đó text ngắn 1 dòng nên khoảng trống này không rõ, nhưng chữ Việt dài hơn tràn thành 2 dòng khiến khoảng trống bị lộ rõ thành "1 dòng trống" y như người dùng mô tả). Sửa `\n\n`→`\n` ở cả 3 chỗ (dòng EXP + 2 dòng item Chuyển Sinh Đan/Tiên Đan) — bỏ hẳn dòng trống, "Đổi cấp"/tên item lên ngay sau dòng "Tu Vi".
+- Tiện thể sửa luôn `"Còn lại"+h+"cái"` thiếu khoảng trắng quanh số (hiện "Còn lại5cái") → `"Còn lại "+h+" cái"`.
+
+**`default.thm.js`, skin `SkinGainZs`**: nhãn `toDay0/1/2` (dòng "Hôm nay còn có thể đổi/dùng...") có `width=165` quá hẹp so với câu chữ Việt dài hơn nhiều bản Hán gốc, khiến chữ bị ngắt XUỐNG DÒNG GIỮA TỪ (kiểu bẻ theo từng ký tự thay vì theo từ — "đổi" bị tách thành "đ" + "ổi3 lần") — lỗi hiển thị xấu hơn cả việc thiếu dịch. Đã tăng `width` 165→220 và giảm `size` 18→16 cho cả 3 nhãn để câu vừa gọn hơn, không còn bị bẻ giữa từ. Vị trí này (`verticalCenter=-40`, nằm ở dải trên cùng của mỗi hàng, tách biệt với `infoTxt`/`btn` nằm dải giữa) nên việc nới rộng không chạm tới phần tử nào khác.
+
+Lưu ý: dòng "Chuyển Sinh Đan： C" (chữ bị cắt cụt chỉ còn "C") trong ảnh gốc nhiều khả năng tự khắc phục sau khi bỏ dòng trống thừa (trước đây thiếu đúng 1 dòng không gian hiển thị do `\n\n` chiếm chỗ, nay dư ra đúng 1 dòng cho phần "Còn lại X cái" hiện đầy đủ) — cần ảnh xác nhận thực tế ở vòng sau.
+
+Đổi tên `default.thm_fa50fc06.js`→`default.thm_6b79ccee.js`, `main.min_1d276185.js`→`main.min_379445bf.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
