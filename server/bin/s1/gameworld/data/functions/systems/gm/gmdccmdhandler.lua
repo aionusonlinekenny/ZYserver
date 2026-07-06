@@ -105,16 +105,21 @@ gmDcCmdHandlers.setActorDataValid = function(dp)
 	System.setActorDataValid(System.getServerId(), acotr_id, true)
 end
 
---GM đổi tên nhân vật: nếu đang online thì đổi ngay qua đúng API game dùng (LActor.setEntityName),
---hiện tên mới ngay lập tức không cần đăng nhập lại, và autosave định kỳ sẽ tự ghi đúng tên mới
---xuống DB (không còn bị cache ghi đè lại tên cũ như khi tool GM chỉ UPDATE thẳng bảng actors).
+--GM đổi tên nhân vật: nếu đang online thì đổi ngay qua đúng luồng game tự dùng khi người chơi
+--đổi tên bằng thẻ đổi tên (changename.OnSetUserName với way=1 - bỏ qua trừ vật phẩm/thời gian chờ,
+--đúng quy ước "sửa lỗi" có sẵn của module này), gồm cả gói tin báo client cập nhật tên ngay không
+--cần refresh thủ công, và đồng bộ tên ở boss thế giới/phó bản bang hội/phó bản thần khí/bảng xếp
+--hạng - những chỗ changename.lua vốn đã tự đồng bộ khi đổi tên hợp lệ. Autosave định kỳ sau đó tự
+--ghi đúng tên mới xuống DB (không còn bị cache ghi đè lại tên cũ như khi tool GM chỉ UPDATE thẳng
+--bảng actors). Nhân vật đang offline thì lệnh này không làm gì (không có actor để lấy).
 gmDcCmdHandlers.renameActor = function(dp)
 	local actorid = tonumber(LDataPack.readString(dp))
 	local name = LDataPack.readString(dp)
 	if not actorid or not name or name == "" then return end
 	local actor = LActor.getActorById(actorid, true, true)
 	if not actor then return end
-	LActor.setEntityName(actor, name)
+	local rawName = LActor.getName(actor)
+	changename.OnSetUserName(actor, 0, name, rawName, 1)
 end
 
 --设置禁言
