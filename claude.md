@@ -1961,3 +1961,31 @@ Thêm case mới trong `gmquery.php` (đều yêu cầu đăng nhập qua `gm_re
 Giao diện: thêm card "Danh sách người chơi" trong `gm.php` (bảng + ô tìm kiếm + nút trang trước/sau), mỗi dòng có 3 link thao tác Tặng quà/Đổi tên/Xoá (Xoá có `confirm()` cảnh báo trước, Đổi tên dùng `prompt()` nhập tên mới).
 
 `php -l` sạch cho toàn bộ 6 file PHP mới/sửa (`gm.php`, `gmquery.php`, `itemquery.php`, `auth.php`, `login.php`, `logout.php`).
+
+## 12. GM tool bản "pro": tên/icon vật phẩm đồng bộ game thật + chia tab (2026-07-06)
+
+### 12.1. Vấn đề: dropdown "Chọn vật phẩm" vẫn hiện tiếng Trung
+
+`gm/item.txt` (nguồn dữ liệu cho ô tìm/chọn vật phẩm khi gửi thư) là 1 file rời, tự thân, chưa từng được dịch — 1227/1228 dòng vẫn là tên tiếng Trung gốc (ví dụ `200004;洗髓丹`), nên GM không biết mình đang gửi vật phẩm gì.
+
+Phát hiện quan trọng: file cấu hình client thật của game — `resource/config/config.json` (13MB, bảng `ConfigItem`, ~18272 vật phẩm) — **đã có sẵn tên tiếng Việt chính thức** (client game hiển thị tên này cho người chơi) kèm field `icon` (id ảnh icon, khác với id vật phẩm ở một số trường hợp). Đối chiếu 1228 id trong `item.txt` với `ConfigItem`: khớp tên Việt sẵn có cho 1150/1228 (93.6%). 78 id còn lại (tiền tệ như "元宝"/Nguyên Bảo, và một số trang bị/vật phẩm sự kiện không nằm trong `ConfigItem`) được dịch thủ công dựa theo văn phong đã dùng trong game (Chí Thánh, Tiên Cung, Chủ Tể, Thần Khí...).
+
+Đã sinh file mới `gm/items_vi.json` (id, name tiếng Việt, icon) từ `config.json` + bảng dịch thủ công cho 78 id còn lại, dùng script Python một lần (không đưa script vào repo). Icon: đối chiếu với thư mục ảnh `resource/icons/item/<icon_id>.png` có sẵn trong game (64x64 PNG) — 1135/1228 vật phẩm có icon thật, 93 vật phẩm không tìm thấy file ảnh tương ứng thì để icon rỗng (client hiện khối "?" thay thế).
+
+`gm/itemquery.php` và phần render dropdown ban đầu trong `gm.php` đổi từ đọc `item.txt` sang đọc `gm/items_vi.json`, trả thêm field `icon` (đường dẫn tương đối `../resource/icons/item/<id>.png` tính từ `gm/`, vì `resource/` là thư mục cùng cấp `gm/` trong `WWW/`). `itemquery.php` giờ cũng yêu cầu đăng nhập qua `gm_require_login_or_json()` như các endpoint khác (trước đây không có gate nào).
+
+Ghi chú: `gm/item.txt` không xoá (còn được `gm/index.php` — 1 file khác, cũ, gọi `playerquery.php` vốn **không tồn tại** trong thư mục `gm/`, nên trang này vốn đã hỏng/chết từ trước, không liên quan luồng đang dùng) tham chiếu tới, nhưng để an toàn không đụng vào.
+
+### 12.2. Chia `gm.php` thành 3 tab
+
+Theo yêu cầu, gộp các card cũ vào 3 tab để gọn hơn:
+
+- **Quản lý tài khoản**: Mã quyền người chơi + Thêm VIP, Cấm chat/Gỡ cấm chat, Danh sách người chơi (tìm kiếm/phân trang, mỗi dòng có 4 thao tác: Chọn — đổ tài khoản vào ô "Tài khoản game" dùng chung cho cấm chat/thêm VIP; Tặng quà — chuyển sang tab Gửi quà kèm tài khoản; Đổi tên; Xoá).
+- **Gửi quà / Nạp VIP**: gộp "Nạp tiền (nguyên bảo)" (trước ở tab Quản lý tài khoản) + "Gửi vật phẩm qua thư". Cả 2 dùng chung 1 ô tài khoản (`#chargeuid`) — có thể gõ tay hoặc **chọn trực tiếp từ danh sách** qua ô tìm kiếm tài khoản mới (gọi lại API `playerlist`, hiện danh sách tài khoản/tên nhân vật/cấp/VIP để bấm chọn, không cần gõ tên nhân vật thủ công như trước). Ô chọn vật phẩm cũng đổi từ `<select>` thường sang picker tự chế (input tìm kiếm debounce 250ms + danh sách kết quả có icon 32x32 + tên + id, bấm để chọn) vì thẻ `<select><option>` không hiển thị được ảnh — chọn xong hiện khối tóm tắt (icon 40x40 + tên + id) phía trên ô nhập số lượng.
+- **Quản lý Payment**: y nguyên card cấu hình PayPal đã làm ở mục 10/11 (chỉ chuyển vào tab riêng, không đổi logic).
+
+Khối "Khu & tài khoản" (chọn khu + ô tài khoản game) nằm ngoài tab, dùng chung cho các thao tác nhập tay ở tab Quản lý tài khoản. Đổi khu (`#qu`) giờ tự tải lại danh sách người chơi.
+
+Đã bỏ 4 handler JS chết từ trước (`#zhfhbtn`/`#fhbtn`/`#zhjfbtn`/`#jfbtn` — phong/giải phong tài khoản kiểu cũ) vì không có nút HTML nào gắn với chúng kể cả trước khi tôi động vào, dọn code thay vì mang theo qua lần viết lại này.
+
+`php -l` sạch cho `gm.php`/`gmquery.php`/`itemquery.php` sau khi sửa, đã test render `gm.php` qua CLI (đủ 3 tab, không còn tham chiếu `item.txt`) và test `itemquery.php` qua CLI (tìm "Nguyên" trả về đúng tên Việt + icon path hợp lệ, file ảnh xác nhận tồn tại trên đĩa).

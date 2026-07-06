@@ -1,41 +1,21 @@
 <?php
-if($_POST){
-	$key=trim($_POST['keyword']);
-	$return=array(array('key'=>0,'val'=>'Vui lòng chọn'));
-    $file = fopen("item.txt", "r");
-	if($key==''){
-		while(!feof($file))
-		{
-			$line=fgets($file);
-			$txts=explode(';',$line);
-			if(count($txts)==2){
-				$tmp=array(
-					'key'=>$txts[0],
-					'val'=>$txts[1]
-				);
-				array_push($return,$tmp);
-			}
-		}
-	}else{
-		while(!feof($file))
-		{
-			$line=fgets($file);
-			$pos=strpos($line,$key);
-			if($pos){
-				$txts=explode(';',$line);
-				if(count($txts)==2){
-					$tmp=array(
-						'key'=>$txts[0],
-						'val'=>$txts[1]
-					);
-					array_push($return,$tmp);
-				}
-			}
-		}		
+header("Content-type: text/html; charset=utf-8");
+require 'auth.php';
+gm_require_login_or_json();
+
+$items = json_decode(file_get_contents('items_vi.json'), true);
+if(!$items){ $items = array(); }
+
+$key = $_POST ? trim($_POST['keyword']) : '';
+$return = array(array('key'=>0,'val'=>'Vui lòng chọn','icon'=>''));
+foreach($items as $it){
+	if($key!=='' && stripos($it['id'].' '.$it['name'], $key) === false){
+		continue;
 	}
-    fclose($file);
-	echo(json_encode($return));
-}else{
-	$return=array(array('key'=>0,'val'=>'Vui lòng chọn'));
-	echo(json_encode($return));
+	$return[] = array(
+		'key'=>$it['id'],
+		'val'=>$it['name'],
+		'icon'=>$it['icon']!=='' ? '../resource/icons/item/'.$it['icon'].'.png' : '',
+	);
 }
+echo json_encode($return);
