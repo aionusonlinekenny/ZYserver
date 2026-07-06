@@ -1820,6 +1820,10 @@ Lưu ý: dòng "Chuyển Sinh Đan： C" (chữ bị cắt cụt chỉ còn "C")
 
 Đổi tên `default.thm_fa50fc06.js`→`default.thm_6b79ccee.js`, `main.min_1d276185.js`→`main.min_379445bf.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
 
+Cập nhật thêm (2026-07-06): người dùng phản hồi 2 việc — (1) bỏ hẳn ý tưởng vẽ lại icon `封神/灵宠/神御/仙纹/诛仙/幻化` ở mục 8.32 (không làm); (2) dòng "Còn có thể đổi" KHÔNG cần thu nhỏ cỡ chữ, chỉ cần rút gọn câu chữ là đủ. Đã revert `size` 16→18 (giữ nguyên `width=220` đã nới), và rút ngắn text nguồn: `"Hôm nay còn có thể đổi"`→`"Còn có thể đổi"` (cả 3 chỗ trong `main.min.js` nơi build textFlow thực tế, và đồng bộ luôn placeholder mặc định trong `default.thm.js` — `toDay0` "Hôm nay còn có thể đổi"→"Còn có thể đổi", `toDay1`/`toDay2` "Hôm nay còn có thể dùng"→"Còn có thể dùng" — dù placeholder này thực tế bị ghi đè lúc runtime, vẫn sửa cho nhất quán).
+
+Đổi tên `default.thm_6b79ccee.js`→`default.thm_1fa434bf.js`, `main.min_379445bf.js`→`main.min_acec48fa.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
