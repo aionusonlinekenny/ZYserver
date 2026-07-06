@@ -2037,3 +2037,13 @@ Vì không thể truy cập trực tiếp trình duyệt/server thật của ng�
 - Xem khung log nhỏ hiện trên màn hình game ngay lúc đó (sẽ thấy dòng `[sdk] Pay money success resp = ...` nếu đã gọi đúng `pay_create_order.php`, hoặc dòng `Dữ liệu nạp thẻ` nếu vẫn rơi vào nhánh SDK gốc cũ — nếu thấy dòng này nghĩa là trình duyệt đang chạy bản JS cũ do cache, cần xoá cache/tải lại hẳn).
 - Mở thêm `http://71.31.97.241/gm/pay_debug.log` để xem log phía server (sẽ cho biết request có tới nơi không, và nếu tới thì dừng ở bước nào/lỗi gì).
 Gửi lại nội dung 2 chỗ này để xác định chính xác nút đang kẹt ở đâu.
+
+## 16. Tìm ra nguyên nhân thật: bản vá mục 13 tự làm hỏng cú pháp do dính chữ liền với "else" (2026-07-06)
+
+Người dùng gửi ảnh chụp 1 hộp thoại lỗi JS hiện ngay trên trình duyệt (`71.31.97.241 says` — do có sẵn 1 window.onerror handler tuỳ biến trong game hiện alert khi có exception), nội dung: `Hàm lỗi: t.PayMoney`, kèm stack trace trỏ đúng vào `main.min_726885d6.js`. Tra theo đúng dòng/cột trong file thì lộ ra: bản vá ở mục 13 (đổi `"browser"===this.sdkType?...` thành `this.IsBrowser()?...`) đã **vô tình dính liền chữ với từ khoá `else` đứng ngay trước nó**, biến thành 1 chuỗi ký tự duy nhất `elsethis.IsBrowser()...` — vì file này minify không có khoảng trắng, và may mắn (xui) là bản gốc `else"browser"===...` không bị lỗi vì dấu `"` chặn được việc dính chữ, còn `else` + `this` (đều là chữ cái) thì JS đọc gộp thành 1 định danh duy nhất `elsethis` — cú pháp vẫn hợp lệ (nên `node -c` vẫn qua, vì đó chỉ là kiểm tra cú pháp) nhưng biến `elsethis` không tồn tại → mỗi lần chạy tới đây là ném lỗi `ReferenceError`, và vì nằm ngay trong `PayMoney`, nghiễm nhiên MỌI lần bấm mua/nạp trong game đều gãy ở đúng chỗ tôi vừa sửa — đây là lỗi tôi tự gây ra khi thay thế chuỗi ký tự không để ý viết liền vào code đã minify.
+
+**Đã sửa**: thêm lại đúng 1 khoảng trắng — `elsethis.IsBrowser()` → `else this.IsBrowser()`. `node -c` qua được. Đổi tên `main.min_726885d6.js` → `main.min_8ed777e0.js` (cache-bust), cập nhật `manifest.json` + `index.php`'s `?v=`.
+
+**Bài học áp dụng cho các lần sửa JS minify sau này**: khi thay thế 1 đoạn text nằm sát 1 từ khoá JS (`else`, `return`, `in`, `of`, `typeof`, `instanceof`, `new`, `delete`, `void`...) trong file đã minify (không khoảng trắng), phải tự kiểm tra ký tự ngay trước/sau chỗ thay có phải chữ/số/`_`/`$` không — nếu có, phải chủ động thêm 1 khoảng trắng ở ranh giới đó, vì `node -c`/`php -l` chỉ bắt lỗi cú pháp chứ không bắt được kiểu "2 token dính thành 1 định danh hợp lệ nhưng sai nghĩa" như thế này.
+
+Vẫn giữ nguyên khung log debug trên màn hình (`data-show-log="true"`) và file log `gm/pay_debug.log` thêm 1 vòng test nữa để xác nhận dứt điểm việc nạp tiền chạy đúng, trước khi tắt lại 2 công cụ chẩn đoán này.
