@@ -1770,6 +1770,18 @@ Với kết quả này, `main.min.js` có thể coi là **về cơ bản đã d�
 
 Đổi tên `main.min_bbcd1e2a.js`→`main.min_6b83ec7f.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
 
+## 8.30. Phiên âm Hán-Việt danh sách ~31 tên ngẫu nhiên trong hiệu ứng "người chơi vừa vào game" (2026-07-05)
+
+Người dùng chọn hướng xử lý cho danh sách tên còn sót ở mục 8.29 (`紫廖歌`,`半瓶泉水`,...): **phiên âm Hán-Việt** (thay vì giữ nguyên/dịch nghĩa/bỏ qua).
+
+Trước khi sửa, kiểm tra kỹ ngữ cảnh sử dụng để đảm bảo an toàn: mảng `s` này KHÔNG PHẢI gợi ý điền tên khi tạo nhân vật (dù nằm cùng hàm `CreateRoleWin` với `nameInput.maxChars=6` — ô nhập tên thật của người chơi, giới hạn 6 ký tự) — mà được nhân bản 3 lần rồi đổ vào `list.dataProvider` với itemRenderer `CreateRoleNameViewItem`, hàm `dataChanged` của renderer này bọc mỗi tên thành câu "Người chơi  [tên]  đang vào game" hiển thị dạng danh sách cuộn (ticker "mạng xã hội ảo" chạy nền màn hình tạo nhân vật, tạo cảm giác đông người chơi). Vì đây chỉ là text hiển thị thuần tuý (không set vào ô nhập liệu nào), độ dài tên dịch dài hơn bản gốc Hán không gây vấn đề với giới hạn `maxChars=6` của `nameInput` (2 thứ hoàn toàn độc lập).
+
+Phiên âm Hán-Việt từng chữ cho cả 31 tên, giữ nguyên các ký tự trang trí không phải Hán tự (`≈`, `″`, dấu chấm giữa `丶`→`·`, dấu phẩy `、`→`,`) đúng vị trí gốc: Tử Liêu Ca, Bán Bình Tuyền Thủy, Noãn Phong, Phồn Hoa Quá Hậu, Niệm Nhĩ Thành Tập, Nghịch·Mỹ Lệ, Ác Trú Đích Mỹ, Cách Ngạn Quan Hỏa, Tàn Tiếu, Hà Thời Tô Tỉnh, Yên·Nhiên Tận Liễu, Niên Thiếu Vô Tri≈, Tá Bất Điệu Đích Giáp, ″Ôn Đồng Tiệm Viễn≈, Bất Quai (từ `吥乖` — chữ lóng mạng thay cho `不乖`), Tẩu Tứ Phương, Vô Lực Thuyết Ái, Phồn Hoa Thương Tang, Tạp Xích, Vãng Sự Tùy Phong, Kiếm Đảm Cầm Tâm, Tâm Như Chỉ Thủy, Phong Thương Y Cựu, Nhất Trực Đê Điệu, Dao Vong Nhi Lập, Ưu Uất Đích Tát Khắc Tư (từ `萨克斯`=saxophone phiên âm), Ca Bỉ Toản Hoàn Huyễn, Truy Phong, Bản Nhân, Hôn, Toàn Đăng Tương Bạn, Tàn Nguyệt Cô Sinh.
+
+Đến đây, `main.min.js` gần như không còn chữ Hán hiển thị cho người chơi — phần sót lại chỉ còn debug/console.log (dev-only) và dead code số Hán. Có thể coi mục tiêu dịch `main.min.js` đã hoàn thành. Bước tiếp theo: rà `resource/config/*.json` khi người dùng yêu cầu tiếp tục.
+
+Đổi tên `main.min_6b83ec7f.js`→`main.min_1d276185.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
