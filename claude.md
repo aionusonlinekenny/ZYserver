@@ -1838,6 +1838,18 @@ Lưu ý: chưa có ảnh xác nhận kết quả thực tế — tên item dài 
 
 Đổi tên `default.thm_1fa434bf.js`→`default.thm_edd8b686.js`, `main.min_acec48fa.js`→`main.min_57c06de4.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
 
+**Sự cố xen giữa (2026-07-06)**: người dùng báo không vào được màn chọn server, gửi kèm log network cho thấy `eui.min_506ce9f.js` trả về **404** trên server thật. Xác minh: file này chưa từng bị đụng tới bởi bất kỳ commit dịch thuật/sửa UI nào trong suốt phiên làm việc (`git log --follow` chỉ có đúng "Initial commit"), và tồn tại đầy đủ (210KB) trong repo — kết luận đây là sự cố phía triển khai trên server thật (file bị thiếu/xoá nhầm khi copy), không liên quan tới các thay đổi code. Đã gửi lại file `eui.min_506ce9f.js` cho người dùng qua `SendUserFile` để họ tự upload thay thế. Người dùng xác nhận sau đó đã vào lại được.
+
+## 8.35. Canh giữa dòng "Còn có thể đổi X lần" theo tâm nút bấm + thêm khoảng trắng + rút gọn nhãn nút (ảnh IMG_0560, 2026-07-06)
+
+Sau khi xác nhận layout tách tên item ở mục 8.34 hoạt động đúng (tên hiện trên icon, "Còn lại X cái" xanh lá), người dùng chỉ ra 3 điều cần chỉnh tiếp trong cùng popup Nhận Tu Vi:
+
+1. **Dòng "Còn có thể đổi3 lần" bị lệch, không canh giữa nút bấm phía dưới** — nhìn "kỳ". Nguyên nhân: `toDay0/1/2` dùng neo `right=8` (đo từ mép phải nhóm) trong khi nút `btn0/1/2` dùng `horizontalCenter=142.5`/`146`/`146` (đo từ tâm nhóm) — 2 hệ quy chiếu khác nhau nên tâm 2 phần tử lệch nhau dù cùng `textAlign=center`. Sửa bằng cách đổi `toDay0/1/2` từ `right=8` sang `horizontalCenter` cùng giá trị với nút tương ứng (`142.5`/`146`/`146`) — đảm bảo tâm dòng chữ luôn khớp tâm nút bất kể `width`.
+2. **Thiếu khoảng trắng giữa "đổi" và số lần** (hiện "đổi3 lần") — sửa `"Còn có thể đổi<font...>"` → `"Còn có thể đổi <font...>"` (thêm dấu cách trước số) trong `main.min.js`, cả 3 chỗ.
+3. **Nút "Sử dụng ngay" bị tràn 2 dòng ("Sử dụng nga/y")** — rút gọn thành `"Sử dụng"`. Phát hiện chuỗi này còn được DÙNG LÀM ĐIỀU KIỆN SO SÁNH ở `onClick_a94` (`"Sử dụng ngay"==this.btns[e].label`) để quyết định hành vi khi bấm nút — nếu chỉ đổi chỗ gán nhãn mà quên đổi chỗ so sánh sẽ lặp lại đúng loại bug đã gặp nhiều lần trước đây (nút bấm không phản hồi). Đã dùng `replace_all` cho toàn bộ 4 chỗ chứa `"Sử dụng ngay"` (2 chỗ gán nhãn trong `GainZsView` + 1 chỗ gán nhãn ở hàm khác dùng chung 3 nút này + 1 chỗ so sánh) để đảm bảo đồng bộ.
+
+Đổi tên `default.thm_edd8b686.js`→`default.thm_d927d154.js`, `main.min_57c06de4.js`→`main.min_77e45384.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
