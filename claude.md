@@ -1740,6 +1740,20 @@ Bài học rút ra: khi dịch label hiển thị (`.text=`/`.label=`), LUÔN LU
 
 Đổi tên `main.min_61427097.js`→`main.min_d8f18f55.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
 
+## 8.28. Dịch tiếp đợt 3 (`main.min.js`): thêm ~150 cụm nữa + phát hiện thêm 1 bug nút "Hủy" (2026-07-05)
+
+Theo yêu cầu "cứ tiếp tục nha", tiếp tục rà từ 354 cụm còn lại của mục 8.27.
+
+**Đã dịch thêm**: xác nhận dùng vật phẩm Boss Dã Ngoại/Thiên Địa Yêu Trủng vào thử thách, Yêu Trủng Cực Cảnh, thông báo không đủ lượt thử thách mở Yêu Đế Thiên Cung, Thuộc Tính Đặc Biệt/Cộng Thêm Phòng Thủ, tư vấn CSKH, điểm danh thành công/thất bại, đề xuất nhận gấp đôi, đã nhận hết thưởng tích lũy, "Đang trống" (tên chủ công guild trống), Vĩnh viễn, nâng cấp VIP, đổi mã kích hoạt (thành công/đã dùng/không tồn tại), trực tuyến, không thể nâng cấp kỹ năng (Tu Pháp Tĩnh Thất), hướng dẫn chơi, guild battle (tự động chuyển khu vực/hồi sinh cổng Tiên Cung/tự động thoát), xếp hạng kỳ này/trước, màu sắc Trắng/Xanh Lục/Tím/Cam/Đỏ (bộ Chu Tiên), phân giải vật phẩm, đã đạt cấp tối đa, Giảm Sát Thương Thần Phạt, Phàm/Trung/Thượng/Cực/Thần Phẩm (bộ Hồn Cốt), Đặc Biệt/Hồn Cốt, giải đấu liên server (`STATE_KF_TYPE_CN`/`STATE_KF_TYPE_AWARD_CN`/`STATE_KF_ICON_CN`), hệ thống Tiên Cung Chi Linh (kích hoạt/hủy/thông báo giới hạn), giai 1 sao, thuộc tính cơ bản Pháp Bảo, điều kiện nâng cấp, sau khi kích hoạt skin, đổi Tu Vi/cấp, promptList hoạt động (BOSS Chuyển Sinh đã bị tiêu diệt/không có boss đủ điều kiện/đang trong phó bản), xúc xắc "đã tung được X điểm", bảng xếp hạng Vương Giả Tranh Bá, người chơi đang vào game, và màn hình đăng nhập dự phòng (Tài khoản/Mật khẩu/Đăng nhập — màn hình debug hiếm khi hiện vì game thật đăng nhập qua `index.php` với uid/sign).
+
+**Phát hiện thêm 1 bug logic tương tự mục 8.27**: `"取  消"==this.active.label` (2 khoảng trắng đệm, khác với `"取 消"` 1 khoảng trắng đã sửa ở 8.27 — đây là hệ thống Tiên Cung Chi Linh, nút Hủy khác với hệ thống Ảo Hình Chiến Linh đã sửa trước) — nhãn nút thực tế đã là `"Hủy"` từ trước, so sánh với "取  消" luôn sai khiến nút Hủy trong màn hình kích hoạt Tiên Cung Chi Linh không phản hồi. Đã sửa literal so sánh khớp `"Hủy"`.
+
+Dọn thêm 5 chỗ `fontFamily="黑体"` còn sót ở màn hình đăng nhập dự phòng → `"Microsoft YaHei"`.
+
+**Kết quả**: `main.min.js` giảm từ 354 xuống còn **217 cụm riêng biệt** (375 lượt). Còn lại chủ yếu: danh sách ~40 tên ngẫu nhiên kiểu thơ Trung Quốc (`紫廖歌`,...— cần người dùng quyết định), một số toast/nhãn lẻ tẻ, và các chuỗi debug/console.log/ErrLog.trace chỉ dev nhìn thấy (cố tình bỏ qua vì không hiển thị cho người chơi). `resource/config/*.json` vẫn chưa được rà ở các đợt này.
+
+Đổi tên `main.min_d8f18f55.js`→`main.min_bbcd1e2a.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
