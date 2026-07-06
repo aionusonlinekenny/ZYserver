@@ -5,9 +5,14 @@
  * Dùng để CHẶN việc client tự sửa tham số "amount" gửi lên thành số tuỳ ý (vì bản thân
  * PayMoneyByBrowser gốc không hề ký/băm payload trước khi gửi đi).
  *
+ * 8800 không nằm trong ConfigRechargeItems (không phải 1 gói nạp thường) - đây là mức cash
+ * riêng cho nút mua "Thẻ tháng Đặc Quyền" (FranchiseWindow trong main.min.js), cần cash*100
+ * = 880000 để khớp priviMoney trong privilegeconfig.config. Xem thêm ghi chú sửa lỗi
+ * "Recharge.ins().showReChargeInfo(88)" -> "...(8800)" trong claude.md mục 20.
+ *
  * ĐÂY LÀ NƠI DUY NHẤT CẦN CẬP NHẬT nếu sau này thêm/đổi gói nạp trong config.json.
  */
-$RECHARGE_VALID_CASH = array(6, 10, 12, 20, 25, 30, 50, 68, 100, 108, 128, 198, 200, 258, 328, 500, 518, 648, 1000, 1500, 2000, 3000);
+$RECHARGE_VALID_CASH = array(6, 10, 12, 20, 25, 30, 50, 68, 100, 108, 128, 198, 200, 258, 328, 500, 518, 648, 1000, 1500, 2000, 3000, 8800);
 
 /** Tỉ lệ quy đổi nguyên bảo: amount (yuanbao) = cash * RECHARGE_RATIO (khớp userInfo.Ratio="100" phía client). */
 define('RECHARGE_RATIO', 100);
