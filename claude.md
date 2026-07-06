@@ -1723,6 +1723,23 @@ Theo yêu cầu người dùng ("quay lại vấn đề dịch thuật, xem còn
 
 Đổi tên `main.min_cd7a75d1.js`→`main.min_61427097.js`, `default.thm_d87127bf.js`→`default.thm_fa50fc06.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
 
+## 8.27. Dịch tiếp đợt 2 (`main.min.js`): thêm ~150 cụm + phát hiện/sửa 5 bug logic do dịch dở dang trước đây (2026-07-05)
+
+Theo yêu cầu "cứ theo lộ trình mà dịch tiếp, dịch xong thì note vào claude", tiếp tục rà từ 511 cụm còn lại của mục 8.26.
+
+**Đã dịch thêm**: các toast/nhãn lẻ tẻ (đấu giá thành công, nhận thưởng, xem bảng xếp hạng/phần thưởng, đã/chưa đạt được, mở khóa Tiên Vũ/Ngự Khí, đấu giá thất bại, túi đồ đầy, gainWay Yêu Trủng BOSS/Nhiệm Vụ Giới Hạn, Thuộc Tính Chú Linh/Cực Phẩm, Nhận Thần Trang, Thuộc Tính Đặc Biệt, câu flavor text item 269999, Đồ Giám, Hiệu Ứng Khi Đủ Bộ, xóa CD thử thách,元宝月卡/至尊/贵族, mã lỗi kích hoạt 1-8, mã lỗi đăng nhập, Thần Phạt descArr, Tư Chất, Thần Vũ/Vũ Hồn/Vũ Card/Vũ Linh, Chú Hồn, Thú Đan/Huyết/Khải/Giác/Trảo (mảng `posType` — khác mảng `equipName` đã dịch ở 8.26), v.v.
+
+**Quan trọng — phát hiện 5 lỗi LOGIC (không chỉ thiếu dịch) do các đợt dịch trước đây đổi label hiển thị nhưng bỏ sót chỗ SO SÁNH literal Chinese với label đó, khiến điều kiện luôn `false` và tính năng bị vô hiệu âm thầm**:
+1. `"骑乘"==this.zhanqilab.text` — nhãn thực tế đã là `"Cưỡi"` từ trước, so sánh với "骑乘" luôn sai → sửa lại literal so sánh thành `"Cưỡi"`.
+2. `getInviteDes_a94()` (mời vào nhóm phó bản) — code thay thế ký tự "我" (placeholder "tôi" kiểu Hán) bằng tên người chơi tô màu, NHƯNG `GlobalConfig.ConfigTeamFuBenBase.inviteText` trong config đã được dịch sang tiếng Việt từ trước và không còn chứa ký tự "我" nữa → tên người chơi ÂM THẦM KHÔNG BAO GIỜ được chèn vào tin mời mặc định. Sửa triệt để: bỏ hẳn logic thay thế ký tự, luôn ghép tên phía trước (`return t=e+t`) — khớp hành vi nhánh còn lại (khi người chơi tự gõ nội dung).
+3-5. Hệ thống "Ảo Hình Chiến Linh"/Vũ Khí Linh Hoạt (`upGradeBtn0`/`active` button): 4 chỗ so sánh literal Chinese (`"使 用"`, `"取 消"`, `"替 换"`, `"激  活"` — có khoảng trắng đệm giữa 2 chữ theo kiểu canh chữ Hán) trong khi nhãn nút thực tế đã được gán tiếng Việt (`"Sử dụng"`, `"Hủy"`, `"Thay thế"`, `"Kích hoạt"`) từ đợt dịch trước — khiến bấm nút không có phản hồi (Use/Cancel/Replace/Activate không hoạt động). Sửa lại 4 literal so sánh khớp đúng nhãn tiếng Việt thực tế đang dùng. Đồng thời dịch nốt `calldesc="突 破"`→`"Đột Phá"` (biến `calldesc` này parallel với `"Nâng Cấp"`/`"Kích Hoạt"` đã dịch, và cả 2 chỗ so sánh `"突 破"==this.calldesc` được cập nhật đồng bộ nên không bị lỗi tương tự).
+
+Bài học rút ra: khi dịch label hiển thị (`.text=`/`.label=`), LUÔN LUÔN grep toàn file tìm xem có chỗ nào so sánh `"<chuỗi Hán cũ>"==<cùng property>` ở nơi khác không, để tránh vô tình để lại điều kiện chết sau khi đổi 1 phía mà quên phía kia — đã set thói quen này cho các đợt dịch tiếp theo. Cũng tăng độ bền cho hàm `labelTextInfo` (dùng `indexOf` kiểm tra từ khóa để tô màu cảnh báo) bằng cách bổ sung thêm các từ khóa tiếng Việt tương ứng ("Có thể nhận", "Không thể", "Chưa") CHUNG VỚI các từ khóa Hán cũ (không xoá, chỉ thêm) để không phá vỡ trường hợp đang hoạt động.
+
+**Kết quả**: `main.min.js` giảm từ 511 xuống còn **354 cụm riêng biệt** (555 lượt). Vẫn còn scope lớn (danh sách tên ngẫu nhiên ~40 cái, nhiều toast rải rác, chuỗi debug bỏ qua có chủ đích, và toàn bộ `resource/config/*.json` gần như chưa đụng tới) — sẽ tiếp tục ở các đợt sau theo đúng tinh thần rà từng hàm/mảng lớn trước, toast lẻ tẻ sau.
+
+Đổi tên `main.min_61427097.js`→`main.min_d8f18f55.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
 ## 9. Dọn dẹp repo: xoá file không được load / trùng lặp / build cũ (2026-07-03)
 
 Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (không được client/server nào load, hoặc là bản trùng/build cũ đã bị thay thế). Dùng 1 agent con khảo sát toàn repo, sau đó tự tay xác minh lại từng phát hiện trước khi xoá (đối chiếu `manifest.json` thật đang được `index.php` load, so hash file, kiểm tra tham chiếu chéo bằng `grep` toàn bộ `.php/.js/.json/.html`).
