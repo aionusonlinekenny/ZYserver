@@ -4,6 +4,7 @@ header("Content-type: text/html; charset=utf-8");
 ini_set('date.timezone','Asia/Shanghai');
 if($_POST){
 	include 'config.php';
+	include 'paypal_lib.php';
 	$gmcode=trim($_POST['checknum']);
 	if($gmcode!='syymw.com'){
 		$return=array(
@@ -379,6 +380,59 @@ if($_POST){
 					exit(json_encode($return));
 				}
 				break;
+		case 'getpaymentconfig':
+            $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
+            if(!$conn){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'数据库连接失败！',
+				);
+				exit(json_encode($return));
+            }
+            mysqli_select_db($conn,$qu['db']);
+			$cfg=pp_get_payment_config($conn,$srvid);
+			mysqli_close($conn);
+			// Không trả secret thật về client, tránh lộ khi F12/xem mã nguồn trang.
+			$cfg['paypal_secret']='';
+			$return=array(
+				'errcode'=>0,
+				'info'=>'OK',
+				'config'=>$cfg,
+			);
+			exit(json_encode($return));
+			break;
+		case 'setpaymentconfig':
+            $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
+            if(!$conn){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'数据库连接失败！',
+				);
+				exit(json_encode($return));
+            }
+            mysqli_select_db($conn,$qu['db']);
+			$ppmode=(trim($_POST['ppmode'])==='live')?'live':'sandbox';
+			$ppclientid=mysqli_real_escape_string($conn,trim($_POST['ppclientid']));
+			$ppemail=mysqli_real_escape_string($conn,trim($_POST['ppemail']));
+			$ppwebhookid=mysqli_real_escape_string($conn,trim($_POST['ppwebhookid']));
+			$ppusdrate=floatval($_POST['ppusdrate']);
+			if($ppusdrate<=0){ $ppusdrate=1.0; }
+			$vipreq=intval($_POST['vipreq'])?1:0;
+			$ybreq=intval($_POST['ybreq'])?1:0;
+			$ppsecretRaw=trim($_POST['ppsecret']);
+			mysqli_query($conn,"INSERT INTO payment_config (serverid,paypal_mode,paypal_client_id,paypal_receiver_email,paypal_webhook_id,usd_conversion_rate,vip_require_payment,yuanbao_require_payment) VALUES ('{$srvid}','{$ppmode}','{$ppclientid}','{$ppemail}','{$ppwebhookid}','{$ppusdrate}','{$vipreq}','{$ybreq}') ON DUPLICATE KEY UPDATE paypal_mode='{$ppmode}',paypal_client_id='{$ppclientid}',paypal_receiver_email='{$ppemail}',paypal_webhook_id='{$ppwebhookid}',usd_conversion_rate='{$ppusdrate}',vip_require_payment='{$vipreq}',yuanbao_require_payment='{$ybreq}'");
+			// Chỉ ghi đè secret khi GM thực sự nhập giá trị mới (bỏ trống nghĩa là giữ nguyên secret cũ).
+			if($ppsecretRaw!==''){
+				$ppsecret=mysqli_real_escape_string($conn,$ppsecretRaw);
+				mysqli_query($conn,"UPDATE payment_config SET paypal_secret='{$ppsecret}' WHERE serverid='{$srvid}'");
+			}
+			mysqli_close($conn);
+			$return=array(
+				'errcode'=>0,
+				'info'=>'Đã lưu cấu hình thanh toán.',
+			);
+			exit(json_encode($return));
+			break;
 		default:
 			$return=array(
 				'errcode'=>1,

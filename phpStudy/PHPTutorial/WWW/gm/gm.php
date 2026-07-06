@@ -42,6 +42,21 @@ header("Content-type: text/html; charset=utf-8");
   </select></div>
   <div><span>物品数量: </span><input type='text' value='' id='mailnum' placeholder='请输入发放数量'></div>
   <div><input type='button' value='发送邮件' id='mailbtn'></div>
+  <br><hr/><br>
+  <div style="border:1px solid #999;padding:10px;max-width:560px">
+    <b>Cài đặt thanh toán PayPal</b><br><br>
+    <div><span>Chế độ: </span><select id='ppmode'><option value='sandbox'>sandbox (thử nghiệm)</option><option value='live'>live (thật)</option></select></div>
+    <div><span>PayPal Client ID: </span><input type='text' id='ppclientid' style="width:320px"></div>
+    <div><span>PayPal Secret: </span><input type='password' id='ppsecret' style="width:320px"></div>
+    <div><span>Email nhận tiền: </span><input type='text' id='ppemail' style="width:320px"></div>
+    <div><span>Webhook ID: </span><input type='text' id='ppwebhookid' style="width:320px"></div>
+    <div><span>Tỉ giá quy đổi USD: </span><input type='text' id='ppusdrate' value='1.0000' style="width:100px"></div>
+    <div><span>Bắt buộc trả tiền - VIP/Thẻ tháng: </span><input type='checkbox' id='vipreq' style="width:auto;height:auto"></div>
+    <div><span>Bắt buộc trả tiền - Nạp Nguyên Bảo: </span><input type='checkbox' id='ybreq' style="width:auto;height:auto"></div>
+    <div id='ppstatus' style="color:#0066cc;min-height:20px"></div>
+    <div><input type='button' value='Tải cấu hình hiện tại' id='pploadbtn'> <input type='button' value='Lưu cấu hình' id='ppsavebtn'></div>
+    <div style="color:#999;font-size:11px;margin-top:8px">Bỏ tick 2 công tắc trên = người chơi bấm mua/nạp là nhận ngay, không cần trả tiền thật (vẫn phải xác nhận popup ở client).</div>
+  </div>
 </div>
 <script src='jquery-1.7.2.min.js'></script>
 <script>
@@ -316,6 +331,67 @@ header("Content-type: text/html; charset=utf-8");
 	  console.log('test');
 	  var desc=$('#mailid option:selected').data('desc');
 	  $('#maildesc').html(desc);
+  });
+  $('#pploadbtn').click(function(){
+	  if(checknum==''){
+		  alert('请输入GM校验码。');
+		  return false;
+	  }
+	  $.ajax({
+		  url:'gmquery.php',
+		  type:'post',
+		  'data':{type:'getpaymentconfig',checknum:checknum,uid:'-',qu:qu},
+          'cache':false,
+          'dataType':'json',
+		  success:function(data){
+			  if(data.errcode!=0){
+				  $('#ppstatus').text(data.info);
+				  return;
+			  }
+			  var c=data.config;
+			  $('#ppmode').val(c.paypal_mode);
+			  $('#ppclientid').val(c.paypal_client_id);
+			  $('#ppsecret').val('');
+			  $('#ppemail').val(c.paypal_receiver_email);
+			  $('#ppwebhookid').val(c.paypal_webhook_id);
+			  $('#ppusdrate').val(c.usd_conversion_rate);
+			  $('#vipreq').prop('checked', c.vip_require_payment=='1');
+			  $('#ybreq').prop('checked', c.yuanbao_require_payment=='1');
+			  $('#ppstatus').text('Đã tải cấu hình hiện tại (để trống ô Secret nghĩa là giữ nguyên secret cũ).');
+		  },
+		  error:function(){
+			  $('#ppstatus').text('Tải cấu hình thất bại.');
+		  }
+	  });
+  });
+  $('#ppsavebtn').click(function(){
+	  if(checknum==''){
+		  alert('请输入GM校验码。');
+		  return false;
+	  }
+	  $.ajax({
+		  url:'gmquery.php',
+		  type:'post',
+		  'data':{
+			  type:'setpaymentconfig',checknum:checknum,uid:'-',qu:qu,
+			  ppmode:$('#ppmode').val(),
+			  ppclientid:$('#ppclientid').val(),
+			  ppsecret:$('#ppsecret').val(),
+			  ppemail:$('#ppemail').val(),
+			  ppwebhookid:$('#ppwebhookid').val(),
+			  ppusdrate:$('#ppusdrate').val(),
+			  vipreq:$('#vipreq').is(':checked')?1:0,
+			  ybreq:$('#ybreq').is(':checked')?1:0
+		  },
+          'cache':false,
+          'dataType':'json',
+		  success:function(data){
+			  $('#ppstatus').text(data.info);
+		  },
+		  error:function(){
+			  $('#ppstatus').text('Lưu cấu hình thất bại.');
+		  }
+	  });
   });
 </script>
 </body>

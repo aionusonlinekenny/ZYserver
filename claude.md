@@ -1864,3 +1864,54 @@ Theo yêu cầu người dùng, rà soát repo tìm file an toàn để xoá (kh
 **CHƯA xoá, cần người dùng quyết định (rủi ro cao hơn)**:
 - `phpStudy/PHPTutorial/WWW/resource/exml/` (840 file, ~4MB): file nguồn UI Egret (`.exml`). Repo **không có** công cụ build Egret nào đi kèm (`package.json`/`tsconfig.json`/`egretProperties.json` — đều không tồn tại), nhưng file JS đã biên dịch (`default.thm_70915153.js`, `main.min_d7aad928.js`) có thời gian sửa gần đây nhất repo → khả năng cao có một pipeline build Egret chạy ở NGOÀI repo này (máy dev khác) vẫn dùng các file `.exml` này làm nguồn. Xoá có thể làm mất khả năng sửa UI qua Egret Wing sau này — **giữ nguyên, không xoá**.
 - MySQL data file `phpStudy/PHPTutorial/MySQL/data/actors/actors_copy.*` và `actors9/actors_copy.*` (~16KB, bảng rỗng): đây là file dữ liệu MyISAM thật của MySQL đang chạy — xoá trực tiếp file (thay vì `DROP TABLE` đúng cách qua SQL) có thể làm hỏng engine MySQL nếu server đang chạy hoặc sẽ chạy lại từ đúng thư mục này. **Không tự ý xoá**, để người dùng tự chạy `DROP TABLE actors_copy;` nếu thật sự không cần.
+
+## 10. Hệ thống thanh toán PayPal + công tắc GM bật/tắt yêu cầu trả tiền thật (2026-07-06)
+
+Người dùng yêu cầu: bỏ cổng thanh toán hiện tại, thay bằng PayPal (tài khoản nhận tiền cập nhật trực tiếp trong GM tool), và GM tool cho phép bật/tắt riêng cho "mua VIP" và "nạp nguyên bảo" — bật thì bắt buộc trả tiền thật qua PayPal, tắt thì người chơi bấm mua là được (miễn phí), nhưng vẫn phải hiện popup xác nhận trước khi cộng.
+
+### 10.1. Khảo sát hiện trạng (dùng 2 agent song song trước khi code)
+
+**Hệ thống nạp tiền/VIP hiện tại KHÔNG tự động** — client (`main.min.js`, class `SDkMsg`) chỉ gọi GET trực tiếp ra cổng trung gian Trung Quốc `https://cls.ha02.youyantech.com/$channelid$/pay.php` (hàm `PayMoneyByBrowser`) rồi redirect trình duyệt tới URL cổng đó trả về; **không có file nào trong repo nhận kết quả thanh toán về (webhook)**. Trên thực tế, việc cộng tiền thật hiện đang làm THỦ CÔNG: admin vào tool GM web (`gm/gmquery.php` case `'charge'`) bấm nút, PHP **insert giả 1 dòng vào bảng MySQL `feecallback`** y hệt cổng thanh toán thật báo về. `DBServer` (file .exe biên dịch sẵn, không có mã nguồn trong repo) định kỳ gọi stored procedure `loadfee` đọc bảng này, đẩy sang Lua (`server/bin/s1/gameworld/data/functions/systems/actorsystem/sdkapi/sdkapi.lua` hàm `onFeeCallback`), gọi hàm gốc `LActor.addRechargeOffline(actorid, count, itemid)` để cộng nguyên bảo + tính lại cấp VIP (`actorvip.lua` hàm `onCharge`, dựa trên tổng nguyên bảo tích luỹ so với ngưỡng `VipConfig[level].needYb`).
+
+→ **Kết luận quan trọng**: bảng `feecallback` chính là API "báo thanh toán thành công" đã có sẵn và đang chạy thật trong production — đây là điểm nối lý tưởng cho PayPal, không cần đụng vào Lua/server chút nào.
+
+Tiền lệ có sẵn cho việc "coi như đã trả tiền mà không cần cổng thật":
+- Lệnh GM trong game `@addrecharge <số>` → `vip.gmTestRecharge` → `LActor.addRecharge(actor, yb, -1, ...)` (order_num = -1 đánh dấu không phải giao dịch thật).
+- Tool GM web hiện tại chính là ví dụ thứ 2 (insert thẳng `feecallback`).
+
+Xác định "mua VIP" thực chất KHÔNG phải giao dịch tiền thật riêng — VIP tự tính từ tổng nguyên bảo nạp tích luỹ. Tuy nhiên có 2 gói nạp đặc biệt được `onFeeCallback` xử lý khác (kích hoạt thẻ tháng thay vì cộng thường): nguyên bảo = 300000 (`monthCardMoney`, `server/bin/s1/gameworld/data/config/monthcard/monthcardconfig.config`) và 880000 (`priviMoney`, `.../privilege/privilegeconfig.config`) — dùng 2 giá trị này để phân biệt "gói VIP/thẻ tháng" với "nạp nguyên bảo thường" cho đúng 2 công tắc người dùng yêu cầu.
+
+### 10.2. Kiến trúc lựa chọn: toàn bộ logic bật/tắt nằm ở PHP, không đụng Lua/server
+
+Vì "thanh toán thành công" ở hệ thống này chỉ là 1 dòng insert vào `feecallback`, và cả 2 trường hợp (trả tiền thật qua PayPal / miễn phí do GM tắt công tắc) đều chốt lại bằng đúng thao tác đó — toàn bộ tính năng mới được xây dựng HOÀN TOÀN Ở TẦNG PHP, không sửa 1 dòng Lua nào (giảm rủi ro tối đa vì Lua chạy trên server thật, không test được từ môi trường này).
+
+**File mới trong `phpStudy/PHPTutorial/WWW/gm/`**:
+- `sql/payment_config.sql` — script tạo 2 bảng mới, chạy 1 lần trên DB `actors` của từng server (theo `$quarr` trong `config.php`):
+  - `payment_config` (1 dòng/server): `paypal_mode` (sandbox/live), `paypal_client_id`, `paypal_secret`, `paypal_receiver_email`, `paypal_webhook_id`, `vip_require_payment`, `yuanbao_require_payment`, `usd_conversion_rate`.
+  - `payment_orders`: chống cộng trùng theo `order_id` (đơn PayPal thật lẫn đơn "miễn phí" đều đi qua bảng này, trạng thái `created`/`pending_confirm`/`credited`/`failed`).
+- `paypal_lib.php` — thư viện dùng chung: `pp_get_access_token` (OAuth2 client_credentials), `pp_create_order`/`pp_capture_order` (PayPal Orders v2 REST API), `pp_verify_webhook_signature` (xác minh chữ ký webhook thật, chống giả mạo request), `pp_credit_order` (insert `feecallback` — đúng cơ chế tool GM `'charge'` đang dùng — có kiểm tra chống cộng trùng qua `payment_orders.status`).
+- `recharge_tiers.php` — danh sách các mốc "cash" hợp lệ trích từ `resource/config/config.json` → `ConfigRechargeItems` (`[6,10,12,20,25,30,50,68,100,108,128,198,200,258,328,500,518,648,1000,1500,2000,3000]`) để CHẶN việc client tự sửa tham số `amount` thành số tuỳ ý gửi lên (bản gốc `PayMoneyByBrowser` không hề ký/băm payload) — đây là 1 lỗ hổng có sẵn từ trước, tiện thể vá luôn khi làm endpoint mới. Cũng định nghĩa hằng số `VIP_MONTHCARD_YUANBAO=300000`/`VIP_PRIVILEGE_YUANBAO=880000` để phân biệt gói VIP.
+- `pay_create_order.php` — endpoint THAY THẾ URL youyantech.com mà client gọi. Giải mã payload y hệt format cũ (`data`=base64(encodeURIComponent(JSON)), lấy `ZoneID`/`UserID`/`RoleID`/`amount` từ đó — không cần tra DB tìm actorid vì client đã tự gửi `RoleID` sẵn), validate `amount` nằm trong danh sách hợp lệ, tính `yuanbao = cash*100`, xác định có phải gói VIP không, đọc `payment_config` để biết công tắc đang bật/tắt:
+  - **Tắt** (không cần trả tiền): KHÔNG cộng tiền ngay — trả JSON `{"mode":"free","orderId":...,"message":"Xác nhận để nhận X nguyên bảo?"}` để client tự hiện popup xác nhận trước (đúng yêu cầu), chỉ ghi `payment_orders` trạng thái `pending_confirm`.
+  - **Bật** (bắt buộc trả tiền thật): gọi PayPal tạo đơn thật (quy đổi USD qua `usd_conversion_rate` — **CẦN admin tự chỉnh đúng giá trước khi mở live**, hiện để mặc định 1.0 làm placeholder), trả JSON `{"mode":"paypal","approveUrl":...}` để client redirect sang trang PayPal thật.
+- `pay_free_finalize.php` — bước 2 của chế độ miễn phí: client gọi SAU KHI người chơi bấm "Đồng ý" trên popup, kiểm tra lại công tắc còn tắt tại thời điểm xác nhận (tránh trường hợp GM vừa bật lại giữa lúc popup đang hiện), rồi mới thật sự `pp_credit_order`.
+- `pay_capture.php` — trang PayPal chuyển trình duyệt người chơi về sau khi họ approve/huỷ thanh toán (return_url/cancel_url) — capture đơn PayPal, credit `feecallback`, hiện trang HTML đơn giản kèm nút quay lại game.
+- `pay_webhook.php` — webhook PayPal (server-to-server, đăng ký URL trong PayPal Developer Dashboard) nhận sự kiện `PAYMENT.CAPTURE.COMPLETED`, xác minh chữ ký qua `pp_verify_webhook_signature`, credit `feecallback` — lớp bảo hiểm thứ 2 phòng trường hợp người chơi đóng trình duyệt trước khi được PayPal chuyển về `pay_capture.php` (không lo cộng trùng vì `pp_credit_order` idempotent theo `order_id`).
+
+**Sửa file có sẵn**:
+- `gm/gm.php` — thêm khối "Cài đặt thanh toán PayPal": chọn chế độ sandbox/live, nhập Client ID/Secret/email nhận tiền/Webhook ID/tỉ giá USD, 2 checkbox bật/tắt (VIP, Nguyên Bảo), nút "Tải cấu hình hiện tại"/"Lưu cấu hình" (theo đúng phong cách jQuery ajax có sẵn của trang, dùng chung mã GM và chọn khu vực).
+- `gm/gmquery.php` — thêm `include 'paypal_lib.php'`, 2 case mới: `getpaymentconfig` (đọc cấu hình hiện tại, KHÔNG trả secret thật về client để tránh lộ khi xem mã nguồn trang), `setpaymentconfig` (ghi `payment_config`, secret chỉ bị ghi đè khi GM thực sự nhập giá trị mới — để trống nghĩa là giữ nguyên).
+- `js/main.min.js`, class `SDkMsg`:
+  - `PayMoneyByBrowser`: đổi URL đích từ `https://cls.ha02.youyantech.com/...` sang `gm/pay_create_order.php` (cùng domain, đường dẫn tương đối vì `gm/` nằm cùng cấp `index.php`), giữ nguyên cơ chế `StringUtils.replaceByParam` (giữ đủ 3 tham số vị trí `$0$/$1$/$2$` dù tham số đầu `ch` không còn dùng, tránh lệch vị trí args). Lưu thêm `this.pay_order_id`/`this.pay_zone_id` để dùng ở bước xác nhận miễn phí.
+  - `OnPaySuccess`: trước đây coi response là URL để redirect thẳng (`top.location.href=i`) — nay parse JSON, rẽ nhánh theo `mode`: `paypal`→redirect `approveUrl`; `free`→`WarnView.show(message, ConfirmFreePayment)` (đúng yêu cầu vẫn hiện popup xác nhận); `error`→hiện tip lỗi.
+  - Thêm hàm mới `ConfirmFreePayment(orderId)`: gọi `pay_free_finalize.php`, hiện kết quả qua `UserTips`.
+
+### 10.3. Việc CẦN làm thêm trước khi dùng thật (không thể hoàn tất từ môi trường sandbox này)
+
+1. **Chạy `gm/sql/payment_config.sql`** trên DB `actors` của từng server (server 1 đã có sẵn dòng mặc định `vip_require_payment=1, yuanbao_require_payment=1` — tức mặc định vẫn yêu cầu trả tiền thật, an toàn).
+2. **Điền PayPal Client ID/Secret** (đã có sẵn theo người dùng xác nhận) vào mục "Cài đặt thanh toán PayPal" trong `gm/gm.php`.
+3. **Đăng ký Webhook** trong PayPal Developer Dashboard trỏ về `https://<domain>/gm/pay_webhook.php`, chọn sự kiện `PAYMENT.CAPTURE.COMPLETED`, lấy Webhook ID điền vào GM tool.
+4. **Chỉnh `usd_conversion_rate`** cho đúng giá thật (hiện để mặc định 1.0 chỉ là placeholder — 1 đơn vị "cash" client gửi lên nhân với tỉ giá này ra số USD thu qua PayPal).
+5. Khuyến nghị bảo mật (không phải yêu cầu ban đầu nhưng nên lưu ý): cơ chế xác thực GM tool hiện tại (`gm/gmquery.php`) chỉ là 1 chuỗi bí mật cố định gõ trong code (`$gmcode=='syymw.com'`), không có đăng nhập thật/giới hạn IP — nay mục này có thêm dữ liệu nhạy cảm (PayPal Secret), nên cân nhắc đổi mã GM mặc định và/hoặc giới hạn IP truy cập `gm/` ở tầng web server.
+
+`node -c` qua được cho `main.min.js`, `php -l` qua được cho cả 7 file PHP mới/sửa. Đổi tên `main.min_77e45384.js`→`main.min_13338353.js`, cập nhật `manifest.json`/`index.php` (không đụng `default.thm.js` lần này).
