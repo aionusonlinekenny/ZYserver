@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `payment_config` (
 	`vip_require_payment` TINYINT(1) NOT NULL DEFAULT 1,         -- 1 = bắt buộc trả tiền thật cho gói VIP/thẻ tháng, 0 = miễn phí
 	`yuanbao_require_payment` TINYINT(1) NOT NULL DEFAULT 1,     -- 1 = bắt buộc trả tiền thật khi nạp nguyên bảo thường, 0 = miễn phí
 	`usd_conversion_rate` DECIMAL(10,4) NOT NULL DEFAULT 1.0000, -- 1 đơn vị "amount" client gửi lên = bao nhiêu USD (CẦN admin tự chỉnh đúng giá thật trước khi mở live)
-	`updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY (`serverid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `payment_orders` (
 	`yuanbao_amount` INT NOT NULL,
 	`is_free_mode` TINYINT(1) NOT NULL DEFAULT 0,
 	`status` VARCHAR(32) NOT NULL DEFAULT 'created',             -- created | pending_confirm | credited | failed
-	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`credited_at` DATETIME NULL DEFAULT NULL,
 	PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

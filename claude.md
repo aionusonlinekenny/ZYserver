@@ -1915,3 +1915,9 @@ Vì "thanh toán thành công" ở hệ thống này chỉ là 1 dòng insert v�
 5. Khuyến nghị bảo mật (không phải yêu cầu ban đầu nhưng nên lưu ý): cơ chế xác thực GM tool hiện tại (`gm/gmquery.php`) chỉ là 1 chuỗi bí mật cố định gõ trong code (`$gmcode=='syymw.com'`), không có đăng nhập thật/giới hạn IP — nay mục này có thêm dữ liệu nhạy cảm (PayPal Secret), nên cân nhắc đổi mã GM mặc định và/hoặc giới hạn IP truy cập `gm/` ở tầng web server.
 
 `node -c` qua được cho `main.min.js`, `php -l` qua được cho cả 7 file PHP mới/sửa. Đổi tên `main.min_77e45384.js`→`main.min_13338353.js`, cập nhật `manifest.json`/`index.php` (không đụng `default.thm.js` lần này).
+
+### 10.4. Sửa lỗi import SQL: `1067 - Invalid default value for 'updated_at'`
+
+Khi chạy `gm/sql/payment_config.sql`, một số bản MySQL/MariaDB cũ (thường gặp trên MySQL đi kèm phpStudy) báo lỗi 1067 vì cột kiểu `DATETIME` không hỗ trợ `DEFAULT CURRENT_TIMESTAMP`/`ON UPDATE CURRENT_TIMESTAMP` — khả năng này chỉ có sẵn ở kiểu `TIMESTAMP`, MySQL mới thêm cho `DATETIME` từ bản 5.6.5. Do `CREATE TABLE` thất bại toàn bộ nên bảng `payment_config` (và có thể cả `payment_orders`) chưa được tạo.
+
+Đã đổi `updated_at` (trong `payment_config`) và `created_at` (trong `payment_orders`) từ `DATETIME` sang `TIMESTAMP`, giữ nguyên hành vi tự động điền giờ hiện tại. File vẫn idempotent (`CREATE TABLE IF NOT EXISTS` + `INSERT ... ON DUPLICATE KEY UPDATE`) nên chạy lại toàn bộ file từ đầu là an toàn.
