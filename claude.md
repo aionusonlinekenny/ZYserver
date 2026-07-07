@@ -2280,3 +2280,18 @@ Người dùng đặt câu hỏi/xác nhận: chữ Trung "万兽驭使" ở gó
 Đổi tên `main.min_a7238c3c.js`→`main.min_95a9adbd.js` (cache-bust, chỉ file JS logic này đổi nội dung; `default.thm.js` không đổi lần này nhưng vẫn phải bump `?v=` trong `index.php` vì nội dung `manifest.json` đổi tên file `main.min`). `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh.
+
+### 26.2. Test sau mục 26: dòng nhắc đè lên "Thú Khải" bên trái, vẫn không hiện đủ câu (2026-07-06)
+
+Người dùng gửi ảnh (IMG_0602) báo: sau khi canh giữa (mục 26), dòng "Mặc đủ trang bị mới có thể xuất trận, thuộc tính và…" đè trực tiếp lên chữ "Thú Khải" (nhãn item cột trái dưới cùng) và vẫn không hiện trọn câu. Yêu cầu: buộc câu hiện đủ trên 2 dòng, canh giữa theo tâm hình con chim phía trên.
+
+**Nguyên nhân đè chữ**: bản sửa mục 26 canh giữa cả cụm theo toàn màn hình rộng 600 (`horizontalCenter="0"`, không giới hạn `width` chặt), nên vùng chữ trải dài chạm luôn vào cột item bên trái/phải (khác với bản gốc neo trái `left=110` trước đó, tuy tràn mép phải nhưng không lấn được sang cột trái). Ở đúng độ cao `top=425` này, 2 cột item (icon + nhãn 2 dòng "Trắng 1 sao"/"Thú Khải") đã chiếm sẵn 2 bên; chỉ có khoảng trống ở giữa (giữa cột trái và cột phải, ước lượng ~khoảng x=104 đến x=495 trong hệ toạ độ 600 của skin) — cần thu hẹp `width` để lọt đúng khoảng trống này, không chạm 2 cột.
+
+**Đã sửa**:
+- Thu hẹp `width` của Label từ `480` xuống `340` (vừa trong khoảng trống giữa 2 cột item, không đè "Thú Khải"/"Thú Giác").
+- Chèn thẳng ký tự xuống dòng thủ công (`\n`) vào giữa câu thay vì chỉ dựa vào `wordWrap` tự đoán điểm ngắt: `"Mặc đủ trang bị để xuất trận,\nkích hoạt thuộc tính/kỹ năng"` — đảm bảo LUÔN hiện đúng 2 dòng, không phụ thuộc ước lượng độ rộng ký tự.
+- Giảm cỡ chữ `18→12` và thêm `textAlign="center"` — bắt buộc phải giảm cỡ chữ vì khoảng trống theo chiều dọc giữa nhãn item phía trên (kết thúc ~y=425) và khung thuộc tính "Công kích:+0..." phía dưới (bắt đầu tại `top=452`) chỉ vỏn vẹn ~27px — không đủ chỗ cho 2 dòng chữ cỡ 18 (cần ~44-46px) mà không chạm khung thuộc tính, nên phải thu nhỏ chữ để 2 dòng gọn trong ~27-30px. Giữ `horizontalCenter="0"` (không đổi) để tâm cụm chữ trùng tâm màn hình — nơi hình con chim cũng được canh giữa, nên tự động "canh đều so với hình con chim" như yêu cầu.
+
+Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml` (dùng `&#10;` thay cho ký tự xuống dòng trong thuộc tính XML). Đổi tên `default.thm_70211a8a.js`→`default.thm_de331a1f.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Đây là khoảng không gian rất chật (chỉ ước lượng dựa trên các mốc `top` đã biết trong code, chưa render trực tiếp kiểm chứng), cỡ chữ 12 có thể hơi nhỏ so với mong đợi — cần người dùng xác nhận lại bằng ảnh, nếu vẫn chạm khung thuộc tính bên dưới có thể cần giảm thêm hoặc cân nhắc dời cả khung thuộc tính xuống.
