@@ -2384,3 +2384,17 @@ Vì `SpecialRingWin` xử lý CẢ 2 slot ExRing bằng chung 1 hàm (chỉ khá
 Đổi tên `main.min_90c6d4ca.js`→`main.min_d847a680.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ. Đã chạy lại script quét sau khi sửa để xác nhận không còn sai lệch nào (ngoại trừ 2 trường hợp cố tình bỏ qua ở trên và 1 số trùng tên field giữa các class khác nhau — false positive do field name trùng lặp, không phải lỗi thật).
 
 Đây là NGUYÊN NHÂN GỐC thật sự (không phải suy đoán từ đọc code xung quanh như các lần sửa layout trước — lần này xác minh được bằng cách đối chiếu trực tiếp giá trị gán thực tế trong `default.thm.js`/`main.min.js` với điều kiện so sánh), độ tin cậy cao. Vẫn cần người dùng bấm "Kích hoạt" lại để xác nhận.
+
+Người dùng xác nhận: "Đã mặc được" — bug đã hết cho cả 2 vật phẩm.
+
+## 30. Màn "Thiên Thư" (skin `SkinMijiPanel`): nhãn "Đổi Thiên Thư" bay hẳn ra ngoài mép phải màn hình (2026-07-07)
+
+Người dùng gửi ảnh (IMG_0619) màn "Thiên Thư" (bánh xe 8 ô kỹ năng + nút "Khảm"), báo chữ "Đổi" (thực ra là "Đổi Thiên Thư") bị văng hẳn sang mép phải màn hình, chỉ thấy đúng chữ "Đổi" bị cắt, không thấy phần còn lại.
+
+**Nguyên nhân**: Label `change` ("Đổi Thiên Thư") dùng anchor `right="50"` (neo cách mép phải 50px), nằm trong 1 `Group` cha (chứa `change`, `btnAct` [nút Khảm], `learnLabel`, `learnImg`) **không có `width` khai báo tường minh** — group này chỉ có `height="80"` + `horizontalCenter="0"`, để Egret tự tính `width` dựa theo các con bên trong. Vì `right` định vị theo chính `width` đang-được-tự-tính-toán đó, xảy ra vòng lặp tự tham chiếu (kích thước group phụ thuộc vị trí label, vị trí label lại phụ thuộc kích thước group) khiến Egret tính ra 1 `width` bất định, đẩy hẳn nhãn "Đổi Thiên Thư" ra xa khỏi vùng nhìn thấy — cùng loại lỗi với nhãn `nextAtt` ở mục 24 (Label dùng anchor `right` trong container không có `width` cố định).
+
+**Đã sửa**: thêm `width="600"` tường minh cho Group cha này (khớp đúng chiều rộng toàn skin `SkinMijiPanel`, cũng là chiều rộng màn hình chuẩn) — nhờ vậy `right="50"` giờ tính theo mốc cố định 600, đưa nhãn "Đổi Thiên Thư" về đúng vị trí cách mép phải 50px như thiết kế ban đầu, không ảnh hưởng nút "Khảm" (`horizontalCenter="0"`, đã đúng vị trí từ trước, thêm `width` không làm nó xê dịch vì width mới khớp đúng chiều rộng màn hình).
+
+Sửa đồng bộ `default.thm.js` (`_Group3_i`) + `resource/exml/MijiPanelSkin.exml`. Đổi tên `default.thm_d76b93e8.js`→`default.thm_7459ab38.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh.

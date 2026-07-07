@@ -43,7 +43,7 @@
 		<e:Label id="curZsLv" text="" y="660" fontFamily="Microsoft YaHei" size="16" horizontalCenter="-0.5" x="85" scaleX="1" scaleY="1" textColor="0xffff00" visible="false"/>
 
 		<e:Image id="mijitujian" x="518" y="235" source="" scaleX="1" scaleY="1"/>
-		<e:Group height="80" scaleX="1" scaleY="1" bottom="0" horizontalCenter="0">
+		<e:Group height="80" width="600" scaleX="1" scaleY="1" bottom="0" horizontalCenter="0">
 
 			<e:Label id="change" text="Đổi Thiên Thư" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff06" right="50" bottom="40"/>
 			<e:Group id="btnAct" scaleX="1" scaleY="1" bottom="24" horizontalCenter="0">
