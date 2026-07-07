@@ -2099,3 +2099,21 @@ Người dùng báo: bấm "Mua ngay 30 NDT" ở tab "元宝月卡" (Thẻ Thán
 **Đã sửa**: đổi `showReChargeInfo(30)` → `showReChargeInfo(3000)` (nút Thẻ Tháng Nguyên Bảo) và `showReChargeInfo(88)` → `showReChargeInfo(8800)` (nút Thẻ Tháng Đặc Quyền) trong `main.min.js`. Thêm `8800` vào `$RECHARGE_VALID_CASH` trong `gm/recharge_tiers.php` (trước đó chỉ có 3000, không có 8800, nên nếu chỉ sửa client mà quên chỗ này thì request sẽ bị PHP tự chặn với lỗi "Gói nạp không hợp lệ"). Đổi tên `main.min_8ed777e0.js`→`main.min_b6dc805e.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c`/`php -l` qua được.
 
 Lưu ý: đây là sửa ở phía CLIENT (game), không phải server Lua - không cần restart GameWorld, chỉ cần người chơi tải lại trang (xoá cache) để nhận bản JS mới.
+
+**Việc CÒN TỒN ĐỌNG từ mục này**: người dùng đã lỡ bấm mua thử Thẻ Tháng Nguyên Bảo TRƯỚC KHI có bản vá trên (tức là vẫn dùng `showReChargeInfo(30)` cũ, chỉ nhận 3000 nguyên bảo, chưa kích hoạt được thẻ tháng thật) và bản thông báo/mail xác nhận đã bị đóng nên không còn xem lại được. Người dùng dự định mai mốt tạo nhân vật mới để test lại từ đầu với bản vá đã sửa. Không cần hành động gì thêm từ phía tôi cho việc này - chỉ ghi chú lại theo yêu cầu để không bị quên ngữ cảnh.
+
+## 21. Chỉnh vị trí 1 số nhãn trong màn "Thần Trang" (nâng cấp trang bị cam) bị che/tràn chữ (2026-07-06)
+
+Người dùng gửi ảnh chụp màn "封神" (Thần Trang - tab đầu trong màn Welfare/福利, dùng skin `SkinOrangeEquip` + `GrewupOrangePanel`), báo 2 vấn đề:
+
+1. Link "Nhận Tinh Thể Thần Trang" (nút `getTreasureBtn`) đang nằm CÙNG HÀNG bên phải nút "Nâng Cấp" (`horizontalCenter=192, bottom=6` so với nút `executeBtn` đặt `horizontalCenter=0, bottom=0` trong cùng 1 group cao 102px) - muốn chuyển xuống dưới nút, vào khoảng trống giữa nút "Nâng Cấp" và hàng tab "Thần Trang/Chí Thánh/Vô Cực" phía dưới.
+2. Nhãn tên trang bị phía trên 2 icon so sánh trước/sau (`curName`="Sương Nguyệt Thánh Tán", `nextName`="Trường Không Thánh Trang"...) là `<Label>` không giới hạn `width`, chữ dài tràn ra ngoài 2 bên màn hình, mất chữ. Cần cho xuống 2 dòng và canh giữa đúng theo icon bên dưới nó.
+
+**Đã sửa** (cả trong file nguồn `resource/exml/OrangeEquipSkin.exml` + `resource/exml/GrewupOrangePanel.exml` để đối chiếu sau này, VÀ trong file thật được nạp lúc chạy game `js/default.thm.js` - vì exml chỉ là source tham khảo, game load skin đã biên dịch sẵn trong `default.thm.js`):
+- `getTreasureBtn`: đổi `horizontalCenter` từ `192`→`0` (canh giữa theo nút Nâng Cấp thay vì lệch phải), `bottom` từ `6`→`-70` (đẩy xuống dưới, ra khỏi vùng 102px chứa nút, vào khoảng trống phía dưới nút trước khi tới hàng tab).
+- `curName`/`nextName`: thêm `width="180" wordWrap="true" multiline="true"` (theo đúng pattern đã dùng ở nhiều skin khác trong repo, ví dụ `LiLianTipsSkin.exml`), giữ nguyên `textAlign="center"` có sẵn để chữ tự xuống dòng và canh giữa trong khung 180px thay vì tràn ra ngoài; chỉnh `y` từ `54`→`40` (nhích lên 1 chút để có đủ chỗ cho 2 dòng trước khi chạm icon bên dưới ở y=110).
+- Không đụng tới `SkinLegendEquip` (tab "Chí Thánh") dù có `getTreasureBtn` tương tự - người dùng chỉ báo màn "Thần Trang", nếu tab Chí Thánh/Vô Cực cũng bị lỗi tương tự thì báo lại để sửa tiếp.
+
+**Lưu ý quan trọng - đây là ước lượng, chưa có cách render/xem trực tiếp Egret canvas từ môi trường này**: các con số `bottom=-70`, `width=180`, `y=40` là suy luận dựa trên kích thước các phần tử lân cận đọc được từ code (group cao 102px, icon bắt đầu ở y=110, v.v...), KHÔNG phải test trực quan. Nhờ người dùng chụp lại màn hình sau khi cập nhật để tôi tinh chỉnh thêm nếu vị trí chưa đẹp.
+
+Đổi tên `default.thm_d927d154.js`→`default.thm_6a726144.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được.

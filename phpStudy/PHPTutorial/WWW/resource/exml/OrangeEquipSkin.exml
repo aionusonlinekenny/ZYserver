@@ -18,7 +18,7 @@
 		<e:Group id="btnGroup" width="213" height="67" horizontalCenter="0" bottom="0">
 			<e:Button id="executeBtn" label="Nâng cấp" width="213" height="67" y="0" horizontalCenter="0" icon="btn1_2" skinName="SkinBtn7"/>
 		</e:Group>
-		<e:Label id="getTreasureBtn" text="Nhận Tinh Thể Thần Trang" size="20" height="60" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="192" bottom="6" stroke="0" textColor="0x00ff06"/>
+		<e:Label id="getTreasureBtn" text="Nhận Tinh Thể Thần Trang" size="20" height="60" verticalAlign="middle" fontFamily="Microsoft YaHei" horizontalCenter="0" bottom="-70" stroke="0" textColor="0x00ff06"/>
 
 	</e:Group>
 	<e:Component id="grewupPanel" y="120" skinName="GrewupOrangePanel" horizontalCenter="0"/>
