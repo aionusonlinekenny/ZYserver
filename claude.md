@@ -2125,3 +2125,12 @@ Người dùng test và báo: đưa "Nhận Tinh Thể Thần Trang" xuống dư
 Về nhãn tên trang bị (`curName`/`nextName`): giữ nguyên `wordWrap`/`multiline` (2 dòng) nhưng **thu hẹp `width` từ 180 xuống 150** để buộc xuống dòng ngay sau "Thương Nguyệt"/"Trường Không" thay vì để lọt thêm 1-2 ký tự của từ "Thánh" rồi mới ngắt giữa từ (ước lượng theo tỉ lệ ký tự quan sát được từ ảnh chụp trước, vẫn là suy đoán chưa render trực tiếp được).
 
 Sửa đồng bộ ở cả `default.thm.js` (file thật load lúc chạy) lẫn 2 file `.exml` nguồn. Đổi tên `default.thm_6a726144.js`→`default.thm_ea09838b.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
+## 22. Áp dụng tương tự cho tab "Chí Thánh" (2026-07-06)
+
+Người dùng xác nhận mục 21 (tab Thần Trang) đã ổn, chuyển sang tab "Chí Thánh" (skin `SkinLegendEquip`, file nguồn `resource/exml/LegendEquipSkin.exml`) - cùng 2 vấn đề tương tự:
+
+1. Nhãn "Chí Thánh Tiên Binh"/"Chí Thánh Tiên Bào" (2 `<Label>` tĩnh, không phải component tái sử dụng như tab Thần Trang) tràn chữ, cần xuống 2 dòng và canh giữa icon. Khác với tab Thần Trang (dùng `horizontalCenter`), 2 label này định vị bằng `x` tuyệt đối (x=47/471, y=308) ngay dưới icon "3 chuyển" (`legend1`/`legend2`, x=49/473, width=76 → tâm icon ở x≈87/511). Đã thêm `width="150" wordWrap="true" multiline="true" textAlign="center"`, và dời `x` sang `12`/`436` (=tâm icon trừ đi nửa width mới) để label mới vẫn canh giữa đúng theo tâm icon thay vì lệch trái như ban đầu.
+2. Nút `getTreasureBtn` text "Nhận Chí Thánh Ngọc Điệp" → rút ngắn thành **"Nhận Chí Thánh"** (giữ nguyên vị trí `horizontalCenter=192, bottom=6`, không lặp lại sai lầm dời-xuống-dưới của mục 21 vì đã biết nó làm mất chữ).
+
+Sửa ở cả `default.thm.js` (2 hàm `_Label2_i`/`_Label3_i` trong class `SkinLegendEquip`, khác tên hàm so với tab Thần Trang vì đây không phải component tái dùng mà là label tĩnh) lẫn `resource/exml/LegendEquipSkin.exml`. Đổi tên `default.thm_ea09838b.js`→`default.thm_ee4144ca.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được. Vẫn là suy đoán theo tỉ lệ, chưa render trực tiếp được - nhờ người dùng chụp ảnh xác nhận sau khi cập nhật.
