@@ -103,7 +103,7 @@
 		<e:Group id="normal" horizontalCenter="0.5" verticalCenter="136">
 			<e:Button id="upgradeBtn" label="Nâng cấp"  horizontalCenter="-112" skinName="SkinBtn1" scaleX="0.8" verticalCenter="0" scaleY="0.8"/>
 			<e:Image id="btnRedPoint0" source="zjmhongdian" x="132" y="0" visible="false"/>
-			<e:Button id="upgradeBtn0" label="Nâng cấp nhanh" skinName="SkinBtn1"  horizontalCenter="112" verticalCenter="0" scaleX="0.8" scaleY="0.8"/>
+			<e:Button id="upgradeBtn0" label="Tự Nâng Cấp" skinName="SkinBtn1"  horizontalCenter="112" verticalCenter="0" scaleX="0.8" scaleY="0.8"/>
 			<e:Image id="btnRedPoint1" source="zjmhongdian" x="392" y="0" visible="false"/>
 		</e:Group>
 		<e:Group id="upLv" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="135" visible="false">
@@ -112,8 +112,8 @@
 		</e:Group>
 		<e:Group height="89" horizontalCenter="0" scaleX="1" scaleY="1" verticalCenter="-123" width="500" anchorOffsetY="0">
 
-			<e:Label id="curAtt" text="Công kích：800\nCông kích：800201\nCông kích：8000" size="20" textAlign="left" verticalAlign="middle" scaleX="1" scaleY="1" verticalCenter="0" fontFamily="Microsoft YaHei" horizontalCenter="-174.5" textColor="0xffffff"/>
-			<e:Label id="nextAtt" text="Công kích：800\nCông kích：8000\nCông kích：8000" size="20" textAlign="left" verticalAlign="middle" verticalCenter="0" y="0" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" right="0" textColor="0xffffff"/>
+			<e:Label id="curAtt" text="Công kích：800\nCông kích：800201\nCông kích：8000" size="18" textAlign="left" verticalAlign="middle" scaleX="1" scaleY="1" verticalCenter="0" fontFamily="Microsoft YaHei" x="10" width="195" wordWrap="true" multiline="true" textColor="0xffffff"/>
+			<e:Label id="nextAtt" text="Công kích：800\nCông kích：8000\nCông kích：8000" size="18" textAlign="left" verticalAlign="middle" verticalCenter="0" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" x="295" width="195" wordWrap="true" multiline="true" textColor="0xffffff"/>
 			<e:Image id="cursor" source="jiantouyou" verticalCenter="0" horizontalCenter="0"/>
 
 			<e:Image scale9Grid="122,0,380,25" width="600" scaleX="1" scaleY="1" source="shuxingbiankuang_png" horizontalCenter="0" verticalCenter="-104" visible="false"/>

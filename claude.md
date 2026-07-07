@@ -2186,3 +2186,17 @@ Sau khi tăng `width` lên `112` (mục 23.3) để hết cảnh 3 dòng, ngư�
 **Đã sửa**: trả `nameLabel` về đúng thông số của mục 23.1: `size=13, width=74`. Dòng "Tiêu hao" giữ nguyên như mục 23.3 (đã bỏ chữ "Vô Cực", không đổi gì thêm).
 
 Đổi tên `default.thm_f1c61ab2.js`→`default.thm_85e0e333.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
+## 24. Màn "Luyện Trận" (skin `SkinYuPeiNew`): mũi tên đè lên chữ so sánh chỉ số; đổi tên nút "Nâng Cấp Nhanh" → "Tự Nâng Cấp" (2026-07-06)
+
+Người dùng gửi ảnh (IMG_0596) màn "Luyện Trận" (skin `SkinYuPeiNew`, file nguồn `resource/exml/YuPeiNewSkin.exml`), báo cột so sánh chỉ số trước/sau nâng cấp ("Công Kích/Sát Thương Bạo Kích/Cường Độ Bạo Kích") bị lộn xộn, đọc không theo thứ tự, mũi tên ở giữa đè lên chữ. Đồng thời yêu cầu đổi nhãn nút `upgradeBtn0` từ "Nâng Cấp Nhanh" thành "Tự Nâng Cấp".
+
+**Nguyên nhân**: 2 Label `curAtt` (cột "trước") và `nextAtt` (cột "sau") định vị KHÔNG đối xứng nhau — `curAtt` dùng `horizontalCenter="-174.5"` (vị trí cố định), còn `nextAtt` dùng `right="0"` (neo theo mép phải, mép trái thực tế = `chiều rộng nhóm cha (500) - offset right (0) - chiều rộng tự đo của chữ`). Vì cột "sau" thường có số lớn hơn (chuỗi dài hơn) nên `nextAtt` tự đo rộng ra, đẩy mép trái của nó lấn sang trái — đúng vào vị trí mũi tên `cursor` (`horizontalCenter=0`, tức chính giữa nhóm rộng 500px) — gây ra hiện tượng mũi tên đè/cắt ngang chữ "Sát Thương Bạo Kích" ở cột phải. Đây cùng loại lỗi với mục 23 (Label tự đo `width` theo nội dung kết hợp neo theo mép thay vì hộp cố định).
+
+**Đã sửa**: đổi cả 2 Label sang hộp cố định, đối xứng nhau qua tâm: `curAtt` → `x=10, width=195`; `nextAtt` → `x=295, width=195` (chừa khoảng trống ~80px ở giữa, từ 205 đến 295, đủ chỗ cho mũi tên rộng ~70px không bao giờ bị 2 cột lấn vào nữa dù chữ dài ngắn thế nào). Thêm `wordWrap="true" multiline="true"` cho cả 2 (phòng khi 1 dòng số quá dài thì tự xuống dòng 4 thay vì tràn ra ngoài khung), giảm cỡ chữ `20→18` để vừa khung 195px hẹp hơn thoải mái hơn.
+
+Đổi nhãn nút `upgradeBtn0`: `"Nâng cấp nhanh"` → `"Tự Nâng Cấp"` ở `default.thm.js` (giá trị khởi tạo mặc định của nút) và ở `main.min.js` trong hàm `stopOneKyUp_a94` (dòng reset nhãn nút về trạng thái nghỉ sau khi dừng vòng lặp tự nâng cấp — nếu không sửa chỗ này, nút sẽ tự đổi lại nhãn cũ mỗi khi người chơi bấm dừng, lặp lại đúng kiểu lỗi "label không đồng bộ" đã gặp trước đây trong session này).
+
+Sửa đồng bộ ở `default.thm.js` + `resource/exml/YuPeiNewSkin.exml` (nguồn) + `main.min.js`. Đổi tên `default.thm_85e0e333.js`→`default.thm_276d87cb.js` và `main.min_75c0bc4a.js`→`main.min_98adb1e8.js` (cache-bust cả 2 vì cả 2 đều đổi nội dung lần này), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file, `php -l` qua được cho `index.php`, `manifest.json` hợp lệ.
+
+Vẫn là suy đoán vị trí dựa trên đọc code xung quanh, chưa render trực tiếp kiểm chứng được — cần người dùng chụp ảnh xác nhận lại, các lần sửa skin trước trong session này (Thần Trang, Chí Thánh, Vô Cực) đều cần 2-4 vòng chỉnh mới đạt kết quả ổn.
