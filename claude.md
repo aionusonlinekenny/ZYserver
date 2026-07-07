@@ -2217,3 +2217,24 @@ Vì vậy: chỉ có thể mở rộng `curAtt` bằng cách kéo dài **thêm v
 Sửa đồng bộ `default.thm.js` + `resource/exml/YuPeiNewSkin.exml`. Đổi tên `default.thm_276d87cb.js`→`default.thm_b85d904d.js` (cache-bust, chỉ file này đổi nội dung lần này), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
 
 Lần này có tra cứu thêm kích thước thật của icon mũi tên trong atlas thay vì chỉ suy đoán từ code xung quanh, nên độ tin cậy cao hơn các lần trước, nhưng vẫn chưa render trực tiếp được — cần người dùng xác nhận lại bằng ảnh.
+
+## 25. Tab "Đạo Tạng" (skin `Skinheartmethod`): rút gọn "Sát Thương Phần Hỏa", sửa chữ bị cắt "Nhận vật ph", rút gọn tên 5 tab dưới cùng (2026-07-06)
+
+Người dùng xác nhận mục 24/24.1 tạm ổn, chuyển sang màn "Đạo Tạng" (ảnh IMG_0598), báo 3 vấn đề:
+
+1. **"Sát Thương Phần Hỏa"** quá dài khiến dòng so sánh chỉ số (`curAtt0`/`nextAtt0` trong `Skinheartmethod`) tự xuống dòng giữa tên thuộc tính và giá trị (`Sát Thương Phần Hỏa` / `: 20000` tách 2 dòng, đọc rối) — yêu cầu đổi thành "Sát Thương Hỏa".
+
+2. **"Nhận vật ph"** bị cắt cụt (thiếu "ẩm"). Tìm ra nguyên nhân: `getItemTxt0` (Label "Nhận vật phẩm" trong `upInfo` group) có `width="100"` — khác với các Label dùng `textFlow` (curAtt0/nextAtt0, tự động xuống dòng khi tràn), Label này gán trực tiếp qua `.text` nên khi nội dung vượt quá `width` mà không có `wordWrap`, phần chữ thừa bị CẮT hẳn (không hiện, không tràn ra ngoài) thay vì tự xuống dòng — cùng cơ chế "text bị cắt vì width hẹp + không wordWrap" đã gặp nhiều lần trong session này.
+
+3. **Dãy 5 tab dưới cùng** ("Ngự Khí", "Luyện Trận", "Đạo Tạng", "Vạn Thú Ngự Sứ", "Long Nguyên") hiển thị dính chữ vào nhau ("Đạo TạngVạn Thú NgựLong Nguyên"). Tìm ra nguyên nhân: đây là `eui.TabBar` với `dataProvider={viewStack}` (định nghĩa trong `TreasureWinSkin.exml`) — nhãn mỗi tab lấy trực tiếp từ thuộc tính `name` của panel con tương ứng trong `ViewStack`. 4/5 tên đã gọn (2 từ), riêng "Vạn Thú Ngự Sứ" (gán cho `shenshouPanel`) dài 4 từ, vượt quá độ rộng nút tab khiến chữ tràn/đè sang nút bên cạnh.
+
+**Nguyên nhân gốc chung của cả 3 vấn đề**: đều là các trường hợp "hộp chữ cố định (width nút hoặc box) không theo kịp độ dài chữ tiếng Việt dịch ra dài hơn bản gốc" — đúng loại lỗi lặp lại xuyên suốt session này, khác nhau ở chỗ xử lý khi tràn (tự xuống dòng / cắt chữ / đè sang ô bên cạnh) tùy loại control.
+
+**Đã sửa**:
+- Đổi chuỗi `"Sát Thương Phần Hỏa"` → `"Sát Thương Hỏa"` ở nơi định nghĩa tên gốc cho thuộc tính này trong `main.min.js` (hàm tra tên theo `AttributeType.atZhuiMingVal`, dùng chung cho MỌI nơi hiển thị thuộc tính này trong toàn bộ game, không riêng màn Đạo Tạng) — nhờ đổi ở đúng 1 chỗ nguồn nên tự động áp dụng đồng bộ mọi nơi. Đồng thời đổi luôn 111+110+1 chỗ chuỗi này bị "đóng cứng" sẵn trong mô tả trang bị ở `resource/config/config.json`, `resource/config1/config0.json`, `resource/config1/config6.json` (những chuỗi desc này không đi qua hàm tra tên ở trên, phải sửa trực tiếp) để đồng bộ toàn game, tránh tái diễn khi người dùng gặp lại chữ cũ ở màn khác.
+- Tăng `width` của `getItemTxt0` từ `100` lên `140` (đủ chỗ cho "Nhận vật phẩm" ở cỡ chữ 20 không bị cắt, đã kiểm tra không đụng nút "Tu luyện" bên cạnh hay tràn khỏi khung `upInfo` rộng 600).
+- Đổi `name="Vạn Thú Ngự Sứ"` (gán cho `shenshouPanel` trong `Skinheartmethod`-liên-quan `ViewStack`, cũng là file `TreasureWinSkin.exml`) → `name="Vạn Thú"` (rút còn 2 từ, đồng bộ với 4 tab còn lại).
+
+Sửa đồng bộ `default.thm.js` + `main.min.js` + `resource/exml/heartmethod.exml` (riêng `getItemTxt0`) + `resource/exml/TreasureWinSkin.exml` (dịch nốt cả 5 tên tab từ tiếng Trung gốc "御器/炼阵/道藏/万兽驭使/龙元" sang tiếng Việt đã dùng trong bản compiled — file exml này trước giờ chưa được đồng bộ dịch, chỉ có bản compiled là đã dịch). Đổi tên `default.thm_b85d904d.js`→`default.thm_9be68048.js` và `main.min_98adb1e8.js`→`main.min_a7238c3c.js` (cache-bust cả 2), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file JS, `php -l` qua được, cả 3 file JSON hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt là độ rộng mới của "Nhận vật phẩm" và tên tab "Vạn Thú" có vừa khít không.

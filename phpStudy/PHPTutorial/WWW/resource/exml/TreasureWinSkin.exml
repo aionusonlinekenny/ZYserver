@@ -4,11 +4,11 @@
     <e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
   	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
     <e:ViewStack id="viewStack" width="600" selectedIndex="2" horizontalCenter="0" top="0" bottom="0">
-        <ns1:LongHunWindow id="ShenluPanel" name="御器" skinName="SkinShenluNew" width="600" horizontalCenter="0" height="728" verticalCenter="-57" visible="false"/>
-		<ns1:JadeNewPanelView id="YupeiPanel" name="炼阵" skinName="SkinYuPeiNew" horizontalCenter="0" verticalCenter="-57" height="728" visible="false"/>
-			<ns1:HeartMethodWindow id="HeartPanel" name="道藏"  horizontalCenter="0" width="600" height="728" verticalCenter="-57" skinName="Skinheartmethod"/>
-		<ns1:ShenshouView id="shenshouPanel" name="万兽驭使" skinName="Skinshenshou" anchorOffsetY="0" horizontalCenter="0" height="728" verticalCenter="-57" visible="false"/>
-			<ns1:HunguWindow id="HunguPanel" name="龙元" skinName="Skinhungu" anchorOffsetY="0" top="0" bottom="0" left="0" right="0" visible="false"/>
+        <ns1:LongHunWindow id="ShenluPanel" name="Ngự Khí" skinName="SkinShenluNew" width="600" horizontalCenter="0" height="728" verticalCenter="-57" visible="false"/>
+		<ns1:JadeNewPanelView id="YupeiPanel" name="Luyện Trận" skinName="SkinYuPeiNew" horizontalCenter="0" verticalCenter="-57" height="728" visible="false"/>
+			<ns1:HeartMethodWindow id="HeartPanel" name="Đạo Tạng"  horizontalCenter="0" width="600" height="728" verticalCenter="-57" skinName="Skinheartmethod"/>
+		<ns1:ShenshouView id="shenshouPanel" name="Vạn Thú" skinName="Skinshenshou" anchorOffsetY="0" horizontalCenter="0" height="728" verticalCenter="-57" visible="false"/>
+			<ns1:HunguWindow id="HunguPanel" name="Long Nguyên" skinName="Skinhungu" anchorOffsetY="0" top="0" bottom="0" left="0" right="0" visible="false"/>
     </e:ViewStack>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="98"/>
    <e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0"
