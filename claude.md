@@ -2295,3 +2295,15 @@ Người dùng gửi ảnh (IMG_0602) báo: sau khi canh giữa (mục 26), dòn
 Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml` (dùng `&#10;` thay cho ký tự xuống dòng trong thuộc tính XML). Đổi tên `default.thm_70211a8a.js`→`default.thm_de331a1f.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
 
 Đây là khoảng không gian rất chật (chỉ ước lượng dựa trên các mốc `top` đã biết trong code, chưa render trực tiếp kiểm chứng), cỡ chữ 12 có thể hơi nhỏ so với mong đợi — cần người dùng xác nhận lại bằng ảnh, nếu vẫn chạm khung thuộc tính bên dưới có thể cần giảm thêm hoặc cân nhắc dời cả khung thuộc tính xuống.
+
+### 26.3. Test sau mục 26.2: hết đè chữ nhưng chữ quá nhỏ khó đọc — quay lại neo trái từ icon, cỡ 16, 1 dòng (2026-07-06)
+
+Người dùng gửi ảnh (IMG_0605 + crop cận cảnh IMG_0606) xác nhận: không còn đè chữ "Thú Khải" nữa, nhưng cỡ chữ 12 quá nhỏ khó nhìn. Yêu cầu: cỡ chữ 16, gói gọn 1 dòng, và dòng chữ phải bắt đầu ngay từ icon dấu "!" (như ảnh cận cảnh minh hoạ) thay vì canh giữa màn hình.
+
+**Đã sửa**: bỏ `horizontalCenter="0"` (canh giữa), quay lại neo trái `left="86"` (đúng vị trí icon gốc trước khi sửa ở mục 26) — icon + Label vẫn nằm chung 1 `Group` với `HorizontalLayout`, nên chữ tự động bắt đầu ngay sau icon "!" như yêu cầu. Bỏ ký tự xuống dòng thủ công đã chèn ở mục 26.2, gộp lại thành 1 dòng. Tăng cỡ chữ `12→16`. Tính lại `width`: tra được kích thước thật icon `gantanhao4` trong atlas (`resource/image/common/img_tj5.json`) là `14x20` — nhỏ hơn nhiều so với ước lượng trước đó; với `gap=10`, khoảng trống còn lại từ `left=86` đến mép phải màn hình 600 là `600-86-14-10=490px`, đặt `width="470"` cho Label (chừa dư ~20px) để câu 58 ký tự ở cỡ chữ 16 (~8.3px/ký tự, cần ~480px) vừa đúng 1 dòng mà không chạm mép phải. Giữ `wordWrap`/`multiline` làm lớp phòng hờ — nếu vẫn hơi dư thì tự xuống dòng 2 thay vì tràn mất chữ như bản gốc.
+
+Vì cột item bên trái ("Trắng 1 sao/Thú Khải") kết thúc sớm hơn vị trí `left=86` này (đã xác nhận không đè ở bản gốc trước khi sửa mục 26), và bản gốc trước đây CHỈ lỗi vì câu quá dài (102 ký tự) tràn mép phải chứ không phải lỗi vị trí — nay câu đã rút còn 58 ký tự nên với cùng vị trí neo trái này, tính toán cho thấy đủ chỗ 1 dòng.
+
+Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml`. Đổi tên `default.thm_de331a1f.js`→`default.thm_58d8fc6e.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt là mép phải câu có chạm/tràn khỏi màn hình 600 không.
