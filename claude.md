@@ -2610,3 +2610,19 @@ Người dùng gửi ảnh (IMG_0642) cho thấy sau khi dịch cả cụm sang 
 Đổi tên `default.thm_26a2ce60.js`→`default.thm_4be02d83.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Cần người dùng xác nhận lại bằng ảnh: (1) bố cục cụm Linh Sủng đã về lại như trước mục 39 (không còn lệch/cắt chữ); (2) sau khi xoá cache/dùng tab ẩn danh, khung mô tả đã hết hiện `\n` chưa.
+
+## 41. PHÁT HIỆN QUAN TRỌNG: lỗi "\n" không phải cache trình duyệt — server live (71.31.97.241) KHÔNG đồng bộ đều các thư mục (2026-07-07)
+
+Người dùng gửi ảnh (IMG_0643) sau khi đã revert mục 40, báo bố cục đã đúng lại nhưng "\n" trong khung mô tả VẪN còn y nguyên dù đã được dặn xoá cache/dùng tab ẩn danh ở mục 39. Nghi ngờ giả thuyết "cache trình duyệt" ở mục 39 có thể sai, đã trực tiếp `curl` vào server live `http://71.31.97.241` (không qua trình duyệt, loại trừ hoàn toàn khả năng cache phía client) để kiểm chứng lại từ đầu.
+
+**Bằng chứng cụ thể** (thời điểm kiểm tra ~20:32 GMT ngày 07/07, đối chiếu với lịch sử commit git):
+- `resource/config/config.json` trên server: header `last-modified: Tue, 07 Jul 2026 04:45:23 GMT` — **chưa hề được cập nhật lần nào suốt cả phiên làm việc hôm nay** (mọi commit sửa file này từ mục 35 trở đi, kể cả sau khi đã đổi query-string cache-bust ở mục 39, đều không hề tới được server). Tải trực tiếp file này qua `curl` (bỏ qua trình duyệt hoàn toàn) vẫn cho ra đúng lỗi double-escape `\\n` gốc y hệt trước khi sửa.
+- `js/default.thm_4be02d83.js` (bản mới nhất, vừa push ở mục 40 lúc 20:11 GMT): `last-modified: 20:27:13 GMT` — **đã đồng bộ đúng**, chỉ trễ khoảng 16 phút sau khi push.
+- `js/main.min_1cc6be7e.js` (đáng lẽ phải có từ mục 38, push lúc 19:50 GMT): **trả về 404 — chưa bao giờ được đồng bộ lên server**, dù đã hơn 40 phút trôi qua và đã có thêm 2 commit sau đó.
+- `js/main.min_806bc0b1.js` (bản CŨ hơn, từ mục 37): vẫn còn tồn tại trên server (`last-modified: 19:39:39 GMT`) — nghĩa là `manifest.json` trên server ĐANG trỏ tới bản main.min.js CŨ này thay vì bản mới nhất, trong khi `default.thm.js` cùng lúc lại trỏ đúng bản mới nhất — 2 file trong CÙNG 1 file `manifest.json` bị lệch trạng thái đồng bộ với nhau.
+
+**Kết luận**: hệ thống deploy/đồng bộ từ git repo này lên server live **KHÔNG chạy đồng nhất qua toàn bộ dự án** — có vẻ như `js/` được đồng bộ khá nhanh (trong vòng ~15-40 phút sau khi push) nhưng đôi khi bỏ sót từng file riêng lẻ (`main.min_1cc6be7e.js` bị bỏ sót hoàn toàn dù `default.thm.js` cùng thư mục vẫn đồng bộ đều đặn qua nhiều lượt sau đó), còn `resource/config/` dường như đồng bộ theo lịch RIÊNG, chậm hơn nhiều hoặc đang gặp lỗi — không có lần cập nhật nào suốt hơn 15 tiếng dù nội dung file đã đổi nhiều lần.
+
+**Đây KHÔNG phải lỗi có thể sửa bằng cách thay đổi code trong repo này** — mọi nội dung/logic mình sửa từ mục 35 tới giờ (double-escape `\\n`, các fix bố cục IMG_0630-0633, item name truncate, "Thời gian còn lại"...) đều ĐÚNG và đã nằm sẵn trong git, nhưng phần lớn resource/config CHƯA từng tới được server thật để người dùng thấy. Cơ chế đồng bộ (CI/CD, cron rsync, hay quy trình thủ công nào đó copy từ repo này lên `71.31.97.241`) nằm ngoài phạm vi truy cập của mình trong phiên làm việc này.
+
+**Hành động đề xuất cho người dùng**: cần kiểm tra/liên hệ phía quản lý hạ tầng deploy xem quy trình đồng bộ từ git repo `aionusonlinekenny/zyserver` lên server `71.31.97.241` hoạt động thế nào (chạy tự động theo lịch? theo webhook mỗi lần push? thủ công?), đặc biệt lưu ý: (1) thư mục `resource/config/` có vẻ không được đồng bộ theo cùng lịch với `js/`; (2) từng có ít nhất 1 file JS bị bỏ sót hoàn toàn dù các file khác cùng lượt push vẫn đồng bộ được — có thể do lỗi/timeout khi đồng bộ file lớn, hoặc giới hạn số file mỗi lượt đồng bộ.
