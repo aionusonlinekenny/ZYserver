@@ -2168,3 +2168,13 @@ Người dùng xác nhận: 6 tên vật phẩm hàng dưới đã xuống 2 dò
 - `cost` (nhãn "Tiêu hao"): nguyên nhân có khả năng là `width=140` vẫn đủ chỗ cho chuỗi "Thần Kiếm Vô Cực" nằm gọn 1 dòng ở cỡ chữ 16 (ước lượng trước đó quá rộng tay) - thu hẹp tiếp `width` từ `140` xuống `90` để chắc chắn ép xuống dòng.
 
 Sửa đồng bộ `default.thm.js` + 2 file `.exml`. Đổi tên `default.thm_fe52b2fe.js`→`default.thm_7ddbda66.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
+### 23.3. Cỡ chữ 20 làm tên vật phẩm xuống 3 dòng; rút gọn dòng "Tiêu hao" bằng cách bỏ chữ "Vô Cực" (2026-07-06)
+
+Người dùng báo: sau khi trả cỡ chữ về 20, `width=74` giờ lại quá hẹp khiến 1 số tên vật phẩm xuống **3 dòng** (chữ to hơn cần nhiều chỗ ngang hơn) thay vì 2 - yêu cầu tăng `width` thêm khoảng "3 ký tự". Đồng thời dòng "Tiêu hao [tên vật liệu]: [số lượng]" khi xuống dòng bị vỡ bố cục rất khó nhìn (chữ "Cực" của "Vô Cực" bị tách xuống dòng 2 trong khi ": 0/1" lại nằm ở cuối dòng 1, thứ tự đọc bị đảo lộn) - đề nghị bỏ hẳn chữ "Vô Cực" khỏi dòng "Tiêu hao" để câu ngắn lại, không cần xuống dòng nữa.
+
+**Đã sửa**:
+- `nameLabel` (6 tên vật phẩm): tăng `width` từ `74` lên `112` (~+38px, đúng khoảng 3 ký tự ở cỡ chữ 20) để chữ đủ chỗ xuống đúng 2 dòng thay vì 3. Lưu ý: 112px rộng hơn khung item (88px) nên có thể lấn nhẹ sang khoảng trống 2 bên item liền kề (gap giữa các item chỉ 2px) - chấp nhận đánh đổi này theo yêu cầu người dùng, ưu tiên không vỡ dòng.
+- Dòng "Tiêu hao": thay vì tiếp tục vật lộn với việc xuống dòng, sửa thẳng ở `main.min.js` chỗ gán `this.cost.text=h.name` (2 chỗ, ứng với 2 nhánh code khi vật phẩm đang có thể nâng cấp) thành `h.name.replace("Vô Cực","").replace(/^\s+|\s+$/g,"")` - loại bỏ cụm "Vô Cực" (thừa vì cả tab này vật phẩm nào cũng là "Vô Cực") khỏi tên hiển thị ở dòng Tiêu hao, kèm trim khoảng trắng thừa sau khi cắt. Nhờ vậy câu ngắn hẳn lại (ví dụ "Hộ Uyển" thay vì "Hộ Uyển Vô Cực"), nhiều khả năng đủ ngắn để không cần xuống dòng nữa mà không cần đoán thêm về `width`.
+
+Đổi tên `main.min_e6cddaaa.js`→`main.min_75c0bc4a.js` và `default.thm_7ddbda66.js`→`default.thm_f1c61ab2.js` (cache-bust cả 2), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
