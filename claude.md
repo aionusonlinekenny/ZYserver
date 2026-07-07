@@ -2626,3 +2626,15 @@ Người dùng gửi ảnh (IMG_0643) sau khi đã revert mục 40, báo bố c�
 **Đây KHÔNG phải lỗi có thể sửa bằng cách thay đổi code trong repo này** — mọi nội dung/logic mình sửa từ mục 35 tới giờ (double-escape `\\n`, các fix bố cục IMG_0630-0633, item name truncate, "Thời gian còn lại"...) đều ĐÚNG và đã nằm sẵn trong git, nhưng phần lớn resource/config CHƯA từng tới được server thật để người dùng thấy. Cơ chế đồng bộ (CI/CD, cron rsync, hay quy trình thủ công nào đó copy từ repo này lên `71.31.97.241`) nằm ngoài phạm vi truy cập của mình trong phiên làm việc này.
 
 **Hành động đề xuất cho người dùng**: cần kiểm tra/liên hệ phía quản lý hạ tầng deploy xem quy trình đồng bộ từ git repo `aionusonlinekenny/zyserver` lên server `71.31.97.241` hoạt động thế nào (chạy tự động theo lịch? theo webhook mỗi lần push? thủ công?), đặc biệt lưu ý: (1) thư mục `resource/config/` có vẻ không được đồng bộ theo cùng lịch với `js/`; (2) từng có ít nhất 1 file JS bị bỏ sót hoàn toàn dù các file khác cùng lượt push vẫn đồng bộ được — có thể do lỗi/timeout khi đồng bộ file lớn, hoặc giới hạn số file mỗi lượt đồng bộ.
+
+## 42. Sau khi hết "\n", lộ ra lỗi bố cục thật của khung mô tả `Explain1` (2026-07-07)
+
+Người dùng gửi ảnh (IMG_0644) xác nhận sau khi server đồng bộ xong (mục 41), lỗi `\n` đã hết — nhưng giờ thấy rõ khung mô tả ("Thu thập đủ 5 Linh Vật có thể dung hợp triệu hoán Linh Thú...") có 1 khoảng trắng thừa bên trái, đoạn chữ không tận dụng hết bề rộng khung.
+
+**Nguyên nhân**: nhãn `Explain1` (skin `ring.exml`) có `width="456"` — TRÙNG với bề rộng khung cha `aciveGroup` (`width="456"`) — nhưng lại đặt thêm `horizontalCenter="90"`, đẩy tâm nhãn lệch phải 90px so với tâm khung cha. Vì nhãn rộng bằng đúng khung cha, việc lệch tâm 90px khiến mép trái nhãn tụt vào trong 90px (bỏ trống 90px bên trái, đúng như ảnh chụp) đồng thời mép phải tràn ra ngoài khung cha 90px (không thấy rõ trong ảnh vì bị các phần tử khác che/cắt). `textAlign="left"` khiến chữ bắt đầu từ mép trái CỦA NHÃN (đã bị đẩy vào trong), không phải mép trái của khung cha — tạo đúng hiệu ứng "còn dư lề trái, chữ không dời qua đó" người dùng mô tả.
+
+**Đã sửa**: đổi `horizontalCenter` của `Explain1` từ `90`→`0` — khi đó nhãn khớp khít đúng khung cha (0 tới 456), chữ bắt đầu ngay từ mép trái thật, không còn dư khoảng trắng, cũng không còn tràn phải.
+
+Sửa đồng bộ `ring.exml` và `default.thm.js` (hàm `Explain1_i` bên trong class `window.ring`). Đổi tên `default.thm_4be02d83.js`→`default.thm_309e37ab.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+**Lưu ý về deploy**: dựa trên phát hiện mục 41, lần này CHỈ sửa `default.thm.js`/`ring.exml` (không đụng `resource/config/`) nên nhiều khả năng sẽ đồng bộ nhanh (trong khoảng 15-40 phút) giống các lần sửa `js/` trước đó — nhưng vẫn cần người dùng xác nhận lại bằng ảnh sau khi đợi 1 lúc, vì đã có tiền lệ 1 file JS từng bị bỏ sót hoàn toàn không rõ lý do.
