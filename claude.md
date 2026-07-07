@@ -2594,3 +2594,19 @@ Người dùng gửi ảnh (IMG_0638) cho thấy khung mô tả kỹ năng ("Thu
 Đổi tên `default.thm_7c50e073.js`→`default.thm_26a2ce60.js` (cache-bust, `main.min.js` không đổi lần này nên giữ nguyên `main.min_1cc6be7e.js`), cập nhật `manifest.json`/`index.php`. `node -c` qua, `php -l` qua, tất cả file JSON liên quan (`manifest.json`, `default.res.json`, `default.res3.json`, `default.res4.json`, `default.resPublishReplace.json`) hợp lệ qua `json.load()`.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xoá cache trình duyệt hoặc tải lại bằng tab ẩn danh để xác nhận: (1) khung mô tả đã xuống dòng đúng, không còn hiện `\n`; (2) độ dịch trái `-100px` cho cả cụm đã vừa mắt chưa hay cần chỉnh thêm.
+
+## 40. Revert phần dịch trái ở mục 39 — gây lệch nặng do hiểu sai cơ chế `scrollEnabled` (2026-07-07)
+
+Người dùng gửi ảnh (IMG_0642) cho thấy sau khi dịch cả cụm sang trái `-100px` (mục 39), giao diện bị lệch nặng hơn hẳn: khung mô tả bị CẮT MẤT chữ đầu dòng bên trái ("nh Thú" thay vì "Linh Thú", "ử 8 thu thập" thay vì "Ngày thứ 8 thu thập"...), còn cột 6 icon Linh Vật (vốn dán sát mép phải) lại trôi vào giữa màn hình, đè lên vùng mô tả — tệ hơn hẳn bản gốc.
+
+**Nguyên nhân sai lầm**: Group cha bị dịch (`<e:Group width="600" height="800" ... scrollEnabled="true">`) có `scrollEnabled="true"` — nghĩa là Egret áp 1 khung nhìn (viewport) CỐ ĐỊNH đúng bằng kích thước khai báo (600×800) lên nội dung bên trong, giống 1 cửa sổ cắt cảnh (mask), KHÔNG PHẢI 1 canvas tự do có thể "trượt" cả khối đi mà vẫn hiện đủ nội dung. Đổi `horizontalCenter` của Group này chỉ **xê dịch vị trí neo của nội dung bên trong so với khung nhìn cố định** — phần nào bị đẩy ra ngoài biên khung nhìn (bên trái, do khung mô tả vốn đã neo gần mép trái qua `left=10`) sẽ bị CẮT MẤT hẳn, không phải "trượt ra rồi vẫn thấy được". Đây là góc nhìn sai — không giống các Group thường (không `scrollEnabled`) đã dùng an toàn ở những skin khác trong phiên làm việc này.
+
+**Đã revert hoàn toàn**: trả `horizontalCenter` của Group này về lại `0` (nguyên bản) trong cả `ring.exml` và `default.thm.js` (hàm `_Group7_i` bên trong class `window.ring`).
+
+**Về yêu cầu gốc "dời cả cụm sang trái"**: KHÔNG thử đoán lại lần 2 trong lượt sửa này — vì phép thử vừa rồi đã cho thấy dịch chuyển mù (không nhìn thấy kết quả trực tiếp) trên 1 container có `scrollEnabled` rủi ro cao hơn hẳn so với style/layout thông thường (label, button, image tĩnh). Nếu người dùng vẫn muốn thu hẹp khoảng trống giữa khung mô tả và cột icon, cách an toàn hơn nhiều là dời RIÊNG cột icon (`menuScroller`/`menuList`, đang neo `right="8"`) lại gần khung mô tả hơn (tăng giá trị `right`), thay vì dịch chuyển cả Group cha có viewport cố định — nhưng cần người dùng xác nhận rõ hướng và mức độ trước khi thử tiếp, tránh lặp lại lỗi vừa rồi.
+
+**Về lỗi "\n" vẫn còn hiện trong ảnh IMG_0642**: kiểm tra lại `default.res3.json` — query-string cache-bust `config/config.json?1783454123` từ mục 39 vẫn còn nguyên, chưa bị mất. Khả năng cao người dùng chưa thực sự xoá cache/dùng tab ẩn danh để tải lại như đã dặn ở mục 39 (ảnh IMG_0642 có thể chụp trước khi làm bước đó, hoặc chỉ tải lại thường mà trình duyệt vẫn dùng cache). Chưa có thay đổi thêm nào cho phần này trong lượt sửa này — cần người dùng thử lại đúng cách (xoá cache hẳn / tab ẩn danh) trước khi kết luận cache-bust chưa hiệu quả.
+
+Đổi tên `default.thm_26a2ce60.js`→`default.thm_4be02d83.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Cần người dùng xác nhận lại bằng ảnh: (1) bố cục cụm Linh Sủng đã về lại như trước mục 39 (không còn lệch/cắt chữ); (2) sau khi xoá cache/dùng tab ẩn danh, khung mô tả đã hết hiện `\n` chưa.
