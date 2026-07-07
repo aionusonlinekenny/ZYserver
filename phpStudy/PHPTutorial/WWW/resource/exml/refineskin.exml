@@ -24,7 +24,7 @@
 	</e:Group>
 	<e:Button id="upGradeBtn" label="Tụ Linh"  horizontalCenter="0" skinName="SkinBtn6" width="213" height="67" icon="btn1_2" bottom="3"/>
 	<e:Button id="upGradeBtn0" label="Tinh luyện nhanh" skinName="SkinBtn1"  x="285" y="36" visible="false"/>
-	<e:Label id="getItemTxt" text="Nhận vật phẩm" size="20"  horizontalCenter="170" width="100" height="20" verticalAlign="middle" textAlign="center" anchorOffsetY="0" y="72" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+	<e:Label id="getItemTxt" text="Nhận vật phẩm" size="20"  horizontalCenter="170" width="140" wordWrap="true" multiline="true" verticalAlign="middle" textAlign="center" anchorOffsetY="0" y="72" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 </e:Group>
 <e:Group id="itemGroup"   horizontalCenter="0" height="505" width="560" y="90">
 	<e:Group id="item0" width="76" height="76" y="430" x="242">

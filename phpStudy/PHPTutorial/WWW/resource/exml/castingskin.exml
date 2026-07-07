@@ -20,7 +20,7 @@
 			</e:layout>
 		</e:Group>
 		<e:Button id="upGradeBtn" label="Tinh luyện" horizontalCenter="0" skinName="SkinBtn6" icon="btn1_2" width="213" height="67" bottom="3"/>
-		<e:Label id="getItemTxt" text="Nhận vật phẩm" size="20" horizontalCenter="170" width="100" verticalAlign="middle" textAlign="center" y="72" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="getItemTxt" text="Nhận vật phẩm" size="20" horizontalCenter="170" width="140" wordWrap="true" multiline="true" verticalAlign="middle" textAlign="center" y="72" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 	</e:Group>
 	<!--<e:Group id="powerGroup" y="140" horizontalCenter="0">
 		<e:Image source="zhandoulibg" x="2" y="10" />

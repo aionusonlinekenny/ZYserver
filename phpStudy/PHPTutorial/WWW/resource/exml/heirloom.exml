@@ -31,7 +31,7 @@
 		</e:Group>
 
 		<e:Button id="jihuo" label="Nâng sao nhanh" horizontalCenter="0" icon="btn1_2" bottom="-25" skinName="SkinBtn7"/>
-		<e:Label id="getItemTxt" text="Hợp thành Vũ khí" size="20"  fontFamily="Microsoft YaHei" textColor="0x00ff06" textAlign="left" stroke="0" y="64" x="437"/>
+		<e:Label id="getItemTxt" text="Hợp thành Vũ khí" size="20"  fontFamily="Microsoft YaHei" textColor="0x00ff06" textAlign="left" stroke="0" y="64" x="320" width="160" wordWrap="true" multiline="true"/>
 
 	</e:Group>
 	<e:Group width="413.33" height="125" horizontalCenter="-0.5" verticalCenter="226" anchorOffsetX="0">

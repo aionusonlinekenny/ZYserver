@@ -93,7 +93,7 @@
 			<ns1:PowerPanel id="powerPanel0" skinName="SkinPowerPanel"/>
 		</e:Group>
 		<e:Button id="executeBtn0" label="Long Nguyên Giác Tỉnh" skinName="SkinBtn0" icon="gongmingBtn_png" horizontalCenter="-106.5" bottom="10"/>
-		<e:Label id="getItemTxt0" text="Nhận vật phẩm" size="20" bottom="0" height="60" verticalAlign="middle" width="100" textAlign="center" horizontalCenter="215" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Label id="getItemTxt0" text="Nhận vật phẩm" size="20" bottom="0" height="60" verticalAlign="middle" width="140" wordWrap="true" multiline="true" textAlign="center" horizontalCenter="215" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		<e:Button id="xiangxishuxing" label="" horizontalCenter="147" top="67">
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="tongyongxiangxi"/>

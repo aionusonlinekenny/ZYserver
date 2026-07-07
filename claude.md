@@ -2398,3 +2398,31 @@ Người dùng gửi ảnh (IMG_0619) màn "Thiên Thư" (bánh xe 8 ô kỹ nă
 Sửa đồng bộ `default.thm.js` (`_Group3_i`) + `resource/exml/MijiPanelSkin.exml`. Đổi tên `default.thm_d76b93e8.js`→`default.thm_7459ab38.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh.
+
+## 31. Áp dụng hàng loạt các lỗi tương tự cho 5 skin: "Long Nguyên", "Chu Tiên", "Luyện Khí" (2 tab), "Tiên Cương" (2026-07-07)
+
+Người dùng gửi 5 ảnh, yêu cầu sửa các lỗi "tương tự" các lỗi đã gặp trước đó (chữ bị cắt/xuống dòng do khung hẹp, tràn lệch vị trí...), riêng ảnh cuối ("Tiên Cương") có mô tả cụ thể: chữ "Tiêu hao" xuống dòng dù bên trái còn trống nhiều.
+
+### 31.1. "Long Nguyên" (skin `Skinhungu`) — "Nhận vật phẩm" xuống dòng
+
+Cùng lỗi mẫu đã sửa ở mục 25/26: `getItemTxt0` width=100 quá hẹp. Tăng lên `width=140` + thêm `wordWrap`/`multiline` phòng hờ, giữ nguyên `horizontalCenter=215` (đã kiểm tra còn đủ margin trong khung cha rộng 600).
+
+### 31.2. "Chu Tiên" (skin `Skinheirloom`, class `HeirloomWindow`) — 3 lỗi khác nhau
+
+1. **Chữ số liệu đè lên chữ mô tả** ("Công kích:5400" dính liền): tìm ra 6 cặp nhãn thuộc tính (`desc0`/`attr0` … `desc5`/`attr5`) đều dùng toạ độ CỐ ĐỊNH `attrN.x=70` bất kể `descN` dài ngắn thế nào — với các nhãn tiếng Việt như "Kháng phép:"/"Vật Kháng:" (dài hơn 70px), số liệu đè lên đúng phần cuối chữ mô tả. Phát hiện cặp thứ 7 (`desc6`/`attr6`, "Tất cả thuộc tính linh kiện...") KHÔNG bị lỗi vì code đã tính động: `attr6.x = desc6.x + desc6.width + 20`. Áp dụng đúng công thức đó cho cả 6 cặp còn lại — thêm đoạn `this.attrN.x = this.descN.width + 20` (N=0..5) ngay sau khi gán `text` cho từng cặp trong `main.min.js`, để vị trí số liệu luôn tự bám theo độ dài chữ mô tả thực tế thay vì số cố định.
+2. **"Vũ KhíTất cả thuộc tính bộ phận" dính liền chữ**: tìm ra `this.desc6.text = l + "Tất cả thuộc tính bộ phận"` (l = tên bộ phận trang bị như "Vũ Khí"/"Hộ Uyển"/"Giới Chỉ"...) nối chuỗi không có khoảng cách — cùng loại lỗi "Trắng 1 saoThú Đan" đã gặp ở mục 26.1. Thêm `" - "` làm dấu phân cách: `l+" - Tất cả thuộc tính bộ phận"`.
+3. **"Hợp Thành Đ..." bị cắt mép phải**: nhãn `getItemTxt` định vị `x=437` trong khung cha `upInfo` rộng 500 — với chữ "Hợp Thành Đạo Cụ" (~150px) thì vượt hẳn ra ngoài khung cha lẫn mép phải màn hình 600. Dời về `x=320` + thêm `width=160, wordWrap, multiline` phòng hờ.
+
+### 31.3. "Luyện Khí" tab "Tinh Luyện" (skin `SkinCasting`) và tab "Tụ Linh" (skin `SkinRefine`) — "Nhận vật phẩm" xuống dòng/bị cắt
+
+Cùng lỗi mẫu `getItemTxt`/`getItemTxt0` width=100 quá hẹp ở CẢ HAI skin riêng biệt (2 tab dùng 2 file skin khác nhau, không dùng chung). Cả hai đều nằm trong khung `upInfo` rộng 560, `horizontalCenter=170` còn dư nhiều margin nên chỉ cần tăng `width` lên `140` + thêm `wordWrap`/`multiline`, không cần đổi vị trí.
+
+### 31.4. "Tiên Cương" (skin `SkinNeiGong`) — "Tiêu hao:" xuống dòng dù còn trống bên trái
+
+Nhãn `cosInfodesc` ("Tiêu hao:") có `width="46"` — quá hẹp so với chữ cần ~85px, gây xuống dòng "Tiêu"/"hao:". Nhãn này nằm trong 1 `Group` dùng `HorizontalLayout` (tự động xếp icon + số liệu bên cạnh theo chiều ngang), nên chỉ cần tăng `width` lên `90` là đủ — `HorizontalLayout` sẽ tự đẩy icon đồng tiền + số liệu bên cạnh dịch sang phải theo, không cần chỉnh toạ độ tay.
+
+Cả 5 mục trên sửa đồng bộ `default.thm.js` + các file `.exml` tương ứng (`hunguSkin.exml`, `castingskin.exml`, `refineskin.exml`, `NeiGongSkin.exml`; riêng phần `main.min.js` của mục 31.2 không có `.exml` tương ứng vì là logic tính toán lúc chạy, không phải giá trị mặc định của skin). Đổi tên `default.thm_7459ab38.js`→`default.thm_7fabbd3e.js` và `main.min_d847a680.js`→`main.min_c1727d76.js` (cache-bust cả 2), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file, `php -l` qua được, `manifest.json` hợp lệ.
+
+Không đụng tới các chữ Hán còn sót (tiêu đề "龙元"/"诛仙"/"炼器"/"仙罡", icon "龙元觉醒"/"特殊觉醒") vì người dùng không yêu cầu trong lần này — có thể là text hoặc ảnh, chưa xác minh.
+
+Vẫn chưa render trực tiếp kiểm chứng được cho cả 5 mục — cần người dùng xác nhận lại bằng ảnh cho từng màn.
