@@ -2475,3 +2475,56 @@ Người dùng gửi ảnh (IMG_0628) chỉ ra dòng thông báo cuộn (kiểu 
 **Lưu ý phạm vi**: file `item.config` này còn có 1 bảng riêng cho MÔ TẢ vật phẩm (khoá `d<id>`, ví dụ `d200332`/`d200333`...) — hoàn toàn chưa đụng tới trong lần sửa này (không nằm trong yêu cầu, khối lượng dịch lớn hơn nhiều, cần làm riêng nếu người dùng cần).
 
 Đây là thay đổi DATA server-side thuần (không phải code logic), không cần build/cache-bust như các lần sửa client JS trước — chỉ cần server nạp lại file cấu hình này (thường là restart hoặc GM reload config) để có hiệu lực. Đã kiểm tra bằng `lua -e "loadfile(...)"`: file gốc TRƯỚC khi sửa đã có sẵn 1 lỗi cú pháp ở dòng cuối (`unexpected symbol near <eof>`, không do lần sửa này gây ra — xác nhận bằng cách so sánh với bản gốc qua git, lỗi giống hệt cả về vị trí lẫn nội dung); đối chiếu số lượng dấu ngoặc kép/dấu phẩy/số dòng giữa bản gốc và bản đã sửa hoàn toàn khớp nhau, xác nhận chỉ có nội dung chuỗi thay đổi, không đụng cấu trúc file.
+
+## 35. Sửa hàng loạt lỗi bố cục 4 màn: Linh Sủng, Điểm Danh, Đăng Nhập Thưởng, Đặc Quyền Tháng (2026-07-07)
+
+Người dùng gửi 4 ảnh (IMG_0630-0633) báo một loạt lỗi bố cục/dịch thuật khác nhau trên 4 màn hình:
+
+**IMG_0630 (Linh Sủng)**: mô tả hiện literal `\n` thay vì xuống dòng thật; câu "Ngày thứ 8 thu thập đủ 5 Linh Vật rồi triệu hoán" bị lệch trái mất chữ.
+
+- **Lỗi `\n` literal — phát hiện đây là lỗi HỆ THỐNG, không chỉ riêng 1 chỗ**: file JSON cấu hình dùng double-escape `\\n` (2 dấu gạch chéo ngược + n) trong source thay vì `\n` (1 dấu) — khi `JSON.parse` chạy, `\\n` cho ra chuỗi 2 ký tự `\` + `n` hiển thị y nguyên trên màn hình thay vì ký tự xuống dòng thật. Quét toàn bộ thư mục `resource/` tìm lỗi này, phát hiện và sửa **2534 chỗ** trên 6 file: `config/config.json` (1267), `config1/config0.json` (947), `config1/config2.json` (6), `config1/config4.json` (74), `config1/config5.json` (7), `config1/config6.json` (233). Xác minh lại bằng `json.loads()` sau khi sửa — tất cả hợp lệ. Đây là lỗi ảnh hưởng rất rộng (mô tả vật phẩm, sự kiện...) trên toàn bộ game, không riêng gì màn Linh Sủng.
+- **Lỗi lệch trái/mất chữ**: nhãn `openDesc` (skin `ring.exml`, class `SkinRingFlowDisplayer`/`window.ring`) không có `width`/`wordWrap` nên tự giãn theo nội dung — câu dài bị tràn ra ngoài khung `aciveGroup` (rộng 456px). Thêm `width=420, wordWrap=true, multiline=true`, giảm cỡ chữ 26→22 để vừa khung.
+
+**IMG_0631 (Điểm Danh)**: tên vật phẩm trong ô thưởng chồng chéo lên nhau; dòng "Đã tích lũy điểm danh (X/Y) ngày, điểm danh thêm N ngày nhận thưởng" đè lên nút "Nhận thưởng".
+
+- Nhãn `dayReardText` (skin `DailyCheckInPanelSkin.exml`) không có `width`/`wordWrap` → thêm `width=235` (vừa đúng khoảng trống giữa icon thưởng bên trái và nút bên phải), `wordWrap=true`, `multiline=true`.
+- Phát hiện thêm lỗi nối chuỗi thiếu dấu cách trong `main.min.js`: `"điểm danh thêm"+n+"ngày|nhận thưởng."` → `"điểm danh thêm "+n+" ngày nhận thưởng."` (thiếu khoảng trắng quanh biến số ngày).
+
+**IMG_0631 + IMG_0632 (tên vật phẩm chồng chéo)**: nguyên nhân gốc chung cho cả 2 màn là component `SkinItem3` (`ItemSkin3.exml`) — dùng chung cho rất nhiều lưới vật phẩm trong game (điểm danh, đăng nhập thưởng...). Nhãn `nameTxt` không có `width` → tự giãn theo độ dài tên, đè lên ô bên cạnh khi tên dài. Sửa: thêm `width=74` (đúng bề rộng ô), giảm cỡ chữ 16→13, thêm `wordWrap=true, multiline=true`, tăng `height` 16→28 và chỉnh `y` 82→78 để chừa chỗ cho 2 dòng — theo đúng kiểu người dùng yêu cầu ("name…" khi quá dài, wrap thay vì tràn). Egret không hỗ trợ truncate-ellipsis dựng sẵn nên dùng wrap 2 dòng thay thế (đã áp dụng thành công kiểu này ở mục 23.1 trước đó).
+
+**IMG_0632 (Đăng Nhập Thưởng)**: dòng "thứ 七Chi tiết thưởng ngày" hiện số Hán tự (七 = 7) thay vì số Ả Rập, câu văn cũng sai thứ tự.
+
+- Gốc rễ: hàm `TextFlowMaker.getCStr(e)` tra cứu `numberList=["零","一","二",...,"二十"]` (mảng số đếm Hán tự CHƯA DỊCH) — dùng chung cho 4 nơi gọi trong code. **3/4 nơi gọi đã dùng đúng văn phong Việt** (`"Ngày "+getCStr(t)+"\nChi tiết thưởng"`, vẫn bị lộ số Hán vì lỗi nằm trong chính hàm `getCStr`), riêng 1 nơi (class `SevenDayLogView`, màn đăng nhập thưởng 14 ngày, skin `SkinAct14log`) còn sai cả cấu trúc câu: `"  thứ "+getCStr(t+1)+"Chi tiết thưởng ngày"` (thiếu `\n`, đảo ngược thứ tự).
+- **Sửa `getCStr` tận gốc** (`t.getCStr=function(e){return t.numberList[e]?e+"":""}`) — trả về số Ả Rập thay vì tra bảng số Hán tự, tự động sửa luôn cả 4 nơi gọi cùng lúc (không cần sửa riêng từng chỗ).
+- Chuẩn hoá câu văn của `SevenDayLogView` về đúng dạng `"Ngày "+getCStr(t+1)+"\nChi tiết thưởng"` khớp 3 chỗ còn lại.
+- Mở rộng khung nhãn `dayaward` (skin `act14logSkin.exml`) từ `width=78, size=18` (1 dòng) → `width=150, size=16, wordWrap=true, multiline=true` (2 dòng) để câu "Ngày N / Chi tiết thưởng" không bị mất nghĩa.
+
+**IMG_0633 (Đặc Quyền Tháng)**: "Thời gian còn lại: 29 ngày" đè lên nút "Đã nhận".
+
+- Class `FranchiseWindow` (skin `SkinSpecialCard`/`SpecialCardSkin.exml`) — nhãn `leftTime` (`verticalCenter=230`) nằm quá gần nút `btn1` (`verticalCenter=283`, không khai báo `width`/`height` cụ thể nên kích thước thực tế theo ảnh nền có thể lớn hơn ước tính, gây đè). Dời `leftTime` xuống dưới nút: `verticalCenter` 230→345, giữ nguyên `horizontalCenter=0` (đã canh giữa sẵn).
+
+Sửa đồng bộ cả `default.thm.js` lẫn `.exml` tương ứng cho mọi thay đổi skin, `main.min.js` cho các thay đổi logic/nối chuỗi. Đổi tên `default.thm_4fb42402.js`→`default.thm_3935788a.js`, `main.min_11a0cbdb.js`→`main.min_875af148.js` (cache-bust cả 2), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file JS, `php -l` qua được, `manifest.json` hợp lệ, cả 6 file JSON hợp lệ qua `json.loads()`.
+
+Vẫn chưa render trực tiếp kiểm chứng được cho cả 5 lỗi trên 4 màn — cần người dùng xác nhận lại bằng ảnh cho từng màn, đặc biệt: (1) độ rộng thực tế khung `openDesc` sau khi thu nhỏ chữ; (2) ô tên vật phẩm `SkinItem3` có đủ chỗ cho tên 2 dòng không bị tràn ra khỏi ô 74px hay không; (3) khoảng cách `leftTime`↔`btn1` ở Đặc Quyền Tháng đã đủ xa chưa vì không xác định được chính xác chiều cao thực tế của nút (skin `SkinBtn1` không khai báo `height` cố định).
+
+## 36. Nguyên tắc bố cục skin — rút ra để tự áp dụng cho các lần sửa sau (2026-07-07)
+
+Theo yêu cầu của người dùng, đúc kết lại các nguyên tắc bố cục (layout) thường gặp qua rất nhiều lần sửa lỗi UI trong phiên làm việc này, để tự đọc lại và áp dụng phán đoán hợp lý cho các skin khác trong tương lai mà không cần chờ người dùng chỉ ra từng lỗi cụ thể.
+
+**1. Không bao giờ để `Label` hiển thị nội dung động (tên vật phẩm, mô tả, số liệu...) mà thiếu `width`.** Đây là nguyên nhân phổ biến nhất gây chồng chéo/tràn chữ trong toàn bộ phiên làm việc này. Nếu nội dung có thể dài (tên vật phẩm dài, mô tả nhiều biến số, số liệu lớn...), luôn khai báo `width` cố định dựa theo khoảng trống thực tế xung quanh (khoảng cách tới phần tử lân cận, không phải đoán chừng).
+
+**2. Chữ dài → wrap xuống dòng (`wordWrap="true" multiline="true"`), không để tràn ra ngoài hay bị cắt.** Egret không có truncate-ellipsis dựng sẵn, nên khi người dùng muốn kiểu "tên…" (ellipsis), giải pháp thay thế tốt nhất là cho phép 2 dòng (tăng `height` tương ứng, giảm `size` một chút nếu ô quá nhỏ) thay vì để chữ tràn ra ngoài ranh giới ô — tràn luôn xấu hơn wrap.
+
+**3. Tận dụng khoảng trống thay vì để lệch/tràn một phía.** Nếu 1 phần tử có khoảng trống lớn ở 1 bên (trái/phải) nhưng lại canh sát mép/tràn sang bên kia, ưu tiên: (a) canh giữa (`horizontalCenter`) nếu là chú thích/nhãn độc lập không cần bám theo phần tử khác, hoặc (b) đặt `width` đúng bằng khoảng trống khả dụng để nội dung tự wrap gọn trong đó.
+
+**4. Không bao giờ để 2 phần tử chồng lên nhau — ưu tiên dời XUỐNG DƯỚI hoặc SANG BÊN, không đè.** Khi 1 nhãn/checkbox/nút đè lên phần tử khác, cách sửa an toàn nhất là dời phần tử đó ra khỏi vùng chiếm dụng của phần tử kia (thường là xuống dưới nếu cùng cột dọc, hoặc sang ngang nếu cùng hàng), rồi canh giữa lại (`horizontalCenter=0` hoặc `verticalCenter` phù hợp) để bố cục gọn gàng — không cố nhồi 2 phần tử vào cùng 1 vị trí bằng cách thu nhỏ.
+
+**5. `Label` dùng `right=N`/`left=N` bên trong 1 `Group` cha KHÔNG khai báo `width` rõ ràng → luôn gây lỗi self-referential layout.** Group cha phải có `width` cố định (không để tự tính theo con) nếu bên trong có phần tử neo theo `right`/`left`.
+
+**6. 2 nhãn anh em (mô tả + giá trị) canh theo `x` cố định (hardcode) sẽ vỡ khi 1 trong 2 dịch dài hơn bản gốc.** Luôn dùng công thức động `attrN.x = descN.width + khoảng_cách` thay vì số cố định, để tự thích ứng khi độ dài chữ tiếng Việt khác tiếng Trung.
+
+**7. Kiểm tra kỹ nối chuỗi (string concatenation) khi dịch — thiếu dấu cách giữa biến số và chữ là lỗi rất hay gặp.** Ví dụ `"thêm"+n+"ngày"` → phải là `"thêm "+n+" ngày"`. Đây là lỗi dễ bỏ sót vì code vẫn chạy đúng, chỉ sai ở khoảng trắng hiển thị.
+
+**8. Nghi ngờ mọi hàm/mảng tra cứu số thứ tự (ordinal lookup) có khả năng còn sót số Hán tự chưa dịch** (đã gặp 3 lần trong phiên: `timeLanguage`, `xqArr`, `TextFlowMaker.numberList`) — nếu thấy 1 nhãn hiện ký tự lạ xen giữa chữ Việt, luôn nghi ngờ đây là bảng tra cứu dùng chung, sửa tại nguồn (hàm/mảng) thay vì sửa riêng từng nơi gọi, để tự động khắc phục mọi nơi khác đang dùng chung hàm đó.
+
+**9. Không đoán mù kích thước thật của các phần tử không khai báo `width`/`height` rõ ràng (ví dụ nút dùng skin nền ảnh không set size cố định)** — khi phải ước lượng khoảng cách an toàn quanh các phần tử này, luôn chừa dư khoảng cách (margin lớn hơn mức tối thiểu tính toán được) và luôn ghi chú rõ trong tài liệu rằng đây là ước lượng chưa xác minh trực quan, cần người dùng xác nhận lại bằng ảnh.

@@ -9,7 +9,7 @@
 		<e:Label id="feng" text="Trong giai đoạn thử nghiệm chưa mở tính năng Thẻ Tháng" size="24" horizontalCenter="0" bottom="20" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 		<e:Button id="btn1" label="Mua ngay 88 NDT" verticalCenter="283" horizontalCenter="0" icon="btn2_2" skinName="SkinBtn1"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" horizontalCenter="77" verticalCenter="256"/>
-		<e:Label id="leftTime" horizontalCenter="0" size="20" verticalCenter="230" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
+		<e:Label id="leftTime" horizontalCenter="0" size="20" verticalCenter="345" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
 		<e:Label id="depictLabel" text="" size="18" lineSpacing="6" textAlign="left" verticalAlign="middle" top="327" anchorOffsetX="0" width="471" left="34" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<ns1:PowerPanel id="powerPanel" skinName="SkinPowerPanel" top="150" y="136" left="152"/>
 		<e:Group id="titleMcGroup" horizontalCenter="0" top="80"/>
