@@ -6,7 +6,7 @@
 		<e:Image horizontalCenter="0" source="recharge_leichongbg_png" top="0" height="117"/>
 		<e:Label id="record" text="Đã nạp 5000 Nguyên Bảo" size="20" textColor="0x00FF00" scaleX="1" scaleY="1" y="88" right="26" fontFamily="Microsoft YaHei"/>
 		<e:Group verticalCenter="-9.5" left="11" anchorOffsetX="0" width="521.33">
-		<e:Label text="Thời gian còn lại：" size="20" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
+		<e:Label text="Thời gian còn lại: " size="20" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
 		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="20" scaleX="1" scaleY="1" top="0" left="90" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
 		<e:Label id="actDesc" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." x="63" y="-14" size="20" top="30" left="90" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="left"/>
 		<e:Label text="Mô tả sự kiện：" size="20" scaleX="1" scaleY="1" left="0" top="30" fontFamily="Microsoft YaHei" textColor="0xffff00"/>

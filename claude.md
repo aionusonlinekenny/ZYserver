@@ -2562,3 +2562,17 @@ Thay 3 chỗ gán trực tiếp `this.nameTxt.text=...` trong `setDataByConfig` 
 Sửa đồng bộ `main.min.js` (logic) + `default.thm.js`/`ItemSkin3.exml` (bỏ wrap). Đổi tên `default.thm_3935788a.js`→`default.thm_9b4ecfbc.js`, `main.min_875af148.js`→`main.min_806bc0b1.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt: (1) tên vật phẩm dài có cắt đúng và hiện ".." gọn gàng trong khung 74px hay không; (2) vì hàm `setNameText_a94` áp dụng cho TOÀN BỘ `ItemBase` trong game chứ không riêng 2 màn đã báo lỗi, cần để ý xem có màn nào khác (đã từng có `nameTxt.width` khai báo nhỏ từ trước) giờ bị cắt tên ngoài ý muốn hay không.
+
+## 38. Người dùng gửi lại 2 file JS đã tự tay chỉnh sửa — đọc và đồng bộ vào git (2026-07-07)
+
+Người dùng tải lên 2 file `default.thm_9b4ecfbc.js` và `main.min_806bc0b1.js` (đúng tên 2 file vừa build ở mục 37) đã được tự sửa tay, yêu cầu đọc và cập nhật vào git. Diff bằng `difflib` (so khớp theo token an toàn UTF-8, tránh lỗi `fold` cắt ngang byte đa byte làm vỡ ký tự tiếng Việt) tìm ra toàn bộ thay đổi:
+
+**1. Chuẩn hoá "Thời gian còn lại"**: gộp mọi biến thể `Thời gian còn lại：` (dấu hai chấm full-width), `Thời gian còn lại:` (không có khoảng trắng sau) về cùng 1 dạng `Thời gian còn lại: ` (dấu hai chấm nửa-width + khoảng trắng) — sửa ở ~52 chỗ trong `default.thm.js` và ~9 chỗ trong `main.min.js` (bao gồm cả nhãn `leftTime` ở mục 35's Đặc Quyền Tháng và mọi màn có đếm ngược thời gian khác trong game, không chỉ riêng 1 màn).
+
+**2. Sửa lại đúng lỗi thiếu dấu cách ở dòng "Đã tích lũy điểm danh..."**: phát hiện ra bản sửa ở mục 35 (thêm khoảng trắng quanh biến số ngày trong chuỗi nối) đã **bị mất** — nguyên nhân: trong lúc sửa lỗi `getCStr` (mục 35, phần "thứ 七"), một lần `git checkout --` để hoàn tác lỗi gõ `\n` literal đã vô tình xoá luôn cả bản sửa "thiếu dấu cách" trước đó chưa kịp commit (2 thay đổi khác nhau cùng nằm trong 1 file chưa commit, checkout xoá sạch cả 2). Bản sửa tay của người dùng khôi phục lại đúng: `"...ngày,\nđiểm danh thêm|C:"+a+"&T:"+i+"ngày|nhận thưởng."` → `"...ngày, điểm danh thêm |C:"+a+"&T:"+i+"| ngày nhận thưởng."` (đồng thời bỏ luôn `\n` cứng, để `wordWrap` tự xuống dòng theo `width=235` đã set từ mục 35 — gọn hơn ép xuống dòng cứng).
+
+**Bài học rút ra**: khi dùng `git checkout -- <file>` để hoàn tác 1 lỗi cụ thể trong 1 file có NHIỀU thay đổi chưa commit gộp chung, phải xác minh lại TẤT CẢ các thay đổi trước đó của file đó vẫn còn nguyên sau khi checkout — không chỉ riêng phần vừa sửa lại. An toàn hơn nên `git stash` phần đang làm dở trước khi thử nghiệm 1 đoạn sửa mới có rủi ro, thay vì sửa trực tiếp trên file có sẵn nhiều thay đổi chưa lưu.
+
+Đồng bộ thêm vào 43 file `.exml` khác trong `resource/exml/` có cùng mẫu "Thời gian còn lại" chưa chuẩn hoá (không nằm trong 2 file JS người dùng gửi, nhưng cùng lỗi nên sửa luôn cho nhất quán toàn bộ codebase — theo đúng tinh thần "dò lại toàn bộ code" người dùng hay yêu cầu), và cập nhật `DailyCheckInPanelSkin.exml`'s `dayReardText` bỏ `\n` khớp bản JS mới.
+
+Đổi tên `default.thm_9b4ecfbc.js`→`default.thm_7c50e073.js`, `main.min_806bc0b1.js`→`main.min_1cc6be7e.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.

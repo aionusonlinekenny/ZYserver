@@ -7,7 +7,7 @@
 			<e:Image left="0" right="0" top="0" bottom="0" source="activity_headbg1_png" source.hefu="activity_headbg2_png"/>
 			<e:Image source="shuxingbg" scale9Grid="77,5,15,34" left="0" right="0" top="15" bottom="15" visible="false"/>
 			<e:Group left="11" x="0" y.hefu="8" anchorOffsetY.hefu="0" left.hefu="11" height.hefu="89" bottom="4">
-			<e:Label text="Thời gian còn lại：" size="20" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xffffff" size.hefu="18"/>
+			<e:Label text="Thời gian còn lại: " size="20" scaleX="1" scaleY="1" left="0" top="0" fontFamily="Microsoft YaHei" textColor="0xffffff" size.hefu="18"/>
 			<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="20" textColor="0x00FF00" scaleX="1" scaleY="1" top="0" left="100" fontFamily="Microsoft YaHei" size.hefu="18" left.hefu="96"/>
 			<e:Label id="actDesc" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn. cấp độ chỉ định sẽ nhận phần thưởng giới hạn." x="63" y="-14" size="20" width="426.33" top="28" left="100" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetX="0" size.hefu="18" width.hefu="426" left.hefu="96"/>
 			<e:Label text="Mô tả sự kiện：" size="20" scaleX="1" scaleY="1" left="0" top="28" fontFamily="Microsoft YaHei" size.hefu="18" textColor="0xffff00"/>

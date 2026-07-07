@@ -64,7 +64,7 @@
 	<e:Image x="44" source="denglutianshu_png" bottom="40"/>
 	<e:Label id="dayaward" text="Ngày 1\nChi tiết thưởng" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" y="494" x="12" textAlign="center" width="80"/>
 	<e:Group y="331" x="151">
-		<e:Label text="Thời gian còn lại：" size="18"  x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Thời gian còn lại: " size="18"  x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="18"  x="90" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0"/>

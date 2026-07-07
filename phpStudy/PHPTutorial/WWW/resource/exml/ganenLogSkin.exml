@@ -47,7 +47,7 @@
 	<e:Label id="daylabel" text="Số ngày đăng nhập:13" size="20" bottom="30" x="50" textColor="0xf8b141" />
 	<e:Label id="dayaward" text="Chi tiết thưởng ngày đầu" size="20" textColor="0xF8B141" horizontalCenter="0" bold="true" y="429"/>
 	<e:Group horizontalCenter="60" y="30">
-		<e:Label text="Thời gian còn lại：" size="18" textColor="0xFF9900" scaleX="1" scaleY="1" x="0" y="0"/>
+		<e:Label text="Thời gian còn lại: " size="18" textColor="0xFF9900" scaleX="1" scaleY="1" x="0" y="0"/>
 		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" scaleX="1" scaleY="1" x="90" y="0"/>
 		<e:layout>
 			<e:HorizontalLayout gap="0"/>

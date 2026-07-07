@@ -22,7 +22,7 @@
 		<e:Group id="infoBg" left="0" right="0" x="3" top="0">
 			<e:Image horizontalCenter="0" source="login_reward_des_jpg" verticalCenter="0"/>
 			<e:Group left="24" y="69.98">
-			<e:Label text="Thời gian còn lại:" size="18" left="0" top="0" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Thời gian còn lại: " size="18" left="0" top="0" fontFamily="Microsoft YaHei"/>
 			<e:Label id="actTime1" text="6 ngày 23 giờ 10 phút" size="18" top="0" left="90" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 			<e:Label id="actInfo1" text="                 Hoàn thành nhiệm vụ sự kiện trong 7 ngày kể từ khi mở sự kiện để tích điểm và giành giải thưởng lớn " x="63" y="-14" size="18" width="356" top="21" left="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" anchorOffsetY="0" height="42" lineSpacing="4"/>
 			<e:Label text="Mô tả sự kiện:" size="18" left="0" top="21" fontFamily="Microsoft YaHei"/>

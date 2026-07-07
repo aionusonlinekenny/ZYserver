@@ -20,7 +20,7 @@
 		<e:Group width="60" height="53" top="84" horizontalCenter="184">
 			<e:BitmapLabel id="starNum" text="16" font="num_vip_v_fnt" horizontalCenter="0" verticalCenter="0" scaleX="1.3" scaleY="1.3" letterSpacing="-3"/>
 		</e:Group>
-		<e:Label text="Thời gian còn lại：" size="18" scaleX="1" scaleY="1" top="14" horizontalCenter="-46" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
+		<e:Label text="Thời gian còn lại: " size="18" scaleX="1" scaleY="1" top="14" horizontalCenter="-46" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
 		<ns1:PriceIcon id="price" skinName="SkinPriceIcon" horizontalCenter="0.5" bottom="2" includeIn="normal"/>
 		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="18" scaleX="1" scaleY="1" top="14" horizontalCenter="60.5" fontFamily="Microsoft YaHei" textColor="0x00FF06"/>
 

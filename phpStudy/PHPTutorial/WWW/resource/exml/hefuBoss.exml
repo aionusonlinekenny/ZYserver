@@ -10,7 +10,7 @@
 		</e:Group>
 		<e:Group id="infoBg" y="54" horizontalCenter="0" width="540">
 		<e:Image   scale9Grid="77,5,15,34" source="activity_headbg0_png" y="0" horizontalCenter="0" scaleY="1.1"/>
-		<e:Label text="Thời gian còn lại：" x="14" y="10" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label text="Thời gian còn lại: " x="14" y="10" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" y="10" size="18" textColor="0x00FF00" fontFamily="Microsoft YaHei" left="104" width="422"/>
 		<e:Label id="actInfo" text="Trong thời gian sự kiện tiêu diệt thành công BOSS sẽ nhận được Gói Quà BOSS." x="104" y="50" size="18" width="422" left="104" fontFamily="Microsoft YaHei" textColor="0xffffff" height="54"/>
 		<e:Label text="Mô tả sự kiện：" x="14" y="50" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>

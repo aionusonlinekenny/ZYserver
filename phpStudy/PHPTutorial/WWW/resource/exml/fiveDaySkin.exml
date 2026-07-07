@@ -6,7 +6,7 @@
 			<e:Image left="0" right="0" top="0" bottom="0" source="ny_curtain_png"/>
 			<e:Image source="shuxingbg" scale9Grid="77,5,15,34" left="0" right="0" top="15" bottom="15" visible="false"/>
 			<e:Group verticalCenter="2.5" left="28" anchorOffsetX="0" width="436" anchorOffsetY="0" height="55">
-			<e:Label text="Thời gian còn lại：" size="18" textColor="0xFF9900" left="0" top="0"/>
+			<e:Label text="Thời gian còn lại: " size="18" textColor="0xFF9900" left="0" top="0"/>
 			<e:Label id="actTime" text="6 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" top="0" left="90"/>
 			<e:Label id="actDesc" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." x="63" y="-14" size="18" width="345" top="20" left="90" textColor="0xDFD1B5" anchorOffsetY="0" height="36" anchorOffsetX="0"/>
 			<e:Label text="Mô tả sự kiện：" size="18" textColor="0xFF9900" left="0" top="20"/>

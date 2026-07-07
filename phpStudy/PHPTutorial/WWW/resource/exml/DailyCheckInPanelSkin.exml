@@ -22,7 +22,7 @@
 	<e:Group id="rewardGroup" bottom="0" horizontalCenter="10" width="524" height="100">
 		<e:Image left="0" right="0" top="0" bottom="0" source="tongyongtip1" scale9Grid="3,3,19,19" visible="false"/>
 		<e:Image left="0" right="0" top="0" bottom="0" source="tongyongtip2" scale9Grid="19,19,3,5" visible="false"/>
-		<e:Label id="dayReardText" text="Đã điểm danh tích lũy（8/10）ngày,  \n điểm danh thêm 2 ngày là có thể nhận thưởng." size="20" verticalCenter="-7" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="2" left="80" width="235" wordWrap="true" multiline="true"/>
+		<e:Label id="dayReardText" text="Đã điểm danh tích lũy（8/10）ngày, điểm danh thêm 2 ngày là có thể nhận thưởng." size="20" verticalCenter="-7" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="2" left="80" width="235" wordWrap="true" multiline="true"/>
 		<ns1:ItemBase id="rewardItem" x="10" scaleX="0.9" scaleY="0.9" skinName="SkinItem3" top="10"/>
 		<e:Button id="rewardBtn" label="Nhận thưởng" verticalCenter="0" right="16" width="176" height="69" skinName="SkinBtn1"/>
 	</e:Group>

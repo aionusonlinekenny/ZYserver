@@ -13,7 +13,7 @@
 	<e:Group id="infoBg" left="0" right="0"  top="0" touchThrough="false" width="560" height="141">
 		<e:Image left="0" right="0" top="0" bottom="0" source="login_reward_des_jpg"/>
 		<e:Group left="12" bottom="4">
-		<e:Label text="Thời gian còn lại：" size="18" left="0" top="0" fontFamily="Microsoft YaHei" />
+		<e:Label text="Thời gian còn lại: " size="18" left="0" top="0" fontFamily="Microsoft YaHei" />
 		<e:Label id="actTime1" text="6 ngày 23 giờ 55 phút" size="18" textColor="0x00FF00" top="0" left="90" fontFamily="Microsoft YaHei"/>
 		<e:Label id="actInfo1" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." x="63" y="-14" size="18" width="320" top="20" left="90" fontFamily="Microsoft YaHei" />
 		<e:Label text="Mô tả sự kiện：" size="18" left="0" top="20" fontFamily="Microsoft YaHei" />

@@ -91,7 +91,7 @@
 			</e:layout>
 			</e:Group>
 		</e:Group>
-		<e:Label id="leftTime" text="Thời gian còn lại reset tích lũy：6 ngày 04:23:01" size="18" right="13" top="464" textColor="0xf8b141" visible="false" x="321" y="464"/>
+		<e:Label id="leftTime" text="Thời gian còn lại reset tích lũy: 6 ngày 04:23:01" size="18" right="13" top="464" textColor="0xf8b141" visible="false" x="321" y="464"/>
 		<e:Label id="hope" text="500" size="18" top="578" x="66" y="578" visible="false"/>
 		<e:Group horizontalCenter="140" top="451" x="332" y="475">
 			<e:Group top="478" x="5" y="8">

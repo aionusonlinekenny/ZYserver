@@ -51,7 +51,7 @@
 		<e:Image scaleY="1" horizontalCenter="0" y="-7" width="214" height="50" source="huabian3"/>
 
 		<e:Image id="title" y="11" horizontalCenter="0" source="biaoti_ybzp_png"/>
-		<e:Label id="actTime" text="Thời gian còn lại：20 giờ 20 phút 20 giây" size="20" y="53" x="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="actTime" text="Thời gian còn lại: 20 giờ 20 phút 20 giây" size="20" y="53" x="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 
 
