@@ -2528,3 +2528,37 @@ Theo yêu cầu của người dùng, đúc kết lại các nguyên tắc bố 
 **8. Nghi ngờ mọi hàm/mảng tra cứu số thứ tự (ordinal lookup) có khả năng còn sót số Hán tự chưa dịch** (đã gặp 3 lần trong phiên: `timeLanguage`, `xqArr`, `TextFlowMaker.numberList`) — nếu thấy 1 nhãn hiện ký tự lạ xen giữa chữ Việt, luôn nghi ngờ đây là bảng tra cứu dùng chung, sửa tại nguồn (hàm/mảng) thay vì sửa riêng từng nơi gọi, để tự động khắc phục mọi nơi khác đang dùng chung hàm đó.
 
 **9. Không đoán mù kích thước thật của các phần tử không khai báo `width`/`height` rõ ràng (ví dụ nút dùng skin nền ảnh không set size cố định)** — khi phải ước lượng khoảng cách an toàn quanh các phần tử này, luôn chừa dư khoảng cách (margin lớn hơn mức tối thiểu tính toán được) và luôn ghi chú rõ trong tài liệu rằng đây là ước lượng chưa xác minh trực quan, cần người dùng xác nhận lại bằng ảnh.
+
+## 37. Đổi tên vật phẩm quá dài từ wrap 2 dòng sang truncate 1 dòng kiểu "Tên…" (2026-07-07)
+
+Người dùng gửi ảnh (IMG_0637, màn Điểm Danh) phản hồi lại cách sửa ở mục 35: wrap tên vật phẩm dài xuống 2 dòng (ví dụ "Thám Ngọc Kim Linh" xuống 2 dòng) không phải điều muốn — muốn kiểu cắt ngắn 1 dòng kèm dấu "…" (ví dụ "Thám Ngọc..") giống ảnh mẫu gửi kèm.
+
+**Vấn đề với cách cũ**: Egret không có thuộc tính dựng sẵn kiểu CSS `text-overflow: ellipsis`, nên lần trước dùng `wordWrap+multiline` (2 dòng) làm giải pháp thay thế. Lần này cần tự cài đặt truncate 1 dòng bằng tay.
+
+**Cách làm**: tên vật phẩm được set qua `this.nameTxt.text=...` ở nhiều chỗ trong class `ItemBase` (`main.min.js`) — đây là class DÙNG CHUNG cho mọi ô vật phẩm trong game (không riêng gì màn điểm danh/đăng nhập thưởng), tương ứng đúng với `SkinItem3` đã sửa ở mục 35. Thay vì gán trực tiếp, thêm 1 hàm dùng chung mới `setNameText_a94(t)`:
+
+```js
+e.prototype.setNameText_a94 = function (t) {
+    var e = this.nameTxt;
+    e.text = t;
+    var i = e.width;
+    if (i > 0 && e.textWidth > i) {
+        var s = t;
+        while (s.length > 1) {
+            s = s.slice(0, -1);
+            e.text = s + "..";
+            if (e.textWidth <= i) break;
+        }
+    }
+};
+```
+
+Cơ chế: gán full text trước, đo `textWidth` thực tế đã render (Egret hỗ trợ đọc `.textWidth` ngay sau khi set `.text`, không cần đợi thêm frame — đã xác nhận cách dùng này có sẵn nhiều chỗ khác trong code). Nếu tràn quá `width` khai báo, cắt dần từng ký tự cuối + luôn gắn ".." vào cuối, đo lại, lặp tới khi vừa khung hoặc chỉ còn 1 ký tự. Chỉ áp dụng khi `nameTxt.width` được khai báo (>0) — những nơi dùng `ItemBase` mà không set `width` cho `nameTxt` (danh sách rộng, không cần cắt) không bị ảnh hưởng, tránh sửa lan sang những màn không liên quan.
+
+Thay 3 chỗ gán trực tiếp `this.nameTxt.text=...` trong `setDataByConfig` (tên vật phẩm thường + tên cấp/chuyển + trường hợp fitleEquip) và 1 chỗ trong `dataChanged` (tên tiền tệ/currency) thành gọi `this.setNameText_a94(...)`. Có 1 chỗ gán `nameTxt.text=AwardsData.getNameOfCurrency(...)` khác nằm trong 1 class riêng biệt (không phải `ItemBase`) — không đụng tới vì không cùng ngữ cảnh/không rõ `nameTxt` của class đó có set `width` hay không.
+
+**Hoàn lại phần sửa mục 35 trên `SkinItem3`** (không cần nữa vì giờ xử lý bằng JS thay vì CSS-wrap): bỏ `wordWrap`/`multiline`, trả `height` 28→16, `y` 78→82 (về nguyên bản 1 dòng); vẫn giữ `width=74` (bắt buộc phải có để `setNameText_a94` biết giới hạn mà cắt) và `size=13` (giữ nguyên cỡ chữ nhỏ hơn bản gốc 16, giúp vừa nhiều ký tự hơn trước khi phải cắt).
+
+Sửa đồng bộ `main.min.js` (logic) + `default.thm.js`/`ItemSkin3.exml` (bỏ wrap). Đổi tên `default.thm_3935788a.js`→`default.thm_9b4ecfbc.js`, `main.min_875af148.js`→`main.min_806bc0b1.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt: (1) tên vật phẩm dài có cắt đúng và hiện ".." gọn gàng trong khung 74px hay không; (2) vì hàm `setNameText_a94` áp dụng cho TOÀN BỘ `ItemBase` trong game chứ không riêng 2 màn đã báo lỗi, cần để ý xem có màn nào khác (đã từng có `nameTxt.width` khai báo nhỏ từ trước) giờ bị cắt tên ngoài ý muốn hay không.

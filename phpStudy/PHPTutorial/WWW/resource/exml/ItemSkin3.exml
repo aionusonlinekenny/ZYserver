@@ -4,7 +4,7 @@
 	<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" horizontalCenter="0" y="0" width="74"/>
 	<e:Image id="bless" horizontalCenter="2.5" verticalCenter="-16.5" source=""/>
 	<e:Label id="count" size="16" y="53" text="999" stroke="1" strokeColor="0x232323" fontFamily="Microsoft YaHei" width="65.43" textAlign="right" textColor="0xffffff" horizontalCenter="-0.5" anchorOffsetX="0"/>
-	<e:Label id="nameTxt" size="13" textAlign="center" text="name" strokeColor="0x111111" stroke="0" fontFamily="Microsoft YaHei" horizontalCenter="0" y="78" width="74" height="28" wordWrap="true" multiline="true" verticalAlign="middle" textColor="0xffffff"/>
+	<e:Label id="nameTxt" size="13" textAlign="center" text="name" strokeColor="0x111111" stroke="0" fontFamily="Microsoft YaHei" horizontalCenter="0" y="82" width="74" height="16" verticalAlign="middle" textColor="0xffffff"/>
 	<e:Group id="redPoint" y="2" right="-3" visible="false">
 		<e:Image source="zjmhongdian" y="-7" x="5"/>
 	</e:Group>
