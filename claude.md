@@ -2266,3 +2266,17 @@ Sửa đồng bộ `default.thm.js` (tái cấu trúc `_Image2_i`/`_Label5_i` c�
 Lưu ý: tiêu đề góc trên bên trái màn này ("万兽驭使") vẫn còn tiếng Trung chưa dịch — người dùng chưa yêu cầu nên chưa đụng tới, có thể xử lý riêng nếu cần.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt là độ dài dòng chữ mới có vừa 1 dòng hay xuống 2 dòng, và cụm icon+chữ đã thật sự nằm giữa màn hình chưa.
+
+### 26.1. Xác nhận tiêu đề "万兽驭使" là ảnh (không sửa được bằng text) + tách "Trắng 1 sao" + tên vật phẩm ra 2 dòng (2026-07-06)
+
+Người dùng đặt câu hỏi/xác nhận: chữ Trung "万兽驭使" ở góc trên có phải là ảnh không, và yêu cầu tách cụm "Trắng 1 sao" + tên vật phẩm (hiện dính liền nhau kiểu "Trắng 1 saoThú Đan") thành 2 dòng riêng.
+
+**Xác nhận tiêu đề là ảnh**: tra trong `main.min.js` thấy đoạn code chọn banner theo tab: `case e.Shenshou: this.title.source="biaoti_shoushen"` — đây là gán `.source` cho 1 `e:Image`, tức đúng là ảnh bitmap có sẵn chữ Hán vẽ trong file `resource/image/biaoti/biaoti_shoushen.png` (không phải text) — giống hệt trường hợp icon "封神/灵宠/神御..." đã gặp và xác nhận ở mục 8.32 trước đây trong session này. Không sửa được bằng cách đổi text; muốn dịch phải vẽ lại/thay hẳn file ảnh (ngoài khả năng hiện tại) — tạm để nguyên, chưa đụng tới.
+
+**Tách "Trắng 1 sao" + tên vật phẩm thành 2 dòng**: tìm thấy trong `main.min.js`, class `ShenshouEquipItem` (item renderer cho các ô khoá "Trắng 1 sao..." khi CHƯA có vật phẩm, dùng bởi `shenshouEquipItem.exml`/`ItemshenshouEquip`), hàm `setPosData` gán `this.nameTxt.text=this.qualityName[i]+this.equipName[e]` — nối trực tiếp 2 chuỗi ("Trắng 1 sao" + "Thú Đan") không hề có khoảng trắng hay xuống dòng ở giữa, nên hiển thị dính liền đọc như 1 từ. Label `nameTxt` trong exml không có `width` cố định (tự co giãn theo nội dung) nên không cần thêm `wordWrap` — chỉ cần chèn `"\n"` là đủ tách 2 dòng.
+
+**Đã sửa**: đổi thành `this.nameTxt.text=this.qualityName[i]+"\n"+this.equipName[e]` (chèn newline thủ công giữa 2 phần) trong `main.min.js`. Không cần sửa `shenshouEquipItem.exml` vì text được gán động hoàn toàn từ code, exml chỉ định nghĩa style/vị trí của Label.
+
+Đổi tên `main.min_a7238c3c.js`→`main.min_95a9adbd.js` (cache-bust, chỉ file JS logic này đổi nội dung; `default.thm.js` không đổi lần này nhưng vẫn phải bump `?v=` trong `index.php` vì nội dung `manifest.json` đổi tên file `main.min`). `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh.
