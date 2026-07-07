@@ -2321,3 +2321,19 @@ Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml`. Đổi 
 Người dùng chốt: `left="96"` (mục 26.4) vẫn chưa đủ, đổi hẳn thành `t.left = 120;` là đẹp. Đã sửa `left="96"`→`left="120"`, đồng thời thu hẹp `width` của Label từ `470`→`450` (vì `left` tăng thêm 24px thì ngân sách chiều rộng còn lại đến mép phải màn hình giảm tương ứng, từ 480px xuống 456px — giữ `width=450` để chắc chắn không tràn mép phải).
 
 Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml`. Đổi tên `default.thm_22f60dd9.js`→`default.thm_d76b93e8.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+## 27. Màn "Chọn máy chủ" đầu game (trước khi vào game, class `GameSelectServeUI`): dời lên cao hơn 200px (2026-07-06)
+
+Người dùng hỏi về màn hình đăng nhập/chọn server đầu tiên ("Say Mộng Giang Hồ", ô "Túy Võ Hiệp - Server 1" + nút "Chọn máy chủ" + nút "Bắt Đầu") — ban đầu tìm không ra vì đây KHÔNG phải trang HTML tĩnh, không nằm trong `resource/exml/*.exml` (không dùng cơ chế skin EUI thông thường như mọi màn khác trong session này), mà là 1 class Egret dựng UI hoàn toàn bằng code (`new eui.Image`, `new eui.Button`, gán `.x`/`.y` trực tiếp), tên class `GameSelectServeUI` trong `main.min.js`. Người dùng xác nhận thêm bằng ảnh chụp tab Network của DevTools cho thấy các ảnh `bar1.png`, `selectServerBtnBg.png`, `selecServerBg.png`, `statemessage.png`... đều tải từ `resource/eui/loading/` — khớp đúng với các đường dẫn `ResDirMgr.RES_RESOURCE+"eui/loading/..."` tìm thấy trong `GameSelectServeUI`.
+
+Yêu cầu: dời "chỗ chọn server" (thanh nền + icon trạng thái + chữ "Túy Võ Hiệp - Server 1" + nút "Chọn máy chủ") lên cao hơn khoảng 200px.
+
+**Đã sửa**: trừ `200` vào toạ độ `y` của 4 phần tử tạo nên thanh chọn server (không đụng nút "Bắt Đầu" `inGameBtn` vì người dùng chỉ nói "chỗ chọn server"):
+- `nowServePaneBg` (nền thanh pill): `y=633` → `y=433`
+- `nowSelectServerStatePic` (icon tròn trạng thái, chấm vàng/xanh): `y=646` → `y=446`
+- `nowSelectServerText` (chữ "Túy Võ Hiệp - Server 1"): `y=648` → `y=448`
+- `selectBtn` (nút "Chọn máy chủ"): `y=643` → `y=443`
+
+Vì class này dựng UI bằng code thuần (không qua `.exml`), không có file nguồn nào để đồng bộ — chỉ sửa `main.min.js`. Đổi tên `main.min_95a9adbd.js`→`main.min_f4cc8742.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt xem thanh chọn server ở vị trí mới có bị che bởi logo tiêu đề "Say Mộng Giang Hồ" phía trên hay không (logo được set `y=250` trong code, thấp hơn nhiều so với vị trí mới `y≈433-448` nên về lý thuyết không chạm nhau, nhưng vẫn cần xác nhận thực tế).
