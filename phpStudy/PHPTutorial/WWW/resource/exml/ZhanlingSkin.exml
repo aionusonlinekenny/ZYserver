@@ -135,7 +135,7 @@
 				<e:HorizontalLayout verticalAlign="middle" gap.zl_max="-5" gap.zl_up="0" gap.skin_up="0" gap.skin_max="0" gap="0"/>
 			</e:layout>
 			</e:Group>
-			<e:CheckBox label="Tự động mua bằng Nguyên Bảo" skinName="SkinCheckBox0" id="checkBoxs" includeIn="zl_up,skin_up" verticalCenter="0" verticalCenter.skin_up="0" right="6"/>
+			<e:CheckBox label="Tự động mua bằng Nguyên Bảo" skinName="SkinCheckBox0" id="checkBoxs" includeIn="zl_up,skin_up" horizontalCenter="0" top="76" top.skin_up="76"/>
 		</e:Group>
 
 		<e:Button id="huanxing" label="" icon="zl_huanxing_btn" skinName="SkinBtn0" includeIn="zl_up,zl_max" right="25" top="71"/>

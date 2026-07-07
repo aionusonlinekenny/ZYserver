@@ -2426,3 +2426,15 @@ Cả 5 mục trên sửa đồng bộ `default.thm.js` + các file `.exml` tươ
 Không đụng tới các chữ Hán còn sót (tiêu đề "龙元"/"诛仙"/"炼器"/"仙罡", icon "龙元觉醒"/"特殊觉醒") vì người dùng không yêu cầu trong lần này — có thể là text hoặc ảnh, chưa xác minh.
 
 Vẫn chưa render trực tiếp kiểm chứng được cho cả 5 mục — cần người dùng xác nhận lại bằng ảnh cho từng màn.
+
+## 32. Tab "Pháp Bảo" (skin `ZhanlingSkin`): checkbox "Tự động mua bằng Nguyên Bảo" đè lên nút "Nâng sao nhanh" (2026-07-07)
+
+Người dùng gửi ảnh (IMG_0601) màn "Pháp Bảo" (Ma Luyện Dung Lô), báo checkbox "Tự động mua bằng Nguyên Bảo" đè trực tiếp lên nút "Nâng sao nhanh", yêu cầu dời checkbox xuống dưới nút và canh giữa.
+
+**Nguyên nhân**: checkbox `checkBoxs` định vị `verticalCenter="0" right="6"` trong khung `dinghong` (cao 75px) — cùng `verticalCenter=0` với `upBtnGroup` (chứa nút "Nâng sao nhanh", `bottom="6"`) nên cả 2 nằm chồng đúng cùng 1 hàng ngang, checkbox lại đủ rộng để lấn vào giữa nơi nút đã canh giữa.
+
+**Đã sửa**: đổi `checkBoxs` từ `verticalCenter=0, right=6` → `horizontalCenter=0, top=76` (nằm dưới đáy nút một chút, canh giữa theo chiều ngang thay vì dán mép phải). Vì skin này có 2 trạng thái riêng (`zl_up` và `skin_up`) cùng include checkbox, và trạng thái `skin_up` có 1 dòng ghi đè `verticalCenter=0` riêng (đã canh giữa lại theo chiều dọc, làm hỏng fix nếu chỉ sửa giá trị mặc định) — phải sửa luôn dòng ghi đè này thành `top=76` để cả 2 trạng thái đều nhất quán.
+
+Sửa đồng bộ `default.thm.js` + `resource/exml/ZhanlingSkin.exml`. Đổi tên `default.thm_7fabbd3e.js`→`default.thm_8cc54429.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt kiểm tra checkbox có bị đè lên phần tử nào khác nằm phía dưới `dinghong` hay không (vì `top=76` đẩy checkbox ra ngoài rìa dưới của khung `dinghong` cao 75px).
