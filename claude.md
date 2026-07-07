@@ -2158,3 +2158,13 @@ Người dùng test và báo: "Tiêu hao Thần Kiếm Vô Cực" giờ tuột x
 **Lỗi 2 ("Vô Cực Hài Tử" không xuống dòng)**: không rõ nguyên nhân chính xác (có thể do chữ này ngắn/hẹp hơn ước lượng nên vẫn vừa 1 dòng ở `width=88`), thu hẹp thêm `width` từ `88`→`74` và giảm cỡ chữ `14`→`13` cho toàn bộ 6 tên vật phẩm hàng dưới để tăng khả năng buộc xuống dòng đồng đều hơn.
 
 Đổi tên `default.thm_0cc68ee7.js`→`default.thm_fe52b2fe.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được. Đây vẫn là môi trường không render trực tiếp được nên vẫn cần người dùng xác nhận lại bằng ảnh chụp - xin lỗi vì đã mất 1 vòng sửa sai do không kiểm tra kỹ layout xung quanh trước khi đổi vị trí.
+
+### 23.2. Tinh chỉnh sau test: item đã xuống 2 dòng ổn nhưng chữ nhỏ quá; "Tiêu hao" vẫn chưa xuống dòng (2026-07-06)
+
+Người dùng xác nhận: 6 tên vật phẩm hàng dưới đã xuống 2 dòng đều nhau (đúng ý), nhưng cỡ chữ `13` quá nhỏ - muốn trả lại cỡ chữ như lúc ban đầu (trước khi tôi thu nhỏ), chỉ cần giữ khung hẹp (`width`) để nó tiếp tục xuống dòng là đủ. Riêng nhóm "Tiêu hao Thần Kiếm Vô Cực" vẫn hiện 1 dòng dài tràn mép, không xuống dòng như mong đợi.
+
+**Đã sửa**:
+- `nameLabel` (6 tên vật phẩm): trả cỡ chữ `13→20` (về đúng cỡ gốc ban đầu), **giữ nguyên** `width=74` (khung hẹp là thứ thực sự cần để ép xuống dòng, không phải cỡ chữ).
+- `cost` (nhãn "Tiêu hao"): nguyên nhân có khả năng là `width=140` vẫn đủ chỗ cho chuỗi "Thần Kiếm Vô Cực" nằm gọn 1 dòng ở cỡ chữ 16 (ước lượng trước đó quá rộng tay) - thu hẹp tiếp `width` từ `140` xuống `90` để chắc chắn ép xuống dòng.
+
+Sửa đồng bộ `default.thm.js` + 2 file `.exml`. Đổi tên `default.thm_fe52b2fe.js`→`default.thm_7ddbda66.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được.

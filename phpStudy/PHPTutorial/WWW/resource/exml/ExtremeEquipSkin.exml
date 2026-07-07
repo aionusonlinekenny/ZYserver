@@ -109,7 +109,7 @@
 	<e:Image id="redPoint" source="zjmhongdian" touchEnabled="false" y="342" horizontalCenter="63.5"/>
 	<e:Group y="366" x="395">
 		<e:Label text="Tiêu hao" size="16" fontFamily="Microsoft YaHei"/>
-		<e:Label id="cost" text="Phần Thiên Thần Kiếm" size="16" width="140" wordWrap="true" multiline="true" fontFamily="Microsoft YaHei"/>
+		<e:Label id="cost" text="Phần Thiên Thần Kiếm" size="16" width="90" wordWrap="true" multiline="true" fontFamily="Microsoft YaHei"/>
 		<e:Label text=": " size="16" fontFamily="Microsoft YaHei"/>
 		<e:Label id="numLabel" text="0/1" size="16" fontFamily="Microsoft YaHei"/>
 		<e:layout>
