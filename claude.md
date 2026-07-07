@@ -2238,3 +2238,17 @@ Người dùng xác nhận mục 24/24.1 tạm ổn, chuyển sang màn "Đạo 
 Sửa đồng bộ `default.thm.js` + `main.min.js` + `resource/exml/heartmethod.exml` (riêng `getItemTxt0`) + `resource/exml/TreasureWinSkin.exml` (dịch nốt cả 5 tên tab từ tiếng Trung gốc "御器/炼阵/道藏/万兽驭使/龙元" sang tiếng Việt đã dùng trong bản compiled — file exml này trước giờ chưa được đồng bộ dịch, chỉ có bản compiled là đã dịch). Đổi tên `default.thm_b85d904d.js`→`default.thm_9be68048.js` và `main.min_98adb1e8.js`→`main.min_a7238c3c.js` (cache-bust cả 2), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file JS, `php -l` qua được, cả 3 file JSON hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt là độ rộng mới của "Nhận vật phẩm" và tên tab "Vạn Thú" có vừa khít không.
+
+### 25.1. Test sau mục 25: tab/label đã ổn nhưng "Sát Thương Hỏa" vẫn tự tách số ra dòng riêng (2026-07-06)
+
+Người dùng gửi ảnh (IMG_0599) xác nhận: tên tab, "Nhận vật phẩm" đều đã hiển thị đúng. Còn lại: dòng "Sát Thương Hỏa：20000" (cột trái) vẫn xuống dòng nhưng lần này đứt ngay GIỮA con số ("Sát Thương Hỏa：200" rồi "00" rơi xuống dòng dưới) — chỉ thiếu đúng vài px là đủ 1 dòng. Tương tự cột phải "Sát Thương Hỏa：2040" rồi "0" rớt dòng. Yêu cầu: dời khung trái sang trái thêm 30px, mở rộng khung phải thêm 30px về bên phải (cùng nguyên tắc như mục 24.1, chỉ khác skin).
+
+**Khác với mục 24.1**: skin `Skinheartmethod` dùng nền `nextAttBG0` kiểu `left=0,right=0,top=0,bottom=0` (co giãn khít theo đúng khung chứa `shuxingbianhua` rộng 581), không phải ảnh nền cố định 548px có margin hẹp như skin `SkinYuPeiNew` — nên có nhiều khoảng trống hơn để mở rộng, không lo tràn khỏi nền.
+
+**Đã sửa** (áp dụng cho trạng thái `narmal`, đúng trạng thái đang hiển thị trong ảnh):
+- `curAtt0`: `horizontalCenter=-140.5, width=192` → `horizontalCenter=-155.5, width=222` (giữ nguyên mép phải tại vị trí cũ để không đụng mũi tên `cursor0`, kéo dài thêm đúng 30px về bên trái).
+- `nextAtt0`: `horizontalCenter=155, width=199` → `horizontalCenter=170, width=229` (giữ nguyên mép trái tại vị trí cũ, mở rộng thêm đúng 30px về bên phải).
+
+Sửa đồng bộ `default.thm.js` + `resource/exml/heartmethod.exml`. Đổi tên `default.thm_9be68048.js`→`default.thm_13a5740f.js` (cache-bust, chỉ file này đổi nội dung lần này), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh.
