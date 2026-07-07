@@ -3,7 +3,7 @@
 	<w:Config id="15a177a4c02"/>
 	<e:Rect width="600" fillColor="0x0d97ae" horizontalCenter="0" top="0" bottom="0"/>
   	<e:Image horizontalCenter="1" source="bg_1_jpg" verticalCenter="-35.5"/>
-	<e:Group width="600" height="800" horizontalCenter="0" verticalCenter="-20" scrollEnabled="true">
+	<e:Group width="600" height="800" horizontalCenter="-100" verticalCenter="-20" scrollEnabled="true">
 
 		<e:Group width="556" horizontalCenter="0" bottom="58" visible="false">
 		<e:Image source="bantoumingkuang4" x="0" top="0" bottom="0" width="278" height="90" visible="false"/>

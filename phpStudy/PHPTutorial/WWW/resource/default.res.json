@@ -6,7 +6,7 @@
 }
 ],"resources": [ 
 {
-"url": "config/config.json",
+"url": "config/config.json?1783454123",
 "type": "json",
 "name": "config_json"
 },
