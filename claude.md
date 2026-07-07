@@ -2638,3 +2638,14 @@ Người dùng gửi ảnh (IMG_0644) xác nhận sau khi server đồng bộ xo
 Sửa đồng bộ `ring.exml` và `default.thm.js` (hàm `Explain1_i` bên trong class `window.ring`). Đổi tên `default.thm_4be02d83.js`→`default.thm_309e37ab.js`, cập nhật `manifest.json`/`index.php`. `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 **Lưu ý về deploy**: dựa trên phát hiện mục 41, lần này CHỈ sửa `default.thm.js`/`ring.exml` (không đụng `resource/config/`) nên nhiều khả năng sẽ đồng bộ nhanh (trong khoảng 15-40 phút) giống các lần sửa `js/` trước đó — nhưng vẫn cần người dùng xác nhận lại bằng ảnh sau khi đợi 1 lúc, vì đã có tiền lệ 1 file JS từng bị bỏ sót hoàn toàn không rõ lý do.
+
+## 43. Người dùng gửi lại 3 file tự sửa tay (main.min.js, default.thm.js, config.json) — đồng bộ vào git (2026-07-07)
+
+Người dùng tải lên 3 file đã tự sửa tay: `main.min_1cc6be7e.js`, `default.thm_4be02d83.js`, `config.json`. Lưu ý: `default.thm_4be02d83.js` là tên file CŨ (trước bản sửa `Explain1` ở mục 42) — nghĩa là người dùng tự sửa dựa trên bản TRƯỚC lượt sửa mới nhất, nên phải diff cẩn thận rồi áp lên bản git hiện tại (mới hơn) thay vì ghi đè trực tiếp, tránh làm mất phần mình đã sửa sau đó.
+
+**So khớp bằng `difflib`/`diff` (an toàn UTF-8):**
+- `default.thm_4be02d83.js`: thay đổi DUY NHẤT của người dùng là `Explain1`'s `horizontalCenter` 90→0 — **trùng khớp hoàn toàn** với bản sửa mình đã làm ở mục 42 (bản git hiện tại `default.thm_309e37ab.js` đã có sẵn đúng thay đổi này) → không cần áp gì thêm cho file này.
+- `main.min_1cc6be7e.js`: đổi `openDesc.text` từ `"Ngày thứ 8 thu thập đủ 5 Linh Vật rồi triệu hoán"` → `"Ngày 8, thu thập đủ 5 Linh Vật rồi triệu hoán"` (bỏ chữ "thứ" thừa, thêm dấu phẩy) — đã áp trực tiếp vào bản git hiện tại.
+- `config.json`: sửa field `explain` của Linh Phượng — đổi các dấu `\n` xuống dòng cứng giữa 4 câu mô tả thành dấu `.` + khoảng trắng, viết liền thành 1 đoạn văn tự nhiên thay vì ép xuống dòng riêng biệt (`"...Linh Thú  \nNâng cấp..."` → `"...Linh Thú. Nâng cấp..."`) — đã áp trực tiếp, xác nhận khớp 100% (md5 giống hệt file người dùng gửi) sau khi sửa.
+
+Đổi tên `main.min_1cc6be7e.js`→`main.min_6f90963a.js` (cache-bust), cập nhật `manifest.json`/`index.php`. Đồng thời bump lại query-string cache-bust cho `config/config.json` (theo đúng bài học mục 41) từ `?1783454123`→`?1783465921` trong cả 3 file `default.res3.json`/`default.res.json`/`default.resPublishReplace.json`. `node -c` qua cho cả 2 file JS, `php -l` qua, tất cả JSON liên quan hợp lệ qua `json.load()`.
