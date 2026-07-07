@@ -2438,3 +2438,26 @@ Người dùng gửi ảnh (IMG_0601) màn "Pháp Bảo" (Ma Luyện Dung Lô), 
 Sửa đồng bộ `default.thm.js` + `resource/exml/ZhanlingSkin.exml`. Đổi tên `default.thm_7fabbd3e.js`→`default.thm_8cc54429.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt kiểm tra checkbox có bị đè lên phần tử nào khác nằm phía dưới `dinghong` hay không (vì `top=76` đẩy checkbox ra ngoài rìa dưới của khung `dinghong` cao 75px).
+
+## 33. Dò toàn bộ code sửa văn phong "thứ N ngày mở" → "Ngày N mở" (2026-07-07)
+
+Người dùng gửi ảnh (IMG_0626, màn "Linh Sủng") báo icon khoá hiện "thứ 7ngày hoặc VIP4Mở"/"thứ 8ngày mở" — dịch sát theo cấu trúc tiếng Trung ("第N天开启") nên bị lộn thứ tự, đọc không tự nhiên trong tiếng Việt. Yêu cầu đổi thành "Ngày 7 mở"/"Ngày 8 mở" kiểu văn phong, và dò toàn bộ code (kể cả server) tìm chỗ tương tự để sửa luôn.
+
+**Phạm vi xác định**: chỉ sửa các chỗ dùng đúng thứ tự SAI "thứ N ngày..." (ordinal trước, "ngày" sau) — đây là cấu trúc ngược, không tự nhiên. Các chỗ dùng "ngày thứ N..." (đúng thứ tự, ví dụ "ngày thứ 2 sau khi mở server" trong `ConfigHelpInfo`) đã là văn phong tiếng Việt tự nhiên (như "ngày thứ 2 sau khi sinh"), **không đụng tới**.
+
+**Dò được trong `main.min.js`** (9 chỗ dùng cấu trúc sai "thứ N ngày..."):
+1. `openLv.text` (icon "Linh Vật" khoá, đúng chỗ trong ảnh IMG_0626) — 3 nhánh: `"thứ "+day+"ngày hoặc VIP"+vip+"Mở"` / `"thứ "+day+"ngày mở"` / `"VIP"+vip+"Mở"` (thiếu dấu cách) → đổi thành `"Ngày "+day+" hoặc VIP"+vip+" mở"` / `"Ngày "+day+" mở"` / `"VIP"+vip+" mở"` (thêm dấu cách + chữ thường "mở").
+2. `openDesc.text` (chỗ tương tự trong popup "Ngọc Phù ExRing" — hệ thống đã sửa ở mục 28/29) — cùng cấu trúc, sửa tương tự.
+3. **Phát hiện thêm 1 lỗi nặng hơn**: mảng `timeLanguage=["一","二","三","四","五","六","七"]` trong class hiển thị tab "7 ngày vui vẻ" — **chưa dịch, còn nguyên số Hán tự** (một/二/三...), nghĩa là số ngày hiển thị ra là CHỮ HÁN chứ không phải số! Đổi thành `["1","2","3","4","5","6","7"]`, đồng thời sửa `dayLabel.text="thứ "+...+"ngày"` → `"Ngày "+...`.
+4. `day.text="thứ "+data.day+"ngày"` (1 ô lịch nhận thưởng khác) → `"Ngày "+data.day`.
+5. Nhãn ngày trong bảng nạp thẻ nhiều ngày (`target+s`): `"thứ "+i+"ngày"+...` → `"Ngày "+i+...`.
+6. `dayaward.text` (2 biến thể khác nhau trong 2 class lịch nhận thưởng khác nhau, 1 biến thể còn dính chữ do thiếu cả xuống dòng: `"thứ "+...+"Chi tiết thưởng ngày"` không hề có `\n` phân dòng) → chuẩn hoá cả 2 về cùng 1 dạng `"Ngày "+...+"\nChi tiết thưởng"`.
+7. `UserTips.showCenterTips("Hoạt động mở ngày thứ "+day+"ngày mở")` — câu bị lặp "ngày" 2 lần → `"Hoạt động mở vào Ngày "+day`.
+
+**Dò được trong `default.thm.js`** (skin tĩnh, sự kiện "14 ngày liên tiếp"): 13 nhãn cố định `"Ngày thứ 2"` .. `"Ngày thứ 14"` (khác nhóm trên — đã đúng thứ tự "Ngày" trước, nhưng vẫn thừa chữ "thứ" so với phong cách người dùng muốn) → đổi thành `"Ngày 2"` .. `"Ngày 14"`, khớp với nhãn "Ngày đầu tiên" (ngày 1) đã có sẵn không dùng "thứ". Đồng bộ `resource/exml/act14logSkin.exml`.
+
+**Dò phía server (Lua)**: nhờ agent quét toàn bộ `server/bin/s1/gameworld/` (và `s99`) tìm cả 2 dạng — chuỗi nối kiểu `"thứ "..day.."ngày"` và mảng số Hán tự chưa dịch kiểu `timeLanguage` — **không tìm thấy trường hợp nào**. Các chỗ "ngày thứ N" tìm được trong file ngôn ngữ server (`activityname.txt`) đều đúng thứ tự tự nhiên, không cần sửa.
+
+Đổi tên `default.thm_8cc54429.js`→`default.thm_4fb42402.js` và `main.min_c1727d76.js`→`main.min_11a0cbdb.js` (cache-bust cả 2), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file, `php -l` qua được, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt màn "Linh Sủng" (IMG_0626) và màn sự kiện "7 ngày"/"14 ngày liên tiếp".
