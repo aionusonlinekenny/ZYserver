@@ -55,8 +55,13 @@
 		<e:Image id="leftRed" x="20" y="-8" source="zjmhongdian" touchEnabled="false"/>
 		</e:Group>
 	</e:Group>
-	<e:Image top="425" left="86" source="gantanhao4"/>
-	<e:Label text="Mặc đủ trang bị mới có thể xuất trận, thuộc tính và kỹ năng Thú Thần Hộ Vệ xuất trận sẽ có hiệu lực" size="18" top="425" fontFamily="Microsoft YaHei" textColor="0xffff00" left="110"/>
+	<e:Group horizontalCenter="0" top="425">
+		<e:Image source="gantanhao4"/>
+		<e:Label text="Mặc đủ trang bị để xuất trận, kích hoạt thuộc tính/kỹ năng" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" width="480" wordWrap="true" multiline="true"/>
+		<e:layout>
+			<e:HorizontalLayout gap="10" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
 	<e:Scroller id="listScroller" left="48" right="48" top="619" height="109">
 		<e:List id="listMenu" horizontalCenter="0" top="0" bottom="0" itemRendererSkinName="shenshouSelectBtn">
 		<e:layout>

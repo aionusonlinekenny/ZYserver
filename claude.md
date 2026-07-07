@@ -2252,3 +2252,17 @@ Người dùng gửi ảnh (IMG_0599) xác nhận: tên tab, "Nhận vật phẩ
 Sửa đồng bộ `default.thm.js` + `resource/exml/heartmethod.exml`. Đổi tên `default.thm_9be68048.js`→`default.thm_13a5740f.js` (cache-bust, chỉ file này đổi nội dung lần này), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh.
+
+## 26. Tab "Vạn Thú" (skin `Skinshenshou`): dòng nhắc "Mặc đủ trang bị..." tràn khỏi màn hình, yêu cầu canh giữa + rút ngắn (2026-07-06)
+
+Người dùng gửi ảnh (IMG_0600) màn "Vạn Thú" (skin `Skinshenshou`, nguồn `resource/exml/shenshouSkin.exml`), báo dòng chữ vàng "Mặc đủ trang bị mới có thể xuất trận, thuộc tính và kỹ năng Thú Th[bị cắt]" bị mất chữ, yêu cầu đưa vào giữa màn hình và viết ngắn lại.
+
+**Nguyên nhân**: icon cảnh báo (`gantanhao4`) và Label neo cứng bằng `left="86"`/`left="110"` (không có `width`/`wordWrap`), trong khi bản dịch tiếng Việt gốc dài 102 ký tự — vượt xa hết chiều rộng màn hình 600, phần vượt quá bị cắt khỏi vùng nhìn thấy (không phải lỗi code, mà do neo trái không giới hạn kết hợp câu quá dài).
+
+**Đã sửa**: gộp icon + label vào chung 1 `Group` mới (`horizontalCenter="0"`, `HorizontalLayout gap="10" verticalAlign="middle"`) thay vì 2 phần tử rời neo trái cố định — nhờ vậy cả cụm (icon+chữ) tự canh giữa màn hình như 1 khối, không cần đoán tọa độ tay. Đồng thời rút ngắn nội dung: "Mặc đủ trang bị mới có thể xuất trận, thuộc tính và kỹ năng Thú Thần Hộ Vệ xuất trận sẽ có hiệu lực" (102 ký tự) → "Mặc đủ trang bị để xuất trận, kích hoạt thuộc tính/kỹ năng" (58 ký tự, giữ nguyên ý chính: phải mặc đủ đồ mới xuất trận được và thuộc tính/kỹ năng mới có tác dụng). Thêm `width="480" wordWrap="true" multiline="true"` cho Label làm lớp phòng hờ — nếu vẫn hơi dài so với ước lượng thì tự xuống dòng gọn trong khung thay vì tràn ra ngoài như cũ.
+
+Sửa đồng bộ `default.thm.js` (tái cấu trúc `_Image2_i`/`_Label5_i` cũ thành 1 `_Group8_i` mới chứa cả 2, cập nhật lại danh sách `elementsContent` của skin) + `resource/exml/shenshouSkin.exml`. Đổi tên `default.thm_13a5740f.js`→`default.thm_70211a8a.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Lưu ý: tiêu đề góc trên bên trái màn này ("万兽驭使") vẫn còn tiếng Trung chưa dịch — người dùng chưa yêu cầu nên chưa đụng tới, có thể xử lý riêng nếu cần.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt là độ dài dòng chữ mới có vừa 1 dòng hay xuống 2 dòng, và cụm icon+chữ đã thật sự nằm giữa màn hình chưa.
