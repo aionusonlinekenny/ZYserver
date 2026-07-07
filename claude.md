@@ -2649,3 +2649,23 @@ Người dùng tải lên 3 file đã tự sửa tay: `main.min_1cc6be7e.js`, `d
 - `config.json`: sửa field `explain` của Linh Phượng — đổi các dấu `\n` xuống dòng cứng giữa 4 câu mô tả thành dấu `.` + khoảng trắng, viết liền thành 1 đoạn văn tự nhiên thay vì ép xuống dòng riêng biệt (`"...Linh Thú  \nNâng cấp..."` → `"...Linh Thú. Nâng cấp..."`) — đã áp trực tiếp, xác nhận khớp 100% (md5 giống hệt file người dùng gửi) sau khi sửa.
 
 Đổi tên `main.min_1cc6be7e.js`→`main.min_6f90963a.js` (cache-bust), cập nhật `manifest.json`/`index.php`. Đồng thời bump lại query-string cache-bust cho `config/config.json` (theo đúng bài học mục 41) từ `?1783454123`→`?1783465921` trong cả 3 file `default.res3.json`/`default.res.json`/`default.resPublishReplace.json`. `node -c` qua cho cả 2 file JS, `php -l` qua, tất cả JSON liên quan hợp lệ qua `json.load()`.
+
+## 44. Batch fix 3 màn: Tru Tiên (heirloom), Tu Pháp Tĩnh Thất (Guild Skill), Thành viên Tiên Minh (2026-07-07)
+
+Người dùng gửi 3 ảnh (IMG_0646-0648), báo hàng loạt lỗi bố cục trên 3 màn khác nhau, yêu cầu làm trước những phần rõ ràng có thể sửa, để lại phần phức tạp bàn thêm.
+
+**IMG_0646 (Tru Tiên — skin `heirloom.exml`/`Skinheirloom`):**
+- "Hợp Thành Đạo Cụ" (`getItemTxt`) đè lên nút "Kích hoạt" (`jihuo`, `horizontalCenter=0` trong khung rộng 500) — nhãn trước đó neo tại `x=320` quá gần biên phải ước lượng của nút. Dời `x` 320→350, giảm `width` 160→150 để không tràn ra ngoài khung.
+- "một phần lớn thông tin bị dạt qua bên phải" — khối 7 cặp desc/attr (Công kích, Vật Kháng, Bạo Kích, Sinh Lực, Kháng phép, Cương Khí...) dùng `TileLayout requestedColumnCount=2` trong khung chỉ rộng `413.33`, `horizontalGap=43` quá lớn khiến cột phải (Sinh Lực/Kháng phép/Cương Khí) bị đẩy ra ngoài rìa màn 600px, mất chữ. Mở rộng khung `413.33`→`560`, `horizontalCenter` `-0.5`→`0` (canh giữa đúng màn 600px), giảm `horizontalGap` 43→0 để cột phải có thêm chỗ.
+
+**IMG_0647 (Tu Pháp Tĩnh Thất — skin `GuildSkillWinSkin.exml`/`SkinGuildSkillWin` + `GuildSkillSkin.exml`/`SkinGuildSkill`):**
+- "Tiêu hao nâng cấp:"/"Cống hiến còn lại:" (2 nhãn tĩnh dài ~17-18 ký tự, không giới hạn `width`) đè lên icon + giá trị đứng ngay sau (icon tại `horizontalCenter=-109.5`, giá trị tại `x=163`/`x=162.5`) — với size=20, nhãn dài cỡ này thực tế render rộng hơn 163px nên đè lên cả icon lẫn giá trị. Dời icon (`horizontalCenter` -109.5→-30) và giá trị (`x` 163/162.5→220) sang phải, chừa đủ chỗ cho nhãn.
+- "Các nút bấm bên dưới cần thu gọn" — 2 tab "Tu Pháp Tĩnh Thất"/"Xây Dựng Tiên Sơn" (tên tab lấy từ thuộc tính `name` của từng trang trong `viewStack`, hiển thị qua `TabBar` dùng skin `SkinBtnTab0` — nút cỡ cố định ~110-120px, nhãn không giới hạn `width`) — bản dịch tiếng Việt dài hơn nhiều so với bản gốc tiếng Trung ("修法静室"/"仙山建设", chỉ 4 chữ) khiến 2 tab tràn chồng lên nhau (layout dùng `gap=-8`, vốn đã thiết kế sát nhau). Không sửa skin `SkinBtnTab0` dùng chung (hơn 30 màn khác đang dùng, rủi ro cao) — thay vào đó RÚT NGẮN tên hiển thị: "Tu Pháp Tĩnh Thất"→"Tĩnh Thất", "Xây Dựng Tiên Sơn"→"Tiên Sơn", đủ ngắn để vừa nút mà vẫn giữ được ý nghĩa.
+
+**IMG_0648 (Thành viên Tiên Minh — skin `GuildInfoSkin.exml`/`SkinGuildInfo` + `MemberItemSkin.exml`/`SkinMemberItem`):** người dùng báo "cần làm nhiều lắm", đã khảo sát và CHỈ sửa phần chắc chắn xác định được nguyên nhân:
+- Cột "Chức vụ" trong bảng thành viên bị vỡ dòng giữa từ ("Minh Ch" / "ủ") — nhãn `office` chỉ rộng `80px` dù còn dư tới ~140px trong cột trước khi chạm cột kế tiếp. Mở rộng `width` 80→130, dịch `x` 53→30 (canh giữa lại trong khoảng rộng hơn).
+- **Chưa sửa** (cần xem lại kỹ hơn, không đủ chắc chắn để đoán mù): icon chồng lên "Ngân quỹ:"/"Số người:" trong khung "Thông tin Tiên Minh", và icon chồng lên "Cống hiến của tôi:" — trong `GuildInfoSkin.exml` không tìm thấy phần tử Image nào được đặt đè lên các nhãn này một cách rõ ràng (2 `Image source="tongyongdian2"` gần đó đều đã `visible="false"`), nên nghi ngờ đây có thể là hiệu ứng đồ hoạ trang trí của khung nền chứ không phải lỗi chồng lấp phần tử — cần ảnh chụp cận cảnh hơn hoặc xác nhận lại từ người dùng trước khi đoán tiếp.
+
+Sửa đồng bộ `.exml` + `default.thm.js` cho cả 3 skin. Đổi tên `default.thm_309e37ab.js`→`default.thm_61090b9d.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh cho cả 3 màn, đặc biệt: (1) khung "Tiêu hao nâng cấp"/"Cống hiến còn lại" ở IMG_0647 dời sang phải bao nhiêu là đủ (ước lượng theo độ dài chữ, chưa đo chính xác); (2) 2 tên tab rút gọn có còn đủ rõ nghĩa không; (3) độ rộng cột "Chức vụ" mới đã đủ cho các chức vụ dài hơn "Minh Chủ" (như "Phó Minh Chủ") hay chưa.

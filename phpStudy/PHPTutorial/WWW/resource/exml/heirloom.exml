@@ -31,10 +31,10 @@
 		</e:Group>
 
 		<e:Button id="jihuo" label="Nâng sao nhanh" horizontalCenter="0" icon="btn1_2" bottom="-25" skinName="SkinBtn7"/>
-		<e:Label id="getItemTxt" text="Hợp thành Vũ khí" size="20"  fontFamily="Microsoft YaHei" textColor="0x00ff06" textAlign="left" stroke="0" y="64" x="320" width="160" wordWrap="true" multiline="true"/>
+		<e:Label id="getItemTxt" text="Hợp thành Vũ khí" size="20"  fontFamily="Microsoft YaHei" textColor="0x00ff06" textAlign="left" stroke="0" y="64" x="350" width="150" wordWrap="true" multiline="true"/>
 
 	</e:Group>
-	<e:Group width="413.33" height="125" horizontalCenter="-0.5" verticalCenter="226" anchorOffsetX="0">
+	<e:Group width="560" height="125" horizontalCenter="0" verticalCenter="226" anchorOffsetX="0">
 
 
 
@@ -42,7 +42,7 @@
 			<e:Label id="desc0" text="Công kích:" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="attr0" text="+123456" size="20" x="70" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>
-		<e:Group y="14" x="317">
+		<e:Group y="14" x="300">
 			<e:Label id="desc1" text="Sinh lực:" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="attr1" text="+123456" size="20" x="70" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>
@@ -50,7 +50,7 @@
 			<e:Label id="desc2" text="Sinh lực:" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="attr2" text="+123456" size="20" x="70" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>
-		<e:Group y="39" x="317">
+		<e:Group y="39" x="300">
 			<e:Label id="desc3" text="Sinh lực:" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="attr3" text="+123456" size="20" x="70" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>
@@ -58,7 +58,7 @@
 			<e:Label id="desc4" text="Sinh lực:" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="attr4" text="+123456" size="20" x="70" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>
-		<e:Group y="65" x="317">
+		<e:Group y="65" x="300">
 			<e:Label id="desc5" text="Sinh lực:" size="20" x="0" y="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 			<e:Label id="attr5" text="+123456" size="20" x="70" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>
@@ -67,7 +67,7 @@
 			<e:Label id="attr6" text="+123456" size="20" x="156" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 		</e:Group>
 		<e:layout>
-			<e:TileLayout requestedColumnCount="2" verticalAlign="middle" horizontalAlign="left" horizontalGap="43" verticalGap="9"/>
+			<e:TileLayout requestedColumnCount="2" verticalAlign="middle" horizontalAlign="left" horizontalGap="0" verticalGap="9"/>
 		</e:layout>
 	</e:Group>
 	<e:Label id="maxDesc" text="Bộ phận này đã đạt cấp tối đa"   size="30" bottom="109" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>

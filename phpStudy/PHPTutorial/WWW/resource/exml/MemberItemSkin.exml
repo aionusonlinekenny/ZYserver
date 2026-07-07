@@ -7,7 +7,7 @@
 		<e:Image id="vipTitle" scaleX="1" scaleY="1" verticalCenter="1.5" source="vipv_png" y="8" left="23"/>
 	</e:Group>
 	<e:Group width="192.67" height="50" x="208.25" y="0" anchorOffsetX="0">
-		<e:Label id="office" text="Minh Chủ" size="22" width="80" x="53" verticalCenter="1" y="15" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xffffff"/>
+		<e:Label id="office" text="Minh Chủ" size="22" width="130" x="30" verticalCenter="1" y="15" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xffffff"/>
 	</e:Group>
 	<e:Group width="200" height="50" x="401" y="0">
 		<e:Label id="conLab" text="25789456" size="22" textAlign="center" verticalCenter="0" y="15" scaleX="1" scaleY="1" horizontalCenter="0" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="125" textColor="0xffffff"/>

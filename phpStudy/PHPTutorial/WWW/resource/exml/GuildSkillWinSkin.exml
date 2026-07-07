@@ -41,11 +41,11 @@
 			<e:Label id="praCurBase" text="Chưa học" x="48.66" y="60.65" size="20" wordWrap="true" height="42" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Label id="praNextLab" text="Công kích: 100" x="341.35" y="61.33" size="20" wordWrap="true" height="42" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Image x="212.5" y="53.5" source="jiantouyou"/>
-			<e:Label id="praCon" text="8000" x="162.5" y="181.5" size="20" textColor="0xfeffff" fontFamily="Microsoft YaHei"/>
-			<e:Image source="szbanggong" scaleX="1.4" scaleY="1.4" horizontalCenter="-109.5" verticalCenter="49"/>
-			<e:Label id="praCost" text="8000" x="163" y="135" size="20" textColor="0xfeffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="praCon" text="8000" x="220" y="181.5" size="20" textColor="0xfeffff" fontFamily="Microsoft YaHei"/>
+			<e:Image source="szbanggong" scaleX="1.4" scaleY="1.4" horizontalCenter="-30" verticalCenter="49"/>
+			<e:Label id="praCost" text="8000" x="220" y="135" size="20" textColor="0xfeffff" fontFamily="Microsoft YaHei"/>
 			<e:Label id="praCost0" text="8000" size="20" textColor="0xfeffff" fontFamily="Microsoft YaHei" horizontalCenter="147" verticalCenter="2"/>
-			<e:Image source="szbanggong" scaleX="1.4" scaleY="1.4" horizontalCenter="-109.5" verticalCenter="3"/>
+			<e:Image source="szbanggong" scaleX="1.4" scaleY="1.4" horizontalCenter="-30" verticalCenter="3"/>
 			<e:Image source="szjinbi"  horizontalCenter="83" verticalCenter="2"/>
 			<e:Button id="praBtn" label="Học" skinName="SkinBtn1" bottom="12" horizontalCenter="-0.5" width="156" height="60" scaleX="0.9" scaleY="0.9"/>
 			<e:Group id="praBtnMc" width="156" height="60" horizontalCenter="0.5" bottom="11"/>

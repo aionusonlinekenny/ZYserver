@@ -7,8 +7,8 @@
   	<e:Image horizontalCenter="0" source="bg_1_jpg" verticalCenter="-35"/>
 
 	<e:ViewStack id="viewStack"   selectedIndex="1" width="600" horizontalCenter="0" top="0" bottom="0">
-		<ns1:GuildSkillPanelView name="修法静室" id="guildskill" skinName="SkinGuildSkillWin" width="600" height="728" verticalCenter="-57" horizontalCenter="0" visible="false"/>
-		<ns1:GuildFirePanelView id="guildcampfire" name="仙山建设" skinName="SkinGuildCampFire" width="600" horizontalCenter="0" top="0" bottom="0"/>		
+		<ns1:GuildSkillPanelView name="Tĩnh Thất" id="guildskill" skinName="SkinGuildSkillWin" width="600" height="728" verticalCenter="-57" horizontalCenter="0" visible="false"/>
+		<ns1:GuildFirePanelView id="guildcampfire" name="Tiên Sơn" skinName="SkinGuildCampFire" width="600" horizontalCenter="0" top="0" bottom="0"/>
 		<!--<e:Component name="仙盟商店" id="guildstore" skinName="GuildStoreWinSkin" top="0" bottom="10" left="0" right="9" visible="false"/>-->
 	</e:ViewStack>
 
