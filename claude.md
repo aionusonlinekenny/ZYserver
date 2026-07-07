@@ -2178,3 +2178,11 @@ Người dùng báo: sau khi trả cỡ chữ về 20, `width=74` giờ lại qu
 - Dòng "Tiêu hao": thay vì tiếp tục vật lộn với việc xuống dòng, sửa thẳng ở `main.min.js` chỗ gán `this.cost.text=h.name` (2 chỗ, ứng với 2 nhánh code khi vật phẩm đang có thể nâng cấp) thành `h.name.replace("Vô Cực","").replace(/^\s+|\s+$/g,"")` - loại bỏ cụm "Vô Cực" (thừa vì cả tab này vật phẩm nào cũng là "Vô Cực") khỏi tên hiển thị ở dòng Tiêu hao, kèm trim khoảng trắng thừa sau khi cắt. Nhờ vậy câu ngắn hẳn lại (ví dụ "Hộ Uyển" thay vì "Hộ Uyển Vô Cực"), nhiều khả năng đủ ngắn để không cần xuống dòng nữa mà không cần đoán thêm về `width`.
 
 Đổi tên `main.min_e6cddaaa.js`→`main.min_75c0bc4a.js` và `default.thm_7ddbda66.js`→`default.thm_f1c61ab2.js` (cache-bust cả 2), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file.
+
+### 23.4. Quay lại bản chữ nhỏ cho tên item - người dùng so sánh 2 ảnh và thấy bản cũ đẹp hơn (2026-07-06)
+
+Sau khi tăng `width` lên `112` (mục 23.3) để hết cảnh 3 dòng, người dùng gửi 2 ảnh so sánh: ảnh hiện tại (width=112, cỡ chữ 20) bị tràn chữ đè sang tên item bên cạnh ("Vô Cực Thần Kiếm" đè lên "Vô Cực Thần Giáp"); ảnh cũ hơn (từ lúc `width=74, size=13`, mục 23.1) nhìn gọn gàng, không chồng chéo dù chữ nhỏ hơn. Người dùng chọn phương án cũ.
+
+**Đã sửa**: trả `nameLabel` về đúng thông số của mục 23.1: `size=13, width=74`. Dòng "Tiêu hao" giữ nguyên như mục 23.3 (đã bỏ chữ "Vô Cực", không đổi gì thêm).
+
+Đổi tên `default.thm_f1c61ab2.js`→`default.thm_85e0e333.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được.
