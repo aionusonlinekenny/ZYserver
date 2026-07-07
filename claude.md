@@ -2117,3 +2117,11 @@ Người dùng gửi ảnh chụp màn "封神" (Thần Trang - tab đầu trong
 **Lưu ý quan trọng - đây là ước lượng, chưa có cách render/xem trực tiếp Egret canvas từ môi trường này**: các con số `bottom=-70`, `width=180`, `y=40` là suy luận dựa trên kích thước các phần tử lân cận đọc được từ code (group cao 102px, icon bắt đầu ở y=110, v.v...), KHÔNG phải test trực quan. Nhờ người dùng chụp lại màn hình sau khi cập nhật để tôi tinh chỉnh thêm nếu vị trí chưa đẹp.
 
 Đổi tên `default.thm_d927d154.js`→`default.thm_6a726144.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được.
+
+### 21.1. Phản hồi sau test: bỏ dời vị trí, chỉ rút ngắn chữ + thu hẹp width (2026-07-06)
+
+Người dùng test và báo: đưa "Nhận Tinh Thể Thần Trang" xuống dưới nút Nâng Cấp làm nó **biến mất hẳn** khỏi màn hình (nhìn kỹ ảnh chụp thấy có chữ mờ gần như trong suốt ngay phía trên hàng tab - khả năng cao là bị 1 layer/mask nào đó của khối tab che mất hoặc nằm ngoài vùng hiển thị được của group cha). Quyết định: **trả lại vị trí cũ** (`horizontalCenter=192, bottom=6`, đúng như trước khi tôi sửa ở mục 21), chỉ đổi nội dung chữ từ "Nhận Tinh Thể Thần Trang" → **"Nhận Tinh Thể"** cho ngắn lại (không có chỗ nào trong code so sánh cứng với chuỗi text cũ nên đổi chữ an toàn, không gây lỗi logic).
+
+Về nhãn tên trang bị (`curName`/`nextName`): giữ nguyên `wordWrap`/`multiline` (2 dòng) nhưng **thu hẹp `width` từ 180 xuống 150** để buộc xuống dòng ngay sau "Thương Nguyệt"/"Trường Không" thay vì để lọt thêm 1-2 ký tự của từ "Thánh" rồi mới ngắt giữa từ (ước lượng theo tỉ lệ ký tự quan sát được từ ảnh chụp trước, vẫn là suy đoán chưa render trực tiếp được).
+
+Sửa đồng bộ ở cả `default.thm.js` (file thật load lúc chạy) lẫn 2 file `.exml` nguồn. Đổi tên `default.thm_6a726144.js`→`default.thm_ea09838b.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được.
