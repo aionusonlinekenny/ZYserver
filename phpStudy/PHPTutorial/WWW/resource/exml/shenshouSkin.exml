@@ -55,7 +55,7 @@
 		<e:Image id="leftRed" x="20" y="-8" source="zjmhongdian" touchEnabled="false"/>
 		</e:Group>
 	</e:Group>
-	<e:Group left="86" top="425">
+	<e:Group left="96" top="425">
 		<e:Image source="gantanhao4"/>
 		<e:Label text="Mặc đủ trang bị để xuất trận, kích hoạt thuộc tính/kỹ năng" size="16" fontFamily="Microsoft YaHei" textColor="0xffff00" width="470" wordWrap="true" multiline="true"/>
 		<e:layout>

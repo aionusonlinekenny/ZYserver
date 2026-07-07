@@ -2307,3 +2307,11 @@ Vì cột item bên trái ("Trắng 1 sao/Thú Khải") kết thúc sớm hơn v
 Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml`. Đổi tên `default.thm_de331a1f.js`→`default.thm_58d8fc6e.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt là mép phải câu có chạm/tràn khỏi màn hình 600 không.
+
+### 26.4. Test sau mục 26.3: 1 dòng, cỡ chữ 16 ổn, chỉ cần dời sang phải 10px cho thoáng khỏi "Thú Khải" (2026-07-06)
+
+Người dùng gửi ảnh (IMG_0607) xác nhận: câu đã gọn 1 dòng, cỡ chữ 16 đọc rõ, không tràn mép phải — chỉ cần dời cả cụm (icon+chữ) sang phải thêm 10px để không còn sát/gần chạm chữ "Thú Khải" bên trái.
+
+**Đã sửa**: đổi `left="86"` → `left="96"` cho `Group` chứa icon+Label (đơn giản dời cả cụm sang phải 10px, giữ nguyên mọi thông số khác — cỡ chữ 16, 1 dòng, `width=470`). Khoảng trống còn lại đến mép phải màn hình giảm nhẹ từ 490px xuống 480px, vẫn đủ dư ~10px cho câu 58 ký tự.
+
+Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml`. Đổi tên `default.thm_58d8fc6e.js`→`default.thm_22f60dd9.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
