@@ -2200,3 +2200,20 @@ Người dùng gửi ảnh (IMG_0596) màn "Luyện Trận" (skin `SkinYuPeiNew`
 Sửa đồng bộ ở `default.thm.js` + `resource/exml/YuPeiNewSkin.exml` (nguồn) + `main.min.js`. Đổi tên `default.thm_85e0e333.js`→`default.thm_276d87cb.js` và `main.min_75c0bc4a.js`→`main.min_98adb1e8.js` (cache-bust cả 2 vì cả 2 đều đổi nội dung lần này), cập nhật `manifest.json`/`index.php`. `node -c` qua được cho cả 2 file, `php -l` qua được cho `index.php`, `manifest.json` hợp lệ.
 
 Vẫn là suy đoán vị trí dựa trên đọc code xung quanh, chưa render trực tiếp kiểm chứng được — cần người dùng chụp ảnh xác nhận lại, các lần sửa skin trước trong session này (Thần Trang, Chí Thánh, Vô Cực) đều cần 2-4 vòng chỉnh mới đạt kết quả ổn.
+
+### 24.1. Test sau mục 24: hết đè mũi tên nhưng khung 195px quá hẹp, "Sát Thương Bạo Kích :" tự xuống 2-3 dòng (2026-07-06)
+
+Người dùng gửi ảnh (IMG_0597) xác nhận mũi tên không còn đè chữ nữa, nhưng nút "Tự Nâng Cấp" đã đổi tên đúng như yêu cầu. Vấn đề còn lại: khung `width=195` quá hẹp nên dòng "Sát Thương Bạo Kích :" tự tách khỏi số của nó (750/1500) xuống dòng riêng, đọc bị ngắt quãng. Yêu cầu: mở rộng + dời khung trái sang trái 10-20px để dòng "Sát Thương Bạo Kích : 750" nằm 1 dòng (giữ nguyên lề trái vì đã ổn); mở rộng khung phải để "Sát Thương Bạo Kích : 1500" và "Cường Độ Bạo Kích : 10" đều nằm 1 dòng.
+
+**Tính toán**: tra được kích thước gốc icon mũi tên `jiantouyou` trong atlas (`resource/image/common/img_tj5.json`) là `75x70` — với `horizontalCenter=0` trong nhóm rộng 500, mũi tên chiếm từ local x=212.5 đến 287.5. Khung `curAtt` gốc (x=10,width=195 → mép phải 205) và `nextAtt` gốc (x=295 → mép trái 295) đã cách mũi tên đúng 7.5px mỗi bên — đây là giới hạn AN TOÀN không được vượt qua khi mở rộng. Ngoài ra, nền pano trong `maxGroup` (`tongyong_dikuang4`, rộng 548, `horizontalCenter=0`) giới hạn vùng hiển thị chữ trong khoảng local x = -24 đến 524 (vượt ra ngoài dễ bị tràn khỏi khung nền).
+
+Vì vậy: chỉ có thể mở rộng `curAtt` bằng cách kéo dài **thêm về bên trái** (giữ nguyên mép phải=205 để không đụng mũi tên), và mở rộng `nextAtt` bằng cách kéo dài **thêm về bên phải** (giữ nguyên mép trái=295). Ước lượng độ rộng cần thiết cho dòng dài nhất ("Sát Thương Bạo Kích : 1500", ~26 ký tự) ở cỡ chữ 18 sẽ vượt quá ngân sách còn lại trong khung nền 548px nếu cộng cả 2 cột + khoảng mũi tên — nên giảm thêm cỡ chữ `18→16` để vừa an toàn trong giới hạn nền.
+
+**Đã sửa**:
+- `curAtt`: `x=10,width=195` → `x=-15,width=220` (mép phải giữ nguyên 205, kéo dài thêm 25px về bên trái, dịch cả khung sang trái 25px so với trước).
+- `nextAtt`: `x=295,width=195` → `x=295,width=225` (giữ nguyên mép trái 295, chỉ kéo dài thêm 30px về bên phải, mép phải mới = 520, vẫn trong giới hạn nền 524).
+- Cỡ chữ cả 2: `18→16` (cần thiết để dòng dài nhất vừa khung mới mà không đụng viền nền hoặc mũi tên).
+
+Sửa đồng bộ `default.thm.js` + `resource/exml/YuPeiNewSkin.exml`. Đổi tên `default.thm_276d87cb.js`→`default.thm_b85d904d.js` (cache-bust, chỉ file này đổi nội dung lần này), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+Lần này có tra cứu thêm kích thước thật của icon mũi tên trong atlas thay vì chỉ suy đoán từ code xung quanh, nên độ tin cậy cao hơn các lần trước, nhưng vẫn chưa render trực tiếp được — cần người dùng xác nhận lại bằng ảnh.
