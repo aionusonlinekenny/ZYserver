@@ -2315,3 +2315,9 @@ Người dùng gửi ảnh (IMG_0607) xác nhận: câu đã gọn 1 dòng, cỡ
 **Đã sửa**: đổi `left="86"` → `left="96"` cho `Group` chứa icon+Label (đơn giản dời cả cụm sang phải 10px, giữ nguyên mọi thông số khác — cỡ chữ 16, 1 dòng, `width=470`). Khoảng trống còn lại đến mép phải màn hình giảm nhẹ từ 490px xuống 480px, vẫn đủ dư ~10px cho câu 58 ký tự.
 
 Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml`. Đổi tên `default.thm_58d8fc6e.js`→`default.thm_22f60dd9.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
+
+### 26.5. Chỉnh thêm: `left=120` là đẹp nhất (2026-07-06)
+
+Người dùng chốt: `left="96"` (mục 26.4) vẫn chưa đủ, đổi hẳn thành `t.left = 120;` là đẹp. Đã sửa `left="96"`→`left="120"`, đồng thời thu hẹp `width` của Label từ `470`→`450` (vì `left` tăng thêm 24px thì ngân sách chiều rộng còn lại đến mép phải màn hình giảm tương ứng, từ 480px xuống 456px — giữ `width=450` để chắc chắn không tràn mép phải).
+
+Sửa đồng bộ `default.thm.js` + `resource/exml/shenshouSkin.exml`. Đổi tên `default.thm_22f60dd9.js`→`default.thm_d76b93e8.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
