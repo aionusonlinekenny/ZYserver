@@ -2351,3 +2351,36 @@ Người dùng báo (kèm 5 ảnh minh hoạ luồng): nạp VIP3 nhận đượ
 Vì đây là sửa 100% code logic trong `main.min.js` (không phải file skin/layout), chỉ đổi tên `main.min_f4cc8742.js`→`main.min_90c6d4ca.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ.
 
 Đây là sửa dựa trên đọc code tĩnh (không debug trực tiếp bằng log server/network được), về lý thuyết giải quyết đúng triệu chứng đã báo (kiểm tra sai do cache lệch) — nhưng cần người dùng bấm "Kích hoạt" lại để xác nhận đã kích hoạt thành công. Nếu vẫn lỗi, khả năng cao nguyên nhân nằm ở phía SERVER (Lua) từ chối lệnh `sendUpGradeOperate` vì lý do khác — sẽ cần dò tiếp phía server lúc đó.
+
+## 29. Bug thật sự của mục 28: sai lệch HOA/thường giữa nhãn nút và điều kiện so sánh trong code (2026-07-07)
+
+Người dùng test lại: vẫn còn báo "Không đủ nguyên liệu" y hệt dù túi đồ giờ có tới 3 cái "Định Thân Ngọc Phù" (ảnh xác nhận số lượng qua tab Đạo cụ) — chứng tỏ bản vá mục 28 (đọc thẳng `bagModel` thay vì cache) không giải quyết đúng gốc rễ. Người dùng yêu cầu dò lại toàn bộ code trong repo, và dò luôn phần "Tiên Thủ Trụy Sức" (nguyên liệu ExRing thứ 2, cần thưởng VIP5).
+
+**Tìm ra nguyên nhân thật**: đoạn xử lý bấm nút trong `SpecialRingWin` (class quản lý cả 2 "ngọc phù" ExRing) là:
+```js
+case this.btnUse: "Kích Hoạt"==this.btnUse.label ? this.sendUpgrade() : this.openBuyGoods()
+```
+Nhưng nhãn THẬT SỰ của nút (định nghĩa trong skin `SkinRingTips`, file `default.thm.js`) lại là:
+```js
+t.label = "Kích hoạt";  // chữ "h" thường, không phải "Kích Hoạt" chữ "H" hoa
+```
+JavaScript so sánh chuỗi phân biệt hoa/thường (`"Kích Hoạt" !== "Kích hoạt"`), nên điều kiện **LUÔN LUÔN sai** — bấm nút không bao giờ gọi được `sendUpgrade()` (gửi lệnh lên server) mà luôn rơi vào `openBuyGoods()` (mở popup "thiếu nguyên liệu"), **bất kể trong túi có bao nhiêu nguyên liệu**. Đây là lỗi dịch thuật có sẵn từ trước (một chỗ dịch "Kích hoạt", một chỗ dịch/gõ "Kích Hoạt" — không đồng bộ hoa/thường), không phải lỗi do các lần sửa trước trong session này gây ra. Bản vá mục 28 tuy đúng hướng (cache có thể lệch thật) nhưng không phải nguyên nhân chính khiến nút luôn báo lỗi.
+
+Vì `SpecialRingWin` xử lý CẢ 2 slot ExRing bằng chung 1 hàm (chỉ khác tham số `index`/`currData` truyền vào), lỗi này áp dụng cho **cả "Định Thân Ngọc Phù" lẫn "Tiên Thủ Trụy Sức"** — sửa 1 chỗ là khắc phục cho cả hai như người dùng yêu cầu.
+
+**Dò toàn bộ code để tìm lỗi tương tự**: viết script quét toàn bộ `main.min.js`, tìm mọi chỗ so sánh `"chuỗi"==this.xxx.label`, đối chiếu với mọi nơi từng gán `this.xxx.label="chuỗi"` cho cùng field đó, lọc ra các trường hợp chuỗi so sánh không khớp với bất kỳ giá trị nào từng được gán (cùng class). Tìm thêm được **5 lỗi cùng loại** (không phải do người dùng báo, chủ động sửa luôn cho đồng bộ, tránh lặp lại đúng kiểu lỗi này ở tính năng khác):
+
+- `DressesWin` (màn "Ảo Hóa"/hình tượng biến hình), nút `dressBtn`:
+  - `"Kích Hoạt"` → `"Kích hoạt"` (cùng lỗi hoa/thường)
+  - `"Huyễn Hóa"` → `"Ảo Hóa"` (2 từ dịch khác nhau cho cùng 1 khái niệm — nhãn nút thật luôn là "Ảo Hóa", điều kiện kiểm tra "Huyễn Hóa" không bao giờ khớp)
+  - `"Nâng Cấp"` → `"Nâng cấp"` (lỗi hoa/thường)
+  - `"Cởi Bỏ"` → `"Cởi ra"` (2 từ dịch khác nhau cho cùng khái niệm "gỡ trang phục")
+- `DressesWin`, nút `dressBtn2`: `"Huyễn Hóa"` → `"Ảo Hóa"` (cùng lỗi, khiến bấm nút này luôn chạy nhầm sang lệnh "cởi ra" thay vì "mặc vào")
+- `OSATarget6Panel`, nút `goBtn`: `"Đi Tiêu Diệt"` → `"Đi tiêu diệt"` (lỗi hoa/thường, khiến nút "đi tiêu diệt boss" trong 1 sự kiện không hoạt động)
+- (panel xem chung kết đấu trường), nút `vewChampScore`: `"Xem Tỷ Số"` → `"Xem tỷ số"` (lỗi hoa/thường, khiến nút "Xem tỷ số" không mở được màn xem kết quả)
+
+**Không sửa** 2 trường hợp còn lại nghi ngờ tương tự vì rủi ro cao/không đủ chắc chắn: `upgradeBtn` so với `"Tiến Giai"` (field name dùng chung bởi nhiều class khác nhau trong game, không xác định chắc được đây có phải lỗi thật hay là logic hợp lệ dùng chung từ 1 base class) và `btn1` so với `"Mua"` (tên field quá chung chung, khả năng cao đang so sánh nhầm giữa nhiều class không liên quan — không đủ bằng chứng để sửa an toàn).
+
+Đổi tên `main.min_90c6d4ca.js`→`main.min_d847a680.js` (cache-bust), cập nhật `manifest.json`/`index.php`. `node -c` qua được, `php -l` qua được, `manifest.json` hợp lệ. Đã chạy lại script quét sau khi sửa để xác nhận không còn sai lệch nào (ngoại trừ 2 trường hợp cố tình bỏ qua ở trên và 1 số trùng tên field giữa các class khác nhau — false positive do field name trùng lặp, không phải lỗi thật).
+
+Đây là NGUYÊN NHÂN GỐC thật sự (không phải suy đoán từ đọc code xung quanh như các lần sửa layout trước — lần này xác minh được bằng cách đối chiếu trực tiếp giá trị gán thực tế trong `default.thm.js`/`main.min.js` với điều kiện so sánh), độ tin cậy cao. Vẫn cần người dùng bấm "Kích hoạt" lại để xác nhận.
