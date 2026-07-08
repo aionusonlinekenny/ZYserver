@@ -2926,3 +2926,30 @@ Người dùng xác nhận mục 61 ổn (gửi ảnh xác nhận 3 dòng thông
 Sửa đồng bộ `zaoyuskin.exml` + `default.thm.js` (`_Image1_i`, `_Label1_i`, `_Image6_i`, `_Label6_i`, `scroller_i`). Không có dynamic override cho câu chú thích này trong `main.min.js` (đã grep xác nhận, hoàn toàn tĩnh). Đổi tên `default.thm_5212b828.js`→`default.thm_10d6176f.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ, exml qua `xml.etree.ElementTree.parse`.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: (1) câu chú thích hiện đủ 2 dòng, không còn bị cắt chữ "Tiêu" bên trái; (2) không đè lên dòng "(Mỗi phút giảm 1 điểm)" phía trên; (3) khối "Người chơi gần đây" đã dời xuống đủ, không bị chồng lên câu chú thích 2 dòng. Khoảng dời 46px là ước tính dựa trên chiều cao 1 dòng chữ size 20 (~24px) × 2 dòng cộng đệm — có thể cần chỉnh thêm nếu vẫn còn sát nhau.
+
+## 63. Sửa toàn bộ "số+đơn vị" sai kiểu tiếng Trung (cấp/chuyển/hạng) trên toàn `main.min.js` (2026-07-08)
+
+Người dùng xác nhận mục 62 ổn (ảnh cho thấy 3 dòng thông tin không đè, câu chú thích 2 dòng gọn gàng). Phát hiện lỗi mới: "Xếp hạng Sát Lục: 1hạng" sai văn phong tiếng Việt — yêu cầu đổi thành "Hạng 1" (từ đứng TRƯỚC số, có khoảng cách), tương tự "Cấp 1", "Chuyển 1", và yêu cầu RÀ TOÀN BỘ CODE tìm các chỗ lỗi tương tự để sửa luôn, nhấn mạnh phải cẩn thận vì dễ vỡ code.
+
+**Nguyên nhân gốc**: đây là kiểu Trung Quốc "số+đơn vị" (ví dụ "76级" = cấp 76) được dịch nguyên xi từng chữ sang tiếng Việt mà KHÔNG đảo trật tự — hàng trăm chỗ trong `main.min.js` nối chuỗi kiểu `VAR+"cấp"`/`VAR+"chuyển"`/`VAR+"hạng"` (số đứng trước, từ đứng sau, không khoảng cách), đúng văn phong tiếng Việt phải là "Cấp 76"/"Chuyển 12"/"Hạng 1" (từ trước, số sau, có khoảng cách).
+
+**Phương pháp rà soát** (để đảm bảo không vỡ code với quy mô lớn — gần 300 chỗ):
+1. Viết script Python quét toàn bộ `main.min.js` tìm mọi chỗ nối chuỗi `<biểu thức>+"cấp"`/`+"chuyển"`/`+"hạng"` (kể cả biến thể có hậu tố như `+"cấp mở"`, `+"cấp)"`, `+"cấp|"`, `+"hạng|"`...).
+2. Viết bộ dò biên biểu thức lùi từ vị trí `+` (đếm độ sâu ngoặc `()`/`[]`, dừng đúng ở ranh giới biểu thức — xử lý được cả biến đơn giản `t.level`, chuỗi thuộc tính `this.data.itemConfig.level`, gọi hàm `ShenshouModel.ins().getEquipLvResult(...)`, biểu thức số học trong ngoặc `(this._curLevel+1)`, phép chia/chia dư không ngoặc `e/1e3`, `e%1e3`...).
+3. In toàn bộ danh sách biểu thức trích được ra để **soát bằng mắt trước khi áp dụng** — phát hiện các trường hợp KHÔNG được đảo trật tự vì "cấp"/"hạng" ở đây mang nghĩa khác (không phải nhãn cấp độ):
+   - `"nâng cấp lên"+o+"cấp"` — "cấp" ở đây là ĐẾM SỐ LƯỢNG cấp tăng thêm (giống "5 giây", không phải "Cấp 5"), giữ nguyên trật tự, chỉ thêm khoảng cách.
+   - `"Nâng thêm"+s+"cấp là có thể nhận thưởng"` và 2 câu tương tự dùng "chiến lực"/"điểm trang bị" — cùng kiểu ĐẾM SỐ LƯỢNG, chỉ thêm khoảng cách, không đảo.
+   - `"thứ "+X+"hạng"` (7 chỗ, có tiền tố "thứ") — nếu đảo thành "thứ Hạng X" sẽ lặp nghĩa/sai ngữ pháp; giữ nguyên trật tự "thứ X", chỉ thêm khoảng cách trước "hạng".
+   - 2 chỗ "hạng" KHÔNG có tiền tố "thứ" (đúng là ca lỗi trong ảnh người dùng gửi) → đảo bình thường thành "Hạng X".
+4. Xử lý riêng biến thể GHÉP `X+"chuyển"+Y+"cấp"` (9 chỗ, ví dụ tạo ra "12chuyển200cấp" giống hệt ảnh gốc mục đầu tiên) → `"Chuyển "+X+" Cấp "+Y` (thêm khoảng trắng phân tách 2 cụm).
+5. Sau khi xử lý các ngoại lệ thủ công, chạy transform tự động cho toàn bộ phần còn lại (đã xác nhận an toàn qua bước soát bằng mắt).
+
+**Kết quả**: 14 sửa thủ công (thêm khoảng cách, không đảo) + 9 ghép chuyển+cấp + 135 chỗ "cấp" đơn lẻ + 105 chỗ "chuyển" đơn lẻ được đảo trật tự = **263 chỗ** trong `main.min.js`. Ngoài ra phát hiện thêm 2 chỗ liên quan đến từ "bộ" (số lượng mảnh trang bị) bị dính liền số ngay sau khi đảo "cấp"/"chuyển" phía trước (`...+"Cấp "+b+""+y+"bộ:"`) — vá thêm dấu phẩy/khoảng cách để không bị 2 số dính nhau (`+"Cấp "+b+", "+y+" bộ:"`), KHÔNG đảo "bộ" (chưa xác nhận được style chuẩn cho từ này).
+
+**Đã kiểm tra không có text tĩnh tương tự trong `default.thm.js` và các file `.exml`** — toàn bộ lỗi này nằm ở text ĐỘNG (set trong `main.min.js`), không có placeholder tĩnh nào bị lỗi cùng kiểu.
+
+**Phạm vi CHỦ ĐỘNG THU HẸP**: chỉ xử lý 3 từ người dùng nêu rõ (cấp/chuyển/hạng) + vá tối thiểu cho "bộ" (chỉ thêm khoảng cách, không đảo). KHÔNG mở rộng dò các từ phân loại/thứ hạng khác (sao, tầng, vòng...) vì mỗi từ có thể có quy tắc tiếng Việt khác nhau (ví dụ "5 sao" đã ĐÚNG kiểu đếm số lượng, đảo thành "Sao 5" sẽ SAI) — cần xác nhận riêng từng từ với người dùng ở đợt sau nếu muốn mở rộng, để tránh đúng rủi ro "vỡ code" mà người dùng cảnh báo.
+
+Chỉ sửa `main.min.js` (không có exml/`default.thm.js` nào cần đổi). Đổi tên `main.min_fcf6858d.js`→`main.min_a8420dc8.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ. Đã kiểm tra kỹ: không phát sinh double-space, không có artefact `+""` gây lỗi hiển thị (dù còn 112 chỗ `+""` thừa vô hại về mặt chức năng).
+
+Vẫn chưa render trực tiếp kiểm chứng được — quy mô thay đổi RẤT LỚN (263 chỗ) nên rủi ro cao hơn bình thường dù đã soát kỹ từng nhóm mẫu bằng mắt trước khi áp dụng tự động. Cần người dùng kiểm tra rộng nhiều màn hình khác nhau (không chỉ riêng màn Cạnh Kỹ) để xác nhận: "Cấp X", "Chuyển X", "Hạng X" hiển thị đúng khắp nơi (thông tin nhân vật, thú cưỡi, trang bị, xếp hạng bang hội, Thiên Cơ Các, Vạn Long Mộ, danh sách người chơi gần đây...) mà không có chỗ nào bị lệch/thiếu số do sai sót trong quá trình dò biên tự động.
