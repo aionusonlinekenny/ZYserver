@@ -2529,6 +2529,8 @@ Theo yêu cầu của người dùng, đúc kết lại các nguyên tắc bố 
 
 **9. Không đoán mù kích thước thật của các phần tử không khai báo `width`/`height` rõ ràng (ví dụ nút dùng skin nền ảnh không set size cố định)** — khi phải ước lượng khoảng cách an toàn quanh các phần tử này, luôn chừa dư khoảng cách (margin lớn hơn mức tối thiểu tính toán được) và luôn ghi chú rõ trong tài liệu rằng đây là ước lượng chưa xác minh trực quan, cần người dùng xác nhận lại bằng ảnh.
 
+**10. ƯU TIÊN dời vị trí (đổi `x`/`horizontalCenter`/khoảng cách) hơn là giảm cỡ chữ (`size`) khi 2 phần tử chồng lấn.** Theo yêu cầu rõ ràng của người dùng (mục 45-47) — giảm `size` làm chữ nhỏ đi trông không đẹp/không nhất quán với các nhãn khác, trong khi hầu hết các trường hợp chồng lấn đều có thể giải quyết bằng cách dời phần tử (thường là còn dư khoảng trống ở đâu đó chưa tận dụng, như lề trái của khung chứa). Chỉ giảm `size` khi đã xác nhận không còn khoảng trống nào để dời nữa. Khi đo "dời sát mép/chừa lề Npx", phải xác định rõ đang đo theo mép của khung nền HIỂN THỊ (cái người dùng nhìn thấy trên ảnh) chứ không phải mép của Group lập trình chứa phần tử đó — 2 mốc này có thể lệch nhau hàng chục pixel nếu Group có offset riêng (`x`/`y` riêng so với khung nền cha).
+
 ## 37. Đổi tên vật phẩm quá dài từ wrap 2 dòng sang truncate 1 dòng kiểu "Tên…" (2026-07-07)
 
 Người dùng gửi ảnh (IMG_0637, màn Điểm Danh) phản hồi lại cách sửa ở mục 35: wrap tên vật phẩm dài xuống 2 dòng (ví dụ "Thám Ngọc Kim Linh" xuống 2 dòng) không phải điều muốn — muốn kiểu cắt ngắn 1 dòng kèm dấu "…" (ví dụ "Thám Ngọc..") giống ảnh mẫu gửi kèm.
@@ -2707,3 +2709,17 @@ Người dùng gửi ảnh (IMG_0652) chỉ ra sau khi sửa mục 46 (`x=4`), 2
 Sửa đồng bộ `GuildSkillWinSkin.exml` + `default.thm.js`. Đổi tên `default.thm_ae5ff6d4.js`→`default.thm_9d93189e.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 **Bài học**: khi người dùng yêu cầu "dời sát mép/chừa lề Npx", cần xác định rõ đang đo theo mép của KHUNG NỀN HIỂN THỊ (thứ người dùng nhìn thấy) hay mép của GROUP CHỨA phần tử đó (toạ độ lập trình) — 2 mốc này có thể lệch nhau hàng chục pixel nếu group có offset riêng, như trường hợp `praGroup.x=60` ở đây.
+
+## 48. Icon "!" lệch xuống dòng 2 ở skin Xây Dựng Tiên Sơn (`GuildCampFireSkin.exml`) (2026-07-08)
+
+Người dùng xác nhận mục 47 đẹp rồi (**chốt nguyên tắc: ưu tiên dời vị trí hơn giảm cỡ chữ khi sửa chồng lấn** — đã ghi thành mục 10 trong phần "Nguyên tắc bố cục" mục 36), rồi chuyển qua màn "Xây Dựng Tiên Sơn" (skin `GuildCampFireSkin.exml`/`SkinGuildCampFire`). Icon "!" (`point1`/`point2`, ảnh `gantanhao3`) đang hiện lạc chỗ — thay vì nằm ngay đầu dòng 1 của đoạn mô tả, nó lại nằm ngay đầu dòng 2 (dòng bị xuống dòng do dịch tiếng Việt dài hơn nguyên bản).
+
+**Nguyên nhân**: `desc1`/`desc2` (nhãn mô tả, `width=495 size=20`) neo bằng `bottom` — khi chữ tràn quá 1 dòng (do bản dịch tiếng Việt dài hơn nhiều so với text gốc), nhãn tự phát triển chiều cao MỞ RỘNG LÊN TRÊN (vì đáy neo cố định, đỉnh trồi lên khi có thêm dòng). Icon `point1`/`point2` cũng neo bằng `bottom` NHƯNG với giá trị cố định được tính cho trường hợp text 1 DÒNG — nên khi text co giãn thành 2 dòng, icon (không đổi vị trí) chỉ còn thẳng hàng với dòng CUỐI (dòng 2) thay vì dòng đầu.
+
+**Đã sửa**: tăng `bottom` của `point1`/`point2` thêm ~1 chiều cao dòng (size 20, ước lượng line-height ≈24px): `point1` 206→230, `point2` 171→195 — đẩy icon lên cao hơn, thẳng hàng với dòng đầu tiên của đoạn text thay vì dòng 2.
+
+**Lưu ý về độ chắc chắn của fix này**: đây là fix TĨNH (hardcode dựa trên giả định text luôn tràn đúng 2 dòng) — không phải fix động theo `textHeight` thực tế đo được sau khi word-wrap (khác với kiểu fix ở mục 37 dùng `.textWidth` đo runtime). Nếu nội dung `desc1`/`desc2` thay đổi độ dài (dữ liệu server khác) khiến số dòng thực tế không phải luôn là 2, icon có thể lại lệch. Không có thời gian implement fix động trong lượt này; ghi chú lại để cân nhắc nếu lỗi tái diễn ở ngữ cảnh dữ liệu khác.
+
+Sửa đồng bộ `GuildCampFireSkin.exml` + `default.thm.js`. Đổi tên `default.thm_9d93189e.js`→`default.thm_cf63bd7c.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh xem icon đã thẳng hàng đúng dòng đầu chưa, và cả 2 icon (dòng "Mỗi lần dùng..."/dòng "Dùng thêm...") đều đúng.

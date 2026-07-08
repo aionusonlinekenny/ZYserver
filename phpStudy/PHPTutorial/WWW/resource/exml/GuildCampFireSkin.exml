@@ -27,9 +27,9 @@
 			<e:Label id="count" text="1" anchorOffsetX="0" width="105" size="22" scaleX="1" scaleY="1" textColor="0xffe500" fontFamily="Microsoft YaHei" horizontalCenter="114.5" verticalCenter="5.5"/>
 			<e:Button id="give" label="Button" icon="campfire_button_png" horizontalCenter="-7" scaleX="1" scaleY="1" x="253" verticalCenter="0" skinName="SkinBtn0"/>
 		</e:Group>
-		<e:Image id="point1" x="81.99" scaleX="1" scaleY="1" source="gantanhao3" bottom="206"/>
+		<e:Image id="point1" x="81.99" scaleX="1" scaleY="1" source="gantanhao3" bottom="230"/>
 		<e:Label id="desc1" text="Mỗi lần quyên góp 1 que diêm tăng 5 điểm lửa và 30 điểm cống hiến Tiên Minh" x="99.36" anchorOffsetX="0" width="495" size="20" scaleX="1" scaleY="1" textColor="0xffffff" fontFamily="Microsoft YaHei" bottom="208"/>
-		<e:Image id="point2" x="82" scaleX="1" scaleY="1" source="gantanhao3" bottom="171"/>
+		<e:Image id="point2" x="82" scaleX="1" scaleY="1" source="gantanhao3" bottom="195"/>
 		<e:Label id="desc2" text="Mỗi lần quyên góp 1 que diêm tăng 5 điểm lửa và 30 điểm cống hiến Tiên Minh" x="100" anchorOffsetX="0" width="495" size="20" scaleX="1" scaleY="1" textColor="0xffffff" fontFamily="Microsoft YaHei" bottom="172"/>
 		<e:Group id="fireLv" horizontalCenter="0" anchorOffsetY="0" height="473" x="59" scaleX="1" scaleY="1" bottom="377" visible="false">
 			<e:Image id="lv0" y="285" source="campfire_lv1" horizontalCenter="-2.5" visible="false"/>
