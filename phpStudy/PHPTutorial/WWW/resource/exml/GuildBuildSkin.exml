@@ -25,7 +25,7 @@
 		<e:Image width="173" horizontalCenter="87" bottom="132" source="shuzibg"/>
 		<e:Label id="leftLab" text="Tiên Minh cấp 1" size="22" multiline="true" height="152.5" width="194" textAlign="center" lineSpacing="4" horizontalCenter="-121.5" fontFamily="Microsoft YaHei" textColor="0xffffff" anchorOffsetY="0" top="72" anchorOffsetX="0"/>
 		<e:Label id="rightLab" text="Tiên Minh cấp 1" size="22" multiline="true" height="152.5" width="191.33" textAlign="center" lineSpacing="4" horizontalCenter="128" fontFamily="Microsoft YaHei" textColor="0xffffff" top="72" anchorOffsetX="0"/>
-		<e:TextInput id="textInput" width="165" height="30" maxChars="6" enabled="true" skinName="skins.SkinTextInput" horizontalCenter="87" bottom="136"/>
+		<e:TextInput id="textInput" width="165" height="30" maxChars="20" enabled="true" skinName="skins.SkinTextInput" horizontalCenter="87" bottom="136"/>
 		<e:Button id="closeBtn" label="Button" skinName="SkinBtn0" icon="tongyong_btnclose" horizontalCenter="228.5" top="-4"/>
 		<e:Image x="149" y="189" source="szyuanbao" scaleX="0.9" scaleY="0.9"/>
 		<e:Image x="389" y="189" source="szyuanbao" scaleX="0.9" scaleY="0.9"/>

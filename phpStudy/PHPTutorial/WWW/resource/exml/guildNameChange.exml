@@ -9,6 +9,6 @@
 		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" right="4" bottom="-66" visible="false"/>
 		<e:Button id="sureBtn" skinName="SkinBtn1" label="Xác nhận thay đổi" horizontalCenter="0" bottom="30"/>
 		<e:Image y="136" scale9Grid="6,6,3,3" width="250" height="40" source="shuzibg" horizontalCenter="0"/>
-		<e:EditableText id="input" width="230" prompt="单击此处输入名字" maxChars="6" size="20" promptColor="0xffffff" multiline="false" textAlign="center" verticalAlign="middle" horizontalCenter="0" y="140" fontFamily="Microsoft YaHei"/>
+		<e:EditableText id="input" width="230" prompt="单击此处输入名字" maxChars="20" size="20" promptColor="0xffffff" multiline="false" textAlign="center" verticalAlign="middle" horizontalCenter="0" y="140" fontFamily="Microsoft YaHei"/>
 	</e:Group>
 </e:Skin>

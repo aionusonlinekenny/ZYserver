@@ -2804,3 +2804,19 @@ Người dùng xác nhận mục 54 ổn, chuyển qua popup "Danh sách đơn x
 Sửa đồng bộ `MemberApplySkin.exml` + `default.thm.js`. Đổi tên `default.thm_c601a67a.js`→`default.thm_4ed81ceb.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt khoảng dời 36.5px cho ô nhập là ước lượng (chưa đo chính xác độ dài chữ "Chiến lực lớn hơn" ở size 20) — có thể cần dời thêm nếu vẫn còn sát/chồng nhẹ, và cũng cần kiểm tra ô nhập sau khi dời có đè lên nhãn "Tự động chấp nhận" (đã rút ngắn) hay không.
+
+## 56. Tăng giới hạn ký tự đặt tên Tiên Minh từ 6 lên 20 (`GuildBuildSkin.exml`, `guildNameChange.exml`) (2026-07-08)
+
+Người dùng phản ánh việc đặt tên Tiên Minh (bang hội) bị giới hạn ký tự quá ngắn, muốn tăng lên 20 ký tự.
+
+**Tìm ra 2 nơi có giới hạn `maxChars="6"` liên quan đến tên Tiên Minh** (không phải tên nhân vật — `NameChangeSkin.exml`/`nameInput.maxChars=6` trong `main.min.js` là màn đổi tên NHÂN VẬT khác, không đụng tới):
+- `GuildBuildSkin.exml` (`SkinGuildBuild`, dùng bởi view `GuildCreateWindow`) — màn **Tạo Tiên Minh** lúc lập bang lần đầu, ô `TextInput id="textInput"`.
+- `guildNameChange.exml` (`SkinGuildNameChange`, dùng bởi view `GuildChangeNamePanelView`) — màn **Đổi tên Tiên Minh** miễn phí sau gộp server, ô `EditableText id="input"`.
+
+Cả 2 đều đổi `maxChars` từ `6` → `20`, sửa đồng bộ trong exml lẫn hàm khởi tạo tương ứng trong `default.thm.js` (`textInput_i` của `SkinGuildBuild`, `input_i` của `SkinGuildNameChange`).
+
+**Kiểm tra không bỏ sót giới hạn khác**: đã `grep` toàn bộ `main.min.js` — cả 2 luồng (`GuildCreateWindow`/`sendGuildCreate`, `GuildChangeNamePanelView`) đều gửi thẳng `textInput.text`/`input.text` lên server, không có validate độ dài phía client nào khác ngoài `maxChars`. Không có mã nguồn server (`server/bin/` chỉ chứa file `.exe` đã biên dịch sẵn) nên không kiểm tra được server có giới hạn cứng riêng hay không — nếu server chặn tên dài quá N ký tự thì đây vẫn là giới hạn ẩn ngoài tầm sửa của repo này.
+
+Đổi tên `default.thm_4ed81ceb.js`→`default.thm_f3250b4b.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng thử tạo/đổi tên Tiên Minh với tên dài hơn 6 ký tự để xác nhận: (1) client cho nhập tới 20 ký tự, (2) server có chấp nhận tên dài hơn 6 ký tự hay không (đây là phần không kiểm chứng được từ code client).
