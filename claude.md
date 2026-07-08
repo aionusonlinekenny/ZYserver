@@ -2695,3 +2695,15 @@ Bản sửa mục 45 (giảm `size` 20→13) đã hoạt động đúng (không 
 Sửa đồng bộ `GuildSkillWinSkin.exml` + `default.thm.js`. Đổi tên `default.thm_c2871533.js`→`default.thm_ae5ff6d4.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Đây là thay đổi theo yêu cầu trực tiếp của người dùng (không phải suy luận của mình) — vẫn cần xác nhận lại bằng ảnh xem chữ cỡ 20 tại `x=4` có thực sự đủ chỗ trước khối nền hay không, vì theo ước lượng độ rộng chữ ở size 20 (mục 44/45) có thể vẫn hơi sát/tràn nhẹ.
+
+## 47. Mục 46 vẫn còn dư lề trái — do đo nhầm mốc "mép trái" (2026-07-08)
+
+Người dùng gửi ảnh (IMG_0652) chỉ ra sau khi sửa mục 46 (`x=4`), 2 nhãn vẫn còn khoảng trắng khá rộng phía bên trái, hỏi sao không dời tiếp qua được.
+
+**Nguyên nhân**: `x=4` ở mục 46 là toạ độ CỤC BỘ tính từ gốc của `praGroup` (`x="60"` so với khung 600px bên ngoài) — không phải từ mép trái THẬT SỰ của khung nền (panel `dinghong`, ảnh nền rộng `580px` canh giữa trong khung `600px` → mép trong thực tế nằm ở toạ độ `10` trong hệ ngoài). Vì `praGroup` đã tự lùi vào `60px` so với mép khung nền, `x=4` cục bộ thực chất tương ứng toạ độ `64` trong hệ ngoài — cách mép khung nền thật những **54px**, đúng là khoảng trắng người dùng thấy.
+
+**Đã tính lại và sửa đúng mốc**: mép trong khung nền ở toạ độ ngoài `10` → quy đổi về hệ cục bộ của `praGroup` là `10 - 60 = -50`. Đặt `x=-46` cho cả 2 nhãn (chừa đúng ~4px từ mép khung nền thật, đúng tinh thần yêu cầu ban đầu ở mục 46). Nhờ dời thêm ra xa khỏi khối nền `szbanggong` (vẫn cố định ở toạ độ cục bộ `131`), khoảng cách từ nhãn tới khối nền cũng tăng từ `127px`→`177px`, tiện thể giải quôn luôn phần "Cống hiến còn lại:" từng hơi sát khối nền ở ảnh trước.
+
+Sửa đồng bộ `GuildSkillWinSkin.exml` + `default.thm.js`. Đổi tên `default.thm_ae5ff6d4.js`→`default.thm_9d93189e.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+**Bài học**: khi người dùng yêu cầu "dời sát mép/chừa lề Npx", cần xác định rõ đang đo theo mép của KHUNG NỀN HIỂN THỊ (thứ người dùng nhìn thấy) hay mép của GROUP CHỨA phần tử đó (toạ độ lập trình) — 2 mốc này có thể lệch nhau hàng chục pixel nếu group có offset riêng, như trường hợp `praGroup.x=60` ở đây.

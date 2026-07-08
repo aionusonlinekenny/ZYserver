@@ -51,8 +51,8 @@
 			<e:Group id="praBtnMc" width="156" height="60" horizontalCenter="0.5" bottom="11"/>
 			<e:Image source="jinengline2" x="42" y="58" visible="false"/>
 			<e:Label id="lvTxt" text="Cấp 1" size="22" textColor="0xffff00" fontFamily="Microsoft YaHei" horizontalCenter="-83" verticalCenter="-97"/>
-			<e:Label text="Tiêu hao nâng cấp:" x="4" y="134.65" size="20" textColor="0x001828" fontFamily="Microsoft YaHei"/>
-			<e:Label text="Cống hiến còn lại:" x="4" y="181.33" size="20" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Tiêu hao nâng cấp:" x="-46" y="134.65" size="20" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+			<e:Label text="Cống hiến còn lại:" x="-46" y="181.33" size="20" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Label id="learnLab" text="Không thể nâng cấp kỹ năng, vui lòng nâng cấp Tu Pháp Tịnh Thất trước  Đi nâng cấp" size="20" horizontalCenter="0" bottom="30" x="34" y="391"  textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
 		</e:Group>
 	</e:Group>
