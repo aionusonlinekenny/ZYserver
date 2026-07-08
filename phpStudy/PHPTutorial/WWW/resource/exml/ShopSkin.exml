@@ -16,8 +16,8 @@
 		<e:Image horizontalCenter="-186.5" top="10" source="biaoti_shangcheng_png"/>
 	</e:Group>
 	<e:ViewStack id="viewStack" width="560" selectedIndex="1" anchorOffsetY="0" top="107" bottom="186" horizontalCenter="0">
-		<ns1:BlackMarketPanel id="blackMarketPanel" skinName="SkinBlackMarket" name="神秘商店" top="0" bottom="0" left="0" right="0" width="560" visible="false"/>
-		<ns1:PropertyPanel id="itemShopPanel" skinName="SkinItemShop" name="道具商店" anchorOffsetY="0" top="0" bottom="0" left="0" right="0"/>
+		<ns1:BlackMarketPanel id="blackMarketPanel" skinName="SkinBlackMarket" name="Bí Ẩn" top="0" bottom="0" left="0" right="0" width="560" visible="false"/>
+		<ns1:PropertyPanel id="itemShopPanel" skinName="SkinItemShop" name="Đạo Cụ" anchorOffsetY="0" top="0" bottom="0" left="0" right="0"/>
 	</e:ViewStack>
 <e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}"
 	          selectedIndex="0" horizontalCenter="0" bottom="106">

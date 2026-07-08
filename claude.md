@@ -2866,3 +2866,31 @@ Chỉ sửa đúng 2 dòng khởi tạo `name` này — KHÔNG đụng các câu
 Chỉ sửa `main.min.js` (không có exml/`default.thm.js` nào cần đổi). Đổi tên `main.min_6a7ab3f8.js`→`main.min_fcf6858d.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: dòng đếm ngược tách đúng 2 dòng cố định ("...tiếp theo:" / "00:00:00"), và 2 tab hiển thị đủ chữ "Bí Ẩn"/"Đạo Cụ" không bị cắt.
+
+## 60. Sửa bổ sung: `name` tab bị GHI ĐÈ trong `default.thm.js` (mục 59 chưa đủ) (`ShopSkin.exml`) (2026-07-08)
+
+Người dùng test lại, tab vẫn hiện "Cửa Hàng Bí Ẩn"/"Cửa Hàng Đạo Cụ" dù đã sửa `main.min.js` ở mục 59. Gửi kèm file `default.thm_16e88674.js` yêu cầu kiểm tra.
+
+**Nguyên nhân thật**: `name` của 2 tab KHÔNG chỉ được set 1 lần trong constructor của `BlackMarketPanel`/`PropertyPanel` (đã sửa ở mục 59) — nó còn bị GHI ĐÈ ngay sau đó bởi chính skin cha `SkinShop` (compiled từ `ShopSkin.exml`), trong hàm `blackMarketPanel_i()`/`itemShopPanel_i()`:
+```
+_proto.blackMarketPanel_i = function () {
+	var t = new BlackMarketPanel();   // constructor set name = "Bí Ẩn" (mục 59)
+	...
+	t.name = "Cửa Hàng Bí Ẩn";        // NHƯNG dòng này chạy NGAY SAU, ghi đè lại
+	...
+};
+```
+Đây là do exml gốc khai báo trực tiếp thuộc tính `name` trên thẻ con trong `<e:ViewStack>`:
+```
+<ns1:BlackMarketPanel id="blackMarketPanel" ... name="神秘商店" .../>
+<ns1:PropertyPanel id="itemShopPanel" ... name="道具商店" .../>
+```
+(exml gốc thậm chí CHƯA từng được dịch — vẫn còn tiếng Trung nguyên bản "神秘商店"/"道具商店", còn bản dịch tiếng Việt "Cửa Hàng Bí Ẩn"/"Cửa Hàng Đạo Cụ" chỉ tồn tại trong `default.thm.js` đã biên dịch từ một lần dịch trước đó không đồng bộ ngược lại exml).
+
+**Bài học**: khi 1 giá trị hiển thị (text/name/label...) có thể được set từ NHIỀU nơi (constructor class trong `main.min.js` VÀ thuộc tính khai báo trực tiếp trên component con trong skin cha chứa nó), phải rà cả hai — sửa 1 chỗ có thể bị chỗ kia ghi đè do thứ tự thực thi (skin cha luôn set thuộc tính SAU khi gọi `new` constructor).
+
+**Đã sửa**: `default.thm_16e88674.js` (2 dòng `t.name` trong `SkinShop.blackMarketPanel_i`/`itemShopPanel_i`) và `ShopSkin.exml` (thuộc tính `name` trên 2 thẻ con trong `ViewStack`, dịch luôn từ tiếng Trung gốc sang "Bí Ẩn"/"Đạo Cụ" cho đồng bộ).
+
+Đổi tên `default.thm_16e88674.js`→`default.thm_4639fce7.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh 2 tab đã hiện đúng "Bí Ẩn"/"Đạo Cụ".
