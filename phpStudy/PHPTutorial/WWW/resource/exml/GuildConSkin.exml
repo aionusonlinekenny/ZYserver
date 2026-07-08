@@ -28,8 +28,8 @@
 		<e:Label id="desc1" text="Quyên góp 100.000 Đồng" size="22" y="191" horizontalCenter="126" textColor="0xffe500" fontFamily="Microsoft YaHei" width="201" textAlign="center"/>
 		<e:Label id="count0" text="0/40" size="22" y="319" horizontalCenter="-121" textColor="0xfefefe" fontFamily="Microsoft YaHei"/>
 		<e:Label id="count1" text="0/10" size="22" y="319" horizontalCenter="127" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Label id="info0" text="+300   " size="20" width="201" y="222" height="60" verticalAlign="middle" horizontalCenter="-123" textColor="0xffffff" fontFamily="Microsoft YaHei" textAlign="center"/>
-		<e:Label id="info1" text="+200" size="20" width="201" y="222" height="60" verticalAlign="middle" horizontalCenter="123" textColor="0xffffff" fontFamily="Microsoft YaHei" textAlign="center"/>
+		<e:Label id="info0" text="+300   " size="20" width="201" y="255" height="60" verticalAlign="middle" horizontalCenter="-123" textColor="0xffffff" fontFamily="Microsoft YaHei" textAlign="center"/>
+		<e:Label id="info1" text="+200" size="20" width="201" y="255" height="60" verticalAlign="middle" horizontalCenter="123" textColor="0xffffff" fontFamily="Microsoft YaHei" textAlign="center"/>
 		<e:Label id="info2" text="Ngân quỹ" size="16"  textColor="0x7e6437" x="54" y="271" visible="false"/>
 		<e:Label id="info5" text="+200" size="16"  width="43" textColor="0x9f946d" x="364" y="271" visible="false"/>
 		<e:Label id="info4" text="Cống hiến" size="16"  textColor="0x7e6437" x="54" y="237" visible="false"/>

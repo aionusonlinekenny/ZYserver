@@ -2780,3 +2780,15 @@ Người dùng xác nhận màn Tiên Minh (mục 51-52) đã ổn, chuyển qua
 Sửa đồng bộ `GuildManageItemSkin.exml` + `default.thm.js` + `main.min.js`. Đổi tên `default.thm_3112c4b8.js`→`default.thm_8d8d3ec2.js`, `main.min_c45745a3.js`→`main.min_0cdf96eb.js` (cache-bust cả 2). `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh cho cả 3 thẻ công trình (vị trí nút mới, vị trí "Cần ngân quỹ" dưới nút có canh giữa đẹp không, chữ "Yêu cầu:" đã đúng ý).
+
+## 54. Sửa vỡ dòng giữa từ + chồng chéo trên popup "Quyên góp Tiên Minh" (`GuildConSkin.exml`) (2026-07-08)
+
+Người dùng xác nhận mục 53 ổn, chuyển qua popup "Quyên góp Tiên Minh" (donate). Báo: tiêu đề "Quyên góp1000Nguyên Bảo" xuống dòng ngay giữa từ ("Nguyê" / "n Bảo"), và dòng "Cống hiến +1000 / Quỹ +1000" bên dưới bị dòng tiêu đề (khi tràn 2 dòng) đè lên.
+
+**Tìm ra gốc rễ thật của lỗi vỡ dòng giữa từ**: không phải do khung quá hẹp đơn thuần, mà do lỗi nối chuỗi THIẾU DẤU CÁCH trong `main.min.js` (class `GuildConWindow.initUI`) — đúng mẫu lỗi đã gặp nhiều lần trong phiên này (nguyên tắc 7 trong style guide): `"Quyên góp"+count+"Nguyên Bảo"` (không có khoảng trắng quanh biến số) khiến toàn bộ cụm "góp1000Nguyên" dính liền thành 1 "từ" không có chỗ ngắt dòng tự nhiên, trình engine buộc phải ngắt CỨNG giữa từ. Sửa thành `"Quyên góp "+count+" Nguyên Bảo"` (thêm khoảng trắng 2 bên) — tương tự cho dòng "Đồng Tiền". Sau khi có khoảng trắng, dù vẫn tràn 2 dòng (do câu vẫn dài hơn khung 201px ở size 22) nhưng sẽ ngắt đúng theo ranh giới từ, không còn vỡ giữa từ nữa.
+
+**Sửa chồng chéo với "Cống hiến +.../Quỹ +..."**: nhãn `info0`/`info1` (dòng "Cống hiến +N / Quỹ +N") đặt `y=222`, trong khi tiêu đề `desc0`/`desc1` phía trên bắt đầu ở `y=191` và cao tới ~2 dòng (~53px ở size 22) → tràn xuống tới `y≈244`, đè lên `info0`/`info1`. Dời `info0`/`info1` xuống `y=255` (thêm ~11px đệm sau khi tiêu đề tràn 2 dòng).
+
+Sửa đồng bộ `GuildConSkin.exml` + `default.thm.js` (`info0_i`/`info1_i`) + `main.min.js` (`GuildConWindow.initUI`). Đổi tên `default.thm_8d8d3ec2.js`→`default.thm_c601a67a.js`, `main.min_0cdf96eb.js`→`main.min_2b15442a.js` (cache-bust cả 2). `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.
+
+Áp dụng tương tự cho cả 2 bên (Nguyên Bảo và Đồng Tiền) theo đúng yêu cầu "tương tự cho bên cạnh". Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh xem tiêu đề đã ngắt dòng đẹp (không vỡ giữa từ) và "Cống hiến/Quỹ" đã tránh chồng lấn hoàn toàn chưa.
