@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="Skinzaoyu" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<e:Group y="54.51" width="600" height="240" horizontalCenter="0">
-		<e:Image x="67" bottom="41" source="gantanhao1"/>
-		<e:Label text="Tiêu diệt người chơi Đạo Tâm Ba Động+25 điểm, đạt 100 sẽ không thể thách đấu" size="20" horizontalCenter="-6" bottom="42" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
+		<e:Image x="67" y="193" source="gantanhao1"/>
+		<e:Label text="Tiêu diệt người chơi Đạo Tâm Ba Động+25 điểm,&#10;đạt 100 sẽ không thể thách đấu" size="20" horizontalCenter="-6" y="195" textColor="0x0038ab" fontFamily="Microsoft YaHei" textAlign="center"/>
 		<e:Group x="204" y="16" width="184.67" anchorOffsetY="0" height="36.67" anchorOffsetX="0">
 			<e:Image verticalCenter="1.6649999999999991" source="huawen2" scale9Grid="27,14,9,2" width="179" horizontalCenter="1.1650000000000063"/>
 			<e:Label text="Thông tin cá nhân" size="22" horizontalCenter="0.6650000000000063" verticalCenter="-7.335000000000001" textColor="0x001828" fontFamily="Microsoft YaHei"/>
@@ -23,9 +23,9 @@
 		<e:Label id="labelRedPoint" text="" x="405" y="137.31" size="20" fontFamily="Microsoft YaHei" textColor="0x35e62d"/>
 		<e:Label id="time" text="（Có thể thách đấu sau 33:59）" x="217.69" y="164" fontFamily="Microsoft YaHei" size="20" textColor="0xf3311e"/>
 	</e:Group>
-	<e:Image width="578" scale9Grid="3,3,21,18" horizontalCenter="-1" top="259" bottom="237" anchorOffsetY="0" source="tongyong_dikuang4"/>
-	<e:Label text="Người chơi gần đây" horizontalCenter="-1" size="22" textColor="0xffff00" fontFamily="Microsoft YaHei" top="269" bottom="657"/>
-	<e:Scroller id="scroller" width="578" top="295" bottom="244" horizontalCenter="-1" anchorOffsetY="0">
+	<e:Image width="578" scale9Grid="3,3,21,18" horizontalCenter="-1" top="305" bottom="237" anchorOffsetY="0" source="tongyong_dikuang4"/>
+	<e:Label text="Người chơi gần đây" horizontalCenter="-1" size="22" textColor="0xffff00" fontFamily="Microsoft YaHei" top="315" bottom="657"/>
+	<e:Scroller id="scroller" width="578" top="341" bottom="244" horizontalCenter="-1" anchorOffsetY="0">
 		<e:List id="list" itemRendererSkinName="ZaoYuInfoItem" height="409">
 		<e:layout>
 			<e:VerticalLayout horizontalAlign="center" gap="-1"/>
