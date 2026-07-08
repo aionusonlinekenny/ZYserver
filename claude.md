@@ -2669,3 +2669,19 @@ Người dùng gửi 3 ảnh (IMG_0646-0648), báo hàng loạt lỗi bố cục
 Sửa đồng bộ `.exml` + `default.thm.js` cho cả 3 skin. Đổi tên `default.thm_309e37ab.js`→`default.thm_61090b9d.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh cho cả 3 màn, đặc biệt: (1) khung "Tiêu hao nâng cấp"/"Cống hiến còn lại" ở IMG_0647 dời sang phải bao nhiêu là đủ (ước lượng theo độ dài chữ, chưa đo chính xác); (2) 2 tên tab rút gọn có còn đủ rõ nghĩa không; (3) độ rộng cột "Chức vụ" mới đã đủ cho các chức vụ dài hơn "Minh Chủ" (như "Phó Minh Chủ") hay chưa.
+
+## 45. Sửa sai hướng ở mục 44 — hiểu nhầm bản chất "ô đen", revert và sửa lại đúng cách (2026-07-08)
+
+Người dùng gửi ảnh xác nhận cách sửa mục 44 cho "Tiêu hao nâng cấp:"/"Cống hiến còn lại:" là SAI hướng — bảo revert lại như ảnh gốc rồi hướng dẫn lại: "Tiêu hao nâng cấp: dời qua trái trước cái ô đen là được".
+
+**Hiểu sai ban đầu**: mục 44 đoán rằng icon `szbanggong` chỉ là icon nhỏ, nên dời icon+giá trị SANG PHẢI để tránh đè lên nhãn. Nhưng thực tế `szbanggong` (đã `scaleX/scaleY=1.4`) là 1 khối NỀN DẠNG VIÊN THUỐC (pill) khá RỘNG, không phải icon nhỏ — dời nó sang phải chỉ khiến khối nền này che mất luôn phần SỐ (`praCost`/`praCon`) đứng sau, vì thứ tự render trong exml đặt `Image` (nền) sau `Label` (số) nên nền vẽ ĐÈ LÊN số — càng sửa càng sai.
+
+**Đã revert** toàn bộ vị trí `praCon`/`praCost`/`praCost0` và 2 `Image szbanggong` về đúng y hệt bản gốc (trước mục 44): `praCon.x` 220→162.5, `praCost.x` 220→163, icon `horizontalCenter` -30→-109.5 (2 chỗ).
+
+**Sửa lại đúng theo hướng dẫn mới**: thay vì dời khối nền, THU NHỎ 2 nhãn tĩnh "Tiêu hao nâng cấp:"/"Cống hiến còn lại:" (dài ~18 ký tự, trước đó `size=20` không đặt `width` nên tràn quá xa sang phải, lấn cả vào vùng khối nền lẫn số) — giảm `size` 20→13 cho cả 2 nhãn, để nhãn kết thúc TRƯỚC khi chạm khối nền (thay vì dời khối nền ra xa nhãn như mục 44 làm sai).
+
+Sửa đồng bộ `GuildSkillWinSkin.exml` + `default.thm.js`. Đổi tên `default.thm_61090b9d.js`→`default.thm_c2871533.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+**Bài học**: trước khi dời 1 phần tử để giải quyết chồng lấp, cần xác định rõ ràng phần tử nào là "thủ phạm" thực sự lấn sang phần tử kia — không nên mặc định phần tử có tên "icon" là nhỏ; cần kiểm tra `scaleX`/`scaleY` và thứ tự render (z-order) trong danh sách `elementsContent`, vì phần tử render sau sẽ vẽ đè lên phần tử render trước dù toạ độ không đổi.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh xem cỡ chữ `size=13` đã đủ nhỏ để nhãn nằm gọn trước khối nền chưa, hay cần thu nhỏ thêm/không cần thiết vì hình phần còn lại của yêu cầu ("sau đó làm như mình nói") vẫn đang chờ hướng dẫn tiếp theo từ người dùng.
