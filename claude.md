@@ -2834,3 +2834,19 @@ Người dùng phản ánh màn **Tạo nhân vật** cũng bị giới hạn k�
 Chỉ sửa `main.min.js` (không có exml nào cần sửa vì giá trị gốc không nằm trong skin). Đổi tên `main.min_2b15442a.js`→`main.min_857e08fa.js` (cache-bust, `default.thm.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng thử tạo nhân vật với tên dài hơn 6 ký tự để xác nhận: (1) client cho nhập tới 12 ký tự, (2) tên dài không bị tràn/vỡ ở bảng tên trên đầu nhân vật/chat/xếp hạng, (3) server có chấp nhận tên dài hơn 6 ký tự hay không.
+
+## 58. Rút gọn nút bấm + sửa vỡ dòng "Thời gian làm mới lô hàng" + dời "Xem trước Cực Phẩm" trên popup Cửa Hàng Bí Ẩn (`BlackMarketSkin.exml`) (2026-07-08)
+
+Người dùng gửi ảnh popup "Cửa Hàng Bí Ẩn" (Chợ đen/Black Market — tiêu đề "商店" vẫn chưa dịch). 3 yêu cầu: (1) rút gọn tên các nút bấm; (2) dời "Xem trước Cực Phẩm" lên bên dưới dòng "Thời gian làm mới lô hàng tiếp theo: 00:00:00"; (3) dòng đó đang vỡ dòng ngay chữ "theo:" (xuống dòng thành "...tiếp the" / "o: 00:00:00") — mở rộng khung để "theo:" nằm trọn dòng 1, chỉ "00:00:00" xuống dòng 2.
+
+**Xác định đúng skin**: `SkinBlackMarket`/`BlackMarketPanel` — dễ nhầm với `FDStoreSkin`/`activityStore` vì cả 2 đều có field tên `refreshShopBtn`. Phân biệt bằng field riêng của mỗi class (`keylabel`, `costGroup`, `price` thuộc `BlackMarketPanel`; `redPoint1`, `ConfigActivityType22_1` thuộc class kia) — CHỈ sửa đúng 1 trong 2 chỗ set `refreshShopBtn.label` trong `main.min.js`, không đụng chỗ còn lại.
+
+**Đã sửa**:
+- Nút `buyAllItemBtn`: "Mua tất cả" → "Mua hết".
+- Nút `refreshShopBtn` (nhãn set ĐỘNG theo trạng thái miễn phí, trong `BlackMarketPanel.updateOthersUIInfo_a94`): "Làm mới miễn phí" → "Miễn phí" (khi đang miễn phí); giữ nguyên "Làm mới" khi không miễn phí (đã đủ ngắn).
+- Nhãn `tip` (text set động trong `refushEndTime_a94`: `"Thời gian làm mới lô hàng tiếp theo: "+giờ`): mở rộng `width` 280→320, dịch `horizontalCenter` 118→108 (lệch trái 10px để không đụng mép phải khung, vì khung skin chỉ rộng 560 và center gốc đã gần sát mép phải) — đủ chỗ cho "theo:" nằm trọn dòng 1.
+- Nhãn `goodsOverView` ("Xem trước Cực Phẩm"): dời từ `bottom=20` (đang chồng lên hàng nút bấm) lên `bottom=100`, đổi `horizontalCenter` từ 189 → 118 (canh giữa ngay dưới nhãn `tip`, do `tip` neo `bottom` cố định nên phần trên mọc lên khi 2 dòng, còn đáy `tip` giữ nguyên — `goodsOverView` đặt ngay dưới đáy đó), đổi `textAlign` từ "left" → "center" cho khớp cách canh giữa mới.
+
+Sửa đồng bộ `BlackMarketSkin.exml` + `default.thm.js` (`tip_i`, `buyAllItemBtn_i`, `goodsOverView_i`) + `main.min.js` (đúng 1 trong 2 chỗ `refreshShopBtn.label`). Đổi tên `default.thm_f3250b4b.js`→`default.thm_16e88674.js`, `main.min_857e08fa.js`→`main.min_6a7ab3f8.js` (cache-bust cả 2). `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: (1) cả 2 nút bấm hiển thị đủ chữ, không tràn; (2) dòng đếm ngược chỉ vỡ đúng ở "00:00:00", "theo:" đã lên dòng 1; (3) "Xem trước Cực Phẩm" nằm gọn dưới dòng đếm ngược, không chồng lên nút bấm hay dòng "200 hoặc..." bên dưới.
