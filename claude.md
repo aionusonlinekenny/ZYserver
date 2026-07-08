@@ -2792,3 +2792,15 @@ Người dùng xác nhận mục 53 ổn, chuyển qua popup "Quyên góp Tiên 
 Sửa đồng bộ `GuildConSkin.exml` + `default.thm.js` (`info0_i`/`info1_i`) + `main.min.js` (`GuildConWindow.initUI`). Đổi tên `default.thm_8d8d3ec2.js`→`default.thm_c601a67a.js`, `main.min_0cdf96eb.js`→`main.min_2b15442a.js` (cache-bust cả 2). `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.
 
 Áp dụng tương tự cho cả 2 bên (Nguyên Bảo và Đồng Tiền) theo đúng yêu cầu "tương tự cho bên cạnh". Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh xem tiêu đề đã ngắt dòng đẹp (không vỡ giữa từ) và "Cống hiến/Quỹ" đã tránh chồng lấn hoàn toàn chưa.
+
+## 55. Sửa ô nhập "Chiến lực" đè lên nhãn + rút gọn "Tự động chấp nhận gia nhập" (`MemberApplySkin.exml`) (2026-07-08)
+
+Người dùng xác nhận mục 54 ổn, chuyển qua popup "Danh sách đơn xin" (member apply list). Yêu cầu: (1) ô nhập số "chiến lực" đang đè lên nhãn "Chiến lực lớn hơn" phía trước, cần dời qua phải; (2) rút ngắn nhãn "Tự động chấp nhận gia nhập" — bỏ "gia nhập" ở cuối.
+
+**Đã sửa**:
+- Ô nhập (`Image` nền `shuzibg` + `TextInput` + `EditableText attrNum`, cả 3 đi cùng bộ) dời `horizontalCenter` từ `-56.5`→`-20` (dịch phải ~36.5px) để không đè lên nhãn "Chiến lực lớn hơn" phía trước.
+- Nhãn `_Label2_i`: bỏ "gia nhập" — "Tự động chấp nhận gia nhập" → "Tự động chấp nhận". Không có bản set động trong `main.min.js` (xác nhận qua `grep`), text hoàn toàn tĩnh trong skin.
+
+Sửa đồng bộ `MemberApplySkin.exml` + `default.thm.js`. Đổi tên `default.thm_c601a67a.js`→`default.thm_4ed81ceb.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt khoảng dời 36.5px cho ô nhập là ước lượng (chưa đo chính xác độ dài chữ "Chiến lực lớn hơn" ở size 20) — có thể cần dời thêm nếu vẫn còn sát/chồng nhẹ, và cũng cần kiểm tra ô nhập sau khi dời có đè lên nhãn "Tự động chấp nhận" (đã rút ngắn) hay không.

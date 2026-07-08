@@ -12,7 +12,7 @@
 
 		<e:CheckBox id="checkBoxs" skinName="SkinCheckBox0" height="38" bottom="60" horizontalCenter="227.5"/>
 		<e:Label text="Chiến lực lớn hơn" size="20"   bottom="69" horizontalCenter="-173.5" textColor="0x001828" fontFamily="Microsoft YaHei"/>
-		<e:Label text="Tự động chấp nhận gia nhập" size="20" bottom="69" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="135.5"/>
+		<e:Label text="Tự động chấp nhận" size="20" bottom="69" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="135.5"/>
 		<e:Scroller width="499" height="425"   y="42" horizontalCenter="1" anchorOffsetY="0" anchorOffsetX="0">
 			<e:List id="list" x="-38" y="-186" itemRendererSkinName="SkinMemberApplyItem">
 			<e:layout>
@@ -21,9 +21,9 @@
 			</e:List>
 		</e:Scroller>
 		<e:Label text="Danh sách đơn xin" size="20" horizontalCenter="4.5" textColor="0x39566a" fontFamily="Microsoft YaHei" top="-3"/>
-		<e:Image width="118" height="38" source="shuzibg" scale9Grid="5,5,15,14" bottom="60" horizontalCenter="-56.5"/>
-		<e:TextInput width="118" height="38" bottom="60" horizontalCenter="-56.5" anchorOffsetX="0"/>
-		<e:EditableText id="attrNum" height="38" textColor="0xFFFFFF" width="118" text="" size="22" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="-56.5" bottom="60" verticalAlign="middle"/>
+		<e:Image width="118" height="38" source="shuzibg" scale9Grid="5,5,15,14" bottom="60" horizontalCenter="-20"/>
+		<e:TextInput width="118" height="38" bottom="60" horizontalCenter="-20" anchorOffsetX="0"/>
+		<e:EditableText id="attrNum" height="38" textColor="0xFFFFFF" width="118" text="" size="22" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="-20" bottom="60" verticalAlign="middle"/>
 	</e:Group>
 	<e:Group horizontalCenter="0.5" width="383" height="40" verticalCenter="311">
 		<e:Image touchEnabled="false" source="bantoutiaobg" left="0" right="0" top="3" bottom="-3" scale9Grid="31,4,113,26"/>
