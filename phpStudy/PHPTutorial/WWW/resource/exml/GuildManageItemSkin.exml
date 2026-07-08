@@ -12,19 +12,19 @@
 	<e:Image id="progressbg1" x="574.1" y="15" source="jindutiaotou" scaleY="1" scaleX="-1"/>
 	<e:Label id="nameLab" text="Phòng luyện công" x="10.66" y="15.02" size="22" textColor="0x0000f1" fontFamily="Microsoft YaHei" visible="false"/>
 	<e:Image id="title"  top="9" left="13"  source="title_builditem1_png"/>
-	<e:Group  y="61" anchorOffsetY="0" anchorOffsetX="0" right="210">
+	<e:Group  y="84" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="174.5">
 		<e:Image id="gold" x="25" y="-5" scaleY="1" scaleX="1" source="szjinbi" visible="false"/>
 		<e:Label text="Cần ngân quỹ:" x="-15" y="10" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"   textAlign="right"/>
 		<e:Label id="needMoney" text="999999" x="-25" y="14.5" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"   textAlign="right"/>
 		<e:layout>
-			<e:HorizontalLayout horizontalAlign="right" verticalAlign="middle"/>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
 		</e:layout>
 	</e:Group>
 
 	<e:Label id="levelLab" text="Cấp 99" x="279.35" y="15.34" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-	<e:Label id="upLevelLab" text="Yêu cầu nâng cấp：Đại sảnh quản lý đạt cấp 2 " y="42.74" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="14"/>
+	<e:Label id="upLevelLab" text="Yêu cầu：Đại sảnh quản lý đạt cấp 2 " y="42.74" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff" left="14"/>
 	<e:Label id="money" text="12/12" x="376.38" y="18" size="16" width="180.4" textAlign="center" fontFamily="Microsoft YaHei" anchorOffsetX="0" verticalAlign="middle" textColor="0x001828"/>
-	<e:Button id="upBtn" y="62.01" label="Nâng cấp" width="100" height="46" scaleX="0.8" scaleY="0.8" icon="btn2_2" skinName="SkinBtn28" right="87"/>
+	<e:Button id="upBtn" y="50" label="Nâng cấp" width="100" height="46" scaleX="0.65" scaleY="0.65" icon="btn2_2" skinName="SkinBtn28" right="87"/>
 	<e:Label id="buildingLab" text="Quyết định cấp độ Tiên Minh" x="14.66" y="90" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	<e:Image id="buildImg" source="tongyongdian2" x="13" y="74.99" visible="false"/>
 

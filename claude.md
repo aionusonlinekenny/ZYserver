@@ -2767,3 +2767,16 @@ Người dùng xác nhận mục 51 đã đúng hướng (chồng chéo hết, "
 Sửa đồng bộ `GuildInfoSkin.exml` + `default.thm.js`. Đổi tên `default.thm_e6e4f8e1.js`→`default.thm_3112c4b8.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt mục 3 (khoảng dời 24px cho "Ngân quỹ"/"Số người" là ước lượng theo chênh lệch độ dài chữ so với "Cấp độ:", chưa đo chính xác — nếu vẫn còn chồng nhẹ có thể cần dời thêm).
+
+## 53. Bố cục lại khu vực "Nâng cấp" trên các thẻ công trình Tiên Minh (`GuildManageItemSkin.exml`) (2026-07-08)
+
+Người dùng xác nhận màn Tiên Minh (mục 51-52) đã ổn, chuyển qua màn "Công trình Tiên Minh" (danh sách 3 thẻ công trình: Tiên Minh Đại Điện, Tu Pháp Tĩnh Thất, Tiên Minh Trú Địa — skin `GuildManageItemSkin.exml`/`SkinGuildManageItem`, dùng chung cho cả 3 thẻ). Yêu cầu: (1) thu nhỏ nút "Nâng cấp"; (2) nhích nút lên trên một chút; (3) dời chữ "Cần ngân quỹ:xxx" xuống dưới nút thay vì bên trái; (4) đổi "Yêu cầu nâng cấp:" thành "Yêu cầu:".
+
+**Đã sửa**:
+- Nút `upBtn`: giảm `scaleX`/`scaleY` 0.8→0.65 (thu nhỏ ~19%), dời `y` 62.01→50 (nhích lên ~12px). Giữ nguyên `right=87` (mép phải không đổi, thu nhỏ tự nhiên "ăn" về phía trái, không cần tính lại vị trí ngang).
+- Group chứa "Cần ngân quỹ:"/`needMoney` (dùng `HorizontalLayout`): đổi từ neo `right="210"` (bên trái nút, `horizontalAlign="right"`) sang `horizontalCenter="174.5"` (tính theo tâm nút sau khi thu nhỏ+dời) + `y="61"→"84"` (xuống dưới đáy nút mới) + `horizontalAlign="center"` (căn giữa cặp nhãn+giá trị dưới nút thay vì canh phải).
+- `upLevelLab`: đổi text "Yêu cầu nâng cấp：..." → "Yêu cầu：...". Chuỗi này còn được set ĐỘNG trong `main.min.js` (`GuildBuildBaseItemRender.dataChanged`) với nội dung thực tế "Yêu cầu nâng cấp: Tiên Minh Đại Điện đạt Ncấp" — sửa luôn ở đây (chỗ DUY NHẤT chứa chuỗi này trong toàn file) để khớp với bản exml.
+
+Sửa đồng bộ `GuildManageItemSkin.exml` + `default.thm.js` + `main.min.js`. Đổi tên `default.thm_3112c4b8.js`→`default.thm_8d8d3ec2.js`, `main.min_c45745a3.js`→`main.min_0cdf96eb.js` (cache-bust cả 2). `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh cho cả 3 thẻ công trình (vị trí nút mới, vị trí "Cần ngân quỹ" dưới nút có canh giữa đẹp không, chữ "Yêu cầu:" đã đúng ý).
