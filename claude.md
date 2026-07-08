@@ -2723,3 +2723,13 @@ Người dùng xác nhận mục 47 đẹp rồi (**chốt nguyên tắc: ưu ti
 Sửa đồng bộ `GuildCampFireSkin.exml` + `default.thm.js`. Đổi tên `default.thm_9d93189e.js`→`default.thm_cf63bd7c.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh xem icon đã thẳng hàng đúng dòng đầu chưa, và cả 2 icon (dòng "Mỗi lần dùng..."/dòng "Dùng thêm...") đều đúng.
+
+## 49. Mở rộng khung mô tả thay vì để tràn 2 dòng — dùng đúng lề trái còn dư (2026-07-08)
+
+Người dùng xác nhận ảnh mục 48 icon đã thẳng hàng đúng dòng 1, nhưng muốn giải quyết tận gốc: thay vì để chữ tràn xuống dòng 2 (dù đã canh icon đúng), muốn MỞ RỘNG khung `desc1`/`desc2` sang bên trái (khoảng trống chưa dùng tới, trước icon "!") để câu đủ chỗ nằm gọn 1 dòng luôn — đúng tinh thần nguyên tắc mục 10 (ưu tiên dời/mở rộng hơn đổi cỡ chữ).
+
+**Đã sửa**: nhận thấy `point1`/`point2` (icon) đang neo `x≈82`, còn màn hình rộng 600px — dư khoảng 82px lề trái chưa dùng. Dời icon `x` 82→10 (chừa lề nhỏ 10px), dời `desc1`/`desc2` `x` tương ứng theo (giữ nguyên khoảng cách icon↔chữ ~17-18px): 99.36→27, 100→28. Mở rộng `width` 495→567 (+72px, bù đúng phần đã dời trái, giữ nguyên mép phải không đổi so với trước). Đồng thời trả `bottom` của 2 icon về lại đúng bằng `bottom` của `desc1`/`desc2` (208/172 — bỏ phần offset +24 thêm ở mục 48, vì giờ text dự kiến gọn 1 dòng, không cần bù trồi lên nữa).
+
+Sửa đồng bộ `GuildCampFireSkin.exml` + `default.thm.js`. Đổi tên `default.thm_cf63bd7c.js`→`default.thm_9a114d1c.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận: (1) câu mô tả đã gọn 1 dòng chưa (nếu vẫn tràn nhẹ, có thể cần mở thêm vài chục px nữa hoặc chấp nhận tràn nhẹ có icon canh đúng như mục 48); (2) icon có canh đúng lại theo `bottom` mới sau khi bỏ offset hay không.
