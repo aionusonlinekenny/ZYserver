@@ -16,17 +16,12 @@
 		<e:Label text="Điểm Sát Lục:" y="64" size="20" x="217.73" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		<e:Label text="Xếp hạng Sát Lục:" y="100.02" size="20" x="217.67" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		<e:Label text="Đạo Tâm Ba Động:" y="136.06" size="20" x="217.69" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-		<e:Label id="dayPrestige" text="" y="64.65" size="20" x="297.32" textColor="0x001828" fontFamily="Microsoft YaHei"/>
-		<e:Label id="rank" text="" y="100.01" size="20" x="318.03" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label id="dayPrestige" text="" y="64.65" size="20" x="405" textColor="0x001828" fontFamily="Microsoft YaHei"/>
+		<e:Label id="rank" text="" y="100.01" size="20" x="405" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		<e:Label id="labelRed" text="Xóa ngay" x="217.27" y="155.35" size="20" textColor="0x35e62d" fontFamily="Microsoft YaHei"/>
 		<e:Button id="rewardBtn" label="Button" x="476.83" y="47.84" skinName="SkinBtn0" icon="meirijiangli2"/>
-		<e:Group x="318.7" y="137.31">
-			<e:Label id="labelRedPoint" text="" x="0" y="0" size="20"   fontFamily="Microsoft YaHei" textColor="0x35e62d"/>
-			<e:Label id="time" text="（Có thể thách đấu sau 33:59）" x="167" y="6" fontFamily="Microsoft YaHei" size="20" textColor="0xf3311e"/>
-			<e:layout>
-				<e:HorizontalLayout gap="0"/>
-			</e:layout>
-		</e:Group>
+		<e:Label id="labelRedPoint" text="" x="405" y="137.31" size="20" fontFamily="Microsoft YaHei" textColor="0x35e62d"/>
+		<e:Label id="time" text="（Có thể thách đấu sau 33:59）" x="217.69" y="164" fontFamily="Microsoft YaHei" size="20" textColor="0xf3311e"/>
 	</e:Group>
 	<e:Image width="578" scale9Grid="3,3,21,18" horizontalCenter="-1" top="259" bottom="237" anchorOffsetY="0" source="tongyong_dikuang4"/>
 	<e:Label text="Người chơi gần đây" horizontalCenter="-1" size="22" textColor="0xffff00" fontFamily="Microsoft YaHei" top="269" bottom="657"/>
@@ -37,7 +32,7 @@
 		</e:layout>
 		</e:List>
 	</e:Scroller>
-	<e:Button id="rankBtn" label="Xem xếp hạng" skinName="SkinBtn1" horizontalCenter="-100" bottom="168"/>
-	<e:Button id="recordBtn" skinName="SkinBtn1" label="Lịch sử chiến đấu" horizontalCenter="100" bottom="168"/>
+	<e:Button id="rankBtn" label="Xếp Hạng" skinName="SkinBtn1" horizontalCenter="-100" bottom="168"/>
+	<e:Button id="recordBtn" skinName="SkinBtn1" label="Lịch Sử" horizontalCenter="100" bottom="168"/>
 
 </e:Skin>

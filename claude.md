@@ -2894,3 +2894,20 @@ _proto.blackMarketPanel_i = function () {
 Đổi tên `default.thm_16e88674.js`→`default.thm_4639fce7.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh 2 tab đã hiện đúng "Bí Ẩn"/"Đạo Cụ".
+
+## 61. Sửa chồng chéo số liệu "Thông tin cá nhân" + rút gọn 2 nút bấm màn Cạnh Kỹ (`zaoyuskin.exml`) (2026-07-08)
+
+Người dùng gửi ảnh màn "竟技" (Cạnh Kỹ/Arena PK). Yêu cầu: (1) khu vực dưới tiêu đề "Thông tin cá nhân" (3 dòng: Điểm Sát Lục / Xếp hạng Sát Lục / Đạo Tâm Ba Động) bị nhãn đè lên giá trị, cần tính toán sắp xếp lại hợp lý, có thể dời sang phải để có thêm chỗ; (2) đổi "Xem xếp hạng"/"Lịch sử chiến đấu" → "Xếp Hạng"/"Lịch Sử".
+
+**Phân tích nguyên nhân**: cả 3 dòng đều có nhãn tĩnh (`x≈217.7`) và giá trị động đặt cách nhãn một khoảng cố định quá hẹp (79-101px), trong khi nhãn tiếng Việt dài hơn nhiều so với bản gốc tiếng Trung (ví dụ "Xếp hạng Sát Lục:" ước tính ~178px ở size 20, cần khoảng cách lớn hơn nhiều so với 100px hiện có).
+
+**Đã sửa (ưu tiên di chuyển, không giảm size chữ — nguyên tắc 10)**:
+- `dayPrestige` (giá trị "Điểm Sát Lục"), `rank` (giá trị "Xếp hạng Sát Lục", có thể là "Chưa lên bảng"), `labelRedPoint` (giá trị số "Đạo Tâm Ba Động"): gom về chung 1 cột `x=405` (đủ xa để tránh nhãn dài nhất "Xếp hạng Sát Lục:" ở dòng 2, tạo cảm giác bảng canh cột thay vì mỗi dòng một khoảng lệch khác nhau).
+- Nhãn `time` (phần chú thích phụ dạng "(Mỗi phút giảm 1 điểm)"/"(Xphút nữa có thể thử thách)" đi kèm `labelRedPoint`) — TRƯỚC đây nằm chung 1 `Group`+`HorizontalLayout` ngay sau `labelRedPoint` trên CÙNG 1 dòng, đi theo lẽ sẽ kéo dài rất xa (~230px cho câu dài nhất) và có nguy cơ tràn ra ngoài khung skin rộng 600px nếu đẩy `labelRedPoint` sang phải theo cột chung. Xử lý bằng cách TÁCH `time` ra khỏi Group, đưa xuống DÒNG RIÊNG bên dưới (`x=217.69, y=164`, thẳng hàng với nhãn "Đạo Tâm Ba Động:" phía trên) thay vì cùng dòng — xoá hẳn Group+HorizontalLayout bọc ngoài (không còn cần thiết vì 2 label giờ độc lập).
+- 2 nút `rankBtn`/`recordBtn`: "Xem xếp hạng"→"Xếp Hạng", "Lịch sử chiến đấu"→"Lịch Sử".
+
+Sửa đồng bộ `zaoyuskin.exml` + `default.thm.js` (`dayPrestige_i`, `rank_i`, `labelRedPoint_i`, `time_i`, xoá `_Group3_i`/`_HorizontalLayout1_i`, sửa `elementsContent` của hàm gốc để gọi thẳng `labelRedPoint_i()`/`time_i()` thay vì qua Group trung gian, `rankBtn_i`, `recordBtn_i`). Không có dynamic override nào cho 2 nhãn nút trong `main.min.js` (đã grep xác nhận). Đổi tên `default.thm_4639fce7.js`→`default.thm_5212b828.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+**Lưu ý riêng, chưa xử lý trong đợt này**: dòng chú thích "Tiêu diệt người chơi Đạo Tâm Ba Động+25 điểm, đạt 100 sẽ không thể thách đấu" (nằm ngay dưới, `bottom=42`, `horizontalCenter=-6`) trong ảnh gốc bị TRÀN/CẮT bên trái màn hình (thấy "u diệt người chơi..." thay vì "Tiêu diệt..."), do câu quá dài so với việc canh giữa bằng `horizontalCenter`. Đây là lỗi khác, không nằm trong 3 dòng "chồng chéo số liệu" người dùng nêu lần này — nếu người dùng xác nhận vẫn còn thấy, sẽ xử lý ở đợt sau.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: (1) 3 dòng thông tin không còn đè lên nhau, giá trị hiển thị đủ (đặc biệt trường hợp "Chưa lên bảng" dài nhất — vị trí x=405 là ước tính, khung skin chỉ rộng 600 và có nút phần thưởng ở x=476.83 y=47.84 nhưng KHÔNG cùng độ cao với 2 dòng dưới nên không lo va chạm dòng 2/3, chỉ dòng 1 nằm gần độ cao nút này nhưng giá trị dòng 1 chỉ là số ngắn nên an toàn); (2) dòng "(Mỗi phút giảm 1 điểm)" đã xuống dòng riêng gọn gàng dưới "Đạo Tâm Ba Động:"; (3) 2 nút đã đổi tên đúng.
