@@ -66,9 +66,9 @@
 		<e:Image  width="580" horizontalCenter="0" source="tongyong_dikuang4" top.skin_up="455"  top.skin_max="472" scale9Grid="10,10,60,60" includeIn="zl_up,zl_max,skin_max"   top="-232" height="180" />
 
 			<e:Image id="tongyongline" height="1" y="10" width="500" horizontalCenter="0" top="594" includeIn="skin_max" source="tongyongline" x="10"/>
-		<e:Label id="curAtt" text="" size="20" textAlign.skin_max="left" textAlign.skin_up="left" textAlign.zl_max="left" verticalAlign="justify" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign.zl_up="left" width="140" horizontalCenter.zl_up="-128"  horizontalCenter.skin_up="-128"  top.skin_up="486" top.skin_max="486" top="-218" lineSpacing="3" height="95" />
+		<e:Label id="curAtt" text="" size="20" textAlign.skin_max="left" textAlign.skin_up="left" textAlign.zl_max="left" verticalAlign="justify" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign.zl_up="left" width="200" horizontalCenter.zl_up="-158"  horizontalCenter.skin_up="-158"  top.skin_up="486" top.skin_max="486" top="-218" lineSpacing="3" height="95" />
 
-		<e:Label id="nextAtt" text="" size="20" textAlign="left" verticalAlign="justify" includeIn="zl_up,skin_up" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="140" width="140" top.zl_up="-218" height="95" top.skin_up="486"   lineSpacing="3"/>
+		<e:Label id="nextAtt" text="" size="20" textAlign="left" verticalAlign="justify" includeIn="zl_up,skin_up" textColor="0x001828" fontFamily="Microsoft YaHei" horizontalCenter="165" width="190" top.zl_up="-218" height="95" top.skin_up="486"   lineSpacing="3"/>
 		<e:Image id="cursor" source="jiantouyou" horizontalCenter="0" includeIn="zl_up,skin_up" verticalCenter.zl_max="14" anchorOffsetY.zl_up="0" top.skin_up="485" height.skin_up="70" top.zl_up="-218" height.zl_up="70"/>
 			<e:Image height="2" y="0" width="500" horizontalCenter="0" top="595" includeIn="skin_max" source="tongyongline" />
 		</e:Group>

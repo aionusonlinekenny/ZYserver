@@ -2996,3 +2996,17 @@ Sửa đồng bộ `ladderwinskin.exml` + `default.thm.js` (tab names) + `main.m
 **Bài học bổ sung cho style guide**: khi rà lỗi "số+đơn vị" dạng ghép (2 cụm nối liền nhau, ví dụ Chuyển+Cấp), phải đặc biệt cẩn thận với biến thể NẰM TRONG TERNARY (1 cụm có điều kiện, cụm kia luôn hiện) — script tự động dựa trên regex tìm cặp liền kề `A+"X"+B+"Y"` sẽ bỏ sót biến thể này vì có dấu `?:` xen giữa, cần quét thêm bằng mẫu `"TừViệt "+expr+"":""`ngay-trước`+"TừViệt2 "` để bắt hết.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: (1) 5 tab hiển thị đủ chữ "Xung Quanh"/"Vương Giả"/"Đào Mỏ"/"Tiên Đồ"/"Vạn Long", không còn đè lên nhau; (2) "Chuyển 12 Cấp 111" đã có khoảng cách đúng ở danh sách người chơi gần đây và các màn liên quan (bảng xếp hạng, danh sách bạn bè).
+
+## 66. Mở rộng 2 cột so sánh chỉ số (trước/sau) đang rớt dòng trên `ZhanlingSkin.exml` (2026-07-08)
+
+Người dùng gửi ảnh màn "法宝" (chưa dịch, dùng chung layout với Chiến Lệnh) — khu vực so sánh chỉ số trước→sau nâng sao ("Công Kích：10 / 630, Vật Kháng：26/57" bên trái, mũi tên, rồi "Công Kích：11/980..." bên phải) bị rớt dòng giữa nhãn và giá trị vì cột quá hẹp. Yêu cầu: cột trái dời sang trái để không rớt dòng, cột phải mở rộng thêm bên phải.
+
+**Xác định đúng skin — khó vì tiêu đề màn hình vẫn còn tiếng Trung "法宝" và menu bên trái cũng chưa dịch (铭图/灵晶/符篆/器魂), không tìm được qua tên màn hình**. Tìm bằng cách khác: 2 nhãn hiển thị dạng "before→after" với mũi tên ở giữa là mẫu UI đặc trưng, tìm ra `id="curAtt"` (cột trái)/`id="nextAtt"` (cột phải)/`id="cursor"` (ảnh mũi tên `jiantouyou`) trong `ZhanlingSkin.exml` — skin DÙNG CHUNG cho nhiều tính năng khác nhau (Chiến Lệnh gốc `ZhanLingPanel` và biến thể `ZhanLingPanelExView` cho tính năng "法宝" hiện tại, phân biệt qua state `zl_up`/`zl_max` vs `skin_up`/`skin_max`).
+
+**Đã sửa** (giữ mép trong sát mũi tên `cursor` cố định, chỉ mở rộng mép ngoài — đúng yêu cầu "dời trái"/"mở rộng phải"):
+- `curAtt` (cột trái): `width` 140→200, `horizontalCenter` -128→-158 (cả 2 state `zl_up` và `skin_up` đều dùng chung giá trị này) — mép phải (sát mũi tên) giữ nguyên tại -58, mép trái dời thêm 60px.
+- `nextAtt` (cột phải): `width` 140→190, `horizontalCenter` 140→165 — mép trái (sát mũi tên) giữ nguyên tại 70, mép phải mở rộng thêm 50px.
+
+Sửa đồng bộ `ZhanlingSkin.exml` + `default.thm.js` (`curAtt_i`, `nextAtt_i`, và 2 dòng `eui.SetProperty("curAtt","horizontalCenter",-128)` trong định nghĩa state `zl_up`/`skin_up` — đặc thù riêng của skin dùng `states=` kiểu Egret, khác cấu trúc `_i()` factory đơn giản đã gặp ở các skin khác, cần sửa cả phần khai báo `eui.State`/`eui.SetProperty` mới có hiệu lực). Đổi tên `default.thm_10d6176f.js`→`default.thm_2cacec0b.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ, exml qua `xml.etree.ElementTree.parse`.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: cả 2 cột "Công Kích :"/"Vật Kháng :" đã nằm gọn 1 dòng mỗi thông số, không còn rớt xuống dòng dưới. Do skin này dùng chung cho nhiều tính năng (Chiến Lệnh, "法宝" và có thể còn nơi khác), nên cũng cần xác nhận các màn khác dùng chung layout so sánh này (nếu có) không bị ảnh hưởng xấu bởi việc mở rộng 2 cột.
