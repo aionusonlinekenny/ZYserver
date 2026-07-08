@@ -2971,3 +2971,28 @@ if("Thử Thách"==t.target.label||"Đang Thử Thách"==t.target.label){
 Chỉ sửa `main.min.js` (không liên quan exml/`default.thm.js`, đây là lỗi thuần logic JS). Đổi tên `main.min_a8420dc8.js`→`main.min_61785772.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Đây là sửa LOGIC (không phải vị trí hiển thị) nên không cần chờ ảnh chụp để so sánh trực quan — người dùng có thể xác nhận trực tiếp bằng cách thử bấm "Thách đấu" sau khi server đồng bộ, kỳ vọng: vào trận đấu bình thường khi Đạo Tâm Ba Động < 100, hoặc hiện popup mua thêm lượt (`BuyRedThingWin`) khi ≥ 100 — thay vì im lặng không phản ứng như trước.
+
+## 65. Rút gọn tên 5 tab trong "Cạnh Kỹ" + vá nốt 3 chỗ "ChuyểnXCấp" thiếu khoảng cách sót lại từ mục 63 (2026-07-08)
+
+Người dùng xác nhận mục 61/62 ổn (gửi ảnh: 3 dòng thông tin, câu chú thích 2 dòng, "Hạng 1"/"Cấp 76" đều đúng). Phát hiện thêm: hàng "Vương Giả Tranh Bá"→hiện "Chuyển 12Cấp 111" (thiếu khoảng cách giữa 2 cụm) trong danh sách người chơi gần đây; và 5 tab điều hướng bên dưới ("Người xung quanh", "Vương Giả Tranh Bá", "Tiên Ngọc Thái Đoạt", "Tiên Đồ", "Vạn Long Mộ") quá dài, chữ đè lên nhau. Yêu cầu rút gọn: Xung Quanh, Vương Giả, Đào Mỏ, Tiên Đồ, Vạn Long.
+
+**Tìm ra container thật của 5 tab** (khó — không phải `EncountBgWin`/`ZaoYuBGSkin` như đoán ban đầu, class đó đã CHẾT/không còn được gọi ở đâu cả): true container là **`Skinladderwin`** (`ladderwinskin.exml`), lớp `LadderWindow` (mở qua nút "Cạnh Kỹ" ở thanh chức năng chính, `LadderBtnIconRule.tapExecute→ViewMgr.ins().open(LadderWindow,0)`). `Skinladderwin` có `ViewStack` chứa 5 panel con (`zaoyu`=`NearbyInfoWin`/dùng chính `Skinzaoyu` ta đã sửa nhiều lần, `ladder`=`LadderInfoComPanel`, `wakuang`=`MinePanelView`, `teamfb`=`TeamNewFbPanel`, `challengeHunshou`=`HunGuFBWin`), mỗi panel có thuộc tính `name` dùng làm nhãn tab — và giống hệt bài học mục 60: `default.thm.js`'s `_i()` factory của `Skinladderwin` GHI ĐÈ `name` ngay sau khi tạo từng panel, nên chỉ cần sửa đúng chỗ này (không cần đụng constructor riêng của từng class trong `main.min.js`).
+
+**Đã sửa** (`default.thm.js` — `zaoyu_i`, `ladder_i`, `wakuang_i`, `challengeHunshou_i`; giữ nguyên `teamfb_i` vì "Tiên Đồ" đã đủ ngắn):
+- "Người xung quanh" → "Xung Quanh"
+- "Vương Giả Tranh Bá" → "Vương Giả"
+- "Tiên Ngọc Thái Đoạt" → "Đào Mỏ"
+- "Vạn Long Mộ" → "Vạn Long"
+
+Đồng bộ `ladderwinskin.exml` — dịch thẳng từ tiếng Trung gốc chưa từng dịch ("附近的人"/"王者争霸"/"仙玉采夺"/"万龙墓") sang thẳng bản rút gọn tiếng Việt luôn (giống cách xử lý ShopSkin.exml ở mục 60).
+
+**Vá thêm phần "ChuyểnXCấp" dính liền**: rà toàn bộ `main.min.js` tìm các chỗ có cùng cấu trúc lỗi như dòng đã phát hiện (`EncounterInfoItem.dataChanged`: `""+(t.zsLv?"Chuyển "+t.zsLv+"":"")+"Cấp "+t.lv+""`) — đây là lỗi SÓT LẠI từ mục 63: khi "chuyển" nằm trong nhánh ternary (điều kiện có/không tái sinh) và "cấp" nằm ngoài ternary, script tự động ở mục 63 đảo đúng trật tự TỪNG CỤM riêng lẻ nhưng không thêm khoảng cách N GĂN CÁCH giữa 2 cụm đã đảo (vì bản gốc cũng chưa từng có khoảng cách ở đó). Tìm được đúng 3 chỗ có cấu trúc này, thêm khoảng trắng vào bên trong nhánh true của ternary (`"Chuyển "+X+"":""` → `"Chuyển "+X+" ":""`):
+- `EncounterInfoItem.dataChanged` (danh sách "Người chơi gần đây")
+- 1 chỗ dùng `e.zs` (label_name, danh sách bạn bè/liên hệ — 4 lần lặp cùng 1 dòng trong các hàm khác nhau)
+- 1 chỗ dùng `t[RankDataType.DATA_ZHUAN]` (bảng xếp hạng)
+
+Sửa đồng bộ `ladderwinskin.exml` + `default.thm.js` (tab names) + `main.min.js` (3 chỗ ChuyểnXCấp). Đổi tên `default.thm_10d6176f.js`→`default.thm_4d15a64e.js`, `main.min_61785772.js`→`main.min_cefa891c.js` (cache-bust cả 2). `node -c` qua cho cả 2 file JS, `php -l` qua, `manifest.json` hợp lệ, exml qua `xml.etree.ElementTree.parse`.
+
+**Bài học bổ sung cho style guide**: khi rà lỗi "số+đơn vị" dạng ghép (2 cụm nối liền nhau, ví dụ Chuyển+Cấp), phải đặc biệt cẩn thận với biến thể NẰM TRONG TERNARY (1 cụm có điều kiện, cụm kia luôn hiện) — script tự động dựa trên regex tìm cặp liền kề `A+"X"+B+"Y"` sẽ bỏ sót biến thể này vì có dấu `?:` xen giữa, cần quét thêm bằng mẫu `"TừViệt "+expr+"":""`ngay-trước`+"TừViệt2 "` để bắt hết.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: (1) 5 tab hiển thị đủ chữ "Xung Quanh"/"Vương Giả"/"Đào Mỏ"/"Tiên Đồ"/"Vạn Long", không còn đè lên nhau; (2) "Chuyển 12 Cấp 111" đã có khoảng cách đúng ở danh sách người chơi gần đây và các màn liên quan (bảng xếp hạng, danh sách bạn bè).

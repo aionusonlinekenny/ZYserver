@@ -9,11 +9,11 @@
 
 	<ns1:KFBattlListPanel id="kf" name="跨服" left="0" right="0" top="0" bottom="0" x="10" y="10" skinName="SkinKFBattlList" visible="false"/>
 	<e:ViewStack id="viewStack" width="600" selectedIndex="4" horizontalCenter="0" height="948" verticalCenter="0">
-		<ns1:NearbyInfoWin id="zaoyu" skinName="Skinzaoyu" name="附近的人" left="0" right="0" top="0" bottom="0" visible="false"/>
-		<ns1:LadderInfoComPanel id="ladder" skinName="Skinladderinfo" name="王者争霸"  left="0" right="0" top="0" bottom="0" visible="false"/>
-		<ns1:MinePanelView id="wakuang" name="仙玉采夺" left="0" right="0" top="0" bottom="0" x="10" y="10" skinName="SkinWaKuang" visible="false"/>
-		<ns1:TeamNewFbPanel id="teamfb" name="仙途" skinName="SkinTeamFb" width="600" top="0" bottom="0" horizontalCenter="0" visible="false"/>
-		<ns1:HunGuFBWin id="challengeHunshou" name="万龙墓" skinName="SkinchallengeHunshou" horizontalCenter="0" top="0" bottom="0"/>
+		<ns1:NearbyInfoWin id="zaoyu" skinName="Skinzaoyu" name="Xung Quanh" left="0" right="0" top="0" bottom="0" visible="false"/>
+		<ns1:LadderInfoComPanel id="ladder" skinName="Skinladderinfo" name="Vương Giả"  left="0" right="0" top="0" bottom="0" visible="false"/>
+		<ns1:MinePanelView id="wakuang" name="Đào Mỏ" left="0" right="0" top="0" bottom="0" x="10" y="10" skinName="SkinWaKuang" visible="false"/>
+		<ns1:TeamNewFbPanel id="teamfb" name="Tiên Đồ" skinName="SkinTeamFb" width="600" top="0" bottom="0" horizontalCenter="0" visible="false"/>
+		<ns1:HunGuFBWin id="challengeHunshou" name="Vạn Long" skinName="SkinchallengeHunshou" horizontalCenter="0" top="0" bottom="0"/>
 	</e:ViewStack>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" top="0" horizontalCenter="0" width="600"/>
 		<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="92"/>
