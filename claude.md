@@ -2820,3 +2820,17 @@ Cả 2 đều đổi `maxChars` từ `6` → `20`, sửa đồng bộ trong exml
 Đổi tên `default.thm_4ed81ceb.js`→`default.thm_f3250b4b.js` (cache-bust, `main.min.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng thử tạo/đổi tên Tiên Minh với tên dài hơn 6 ký tự để xác nhận: (1) client cho nhập tới 20 ký tự, (2) server có chấp nhận tên dài hơn 6 ký tự hay không (đây là phần không kiểm chứng được từ code client).
+
+## 57. Tăng giới hạn ký tự đặt tên nhân vật từ 6 lên 12 (`main.min.js`) (2026-07-08)
+
+Người dùng phản ánh màn **Tạo nhân vật** cũng bị giới hạn ký tự tên quá ngắn, muốn điều chỉnh tương tự mục 56.
+
+**Khác với tên Tiên Minh**: giới hạn này KHÔNG nằm trong exml (`CreateRole1Skin.exml`/`SkinCreateRole1` không khai báo `maxChars` cho `nameInput`), mà bị set ĐỘNG hoàn toàn trong `main.min.js`, ngay trong constructor của view `CreateRoleWin`: `e.nameInput.maxChars=6`. Đây là chỗ DUY NHẤT trong toàn file chứa dòng này (xác nhận qua `grep -c`).
+
+**Chọn mức 12 ký tự** (không phải 20 như tên Tiên Minh): tên nhân vật hiển thị ở nhiều nơi hơn tên Tiên Minh (bảng tên trên đầu nhân vật, khung chat, bảng xếp hạng...) — mức 12 vừa đủ thoải mái cho tiếng Việt có dấu, vừa hạn chế rủi ro tràn chữ ở các UI khác chưa được rà soát trong đợt sửa này.
+
+**Kiểm tra không bỏ sót**: hàm `sendCreateRole_a94` gửi thẳng `this.nameInput.text` lên server qua `RoleMgr.ins().sendCreateRole(...)`, không có validate độ dài phía client nào khác. Tương tự mục 56, không có mã nguồn server nên không kiểm tra được giới hạn cứng phía server (nếu có).
+
+Chỉ sửa `main.min.js` (không có exml nào cần sửa vì giá trị gốc không nằm trong skin). Đổi tên `main.min_2b15442a.js`→`main.min_857e08fa.js` (cache-bust, `default.thm.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng thử tạo nhân vật với tên dài hơn 6 ký tự để xác nhận: (1) client cho nhập tới 12 ký tự, (2) tên dài không bị tràn/vỡ ở bảng tên trên đầu nhân vật/chat/xếp hạng, (3) server có chấp nhận tên dài hơn 6 ký tự hay không.
