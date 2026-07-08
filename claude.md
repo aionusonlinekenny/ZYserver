@@ -2754,3 +2754,16 @@ Người dùng gửi ảnh (IMG_0662) chỉ ra chi tiết 4 lỗi trên màn Ti�
 Sửa đồng bộ `GuildInfoSkin.exml` + `default.thm.js` (4 hàm `_Label2_i`, `_Label5_i`, `_Label7_i`, `myCon_i`/`_Label11_i`/`_Image11_i`). Đổi tên `default.thm_9a114d1c.js`→`default.thm_e6e4f8e1.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh cho cả 4 điểm, đặc biệt điểm 2 (khoảng cách ước lượng 151px dời trái cho "Thông báo Tiên Minh" dựa trên ước lượng độ rộng chữ ở size 22, chưa đo chính xác) và điểm 4 (khoảng dời 71px cho icon/giá trị cống hiến, cũng là ước lượng).
+
+## 52. Tinh chỉnh tiếp màn "Thành viên Tiên Minh" theo ảnh xác nhận mục 51 (2026-07-08)
+
+Người dùng xác nhận mục 51 đã đúng hướng (chồng chéo hết, "Cống hiến tích lũy"/"Cống hiến của tôi" đã đẹp), gửi thêm ảnh cận cảnh (IMG_0663) chỉ ra các điểm cần tinh chỉnh thêm:
+
+1. **"Thông báo Tiên Minh"** dời thêm qua phải 10px (từ mục 51's `x=200` → `x=210`) — chỉnh nhẹ theo yêu cầu trực tiếp.
+2. **"Xem đơn xin gia nhập"** (link trong khung "Thông tin Tiên Minh") cũng canh giữa lá cờ giống tiêu đề — đổi từ `x="64"` cố định sang `horizontalCenter="0"`.
+3. **"Ngân quỹ:"/"Số người:"** đè lên giá trị số theo sau (`guildMoney`/`guildMember`) — 2 nhãn này dài 9 ký tự (dài hơn "Cấp độ:" 7 ký tự, vốn không bị lỗi vì đủ chỗ trong khoảng cách gốc `x=76`) nên tràn quá khoảng cách 60px gốc. Theo đúng nguyên tắc mục 10, dời giá trị `guildMoney`/`guildMember` từ `x=76`/`x=76.29` → `x=100` (thêm 24px, chừa đủ chỗ cho 2 ký tự dư so với "Cấp độ:").
+4. **"Tên nhân vật"** (tiêu đề cột trong bảng thành viên) chưa canh giữa cột — trước đó neo `left="72"` (không tính theo cột dữ liệu thực tế). Cột dữ liệu tương ứng (`nameLab` trong `MemberItemSkin.exml`) nằm ở `x=1` width=`207`. Đổi sang `horizontalCenter="-195.5"` (tính tâm cột 1-208 quy về hệ toạ độ canh giữa hàng tiêu đề width 600) — theo đúng cách đã làm cho "Cống hiến tích lũy" ở mục 51.
+
+Sửa đồng bộ `GuildInfoSkin.exml` + `default.thm.js`. Đổi tên `default.thm_e6e4f8e1.js`→`default.thm_3112c4b8.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh, đặc biệt mục 3 (khoảng dời 24px cho "Ngân quỹ"/"Số người" là ước lượng theo chênh lệch độ dài chữ so với "Cấp độ:", chưa đo chính xác — nếu vẫn còn chồng nhẹ có thể cần dời thêm).
