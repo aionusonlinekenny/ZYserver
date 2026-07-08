@@ -2733,3 +2733,11 @@ Người dùng xác nhận ảnh mục 48 icon đã thẳng hàng đúng dòng 1
 Sửa đồng bộ `GuildCampFireSkin.exml` + `default.thm.js`. Đổi tên `default.thm_cf63bd7c.js`→`default.thm_9a114d1c.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận: (1) câu mô tả đã gọn 1 dòng chưa (nếu vẫn tràn nhẹ, có thể cần mở thêm vài chục px nữa hoặc chấp nhận tràn nhẹ có icon canh đúng như mục 48); (2) icon có canh đúng lại theo `bottom` mới sau khi bỏ offset hay không.
+
+## 50. Bỏ chữ "thêm" thừa trong 2 câu mô tả Xây Dựng Tiên Sơn (2026-07-08)
+
+Người dùng yêu cầu bỏ chữ "thêm" ở cụm "tăng thêm N" trong cả 2 dòng mô tả (không đụng tới "Dùng thêm N Linh Ngọc Hồ Lô" ở đầu dòng 2, chỉ bỏ "thêm" đứng sau "tăng"): "Mỗi lần dùng 1 Linh Ngọc Hồ Lô tăng thêm 30 điểm..." → "...tăng 30 điểm...", "...có thể tăng thêm 6000 quỹ..." → "...có thể tăng 6000 quỹ...".
+
+**Đã sửa trong `main.min.js`** (text set động qua `TextFlowMaker.generateTextFlow1`, không nằm trong exml): tìm thấy 4 chỗ "tăng thêm" thuộc đúng class `GuildFirePanelView` (2 bản `desc1` giống hệt nhau dùng cho 2 nhánh if/else, 2 bản `desc2` — 1 cho trạng thái bình thường, 1 cho trạng thái "đã đạt tối đa" ngày mai — cả 2 đều có cùng mẫu "có thể tăng thêm N quỹ" nên sửa luôn cả 2 cho nhất quán dù người dùng chỉ thấy 1 trong 2 trên ảnh). File có tổng cộng 10 chỗ chứa "tăng thêm" nhưng CHỈ sửa đúng 4 chỗ thuộc màn này, không đụng 6 chỗ còn lại ở màn khác.
+
+Đổi tên `main.min_6f90963a.js`→`main.min_c45745a3.js` (cache-bust, `default.thm.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
