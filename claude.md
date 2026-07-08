@@ -2850,3 +2850,19 @@ Người dùng gửi ảnh popup "Cửa Hàng Bí Ẩn" (Chợ đen/Black Market
 Sửa đồng bộ `BlackMarketSkin.exml` + `default.thm.js` (`tip_i`, `buyAllItemBtn_i`, `goodsOverView_i`) + `main.min.js` (đúng 1 trong 2 chỗ `refreshShopBtn.label`). Đổi tên `default.thm_f3250b4b.js`→`default.thm_16e88674.js`, `main.min_857e08fa.js`→`main.min_6a7ab3f8.js` (cache-bust cả 2). `node -c` qua cho cả 2 file, `php -l` qua, `manifest.json` hợp lệ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: (1) cả 2 nút bấm hiển thị đủ chữ, không tràn; (2) dòng đếm ngược chỉ vỡ đúng ở "00:00:00", "theo:" đã lên dòng 1; (3) "Xem trước Cực Phẩm" nằm gọn dưới dòng đếm ngược, không chồng lên nút bấm hay dòng "200 hoặc..." bên dưới.
+
+## 59. Ép xuống dòng cứng cho "00:00:00" + rút gọn tên 2 tab Cửa Hàng (`main.min.js`) (2026-07-08)
+
+Người dùng xác nhận mục 58 gần ổn (2 nút không còn tràn chữ, "Xem trước Cực Phẩm" đã dời đúng chỗ), nhưng còn 2 điểm: (1) dòng đếm ngược vẫn đợi tràn dòng mới ngắt (ngắt ngay giữa "00:00:00" thành "...tiếp theo: 00" / ":00:00") — muốn ép "00:00:00" LUÔN nằm hẳn dòng 2, không phụ thuộc độ rộng khung; (2) 2 tab "Cửa Hàng Bí Ẩn" / "Cửa Hàng Đạo Cụ" đang bị cắt chữ ("Cửa Hàng B..." ) — muốn bỏ hẳn tiền tố "Cửa Hàng", chỉ giữ "Bí Ẩn" / "Đạo Cụ".
+
+**Sửa (1) — xuống dòng cứng**: thay vì chỉnh `width` để chờ engine tự ngắt theo từ (vẫn phụ thuộc kích thước font/khung, dễ lệch), sửa thẳng chuỗi nối trong `refushEndTime_a94`: đổi khoảng trắng phân cách thành ký tự xuống dòng — `"Thời gian làm mới lô hàng tiếp theo:\n"+giờ` (trước đó là `"...theo: "+giờ`). `\n` được engine hỗ trợ xuống dòng cứng bình thường (đã xác nhận qua bài học `\n` ở mục 41 trước đây trong phiên này). `width=320` từ mục 58 vẫn đủ cho dòng 1 một mình, giữ nguyên không cần chỉnh lại exml/`default.thm.js` lần này.
+
+**Sửa (2) — rút gọn tên tab**: 2 tab này lấy tên hiển thị từ property `name` gán ngay trong constructor của mỗi panel (dùng làm `dataProvider` cho `TabBar` trong `ShopView`), không nằm trong exml nào:
+- `BlackMarketPanel`: `e.name="Cửa Hàng Bí Ẩn"` → `e.name="Bí Ẩn"`.
+- `PropertyPanel`: `e.name="Cửa Hàng Đạo Cụ"` → `e.name="Đạo Cụ"`.
+
+Chỉ sửa đúng 2 dòng khởi tạo `name` này — KHÔNG đụng các câu văn khác có nhắc "Cửa Hàng Bí Ẩn" trong nội dung thông báo (ví dụ "Mua hàng ở Cửa Hàng Bí Ẩn hoặc làm mới để nhận", "Cửa Hàng Bí Ẩn không tìm thấy vật phẩm") vì đó là câu hoàn chỉnh, đổi sẽ đọc cụt nghĩa. Cũng không đụng tên các panel khác cùng mẫu ("Cửa Hàng Điểm", "Cửa Hàng Quý Tộc") vì không thuộc 2 tab hiển thị trong màn hình này.
+
+Chỉ sửa `main.min.js` (không có exml/`default.thm.js` nào cần đổi). Đổi tên `main.min_6a7ab3f8.js`→`main.min_fcf6858d.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: dòng đếm ngược tách đúng 2 dòng cố định ("...tiếp theo:" / "00:00:00"), và 2 tab hiển thị đủ chữ "Bí Ẩn"/"Đạo Cụ" không bị cắt.
