@@ -2685,3 +2685,13 @@ Sửa đồng bộ `GuildSkillWinSkin.exml` + `default.thm.js`. Đổi tên `def
 **Bài học**: trước khi dời 1 phần tử để giải quyết chồng lấp, cần xác định rõ ràng phần tử nào là "thủ phạm" thực sự lấn sang phần tử kia — không nên mặc định phần tử có tên "icon" là nhỏ; cần kiểm tra `scaleX`/`scaleY` và thứ tự render (z-order) trong danh sách `elementsContent`, vì phần tử render sau sẽ vẽ đè lên phần tử render trước dù toạ độ không đổi.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh xem cỡ chữ `size=13` đã đủ nhỏ để nhãn nằm gọn trước khối nền chưa, hay cần thu nhỏ thêm/không cần thiết vì hình phần còn lại của yêu cầu ("sau đó làm như mình nói") vẫn đang chờ hướng dẫn tiếp theo từ người dùng.
+
+## 46. Đổi cách sửa mục 45 theo yêu cầu người dùng — giữ nguyên cỡ chữ, chỉ dời sát lề (2026-07-08)
+
+Bản sửa mục 45 (giảm `size` 20→13) đã hoạt động đúng (không còn chồng lấp, xác nhận qua ảnh IMG_0651), nhưng người dùng phản hồi thích cách khác hơn: giữ nguyên cỡ chữ gốc, chỉ cần dời nhãn "Tiêu hao nâng cấp:"/"Cống hiến còn lại:" sát về mép trái (chừa lề ~4px) vẫn đủ chỗ.
+
+**Đã đổi lại** theo đúng yêu cầu: trả `size` 13→20 (nguyên bản), đổi `x` của cả 2 nhãn về `4` (từ `13.31`/`12.67`) — giữ chữ to như cũ, chỉ tận dụng thêm ~9-13px lề trái còn dư.
+
+Sửa đồng bộ `GuildSkillWinSkin.exml` + `default.thm.js`. Đổi tên `default.thm_c2871533.js`→`default.thm_ae5ff6d4.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Đây là thay đổi theo yêu cầu trực tiếp của người dùng (không phải suy luận của mình) — vẫn cần xác nhận lại bằng ảnh xem chữ cỡ 20 tại `x=4` có thực sự đủ chỗ trước khối nền hay không, vì theo ước lượng độ rộng chữ ở size 20 (mục 44/45) có thể vẫn hơi sát/tràn nhẹ.
