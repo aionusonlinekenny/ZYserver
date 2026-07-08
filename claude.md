@@ -2741,3 +2741,16 @@ Người dùng yêu cầu bỏ chữ "thêm" ở cụm "tăng thêm N" trong c�
 **Đã sửa trong `main.min.js`** (text set động qua `TextFlowMaker.generateTextFlow1`, không nằm trong exml): tìm thấy 4 chỗ "tăng thêm" thuộc đúng class `GuildFirePanelView` (2 bản `desc1` giống hệt nhau dùng cho 2 nhánh if/else, 2 bản `desc2` — 1 cho trạng thái bình thường, 1 cho trạng thái "đã đạt tối đa" ngày mai — cả 2 đều có cùng mẫu "có thể tăng thêm N quỹ" nên sửa luôn cả 2 cho nhất quán dù người dùng chỉ thấy 1 trong 2 trên ảnh). File có tổng cộng 10 chỗ chứa "tăng thêm" nhưng CHỈ sửa đúng 4 chỗ thuộc màn này, không đụng 6 chỗ còn lại ở màn khác.
 
 Đổi tên `main.min_6f90963a.js`→`main.min_c45745a3.js` (cache-bust, `default.thm.js` không đổi lần này). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+## 51. Sửa 4 lỗi bố cục màn "Thành viên Tiên Minh" (`GuildInfoSkin.exml`) (2026-07-08)
+
+Người dùng gửi ảnh (IMG_0662) chỉ ra chi tiết 4 lỗi trên màn Tiên Minh (guild info), mô tả rất rõ từng phần cần sửa:
+
+1. **"Thông tin Tiên Minh"** (tiêu đề khung xanh) không canh giữa nền lá cờ — trước đó dùng `x="58"` cố định (không tính theo độ dài chữ thực tế). Đổi sang `horizontalCenter="0"` để Egret tự canh giữa đúng theo khung cha `infoGroup` (width=207), không cần đoán độ rộng chữ.
+2. **"Thông báo Tiên Minh"** (tiêu đề khung thông báo) đè lên icon sửa thông báo (`cityBtn`, tại `x=447`) — chữ "Tiên" đang che icon. Dời nhãn từ `x=351`→`x=200` (dịch trái ~151px) để toàn bộ cụm "Thông báo Tiên Minh" nằm gọn trước icon, không đè lên.
+3. **"Cống hiến tích lũy"** (tiêu đề cột trong bảng thành viên) lệch trái, đè lên biên giữa cột "Chức vụ" và cột điểm — trước đó neo `right="60"` (chỉ tính từ mép phải toàn hàng, không tính đúng theo cột dữ liệu thực tế bên dưới, vốn nằm ở `x=401` width=`200` theo `MemberItemSkin.exml`). Đổi sang `horizontalCenter="201"` — tính đúng tâm của cột dữ liệu (401 đến 601) quy về hệ toạ độ canh giữa của hàng tiêu đề (width 600).
+4. **"Cống hiến của tôi："** (label cuối màn) đè lên icon `szbanggong` + giá trị `myCon` (số 3771) — cùng mẫu lỗi với mục 45 (icon/giá trị đặt quá gần nhãn dài). Theo đúng nguyên tắc mục 10 (ưu tiên dời phần tử, không đổi cỡ chữ), dời icon `x` 149→220 và `myCon.x` 188→260 (dời sang phải, giữ khoảng cách icon↔giá trị ~40px như cũ).
+
+Sửa đồng bộ `GuildInfoSkin.exml` + `default.thm.js` (4 hàm `_Label2_i`, `_Label5_i`, `_Label7_i`, `myCon_i`/`_Label11_i`/`_Image11_i`). Đổi tên `default.thm_9a114d1c.js`→`default.thm_e6e4f8e1.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh cho cả 4 điểm, đặc biệt điểm 2 (khoảng cách ước lượng 151px dời trái cho "Thông báo Tiên Minh" dựa trên ước lượng độ rộng chữ ở size 22, chưa đo chính xác) và điểm 4 (khoảng dời 71px cho icon/giá trị cống hiến, cũng là ước lượng).
