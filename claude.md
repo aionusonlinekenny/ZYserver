@@ -2953,3 +2953,21 @@ Người dùng xác nhận mục 62 ổn (ảnh cho thấy 3 dòng thông tin kh
 Chỉ sửa `main.min.js` (không có exml/`default.thm.js` nào cần đổi). Đổi tên `main.min_fcf6858d.js`→`main.min_a8420dc8.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ. Đã kiểm tra kỹ: không phát sinh double-space, không có artefact `+""` gây lỗi hiển thị (dù còn 112 chỗ `+""` thừa vô hại về mặt chức năng).
 
 Vẫn chưa render trực tiếp kiểm chứng được — quy mô thay đổi RẤT LỚN (263 chỗ) nên rủi ro cao hơn bình thường dù đã soát kỹ từng nhóm mẫu bằng mắt trước khi áp dụng tự động. Cần người dùng kiểm tra rộng nhiều màn hình khác nhau (không chỉ riêng màn Cạnh Kỹ) để xác nhận: "Cấp X", "Chuyển X", "Hạng X" hiển thị đúng khắp nơi (thông tin nhân vật, thú cưỡi, trang bị, xếp hạng bang hội, Thiên Cơ Các, Vạn Long Mộ, danh sách người chơi gần đây...) mà không có chỗ nào bị lệch/thiếu số do sai sót trong quá trình dò biên tự động.
+
+## 64. Sửa lỗi bấm "Thách đấu" không có phản ứng gì trên màn Cạnh Kỹ (`main.min.js`) (2026-07-08)
+
+Người dùng báo: dù "Đạo Tâm Ba Động" không phải 100, bấm "Thách đấu" vẫn không thực hiện được — đây là LỖI CHỨC NĂNG (không phải UI), yêu cầu dò tìm nguyên nhân.
+
+**Nguyên nhân gốc — lỗi so sánh chuỗi do dịch thuật trước đây bỏ sót**: nút bấm trong danh sách "Người chơi gần đây" (`ZaoYuInfoItem.exml`/`EncounterInfoItem`) có nhãn mặc định `"Thách đấu"` (xác nhận trong cả exml lẫn `default.thm.js`, và trong `EncounterInfoItem.dataChanged`: `...?this.challengeBtn.label="Thách đấu":this.challengeBtn.label="Đang Thử Thách"`). Nhưng hàm xử lý bấm nút (`NearbyInfoWin.onTap_a94`) lại kiểm tra:
+```js
+if("Thử Thách"==t.target.label||"Đang Thử Thách"==t.target.label){
+  // ...toàn bộ logic kiểm tra túi đồ, kiểm tra Đạo Tâm Ba Động, gọi sendGoFight_a94...
+}
+```
+`"Thử Thách"` (tên cũ, có lẽ trước khi dịch) KHÁC với `"Thách đấu"` (tên nhãn thực tế hiện tại) — nên điều kiện `if` không bao giờ đúng khi nút đang ở trạng thái sẵn sàng thách đấu, khiến TOÀN BỘ logic bên trong (kể cả việc gọi chiến đấu) bị bỏ qua hoàn toàn. Bấm nút do đó không có phản ứng gì, không phụ thuộc điểm Đạo Tâm Ba Động là bao nhiêu — đúng khớp triệu chứng người dùng mô tả. Nhánh `else if("Tìm Địch"==t.target.label...)` cũng được xác nhận là code chết tương tự (không nơi nào còn gán nhãn "Tìm Địch" cho nút này nữa, có thể sót lại từ bản cũ trước khi bỏ tính năng) nhưng không gây ảnh hưởng nên không đụng tới.
+
+**Đã sửa**: đổi điều kiện kiểm tra từ `"Thử Thách"==t.target.label` thành `"Thách đấu"==t.target.label` (giữ nguyên `"Đang Thử Thách"==t.target.label` vì nhánh đó đã khớp đúng sẵn). Chỉ 1 chỗ duy nhất trong toàn file (xác nhận qua `grep -c`).
+
+Chỉ sửa `main.min.js` (không liên quan exml/`default.thm.js`, đây là lỗi thuần logic JS). Đổi tên `main.min_a8420dc8.js`→`main.min_61785772.js` (cache-bust). `node -c` qua, `php -l` qua, `manifest.json` hợp lệ.
+
+Đây là sửa LOGIC (không phải vị trí hiển thị) nên không cần chờ ảnh chụp để so sánh trực quan — người dùng có thể xác nhận trực tiếp bằng cách thử bấm "Thách đấu" sau khi server đồng bộ, kỳ vọng: vào trận đấu bình thường khi Đạo Tâm Ba Động < 100, hoặc hiện popup mua thêm lượt (`BuyRedThingWin`) khi ≥ 100 — thay vì im lặng không phản ứng như trước.
