@@ -73,12 +73,12 @@
 
 
 			<e:Image includeIn="nomax" source="jueweiattr" top="366" left="148"/>
-			<e:Label text="Tiêu hao Lịch Luyện：" top="396" fontFamily="Microsoft YaHei" left="8" textColor="0xffffff" size="20" includeIn="nomax"/>
+			<e:Label text="Lịch Luyện:" top="396" fontFamily="Microsoft YaHei" left="8" textColor="0xffffff" size="20" includeIn="nomax"/>
 			<e:Group width="591" height="38" includeIn="nomax,max" top="448" horizontalCenter.max="0" horizontalCenter="0" top.max="448" top.nomax="448">
 
 			<e:Label text="Tên nhiệm vụ" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" left="41"/>
-				<e:Label text="Số lần" x="225" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
-				<e:Label text="Thưởng mỗi lần" x="350" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label text="Số lần" x="245" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+				<e:Label text="Thưởng mỗi lần" x="331" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:Label text="Thao tác" size="21" verticalCenter="0" fontFamily="Microsoft YaHei" textColor="0x001828" right="50"/>
 
 

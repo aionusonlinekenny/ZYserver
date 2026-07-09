@@ -3108,3 +3108,24 @@ Sửa đồng bộ 3 chỗ: `LiLianSkin.exml`, `LiLianItemSkin.exml`, `default.t
 - Nhãn ribbon "练气" (tiêu đề cảnh giới hiện tại, ảnh `juewei_0_8_png`) vẫn còn tiếng Trung chưa dịch — đây là ảnh asset có chữ Hán vẽ sẵn, không sửa được qua text, nằm ngoài phạm vi yêu cầu lần này.
 
 Cần người dùng gửi lại ảnh xác nhận: (1) bảng nhiệm vụ không còn số đè lên tên; (2) tiêu đề hiển thị đúng "Tầng 5"/"Tầng 6"; (3) khối so sánh Sinh Lực/Công Kích bên trái hiện gọn 1 dòng mỗi thông số, mũi tên và cột bên phải không còn sát/đè vào cột trái.
+
+## 71. Sửa lại bảng nhiệm vụ màn Cảnh Giới (LiLian) — mục 70 làm rối thêm thay vì đơn giản chỉ dời cột (2026-07-09)
+
+Người dùng xác nhận khối "Sinh Lực/Công Kích" (phần chính của mục 70) đã đẹp, nhưng báo bảng nhiệm vụ bên dưới bị "chồng chéo tùm lum" — TỆ HƠN trước khi sửa. Chỉ ra 2 việc cụ thể: (1) đáng lẽ chỉ cần dời cột "Số lần" sang phải một chút là đủ, không cần đổi gì thêm; (2) đổi cụm "Tiêu hao Lịch Luyện：" thành "Lịch Luyện:".
+
+**Tự nhận sai lầm của mục 70**: đã mắc 2 lỗi cùng lúc khi sửa bảng nhiệm vụ:
+1. Thêm `width="175"` cho `nameTxt` (tên nhiệm vụ) — nhưng Label mặc định tự XUỐNG DÒNG khi có `width`, biến 1 dòng thành 2 dòng (vd "Pho Bản Kinh Nghiệm" → "Pho Bản Kinh Nghi"/"ệm"), phá vỡ layout hàng cố định cao 43px, DÀY THÊM vấn đề thay vì đơn giản ngăn tràn chữ.
+2. Dời luôn cả cột "Thưởng mỗi lần" (335→355 ở item, 331→350 ở tiêu đề) dù cột này KHÔNG hề bị lỗi ban đầu (đã có sẵn khoảng hở ~135px với cột "Số lần" cũ) — việc dời không cần thiết này đẩy nó chạm/đè vào cột "Thao tác" ở hàng tiêu đề ("Thưởng mỗi lần" + "Thao tác" dính vào nhau thành "...lài Thao tác").
+
+**Đã sửa lại (theo đúng yêu cầu tối thiểu của người dùng)**:
+- `nameTxt`: giữ `width="200"` (đủ chỗ cho tên ~19-20 ký tự ở size 21 không tràn) nhưng thêm `wordWrap="false" multiline="false"` để CHẶN xuống dòng — nếu có tên hiếm gặp dài hơn nữa thì tràn nhẹ ra ngoài (đọc được, 1 dòng) thay vì vỡ thành 2 dòng phá layout.
+- `descTxt`/"Số lần": dời x 200 gốc → 245 (đủ chỗ sau `nameTxt` rộng 200 + khoảng hở nhỏ).
+- `liLianNumTxt`/"Thưởng mỗi lần": TRẢ VỀ x=335 (giá trị gốc, không đổi) — vì cột này chưa từng có vấn đề.
+- Tiêu đề bảng: `Số lần` x→245 (khớp cột dưới), `Thưởng mỗi lần` TRẢ VỀ x=331 (giá trị gốc).
+- `Lịch Luyện:` : đổi text từ "Tiêu hao Lịch Luyện：" (dấu hai chấm kiểu Trung `：`) thành "Lịch Luyện:" theo đúng yêu cầu.
+
+**Bài học**: khi chỉ 1 phần tử bị lỗi tràn (ở đây là `nameTxt`), chỉ nên đụng tới đúng phần tử đó và phần tử NGAY SAU nó — không lan sang các cột xa hơn vốn dĩ đang ổn, kể cả khi "dời cho cân bằng/đẹp" nghe hợp lý; mỗi cột dời thêm là một điểm rủi ro overlap mới với hàng xóm bên phải nó. Ưu tiên thay đổi tối thiểu (minimal diff) đúng theo yêu cầu gốc, không tự ý mở rộng phạm vi sửa.
+
+Sửa đồng bộ `LiLianSkin.exml`, `LiLianItemSkin.exml`, `default.thm.js` (`nameTxt_i`, `descTxt_i`, `liLianNumTxt_i` của `SkinLiLianItem`; `_Label6_i`, `_Label7_i`, và Label "Lịch Luyện:" của `SkinLiLian`). `main.min.js` không đổi lần này. Cache-bust: `default.thm_125b690d.js`→`default.thm_8793532b.js`. Đã kiểm tra nội dung staged bằng `git show :path` ngay sau `git mv`+`git add` (đúng quy trình rút ra ở mục 70), `node -c` qua, `php -l` qua, `manifest.json` hợp lệ, cả 2 exml qua `xml.etree.ElementTree.parse`.
+
+Cần người dùng xác nhận lại: tên nhiệm vụ dài hiện đủ chỗ 1 dòng, cột "Số lần" không đè tên, cột "Thưởng mỗi lần" không đè "Thao tác" ở cả tiêu đề lẫn từng dòng, nhãn "Lịch Luyện:" hiển thị đúng.
