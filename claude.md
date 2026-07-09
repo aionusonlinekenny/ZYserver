@@ -3299,3 +3299,27 @@ Xác định đúng 3 vị trí factory cần sửa trong `default.thm.js` bằn
 Cache-bust cả 2 file: `main.min_bde097b6.js`→`main.min_10f4f5ec.js`, `default.thm_2b719960.js`→`default.thm_d71a7faa.js`. Đã xác minh nội dung staged: `node -c` qua cả 2 file, chuỗi `"\n     Nạp thẻ"` (bản cũ có khoảng trắng thừa) không còn trong file đã stage, đếm đúng 3 chỗ `t.height = 64;` mới trong đúng 3 factory `target0_i`/`target1_i`/`target2_i` (loại trừ các `height = 64` sẵn có ở nơi khác trong file, không liên quan), exml qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas nên không chắc `wrapVN_px_a94` chọn đúng điểm ngắt dòng đẹp mắt cho mọi giá trị `num` (500/2000/3000 trong ảnh mẫu, nhưng số tiền thực tế có thể khác nhiều theo cấu hình sự kiện) — cần ảnh xác nhận cả 3 hàng "Ngày 1/2/3" hiển thị đủ chữ, không mất/không tràn.
+
+## 81. Xác nhận mục 80 OK, sửa 2 việc mới: đổi tên nút "Nung luyện một chạm" + tách 2 dòng đè nhau trong màn "Đồ Giám" (2026-07-09)
+
+Người dùng xác nhận mục 80 đã ổn, kèm 2 yêu cầu mới trong cùng 1 tin nhắn:
+
+**Việc 1 — đổi text nút**: tìm trong `main.min.js` chuỗi "Nung luyện một chạm" (nhãn nút `smeltBtn` khi `Recharge.ins().franchise` bật, thuộc 1 màn nung luyện trang bị không nêu rõ trong ảnh, chỉ dựa vào chuỗi text người dùng cung cấp) — chỉ có ĐÚNG 1 vị trí duy nhất trong toàn file, đổi trực tiếp thành "Nung luyện nhanh".
+
+**Việc 2 — màn "Đồ Giám" (图鉴/Illustrations), ảnh IMG_0725**: dòng "Kinh nghiệm Đồ Giám：" (kèm số exp) và dòng "Phân Giải Đồ Giám Dư Thừa" (link màu xanh lá, có thể bấm) đang nằm chung 1 hàng ngang và đè lên nhau. Người dùng yêu cầu cụ thể: đưa "Phân giải Đồ Giám..." xuống dòng RIÊNG bên dưới "Kinh nghiệm Đồ Giám", và cân đối lại vị trí 2 dòng cho đẹp.
+
+**Xác định đúng skin**: `id="resolve"` (nhãn "Phân giải Đồ Giám dư") chỉ xuất hiện trong đúng 1 file exml — `tujian.exml` (`class="SkinTujian"`), dùng bởi `IllustrationsWin` (tên hiển thị "Đồ Giám" trong code, khớp tiêu đề màn 图鉴 trong ảnh) — tránh lặp lại lỗi "đoán nhầm skin" đã gặp ở mục 75-77 bằng cách xác nhận qua `id` riêng biệt thay vì chỉ tra text.
+
+**Cấu trúc gốc gây đè chữ**: cả 2 nhãn `"Kinh nghiệm Đồ Giám："` + `expValue` (số exp) VÀ khối `eff`+`resolve` ("Phân giải Đồ Giám dư") đều nằm chung 1 `Group` cao 50px, định vị bằng toạ độ `x` tuyệt đối cố định (label x=27, expValue x=112, khối resolve đặt qua `horizontalCenter=86.5` trong 1 Group con rộng 127px lồng bên trong) — TOÀN BỘ nằm trên cùng 1 hàng ngang (cùng y), không có dòng thứ 2, nên khi nhãn "Kinh nghiệm Đồ Giám：" (auto-rộng theo nội dung ở size 18) đủ dài, nó tràn qua đè lên cả `expValue` lẫn khối `resolve` phía sau — đúng lỗi "nhãn tĩnh tự giãn + phần tử sau đặt x cố định" đã gặp nhiều lần trong phiên (mục 75/76/77).
+
+**Đã sửa** (`tujian.exml` + `default.thm.js`, class `SkinTujian`): tách hẳn thành 2 hàng xếp dọc thay vì 1 hàng ngang chật:
+- Hàng 1 (`x=27, y=2`): gom nhãn "Kinh nghiệm Đồ Giám：" + `expValue` vào 1 Group con dùng `HorizontalLayout gap="4" verticalAlign="middle"` — để engine tự đo độ rộng nhãn và đặt số exp ngay sau, không còn đoán x cố định (đúng cách làm ưu tiên đã rút ra từ mục 76).
+- Hàng 2 (`x=27, y=28`, nằm NGAY DƯỚI hàng 1): gom `eff` (hiệu ứng) + `resolve` (nhãn "Phân giải Đồ Giám dư") vào 1 Group con khác cũng dùng `HorizontalLayout gap="4" verticalAlign="middle"`, thay cho cách lồng 2 lớp Group + `horizontalCenter` cũ.
+- Icon `tujianexp` (viên đá kinh nghiệm) đổi `verticalCenter` từ `-0.5` (canh giữa theo hàng đơn cũ) thành `0` để canh giữa theo TOÀN BỘ khối 2 hàng mới — cân đối trực quan hơn, đúng yêu cầu "cân đối lại vị trí của 2 dòng này".
+- Tăng chiều cao Group cha từ 50 → 54 để đủ chỗ cho 2 hàng (18px chữ × 2 + khoảng cách), không đụng đến `powerGroup` (Group ông bà chứa nó) vì EUI Group không tự clip theo chiều cao con.
+
+Đồng bộ y hệt cấu trúc mới sang `default.thm.js` (xoá 2 factory cũ `_Group3_i`/`_Group2_i` lồng nhau kiểu horizontalCenter, thay bằng 2 factory mới `_ExpRow_i`/`_ResolveRow_i` + 2 factory `HorizontalLayout` tương ứng, xác nhận đây là 3 cái tên MỚI chưa tồn tại — không trùng với factory tên số thứ tự (`_Group2_i`/`_Group3_i`) đã dùng ở các skin khác trong file, tránh xung đột khi Edit tool bắt buộc match duy nhất).
+
+Cache-bust cả 2 file: `main.min_10f4f5ec.js`→`main.min_db242e9a.js`, `default.thm_d71a7faa.js`→`default.thm_b5e3dd0c.js`. Đã xác minh nội dung staged: `node -c` qua cả 2, đếm đúng 1 chỗ "Nung luyện nhanh" và 0 chỗ "Nung luyện một chạm" còn sót, đếm đúng 3 chỗ `_ExpRow_i`/`_ResolveRow_i` xuất hiện trong file đã stage (1 khai báo + gọi trong `elementsContent` + 1 factory layout riêng mỗi cái — khớp cấu trúc dự kiến), exml qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas nên chưa chắc khoảng cách `y=2`/`y=28` giữa 2 hàng và việc tăng height cha lên 54 đã đủ "cân đối đẹp" theo đúng ý người dùng, hay cần tinh chỉnh thêm — cần ảnh xác nhận cả nút "Nung luyện nhanh" đã đổi tên đúng chỗ (không rõ nút này thuộc màn nào cụ thể vì người dùng không gửi ảnh cho phần này) lẫn 2 dòng "Kinh nghiệm Đồ Giám"/"Phân giải Đồ Giám dư" trong màn Đồ Giám đã tách rõ ràng, không còn đè nhau.
