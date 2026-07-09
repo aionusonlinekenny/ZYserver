@@ -3148,3 +3148,15 @@ Xác minh: sau khi sửa, quét lại chính file đã sửa bằng cùng script
 - Đã loại trừ an toàn 6 trường hợp nghi ngờ (regex bắt nhầm qua ranh giới câu lệnh `.text=`) — nếu có báo lỗi dính chữ ở các màn liên quan đến các biến `multiple`, `time`, `num`, `lilian`, `name`, thì đây có thể là các trường hợp bị bỏ sót có chủ đích, cần dò tay riêng.
 
 Cần người dùng dạo qua nhiều màn hình khác nhau (không chỉ Uy Vọng) để xác nhận: (1) hộp thoại "Có xác nhận tiêu... Nguyên Bảo để lấy lại... điểm Uy Vọng?" đã có khoảng cách đúng; (2) các thông báo/nhãn khác có số xen giữa chữ (VIP, bậc/sao, giờ/phút, nạp tích lũy, v.v.) đã tách rời rõ ràng; (3) báo lại nếu còn sót chỗ nào để dò tiếp.
+
+## 73. Nhãn "Xem trước Uy Vọng" đè lên huy hiệu tước hiệu (WeiWangSkin) (2026-07-09)
+
+Người dùng xác nhận mục 72 tạm ổn, báo thêm ở màn Uy Vọng (chính màn vừa sửa): dòng "Hiện tại：[huy hiệu tước hiệu]Xem trước Uy Vọng" — chữ "Xem trước Uy Vọng" (link xanh gạch chân) đè lên huy hiệu tước hiệu (ảnh `myTitle`, có chữ Hán "名不見传" vẽ sẵn trong texture, không dịch được vì là ảnh), yêu cầu dời "Xem trước Uy Vọng" sang phải.
+
+**Xác định**: `WeiWangSkin.exml`, nhãn `overViewTxt` (`horizontalCenter="95"`) và ảnh `myTitle` (`left="75" width="111"`, mép phải ở local x=186) cùng nằm trong 1 `Group` rộng 254px. Với `horizontalCenter=95` (tâm nhãn ở local x=222, không có `width` nên tự giãn theo nội dung ~198px ở size 20), mép trái nhãn rơi vào khoảng x=123 — chồng thẳng lên mép phải huy hiệu (186), khớp với hiện tượng "传Xem trước..." dính vào nhau trong ảnh.
+
+**Đã sửa**: chỉ đổi `horizontalCenter` của `overViewTxt` từ `95`→`170` (dời sang phải ~75px, đủ để mép trái nhãn vượt qua mép phải huy hiệu (186) kèm khoảng hở), không đổi gì khác (đúng bài học tối thiểu-thay-đổi ở mục 71) — kiểm tra mép phải nhãn sau khi dời vẫn nằm trong khung skin 600px, không chạm biên hay đụng các nút/ảnh khác ở vùng lân cận.
+
+Sửa đồng bộ `WeiWangSkin.exml` + `default.thm.js` (`overViewTxt_i` của `SkinWeiWang`). `main.min.js` không đổi. Cache-bust: `default.thm_8793532b.js`→`default.thm_4e8b9dcb.js`. Đã xác minh nội dung staged bằng `git show :path` ngay sau `git mv`+`git add` trước khi commit (đúng quy trình mục 70), `node -c` qua, `php -l` qua, `manifest.json` hợp lệ, exml qua `xml.etree.ElementTree.parse`.
+
+Cần người dùng xác nhận lại: "Xem trước Uy Vọng" không còn đè lên huy hiệu tước hiệu, đọc rõ cả 2 phần.
