@@ -6,8 +6,11 @@
 			<e:Group id="infoBg" left="0" right="0" x="10" top="0" bottom="0">
 			<e:Image left="0" right="0" top="0" bottom="0" source="day42_headbg_png"/>
 			<e:Group verticalCenter="8.5" rotation="0.14" left="177" width="364">
-				<e:Label id="actInfo0" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="top" anchorOffsetY="0" height="36.99" y="10" left="90" right="-6"/>
-				<e:Label text="Mô tả sự kiện：" size="18"  left="0" fontFamily="Microsoft YaHei" textColor="0xffff00" y="10"/>
+				<e:Label text="Mô tả sự kiện：" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label id="actInfo0" text="Trong thời gian sự kiện mở server, người đầu tiên đạt cấp độ chỉ định sẽ nhận phần thưởng giới hạn." size="18" fontFamily="Microsoft YaHei" textColor="0xffffff" verticalAlign="top" anchorOffsetY="0" height="36.99" width="250"/>
+				<e:layout>
+					<e:HorizontalLayout gap="0" verticalAlign="top"/>
+				</e:layout>
 			</e:Group>
 			<e:Label id="todayRecharge" text="Nạp tích lũy hôm nay：10000" y="115" size="18" right="30" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="right"/>
 			</e:Group>

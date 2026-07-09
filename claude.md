@@ -3224,3 +3224,24 @@ Cache-bust: `default.thm_7a7ef2f6.js`→`default.thm_7c15b5b4.js` (`main.min.js`
 **Lưu ý**: cách làm HorizontalLayout này đáng tin cậy hơn hẳn so với đoán `left=`, nên ưu tiên dùng cho các trường hợp "nhãn tĩnh + giá trị động đặt ngay sau" tương tự gặp phải sau này trong phiên, thay vì đoán pixel ngay từ đầu.
 
 Cần người dùng xác nhận lại bằng ảnh: "Thời gian còn lại"/"Mô tả sự kiện" đã tách rời rõ ràng khỏi giá trị đi kèm.
+
+## 77. Mục 76 vẫn không hết — hóa ra đã sửa NHẦM SKIN suốt từ mục 75 (2026-07-09)
+
+Người dùng gửi lại ảnh xác nhận: ảnh 1 ("每日累充") vẫn đè y hệt trước ("Thời gian cônglại41phút26giây", "Mô tả sự kiMỗi ngày nạp đủ..."); ảnh 2 là 1 skin KHÁC "三日连充" (3 ngày nạp liên tục) cũng bị lỗi y hệt. Người dùng cho biết đã tự tải file mới về chép đè thủ công nhưng không thấy đổi gì.
+
+**Kiểm tra deploy trước khi nghi ngờ code sai** (đúng quy trình mục 68b/76): tải trực tiếp `default.thm_7c15b5b4.js` từ server thật — xác nhận bản sửa `HorizontalLayout` ở mục 76 **ĐÃ CÓ TRÊN SERVER ĐÚNG NHƯ COMMIT**, không phải lỗi deploy. Vậy tại sao người dùng vẫn thấy lỗi y hệt?
+
+**Phát hiện nguyên nhân thật**: từ mục 75, tôi đã xác định NHẦM skin ngay từ đầu! Tìm bằng cách grep chuỗi `"Thời gian còn lại"`/`"Mô tả sự kiện"` ra rất nhiều file, tôi chọn đại `DailyRechargeSkin.exml` (dùng bởi class `DailyRechargeItemRender`, id `actTime0`/`actInfo0`) vì nó khớp text — nhưng **màn hình thật người dùng đang xem lại dùng skin khác: `OSADailyRechargeSkin.exml`** (dùng bởi class `OSATarget0Panel3`, id `actTime`/`actDesc` — KHÔNG có số "0" ở cuối, và values hoàn toàn khác biến/khác cấu trúc). Cả 2 skin đều có tiêu đề gần giống, đều dùng chung 2 câu text tĩnh "Thời gian còn lại: " / "Mô tả sự kiện：", dễ nhầm lẫn nếu chỉ dò bằng text search mà không xác nhận chéo qua tên skin/class thực sự đang mở. Tương tự, "三日连充" hóa ra là `LoopRechargeSkin.exml` (`SkinLoopRecharge`, dùng bởi `OSATarget0Panel4`) — một skin THỨ BA hoàn toàn khác, cũng lặp lại đúng lỗi.
+
+**Bài học quan trọng**: khi 1 khung UI xuất hiện ở NHIỀU màn hình có tên/tiêu đề gần giống nhau (ở đây: "每日累充" xuất hiện dùng CẢ 2 skin `DailyRechargeSkin` VÀ `OSADailyRechargeSkin` tùy ngữ cảnh nào mở nó — có thể do server mới mở dùng skin "OSA" riêng cho các sự kiện chỉ chạy trong N ngày đầu mở server), **không được chỉ dựa vào text search để xác định đúng skin** — cần xác nhận thêm qua tên hình ảnh tiêu đề (`source="biaoti_..."`), hoặc tốt hơn là xác nhận qua ID/thuộc tính đặc trưng KHÔNG trùng giữa các skin nghi ngờ (ở đây lẽ ra phải để ý `actTime0` khác `actTime`, `actInfo0` khác `actDesc` ngay từ mục 75).
+
+**Đã sửa cả 2 skin còn lại đúng theo pattern HorizontalLayout đã dùng thành công ở mục 76**:
+- `OSADailyRechargeSkin.exml` (`actTime`/`actDesc`, class `OSATarget0Panel3`): tách nhóm `_Group1` thành 2 sub-Group `_TimeRow`/`_DescRow` dùng `HorizontalLayout`, dọn thuộc tính vị trí cứng khỏi các Label con — cùng cách làm hệt mục 76.
+- `LoopRechargeSkin.exml` (`actInfo0` + label "Mô tả sự kiện：", class `OSATarget0Panel4`): chỉ có 1 hàng cần sửa (không có hàng "Thời gian còn lại" riêng trong skin này), áp dụng `HorizontalLayout` tương tự.
+- Tên vật phẩm trong danh sách thưởng: cả `OSADailyRechargeRender` (dùng `KaifuItemBase extends ItemBase`, skin `SkinItem2`) và `OSATarget0Panel4` (dùng `BagItemBase` cho cả 3 list `reward0`/`reward1`/`reward2`) đều gặp đúng lỗi wrap-ký-tự-không-theo-từ như mục 75 — thêm `fixRewardName_a94` cho cả 2 class, tái dùng `wrapVN_a94` (không định nghĩa lại).
+
+Sửa đồng bộ 2 exml (`OSADailyRechargeSkin.exml`, `LoopRechargeSkin.exml`) + `default.thm.js` (`_Group1_i`/`_TimeRow_i`/`_DescRow_i`/layout factories của cả 2 class, xác định đúng vị trí bằng số dòng cụ thể trong từng class) + `main.min.js` (`OSADailyRechargeRender.dataChanged`, `OSATarget0Panel4.setData` — cả 2 thêm hàm `fixRewardName_a94` mới). Cache-bust cả 2 file: `default.thm_7c15b5b4.js`→`default.thm_2b719960.js`, `main.min_17058af2.js`→`main.min_f9311d40.js`. Đã xác minh nội dung staged đúng cả 2 vị trí class trước khi commit, `node -c` qua cả 2, `php -l` qua, `manifest.json` hợp lệ, cả 2 exml qua `xml.etree.ElementTree.parse`.
+
+**Lưu ý/rủi ro chưa kiểm chứng**: chưa loại trừ khả năng còn MỘT skin thứ 4 nào đó (vd biến thể khác của "每日累充"/"三日连充" cho các server đã mở lâu, không phải server mới) cũng lặp lại lỗi tương tự — nếu người dùng thấy còn màn nào khác bị y hệt, cần báo lại CHÍNH XÁC tiêu đề/context màn đó (đang ở đâu, bấm nút gì để vào) để tránh lặp lại nhầm lẫn đã xảy ra ở mục 75-76.
+
+Cần người dùng xác nhận lại cả 2 skin bằng ảnh mới sau khi server đồng bộ.
