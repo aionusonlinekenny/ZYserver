@@ -3208,3 +3208,19 @@ Sửa đồng bộ `DailyRechargeSkin.exml` + `default.thm.js` (`actTime0_i`, `a
 **Chưa sửa — nghi ngờ không thuộc phạm vi skin này**: ảnh còn cho thấy 1 dòng thông báo dạng "...Emmaban đã nhận Gói Nạp Hàng Ngày trị giá 32888 Nguyên Bảo" đè lên vùng mô tả sự kiện — không tìm thấy chuỗi này trong `DailyRechargeSkin`/`main.min.js` qua tra cứu trực tiếp, nghi là banner thông báo TOÀN CỤC (kiểu marquee hiển thị giao dịch của người chơi khác) render đè lên MỌI cửa sổ đang mở tại vị trí cố định gần đầu màn hình, không phải lỗi riêng của skin này — cần thêm ảnh/thông tin xác nhận trước khi có thể dò tiếp (không chắc đây có sửa được từ phía UI của popup này hay không, vì nếu banner nằm ở layer cao hơn thì phải sửa NƠI banner được tạo, không phải nơi nó đè lên).
 
 Cần người dùng xác nhận lại: "Thời gian còn lại"/"Mô tả sự kiện" không còn đè lên giá trị đi kèm, tên vật phẩm trong danh sách thưởng xuống dòng gọn theo từ và không tràn sang ô bên cạnh.
+
+## 76. Mục 75 sửa chưa đủ — bỏ ước lượng pixel, chuyển sang HorizontalLayout để hết đoán mò (2026-07-09)
+
+Người dùng xác nhận banner "Emmaban đã nhận..." đúng là thông báo hệ thống, bỏ qua — nhưng gửi ảnh mới cho thấy **"Thời gian còn lại"/"Mô tả sự kiện" VẪN đè lên giá trị đi kèm y hệt trước khi sửa**, dù đã đổi `left` từ 97→205 ở mục 75.
+
+**Kiểm tra trước khi sửa tiếp** (đúng bài học mục 68b): tải trực tiếp `default.thm_7a7ef2f6.js` đang chạy trên server thật (`curl http://71.31.97.241/js/...`) để loại trừ khả năng chưa deploy — xác nhận file đã đúng nội dung mục 75 (left=205) **NHƯNG người dùng vẫn thấy đè lên** → kết luận: bản sửa mục 75 ĐÃ chạy đúng, nhưng con số 205px tôi ước lượng cho độ rộng chữ "Thời gian còn lại: " là **sai, chưa đủ dài** — ước lượng ~10.5px/ký tự không khớp thực tế (không tự render được canvas Egret để đo chính xác nên đây luôn là rủi ro đã cảnh báo trước).
+
+**Quyết định**: thay vì tiếp tục đoán 1 con số lớn hơn (có thể lại sai lần nữa), **chuyển hẳn sang `HorizontalLayout`** cho 2 hàng "Thời gian còn lại: [giá trị]" và "Mô tả sự kiện：[nội dung]" — bọc mỗi cặp nhãn+giá trị vào 1 Group con dùng `HorizontalLayout gap="0" verticalAlign="middle"`, để engine TỰ đo độ rộng thật của nhãn và đặt giá trị ngay sau, loại bỏ hoàn toàn việc đoán pixel. Đây là cách làm ĐÚNG NGUYÊN TẮC hơn — không dựa vào ước lượng font-metric nữa mà để Egret tự tính, đảm bảo không lặp lại lỗi tương tự nếu sau này đổi cỡ chữ/nội dung nhãn.
+
+Sửa: `DailyRechargeSkin.exml` — tách `_Group` chứa 4 label thành 2 sub-`Group` (`_TimeRow`, `_DescRow`), mỗi sub-Group có `HorizontalLayout`, bỏ hết `left`/`x`/`top`/`bottom` cố định trên từng Label con (để layout tự sắp). `default.thm.js` — thêm 2 hàm Group mới (`_TimeRow_i`, `_DescRow_i`) + 2 hàm layout (`_TimeRowLayout_i`, `_DescRowLayout_i`), dọn bỏ thuộc tính vị trí cứng khỏi `_Label1_i`/`actTime0_i`/`actInfo0_i`/`_Label2_i` — xác định đúng vị trí cần sửa bằng cách đọc trực tiếp theo SỐ DÒNG cụ thể trong class `DailyRechargeSkin` (không dùng tên hàm chung chung vì `_Label2_i`/`actTime0_i` trùng tên ở hàng trăm chỗ khác trong file).
+
+Cache-bust: `default.thm_7a7ef2f6.js`→`default.thm_7c15b5b4.js` (`main.min.js` không đổi lần này). Đã xác minh nội dung staged đúng đoạn code mới (`_TimeRow_i`/`_DescRow_i`) trước khi commit, `node -c` qua, `php -l` qua, `manifest.json` hợp lệ, exml qua `xml.etree.ElementTree.parse`.
+
+**Lưu ý**: cách làm HorizontalLayout này đáng tin cậy hơn hẳn so với đoán `left=`, nên ưu tiên dùng cho các trường hợp "nhãn tĩnh + giá trị động đặt ngay sau" tương tự gặp phải sau này trong phiên, thay vì đoán pixel ngay từ đầu.
+
+Cần người dùng xác nhận lại bằng ảnh: "Thời gian còn lại"/"Mô tả sự kiện" đã tách rời rõ ràng khỏi giá trị đi kèm.
