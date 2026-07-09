@@ -3071,3 +3071,15 @@ Người dùng gửi lại 4 ảnh xác nhận mục 68 — vẫn thấy y hệt
 2. **Không bao giờ sửa nội dung 1 file mà giữ nguyên tên hash đã từng được commit/deploy trước đó** — dù là sửa lỗi cho chính lần deploy vừa rồi. Luôn sinh hash mới mỗi khi nội dung thực sự thay đổi so với bất kỳ lần đã push nào trước, kể cả khi đó là bản vá cho chính lỗi vừa gây ra.
 3. Khi `git add` nhiều đường dẫn trong 1 lệnh, nếu có thể 1 đường dẫn đã bị đổi tên/không còn tồn tại, **tách riêng từng nhóm lệnh `git add`** hoặc kiểm tra `git status --short` ngay sau add để chắc chắn mọi thay đổi định sửa đều đã thực sự nằm trong staging area — lệnh `git add` fail 1 phần sẽ fail toàn bộ (không add gì) mà không luôn báo lỗi dễ thấy giữa nhiều dòng output khác.
 4. Khi nghi ngờ ảnh xác nhận của người dùng cho thấy lỗi y hệt "vẫn còn nguyên" sau khi đã fix, **ưu tiên kiểm tra trực tiếp file đang chạy trên server thật (qua `curl` tới CDN nếu mạng cho phép) thay vì đoán do "chưa kịp sync"** — sự cố lần này lẽ ra không bao giờ tự hết dù chờ bao lâu vì bản chất là cache vĩnh viễn theo tên file, không phải độ trễ đồng bộ thông thường.
+
+## 69. Nhãn "Hợp Thành Đạo Cụ" bị xuống dòng ở màn Tru Tiên (誅仙/Heirloom) (2026-07-09)
+
+Người dùng xác nhận mục 68 đã ổn (ảnh chụp màn "誅仙" - Tru Tiên - không liên quan trực tiếp mục 68 nhưng cùng kiểu link chữ), báo thêm: nhãn liên kết "Hợp Thành Đạo Cụ" cạnh nút "Kích hoạt" bị xuống dòng thành "Hợp Thành Đạo C" / "ụ", cần gộp lại 1 dòng.
+
+**Xác định skin**: `heirloom.exml`/`Skinheirloom` (class dùng `id="getItemTxt"` — nhãn link gạch chân, đổi text động qua `TextFlowMaker.generateTextFlow("|U&T:"+r)` với `r` là 1 trong "Hợp Thành Đạo Cụ"/"Nhận Tru Tiên Kiếm"/"Nhận Tru Tiên Giáp"/"Phân Giải Vật Phẩm" tùy trạng thái — dài nhất ~18-19 ký tự). Gốc lỗi: `width="150"` quá hẹp (được canh sát lề phải nhóm `upInfo` rộng 500, `x="350"`→150 vừa khít mép 500), lại có `wordWrap="true" multiline="true"` nên tự động xuống dòng khi chữ dài hơn ô.
+
+**Đã sửa**: mở rộng `width` 150→240 (đủ chỗ cho chuỗi dài nhất ~19 ký tự ở size 20, giữ `x="350"` cố định vì đó là mép trái sát nút `jihuo`/"Kích hoạt" — chỉ nới mép phải), và tắt hẳn `wordWrap="false" multiline="false"` để đảm bảo LUÔN 1 dòng bất kể chữ dài bao nhiêu (đúng yêu cầu tường minh của người dùng), thay vì chỉ nới rộng rồi hy vọng đủ. Mép phải mới ở x=590 trong khung skin rộng 600 — còn dư 10px, không chạm biên, không đụng các nút khác ở hàng này (đã kiểm tra `attrSet`/`neatSet`/`closeBtn` đều ở vị trí y khác xa).
+
+Sửa đồng bộ `heirloom.exml` + `default.thm.js` (`getItemTxt_i` của `Skinheirloom`). Cache-bust: `default.thm_9164efba.js`→`default.thm_a6eb6afc.js` (`main.min.js` không đổi lần này). Áp dụng đúng bài học ở mục 68b: kiểm tra nội dung file có hash mới ngay trong git trước khi push, không tái dùng tên hash cũ.
+
+Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: nhãn "Hợp Thành Đạo Cụ" (và các biến thể "Nhận Tru Tiên Kiếm"/"Nhận Tru Tiên Giáp"/"Phân Giải Vật Phẩm" nếu gặp trạng thái khác) nằm gọn 1 dòng, không tràn ra ngoài khung/đè lên nút khác.
