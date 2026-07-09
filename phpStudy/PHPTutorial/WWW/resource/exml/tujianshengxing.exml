@@ -42,7 +42,6 @@
 
 			</e:Group>
 		</e:Group>
-		<e:Label id="info" text="Nhận kinh nghiệm Đồ Giám" size="20" right="-18" bottom="-23" visible.max="false" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
 		<e:Image id="xiangqing" x="406" y="47" source="tongyongxiangxi" visible="false"/>
 		<e:Group id="need" includeIn="noActive" horizontalCenter="0" bottom="40" visible="false">
 			<e:Label text="Cần：" x="0" y="0" size="20" fontFamily="Microsoft YaHei"/>
@@ -52,6 +51,12 @@
 			</e:layout>
 		</e:Group>
 		<e:Label id="specialAttr" text="" size="20" horizontalCenter="0.5" fontFamily="Microsoft YaHei" textColor="0xac00dd" bold="true" verticalCenter="58"/>
-		<e:Button id="btnUp" label="Nâng sao" icon="btn2_2" width="178" height="69" horizontalCenter="0" visible.max="false" label.noActive="Kích hoạt" skinName="SkinBtn28" bottom="-36"/>
+		<e:Group horizontalCenter="0" bottom="-36">
+			<e:Button id="btnUp" label="Nâng sao" icon="btn2_2" width="178" height="69" visible.max="false" label.noActive="Kích hoạt" skinName="SkinBtn28"/>
+			<e:Label id="info" text="Kinh nghiệm" size="20" visible.max="false" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:layout>
+				<e:HorizontalLayout gap="12" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
 	</e:Group>
 </e:Skin>
