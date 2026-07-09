@@ -3160,3 +3160,32 @@ Người dùng xác nhận mục 72 tạm ổn, báo thêm ở màn Uy Vọng (c
 Sửa đồng bộ `WeiWangSkin.exml` + `default.thm.js` (`overViewTxt_i` của `SkinWeiWang`). `main.min.js` không đổi. Cache-bust: `default.thm_8793532b.js`→`default.thm_4e8b9dcb.js`. Đã xác minh nội dung staged bằng `git show :path` ngay sau `git mv`+`git add` trước khi commit (đúng quy trình mục 70), `node -c` qua, `php -l` qua, `manifest.json` hợp lệ, exml qua `xml.etree.ElementTree.parse`.
 
 Cần người dùng xác nhận lại: "Xem trước Uy Vọng" không còn đè lên huy hiệu tước hiệu, đọc rõ cả 2 phần.
+
+## 74. Dịch tiêu đề/nội dung mail hệ thống — LẦN ĐẦU sửa file config phía SERVER, không phải client (2026-07-09)
+
+Người dùng gửi ảnh hộp thư trong game (tab "Gần đây"/mail), báo nhiều tiêu đề mail hệ thống gửi vẫn còn tiếng Trung (vd "杀戮榜排名奖(Chưa đọc)", "月卡奖励元宝(Đã đọc)", "每日历练奖励补发(Đã đọc)", "弥罗珍宝殿(Đã đọc)"), yêu cầu dò và dịch hết cho đồng bộ.
+
+**Khác biệt quan trọng so với tất cả các mục trước**: đây là LẦN ĐẦU TIÊN trong phiên làm việc này phải sửa file thuộc **phía SERVER** (`server/bin/s1/gameworld/data/config/**/*.config`) thay vì file client (`phpStudy/PHPTutorial/WWW/...`). File `.config` là bảng dữ liệu dạng cú pháp giống Lua table (`KeyName={ field = "giá trị", ... }`), do server game (file `.exe` C++ Windows, không chạy trong sandbox này) đọc để sinh nội dung mail động.
+
+**Đã cố gắng hỏi người dùng qua `AskUserQuestion`** về (1) server có tự hot-reload config hay cần restart tiến trình `gameworld` mới áp dụng, và (2) có nên sửa toàn bộ hay chỉ giới hạn `mail.config` chính — nhưng **cả 2 lần gọi đều lỗi "Tool permission request failed: stream closed"** (không rõ do container bị restart giữa chừng hay do môi trường không hỗ trợ tool này lúc đó). Sau khi container restart và không nhận được phản hồi, **đã tự quyết định tiến hành dịch toàn bộ** dựa trên yêu cầu rõ ràng ban đầu của người dùng ("xem còn cái gì thì dịch cho đồng bộ luôn"), vì đây thuộc đúng tinh thần công việc đã làm xuyên suốt phiên (dịch nốt phần còn sót tiếng Trung), nhưng **CHƯA XÁC NHẬN ĐƯỢC** liệu sửa file config có cần restart server để áp dụng hay không — đây là rủi ro/điểm mù lớn nhất của mục này, khác hẳn các mục trước (client JS/exml luôn tự động đồng bộ, đã kiểm chứng nhiều lần qua `curl` trực tiếp tới CDN).
+
+**Phạm vi đã dò và dịch** (dò bằng script Python quét toàn bộ cây thư mục `data/config/`, tìm mọi field có tên chứa `mail/title/head/context/content` mà giá trị còn chứa ký tự tiếng Trung — quét lặp lại nhiều vòng vì mỗi vòng lại lộ ra thêm file/field mới chưa từng nghĩ tới):
+- `language/lang/mail.config` (75 dòng, ~50 field) — bảng tiêu đề/nội dung mail cho boss dã ngoại, bảng xếp hạng mở server, v.v. — viết lại toàn bộ file bằng tool Write (đã đối chiếu số lượng key và thứ tự key trước/sau bằng script Python, khớp 100% — chỉ giá trị đổi, cấu trúc/khóa giữ nguyên).
+- `mail/mail.config` (101 mục, file mail cố định theo ID — chúc mừng lên cấp/chuyển sinh, quà mở server theo ngày, mùa giải Đỉnh Phong, cá cược, bảng xếp hạng nhân khí, v.v.) — dịch bằng kết hợp regex cho các mẫu lặp lại theo số (cấp N, chuyển sinh N, ngày N, hạng N) + dịch tay cho các mục duy nhất.
+- 39 file `.config` khác rải rác khắp các tính năng (thành phố/BOSS hợp server, quà gộp nhóm, đổi quà, tiên minh/trấn yêu, thẻ tháng/đặc quyền, BOSS thế giới, BOSS chuyển sinh, đấu giá, cạnh tranh liên server, đại chiến phe phái, phó bản tiên đồ tổ đội, vương giả tranh bá, lịch luyện, nạp tiền, di la trân bảo điện, chia sẻ WeChat, nhiệm vụ giới hạn thời gian, vô cực chiến trường, ảo hóa hết hạn, hoạt động nạp tích lũy các loại, v.v.) — dịch bằng thay thế chuỗi chính xác (exact string match trên toàn bộ giá trị `"..."`, giữ nguyên `%s`/`%d`/markup `|C:màu&T:chữ|`).
+
+**Quy trình an toàn áp dụng cho tất cả 41 file**:
+1. Trước mỗi lần thay thế: đếm số dấu `{`/`}`/`"` trong file.
+2. Sau khi thay thế: đối chiếu lại — bắt buộc khớp tuyệt đối (đảm bảo không vô tình phá cấu trúc bảng hay làm lệch số dấu ngoặc kép khi chuỗi tiếng Việt mới chứa ký tự đặc biệt).
+3. Kiểm tra mỗi khóa dịch đều khớp được ít nhất 1 lần trong file (`zero_hits` rỗng) — tránh trường hợp dịch nhầm chuỗi không tồn tại (lỗi gõ) mà không hay biết.
+4. **Xác thực cú pháp Lua THẬT** bằng `lua5.3 -e "load(content)"` (không chỉ đếm ngoặc) cho toàn bộ 41 file — 40/41 qua thẳng; file `language/lang/mail.config` báo lỗi cú pháp ở dấu phẩy thừa sau dấu `}` đóng bảng cấp cao nhất — đã **xác minh lại bằng `git show HEAD:...`** rằng bản GỐC (trước khi Claude sửa) cũng lỗi y hệt qua cùng phép thử → kết luận đây là đặc điểm sẵn có của file (server dùng parser tùy biến khoan dung hơn `lua5.3` chuẩn, không phải lỗi do sửa) — không phải regression, an toàn.
+
+**Chưa làm/rủi ro còn lại**:
+- Chưa xác nhận cơ chế deploy/reload cho server config (câu hỏi gửi người dùng bị lỗi tool, chưa có câu trả lời) — người dùng cần tự kiểm tra xem có cần restart tiến trình `gameworld` (thư mục `server/bin/s1/gameworld/`) để áp dụng hay không.
+- Không chắc file trong repo git này có thật sự là bản đang chạy trên server thật (71.31.97.241:9001) hay chỉ là bản lưu/backup — khác với file client đã xác minh qua `curl` trực tiếp CDN nhiều lần, CHƯA có cách xác minh tương tự cho phía server trong phiên này.
+- Có thể còn sót các field mail dùng quy ước đặt tên khác hẳn (không chứa "mail/title/head/context/content") mà script chưa bắt được — nếu người dùng vẫn thấy mail tiếng Trung sau khi deploy, cần chụp ảnh cụ thể để dò tiếp theo đúng tên field đó.
+- Dịch Hán-Việt cho tên boss/tính năng (vd "Xúc Long Thần", "Yêu Ma Thượng Cổ", "Vương Giả Tranh Bá") dựa trên quy ước đã thấy trong ảnh chụp màn hình trước đó và cách dịch monster.config hiện có — không đối chiếu được 100% với văn bản gốc client cho MỌI tên (do khối lượng quá lớn), có thể có vài chỗ tên khác với cách gọi trong UI client, cần người dùng đối chiếu khi thấy mail thật.
+
+Không cache-bust/không đổi `manifest.json`/`index.php` lần này vì đây là file server, không thuộc pipeline cache-bust của client (`phpStudy/PHPTutorial/WWW`).
+
+Cần người dùng: (1) xác nhận cách áp dụng thay đổi config phía server (restart cần thiết hay không); (2) sau khi áp dụng, vào lại hộp thư kiểm tra các mail cũ (mail mới gửi từ giờ trở đi mới dùng bản dịch mới, mail ĐÃ CÓ SẴN trong hộp thư trước đó có thể đã lưu title/content dạng tiếng Trung snapshot trong database, không tự đổi theo config mới — cần kiểm tra thực tế); (3) báo lại nếu còn sót mail tiếng Trung ở field/tính năng khác.
