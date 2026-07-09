@@ -3266,3 +3266,20 @@ Người dùng xác nhận ảnh mới: 2 skin mục 77 (`OSADailyRechargeSkin`,
 Cache-bust: `main.min_f9311d40.js` → `main.min_c257d04c.js` (`default.thm.js` không đổi lần này). Đã xác minh bằng `node -e` đếm đúng 4 lần xuất hiện `wrapVN_px_a94` (1 định nghĩa + 3 nơi gọi) và 0 chỗ còn sót `wrapVN_a94(n.text` (cách gọi cũ) trong file đã stage, `node -c` qua cú pháp, `manifest.json`/`index.php` (bump version query `?v=`) đã trỏ đúng hash mới.
 
 **Chưa kiểm chứng bằng ảnh thật**: không tự render được canvas Egret nên không chắc 78px/88px đã đủ rộng để "Nguyên Bảo"/"Đồng Tiền" nằm gọn 1 dòng và tên dài (~20 ký tự như "Gói Đồ Giám Giai Nhân") xuống 2 dòng đầy đủ không mất chữ — cần ảnh xác nhận. `r.itemConfig` đã bao phủ cả nhánh `type==1` lẫn `type==6` trong `ItemBase.dataChanged` gốc (cả 2 đều set `this.itemConfig=GlobalConfig.ConfigItem[...]`), và `r.isCurrency` bao phủ nhánh `type==0`; nếu vẫn còn tên bị cắt/mất chữ ở loại item khác, cần biết CHÍNH XÁC tên vật phẩm bị lỗi để tra thêm nhánh `dataChanged` chưa gặp (vd `ItemData` instance, nhánh đầu tiên của hàm).
+
+## 79. Nút "Chưa hoàn thành" tràn ra ngoài nền nút — giảm font size riêng cho nhãn này (2026-07-09)
+
+Người dùng yêu cầu (không kèm ảnh mới, tiếp nối trực tiếp mạch màn hình nạp tích lũy mục 75-78): nút hiện chữ "Chưa hoàn thành" đang to hơn nền nút, cần giảm cỡ chữ xuống 2px để chữ lọt gọn trong nền.
+
+**Xác định phạm vi**: tra `main.min.js` tìm tất cả nơi set `.label="Chưa hoàn thành"` — có tới 13 vị trí rải khắp game (nhiều màn nạp/tích lũy khác nhau, không chỉ 3 skin đang làm việc). Vì người dùng không gửi ảnh mới và đang tiếp nối đúng mạch 3 skin vừa sửa ở mục 75/77/78, chỉ sửa đúng 3 nút thuộc 3 class đó, KHÔNG động vào 10 vị trí còn lại (thuộc tính năng khác, ngoài phạm vi đang trao đổi):
+- `DailyRechargeItemRender.get` — skin `SkinBtn25` (`DailyRechargeItemSkin.exml`), nút 50×30px, cỡ chữ mặc định 20 → giảm còn 18 khi label là "Chưa hoàn thành".
+- `OSADailyRechargeRender.getBtn` — skin `SkinBtn5` (`OSADailyRechargeItem.exml`), nút 140×55px (khá rộng), cỡ chữ mặc định 24 → giảm còn 22.
+- `OSATarget0Panel4.get0/get1/get2` — skin `SkinBtn5` (`LoopRechargeSkin.exml`), nút 50×30px (rất chật), cỡ chữ mặc định 24 → giảm còn 22.
+
+**Cách chỉnh font size của Button**: `id="labelDisplay"` trong skin `Btn5Skin.exml`/`Btn25Skin.exml` là tên SkinPart dành riêng được Egret EUI tự bind thẳng vào instance Button (`button.labelDisplay` truy cập được trực tiếp, không cần lách qua state) — xác nhận đúng bằng cách tìm thấy pattern y hệt đã tồn tại sẵn trong chính codebase gốc (`this.expBar.labelDisplay.size=12`), nên dùng lại đúng API này thay vì tự chế cách khác.
+
+**Lưu ý tránh rò rỉ trạng thái do renderer/button bị tái sử dụng**: các nút này đổi nhãn qua lại giữa nhiều trạng thái ("Đã nhận"/"Nhận"/"Nhận ngay"/"Chưa hoàn thành") trên CÙNG 1 instance Button khi dữ liệu đổi (không phải tạo mới) — nếu chỉ set `labelDisplay.size` riêng cho nhánh "Chưa hoàn thành" mà không set lại kích thước mặc định ở các nhánh còn lại, cỡ chữ nhỏ có thể bị "dính" lại khi nhãn đổi sang trạng thái khác. Đã set `labelDisplay.size` tường minh ở TẤT CẢ các nhánh gán `.label` cho cả 3 nút (không chỉ nhánh "Chưa hoàn thành"), không chỉ riêng nhánh cần giảm.
+
+Cache-bust: `main.min_c257d04c.js` → `main.min_bde097b6.js` (`default.thm.js` không đổi). Đã xác minh nội dung staged: đếm `labelDisplay.size=` xuất hiện đúng 7 lần (1 sẵn có từ trước + 6 chỗ mới thêm ở 3 nút), `node -c` qua cú pháp, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=` theo hash mới.
+
+**Chưa kiểm chứng bằng ảnh thật**: không chắc 18px/22px đã đủ nhỏ để "Chưa hoàn thành" lọt vừa nền nút 50×30 — người dùng nói cụ thể "xuống 2px" nên làm đúng theo số đó, nhưng nếu ảnh sau vẫn tràn thì cần giảm thêm hoặc đổi cách khác (auto-scale theo `textWidth` tương tự `wrapVN_px_a94` mục 78, thay vì trừ cứng 2px). Nếu người dùng thấy còn nút "Chưa hoàn thành" khác cũng tràn chữ (trong 10 vị trí chưa đụng tới), cần chỉ rõ đang ở màn nào để tra đúng vị trí, tránh lặp lại kiểu nhầm skin đã gặp ở mục 75-77.
