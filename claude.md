@@ -3083,3 +3083,27 @@ Người dùng xác nhận mục 68 đã ổn (ảnh chụp màn "誅仙" - Tru 
 Sửa đồng bộ `heirloom.exml` + `default.thm.js` (`getItemTxt_i` của `Skinheirloom`). Cache-bust: `default.thm_9164efba.js`→`default.thm_a6eb6afc.js` (`main.min.js` không đổi lần này). Áp dụng đúng bài học ở mục 68b: kiểm tra nội dung file có hash mới ngay trong git trước khi push, không tái dùng tên hash cũ.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh: nhãn "Hợp Thành Đạo Cụ" (và các biến thể "Nhận Tru Tiên Kiếm"/"Nhận Tru Tiên Giáp"/"Phân Giải Vật Phẩm" nếu gặp trạng thái khác) nằm gọn 1 dòng, không tràn ra ngoài khung/đè lên nút khác.
+
+## 70. Màn "境界" (Cảnh Giới/LiLian): số liệu chồng lên nhau, "5tầng/6tầng" cần đổi "Tầng 5/Tầng 6", cột "Số lần" đè lên tên nhiệm vụ (2026-07-09)
+
+Người dùng gửi ảnh màn "境界" (Cảnh Giới, hệ thống luyện khí/thăng cấp cảnh giới), báo 3 lỗi cùng lúc:
+1. Bảng nhiệm vụ bên dưới ("Tên nhiệm vụ/Số lần/Thưởng mỗi lần/Thao tác"): cột "Số lần" (vd "0/2") đè lên chữ "Tên nhiệm vụ" (vd "Pho Bản Kinh Nghiệ0/2") — yêu cầu dời cột "Số lần" và số liệu bên dưới nó sang phải.
+2. Nhãn tiêu đề so sánh tầng "5tầng"/"6tầng" cần đổi thứ tự thành "Tầng 5"/"Tầng 6".
+3. Khối so sánh "Sinh Lực/Công Kích" giữa tầng hiện tại và tầng kế tiếp: số liệu bên trái bị xuống dòng cắt ngay giữa số (vd "4949" thành "494"/"9") do khung quá hẹp — yêu cầu mở rộng khung bên trái để hiện 1 dòng, đồng thời dời mũi tên + thông tin tầng kế tiếp (bên phải) sang phải một chút.
+
+**Xác định skin**: `LiLianSkin.exml`/`SkinLiLian` (khối so sánh tầng + bảng nhiệm vụ) và `LiLianItemSkin.exml`/`SkinLiLianItem` (từng dòng trong danh sách nhiệm vụ, list `id="list"`).
+
+**Lỗi 1 — cột "Số lần" đè "Tên nhiệm vụ"**: trong `LiLianItemSkin.exml`, `nameTxt` (tên nhiệm vụ) hoàn toàn KHÔNG có `width` giới hạn — với tên dài (vd "Pho Bản Kinh Nghiệm"), Label tự giãn theo nội dung, tràn thẳng vào vị trí cố định `x="200"` của `descTxt` (số lần). Sửa: thêm `width="175"` cho `nameTxt` (đổi `textAlign` "center"→"left" cho nhất quán vì giờ đã có khung riêng), dời `descTxt` (Số lần) `x` 200→225, dời `liLianNumTxt` (Thưởng mỗi lần) `x` 335→355 — đồng thời dời luôn 2 nhãn tiêu đề cột tương ứng trong `LiLianSkin.exml` (`x="200"`→`225`, `x="331"`→`350`) để khớp cột với nội dung bên dưới.
+
+**Lỗi 2 — "5tầng"/"6tầng"**: 2 chỗ gán text trong `main.min.js`: `this.levelLabel.text=e.trainlevel+"tầng"` → đổi thành `"Tầng "+e.trainlevel`; `this.levelLabel0.text=s.trainlevel+"tầng"+a` → đổi thành `"Tầng "+s.trainlevel+a` (giữ nguyên hậu tố `a` — tên cảnh giới đặc biệt chỉ xuất hiện khi lên đúng tầng 1 của 1 mốc mới).
+
+**Lỗi 3 — số liệu cắt giữa số + mũi tên/tầng kế tiếp cần dời phải**: đây là biến thể của đúng lỗi đã gặp ở mục 66 (`AttributeData.getAttStr` sinh chuỗi nhiều dòng, Label tự wrap theo ký tự khi width hẹp) — cùng cách sửa: mở khung `width`, KHÔNG đổi logic sinh chuỗi. Nhóm chứa `attrTxt`(trái)/`cursor`(mũi tên)/`nextTxt`(phải) vốn đặt trong `Group` rộng 280 (bám `right=16` vào panel 600px) với 3 phần tử gần như chạm nhau (khe hở ~0-2px, một số điểm còn âm/đè lên nhau) — widen `attrTxt` không có chỗ trống để "nở ra" mà không đụng `cursor` ngay. Sửa: nới rộng luôn cả khối `Group` chứa cả 3 (280→340, `right` 16→4, chiếm thêm ~12px lề phải dư sẵn của panel), rồi bên trong: `attrTxt` width 120→170 (đủ chỗ "Sinh Lực： 4949" 1 dòng ở size 18), `cursor` dời phải (`right` 83→85, do khung mẹ rộng hơn nên vị trí tuyệt đối dời phải dù số cục bộ gần như không đổi), `nextTxt`+`levelLabel0` dời phải theo (`horizontalCenter` 92/92.5→131), `levelLabel`+`attrTxt` căn lại tâm (`horizontalCenter` -80→-85). Nới luôn nền mờ phía sau (`_Rect4`/Rect nội bộ) từ width 291→350 để phủ đủ khối đã rộng ra, tránh lòi rìa `attrTxt`/`nextTxt` ra ngoài nền. Đã kiểm tra khoảng trống bên trái (ảnh trang trí cờ/lá cờ ở x=23-117, mũi tên/số liệu ở x≥256 sau khi nới) không bị đụng.
+
+Sửa đồng bộ 3 chỗ: `LiLianSkin.exml`, `LiLianItemSkin.exml`, `default.thm.js` (`levelLabel_i`, `attrTxt_i`, `cursor_i`, `levelLabel0_i`, `nextTxt_i`, `_Group4_i`, `_Rect4_i`, `_Label6_i`/`_Label7_i` của `SkinLiLian`; `nameTxt_i`, `descTxt_i`, `liLianNumTxt_i` của `SkinLiLianItem`) + `main.min.js` (2 chỗ gán `levelLabel`/`levelLabel0`). Cache-bust: `default.thm_a6eb6afc.js`→`default.thm_125b690d.js`, `main.min_69b82e9a.js`→`main.min_a154f51e.js`. Đã kiểm tra nội dung thực trong git commit khớp working tree trước khi push (theo đúng bài học mục 68b/69), `node -c` qua cả 2 JS, `php -l` qua, `manifest.json` hợp lệ, cả 2 exml qua `xml.etree.ElementTree.parse`.
+
+**Lưu ý/rủi ro chưa kiểm chứng được**:
+- Độ rộng 170px cho `attrTxt` và các khoảng dời (~10-20px) là ước lượng dựa trên số ký tự hiển thị trong ảnh, không đo pixel chính xác — số liệu rất dài (6+ chữ số) vẫn có thể cần điều chỉnh thêm.
+- Chưa xác nhận cột "Thao tác" (`goOnTxt`/`sureImg`, `right="13"` trong `LiLianItemSkin.exml`) có đủ khoảng cách với `liLianNumTxt` mới (x=355) hay không — theo tính toán còn khoảng ~13px, hơi hẹp nhưng không âm.
+- Nhãn ribbon "练气" (tiêu đề cảnh giới hiện tại, ảnh `juewei_0_8_png`) vẫn còn tiếng Trung chưa dịch — đây là ảnh asset có chữ Hán vẽ sẵn, không sửa được qua text, nằm ngoài phạm vi yêu cầu lần này.
+
+Cần người dùng gửi lại ảnh xác nhận: (1) bảng nhiệm vụ không còn số đè lên tên; (2) tiêu đề hiển thị đúng "Tầng 5"/"Tầng 6"; (3) khối so sánh Sinh Lực/Công Kích bên trái hiện gọn 1 dòng mỗi thông số, mũi tên và cột bên phải không còn sát/đè vào cột trái.
