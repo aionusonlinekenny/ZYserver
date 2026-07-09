@@ -46,7 +46,7 @@
 
 			<e:Group id="itemGroup" x="425" y="194.34">
 
-				<e:Label id="itemName" text="Tên vật phẩm x1" size="20" textAlign="center" y="-3" textColor="0x00ff00" fontFamily="Microsoft YaHei" x="0" width="170"/>
+				<e:Label id="itemName" text="Tên vật phẩm x1" size="20" textAlign="center" y="-38" height="50" verticalAlign="bottom" multiline="true" wordWrap="true" textColor="0x00ff00" fontFamily="Microsoft YaHei" x="0" width="170"/>
 				<e:layout>
 					<e:BasicLayout/>
 				</e:layout>

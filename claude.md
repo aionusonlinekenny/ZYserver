@@ -3028,3 +3028,32 @@ Sửa đồng bộ 2 file exml + `default.thm.js` (`imageName_i` của `SkinDres
 **Lưu ý riêng — ngoại lệ nguyên tắc 10**: đây là 1 trong số ít trường hợp phải giảm size chữ (18→14 cho tên vật phẩm trong lưới) vì không gian vật lý trong ô 110×132px quá chật, dời vị trí đơn thuần không đủ chỗ cho 2 dòng mà không đụng icon phía trên — đã ưu tiên tối đa việc dời trước (bottom, width) rồi mới giảm size ở mức tối thiểu cần thiết.
 
 Vẫn chưa render trực tiếp kiểm chứng được — cần người dùng xác nhận lại bằng ảnh cho cả 4 tab: (1) tên vật phẩm trong lưới không còn tràn/đè lên ô bên cạnh, xuống dòng gọn trong ô riêng nếu tên dài; (2) tên nguyên liệu kích hoạt ở góc phải đỡ bị wrap xấu hơn (có thể vẫn xuống 2 dòng với tên rất dài, nhưng nên đỡ hơn nhiều so với trước); (3) với vật phẩm CÓ hạn dùng (hiện `timelabel`), kiểm tra tên vật phẩm 2 dòng có đè lên dòng đếm ngược hạn dùng hay không — đây là rủi ro đã lường trước nhưng chưa kiểm chứng được vì ảnh gửi đều là vật phẩm vĩnh viễn.
+
+## 68. Vỡ dòng theo TỪ (không cắt giữa từ) + đồng nhất vị trí tên khi 1/2 dòng + tránh đè nút "Kích hoạt" (2026-07-08)
+
+Người dùng gửi 4 ảnh (Hóa Hình/Ảo Vũ/Tiên Vũ/Ngự Khí) sau khi mục 67 thêm `width`+`wordWrap` cho tên vật phẩm: chữ vẫn bị xuống dòng SAI VỊ TRÍ, cắt ngay giữa từ (vd "Huyền Hạo Thượ" / "ng Khí", "Lưỡng Nghi Chân Đ" / "ế×1", "Cuồng Hoan Đồng T" / "hú×1") — nhìn rất xấu; đồng thời có item 1 dòng, có item 2 dòng, không đều nhau; và tên nguyên liệu kích hoạt khi xuống 2 dòng thì ĐÈ LÊN nút "Kích hoạt" bên dưới thay vì có khoảng cách.
+
+**Nguyên nhân gốc**: engine Egret Label khi bật `wordWrap`/`multiline` chỉ ngắt dòng theo VỊ TRÍ KÝ TỰ (character-based), không quan tâm ranh giới từ (word boundary) — dù chuỗi có dấu cách, nó vẫn có thể cắt ngay giữa một từ nếu độ rộng tràn đúng lúc đó. Thuộc tính `wordWrap`/`multiline` chỉ quyết định CÓ xuống dòng hay không, không quyết định NGẮT Ở ĐÂU.
+
+**Đã sửa (2 phần)**:
+
+1. **Ngắt dòng theo từ** — thêm hàm helper mới vào `main.min.js`:
+   ```js
+   window.wrapVN_a94=function(s,n){for(var w=s.split(" "),l=[],c="",i=0;i<w.length;i++){var x=c?c+" "+w[i]:w[i];x.length>n&&c?(l.push(c),c=w[i]):c=x}return c&&l.push(c),l.join("\n")};
+   ```
+   Hàm này ghép từng từ (split theo dấu cách) vào dòng hiện tại cho đến khi vượt ngưỡng ký tự `n`, lúc đó mới xuống dòng mới — CHỈ ngắt tại chỗ có dấu cách, không bao giờ cắt giữa từ. Kết quả nối bằng `\n` thật, gán trực tiếp vào `.text`/`.textFlow` (theo đúng tiền lệ đã dùng ở mục 59/62/63: Egret render `\n` bên trong chuỗi thành xuống dòng thật).
+   - Áp dụng cho tên vật phẩm trong lưới (`DressesItemRenderer.dataChanged`): `this.imageName.text = wrapVN_a94(t.zhuanban.name, 12)` (ngưỡng 12 ký tự, ước lượng từ bằng chứng "Đế Bình Tiên" 12 ký tự vừa đúng 1 dòng trong ảnh gốc).
+   - Áp dụng cho tên nguyên liệu kích hoạt (`DressesWin.onUpdateInfo_a94`, cả 4 nhánh rẽ nhánh true/false của 2 điểm gọi "Nâng cấp"/"Kích hoạt"): `wrapVN_a94(GlobalConfig.ConfigItem[this.id].name+"×"+this.num, 16)` (ngưỡng 16, ước lượng từ bằng chứng "Huyền Hạo Thượng" 16 ký tự vừa đúng 1 dòng).
+   - Đã dò tay ~8 ví dụ tên thật trong các ảnh gửi để kiểm tra thuật toán không còn cắt giữa từ ở cả 2 ngưỡng trên.
+
+2. **Đồng nhất vị trí + tránh đè nút "Kích hoạt"** (`DressSkin.exml`, nhãn `itemName` trong `itemGroup`): tính lại hình học chính xác bằng số đo thật lấy từ `default.thm.js`/texture atlas (không còn ước lượng): `dressBtn` cao đúng 69px (đo từ frame `btn2_2` trong `resource/image/common/img_tj4.json`: `w:176,h:69`, không set `height` riêng trong exml nên lấy nguyên khung ảnh), `bottom="15"` trong `selectGroup` cao 300px → mép trên nút = 300-15-69 = **216**. `itemName` gốc đặt tại `y="-3"` trong `itemGroup` (y=194.34) → mép trên chữ ở 191.34, với 1 dòng cao ~25px thì mép dưới chữ đã chạm gần sát mép trên nút (216) — xuống 2 dòng chắc chắn đè. Sửa: thêm `height="50"` (đủ chỗ cho đúng 2 dòng), `verticalAlign="bottom"` (chữ luôn neo theo mép DƯỚI của khung 50px — 1 dòng cũng như 2 dòng đều có cùng mép dưới, tự động "đồng nhất" theo đúng yêu cầu, và mọc lên trên khi dài ra thay vì mọc xuống đè nút), dời `y` từ `-3`→`-38` (đưa khung 50px lên cao hơn để mép dưới dừng ở y tuyệt đối ≈206.34, cách mép trên nút "Kích hoạt" ~9.7px — có khoảng hở rõ ràng thay vì chồng lên). Đồng bộ sửa `itemName_i()` trong `default.thm.js`.
+   - Riêng lưới `DressItemSkin.exml` (`imageName`, mục 67) đã dùng `bottom="18"` (neo theo mép dưới, không set `height`) — theo đúng cơ chế Egret đã ghi nhận từ trước (nhãn neo `bottom` mọc lên trên khi thêm dòng, mép dưới luôn cố định), nên đã tự "đồng nhất" mép dưới giữa các ô 1 dòng/2 dòng sẵn — không cần sửa thêm exml này, chỉ cần fix (1) ở trên là đủ để hết cắt giữa từ.
+
+Cache-bust cả 2 file: `default.thm_beef5be5.js`→`default.thm_5e2b47b4.js`, `main.min_cefa891c.js`→`main.min_dcfb6fb4.js`. `node -c` qua cả 2, `php -l` qua `index.php`, `manifest.json` hợp lệ, `DressSkin.exml` qua `xml.etree.ElementTree.parse`.
+
+**Lưu ý/rủi ro chưa kiểm chứng được**:
+- Ngưỡng ký tự 12/16 trong `wrapVN_a94` là ƯỚC LƯỢNG dựa trên vài ví dụ thực tế trong ảnh, không phải đo pixel chính xác (do không tự render được canvas Egret) — tên rất dài hoặc rất nhiều ký tự rộng (chữ hoa, dấu) vẫn có thể cần chỉnh lại ngưỡng.
+- Chưa xác nhận 100% `\n` chèn thủ công có sống sót qua `egret.HtmlTextParser` khi nằm trong `<font><u>...</u></font>` (dùng cho nhãn kích hoạt tô màu/gạch chân) — suy luận an toàn từ tiền lệ các mục trước nhưng chưa test độc lập cho đúng đoạn code này.
+- Số đo hình học (216, 191.34, gap 9.7px) tính từ giá trị khai báo trong exml/thm.js + kích thước texture thật, độ tin cậy cao hơn các lần ước lượng trước, nhưng vẫn cần ảnh xác nhận thực tế vì có thể còn yếu tố line-height/leading của font "Microsoft YaHei" trong Egret chưa tính hết.
+
+Cần người dùng gửi lại ảnh cả 4 tab (Hóa Hình/Ảo Vũ/Tiên Vũ/Ngự Khí) để xác nhận: tên trong lưới không còn cắt giữa từ; tên nguyên liệu kích hoạt xuống dòng gọn theo từ và có khoảng hở rõ với nút "Kích hoạt", không còn đè lên nhau.
