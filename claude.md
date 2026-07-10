@@ -3449,3 +3449,29 @@ Người dùng xác nhận ảnh mới: tab bar, "Trùng Thiên 5", các nhãn "
 Cache-bust `default.thm_d5e599a7.js`... (tiếp mục 87) → `default.thm_c0862323.js` (`main.min.js` không đổi lần này, không có logic JS nào cần sửa). Đã xác minh nội dung staged: `node -c` qua, `text="Kinh nghiệm"` xuất hiện đúng 1 lần trong phạm vi class `SkinChuangtianguan` (2 chỗ khác ở class không liên quan, không đụng), exml qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas nên chưa chắc size 12 + gap 2 đã đủ gọn để không còn tràn với MỌI giá trị exp có thể xuất hiện (số càng nhiều chữ số càng dễ tràn lại) — cần ảnh xác nhận khối "Kinh nghiệm [số]" đã canh giữa gọn dưới icon và không còn đè tên vật phẩm icon bên cạnh.
+
+## 89. Popup thông báo vượt tầng (Hạo Thiên Tháp): câu "được phần thưởng như sau" bị cắt lề trái, nút "Thử thách thứ X tầng" sai thứ tự + tràn chữ, và rút gọn câu quay thưởng (2026-07-10)
+
+Người dùng gửi 2 ảnh: (1) popup "胜利"/Chiến thắng hiện ra sau khi vượt 1 tầng Hạo Thiên Tháp, (2) popup quay thưởng may mắn (vòng quay Hạo Thiên Tháp). 4 lỗi cần sửa:
+
+**A. Câu "Nhận được phần thưởng như sau：" bị lệch trái, mất chữ "N" đầu câu ngoài mép màn hình.**
+
+Nguyên nhân: đúng kiểu lỗi "textAlign vô tác dụng khi thiếu width" đã gặp ở mục 87 (`openDesc`) — nhãn `txt` trong `ChuangtianguanResultSkin.exml` (skin `SkinChuangtianguanResult`, dùng bởi popup kết quả) có `textAlign="center"` nhưng KHÔNG khai báo `width`, nên `textAlign` không có hộp nào để canh giữa bên trong — vị trí thực tế chỉ do `horizontalCenter="-176.5"` quyết định (đẩy hẳn sang trái so với tâm màn hình), khiến câu dài bị tràn ra ngoài mép trái. Sửa: đổi `horizontalCenter="-176.5"` → `horizontalCenter="0"` (canh giữa đúng tâm, không có phần tử nào khác cùng hàng nên an toàn khi đổi).
+
+**B + C. Nút "Thử thách thứ 10 tầng" sai thứ tự từ + 2 dòng tràn chữ; nút "Nhận thưởng(Ns)" kế bên cũng cần chữ nhỏ hơn để lọt tâm nút.**
+
+Bài học quan trọng rút ra khi tìm đúng chỗ sửa: code có 1 class TÊN GẦN GIỐNG và PATTERN CHỮ Y HỆT nằm ở 2 nơi khác nhau trong `main.min.js` — cả `ResultedWin` (skin `SkinResult`) LẪN `TongResultedWin` (skin `SkinChuangtianguanResult`) đều có nhánh `GameMap.fbType==UserFb.FB_TYPE_TIAOZHAN` với chuỗi `"Thử thách thứ "+X+" tầng"`. Nếu chỉ grep theo text rồi sửa bừa chỗ tìm thấy đầu tiên sẽ sửa NHẦM class chết (`ResultedWin` không hề được gọi cho loại dungeon này). Đã lần theo đúng logic điều phối `ResultMgr.prototype.create` (hàm `switch` theo `GameMap.fbType`) và xác nhận `case UserFb.FB_TYPE_TIAOZHAN` gọi `TongResultedWin`, KHÔNG phải `ResultedWin` — nên chỉ sửa đúng bản trong `TongResultedWin`. Đây là biến thể mới của bài học "nhầm skin" ở mục 77: lần này là "nhầm CLASS xử lý kết quả" dù pattern code giống hệt, phải lần theo đường điều phối thật sự chứ không chỉ tin vào so khớp chữ.
+
+Trong `TongResultedWin.prototype.open` (`main.min.js`):
+- Đổi `this.rewardBtn.label="Thử thách thứ "+r.layer+" tầng"` → `this.rewardBtn.label="Thử thách tầng "+r.layer` (đúng thứ tự từ theo yêu cầu, "Thử thách tầng 10" thay vì "Thử thách thứ 10 tầng").
+- Thêm `this.closeBtn.labelDisplay.size=15` và `this.rewardBtn.labelDisplay.size=15` (dùng đúng pattern `labelDisplay.size=` đã xác lập ở mục 79 — set cỡ chữ JS ngay trên instance Button thay vì sửa skin `SkinBtn7` dùng chung ở rất nhiều màn hình khác), đặt ngay sau `this.closeBtn.name=s?"Nhận thưởng":"Thoát"` ở đầu `open()` để cỡ chữ được set 1 LẦN DUY NHẤT và không bị mất — vì bộ đếm ngược `updateCloseBtnText_a94` (chạy mỗi giây qua `TimerMgr`) chỉ gán lại `.label` (text), không đụng đến `.labelDisplay.size`, nên set sớm trong `open()` là đủ, không cần set lại mỗi tick.
+
+**D. Câu ở popup quay thưởng: "Vượt mỗi 10 tầng là lấy được 1 phần thưởng trong hòm giải thưởng!" → rút ngắn "Vượt mỗi 10 tầng là lấy được 1 phần thưởng!"**
+
+Tìm thấy trong skin `SkinTttZhuanpan` (`tttZhuanpan.exml`, dùng bởi `HaoTianTaLotteryWin`). Sửa trực tiếp câu chữ (bỏ cụm "trong hòm giải thưởng") ở cả exml lẫn factory `_Label2_i` trong `default.thm.js`.
+
+**Trục trặc công cụ khi sửa `default.thm.js` cho mục D**: `Edit` tool báo lỗi "String to replace not found" dù `Read`/`Grep` hiển thị chuỗi y hệt — do sai khác chuẩn hoá Unicode (NFC/NFD) giữa cách `Edit` tool so khớp chuỗi và encoding thật trong file đối với các ký tự có dấu tiếng Việt. Khắc phục bằng cách đọc/ghi file trực tiếp qua Python (`open(..., encoding='utf-8')`, `str.replace()`, ghi đè), tránh phụ thuộc vào so khớp chuỗi literal của `Edit` tool cho các đoạn có dấu tiếng Việt dài. Áp dụng luôn cách này cho 2 chỗ sửa còn lại trong `main.min.js` (mục B/C) để nhất quán và chắc chắn đúng nội dung UTF-8 gốc.
+
+Cache-bust: `main.min_ffc375d9.js` → `main.min_09dd49d6.js`, `default.thm_c0862323.js` → `default.thm_d35a4f1b.js`, cập nhật `manifest.json` (`game` list) và `index.php` (`?v=`). Đã xác minh toàn bộ nội dung staged qua `git show :path` (không chỉ working tree, tránh bẫy git-mv-staleness từng gặp): xác nhận đúng cả 4 chỗ sửa (A/B/C/D) đều có mặt và ĐÚNG NGỮ CẢNH (nằm trong class/skin đúng, không lẫn sang bản dead-code), `node -c` qua cả 2 file JS, `xml.etree.ElementTree.parse` qua cả 2 file exml.
+
+**Chưa kiểm chứng bằng ảnh thật**: cỡ chữ 15 cho `closeBtn`/`rewardBtn` là ước lượng (giảm từ mặc định 24/26 của `SkinBtn7`) — cần ảnh xác nhận câu "Thử thách tầng 10" và "Nhận thưởng(Ns)" đã nằm gọn 1 dòng, canh giữa trong nền nút, không còn tràn hoặc xuống 2 dòng; cũng cần xác nhận câu "được phần thưởng như sau" đã hiện đầy đủ, canh giữa đúng.

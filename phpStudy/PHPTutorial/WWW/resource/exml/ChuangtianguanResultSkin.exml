@@ -24,7 +24,7 @@
 		</e:Group>
 		<e:Image id="title" source="labwin_png" horizontalCenter="28" verticalCenter="-325.5"/>
 
-		<e:Label id="txt" text="Phần thưởng nhận được như sau:" size="20" textAlign="center" y="288.21"   fontFamily="Microsoft YaHei" horizontalCenter="-176.5"/>
+		<e:Label id="txt" text="Phần thưởng nhận được như sau:" size="20" textAlign="center" y="288.21"   fontFamily="Microsoft YaHei" horizontalCenter="0"/>
 
 		<e:List id="listCoin" y="313" width="398" x="55">
 			<e:layout>

@@ -31,7 +31,7 @@
 		</e:Group>
 		<e:Image id="tttzhi" x="300" y="299" touchEnabled="false" anchorOffsetX="45" anchorOffsetY="107" source="tttluckyzz_png"/>
 		<e:Image width="420" height="30" scale9Grid="30,0,32,17" horizontalCenter="0" bottom="42" source="ttttipsbg_png"/>
-		<e:Label text="Vượt mỗi 10 tầng là lấy được 1 phần thưởng trong hòm giải thưởng!" size="20" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" bottom="48"/>
+		<e:Label text="Vượt mỗi 10 tầng là lấy được 1 phần thưởng!" size="20" horizontalCenter="0" textColor="0xffff00" fontFamily="Microsoft YaHei" bottom="48"/>
 		<e:Button id="choujiangBtn" skinName="SkinBtn0" icon="tttluckybtn" horizontalCenter="2" verticalCenter="-6.5" anchorOffsetY="0" height="80" anchorOffsetX="0" width="82"/>
 		<e:Button id="closeBtn" skinName="SkinBtn0" icon="fanhui" right="0" y="530" visible="false"/>
 		<e:Image anchorOffsetX="0" width="300" height="34" source="bantoutiaobg" horizontalCenter="0" x="157" bottom="-2"/>
