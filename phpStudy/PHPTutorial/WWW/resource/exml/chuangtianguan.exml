@@ -102,7 +102,7 @@
 	<e:Label id="limit" text="Chuyển sinh 1 cấp X có thể tiếp tục thách đấu" size="24"   horizontalCenter="134" bottom="39" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>
 
 	<e:Label id="dailyGift" text="（Có thể nhận）" size="18"   horizontalCenter="-204.5" x="86" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x00ff00" verticalCenter="343" textAlign="center"/>
-	<e:Label id="dailyGift0" text="Vượt mỗi 10 tầng có thể quay thưởng" size="18" horizontalCenter="-46" x="96" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" textColor="0x00ff00" verticalCenter="343"/>
+	<e:Label id="dailyGift0" text="Vượt mỗi 10 tầng\ncó thể quay thưởng" size="18" width="140" horizontalCenter="-46" x="96" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" textColor="0x00ff00" verticalCenter="343" lineSpacing="2"/>
 	<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" horizontalCenter="-175.5" x="157" verticalCenter="258.5"/>
 	<e:Button id="choujiang" label="" skinName="SkinBtn0" icon="tttlucky_png" horizontalCenter="-46" verticalCenter="287"/>
 	<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" horizontalCenter="-36.5" x="167" verticalCenter="259.5"/>

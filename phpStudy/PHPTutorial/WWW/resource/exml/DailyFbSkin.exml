@@ -27,7 +27,7 @@
 
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" currentState="nohead" width="600" horizontalCenter="0"/>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" bottom="94" source="bantoumingkuang3_png" scale9Grid="277,7,51,49"/>
-	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" bottom="101" horizontalCenter="0">
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0Wide" dataProvider="{viewStack}" selectedIndex="0" bottom="101" horizontalCenter="0">
 		<e:layout>
 		<e:HorizontalLayout gap="-10" horizontalAlign="center"/>
 		</e:layout>
