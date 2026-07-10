@@ -82,12 +82,9 @@
 				<e:Image width="66" height="66.5"   source="quality3" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" y="0"/>
 
 				<e:Image source="ZSexp"   width="62" height="62.5" horizontalCenter="0" top="3"/>
-				<e:Group height="15" y="73" horizontalCenter="0">
-					<e:Label id="nameTxt" size="12" textAlign="center" text="Kinh nghiệm" strokeColor="0x111111" stroke="0" fontFamily="Microsoft YaHei" textColor="0x00ff00" y="-1.5"/>
-					<e:Label id="expText" text="300000" y="-1.5" size="12" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="left"/>
-					<e:layout>
-						<e:HorizontalLayout gap="2" horizontalAlign="center" verticalAlign="middle"/>
-					</e:layout>
+				<e:Group height="30" y="73" horizontalCenter="0" width="90">
+					<e:Label id="nameTxt" size="12" textAlign="center" text="Kinh nghiệm" strokeColor="0x111111" stroke="0" fontFamily="Microsoft YaHei" textColor="0x00ff00" width="90" y="0"/>
+					<e:Label id="expText" text="300000" size="12" fontFamily="Microsoft YaHei" textColor="0x00ff00" textAlign="center" width="90" y="15"/>
 				</e:Group>
 			</e:Group>
 		</e:Group>
