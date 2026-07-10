@@ -23,7 +23,7 @@
 				<e:CheckBox id="cbSound" label="Âm thanh" skinName="SkinCheckBox0" height="31"/>
 				<e:CheckBox id="cbShake" label="Rung màn hình" skinName="SkinCheckBox0" height="31"/>
 				<e:layout>
-					<e:HorizontalLayout gap="30" verticalAlign="middle"/>
+					<e:HorizontalLayout gap="30" verticalAlign="middle" horizontalAlign="center"/>
 				</e:layout>
 			</e:Group>
 			<e:Group width="430" horizontalCenter="0" x="-6" y="87" scaleX="1" scaleY="1">

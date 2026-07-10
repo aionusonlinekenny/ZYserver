@@ -3360,3 +3360,17 @@ Người dùng gửi ảnh popup "Cài đặt": 2 hàng checkbox bị chồng ch
 Cache-bust `default.thm_b5e3dd0c.js`→`default.thm_f288a82b.js` (`main.min.js` không đổi lần này, không có logic JS nào cần sửa). Đã xác minh nội dung staged: `node -c` qua, đúng 1 chỗ `height = 582` và 1 chỗ `height = 462` NẰM TRONG đúng phạm vi class `Skinsetting` (loại trừ các giá trị trùng số ở skin khác trong file), `_Group8_i`/`_Group9_i`/`_HorizontalLayout3_i` xuất hiện đúng vị trí (khai báo + gọi trong `elementsContent`), exml qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas nên chưa chắc chắn 100% — (1) ước tính độ rộng chữ chỉ dựa trên số ký tự, chưa đo pixel thật nên không chắc hàng "Âm thanh"/"Rung màn hình" giữ 2 cột có thực sự đủ chỗ hay vẫn hơi chật; (2) chiều cao khung mới (582/462) có thể dư/thiếu chút ít so với 6 hàng thực tế render; (3) việc phóng to khung ngoài popup có thể làm popup trông to hơn hẳn so với các popup khác cùng game — cần ảnh xác nhận cả bố cục đã "ngay ngắn" lẫn kích thước tổng thể popup còn hài hoà.
+
+## 84. Mục 83 hết chồng chữ, nhưng hàng "Âm thanh"/"Rung màn hình" bị lệch trái thay vì canh giữa (2026-07-09)
+
+Người dùng xác nhận ảnh mới: hết chồng chữ hoàn toàn, nhưng hàng đầu tiên "Âm thanh"/"Rung màn hình" (hàng duy nhất còn giữ 2 cột từ mục 83) nằm lệch hẳn sang trái, trong khi các hàng 1-cột bên dưới đều canh giữa gọn gàng — yêu cầu canh giữa lại 2 checkbox này.
+
+**Nguyên nhân**: `HorizontalLayout` thêm ở mục 83 cho hàng này (`gap="30" verticalAlign="middle"`) không có `horizontalAlign="center"` — mặc định `HorizontalLayout` xếp các phần tử con bắt đầu từ mép TRÁI của Group chứa nó, không tự canh giữa. Group chứa hàng này rộng `width="430"` (cố ý để rộng, đề phòng chữ dài) nhưng nội dung thật (2 checkbox + gap 30) hẹp hơn nhiều, nên phần thừa bên phải bị bỏ trống, khiến cả cụm nhìn lệch trái dù bản thân Group đã `horizontalCenter="0"` (canh giữa đúng CÁI HỘP 430px, không phải canh giữa NỘI DUNG bên trong hộp).
+
+**Đã sửa** (`settingskin.exml` + `default.thm.js`, class `Skinsetting`): thêm `horizontalAlign="center"` vào `HorizontalLayout` của hàng "Âm thanh"/"Rung màn hình" — để layout tự canh giữa nội dung thật bên trong Group 430px, thay vì dồn về mép trái.
+
+Đồng bộ `default.thm.js`: thêm `t.horizontalAlign = "center";` vào factory `_HorizontalLayout3_i` (xác nhận đúng bằng cách khớp theo `elementsContent = [this.cbSound_i(),this.cbShake_i()]` liền kề — tên factory `_HorizontalLayout3_i` bị trùng ở ~30 class khác trong file do đánh số tự động, không thể chỉ dựa tên để sửa, đúng bài học mục 76/77/82).
+
+Cache-bust `default.thm_f288a82b.js`→`default.thm_da3b808c.js` (`main.min.js`/exml khác không đổi). Đã xác minh nội dung staged đúng vị trí factory (kèm dòng `elementsContent` cbSound/cbShake liền kề để xác nhận không nhầm class), `node -c` qua cú pháp, exml qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas — cần ảnh xác nhận hàng "Âm thanh"/"Rung màn hình" đã canh giữa đúng, thẳng hàng trực quan với các hàng 1-cột bên dưới.
