@@ -18,7 +18,7 @@
 		<ns1:BossesHomeMainWin id="homeBoss" skinName="SkinVipBossPanel2" name="妖帝天宫" right="0" left="0" top="0" bottom="0" visible="false"/>
 	</e:ViewStack>
 	<e:Image width="600" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" scale9Grid="75,5,452,51" height="60" bottom="93"/>
-	<e:TabBar id="tab" selectedIndex="0" itemRendererSkinName="SkinBtnTab0"
+	<e:TabBar id="tab" selectedIndex="0" itemRendererSkinName="SkinBtnTab0Wide"
 	          dataProvider="{viewStack}"   bottom="99" horizontalCenter="0">
 		<e:layout>
 			<e:HorizontalLayout  gap="-3"/>
