@@ -3586,3 +3586,13 @@ Sửa `PersonalBossPanelSkin.exml`: bỏ hẳn `width="170"` và `textAlign="cen
 Cache-bust: chỉ `default.thm_0a8aaa85.js` (mục 96) → `default.thm_af7a9ba9.js` (`main.min.js` không đổi lần này). Xác minh nội dung staged qua `git show :path`: `nameTxt_i` đã bỏ đúng `width`/`textAlign`, `node -c` qua, `xml.etree.ElementTree.parse` qua exml, `manifest.json`/`index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: đây là lần thứ 4 sửa cùng 1 vấn đề — lần này đổi hẳn CHIẾN LƯỢC (không còn cố hiểu/chặn cờ wrap của engine nữa) thay vì tiếp tục tinh chỉnh cùng 1 hướng đã thất bại 3 lần, dựa trên nguyên lý đã có bằng chứng thành công thật (mục 88) chứ không phải suy đoán mới — nhưng vẫn bắt buộc cần ảnh xác nhận vì mọi giả thuyết trước đó về hành vi wrap của engine này đều đã sai ít nhất 1 lần.
+
+## 98. Ảnh xác nhận mục 97: "Đại Hoang Vũ Dân" nay hiện trọn 1 dòng, "Chuyển 12" xuống dòng riêng — THÀNH CÔNG sau 4 lần sửa. Yêu cầu thêm: đổi màu chữ "Cấp X"/"Chuyển X" sang vàng (2026-07-10)
+
+Xác nhận: fix mục 97 (bỏ hẳn `width` trên `nameTxt`, để `horizontalCenter` tự canh theo nội dung thật) đã giải quyết DỨT ĐIỂM lỗi wrap tên boss sau 4 lần thử (mục 93→94→95→96→97) — bài học: khi 1 giả thuyết về hành vi engine (ở đây là cờ `wordWrap`/`multiline`) sai liên tiếp nhiều lần, nên chuyển hẳn sang kỹ thuật khác đã có BẰNG CHỨNG THÀNH CÔNG THẬT trong cùng dự án thay vì tiếp tục tinh chỉnh cùng giả thuyết.
+
+Yêu cầu thêm: đổi màu chữ `levelTxt` ("Cấp 70"/"Chuyển 12"...) từ trắng (`0xffffff`) sang vàng (`0xffff00` — màu vàng chuẩn dùng xuyên suốt codebase cho các nhãn phụ/nổi bật, vd câu "Vượt mỗi 10 tầng..." ở mục 89). Sửa `PersonalBossPanelSkin.exml` + `default.thm.js`'s `levelTxt_i` (đúng phạm vi class `SkinPersonalBossPanel`). Không có nơi nào trong `main.min.js` set `textColor` động cho `levelTxt` nên chỉ cần sửa 2 chỗ khai báo tĩnh này là đủ.
+
+Cache-bust: chỉ `default.thm_af7a9ba9.js` (mục 97) → `default.thm_69c7846d.js` (`main.min.js` không đổi). Xác minh nội dung staged qua `git show :path`: `node -c` qua, `xml.etree.ElementTree.parse` qua exml, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: đổi màu tĩnh đơn giản, rủi ro thấp — cần ảnh xác nhận "Cấp X"/"Chuyển X" đã hiện màu vàng dưới tên boss.
