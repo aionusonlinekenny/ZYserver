@@ -3431,3 +3431,21 @@ Người dùng nhắc bổ sung: dòng `openDesc` ("Vượt ải 5 Trùng Thiên
 Cache-bust cả 2 file: `main.min_b7cba202.js`→`main.min_ffc375d9.js`, `default.thm_d5e599a7.js`→`default.thm_5c6d079d.js`. Đã xác minh nội dung staged: `node -c` qua cả 2, đúng 3 chuỗi mới (`openDesc`/`desc2`/`desc` dùng `n.group`) không còn `o.name`, đúng vị trí `horizontalCenter=20` trong factory `openDesc_i` của `SkinChuangtianguan` (không nhầm 3 class trùng tên khác), exml qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas — cần ảnh xác nhận dòng "Vượt ải Trùng Thiên 5 Tầng 10" hiển thị đúng thứ tự và khung đã canh giữa đẹp mắt như mong muốn.
+
+## 88. Xác nhận mục 85-87 OK — còn khối "Kinh nghiệm" (thưởng vượt tầng) đè lên tên vật phẩm icon bên cạnh, chưa canh giữa (2026-07-09)
+
+Người dùng xác nhận ảnh mới: tab bar, "Trùng Thiên 5", các nhãn "Tầng X", "Vượt ải Trùng Thiên 5 Tầng 10", "Vượt ải tầng 8 thưởng", khung xếp hạng đều đã đúng và đẹp. Còn sót: khối "Kinh nghiệm" + số exp (dưới icon EXP, KHÔNG thuộc `iconList`/`iconList0` mà là 1 `Group` riêng dựng tay) hiện ra dính liền không cách ("Kinh nghiệm900") và đè lên tên vật phẩm icon kế bên ("(Văn Ngẫu Nhiên)" của `iconList`), đồng thời không canh giữa gọn dưới icon.
+
+**Xác định nguyên nhân sâu hơn mục 85**: mục 85 đã thu hẹp `nameTxt` của `iconList`/`iconList0` (dùng `wrapVN_px_a94`) nhưng đó KHÔNG phải nguồn đè chính — khối "Kinh nghiệm"+"exp" nằm trong 1 `Group` con có `width="80"` CỐ ĐỊNH, `HorizontalLayout gap="0"`; ở size 15, "Kinh nghiệm" (~11 ký tự) + số exp (vd "900") thực tế cần hơn 100px, vượt xa khung 80px khai báo. Vì `HorizontalLayout horizontalAlign="center"` canh giữa dựa trên CHIỀU RỘNG KHAI BÁO (80) chứ không phải nội dung thật, phần tràn bị đẩy lệch cả 2 bên ra ngoài khung 80px, chồng sang `iconList` kế bên (khoảng cách tâm giữa 2 khối chỉ ~82.5px) — đúng kiểu lỗi "khai báo width cố định nhỏ hơn nội dung thật" đã gặp nhiều lần trong phiên.
+
+**Đã sửa** (`chuangtianguan.exml` + `default.thm.js`, class `SkinChuangtianguan`):
+- Bỏ hẳn `width="80"` cố định trên `Group` chứa `nameTxt`+`expText`, để nó TỰ CO GIÃN theo nội dung thật — khi đó `horizontalCenter="0"` của chính Group này sẽ canh giữa đúng nội dung thật trong khung cha rộng 90px (khớp đúng khoảng cách tới `iconList` đã tính toán từ đầu), không còn đoán mò kích thước.
+- Giảm cỡ chữ `nameTxt`/`expText` từ 15 → 12 để tổng độ rộng nội dung thực tế gọn lại gần khớp khung 90px cha, giảm rủi ro tràn với số exp nhiều chữ số.
+- Thêm `gap="2"` (từ `gap="0"`) giữa "Kinh nghiệm" và số exp để tách rõ 2 phần thay vì dính liền ("Kinh nghiệm900" → "Kinh nghiệm 900"), thêm `verticalAlign="middle"` cho gọn theo chiều dọc.
+- Bỏ `x="30"` thừa trên `expText` (giá trị cũ từ trước khi có `HorizontalLayout`, không còn tác dụng vì layout tự tính vị trí, dọn cho đỡ gây hiểu lầm khi đọc lại sau này).
+
+Đồng bộ `default.thm.js`: sửa `_Group2_i` (bỏ `t.width=80`), `_HorizontalLayout3_i` (`gap` 0→2, thêm `verticalAlign="middle"`), `nameTxt_i`/`expText_i` (size 15→12, bỏ `t.x=30` ở `expText_i`) — xác nhận đúng vị trí bằng cách khớp `t.text="Kinh nghiệm"` VÀ vị trí dòng cụ thể (tên `_Group2_i`/`nameTxt_i` trùng ở hàng chục class khác trong file do đánh số tự động, đã cross-check qua offset thuộc đúng phạm vi class `SkinChuangtianguan`, đúng bài học mục 76/77/82/86).
+
+Cache-bust `default.thm_d5e599a7.js`... (tiếp mục 87) → `default.thm_c0862323.js` (`main.min.js` không đổi lần này, không có logic JS nào cần sửa). Đã xác minh nội dung staged: `node -c` qua, `text="Kinh nghiệm"` xuất hiện đúng 1 lần trong phạm vi class `SkinChuangtianguan` (2 chỗ khác ở class không liên quan, không đụng), exml qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas nên chưa chắc size 12 + gap 2 đã đủ gọn để không còn tràn với MỌI giá trị exp có thể xuất hiện (số càng nhiều chữ số càng dễ tràn lại) — cần ảnh xác nhận khối "Kinh nghiệm [số]" đã canh giữa gọn dưới icon và không còn đè tên vật phẩm icon bên cạnh.
