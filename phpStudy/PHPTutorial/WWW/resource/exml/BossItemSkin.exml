@@ -20,7 +20,7 @@
 
 
 
-		<e:Label id="nameTxt" text="Xúc Long Thần Đại Thần" size="20" horizontalCenter="-89" y="94" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+		<e:Label id="nameTxt" text="Xúc Long Thần Đại Thần" size="20" horizontalCenter="-89" y="94" width="110" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
 	</e:Group>
 	<e:Group id="needLv" horizontalCenter="204" y="42" visible="false">
 
