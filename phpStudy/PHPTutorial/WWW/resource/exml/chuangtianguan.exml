@@ -49,7 +49,7 @@
 			<e:Image width="308" y="2" horizontalCenter="23" source="fuentitlebg2" scale9Grid="38,0,17,13"/>
 			<e:Image width="79" height="17" y="-2" horizontalCenter="18" source="fuentitlebg"/>
 
-			<e:Label id="openDesc" text="Vượt qua Ba Mươi Sáu Trùng Thiên" size="20" y="21" x="85" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="openDesc" text="Vượt qua Ba Mươi Sáu Trùng Thiên" size="20" y="21" horizontalCenter="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<ns1:BagItemBase id="itemicon" y="90" skinName="SkinItem2" horizontalCenter="21"/>
 			<e:Label id="unlock" text="Mở khóa loại Tiên Văn mới" y="53" size="18" horizontalCenter="19" fontFamily="Microsoft YaHei" textAlign="center"/>
 			<ns1:BaseComponent id="runeItem" width="100" height="110" y="75.5" skinName="SkinRuneItem" x="106" visible="false"/>

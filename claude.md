@@ -3414,3 +3414,20 @@ Người dùng gửi lại 2 ảnh xác nhận mục 85 đã hết chồng chéo
 Cache-bust cả 2 file: `main.min_cde8368f.js`... (tiếp nối mục 85) → `main.min_b7cba202.js`, `default.thm_da3b808c.js`... → `default.thm_d5e599a7.js`. Đã xác minh nội dung staged: `node -c` qua cả 2, đúng 2 chỗ `truncateEllipsis_a94` (định nghĩa + gọi), đúng 1 chỗ mỗi kiểu chuỗi mới (`"Trùng Thiên "+i.group`, `"Tầng "+t.layer`, `Số lần càn quét: `/`Số lần thử thách: `), cả 2 exml (`chuangtianguan.exml`, `DailyFbItemSkin.exml`) qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas nên chưa chắc `x=220`/`x=140` đã đủ để 2 dòng label hết tràn hoàn toàn, và chưa chắc ngưỡng cắt 22 ký tự của `truncateEllipsis_a94` là hợp lý cho mọi trường hợp thực tế (tầng/trùng thiên có thể lên tới 2-3 chữ số ở cấp cao) — cần ảnh xác nhận cả nút "Thử Thách", label "Số lần càn quét:", và toàn bộ cụm số-trước-danh-từ trong Hạo Thiên Tháp đã đổi đúng thứ tự lẫn không còn tràn/chồng.
+
+## 87. Bổ sung mục 86 bỏ sót: dòng "Vượt ải X Trùng Thiên Y tầng" + canh giữa khung mở khóa (2026-07-09)
+
+Người dùng nhắc bổ sung: dòng `openDesc` ("Vượt ải 5 Trùng Thiên 10 tầng" — khung "Mở ô Tiên Văn mới"/thông báo mở khóa phía trên danh sách thưởng) chưa được đổi thứ tự số-danh từ ở mục 86 (chỉ sửa `nameLabel`/`passAllTip0`/`nowrawed`/`num0-2`, bỏ sót đúng dòng này dù cùng 1 khối code), và khung chứa dòng này đang bị lệch chứ không canh giữa.
+
+**Đã sửa** (`main.min.js`, cùng khối code `refreshPanelInfo` đã sửa ở mục 85/86): 3 chuỗi dùng `o.name` (dạng "5 Trùng Thiên" lấy nguyên từ config) đổi hẳn sang dùng `n.group` (field số, `n.group` == khoá tra `GlobalConfig.ConfigFbChName[n.group]` nên luôn bằng đúng giá trị `o.group`, dùng thẳng `n.group` cho gọn) để tự dựng đúng thứ tự mới:
+- `openDesc.text`: `"Vượt ải "+o.name+" "+n.layer+" tầng"` → `"Vượt ải Trùng Thiên "+n.group+" Tầng "+n.layer`.
+- `itemicon.desc2`: tương tự, bỏ hẳn `o.name`, dùng `"Trùng Thiên "+n.group+" Tầng "+n.layer`.
+- `itemicon.desc` (dòng tooltip mở khóa khi chưa đủ điều kiện): `"Vượt ải "+o.name+" "+n.layer+" tầng mở khóa"` → `"Vượt ải Trùng Thiên "+n.group+" Tầng "+n.layer+" mở khóa"`.
+
+**Canh giữa khung**: `openDesc` (`chuangtianguan.exml`) đang định vị bằng `x="85"` tuyệt đối kèm `textAlign="center"` — nhưng `textAlign` chỉ có tác dụng khi có `width`, ở đây không có `width` nên `textAlign="center"` vô nghĩa, nhãn chỉ đơn giản dán vào x=85 không hề canh giữa khung. Các phần tử anh em cùng khung (`itemicon`, `unlock`, `runeLock`) đều dùng `horizontalCenter="19-21"` nhất quán — đổi `openDesc` từ `x="85"` sang `horizontalCenter="20"` (bỏ hẳn `x`) để khớp đúng cách canh giữa mà các phần tử khác trong cùng khung đang dùng.
+
+Đồng bộ `default.thm.js`: sửa `openDesc_i` (bỏ `t.x=85`, thêm `t.horizontalCenter=20`) — xác nhận đúng vị trí factory duy nhất thuộc `SkinChuangtianguan` (tên `openDesc_i` trùng ở 3 class khác trong file, xác nhận qua `elementsContent` chứa `itemicon_i()`/`unlock_i()`/`runeLock_i()` liền kề).
+
+Cache-bust cả 2 file: `main.min_b7cba202.js`→`main.min_ffc375d9.js`, `default.thm_d5e599a7.js`→`default.thm_5c6d079d.js`. Đã xác minh nội dung staged: `node -c` qua cả 2, đúng 3 chuỗi mới (`openDesc`/`desc2`/`desc` dùng `n.group`) không còn `o.name`, đúng vị trí `horizontalCenter=20` trong factory `openDesc_i` của `SkinChuangtianguan` (không nhầm 3 class trùng tên khác), exml qua `xml.etree.ElementTree.parse`, `php -l`/`manifest.json` hợp lệ, `index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: không tự render được Egret canvas — cần ảnh xác nhận dòng "Vượt ải Trùng Thiên 5 Tầng 10" hiển thị đúng thứ tự và khung đã canh giữa đẹp mắt như mong muốn.
