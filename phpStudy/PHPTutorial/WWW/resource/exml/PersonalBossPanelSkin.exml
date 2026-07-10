@@ -45,7 +45,7 @@
 
 	<e:Image id="stateImage" source="zdbosskejisha" bottom="287" horizontalCenter="-56.5"/>
 	<e:Image width="248" height="48.67" source="huabian" anchorOffsetY="0" scale9Grid="97,6,22,42" y="25" horizontalCenter="-65"/>
-	<e:Label id="nameTxt" text="Tên BOSS" size="22" textAlign="center" fontFamily="Microsoft YaHei" width="170" textColor="0xffffff" y="46" horizontalCenter="-65"/>
+	<e:Label id="nameTxt" text="Tên BOSS" size="22" textAlign="center" fontFamily="Microsoft YaHei" width="170" textColor="0xffffff" y="46" horizontalCenter="-65" multiline="false" wordWrap="false"/>
 	<e:Label id="levelTxt" text="Cấp 70" size="18" textAlign="center" fontFamily="Microsoft YaHei" width="170" textColor="0xffffff" y="72" horizontalCenter="-65"/>
 
 
