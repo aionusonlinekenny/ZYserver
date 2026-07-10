@@ -37,11 +37,11 @@
 			<e:Image id="rankImg1" x="10" y="84" source="paihang2" width="25" height="25"/>
 			<e:Image id="rankImg2" x="10" y="121" source="paihang3" width="25" height="25"/>
 			<e:Label id="name0" text="VươngGiả·KimGia" y="47" size="18" left="50" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label id="num0" text="36 Trùng Thiên tầng 10" y="47" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" x="187" textAlign="left"/>
+			<e:Label id="num0" text="Trùng Thiên 36 Tầng 10" y="47" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00" x="140" textAlign="left"/>
 			<e:Label id="name1" text="Cực Quang" y="87" size="18" x="50" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label id="num1" text="9 Trùng Thiên tầng 1" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0xabebff" x="187" textAlign="left"/>
+			<e:Label id="num1" text="Trùng Thiên 9 Tầng 1" y="87" size="18" fontFamily="Microsoft YaHei" textColor="0xabebff" x="140" textAlign="left"/>
 			<e:Label id="name2" text="Mộng Lý Họa" y="123" size="16" x="50" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
-			<e:Label id="num2" text="1 Trùng Thiên tầng 1" y="123" size="18" textColor="0x00ff00" x="187" fontFamily="Microsoft YaHei" textAlign="left"/>
+			<e:Label id="num2" text="Trùng Thiên 1 Tầng 1" y="123" size="18" textColor="0x00ff00" x="140" fontFamily="Microsoft YaHei" textAlign="left"/>
 			<e:Label id="jump" text="Xem xếp hạng" x="169" size="18" width="150" textAlign="center" height="34" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 		</e:Group>
 		<e:Group id="topGroup" width="270" height="199"  x="1">

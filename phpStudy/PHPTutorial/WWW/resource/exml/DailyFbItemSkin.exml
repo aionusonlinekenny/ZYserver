@@ -9,7 +9,7 @@
 	<e:Button id="doubleChallengeBtn" label="Càn quét gấp đôi" horizontalCenter="-6" width="168" height="68" skinName="SkinBtn1" bottom="48" visible.canChallenge="false" visible.noChallenge="false" visible="false"/>
 	<e:Button id="challengeBtn" label="Thách đấu" visible.noChallenge="false" width="168" height="68" horizontalCenter="171.5" icon="btn2_2" bottom="48" skinName="SkinBtn1"/>
 	<e:Image id="redPoint" x="524" y="42" includeIn="canChallenge" source="zjmhongdian" visible="false"/>
-	<e:Label id="count" size="20" text="Số lần thách đấu hôm nay：4 lần" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" verticalAlign="top" x="373.68" y="11" visible.noChallenge="false"/>
+	<e:Label id="count" size="20" text="Số lần thách đấu：4 lần" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" verticalAlign="top" x="220" y="11" visible.noChallenge="false"/>
 	<ns1:ItemBase id="item" x="50" y="54" skinName="SkinItem"/>
 	<e:Group id="barGaroup" width="150" includeIn="canChallenge" bottom="13" horizontalCenter="166.5" visible="false">
 		<e:Image id="barbg" anchorOffsetX="0" source="progress2" height="21" scale9Grid="10,2,60,15" left="8" right="-7" verticalCenter="0.5"/>
