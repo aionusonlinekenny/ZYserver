@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="Skinsetting" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<e:Rect id="bgClose" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
-	<e:Group width="484" height="482" verticalCenter="15" horizontalCenter="0" anchorOffsetY="0">
+	<e:Group width="484" height="582" verticalCenter="15" horizontalCenter="0" anchorOffsetY="0">
 		<e:Image id="frame" source="tongyong_dikuang2" scale9Grid="20,5,81,72" width="484" horizontalCenter="0" top="25" bottom="24"/>
 		<e:Image id="tou" source="tongyong_juanzhou" width="481" horizontalCenter="0.5" top="20"/>
 		<e:Image width="249" horizontalCenter="0" top="0" source="tongyong_titlebg"/>
@@ -18,18 +18,25 @@
 
 
 
-		<e:Group id="contentGroup" width="419" height="362" horizontalCenter="0" verticalCenter="0">
-			<e:Group width="430" horizontalCenter="0" verticalCenter="-139" x="-6" y="27" scaleX="1" scaleY="1">
-				<e:CheckBox id="cbSound" label="Âm thanh" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
-				<e:CheckBox id="cbShake" label="Rung màn hình" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="105" anchorOffsetY="0"/>
+		<e:Group id="contentGroup" width="419" height="462" horizontalCenter="0" verticalCenter="0">
+			<e:Group width="430" horizontalCenter="0" x="-6" y="27" scaleX="1" scaleY="1">
+				<e:CheckBox id="cbSound" label="Âm thanh" skinName="SkinCheckBox0" height="31"/>
+				<e:CheckBox id="cbShake" label="Rung màn hình" skinName="SkinCheckBox0" height="31"/>
+				<e:layout>
+					<e:HorizontalLayout gap="30" verticalAlign="middle"/>
+				</e:layout>
 			</e:Group>
-			<e:Group width="430" horizontalCenter="0" verticalCenter="-79" x="-6" y="87" scaleX="1" scaleY="1">
-				<e:CheckBox id="cbSkillEff" label="Chặn hiệu ứng kỹ năng" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
-				<e:CheckBox id="cbMonster" label="Chặn quái vật" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="65" anchorOffsetY="0"/>
+			<e:Group width="430" horizontalCenter="0" x="-6" y="87" scaleX="1" scaleY="1">
+				<e:CheckBox id="cbSkillEff" label="Chặn hiệu ứng kỹ năng" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45"/>
 			</e:Group>
-			<e:Group width="430" horizontalCenter="0" verticalCenter="-19" x="-6" y="147" scaleX="1" scaleY="1">
-				<e:CheckBox id="cbOtherRole" label="Chặn người chơi khác" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45" anchorOffsetX="0"/>
-				<e:CheckBox id="cbAllRole" label="Chặn tất cả người chơi" skinName="SkinCheckBox0" height="31" verticalCenter="0" right="25" anchorOffsetY="0"/>
+			<e:Group width="430" horizontalCenter="0" x="-6" y="120" scaleX="1" scaleY="1">
+				<e:CheckBox id="cbMonster" label="Chặn quái vật" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45"/>
+			</e:Group>
+			<e:Group width="430" horizontalCenter="0" x="-6" y="153" scaleX="1" scaleY="1">
+				<e:CheckBox id="cbOtherRole" label="Chặn người chơi khác" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45"/>
+			</e:Group>
+			<e:Group width="430" horizontalCenter="0" x="-6" y="186" scaleX="1" scaleY="1">
+				<e:CheckBox id="cbAllRole" label="Chặn tất cả người chơi" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45"/>
 			</e:Group>
 			<e:Group width="430" horizontalCenter="0" verticalCenter="41" x="-6" y="207" scaleX="1" scaleY="1">
 				<e:CheckBox id="cbHeji" label="Tự động thi triển Thần Phạt" skinName="SkinCheckBox0" height="31" verticalCenter="0" left="45"/>
