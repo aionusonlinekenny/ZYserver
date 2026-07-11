@@ -3951,3 +3951,21 @@ Text được set ĐỘNG qua `main.min.js` (`this.buyTime.textFlow=...parser("<
 Cache-bust: `default.thm_1bb01637.js`(mục 119)→`default.thm_780160be.js`, `main.min_5fe8c36c.js`(mục 118)→`main.min_79119c91.js`. Xác minh: `node -c` cả 2, `git show :path` xác nhận cả 3 nơi (exml, default.thm.js, main.min.js) đều đã đổi thành "Mua thêm lượt", `manifest.json`/`index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận nhãn hiển thị đúng "Mua thêm lượt" và không còn tràn lề phải.
+
+## 121. Ảnh xác nhận mục 119: số liệu lại đè lên nhãn dài hơn, và 2 link đè lên icon bên trái — chuyển hẳn sang kỹ thuật Group+HorizontalLayout để hết đoán lệch lần nữa (2026-07-11)
+
+Người dùng gửi ảnh cho thấy 2 vấn đề mới phát sinh từ mục 119:
+
+**A. "Số trận thắng ròng6" — giá trị lại đè lên đúng dấu ":" cuối nhãn**: mục 119 dùng CHUNG 1 giá trị `x=370` cho cả `winNum` và `winNum0`, đo từ nhãn "Xếp hạng của tôi:" (17 ký tự) — nhưng nhãn còn lại "Số trận thắng ròng:" DÀI HƠN (19 ký tự), nên cùng 1 `x=370` vừa đủ cho nhãn ngắn lại đè lên nhãn dài. Đây là hệ quả tất yếu của việc dùng 1 giá trị `x` cố định chung cho 2 nhãn có độ dài khác nhau — bài học "đo 1 lần dùng cho nhiều nơi khác nhau" tiếp tục sai (lần thứ 3 liên tiếp ở khu vực này).
+
+**Sửa DỨT ĐIỂM bằng kỹ thuật Group+HorizontalLayout** (kỹ thuật ĐÁNG LẼ nên dùng từ mục 118 thay vì đoán tọa độ `x` cố định nhiều lần): mỗi cặp nhãn+giá trị bọc riêng trong `Group x="223" y="..."` với `HorizontalLayout gap="8"` — giá trị giờ LUÔN bám sát đúng ngay sau bề rộng THẬT của nhãn tương ứng (do layout tự đo, không cần đoán px/ký tự nữa), triệt tiêu hẳn khả năng đè hoặc quá xa dù nhãn dài ngắn khác nhau.
+
+**B. "Xếp hạng tuần trước"/"Xem bảng xếp hạng" đè lên icon huy hiệu bên trái**: mục 119 dùng `horizontalCenter="0"` để canh giữa cặp link trong khung rộng 554px — nhưng khung đó BAO GỒM CẢ vùng icon huy hiệu bên trái (huy hiệu chiếm khoảng 0-200px), nên canh giữa theo TOÀN BỘ bề rộng khung khiến cặp link lấn vào vùng icon. Đo lại: cặp link ở cỡ chữ 20 cần khoảng ~400px, trong khi khoảng trống AN TOÀN sau icon (200) đến hết khung (554) chỉ có ~354px — không đủ chỗ để vừa né icon vừa giữ nguyên cỡ chữ/khoảng cách gốc. Giảm cỡ chữ `20→18` và khoảng cách giữa 2 link `gap="30"→"18"`, đồng thời đổi từ `horizontalCenter="0"` sang `x="210"` cố định (bắt đầu ngay sau icon, không còn canh giữa toàn khung) để đảm bảo đủ chỗ mà không đè icon lẫn không tràn khung.
+
+Đồng bộ `default.thm.js` (`Skinladderinfo`): tạo `_Group4_i`(bọc `_Label1_i`+`winNum0_i`, `x=223 y=88`, layout `_HorizontalLayout3_i` gap=8) và `_Group5_i`(bọc `_Label2_i`+`winNum_i`, `x=223 y=118`, layout `_HorizontalLayout4_i` gap=8); `_Label1_i`/`_Label2_i`/`winNum_i`/`winNum0_i` bỏ hết `x`/`y` cố định (giờ theo layout); `_Group1_i`'s `elementsContent` trỏ vào `_Group4_i()`/`_Group5_i()` thay vì 4 phần tử rời; `_Group2_i` đổi `horizontalCenter=0`→`x=210`, `_HorizontalLayout2_i` đổi `gap=30`→`18`, `showNomber_i`/`showNomber0_i` đổi `size=20`→`18`. Quét class xác nhận tên mới `_Group4`/`_Group5`/`_HorizontalLayout3`/`_HorizontalLayout4` không trùng với các tên đã dùng (`_Group1-3`, `_HorizontalLayout1-2`, `_VerticalLayout1`, `_Label1-4`).
+
+Cache-bust: `default.thm_780160be.js`(mục 120)→`default.thm_f4b9689b.js`. Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `ladderinfoskin.exml`, script đối chiếu factory-method riêng cho `Skinladderinfo` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Bài học đúc kết cho khu vực này (sau 3 lần chỉnh liên tiếp)**: với cặp "nhãn tiếng Việt (độ dài không cố định do dịch) + giá trị động", KHÔNG nên đoán tọa độ `x` cố định dù đã "đo trên ảnh thật" — vì các nhãn khác nhau trong CÙNG màn hình vẫn có thể chênh lệch độ dài đủ để 1 giá trị `x` chung làm hỏng nhãn còn lại. Bọc riêng từng cặp bằng `Group+HorizontalLayout` (giá trị luôn bám đúng sau nhãn thật) là giải pháp ĐÚNG NGAY TỪ ĐẦU, nên áp dụng ngay khi phát hiện lớp lỗi "giá trị đè/xa nhãn" thay vì thử đoán `x` trước.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận số liệu "Xếp hạng của tôi"/"Số trận thắng ròng" bám sát đúng sau từng nhãn (không đè, không quá xa) dù nhãn dài ngắn khác nhau, và cặp link "Xếp hạng tuần trước"/"Xem bảng xếp hạng" không còn đè lên icon huy hiệu bên trái.

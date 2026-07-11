@@ -15,16 +15,26 @@
 
 		<e:Image id="winImg" y="63" scale9Grid="25,23,9,22" x="432" source="jjliansheng"/>
 
-		<e:Label text="Xếp hạng của tôi:" x="223" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label text="Số trận thắng ròng:" x="223" y="121" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="winNum" text="" x="370" y="122" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="winNum0" text="" x="370" y="94" size="18" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
-		<e:Label id="duanwei" text="" x="330" y="44" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Group horizontalCenter="0" y="160">
-			<e:Label id="showNomber0" text="Xếp hạng tuần trước" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-			<e:Label id="showNomber" text="Xếp hạng hiện tại" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:Group x="223" y="88">
+			<e:Label text="Xếp hạng của tôi:" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="winNum0" text="" size="18" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 			<e:layout>
-				<e:HorizontalLayout gap="30" verticalAlign="middle"/>
+				<e:HorizontalLayout gap="8" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="223" y="118">
+			<e:Label text="Số trận thắng ròng:" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="winNum" text="" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:layout>
+				<e:HorizontalLayout gap="8" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="duanwei" text="" x="330" y="44" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Group x="210" y="160">
+			<e:Label id="showNomber0" text="Xếp hạng tuần trước" size="18" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:Label id="showNomber" text="Xếp hạng hiện tại" size="18" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout gap="18" verticalAlign="middle"/>
 			</e:layout>
 		</e:Group>
 	</e:Group>
