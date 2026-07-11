@@ -27,21 +27,34 @@
 					<e:Label y="0" text="【Thuộc tính cộng thêm】" size="20" x="0"   textColor.lock="0x00ffff"
 					          fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
 
-					<e:Label id="value0" y="25" text="+1000" size="18" verticalAlign="justify" x="90" textAlign="left" 
-					           fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-					<e:Label id="value2" y="50" text="+1000" size="18" verticalAlign="justify" x="90" textAlign="left" 
-					           x.active="90" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-					<e:Label id="value1" y="25" text="+1000" size="18" verticalAlign="justify" x="257" textAlign="left" 
-					           x.active="265" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-					<e:Label id="value3" y="50" text="+1000" size="18" verticalAlign="justify" x="257" textAlign="left" 
-					           x.active="265" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-					<e:Label id="attr0" y="25" text="Công kích：" size="18" verticalAlign="justify" x="24" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
-					<e:Label id="attr2" y="50" text="Kháng phép：" size="18" verticalAlign="justify" x="24" textAlign="left" 
-					           fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
-					<e:Label id="attr1" y="25" text="Tỷ lệ Bạo kích：" size="18" verticalAlign="justify" textAlign="left"
-					           x="190"  fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
-					<e:Label id="attr3" y="50" text="Sinh lực：" size="18" verticalAlign="justify" textAlign="left"
-					           x="190"  fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+					<e:Group x="24" y="25">
+						<e:Label id="attr0" text="Công kích：" size="18" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+						<e:Label id="value0" text="+1000" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+						<e:layout>
+							<e:HorizontalLayout gap="4"/>
+						</e:layout>
+					</e:Group>
+					<e:Group x="190" x.active="198" y="25">
+						<e:Label id="attr1" text="Tỷ lệ Bạo kích：" size="18" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+						<e:Label id="value1" text="+1000" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+						<e:layout>
+							<e:HorizontalLayout gap="4"/>
+						</e:layout>
+					</e:Group>
+					<e:Group x="24" y="50">
+						<e:Label id="attr2" text="Kháng phép：" size="18" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+						<e:Label id="value2" text="+1000" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+						<e:layout>
+							<e:HorizontalLayout gap="4"/>
+						</e:layout>
+					</e:Group>
+					<e:Group x="190" x.active="198" y="50">
+						<e:Label id="attr3" text="Sinh lực：" size="18" fontFamily="Microsoft YaHei" textColor="0x00ffff"/>
+						<e:Label id="value3" text="+1000" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+						<e:layout>
+							<e:HorizontalLayout gap="4"/>
+						</e:layout>
+					</e:Group>
 
 				</e:Group>
 				<e:Group y="70"    width="325" horizontalCenter="0" x="0">
