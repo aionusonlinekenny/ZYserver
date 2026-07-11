@@ -7,7 +7,7 @@
 		<e:Image width="374" height="391" fillMode="scale" alpha="1" anchorOffsetY="0" source="tongyongbg5" scale9Grid="4,5,17,9" horizontalCenter="-1" verticalCenter="17.5"/>
 
 		<e:Image source="tongyong_juanzhou" width="430" horizontalCenter="0" top="15"/>
-		<e:Image source="tongyong_titlebg" width="281" horizontalCenter="-1.5" verticalCenter="-171" scale9Grid="66,14,117,11"/>
+		<e:Image source="tongyong_titlebg" width="281" horizontalCenter="-1.5" verticalCenter="-211.5" scale9Grid="66,14,117,11"/>
 		<e:Label id="abilityName" text="Tiên Linh Chúc Phúc" size="22" fontFamily="Microsoft YaHei" top="10" horizontalCenter="0" textColor="0x084151"/>
 		<e:Group left="46" top="69">
 			<e:Label text="Tiên Linh Chúc Phúc" size="20" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
