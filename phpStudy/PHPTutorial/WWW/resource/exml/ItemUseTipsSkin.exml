@@ -10,12 +10,20 @@
 
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="33" y="30" />
 		<e:Label id="nameLabel" text="Lông Vũ" size="22" x="130" y="28"  fontFamily.guildgifts="Microsoft YaHei" size.guildgifts="22" textColor.guildgifts="0x00ff06" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-		<e:Label text="Cấp độ：" size="20" x="130" y="62" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-
-
-		<e:Label id="lv" text="9" size="20" x="191" y="62"  fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" bold.guildgifts="false" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label text="Số lượng：" size="20" x="130" y="89" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="num" text="Cấp 1" size="20" x="190" y="89"  fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Group x="130" y="62">
+			<e:Label text="Cấp độ：" size="20" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="lv" text="9" size="20" fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" bold.guildgifts="false" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="130" y="89">
+			<e:Label text="Số lượng：" size="20" textColor.guildgifts="0x6b9baa" fontFamily.guildgifts="Microsoft YaHei" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="num" text="Cấp 1" size="20" fontFamily.guildgifts="Microsoft YaHei" textColor.guildgifts="0xffffff" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
 		<e:Image source="tongyongline" y="120" left="0" right="0" />
 
 

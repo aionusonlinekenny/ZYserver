@@ -19,12 +19,27 @@
 		<e:Label id="score" text="" size="18" y="15" textAlign="right" right="20" width="200" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 
 
-		<e:Label y="53" text="Vị trí：" size="18" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="type" y="53" text="" size="18" x="180" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label y="77" text="Chuyển sinh：" size="18" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="lv" y="77" text="" size="18" x="180" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Label y="101" text="Nghề nghiệp：" size="18" x="120" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-		<e:Label id="career" y="101" text="" size="18" x="180" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Group y="53" x="120">
+			<e:Label text="Vị trí：" size="18" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="type" text="" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group y="77" x="120">
+			<e:Label text="Chuyển sinh：" size="18" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="lv" text="" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group y="101" x="120">
+			<e:Label text="Nghề nghiệp：" size="18" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="career" text="" size="18" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="47"/>
 		<e:Image y="132" width="340" horizontalCenter="0" anchorOffsetY="0" height="45" alpha="0.8" source="bantoutiaobg8" scale9Grid="116,5,50,31"/>
 
@@ -32,12 +47,16 @@
 		<e:Group x="26" top="190" bottom="27">
 			<e:Group id="baseGroup" x="0" y="0"  >
 				<e:Label y="0" text="Thuộc tính cơ bản" size="20" x="0"   fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-				<e:Label y="25" text="Công kích：Sinh lực：Kháng vật lý：Kháng phép：" size="18" verticalAlign="justify" x="22" textAlign="left" width="54" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="25" text="Công kích：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="50" text="Sinh lực：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="75" text="Kháng vật lý：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="100" text="Kháng phép：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label id="attr0" y="25" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr1" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr2" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr3" y="100" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-				<e:Label y="125" text="Sát thương Thần Thánh：Tinh Thông Thần Thánh：" size="18" verticalAlign="justify" x="22" textAlign="left" width="90" lineSpacing="7"  text.noSpirit1="Sát thương Thần Thánh：" text.doSpirit1="Sát thương Thần Thánh：" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="125" text="Sát thương Thần Thánh：" size="18" x="22" textAlign="left" text.noSpirit1="Sát thương Thần Thánh：" text.doSpirit1="Sát thương Thần Thánh：" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label y="150" text="Tinh Thông Thần Thánh：" size="18" x="22" textAlign="left" includeIn="noSpirit0,doSpirit0" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label id="attr4" y="125" text="" size="18" verticalAlign="justify" x="112" textAlign="left"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr5" y="150" text="" size="18" verticalAlign="justify" x="112" textAlign="left"  includeIn="noSpirit0,doSpirit0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="soulAddAttr0" y="25" text="" size="18" verticalAlign="justify" x="237" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
@@ -56,7 +75,10 @@
 					<e:HorizontalLayout gap="3" verticalAlign="bottom"/>
 				</e:layout>
 				</e:Group>
-				<e:Label y="25" text="Công kích：Sinh lực：Kháng vật lý：Kháng phép：" size="18" verticalAlign="justify" x="22" textAlign="left" width="54" lineSpacing="7"    fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label y="25" text="Công kích：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label y="50" text="Sinh lực：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label y="75" text="Kháng vật lý：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+				<e:Label y="100" text="Kháng phép：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 				<e:Label id="attr6" y="25" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff" />
 				<e:Label id="attr7" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr8" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
@@ -74,7 +96,10 @@
 				</e:layout>
 				</e:Group>
 				<e:Label id="suitState" y="25" text="Thuộc tính" size="18" verticalAlign="justify" x="22" textAlign="left" lineSpacing="7" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-				<e:Label id="attrDesc" y="50" text="Công kích：Sinh lực：Kháng vật lý：Kháng phép：" size="18" verticalAlign="justify" x="22" textAlign="left" width="54" lineSpacing="7"   fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label id="attrDesc" y="50" text="Công kích：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label y="75" text="Sinh lực：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label y="100" text="Kháng vật lý：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label y="125" text="Kháng phép：" size="18" x="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 				<e:Label id="attr12" y="50" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 				<e:Label id="attr13" y="75" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:Label id="attr14" y="100" text="" size="18" verticalAlign="justify" x="76" textAlign="left"   fontFamily="Microsoft YaHei" textColor="0xffffff"/>
