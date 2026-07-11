@@ -17,11 +17,16 @@
 
 		<e:Label text="Xếp hạng của tôi:" x="223" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label text="Số trận thắng ròng:" x="223" y="121" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="winNum" text="" x="435" y="122" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="winNum0" text="" x="435" y="94" size="18" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="winNum" text="" x="370" y="122" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="winNum0" text="" x="370" y="94" size="18" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 		<e:Label id="duanwei" text="" x="330" y="44" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="showNomber" text="Xếp hạng hiện tại" x="216" y="190" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
-		<e:Label id="showNomber0" text="Xếp hạng tuần trước" x="216" y="160" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:Group horizontalCenter="0" y="160">
+			<e:Label id="showNomber0" text="Xếp hạng tuần trước" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:Label id="showNomber" text="Xếp hạng hiện tại" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout gap="30" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
 	</e:Group>
 	<e:Image horizontalCenter="0.5" y="291" source="wzdw_png"/>
 
@@ -38,7 +43,13 @@
 
 	<e:Label id="showReward" text="Thêm thưởng theo bậc" size="22" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="546"/>
 	<e:Image width="283" height="30" source="wzdixian" horizontalCenter="1.5" y="329"/>
-	<e:Label id="truceIng" text="Thời gian thi đấu:Thứ 2 10:00-Chủ nhật 22:00 （Tính điểm lúc 22:30 Chủ nhật）" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="25" top="599"/>
+	<e:Group horizontalCenter="25" top="599">
+		<e:Label text="Thời gian thi đấu:Thứ 2 10:00-Chủ nhật 22:00" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0"/>
+		<e:Label text="（Tính điểm lúc 22:30 Chủ nhật）" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="0"/>
+		<e:layout>
+			<e:VerticalLayout gap="4" horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
 	<e:Image source="gantanhao4" width="16" height="22" horizontalCenter="-224" top="598"/>
 
 	<e:Group id="openInfo" horizontalCenter="0" width="578" anchorOffsetY="0" height="119" top="661">
