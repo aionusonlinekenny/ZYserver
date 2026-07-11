@@ -18,9 +18,14 @@
 		<e:Image id="imgIcon" anchorOffsetX="0" anchorOffsetY="0" width="70" height="70" source="14000_png" horizontalCenter="0" verticalCenter="0" x="20" y="9" scaleX="1" scaleY="1"/>
 	</e:Group>
 	<e:Group width="400" height="110" top="0" anchorOffsetY="0" right="0">
-		<e:Label id="stateLabel" text="(Mở khóa ở bậc 10)" size="20" left="90" textColor="0xe40000" fontFamily="Microsoft YaHei" x="89" scaleX="1" scaleY="1" verticalCenter="-28"/>
 		<e:Label id="descLabel" text="3 ô kỹ năng đầu của Phụng, 3 ô kỹ năng đầu của Viêm Hoàng Linh Phụng, Viêm Hoàng Linh Phụng có thể học kỹ năng tăng thuộc tính cộng thêm" size="18" width="395" anchorOffsetY="0" height="50" anchorOffsetX="0" fontFamily="Microsoft YaHei" alpha="1" textColor="0x001828" scaleX="1" scaleY="1" verticalCenter="15" verticalAlign="middle" horizontalCenter="-0.5"/>
-		<e:Label id="nameTxt" size="20" textAlign="center" text="Tiểu Hỏa Cầu Thuật" strokeColor="0x111111" fontFamily="Microsoft YaHei" textColor="0x0038ab" scaleX="1" scaleY="1" left="0" verticalCenter="-28"/>
+		<e:Group left="0" verticalCenter="-28">
+			<e:Label id="nameTxt" size="20" text="Tiểu Hỏa Cầu Thuật" strokeColor="0x111111" fontFamily="Microsoft YaHei" textColor="0x0038ab" scaleX="1" scaleY="1"/>
+			<e:Label id="stateLabel" text="(Mở khóa ở bậc 10)" size="20" textColor="0xe40000" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1"/>
+			<e:layout>
+				<e:HorizontalLayout gap="6" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
 	</e:Group>
 
 
