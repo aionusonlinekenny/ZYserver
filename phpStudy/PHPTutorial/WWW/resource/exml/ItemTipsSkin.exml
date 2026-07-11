@@ -10,9 +10,20 @@
 
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="52"/>
 		<e:Label id="nameLabel" text="Lông Vũ" size="24" x="20" y="10" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label text="Số lượng：" size="20" x="120" y="90" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-		<e:Label id="num" text="9" size="20" x="180" y="90" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label text="Cấp độ：" size="20" x="120" y="66" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+		<e:Group x="120" y="90">
+			<e:Label text="Số lượng：" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="num" text="9" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="120" y="66">
+			<e:Label text="Cấp độ：" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+			<e:Label id="lv" text="1" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
 		<e:Group y="160" horizontalCenter="0" width="361">
 			<e:Label id="description" text="Sử dụng để nhận 10.000.000 kinh nghiệm nhân vậtSử dụng để nhận 10.000.000 kinh nghiệm nhân vật" size="18" width="361" y="0" textAlign="left" horizontalCenter="0" x="0"   fontFamily="Microsoft YaHei" textColor="0x6b9baa" lineSpacing="4"/>
 			<e:Group height="15" x="188" y="-3"/>
@@ -20,7 +31,6 @@
 				<e:VerticalLayout/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="lv" text="Cấp 1" size="20" x="180" y="66" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image width="300" y="140" horizontalCenter="0" source="tongyongline" height="1"/>
 		<e:Label id="power" text="Điểm：999999" size="20" y="20" textAlign="right" width="200" right="10" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" bottom="-46" width="300" scale9Grid="179,4,17,30"/>
