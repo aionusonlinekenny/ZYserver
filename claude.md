@@ -3881,3 +3881,23 @@ Cache-bust: `default.thm_9122d4d8.js`(mục 115)→`default.thm_aef8f65c.js` (ch
 **Bài học bổ sung cho lớp bug "Group+VerticalLayout căn giữa nhiều hàng bề rộng khác nhau"**: khi các hàng trong 1 `VerticalLayout` có bề rộng CHÊNH LỆCH NHIỀU (do 1 hàng có `width` khai báo cố định lớn hơn hẳn, kể cả khi phần tử đó đang ẩn — Egret vẫn tính bề rộng ẩn vào phép đo Group), `horizontalAlign="center"` sẽ lãng phí không gian ở hàng hẹp hơn thay vì tận dụng cho nội dung cần wrap. Cân nhắc `horizontalAlign="left"` khi hàng hẹp hơn chứa nội dung CẦN không gian (như mô tả dài) hơn là ưu tiên tính thẩm mỹ canh giữa.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cụm "!" ở cả `GwTask` và "Hợp Thành" đã dời sát lề trái hơn, mô tả có thêm không gian (giảm/hết hiện tượng ngắt giữa từ như "V/ật"), và không có tràn lề phải mới phát sinh do tăng `width`.
+
+## 117. Màn hình danh sách phó bản đội nhóm (`teamFbItem.exml`/`SkinTeamFbItem`, hiện ở tab "Tiên Đồ" và tương tự): "Xem hướng dẫn" đè lên tiêu đề nền, tên boss "Thương Sơn Quỷ Xà" bị cắt mất dòng 2 (2026-07-11)
+
+Người dùng gửi 1 ảnh màn "Tiên Đồ" (danh sách phó bản như "Bích Hải Thâm Đàm", "Long Phụng Vân Cảnh", "U Minh Chi Lộ", "Hoang Giao Cốt") chỉ ra 2 lỗi lặp lại ở CẢ 4 dòng phó bản:
+
+**A. Link "Xem hướng dẫn" đè lên chữ tiêu đề nền (baked vào ảnh nền `fbImg`)**: `gonglveTxt` đặt cố định `x="200"` — nhưng tiêu đề (vẽ sẵn trong ảnh nền, khác nhau mỗi dòng: "Bích Hải Thâm Đàm", "Long Phụng Vân Cảnh"...) có độ dài khác nhau, tiêu đề dài nhất ("Long Phụng Vân Cảnh") kết thúc gần đúng vị trí `x=200`, gây đè chữ ở mọi dòng (đã kiểm tra bằng cách crop-so-sánh cả 3 dòng trong ảnh, xác nhận lỗi lặp lại y hệt bài người dùng mô tả). Dời `gonglveTxt` từ `x="200"`→`x="300"` — đủ xa để không đè lên tiêu đề dài nhất (kết thúc ~x=196 theo ước lượng từ ảnh) lẫn không chạm dải ruy băng "已激活"/"未激活" ở góc phải (bắt đầu ~x=497).
+
+**B. Tên boss dài ("Thương Sơn Quỷ Xà") bị cắt cụt dòng 2 khi mở rộng thẻ chi tiết**: `nameTxt` (tên boss dưới icon tròn, trong Group con `id="zhankai"` chỉ hiện khi thẻ mở rộng) đặt `width="128"` (giới hạn bởi danh sách phần thưởng bắt đầu ngay `x="128"` bên cạnh, không thể nới rộng thêm) — tên dài (17 ký tự kể cả dấu cách) BẮT BUỘC phải wrap 2 dòng dù cỡ chữ nào, nhưng Group con `id="zhankai"` chỉ có `height="130"` và `nameTxt` bắt đầu ở `y="103"` → chỉ còn 27px cho 2 dòng chữ (cần ~48-58px ở cỡ 20), khiến dòng 2 bị dòng phó bản KẾ TIẾP trong danh sách vẽ đè lên (không phải clip cứng, mà do item sau trong List vẽ ngay sát y-boundary, đè lên phần tràn ra ngoài).
+
+Người dùng yêu cầu giảm cỡ chữ 3pt — đã áp dụng (`size="20"`→`"17"`) nhưng đồng thời TÍNH TOÁN xác nhận: chỉ giảm cỡ chữ KHÔNG đủ giải quyết triệt để (2 dòng ở cỡ 17 vẫn cần ~41px, vẫn vượt xa 27px sẵn có) — nên **kèm theo tăng chiều cao vùng chứa** để khớp đúng với yêu cầu thực tế: Group con `id="zhankai"` từ `height="130"`→`"160"` (+30px, đủ cho 2 dòng ở cỡ 17 với dư ~16px margin), kéo theo tăng tổng chiều cao skin ở state "zhankai" từ `height.zhankai="262"`→`"291"` (131 base + 160 nội dung mới) để List tự động chừa đủ chỗ khi item này mở rộng, không đụng tới các phần tử khác (nút "Thách đấu" dùng `verticalCenter`, danh sách thưởng dùng `y` cố định từ đầu Group nên không bị ảnh hưởng bởi việc tăng chiều cao).
+
+Áp dụng cho MỌI tab (Xung Quanh/Vương Giả/Đào Mỏ/Tiên Đồ/Vạn Long) vì cả 5 tab đều dùng chung `SkinTeamFbItem` làm itemRenderer cho danh sách phó bản — sửa 1 lần tự động áp dụng khắp nơi, đúng như người dùng yêu cầu.
+
+**Ghi nhận nhưng CHƯA sửa (ngoài phạm vi yêu cầu lần này)**: tên vật phẩm trong danh sách "Xem trước thưởng" ("Tinh Phách Ngưng Khí", "Kết Tinh Thần Trang"...) cũng bị wrap/cắt tương tự trong cùng ảnh (dùng skin `SkinItem`/`SkinItem2` riêng, không phải `SkinTeamFbItem`) — người dùng không đề cập lần này nên chưa động tới, cần báo riêng nếu muốn sửa tiếp.
+
+Đồng bộ `default.thm.js` (`SkinTeamFbItem`): `zhankai_i()` đổi `t.height=130→160`, root state "zhankai" đổi `SetProperty("","height",262→291)`, `nameTxt_i()` đổi `t.size=20→17`, `gonglveTxt_i()` đổi `t.x=200→300`.
+
+Cache-bust: `default.thm_aef8f65c.js`(mục 116)→`default.thm_492b7c36.js`. Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `teamFbItem.exml`, script đối chiếu factory-method riêng cho `SkinTeamFbItem` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Xem hướng dẫn" không còn đè lên tiêu đề ở cả 4 dòng phó bản, và tên boss "Thương Sơn Quỷ Xà" (cùng các tên dài khác) hiển thị đủ 2 dòng không bị cắt khi mở rộng thẻ chi tiết.
