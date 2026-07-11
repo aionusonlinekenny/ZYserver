@@ -14,7 +14,7 @@
 			<e:Label id="nameLabel" text="Đồ Long " size="20" textAlign="left" textColor="0x90f490" y="20" x="20" fontFamily="Microsoft YaHei"/>
 			<e:Label y="57" text="Vị trí：" size="18" x="120" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 			<e:Label id="lv0" y="105" text="Hỏa Phù" size="18" x="180" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Group y="81">
+			<e:Group x="120" y="81">
 				<e:Label id="levelKey" text="Cấp độ：" size="18" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:Label id="lv" text="Cấp 100" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
