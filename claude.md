@@ -3941,3 +3941,13 @@ Cache-bust: `default.thm_741fd781.js`(mục 118)→`default.thm_1bb01637.js` (ch
 **Bài học bổ sung**: hằng số px/ký tự calibrate ở 1 bối cảnh (font/size/màn hình cụ thể) trong phiên trước KHÔNG nên áp dụng máy móc sang bối cảnh khác mà không đo lại — lần này áp dụng hằng số ~10.5px/ký tự (vốn hiệu chỉnh cho 1 trường hợp riêng ở mục 112) đã ước lượng dư quá nhiều (thực tế chỉ ~7px/ký tự trong bối cảnh này), dẫn đến sửa "quá tay" (over-correct): né được lỗi chồng chữ nhưng tạo ra khoảng trống xấu không cần thiết. Nên ưu tiên đo trực tiếp trên ảnh xác nhận thật (crop + so tỷ lệ pixel) mỗi khi có ảnh cụ thể, thay vì tái dùng hằng số cũ.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận số liệu đứng sát nhãn hợp lý (không quá gần gây đè, không quá xa gây rời rạc), 2 link "Xếp hạng tuần trước"/"Xem bảng xếp hạng" nằm chung 1 hàng canh giữa khung, và câu "Thời gian thi đấu..." hiển thị đủ 2 dòng gọn trong màn hình không tràn lề phải.
+
+## 120. Rút gọn "Mua thêm lượt ghép trận" thành "Mua thêm lượt" theo yêu cầu người dùng, tránh nguy cơ tràn lề như đã thấy ở ảnh IMG_0838 (2026-07-11)
+
+Người dùng yêu cầu đơn giản: đổi nhãn link "Mua thêm lượt ghép trận" (`buyTime`, màn "Vương Giả") thành "Mua thêm lượt" là đủ. Đây cũng chính là dòng từng bị cắt cụt ở rìa phải màn hình trong ảnh IMG_0838 (mục 118) do đặt `x="413"` khá sát mép khung `openInfo` (rộng 578px) — rút ngắn chữ giúp giảm nguy cơ tràn lề đó luôn dù không được yêu cầu trực tiếp.
+
+Text được set ĐỘNG qua `main.min.js` (`this.buyTime.textFlow=...parser("<u>Mua thêm lượt ghép trận</u>")`, ghi đè giá trị mặc định trong exml ngay khi mở màn) — sửa cả 2 nơi để đồng bộ nguồn/biên dịch: `main.min.js` (giá trị THẬT SỰ hiển thị) và `ladderinfoskin.exml`+`default.thm.js`'s `buyTime_i` (giá trị mặc định, dù bị ghi đè ngay lập tức, vẫn nên khớp để tránh lệch nguồn/biên dịch như đã từng gặp ở mục 113).
+
+Cache-bust: `default.thm_1bb01637.js`(mục 119)→`default.thm_780160be.js`, `main.min_5fe8c36c.js`(mục 118)→`main.min_79119c91.js`. Xác minh: `node -c` cả 2, `git show :path` xác nhận cả 3 nơi (exml, default.thm.js, main.min.js) đều đã đổi thành "Mua thêm lượt", `manifest.json`/`index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận nhãn hiển thị đúng "Mua thêm lượt" và không còn tràn lề phải.
