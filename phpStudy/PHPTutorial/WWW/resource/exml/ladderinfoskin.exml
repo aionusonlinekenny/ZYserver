@@ -17,10 +17,10 @@
 
 		<e:Label text="Xếp hạng của tôi:" x="223" y="91" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Label text="Số trận thắng ròng:" x="223" y="121" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="winNum" text="" x="324" y="122" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="winNum0" text="" x="325" y="94" size="18" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+		<e:Label id="winNum" text="" x="435" y="122" size="18" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Label id="winNum0" text="" x="435" y="94" size="18" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 		<e:Label id="duanwei" text="" x="330" y="44" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-		<e:Label id="showNomber" text="Xếp hạng hiện tại" x="331" y="160" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:Label id="showNomber" text="Xếp hạng hiện tại" x="216" y="190" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 		<e:Label id="showNomber0" text="Xếp hạng tuần trước" x="216" y="160" size="20" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
 	</e:Group>
 	<e:Image horizontalCenter="0.5" y="291" source="wzdw_png"/>
@@ -28,10 +28,10 @@
 
 
 
-	<e:Scroller horizontalCenter="1" top="400">
-		<e:List id="rewardList" itemRendererSkinName="SkinItem2">
+	<e:Scroller horizontalCenter="1" top="400" height="160">
+		<e:List id="rewardList" itemRendererSkinName="SkinItem2" height="160">
 		<e:layout>
-			<e:HorizontalLayout/>
+			<e:HorizontalLayout paddingLeft="15"/>
 		</e:layout>
 		</e:List>
 	</e:Scroller>
