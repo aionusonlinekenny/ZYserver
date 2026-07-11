@@ -61,24 +61,24 @@
 			<e:Label id="targetLabel" text="Thánh Vật ngẫu nhiên" y="80" size="18" horizontalCenter="0" y.ultramix="74" textColor="0xffffff" fontFamily="Microsoft YaHei" y.mix="126"/>
 		</e:Group>
 		<e:Button id="mix" label="Hợp thành" skinName="SkinBtn1" horizontalCenter="0" label.ultramix="Dung hợp" horizontalCenter.ultramix="0" bottom.mix="11" bottom.ultramix="11"/>
-		<e:Group id="bottomDesc" top="12" y.mix="19" x.mix="94" y.ultramix="14" x.ultramix="96">
+		<e:Group id="bottomDesc" top="12" y.mix="19" x.mix="20" y.ultramix="14" x.ultramix="20">
 			<e:Group>
 				<e:Image source="gantanhao3"/>
-				<e:Label text="Tiêu hao 3 Thánh Vật cùng phẩm chất để hợp thành ngẫu nhiên 1 Thánh Vật mới" size="16" width="480" bold="false" text.ultramix="Thánh Vật Thần Phẩm cùng Thần Binh 1 kỹ năng có thể dung hợp" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Tiêu hao 3 Thánh Vật cùng phẩm chất để hợp thành ngẫu nhiên 1 Thánh Vật mới" size="16" width="530" bold="false" text.ultramix="Thánh Vật Thần Phẩm cùng Thần Binh 1 kỹ năng có thể dung hợp" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout gap="6" verticalAlign="top"/>
 				</e:layout>
 			</e:Group>
 			<e:Group>
 				<e:Image source="gantanhao3"/>
-				<e:Label text="Khi hợp thành Thánh Vật có tỷ lệ nâng lên phẩm chất cao hơn" size="16" width="480" bold="false" text.ultramix="Dung hợp thành công sẽ nhận Thánh Vật mới chứa kỹ năng chính phụ" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label text="Khi hợp thành Thánh Vật có tỷ lệ nâng lên phẩm chất cao hơn" size="16" width="530" bold="false" text.ultramix="Dung hợp thành công sẽ nhận Thánh Vật mới chứa kỹ năng chính phụ" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout gap="6" verticalAlign="top"/>
 				</e:layout>
 			</e:Group>
 			<e:Group includeIn="ultramix">
 				<e:Image id="materialTxtImg" source="gantanhao3"/>
-				<e:Label id="materialTxt" text="Tỷ lệ dung hợp thành công là 25%, thất bại thì Thánh Hồn phụ sẽ bị hủy" size="16" width="480" bold="false" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:Label id="materialTxt" text="Tỷ lệ dung hợp thành công là 25%, thất bại thì Thánh Hồn phụ sẽ bị hủy" size="16" width="530" bold="false" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 				<e:layout>
 					<e:HorizontalLayout gap="6" verticalAlign="top"/>
 				</e:layout>

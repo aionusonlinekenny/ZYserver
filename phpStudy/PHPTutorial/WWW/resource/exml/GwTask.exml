@@ -7,7 +7,7 @@
 		<e:Group horizontalCenter="0" verticalCenter="184.5">
 			<e:Group>
 				<e:Image id="gantanhao" source="gantanhao3"/>
-				<e:Label id="taskLabel" text="" size="18" width="420" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:Label id="taskLabel" text="" size="18" width="520" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout gap="8" verticalAlign="top"/>
 				</e:layout>
@@ -18,7 +18,7 @@
 				<e:Label id="renwuneirong" text="1.xxxxxxxxxxxxxxxxxxxxxx" horizontalCenter="0" size="18" width="560" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" visible="false"/>
 			</e:Group>
 			<e:layout>
-				<e:VerticalLayout gap="6" horizontalAlign="center"/>
+				<e:VerticalLayout gap="6" horizontalAlign="left"/>
 			</e:layout>
 		</e:Group>
 		<e:Group id="showSkill0" width="563" height="118" y="107" horizontalCenter="0">

@@ -3861,3 +3861,23 @@ Khi đồng bộ `default.thm.js`: dựng lại `_proto._Group1_i` (cụm icon+t
 Cache-bust: `default.thm_9cb9125f.js`(mục 114)→`default.thm_9122d4d8.js` (chỉ đổi layout, không đụng `main.min.js` lần này). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `GwTask.exml`, script đối chiếu factory-method cho riêng class `SkinGwTask` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged (cấu trúc Group lồng nhau khớp exml, `_Group3_i`/`_Group4_i`/`_VerticalLayout1_i` đúng như thiết kế), `manifest.json`/`index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cả 3 vũ khí (đang làm/toàn bộ hoàn thành/có nhiệm vụ cụ thể) không còn chồng chữ giữa `taskLabel` và label bên dưới, và nút "Nhận nhiệm vụ" không bị chồng lên cụm kỹ năng thứ 3 (`showSkill2`) do ngân sách chiều cao khít như đã tính ở trên.
+
+## 116. Ảnh xác nhận mục 115: GwTask hết chồng chữ (OK cả 3 vũ khí!), nhưng người dùng chỉ ra cụm "!" vẫn còn để phí khoảng trống bên trái thay vì dời qua để mô tả có thêm chỗ (2026-07-11)
+
+Người dùng gửi 3 ảnh xác nhận mục 115 đã hết lỗi chồng chữ (không còn `taskLabel` đè lên label bên dưới ở cả "Quy Nguyên Đế Kiếm"/"Phục Ma Kim Cầm"), nhưng chỉ ra 1 vấn đề khác: cụm icon "!" (ở cả `GwTask` lẫn `GwMixSkin`/"Hợp Thành") có khoảng trống thừa bên trái không dùng tới, trong khi đúng ra nên dời cụm này qua trái để nhường thêm chỗ cho mô tả — giảm khả năng phải wrap dòng hoặc wrap ngắt giữa từ.
+
+**Nguyên nhân (GwTask)**: `VerticalLayout horizontalAlign="center"` (đặt ở mục 115) canh giữa TỪNG HÀNG theo bề rộng hàng RỘNG NHẤT trong Group cha. Hàng 1 (icon+`taskLabel`, bề rộng tự nhiên ~448px = icon+gap8+width420) hẹp hơn hàng 2 (`renwuneirong` khai báo `width="560"`, vẫn tính vào bề rộng đo dù đang ẩn) — nên hàng 1 bị đệm ~56px mỗi bên để canh giữa trong khung 560px, lãng phí không gian có thể dùng cho `taskLabel`.
+
+**Nguyên nhân (GwMixSkin/"Hợp Thành")**: `bottomDesc` đặt `x.mix="94"`/`x.ultramix="96"` — độ lệch trái cố định kế thừa từ thiết kế tiếng Trung gốc (chữ Hán ngắn hơn nhiều nên không cần sát lề), để lại khoảng trống ~94px vô ích bên trái trong khi mô tả tiếng Việt (`width="480"`) đã tràn sát mép phải (kết thúc đúng x=600, 0px lề phải — rủi ro tràn nếu chữ dài hơn ước tính, từng thấy vỡ giữa từ "Thánh V/ật mới" ở ảnh IMG_0828).
+
+**Sửa cả 2 file bằng cách dời cụm "!" qua trái + tăng `width` mô tả tương ứng để tận dụng khoảng trống vừa giải phóng**:
+- `GwTask.exml`: đổi `horizontalAlign="center"`→`"left"` (hàng 1 giờ canh sát lề trái của Group cha thay vì bị đệm giữa), đồng thời tăng `taskLabel` từ `width="420"`→`"520"` (tận dụng phần rộng thêm, vẫn chừa ~12px trong khung 560px, không tràn ra ngoài `_Group3`).
+- `GwMixSkin.exml`: giảm `x.mix`/`x.ultramix` từ `94`/`96`→`20` (thống nhất 1 giá trị luôn, vì 94/96 chỉ lệch 2px không có ý nghĩa thực), tăng `width` cả 3 label mô tả (2 label luôn hiện + `materialTxt` chỉ hiện ở "ultramix") từ `480`→`530` — tính toán: lề trái mới 20 + icon(~20) + gap(6) + width(530) = 576, chừa ~24px lề phải an toàn (trước đây là 0px, sát mép tràn).
+
+Đồng bộ `default.thm.js`: `SkinGwTask._VerticalLayout1_i` đổi `horizontalAlign`, `taskLabel_i` đổi `width`; `SkinGwMixSkin` đổi `width=480→530` ở cả 3 factory label (`_Label1_i`/`_Label2_i`/`materialTxt_i`), và đổi cả 2 dòng `new eui.SetProperty("bottomDesc","x",94/96)` (trong `createChildren`/state khởi tạo state "mix"/"ultramix") thành `20`.
+
+Cache-bust: `default.thm_9122d4d8.js`(mục 115)→`default.thm_aef8f65c.js` (chỉ layout, không đụng `main.min.js`). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `GwTask.exml`/`GwMixSkin.exml`, script đối chiếu factory-method riêng cho `SkinGwTask`/`SkinGwMixSkin` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged (`width="520"`, `horizontalAlign="left"`, `x.mix="20"`/`x.ultramix="20"`, `width="530"` x3), `manifest.json`/`index.php` đã bump `?v=`.
+
+**Bài học bổ sung cho lớp bug "Group+VerticalLayout căn giữa nhiều hàng bề rộng khác nhau"**: khi các hàng trong 1 `VerticalLayout` có bề rộng CHÊNH LỆCH NHIỀU (do 1 hàng có `width` khai báo cố định lớn hơn hẳn, kể cả khi phần tử đó đang ẩn — Egret vẫn tính bề rộng ẩn vào phép đo Group), `horizontalAlign="center"` sẽ lãng phí không gian ở hàng hẹp hơn thay vì tận dụng cho nội dung cần wrap. Cân nhắc `horizontalAlign="left"` khi hàng hẹp hơn chứa nội dung CẦN không gian (như mô tả dài) hơn là ưu tiên tính thẩm mỹ canh giữa.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cụm "!" ở cả `GwTask` và "Hợp Thành" đã dời sát lề trái hơn, mô tả có thêm không gian (giảm/hết hiện tượng ngắt giữa từ như "V/ật"), và không có tràn lề phải mới phát sinh do tăng `width`.
