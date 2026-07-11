@@ -3,11 +3,11 @@
         xmlns:ns1="*" height="948">
 	<w:Config id="1586b1359f6" />
 	<e:Rect id="bgClose" left="-2" right="2" top="2" bottom="3" fillAlpha="0.7"  anchorOffsetY="0" anchorOffsetX="0"/>
-	<e:Group id="anigroup" width="444" height="482" horizontalCenter="0" verticalCenter="-29">
+	<e:Group id="anigroup" width="444" height="760" horizontalCenter="0" verticalCenter="-29">
 		<e:Image source="bantoutiaobg" height="40" horizontalCenter="0.5" bottom="-48" width="383"  scale9Grid="177,2,13,29"/>
 		<e:Label horizontalCenter="1" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-36"  textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		<e:Image id="bg"  
-		          scale9Grid="10,9,9,10" source="tongyongtip1" width="436" height="474" horizontalCenter="0" verticalCenter="0"/>
+		          scale9Grid="10,9,9,10" source="tongyongtip1" width="436" height="752" horizontalCenter="0" verticalCenter="0"/>
 		<e:Image id="bg0"   left="0" right="0" top="0" bottom="0" source="tongyongtip2"
 		         scale9Grid="19,18,2,6" />
 
@@ -39,37 +39,37 @@
 		<e:Group x="16" y="172.5">
 			<e:Group>
 				<e:Label text="【Chỉ Qua Vi Vũ】" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-				<e:Label text="3 nhân vật Song Kháng+300, Song Kháng+1%" size="20" width="270" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label text="3 nhân vật Song Kháng+300, Song Kháng+1%" size="20" width="380" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:layout>
-					<e:HorizontalLayout gap="4" verticalAlign="top"/>
+					<e:VerticalLayout gap="2"/>
 				</e:layout>
 			</e:Group>
 			<e:Group>
 				<e:Label text="【Vũ Khúc Thần Lực】" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-				<e:Label text="3 nhân vật Công kích+1000, Công kích+1%" size="20" width="270" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label text="3 nhân vật Công kích+1000, Công kích+1%" size="20" width="380" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:layout>
-					<e:HorizontalLayout gap="4" verticalAlign="top"/>
+					<e:VerticalLayout gap="2"/>
 				</e:layout>
 			</e:Group>
 			<e:Group>
 				<e:Label text="【Đại Địa Hồi Xuân】" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-				<e:Label text="Khi tấn công có 10% tỷ lệ kích hoạt hồi 60000 sinh lực, thời gian hồi 60 giây" size="20" width="270" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label text="Khi tấn công có 10% tỷ lệ kích hoạt hồi 60000 sinh lực, thời gian hồi 60 giây" size="20" width="380" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:layout>
-					<e:HorizontalLayout gap="4" verticalAlign="top"/>
+					<e:VerticalLayout gap="2"/>
 				</e:layout>
 			</e:Group>
 			<e:Group>
 				<e:Label text="【Bất Tử Bất Diệt】" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-				<e:Label text="3 nhân vật Sinh lực+50000, Sinh lực+1%" size="20" width="270" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label text="3 nhân vật Sinh lực+50000, Sinh lực+1%" size="20" width="380" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:layout>
-					<e:HorizontalLayout gap="4" verticalAlign="top"/>
+					<e:VerticalLayout gap="2"/>
 				</e:layout>
 			</e:Group>
 			<e:Group>
 				<e:Label text="【Đại Thiên Hành Phạt】" size="20" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
-				<e:Label text="Khi tấn công có 10% tỷ lệ kích hoạt gây 1.25 lần sát thương, thời gian hồi 60 giây" size="20" width="270" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
+				<e:Label text="Khi tấn công có 10% tỷ lệ kích hoạt gây 1.25 lần sát thương, thời gian hồi 60 giây" size="20" width="380" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 				<e:layout>
-					<e:HorizontalLayout gap="4" verticalAlign="top"/>
+					<e:VerticalLayout gap="2"/>
 				</e:layout>
 			</e:Group>
 			<e:layout>
