@@ -3,11 +3,11 @@
         xmlns:ns1="*" height="948">
 	<w:Config id="1586b1359f6" />
 	<e:Rect id="bgClose" left="-2" right="2" top="2" bottom="3" fillAlpha="0.7"  anchorOffsetY="0" anchorOffsetX="0"/>
-	<e:Group id="anigroup" width="444" height="684" horizontalCenter="0" verticalCenter="-29">
+	<e:Group id="anigroup" width="444" height="482" horizontalCenter="0" verticalCenter="-29">
 		<e:Image source="bantoutiaobg" height="40" horizontalCenter="0.5" bottom="-48" width="383"  scale9Grid="177,2,13,29"/>
 		<e:Label horizontalCenter="1" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-36"  textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		<e:Image id="bg"  
-		          scale9Grid="10,9,9,10" source="tongyongtip1" width="436" height="676" horizontalCenter="0" verticalCenter="0"/>
+		          scale9Grid="10,9,9,10" source="tongyongtip1" width="436" height="474" horizontalCenter="0" verticalCenter="0"/>
 		<e:Image id="bg0"   left="0" right="0" top="0" bottom="0" source="tongyongtip2"
 		         scale9Grid="19,18,2,6" />
 
@@ -19,7 +19,8 @@
 		<e:Image anchorOffsetX="0" horizontalCenter="0.5" width="329" top="153" source="line2_png"/>
 		<e:Group id="attrGroup" left="29" anchorOffsetY="0" height="119" anchorOffsetX="0" width="314.5" top="21">
 
-			<e:Label id="attrValue" text="Sinh lực：90000&#10;Công kích：100000&#10;Kháng vật lý：1000&#10;Kháng phép：99988" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="10.5" width="268"  x="0" anchorOffsetY="0" height="119" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="attrName" text="Sinh lực：&#10;Công kích：&#10;Kháng vật lý：&#10;Kháng phép：" size="20" lineSpacing="10" width="160" anchorOffsetX="0" fontFamily="Microsoft YaHei" textColor="0x6b9baa" height="119"/>
+			<e:Label id="attrValue" text="90000&#10;100000&#10;1000&#10;99988" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" width="140" anchorOffsetY="0" height="119" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 				<e:HorizontalLayout verticalAlign="middle"/>
 			</e:layout>
