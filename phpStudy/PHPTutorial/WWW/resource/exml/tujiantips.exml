@@ -27,7 +27,7 @@
 		</e:Group>
 		<ns1:ItemIcon id="itemIcon" skinName="SkinItemIcon" x="20" y="52" />
 		<ns1:PowerPanel id="powerPanel" y="130"  skinName="Skin2PowerPanel" horizontalCenter="0"/>
-		<e:Label id="threeLabel" y="150.52" text="（khi có 3 nhân vật）" size="20" textColor="0xFF9900" fontFamily="Microsoft YaHei" right="1" verticalAlign="middle"/>
+		<e:Label id="threeLabel" y="150.52" text="（khi có 3 nhân vật）" size="13" textColor="0xFF9900" fontFamily="Microsoft YaHei" right="1" verticalAlign="middle"/>
 		<e:Image id="iconBg" y="193" horizontalCenter="0" source="tujian260001_png" visible="false"/>
 		<e:List id="tujianlist" horizontalCenter="0" itemRendererSkinName="SkinTujianState" y="194">
 			<e:layout>
