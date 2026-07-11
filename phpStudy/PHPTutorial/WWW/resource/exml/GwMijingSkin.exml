@@ -22,18 +22,31 @@
 		<e:Button id="challenge" label="Thách đấu" skinName="SkinBtn1" horizontalCenter="0" y="620"/>
 		<e:Label id="countText" text="" horizontalCenter="0" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="695"/>
 		<e:Label id="buyCount" text="Số lần mua" horizontalCenter="0" bottom="20" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
-		<e:Scroller horizontalCenter="0" scaleX="0.9" scaleY="0.9" y="308" height="320">
+		<e:Scroller horizontalCenter="0" scaleX="0.9" scaleY="0.9" y="348" height="280">
 			<e:List id="list" itemRendererSkinName="SkinGwMijingItem" anchorOffsetY="0">
 				<e:layout>
 					<e:VerticalLayout gap="5"/>
 				</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Group id="info" y="250" x="168">
-			<e:Image id="infoImg1" x="3" y="2" source="gantanhao4"/>
-			<e:Image id="infoImg2" x="3" y="27" source="gantanhao4"/>
-			<e:Label id="infoText1" text="Vượt ải đánh giá S có thể mở khóa thách đấu tầng tiếp theo" x="28" y="2" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label id="infoText2" text="Đánh giá vượt ải càng cao thưởng càng nhiều" x="28" y="27" size="20" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+		<e:Group id="info" y="250" x="20">
+			<e:Group>
+				<e:Image id="infoImg1" y="2" source="gantanhao4"/>
+				<e:Label id="infoText1" text="Vượt ải đánh giá S có thể mở khóa thách đấu tầng tiếp theo" y="2" size="18" width="540" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:layout>
+					<e:HorizontalLayout gap="6" verticalAlign="top"/>
+				</e:layout>
+			</e:Group>
+			<e:Group>
+				<e:Image id="infoImg2" y="2" source="gantanhao4"/>
+				<e:Label id="infoText2" text="Đánh giá vượt ải càng cao thưởng càng nhiều" y="2" size="18" width="540" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:layout>
+					<e:HorizontalLayout gap="6" verticalAlign="top"/>
+				</e:layout>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="6"/>
+			</e:layout>
 		</e:Group>
 	</e:Group>
 	<e:Image id="rpImg" x="368" source="zjmhongdian" y="620"/>

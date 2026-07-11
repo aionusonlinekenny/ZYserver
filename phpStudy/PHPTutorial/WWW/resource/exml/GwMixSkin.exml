@@ -62,12 +62,30 @@
 		</e:Group>
 		<e:Button id="mix" label="Hợp thành" skinName="SkinBtn1" horizontalCenter="0" label.ultramix="Dung hợp" horizontalCenter.ultramix="0" bottom.mix="11" bottom.ultramix="11"/>
 		<e:Group id="bottomDesc" top="12" y.mix="19" x.mix="94" y.ultramix="14" x.ultramix="96">
-			<e:Image x="0" y="0" source="gantanhao" source.mix="gantanhao3" x.mix="3" y.mix="2" source.ultramix="gantanhao3" y.ultramix="2" x.ultramix="3"/>
-			<e:Image x="0" y="30" source="gantanhao" source.mix="gantanhao3" x.mix="3" y.mix="32" source.ultramix="gantanhao3" x.ultramix="3" y.ultramix="32"/>
-			<e:Image id="materialTxtImg" x="3" y="62" includeIn="ultramix" source="gantanhao3"/>
-			<e:Label text="Tiêu hao 3 Thánh Vật cùng phẩm chất để hợp thành ngẫu nhiên 1 Thánh Vật mới" x="26" y="2" size="18" text.ultramix="Thánh Vật Thần Phẩm cùng Thần Binh 1 kỹ năng có thể dung hợp" fontFamily.mix="Microsoft YaHei" size.mix="20" bold.mix="false" textColor.mix="0xffffff" bold.ultramix="false" fontFamily.ultramix="Microsoft YaHei" size.ultramix="20" textColor.ultramix="0xffffff" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label text="Khi hợp thành Thánh Vật có tỷ lệ nâng lên phẩm chất cao hơn" x="26" y="32" size="18" text.ultramix="Dung hợp thành công sẽ nhận Thánh Vật mới chứa kỹ năng chính phụ" fontFamily.mix="Microsoft YaHei" size.mix="20" bold.mix="false" textColor.mix="0xffffff" bold.ultramix="false" fontFamily.ultramix="Microsoft YaHei" size.ultramix="20" textColor.ultramix="0xffffff" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label id="materialTxt" text="Tỷ lệ dung hợp thành công là 25%, thất bại thì Thánh Hồn phụ sẽ bị hủy" x="26" y="62" size="20" bold="false" includeIn="ultramix" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Group>
+				<e:Image source="gantanhao3"/>
+				<e:Label text="Tiêu hao 3 Thánh Vật cùng phẩm chất để hợp thành ngẫu nhiên 1 Thánh Vật mới" size="16" width="480" bold="false" text.ultramix="Thánh Vật Thần Phẩm cùng Thần Binh 1 kỹ năng có thể dung hợp" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+					<e:HorizontalLayout gap="6" verticalAlign="top"/>
+				</e:layout>
+			</e:Group>
+			<e:Group>
+				<e:Image source="gantanhao3"/>
+				<e:Label text="Khi hợp thành Thánh Vật có tỷ lệ nâng lên phẩm chất cao hơn" size="16" width="480" bold="false" text.ultramix="Dung hợp thành công sẽ nhận Thánh Vật mới chứa kỹ năng chính phụ" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+				<e:layout>
+					<e:HorizontalLayout gap="6" verticalAlign="top"/>
+				</e:layout>
+			</e:Group>
+			<e:Group includeIn="ultramix">
+				<e:Image id="materialTxtImg" source="gantanhao3"/>
+				<e:Label id="materialTxt" text="Tỷ lệ dung hợp thành công là 25%, thất bại thì Thánh Hồn phụ sẽ bị hủy" size="16" width="480" bold="false" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+				<e:layout>
+					<e:HorizontalLayout gap="6" verticalAlign="top"/>
+				</e:layout>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="2"/>
+			</e:layout>
 		</e:Group>
 		<e:Label id="turn"  size="20" verticalAlign.mix="top" verticalAlign.ultramix="top" textAlign.mix="left" textAlign.ultramix="left" height.mix="20" width.mix="80" horizontalCenter.mix="155" bottom.mix="25" height.ultramix="20" horizontalCenter.ultramix="155" bottom.ultramix="25" width.ultramix="80" fontFamily="Microsoft YaHei" textColor="0x00ff06" horizontalCenter="155" width="80" height="20" textAlign="left" bottom="25"/>
 		<e:Label id="noItemDesc" text="Túi đồ không có Thánh Vật để dung hợp" size="20" horizontalCenter="0" bold="false" text.mix="Túi đồ không có Thánh Vật để hợp thành" bottom.ultramix="142" fontFamily="Microsoft YaHei" textColor="0xffffff" bottom="142"/>
