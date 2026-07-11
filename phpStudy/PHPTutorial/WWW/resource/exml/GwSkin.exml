@@ -8,10 +8,10 @@
 
 
 	<e:ViewStack id="viewStack" width="600" selectedIndex="2" horizontalCenter="0" height="728" verticalCenter="-57">
-		<ns1:GweaponView id="weaponGroup" scaleX="1" scaleY="1" skinName="SkinGwWeapon" anchorOffsetX="0" anchorOffsetY="0" name="神 兵" left="0" right="0" top="0" bottom="0"/>
-		<ns1:GweaponFubenView id="mijingGroup" scaleX="1" scaleY="1" skinName="SkinGwMijing" name="神兵幻境" top="0" bottom="0" left="0" right="0" visible="false"/>
-		<ns1:MagicalweaponItemMixView id="mixGroup" scaleX="1" scaleY="1" skinName="SkinGwMixSkin" name="圣物合成" top="0" bottom="0" left="0" right="0"/>
-		<ns1:GweaponBossView id="gwBoss" scaleX="1" scaleY="1" skinName="SkinGwBoss" name="神兵圣域" top="0" bottom="0" left="0" right="0" visible="false"/>
+		<ns1:GweaponView id="weaponGroup" scaleX="1" scaleY="1" skinName="SkinGwWeapon" anchorOffsetX="0" anchorOffsetY="0" name="Thần Binh" left="0" right="0" top="0" bottom="0"/>
+		<ns1:GweaponFubenView id="mijingGroup" scaleX="1" scaleY="1" skinName="SkinGwMijing" name="Huyễn Cảnh" top="0" bottom="0" left="0" right="0" visible="false"/>
+		<ns1:MagicalweaponItemMixView id="mixGroup" scaleX="1" scaleY="1" skinName="SkinGwMixSkin" name="Hợp Thành" top="0" bottom="0" left="0" right="0"/>
+		<ns1:GweaponBossView id="gwBoss" scaleX="1" scaleY="1" skinName="SkinGwBoss" name="Thánh Vực" top="0" bottom="0" left="0" right="0" visible="false"/>
 	</e:ViewStack>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" currentState="nohead" horizontalCenter="0" top="0"/>
 	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" y="4" scaleX="0.9" scaleY="0.9" horizontalCenter="-274" visible="true"/>
@@ -19,7 +19,7 @@
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" scale9Grid="29,7,539,49" bottom="80" source="bantoumingkuang3_png"/>
 	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" horizontalCenter="0" bottom="88">
 		<e:layout>
-			<e:HorizontalLayout gap="-8"/>
+			<e:HorizontalLayout gap="0"/>
 		</e:layout>
 	</e:TabBar>
 	<e:Image id="gwRp" source="zjmhongdian" bottom="120" horizontalCenter="-123.5"/>

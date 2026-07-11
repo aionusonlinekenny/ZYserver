@@ -61,7 +61,7 @@
 			<e:Label id="targetLabel" text="Thánh Vật ngẫu nhiên" y="80" size="18" horizontalCenter="0" y.ultramix="74" textColor="0xffffff" fontFamily="Microsoft YaHei" y.mix="126"/>
 		</e:Group>
 		<e:Button id="mix" label="Hợp thành" skinName="SkinBtn1" horizontalCenter="0" label.ultramix="Dung hợp" horizontalCenter.ultramix="0" bottom.mix="11" bottom.ultramix="11"/>
-		<e:Group id="bottomDesc" horizontalCenter="0" top="12" y.mix="19" x.mix="94" y.ultramix="14" x.ultramix="96">
+		<e:Group id="bottomDesc" top="12" y.mix="19" x.mix="94" y.ultramix="14" x.ultramix="96">
 			<e:Image x="0" y="0" source="gantanhao" source.mix="gantanhao3" x.mix="3" y.mix="2" source.ultramix="gantanhao3" y.ultramix="2" x.ultramix="3"/>
 			<e:Image x="0" y="30" source="gantanhao" source.mix="gantanhao3" x.mix="3" y.mix="32" source.ultramix="gantanhao3" x.ultramix="3" y.ultramix="32"/>
 			<e:Image id="materialTxtImg" x="3" y="62" includeIn="ultramix" source="gantanhao3"/>
