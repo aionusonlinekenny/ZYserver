@@ -4189,3 +4189,28 @@ Cache-bust: `default.thm_ba771eb1.js`(mục 133)→`default.thm_cb2dbad8.js`. X�
 **Rủi ro còn lại chưa kiểm chứng**: ngân sách chiều cao cho khối `labelInfo`+`tipsDes2` trong tooltip khá eo hẹp — `btnOpen` (nút "Kích hoạt") neo `bottom="16"` cao 51px trong `anigroup` cao 476, mép trên của `btnOpen` ở khoảng y≈409; khối chữ bắt đầu ở y=332, còn ~77px cho 2 dòng text. Ở `size=18`/`width=270`, `labelInfo` (~47 ký tự, có thể vẫn wrap 2 dòng ~44px) + gap 4px + `tipsDes2` (~42 ký tự, có thể 1-2 dòng ~22-44px) ước tính tổng ~70-92px — SÁT hoặc có thể VẪN chạm nhẹ `btnOpen` trong trường hợp xấu nhất. Cần ảnh xác nhận.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận (1) mô tả "Thần Phạt Diệt BOSS..." không còn đè lên ảnh "开启神罚技能" phía trên, và (2) cả 2 dòng tooltip "Bông Tai Lam Liên" nằm gọn trong khung, không tràn lề phải và không đè lên nút "Kích hoạt" phía dưới.
+
+## 135. Nút "Thăng bậc" ở màn "Ngự Khí" (Pháp Bảo bay) mở nhầm popup mua nguyên liệu thay vì tiến giai — lỗi logic JS do lệch chuỗi nhãn, không phải lỗi giao diện (`LongHunWindow`/`SkinShenluNew`) (2026-07-12)
+
+Người dùng gửi ảnh popup "Cách nhận nguyên liệu" (mua "Tinh Phách Ngự Khí", đơn giá 100 Nguyên Bảo x81=8100) báo "mua vật phẩm này nó không hoạt động" (bấm Mua không thấy phản hồi). Gửi thêm ảnh túi đồ cho thấy đã có sẵn 434 "Tinh Phách Ngự Khí" trong kho — mua thêm là vô nghĩa, cho thấy vấn đề gốc không nằm ở việc thiếu nguyên liệu. Gửi thêm ảnh màn "Ngự Khí" (nâng cấp Pháp Bảo bay "问天剑") cho thấy dòng "Tiêu hao:" có icon nguyên liệu nhưng KHÔNG hiện số lượng, kèm nút "Thăng bậc" và đủ 10 sao vàng.
+
+**Điều tra**: đây là hệ thống "Ngự Khí" (`LongHunWindow`, skin `ShenluNewSkin.exml`/`SkinShenluNew`) — nâng cấp "Pháp Bảo bay" theo từng cấp (level) trong 1 bậc (stage), cứ đủ 10 cấp (đạt mốc `%10==0`) thì chuyển sang chế độ "tiến giai" (lên bậc mới, KHÔNG tốn nguyên liệu, chỉ cần bấm xác nhận) — lúc này hàm `showStageUpgradeBtn_a94` chủ động ẩn nhãn số lượng nguyên liệu (`this.material.visible=!1`) và đổi nhãn nút thành `"Thăng bậc"` — đây là hành vi ĐÚNG THIẾT KẾ (không phải lỗi), vì ở bước tiến giai không cần tốn nguyên liệu nên không có số nào để hiện.
+
+**Lỗi thật sự nằm ở `onTap_a94`** (hàm xử lý bấm nút `upgradeBtn`):
+```js
+"Nâng Cấp Nhanh"==this.upgradeBtn.label?this.ascension_a94()
+:"Dừng"==this.upgradeBtn.label?this.stopAuto_a94(1)
+:"Tiến Giai"==this.upgradeBtn.label?this.sendStageUpgrade()
+:this.openBuyGoods();
+```
+Hàm so khớp nhãn nút bằng chuỗi CHỮ để quyết định hành động — nhưng trong TOÀN BỘ class `LongHunWindow`, nhãn nút chỉ từng được gán 1 trong 3 giá trị `"Dừng"`, `"Nâng Cấp Nhanh"`, `"Thăng bậc"` (xác nhận bằng cách trích toàn bộ class và đếm — 0 chỗ nào gán `"Tiến Giai"`). Khi nút hiện "Thăng bậc" và người dùng bấm, chuỗi so sánh `"Tiến Giai"==this.upgradeBtn.label` luôn SAI (vì nhãn thật là "Thăng bậc" chứ không phải "Tiến Giai") → rơi vào nhánh `else`, gọi nhầm `this.openBuyGoods()` (mở popup "Cách nhận nguyên liệu") thay vì `this.sendStageUpgrade()` (hành động đúng để tiến giai). Đây là lỗi dịch thuật: 2 chuỗi tiếng Việt khác nhau ("Thăng bậc" và "Tiến Giai") được dùng cho cùng 1 khái niệm gốc tiếng Trung ở 2 chỗ khác nhau trong code, phá vỡ logic so khớp chuỗi. (Chuỗi "Tiến Giai" vẫn tồn tại đúng chỗ khác trong file — thuộc hệ thống Nhẫn/Ring riêng biệt dùng biến `this.upgradebtn.label` viết thường chữ b, không liên quan, không đụng tới.)
+
+Cùng lỗi này còn ảnh hưởng phần preview thuộc tính kế tiếp: `roleChange()` có `f="Tiến Giai"==this.upgradeBtn.label` (biến quyết định hiện thuộc tính bậc hiện tại hay bậc kế tiếp) — cũng luôn sai vì lý do tương tự.
+
+**Sửa**: đổi cả 2 chỗ so sánh trong `LongHunWindow` từ `"Tiến Giai"==this.upgradeBtn.label` thành `"Thăng bậc"==this.upgradeBtn.label` để khớp đúng với chuỗi nhãn thực sự được gán.
+
+Cache-bust: `main.min_5466e1df.js`(mục 131)→`main.min_3269d794.js` (chỉ JS, không đụng `default.thm.js`/exml lần này). Xác minh: `node -c`, `git show :path` xác nhận cả 2 chỗ đã đổi đúng thành `"Thăng bậc"==this.upgradeBtn.label`, `manifest.json`+`index.php`'s `?v=` đã bump.
+
+**Trả lời người dùng**: việc không hiện số nguyên liệu khi đủ 10 sao là ĐÚNG (lúc này không cần tốn nguyên liệu để tiến giai). Lỗi thật là bấm "Thăng bậc" bị mở nhầm popup mua nguyên liệu do lệch chuỗi so khớp trong code — đã sửa để bấm "Thăng bậc" gọi đúng hành động tiến giai.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần xác nhận khi bấm nút "Thăng bậc" (đủ 10 sao) giờ tiến giai thành công (không còn mở popup mua nguyên liệu), và bậc/sao/thuộc tính cập nhật đúng sau khi tiến giai.
