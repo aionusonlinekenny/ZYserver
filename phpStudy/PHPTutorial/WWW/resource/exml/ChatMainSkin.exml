@@ -3,9 +3,9 @@
 	<w:Config id="1589952c00c"/>
 	
 
-	<e:Group id="chatGroup" touchEnabled="false" bottom="100" width="400" height="42" horizontalCenter="0">
-		<e:Image top="0" bottom="-10" height="63" source="zjmgonggaobg2" scale9Grid="4,5,13,6" width="390" horizontalCenter="0"/>
-		<e:List id="chatList" itemRendererSkinName="SkinChatItem" height="34" verticalCenter="0" left="15" right="15" anchorOffsetX="0">
+	<e:Group id="chatGroup" touchEnabled="false" bottom="100" width="400" height="60" horizontalCenter="0">
+		<e:Image top="0" bottom="-10" height="70" source="zjmgonggaobg2" scale9Grid="4,5,13,6" width="390" horizontalCenter="0"/>
+		<e:List id="chatList" itemRendererSkinName="SkinChatItem" height="56" verticalCenter="0" left="15" right="15" anchorOffsetX="0">
 			<e:layout>
 				<e:VerticalLayout gap="0" verticalAlign="middle"/>
 			</e:layout>

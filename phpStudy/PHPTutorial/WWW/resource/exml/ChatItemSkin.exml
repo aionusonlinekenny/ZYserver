@@ -4,7 +4,7 @@
 	<e:Group id="textGroup" top="1" bottom="1" left="2" right="2">
 		<e:Label id="showHead" text="[Tên nhân vật]" size="20" y="3"   x="32" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image id="chatVip" width="28" height="18" x="3" y="5" source="xvip_v2_png"  />
-		<e:Label id="showText" text="Đây là nội dung" x="128" size="20" fontFamily="Microsoft YaHei" textColor="0xabebff" y="3" lineSpacing="6"/>
+		<e:Label id="showText" text="Đây là nội dung" x="128" width="250" size="20" fontFamily="Microsoft YaHei" textColor="0xabebff" y="3" lineSpacing="6"/>
 		<e:Label id="linehuan" text="" x="459" fontFamily="Microsoft YaHei" size="20" visible="false"/>
 	</e:Group>
 	

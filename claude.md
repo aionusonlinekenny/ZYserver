@@ -4035,3 +4035,23 @@ Cache-bust: `default.thm_413a432b.js`(mục 123)→`default.thm_ab2fa794.js` (ch
 **Bài học đúc kết cho cụm "lvTxt xuống dòng" (sau 3 lần chỉnh liên tiếp — mục 122, 123, 125)**: ước lượng px/ký tự từ trí nhớ hoặc hiệu chỉnh ở bối cảnh KHÁC (dù cùng phiên) liên tục sai lệch nhẹ (không đủ margin) qua nhiều vòng. Khi ảnh xác nhận cho thấy lỗi chỉ "GẦN ĐÚNG" (như trường hợp này — chỉ 1 ký tự tràn, không phải tràn nghiêm trọng), nên NGAY LẬP TỨC đo trực tiếp bằng lưới pixel chồng lên ảnh thật (như đã làm ở đây) thay vì tiếp tục đoán tăng dần — tiết kiệm được các vòng lặp không cần thiết.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Chuyển X Cấp YYY" (kể cả cấp độ 3 chữ số) hiển thị trọn vẹn 1 dòng, không còn ký tự nào bị tràn xuống dòng 2.
+
+## 126. Thanh chat/thông báo nổi (`ChatMainSkin.exml`/`SkinChatMain`, dòng chat mới nhất hiện phía trên icon dưới màn hình) — nội dung dài tràn hẳn ra khỏi khung, chạy qua nửa màn hình (2026-07-11)
+
+Người dùng gửi ảnh cho thấy dòng thông báo "Chúc mừng người chơi Emmaban đã nâng cấp thành công Thần T..." tràn hẳn khỏi khung chat nổi (thanh nhỏ hiện phía trên dãy icon chức năng), kéo dài gần hết bề ngang màn hình.
+
+**Điều tra nguồn gốc nội dung**: tìm khắp `main.min.js`/`default.thm.js`/toàn bộ file JS còn lại và cả `resource/config` — cụm "nâng cấp thành công" hay "Chúc mừng người chơi...đã..." KHÔNG tồn tại ở bất kỳ đâu trong client. Xác nhận qua `postBroadcastResult` (đọc `t.readString()` trực tiếp từ socket) rằng đây là chuỗi DO SERVER GỬI SẴN (kể cả phần tô màu), không phải ghép chuỗi ở client — nghĩa là phần "Emmabanđã" dính chữ (nếu có) nằm ngoài khả năng sửa từ repo này (cần sửa ở code server, không có trong repo). Không báo sai cho người dùng: chỉ tập trung vào phần THẬT SỰ sửa được — cách client HIỂN THỊ chuỗi đó.
+
+**Xác định đúng thành phần gây tràn**: dò theo cấu trúc UI, xác nhận thanh chat nổi là `ChatMainSkin.exml`(`SkinChatMain`) — `chatGroup`(rộng 400, cao 42) chứa `chatList`(cao CỐ ĐỊNH 34, chỉ đủ 1 dòng) dùng chung itemRenderer `ChatItemSkin.exml`(`SkinChatItem`) với LABEL "showText" (nội dung tin nhắn) KHÔNG CÓ `width` — nghĩa là bất kể nội dung dài bao nhiêu (tin nhắn thường ngắn nên trước giờ không lộ ra), Label luôn render 1 dòng, tự do tràn ngang không giới hạn. Với tin nhắn thông báo hệ thống dài (~60 ký tự), tràn hẳn ra khỏi khung 400px, kéo dài gần hết màn hình 600px — đúng như ảnh chụp.
+
+**Sửa bằng cách cho phép wrap trong đúng khung sẵn có** (không đổi thiết kế thanh chat, chỉ mở rộng đủ chứa nội dung dài khi cần):
+- `ChatItemSkin.exml`: thêm `width="250"` cho `showText` (đủ hẹp để tin nhắn dài buộc phải word-wrap thay vì tràn tự do, đồng thời vẫn đủ rộng cho tin nhắn ngắn thông thường 1 dòng như trước). Skin này dùng CHUNG cho cả khung chat nổi (`ChatMainSkin`, chiều cao cố định) LẪN cửa sổ chat đầy đủ có tab (`ChatSkin.exml`, dùng `Scroller` cuộn được, không giới hạn chiều cao) — thêm `width` an toàn cho cả 2 nơi vì `ChatSkin`'s `List` nằm trong `Scroller` co giãn tự nhiên theo item, không rủi ro cắt cụt.
+- `ChatMainSkin.exml`: tăng `chatList` từ cao `34`→`56` (đủ cho 2 dòng khi tin nhắn dài phải wrap) và `chatGroup` từ `42`→`60` tương ứng; ảnh nền `zjmgonggaobg2` vốn đã cao sẵn `63` (dư hơn khung gốc `42`, có thể do thiết kế đã lường trước đôi lúc cần hiển thị dài hơn) — tăng thêm lên `70` để bao trọn khung mới `60` với chút đệm.
+
+Đồng bộ `default.thm.js`: `SkinChatItem`'s `showText_i` thêm `width=250`; `SkinChatMain`'s `chatGroup_i` đổi `height=42→60`, `_Image1_i`(nền) đổi `height=63→70`, `chatList_i` đổi `height=34→56`.
+
+Cache-bust: `default.thm_ab2fa794.js`(mục 125)→`default.thm_7edfca43.js` (chỉ layout, không đụng `main.min.js` vì không có gì để sửa ở JS — xác nhận nội dung do server gửi). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `ChatItemSkin.exml`/`ChatMainSkin.exml`, script đối chiếu factory-method riêng cho `SkinChatItem`/`SkinChatMain` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Lưu ý báo lại người dùng**: nếu phần "Emmabanđã" (dính tên người chơi với chữ tiếp theo) vẫn còn dính sau khi sửa, đó là do SERVER gửi chuỗi đã dính sẵn — không nằm trong phạm vi sửa được của repo client này, cần báo bên vận hành server riêng.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận tin nhắn thông báo dài (như "Chúc mừng người chơi...") giờ wrap gọn trong khung chat nổi (tối đa 2 dòng, không tràn ra khỏi màn hình), và tin nhắn ngắn thông thường vẫn hiển thị bình thường như trước (không bị ảnh hưởng bởi thay đổi).
