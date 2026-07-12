@@ -4278,3 +4278,31 @@ Xác minh: `luac -p` qua cả 4 file Lua (2 instance x 2 file) — không có l�
 - ~~Không tìm thấy cấu hình giới hạn ĐỘ DÀI CỘT trong database~~ **[Đã xác nhận, 2026-07-12]**: người dùng gửi kèm file dump schema (`actors.sql` cho `s1`, `actors9.sql` cho `s99`) — cả 2 bên đều khai báo `actorname varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci` (bảng `actors` dòng 87, và `actors_copy` dòng 159), stored procedure `createnewactor` cũng nhận tham số `sname varchar(32)` khớp đúng — cột đủ rộng (32 > 24) cho giới hạn mới, không có rủi ro bị cắt bớt (truncate) khi lưu. Nếu muốn nâng giới hạn cao hơn nữa vẫn còn dư 8 ký tự (tối đa an toàn là 32) trước khi cần đổi luôn kiểu cột trong DB.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần deploy + restart `gameworld` trên server thật rồi thử tạo nhân vật tên có chữ hoa đầu + khoảng trắng + trên 20 ký tự để xác nhận cả 3 vấn đề đã hết.
+
+## 138. Sau khi deploy mục 137: tạo nhân vật báo "Lỗi SQL" 2-3 lần rồi mới vào được game — điều tra qua log console thật, xác định là lỗi va chạm `actorid` KHÔNG LIÊN QUAN tới các sửa mục 137 (2026-07-12)
+
+Người dùng deploy + restart `gameworld` xong, thử tạo nhân vật tên "Tiên Duyên" (có khoảng trắng) → báo "Lỗi SQL", đổi thành "TiênDuyên" (bỏ khoảng trắng) → vẫn báo "Lỗi SQL" ở lần bấm đầu, bấm nút "Tạo" lần 2 thì vào được game. Do mình (Claude) không truy cập được log/DB server thật, người dùng đã dán trực tiếp log console của `gameworld` lúc khởi động + lúc thao tác.
+
+**Xác nhận trước tiên (tin tốt)**: cả 2 lần thử tên đều KHÔNG hiện lỗi kiểu "tên không hợp lệ" — nghĩa là bản sửa mục 137 (khoảng trắng, hoa/thường, độ dài) đã hoạt động đúng, tên vượt qua hết các bước kiểm tra ở tầng Lua, đi thẳng tới bước ghi database. Lỗi "Lỗi SQL" là bản dịch của mã lỗi `ERR_SQL=-1` — khớp đúng dòng đầu tiên trong mảng `RoleMgr.errorCode` phía client (`["","Lỗi SQL",...]`), lỗi này chỉ phát sinh ở bước ghi DB, không phải bước kiểm tra tên.
+
+**Nguyên nhân thật (đọc trực tiếp từ log console gameworld người dùng gửi)**:
+```
+[ERR]SQLConnection::AfterExeced:Duplicate entry '4097' for key 'PRIMARY':call createnewactor(5,"abc_luciaeban",1, 4097, "Tiên Duyên",3,0)
+[ERR]SQLConnection::AfterExeced:Duplicate entry '8193' for key 'PRIMARY':call createnewactor(5,"abc_luciaeban",1, 8193, "Tiên Duyên",3,0)
+[ERR]SQLConnection::AfterExeced:Duplicate entry '12289' for key 'PRIMARY':call createnewactor(5,"abc_luciaeban",1, 12289, "TiênDuyên",3,0)
+→ lần thử thứ 4 mới thành công, actorid=16385
+```
+Server tự sinh `actorid` (khóa chính bảng `actors`) cho nhân vật MỚI theo dãy tăng dần cách đều 4096 (`4097, 8193, 12289, 16385, ...`). Nhưng đối chiếu với đoạn log lúc KHỞI ĐỘNG server (dòng ngay sau `load allowword.txt`/`start server...[ok]`):
+```
+[TIP]create image actor 4097!!!!!
+[TIP]create image actor 1!!!!!
+[TIP]create image actor 12289!!!!!
+[TIP]create image actor 8193!!!!!
+```
+→ chính xác 4 "nhân vật ảo hệ thống" (actorid = `1, 4097, 8193, 12289`) được server tự tạo lại MỖI LẦN khởi động, và ngay sau đó được xử lý qua các hàm liên quan hệ thống Bang Hội (`guildskill.updataAttrs`, `guildbattlefb.initData`) — nhiều khả năng đây là các "nhân vật đại diện hệ thống" phục vụ tính năng Tranh Đoạt Bang Hội (guild battle), KHÔNG PHẢI dữ liệu rác/test.
+
+Vì bộ đếm sinh `actorid` cho nhân vật MỚI (thuật toán nằm trong mã nhị phân đã biên dịch của `gameworld.exe`, không có mã nguồn Lua để xem/sửa) LUÔN bắt đầu lại từ đúng dãy `4097, 8193, 12289, ...` sau MỖI LẦN restart — nên 3 lượt tạo nhân vật ĐẦU TIÊN sau bất kỳ lần restart nào (của BẤT KỲ người chơi nào, không riêng tài khoản người dùng) sẽ luôn va chạm khóa chính với 4 "nhân vật ảo" này và báo "Lỗi SQL", tới lượt thứ 4 mới thoát khỏi vùng va chạm và tạo thành công. Đây chính là lý do lỗi xuất hiện đúng lúc sau khi restart `gameworld` để deploy bản sửa mục 137.
+
+**Không sửa (theo lựa chọn của người dùng)**: đã hỏi ý kiến người dùng giữa 2 hướng — (a) chấp nhận không sửa (rủi ro thấp nhất, không đụng dữ liệu hệ thống, chỉ ảnh hưởng 3 lượt tạo đầu sau MỖI LẦN restart, người chơi chỉ cần bấm lại nút Tạo, không mất dữ liệu/nhân vật đã có) — (b) điều tra sâu thêm code Lua hệ thống bang hội để xác minh chắc chắn 4 actorid này có phải dữ liệu hệ thống thật hay có thể xóa/dời an toàn. **Người dùng chọn hướng (a) — chấp nhận, không sửa.**
+
+**Kết luận cho người dùng**: lỗi "Lỗi SQL" khi tạo nhân vật là lỗi CÓ THẬT nhưng KHÔNG liên quan tới các sửa mục 137 — là hành vi có sẵn của thuật toán sinh actorid trong server nhị phân, tái diễn ở 3 lượt tạo nhân vật đầu tiên sau MỖI lần restart `gameworld` (không phải lỗi thường trực, không mất dữ liệu, chỉ cần bấm lại nút Tạo). Không có thay đổi code nào trong mục này (chỉ điều tra + ghi nhận).
