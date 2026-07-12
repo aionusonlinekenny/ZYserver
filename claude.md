@@ -4009,3 +4009,13 @@ Tính lại khoảng cách: mép phải hộp `lvTxt` mới ở tọa độ tuy�
 Cache-bust: `default.thm_c27cd2da.js`(mục 122)→`default.thm_413a432b.js` (chỉ layout, không đụng `main.min.js` lần này). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `PlayFunSkin.exml`, script đối chiếu factory-method riêng cho `SkinPlayFun` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged (`width="140"`, `size="13"` x3, `x="335"`), `manifest.json`/`index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Chuyển X Cấp YYY" (kể cả khi cấp độ đủ 3 chữ số) hiển thị trọn 1 dòng không xuống dòng, và vẫn giữ khoảng cách rõ ràng với cụm "Thứ Z quan...EXP.../giờ" bên cạnh.
+
+## 124. "Thứ 227quan" (HUD chính, `mapName0`) dính chữ 2 điểm, viết thường "quan" — đổi thành "Thứ 227 Quan" (2026-07-11)
+
+Người dùng yêu cầu định dạng lại nhãn số ải/quan hiện tại (`mapName0`, dòng "Thứ 228quan" trong HUD chính) thành "Thứ xx Quan". Kiểm tra JS xác nhận đây CŨNG là lỗi dính chữ (cùng lớp bug với mục 114/122): `"Thứ|C:0x00ff00&T:"+guanqiaID+"|quan"` ghép "Thứ" + số (tô xanh) + "quan" hoàn toàn KHÔNG có khoảng trắng ở cả 2 điểm nối, đồng thời "quan" viết thường không đúng quy cách viết hoa từng từ như "Thứ".
+
+Sửa: `"Thứ|...|quan"` → `"Thứ |...| Quan"` (thêm khoảng trắng trước số VÀ trước "Quan", viết hoa "Quan"). Kết quả: "Thứ 228 Quan" thay vì "Thứ228quan"/"Thứ 228quan" (tuỳ cách đọc trước đó).
+
+Cache-bust: `main.min_ba68d9e8.js`(mục 123)→`main.min_e51ef6f3.js` (chỉ đổi JS, không đụng `default.thm.js` lần này). Xác minh: `node -c`, `git show :path` xác nhận đúng chuỗi `"Thứ |...| Quan"` đã staged, `manifest.json` đã bump (`index.php`'s `?v=` giữ nguyên vì vẫn trỏ đúng hash `default.thm.js` không đổi).
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận hiển thị đúng "Thứ 228 Quan" (có khoảng trắng, "Quan" viết hoa), và không bị tràn/đè vào cụm EXP bên cạnh do chữ dài thêm 2 ký tự so với trước.
