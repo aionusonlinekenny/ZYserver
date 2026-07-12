@@ -3969,3 +3969,25 @@ Cache-bust: `default.thm_780160be.js`(mục 120)→`default.thm_f4b9689b.js`. X�
 **Bài học đúc kết cho khu vực này (sau 3 lần chỉnh liên tiếp)**: với cặp "nhãn tiếng Việt (độ dài không cố định do dịch) + giá trị động", KHÔNG nên đoán tọa độ `x` cố định dù đã "đo trên ảnh thật" — vì các nhãn khác nhau trong CÙNG màn hình vẫn có thể chênh lệch độ dài đủ để 1 giá trị `x` chung làm hỏng nhãn còn lại. Bọc riêng từng cặp bằng `Group+HorizontalLayout` (giá trị luôn bám đúng sau nhãn thật) là giải pháp ĐÚNG NGAY TỪ ĐẦU, nên áp dụng ngay khi phát hiện lớp lỗi "giá trị đè/xa nhãn" thay vì thử đoán `x` trước.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận số liệu "Xếp hạng của tôi"/"Số trận thắng ròng" bám sát đúng sau từng nhãn (không đè, không quá xa) dù nhãn dài ngắn khác nhau, và cặp link "Xếp hạng tuần trước"/"Xem bảng xếp hạng" không còn đè lên icon huy hiệu bên trái.
+
+## 122. HUD chính (`PlayFunSkin.exml`/`SkinPlayFun`, luôn hiển thị góc trên màn hình): dòng "Chuyển X Cấp Y" dính chữ với "Thứ Z quan" bên cạnh, gây nhìn như xuống dòng/tràn (2026-07-11)
+
+Người dùng gửi 2 ảnh (HUD chính lúc chưa vào trận và lúc đang chiến đấu), yêu cầu: "chỗ hiển thị Level của nhân vật bị xuống dòng, cho hiển thị 1 dòng và thu nhỏ lại".
+
+**Nguyên nhân kép**:
+1. **Dính chữ (JS)**: hàm `expChange()` (điều khiển `lvTxt`, hiển thị "Chuyển sinh + cấp độ" màu xanh lá) ghép `"|C:0x00FF00&T:Chuyển "+i+"|"` (đoạn tô màu, vd "Chuyển 12") trực tiếp với `"Cấp "+e` (đoạn không màu, vd "Cấp 227") mà KHÔNG có khoảng trắng ở điểm nối — sinh ra "Chuyển 12Cấp 227" dính liền, đúng lớp lỗi "dính chữ do ghép chuỗi kiểu tiếng Trung" đã gặp nhiều lần (mục 114).
+2. **2 cụm nhãn độc lập gần như chạm nhau (layout)**: `lvTxt` (thuộc Group "player info", `horizontalCenter="-170"`, box `x=220 width=110`) và `mapName0`+`expGroup` (thuộc Group KHÁC, `x=295`) là 2 CỤM HOÀN TOÀN TÁCH BIỆT về cấu trúc cha, được set tọa độ độc lập từ trước — tính theo tọa độ tuyệt đối, mép phải hộp `lvTxt` (≈318px) và điểm bắt đầu `mapName0` (≈317.5px) gần như trùng khít nhau (khoảng cách ~0.5px). Ở cỡ chữ gốc 18 với `lvTxt` dùng `textAlign="center"`, nếu chuỗi "Chuyển 12 Cấp 227" (sau khi thêm dấu cách) rộng hơn hộp 110px, phần chữ tràn ra 2 bên (do canh giữa) sẽ lấn ngay vào vùng `mapName0`, tạo cảm giác dính liền/tràn dòng như ảnh chụp — đây là nguyên nhân gốc của cả hiện tượng "xuống dòng" người dùng mô tả (thật ra là 2 cụm đè/lấn nhau chứ không phải 1 Label tự nó word-wrap).
+
+**Sửa theo đúng yêu cầu (thu nhỏ + về 1 dòng, không đè nhau)**:
+- Thêm khoảng trắng vào điểm nối JS: `s=s+"Cấp "+e` → `s=s+" Cấp "+e` (Chuyển 12Cấp 227 → Chuyển 12 Cấp 227).
+- Giảm cỡ chữ cả 3 nhãn liên quan (`lvTxt`, `mapName0`, `expTxt`) từ `size="18"` → `"14"` (thu nhỏ như yêu cầu, giảm nguy cơ tràn hộp).
+- Dời cụm `mapName0`+`expGroup` (Group cha) từ `x="295"` → `"315"` (+20px đệm an toàn) để tăng khoảng cách với `lvTxt`, không còn phụ thuộc hoàn toàn vào việc chữ vừa đủ nhỏ.
+- Tinh chỉnh `y` của cả 3 nhãn (+2px mỗi nhãn) để bù lại việc chữ nhỏ hơn khiến baseline lệch nhẹ so với hàng gốc, giữ cảm giác canh giữa dòng như cũ.
+
+Đồng bộ `default.thm.js` (`SkinPlayFun`): `_Group1_i`(cha của `mapName0`/`expGroup`) đổi `x=295→315`; `mapName0_i`/`expTxt_i`/`lvTxt_i` đổi `size=18→14` và `y` tương ứng.
+
+Cache-bust: `default.thm_f4b9689b.js`(mục 121)→`default.thm_c27cd2da.js`, `main.min_79119c91.js`(mục 120)→`main.min_ba68d9e8.js`. Xác minh: `node -c` cả 2, `xml.etree.ElementTree.parse` qua `PlayFunSkin.exml`, script đối chiếu factory-method riêng cho `SkinPlayFun` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged (`" Cấp "` đã có dấu cách, `size="14"` x3, `x="315"`), `manifest.json`/`index.php` đã bump `?v=`.
+
+**Phát hiện thêm nhưng CHƯA sửa (ngoài phạm vi yêu cầu lần này)**: ảnh đầu (IMG_0844) cho thấy `ybTxt` (số lượng tiền tệ thứ 2, góc trên phải HUD) cũng bị wrap — "3071.4vạn" xuống dòng thành "3071.4vạ"/"n". Đây là nhãn KHÁC (`ybTxt`, không liên quan `lvTxt`/`mapName0`), người dùng chưa yêu cầu sửa nên chưa động tới — cần xác nhận nếu muốn sửa tiếp ở lượt sau.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận dòng "Chuyển X Cấp Y Thứ Z quan [EXP] .../giờ" hiển thị gọn 1 dòng, đọc rõ có khoảng cách hợp lý giữa các cụm, không còn dính/đè chữ.
