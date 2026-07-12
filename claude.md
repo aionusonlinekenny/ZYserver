@@ -4071,3 +4071,15 @@ Cache-bust: `default.thm_7edfca43.js`(mục 126)→`default.thm_e6875607.js` (ch
 **Lưu ý**: `SkinWarnBuy` dùng CHUNG cho MỌI hộp thoại xác nhận mua "Tầm Bảo" trong game (nhiều loại vật phẩm, tên dài ngắn khác nhau) — sửa 1 lần áp dụng cho tất cả các trường hợp tương tự, không chỉ riêng "Cuộn Tầm Bảo Trang Bị".
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận hộp thoại "Thông báo" hiển thị đủ câu hỏi xác nhận (kể cả tên vật phẩm dài) gọn trong khung nền, không tràn ra ngoài viền hộp thoại.
+
+## 128. "Chuyển 12 Cấp 110" hết xuống dòng nhưng chữ quá nhỏ khó đọc — tăng cỡ chữ lại (11→13), dời cụm "Thứ Quan" thêm 10px để lấy chỗ (2026-07-11)
+
+Người dùng xác nhận mục 125 đã hết xuống dòng, nhưng chữ quá nhỏ (cỡ 11) khó đọc, muốn tăng lại. Theo đúng tính toán ở mục 125 (đo trực tiếp trên ảnh thật): "Chuyển 12 Cấp 113" cần ~144.7 đơn vị canvas ở cỡ chữ 13 — hộp hiện tại (`width="140"`) không đủ cho cỡ 13 (thiếu ~5 đơn vị), đó là lý do trước phải hạ xuống cỡ 11. Muốn tăng lại cỡ 13 mà không tái lặp lỗi xuống dòng, cần thêm phòng — áp dụng đúng kỹ thuật đã dùng ở mục 123: dời cụm "Thứ Z Quan...EXP.../giờ" thêm 10px (`x="335"`→`"345"`) để nhường chỗ, đồng thời nới hộp `lvTxt` từ `width="140"`→`"150"`.
+
+Kiểm tra lại: cần 144.7 đơn vị ở cỡ 13, hộp mới 150 → dư 5.3 đơn vị (≈11px màn hình) — biên hẹp nhưng dựa trên số đo THẬT (không phải ước lượng) từ mục 125, đủ tin cậy hơn các lần đoán trước.
+
+Đồng bộ `default.thm.js` (`SkinPlayFun`): `_Group1_i`(cụm "Thứ Quan") đổi `x=335→345`; `lvTxt_i` đổi `size=11→13`, `width=140→150`.
+
+Cache-bust: `default.thm_e6875607.js`(mục 127)→`default.thm_9e293426.js` (chỉ layout, không đụng `main.min.js`). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `PlayFunSkin.exml`, script đối chiếu factory-method riêng cho `SkinPlayFun` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Chuyển X Cấp YYY" (kể cả cấp 3 chữ số) vừa đủ lớn dễ đọc VÀ vẫn nằm trọn 1 dòng không xuống dòng lại, đồng thời cụm "Thứ Z Quan" bên cạnh không bị tràn lề phải do dời thêm 10px.

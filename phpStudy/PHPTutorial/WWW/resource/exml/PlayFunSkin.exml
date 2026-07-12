@@ -11,7 +11,7 @@
 			<e:Button id="recharge2" skinName="SkinBtn0" y="6" icon="zjmjinbi" x="313" width="35" height="27" scaleX="0.7" scaleY="0.7"/>
 			<e:Label id="goldTxt" text="0" y="4.5" size="18" textAlign="center" width="82" x="343" textColor="0xffffff" verticalAlign="middle"/>
 			<e:Label id="ybTxt" text="0" y="4.5" size="18" textAlign="center" width="82" x="484" textColor="0xffffff" verticalAlign="bottom"/>
-			<e:Group width="260" height="30" x="335" y="37.5">
+			<e:Group width="260" height="30" x="345" y="37.5">
 			<e:Label id="mapName0" text="Ải 3600" size="13" backgroundColor="0x000000" x="22.52" y="5.15" scaleX="1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Group id="expGroup" y="-0.5" x="111.69" width="190">
 				<e:Image x="20" y="-2" source="ZSexp" scaleX="1" width="24" height="24"/>
@@ -28,7 +28,7 @@
 		<e:Group y="0" horizontalCenter="-170" x="0" scaleX="1" scaleY="1" height="125" width="284" anchorOffsetX="0">
 			<e:Image pixelHitTest="true" x="16" y="0" touchEnabled="false" width="317" anchorOffsetX="0" source="zjmtouxiangkuang2"/>
 			<e:Label id="nameTxt" text="Bánh Bao Bánh Bao Bánh Bao" y="40" size="18" textAlign="left" x="110" touchEnabled="false" textColor="0xffffff" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
-			<e:Label id="lvTxt" text="Chuyển sinh 99 cấp 999" y="43" size="11" textAlign="center" x="220" touchEnabled="false" width="140" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="lvTxt" text="Chuyển sinh 99 cấp 999" y="42" size="13" textAlign="center" x="220" touchEnabled="false" width="150" textColor="0x00ff00" fontFamily="Microsoft YaHei"/>
 			<e:Group id="flameGroup" y="2" width="186" x="97" anchorOffsetX="0">
 				<e:Image id="fightImg" anchorOffsetX="0" scaleX="1" scaleY="1" source="zjmzhandouli2" left="6"/>
 			</e:Group>
