@@ -4214,3 +4214,24 @@ Cache-bust: `main.min_5466e1df.js`(mục 131)→`main.min_3269d794.js` (chỉ JS
 **Trả lời người dùng**: việc không hiện số nguyên liệu khi đủ 10 sao là ĐÚNG (lúc này không cần tốn nguyên liệu để tiến giai). Lỗi thật là bấm "Thăng bậc" bị mở nhầm popup mua nguyên liệu do lệch chuỗi so khớp trong code — đã sửa để bấm "Thăng bậc" gọi đúng hành động tiến giai.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần xác nhận khi bấm nút "Thăng bậc" (đủ 10 sao) giờ tiến giai thành công (không còn mở popup mua nguyên liệu), và bậc/sao/thuộc tính cập nhật đúng sau khi tiến giai.
+
+## 136. Rà toàn bộ `main.min.js` tìm lỗi CÙNG DẠNG với mục 135 (nhãn dịch dùng làm điều kiện so khớp chuỗi bị lệch) — phát hiện thêm 1 chỗ ở khung chat (`ChatsWin`) (2026-07-12)
+
+Sau khi xác nhận fix mục 135 hoạt động, người dùng yêu cầu chủ động rà lại toàn bộ những gì đã dịch/sửa trước đây xem có chỗ nào bị cùng dạng lỗi (nhãn/text tiếng Việt dùng làm điều kiện so sánh chuỗi cho logic bấm nút, nhưng chuỗi so sánh không khớp với chuỗi thực sự được gán) thì sửa luôn.
+
+**Phương pháp**: viết script Python quét toàn bộ `main.min.js`, tách file thành từng khối theo ranh giới class (`__reflect(X.prototype,"X")`), rồi trong TỪNG class đối chiếu toàn bộ chuỗi được SO SÁNH (`"..."==this.X.label`/`.text`/`.currentState`) với toàn bộ chuỗi từng được GÁN (`this.X.prop="..."`) cho đúng property đó — liệt kê những chuỗi so sánh không khớp bất kỳ chuỗi gán nào trong cùng class (dấu hiệu y hệt lỗi mục 135).
+
+**Các ứng viên tìm được và kết quả xác minh thủ công từng cái**:
+- `GetSamsaraExpView`'s `btn1`/`btn2.label` so `"Mua"` — ban đầu tưởng lệch nhưng xác nhận CÓ gán đúng qua truy cập thuộc tính động `this["btn"+e].label="Mua"` (script quét literal không bắt được dạng này) → không phải lỗi.
+- `SpecialRingWin`'s `btnUse.label` so `"Kích hoạt"` — không có JS nào gán, nhưng khớp đúng giá trị mặc định khai báo sẵn trong exml nguồn (`RingTips.exml`, `label="Kích hoạt"`) và nhánh else gần như không bao giờ cần chạy tới (không gây hại) → không phải lỗi, không sửa.
+- `HeirloomWindow`'s `getItemTxt.text` so `"Hợp Thành Đạo Cụ"`/`"Nhận Tru Tiên Kiếm"`/`"Nhận Tru Tiên Giáp"` — xác nhận CÓ gán đúng qua biến trung gian (`var r="Hợp Thành Đạo Cụ";...generateTextFlow("|U&T:"+r)`) → không phải lỗi.
+- `.currentState` "down" ở `WorldBossesUiInfo`/`GuildWarUiInfoView` — thuộc trạng thái skin chuẩn của Button (up/down/disabled, do framework Egret tự quản lý khi chạm), không phải chuỗi dịch, không liên quan lớp lỗi này → bỏ qua.
+- **`ChatsWin`'s `chatInput.text` so `"   Nhấn để nhập nội dung chat"`** (điều kiện chặn gửi tin nhắn trống ở khung chat chính, nút `sendBtn`) — xác nhận đây là lỗi CÙNG DẠNG THẬT: chuỗi placeholder này KHÔNG hề được gán ở bất kỳ đâu trong toàn bộ file (kể cả exml nguồn `ChatSkin.exml` cũng khai báo `text=""`, và `default.thm.js`'s `chatInput_i` cũng `t.text=""`) — nghĩa là điều kiện này VĨNH VIỄN sai, không bao giờ chặn được khi người dùng bấm gửi với ô chat trống. Đối chiếu với ô chat khác cùng class (`sendBtn0`, dùng cho tư vấn CSKH) cho thấy cách làm ĐÚNG: `0==this.input.text.length||this.input.text==this.defaultText` (kiểm tra độ dài thực tế, không chỉ so sánh 1 chuỗi cứng).
+
+**Sửa**: đổi điều kiện trong `ChatsWin`'s `sendBtn` từ `"   Nhấn để nhập nội dung chat"==this.chatInput.text` thành `0==this.chatInput.text.length` — giờ bấm gửi khi ô chat thực sự trống sẽ đúng bị chặn kèm cảnh báo "Vui lòng nhập nội dung chat" thay vì lọt qua và gọi gửi tin nhắn rỗng lên server.
+
+Cache-bust: `main.min_3269d794.js`(mục 135)→`main.min_cdaaf0bd.js`. Xác minh: `node -c`, `git show :path` xác nhận đúng nội dung đã đổi, `manifest.json`+`index.php`'s `?v=` đã bump.
+
+**Trả lời người dùng**: đã rà toàn bộ `main.min.js` theo đúng dạng lỗi vừa phát hiện — tìm thấy thêm 1 chỗ tương tự ở khung chat chính (điều kiện chặn gửi tin nhắn trống không bao giờ hoạt động do so sánh với 1 chuỗi placeholder không tồn tại) và đã sửa. Các ứng viên khác đều kiểm tra kỹ và xác nhận không phải lỗi (chỉ là hạn chế của cách quét tự động, không phải lỗi thật).
+
+**Chưa kiểm chứng bằng ảnh thật**: cần xác nhận bấm nút gửi (biểu tượng gửi ở khung chat thế giới/bang hội) khi ô nhập trống giờ hiện đúng cảnh báo "Vui lòng nhập nội dung chat" thay vì im lặng gửi tin trống.
