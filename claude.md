@@ -3991,3 +3991,21 @@ Cache-bust: `default.thm_f4b9689b.js`(mục 121)→`default.thm_c27cd2da.js`, `m
 **Phát hiện thêm nhưng CHƯA sửa (ngoài phạm vi yêu cầu lần này)**: ảnh đầu (IMG_0844) cho thấy `ybTxt` (số lượng tiền tệ thứ 2, góc trên phải HUD) cũng bị wrap — "3071.4vạn" xuống dòng thành "3071.4vạ"/"n". Đây là nhãn KHÁC (`ybTxt`, không liên quan `lvTxt`/`mapName0`), người dùng chưa yêu cầu sửa nên chưa động tới — cần xác nhận nếu muốn sửa tiếp ở lượt sau.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận dòng "Chuyển X Cấp Y Thứ Z quan [EXP] .../giờ" hiển thị gọn 1 dòng, đọc rõ có khoảng cách hợp lý giữa các cụm, không còn dính/đè chữ.
+
+## 123. Ảnh xác nhận mục 122: hết dính chữ với "Thứ Z quan" (OK), nhưng "lvTxt" tự nó vẫn xuống dòng ("Chuyển 12 Cấp 11"/"3") vì cấp độ thực tế 3 chữ số không vừa hộp 110px — nới rộng theo đề xuất người dùng (dời cụm EXP/quan qua phải lấy thêm room) (2026-07-11)
+
+Người dùng gửi ảnh xác nhận mục 122 đã hết dính chữ giữa `lvTxt` và `mapName0` (khoảng cách rõ ràng, không còn chạm nhau), nhưng chỉ ra `lvTxt` ("Chuyển 12 Cấp 113") vẫn TỰ NÓ xuống dòng — dòng 1 "Chuyển 12 Cấp 11", dòng 2 "3". Nguyên nhân: cấp độ nhân vật thực tế là số CÓ 3 CHỮ SỐ (113, không phải giả định trước đó), khiến chuỗi "Chuyển 12 Cấp 113" (17 ký tự) vẫn vượt quá hộp `width="110"` dù đã giảm cỡ chữ 18→14 ở mục 122 — hộp quá hẹp là nguyên nhân trực tiếp gây word-wrap, không phải do cỡ chữ chưa đủ nhỏ.
+
+**Người dùng đề xuất**: dời cụm "EXP" (thật ra là cả cụm `mapName0`+`expGroup`, "Thứ Z quan...EXP.../giờ") qua bên phải để lấy thêm khoảng trống cho "phần level" (`lvTxt`). Áp dụng đúng theo đề xuất, kết hợp thêm biên an toàn:
+- Dời cụm `mapName0`+`expGroup` (Group cha) từ `x="315"`(mục 122) → `x="335"` (+20px nữa).
+- Nới rộng `lvTxt` từ `width="110"` → `"140"` (tận dụng khoảng trống vừa giải phóng).
+- Giảm thêm cỡ chữ cả 3 nhãn (`lvTxt`/`mapName0`/`expTxt`) từ `14`→`13` (thêm biên an toàn, tránh lặp lại vòng thử-sai thứ 3).
+- Tinh chỉnh `y` tương ứng (+0.5px mỗi nhãn) để bù baseline theo cỡ chữ mới.
+
+Tính lại khoảng cách: mép phải hộp `lvTxt` mới ở tọa độ tuyệt đối ≈338, điểm bắt đầu `mapName0` mới ≈357.5 (cụm dời sang x=335 + offset nội bộ 22.52) → còn dư ~14.5px, vẫn đảm bảo không đè lại như mục 121.
+
+Đồng bộ `default.thm.js` (`SkinPlayFun`): `_Group1_i` đổi `x=315→335`; `mapName0_i`/`expTxt_i`/`lvTxt_i` đổi `size=14→13`; `lvTxt_i` đổi thêm `width=110→140`.
+
+Cache-bust: `default.thm_c27cd2da.js`(mục 122)→`default.thm_413a432b.js` (chỉ layout, không đụng `main.min.js` lần này). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `PlayFunSkin.exml`, script đối chiếu factory-method riêng cho `SkinPlayFun` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged (`width="140"`, `size="13"` x3, `x="335"`), `manifest.json`/`index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Chuyển X Cấp YYY" (kể cả khi cấp độ đủ 3 chữ số) hiển thị trọn 1 dòng không xuống dòng, và vẫn giữ khoảng cách rõ ràng với cụm "Thứ Z quan...EXP.../giờ" bên cạnh.
