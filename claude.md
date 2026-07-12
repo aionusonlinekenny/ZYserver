@@ -4019,3 +4019,19 @@ Sửa: `"Thứ|...|quan"` → `"Thứ |...| Quan"` (thêm khoảng trắng trư�
 Cache-bust: `main.min_ba68d9e8.js`(mục 123)→`main.min_e51ef6f3.js` (chỉ đổi JS, không đụng `default.thm.js` lần này). Xác minh: `node -c`, `git show :path` xác nhận đúng chuỗi `"Thứ |...| Quan"` đã staged, `manifest.json` đã bump (`index.php`'s `?v=` giữ nguyên vì vẫn trỏ đúng hash `default.thm.js` không đổi).
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận hiển thị đúng "Thứ 228 Quan" (có khoảng trắng, "Quan" viết hoa), và không bị tràn/đè vào cụm EXP bên cạnh do chữ dài thêm 2 ký tự so với trước.
+
+## 125. Ảnh xác nhận mục 124: "Thứ 228 Quan" đã đẹp, nhưng "lvTxt" ("Chuyển 12 Cấp 113") vẫn xuống dòng — đo trực tiếp bằng lưới pixel trên ảnh thật để tính đúng, thay vì tiếp tục đoán (2026-07-11)
+
+Người dùng xác nhận "Thứ 228 Quan" (mục 124) đã hiển thị đẹp, không đè cụm EXP. Nhưng `lvTxt` ("Chuyển 12 Cấp 113") vẫn xuống dòng: dòng 1 "Chuyển 12 Cấp 11", dòng 2 chỉ còn "3" — dù mục 123 đã nới `width="110"→"140"` và giảm cỡ chữ `14→13`.
+
+**Đo lại chính xác bằng lưới tọa độ pixel chồng lên ảnh thật** (thay vì tiếp tục ước lượng hằng số px/ký tự như 2 lần trước, vốn đã sai liên tiếp): vẽ gridline mỗi 50px lên ảnh chụp màn hình thật, xác nhận: hộp `lvTxt` (rộng 140, canh giữa `textAlign="center"`) gần như ĐỦ CHỖ — chữ "Chuyển 12 Cấp 11" lấp gần đầy hộp, chỉ THIẾU ĐÚNG PHẦN ĐUÔI (~1 ký tự "3") mới tràn. Tính ra cần ~144.7 đơn vị canvas cho chuỗi đầy đủ trong khi hộp chỉ có 140 — thiếu rất ít (~5 đơn vị, tương đương ~10px màn hình), không cần nới hộp thêm (vì đã sát mép "Thứ 228 Quan" bên cạnh, nới thêm sẽ gây đè lại đúng như mục 121) — CHỈ CẦN giảm cỡ chữ thêm 1 chút là đủ.
+
+Giảm cỡ chữ `lvTxt` từ `size="13"`→`"11"` (2pt, đủ dư so với mức thiếu hụt ~5 đơn vị đã tính, tránh lặp lại kiểu chỉnh nhích từng chút không triệt để), giữ nguyên `width="140"` (không cần nới thêm, đã đủ với cỡ chữ mới, không rủi ro đè `mapName0` bên cạnh vì hộp không đổi kích thước/vị trí). Tinh chỉnh `y` từ `42`→`43` bù baseline.
+
+Đồng bộ `default.thm.js` (`SkinPlayFun`): `lvTxt_i` đổi `size=13→11`, `y=42→43`.
+
+Cache-bust: `default.thm_413a432b.js`(mục 123)→`default.thm_ab2fa794.js` (chỉ layout, không đụng `main.min.js` lần này). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `PlayFunSkin.exml`, script đối chiếu factory-method riêng cho `SkinPlayFun` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Bài học đúc kết cho cụm "lvTxt xuống dòng" (sau 3 lần chỉnh liên tiếp — mục 122, 123, 125)**: ước lượng px/ký tự từ trí nhớ hoặc hiệu chỉnh ở bối cảnh KHÁC (dù cùng phiên) liên tục sai lệch nhẹ (không đủ margin) qua nhiều vòng. Khi ảnh xác nhận cho thấy lỗi chỉ "GẦN ĐÚNG" (như trường hợp này — chỉ 1 ký tự tràn, không phải tràn nghiêm trọng), nên NGAY LẬP TỨC đo trực tiếp bằng lưới pixel chồng lên ảnh thật (như đã làm ở đây) thay vì tiếp tục đoán tăng dần — tiết kiệm được các vòng lặp không cần thiết.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Chuyển X Cấp YYY" (kể cả cấp độ 3 chữ số) hiển thị trọn vẹn 1 dòng, không còn ký tự nào bị tràn xuống dòng 2.
