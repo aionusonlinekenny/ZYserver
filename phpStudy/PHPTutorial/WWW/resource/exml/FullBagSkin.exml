@@ -13,8 +13,7 @@
 
 		<e:Button skinName="SkinBtn1" label="Đi luyện hóa" id="sureBtn" horizontalCenter="0" verticalCenter="72"/>
 		<e:Label text="Thông báo" size="22" horizontalCenter="0" top="13" fontFamily="Microsoft YaHei" textColor="0x084151"/>
-		<e:Label text="Túi đồ không đủ chỗ         , vui lòng dọn túi đồ trước để tránh không nhận được phần thưởng." size="20" width="300" lineSpacing="10" textAlign="center" horizontalCenter="0" textColor="0x213847" fontFamily="Microsoft YaHei" top="120"/>
-		<e:Label id="numText" text="20" size="20" width="40" lineSpacing="10" textAlign="center" horizontalCenter="2" fontFamily="Microsoft YaHei" textColor="0x0038ab" top="120"/>
+		<e:Label id="numText" text="" size="20" width="300" lineSpacing="10" textAlign="center" horizontalCenter="0" textColor="0x213847" fontFamily="Microsoft YaHei" top="120"/>
 
 		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="tongyong_btnclose" right="-3" y="1"/>
 	</e:Group>
