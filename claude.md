@@ -4235,3 +4235,46 @@ Cache-bust: `main.min_3269d794.js`(mục 135)→`main.min_cdaaf0bd.js`. Xác min
 **Trả lời người dùng**: đã rà toàn bộ `main.min.js` theo đúng dạng lỗi vừa phát hiện — tìm thấy thêm 1 chỗ tương tự ở khung chat chính (điều kiện chặn gửi tin nhắn trống không bao giờ hoạt động do so sánh với 1 chuỗi placeholder không tồn tại) và đã sửa. Các ứng viên khác đều kiểm tra kỹ và xác nhận không phải lỗi (chỉ là hạn chế của cách quét tự động, không phải lỗi thật).
 
 **Chưa kiểm chứng bằng ảnh thật**: cần xác nhận bấm nút gửi (biểu tượng gửi ở khung chat thế giới/bang hội) khi ô nhập trống giờ hiện đúng cảnh báo "Vui lòng nhập nội dung chat" thay vì im lặng gửi tin trống.
+
+## 137. Tạo nhân vật mới: chữ cái đầu tên tự động bị viết thường ("EmĐẹp"→"emĐẹp"), tên có khoảng trắng bị lỗi, và tăng giới hạn ký tự tên — lỗi nằm ở SERVER (script Lua `gameworld`), không phải client (2026-07-12)
+
+Người dùng báo 3 vấn đề khi tạo nhân vật mới: (1) đặt tên "EmĐẹp" (chữ E hoa) nhưng vào game hiển thị thành "emĐẹp" (chữ e tự bị viết thường, "Đẹp" vẫn giữ hoa); (2) tên có khoảng trắng bị lỗi khi đăng ký; (3) muốn tăng giới hạn ký tự tên lên trên 20.
+
+**Điều tra client trước**: rà toàn bộ `main.min.js`/exml liên quan tạo nhân vật (`CreateRoleWin`, `RoleMgr.sendCreateRole`) — xác nhận client gửi tên đi NGUYÊN VĂN, không hề có `toLowerCase()` hay xử lý biến đổi chữ hoa/thường nào (`a.writeString(t)` — ghi thẳng chuỗi gốc vào gói tin gửi server). Cũng không tìm thấy PHP/SQL nào trong repo web (`reg/`, `gm/`) đụng tới tên nhân vật — hệ thống đăng ký tài khoản (`reg/api/api.php`) là bảng `user` hoàn toàn khác, không liên quan tên nhân vật trong game. → xác nhận lỗi không nằm ở phần client/web trong repo.
+
+**Tìm ra nguồn thật**: repo có kèm thư mục `server/bin/` chứa 2 instance game server đã cài đặt sẵn (`s1` = server chính đang chạy thật theo `index.php`'s serverList, `s99` = bản test/staging, nội dung file cấu hình 2 bên giống hệt nhau) — bên trong có các script **Lua** (đuôi `.txt`/`.lua`, không phải mã nhị phân biên dịch) điều khiển logic tạo/đổi tên nhân vật, đọc được và SỬA được trực tiếp:
+
+- **`gameworld/data/actormgr/actormgr.txt`, hàm `createActor`** (xử lý gói tin tạo nhân vật từ client):
+  ```lua
+  local name = LDataPack.readString(dp)
+  name = LActorMgr.lowerCaseNameStr(name)   -- GHI ĐÈ tên gốc bằng bản đã hạ chữ thường
+  local nameLen = System.getStrLenUtf8(name)
+  if nameLen <= 0 or nameLen > 6 or not LActorMgr.checkNameStr(name) then ...
+  elseif LActorMgr.nameHasUser(name) then ...
+  ...
+  ret, aid = LActorMgr.createActor(accountid, accountname, name, sex, job, aid, pfid or "", gateuser)  -- LƯU bằng tên đã bị hạ chữ thường
+  ```
+  `LActorMgr.lowerCaseNameStr` là hàm gốc (native, biên dịch sẵn trong file .exe server, không có mã nguồn) — quan sát hành vi thực tế cho thấy nó chỉ hạ chữ thường đúng với ký tự ASCII cơ bản (A-Z, 1 byte, vốn thiết kế cho tên tiếng Trung/bính âm), còn ký tự Việt có dấu dạng tổ hợp nhiều byte UTF-8 như "Đ" thì hàm không nhận diện được nên giữ nguyên — khớp chính xác hiện tượng "EmĐẹp"→"emĐẹp" (chữ "E" ASCII bị hạ, "Đẹp" giữ nguyên vì đã là ký tự đa byte). Bản thân việc gọi hàm này KHÔNG sai (dùng để kiểm tra trùng tên không phân biệt hoa/thường qua `nameHasUser`), nhưng lỗi là kết quả hạ chữ thường bị GÁN ĐÈ luôn lên biến `name` gốc rồi đem LƯU VĨNH VIỄN, thay vì chỉ dùng cho việc so trùng.
+
+- **`gameworld/data/functions/systems/changename/changename.lua`** (tính năng "Đổi Tên", dùng thẻ đổi tên) — bị COPY Y HỆT lỗi trên (`name = LActorMgr.lowerCaseNameStr(name)` rồi dùng `name` đã hạ chữ thường cho `LActor.changeName`) — cùng 1 lỗi sẽ tái diễn khi người chơi dùng chức năng đổi tên, dù người dùng chưa hỏi tới nhưng sửa luôn cho nhất quán.
+
+- **Giới hạn độ dài**: cả `createActor`, `randNameReq` (tạo tên ngẫu nhiên) trong `actormgr.txt`, và `changename.lua` đều hard-code `nameLen > 6` — giới hạn 6 "ký tự" (đếm qua `System.getStrLenUtf8`, tính theo code point — hợp lý cho tên Hán 1 âm/1 chữ nhưng quá chật cho tên tiếng Việt cần nhiều ký tự hơn). Đồng thời client (`main.min.js`'s `CreateRoleWin`) lại đang cho gõ tối đa `nameInput.maxChars=12` — tức là TRƯỚC GIỜ người chơi có thể gõ tới 12 ký tự nhưng server luôn từ chối (báo lỗi tên không hợp lệ) nếu vượt quá 6 — không khớp nhau.
+
+- **Lỗi khoảng trắng**: tìm thấy `gameworld/data/allowword.txt` — file cấu hình (không phải mã nhị phân) liệt kê các dải mã Unicode ký tự HỢP LỆ cho tên, được hàm gốc `LActorMgr.checkNameStr` đọc để kiểm tra. Dòng đầu tiên `0x0021,0X007E` (từ `!` đến `~`) — bắt đầu từ 0x21, CỐ TÌNH LOẠI TRỪ ký tự khoảng trắng (0x20, ngay trước `!`) khỏi danh sách hợp lệ → bất kỳ tên nào chứa khoảng trắng sẽ bị `checkNameStr` từ chối ngay, trả lỗi "tên không hợp lệ" (người dùng cảm nhận thành "lỗi đăng ký").
+
+**Sửa (áp dụng cho cả 2 instance `s1` và `s99`, vì file cấu hình mỗi bên độc lập)**:
+1. `actormgr.txt`'s `createActor`: tách biến `checkName = LActorMgr.lowerCaseNameStr(name)` riêng cho việc so trùng (`nameHasUser(checkName)`), giữ nguyên `name` gốc (đúng hoa/thường người chơi gõ) để lưu qua `LActorMgr.createActor(...,name,...)`. Giới hạn `nameLen > 6` → `nameLen > 24`.
+2. `actormgr.txt`'s `randNameReq`: giới hạn `len > 6` → `len > 24` (đồng bộ, tên ngẫu nhiên vốn ngắn nên không ảnh hưởng).
+3. `changename.lua`: cùng kỹ thuật tách biến `checkName` (so sánh "trùng tên hiện tại" cũng đổi sang so 2 bản đã hạ chữ thường cho nhất quán ý nghĩa gốc), giữ `name` gốc để gọi `LActor.changeName(sysarg, name)`. Giới hạn `nameLen > 6` → `nameLen > 24`.
+4. `allowword.txt`: mở rộng dải `0x0021,0X007E` → `0x0020,0X007E` để cho phép khoảng trắng trong tên.
+5. Client `main.min.js`'s `CreateRoleWin`: `nameInput.maxChars=12` → `24` để khớp với giới hạn server mới (24, cao hơn yêu cầu "trên 20" của người dùng).
+
+Xác minh: `luac -p` qua cả 4 file Lua (2 instance x 2 file) — không có lỗi cú pháp; `node -c` cho `main.min.js`; `git show :path` xác nhận đúng nội dung staged; `manifest.json`/`index.php`'s `?v=` đã bump.
+
+**Lưu ý quan trọng cho người dùng**:
+- Đây là các file KỊCH BẢN (script) được server game đọc trực tiếp lúc chạy (không phải mã nhị phân biên dịch) — sau khi deploy code này lên server thật, cần **khởi động lại (restart) tiến trình `gameworld`** (không chỉ web) thì các thay đổi mới có hiệu lực — restart web/PHP không đủ.
+- Các nhân vật đã tạo TRƯỚC bản sửa này (tên đã bị hạ chữ thường sẵn trong database) sẽ KHÔNG tự động được sửa lại — đây là dữ liệu đã lưu, muốn sửa tên cũ cần đổi tên thủ công qua GM hoặc chức năng đổi tên (nay đã sửa) cho từng nhân vật, nằm ngoài phạm vi sửa code.
+- Giới hạn 24 ký tự là ước lượng hợp lý (gấp đôi mức "trên 20" người dùng yêu cầu); có thể chỉnh tiếp nếu muốn cao/thấp hơn — chỉ cần đổi đồng bộ cả 3 nơi (2 chỗ trong `actormgr.txt`, 1 chỗ `changename.lua`, và `nameInput.maxChars` phía client).
+- Không tìm thấy cấu hình giới hạn ĐỘ DÀI CỘT trong database (không có file SQL schema cho bảng `actors` trong repo) — nếu cột tên trong DB có giới hạn kiểu `VARCHAR` ngắn hơn 24 ký tự thì vẫn có thể bị cắt/lỗi khi lưu, cần người quản trị DB xác nhận độ dài cột `actorname`/`actors.actorname` thực tế.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần deploy + restart `gameworld` trên server thật rồi thử tạo nhân vật tên có chữ hoa đầu + khoảng trắng + trên 20 ký tự để xác nhận cả 3 vấn đề đã hết.

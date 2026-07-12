@@ -200,11 +200,11 @@ function createActor(dp, serverid, accountid, accountname, actorid, netid, gateu
 	local sex, job, pf, pfid, appid
 
 	local name = LDataPack.readString(dp)
-	name = LActorMgr.lowerCaseNameStr(name)
+	local checkName = LActorMgr.lowerCaseNameStr(name)
 	local nameLen = System.getStrLenUtf8(name)
-	if nameLen <= 0 or nameLen > 6 or not LActorMgr.checkNameStr(name) then
+	if nameLen <= 0 or nameLen > 24 or not LActorMgr.checkNameStr(name) then
 		ret = ERR_NAME
-	elseif LActorMgr.nameHasUser(name) then
+	elseif LActorMgr.nameHasUser(checkName) then
 		ret = ERR_SAMENAME
 	else
 		sex = LDataPack.readChar(dp)
@@ -399,7 +399,7 @@ function randNameReq(cmd, dp, serverid, accountid, accountname, actorid, netid, 
 			local used = LActorMgr.nameHasUser(actorname)
 			if not used then
 				local len = System.getStrLenUtf8(actorname)
-				if len <= 0 or len > 6 or not LActorMgr.checkNameStr(actorname) then
+				if len <= 0 or len > 24 or not LActorMgr.checkNameStr(actorname) then
 					--continue
 				else
 					break

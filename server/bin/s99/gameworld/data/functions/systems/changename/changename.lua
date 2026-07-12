@@ -22,9 +22,9 @@ function ChangeUserName(sysarg, packet)
 
     local name = LDataPack.readString(packet)
     if name == nil then return end
-    name = LActorMgr.lowerCaseNameStr(name)
+    local checkName = LActorMgr.lowerCaseNameStr(name)
     local rawName = LActor.getName(sysarg)
-    if rawName == name then
+    if LActorMgr.lowerCaseNameStr(rawName) == checkName then
         local npack = LDataPack.allocPacket(sysarg, Protocol.CMD_Base, Protocol.sBaseCmd_ChangeName)
         if npack == nil then return end
         LDataPack.writeChar(npack, (-6))
@@ -32,7 +32,7 @@ function ChangeUserName(sysarg, packet)
         return
     end
     local nameLen = System.getStrLenUtf8(name)
-    if nameLen <= 1 or nameLen > 6 or not LActorMgr.checkNameStr(name) then
+    if nameLen <= 1 or nameLen > 24 or not LActorMgr.checkNameStr(name) then
         local npack = LDataPack.allocPacket(sysarg, Protocol.CMD_Base, Protocol.sBaseCmd_ChangeName)
         if npack == nil then return end
         LDataPack.writeChar(npack, (-12))
