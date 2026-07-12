@@ -4306,3 +4306,24 @@ Vì bộ đếm sinh `actorid` cho nhân vật MỚI (thuật toán nằm trong 
 **Không sửa (theo lựa chọn của người dùng)**: đã hỏi ý kiến người dùng giữa 2 hướng — (a) chấp nhận không sửa (rủi ro thấp nhất, không đụng dữ liệu hệ thống, chỉ ảnh hưởng 3 lượt tạo đầu sau MỖI LẦN restart, người chơi chỉ cần bấm lại nút Tạo, không mất dữ liệu/nhân vật đã có) — (b) điều tra sâu thêm code Lua hệ thống bang hội để xác minh chắc chắn 4 actorid này có phải dữ liệu hệ thống thật hay có thể xóa/dời an toàn. **Người dùng chọn hướng (a) — chấp nhận, không sửa.**
 
 **Kết luận cho người dùng**: lỗi "Lỗi SQL" khi tạo nhân vật là lỗi CÓ THẬT nhưng KHÔNG liên quan tới các sửa mục 137 — là hành vi có sẵn của thuật toán sinh actorid trong server nhị phân, tái diễn ở 3 lượt tạo nhân vật đầu tiên sau MỖI lần restart `gameworld` (không phải lỗi thường trực, không mất dữ liệu, chỉ cần bấm lại nút Tạo). Không có thay đổi code nào trong mục này (chỉ điều tra + ghi nhận).
+
+## 139. Phát hiện thêm: tên có khoảng trắng KHÔNG còn báo lỗi (đúng như mục 137 sửa) nhưng bị ÂM THẦM CẮT MẤT phần sau khoảng trắng khi lưu — revert lại phần cho phép khoảng trắng (2026-07-12)
+
+Tiếp nối mục 138: người dùng tạo nhân vật tên "Hạn Vũ" — lần này KHÔNG báo lỗi (xác nhận `allowword.txt` mục 137 hoạt động, không còn bị `checkNameStr` từ chối), nhưng vào game thì tên chỉ còn "Hạn" — phần " Vũ" (khoảng trắng + Vũ) biến mất. Người dùng tự kiểm tra DB xác nhận: bảng `actors` cũng chỉ lưu "Hạn", không phải "Hạn Vũ" — xác nhận đây là lỗi CẤP DỮ LIỆU (không phải lỗi hiển thị client).
+
+**Điều tra qua log `gameworld` (do người dùng dán trực tiếp)**: dòng
+```
+[12:53:43]actormgr.createActor pf:, pfid:, appid:
+[12:53:43][TIP]EnterScene name:H?n,id:20481,...
+```
+("H?n" = "Hạn" với "ạ" hiển thị lỗi phông chữ console, không phải bằng chứng cắt chữ) — điểm mấu chốt: dòng `EnterScene name:...` xuất hiện CÙNG GIÂY với `actormgr.createActor`, và tên đã CHỈ CÒN 3 KÝ TỰ "Hạn" (không có khoảng trắng, không có "Vũ" theo sau) — nghĩa là bị cắt rất sớm, trước hoặc ngay trong bước xử lý tạo nhân vật, không phải do MySQL/charset lúc ghi.
+
+**Kết luận**: đây là lỗi KHÁC (không phải lỗi mục 137 tái phát) — nằm trong đoạn code (biên dịch sẵn trong `gameworld.exe`, không có mã nguồn để sửa) xử lý/ghi tên nhân vật thực sự, dùng kiểu đọc chuỗi kiểu C cổ điển bị NGẮT TẠI KÝ TỰ KHOẢNG TRẮNG ĐẦU TIÊN (giống hành vi `sscanf("%s",...)`) — bất kỳ tên nào có khoảng trắng sẽ luôn bị mất phần sau trong ÂM THẦM, không có cảnh báo gì. Không thể sửa tận gốc từ repo này.
+
+**Quyết định (theo yêu cầu người dùng)**: vì không sửa được lỗi cắt chữ tận gốc, và "báo lỗi rõ ràng" vẫn tốt hơn "âm thầm mất dữ liệu tên", người dùng chọn REVERT lại phần cho phép khoảng trắng đã sửa ở mục 137.
+
+Sửa: `allowword.txt` (cả `s1` và `s99`) — trả `0x0020,0X007E` về lại `0x0021,0X007E` (loại khoảng trắng khỏi danh sách ký tự hợp lệ, y hệt trạng thái gốc trước mục 137) — khôi phục hành vi TỪ CHỐI tên chứa khoảng trắng với thông báo lỗi rõ ràng, thay vì cho qua rồi âm thầm cắt mất.
+
+**Lưu ý**: 2 phần sửa còn lại của mục 137 (chữ hoa/thường đầu tên không còn bị hạ nhầm, giới hạn độ dài nâng lên 24) VẪN GIỮ NGUYÊN, không bị ảnh hưởng — chỉ revert riêng phần khoảng trắng.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần deploy + restart `gameworld` rồi thử tạo tên có khoảng trắng, xác nhận báo lỗi rõ ràng trở lại (không tạo được nhân vật) thay vì tạo được nhưng mất chữ.
