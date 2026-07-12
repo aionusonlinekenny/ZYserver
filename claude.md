@@ -4119,3 +4119,19 @@ Cache-bust: `default.thm_83d6b8e9.js`(mục 129)→`default.thm_8d6684ef.js` (ch
 **Lưu ý về khoảng cách dọc**: cả 2 nhãn dùng neo `bottom` (không phải `top`), nên khi wrap thành 2 dòng, khối chữ sẽ CAO THÊM lên phía TRÊN (giữ nguyên mép dưới cố định) chứ không lấn xuống phần tử bên dưới — về lý thuyết an toàn với các phần tử liền kề, nhưng chưa kiểm chứng bằng ảnh thật liệu có chạm phần tử phía TRÊN (đường kẻ phân cách `tongyongline`) hay không.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cả 2 dòng ghi chú hiển thị đầy đủ trong khung (word-wrap 2 dòng nếu cần), không tràn lề phải, và không đè lên đường kẻ phân cách phía trên.
+
+## 131. Điều tra "không ghép được đối thủ": lỗi "没有匹配到对手" là chuỗi SERVER GỬI, không liên quan các sửa gần đây — nhưng phát hiện thêm lỗi dính chữ "Bạch Ngân5đoạn" ở màn VS (`ChallengeSkin.exml`) (2026-07-11)
+
+Người dùng báo sau khi sửa xong (mục 118-130) thì "Ghép đối thủ" không hoạt động, kèm ảnh cho thấy tooltip tiếng Trung "没有匹配到对手" (nghĩa: "không tìm được đối thủ phù hợp") xuất hiện, cùng với chữ "Bạch Ngân5đoạn"/"Bạch Ngân2đoạn" dính liền dưới 2 avatar trong màn hình "VS".
+
+**Điều tra "没有匹配到对手"**: tìm khắp TOÀN BỘ file JS trong `js/` (kể cả `main.min.js`, `default.thm.js`, và mọi file khác) — chuỗi này KHÔNG tồn tại ở bất kỳ đâu trong client. Xác nhận đây là chuỗi do SERVER gửi thẳng (y hệt cơ chế đã xác nhận ở mục 126 với broadcast "Chúc mừng người chơi..."). Đối chiếu logic nút "Ghép đối thủ" (`flowPlayer`, trong `Skinladderinfo`): xác nhận không hề bị đụng tới ở bất kỳ sửa nào trong mục 118-130 (chỉ sửa `winNum`/`winNum0`/`showNomber`/`Scroller`/`_Group3`(thời gian)/`buyTime` text — không liên quan logic gửi yêu cầu ghép trận). Cũng xác nhận hàm `getZhongwenNumber` đã xóa ở mục 124 không còn bị gọi ở đâu (0 tham chiếu, không gây lỗi runtime). Kết luận: đây là phản hồi THẬT từ server (có thể do server test/riêng tư hiện không đủ người chơi thật trong khoảng bậc để ghép, hoặc 1 lỗi/thông báo phía server chưa dịch) — nằm NGOÀI khả năng sửa của repo client này.
+
+**Phát hiện thêm (không phải nguyên nhân gây lỗi ghép trận, nhưng đúng lớp lỗi dính chữ đã sửa nhiều lần)**: "Bạch Ngân5đoạn" ở màn VS (`ChallengeSkin.exml`/`SkinChallenge`, Label `mylv`/`otherlv`) — chính là 2 chỗ tôi đã PHÁT HIỆN nhưng KHÔNG sửa ở mục 124 (khi đó chỉ sửa `getDuanWeiDesc()` cho `duanwei` — dòng "Chuyển X Cấp Y" ở HUD chính — còn `mylv`/`otherlv` dùng công thức tương tự `""+showLevel+(showDan||"")+"đoạn"` ở 1 hàm KHÁC (trong `LadderChallengeWindow`, điều khiển màn VS) chưa được sửa cùng lúc).
+
+Sửa cả 3 chỗ (`mylv`, `otherlv` x2 nhánh): `""+showLevel+(showDan||"")+"đoạn"` → `""+showLevel+" Đoạn "+(showDan||"")` — thêm khoảng trắng, viết hoa "Đoạn", đổi thứ tự đúng tiếng Việt (giống mục 124 nhưng dùng dạng ngắn gọn hơn "Đoạn N" không có dấu gạch ngang, vì `mylv`/`otherlv` không có `width` giới hạn và nằm trong khung hẹp hơn dưới avatar — tính toán theo hằng số đã hiệu chỉnh (~7px/ký tự tại size20) xác nhận cả 2 vị trí đều đủ chỗ, không cần thêm `width`/`right` phòng ngừa).
+
+Cache-bust: `main.min_e51ef6f3.js`(mục 126)→`main.min_5466e1df.js` (chỉ JS, không đụng `default.thm.js`/exml lần này). Xác minh: `node -c`, `git show :path` xác nhận cả 3 chỗ đã đổi đúng thành `" Đoạn "`, `manifest.json` đã bump (`index.php`'s `?v=` giữ nguyên vì vẫn trỏ đúng `default.thm.js` không đổi).
+
+**Trả lời người dùng**: lỗi "không ghép được đối thủ" không phải do các sửa gần đây gây ra — đây là phản hồi từ server, nằm ngoài phạm vi sửa của code client. Đã tiện sửa luôn lỗi dính chữ "Bạch Ngân5đoạn" phát hiện trong cùng ảnh.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Bạch Ngân Đoạn 5"/"Bạch Ngân Đoạn 2" hiển thị đúng, không tràn lề. Vấn đề "không ghép được đối thủ" cần xác nhận từ phía người dùng/server, không thể kiểm chứng qua code.
