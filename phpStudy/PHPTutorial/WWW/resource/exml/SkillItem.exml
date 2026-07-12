@@ -5,10 +5,17 @@
 	<e:Image id="iconBG" x="22" width="76" height="76" scale9Grid="8,8,48,48" y="15" source="jinengkuang"/>
 	<e:Image id="icon" x="25" verticalCenter="0" width="69" height="70"/>
 	<e:Image id="iconsuo" horizontalCenter="-231" verticalCenter="0" source="suowen3"/>
-	<e:Label id="skillName" y="12" text="" size="22" x="115" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+	<e:Group x="115" y="12">
+		<e:Label id="skillName" text="" size="22" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+		<e:Group>
+			<e:Label id="lv" text="" size="22" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
+			<e:Label id="lock" text="" width="130" size="22" textAlign="left" verticalAlign="middle" height="26" strokeColor="0x001828" fontFamily="Microsoft YaHei" textColor="0xe40000" anchorOffsetX="0" anchorOffsetY="0"/>
+		</e:Group>
+		<e:layout>
+			<e:HorizontalLayout gap="10" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
 	<e:Image id="select" width="88" height="88" x="16" source="xuanzhongkuang2" scale9Grid="4,4,8,8" y="9" visible="false"/>
-	<e:Label id="lv" text="" y="12" size="22" x="259" fontFamily="Microsoft YaHei" textColor="0x0038ab"/>
-	<e:Label id="lock" text="" width="130" size="22" textAlign="left" verticalAlign="middle" height="26" strokeColor="0x001828" x="238" fontFamily="Microsoft YaHei" textColor="0xe40000" anchorOffsetX="0" y="10" anchorOffsetY="0"/>
 	<e:Label id="skillDesc" y="47" text="" size="20" height="46" x="108" width="334" anchorOffsetY="0" anchorOffsetX="0" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="left" textColor="0x001828"/>
 	<e:Label id="costAll" y="15" size="20" text="" x="483" textAlign="left" width="97" textColor="0x00842c" fontFamily="Microsoft YaHei" anchorOffsetX="0"/>
 	<e:Image id="coinIcon1" x="975" y="315" anchorOffsetX="525" anchorOffsetY="308" width="32" height="35" source="coin1_png"/>

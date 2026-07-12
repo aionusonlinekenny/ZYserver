@@ -4135,3 +4135,19 @@ Cache-bust: `main.min_e51ef6f3.js`(mục 126)→`main.min_5466e1df.js` (chỉ JS
 **Trả lời người dùng**: lỗi "không ghép được đối thủ" không phải do các sửa gần đây gây ra — đây là phản hồi từ server, nằm ngoài phạm vi sửa của code client. Đã tiện sửa luôn lỗi dính chữ "Bạch Ngân5đoạn" phát hiện trong cùng ảnh.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Bạch Ngân Đoạn 5"/"Bạch Ngân Đoạn 2" hiển thị đúng, không tràn lề. Vấn đề "không ghép được đối thủ" cần xác nhận từ phía người dùng/server, không thể kiểm chứng qua code.
+
+## 132. Màn "Kỹ Năng" (法术, tab "Pháp Thuật") — tên kỹ năng dài đè lên "Cấp XX mở" (`SkillItem.exml`) (2026-07-11)
+
+Người dùng gửi ảnh cho thấy các dòng kỹ năng CHƯA MỞ KHÓA ("Kiếm Đãng...", "Luân Hồi Kiếm...", "Vạn Linh Kiếm...") có tên kỹ năng (xanh dương) đè lên nhãn "Cấp XX mở" (đỏ) bên cạnh.
+
+**Điều tra**: skill list dùng chung 1 itemRenderer `SkillItem.exml` (5 dòng trong `SkillSkin.exml`). `skillName` (tên kỹ năng) không có `width`, đặt `x="115"`; `lock` (nhãn "Cấp XX mở", chỉ hiện khi khóa) đặt `x="238"` cố định — tên kỹ năng dài ("Kiếm Đãng Bát Phương" v.v., đều dài hơn tên 2 kỹ năng đã mở khóa "Đằng Long Kiếm Thuật"/"Kiếm Ảnh Tung Hoành") tràn qua khỏi x=238, đè lên "Cấp XX mở".
+
+**Phát hiện thêm khi đối chiếu `default.thm.js`**: nhãn `lv` (hiện "Lv.X" khi đã mở khóa) trong file NGUỒN (exml, trước khi sửa) khai báo `x="259"`, nhưng bản BIÊN DỊCH THẬT SỰ đang chạy lại là `x="360"` — lệch nguồn/biên dịch giống các lần phát hiện trước trong phiên (không rõ do ai chỉnh sửa từ trước, không phải lỗi do phiên này gây ra). Vì cách sửa dùng layout tự động (không phụ thuộc giá trị `x` cụ thể của `lv`/`lock`), điểm lệch này tự nhiên được khép lại luôn mà không cần xử lý riêng.
+
+**Sửa bằng kỹ thuật Group+HorizontalLayout kết hợp Group-lồng-overlap (đã dùng ở GwTask mục 115 cho trường hợp tương tự — nhiều nhãn loại trừ lẫn nhau đứng sau 1 nhãn có độ dài thay đổi)**: bọc `skillName` + 1 Group con (chứa `lv`+`lock`, 2 nhãn loại trừ lẫn nhau qua `visible`, coi như 1 "khe" duy nhất) trong `Group x="115" y="12"` với `HorizontalLayout gap="10"` — nhãn cấp độ/khóa giờ LUÔN đứng ngay sau tên kỹ năng thật, bất kể tên dài ngắn, không cần đoán ngân sách pixel (đặc biệt quan trọng ở đây vì phát hiện lệch nguồn/biên dịch khiến việc đoán theo exml gốc không đáng tin).
+
+Đồng bộ `default.thm.js` (`SkillItem`): tạo `_Group1_i`(bọc `skillName`+`_Group2_i`, layout `_HorizontalLayout1_i` gap=10) và `_Group2_i`(bọc `lv`+`lock`); `skillName_i`/`lv_i`/`lock_i` bỏ hết `x`/`y` cố định (bao gồm cả giá trị `x=360` lệch nguồn của `lv_i`); cập nhật `elementsContent` gốc trỏ `_Group1_i()` thay vì 3 phần tử rời.
+
+Cache-bust: `default.thm_8d6684ef.js`(mục 131 — main.min.js only, default.thm.js giữ nguyên từ mục 130)→`default.thm_f9b5b7a4.js`. Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `SkillItem.exml`, script đối chiếu factory-method riêng cho `SkillItem` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cả 5 dòng kỹ năng (2 đã mở + 3 đang khóa) hiển thị đúng, "Lv.X"/"Cấp XX mở" đứng ngay sau tên kỹ năng không đè, không tràn sang cột mô tả/nút nâng cấp bên phải.
