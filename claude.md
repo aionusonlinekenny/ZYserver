@@ -4101,3 +4101,21 @@ Cache-bust: `default.thm_9e293426.js`(mục 128)→`default.thm_83d6b8e9.js` (ch
 **Ghi nhận (chưa kiểm tra sâu)**: còn 5 file khác cũng chứa cụm "Vị trí/Cấp độ/Nghề nghiệp" (`ReincarnateEquipTipsSkin.exml`, `ExtremeEquipTipsSkin.exml`, `ShenYuTipsSkin.exml`, `hunguTipsSkin.exml`) — kiểm tra nhanh 1 trong số đó (`ReincarnateEquipTipsSkin.exml`) không thấy mẫu lỗi `x=111`/`y=` cố định (có thể đã dùng đúng pattern như `EquipTipsSkin`), nhưng CHƯA kiểm tra đầy đủ toàn bộ — nếu người dùng gặp lỗi tương tự ở các màn hình khác, báo lại để rà tiếp.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cả 2 tooltip "Vũ Hóa"/"Bồi dưỡng" hiển thị đúng, giá trị "Cấp 0"/"Lạc Anh" đứng ngay sau nhãn tương ứng, không còn đè chữ.
+
+## 130. Tooltip "Tiên Vũ" tiếp: 2 dòng ghi chú vàng ("Tiêu hao...có thể tăng...") tràn khỏi khung tooltip (2026-07-11)
+
+Người dùng gửi tiếp 2 ảnh (cùng 2 tooltip "Vũ Hóa"/"Bồi dưỡng" ở mục 129, đã xác nhận hết đè chữ nhãn/giá trị), chỉ ra dòng ghi chú vàng bên dưới bảng thuộc tính ("Tiêu hao Vũ Hóa Cổ Tịch có thể tăng theo % thuộc tính cơ bản Tiên Vũ" / "Tiêu hao Tiên Vũ Tinh Phách có thể tăng thuộc tính cơ bản Tiên Vũ") tràn hẳn ra ngoài khung tooltip (khung chỉ rộng ~300px).
+
+**Nguyên nhân**: cả 2 Label đều KHÔNG có `width` — chuỗi dài (66-69 ký tự) tự do tràn ngang không word-wrap, giống lớp lỗi đã gặp rất nhiều lần trong phiên.
+
+Sửa theo đúng phong cách định vị SẴN CÓ của từng file (không đổi cách neo gốc):
+- `wingZizhiTips.exml` (dùng `left="39"`, không dùng `horizontalCenter`): thêm `right="16"` — để Egret tự tính bề rộng khả dụng (300-39-16=245) và word-wrap trong đó, thay vì cố định `width` cứng. Áp dụng luôn cho `maxLvDesc` (nhãn tương tự, hiện đang `visible="false"` mặc định nhưng cùng lớp lỗi nếu sau này hiện ra).
+- `wingFeishengTips.exml` (dùng `horizontalCenter="0"`): thêm `width="260"` + `textAlign="center"` — giữ canh giữa, word-wrap trong 260px. Áp dụng luôn cho `maxLvDesc` tương ứng.
+
+Đồng bộ `default.thm.js`: `wingZizhiTips`'s `_Label7_i`/`maxLvDesc_i` thêm `right=16`; `wingFeishengTips`'s `_Label8_i`/`maxLvDesc_i` thêm `width=260`+`textAlign=center`.
+
+Cache-bust: `default.thm_83d6b8e9.js`(mục 129)→`default.thm_8d6684ef.js` (chỉ layout, không đụng `main.min.js`). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua cả 2 file exml, script đối chiếu factory-method riêng cho `wingZizhiTips`/`wingFeishengTips` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Lưu ý về khoảng cách dọc**: cả 2 nhãn dùng neo `bottom` (không phải `top`), nên khi wrap thành 2 dòng, khối chữ sẽ CAO THÊM lên phía TRÊN (giữ nguyên mép dưới cố định) chứ không lấn xuống phần tử bên dưới — về lý thuyết an toàn với các phần tử liền kề, nhưng chưa kiểm chứng bằng ảnh thật liệu có chạm phần tử phía TRÊN (đường kẻ phân cách `tongyongline`) hay không.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cả 2 dòng ghi chú hiển thị đầy đủ trong khung (word-wrap 2 dòng nếu cần), không tràn lề phải, và không đè lên đường kẻ phân cách phía trên.
