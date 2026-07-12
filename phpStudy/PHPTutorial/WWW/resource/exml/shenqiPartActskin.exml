@@ -7,9 +7,12 @@
 		<e:Image id="namebg0" height="231" left="0" right="0" anchorOffsetY="0" scale9Grid="7,6,13,499" source="quali3_png"/>
 		<e:Label id="labelName" text="" size="28" y="10" textColor="0xC41200" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
 		<e:Image id="departline0" source="tongyongline" left="8" right="8" bottom="73" height="1.5"/>
-		<e:Group y="332" left="18">
-			<e:Label id="tipsDes2" text="Sưu tầm trang sức để nhận nhiều thuộc tính" size="20" y="27" textAlign="left" verticalAlign="top" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-			<e:Label id="labelInfo" text="" size="20" y="0" textAlign="left" verticalAlign="top" x="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Group y="332" left="18" width="270">
+			<e:Label id="labelInfo" text="" size="18" width="270" textAlign="left" verticalAlign="top" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="tipsDes2" text="Sưu tầm trang sức để nhận nhiều thuộc tính" size="18" width="270" textAlign="left" verticalAlign="top" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:VerticalLayout gap="4"/>
+			</e:layout>
 		</e:Group>
 		<e:Image id="imgArtifact" y="50" source="sq_11_png" width="100" height="100" horizontalCenter="0.5"/>
 		<e:Button id="btnOpen" label="Kích hoạt" horizontalCenter="-0.5" bottom="16" width="118" height="51" icon="btn2_2" scaleX="0.8" scaleY="0.8" skinName="SkinBtn6"/>

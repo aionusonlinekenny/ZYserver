@@ -4171,3 +4171,21 @@ Cache-bust: `default.thm_f9b5b7a4.js`(mục 132)→`default.thm_ba771eb1.js`. X�
 **Ghi nhận KHÔNG SỬA (ngoài phạm vi/không chắc sửa được)**: màn "Thần Khí" còn nhiều chữ Hán chưa dịch có khả năng baked vào ảnh (tiêu đề dọc "天湖蓝莲", dòng vàng "开启神罚技能", dấu mộc đỏ "未解锁") — chưa xác minh có phải ảnh tĩnh hay Label, cần kiểm tra riêng nếu người dùng muốn dịch tiếp.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Minh Chủ"/"Số người" không còn đè lên giá trị trong danh sách xin gia nhập, và mô tả kỹ năng "Thần Phạt Diệt BOSS..." hiển thị đủ chữ, gói gọn trong màn hình không tràn lề nào.
+
+## 134. Sau mục 133: mô tả "Thần Phạt..." đè lên `imgName` của Tiên Lữ phía trên; tooltip "Bông Tai Lam Liên" tràn khung (`XinShenQiSkin.exml`, `shenqiPartActskin.exml`) (2026-07-12)
+
+Người dùng gửi 2 ảnh mới sau khi mục 133 lên: (1) màn "Thần Khí" — sau khi `labelAttr` được thêm `width="560"` ở mục 133, chữ mô tả "Thần Phạt Diệt BOSS Trong Tích Tắc, càng nhiều nhân vật sát thương càng khủng khiếp" giờ wrap 2 dòng, nhưng vì neo `bottom="18"` (mép dưới cố định) nên khối chữ cao thêm lên PHÍA TRÊN, đè lên ảnh "开启神罚技能" (`imgFunc`) — người dùng gọi là "img name của Tiên Lữ" (do màn này tái dùng nền `xianlvbg_jpg` của Tiên Lữ); (2) tooltip "Bông Tai Lam Liên" — dòng "Nhận thêm 1 trang sức có thể mời Tiên Lữ đồng hành"/"Sưu tầm trang sức để nhận nhiều thuộc tính" tràn ra ngoài khung viền tooltip.
+
+**A. `labelAttr` đè lên `imgFunc` (`XinShenQiSkin.exml`, Group `attribute`)**: không thể tăng chiều cao Group `attribute` (đang `height="95"`) vì Group `part` ngay bên dưới bắt đầu ở `top="749"`, chỉ còn ~9px hở (645+95=740). Thay vào đó giảm khoảng đệm dưới và cỡ chữ để giải phóng thêm không gian trong ngân sách hiện có: `bottom="18"`→`"2"`, `size="20"`→`"18"`.
+
+**B. `labelInfo`/`tipsDes2` tràn khung (`shenqiPartActskin.exml`, tooltip "Bông Tai Lam Liên")**: xác minh qua `main.min.js` (`openTipsView_a94`) rằng `labelInfo.text` được gán động `"Nhận thêm "+n+" trang sức có thể mời Tiên Lữ đồng hành"`. Cả 2 Label gốc không có `width`, đặt `x="0"` cố định + `y` lệch riêng (`tipsDes2` khai báo trước trong file nhưng hiển thị DƯỚI `labelInfo` nhờ `y` thủ công) — tràn ngang ra khỏi khung tooltip (component cha `anigroup` rộng 307, lề trái `left="18"`).
+
+Sửa bằng kỹ thuật Group+VerticalLayout tự xếp chồng (đã dùng cho GwTask trước đây) — đổi thứ tự khai báo đúng theo thứ tự hiển thị thật (`labelInfo` trước, `tipsDes2` sau), bọc trong `Group left="18" y="332" width="270"` (270 = 307 - 18 lề trái - ~19 lề phải) với `VerticalLayout gap="4"`, giảm cỡ chữ `size="20"`→`"18"` để bớt số dòng wrap. Cả 2 Label thêm `width="270"` để word-wrap đúng thay vì tràn ngang.
+
+Đồng bộ `default.thm.js`: `SkinXinShenQi`'s `labelAttr_i` đổi `bottom=2`, `size=18` (giữ `width=560` từ mục 133); `SkinshenqiPartAct`'s `_Group1_i` thêm `width=270` + layout trỏ `_VerticalLayout2_i()` (mới, `gap=4`) + `elementsContent` đổi thứ tự `[labelInfo_i(), tipsDes2_i()]`; `labelInfo_i`/`tipsDes2_i` đổi `size=18` + thêm `width=270`, bỏ `x`/`y` cố định.
+
+Cache-bust: `default.thm_ba771eb1.js`(mục 133)→`default.thm_cb2dbad8.js`. Xác minh: `node -c`, script đối chiếu factory-method riêng cho `SkinXinShenQi`/`SkinshenqiPartAct` (0 thiếu/0 thừa định nghĩa trong đúng phạm vi class, tránh nhầm với `_Group1_i` trùng tên ở class khác), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Rủi ro còn lại chưa kiểm chứng**: ngân sách chiều cao cho khối `labelInfo`+`tipsDes2` trong tooltip khá eo hẹp — `btnOpen` (nút "Kích hoạt") neo `bottom="16"` cao 51px trong `anigroup` cao 476, mép trên của `btnOpen` ở khoảng y≈409; khối chữ bắt đầu ở y=332, còn ~77px cho 2 dòng text. Ở `size=18`/`width=270`, `labelInfo` (~47 ký tự, có thể vẫn wrap 2 dòng ~44px) + gap 4px + `tipsDes2` (~42 ký tự, có thể 1-2 dòng ~22-44px) ước tính tổng ~70-92px — SÁT hoặc có thể VẪN chạm nhẹ `btnOpen` trong trường hợp xấu nhất. Cần ảnh xác nhận.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận (1) mô tả "Thần Phạt Diệt BOSS..." không còn đè lên ảnh "开启神罚技能" phía trên, và (2) cả 2 dòng tooltip "Bông Tai Lam Liên" nằm gọn trong khung, không tràn lề phải và không đè lên nút "Kích hoạt" phía dưới.
