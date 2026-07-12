@@ -4151,3 +4151,23 @@ Người dùng gửi ảnh cho thấy các dòng kỹ năng CHƯA MỞ KHÓA ("K
 Cache-bust: `default.thm_8d6684ef.js`(mục 131 — main.min.js only, default.thm.js giữ nguyên từ mục 130)→`default.thm_f9b5b7a4.js`. Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `SkillItem.exml`, script đối chiếu factory-method riêng cho `SkillItem` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cả 5 dòng kỹ năng (2 đã mở + 3 đang khóa) hiển thị đúng, "Lv.X"/"Cấp XX mở" đứng ngay sau tên kỹ năng không đè, không tràn sang cột mô tả/nút nâng cấp bên phải.
+
+## 133. 2 lỗi mới: "Minh Chủ"/"Số người" đè lên giá trị trong danh sách xin gia nhập Tiên Minh (`ApplyItemSkin.exml`), và mô tả kỹ năng "神器"(Thần Khí) tràn cả 2 lề (`XinShenQiSkin.exml`) (2026-07-11)
+
+Người dùng gửi 3 ảnh (tooltip trang sức "Bông Tai Lam Liên" — không có lỗi; màn "Thần Khí"/"神器" nền tái dùng ảnh "Tiên Lữ" — mô tả kỹ năng bị cắt cả 2 đầu; danh sách "Xin gia nhập Tiên Minh" — nhãn đè giá trị), yêu cầu chuyển sang rà "skin này" (cụm màn hình mới).
+
+**A. "Minh ChủEmmaban"/"Số ngư1/40" — nhãn đè giá trị (`ApplyItemSkin.exml`, danh sách đơn xin gia nhập)**: đúng lớp lỗi kinh điển đã sửa rất nhiều lần trong phiên — `text="Minh Chủ:"` không có `x` (mặc định 0) trong khi `id="president"` (tên minh chủ) đặt cứng `x="45"` — nhãn "Minh Chủ:" (9 ký tự) cần nhiều hơn 45px nên đè lên tên. Tương tự `text="Số người:"` tại `x="148"` và `id="member"` tại `x="192"` chỉ cách nhau 44px, không đủ cho nhãn "Số người:" (9 ký tự).
+
+Sửa bằng kỹ thuật Group+HorizontalLayout chuẩn của phiên (2 cặp nhãn+giá trị, mỗi cặp 1 Group con `gap="4"`, gộp cả 2 cặp trong 1 Group cha `gap="15"`) — giá trị luôn bám đúng sau nhãn thật. Tiện dọn luôn 1 Label rác không có `id`, chỉ chứa `text="  "` (2 khoảng trắng) ở toạ độ âm `y="-22.5"` — rõ ràng là phần tử thừa/lỗi thời từ lần chỉnh sửa trước, không ai tham chiếu, xóa an toàn.
+
+**B. Mô tả kỹ năng "Thần Phạt Diệt BOSS..." tràn cả 2 lề màn hình (`XinShenQiSkin.exml`, hệ thống "神器"/Thần Khí)**: `labelAttr` (Label hiển thị mô tả kỹ năng, nội dung lấy từ `resource/config1/config2.json`'s `ImbaConf[1].funcDesc`, dài ~85 ký tự) dùng `horizontalCenter="0"` nhưng KHÔNG có `width` — text tự do tràn ĐỀU cả 2 bên khi vượt quá chiều rộng màn hình (600px), khớp đúng hiện tượng "mất chữ đầu bên trái VÀ bị cắt bên phải" thấy trong ảnh (không phải lỗi tràn 1 phía như các lần trước, vì đây là canh giữa không giới hạn).
+
+Sửa: thêm `width="560"` (gần khớp bề rộng khung nền `attribute` Group, rộng 594px) — buộc word-wrap trong màn hình thay vì tràn ra ngoài cả 2 bên.
+
+Đồng bộ `default.thm.js`: `SkinApplyItem`'s `_Group1_i` tách thành `_Group1_i`(cha, `HorizontalLayout1` gap=15) bọc `_Group2_i`(Minh Chủ+president, `HorizontalLayout2` gap=4) và `_Group3_i`(Số người+member, `HorizontalLayout3` gap=4), xóa Label rác `_Label2_i`; `SkinXinShenQi`'s `labelAttr_i` thêm `width=560`.
+
+Cache-bust: `default.thm_f9b5b7a4.js`(mục 132)→`default.thm_ba771eb1.js`. Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua cả 2 file exml, script đối chiếu factory-method riêng cho `SkinApplyItem`/`SkinXinShenQi` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Ghi nhận KHÔNG SỬA (ngoài phạm vi/không chắc sửa được)**: màn "Thần Khí" còn nhiều chữ Hán chưa dịch có khả năng baked vào ảnh (tiêu đề dọc "天湖蓝莲", dòng vàng "开启神罚技能", dấu mộc đỏ "未解锁") — chưa xác minh có phải ảnh tĩnh hay Label, cần kiểm tra riêng nếu người dùng muốn dịch tiếp.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Minh Chủ"/"Số người" không còn đè lên giá trị trong danh sách xin gia nhập, và mô tả kỹ năng "Thần Phạt Diệt BOSS..." hiển thị đủ chữ, gói gọn trong màn hình không tràn lề nào.
