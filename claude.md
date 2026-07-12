@@ -4055,3 +4055,19 @@ Cache-bust: `default.thm_ab2fa794.js`(mục 125)→`default.thm_7edfca43.js` (ch
 **Lưu ý báo lại người dùng**: nếu phần "Emmabanđã" (dính tên người chơi với chữ tiếp theo) vẫn còn dính sau khi sửa, đó là do SERVER gửi chuỗi đã dính sẵn — không nằm trong phạm vi sửa được của repo client này, cần báo bên vận hành server riêng.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận tin nhắn thông báo dài (như "Chúc mừng người chơi...") giờ wrap gọn trong khung chat nổi (tối đa 2 dòng, không tràn ra khỏi màn hình), và tin nhắn ngắn thông thường vẫn hiển thị bình thường như trước (không bị ảnh hưởng bởi thay đổi).
+
+## 127. Sửa lại đúng chỗ: hộp thoại xác nhận mua "Tầm Bảo" (`WarnBuySkin.exml`/`SkinWarnBuy`, "Có muốn tiêu hao 4980 Nguyên Bảo mua Cuộn Tầm Bảo Trang Bị*10") tràn khỏi khung — KHÔNG phải dòng "Chúc mừng người chơi" như mục 126 hiểu nhầm (2026-07-11)
+
+Người dùng chỉnh lại: mục 126 hiểu nhầm chỗ cần sửa — dòng "Chúc mừng người chơi...đã nâng cấp..." (thông báo hệ thống) không phải lỗi cần sửa. Chỗ THẬT SỰ bị tràn khung là dòng nội dung hộp thoại xác nhận "Thông báo": "Có muốn tiêu hao 4980 Nguyên Bảo mua Cuộn Tầm Bảo Trang Bị*10" trong cùng tấm ảnh IMG_0850.
+
+**Nguyên nhân**: `desTxt` (`WarnBuySkin.exml`, class `SkinWarnBuy` — hộp thoại xác nhận dùng CHUNG cho mọi giao dịch "Tầm Bảo"/quay thưởng trong game, gọi qua `HuntWarnBuyView.showBuyWarn(...)`) không có `width` — nội dung câu hỏi xác nhận được ghép động `"Có muốn tiêu hao "+giá+" Nguyên Bảo mua "+tên vật phẩm+"*"+số lượng` (độ dài thay đổi tùy vật phẩm/số lượng), không giới hạn nên tự do tràn ngang không word-wrap. Với tên vật phẩm dài ("Cuộn Tầm Bảo Trang Bị"), câu hỏi dài ~60 ký tự vượt xa khung nền trang trí bên trong hộp thoại (`tongyong_dikuang1`, rộng 419px trên tổng khung thoại 487px).
+
+Sửa: thêm `width="380"` + `textAlign="center"` cho `desTxt` — buộc word-wrap trong đúng khung nền có sẵn (khung nền cao 206px, dòng chữ gốc chỉ chiếm 1 dòng ở gần đỉnh, còn rất nhiều khoảng trống bên dưới trước khi tới checkbox "Lần đăng nhập này không nhắc lại", đủ chỗ cho 2-3 dòng khi wrap mà không cần tăng chiều cao khung).
+
+Đồng bộ `default.thm.js` (`SkinWarnBuy`): `desTxt_i` thêm `textAlign="center"`, `width=380`.
+
+Cache-bust: `default.thm_7edfca43.js`(mục 126)→`default.thm_e6875607.js` (chỉ layout, không đụng `main.min.js`). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `WarnBuySkin.exml`, script đối chiếu factory-method riêng cho `SkinWarnBuy` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Lưu ý**: `SkinWarnBuy` dùng CHUNG cho MỌI hộp thoại xác nhận mua "Tầm Bảo" trong game (nhiều loại vật phẩm, tên dài ngắn khác nhau) — sửa 1 lần áp dụng cho tất cả các trường hợp tương tự, không chỉ riêng "Cuộn Tầm Bảo Trang Bị".
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận hộp thoại "Thông báo" hiển thị đủ câu hỏi xác nhận (kể cả tên vật phẩm dài) gọn trong khung nền, không tràn ra ngoài viền hộp thoại.

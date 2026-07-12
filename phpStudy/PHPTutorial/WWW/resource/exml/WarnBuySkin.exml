@@ -13,7 +13,7 @@
 		<e:Button id="noBtn" label="Hủy" horizontalCenter="-80" bottom="20" skinName="SkinBtn6" width="120" height="50" icon="btn3_1"/>
 		<e:CheckBox id="tipsCheckbox" label="Lần đăng nhập này không nhắc lại" y="136" skinName="SkinCheckBox0" horizontalCenter="0" scaleX="0.9" scaleY="0.9"/>
 		<e:Group horizontalCenter="0" top="71">
-			<e:Label id="desTxt" size="20" y="59" horizontalCenter="0" text="Có tiêu hao" fontFamily="Microsoft YaHei" textColor="0x001828"/>
+			<e:Label id="desTxt" size="20" y="59" horizontalCenter="0" width="380" textAlign="center" text="Có tiêu hao" fontFamily="Microsoft YaHei" textColor="0x001828"/>
 			<e:layout>
 				<e:HorizontalLayout gap="0"/>
 			</e:layout>
