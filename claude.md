@@ -4083,3 +4083,21 @@ Kiểm tra lại: cần 144.7 đơn vị ở cỡ 13, hộp mới 150 → dư 5.
 Cache-bust: `default.thm_e6875607.js`(mục 127)→`default.thm_9e293426.js` (chỉ layout, không đụng `main.min.js`). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua `PlayFunSkin.exml`, script đối chiếu factory-method riêng cho `SkinPlayFun` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận "Chuyển X Cấp YYY" (kể cả cấp 3 chữ số) vừa đủ lớn dễ đọc VÀ vẫn nằm trọn 1 dòng không xuống dòng lại, đồng thời cụm "Thứ Z Quan" bên cạnh không bị tràn lề phải do dời thêm 10px.
+
+## 129. Màn "Tiên Vũ" (Immortal Feather) — 2 tooltip "Vũ Hóa"/"Bồi dưỡng" đè chữ nhãn lên giá trị ("Cấp độCấp 0", "Nghề nghiệpLạc Anh") (2026-07-11)
+
+Người dùng gửi 2 ảnh tooltip khác nhau ("Vũ Hóa" — `wingFeishengTips.exml`, và "Bồi dưỡng" — `wingZizhiTips.exml`) trong tab "Tiên Vũ", cả 2 đều bị đè chữ y hệt nhau ở 2 dòng cuối: "Cấp độ" đè lên "Cấp 0", "Nghề nghiệp" đè lên "Lạc Anh".
+
+**Nguyên nhân**: cả 2 file dùng cách định vị nhãn cố định `x="111"` và giá trị cố định `x="160"` (chênh đúng 49px) — mẫu thiết kế phù hợp với nhãn tiếng Trung ngắn ("位置："/"等级："/"职业：", 2-3 ký tự) nhưng nhãn tiếng Việt dài hơn nhiều ("Nghề nghiệp：" 12 ký tự) vượt xa 49px, đè lên giá trị đứng ngay sau.
+
+**Phát hiện file "chị em" đã sửa đúng từ trước**: `EquipTipsSkin.exml` (tooltip trang bị thường) có CÙNG 3 dòng "Vị trí/Cấp độ/Nghề nghiệp" nhưng ĐÃ dùng đúng kỹ thuật `Group+HorizontalLayout` (mỗi cặp nhãn+giá trị bọc riêng 1 Group, giá trị tự bám theo bề rộng thật của nhãn) — xác nhận đây là pattern ĐÚNG đã được áp dụng nơi khác trong dự án, chỉ riêng 2 file "Tiên Vũ" bị bỏ sót chưa đồng bộ theo.
+
+Sửa `wingZizhiTips.exml` và `wingFeishengTips.exml` theo ĐÚNG kỹ thuật đã có sẵn ở `EquipTipsSkin.exml`: gộp mỗi cặp nhãn+giá trị (`Vị trí：`+`wingName`, `Cấp độ：`+`zizhiLv`/`feishengLv`, `Nghề nghiệp：`+`career`) vào 1 `Group` riêng (`x="111"`, `y` giữ nguyên theo hàng gốc) với `HorizontalLayout gap="2"` — giá trị giờ luôn bám sát đúng sau nhãn thật, không còn phụ thuộc khoảng cách cố định 49px.
+
+Đồng bộ `default.thm.js`: `wingZizhiTips` — tạo `_Group7_i`/`_Group8_i`/`_Group9_i` (bọc `_Label2/_Label3/_Label4` với `wingName/zizhiLv/career`) + `_HorizontalLayout6/7/8_i`(gap=2), xóa `x`/`y` cố định khỏi 6 Label liên quan, cập nhật `_Group6_i`'s `elementsContent`. `wingFeishengTips` — tương tự với `_Group11_i`/`_Group12_i`/`_Group13_i` + `_HorizontalLayout10/11/12_i`, cập nhật `_Group10_i`'s `elementsContent`. Quét cả 2 class xác nhận tên mới không trùng với `_GroupN`/`_HorizontalLayoutN` đã dùng.
+
+Cache-bust: `default.thm_9e293426.js`(mục 128)→`default.thm_83d6b8e9.js` (chỉ layout, không đụng `main.min.js`). Xác minh: `node -c`, `xml.etree.ElementTree.parse` qua cả 2 file exml, script đối chiếu factory-method riêng cho `wingZizhiTips`/`wingFeishengTips` (0 thiếu/0 thừa định nghĩa), `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Ghi nhận (chưa kiểm tra sâu)**: còn 5 file khác cũng chứa cụm "Vị trí/Cấp độ/Nghề nghiệp" (`ReincarnateEquipTipsSkin.exml`, `ExtremeEquipTipsSkin.exml`, `ShenYuTipsSkin.exml`, `hunguTipsSkin.exml`) — kiểm tra nhanh 1 trong số đó (`ReincarnateEquipTipsSkin.exml`) không thấy mẫu lỗi `x=111`/`y=` cố định (có thể đã dùng đúng pattern như `EquipTipsSkin`), nhưng CHƯA kiểm tra đầy đủ toàn bộ — nếu người dùng gặp lỗi tương tự ở các màn hình khác, báo lại để rà tiếp.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần ảnh xác nhận cả 2 tooltip "Vũ Hóa"/"Bồi dưỡng" hiển thị đúng, giá trị "Cấp 0"/"Lạc Anh" đứng ngay sau nhãn tương ứng, không còn đè chữ.

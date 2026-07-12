@@ -42,16 +42,31 @@
 		<e:Label y="186" text="Thuộc tính cơ bản" size="18" x="24" fontFamily="Microsoft YaHei" textColor="0x6b9baa"/>
 		<e:Image y="128" width="299" horizontalCenter="0" anchorOffsetY="0" height="45" alpha="0.8" source="bantoutiaobg8" scale9Grid="116,5,50,31"/>
 		<ns1:PowerPanel id="powerPanel" y="119" x="17" skinName="Skin2PowerPanel" width="288"/>
-		<e:Label y="50" text="Vị trí：" size="18" x="111" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-		<e:Label y="75" text="Cấp độ：" size="18" x="111" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
-		<e:Label y="100" text="Nghề nghiệp：" size="18" x="111" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+		<e:Group x="111" y="50">
+			<e:Label text="Vị trí：" size="18" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="wingName" text="" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="111" y="75">
+			<e:Label text="Cấp độ：" size="18" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="zizhiLv" text="" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="111" y="100">
+			<e:Label text="Nghề nghiệp：" size="18" textColor="0x6b9baa" fontFamily="Microsoft YaHei"/>
+			<e:Label id="career" text="" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:layout>
+				<e:HorizontalLayout gap="2"/>
+			</e:layout>
+		</e:Group>
 		<e:Label text="Bồi dưỡng" size="20" x="25" y="16" textColor="0xd242fb" fontFamily="Microsoft YaHei" textAlign="center"/>
 		<e:Image source="bantoutiaobg" height="35" horizontalCenter="0" bottom="-48" scale9Grid="128,2,15,41" width="300"/>
 		<e:Label horizontalCenter="0" text="Chạm vùng trống để đóng cửa sổ" size="20" x="30" bottom="-39" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image x="22" y="45" width="76" height="76" scale9Grid="26,40,8,4" source="quality2"/>
-		<e:Label id="wingName" text="" x="160" y="50" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="zizhiLv" text="" x="160" y="75" size="18"  fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-		<e:Label id="career" text="" x="160" y="100" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Image x="28" y="51" source="200238_png"/>
 		<e:Button id="updateBtn" label="Nâng cấp" skinName="SkinBtn1" horizontalCenter="0" bottom="13" includeIn="normal"/>
 		<e:Image scaleX="-1" anchorOffsetX="0" width="260" source="tongyongline" y="370" horizontalCenter="0"/>
