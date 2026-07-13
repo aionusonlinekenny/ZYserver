@@ -4355,3 +4355,23 @@ Ghi đè trực tiếp `chars_names.txt`/`randname_girl.txt` (cả `s1` và `s99
 Cache-bust: `main.min_cdaaf0bd.js`(mục 138-139)→`main.min_ccb3f7b8.js`, `default.thm_cb2dbad8.js`(mục 133-136)→`default.thm_09c1d7b7.js`. Xác minh: `node -c` cả 2 file JS, `xml.etree.ElementTree.parse` qua cả 2 file exml, script đối chiếu factory-method riêng cho `SkinFullBag`/`SkinLimitStartTips` (0 thiếu/0 thừa định nghĩa), đối chiếu toàn bộ ký tự trong 2 file tên ngẫu nhiên mới với `allowword.txt`, `git show :path` xác nhận đúng nội dung staged, `manifest.json`/`index.php` đã bump `?v=`.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần deploy + restart `gameworld` (đổi file tên ngẫu nhiên cần restart mới nhận) rồi kiểm tra (1) popup túi đồ đầy hiện số đúng vị trí không đè chữ, (2) bấm nút xúc xắc ở màn tạo nhân vật ra tên tiếng Việt thay vì tiếng Hán, (3) popup nhiệm vụ giới hạn hiện đúng câu "Hoàn thành 8 nhiệm vụ trong 36 giờ" không đè chữ, gói gọn trong khung không tràn.
+
+## 141. Bỏ sót 2 file tên ngẫu nhiên nữa: `randname_boy.txt` và `def_names.txt` (2026-07-13)
+
+Người dùng gửi ảnh xác nhận sau khi deploy mục 140 vẫn thấy tên gợi ý "七夕雷龙" — cùng lúc gửi kèm nội dung file `randname_boy.txt` (do người dùng tự phát hiện, mình trước đó chưa biết file này tồn tại) và báo còn thiếu `def_names.txt`.
+
+**Điều tra**: rà lại toàn bộ thư mục `gameworld/` tìm các file dạng "tên ngẫu nhiên" — phát hiện BỎ SÓT 2 file ở mục 140:
+- `randname_boy.txt` (134.292 dòng) — nội dung y hệt `randname_girl.txt` GỐC (trước khi sửa) ở phần đầu file, xác nhận đây là 1 trong các nguồn tên ngẫu nhiên thật sự đang dùng (khả năng cao ứng với `symbol` = nam trong `LActorMgr.getRandomName(symbol)`), chưa hề được đụng tới ở mục 140.
+- `def_names.txt` (131.463 dòng) — file tên Hán 4 ký tự khác, cùng định dạng, cũng hoàn toàn chưa dịch.
+
+Cả 2 đều giống hệt cấu trúc `chars_names.txt`/`randname_girl.txt` đã sửa ở mục 140 (UTF-8 BOM, 1 tên/dòng, độ dài dòng không đồng nhất → xác nhận lại an toàn để thay thế bằng nội dung tiếng Việt độ dài khác nhau).
+
+**Sửa**: dùng lại đúng phương pháp mục 140 (tổ hợp 2 nhóm âm tiết Hán-Việt, không dấu cách) — sinh riêng cho từng file để tránh trùng lặp y hệt các file đã sửa:
+- `randname_boy.txt`: nhóm B thiên hero/võ hiệp (Kiếm, Đao, Long, Hổ, Vương, Bá, Hùng, Chiến...) — 1.596 tên (VD: "XuânTiêu", "TrúcĐiện", "VũLong").
+- `def_names.txt`: dùng lại nhóm B tổng quát (giống `chars_names.txt` nhưng seed random khác để nội dung không trùng) — 1.590 tên (VD: "NguyệtĐiệp", "ĐàoKiếm", "TuyếtNgư").
+
+Đã kiểm tra lại: 0 ký tự nào nằm ngoài dải Unicode cho phép trong `allowword.txt`, 0 dấu cách, độ dài tối đa 16 ký tự (dưới giới hạn 24 mục 137), nội dung `s1`/`s99` giống hệt nhau, giữ đúng định dạng UTF-8 BOM gốc.
+
+**Tổng kết đầy đủ 4 file tên ngẫu nhiên đã dịch (mục 140+141)**: `chars_names.txt`, `def_names.txt`, `randname_boy.txt`, `randname_girl.txt` — đã rà thêm 1 lượt tìm các file `.txt` >1000 dòng trong `gameworld/` để xác nhận không còn sót file nào khác dạng tên ngẫu nhiên (chỉ còn `scripterror.txt` là log, không phải name-pool).
+
+**Chưa kiểm chứng bằng ảnh thật**: cần deploy 2 file mới + restart `gameworld` rồi bấm lại nút xúc xắc nhiều lần (cả nhân vật nam/nữ) xác nhận không còn ra tên tiếng Hán.
