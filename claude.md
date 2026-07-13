@@ -4375,3 +4375,19 @@ Cả 2 đều giống hệt cấu trúc `chars_names.txt`/`randname_girl.txt` đ
 **Tổng kết đầy đủ 4 file tên ngẫu nhiên đã dịch (mục 140+141)**: `chars_names.txt`, `def_names.txt`, `randname_boy.txt`, `randname_girl.txt` — đã rà thêm 1 lượt tìm các file `.txt` >1000 dòng trong `gameworld/` để xác nhận không còn sót file nào khác dạng tên ngẫu nhiên (chỉ còn `scripterror.txt` là log, không phải name-pool).
 
 **Chưa kiểm chứng bằng ảnh thật**: cần deploy 2 file mới + restart `gameworld` rồi bấm lại nút xúc xắc nhiều lần (cả nhân vật nam/nữ) xác nhận không còn ra tên tiếng Hán.
+
+## 142. Điều tra hệ thống "tiên nữ hint" (`HintTipsItemRender`), dịch nội dung 1 ảnh gợi ý mới, và tăng thời gian hiển thị vì thu về quá nhanh không kịp đọc (2026-07-13)
+
+**A. Dịch thêm 1 ảnh hint mới**: người dùng gửi ảnh cắt riêng nội dung "仙宫中集结天下好手，请务必步步小心" hỏi dịch nghĩa. Dịch: **"Tiên Cung tập hợp cao thủ khắp thiên hạ, nhất định phải cẩn thận từng bước!"**. Đã thử tìm dòng chữ Hán gốc này trong repo (kể cả rà lại trong số 18 file `tishi_XX.png` đã liệt kê ở mục 140) nhưng KHÔNG khớp — có thể là 1 ảnh hint khác chưa xác định được vị trí file, cần người dùng cung cấp thêm ảnh chụp toàn màn hình lúc xuất hiện hoặc đường dẫn file để xác định chính xác.
+
+**B. Tăng thời gian hiển thị hint "tiên nữ"**: người dùng phản ánh khung hint (hệ thống đã điều tra ở mục 140-141, class `HintTipsItemRender`, hiện nội dung từ các file `tishi_XX.png`) trượt vào rồi thu về quá nhanh, không kịp đọc. Xác định đúng đoạn code điều khiển animation trong `main.min.js`:
+```js
+i.to({horizontalCenter:-250},1e3).wait(2e3).to({horizontalCenter:-800},1e3).call(...)
+```
+Cấu trúc: trượt vào (1 giây) → **đứng yên để đọc (2 giây)** → trượt ra (1 giây) → tự huỷ. Tổng thời gian hiện chỉ ~4 giây, trong đó chỉ 2 giây thực sự đứng yên.
+
+Sửa: tăng thời gian đứng yên (`wait`) từ `2e3` (2 giây) lên `6e3` (6 giây) — gấp 3 lần thời gian đọc trước đó, giữ nguyên thời gian trượt vào/ra. Tổng thời gian hiển thị mới ~8 giây.
+
+Cache-bust: `main.min_ccb3f7b8.js`(mục 140)→`main.min_f8609d58.js`. Xác minh: `node -c`, `git show :path` xác nhận đúng `wait(6e3)` đã đổi, `manifest.json`/`index.php` đã bump `?v=`.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần deploy + kiểm tra khung hint "tiên nữ" giờ đứng yên đủ lâu để đọc hết nội dung trước khi thu về. Câu hỏi dịch ảnh mới (phần A) vẫn cần thêm thông tin từ người dùng để xác định file, chưa sửa được vì chưa rõ vị trí.
