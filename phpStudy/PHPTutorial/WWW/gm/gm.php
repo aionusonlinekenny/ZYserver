@@ -1072,10 +1072,14 @@ gm_require_login_or_redirect();
   };
 
   function loadTaskDefs(){
+	  $('#taskmsg').text('Đang tải danh sách loại nhiệm vụ...');
 	  $.ajax({
 		  url:'gmquery.php', type:'post', data:{type:'taskdefs',uid:'-',qu:qu}, cache:false, dataType:'json',
 		  success:function(data){
-			  if(data.errcode!=0){ return; }
+			  if(data.errcode!=0 || !data.list || data.list.length==0){
+				  $('#taskmsg').text('Không tải được danh sách loại nhiệm vụ: '+(data.info||'phản hồi rỗng')+'. Kiểm tra lại file gm/taskconfig.php và gm/gmquery.php đã deploy đủ trên server chưa.');
+				  return;
+			  }
 			  taskDefs=data.list;
 			  var opts='';
 			  for(var i=0;i<taskDefs.length;i++){
@@ -1083,6 +1087,9 @@ gm_require_login_or_redirect();
 			  }
 			  $('#taskdefselect').html(opts);
 			  loadTaskList(1);
+		  },
+		  error:function(xhr){
+			  $('#taskmsg').text('Lỗi tải danh sách loại nhiệm vụ (HTTP '+xhr.status+'). Có thể file gm/taskconfig.php chưa được deploy lên server, hoặc gmquery.php/config.php trên server đang là bản cũ chưa có action "taskdefs". Kiểm tra log lỗi PHP trên server để biết chi tiết.');
 		  }
 	  });
   }
