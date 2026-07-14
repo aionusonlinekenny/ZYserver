@@ -592,6 +592,41 @@ gm_require_login_or_redirect();
       <div id="taskeditmsg" class="status-msg"></div>
     </div>
 
+    <div class="card">
+      <h2>Quà Nạp Đầu Tiên (theo hệ phái) <span class="badge">Quà miễn phí kèm mốc nạp x4 Nguyên Bảo - "首充" trong game</span></h2>
+      <div class="note">Danh sách này áp dụng chung cho MỌI mốc nạp lần đầu (không phân biệt 10/20/50/100 NDT), chỉ khác theo hệ phái nhân vật (Job 1/2/3). Sửa xong vẫn cần restart gameworld như các phần trên.</div>
+      <div class="btn-row" style="margin-top:10px">
+        <input type="button" class="btn secondary" value="Tải dữ liệu hiện tại" id="firstgiftloadbtn">
+      </div>
+      <div id="firstgiftjobs" style="display:none;margin-top:14px">
+        <div class="card" style="background:#f8f9fb">
+          <h2 style="font-size:13px">Hệ phái 1 (Job 1)</h2>
+          <div class="field"><label>Đồng (Gold):</label><input type="text" id="firstgiftgold1"></div>
+          <div class="field"><label>Nguyên Bảo (Yuanbao):</label><input type="text" id="firstgiftyb1"></div>
+          <div id="firstgiftjob1rows"></div>
+          <div class="btn-row"><input type="button" class="btn secondary" value="+ Thêm dòng" id="firstgiftjob1addbtn"></div>
+        </div>
+        <div class="card" style="background:#f8f9fb">
+          <h2 style="font-size:13px">Hệ phái 2 (Job 2)</h2>
+          <div class="field"><label>Đồng (Gold):</label><input type="text" id="firstgiftgold2"></div>
+          <div class="field"><label>Nguyên Bảo (Yuanbao):</label><input type="text" id="firstgiftyb2"></div>
+          <div id="firstgiftjob2rows"></div>
+          <div class="btn-row"><input type="button" class="btn secondary" value="+ Thêm dòng" id="firstgiftjob2addbtn"></div>
+        </div>
+        <div class="card" style="background:#f8f9fb">
+          <h2 style="font-size:13px">Hệ phái 3 (Job 3)</h2>
+          <div class="field"><label>Đồng (Gold):</label><input type="text" id="firstgiftgold3"></div>
+          <div class="field"><label>Nguyên Bảo (Yuanbao):</label><input type="text" id="firstgiftyb3"></div>
+          <div id="firstgiftjob3rows"></div>
+          <div class="btn-row"><input type="button" class="btn secondary" value="+ Thêm dòng" id="firstgiftjob3addbtn"></div>
+        </div>
+        <div class="btn-row" style="margin-top:14px">
+          <input type="button" class="btn" value="Lưu thay đổi (ghi xuống s1 + s99)" id="firstgiftsavebtn">
+        </div>
+      </div>
+      <div id="firstgiftmsg" class="status-msg"></div>
+    </div>
+
   </div>
 
 </div>
@@ -829,6 +864,11 @@ gm_require_login_or_redirect();
   });
   var addMailItemRow=wireItemRowPicker('#mailitemrows','#mailadditembtn','#mailitemrowtpl');
   var addTaskAwardRow=wireItemRowPicker('#taskeditawardrows','#taskadditembtn','#mailitemrowtpl');
+  var addFirstGiftRow=[
+	  wireItemRowPicker('#firstgiftjob1rows','#firstgiftjob1addbtn','#mailitemrowtpl'),
+	  wireItemRowPicker('#firstgiftjob2rows','#firstgiftjob2addbtn','#mailitemrowtpl'),
+	  wireItemRowPicker('#firstgiftjob3rows','#firstgiftjob3addbtn','#mailitemrowtpl')
+  ];
 
   function escHtml(s){
 	  return String(s==null?'':s).replace(/[&<>"']/g,function(c){
@@ -1337,6 +1377,103 @@ gm_require_login_or_redirect();
 			  }
 		  },
 		  error:function(){ $('#taskeditmsg').text('Lưu thất bại.'); }
+	  });
+  });
+
+  // ---- Quà Nạp Đầu Tiên theo hệ phái (firstRechargAward) ----
+  function populateFirstGiftJob(jobIndex, list){
+	  var gold=0, yb=0, itemAwards=[];
+	  list=list||[];
+	  for(var i=0;i<list.length;i++){
+		  var it=list[i];
+		  if(it.type==0 && it.id==1){ gold=it.count; }
+		  else if(it.type==0 && it.id==2){ yb=it.count; }
+		  else if(it.type==0){ console.warn('Loại tiền tệ id không xác định ở hệ phái '+(jobIndex+1)+':', it); }
+		  else { itemAwards.push(it); }
+	  }
+	  $('#firstgiftgold'+(jobIndex+1)).val(gold||'');
+	  $('#firstgiftyb'+(jobIndex+1)).val(yb||'');
+	  $('#firstgiftjob'+(jobIndex+1)+'rows').html('');
+	  if(itemAwards.length==0){
+		  addFirstGiftRow[jobIndex]();
+	  }else{
+		  for(var i=0;i<itemAwards.length;i++){
+			  var newRow=addFirstGiftRow[jobIndex]();
+			  (function(newRow, it){
+				  newRow.find('.mail-item-id').val(it.id);
+				  newRow.find('.mail-item-num').val(it.count);
+				  if(it.name){
+					  var box=newRow.find('.mail-item-selected');
+					  box.find('img,.noicon').remove();
+					  box.prepend(iconOrPlaceholder(it.icon,''));
+					  box.find('.name').text(it.name);
+					  box.find('.sub').text('ID: '+it.id);
+					  newRow.find('.mail-item-search').val(it.name);
+				  }else{
+					  newRow.find('.mail-item-search').val('ID '+it.id+' (chưa rõ tên)');
+				  }
+			  })(newRow, itemAwards[i]);
+		  }
+	  }
+  }
+  function collectFirstGiftJob(jobIndex){
+	  var items=[];
+	  var gold=$.trim($('#firstgiftgold'+(jobIndex+1)).val());
+	  if(gold!==''){
+		  if(isNaN(gold)||gold<0){ return {error:'Số Đồng hệ phái '+(jobIndex+1)+' không hợp lệ.'}; }
+		  if(gold>0){ items.push({type:0,id:1,count:parseInt(gold,10)}); }
+	  }
+	  var yb=$.trim($('#firstgiftyb'+(jobIndex+1)).val());
+	  if(yb!==''){
+		  if(isNaN(yb)||yb<0){ return {error:'Số Nguyên Bảo hệ phái '+(jobIndex+1)+' không hợp lệ.'}; }
+		  if(yb>0){ items.push({type:0,id:2,count:parseInt(yb,10)}); }
+	  }
+	  var err=null;
+	  $('#firstgiftjob'+(jobIndex+1)+'rows .mail-item-row').each(function(){
+		  var r=$(this);
+		  var itemid=r.find('.mail-item-id').val();
+		  var num=$.trim(r.find('.mail-item-num').val());
+		  if(itemid=='' || itemid=='0'){
+			  if(num!==''){ err='Hệ phái '+(jobIndex+1)+' có dòng chưa chọn vật phẩm.'; }
+			  return;
+		  }
+		  if(num=='' || isNaN(num) || num<1){ err='Hệ phái '+(jobIndex+1)+' có dòng số lượng không hợp lệ.'; return; }
+		  items.push({type:1,id:parseInt(itemid,10),count:parseInt(num,10)});
+	  });
+	  if(err){ return {error:err}; }
+	  if(items.length==0){ return {error:'Hệ phái '+(jobIndex+1)+' phải có ít nhất 1 dòng phần thưởng.'}; }
+	  return {items:items};
+  }
+  $('#firstgiftloadbtn').click(function(){
+	  $('#firstgiftmsg').text('Đang tải...');
+	  $.ajax({
+		  url:'gmquery.php', type:'post', data:{type:'getfirstgift',uid:'-',qu:qu}, cache:false, dataType:'json',
+		  success:function(data){
+			  if(data.errcode!=0){ $('#firstgiftmsg').text(data.info); return; }
+			  for(var j=0;j<3;j++){ populateFirstGiftJob(j, data.jobs[j]); }
+			  $('#firstgiftjobs').show();
+			  $('#firstgiftmsg').text('');
+		  },
+		  error:function(){ $('#firstgiftmsg').text('Tải dữ liệu thất bại.'); }
+	  });
+  });
+  $('#firstgiftsavebtn').click(function(){
+	  var jobs=[];
+	  for(var j=0;j<3;j++){
+		  var r=collectFirstGiftJob(j);
+		  if(r.error){ alert(r.error); return; }
+		  jobs.push(r.items);
+	  }
+	  if(!confirm('Xác nhận lưu Quà Nạp Đầu Tiên xuống file .config trên CẢ s1 và s99? (Đã tự động backup, nhưng CHƯA áp dụng cho tới khi restart gameworld)')){ return; }
+	  $.ajax({
+		  url:'gmquery.php', type:'post',
+		  data:{type:'savefirstgift',uid:'-',qu:qu,jobs:JSON.stringify(jobs)},
+		  cache:false, dataType:'json',
+		  success:function(data){
+			  $('#firstgiftmsg').text(data.info);
+			  if(data.errcode==0){ alert(data.info); }
+		  },
+		  error:function(){ $('#firstgiftmsg').text('Lưu thất bại.'); }
 	  });
   });
 

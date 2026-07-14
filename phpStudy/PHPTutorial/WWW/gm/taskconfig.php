@@ -52,6 +52,17 @@ function tc_get_config_defs($clientConfigDir) {
 			'clientKey' => null,
 			'editable' => array('title', 'content', 'attachment'),
 		),
+		'firsttier' => array(
+			'label' => 'Nạp thẻ lần đầu - mốc x4 Nguyên Bảo',
+			'file' => 'recharge/firstrechargeconfig.config',
+			'clientFile' => $clientConfigDir.'config6.json',
+			'clientKey' => 'ConfigFirstRecharge',
+			// Chỉ cho sửa payReturn (số Nguyên Bảo trả về) - KHÔNG cho sửa pay/payType/id vì
+			// các giá trị này được đối chiếu trực tiếp với số tiền thanh toán thật đổ về từ
+			// cổng thanh toán/SDK (getFirstChargeConfig trong dailyrecharge.lua khớp theo
+			// đúng cặp pay+payType) - đổi sai sẽ làm mốc nạp không còn khớp được đơn hàng thật.
+			'editable' => array('payReturn'),
+		),
 	);
 }
 
@@ -105,17 +116,25 @@ function tc_parse_table_value($rawVal) {
 				$close = tc_find_matching_brace($inner, $i);
 				if ($close < 0) { break; }
 				$sub = substr($inner, $i + 1, $close - $i - 1);
-				$item = array();
-				foreach (explode(',', $sub) as $kv) {
-					$kv = trim($kv);
-					if ($kv === '') { continue; }
-					$parts = explode('=', $kv, 2);
-					if (count($parts) !== 2) { continue; }
-					$k = trim($parts[0]);
-					$v = trim($parts[1]);
-					$item[$k] = (strpos($v, '.') !== false) ? floatval($v) : intval($v);
+				$subTrim = trim($sub);
+				if ($subTrim !== '' && $subTrim[0] === '{') {
+					// Phần tử lại là 1 mảng lồng nữa (VD firstRechargAward: mảng 3 phần tử,
+					// mỗi phần tử là 1 awardList riêng cho 1 hệ phái) - đệ quy thay vì chỉ
+					// hỗ trợ đúng 2 tầng lồng như trước.
+					$result[] = tc_parse_table_value(substr($inner, $i, $close - $i + 1));
+				} else {
+					$item = array();
+					foreach (explode(',', $sub) as $kv) {
+						$kv = trim($kv);
+						if ($kv === '') { continue; }
+						$parts = explode('=', $kv, 2);
+						if (count($parts) !== 2) { continue; }
+						$k = trim($parts[0]);
+						$v = trim($parts[1]);
+						$item[$k] = (strpos($v, '.') !== false) ? floatval($v) : intval($v);
+					}
+					$result[] = $item;
 				}
-				$result[] = $item;
 				$i = $close + 1;
 			} else {
 				$i++;
@@ -253,6 +272,13 @@ function tc_serialize_value($fieldName, $value) {
 			}
 			return '{'.implode(',', $parts).'}';
 		}
+		if (count($value) > 0 && is_array($value[0])) {
+			// Mảng lồng (mỗi phần tử lại là 1 mảng, VD firstRechargAward: 1 awardList
+			// riêng cho mỗi hệ phái) - đệ quy để giữ đúng cấu trúc nhiều tầng.
+			$parts = array();
+			foreach ($value as $sub) { $parts[] = tc_serialize_value($fieldName, $sub); }
+			return '{'.implode(',', $parts).'}';
+		}
 		return '{'.implode(',', array_map('intval', $value)).'}';
 	}
 	if (is_string($value)) {
@@ -285,8 +311,8 @@ function tc_read_client_display($def) {
 	if (!isset($json[$def['clientKey']]) || !is_array($json[$def['clientKey']])) { return $display; }
 	foreach ($json[$def['clientKey']] as $k => $v) {
 		$display[intval($k)] = array(
-			'name' => isset($v['name']) ? $v['name'] : '',
-			'desc' => isset($v['desc']) ? $v['desc'] : '',
+			'name' => isset($v['name']) ? $v['name'] : (isset($v['paydesc']) ? $v['paydesc'] : ''),
+			'desc' => isset($v['desc']) ? $v['desc'] : (isset($v['paydesc']) ? $v['paydesc'] : ''),
 		);
 	}
 	return $display;
@@ -426,4 +452,47 @@ function tc_save_task_entry($serverDirs, $defKey, $blockKey, $updates, $defs) {
 	}
 
 	return array('ok' => true, 'writtenTo' => $writtenTo, 'backups' => $backups, 'skipped' => $skipped);
+}
+
+// ---------- Quà nạp đầu tiên theo hệ phái (ChongZhiBaseConfig.firstRechargAward trong recharge/base.config) ----------
+// File này là 1 bảng "phẳng" (key=value trực tiếp, không có [N]={...} như các file khác) và
+// field firstRechargAward là mảng 3 phần tử (1 awardList riêng cho mỗi hệ phái/job 1-2-3) -
+// khác cấu trúc với mọi def khác nên dùng hàm đọc/ghi riêng thay vì ép vào khung entry chung.
+function tc_read_first_recharge_gift($dirS1) {
+	$path = $dirS1.'recharge/base.config';
+	if (!file_exists($path)) { return null; }
+	$text = file_get_contents($path);
+	if (!preg_match('/firstRechargAward\s*=\s*/', $text, $m, PREG_OFFSET_CAPTURE)) { return null; }
+	$valStart = $m[0][1] + strlen($m[0][0]);
+	$close = tc_find_matching_brace($text, $valStart);
+	if ($close < 0) { return null; }
+	$raw = substr($text, $valStart, $close - $valStart + 1);
+	return array('jobs' => tc_parse_table_value($raw));
+}
+
+function tc_save_first_recharge_gift($serverDirs, $jobsData) {
+	$backups = array();
+	$writtenTo = array();
+	foreach ($serverDirs as $srvKey => $dir) {
+		$path = $dir.'recharge/base.config';
+		if (!file_exists($path)) {
+			return array('ok' => false, 'error' => "Không tìm thấy file cấu hình trên {$srvKey}: {$path}");
+		}
+		$text = file_get_contents($path);
+		if (!preg_match('/firstRechargAward\s*=\s*/', $text, $m, PREG_OFFSET_CAPTURE)) {
+			return array('ok' => false, 'error' => "Không tìm thấy field firstRechargAward trên {$srvKey}.");
+		}
+		$valStart = $m[0][1] + strlen($m[0][0]);
+		$close = tc_find_matching_brace($text, $valStart);
+		if ($close < 0) {
+			return array('ok' => false, 'error' => "File cấu hình trên {$srvKey} có vẻ bị lỗi cú pháp.");
+		}
+		$newRaw = tc_serialize_value('firstRechargAward', $jobsData);
+		$newText = substr($text, 0, $valStart).$newRaw.substr($text, $close + 1);
+		$bak = tc_backup_file($path);
+		if ($bak) { $backups[] = $bak; }
+		file_put_contents($path, $newText);
+		$writtenTo[] = $path;
+	}
+	return array('ok' => true, 'writtenTo' => $writtenTo, 'backups' => $backups);
 }

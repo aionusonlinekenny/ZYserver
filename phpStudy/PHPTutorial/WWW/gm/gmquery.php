@@ -704,6 +704,67 @@ if($_POST){
 			);
 			exit(json_encode($return));
 			break;
+		case 'getfirstgift':
+			$result=tc_read_first_recharge_gift($taskConfigDirs['s1']);
+			if($result===null){
+				$return=array('errcode'=>1,'info'=>'Không đọc được file recharge/base.config (kiểm tra lại đường dẫn $taskConfigDirs trong config.php)');
+				exit(json_encode($return));
+			}
+			$itemCatalog=tc_load_item_catalog($taskClientConfigDir.'config0.json');
+			$jobs=array();
+			foreach($result['jobs'] as $job){
+				$jobs[]=tc_enrich_award_list($job,$itemCatalog);
+			}
+			$return=array(
+				'errcode'=>0,
+				'info'=>'OK',
+				'jobs'=>$jobs,
+			);
+			exit(json_encode($return));
+			break;
+		case 'savefirstgift':
+			$jobsRaw=trim($_POST['jobs']);
+			$jobsIn=$jobsRaw===''?null:json_decode($jobsRaw,true);
+			if(!is_array($jobsIn) || count($jobsIn)!==3){
+				$return=array('errcode'=>1,'info'=>'Dữ liệu không hợp lệ - cần đúng 3 hệ phái');
+				exit(json_encode($return));
+			}
+			$safeJobs=array();
+			foreach($jobsIn as $job){
+				if(!is_array($job)){
+					$return=array('errcode'=>1,'info'=>'Dữ liệu 1 hệ phái không hợp lệ');
+					exit(json_encode($return));
+				}
+				$cleaned=array();
+				foreach($job as $it){
+					$t=isset($it['type'])?intval($it['type']):-1;
+					$id=isset($it['id'])?intval($it['id']):-1;
+					$cnt=isset($it['count'])?intval($it['count']):0;
+					if(($t!==0 && $t!==1) || $cnt<=0){ continue; }
+					$cleaned[]=array('type'=>$t,'id'=>$id,'count'=>$cnt);
+				}
+				if(count($cleaned)==0){
+					$return=array('errcode'=>1,'info'=>'Mỗi hệ phái cần ít nhất 1 dòng phần thưởng hợp lệ');
+					exit(json_encode($return));
+				}
+				if(count($cleaned)>20){
+					$return=array('errcode'=>1,'info'=>'Tối đa 20 dòng phần thưởng mỗi hệ phái');
+					exit(json_encode($return));
+				}
+				$safeJobs[]=$cleaned;
+			}
+			$result=tc_save_first_recharge_gift($taskConfigDirs,$safeJobs);
+			if(!$result['ok']){
+				$return=array('errcode'=>1,'info'=>$result['error']);
+				exit(json_encode($return));
+			}
+			$return=array(
+				'errcode'=>0,
+				'info'=>'Đã lưu vào file .config trên cả s1 và s99. LƯU Ý: phải khởi động lại (restart) gameworld server để thay đổi có hiệu lực trong game.',
+				'backups'=>$result['backups'],
+			);
+			exit(json_encode($return));
+			break;
 		default:
 			$return=array(
 				'errcode'=>1,
