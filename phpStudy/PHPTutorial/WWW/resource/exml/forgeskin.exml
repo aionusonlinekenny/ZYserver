@@ -38,7 +38,7 @@
 
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" anchorOffsetX="0" width="601" top="0" horizontalCenter="0.5"/>
 
-	<e:Image source="biaoti_duanzao" horizontalCenter="-227.5" top="8" scaleX="1.6" scaleY="1.6"/>
+	<e:Image source="biaoti_duanzao" horizontalCenter="-227.5" top="8"/>
 	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="1" scaleY="1" horizontalCenter="273"/>
 	
 </e:Skin>
