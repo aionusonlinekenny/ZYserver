@@ -4509,3 +4509,31 @@ this.mapName0.textFlow=TextFlowMaker.generateTextFlow("Quan |C:0x00ff00&T:"+User
 Cache-bust: `main.min_f8609d58.js`(mục 142/147/148)→`main.min_194aa9a9.js`. Xác minh: `node -c` file mới, `grep` xác nhận không còn tham chiếu tên file cũ trong `manifest.json`/`index.php`, test trực tiếp bằng Node giả lập `guanqiaID=8` xác nhận chuỗi kết quả đúng "Quan 8" (trước là "Thứ 8 Quan").
 
 **Chưa kiểm chứng bằng ảnh thật**: cần deploy + xác nhận HUD hiện đúng "Quan 8" thay vì "Thứ 8 Quan".
+
+**LƯU Ý QUAN TRỌNG phát hiện SAU khi push mục này**: commit đầu tiên cho mục 149 KHÔNG thực sự chứa nội dung đã sửa (dù message + rename file đúng) — do lệnh `git add` liệt kê CẢ đường dẫn file CŨ (đã bị `git mv` đổi tên trước đó, không còn tồn tại) LẪN các đường dẫn hợp lệ khác trong CÙNG 1 lệnh; khi `git add` gặp dù chỉ 1 pathspec không khớp file nào, nó BÁO LỖI VÀ KHÔNG STAGE BẤT KỲ FILE NÀO trong lệnh đó (âm thầm, không rõ ràng) — khiến commit dùng lại nội dung ĐÃ STAGE TỪ TRƯỚC ĐÓ (từ lúc `git mv`, có thể là bản CŨ chưa sửa). Bị phát hiện nhờ Stop hook báo "uncommitted changes" sau khi tưởng đã push xong. Lặp lại y hệt lỗi này ở mục 150 (xem bên dưới) trước khi rút được kinh nghiệm triệt để.
+
+## 150. Sửa "Đấu t5 Ải  nhận  Gương Kim Lý / iếp    được" (dòng thông báo trong popup "Thưởng vượt ải") (2026-07-14)
+
+Người dùng gửi ảnh popup "Thưởng vượt ải" (mở ra sau khi thắng 1 ải), câu hướng dẫn "Đấu tiếp 5 Ải nhận được Gương Kim Lý" bị vỡ chữ, xuống dòng sai vị trí giữa từ.
+
+**Điều tra bằng Explore subagent**: xác định đúng class `TargetGuideWin` (skin `targetSkin` trong `default.thm.js`, nguồn `resource/exml/targetSkin.exml`). Nguyên nhân CÙNG DẠNG với mục 140-B: 1 `Group` (`textPane`) dùng `HorizontalLayout` chứa **4 Label riêng lẻ** ghép thành 1 câu:
+- `guanqiaDes1` = "Đấu tiếp" (có `width="45"` — quá hẹp so với 8 ký tự tiếng Việt cỡ chữ 20)
+- `guanqiaDes2` = số ải động (set runtime, màu vàng `0xffff00`)
+- `guanqiaDes0` = "Ải  nhận được" (có `width="79"` — cũng quá hẹp)
+- `artifactName1` = tên phần thưởng động (set runtime, màu vàng)
+
+Vì `width` cố định quá hẹp, chữ tự wrap NGAY TRONG Label đó ("Đấu tiếp" → "Đấu t" xuống dòng "iếp"), nhưng `HorizontalLayout` vẫn đặt Label tiếp theo (`guanqiaDes2`) dựa theo `width` KHAI BÁO (45px) chứ không theo độ rộng chữ THẬT đang tràn ra — khiến số ải bị đè ngay lên giữa chữ "Đấu t...iếp". `guanqiaDes0` cũng lỗi y hệt với "Ải nhận được".
+
+**Sửa**: gộp cả 4 Label thành 1 Label duy nhất `guanqiaDesc` (`width="420"`, đủ rộng, `textAlign="center"`), dựng câu qua `TextFlowMaker.generateTextFlow` trong `main.min.js` (hàm hiển thị hướng dẫn ải, chỗ trước đây gán `this.guanqiaDes2.text=...,this.artifactName1.text=...`) — giữ đúng màu trắng cho phần tĩnh + vàng cho số ải/tên phần thưởng như thiết kế gốc:
+```js
+this.guanqiaDesc.textFlow=TextFlowMaker.generateTextFlow("Đấu tiếp |C:0xffff00&T:"+UserFb.ins().getNextChapterNeed()+"| Ải nhận được |C:0xffff00&T:"+a.name+"|")
+```
+Đồng bộ `default.thm.js` (gộp 4 hàm factory `guanqiaDes1_i`/`guanqiaDes2_i`/`guanqiaDes0_i`/`artifactName1_i` thành 1 `guanqiaDesc_i`, sửa `textPane_i`'s `elementsContent`, sửa mảng `skinParts`) và `targetSkin.exml` (gộp 4 `&lt;e:Label&gt;` thành 1) theo đúng quy trình đã dùng ở mục 140.
+
+Cache-bust CẢ 2 file: `main.min_194aa9a9.js`(mục 149)→`main.min_54f476dd.js`, `default.thm_09c1d7b7.js`(mục 140+)→`default.thm_2d3b32cb.js`. Xác minh: `node -c` cả 2 file, `python3 xml.etree` parse exml, kiểm tra 0 tham chiếu sót lại tên biến cũ (`guanqiaDes1`/`guanqiaDes2`/`guanqiaDes0`/`artifactName1`) trong CẢ 2 file JS, đối chiếu `skinParts` với tên hàm factory thật (0 entry mồ côi), 0 tham chiếu tên file cũ còn sót trong `manifest.json`/`index.php`.
+
+**LỖI QUY TRÌNH GIT lặp lại từ mục 149 (đã sửa dứt điểm lần này)**: y hệt sự cố mục 149 — `git add` với danh sách pathspec có lẫn đường dẫn file CŨ (đã `git mv` đi, không còn tồn tại) khiến LỆNH BÁO LỖI VÀ KHÔNG STAGE FILE NÀO TRONG LỆNH ĐÓ, làm commit đầu chỉ chứa 2/5 file thay đổi thật (thiếu `index.php`/`manifest.json`/`targetSkin.exml`). Lần này đã PHÁT HIỆN VÀ SỬA NGAY (không phải nhờ Stop hook) bằng cách chủ động đối chiếu **git hash-object (nội dung đĩa) với git ls-files -s (nội dung đã stage)** ngay trước mỗi lần `git commit` — nếu 2 hash không khớp thì `git add` lại rồi kiểm tra lại, và sau khi commit LUÔN `git show HEAD:<path>` để xác nhận nội dung thật đã vào commit trước khi `git push`.
+
+**Quy tắc rút ra, áp dụng từ nay về sau**: (1) KHÔNG BAO GIỜ liệt kê tên file CŨ (trước khi `git mv`) trong cùng 1 lệnh `git add` với các file khác — `git add` thất bại IM LẶNG (không stage gì cả) nếu có dù chỉ 1 pathspec không khớp; (2) sau MỌI lần `git add` trước khi `git commit`, đối chiếu `git hash-object <file>` (đĩa) với cột hash trong `git ls-files -s <file>` (đã stage) — phải khớp; (3) sau MỌI lần `git commit`, chạy `git show HEAD:<file> | grep <chuỗi đặc trưng của fix>` để xác nhận nội dung thật nằm trong commit, KHÔNG chỉ tin vào commit message hay số dòng insert/delete hiển thị; (4) chỉ `git push` sau khi bước (3) xác nhận thành công.
+
+**Chưa kiểm chứng bằng ảnh thật**: cần deploy + xác nhận popup "Thưởng vượt ải" hiện đúng 1 dòng "Đấu tiếp 5 Ải nhận được [Tên phần thưởng]" không vỡ chữ/không đè số lên chữ.
