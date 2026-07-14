@@ -1043,7 +1043,7 @@ gm_require_login_or_redirect();
 	  var tr=$(this).closest('tr');
 	  var actorid=tr.data('actorid');
 	  var account=tr.data('account');
-	  if(!confirm('Xoá nhân vật của tài khoản "'+account+'"? Thao tác này không thể hoàn tác.')){ return; }
+	  if(!confirm('Xoá (vô hiệu hoá) nhân vật của tài khoản "'+account+'"? Nhân vật sẽ không đăng nhập được nữa và biến mất khỏi danh sách này, nhưng dữ liệu (vật phẩm, thư, bang hội...) vẫn được giữ lại trong DB, không xoá vật lý.')){ return; }
 	  $.ajax({
 		  url:'gmquery.php',
 		  type:'post',

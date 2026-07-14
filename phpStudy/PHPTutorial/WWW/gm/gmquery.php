@@ -471,7 +471,7 @@ if($_POST){
 			$page=max(1,intval($_POST['page']));
 			$pageSize=20;
 			$offset=($page-1)*$pageSize;
-			$where="WHERE serverindex='{$srvid}'";
+			$where="WHERE serverindex='{$srvid}' AND (status & 2) = 2";
 			if($keyword!==''){
 				$where.=" AND (accountname LIKE '%{$keyword}%' OR actorname LIKE '%{$keyword}%')";
 			}
@@ -522,20 +522,31 @@ if($_POST){
 				);
 				exit(json_encode($return));
 			}
-			$accountname=$row['accountname'];
-			// Dùng stored procedure gốc của server để xoá đầy đủ dữ liệu liên quan (bang hội, vật phẩm, thư, bạn bè...)
-			// thay vì tự DELETE FROM actors (sẽ để sót dữ liệu ở các bảng khác).
-			$ok=mysqli_query($conn,"CALL clientdeletecharactor('{$actorid}','{$accountname}')");
+			$accountname=mysqli_real_escape_string($conn,$row['accountname']);
+			// Stored procedure gốc của engine (clientdeletecharactor) không tồn tại trên DB thật
+			// (đã xác nhận qua dump SQL thật của người dùng - không nằm trong đó, và 2 procedure
+			// khác cùng chuỗi xoá nhân vật trong game - getactorssocial, delfightinfo - cũng vậy,
+			// nghĩa là tính năng xoá nhân vật gốc trong game rất có thể cũng chưa từng hoạt động
+			// trên server này, không phải lỗi riêng của GM tool).
+			// Thay bằng "xoá mềm": tắt bit giá trị 2 trong cột actors.status - đúng bit mà chính
+			// các stored procedure CÒN TỒN TẠI (clientstartplay, loadactorbasic) đang dùng làm điều
+			// kiện "nhân vật hợp lệ để đăng nhập/tải dữ liệu" ((status & 2) = 2). Tắt bit này khiến
+			// nhân vật không thể đăng nhập được nữa và biến mất khỏi danh sách người chơi trong GM
+			// tool (đã lọc thêm ở case 'playerlist'), nhưng KHÔNG xoá vật lý dữ liệu (vật phẩm, thư,
+			// bang hội...) ở các bảng khác - an toàn hơn nhiều so với tự đoán xoá nhiều bảng khi
+			// không có bản gốc để đối chiếu đầy đủ.
+			$ok=mysqli_query($conn,"UPDATE actors SET status = status & ~2 WHERE actorid='{$actorid}' AND accountname='{$accountname}'");
+			$affected=$ok?mysqli_affected_rows($conn):0;
 			mysqli_close($conn);
-			if($ok){
+			if($ok && $affected>0){
 				$return=array(
 					'errcode'=>0,
-					'info'=>'Đã xoá nhân vật thành công.',
+					'info'=>'Đã vô hiệu hoá nhân vật (xoá mềm) - nhân vật không thể đăng nhập được nữa và đã ẩn khỏi danh sách. Dữ liệu (vật phẩm, thư, bang hội...) vẫn được giữ trong DB, không xoá vật lý.',
 				);
 			}else{
 				$return=array(
 					'errcode'=>1,
-					'info'=>'Xoá nhân vật thất bại (stored procedure clientdeletecharactor có thể chưa tồn tại trên DB này).',
+					'info'=>'Xoá nhân vật thất bại.',
 				);
 			}
 			exit(json_encode($return));
@@ -567,7 +578,7 @@ if($_POST){
             }
             mysqli_select_db($conn,$qu['db']);
 			$newnameEsc=mysqli_real_escape_string($conn,$newname);
-			$dupObj=mysqli_query($conn,"SELECT actorid FROM actors WHERE actorname='{$newnameEsc}' AND serverindex='{$srvid}'");
+			$dupObj=mysqli_query($conn,"SELECT actorid FROM actors WHERE actorname='{$newnameEsc}' AND serverindex='{$srvid}' AND (status & 2) = 2");
 			if(mysqli_fetch_assoc($dupObj)){
 				mysqli_close($conn);
 				$return=array(
