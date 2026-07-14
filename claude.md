@@ -4551,3 +4551,5 @@ Xác nhận có 2 nơi dùng `source="biaoti_duanzao"` trong `default.thm.js` �
 Cache-bust: `default.thm_2d3b32cb.js`(mục 150)→`default.thm_4b6b16d0.js`. Xác minh: `node -c`, xác nhận cả 2 nơi dùng `biaoti_duanzao` trong file (chỉ 1 nơi có `scaleX=1.6` mới thêm, nơi còn lại - KfArenaSkin - vẫn nguyên `top=6` không đổi), không còn tham chiếu tên file cũ, đối chiếu `git hash-object` (đĩa) với `git ls-files -s` (đã stage) khớp trước khi commit, và `git show HEAD:<file>` xác nhận nội dung thật sau khi commit — áp dụng đúng quy trình rút ra từ mục 149/150 (không lặp lại lỗi git add nữa).
 
 **Chưa kiểm chứng bằng ảnh thật**: cần deploy + xác nhận tiêu đề "Luyện Khí" trong màn Rèn hiện to rõ hơn, không đè lên phần tử khác.
+
+**Cập nhật ngay sau đó**: người dùng xem thử thấy phóng to 1.6x nhìn xấu, yêu cầu trả về đúng kích thước gốc của file ảnh (không scale nữa). Đã gỡ `scaleX`/`scaleY` khỏi cả `default.thm.js` và `forgeskin.exml`, về lại y hệt trạng thái trước mục 151 (ảnh hiện đúng 61×33px gốc). Cache-bust: `default.thm_4b6b16d0.js`→`default.thm_5a563d2f.js`.
