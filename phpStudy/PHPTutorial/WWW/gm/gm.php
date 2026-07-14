@@ -1043,7 +1043,7 @@ gm_require_login_or_redirect();
 	  var tr=$(this).closest('tr');
 	  var actorid=tr.data('actorid');
 	  var account=tr.data('account');
-	  if(!confirm('Xoá (vô hiệu hoá) nhân vật của tài khoản "'+account+'"? Nhân vật sẽ không đăng nhập được nữa và biến mất khỏi danh sách này, nhưng dữ liệu (vật phẩm, thư, bang hội...) vẫn được giữ lại trong DB, không xoá vật lý.')){ return; }
+	  if(!confirm('XOÁ THẬT nhân vật của tài khoản "'+account+'"? Thao tác này xoá vật lý nhân vật cùng vật phẩm/thư/bang hội/bạn bè liên quan, KHÔNG thể hoàn tác qua giao diện (có lưu 1 bản snapshot trong bảng gm_deleted_actors để tra cứu thủ công nếu cần). Tên nhân vật/tài khoản sẽ dùng lại được để tạo nhân vật mới.')){ return; }
 	  $.ajax({
 		  url:'gmquery.php',
 		  type:'post',
