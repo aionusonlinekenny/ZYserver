@@ -625,6 +625,12 @@ if($_POST){
 			$pageSize=30;
 			$total=count($allRows);
 			$pageRows=array_slice($allRows,($page-1)*$pageSize,$pageSize);
+			$itemCatalog=tc_load_item_catalog($taskClientConfigDir.'config0.json');
+			foreach($pageRows as &$row){
+				if(isset($row['awardList'])){ $row['awardList']=tc_enrich_award_list($row['awardList'],$itemCatalog); }
+				if(isset($row['attachment'])){ $row['attachment']=tc_enrich_award_list($row['attachment'],$itemCatalog); }
+			}
+			unset($row);
 			$return=array(
 				'errcode'=>0,
 				'info'=>'OK',

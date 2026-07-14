@@ -271,6 +271,24 @@ gm_require_login_or_redirect();
   }
   .selected-box .name{font-weight:600;font-size:13px}
   .selected-box .sub{font-size:11.5px;color:var(--muted)}
+  .award-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    background:#f0f2f5;
+    border-radius:5px;
+    padding:2px 6px 2px 2px;
+    margin:2px 4px 2px 0;
+    font-size:12px;
+    white-space:nowrap;
+  }
+  .award-icon{
+    width:18px;
+    height:18px;
+    border-radius:3px;
+    object-fit:contain;
+    background:#fff;
+  }
   @media (max-width:520px){
     .field label{min-width:100%;}
     .field input[type=text],
@@ -1108,12 +1126,15 @@ gm_require_login_or_redirect();
 	  for(var i=0;i<list.length;i++){
 		  var it=list[i];
 		  if(it.type==0){
-			  parts.push((it.id==1?'Đồng':(it.id==2?'Nguyên Bảo':'Tiền(id='+it.id+')'))+' ×'+it.count);
+			  var label=(it.id==1?'Đồng':(it.id==2?'Nguyên Bảo':'Tiền(id='+it.id+')'));
+			  parts.push('<span class="award-chip">'+escHtml(label)+' ×'+it.count+'</span>');
 		  }else{
-			  parts.push('VP#'+it.id+' ×'+it.count);
+			  var iconHtml=it.icon?('<img src="'+escHtml(it.icon)+'" class="award-icon" onerror="this.style.display=\'none\'">'):'';
+			  var name=it.name?it.name:('VP#'+it.id+' (chưa rõ tên)');
+			  parts.push('<span class="award-chip">'+iconHtml+escHtml(name)+' ×'+it.count+'</span>');
 		  }
 	  }
-	  return parts.join(', ');
+	  return parts.join(' ');
   }
 
   function conditionSummary(row){
@@ -1151,7 +1172,7 @@ gm_require_login_or_redirect();
 					  +'<td style="padding:6px 8px">'+escHtml(dispName)+'</td>'
 					  +'<td style="padding:6px 8px;max-width:220px">'+escHtml(dispDesc.length>80?dispDesc.substring(0,80)+'…':dispDesc)+'</td>'
 					  +'<td style="padding:6px 8px">'+escHtml(conditionSummary(r))+'</td>'
-					  +'<td style="padding:6px 8px">'+escHtml(awardSummary(r.awardList||r.attachment))+'</td>'
+					  +'<td style="padding:6px 8px">'+awardSummary(r.awardList||r.attachment)+'</td>'
 					  +'<td style="padding:6px 8px"><a href="#" class="task-edit-btn" style="color:#2f6fed">Sửa</a></td>'
 					  +'</tr>';
 			  }
@@ -1224,23 +1245,35 @@ gm_require_login_or_redirect();
 				  var newRow=addTaskAwardRow();
 				  (function(newRow, it){
 					  newRow.find('.mail-item-id').val(it.id);
-					  newRow.find('.mail-item-search').val('ID '+it.id+' (đang tải tên...)');
 					  newRow.find('.mail-item-num').val(it.count);
-					  $.ajax({
-						  url:'itemquery.php', type:'post', data:{keyword:it.id}, cache:false, dataType:'json',
-						  success:function(data){
-							  var match=null;
-							  for(var k=0;k<data.length;k++){ if(String(data[k].key)==String(it.id)){ match=data[k]; break; } }
-							  if(match){
-								  var box=newRow.find('.mail-item-selected');
-								  box.find('img,.noicon').remove();
-								  box.prepend(iconOrPlaceholder(match.icon,''));
-								  box.find('.name').text(match.val);
-								  box.find('.sub').text('ID: '+match.key);
-								  newRow.find('.mail-item-search').val(match.val);
+					  // Dùng luôn name/icon đã tra sẵn từ danh sách (ConfigItem, phủ rộng hơn
+					  // items_vi.json) - nếu ko có (id không nằm trong ConfigItem, VD phần thưởng
+					  // danh hiệu) thì tra lại qua itemquery.php như phương án dự phòng.
+					  if(it.name){
+						  var box=newRow.find('.mail-item-selected');
+						  box.find('img,.noicon').remove();
+						  box.prepend(iconOrPlaceholder(it.icon,''));
+						  box.find('.name').text(it.name);
+						  box.find('.sub').text('ID: '+it.id);
+						  newRow.find('.mail-item-search').val(it.name);
+					  }else{
+						  newRow.find('.mail-item-search').val('ID '+it.id+' (chưa rõ tên - có thể là danh hiệu/phần thưởng đặc biệt)');
+						  $.ajax({
+							  url:'itemquery.php', type:'post', data:{keyword:it.id}, cache:false, dataType:'json',
+							  success:function(data){
+								  var match=null;
+								  for(var k=0;k<data.length;k++){ if(String(data[k].key)==String(it.id)){ match=data[k]; break; } }
+								  if(match){
+									  var box=newRow.find('.mail-item-selected');
+									  box.find('img,.noicon').remove();
+									  box.prepend(iconOrPlaceholder(match.icon,''));
+									  box.find('.name').text(match.val);
+									  box.find('.sub').text('ID: '+match.key);
+									  newRow.find('.mail-item-search').val(match.val);
+								  }
 							  }
-						  }
-					  });
+						  });
+					  }
 				  })(newRow, itemAwards[i]);
 			  }
 		  }

@@ -292,6 +292,43 @@ function tc_read_client_display($def) {
 	return $display;
 }
 
+// ---------- Danh mục vật phẩm (id -> tên/icon) để gắn icon vào phần thưởng ----------
+// Đọc thẳng ConfigItem trong config0.json (18k+ vật phẩm, đầy đủ hơn nhiều so với
+// items_vi.json - danh sách nhỏ dùng riêng cho picker tìm vật phẩm khi gửi thư) - đây
+// mới là bảng vật phẩm THẬT của game, có tên tiếng Việt + icon cho hầu hết mọi id
+// xuất hiện trong awardList/attachment. File ~2.4MB nên chỉ đọc 1 lần/request (static cache),
+// không gửi thẳng cho trình duyệt - server tự tra cứu rồi chỉ trả về đúng phần cần cho mỗi trang.
+function tc_load_item_catalog($configItemPath) {
+	static $cache = null;
+	if ($cache !== null) { return $cache; }
+	$cache = array();
+	if (!file_exists($configItemPath)) { return $cache; }
+	$json = json_decode(file_get_contents($configItemPath), true);
+	if (!isset($json['ConfigItem']) || !is_array($json['ConfigItem'])) { return $cache; }
+	foreach ($json['ConfigItem'] as $id => $it) {
+		$iconId = isset($it['icon']) ? $it['icon'] : $id;
+		$cache[intval($id)] = array(
+			'name' => isset($it['name']) ? $it['name'] : '',
+			'icon' => '../resource/icons/item/'.$iconId.'.png',
+		);
+	}
+	return $cache;
+}
+
+// Gắn name/icon vào từng phần tử type=1 (vật phẩm) của 1 danh sách awardList/attachment.
+// Tiền tệ (type=0) không cần vì đã có nhãn cố định Đồng/Nguyên Bảo phía JS.
+function tc_enrich_award_list($list, $catalog) {
+	if (!is_array($list)) { return $list; }
+	foreach ($list as &$it) {
+		if (isset($it['type']) && $it['type'] == 1 && isset($it['id']) && isset($catalog[$it['id']])) {
+			$it['name'] = $catalog[$it['id']]['name'];
+			$it['icon'] = $catalog[$it['id']]['icon'];
+		}
+	}
+	unset($it);
+	return $list;
+}
+
 // ---------- Danh sách entry đã gộp field + tên/mô tả hiển thị ----------
 function tc_list_entries($dirS1, $defKey, $defs) {
 	$loaded = tc_read_config($dirS1, $defKey, $defs);
