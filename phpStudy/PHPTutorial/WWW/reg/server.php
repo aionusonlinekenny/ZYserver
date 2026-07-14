@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include 'api/config.php';
 $channel = 10000;
 $appId = 'tw';
