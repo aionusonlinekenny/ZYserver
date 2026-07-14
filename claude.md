@@ -4429,3 +4429,15 @@ Rất có thể bản `gmquery.php` đang chạy thật trên server trước đ
 Xác minh: `php -l` sạch trên cả 2 file sau khi sửa; test trực tiếp qua `php -S` cục bộ — response `taskdefs`/`itemquery` giờ bắt đầu đúng bằng `{`/`[` (không còn 3 byte thừa), parse JSON thành công.
 
 **Bài học cho lần sau**: khi thêm 1 action mới vào 1 file PHP đã tồn tại lâu (không phải file mới tự viết), nên kiểm tra `head -c 3` file đó (hoặc byte đầu tiên bằng Python) TRƯỚC khi merge, để phát hiện BOM/whitespace thừa tồn đọng từ trước — nhất là với file có khả năng đã qua tay nhiều editor Windows (Notepad cũ hay tự thêm BOM khi lưu "UTF-8").
+
+## 145. Sau khi sửa BOM vẫn y hệt lỗi cũ — phát hiện thêm nguyên nhân thật sự: dùng cú pháp PHP 7+ (`??`) trong file có thể đang chạy PHP cũ hơn (2026-07-14)
+
+Người dùng redeploy `gmquery.php` (bản đã cắt BOM ở mục 144) nhưng báo lỗi Y HỆT như trước — cả "Danh sách người chơi" (`playerlist`, tính năng CŨ) lẫn dropdown "Loại nhiệm vụ" (`taskdefs`, tính năng MỚI) đều vẫn "Tải danh sách thất bại"/"Lỗi tải danh sách loại nhiệm vụ (HTTP 200)" với thông báo lỗi không đổi 1 chữ.
+
+**Nguyên nhân thật**: mục 143 lỡ dùng toán tử `??` (null coalescing, chỉ có từ PHP 7.0 trở lên) trong action `tasklist` (dòng lọc theo từ khóa tìm kiếm). PHP parse TOÀN BỘ file trước khi chạy bất kỳ dòng nào — nếu server thật đang chạy PHP < 7.0 (khá phổ biến với các bản phpStudy cũ dùng để đóng gói sẵn), riêng việc có `??` ở BẤT KỲ ĐÂU trong file khiến `gmquery.php` bị lỗi cú pháp (parse error) ngay từ đầu, làm HỎNG TOÀN BỘ file — không chỉ action `tasklist` mà cả `taskdefs`, `playerlist`, và mọi action khác trong cùng file đều bị ảnh hưởng như nhau. Đây giải thích đúng lý do vì sao lỗi playerlist (vốn hoạt động bình thường trước khi có tab Nhiệm vụ) cũng hỏng, và vì sao lỗi KHÔNG đổi dù đã sửa BOM (BOM là 1 lỗi thật nhưng không phải lỗi duy nhất — sửa BOM không đủ nếu file vẫn không parse được do cú pháp).
+
+**Sửa**: bỏ hết `??`, thay bằng `isset($x) ? $x : ''` (cú pháp tương thích PHP 5.3 trở lên). Đã rà lại toàn bộ `gmquery.php`/`gm.php`/`taskconfig.php`/`config.php` tìm thêm các cú pháp chỉ có ở PHP 7+/8+ khác (`?->` nullsafe, type hint tham số/return kiểu `: array`/`: string`, `match()`, `str_contains`/`str_starts_with`/`str_ends_with`, `enum`, `readonly`) — không phát hiện thêm trường hợp nào khác.
+
+**Bài học cho lần sau**: khi sửa 1 file PHP legacy đang chạy trên hạ tầng cũ (phpStudy Windows, khả năng cao PHP 5.x/7.0 thấp), TUYỆT ĐỐI tránh cú pháp PHP hiện đại (`??`, `?->`, `match`, arrow function `fn()`, type hint) trừ khi đã xác nhận chắc chắn phiên bản PHP server thật hỗ trợ — 1 dòng code hiện đại có thể làm hỏng NGUYÊN FILE parse-error, không chỉ đoạn code đó, và triệu chứng (HTTP 200 nhưng response rỗng/không phải JSON hợp lệ) rất dễ nhầm với các lỗi khác (thiếu file, BOM, cache) nên cần rà kỹ hơn khi lỗi "y hệt" vẫn còn sau khi đã sửa 1 nguyên nhân.
+
+**Chưa kiểm chứng**: cần người dùng redeploy lại `gmquery.php` (chỉ 1 file, không cần đụng 3 file kia) rồi thử lại cả tab "Quản lý tài khoản"/"Gửi quà" (playerlist) lẫn tab "Nhiệm vụ" (taskdefs/tasklist) để xác nhận đã hết lỗi thật.

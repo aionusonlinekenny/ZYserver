@@ -617,7 +617,7 @@ if($_POST){
 			$keyword=mb_strtolower(trim($_POST['keyword']));
 			if($keyword!==''){
 				$allRows=array_values(array_filter($allRows,function($row) use ($keyword){
-					$hay=mb_strtolower(($row['name']??'').' '.($row['desc']??'').' '.$row['blockKey'].' '.($row['taskId']??'').' '.($row['id']??''));
+					$hay=mb_strtolower((isset($row['name'])?$row['name']:'').' '.(isset($row['desc'])?$row['desc']:'').' '.$row['blockKey'].' '.(isset($row['taskId'])?$row['taskId']:'').' '.(isset($row['id'])?$row['id']:''));
 					return mb_strpos($hay,$keyword)!==false;
 				}));
 			}
