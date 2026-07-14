@@ -4537,3 +4537,17 @@ Cache-bust CẢ 2 file: `main.min_194aa9a9.js`(mục 149)→`main.min_54f476dd.j
 **Quy tắc rút ra, áp dụng từ nay về sau**: (1) KHÔNG BAO GIỜ liệt kê tên file CŨ (trước khi `git mv`) trong cùng 1 lệnh `git add` với các file khác — `git add` thất bại IM LẶNG (không stage gì cả) nếu có dù chỉ 1 pathspec không khớp; (2) sau MỌI lần `git add` trước khi `git commit`, đối chiếu `git hash-object <file>` (đĩa) với cột hash trong `git ls-files -s <file>` (đã stage) — phải khớp; (3) sau MỌI lần `git commit`, chạy `git show HEAD:<file> | grep <chuỗi đặc trưng của fix>` để xác nhận nội dung thật nằm trong commit, KHÔNG chỉ tin vào commit message hay số dòng insert/delete hiển thị; (4) chỉ `git push` sau khi bước (3) xác nhận thành công.
 
 **Chưa kiểm chứng bằng ảnh thật**: cần deploy + xác nhận popup "Thưởng vượt ải" hiện đúng 1 dòng "Đấu tiếp 5 Ải nhận được [Tên phần thưởng]" không vỡ chữ/không đè số lên chữ.
+
+## 151. Phóng to tiêu đề "Luyện Khí" (ảnh `biaoti_duanzao.png`) trong màn hình Rèn (2026-07-14)
+
+Người dùng hỏi vào đâu để tăng kích thước chỗ hiện tiêu đề `biaoti_duanzao.png`, kèm ảnh chụp màn hình Rèn (tab Cường Hóa) cho thấy chữ "Luyện Khí" ở góc trên-trái rất nhỏ so với phần còn lại của giao diện.
+
+**Điều tra**: `biaoti_duanzao.png` chỉ nặng **61×33px** (đã kiểm tra bằng PIL) — hiển thị đúng kích thước gốc (không có `width`/`height`/`scaleX`/`scaleY` nào được set) trong `<e:Image>` tại `resource/exml/forgeskin.exml:41` (class `SkinForge`, factory tương ứng `_proto._Image3_i` trong `default.thm.js`, thuộc class `forgeskin`). Đối chiếu toàn bộ thư mục `resource/image/biaoti/` xác nhận TẤT CẢ ảnh tiêu đề `biaoti_*.png` khác đều dùng chung kích thước gốc rất nhỏ tương tự (60-70px rộng, 30-36px cao) — đây là quy ước chung của game (ảnh tiêu đề nhỏ theo thiết kế gốc), không phải lỗi riêng của màn Rèn, nhưng người dùng chỉ yêu cầu phóng to đúng chỗ này nên chỉ sửa `biaoti_duanzao`.
+
+Xác nhận có 2 nơi dùng `source="biaoti_duanzao"` trong `default.thm.js` — 1 ở class `forgeskin` (đúng màn hình trong ảnh), 1 ở class `KfArenaSkin` (màn hình Đấu Trường Liên Server, KHÔNG liên quan) — chỉ sửa đúng cái đầu, xác nhận qua kiểm tra không đụng tới cái thứ 2.
+
+**Sửa**: thêm `scaleX="1.6" scaleY="1.6"` vào đúng `<e:Image source="biaoti_duanzao">` đó (giữ nguyên tỉ lệ, phóng to đều cả 2 chiều thay vì set `width`/`height` cứng có thể làm méo ảnh). Kiểm tra không có rủi ro đè chữ: `horizontalCenter="-227.5"` trong khung rộng 600px đặt ảnh sát mép trái, còn nút đóng (`closeBtn`) ở `horizontalCenter="273"` (sát mép phải) — cách nhau rất xa nên phóng to 1.6 lần (61×33 → ~98×53px) không chạm bất kỳ phần tử nào khác. Đồng bộ `default.thm.js`'s `_Image3_i` factory và `forgeskin.exml`.
+
+Cache-bust: `default.thm_2d3b32cb.js`(mục 150)→`default.thm_4b6b16d0.js`. Xác minh: `node -c`, xác nhận cả 2 nơi dùng `biaoti_duanzao` trong file (chỉ 1 nơi có `scaleX=1.6` mới thêm, nơi còn lại - KfArenaSkin - vẫn nguyên `top=6` không đổi), không còn tham chiếu tên file cũ, đối chiếu `git hash-object` (đĩa) với `git ls-files -s` (đã stage) khớp trước khi commit, và `git show HEAD:<file>` xác nhận nội dung thật sau khi commit — áp dụng đúng quy trình rút ra từ mục 149/150 (không lặp lại lỗi git add nữa).
+
+**Chưa kiểm chứng bằng ảnh thật**: cần deploy + xác nhận tiêu đề "Luyện Khí" trong màn Rèn hiện to rõ hơn, không đè lên phần tử khác.
