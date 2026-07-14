@@ -7,6 +7,7 @@ if($_POST){
 	gm_require_login_or_json();
 	include 'config.php';
 	include 'paypal_lib.php';
+	include 'taskconfig.php';
 	$quid=trim($_POST['qu']);
 	if($quid==''){
 		$return=array(
@@ -83,16 +84,42 @@ if($_POST){
 				exit(json_encode($return));
 			break;
 		case 'mail':
-			$itemid=intval($_POST['item']);
-			$num=intval($_POST['num']);
-			$type='1';
-			if(!$num){
+			$head=trim($_POST['head']);
+			$context=trim($_POST['context']);
+			if($head===''){ $head='Túy Võ Hiệp GM Mail'; }
+			if($context===''){ $context='Túy Võ Hiệp GM Mail'; }
+			$itemsRaw=trim($_POST['items']);
+			$itemsArr=$itemsRaw===''?null:json_decode($itemsRaw,true);
+			if(!is_array($itemsArr) || count($itemsArr)==0){
 				$return=array(
 					'errcode'=>1,
-					'info'=>'Sai số lượng',
+					'info'=>'Chưa chọn vật phẩm/tiền tệ nào để gửi',
 				);
 				exit(json_encode($return));
 			}
+			$parts=array();
+			foreach($itemsArr as $it){
+				$t=isset($it['type'])?intval($it['type']):-1;
+				$id=isset($it['id'])?intval($it['id']):-1;
+				$cnt=isset($it['count'])?intval($it['count']):0;
+				if(($t!==0 && $t!==1) || $cnt<=0){ continue; }
+				$parts[]="{$t},{$id},{$cnt}";
+			}
+			if(count($parts)==0){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Không có vật phẩm/tiền tệ hợp lệ (số lượng phải > 0)',
+				);
+				exit(json_encode($return));
+			}
+			if(count($parts)>20){
+				$return=array(
+					'errcode'=>1,
+					'info'=>'Tối đa 20 dòng vật phẩm/tiền tệ mỗi lần gửi',
+				);
+				exit(json_encode($return));
+			}
+			$itemStr=implode(';',$parts);
             $conn = mysqli_connect($qu['ip'],$qu['user'],$qu['pswd']);
             # Kiểm tra kết nối thành công hay chưa
             if(!$conn){
@@ -106,7 +133,7 @@ if($_POST){
             mysqli_select_db($conn,$qu['db']);
             // Chuẩn bị câu lệnh SQL
 			$sql="SELECT actors.actorid FROM actors WHERE actors.accountname = '{$uid}'";
-			
+
 			/* $sql="SELECT players.dbid FROM players WHERE players.account = '{$uid}'"; */
             $obj = mysqli_query($conn,$sql);
             $row = mysqli_fetch_assoc($obj);
@@ -118,9 +145,12 @@ if($_POST){
 				);
 				exit(json_encode($return));
             }else{
-			$uid=$row['actorid'];
-			$sql="INSERT INTO gmcmd (serverid,cmdid,cmd,param1,param2,param3,param4,param5) VALUES ('{$srvid}','1','sendMail','Túy Võ Hiệp GM Mail', 'Túy Võ Hiệp GM Mail','{$uid}','{$type},{$itemid},{$num}','')";
-/* 			$sql="INSERT INTO gmcmd(serverid,cmd,param1,param2,param3,param4) VALUES ('{$srvid}','mail','{$uid}','{$type}','{$itemid}','{$num}')"; */            $obj = mysqli_query($conn,$sql);
+			$actorid=$row['actorid'];
+			$headEsc=mysqli_real_escape_string($conn,$head);
+			$contextEsc=mysqli_real_escape_string($conn,$context);
+			$itemStrEsc=mysqli_real_escape_string($conn,$itemStr);
+			$sql="INSERT INTO gmcmd (serverid,cmdid,cmd,param1,param2,param3,param4,param5) VALUES ('{$srvid}','1','sendMail','{$headEsc}','{$contextEsc}','{$actorid}','{$itemStrEsc}','')";
+            $obj = mysqli_query($conn,$sql);
 			mysqli_close($conn);
 			}
 				$return=array(
@@ -560,6 +590,105 @@ if($_POST){
 			$return=array(
 				'errcode'=>0,
 				'info'=>'Đã đổi tên nhân vật. Nếu đang online sẽ đổi ngay; nếu offline có thể cần đăng nhập lại (và server đã áp dụng bản vá renameActor) để tên mới hiển thị đúng.',
+			);
+			exit(json_encode($return));
+			break;
+		case 'taskdefs':
+			$defs=tc_get_config_defs($taskClientConfigDir);
+			$out=array();
+			foreach($defs as $k=>$d){
+				$out[]=array('key'=>$k,'label'=>$d['label'],'editable'=>$d['editable']);
+			}
+			$return=array(
+				'errcode'=>0,
+				'info'=>'OK',
+				'list'=>$out,
+			);
+			exit(json_encode($return));
+			break;
+		case 'tasklist':
+			$defs=tc_get_config_defs($taskClientConfigDir);
+			$taskdef=trim($_POST['taskdef']);
+			if(!isset($defs[$taskdef])){
+				$return=array('errcode'=>1,'info'=>'Loại nhiệm vụ không hợp lệ');
+				exit(json_encode($return));
+			}
+			$allRows=tc_list_entries($taskConfigDirs['s1'],$taskdef,$defs);
+			$keyword=mb_strtolower(trim($_POST['keyword']));
+			if($keyword!==''){
+				$allRows=array_values(array_filter($allRows,function($row) use ($keyword){
+					$hay=mb_strtolower(($row['name']??'').' '.($row['desc']??'').' '.$row['blockKey'].' '.($row['taskId']??'').' '.($row['id']??''));
+					return mb_strpos($hay,$keyword)!==false;
+				}));
+			}
+			$page=max(1,intval($_POST['page']));
+			$pageSize=30;
+			$total=count($allRows);
+			$pageRows=array_slice($allRows,($page-1)*$pageSize,$pageSize);
+			$return=array(
+				'errcode'=>0,
+				'info'=>'OK',
+				'list'=>$pageRows,
+				'total'=>$total,
+				'page'=>$page,
+				'pageSize'=>$pageSize,
+				'editable'=>$defs[$taskdef]['editable'],
+			);
+			exit(json_encode($return));
+			break;
+		case 'tasksave':
+			$defs=tc_get_config_defs($taskClientConfigDir);
+			$taskdef=trim($_POST['taskdef']);
+			$blockKey=intval($_POST['blockkey']);
+			if(!isset($defs[$taskdef])){
+				$return=array('errcode'=>1,'info'=>'Loại nhiệm vụ không hợp lệ');
+				exit(json_encode($return));
+			}
+			$updatesRaw=trim($_POST['updates']);
+			$updates=$updatesRaw===''?null:json_decode($updatesRaw,true);
+			if(!is_array($updates) || count($updates)==0){
+				$return=array('errcode'=>1,'info'=>'Không có dữ liệu cập nhật');
+				exit(json_encode($return));
+			}
+			// Chỉ nhận field nằm trong danh sách editable của loại nhiệm vụ này (chặn field lạ ngay từ đây)
+			$editable=$defs[$taskdef]['editable'];
+			$safeUpdates=array();
+			foreach($updates as $f=>$v){
+				if(!in_array($f,$editable,true)){ continue; }
+				if($f==='awardList'){
+					if(!is_array($v)){ continue; }
+					$cleaned=array();
+					foreach($v as $it){
+						$t=isset($it['type'])?intval($it['type']):-1;
+						$id=isset($it['id'])?intval($it['id']):-1;
+						$cnt=isset($it['count'])?intval($it['count']):0;
+						if(($t!==0 && $t!==1) || $cnt<=0){ continue; }
+						$cleaned[]=array('type'=>$t,'id'=>$id,'count'=>$cnt);
+					}
+					if(count($cleaned)>20){
+						$return=array('errcode'=>1,'info'=>'Tối đa 20 dòng phần thưởng');
+						exit(json_encode($return));
+					}
+					$safeUpdates[$f]=$cleaned;
+				}elseif($f==='mail_head' || $f==='mail_context'){
+					$safeUpdates[$f]=mb_substr(trim((string)$v),0,500);
+				}else{
+					$safeUpdates[$f]=intval($v);
+				}
+			}
+			if(count($safeUpdates)==0){
+				$return=array('errcode'=>1,'info'=>'Không có field hợp lệ để lưu');
+				exit(json_encode($return));
+			}
+			$result=tc_save_task_entry($taskConfigDirs,$taskdef,$blockKey,$safeUpdates,$defs);
+			if(!$result['ok']){
+				$return=array('errcode'=>1,'info'=>$result['error']);
+				exit(json_encode($return));
+			}
+			$return=array(
+				'errcode'=>0,
+				'info'=>'Đã lưu vào file .config trên cả s1 và s99. LƯU Ý: phải khởi động lại (restart) gameworld server để thay đổi có hiệu lực trong game.',
+				'backups'=>$result['backups'],
 			);
 			exit(json_encode($return));
 			break;

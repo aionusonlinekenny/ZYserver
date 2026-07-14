@@ -316,6 +316,7 @@ gm_require_login_or_redirect();
     <button type="button" class="tab-btn active" data-tab="tab-account">Quản lý tài khoản</button>
     <button type="button" class="tab-btn" data-tab="tab-gift">Gửi quà / Nạp VIP</button>
     <button type="button" class="tab-btn" data-tab="tab-payment">Quản lý Payment</button>
+    <button type="button" class="tab-btn" data-tab="tab-task">Nhiệm vụ</button>
   </div>
 
   <!-- TAB: Quản lý tài khoản -->
@@ -400,13 +401,51 @@ gm_require_login_or_redirect();
     </div>
 
     <div class="card">
-      <h2>Gửi vật phẩm qua thư <span class="badge">Nạp 2800 kích hoạt Thẻ tháng Nguyên Bảo, nạp 8800 kích hoạt Thẻ tháng Đặc Quyền</span></h2>
-      <div class="picker">
-        <input type="text" class="picker-input" id="itemsearch" placeholder="Gõ tên hoặc ID vật phẩm...">
-        <div class="picker-results" id="itemresults"></div>
+      <h2>Gửi thư quà tặng <span class="badge">Có thể gửi nhiều vật phẩm + tiền tệ trong 1 thư, tiêu đề/nội dung tùy chỉnh</span></h2>
+
+      <div class="field">
+        <label>Tiêu đề thư:</label>
+        <input type="text" id="mailhead" placeholder="Để trống = &quot;Túy Võ Hiệp GM Mail&quot;">
       </div>
-      <input type="hidden" id="mailid" value="0">
-      <div class="selected-box" id="itemselected" style="margin-top:12px">
+      <div class="field">
+        <label>Nội dung thư:</label>
+        <input type="text" id="mailcontext" placeholder="Để trống = &quot;Túy Võ Hiệp GM Mail&quot;">
+      </div>
+
+      <hr class="sep">
+
+      <div class="field">
+        <label>Đồng (Gold):</label>
+        <input type="text" id="mailgold" placeholder="Số lượng Đồng, để trống nếu không gửi">
+      </div>
+      <div class="field">
+        <label>Nguyên Bảo (Yuanbao):</label>
+        <input type="text" id="mailyuanbao" placeholder="Số lượng Nguyên Bảo, để trống nếu không gửi">
+      </div>
+      <div class="note">Loại tiền tệ được suy luận từ dữ liệu cấu hình game (chưa có xác nhận 100% từ mã nguồn gốc engine) - nếu người chơi nhận sai loại tiền, báo lại để điều chỉnh.</div>
+
+      <hr class="sep">
+
+      <div id="mailitemrows"></div>
+      <div class="btn-row">
+        <input type="button" class="btn secondary" value="+ Thêm dòng vật phẩm" id="mailadditembtn">
+      </div>
+
+      <div class="btn-row" style="margin-top:14px">
+        <input type="button" class="btn" value="Gửi thư" id="mailbtn">
+      </div>
+    </div>
+
+  </div>
+
+  <template id="mailitemrowtpl">
+    <div class="card mail-item-row" style="background:#f8f9fb">
+      <div class="picker">
+        <input type="text" class="picker-input mail-item-search" placeholder="Gõ tên hoặc ID vật phẩm...">
+        <div class="picker-results mail-item-results"></div>
+      </div>
+      <input type="hidden" class="mail-item-id" value="0">
+      <div class="selected-box mail-item-selected" style="margin-top:12px">
         <div class="noicon">?</div>
         <div>
           <div class="name">Chưa chọn vật phẩm</div>
@@ -415,14 +454,13 @@ gm_require_login_or_redirect();
       </div>
       <div class="field">
         <label>Số lượng vật phẩm:</label>
-        <input type="text" value="" id="mailnum" placeholder="Nhập số lượng phát">
+        <input type="text" class="mail-item-num" placeholder="Nhập số lượng phát">
       </div>
       <div class="btn-row">
-        <input type="button" class="btn" value="Gửi thư" id="mailbtn">
+        <input type="button" class="btn danger mail-item-remove" value="Xoá dòng này">
       </div>
     </div>
-
-  </div>
+  </template>
 
   <!-- TAB: Quản lý Payment -->
   <div class="tabpanel" id="tab-payment">
@@ -471,6 +509,71 @@ gm_require_login_or_redirect();
       <div id="ppstatus" class="status-msg"></div>
       <div class="note">Bỏ tick 2 công tắc trên = người chơi bấm mua/nạp là nhận ngay, không cần trả tiền thật (vẫn phải xác nhận popup ở client).</div>
     </div>
+  </div>
+
+  <!-- TAB: Nhiệm vụ -->
+  <div class="tabpanel" id="tab-task">
+
+    <div class="card" style="border-color:#e5484d;background:#fff5f5">
+      <h2 style="color:#e5484d;border-bottom-color:#f3c6c6">⚠ Lưu ý quan trọng trước khi sửa nhiệm vụ</h2>
+      <div style="color:#c9383d;font-size:12.5px;line-height:1.6">
+        Lưu ở đây sẽ ghi <b>trực tiếp</b> xuống file cấu hình gốc (.config) trên cả 2 server <b>s1</b> và <b>s99</b> (tự động backup file cũ trước khi ghi vào thư mục <code>backup_gmtool</code> cùng cấp).
+        Thay đổi <b>KHÔNG</b> áp dụng ngay cho người chơi đang online — bắt buộc phải tự <b>khởi động lại (restart) tiến trình gameworld</b> thì mới có hiệu lực trong game. Vui lòng kiểm tra kỹ số liệu trước khi lưu.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Danh sách nhiệm vụ</h2>
+      <div class="field">
+        <label>Loại nhiệm vụ:</label>
+        <select id="taskdefselect"></select>
+      </div>
+      <div class="field">
+        <label>Tìm kiếm:</label>
+        <input type="text" id="tasksearch" placeholder="Tìm theo tên, mô tả, ID...">
+        <input type="button" class="btn secondary" value="Tìm" id="tasksearchbtn">
+      </div>
+      <div style="overflow-x:auto">
+        <table id="tasktable" style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px">
+          <thead>
+            <tr style="text-align:left;border-bottom:1px solid #e2e5ea;color:#8a8f98">
+              <th style="padding:6px 8px">ID</th>
+              <th style="padding:6px 8px">Tên</th>
+              <th style="padding:6px 8px">Mô tả</th>
+              <th style="padding:6px 8px">Điều kiện</th>
+              <th style="padding:6px 8px">Thưởng</th>
+              <th style="padding:6px 8px">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="taskbody"></tbody>
+        </table>
+      </div>
+      <div class="btn-row" style="align-items:center">
+        <input type="button" class="btn secondary" value="Trang trước" id="taskprevbtn">
+        <span id="taskpageinfo" style="font-size:12.5px;color:#8a8f98"></span>
+        <input type="button" class="btn secondary" value="Trang sau" id="tasknextbtn">
+      </div>
+      <div id="taskmsg" class="status-msg"></div>
+    </div>
+
+    <div class="card" id="taskeditcard" style="display:none">
+      <h2>Sửa nhiệm vụ #<span id="taskeditid"></span> <span class="badge" id="taskeditname"></span></h2>
+      <div id="taskeditfields"></div>
+      <div id="taskeditawardsection" style="display:none">
+        <hr class="sep">
+        <div class="field"><label>Phần thưởng (reward):</label></div>
+        <div id="taskeditawardrows"></div>
+        <div class="btn-row">
+          <input type="button" class="btn secondary" value="+ Thêm dòng thưởng" id="taskadditembtn">
+        </div>
+      </div>
+      <div class="btn-row" style="margin-top:14px">
+        <input type="button" class="btn" value="Lưu thay đổi (ghi xuống s1 + s99)" id="tasksavebtn">
+        <input type="button" class="btn secondary" value="Huỷ" id="taskcancelbtn">
+      </div>
+      <div id="taskeditmsg" class="status-msg"></div>
+    </div>
+
   </div>
 
 </div>
@@ -583,35 +686,131 @@ gm_require_login_or_redirect();
 		  alert('Vui lòng chọn tài khoản nhận quà ở trên.');
 		  return false;
 	  }
-	  var itemid=$('#mailid').val();
-	  if(itemid=='' || itemid=='0'){
-		  alert('Vui lòng chọn vật phẩm.');
-		  return false;
+	  var items=[];
+	  var gold=$.trim($('#mailgold').val());
+	  if(gold!==''){
+		  if(isNaN(gold) || gold<1){ alert('Số lượng Đồng không hợp lệ.'); return false; }
+		  items.push({type:0,id:1,count:parseInt(gold,10)});
 	  }
-	  var mailnum=$('#mailnum').val();
-	  if(mailnum=='' || isNaN(mailnum)){
-		  alert('Số lượng không được để trống.');
-		  return false;
+	  var yb=$.trim($('#mailyuanbao').val());
+	  if(yb!==''){
+		  if(isNaN(yb) || yb<1){ alert('Số lượng Nguyên Bảo không hợp lệ.'); return false; }
+		  items.push({type:0,id:2,count:parseInt(yb,10)});
 	  }
-	  if(mailnum<1 || mailnum>9999999999){
-		  alert('Phạm vi số lượng: 1-9999999999.');
+	  var rowsOk=true;
+	  $('#mailitemrows .mail-item-row').each(function(){
+		  var row=$(this);
+		  var itemid=row.find('.mail-item-id').val();
+		  var num=$.trim(row.find('.mail-item-num').val());
+		  if(itemid=='' || itemid=='0'){
+			  if(num!==''){ alert('Có dòng vật phẩm chưa chọn vật phẩm.'); rowsOk=false; }
+			  return;
+		  }
+		  if(num=='' || isNaN(num) || num<1){
+			  alert('Số lượng của 1 dòng vật phẩm không hợp lệ.');
+			  rowsOk=false;
+			  return;
+		  }
+		  items.push({type:1,id:parseInt(itemid,10),count:parseInt(num,10)});
+	  });
+	  if(!rowsOk){ return false; }
+	  if(items.length==0){
+		  alert('Vui lòng nhập ít nhất 1 vật phẩm hoặc số lượng tiền tệ.');
 		  return false;
 	  }
 	  $.ajax({
 		  url:'gmquery.php',
 		  type:'post',
-		  'data':{type:'mail',uid:mailuid,item:itemid,num:mailnum,qu:qu},
+		  'data':{type:'mail',uid:mailuid,items:JSON.stringify(items),head:$('#mailhead').val(),context:$('#mailcontext').val(),qu:qu},
           'cache':false,
           'dataType':'json',
 		  success:function(data){
 			  console.log('data',data);
 			  alert(data.info);
+			  if(data.errcode==0){
+				  $('#mailgold').val('');
+				  $('#mailyuanbao').val('');
+				  $('#mailitemrows').html('');
+				  addMailItemRow();
+			  }
 		  },
 		  error:function(){
 			  alert('Thao tác thất bại');
 		  }
 	  });
   });
+
+  // ---- Picker nhiều dòng vật phẩm dùng chung (thư quà tặng + sửa thưởng nhiệm vụ) ----
+  function wireItemRowPicker(containerSel, addBtnSel, tplSel){
+	  function addRow(){
+		  var row=$($(tplSel).html());
+		  $(containerSel).append(row);
+		  return row;
+	  }
+	  $(addBtnSel).click(function(){ addRow(); });
+	  $(containerSel).on('click','.mail-item-remove',function(){
+		  $(this).closest('.mail-item-row').remove();
+		  if($(containerSel+' .mail-item-row').length==0){ addRow(); }
+	  });
+	  var timer=null;
+	  $(containerSel).on('input focus','.mail-item-search',function(){
+		  var input=$(this);
+		  var row=input.closest('.mail-item-row');
+		  var keyword=$.trim(input.val());
+		  clearTimeout(timer);
+		  timer=setTimeout(function(){
+			  $.ajax({
+				  url:'itemquery.php',
+				  type:'post',
+				  'data':{keyword:keyword},
+		          'cache':false,
+		          'dataType':'json',
+				  success:function(data){
+					  var rows='';
+					  var list=(data||[]).filter(function(it){ return it.key!=0; });
+					  if(list.length==0){
+						  rows='<div class="picker-row" style="cursor:default;color:#8a8f98">Không tìm thấy vật phẩm.</div>';
+					  }else{
+						  list=list.slice(0,50);
+						  for(var i=0;i<list.length;i++){
+							  var it=list[i];
+							  rows+='<div class="picker-row" data-id="'+escHtml(it.key)+'" data-name="'+escHtml(it.val)+'" data-icon="'+escHtml(it.icon)+'">'
+								  +iconOrPlaceholder(it.icon,'')
+								  +'<div><div style="font-size:12.5px">'+escHtml(it.val)+'</div><div style="font-size:11px;color:#8a8f98">ID: '+escHtml(it.key)+'</div></div>'
+								  +'</div>';
+						  }
+					  }
+					  row.find('.mail-item-results').html(rows).addClass('show');
+				  },
+				  error:function(){
+					  row.find('.mail-item-results').html('<div class="picker-row" style="cursor:default;color:#e5484d">Tìm vật phẩm thất bại.</div>').addClass('show');
+				  }
+			  });
+		  },250);
+	  });
+	  $(containerSel).on('click','.mail-item-results .picker-row[data-id]',function(){
+		  var row=$(this).closest('.mail-item-row');
+		  var id=$(this).data('id');
+		  var name=$(this).data('name');
+		  var icon=$(this).data('icon');
+		  row.find('.mail-item-id').val(id);
+		  var box=row.find('.mail-item-selected');
+		  box.find('img,.noicon').remove();
+		  box.prepend(iconOrPlaceholder(icon,''));
+		  box.find('.name').text(name);
+		  box.find('.sub').text('ID: '+id);
+		  row.find('.mail-item-results').removeClass('show').html('');
+		  row.find('.mail-item-search').val(name);
+	  });
+	  return addRow;
+  }
+  $(document).on('click',function(e){
+	  if(!$(e.target).closest('.mail-item-search,.mail-item-results').length){
+		  $('.mail-item-results').removeClass('show');
+	  }
+  });
+  var addMailItemRow=wireItemRowPicker('#mailitemrows','#mailadditembtn','#mailitemrowtpl');
+  var addTaskAwardRow=wireItemRowPicker('#taskeditawardrows','#taskadditembtn','#mailitemrowtpl');
 
   function escHtml(s){
 	  return String(s==null?'':s).replace(/[&<>"']/g,function(c){
@@ -625,58 +824,7 @@ gm_require_login_or_redirect();
 	  return '<div class="noicon">?</div>';
   }
 
-  // ---- Item picker (với icon) ----
-  var itemSearchTimer=null;
-  $('#itemsearch').on('input focus',function(){
-	  var keyword=$.trim($(this).val());
-	  clearTimeout(itemSearchTimer);
-	  itemSearchTimer=setTimeout(function(){
-		  $.ajax({
-			  url:'itemquery.php',
-			  type:'post',
-			  'data':{keyword:keyword},
-	          'cache':false,
-	          'dataType':'json',
-			  success:function(data){
-				  var rows='';
-				  var list=(data||[]).filter(function(it){ return it.key!=0; });
-				  if(list.length==0){
-					  rows='<div class="picker-row" style="cursor:default;color:#8a8f98">Không tìm thấy vật phẩm.</div>';
-				  }else{
-					  list=list.slice(0,50);
-					  for(var i=0;i<list.length;i++){
-						  var it=list[i];
-						  rows+='<div class="picker-row" data-id="'+escHtml(it.key)+'" data-name="'+escHtml(it.val)+'" data-icon="'+escHtml(it.icon)+'">'
-							  +iconOrPlaceholder(it.icon,'')
-							  +'<div><div style="font-size:12.5px">'+escHtml(it.val)+'</div><div style="font-size:11px;color:#8a8f98">ID: '+escHtml(it.key)+'</div></div>'
-							  +'</div>';
-					  }
-				  }
-				  $('#itemresults').html(rows).addClass('show');
-			  },
-			  error:function(){
-				  $('#itemresults').html('<div class="picker-row" style="cursor:default;color:#e5484d">Tìm vật phẩm thất bại.</div>').addClass('show');
-			  }
-		  });
-	  },250);
-  });
-  $('#itemresults').on('click','.picker-row[data-id]',function(){
-	  var id=$(this).data('id');
-	  var name=$(this).data('name');
-	  var icon=$(this).data('icon');
-	  $('#mailid').val(id);
-	  var box=$('#itemselected');
-	  box.find('img,.noicon').remove();
-	  box.prepend(iconOrPlaceholder(icon,''));
-	  box.find('.name').text(name);
-	  box.find('.sub').text('ID: '+id);
-	  $('#itemresults').removeClass('show').html('');
-	  $('#itemsearch').val(name);
-  });
   $(document).on('click',function(e){
-	  if(!$(e.target).closest('#itemsearch,#itemresults').length){
-		  $('#itemresults').removeClass('show');
-	  }
 	  if(!$(e.target).closest('#giftaccsearch,#giftaccresults').length){
 		  $('#giftaccresults').removeClass('show');
 	  }
@@ -909,7 +1057,237 @@ gm_require_login_or_redirect();
 	  });
   });
 
+  // ---- Nhiệm vụ (view + edit) ----
+  var taskDefs=[];
+  var taskCurrentDef=null;
+  var taskPage=1;
+  var taskPageSize=30;
+  var taskEditingRow=null;
+  var taskEditableFields=[];
+
+  var FIELD_LABELS={
+	  target:'Mục tiêu (target)', param:'Tham số (param)', trainExp:'Kinh nghiệm rèn luyện (trainExp)',
+	  score:'Điểm thành tựu (score)', valueLimit:'Ngưỡng độ hoạt náo (valueLimit)',
+	  mail_head:'Tiêu đề thư hết hạn', mail_context:'Nội dung thư hết hạn'
+  };
+
+  function loadTaskDefs(){
+	  $.ajax({
+		  url:'gmquery.php', type:'post', data:{type:'taskdefs',uid:'-',qu:qu}, cache:false, dataType:'json',
+		  success:function(data){
+			  if(data.errcode!=0){ return; }
+			  taskDefs=data.list;
+			  var opts='';
+			  for(var i=0;i<taskDefs.length;i++){
+				  opts+='<option value="'+taskDefs[i].key+'">'+escHtml(taskDefs[i].label)+'</option>';
+			  }
+			  $('#taskdefselect').html(opts);
+			  loadTaskList(1);
+		  }
+	  });
+  }
+
+  function awardSummary(list){
+	  if(!list || list.length==0){ return '(không có)'; }
+	  var parts=[];
+	  for(var i=0;i<list.length;i++){
+		  var it=list[i];
+		  if(it.type==0){
+			  parts.push((it.id==1?'Đồng':(it.id==2?'Nguyên Bảo':'Tiền(id='+it.id+')'))+' ×'+it.count);
+		  }else{
+			  parts.push('VP#'+it.id+' ×'+it.count);
+		  }
+	  }
+	  return parts.join(', ');
+  }
+
+  function conditionSummary(row){
+	  var parts=[];
+	  if(row.target!==undefined){ parts.push('target='+row.target); }
+	  if(row.param!==undefined){ parts.push('param='+row.param); }
+	  if(row.type!==undefined){ parts.push('type='+row.type); }
+	  if(row.time!==undefined){ parts.push('time='+row.time+'s'); }
+	  if(row.valueLimit!==undefined){ parts.push('valueLimit='+row.valueLimit); }
+	  return parts.join(', ');
+  }
+
+  function loadTaskList(page){
+	  taskPage=page;
+	  var keyword=$.trim($('#tasksearch').val());
+	  $('#taskmsg').text('Đang tải...');
+	  $.ajax({
+		  url:'gmquery.php', type:'post',
+		  data:{type:'tasklist',uid:'-',qu:qu,taskdef:$('#taskdefselect').val(),keyword:keyword,page:taskPage},
+		  cache:false, dataType:'json',
+		  success:function(data){
+			  if(data.errcode!=0){ $('#taskmsg').text(data.info); $('#taskbody').html(''); return; }
+			  taskPageSize=data.pageSize;
+			  taskEditableFields=data.editable;
+			  var rows='';
+			  if(data.list.length==0){
+				  rows='<tr><td colspan="6" style="padding:10px 8px;color:#8a8f98">Không có dữ liệu.</td></tr>';
+			  }
+			  for(var i=0;i<data.list.length;i++){
+				  var r=data.list[i];
+				  rows+='<tr style="border-bottom:1px solid #f0f2f5">'
+					  +'<td style="padding:6px 8px">'+r.blockKey+'</td>'
+					  +'<td style="padding:6px 8px">'+escHtml(r.name||'')+'</td>'
+					  +'<td style="padding:6px 8px;max-width:220px">'+escHtml(r.desc||'')+'</td>'
+					  +'<td style="padding:6px 8px">'+escHtml(conditionSummary(r))+'</td>'
+					  +'<td style="padding:6px 8px">'+escHtml(awardSummary(r.awardList))+'</td>'
+					  +'<td style="padding:6px 8px"><a href="#" class="task-edit-btn" style="color:#2f6fed">Sửa</a></td>'
+					  +'</tr>';
+			  }
+			  $('#taskbody').html(rows);
+			  $('#taskbody tr').each(function(idx){
+				  if(data.list[idx]){ $(this).data('rowobj', data.list[idx]); }
+			  });
+			  var totalPages=Math.max(1,Math.ceil(data.total/taskPageSize));
+			  $('#taskpageinfo').text('Trang '+data.page+'/'+totalPages+' ('+data.total+' nhiệm vụ)');
+			  $('#taskmsg').text('');
+		  },
+		  error:function(){ $('#taskmsg').text('Tải danh sách thất bại.'); }
+	  });
+  }
+
+  $('#taskdefselect').change(function(){ loadTaskList(1); });
+  $('#tasksearchbtn').click(function(){ loadTaskList(1); });
+  $('#tasksearch').on('keypress',function(e){ if(e.which==13){ loadTaskList(1); } });
+  $('#taskprevbtn').click(function(){ if(taskPage>1){ loadTaskList(taskPage-1); } });
+  $('#tasknextbtn').click(function(){ loadTaskList(taskPage+1); });
+
+  $('#taskbody').on('click','.task-edit-btn',function(e){
+	  e.preventDefault();
+	  var row=$(this).closest('tr').data('rowobj');
+	  openTaskEdit(row);
+  });
+
+  function openTaskEdit(row){
+	  taskEditingRow=row;
+	  $('#taskeditid').text(row.blockKey);
+	  $('#taskeditname').text(row.name||'');
+	  var editable=taskEditableFields||[];
+	  var fieldsHtml='';
+	  for(var i=0;i<editable.length;i++){
+		  var f=editable[i];
+		  if(f=='awardList'){ continue; }
+		  var val=(row[f]!=null)?row[f]:(f.indexOf('mail_')==0?'':0);
+		  if(f=='mail_head' || f=='mail_context'){
+			  fieldsHtml+='<div class="field"><label>'+(FIELD_LABELS[f]||f)+':</label><input type="text" class="taskfield" data-field="'+f+'" value="'+escHtml(val)+'" style="max-width:520px"></div>';
+		  }else{
+			  fieldsHtml+='<div class="field"><label>'+(FIELD_LABELS[f]||f)+':</label><input type="text" class="taskfield" data-field="'+f+'" value="'+escHtml(val)+'"></div>';
+		  }
+	  }
+	  $('#taskeditfields').html(fieldsHtml);
+
+	  if(editable.indexOf('awardList')>=0){
+		  $('#taskeditawardsection').show();
+		  $('#taskeditawardrows').html('');
+		  $('#taskeditfields').append('<div class="field"><label>Đồng (Gold):</label><input type="text" id="taskawardgold"></div>'
+			  +'<div class="field"><label>Nguyên Bảo (Yuanbao):</label><input type="text" id="taskawardyuanbao"></div>');
+		  var gold=0, yb=0, itemAwards=[];
+		  var list=row.awardList||[];
+		  for(var i=0;i<list.length;i++){
+			  var it=list[i];
+			  if(it.type==0 && it.id==1){ gold=it.count; }
+			  else if(it.type==0 && it.id==2){ yb=it.count; }
+			  else if(it.type==0){ console.warn('Loại tiền tệ id không xác định, không hiển thị được trong form (giữ nguyên nếu không sửa phần thưởng):', it); }
+			  else { itemAwards.push(it); }
+		  }
+		  $('#taskawardgold').val(gold||'');
+		  $('#taskawardyuanbao').val(yb||'');
+		  if(itemAwards.length==0){
+			  addTaskAwardRow();
+		  }else{
+			  for(var i=0;i<itemAwards.length;i++){
+				  var newRow=addTaskAwardRow();
+				  (function(newRow, it){
+					  newRow.find('.mail-item-id').val(it.id);
+					  newRow.find('.mail-item-search').val('ID '+it.id+' (đang tải tên...)');
+					  newRow.find('.mail-item-num').val(it.count);
+					  $.ajax({
+						  url:'itemquery.php', type:'post', data:{keyword:it.id}, cache:false, dataType:'json',
+						  success:function(data){
+							  var match=null;
+							  for(var k=0;k<data.length;k++){ if(String(data[k].key)==String(it.id)){ match=data[k]; break; } }
+							  if(match){
+								  var box=newRow.find('.mail-item-selected');
+								  box.find('img,.noicon').remove();
+								  box.prepend(iconOrPlaceholder(match.icon,''));
+								  box.find('.name').text(match.val);
+								  box.find('.sub').text('ID: '+match.key);
+								  newRow.find('.mail-item-search').val(match.val);
+							  }
+						  }
+					  });
+				  })(newRow, it);
+			  }
+		  }
+	  }else{
+		  $('#taskeditawardsection').hide();
+	  }
+
+	  $('#taskeditmsg').text('');
+	  $('#taskeditcard').show();
+	  $('html, body').animate({scrollTop: $('#taskeditcard').offset().top - 20}, 200);
+  }
+
+  $('#taskcancelbtn').click(function(){ $('#taskeditcard').hide(); });
+
+  $('#tasksavebtn').click(function(){
+	  if(!taskEditingRow){ return; }
+	  var updates={};
+	  $('#taskeditfields .taskfield').each(function(){
+		  updates[$(this).data('field')]=$(this).val();
+	  });
+	  if(taskEditableFields.indexOf('awardList')>=0){
+		  var items=[];
+		  var gold=$.trim($('#taskawardgold').val());
+		  if(gold!==''){
+			  if(isNaN(gold)||gold<0){ alert('Số Đồng không hợp lệ.'); return; }
+			  if(gold>0){ items.push({type:0,id:1,count:parseInt(gold,10)}); }
+		  }
+		  var yb=$.trim($('#taskawardyuanbao').val());
+		  if(yb!==''){
+			  if(isNaN(yb)||yb<0){ alert('Số Nguyên Bảo không hợp lệ.'); return; }
+			  if(yb>0){ items.push({type:0,id:2,count:parseInt(yb,10)}); }
+		  }
+		  var rowsOk=true;
+		  $('#taskeditawardrows .mail-item-row').each(function(){
+			  var r=$(this);
+			  var itemid=r.find('.mail-item-id').val();
+			  var num=$.trim(r.find('.mail-item-num').val());
+			  if(itemid=='' || itemid=='0'){
+				  if(num!==''){ alert('Có dòng thưởng chưa chọn vật phẩm.'); rowsOk=false; }
+				  return;
+			  }
+			  if(num=='' || isNaN(num) || num<1){ alert('Số lượng 1 dòng thưởng không hợp lệ.'); rowsOk=false; return; }
+			  items.push({type:1,id:parseInt(itemid,10),count:parseInt(num,10)});
+		  });
+		  if(!rowsOk){ return; }
+		  if(items.length==0){ alert('Phần thưởng phải có ít nhất 1 dòng.'); return; }
+		  updates.awardList=items;
+	  }
+	  if(!confirm('Xác nhận lưu thay đổi xuống file .config trên CẢ s1 và s99? (Đã tự động backup file cũ, nhưng CHƯA áp dụng cho tới khi restart gameworld)')){ return; }
+	  $.ajax({
+		  url:'gmquery.php', type:'post',
+		  data:{type:'tasksave',uid:'-',qu:qu,taskdef:$('#taskdefselect').val(),blockkey:taskEditingRow.blockKey,updates:JSON.stringify(updates)},
+		  cache:false, dataType:'json',
+		  success:function(data){
+			  $('#taskeditmsg').text(data.info);
+			  if(data.errcode==0){
+				  alert(data.info);
+				  $('#taskeditcard').hide();
+				  loadTaskList(taskPage);
+			  }
+		  },
+		  error:function(){ $('#taskeditmsg').text('Lưu thất bại.'); }
+	  });
+  });
+
   loadPlayerList(1);
+  addMailItemRow();
+  loadTaskDefs();
 </script>
 </body>
 </html>

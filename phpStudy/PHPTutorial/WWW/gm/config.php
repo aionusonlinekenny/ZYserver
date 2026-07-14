@@ -30,3 +30,11 @@
 			'srvid'=>'1',
 		)
 	);
+	// Thư mục chứa file .config nhiệm vụ (cú pháp bảng Lua) trên từng server.
+	// Đường dẫn mặc định suy ra từ cấu trúc repo hiện tại - nếu server thật (production)
+	// đặt ở đường dẫn khác thì SỬA TRỰC TIẾP 2 dòng dưới đây cho đúng.
+	$taskConfigDirs=array(
+		's1'=>__DIR__.'/../../../../server/bin/s1/gameworld/data/config/task/',
+		's99'=>__DIR__.'/../../../../server/bin/s99/gameworld/data/config/task/',
+	);
+	$taskClientConfigDir=__DIR__.'/../resource/config1/';
