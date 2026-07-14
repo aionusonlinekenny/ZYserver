@@ -1068,8 +1068,16 @@ gm_require_login_or_redirect();
   var FIELD_LABELS={
 	  target:'Mục tiêu (target)', param:'Tham số (param)', trainExp:'Kinh nghiệm rèn luyện (trainExp)',
 	  score:'Điểm thành tựu (score)', valueLimit:'Ngưỡng độ hoạt náo (valueLimit)',
-	  mail_head:'Tiêu đề thư hết hạn', mail_context:'Nội dung thư hết hạn'
+	  mail_head:'Tiêu đề thư hết hạn', mail_context:'Nội dung thư hết hạn',
+	  title:'Tiêu đề thư', content:'Nội dung thư'
   };
+  var AWARD_FIELD_NAMES=['awardList','attachment'];
+  function awardFieldNameOf(editable){
+	  for(var i=0;i<AWARD_FIELD_NAMES.length;i++){
+		  if(editable.indexOf(AWARD_FIELD_NAMES[i])>=0){ return AWARD_FIELD_NAMES[i]; }
+	  }
+	  return null;
+  }
 
   function loadTaskDefs(){
 	  $('#taskmsg').text('Đang tải danh sách loại nhiệm vụ...');
@@ -1136,12 +1144,14 @@ gm_require_login_or_redirect();
 			  }
 			  for(var i=0;i<data.list.length;i++){
 				  var r=data.list[i];
+				  var dispName=r.name||r.title||'';
+				  var dispDesc=r.desc||r.content||'';
 				  rows+='<tr style="border-bottom:1px solid #f0f2f5">'
 					  +'<td style="padding:6px 8px">'+r.blockKey+'</td>'
-					  +'<td style="padding:6px 8px">'+escHtml(r.name||'')+'</td>'
-					  +'<td style="padding:6px 8px;max-width:220px">'+escHtml(r.desc||'')+'</td>'
+					  +'<td style="padding:6px 8px">'+escHtml(dispName)+'</td>'
+					  +'<td style="padding:6px 8px;max-width:220px">'+escHtml(dispDesc.length>80?dispDesc.substring(0,80)+'…':dispDesc)+'</td>'
 					  +'<td style="padding:6px 8px">'+escHtml(conditionSummary(r))+'</td>'
-					  +'<td style="padding:6px 8px">'+escHtml(awardSummary(r.awardList))+'</td>'
+					  +'<td style="padding:6px 8px">'+escHtml(awardSummary(r.awardList||r.attachment))+'</td>'
 					  +'<td style="padding:6px 8px"><a href="#" class="task-edit-btn" style="color:#2f6fed">Sửa</a></td>'
 					  +'</tr>';
 			  }
@@ -1172,14 +1182,18 @@ gm_require_login_or_redirect();
   function openTaskEdit(row){
 	  taskEditingRow=row;
 	  $('#taskeditid').text(row.blockKey);
-	  $('#taskeditname').text(row.name||'');
+	  $('#taskeditname').text(row.name||row.title||'');
 	  var editable=taskEditableFields||[];
+	  var awardField=awardFieldNameOf(editable);
 	  var fieldsHtml='';
 	  for(var i=0;i<editable.length;i++){
 		  var f=editable[i];
-		  if(f=='awardList'){ continue; }
-		  var val=(row[f]!=null)?row[f]:(f.indexOf('mail_')==0?'':0);
-		  if(f=='mail_head' || f=='mail_context'){
+		  if(f===awardField){ continue; }
+		  var val=(row[f]!=null)?row[f]:(f.indexOf('mail_')==0||f=='title'||f=='content'?'':0);
+		  var isLongText=(f=='mail_context' || f=='content' || (typeof val==='string' && (val.length>80 || val.indexOf('\n')>=0)));
+		  if(isLongText){
+			  fieldsHtml+='<div class="field" style="align-items:flex-start"><label>'+(FIELD_LABELS[f]||f)+':</label><textarea class="taskfield" data-field="'+f+'" rows="5" style="flex:1;max-width:520px;font-family:inherit;font-size:13px;padding:8px;border:1px solid #d7dae0;border-radius:6px">'+escHtml(val)+'</textarea></div>';
+		  }else if(f=='mail_head' || f=='title'){
 			  fieldsHtml+='<div class="field"><label>'+(FIELD_LABELS[f]||f)+':</label><input type="text" class="taskfield" data-field="'+f+'" value="'+escHtml(val)+'" style="max-width:520px"></div>';
 		  }else{
 			  fieldsHtml+='<div class="field"><label>'+(FIELD_LABELS[f]||f)+':</label><input type="text" class="taskfield" data-field="'+f+'" value="'+escHtml(val)+'"></div>';
@@ -1187,13 +1201,13 @@ gm_require_login_or_redirect();
 	  }
 	  $('#taskeditfields').html(fieldsHtml);
 
-	  if(editable.indexOf('awardList')>=0){
+	  if(awardField){
 		  $('#taskeditawardsection').show();
 		  $('#taskeditawardrows').html('');
 		  $('#taskeditfields').append('<div class="field"><label>Đồng (Gold):</label><input type="text" id="taskawardgold"></div>'
 			  +'<div class="field"><label>Nguyên Bảo (Yuanbao):</label><input type="text" id="taskawardyuanbao"></div>');
 		  var gold=0, yb=0, itemAwards=[];
-		  var list=row.awardList||[];
+		  var list=row[awardField]||[];
 		  for(var i=0;i<list.length;i++){
 			  var it=list[i];
 			  if(it.type==0 && it.id==1){ gold=it.count; }
@@ -1227,7 +1241,7 @@ gm_require_login_or_redirect();
 							  }
 						  }
 					  });
-				  })(newRow, it);
+				  })(newRow, itemAwards[i]);
 			  }
 		  }
 	  }else{
@@ -1247,7 +1261,8 @@ gm_require_login_or_redirect();
 	  $('#taskeditfields .taskfield').each(function(){
 		  updates[$(this).data('field')]=$(this).val();
 	  });
-	  if(taskEditableFields.indexOf('awardList')>=0){
+	  var awardField=awardFieldNameOf(taskEditableFields);
+	  if(awardField){
 		  var items=[];
 		  var gold=$.trim($('#taskawardgold').val());
 		  if(gold!==''){
@@ -1273,7 +1288,7 @@ gm_require_login_or_redirect();
 		  });
 		  if(!rowsOk){ return; }
 		  if(items.length==0){ alert('Phần thưởng phải có ít nhất 1 dòng.'); return; }
-		  updates.awardList=items;
+		  updates[awardField]=items;
 	  }
 	  if(!confirm('Xác nhận lưu thay đổi xuống file .config trên CẢ s1 và s99? (Đã tự động backup file cũ, nhưng CHƯA áp dụng cho tới khi restart gameworld)')){ return; }
 	  $.ajax({

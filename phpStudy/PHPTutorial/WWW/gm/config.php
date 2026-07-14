@@ -30,11 +30,12 @@
 			'srvid'=>'1',
 		)
 	);
-	// Thư mục chứa file .config nhiệm vụ (cú pháp bảng Lua) trên từng server.
+	// Thư mục "config" gốc trên từng server (cha chung của task/, mail/, v.v. - đường dẫn tới
+	// từng file .config cụ thể được ghép thêm bởi taskconfig.php's tc_get_config_defs()).
 	// Đường dẫn mặc định suy ra từ cấu trúc repo hiện tại - nếu server thật (production)
 	// đặt ở đường dẫn khác thì SỬA TRỰC TIẾP 2 dòng dưới đây cho đúng.
 	$taskConfigDirs=array(
-		's1'=>__DIR__.'/../../../../server/bin/s1/gameworld/data/config/task/',
-		's99'=>__DIR__.'/../../../../server/bin/s99/gameworld/data/config/task/',
+		's1'=>__DIR__.'/../../../../server/bin/s1/gameworld/data/config/',
+		's99'=>__DIR__.'/../../../../server/bin/s99/gameworld/data/config/',
 	);
 	$taskClientConfigDir=__DIR__.'/../resource/config1/';

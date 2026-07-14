@@ -617,7 +617,7 @@ if($_POST){
 			$keyword=mb_strtolower(trim($_POST['keyword']));
 			if($keyword!==''){
 				$allRows=array_values(array_filter($allRows,function($row) use ($keyword){
-					$hay=mb_strtolower((isset($row['name'])?$row['name']:'').' '.(isset($row['desc'])?$row['desc']:'').' '.$row['blockKey'].' '.(isset($row['taskId'])?$row['taskId']:'').' '.(isset($row['id'])?$row['id']:''));
+					$hay=mb_strtolower((isset($row['name'])?$row['name']:'').' '.(isset($row['desc'])?$row['desc']:'').' '.(isset($row['title'])?$row['title']:'').' '.(isset($row['content'])?$row['content']:'').' '.$row['blockKey'].' '.(isset($row['taskId'])?$row['taskId']:'').' '.(isset($row['id'])?$row['id']:''));
 					return mb_strpos($hay,$keyword)!==false;
 				}));
 			}
@@ -655,7 +655,7 @@ if($_POST){
 			$safeUpdates=array();
 			foreach($updates as $f=>$v){
 				if(!in_array($f,$editable,true)){ continue; }
-				if($f==='awardList'){
+				if($f==='awardList' || $f==='attachment'){
 					if(!is_array($v)){ continue; }
 					$cleaned=array();
 					foreach($v as $it){
@@ -670,8 +670,10 @@ if($_POST){
 						exit(json_encode($return));
 					}
 					$safeUpdates[$f]=$cleaned;
-				}elseif($f==='mail_head' || $f==='mail_context'){
+				}elseif($f==='mail_head' || $f==='mail_context' || $f==='title'){
 					$safeUpdates[$f]=mb_substr(trim((string)$v),0,500);
+				}elseif($f==='content'){
+					$safeUpdates[$f]=mb_substr(trim((string)$v),0,2000);
 				}else{
 					$safeUpdates[$f]=intval($v);
 				}
@@ -685,9 +687,13 @@ if($_POST){
 				$return=array('errcode'=>1,'info'=>$result['error']);
 				exit(json_encode($return));
 			}
+			$info='Đã lưu vào file .config trên cả s1 và s99. LƯU Ý: phải khởi động lại (restart) gameworld server để thay đổi có hiệu lực trong game.';
+			if(!empty($result['skipped'])){
+				$info.=' (Field(s) "'.implode(', ',$result['skipped']).'" KHÔNG lưu được vì entry gốc chưa có sẵn field này - bộ ghi chỉ sửa field đã tồn tại, chưa hỗ trợ thêm field mới.)';
+			}
 			$return=array(
 				'errcode'=>0,
-				'info'=>'Đã lưu vào file .config trên cả s1 và s99. LƯU Ý: phải khởi động lại (restart) gameworld server để thay đổi có hiệu lực trong game.',
+				'info'=>$info,
 				'backups'=>$result['backups'],
 			);
 			exit(json_encode($return));

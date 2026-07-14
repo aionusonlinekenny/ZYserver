@@ -12,38 +12,45 @@ function tc_get_config_defs($clientConfigDir) {
 	return array(
 		'daily' => array(
 			'label' => 'Nhiệm vụ hàng ngày',
-			'file' => 'daily.config',
+			'file' => 'task/daily.config',
 			'clientFile' => $clientConfigDir.'config6.json',
 			'clientKey' => 'ConfigDaily',
 			'editable' => array('target', 'param', 'trainExp', 'awardList'),
 		),
 		'achievement' => array(
 			'label' => 'Nhiệm vụ thành tựu',
-			'file' => 'achievementtask.config',
+			'file' => 'task/achievementtask.config',
 			'clientFile' => $clientConfigDir.'config6.json',
 			'clientKey' => 'ConfigAchievementTask',
 			'editable' => array('target', 'param', 'score', 'awardList'),
 		),
 		'dailyaward' => array(
 			'label' => 'Thưởng độ hoạt náo (activeValue)',
-			'file' => 'dailyaward.config',
+			'file' => 'task/dailyaward.config',
 			'clientFile' => $clientConfigDir.'config4.json',
 			'clientKey' => 'ConfigDailyAward',
 			'editable' => array('valueLimit', 'awardList'),
 		),
 		'limittimetask' => array(
 			'label' => 'Nhiệm vụ giới hạn thời gian',
-			'file' => 'limittimetask.config',
+			'file' => 'task/limittimetask.config',
 			'clientFile' => $clientConfigDir.'config2.json',
 			'clientKey' => 'ConfigLimitTimeTask',
 			'editable' => array('target', 'param', 'awardList'),
 		),
 		'limittime' => array(
 			'label' => 'Đợt nhiệm vụ giới hạn thời gian',
-			'file' => 'limittime.config',
+			'file' => 'task/limittime.config',
 			'clientFile' => null,
 			'clientKey' => null,
 			'editable' => array('mail_head', 'mail_context'),
+		),
+		'mailtemplate' => array(
+			'label' => 'Thư tự động (level-up, chào mừng, v.v.)',
+			'file' => 'mail/mail.config',
+			'clientFile' => null,
+			'clientKey' => null,
+			'editable' => array('title', 'content', 'attachment'),
 		),
 	);
 }
@@ -235,20 +242,20 @@ function tc_parse_lua_config($text) {
 
 // ---------- Serialize giá trị field để ghi lại vào file ----------
 function tc_serialize_value($fieldName, $value) {
-	if ($fieldName === 'awardList' || $fieldName === 'rewards' || $fieldName === 'reward') {
-		$parts = array();
-		foreach ($value as $it) {
-			$t = isset($it['type']) ? intval($it['type']) : 0;
-			$id = isset($it['id']) ? intval($it['id']) : 0;
-			$cnt = isset($it['count']) ? intval($it['count']) : 0;
-			$parts[] = '{type='.$t.',id='.$id.',count='.$cnt.'}';
+	if (is_array($value)) {
+		if (count($value) > 0 && is_array($value[0]) && isset($value[0]['type'])) {
+			$parts = array();
+			foreach ($value as $it) {
+				$t = isset($it['type']) ? intval($it['type']) : 0;
+				$id = isset($it['id']) ? intval($it['id']) : 0;
+				$cnt = isset($it['count']) ? intval($it['count']) : 0;
+				$parts[] = '{type='.$t.',id='.$id.',count='.$cnt.'}';
+			}
+			return '{'.implode(',', $parts).'}';
 		}
-		return '{'.implode(',', $parts).'}';
-	}
-	if ($fieldName === 'taskIds') {
 		return '{'.implode(',', array_map('intval', $value)).'}';
 	}
-	if ($fieldName === 'mail_head' || $fieldName === 'mail_context') {
+	if (is_string($value)) {
 		return tc_escape_lua_string($value);
 	}
 	if (is_float($value) && floor($value) != $value) {
@@ -315,19 +322,26 @@ function tc_list_entries($dirS1, $defKey, $defs) {
 // ---------- Ghi đè 1 entry (áp dụng cho cả s1 + s99), có backup ----------
 function tc_update_entry_text($text, $entry, $updates, $editableFields) {
 	$edits = array();
+	$skipped = array();
 	foreach ($updates as $field => $newValue) {
 		if (!in_array($field, $editableFields, true)) { continue; }
-		if (!isset($entry['fields'][$field])) { continue; }
+		if (!isset($entry['fields'][$field])) {
+			// Field không tồn tại sẵn trong entry gốc (VD: mail chưa có "attachment") - bộ ghi
+			// chỉ thay thế giá trị field ĐÃ CÓ, không tự thêm field mới, nên báo skip rõ ràng
+			// thay vì âm thầm bỏ qua.
+			$skipped[] = $field;
+			continue;
+		}
 		$newRaw = tc_serialize_value($field, $newValue);
 		$edits[] = array($entry['fields'][$field]['start'], $entry['fields'][$field]['end'], $newRaw);
 	}
-	if (count($edits) === 0) { return array('text' => $text, 'changed' => 0); }
+	if (count($edits) === 0) { return array('text' => $text, 'changed' => 0, 'skipped' => $skipped); }
 	usort($edits, function ($a, $b) { return $b[0] - $a[0]; });
 	foreach ($edits as $e) {
 		list($s, $e2, $newText) = $e;
 		$text = substr($text, 0, $s).$newText.substr($text, $e2);
 	}
-	return array('text' => $text, 'changed' => count($edits));
+	return array('text' => $text, 'changed' => count($edits), 'skipped' => $skipped);
 }
 
 function tc_backup_file($path) {
@@ -348,6 +362,7 @@ function tc_save_task_entry($serverDirs, $defKey, $blockKey, $updates, $defs) {
 	$fileName = $def['file'];
 	$backups = array();
 	$writtenTo = array();
+	$skipped = array();
 
 	foreach ($serverDirs as $srvKey => $dir) {
 		$path = $dir.$fileName;
@@ -361,13 +376,17 @@ function tc_save_task_entry($serverDirs, $defKey, $blockKey, $updates, $defs) {
 		}
 		$result = tc_update_entry_text($text, $parsed['entries'][$blockKey], $updates, $def['editable']);
 		if ($result['changed'] === 0) {
-			return array('ok' => false, 'error' => 'Không có field hợp lệ nào được thay đổi.');
+			$reason = count($result['skipped']) > 0
+				? 'Field(s) "'.implode(', ', $result['skipped']).'" chưa tồn tại sẵn trong entry gốc này (bộ ghi chỉ sửa được field đã có, chưa hỗ trợ thêm field mới).'
+				: 'Không có field hợp lệ nào được thay đổi.';
+			return array('ok' => false, 'error' => $reason);
 		}
 		$bak = tc_backup_file($path);
 		if ($bak) { $backups[] = $bak; }
 		file_put_contents($path, $result['text']);
 		$writtenTo[] = $path;
+		$skipped = $result['skipped'];
 	}
 
-	return array('ok' => true, 'writtenTo' => $writtenTo, 'backups' => $backups);
+	return array('ok' => true, 'writtenTo' => $writtenTo, 'backups' => $backups, 'skipped' => $skipped);
 }
