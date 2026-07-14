@@ -89,10 +89,7 @@
 				<e:Image source="jindutiaotou" verticalCenter="-11.5" right="7" rotation="180"/>
 				<e:Label id="lvText" text="Label" x="-2" y="36" width="450" size="20" fontFamily="Microsoft YaHei" textAlign="center"/>
 				<e:Group id="textPane" width="440" height="22" anchorOffsetY="0" horizontalCenter="0" verticalCenter="14.5">
-				<e:Label id="guanqiaDes1" text="Đấu tiếp             " size="20" width="45" horizontalCenter="0" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0" x="-128" y="1" scaleX="1" scaleY="1" textColor="0xffffff"/>
-				<e:Label id="guanqiaDes2" text="15" size="20" textAlign="center" x="8" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" y="1" scaleX="1" scaleY="1" textColor="0xffff00"/>
-				<e:Label id="guanqiaDes0" text="Ải  nhận được                    " size="20" horizontalCenter="-12.5" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="-1" x="-118" y="11" scaleX="1" scaleY="1" anchorOffsetX="0" textColor="0xffffff" width="79"/>
-				<e:Label id="artifactName1" text="Mảnh Tu La①" size="20" textAlign="center" x="120" verticalAlign="middle" fontFamily="Microsoft YaHei" verticalCenter="0" y="1" scaleX="1" scaleY="1" textColor="0xffff00"/>
+				<e:Label id="guanqiaDesc" text="Đấu tiếp 15 Ải nhận được Mảnh Tu La①" size="20" width="420" horizontalCenter="0" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0" y="1" scaleX="1" scaleY="1" textColor="0xffffff"/>
 				<e:layout>
 					<e:HorizontalLayout gap="2" horizontalAlign="center"/>
 				</e:layout>
