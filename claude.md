@@ -4491,3 +4491,21 @@ Người dùng gửi ảnh popup "首充" (Nạp Thẻ Lần Đầu) trong game,
 Đã kiểm thử qua Playwright: `firsttier` hiện đúng 16 mốc qua khung chung có sẵn (không cần sửa JS); "Quà Nạp Đầu Tiên" tải đúng cả 3 hệ phái, mỗi hệ phái đúng 5 vật phẩm (tách riêng phần Đồng ra khỏi danh sách) + tên/icon thật (khác nhau đúng theo hệ phái, khớp tên "Phúc Hải Linh/Huyền/Thánh..." trong ảnh gốc); sửa Đồng hệ phái 1 rồi lưu → `git diff` xác nhận CHỈ đúng 1 dòng `firstRechargAward` đổi trên cả s1 VÀ s99 (kể cả khi s99 vẫn còn nguyên các dòng khác bằng tiếng Trung chưa dịch, không bị ảnh hưởng) → revert sạch. `php -l` sạch trên 3 file đã đổi (`gm.php`, `gmquery.php`, `taskconfig.php`).
 
 **Giới hạn đã biết**: (1) `pay`/`payType`/`id` của `firsttier` cố tình khoá không cho sửa (lý do nêu ở mục A) — nếu sau này cần thêm/bớt hẳn 1 mốc nạp mới thì đây là thao tác khác, phức tạp hơn (phải sửa đồng bộ cả cổng thanh toán thật), chưa hỗ trợ; (2) phần "Quà Nạp Đầu Tiên" áp dụng chung cho MỌI mức tiền nạp lần đầu (không phân biệt 10 hay 100 NDT) — đúng như logic gốc trong `dailyrecharge.lua` (chỉ phân biệt theo hệ phái, không theo số tiền), không phải lỗi thiếu tính năng.
+
+## 149. Sửa "Thứ 8 Quan" → "Quan 8" ở thanh HUD trên cùng (2026-07-14)
+
+Người dùng gửi ảnh HUD trong game thấy nhãn "Thứ 8 Quan" (cạnh "Cấp 16") đọc sai ngữ pháp tiếng Việt, muốn đổi thành "Quan 8".
+
+Đây là bug CÙNG DẠNG với mục 132/140 (dịch máy giữ nguyên thứ tự tiếng Trung "第N关" → ghép cứng "Thứ "+N+" Quan" thay vì đảo lại đúng ngữ pháp Việt). Dùng Explore subagent định vị chính xác: KHÔNG phải lỗi skin/exml (nhãn `mapName0` trong `PlayFunSkin.exml`/`default.thm.js` chỉ có placeholder thiết kế "Ải 3600" đúng thứ tự, không bao giờ hiển thị vì bị JS ghi đè runtime) — lỗi nằm ở `main.min.js`'s hàm `upDataGuanQiaInfo_a94`, dòng dựng `textFlow` bằng ghép chuỗi thô:
+```js
+this.mapName0.textFlow=TextFlowMaker.generateTextFlow("Thứ |C:0x00ff00&T:"+UserFb.ins().guanqiaID+"| Quan")
+```
+Sửa thành:
+```js
+this.mapName0.textFlow=TextFlowMaker.generateTextFlow("Quan |C:0x00ff00&T:"+UserFb.ins().guanqiaID+"|")
+```
+— giữ nguyên số tô màu xanh lá như thiết kế gốc, chỉ đảo vị trí "Thứ"/"Quan" cho đúng ngữ pháp ("Quan 8" thay vì "Thứ 8 Quan"). Đã rà thêm các chỗ dùng "Quan ải thứ "+id khác trong file (2 chỗ, đều là debug log/assert không hiển thị cho người chơi, đã sẵn đúng thứ tự "Quan ải thứ N" từ trước) - xác nhận đây là occurrence DUY NHẤT bị sai thứ tự và hiển thị cho người chơi thấy.
+
+Cache-bust: `main.min_f8609d58.js`(mục 142/147/148)→`main.min_194aa9a9.js`. Xác minh: `node -c` file mới, `grep` xác nhận không còn tham chiếu tên file cũ trong `manifest.json`/`index.php`, test trực tiếp bằng Node giả lập `guanqiaID=8` xác nhận chuỗi kết quả đúng "Quan 8" (trước là "Thứ 8 Quan").
+
+**Chưa kiểm chứng bằng ảnh thật**: cần deploy + xác nhận HUD hiện đúng "Quan 8" thay vì "Thứ 8 Quan".
