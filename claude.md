@@ -4699,3 +4699,19 @@ Người dùng gửi ảnh popup "Cộng thêm bộ trang bị" (mở từ màn 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở lại popup "Cộng thêm bộ trang bị" ở Đồ Giám (thử cả bậc cao 3-4 để thấy rõ chỗ dòng thuộc tính từng bị dính chữ) để xác nhận trực quan.
 
 **Nhắc quy trình commit** (người dùng yêu cầu áp dụng từ nay): code + tài liệu hoá claude.md gộp chung 1 commit duy nhất, không tách riêng.
+
+## 159. Tiếp mục 158 - "Chưa sưu tầm đủ" vẫn dính vào số phân số (2026-07-15)
+
+Sau khi sửa mục 158, người dùng gửi ảnh xác nhận 3/4 lỗi đã hết (tiêu đề, "N bậc", dòng thuộc tính đều tách bạch rõ ràng) nhưng vẫn còn "5/3Đã sưu tầm đủ" / "5/6Chưa thu thập đủ" dính liền không có khoảng cách.
+
+**Xác định gốc rễ mới**: `activated` (Label "Đã sưu tầm đủ"/"Chưa thu thập đủ") định vị bằng `horizontalCenter="136.5"` CỐ ĐỊNH - không hề biết `suitNum` (`x=240`, "5/3") kết thúc ở đâu. Tính ra: tâm của `activated` = tâm dòng (192.5) + 136.5 = 329; với chữ dài nhất "Chưa thu thập đủ" (~220px ở size 22), mép trái ước tính chỉ ở ≈219 - THẤP HƠN cả điểm bắt đầu của `suitNum` (240)! Tức 2 label chồng lấn nhau gần như từ đầu, không phải chỉ thiếu 1 khoảng cách nhỏ.
+
+**Nhận ra vấn đề sâu hơn**: cộng tổng bề rộng cần thiết cho CẢ dòng đầu (jieduan ~55px + label tĩnh ~170px + suitNum ~40px + activated ~220px ở "Chưa thu thập đủ") ≈ 485px, trong khi cả dòng chỉ rộng 385px - dù có canh lại khoảng cách thế nào cũng KHÔNG THỂ vừa 1 dòng ngang, phải tách `activated` xuống dòng riêng.
+
+**Cách sửa**: dời `activated` xuống 1 dòng MỚI ngay dưới dòng tiêu đề (`horizontalCenter="136.5"` → `"0"` để canh giữa cả dòng 385px thay vì lệch phải, `y="3"` → `"30"`), đẩy toàn bộ 4 label thuộc tính (`value0`-`value3`) xuống theo (`y=53/83` → `y=60/90`), tăng chiều cao khối `Group` mỗi dòng bậc từ `113` → `120` để đủ chỗ cho dòng mới mà không đè lên dòng bậc kế tiếp trong danh sách cuộn.
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; sửa `default.thm.js` đúng trong ranh giới class `SkinTuJianSuitItem` (tìm mốc `generateEUI.paths['resource/exml/TuJianSuitItem.exml']` đến class kế tiếp, giữ đúng thói quen từ mục 158 vì các id `value0`-`value3`/`activated` bị trùng tên ở nhiều skin khác trong cùng file); `node -c` sạch; đối chiếu lại toàn bộ block đã sửa trong `default.thm.js` khớp 100% với exml.
+
+**Cache-bust**: `default.thm_268987cd.js` → `default.thm_986e9b7f.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở lại popup, đặc biệt các bậc có "Chưa thu thập đủ" (chữ dài hơn "Đã sưu tầm đủ") để xác nhận không còn dính chữ.
