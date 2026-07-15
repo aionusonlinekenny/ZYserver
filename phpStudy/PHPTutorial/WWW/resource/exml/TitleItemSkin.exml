@@ -6,14 +6,14 @@
     <e:Image id="img" source="ch_2_png" y.simple="10" left="16" anchorOffsetX="0" width="225" anchorOffsetY="0" height="76" top="12"/>
 	<e:Button id="btnSet" label="Mặc/Đeo" icon="xch_02" width="125" horizontalCenter="87.5" height="53" top="30" skinName="SkinBtn3"/>
 	<e:Label id="labLack" text="Chưa nhận" size="24" x.simple="340" y.simple="32" y.expand="32" x.expand="340" fontFamily="Microsoft YaHei" horizontalCenter="88" top="43" textColor="0x1b3046"/>
-	<e:Label id="time" text="Thời hạn：" size="18" textAlign="left" y="65" x="316" fontFamily="Microsoft YaHei" anchorOffsetY="0" height="19" top="82" width="145" horizontalCenter="103.5" textColor="0x00ff00"/>
+	<e:Label id="time" text="Thời hạn：" size="14" textAlign="left" y="65" x="250" fontFamily="Microsoft YaHei" anchorOffsetY="0" height="20" top="82" width="260" textColor="0x00ff00"/>
 	<e:Image rotation="0" source.expand="btnmax" rotation.expand="180" y.expand="21" x.expand="516" horizontalCenter="234.5" top="21" source="btnmax"/>
 	<e:Group width="546" anchorOffsetX="0" horizontalCenter="0" verticalCenter="46" anchorOffsetY="0" height="346.33" includeIn="expand">
 		<e:Group width="100%" height="93">
 			<e:Image y="-4" width="255" horizontalCenter="0.5" anchorOffsetY="0" height="46" source="huabian" scale9Grid="87,0,29,48"/>
 			<e:Label text="Thuộc tính danh hiệu hiện tại" y="16" size="21" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center"/>
 			<e:Group id="power" y="55" x="293"/>
-			<e:Label id="labRare" text="Độ hiếm：" size="20" width="123" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x1b3046" top="56" x="416"/>
+			<e:Label id="labRare" text="Độ hiếm：" size="13" width="138" textAlign="left" fontFamily="Microsoft YaHei" textColor="0x1b3046" top="56" x="416"/>
 			<e:Image x="18" y="40" source="zhandoulibg" visible="false"/>
 			<e:Image source="wingzhanli" y="55" x="184"/>
 		</e:Group>
