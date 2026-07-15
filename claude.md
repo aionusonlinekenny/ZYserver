@@ -4655,3 +4655,11 @@ Người dùng gửi tiếp 2 ảnh chụp màn "Huyễn Hóa" (hệ thống dan
 **Đánh đổi cần lưu ý cho người dùng**: cỡ chữ "Độ hiếm:" giảm khá nhiều (20→13, ~35%) do khung chứa quá hẹp và không thể dời sang trái an toàn (cạnh khối "Lực chiến" bề rộng động) - có thể trông hơi nhỏ so với "Lực chiến:" bên cạnh (vốn là hình ảnh/bitmap cỡ lớn, không đổi) nhưng đảm bảo hiện đủ 1 dòng như yêu cầu, không còn vỡ chữ giữa từ.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở lại màn Huyễn Hóa/danh hiệu (cả state danh sách lẫn bung chi tiết) để xác nhận trực quan.
+
+**Cập nhật mục 156 (2026-07-15, cùng ngày)**: người dùng tự chỉnh lại số liệu sau khi thấy bản đầu (size 14/13, canh trái) hơi nhỏ, gửi lại nguyên file `default.thm_1021c796.js` đã sửa tay và yêu cầu áp dụng đúng theo file đó. Đã diff toàn bộ file (`diff` 2 bản) để xác định CHÍNH XÁC những gì người dùng đổi, chỉ áp dụng đúng phần đó, KHÔNG áp dụng nhầm 1 chỗ khác biệt phát sinh do file người dùng gửi dựa trên bản cũ hơn (thiếu chữ "hiện tại" ở tiêu đề "Thuộc tính danh hiệu" - 1 fix không liên quan từ trước, đã giữ nguyên, không bị revert nhầm). Giá trị mới:
+- `time`: `size` 14→18, `textAlign` left→center (giữ nguyên `width=260`, `x=250`, `height=20`).
+- `labRare`: `size` 13→18, `width` 138→200, `x` 416→375 (dời trái để có thêm chỗ cho cỡ chữ lớn hơn - người dùng đã tự kiểm tra thực tế trên trình duyệt nên tin theo số liệu này thay vì ước tính lý thuyết ban đầu).
+
+Cache-bust `default.thm_1021c796.js` → `default.thm_7e71c9b9.js`, cập nhật `manifest.json`.
+
+**Lưu ý quy trình commit (người dùng nhắc, áp dụng từ đây về sau)**: MỖI đợt việc = 1 COMMIT DUY NHẤT - không tách riêng "commit code" rồi "commit cập nhật claude.md" ngay sau đó. Gộp chung code + tài liệu hoá tiến độ (nếu có) vào cùng 1 commit, vì người dùng dựa vào lịch sử commit trên GitHub để biết chính xác đợt nào cần copy file gì về server thật - tách commit làm khó theo dõi cái nào đi với cái nào.
