@@ -4617,3 +4617,21 @@ Người dùng tạm gác vụ xoá nhân vật (mục 152/153), gửi 4 ảnh c
 **Quy trình xác minh trước khi push** (đúng bài học mục 149/150): `git add` riêng từng path mới (không trộn path cũ đã `git mv`); so `git hash-object` với `git ls-files -s` cho cả 4 file thay đổi - khớp 100%; sau `git commit`, `git show HEAD:<file> | grep <chuỗi đặc trưng>` xác nhận đúng nội dung mới đã vào commit (`"Sinh lực: ","Pháp lực: ","Công kích: "` và `TextFlowMaker.generateTextFlow(i),this.setBtnVisible_a94` đều tìm thấy trong bản `main.min_027652ef.js` ở HEAD) - mới `git push`.
 
 **Chưa kiểm chứng trên trình duyệt thật** (sandbox không chạy được Egret runtime) - người dùng cần tải lại trang (cache-bust filename mới tự đảm bảo không dính cache cũ) và mở lại popup Thuộc tính để xác nhận trực quan. 3 ảnh còn lại người dùng gửi (IMG_0951 - popup "Thay đổi" trang bị) không có lỗi chồng chữ, không cần sửa.
+
+## 155. Popup "Thay đổi" trang bị - "Cấp độ:" đè lên "Cấp N", thừa chữ "Cấp" (2026-07-15)
+
+Người dùng gửi tiếp ảnh (sau khi xác nhận mục 154 đã sửa đúng phần Thuộc tính nhân vật) chỉ ra popup xem trước đổi trang bị ("Thay đổi", mở khi bấm vào 1 món trang bị đang mặc) vẫn còn lỗi tương tự: dòng "Cấp độ" đè chồng lên "Cấp 1", đúng ra chỉ cần hiện "Cấp độ: 1".
+
+**Xác định**: class `RoleEquipChooseItemRender` (`main.min.js`), skin `SkinRoleChooseEquipItem` (`resource/exml/RoleChooseEquipItemSkin.exml`) - đây là phần tử item-preview dùng chung cho cả ô "đang mặc" (trên cùng popup `RoleChooseEquipView`/`SkinRoleChooseEquip`) lẫn từng dòng trong danh sách trang bị thay thế bên dưới. Có 2 Label RIÊNG BIỆT định vị bằng toạ độ tuyệt đối cứng: `levelStrText` ("Cấp độ:", `x=110`) và `levelText` (giá trị, `x=166`) - khoảng cách cố định 56px không đủ chứa chữ "Cấp độ:" tiếng Việt (rộng hơn 2-3 ký tự Hán gốc nhiều), lại thêm lỗi ở hàm `dataChanged`: giá trị gán `r="Cấp "+(level||1)` - LẶP LẠI thừa chữ "Cấp" (nhãn tĩnh đã có "Cấp độ" rồi).
+
+**Cách sửa** (`main.min.js`, hàm `dataChanged` của `RoleEquipChooseItemRender`):
+1. Bỏ tiền tố `"Cấp "` thừa trong nhánh bình thường: `r=isNaN(zsLevel)?(level||1)+"":"Chuyển "+zsLevel+""` (giữ nguyên nhánh "Chuyển N" cho trang bị đã tiến hoá/chuyển hoá vì không trùng lặp với "Cấp độ").
+2. Thay toạ độ cứng `levelText.x=166` bằng tính động **ngay sau khi gán xong `levelStrText.text`** (áp dụng cho CẢ 2 nhánh if/else, kể cả nhánh DZI/Đấu Chiến Tất dùng nhãn "Cấp bậc:" dài hơn): `this.levelText.x=this.levelStrText.x+this.levelStrText.textWidth+4` - tái dùng đúng kiểu code đã có sẵn NGAY TRONG CÙNG HÀM cho phần tử `upImg` (`this.upImg.x=this.power.x+this.power.textWidth+10`), đảm bảo khoảng cách luôn đủ dù nhãn tĩnh dài ngắn khác nhau, không cần đoán số px cố định.
+
+Tham khảo đối chứng: field "Điểm số:" trong cùng skin KHÔNG bị lỗi này vì đã được gộp làm 1 Label duy nhất (`this.power.textFlow=TextFlowMaker.generateTextFlow("Điểm số: |C:...&T:"+s+"|")`) ngay từ đầu - không có 2 Label tách rời để lệch vị trí.
+
+**Kiểm thử**: `node -c` sạch; grep xác nhận field `main.min_027652ef` (tên file cũ trước cache-bust) không còn sót lại tham chiếu nào trong toàn bộ cây thư mục.
+
+**Cache-bust**: chỉ đổi `main.min.js` (không đụng `default.thm.js` lần này) - `main.min_027652ef.js` → `main.min_9a22a15f.js`, cập nhật `manifest.json`. Quy trình xác minh trước push giữ nguyên như mục 149/150/154: `git hash-object` khớp `git ls-files -s`, `git show HEAD` xác nhận đúng nội dung mới nằm trong commit trước khi `git push`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở lại popup "Thay đổi" trang bị để xác nhận trực quan.
