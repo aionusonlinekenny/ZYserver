@@ -4677,3 +4677,25 @@ Cập nhật đồng bộ cả 2 file `.exml` nguồn (`PersonalBossPanelSkin.ex
 **Kiểm thử**: `node -c` sạch; `python3 -c "import xml.etree..."` xác nhận cả 2 exml hợp lệ; `diff` file người dùng gửi với file đã sửa trong repo - chỉ còn đúng 1 khác biệt cố ý giữ lại (dòng "hiện tại"), xác nhận không sót/không thừa thay đổi nào khác.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở lại cả 2 màn BOSS Cá Nhân + BOSS Thế Giới để xác nhận trực quan.
+
+## 158. Popup thưởng bộ trang bị ở Đồ Giám (TuJianSuit) - thiếu dấu cách + chồng chữ (2026-07-15)
+
+Người dùng gửi ảnh popup "Cộng thêm bộ trang bị" (mở từ màn Đồ Giám, link "Phúc Lợi Đồ Trang Dư Thừa") - 4 lỗi cùng lúc: (1) tiêu đề dính liền "Tu Tiên Thánh ĐịaCộng thêm bộ trang bị" (thiếu dấu cách giữa tên bộ và câu mô tả); (2) "1bậc"/"2bậc"/"3bậc"/"4bậc" thiếu dấu cách; (3) "Số món trong bộ" đè lên số phân số "1/3" ngay sau; (4) ở bậc 2-4 dòng "Pháp Kháng：+80Sinh Lực：+4320" 2 cụm thuộc tính dính liền nhau không có khoảng trống.
+
+**Xác định**: class `IllustrationsWayTips` (skin `SkinTuJianSuitTips`, `resource/exml/TuJianSuitTips.exml`) cho tiêu đề, và `IllustrationsWayTipsItem` (skin `SkinTuJianSuitItem`, `resource/exml/TuJianSuitItem.exml`, item renderer cho từng dòng bậc) cho phần còn lại.
+
+**Lỗi 1+2 - THẬT SỰ là thiếu dấu cách trong code** (khác các lỗi trước trong session, phần lớn là do box quá hẹp - lần này đúng là quên gõ dấu cách):
+- `IllustrationsWayTips.prototype.updateData_a94`: `this.nameLabel.text=...getTitleNameById_a94(this.suitId)+"Cộng thêm bộ trang bị"` → thêm dấu cách đầu literal: `+" Cộng thêm bộ trang bị"`.
+- `IllustrationsWayTipsItem.prototype.dataChanged`: `this.jieduan.text=t.level+"bậc"` → `t.level+" bậc"`.
+
+**Lỗi 3 - phát hiện thêm 1 bug PHỤ**: dò kỹ mới thấy có tận 2 Label cùng hiển thị số lượng dư thừa nhau - `num` (chỉ hiện tổng số món, vd "3") và `suitNum` (hiện "đã thu thập/tổng", vd "1/3" - ĐÃ bao gồm luôn tổng số) - `num` hoàn toàn dư thừa, không đóng góp thông tin gì thêm ngoài info suitNum đã có, lại được đặt `x=160` rất gần `suitNum` (`x=192`) và gần label tĩnh "Số món trong bộ：" (`x=60`, không có `width`) - 3 phần tử chen nhau trong ~130px trong khi label tĩnh 1 mình đã cần ~170px ở size 20. Sửa: ẩn hẳn `num` (`this.num.visible=!1` trong JS, thêm `visible="false"` trong skin/exml để khớp trạng thái mặc định), đặt `width="175"` cho label tĩnh, dời `suitNum` từ `x=192`→`x=240` (ngay sau label tĩnh đã có đủ chỗ).
+
+**Lỗi 4**: 4 Label thuộc tính (`value0`/`value2` cột trái `x=50`, `value1`/`value3` cột phải `x=207`) - khoảng cách 157px không đủ cho chuỗi "Pháp Kháng：+4320" (~16 ký tự, ~160px ở size 20) ở các bậc cao. Dời `value1`/`value3` từ `x=207`→`x=230` (nới thêm 23px, đủ margin trong tổng bề rộng dòng 385px).
+
+**Kiểm thử**: `node -c` sạch cả 2 file JS; `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; đọc lại đúng theo RANH GIỚI class `SkinTuJianSuitItem` (tìm từ `generateEUI.paths['resource/exml/TuJianSuitItem.exml']` đến class kế tiếp) trước khi sửa `value1_i`/`value3_i` trong `default.thm.js` - vì các id `value0`-`value3` BỊ TRÙNG TÊN với 1 skin class hoàn toàn khác trong cùng file (đã grep nhầm 1 lần, phát hiện text placeholder khác hẳn "Lực công kích+99999" nên nhận ra ngay và sửa đúng vị trí).
+
+**Cache-bust**: `default.thm_0a4eccfb.js`→`default.thm_268987cd.js`, `main.min_9a22a15f.js`→`main.min_14185959.js`, cập nhật `manifest.json`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở lại popup "Cộng thêm bộ trang bị" ở Đồ Giám (thử cả bậc cao 3-4 để thấy rõ chỗ dòng thuộc tính từng bị dính chữ) để xác nhận trực quan.
+
+**Nhắc quy trình commit** (người dùng yêu cầu áp dụng từ nay): code + tài liệu hoá claude.md gộp chung 1 commit duy nhất, không tách riêng.
