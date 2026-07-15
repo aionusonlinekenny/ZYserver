@@ -24,7 +24,7 @@
 	<e:Label id="nameTxt" text="Tên BOSS（cấp 70）" horizontalCenter="-65" size="22" fontFamily="Microsoft YaHei" textColor="0xffffff" textAlign="center" top="46"/>
 	<e:Group id="bossGroup" width="200" height="200" horizontalCenter="-68" verticalCenter="-40" scaleX="1.2" scaleY="1.2"/>
 	<e:Image width="408" horizontalCenter="-64" scale9Grid="16,13,559,12" source="longhuntextbg2" bottom="103" anchorOffsetY="0" height="117"/>
-	<e:Image width="25" height="49" source="bossItemDorp_png" horizontalCenter="-254.5" bottom="135"/>
+	<e:Image width="54" height="90" source="bossItemDorp_png" horizontalCenter="-254.5" bottom="120"/>
 	<e:List id="dropRewardList"  bottom="110" horizontalCenter="-64" width="309" height="100.5" itemRendererSkinName="SkinItem3">
 		<e:layout>
 			<e:HorizontalLayout horizontalAlign="center" gap="42"/>

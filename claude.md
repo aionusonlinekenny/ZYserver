@@ -4663,3 +4663,17 @@ Người dùng gửi tiếp 2 ảnh chụp màn "Huyễn Hóa" (hệ thống dan
 Cache-bust `default.thm_1021c796.js` → `default.thm_7e71c9b9.js`, cập nhật `manifest.json`.
 
 **Lưu ý quy trình commit (người dùng nhắc, áp dụng từ đây về sau)**: MỖI đợt việc = 1 COMMIT DUY NHẤT - không tách riêng "commit code" rồi "commit cập nhật claude.md" ngay sau đó. Gộp chung code + tài liệu hoá tiến độ (nếu có) vào cùng 1 commit, vì người dùng dựa vào lịch sử commit trên GitHub để biết chính xác đợt nào cần copy file gì về server thật - tách commit làm khó theo dõi cái nào đi với cái nào.
+
+## 157. Tăng kích thước ảnh nhãn "Vật Phẩm Rơi" ở 2 màn BOSS (2026-07-15)
+
+Người dùng hỏi trước "muốn tăng kích thước chữ/hình 'Vật Phẩm Rơi' thì vào đâu chỉnh" (màn BOSS Cá Nhân) - đã tra ra đây thực chất là 1 ẢNH (`bossItemDorp_png`, không phải Label text) định nghĩa ở `resource/exml/PersonalBossPanelSkin.exml`, và phát hiện thêm 1 bản y hệt ở `resource/exml/WorldBossPanel1Skin.exml` (màn Boss Thế Giới) - cùng dùng chung 1 asset, cùng kích thước gốc `width=25 height=49 bottom=135`. Đã khuyến nghị sửa tại chỗ (an toàn, không phải component dùng chung nhiều nơi khác) thay vì đụng `scaleX/scaleY` của `rewardList`.
+
+Người dùng tự chỉnh và gửi lại file `default.thm_1021c796.js` đã sửa tay, yêu cầu áp dụng theo file đó. Diff toàn bộ file xác nhận đúng 3 khác biệt: 2 chỗ ảnh `bossItemDorp_png` (`_Image5_i` trong `PersonalBossPanelSkin`, `_Image6_i` trong `WorldBossPanel1Skin`) đổi `width` 25→54, `height` 49→90, `bottom` 135→120 (phóng to ~2 lần, dịch lên gần khớp lại vị trí), và 1 khác biệt KHÔNG liên quan do file người dùng gửi dựa trên bản cũ hơn mục 156 (thiếu "hiện tại" ở "Thuộc tính danh hiệu") - đã CHỦ ĐỘNG GIỮ NGUYÊN phần này (không áp dụng), chỉ áp dụng đúng 2 chỗ ảnh boss liên quan đến yêu cầu.
+
+Cập nhật đồng bộ cả 2 file `.exml` nguồn (`PersonalBossPanelSkin.exml` dòng 32, `WorldBossPanel1Skin.exml` dòng 27) khớp đúng số liệu mới.
+
+**Cache-bust**: `default.thm_7e71c9b9.js` → `default.thm_0a4eccfb.js`, cập nhật `manifest.json`.
+
+**Kiểm thử**: `node -c` sạch; `python3 -c "import xml.etree..."` xác nhận cả 2 exml hợp lệ; `diff` file người dùng gửi với file đã sửa trong repo - chỉ còn đúng 1 khác biệt cố ý giữ lại (dòng "hiện tại"), xác nhận không sót/không thừa thay đổi nào khác.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở lại cả 2 màn BOSS Cá Nhân + BOSS Thế Giới để xác nhận trực quan.

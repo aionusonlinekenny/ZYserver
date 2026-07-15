@@ -29,7 +29,7 @@
 		</e:layout>
 	</e:Group>
 	<e:Image width="408" horizontalCenter="-64" scale9Grid="16,13,559,12" source="longhuntextbg2" bottom="103" anchorOffsetY="0" height="117"/>
-	<e:Image width="25" height="49" source="bossItemDorp_png" horizontalCenter="-254.5" bottom="135"/>
+	<e:Image width="54" height="90" source="bossItemDorp_png" horizontalCenter="-254.5" bottom="120"/>
 
 
 
