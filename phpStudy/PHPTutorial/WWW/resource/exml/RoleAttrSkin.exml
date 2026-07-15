@@ -17,50 +17,50 @@
 		<e:Button id="rightBtn" label="Nút bấm" skinName="SkinBtn0" icon="jiantouxuan" right="-70"  scaleX="-1.2" verticalCenter="0" scaleY="1.2"/>
 		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="fanhui" x="271" y="369" visible="false" />
 		<e:Group id="attrGroup" x="56" y="90">
-			<e:Label id="attr" text="Công    kích：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：\nTỷ lệ Tê Liệt：" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" width="147"  bottom="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="116"/>
+			<e:Label id="attr" text="" size="16" lineSpacing="12" touchEnabled="false" textAlign="left" width="280"  bottom="0" top="0" textColor="0xffffff" fontFamily="Microsoft YaHei" left="0"/>
 			<e:Group x="0" verticalCenter="-150">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Sinh      lực:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="-120">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Pháp      lực:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="-90">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Công      kích:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="-60">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Kháng      vật lý:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="-30">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Kháng      phép:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="0">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Bạo      kích:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="30">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Tăng cường Bạo kích:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="60">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Kháng      Bạo kích:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="90">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Tỷ lệ Choáng" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" y="0" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" y="0" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="120">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Kháng Choáng:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 			<e:Group x="0" verticalCenter="150">
 				<e:Image touchEnabled="false" source="tongyongdian" y="1" x="0" visible="false"/>
-				<e:Label text="Giảm sát thương:" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
+				<e:Label text="" size="20" lineSpacing="10" touchEnabled="false" textAlign="left" y="0" width="147"  textColor="0x6b9baa" fontFamily="Microsoft YaHei" horizontalCenter="9.5"/>
 			</e:Group>
 		</e:Group>
 	</e:Group>
