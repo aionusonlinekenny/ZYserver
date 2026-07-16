@@ -5063,3 +5063,20 @@ Người dùng xác nhận trục ngang (mục 176) đã đúng - chữ đã "v�
 **Cache-bust**: `default.thm_83a0b43b.js` → `default.thm_6ff51afc.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - độ lệch đo được từ ảnh chụp (không phải môi trường render trực tiếp) có sai số do ảnh mờ/nghiêng khi chụp màn hình; mức dời `+10` là làm tròn dựa trên đo đạc dao động 6-11 đơn vị giữa 3 nút, có thể cần tinh chỉnh thêm nếu vẫn còn chạm nhẹ.
+
+## 178. Tiếp tục chỉnh 3 nút Tiên Minh vẫn còn cao + phát hiện "Tiên Minh Trấn Yêu" lệch trục ngang riêng (2026-07-16)
+
+Người dùng gửi ảnh mới sau mục 177: 3 nút đầu VẪN còn cao (mức dời `+10` chưa đủ, đo lại thấy chữ chỉ vừa chạm sát đáy icon chứ chưa tạo khoảng cách rõ ràng). Đồng thời phát hiện thêm: nút "Tiên Minh Trấn Yêu" tuy giữ nguyên `y="177.65"` theo đúng yêu cầu mục 177, nhưng trục NGANG lại bị lệch hẳn sang phải so với ribbon - cần dời trái để canh giữa.
+
+**Đo lại trục dọc** (lưới toạ độ Y mật độ 10px chồng lên ảnh chụp mới): 3 nút đều cho kết quả "chữ chạm sát đáy icon" (gần như 0 khoảng hở) thay vì có khoảng đệm rõ ràng - dời thêm `+15` đơn vị nữa cho cả 3 nút để tạo khoảng cách thấy rõ:
+- "Đại sảnh sự kiện": `y="157"→"172"`.
+- "Tranh Bá Tiên Cung": `y="119"→"134"`.
+- "Đại Điện Tiên Minh": `y="53"→"68"`.
+
+**Phát hiện lỗi trục ngang riêng của "Tiên Minh Trấn Yêu"**: đo bằng lưới toạ độ X trên ảnh chụp - tâm icon đo được ở khoảng x≈1012 (ảnh gốc), tâm ribbon (nền đỏ) đo được ở khoảng x≈1047, còn tâm khối chữ hiện tại lại ở x≈1130 - lệch khỏi tâm ribbon khoảng 82px. Khác với 3 nút kia (icon và ribbon luôn canh giữa nhau chính xác theo toạ độ khai báo, xác nhận ở mục 176), nút này (`shopBtn`) có khả năng bị ảnh hưởng bởi thuộc tính `horizontalCenter.up="-86"` gán riêng cho ảnh nền trang trí `guild_title6a_png` ở trạng thái "up" (trạng thái hiển thị mặc định) trong khi khối `<e:Skin states="up,down,disabled">` của nút này KHÔNG khai báo `width` tường minh - có thể khiến hệ toạ độ cục bộ của nút này lệch so với 3 nút còn lại (chỉ nút này có tổ hợp thuộc tính này). Vì đo trực tiếp trên ảnh đáng tin hơn suy luận qua công thức (vốn đã đúng cho 3 nút kia nhưng không khớp ở đây), dời `x` theo đúng độ lệch đo được (quy đổi ~2.7px ảnh / 1 đơn vị exml, cùng tỉ lệ dùng ở mục 177): `x="186.47"→"156"` (giữ nguyên `y="177.65"` như yêu cầu).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch.
+
+**Cache-bust**: `default.thm_6ff51afc.js` → `default.thm_eecf824a.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - đặc biệt nút "Tiên Minh Trấn Yêu" dùng số đo trực tiếp từ ảnh chụp (không có công thức khai báo đáng tin cậy như 3 nút kia do nghi ngờ có sự khác biệt cấu trúc `states`/`width` trong `shopBtn`), sai số có thể lớn hơn - cần người dùng xác nhận kỹ bằng ảnh chụp mới.
