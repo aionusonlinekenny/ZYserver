@@ -4800,3 +4800,21 @@ Người dùng hỏi 3 dòng "70" xuất hiện ở góc trên-trái cùng màn 
 **Cache-bust**: `main.min_c8940ba5.js` → `main.min_15ec2238.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và xác nhận góc trên-trái không còn hiện chữ debug nữa (kể cả sau khi mở lại màn kết quả Thông Thiên Quan).
+
+## 164. Dời ảnh tiêu đề "Phi Thăng" sang phải (không ảnh hưởng 4 tab khác) (2026-07-15)
+
+Người dùng yêu cầu dời ảnh tiêu đề "Phi Thăng" (góc trên-trái, ngay cạnh icon "?") sang phải 1 chút.
+
+**Điều tra cấu trúc**: khác các lỗi trước, đây KHÔNG phải lỗi - chỉ là yêu cầu chỉnh vị trí thẩm mỹ. Nhưng phát hiện điểm quan trọng: icon "?" (`help`) và ảnh tiêu đề (`biaoti`) là **1 CẶP PHẦN TỬ DÙNG CHUNG cho cả 5 tab** của màn `RoleWinSkin` (Nhân Vật/Thần Phạt/Chuyển Sinh/Tiên Vũ/Phi Thăng) - vị trí `horizontalCenter=-230` cố định trong skin, chỉ có `source` (ảnh bitmap) được đổi theo tab đang chọn (hàm `setOpenByIndex_a94`, `main.min.js`). Nếu sửa thẳng vị trí trong exml/`default.thm.js` sẽ dời tiêu đề của CẢ 5 TAB, không riêng gì Phi Thăng.
+
+**Cách sửa**: thêm override vị trí RIÊNG cho từng tab trong chính hàm `setOpenByIndex_a94` (không đụng file skin):
+- Thêm `this.biaoti.horizontalCenter=-230` (giá trị mặc định) vào đúng biểu thức reset đầu `switch` (chạy trước MỌI case, đảm bảo 4 tab còn lại luôn về đúng vị trí cũ).
+- Thêm `this.biaoti.horizontalCenter=-210` riêng trong `case 4` (Phi Thăng) - dời sang phải 20px so với mặc định.
+
+Nhờ vậy chỉ tab Phi Thăng bị dời, 4 tab kia giữ nguyên vị trí như trước.
+
+**Kiểm thử**: `node -c` sạch; đọc lại đúng đoạn code đã sửa xác nhận `case 4` có thêm `horizontalCenter=-210` và switch-header có reset `-230` cho các case còn lại.
+
+**Cache-bust**: `main.min_15ec2238.js` → `main.min_5b27e8e4.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại, mở tab Phi Thăng xác nhận tiêu đề đã dời phải, đồng thời kiểm tra qua lại 4 tab còn lại (Nhân Vật/Thần Phạt/Chuyển Sinh/Tiên Vũ) để chắc chắn vị trí tiêu đề của chúng KHÔNG bị ảnh hưởng.
