@@ -4912,3 +4912,24 @@ Người dùng gửi ảnh màn chính "Phó Bản": (1) nút hỏi đáp "?" đ
 **Cache-bust**: `default.thm_1d1ba417.js` → `default.thm_98d3ee6f.js`, `main.min_fd6ff64e.js` → `main.min_68824515.js` (cùng đợt với mục 168 ở trên).
 
 **Chưa kiểm chứng trên trình duyệt thật** - giá trị `-190`, `x="140"/width="280"/x="430"` đều là ước lượng dựa trên độ rộng khung/chữ, cần người dùng xác nhận trực quan không còn đè và không lệch quá xa vị trí cũ.
+
+## 170. Nút "Thưởng" đè tên boss + icon "Đang tấn công" vẫn tràn mép phải ở màn World Boss (2026-07-16)
+
+Người dùng gửi ảnh thực tế trên máy (server 71.31.97.241) sau khi đã pull đợt sửa mục 167, báo "Nút thưởng và icon boss vẫn không thấy đổi": (1) badge "Thưởng" vẫn đè lên tên boss "Chấn Sơn Thạch Linh" (chỉ thấy "Chấn Sơn Thạc[Thưởng]"); (2) icon+tên boss "Đang tấn công" ở góc trên-phải vẫn bị cắt sát mép màn hình ("Chấn Sơn Th/inh" xuống dòng và mất chữ).
+
+**Nguyên nhân thật sự - đây KHÔNG phải cùng 1 lỗi với mục 167**: ảnh chụp thuộc màn hình World Boss, dùng skin `worldbossUiSkin.exml` (class `SkinWorldBossUi`, class logic `WorldBossesUiInfo`) - HOÀN TOÀN KHÁC với `BossBloodSkin.exml`/`BossesBloodPanel` đã sửa ở mục 167 (trùng ý tưởng UI - thanh máu boss + nút thưởng - nhưng là 2 skin/2 class riêng biệt do code gốc có nhiều biến thể màn hình boss: world boss, boss cá nhân, boss công thành...). Vì vậy mục 167 không hề ảnh hưởng tới màn hình này.
+
+**Lỗi 1**: `nameTxt` (`x="188"`, không đặt `width`) và `tipBtn` ("Phần thưởng", `x="278.26"`) định vị tĩnh độc lập trong `bossBloodGroup` - giống hệt kiểu lỗi đã gặp nhiều lần, tên boss dài đè lên nút. Xác nhận qua `main.min.js`, hàm DUY NHẤT set tên boss `WorldBossesUiInfo.prototype.updateBaseInfo_a94` (`this.nameTxt.text=this.bossConfig.name`) không hề cập nhật lại vị trí `tipBtn`.
+
+**Lỗi 2**: `attList` (chứa `attackGroup`/"Đang tấn công", dùng chung item renderer `SkinMemberHead` đã thêm `width="140"` ở mục 167) neo `right="0"` - SÁT MÉP PHẢI màn hình không chừa khoảng trống nào, nên nội dung item rộng 140px (sau khi đã được giới hạn không tràn vô hạn) vẫn bị cắt vì cả khối container đã áp sát rìa phải từ trước.
+
+**Cách sửa**:
+- `main.min.js`, `WorldBossesUiInfo.prototype.updateBaseInfo_a94`: thêm `this.tipBtn.x=this.nameTxt.x+this.nameTxt.textWidth+10` ngay sau khi set tên boss - tái dùng đúng công thức đã dùng ở mục 167. **Lưu ý quan trọng**: cùng chuỗi code y hệt còn xuất hiện ở 1 class khác (`NewWorldBossesUIView`, skin `SkinWpkBossUi`/`wpkBossUiSkin.exml`) nhưng ở skin đó nút `tipBtn` định vị cạnh icon đầu boss (`x=31`) chứ không cạnh tên (`nameTxt` ở `x=162`) - áp công thức này vào sẽ SAI vị trí, nên chỉ sửa đúng 1 trong 2 chỗ trùng lặp (xác nhận qua offset chuỗi trong file, không dùng replace toàn cục).
+- `worldbossUiSkin.exml`: `attList` đổi `right="0"` → `right="50"` (chừa khoảng trống bên phải cho nội dung item 140px không bị cắt).
+- Mirror `attList` vào `default.thm.js` (`SkinWorldBossUi`'s `attList_i`); không cần sửa `nameTxt_i`/`tipBtn_i` (giá trị mặc định trong skin không đổi, vị trí `tipBtn` giờ được ghi đè bằng code runtime).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận đoạn code cũ trong `main.min.js` xuất hiện đúng 2 lần (2 class khác nhau), chỉ thay tại đúng offset của `WorldBossesUiInfo`, giữ nguyên `NewWorldBossesUIView`; xác nhận sửa `attList_i` trong `default.thm.js` chỉ khớp đúng 1 lần; `node -c` sạch cả 2 file.
+
+**Cache-bust**: `default.thm_98d3ee6f.js` → `default.thm_ae402690.js`, `main.min_68824515.js` → `main.min_e4aa5ad1.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - đặc biệt cần người dùng xác nhận lại đúng trên server thật (71.31.97.241) sau khi deploy bản mới, vì đây là màn hình đã báo "vẫn không đổi" một lần (khả năng cao do đợt trước sửa nhầm class `BossesBloodPanel` thay vì `WorldBossesUiInfo`).
