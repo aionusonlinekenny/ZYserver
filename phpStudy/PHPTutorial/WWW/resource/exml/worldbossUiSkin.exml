@@ -86,8 +86,8 @@
 
 		<e:Image scale9Grid="92,32,5,7" y="1" source="zjmtouxiangkuang" x="0.4" width="253" height="67"/>
 		<e:Group x="77" y="7.5" height="18" width="140">
-			<e:Label text="Sở hữu" size="16" textAlign="center" y="-0.6" x="-1.2" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
-			<e:Label id="belongNameTxt" text="Tên người chơi" size="16" textAlign="left" y="-0.6" x="35.2" textColor="0xf0f4fe" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="111.6"/>
+			<e:Label text="Sở hữu" size="16" textAlign="left" y="-0.6" x="0" width="60" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+			<e:Label id="belongNameTxt" text="Tên người chơi" size="16" textAlign="left" y="-0.6" x="63" textColor="0xf0f4fe" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="130"/>
 		</e:Group>
 		<e:Image id="roleHead" source="yuanhead10" width="52" height="52" x="3" y="5" scaleX="1.2" scaleY="1.2"/>
 		<e:Button id="attguishu" label="" x="61" y="50">

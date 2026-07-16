@@ -4933,3 +4933,20 @@ Người dùng gửi ảnh thực tế trên máy (server 71.31.97.241) sau khi 
 **Cache-bust**: `default.thm_98d3ee6f.js` → `default.thm_ae402690.js`, `main.min_68824515.js` → `main.min_e4aa5ad1.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - đặc biệt cần người dùng xác nhận lại đúng trên server thật (71.31.97.241) sau khi deploy bản mới, vì đây là màn hình đã báo "vẫn không đổi" một lần (khả năng cao do đợt trước sửa nhầm class `BossesBloodPanel` thay vì `WorldBossesUiInfo`).
+
+## 171. "Sở hữu" đè lên tên người sở hữu ở màn World Boss (2026-07-16)
+
+Người dùng gửi ảnh xác nhận mục 170 đã hoạt động (nút Thưởng + icon Đang tấn công đều đúng), nhưng phát hiện thêm lỗi mới ngay cạnh đó: chữ "Sở hữu" dính/đè lên tên người chơi sở hữu boss ("Sở hữuEmmaban"), yêu cầu sửa để tên người luôn nằm SAU câu "Sở hữu".
+
+**Xác định**: cùng khối `belongGroup` trong `worldbossUiSkin.exml` (class `SkinWorldBossUi`) - label tĩnh "Sở hữu" (`textAlign="center"`, không đặt `width`, tự đo theo nội dung) và `belongNameTxt` (tên người chơi, `x="35.2"` cố định) định vị độc lập giống hệt kiểu lỗi đã sửa nhiều lần: "Sở hữu" tại size 16 thực tế rộng hơn 35.2px nên đè lên đầu tên người chơi. Grep thêm phát hiện **lỗi giống hệt** ở `BossBelongSkin.exml` (class `SkinBossBelong`, dùng bởi 1 class khác trong `main.min.js` xử lý cùng tính năng "Sở hữu boss" nhưng ở màn hình/thời điểm khác) - label "Sở hữu" + `belongNameTxt1` cùng `x="35.2"` y hệt, sửa luôn cùng lúc.
+
+**Cách sửa** (áp dụng cho cả 2 file):
+- Label tĩnh "Sở hữu": bỏ `textAlign="center"`, đổi `textAlign="left"` + thêm `width="60"`, `x="0"` (khung chữ cố định đủ rộng, không tự phình/co theo nội dung).
+- `belongNameTxt`/`belongNameTxt1`: `x="35.2"` → `x="63"` (ngay sau khung nhãn tĩnh), thu `width` từ `111.6` → `130` (vẫn đủ rộng cho tên dài, không chạm rìa khung ảnh nền `zjmtouxiangkuang` rộng 253px).
+- Mirror cả 2 thay đổi vào `default.thm.js` đúng trong ranh giới class `SkinWorldBossUi`/`SkinBossBelong` (`_Label5_i`/`belongNameTxt_i` và `_Label1_i`/`belongNameTxt1_i`).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận cả 2 exml hợp lệ; xác nhận cả 4 đoạn code cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch. Không cần sửa `main.min.js` đợt này (vị trí 2 label này không bị code runtime ghi đè, chỉ phụ thuộc giá trị mặc định trong skin).
+
+**Cache-bust**: `default.thm_ae402690.js` → `default.thm_e39d4868.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`, không đổi đợt này).
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận tên người chơi dài không bị cắt/tràn ra ngoài khung ảnh nền sau khi dời sang `x="63"`.

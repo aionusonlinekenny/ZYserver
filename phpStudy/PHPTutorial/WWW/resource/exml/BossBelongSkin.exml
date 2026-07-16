@@ -15,8 +15,8 @@
 		</e:Scroller>
 		<e:Image scale9Grid="92,32,5,7" y="1" source="zjmtouxiangkuang" x="0.4" width="253" height="67"/>
 		<e:Group x="77" y="7.5" height="18" width="140">
-		<e:Label text="Sở hữu" size="16" textAlign="center" x="-1.2" textColor="0xFFFF00" fontFamily="Microsoft YaHei" y="-1"/>
-		<e:Label id="belongNameTxt1" text="Tên người chơi" size="16" textAlign="left" y="-1" x="35.2" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="111.6" textColor="0x00ff06"/>
+		<e:Label text="Sở hữu" size="16" textAlign="left" x="0" width="60" textColor="0xFFFF00" fontFamily="Microsoft YaHei" y="-1"/>
+		<e:Label id="belongNameTxt1" text="Tên người chơi" size="16" textAlign="left" y="-1" x="63" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="130" textColor="0x00ff06"/>
 		</e:Group>
 		<e:Image id="roleHead1" source="yuanhead10" width="52" height="52" x="2.96" y="5.24" scaleX="1.2" scaleY="1.2"/>
 		<e:Button id="attguishu1" label="" x="60.95" y="49.85" icon="bossqiangduo" anchorOffsetY="0" height="23.5" anchorOffsetX="0" width="73">
