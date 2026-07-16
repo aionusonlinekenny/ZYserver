@@ -968,7 +968,7 @@ function handleUpgradeBuilding(actor, packet)
 
     guildcommon.broadcastBuildLevel(guild, buildingLevel, index)
 
-    local tips = string.format("[%s]升级了[%s]至Lv.%d", LActor.getName(actor), GuildConfig.buildingNames[index], buildingLevel)
+    local tips = string.format("[%s] đã nâng cấp [%s] lên Lv.%d", LActor.getName(actor), GuildConfig.buildingNames[index], buildingLevel)
     guildchat.sendNotice(guild, tips)
 end
 

@@ -4731,3 +4731,32 @@ Không đụng tới `vipImg0`/`vipImg1`/`vipImg2` (3 ảnh số VIP riêng bi�
 **Cache-bust**: `default.thm_986e9b7f.js` → `default.thm_dd10b482.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở tab "Yêu Đế Thiên Cung" ở màn BOSS, kiểm tra cả 3 khối bậc để xác nhận số đã nằm đúng sau chữ "Tầng".
+
+## 161. Tin nhắn nâng cấp công trình Tiên Minh còn tiếng Trung (2026-07-15)
+
+Người dùng gửi ảnh chat log hiện: `[Tiên Minh][Emmaban]升级了[修法静室]至Lv.2` - chỉ có tag `[Tiên Minh]` và tên người chơi đã dịch, phần còn lại ("升级了", tên công trình, "至Lv.") vẫn nguyên tiếng Trung.
+
+**Khác biệt quan trọng so với toàn bộ các lỗi skin trước trong session này**: đây KHÔNG phải bug trong client JS/exml - dò `main.min.js`/`default.thm.js` (cả `升级了` lẫn tên 4 công trình) đều 0 kết quả. Tin nhắn này được **dựng hoàn toàn phía server bằng Lua** (`guildsystem.lua`, hàm `handleUpgradeBuilding`), client chỉ nhận chuỗi đã dựng sẵn qua socket rồi hiện nguyên văn - khác hẳn mọi lỗi trước (vốn luôn là lỗi vị trí/kích thước Label trong file skin đã dịch sẵn).
+
+**Xác định**: dòng 971 `server/bin/s{1,99}/gameworld/data/functions/systems/guild/guildsystem.lua`:
+```lua
+local tips = string.format("[%s]升级了[%s]至Lv.%d", LActor.getName(actor), GuildConfig.buildingNames[index], buildingLevel)
+```
+- `"升级了"`/`"至Lv."` là literal cứng ngay trong template, chưa từng được dịch.
+- `GuildConfig.buildingNames` (mảng tên 4 công trình, `server/bin/s{1,99}/gameworld/data/config/guild/guild.config` dòng 22) toàn bộ vẫn tiếng Trung: `{"仙盟大殿","修法静室","仙盟商店","仙盟驻地"}` - dù bảng tra cứu TƯƠNG TỰ bên client (`GuildLanguageLabel.guildBuilding` trong `main.min.js`) đã dịch sẵn 2/4 tên ("Tiên Minh Đại Điện", "Tu Pháp Tĩnh Thất") dùng cho UI xây dựng công trình - do 2 bảng nằm ở 2 tầng khác nhau (server Lua config vs client JS enum), đợt dịch JS trước đây không chạm tới file Lua config này nên bị sót.
+
+**Cách sửa**: tái sử dụng ĐÚNG 2 tên đã có sẵn bên client cho công trình 1-2 (giữ nhất quán với UI đang hiển thị), dịch mới 2 tên còn lại (3-4, chưa từng có bản dịch ở bất kỳ đâu trong repo):
+```lua
+buildingNames = {"Tiên Minh Đại Điện","Tu Pháp Tĩnh Thất","Cửa Hàng Tiên Minh","Tiên Minh Trú Địa"},
+```
+Template: `"[%s]升级了[%s]至Lv.%d"` → `"[%s] đã nâng cấp [%s] lên Lv.%d"`.
+
+Áp dụng cả 2 bản `s1` (production) và `s99` (liên server) vì mỗi server giữ 1 bản riêng file config/script này (đúng thông lệ mục 152+).
+
+**Phát hiện phụ**: diff 2 bản `guild.config` s1/s99 cho thấy 1 số dòng KHÁC (`impeachMailTitle`, `impeachMailContext`, `kickMailTitle`, `kickMailContext`, `guildGiftTitle`, `guildGiftContent`) - bản s1 ĐÃ được dịch tiếng Việt từ đợt nào đó trước, còn bản s99 VẪN CÒN tiếng Trung nguyên bản - tức 2 server bị lệch bản dịch ở nhiều chỗ khác trong CHÍNH file này, không chỉ riêng `buildingNames`. Chưa xử lý trong đợt này (ngoài phạm vi yêu cầu, chỉ liên quan tới thông báo nâng cấp công trình) - cần 1 đợt riêng để đồng bộ dịch thuật s99 theo s1 cho các trường còn lại của `guild.config`, và khả năng cao còn nhiều file Lua config khác cũng bị lệch tương tự.
+
+**Kiểm thử**: `luac -p` (Lua 5.1 parser-only) xác nhận cả 4 file (2×`guild.config` + 2×`guildsystem.lua`) parse sạch không lỗi cú pháp.
+
+**Không cần cache-bust** (không đụng file JS client) - server Lua/config chỉ cần GameWorld nạp lại (restart service `3.启动 1 khu vực.bat`/`4.启动跨khu vực.bat`) để áp dụng, không ảnh hưởng file JS/manifest.json phía trình duyệt.
+
+**Chưa kiểm chứng trên server thật** - cần restart GameWorld (s1 và s99) rồi thử nâng cấp 1 công trình bang hội để xác nhận tin nhắn chat hiện đúng tiếng Việt.
