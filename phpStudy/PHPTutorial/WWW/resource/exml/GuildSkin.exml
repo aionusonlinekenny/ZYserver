@@ -43,7 +43,7 @@
 			<e:Image scaleX="1" scaleY="1" includeIn="up,down,disabled" alpha.up="0" visible.disabled="false" x.down="7.5" y.down="166" source="guild_title6a_png" horizontalCenter.disabled="-86" horizontalCenter.up="-86" x="7.5" y="166"/>
 			<e:Image x="183.33" y="140.67" visible.disabled="false" y.down="140.67" x.down="183.33" source="guildrukou_bg_png"/>
 			<e:Image x="211.97" y="155.05" visible.disabled="false" y.down="155.05" x.down="211.97" source="guildbossicon_png"/>
-			<e:Label text="Tiên&#10;Minh&#10;Trấn&#10;Yêu" x="156" y="177.65" size="22" textAlign="center" lineSpacing="2" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="90" visible.disabled="false" x.up="156" y.up="177.65"/>
+			<e:Label text="Tiên&#10;Minh&#10;Trấn&#10;Yêu" x="186.47" y="212.65" size="22" textAlign="center" lineSpacing="2" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="90" visible.disabled="false" x.up="186.47" y.up="212.65"/>
 			<e:Label text="BOSS" x="315.31" y="125" size="22" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="59.34" scaleX="1" scaleY="1" rotation="89.92" visible.disabled="false" visible="false"/>
 			</e:Skin>
 		</e:Button>

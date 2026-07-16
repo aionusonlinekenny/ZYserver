@@ -5106,3 +5106,20 @@ new eui.State("up", [
 **Cache-bust**: `default.thm_eecf824a.js` → `default.thm_3bf63e64.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`). Không cần sửa exml lần này (exml đã đúng từ mục 178, chỉ file JS biên dịch tay bị sót).
 
 **Chưa kiểm chứng trên trình duyệt thật** - lần này rất tự tin vì đã xác định đúng nguyên nhân gốc (không phải đoán mò công thức nữa), nhưng vẫn cần ảnh chụp mới để xác nhận cuối cùng.
+
+## 180. Sau khi gỡ được lỗi `eui.State` (mục 179), tính lại đúng vị trí cuối cho "Tiên Minh Trấn Yêu" (2026-07-16)
+
+Người dùng xác nhận: "Đã thấy di chuyển" (chứng minh mục 179 sửa đúng gốc rễ) nhưng "giờ lệch y và x luôn" - vì đây là LẦN ĐẦU TIÊN giá trị `x=156 y=177.65` (đặt từ mục 178) thực sự được render, mọi ước lượng trước đó dựa trên ảnh chụp đều đo nhầm vị trí render CŨ (`x=219.33 y=212.65`, giá trị gốc từ mục 174 bị `eui.State` ghim chết suốt từ đó đến trước mục 179).
+
+**Nhận ra vấn đề gốc của toàn bộ chuỗi ước lượng trước đó**: vì `y=212.65` (giá trị gốc) vẫn luôn hiển thị xuyên suốt mục 175-178, phản hồi của người dùng ở mục 177 ("Tiên Minh Trấn Yêu vẫn lệch vị trí cao thì ok rồi... không đè icon") thực chất đang xác nhận **giá trị gốc `y=212.65` là ĐÚNG/ĐẸP**, không phải `y=177.65` như tôi từng đặt (nhưng chưa từng thực sự lên hình). Tương tự, phép đo trục ngang ở mục 178 (dời `x` từ `186.47` xuống `156`) cũng đo nhầm dựa trên render của `x=219.33`, nên kết luận rút ra từ phép đo đó không áp dụng được cho giá trị `x=186.47` thực tế.
+
+**Cách sửa dứt điểm**: bỏ hoàn toàn số liệu suy ra từ các lần đo ảnh chụp trước (mục 175-178, vốn đo nhầm baseline), quay lại dùng:
+- `x="186.47"` - đúng công thức đã kiểm chứng chắc chắn ở mục 176 cho 3 nút kia (`icon_x + icon_width/2 - label_width/2`, với `icon_x=211.97 icon_width=39`).
+- `y="212.65"` - phục hồi đúng giá trị GỐC đã được người dùng xác nhận đẹp/không đè icon ở mục 177 (khi giá trị này còn đang thực sự hiển thị), bỏ hẳn ý tưởng "-35 dời lên" chỉ áp dụng đúng cho 3 nút kia.
+- Cập nhật CẢ 2 nơi trong `default.thm.js`: hàm khởi tạo `_Label1_i()` VÀ đoạn `eui.State("up",[...])`'s `SetProperty` (bài học từ mục 179 - phải sửa đồng bộ cả 2 chỗ, xác nhận bằng cách grep trong đúng ranh giới class `SkinGuild$Skin16` không còn sót `156`/`177.65`, chỉ còn `186.47`/`212.65` xuất hiện đúng 2 lần mỗi giá trị (1 factory + 1 state)).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận cả 2 đoạn code cũ trong `default.thm.js` (factory + state) chỉ khớp đúng 1 lần trước khi thay; grep phạm vi class xác nhận sạch giá trị cũ; `node -c` sạch.
+
+**Cache-bust**: `default.thm_3bf63e64.js` → `default.thm_5ba828f6.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - lần này quay về giá trị mà người dùng đã từng trực tiếp xác nhận đẹp (`y=212.65`) cộng công thức đã kiểm chứng chắc chắn cho `x` nên độ tin cậy cao, nhưng vẫn cần ảnh chụp mới để chốt.
