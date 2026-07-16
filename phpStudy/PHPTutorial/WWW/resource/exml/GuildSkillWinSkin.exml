@@ -37,7 +37,7 @@
 			<e:Image width="126" height="38" horizontalCenter="-71.5" verticalCenter="3" source="textbg2" scale9Grid="5,15,6,12"/>
 			<e:Image width="126" height="38" scale9Grid="5,15,6,12" source="textbg2" horizontalCenter="-71.5" verticalCenter="49"/>
 			<e:Image width="173" height="38" horizontalCenter="142.5" verticalCenter="3" source="textbg2" scale9Grid="5,15,6,11"/>
-			<e:Label id="praName" text="Đao Ý" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" horizontalCenter="-172.5" verticalCenter="-97"/>
+			<e:Label id="praName" text="Đao Ý" size="22" fontFamily="Microsoft YaHei" textColor="0xffff00" x="10" width="150" textAlign="left" verticalCenter="-97"/>
 			<e:Label id="praCurBase" text="Chưa học" x="48.66" y="60.65" size="20" wordWrap="true" height="42" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Label id="praNextLab" text="Công kích: 100" x="341.35" y="61.33" size="20" wordWrap="true" height="42" verticalAlign="middle" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Image x="212.5" y="53.5" source="jiantouyou"/>
@@ -50,7 +50,7 @@
 			<e:Button id="praBtn" label="Học" skinName="SkinBtn1" bottom="12" horizontalCenter="-0.5" width="156" height="60" scaleX="0.9" scaleY="0.9"/>
 			<e:Group id="praBtnMc" width="156" height="60" horizontalCenter="0.5" bottom="11"/>
 			<e:Image source="jinengline2" x="42" y="58" visible="false"/>
-			<e:Label id="lvTxt" text="Cấp 1" size="22" textColor="0xffff00" fontFamily="Microsoft YaHei" horizontalCenter="-83" verticalCenter="-97"/>
+			<e:Label id="lvTxt" text="Cấp 1" size="22" textColor="0xffff00" fontFamily="Microsoft YaHei" x="165" width="110" textAlign="left" verticalCenter="-97"/>
 			<e:Label text="Tiêu hao nâng cấp:" x="-46" y="134.65" size="20" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Label text="Cống hiến còn lại:" x="-46" y="181.33" size="20" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 			<e:Label id="learnLab" text="Không thể nâng cấp kỹ năng, vui lòng nâng cấp Tu Pháp Tịnh Thất trước  Đi nâng cấp" size="20" horizontalCenter="0" bottom="30" x="34" y="391"  textColor="0x0038ab" fontFamily="Microsoft YaHei"/>

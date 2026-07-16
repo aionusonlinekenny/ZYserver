@@ -5123,3 +5123,23 @@ Người dùng xác nhận: "Đã thấy di chuyển" (chứng minh mục 179 s�
 **Cache-bust**: `default.thm_3bf63e64.js` → `default.thm_5ba828f6.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - lần này quay về giá trị mà người dùng đã từng trực tiếp xác nhận đẹp (`y=212.65`) cộng công thức đã kiểm chứng chắc chắn cho `x` nên độ tin cậy cao, nhưng vẫn cần ảnh chụp mới để chốt.
+
+## 181. Màn "Kỹ Năng Tiên Minh" - tên kỹ năng dính vào "Cấp độ" (2026-07-16)
+
+Người dùng xác nhận màn Tiên Minh đẹp rồi, chuyển sang báo lỗi mới: màn "Kỹ Năng" (học kỹ năng Tiên Minh, ví dụ tab "Tiên Sơn") - tên kỹ năng dính liền với chữ cấp độ, ví dụ "Lợi Binh Cấp độ59" / "Kết ThuẫnCấp độ56" đọc dính vào nhau.
+
+**Xác định**: `resource/exml/GuildSkillWinSkin.exml` (class `SkinGuildSkillWin`), khối `praGroup`: label `praName` (tên kỹ năng, ví dụ "Lợi Binh"/"Kết Thuẫn") định vị `horizontalCenter="-172.5"`, không đặt `width` → tự đo theo tên thật; label `lvTxt` (chữ cấp độ) định vị `horizontalCenter="-83"` độc lập, không hề biết `praName` dài bao nhiêu. Bản gốc dùng placeholder ngắn "Đao Ý" (2 âm tiết) nên đủ chỗ, nhưng tên kỹ năng thật dài hơn ("Lợi Binh", "Kết Thuẫn"...) tràn qua vùng đã tính sẵn cho `lvTxt`, gây dính chữ - đúng kiểu lỗi lặp lại nhiều lần trong session.
+
+**Phát hiện thêm lỗi phụ**: `main.min.js`, hàm xử lý cập nhật cấp độ kỹ năng có `this.lvTxt.text="Cấp độ"+i` - thiếu dấu cách giữa "độ" và số cấp, làm "Cấp độ59" đọc dính con số dù đã sửa layout (khớp đúng với ảnh người dùng gửi "Cấp độ59"/"Cấp độ56").
+
+**Cách sửa**:
+- `praName`: bỏ `horizontalCenter`, chuyển `x="10" width="150" textAlign="left"` (khung tên kỹ năng đủ rộng cho tên dài, không tự phình theo nội dung).
+- `lvTxt`: bỏ `horizontalCenter`, chuyển `x="165" width="110" textAlign="left"` (luôn nằm sau khung tên kỹ năng, không phụ thuộc độ dài tên).
+- `main.min.js`: `"Cấp độ"+i` → `"Cấp độ "+i` (thêm dấu cách trước số cấp).
+- Mirror 2 thay đổi exml vào `default.thm.js` đúng trong ranh giới class `SkinGuildSkillWin` (`praName_i`, `lvTxt_i`).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js`/`main.min.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch cả 2 file.
+
+**Cache-bust**: `default.thm_5ba828f6.js` → `default.thm_f8316301.js`, `main.min_e4aa5ad1.js` → `main.min_213d37ee.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - `width="150"`/`width="110"` là ước lượng dựa trên độ dài tên kỹ năng dài nhất quan sát được trong ảnh ("Kết Thuẫn"), cần người dùng xác nhận không bị tràn với tên kỹ năng dài hơn nếu có.
