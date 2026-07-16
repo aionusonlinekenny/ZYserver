@@ -4760,3 +4760,25 @@ Template: `"[%s]升级了[%s]至Lv.%d"` → `"[%s] đã nâng cấp [%s] lên Lv
 **Không cần cache-bust** (không đụng file JS client) - server Lua/config chỉ cần GameWorld nạp lại (restart service `3.启动 1 khu vực.bat`/`4.启动跨khu vực.bat`) để áp dụng, không ảnh hưởng file JS/manifest.json phía trình duyệt.
 
 **Chưa kiểm chứng trên server thật** - cần restart GameWorld (s1 và s99) rồi thử nâng cấp 1 công trình bang hội để xác nhận tin nhắn chat hiện đúng tiếng Việt.
+
+## 162. Dọn lỗi console: bỏ gọi API "ban_register" của NPH Trung Quốc gốc (2026-07-15)
+
+Người dùng dán nguyên log console khi chạy game (F12) để kiểm tra có gì bất thường không. Game vào được bình thường ("进入游戏成功", toàn bộ tài nguyên load HTTP 200 OK), nhưng có 2 dòng lỗi lặp lại mỗi lần đăng nhập:
+```
+XHRGET https://cls.ha02.youyantech.com/api/ban_register.php?spid=abc&time=...&sign=...
+NS_ERROR_NET_TIMEOUT
+Cross-Origin Request Blocked: ... CORS request did not succeed.
+```
+(2 dòng "AudioContext"/"Autoplay" khác chỉ là cảnh báo tiêu chuẩn của trình duyệt về chính sách tự phát âm thanh - không phải lỗi, không thể/không cần sửa, mọi game HTML5 đều gặp.)
+
+**Xác định**: `SDkMsg.prototype.QueryBanRegister` (`main.min.js`) gọi thẳng ra API kiểm tra đăng ký/chống gian lận của NHÀ PHÁT HÀNH TRUNG QUỐC GỐC (`cls.ha02.youyantech.com`, cùng domain với API thanh toán `pay.php` đã ghi nhận trước đây ở mục nạp tiền/VIP) - máy chủ này đương nhiên không thể truy cập được từ server tự host riêng (bị timeout, sau đó trình duyệt báo thêm lỗi CORS như hệ quả phụ). Gọi 2 lần mỗi lần đăng nhập (`InitSdk` và `InitJsSdk`).
+
+**Xác nhận AN TOÀN khi bỏ**: dò toàn bộ file, biến `sever_open_day` (tác dụng phụ DUY NHẤT của lệnh gọi này qua callback `OnBanRegisterBack`) chỉ xuất hiện ở ĐÚNG 2 chỗ trong toàn bộ client - chỗ khởi tạo mặc định (`=9999`) và chỗ callback set lại. **Không có bất kỳ nơi nào khác trong code đọc giá trị này** - tức dù lệnh gọi thành công hay thất bại, kết quả hoàn toàn không ảnh hưởng gì tới gameplay/hiển thị, chỉ tốn 1 request mạng vô ích + gây nhiễu console mỗi lần đăng nhập.
+
+**Cách sửa**: xoá đúng 2 lệnh gọi `QueryBanRegister()` (giữ nguyên định nghĩa hàm `QueryBanRegister`/`OnBanRegisterBack` - dead code vô hại, không cần dọn thêm, giảm rủi ro chỉnh sửa không cần thiết).
+
+**Kiểm thử**: `node -c` sạch; grep xác nhận `QueryBanRegister` chỉ còn đúng 1 lần (định nghĩa hàm, không còn lệnh gọi nào).
+
+**Cache-bust**: `main.min_14185959.js` → `main.min_c8940ba5.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại, mở console (F12) đăng nhập lại để xác nhận 2 dòng lỗi ban_register.php không còn xuất hiện.
