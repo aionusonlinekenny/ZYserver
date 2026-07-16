@@ -33,9 +33,9 @@
 			<e:Image y="1.3" x="1.4" source="bosswzbg" width="211" height="37"/>
 			<e:Group x="29" y="4">
 				<e:Image y="16" x="155" width="144" height="26" source="BossHome_png"/>
-				<e:Image y="1.3" x="96" width="-29" source="vip2_v1_png" height="31"/>
+				<e:Image y="1.3" x="96" width="18" source="vip2_v1_png" height="31"/>
 				<e:layout>
-					<e:HorizontalLayout verticalAlign="middle" gap="-49"/>
+					<e:HorizontalLayout verticalAlign="middle" gap="4"/>
 				</e:layout>
 			</e:Group>
 
@@ -66,9 +66,9 @@
 			<e:Label text="Làm mới mỗi 2 giờ" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00" stroke="0.5"/>
 			<e:Group x="29" y="4">
 				<e:Image y="16" x="155" width="144" height="26" source="BossHome_png"/>
-				<e:Image y="1.33" x="96" width="-29" height="31" source="vip2_v2_png"/>
+				<e:Image y="1.33" x="96" width="18" height="31" source="vip2_v2_png"/>
 				<e:layout>
-				<e:HorizontalLayout verticalAlign="middle" gap="-49"/>
+				<e:HorizontalLayout verticalAlign="middle" gap="4"/>
 				</e:layout>
 			</e:Group>
 
@@ -95,9 +95,9 @@
 			<e:Label text="Làm mới mỗi 2 giờ" x="28" y="99" size="20" fontFamily="Microsoft YaHei" textColor="0xFFFF00" stroke="0.5"/>
 			<e:Group x="29" y="4">
 				<e:Image y="16" x="155" width="144" height="26" source="BossHome_png"/>
-				<e:Image y="1.33" x="96" width="-29" height="31" source="vip2_v3_png"/>
+				<e:Image y="1.33" x="96" width="18" height="31" source="vip2_v3_png"/>
 				<e:layout>
-				<e:HorizontalLayout verticalAlign="middle" gap="-49"/>
+				<e:HorizontalLayout verticalAlign="middle" gap="4"/>
 				</e:layout>
 			</e:Group>
 

@@ -4715,3 +4715,19 @@ Sau khi sửa mục 158, người dùng gửi ảnh xác nhận 3/4 lỗi đã h
 **Cache-bust**: `default.thm_268987cd.js` → `default.thm_986e9b7f.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở lại popup, đặc biệt các bậc có "Chưa thu thập đủ" (chữ dài hơn "Đã sưu tầm đủ") để xác nhận không còn dính chữ.
+
+## 160. Số thứ bậc (1/2/3) đè giữa chữ "Cung...Tầng" ở màn Yêu Đế Thiên Cung (2026-07-15)
+
+Người dùng chuyển hướng: tạm gác vụ điều tra crash Gateway, quay lại yêu cầu sửa skin tab "Yêu Đế Thiên Cung" (1 trong 5 tab màn BOSS). Mỗi trong 3 khối bậc (1/2/3) có thanh tiêu đề ghép từ 2 ảnh: `BossHome_png` (ảnh bitmap chữ "Yêu Đế Thiên Cung...Tầng", rộng 144px) + `vip2_v1_png`/`vip2_v2_png`/`vip2_v3_png` (ảnh bitmap số 1/2/3, ~18px). Yêu cầu: dời số ra SAU chữ "Tầng" thay vì đè giữa "Cung" và "Tầng".
+
+**Xác định gốc rễ**: khác hẳn các lỗi trước (không phải do chữ dịch dài hơn bản gốc) - đây là lỗi CANH CHỈNH LAYOUT thuần tuý, tồn tại độc lập với ngôn ngữ. 2 ảnh nằm trong 1 `<e:Group>` dùng `HorizontalLayout gap="-49"` - giá trị gap ÂM khiến layout tự động "kéo" ảnh số ngược trở lại 49px so với vị trí lẽ ra nó nằm ngay sau ảnh chữ (rộng 144px) - kết quả ảnh số bị đẩy vào giữa khoảng x=95 (rơi đúng giữa "Cung" và "Tầng" trong ảnh chữ 144px) thay vì x=144 (ngay sau "Tầng"). Đây là lỗi có sẵn từ thiết kế gốc (bản Trung không chú ý vì gap âm được tính cho layout ảnh chữ Hán ngắn hơn nhiều), **không phải lỗi phát sinh từ việc dịch thuật**. Vị trí này 100% tĩnh trong skin (`resource/exml/VipBossPanelSkin2.exml`, `default.thm.js`), không có code JS nào định vị lại lúc runtime.
+
+**Cách sửa**: đổi `gap="-49"` → `gap="4"` ở cả 3 khối bậc (mỗi khối có `HorizontalLayout` riêng: `_HorizontalLayout2_i`/`_HorizontalLayout4_i`/`_HorizontalLayout6_i` trong `default.thm.js`) - gap dương giúp ảnh số xếp ngay sau ảnh chữ thay vì bị kéo ngược vào giữa. Nhân tiện sửa luôn `width="-29"` (giá trị ÂM vô lý, rất có thể là lỗi gõ nhầm từ trước) → `width="18"` (khớp đúng kích thước sprite thật theo file `img_tj2.json`) trên cả 3 ảnh số (`_Image6_i`/`_Image19_i`/`_Image28_i`) - width âm tuy không trực tiếp gây lỗi chồng chữ nhưng có thể ảnh hưởng cách layout đo kích thước, sửa cho sạch cùng lúc.
+
+Không đụng tới `vipImg0`/`vipImg1`/`vipImg2` (3 ảnh số VIP riêng biệt, hiển thị đúng vị trí cạnh nút "Mở" phía góc phải mỗi khối - dùng chung asset nhưng khác hẳn vị trí, không liên quan tới lỗi này).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; `grep -c 'gap="-49"'` trả về 0 (không còn gap âm sót lại); sửa `default.thm.js` đúng trong ranh giới class `SkinVipBossPanel2` (tìm mốc `generateEUI.paths['resource/exml/VipBossPanelSkin2.exml']`), đối chiếu format y hệt exml trước khi thay; `node -c` sạch.
+
+**Cache-bust**: `default.thm_986e9b7f.js` → `default.thm_dd10b482.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và mở tab "Yêu Đế Thiên Cung" ở màn BOSS, kiểm tra cả 3 khối bậc để xác nhận số đã nằm đúng sau chữ "Tầng".
