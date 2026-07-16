@@ -5025,3 +5025,21 @@ Người dùng gửi ảnh xác nhận mục 174 đã xếp chữ đúng theo t�
 **Cache-bust**: `default.thm_46bc822a.js` → `default.thm_3dd6394f.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - công thức `x_icon - 45` dựa trên giả định ribbon/icon luôn canh giữa nhau (suy ra từ độ lệch nhất quán ~29 đơn vị giữa `x` của ảnh ribbon nền và `x` của icon ở cả 4 nút) và ước lượng độ rộng ribbon ~90 đơn vị khớp với `width` label - cần người dùng xác nhận lại bằng ảnh chụp sau khi deploy, có thể vẫn cần tinh chỉnh thêm vài đơn vị.
+
+## 176. Sửa lại LẦN 2 vị trí ngang 4 nút Tiên Minh - phát hiện lỗi tính toán ở mục 175 (2026-07-16)
+
+Người dùng gửi ảnh chụp thực tế xác nhận vẫn "Lệch" sau mục 175. Dùng Python/PIL phân tích trực tiếp toạ độ điểm ảnh trong ảnh chụp (đo tâm icon tròn và tâm khối chữ bằng lưới toạ độ chồng lên ảnh) để đo chính xác thay vì áng chừng bằng mắt.
+
+**Xác định lỗi thật sự** (khác với mục 175 tưởng): công thức `label_x = icon_x - 45` ở mục 175 THIẾU cộng nửa bề rộng ảnh icon. `icon_x`/`ribbon_x` trong exml là toạ độ CẠNH TRÁI (top-left) của ảnh, không phải tâm - phải cộng thêm `icon_width/2` mới ra tâm thật. Lấy kích thước pixel gốc của từng file ảnh icon (`guildgongnengicon.png` 35×36, `guildwaricon.png` 39×44, `guilddatingicon.png` 40×31, `guildbossicon.png` 39×38 - đọc trực tiếp qua PIL) xác nhận: `ribbon_x + 48` (nửa bề rộng `guildrukou_bg.png` 96px) khớp gần như tuyệt đối với `icon_x + icon_width/2` ở cả 4 nút (sai lệch <1 đơn vị) - xác nhận ribbon và icon luôn canh giữa nhau đúng như giả định trước, chỉ là quên cộng nửa bề rộng icon khi tính tâm.
+
+**Công thức đúng**: `label_x = (icon_x + icon_width/2) - 45`. Vì 4 icon có bề rộng gần bằng nhau (35-40px), độ chênh cần sửa gần như ĐỒNG NHẤT ~+18-20 đơn vị cho cả 4 nút so với mục 175 (giải thích tại sao lỗi "lệch" nhìn giống nhau ở cả 4 nút trong ảnh, dù hướng lệch ban đầu ở mục 174 từng khác nhau):
+- "Đại sảnh sự kiện": `x="22"→"39.5"`.
+- "Tranh Bá Tiên Cung": `x="141"→"160.5"`.
+- "Đại Điện Tiên Minh": `x="-65"→"-45"`.
+- "Tiên Minh Trấn Yêu": `x="167"→"186.47"` (đồng thời `x.up`).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch.
+
+**Cache-bust**: `default.thm_3dd6394f.js` → `default.thm_83a0b43b.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - lần này công thức dựa trên kích thước pixel THẬT của file ảnh (đáng tin hơn nhiều so với mục 175 suy đoán từ ảnh chụp), nhưng vẫn cần người dùng xác nhận bằng ảnh chụp mới vì chưa có môi trường render trực tiếp để kiểm chứng.
