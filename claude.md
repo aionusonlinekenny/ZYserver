@@ -4967,3 +4967,22 @@ Người dùng gửi ảnh màn "Tiên Minh" > tab "Danh sách": chữ "Minh Ch�
 **Cache-bust**: `default.thm_e39d4868.js` → `default.thm_302296d3.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận không còn đè, và tên minh chủ dài không bị cắt trong khung `width="175"` mới.
+
+## 173. Màn chính "Tiên Minh" - chữ trên 4 nút to bị vỡ dọc từng ký tự + hàng "Xếp hạng cống hiến" đè số (2026-07-16)
+
+Người dùng gửi ảnh chụp màn hình (máy tính, ảnh chụp nghiêng) màn chính "Tiên Minh": 4 nút lớn (Đại sảnh sự kiện / Tranh Bá Tiên Cung / Đại Điện Tiên Minh / Tiên Minh Trấn Yêu) hiện chữ vỡ dọc, MỖI KÝ TỰ xuống 1 dòng riêng (ví dụ "Đại sảnh sự kiện" hiện thành cột dọc "Đ-ạ-i- -s-ả-n-h..."), và bảng "Xếp hạng cống hiến hôm nay" có chữ chức vụ ("Minh Chủ") đè lên số điểm cống hiến ("41829").
+
+**Xác định lỗi 1 (vỡ chữ dọc)**: `resource/exml/GuildSkin.exml` - 4 Label tiêu đề nút đều mang `width` cực nhỏ sót lại từ bản gốc tiếng Trung ngắn (2-4 ký tự): `width="22"`, `width="24"`, `width="24.67"`, `width="22"`. Đúng theo hành vi wrap đặc thù của bản Egret này (đã xác định từ trước trong session: CHỈ CẦN có `width` là Label thử wrap, không cần cờ `wordWrap`; nếu 1 "từ" không vừa dòng thì rơi về chế độ ngắt TỪNG KÝ TỰ) - `width=22` nhỏ hơn cả 1 ký tự ở size 22 nên MỌI ký tự đều bị ngắt xuống dòng riêng, tạo hiệu ứng vỡ chữ dọc thấy trong ảnh. Đây là mức độ nặng hơn các lần "vỡ chữ giữa từ" đã gặp trước đây (ví dụ mục 156) - lần này vỡ toàn bộ câu.
+
+**Xác định lỗi 2 (đè chữ hàng cống hiến)**: `resource/exml/gongxianitemSkin.exml` (class `SkinGongxianitem`, item renderer cho danh sách "Xếp hạng cống hiến hôm nay" trong `GuildSkin.exml`) - 3 cột `nameLab`/`office`/`conLab` định vị bằng `x` cố định, không đặt `width`: cột `office` (chức vụ, x=117.67) tự đo theo nội dung thật; bản gốc chức vụ tiếng Trung ngắn (盟主/副盟主/成员...) vừa khít trước `conLab` (điểm số, x=187.67 cố định), nhưng bản dịch tiếng Việt dài hơn nhiều (`GuildLanguageLabel.guildOffice` trong `main.min.js`: "Thành Viên", "Trưởng Lão", "Phó Minh Chủ"...) tràn qua tận x=187.67+ gây đè lên điểm số.
+
+**Cách sửa**:
+- 4 Label nút trong `GuildSkin.exml`: tăng `width` từ 22-24.67 lên `260` (đủ rộng cho câu dài nhất "Tranh Bá Tiên Cung"/"Đại Điện Tiên Minh"/"Tiên Minh Trấn Yêu" ở size 22, không còn ép wrap).
+- `gongxianitemSkin.exml`: chia lại 3 cột theo `x`+`width` rõ ràng thay vì đoán khoảng cách: `nameLab` (`x=4 width=58 size=16`), `office` (`x=64 width=114 size=14`, giảm cỡ chữ để vừa cụm dài nhất "Phó Minh Chủ"), `conLab` (`x=182 width=58 size=16`). Tăng `width` tổng của skin từ 240→244 (Scroller cha trong `GuildSkin.exml` rộng 246, còn dư 2px).
+- Mirror toàn bộ vào `default.thm.js`: 4 Label nút sửa đúng trong 4 class con lồng nhau riêng biệt (`SkinGuild$Skin13/14/15/16`, đều dùng chung tên hàm `_Label1_i` nhưng khác `text` nên định vị theo cặp text+width cụ thể để không nhầm class); `SkinGongxianitem`'s `nameLab_i`/`office_i`/`conLab_i` sửa theo đúng khối class.
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận cả 2 exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay (đặc biệt các Label nút dùng chung tên hàm nhưng ở các class lồng khác nhau); `node -c` sạch. Không cần sửa `main.min.js` (các vị trí này không bị code runtime ghi đè).
+
+**Cache-bust**: `default.thm_302296d3.js` → `default.thm_78c0302b.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - `width="260"` cho 4 nút là ước lượng dựa trên độ dài câu dài nhất, cần xác nhận không tràn ra ngoài vùng bấm của nút hoặc đè lên nút kế bên; cỡ chữ `office` giảm còn 14 có thể hơi nhỏ, cần người dùng xem trực quan có cần chỉnh lại không.

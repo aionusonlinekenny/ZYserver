@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="SkinGongxianitem" width="240" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
+<e:Skin class="SkinGongxianitem" width="244" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:euiextension="euiextension.*"
 	xmlns:ns1="*">
-	<e:Label id="nameLab" text="À tên có 6 chữ" x="4" y="4" size="18" textAlign="left" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-	<e:Label id="office" text="Phó Minh Chủ" x="117.67" y="4" size="18" textAlign="center" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-	<e:Label id="conLab" text="995999" x="187.67" y="5" size="18" verticalAlign="justify" textAlign="right" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
+	<e:Label id="nameLab" text="À tên có 6 chữ" x="4" y="5" width="58" size="16" textAlign="left" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+	<e:Label id="office" text="Phó Minh Chủ" x="64" y="6" width="114" size="14" textAlign="center" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+	<e:Label id="conLab" text="995999" x="182" y="5" width="58" size="16" verticalAlign="justify" textAlign="right" textColor="0xffff00" fontFamily="Microsoft YaHei"/>
 	<e:Image y="22" height="2" source="tongyongline" left="0" right="0" visible="false"/>
 
 	
