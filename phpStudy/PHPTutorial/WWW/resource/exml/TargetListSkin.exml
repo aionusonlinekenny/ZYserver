@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="SkinTargetList" width="600" height="948" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*">
-	<e:Group id="attackGroup0" top="180" right="3" touchEnabled="false">
+	<e:Group id="attackGroup0" top="180" right="60" touchEnabled="false">
 		<e:Group x="0" y="0" width="112">
 		<e:Image y="8" source="gongji" horizontalCenter="0"/>
 		<e:Label text="Đang tấn công" y="10" size="18" textAlign="center" x="14" fontFamily="Microsoft YaHei" textColor="0xffff00" visible="false"/>

@@ -4858,3 +4858,19 @@ Người dùng gửi ảnh tab "Thiên Địa Yêu Trứng" (khác tab "Vạn Ma
 **Cache-bust**: `default.thm_df14d9d2.js` → `default.thm_a866ebe6.js`, `main.min_d9af1f27.js` → `main.min_1f7bdcfb.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - giá trị `bottom="-25"` cho `remindTpis` là ước lượng, cần người dùng xác nhận đã đủ thấp (không còn đè nút) và không quá thấp (rơi ra ngoài khung/đè lên nội dung bên dưới).
+
+## 167. 3 lỗi HUD combat + màn Quà Đăng Nhập (2026-07-15)
+
+Người dùng gửi liên tiếp 3 ảnh trong lúc đang chiến đấu/dùng tính năng, gộp chung 1 đợt sửa:
+
+**1. "Số ngày đăng nhập" đè lên nút "Nhận thưởng"** (`act14logSkin.exml`, class `SkinAct14log`, màn "Quà Đăng Nhập" trong "福利"): `daylabel` (`left="45"`, `size="20"`, không đặt `width`) và `suerBtn` (nút, `horizontalCenter="0" width="180"`, canh giữa khung 600px, trải x≈210-390) định vị độc lập - chữ dài "Số ngày đăng nhập: 15" tràn thẳng vào vùng nút. Dời `daylabel` sang PHẢI nút thay vì trái: `left="45"→"400"`, giảm cỡ chữ `20→16` (đủ hẹp để không chạm mép phải khung 600px), chỉnh `bottom="18"→"20"` canh gần giữa chiều cao nút hơn.
+
+**2. Nút "Thưởng" (badge phần thưởng) đè tên boss ở thanh máu chiến đấu** (`BossBloodSkin.exml`, class `SkinBossBlood`, class logic `BossesBloodPanel`): `tipBtn0` (nút "Phần thưởng") định vị tĩnh `x="261.26"`, không hề biết `nameTxt` (tên boss, độ dài đổi theo từng boss) dài bao nhiêu - tên boss dài sẽ chạy đè lên nút. Sửa trong `main.min.js`, hàm `updateInfoOfBase_a94` (nơi DUY NHẤT set `nameTxt.text` mỗi khi đổi boss): thêm `this.tipBtn0.x=this.nameTxt.x+this.nameTxt.textWidth+10` ngay sau khi set tên - tái dùng đúng kiểu tính động đã dùng nhiều lần trong session (`label2.x = label1.x + label1.textWidth + gap`), tự động đúng cho MỌI độ dài tên boss thay vì toạ độ cứng.
+
+**3. Icon "Đang tấn công" (boss đang đánh) tràn ra ngoài rìa phải màn hình** (`TargetListSkin.exml`, class `SkinTargetList` + item renderer `MemberHeadSkin.exml`, class `SkinMemberHead`): khối `attackGroup0` neo `right="3"` (chỉ cách rìa phải 3px), bên trong `roleName` (tên boss) không hề đặt `width` - tên boss dài tự do tràn 2 bên, phía phải chạy thẳng ra ngoài màn hình mất chữ. Sửa: `attackGroup0`'s `right` 3→60 (dời cả khối sang trái, đúng yêu cầu người dùng), `roleName` thêm `width="140"` (chặn tràn vô hạn, tự xuống dòng nếu tên quá dài thay vì tràn ngang). **Lưu ý**: `SkinMemberHead` là item renderer DÙNG CHUNG cho nhiều list khác (`list2`/`list3` trong `TargetListView` cho thành viên đội/bang hội) - thêm `width` là cải thiện chung hợp lý (trước đó hoàn toàn không giới hạn ở bất kỳ đâu dùng skin này), không phát hiện tác dụng phụ xấu.
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận cả 3 exml hợp lệ; `node -c` sạch cả 2 file JS; grep xác nhận vị trí sửa nằm đúng trong ranh giới class liên quan (không nhầm với các định nghĩa `roleName_i`/`attackGroup0_i` trùng tên khác nếu có).
+
+**Cache-bust**: `default.thm_a866ebe6.js` → `default.thm_1d1ba417.js`, `main.min_1f7bdcfb.js` → `main.min_fd6ff64e.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - đặc biệt mục 2 và 3 cần kiểm tra TRONG lúc combat thật (boss tên dài) để xác nhận không còn đè/tràn; mục 1 giá trị `left="400"` là ước lượng, có thể cần tinh chỉnh thêm.
