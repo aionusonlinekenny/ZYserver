@@ -4986,3 +4986,23 @@ Người dùng gửi ảnh chụp màn hình (máy tính, ảnh chụp nghiêng)
 **Cache-bust**: `default.thm_302296d3.js` → `default.thm_78c0302b.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - `width="260"` cho 4 nút là ước lượng dựa trên độ dài câu dài nhất, cần xác nhận không tràn ra ngoài vùng bấm của nút hoặc đè lên nút kế bên; cỡ chữ `office` giảm còn 14 có thể hơi nhỏ, cần người dùng xem trực quan có cần chỉnh lại không.
+
+## 174. Theo yêu cầu người dùng: đổi 4 nút Tiên Minh sang xếp chữ dọc theo từng từ + nới cột Name trong bảng cống hiến (2026-07-16)
+
+Sau mục 173 (đã sửa lỗi vỡ chữ dọc từng KÝ TỰ bằng cách nới rộng `width` để chữ nằm 1 dòng), người dùng phản hồi họ thực ra MUỐN 4 nút hiển thị xếp dọc - nhưng xếp theo TỪNG TỪ (word-by-word), canh giữa, giống kiểu "Đại / Sảnh / Sự / Kiện" mỗi từ 1 dòng - không phải xếp lỗi theo từng ký tự như trước. Đồng thời yêu cầu bảng "Xếp hạng cống hiến hôm nay": tăng độ dài cột Name, dời cột chức vụ qua phải thêm để Name có đủ chỗ.
+
+**Cách sửa 4 nút** (`resource/exml/GuildSkin.exml`): thay vì để Egret tự động ngắt (gây vỡ từng ký tự như mục 173 phát hiện), tự chèn ngắt dòng CHỦ ĐỘNG bằng thực thể XML `&#10;` giữa mỗi từ (cách đã có sẵn trong codebase - `LYRAttrSkin.exml`/`zaoyuskin.exml` dùng y hệt, xác nhận qua `default.thm.js` biên dịch ra `\n` thật trong chuỗi JS). Đổi `width="260"` (1 dòng) → `width="90"` (đủ cho từ dài nhất) + `textAlign="center"` + `lineSpacing="2"` cho cả 4 label. Dời `y` lên trên (giảm khoảng 35px mỗi label) để khối 4 dòng mới cân đối quanh vị trí neo cũ thay vì chỉ tràn xuống dưới từ đó:
+- "Đại sảnh sự kiện" → "Đại&#10;sảnh&#10;sự&#10;kiện", `y="182"→"147"`.
+- "Tranh Bá Tiên Cung" → "Tranh&#10;Bá&#10;Tiên&#10;Cung", `y="144"→"109"`.
+- "Đại Điện Tiên Minh" → "Đại&#10;Điện&#10;Tiên&#10;Minh", `y="78"→"43"`.
+- "Tiên Minh Trấn Yêu" → "Tiên&#10;Minh&#10;Trấn&#10;Yêu", `y="212.65"→"177.65"`.
+
+**Cách sửa bảng cống hiến** (`resource/exml/gongxianitemSkin.exml`, tiếp tục từ mục 173): nới `nameLab` từ `width="58"`→`"90"` (+32px), dời `office` sang phải theo đúng lượng đó (`x="64"→"98"`, thu `width="114"→"90"`, giảm cỡ chữ `14→13` để vẫn vừa "Phó Minh Chủ"), dời `conLab` theo (`x="182"→"192"`, thu `width="58"→"48"`, giảm cỡ chữ `16→14` để vẫn đủ chỗ cho số 6 chữ số). Tổng 3 cột vẫn nằm gọn trong `width="244"` của skin (4+90=94, +4 lề=98+90=188, +4 lề=192+48=240).
+
+**Cách sửa `default.thm.js`**: mirror cả 4 Label nút (đúng trong 4 class con lồng nhau `SkinGuild$Skin13/14/15/16`, xác nhận unique match theo cặp text cũ trước khi thay) và 3 Label trong `SkinGongxianitem` (`nameLab_i`/`office_i`/`conLab_i`).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận cả 2 exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch. Không cần sửa `main.min.js`.
+
+**Cache-bust**: `default.thm_78c0302b.js` → `default.thm_46bc822a.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - vị trí `y` mới cho 4 nút và độ rộng cột mới trong bảng cống hiến đều là ước lượng dựa trên tính toán số học (không có môi trường render thật), cần người dùng xem trực quan và phản hồi nếu cần tinh chỉnh thêm (đặc biệt là khoảng cách 4 dòng chữ trong nút có bị lệch tâm so với icon phía trên hay không).
