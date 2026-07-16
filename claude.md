@@ -4874,3 +4874,41 @@ Người dùng gửi liên tiếp 3 ảnh trong lúc đang chiến đấu/dùng 
 **Cache-bust**: `default.thm_a866ebe6.js` → `default.thm_1d1ba417.js`, `main.min_1f7bdcfb.js` → `main.min_fd6ff64e.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - đặc biệt mục 2 và 3 cần kiểm tra TRONG lúc combat thật (boss tên dài) để xác nhận không còn đè/tràn; mục 1 giá trị `left="400"` là ước lượng, có thể cần tinh chỉnh thêm.
+
+## 168. Tooltip di vật "Tru Tiên Cước" - "Chuyển sinh：3" dính chữ + dòng ghi chú tràn khung (2026-07-16)
+
+Người dùng gửi ảnh popup xem thông tin di vật (item Chu Tiên): (1) "Chuyển sinh：3" - số "3" đè sát ngay sau dấu "：" của label; (2) dòng "Trang bị Chu Tiên có thể dùng chồng với trang bị thường" tràn ra khỏi khung viền của popup. Yêu cầu cụ thể: chia dòng 2 thành 2 dòng, canh giữa theo khung thông tin.
+
+**Xác định**: `resource/exml/heirloomitemtips.exml`, class `Skinheirloomitemtips`, khối `Group id="top"`:
+- Label tĩnh "Chuyển sinh：" (`x="122"`) và giá trị "3" (`x="177"`) - `x=177` nằm ngay sát mép phải label tĩnh (label dài hơn ước tính ban đầu do dịch tiếng Việt), đè sát/dính chữ.
+- Trong khối `Group id="value"`: Label `name3` (dòng ghi chú vàng cuối tooltip) không có `width`/`wordWrap` → render 1 dòng dài tràn thẳng qua khung viền bo (`BG`, `scale9Grid`) của popup rộng 400px.
+
+**Cách sửa**:
+- Giá trị "3": `x="177"` → `x="260"` (dời xa hẳn khỏi label tĩnh).
+- `name3`: thêm `width="370"` (đủ hẹp so với khung 400px để chừa lề 2 bên) + `wordWrap="true"` + `multiline="true"` + `textAlign="center"` + `horizontalCenter="0"` (thay `x` cố định bằng canh giữa theo đúng khung, đúng yêu cầu người dùng) - chữ tự tách 2 dòng và canh giữa.
+- Mirror cả 2 thay đổi vào `default.thm.js` đúng trong ranh giới class `Skinheirloomitemtips` (hàm `_Label4_i` cho giá trị "3", `name3_i` cho dòng ghi chú).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; sửa đúng 1 chỗ duy nhất trong toàn file `default.thm.js` cho mỗi hàm (xác nhận bằng đếm số lần khớp chuỗi cũ = 1 trước khi thay); `node -c` sạch.
+
+**Cache-bust**: `default.thm_1d1ba417.js` → `default.thm_98d3ee6f.js`, `main.min_fd6ff64e.js` → `main.min_68824515.js` (cùng đợt với mục 169 bên dưới).
+
+**Chưa kiểm chứng trên trình duyệt thật** - độ dài dòng ghi chú sau khi chia 2 dòng (`width="370"`) là ước lượng dựa trên độ rộng khung 400px, cần người dùng xác nhận không bị lệch tâm hoặc vẫn tràn.
+
+## 169. Màn "Phó Bản" - nút "?" đè ảnh tiêu đề + số lần thách đấu hôm nay bị đè lên chữ (2026-07-16)
+
+Người dùng gửi ảnh màn chính "Phó Bản": (1) nút hỏi đáp "?" đè lên ảnh tiêu đề "Phó Bản"; (2) dòng "Số lần thách đấu hôm nay：" bị số đè lên, hiện thành vệt nhỏ khó đọc.
+
+**Xác định lỗi 1**: `resource/exml/DailyFbSkin.exml`, class `SkinDailyFb` - ảnh `biaoti` (tiêu đề, mặc định `horizontalCenter="-227"`) và nút `help` ("?", `horizontalCenter="-264" visible="false"`, chỉ hiện khi vào tab "Hộ Vệ Thần Khí"). Vị trí `biaoti` khi vào tab đó KHÔNG lấy giá trị mặc định trong exml mà bị override tại runtime trong `main.min.js`, hàm `FbDailyWin.prototype.setOpenByIndex_a94`, nhánh `case 4` (tab Hộ Vệ Thần Khí): `this.biaoti.horizontalCenter=-205` - chỉ cách `help` (`-264`) đúng 59px, không đủ (so với mức 71px đã dùng ổn ở mục 164 cho cùng kiểu ảnh tiêu đề/icon).
+
+**Xác định lỗi 2**: `resource/exml/guardGodWeaponSkin.exml`, class `SkinGuardGodWeapon` (nội dung tab "Hộ Vệ Thần Khí"): label tĩnh "Số lần thách đấu hôm nay：" (`horizontalCenter="-8"`, không đặt `width` → tự canh giữa theo độ rộng chữ thật) và `lbTime` (số lần còn lại, `horizontalCenter="79"`) định vị độc lập bằng `horizontalCenter` riêng biệt - chữ tiếng Việt dài hơn ước tính khiến vùng `lbTime` rơi đè vào giữa câu. Xác nhận qua `main.min.js` hàm `updateChallgeTimes` chỉ set `lbTime.text`, không hề set lại vị trí.
+
+**Cách sửa**:
+- `main.min.js`: `case 4` đổi `this.biaoti.horizontalCenter=-205` → `-190` (tăng khoảng cách với `help` lên 74px).
+- `guardGodWeaponSkin.exml`: bỏ `horizontalCenter` ở cả 2 label, chuyển sang toạ độ `x` cố định: label tĩnh `x="140" width="280" textAlign="left"` (khung chữ cố định, không tự phình theo nội dung), `lbTime` `x="430"` (ngay sau khung label, luôn có ít nhất 170px trống cho số).
+- Mirror cả 2 thay đổi vào `default.thm.js`: `SkinDailyFb` không cần sửa gì (giá trị `-205→-190` chỉ nằm trong `main.min.js` runtime, không phải giá trị mặc định trong skin); `SkinGuardGodWeapon` sửa `_Label2_i` và `lbTime_i` khớp với exml.
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận cả 2 exml hợp lệ; xác nhận chuỗi cũ trong `main.min.js`/`default.thm.js` chỉ khớp đúng 1 lần trước khi thay (không đụng class khác dùng chung tên hàm `_Label2_i`/`lbTime_i`); `node -c` sạch cả 2 file.
+
+**Cache-bust**: `default.thm_1d1ba417.js` → `default.thm_98d3ee6f.js`, `main.min_fd6ff64e.js` → `main.min_68824515.js` (cùng đợt với mục 168 ở trên).
+
+**Chưa kiểm chứng trên trình duyệt thật** - giá trị `-190`, `x="140"/width="280"/x="430"` đều là ước lượng dựa trên độ rộng khung/chữ, cần người dùng xác nhận trực quan không còn đè và không lệch quá xa vị trí cũ.
