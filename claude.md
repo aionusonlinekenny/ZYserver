@@ -4782,3 +4782,21 @@ Cross-Origin Request Blocked: ... CORS request did not succeed.
 **Cache-bust**: `main.min_14185959.js` → `main.min_c8940ba5.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại, mở console (F12) đăng nhập lại để xác nhận 2 dòng lỗi ban_register.php không còn xuất hiện.
+
+## 163. Số "70" lặp lại ở góc trên-trái mọi màn hình - bảng debug log của Egret còn bật (2026-07-15)
+
+Người dùng hỏi 3 dòng "70" xuất hiện ở góc trên-trái cùng màn hình (đè cả lên thanh trạng thái trình duyệt) là gì, thấy ở màn "Thuộc tính" (属性) nhưng thực ra không liên quan gì tới màn đó.
+
+**Xác định**: đây là bảng LOG DEBUG TÍCH HỢP SẴN của chính engine Egret (không phải phần tử UI game, không nằm trong bất kỳ skin nào) - 1 `<div>` HTML thường đè lên toàn trang, độc lập với canvas/stage. Bật/tắt qua thuộc tính `data-show-log` trên thẻ `.egret-player` trong `index.php` - đang để `"true"` (đáng lẽ phải `"false"` ở bản chạy thật/production). Bảng này gom lại MỌI lệnh `egret.log(...)` gọi trong suốt phiên chơi, không tự xoá dòng cũ, và luôn neo cố định ở toạ độ do `data-show-fps-style="x:0,y:0,..."` quy định (x=0,y=0 - đúng góc trên-trái) - vì vậy nó "bám" theo mọi màn hình người chơi mở sau đó, không phải lỗi của riêng màn nào.
+
+**Nguồn phát sinh số "70"**: tìm thấy trong `main.min.js`, class `TongResultedWin` (skin `SkinChuangtianguanResult` - màn kết quả sau khi vượt ải "Thông Thiên Quan"), hàm `open()` có đúng 1 dòng debug sót lại từ lúc code (developer quên xoá): `egret.log(this.closeBtn.x)` - in ra giá trị `closeBtn.x` (được gán cứng = 70 ở cả 3 nhánh điều kiện khi có phần thưởng). Mỗi lần người chơi mở màn kết quả đó (có phần thưởng khả dụng), bảng debug lại dồn thêm 1 dòng "70" - khớp đúng 3 dòng người dùng thấy = đã mở màn đó 3 lần trong phiên.
+
+**Cách sửa**:
+1. `index.php`: `data-show-log="true"` → `"false"` - tắt hẳn bảng debug log, xử lý tận gốc (không chỉ riêng dòng "70" này mà mọi debug log tương lai khác cũng không còn hiện ra nữa).
+2. `main.min.js`: xoá đúng lệnh `egret.log(this.closeBtn.x)` sót lại trong `TongResultedWin.open()` (dọn sạch nguồn phát sinh, dù bước 1 đã đủ để ẩn triệu chứng). Giữ nguyên 3 chỗ gán `this.closeBtn.x=70` (không đổi hành vi, chỉ là code hơi dư thừa/lặp giá trị, không phải lỗi, không cần đụng tới ngoài phạm vi yêu cầu).
+
+**Kiểm thử**: `php -l` sạch `index.php`; `node -c` sạch `main.min.js`; grep xác nhận 0 chỗ còn sót `egret.log(this.closeBtn.x)`; đọc lại đúng vị trí đã sửa xác nhận không nhầm với 1 block tương tự khác trong cùng file (có cùng cấu trúc điều kiện nhưng KHÔNG chứa `egret.log`, thuộc 1 class khác dùng biến `l`/`c` thay vì `a`/`r`).
+
+**Cache-bust**: `main.min_c8940ba5.js` → `main.min_15ec2238.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại và xác nhận góc trên-trái không còn hiện chữ debug nữa (kể cả sau khi mở lại màn kết quả Thông Thiên Quan).
