@@ -4950,3 +4950,20 @@ Người dùng gửi ảnh xác nhận mục 170 đã hoạt động (nút Thư�
 **Cache-bust**: `default.thm_ae402690.js` → `default.thm_e39d4868.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`, không đổi đợt này).
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận tên người chơi dài không bị cắt/tràn ra ngoài khung ảnh nền sau khi dời sang `x="63"`.
+
+## 172. "Minh Chủ:" đè lên tên minh chủ ở màn Danh sách Tiên Minh (2026-07-16)
+
+Người dùng gửi ảnh màn "Tiên Minh" > tab "Danh sách": chữ "Minh Chủ:" dính/đè lên tên minh chủ ngay sau nó (ví dụ "Minh ChủEmmaban", "Minh Chủsyymw.net").
+
+**Xác định**: `resource/exml/GuildListItemSkin.exml` (class `SkinGuildListItem`, item renderer cho mỗi dòng trong danh sách tiên minh) - label tĩnh "Minh Chủ:" định vị bằng `horizontalCenter="-162.5"` (không đặt `width`, tự đo theo nội dung thật) và `president` (tên minh chủ) định vị độc lập bằng `horizontalCenter="-31.5" width="188.67"`. Bản gốc tiếng Trung "盟主:" chỉ 3 ký tự nên đủ chỗ; dịch sang "Minh Chủ:" (9 ký tự) rộng hơn nhiều, tràn qua ranh giới đã tính sẵn cho `president`, gây đè - đúng kiểu lỗi lặp lại nhiều lần trong session (nhãn tĩnh không `width` + giá trị động định vị cứng độc lập).
+
+**Cách sửa**: bỏ `horizontalCenter` ở cả 2 label, chuyển sang toạ độ `x` tuyệt đối để kiểm soát chính xác ranh giới (thay vì đoán độ rộng chữ tự động):
+- "Minh Chủ:": `x="95"` (chừa chỗ cho icon thứ hạng `numberGroup` chiếm x≈0-94 bên trái) `width="120"` `textAlign="left"`.
+- `president`: `x="220"` (ngay sau khung nhãn tĩnh, chừa dư 5px) `width="175"` (giảm nhẹ từ `188.67`, vẫn đủ rộng cho tên dài, không chạm nhãn "Số người:" bên phải - tính toán dựa trên vị trí `horizontalCenter="167.5"` của "Số người:", quy đổi ra x tuyệt đối theo `width=566` của skin: center≈450.5, president kết thúc ở x=395, còn dư ~10-15px).
+- Mirror cả 2 thay đổi vào `default.thm.js` đúng trong ranh giới class `SkinGuildListItem` (`_Label1_i`, `president_i`).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận cả 2 đoạn code cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch. Không cần sửa `main.min.js` (vị trí 2 label này không bị code runtime ghi đè).
+
+**Cache-bust**: `default.thm_e39d4868.js` → `default.thm_302296d3.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận không còn đè, và tên minh chủ dài không bị cắt trong khung `width="175"` mới.
