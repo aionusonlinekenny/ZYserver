@@ -5043,3 +5043,23 @@ Người dùng gửi ảnh chụp thực tế xác nhận vẫn "Lệch" sau m�
 **Cache-bust**: `default.thm_3dd6394f.js` → `default.thm_83a0b43b.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - lần này công thức dựa trên kích thước pixel THẬT của file ảnh (đáng tin hơn nhiều so với mục 175 suy đoán từ ảnh chụp), nhưng vẫn cần người dùng xác nhận bằng ảnh chụp mới vì chưa có môi trường render trực tiếp để kiểm chứng.
+
+## 177. Chỉnh trục dọc: chữ 3/4 nút Tiên Minh đè lên icon, riêng "Tiên Minh Trấn Yêu" giữ nguyên (2026-07-16)
+
+Người dùng xác nhận trục ngang (mục 176) đã đúng - chữ đã "vào chính giữa" ribbon. Phát hiện lỗi mới: 3 nút ("Đại sảnh sự kiện", "Tranh Bá Tiên Cung", "Đại Điện Tiên Minh") có dòng chữ đầu tiên đè lên icon tròn phía trên, cần dời XUỐNG một chút. Riêng nút "Tiên Minh Trấn Yêu" hiện KHÔNG đè (còn cách icon một khoảng), người dùng yêu cầu GIỮ NGUYÊN vị trí này - không áp dụng thay đổi.
+
+**Đo đạc**: dùng Python/PIL vẽ lưới toạ độ Y chồng lên ảnh chụp thật (mật độ 10px, đánh dấu mốc 50px) rồi đọc trực tiếp ranh giới đáy icon và đỉnh chữ dòng đầu cho từng nút - đáng tin hơn suy luận từ `y + height` khai báo trong exml vì file ảnh icon có vùng trong suốt (padding) không đều quanh hình tròn hiển thị, không thể suy ra ranh giới thật chỉ từ kích thước pixel khai báo (khác với trục ngang - hình tròn đối xứng nên tâm vẫn tính đúng dù có padding, nhưng biên trên/dưới thì không).
+
+**Kết quả đo** (khoảng đè hiện tại, đơn vị exml ước lượng qua tỉ lệ px/unit riêng từng nút): nút 1 đè ~7 đơn vị, nút 2 đè ~11 đơn vị, nút 3 đè ~6 đơn vị. Nút 4 ("Tiên Minh Trấn Yêu") đo được KHÔNG đè (còn dư khoảng trống phía trên chữ) - khớp với phản hồi người dùng.
+
+**Cách sửa**: dời `y` xuống thêm ~10 đơn vị cho 3 nút đầu (giá trị làm tròn, thống nhất cho dễ theo dõi, đủ bù phần đè đo được + thêm khoảng đệm nhỏ):
+- "Đại sảnh sự kiện": `y="147"→"157"`.
+- "Tranh Bá Tiên Cung": `y="109"→"119"`.
+- "Đại Điện Tiên Minh": `y="43"→"53"`.
+- "Tiên Minh Trấn Yêu": **không đổi**, giữ `y="177.65"` như mục 174.
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay (chỉ 3 label, không đụng label thứ 4); `node -c` sạch.
+
+**Cache-bust**: `default.thm_83a0b43b.js` → `default.thm_6ff51afc.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - độ lệch đo được từ ảnh chụp (không phải môi trường render trực tiếp) có sai số do ảnh mờ/nghiêng khi chụp màn hình; mức dời `+10` là làm tròn dựa trên đo đạc dao động 6-11 đơn vị giữa 3 nút, có thể cần tinh chỉnh thêm nếu vẫn còn chạm nhẹ.
