@@ -4818,3 +4818,27 @@ Nhờ vậy chỉ tab Phi Thăng bị dời, 4 tab kia giữ nguyên vị trí n
 **Cache-bust**: `main.min_15ec2238.js` → `main.min_5b27e8e4.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng tải lại, mở tab Phi Thăng xác nhận tiêu đề đã dời phải, đồng thời kiểm tra qua lại 4 tab còn lại (Nhân Vật/Thần Phạt/Chuyển Sinh/Tiên Vũ) để chắc chắn vị trí tiêu đề của chúng KHÔNG bị ảnh hưởng.
+
+## 165. Màn "Vạn Ma Tổ Địa" - số lần thách đấu đè chữ + "Cài đặt nhắc nhở" bị cắt (2026-07-15)
+
+Người dùng gửi ảnh tab "Vạn Ma Tổ Địa": (1) "Số lần thách đấu：5" - số "5" đè lên chữ "thách đấu" ngay giữa câu; (2) "Cài đặt nhắc nhở" bị tràn/cắt ở rìa phải màn hình.
+
+**Xác định**: `resource/exml/ShenYuBossSkin.exml` (class `SkinShenYuBoss`), khối `Group` đầu (width=554) chứa 4 phần tử định vị bằng toạ độ `x` tuyệt đối RIÊNG RẼ, không hề biết vị trí/kích thước của nhau:
+- Label tĩnh "Số lần thách đấu：" (`x=15`, không đặt `width`, tự đo ~190px)
+- `timeTxt` (đếm ngược hồi phục, `x=194 width=210`)
+- `challengeCountTxt` (số lần còn lại dạng "N/M", `x=110`) - **x=110 rơi ngay giữa label tĩnh** (label tĩnh trải dài tới ~205) → đè chữ.
+- `setting` ("Cài đặt nhắc nhở", `x=444`) - khối `Group` chỉ rộng 554, `setting` lại không đặt `width`, chữ tiếng Việt dài hơn nhiều so với bản gốc ngắn → tràn ra ngoài rìa phải.
+
+**Phát hiện thêm**: `timeTxt` (hiện đồng thời với `challengeCountTxt` khi người chơi đã dùng bớt lượt thách đấu - không phải 2 trạng thái loại trừ nhau như tưởng ban đầu, đã kiểm tra kỹ hàm `updateTimes_a94` của đúng class `ShenyuBossesPanel` để xác nhận) nên khi sửa vị trí `challengeCountTxt` phải tính luôn để không đụng `timeTxt`. Ngoài ra `timeTxt.text="（"+e+" hồi phục)"` dùng dấu ngoặc TRÒN KIỂU TRUNG (`（` full-width) mở nhưng đóng bằng ngoặc thường `)` - lệch kiểu ngoặc, sửa luôn cho nhất quán (xuất hiện y hệt ở 2 class boss panel khác nhau, sửa cả 2).
+
+**Cách sửa**:
+- `challengeCountTxt`: `x=110` → `205` (sau label tĩnh).
+- `timeTxt`: `x=194 width=210` → `x=270 width=160` (dời sau `challengeCountTxt`, thu hẹp bớt để chừa chỗ).
+- `setting`: bỏ `x=444` cố định, đổi sang neo `right="10"` - đảm bảo LUÔN nằm gọn trong khung bất kể độ dài chữ, không bao giờ tràn ra ngoài nữa (khác cách "dò số px rồi đoán x" từng dùng - neo theo cạnh phải chắc chắn hơn).
+- `main.min.js`: sửa dấu ngoặc `（...)"` → `(...)"`  ở cả 2 chỗ trùng lặp.
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; sửa `default.thm.js` đúng trong ranh giới class `SkinShenYuBoss`; `node -c` sạch cả 2 file JS; grep xác nhận 0 chỗ còn sót dấu ngoặc kiểu Trung.
+
+**Cache-bust**: `default.thm_dd10b482.js` → `default.thm_df14d9d2.js`, `main.min_5b27e8e4.js` → `main.min_d9af1f27.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - đặc biệt cần kiểm tra ở TRẠNG THÁI ĐÃ DÙNG BỚT LƯỢT (để `timeTxt` hiện lên đồng thời với `challengeCountTxt`) xem 2 phần tử này còn chồng nhau không, vì không có môi trường render thật để xác nhận trực tiếp.
