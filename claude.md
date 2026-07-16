@@ -5006,3 +5006,22 @@ Sau mục 173 (đã sửa lỗi vỡ chữ dọc từng KÝ TỰ bằng cách n�
 **Cache-bust**: `default.thm_78c0302b.js` → `default.thm_46bc822a.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - vị trí `y` mới cho 4 nút và độ rộng cột mới trong bảng cống hiến đều là ước lượng dựa trên tính toán số học (không có môi trường render thật), cần người dùng xem trực quan và phản hồi nếu cần tinh chỉnh thêm (đặc biệt là khoảng cách 4 dòng chữ trong nút có bị lệch tâm so với icon phía trên hay không).
+
+## 175. Chỉnh lại vị trí ngang của 4 chữ nút Tiên Minh - bị lệch phải so với icon/ribbon (2026-07-16)
+
+Người dùng gửi ảnh xác nhận mục 174 đã xếp chữ đúng theo từng từ, nhưng cả 4 khối chữ đều nằm lệch hẳn sang PHẢI so với icon tròn + ribbon đỏ của nút (không nằm trên ribbon mà trôi ra ngoài nền).
+
+**Nguyên nhân**: ở mục 174, khi đổi từ 1 dòng sang `width="90" textAlign="center"`, tâm hiển thị thực tế của khối chữ nằm ở `x + width/2 = x + 45`, nhưng `x` truyền vào vẫn là toạ độ CŨ (dùng cho text 1 dòng canh trái trước đó, vốn không cộng thêm nửa `width`) - nên toàn bộ khối chữ bị đẩy lệch phải đúng 45 đơn vị so với vị trí lẽ ra phải là tâm ribbon.
+
+**Cách sửa**: tính lại `x` theo công thức `x_mới = x_icon - 45` (lấy toạ độ `x` của ảnh icon tròn trong CÙNG nút - tâm ribbon/icon do đội thiết kế gốc luôn canh đúng nhau - trừ đi nửa `width=90` để bù lại độ lệch tâm do `textAlign="center"` gây ra), thay vì dùng lại `x` cũ của label:
+- "Đại sảnh sự kiện": icon `x=67` → label `x="73"→"22"`.
+- "Tranh Bá Tiên Cung": icon `x=186` → label `x="193"→"141"`.
+- "Đại Điện Tiên Minh": icon `x=-20` → label `x="-13"→"-65"`.
+- "Tiên Minh Trấn Yêu": icon `x=211.97` → label `x="219.33"→"167"` (đồng thời `x.up`).
+- `y` giữ nguyên như mục 174 (chưa thấy người dùng phàn nàn về trục dọc).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch.
+
+**Cache-bust**: `default.thm_46bc822a.js` → `default.thm_3dd6394f.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - công thức `x_icon - 45` dựa trên giả định ribbon/icon luôn canh giữa nhau (suy ra từ độ lệch nhất quán ~29 đơn vị giữa `x` của ảnh ribbon nền và `x` của icon ở cả 4 nút) và ước lượng độ rộng ribbon ~90 đơn vị khớp với `width` label - cần người dùng xác nhận lại bằng ảnh chụp sau khi deploy, có thể vẫn cần tinh chỉnh thêm vài đơn vị.
