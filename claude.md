@@ -4842,3 +4842,19 @@ Người dùng gửi ảnh tab "Vạn Ma Tổ Địa": (1) "Số lần thách đ
 **Cache-bust**: `default.thm_dd10b482.js` → `default.thm_df14d9d2.js`, `main.min_5b27e8e4.js` → `main.min_d9af1f27.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - đặc biệt cần kiểm tra ở TRẠNG THÁI ĐÃ DÙNG BỚT LƯỢT (để `timeTxt` hiện lên đồng thời với `challengeCountTxt`) xem 2 phần tử này còn chồng nhau không, vì không có môi trường render thật để xác nhận trực tiếp.
+
+## 166. Màn "Thiên Địa Yêu Trứng" - "Cực CảnhSố lần" dính chữ + "Cài đặt nhắc nhở" đè nút (2026-07-15)
+
+Người dùng gửi ảnh tab "Thiên Địa Yêu Trứng" (khác tab "Vạn Ma Tổ Địa" đã sửa ở mục 165 - dùng skin RIÊNG `WorldBossPanel1Skin.exml`, class `WorldBossesMainPanel`): "Yêu Trủng Cực CảnhSố lần còn lại: 3 lần" dính chữ, và "Cài đặt nhắc nhở" đè lên góc dưới-phải nút "Tham gia thách đấu".
+
+**Lỗi 1 - đúng kiểu thiếu dấu cách** (main.min.js, `WorldBossesMainPanel`'s xử lý cập nhật thông tin - hàm chứa `worldBossLeftTime`): `n+"Số lần còn lại: |C:0x00842C&T:"+s+" lần|"` với `n` là tên loại boss ("Thiên Địa Yêu Trủng" hoặc "Yêu Trủng Cực Cảnh") - thiếu dấu cách trước "Số lần còn lại". Thêm 1 dấu cách: `n+" Số lần còn lại: ..."`.
+
+**Lỗi 2 - vị trí tĩnh không tính khoảng cách với nút**: `remindTpis` ("Cài đặt nhắc nhở", `WorldBossPanel1Skin.exml`) định vị `horizontalCenter="87" bottom="19"` hoàn toàn độc lập với nút `challengeBtn` ("Tham gia thách đấu", `horizontalCenter="-58" bottom="3"`, skin `SkinBtn1`) - `bottom=19` nằm NGAY TRONG khoảng chiều cao của nút (nút cao ~50-60px, đáy ở bottom=3 nên đỉnh nút ở khoảng bottom=55-65), gây đè lên góc nút.
+
+**Cách sửa**: dời `remindTpis` xuống DƯỚI nút, canh giữa theo đúng tâm nút: `horizontalCenter="-58"` (khớp tâm nút thay vì `87`), `bottom="-25"` (thấp hơn đáy nút, ước lượng dựa trên chiều cao nút ~50-60px + khoảng đệm nhỏ - **chưa có môi trường render để đo chính xác pixel**, cần người dùng xác nhận trực quan, có thể cần tinh chỉnh thêm nếu lệch).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; `node -c` sạch cả 2 file JS.
+
+**Cache-bust**: `default.thm_df14d9d2.js` → `default.thm_a866ebe6.js`, `main.min_d9af1f27.js` → `main.min_1f7bdcfb.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - giá trị `bottom="-25"` cho `remindTpis` là ước lượng, cần người dùng xác nhận đã đủ thấp (không còn đè nút) và không quá thấp (rơi ra ngoài khung/đè lên nội dung bên dưới).

@@ -43,5 +43,5 @@
 	<e:Image id="stateImage" bottom="287" horizontalCenter="-56.5" source="zdbosskejisha_png"/>
 	<e:Label id="leftCDText" text="CD thách đấu:999 giây" size="22"    bottom="23" horizontalCenter="-56" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 	<e:Label id="getItemTxt" text="Số lần mua" size="20"   bottom="19" fontFamily="Microsoft YaHei" horizontalCenter="-206" stroke="0.5" textColor="0x00842c" visible="false"/>
-	<e:Label id="remindTpis" text="Cài đặt nhắc nhở" size="20" horizontalCenter="87" bottom="19" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
+	<e:Label id="remindTpis" text="Cài đặt nhắc nhở" size="20" horizontalCenter="-58" bottom="-25" fontFamily="Microsoft YaHei" textColor="0x00842c"/>
 </e:Skin>
