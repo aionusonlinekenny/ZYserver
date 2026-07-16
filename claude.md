@@ -5080,3 +5080,29 @@ Người dùng gửi ảnh mới sau mục 177: 3 nút đầu VẪN còn cao (m�
 **Cache-bust**: `default.thm_6ff51afc.js` → `default.thm_eecf824a.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - đặc biệt nút "Tiên Minh Trấn Yêu" dùng số đo trực tiếp từ ảnh chụp (không có công thức khai báo đáng tin cậy như 3 nút kia do nghi ngờ có sự khác biệt cấu trúc `states`/`width` trong `shopBtn`), sai số có thể lớn hơn - cần người dùng xác nhận kỹ bằng ảnh chụp mới.
+
+## 179. TÌM RA NGUYÊN NHÂN THẬT: "Tiên Minh Trấn Yêu" không đổi qua 2 đợt sửa vì bị `eui.State` ghi đè lại toạ độ cũ (2026-07-16)
+
+Người dùng gửi ảnh mới xác nhận 3 nút kia đã đẹp, nhưng "Tiên Minh Trấn Yêu" "vẫn lệch phải so với hình mà không thấy thay đổi" dù đã sửa ở cả mục 176 và mục 178. Dùng Python/PIL crop 2 ảnh chụp (trước và sau mục 178) với CÙNG toạ độ khung để so sánh pixel-đối-pixel: xác nhận 3 nút kia dịch chuyển rõ ràng đúng như đã sửa, nhưng riêng nút này position giống hệt 100% - chứng minh đợt sửa mục 178 hoàn toàn KHÔNG có tác dụng, dù code đã đúng.
+
+**Nguyên nhân thật sự**: `default.thm.js`, class `SkinGuild$Skin16` (skin của `shopBtn`) có khai báo `this.states = [...]` mô tả hành vi riêng cho từng trạng thái nút (`up`/`down`/`disabled`) - CHỈ nút này (trong 4 nút Tiên Minh) có đoạn:
+```js
+new eui.State("up", [
+    ...
+    new eui.SetProperty("_Label1","x",219.33),
+    new eui.SetProperty("_Label1","y",212.65)
+])
+```
+Đây là mã biên dịch từ thuộc tính `x.up="219.33" y.up="212.65"` gốc trong exml (từ trước khi bắt đầu sửa, mục 164 trở về trước) - GHI ĐÈ giá trị `x`/`y` của `_Label1` (chính là label "Tiên Minh Trấn Yêu") NGAY SAU khi component khởi tạo, vì trạng thái mặc định hiển thị của nút LUÔN LÀ "up". Tất cả các lần sửa từ mục 175 đến 178 chỉ cập nhật đúng hàm khởi tạo `_Label1_i()` (giá trị mặc định ban đầu) và cả 2 thuộc tính `x`/`x.up` trong EXML nguồn - nhưng vì tôi chỉnh sửa trực tiếp file `default.thm.js` đã biên dịch bằng cách thay chuỗi thủ công (không có công cụ biên dịch exml→js thật), tôi đã bỏ sót đúng đoạn `eui.SetProperty("_Label1","x"/"y",...)` này trong `this.states` suốt 2 đợt sửa liên tiếp - nó vẫn giữ giá trị `219.33/212.65` gốc, ghi đè lại ngay sau khi Egret áp state "up" lúc hiển thị, khiến MỌI thay đổi ở `_Label1_i()` vô nghĩa trên thực tế.
+
+**Tại sao 3 nút kia không bị lỗi này**: exml của `practiseBtn`/`cityBtn`/`manageBtn` KHÔNG hề có thuộc tính `x.up`/`y.up` trên label của chúng (chỉ `shopBtn` có, tình cờ sót lại từ thiết kế gốc) nên không có đoạn `SetProperty` ghi đè tương ứng trong `states`.
+
+**Cách sửa**: tìm đúng đoạn `new eui.SetProperty("_Label1","x",219.33), new eui.SetProperty("_Label1","y",212.65)` (xác nhận duy nhất 1 chỗ trong toàn file qua context - đúng trong `SkinGuild$Skin16`) và cập nhật thành giá trị đúng hiện tại: `x=156, y=177.65` (khớp với `_Label1_i()` đã sửa ở mục 178). Grep xác nhận không còn sót giá trị cũ `219.33`/`212.65` ở đâu khác trong file.
+
+**Bài học rút ra**: từ nay khi label có thuộc tính `.up`/`.down`/`.disabled` (state-specific) trong exml, PHẢI grep thêm `eui.SetProperty("<tên biến>",...)` trong `default.thm.js` (không chỉ hàm khởi tạo `_i()`) để tìm và cập nhật đủ mọi nơi giá trị bị trùng lặp do cơ chế state của Egret.
+
+**Kiểm thử**: xác nhận chuỗi cũ khớp đúng 1 lần trước khi thay; grep xác nhận 0 chỗ còn sót `219.33`/`212.65`; `node -c` sạch.
+
+**Cache-bust**: `default.thm_eecf824a.js` → `default.thm_3bf63e64.js` (main.min.js giữ nguyên `main.min_e4aa5ad1.js`). Không cần sửa exml lần này (exml đã đúng từ mục 178, chỉ file JS biên dịch tay bị sót).
+
+**Chưa kiểm chứng trên trình duyệt thật** - lần này rất tự tin vì đã xác định đúng nguyên nhân gốc (không phải đoán mò công thức nữa), nhưng vẫn cần ảnh chụp mới để xác nhận cuối cùng.
