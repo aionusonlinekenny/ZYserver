@@ -25,7 +25,7 @@
 			<e:Image id="progressImg" x="136" y="53" width="353" source="shenb_jindutiao" scale9Grid="8,0,21,18"/>
 			<e:Image id="rpImgExp" x="106" y="12" source="zjmhongdian"/>
 			<e:Rect id="maskPro" width="356" height="20" x="135" y="61" anchorOffsetX="0" anchorOffsetY="10"/>
-			<e:Group width="300" height="20" includeIn="active" x="135" y="75">
+			<e:Group width="300" height="20" includeIn="active" x="135" y="90">
 				<e:Label id="lvCount" text="" size="18" y="1" fontFamily="Microsoft YaHei" textColor="0x00ff06" x="6" scaleX="1" scaleY="1" textAlign="left"/>
 				<e:Label id="needExp" text="" size="18" y="1" fontFamily="Microsoft YaHei" textColor="0xffff00" x="54" scaleX="1" scaleY="1" textAlign="left"/>
 				<e:layout>
@@ -33,7 +33,7 @@
 				</e:layout>
 			</e:Group>
 		</e:Group>
-		<e:Label id="curPointLabel" text="" size="18" horizontalCenter="0.5" includeIn="active" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="75"/>
+		<e:Label id="curPointLabel" text="" size="18" x="10" width="460" wordWrap="true" multiline="true" textAlign="center" includeIn="active" fontFamily="Microsoft YaHei" textColor="0x00ff06" y="75"/>
 		<ns1:PowerPanel id="power" skinName="SkinPowerPanel" x="161" y="6" horizontalCenter.active="12" visible.task="false" y.active="13"/>
 		<e:Group id="powerpanel" includeIn="active" x="422" anchorOffsetX="0" width="37" y="26">
 			<e:Image id="detailBtn" x="0" source="tongyongxiangxi" width="37" height="38" verticalCenter="0"/>

@@ -5187,3 +5187,21 @@ Sau mục 183, người dùng gửi thêm ảnh cho thấy dù đã sửa, hiệ
 **Cache-bust**: `main.min_d1fb82a6.js` → `main.min_54b48e0c.js` (default.thm.js giữ nguyên `default.thm_f8316301.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận nhãn mới "Hoàn Thành" đã đủ ngắn để tránh chạm hiệu ứng ánh sáng dư mục 183 để lại.
+
+## 185. Màn "Thần Binh" (cây kỹ năng vũ khí thần) - 3 chỗ chồng chữ (2026-07-16)
+
+Người dùng gửi ảnh màn chính "Thần Binh" (`归元帝剑`/"Quy Nguyên Đế Kiếm", cây kỹ năng dạng mạng lưới): (1) "Cấp Thần Binh mỗi tăng10cấp nhận được1điểm kỹ năng" dính số vào chữ và bị cắt ở rìa phải màn hình; (2) "Kinh nghiệm Thần Binh" đè lên "Lv.2 (25000/100000)" bên dưới. Trước đó lỗi tưởng do chưa deploy đúng file main.min mới (đã xác nhận và khắc phục ở lượt trước) - lần này là lỗi thật trong code.
+
+**Lỗi 1 - thiếu dấu cách quanh số động, main.min.js**: hàm cập nhật `curPointLabel` (nhãn thông báo "còn X điểm kỹ năng chưa dùng") dùng `HtmlTextParser` ghép chuỗi: `'<font...>Cấp Thần Binh mỗi tăng</font>10<font...>cấp nhận được</font>1<font...>điểm kỹ năng</font>'` - các số `10`/`1` nằm NGOÀI thẻ `<font>`, dính liền không có khoảng trắng ở cả 2 đầu. Thêm dấu cách trước/sau mỗi số.
+
+**Lỗi 1b - `curPointLabel` tràn đè lên nút "Đặt lại điểm kỹ năng"**: `resource/exml/GwWeapon.exml`, `curPointLabel` định vị `horizontalCenter="0.5"` (canh giữa khung 600px), không đặt `width` → tự đo theo câu thật. Câu tiếng Việt dài (~54 ký tự ở size 18, ước lượng ~486px) trải rộng gần hết màn hình, tràn vào vùng nhãn `reset` ("Đặt lại điểm kỹ năng", định vị cứng `x="481"`) - khớp với phần chữ bị cắt/đè thấy ở rìa phải trong ảnh. Sửa: bỏ `horizontalCenter`, chuyển `x="10" width="460" wordWrap="true" multiline="true" textAlign="center"` - câu dài giờ tự xuống dòng trong khung 460px (kết thúc trước `x=481` của `reset`, còn dư ~11px), vẫn canh giữa trong khung nhờ `textAlign="center"`.
+
+**Lỗi 2 - "Kinh nghiệm Thần Binh" đè "Lv.2 (...)"**: cùng file, khối `exp` Group - `expText` ("Kinh nghiệm Thần Binh", `y="68"`, không `width`) và `Group` chứa `lvCount`+`needExp` (`y="75"`) chỉ cách nhau 7 đơn vị theo trục dọc - không đủ cho 1 dòng chữ cỡ 16 (cao ~20px), gây đè chồng 2 dòng. Dời `Group` xuống `y="90"` (tạo khoảng cách rõ ràng sau dòng `expText`).
+
+**Cách sửa `default.thm.js`**: mirror cả 2 thay đổi đúng trong ranh giới class `SkinGwWeapon` (`curPointLabel_i`, `_Group1_i` - group chứa `lvCount`/`needExp`).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js`/`main.min.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch cả 2 file.
+
+**Cache-bust**: `default.thm_f8316301.js` → `default.thm_eecc183c.js`, `main.min_54b48e0c.js` → `main.min_58e5fc16.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - `width="460"` cho `curPointLabel` và `y="90"` cho nhóm Lv/exp là ước lượng dựa trên độ dài chữ quan sát được, cần người dùng xác nhận không còn đè và không tràn ra ngoài khung ảnh nền phía dưới.
