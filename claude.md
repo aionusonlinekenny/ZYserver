@@ -5251,3 +5251,25 @@ Người dùng gửi ảnh màn "Tẩy Tủy" (Kinh Mạch): tên bậc "Tầng 
 **Cache-bust**: `default.thm_f879cfbe.js` → `default.thm_bdc9f58d.js`, `main.min_58e5fc16.js` → `main.min_2e6152fb.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - `width="80"` là ước lượng đủ cho từ dài nhất quan sát được ở size 24, cần người dùng xác nhận cả 2 màn "Kinh Mạch" và "Tâm Pháp" hiển thị đúng theo từng từ, không bị ngắt giữa từ hay tràn khung.
+
+## 188. Thêm khoảng trắng quanh dấu "·" trong tên các Tầng (Kinh Mạch/Tâm Pháp) - sửa dữ liệu cấu hình, không phải code (2026-07-17)
+
+Người dùng gửi ~85 dòng kết quả grep các bản ghi `"name":"Tầng N·<Tên bậc>"` (ví dụ `"Tầng 1·Tu Bồ Đề"`, `"Tầng 5·Tri Kiến Ly"`) trong file cấu hình game, yêu cầu thêm khoảng trắng quanh dấu chấm giữa "·" cho MỌI tầng: `"Tầng 1·Tu Bồ Đề"` → `"Tầng 1 · Tu Bồ Đề"`.
+
+**Khác biệt với các mục trước**: đây là sửa DỮ LIỆU NỘI DUNG (game content data) trong file JSON cấu hình, không phải sửa code JS/exml. Text "Tầng N·Tên" là chuỗi `name` gốc của từng bậc Kinh Mạch/Tâm Pháp (`ConfigJingMaiLevel`), được label `jinMaiName`/`xinfaName` lấy nguyên văn rồi áp dụng `.replace(/ /g,"\n")` (mục 187) để xuống dòng theo từ. Do dấu "·" dính liền số tầng và tên (không có khoảng trắng), toàn bộ cụm `"Tầng5·Tri"`-kiểu bị coi là 1 "từ" duy nhất khi tách theo khoảng trắng, không xuống dòng đúng chỗ mong muốn.
+
+**Vị trí dữ liệu**: 2 file chứa cùng bộ 84 bản ghi trùng nhau (kiểm chứng bằng `re.findall` cho kết quả giống hệt) - `resource/config/config.json` (13MB, pretty-print, cấu hình gốc) và `resource/config1/config1.json`'s chunk `resource/config1/config6.json` (1.7MB, minify, bản sao/phần chia nhỏ để tải riêng qua `default.res4.json`).
+
+**Cách sửa**: dùng regex `re.subn(r'(Tầng \d+)·', r'\1 · ', content)` áp cho cả 2 file - chèn khoảng trắng trước và sau dấu "·", giữ nguyên số tầng và tên bậc. Xác nhận trước khi ghi: đúng 84 lần thay thế ở MỖI file (khớp số lượng bản ghi đếm được), không còn sót mẫu `Tầng \d+·` chưa có khoảng trắng sau khi thay.
+
+**Tác động lên hiển thị (mục 187)**: sau khi thêm khoảng trắng, dấu "·" trở thành 1 "từ" riêng khi `.replace(/ /g,"\n")` xử lý - ví dụ `"Tầng 5 · Tri Kiến Ly"` sẽ xuống dòng thành `Tầng / 5 / · / Tri / Kiến / Ly` (thêm 1 dòng cho riêng dấu "·"). Đây là hệ quả tất yếu của đúng yêu cầu người dùng (tách rõ số tầng và tên bậc thành các cụm riêng biệt về mặt ngữ nghĩa); label `jinMaiName`/`xinfaName` không đặt `height` cố định nên tự giãn xuống, không bị cắt.
+
+**Cache-bust**: 2 file JSON cấu hình dùng cơ chế cache-bust KHÁC với file JS (không đổi tên file kèm hash, mà đổi SỐ PHIÊN BẢN dạng query-string gắn sau URL trong file manifest tải resource):
+- `resource/default.res.json`, `resource/default.res3.json`, `resource/default.resPublishReplace.json`: `config/config.json?1783465921` → `config/config.json?1784304302`.
+- `resource/default.res4.json`: `config1/config6.json?1783454123` → `config1/config6.json?1784304302`.
+
+(`resource/version.json` cũng có hash MD5 cũ cho 2 file này nhưng đây là snapshot do script build nội bộ `version_control.py` tạo offline, không có đoạn JS nào trong client đọc/dùng file này để quyết định tải lại - không cần cập nhật.)
+
+**Kiểm thử**: `python3 -c "import json; json.load(...)"` xác nhận cả `config.json`, `config6.json`, và 4 file `default.resN.json`/`resPublishReplace.json` vẫn là JSON hợp lệ sau khi sửa.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận màn "Kinh Mạch"/"Tâm Pháp" hiển thị tên bậc đúng, dấu "·" xuống dòng riêng không gây khó đọc hay tràn khung.
