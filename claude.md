@@ -5273,3 +5273,31 @@ Người dùng gửi ~85 dòng kết quả grep các bản ghi `"name":"Tầng N
 **Kiểm thử**: `python3 -c "import json; json.load(...)"` xác nhận cả `config.json`, `config6.json`, và 4 file `default.resN.json`/`resPublishReplace.json` vẫn là JSON hợp lệ sau khi sửa.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận màn "Kinh Mạch"/"Tâm Pháp" hiển thị tên bậc đúng, dấu "·" xuống dòng riêng không gây khó đọc hay tràn khung.
+
+## 189. "Số lượng quái vật tiêu diệt X/100" không canh giữa và chồng chữ trong màn hình chiến đấu (2026-07-17)
+
+Người dùng gửi ảnh màn hình chiến đấu (boss "王尊王庭"): dòng đếm số quái vật tiêu diệt hiện "Số lượng quái vật tiêu diệ**99**/100" - số "99" (màu xanh lá) đè lên chữ "t：" cuối câu, đồng thời cả cụm không canh giữa dưới dòng "891000" phía trên.
+
+**Nguyên nhân**: `resource/exml/GameFightSceneSkin.exml` (class `SkinGameFightScene`, dùng chung cho HUD trong lúc đánh boss/phó bản), nhóm `flyExpGroup1` có 2 Label ĐỘC LẬP đặt cạnh nhau bằng toạ độ cố định:
+- `lbNum0`: text tĩnh "Số lượng quái vật tiêu diệt：", không `width` (tự đo theo chữ thật), `horizontalCenter="-54"`.
+- `lbNum`: số động "X/100" (tô màu qua `textFlow`, cập nhật bởi `updateKill_a94` trong `main.min.js`), không `width`, `horizontalCenter="63"`.
+
+Bản gốc tiếng Trung ngắn nên 2 label không chạm nhau ở vị trí cố định đó; sau khi dịch, chuỗi "Số lượng quái vật tiêu diệt：" dài hơn nhiều, tràn qua vị trí cố định `horizontalCenter="63"` của label số, gây đè chữ - cùng loại lỗi "label auto-width dịch dài hơn bản gốc" đã gặp nhiều lần trong session, nhưng lần này lỗi ở 2 ELEMENT RIÊNG BIỆT cùng đè lên nhau (không phải 1 label tràn qua label khác cố định).
+
+**Cách sửa (gộp thành 1 Label duy nhất thay vì 2 label định vị độc lập)**: sửa `main.min.js`, hàm `updateKill_a94` - thay vì gán `textFlow` cho `lbNum` (label số), gán TOÀN BỘ (tiền tố tĩnh + số động tô màu) vào `textFlow` của `lbNum0`:
+```js
+// cũ: this.lbNum.textFlow=TextFlowMaker.generateTextFlow1("|C:0x00ff00&T:"+kill+"||C:0xFFFFFF&T:/"+total+"|")
+// mới:
+this.lbNum0.textFlow=TextFlowMaker.generateTextFlow1("|C:0xFFFFFF&T:Số lượng quái vật tiêu diệt：||C:0x00ff00&T:"+UserFb.ins().expMonterCountKill+"||C:0xFFFFFF&T:/"+UserFb.ins().fbExpTotal+"|")
+```
+`TextFlowMaker.generateTextFlow1` tách chuỗi theo dấu `|`, mỗi đoạn `C:màu&T:nội dung` render 1 đoạn `<font color>` riêng trong CÙNG một Label - nhờ vậy label tự đo đúng tổng chiều rộng thật (tiền tố + số), không còn 2 bounding box chồng nhau. `lbNum` (label số cũ) đặt `visible="false"` vĩnh viễn (cả trong `default.thm.js` lẫn exml) vì không còn dùng.
+
+**Sửa canh giữa**: `lbNum0` đổi `horizontalCenter="-54"` → `horizontalCenter="0"` (canh giữa đúng dưới dòng "891000" phía trên, vốn cũng `horizontalCenter="0"`/`"0.5"`) - vì giờ là 1 label duy nhất tự đo bề rộng, `horizontalCenter="0"` sẽ luôn canh giữa chính xác toàn bộ cụm (tiền tố + số) bất kể số đếm dài ngắn thế nào.
+
+**Mirror `default.thm.js`**: sửa đúng trong ranh giới hàm `lbNum0_i`/`lbNum_i` (2 hàm factory riêng, không trùng tên với lớp khác nên không cần scope theo class).
+
+**Kiểm thử**: `node -c` sạch cả 2 file JS; `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận chuỗi `updateKill_a94` cũ chỉ khớp đúng 1 lần trong `main.min.js` trước khi thay, `lbNum0_i`/`lbNum_i` chỉ khớp đúng 1 lần trong `default.thm.js` trước khi thay.
+
+**Cache-bust**: `default.thm_bdc9f58d.js` → `default.thm_6d7b4652.js`, `main.min_2e6152fb.js` → `main.min_29481c84.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận dòng đếm quái vật hiển thị đúng, canh giữa, không còn chồng chữ ở các giá trị đếm khác nhau (đặc biệt khi số lên tới 3 chữ số "100/100").

@@ -22,8 +22,8 @@
 		<e:Image  source="bantoutiaobg2" scale9Grid="41,5,7,12" left="0" right="0" top="0" bottom="0" visible="false"/>
 
 		<e:Image id="killNumImg" y="6" horizontalCenter="-50" scaleX="0.6" scaleY="0.6" source="" visible="false"/>
-		<e:Label id="lbNum0" text="Số lượng quái vật tiêu diệt：" y="5" size="20" horizontalCenter="-54" fontFamily="Microsoft YaHei"/>
-		<e:Label id="lbNum" text="100/100" y="5" size="20" horizontalCenter="63" fontFamily="Microsoft YaHei" textAlign="left"/>
+		<e:Label id="lbNum0" text="Số lượng quái vật tiêu diệt：" y="5" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei"/>
+		<e:Label id="lbNum" text="100/100" y="5" size="20" horizontalCenter="63" fontFamily="Microsoft YaHei" textAlign="left" visible="false"/>
 	</e:Group>
 	<e:Group id="GwRankGroup" bottom="175" horizontalCenter="15.5" anchorOffsetX="0" visible="false">
 
