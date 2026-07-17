@@ -11,7 +11,7 @@
 			<e:Group y="17" height="158" visible.open="false" anchorOffsetY="0" left="20" height.narmal="158" anchorOffsetX="0" width="90">
 				<ns1:LevelImage id="heartmethodStage" width="40" height="109" skinName="Skinjieji" top="3" left="0"/>
 
-			<e:Label id="xinfaName" text="Vô Ảnh Tâm Pháp" italic="false" width="24" size="24" verticalCenter="22" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" verticalCenter.narmal="22" horizontalCenter="23"/>
+			<e:Label id="xinfaName" text="Vô Ảnh Tâm Pháp" italic="false" width="80" size="24" textAlign="center" verticalCenter="22" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" verticalCenter.narmal="22" horizontalCenter="-4"/>
 				<e:layout>
 					<e:BasicLayout/>
 				</e:layout>

@@ -31,7 +31,7 @@
 		</e:Group>
 		<e:Group height="302" width="85" verticalCenter="-138.5" horizontalCenter="-251.5">
 			<e:Image source="bantoutiaobg" rotation="90" scale9Grid="29,5,180,35" width="176" height="49" y="65" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-17" visible="false"/>
-			<e:Label id="jinMaiName" text="" italic="false" width="24" size="24" fontFamily="Microsoft YaHei" y="109" x="19" textColor="0xffff00" stroke="1" textAlign="center"/>
+			<e:Label id="jinMaiName" text="" italic="false" width="80" size="24" fontFamily="Microsoft YaHei" y="109" x="-8" textColor="0xffff00" stroke="1" textAlign="center"/>
 			<ns1:LevelImage id="jinmaiStage" width="41" height="119" x="11" y="-10" skinName="Skinjieji"/>
 		</e:Group>
 		

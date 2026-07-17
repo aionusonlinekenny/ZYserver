@@ -5229,3 +5229,25 @@ if(GameServer.serverOpenDay){
 **Cache-bust**: `default.thm_eecc183c.js` → `default.thm_f879cfbe.js` (main.min.js giữ nguyên `main.min_58e5fc16.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận vào đúng khung giờ 19:20-19:40 server để thấy dòng "Mỗi ngày 19:30 mở" hiển thị đúng và nút "Vào" hoạt động bình thường.
+
+## 187. Tên "Kinh Mạch"/"Tâm Pháp" vỡ chữ dọc từng ký tự - áp dụng cách sửa "xuống dòng theo từ" như Tiên Minh (2026-07-17)
+
+Người dùng gửi ảnh màn "Tẩy Tủy" (Kinh Mạch): tên bậc "Tầng 5. Tri Kiến Lý" hiện vỡ dọc TỪNG KÝ TỰ ("T/ần/g/5./Tr/i/Ki/ến/L/y") - cùng loại lỗi đã sửa ở mục 173/174 cho 4 nút Tiên Minh. Người dùng yêu cầu cụ thể: áp dụng đúng cách đã sửa bên Tiên Minh - xuống dòng theo NGHĨA CỦA TỪ (mỗi từ 1 dòng), không ngắt giữa từ.
+
+**Khác biệt quan trọng so với mục 174**: label nút Tiên Minh dùng text TĨNH khai báo sẵn trong exml nên có thể chèn thẳng `&#10;` giữa các từ. Label `jinMaiName` (tên bậc Kinh Mạch) lại nhận text ĐỘNG từ code (`this.jinMaiName.text=e.name`, với `e` lấy từ `GlobalConfig.ConfigJingMaiLevel` - dữ liệu đóng gói trong file cấu hình nhị phân `config_0.05.pack`, không tiện chỉnh sửa trực tiếp) - nội dung thay đổi theo từng bậc/cấp, không thể chèn `&#10;` cố định vào exml như label tĩnh.
+
+**Cách sửa**: xử lý NGAY TẠI ĐIỂM GÁN TEXT trong `main.min.js` - thay khoảng trắng bằng ký tự xuống dòng thật (`\n`) bằng `.replace(/ /g,"\n")`, biến MỌI chuỗi tên (bất kể nội dung gì) thành xuống dòng theo từng từ tách bởi dấu cách, không cần biết trước nội dung:
+- `this.jinMaiName.text=e.name` → `this.jinMaiName.text=e.name.replace(/ /g,"\n")`.
+- `resource/exml/JinMaiSkin.exml`: `jinMaiName` `width="24"` → `width="80"` (đủ rộng cho từ dài nhất "Kiến"/"Tầng" ở size 24 mà không bị ngắt ký tự), thêm `textAlign` giữ nguyên "center" đã có sẵn, chỉnh `x` để bù lại tâm sau khi tăng độ rộng.
+
+**Chủ động rà thêm lỗi giống hệt** (theo thói quen session: khi tìm ra 1 lỗi dạng "label width=24 size=24 hiển thị tên nhiều từ", chủ động grep tìm chỗ khác dùng chung khuôn mẫu): phát hiện `resource/exml/heartmethod.exml` (màn "Tâm Pháp", tính năng song song với "Kinh Mạch") có `xinfaName` với `width="24" size="24"` GIỐNG HỆT, hiển thị tên nhiều từ như "Vô Ảnh Tâm Pháp" - chắc chắn dính cùng lỗi dù người dùng chưa báo. Sửa tương tự:
+- `main.min.js`: `this.xinfaName.text=i?i.name:""` → `this.xinfaName.text=i?i.name.replace(/ /g,"\n"):""`.
+- `heartmethod.exml`: `xinfaName` `width="24"` → `width="80"`, thêm `textAlign="center"` (trước đó không có, mặc định trái - không phù hợp khi xuống dòng nhiều từ), chỉnh `horizontalCenter` bù tâm.
+
+**Mirror `default.thm.js`**: cả 2 label sửa đúng trong ranh giới class `SkinJinMai`/`Skinheartmethod` (`jinMaiName_i`, `xinfaName_i`).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận cả 2 exml hợp lệ; xác nhận mỗi đoạn code cũ trong `default.thm.js`/`main.min.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch cả 2 file.
+
+**Cache-bust**: `default.thm_f879cfbe.js` → `default.thm_bdc9f58d.js`, `main.min_58e5fc16.js` → `main.min_2e6152fb.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - `width="80"` là ước lượng đủ cho từ dài nhất quan sát được ở size 24, cần người dùng xác nhận cả 2 màn "Kinh Mạch" và "Tâm Pháp" hiển thị đúng theo từng từ, không bị ngắt giữa từ hay tràn khung.
