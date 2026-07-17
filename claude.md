@@ -5175,3 +5175,15 @@ Người dùng xác nhận đã copy đúng file `main.min_a1fc68b6.js` lên ser
 **Cache-bust**: `main.min_a1fc68b6.js` → `main.min_d1fb82a6.js` (default.thm.js giữ nguyên `default.thm_f8316301.js`).
 
 **Chưa kiểm chứng trên trình duyệt thật** - lần này đã đọc đúng cấu trúc `Btn1Skin.exml` để hiểu chính xác TẠI SAO mục 182 không có tác dụng (không phải đoán mò lần 2), chọn giải pháp ẩn/hiện thay vì đồng bộ scale vì đơn giản và chắc chắn không lệch - cần người dùng bấm giữ thử lại để xác nhận cuối cùng.
+
+## 184. Theo đề xuất người dùng: rút ngắn nhãn nút "Hoàn Thành Nhiệm Vụ" → "Hoàn Thành" (2026-07-16)
+
+Sau mục 183, người dùng gửi thêm ảnh cho thấy dù đã sửa, hiệu ứng ánh sáng vẫn còn lệch nhẹ dù không nghiêm trọng bằng lúc bấm giữ, và đề xuất giải pháp thực dụng hơn: đổi nhãn nút từ "Hoàn Thành Nhiệm Vụ" thành "Hoàn Thành" (bỏ chữ "Nhiệm Vụ") - chữ ngắn hơn sẽ đỡ chạm rìa vùng hiệu ứng, giảm cảm giác lệch dù hiệu ứng còn hơi lệch.
+
+**Cách sửa**: `main.min.js`, class `GweaponTaskView`, mảng nhãn trạng thái nút `s=["Nhận Nhiệm Vụ","Đi Đến","Hoàn Thành Nhiệm Vụ","Kích Hoạt"]` (index 2 = nhãn khi nhiệm vụ sẵn sàng nhận, đúng trạng thái hiển thị trong ảnh) - đổi `"Hoàn Thành Nhiệm Vụ"` → `"Hoàn Thành"`.
+
+**Kiểm thử**: xác nhận chuỗi cũ chỉ khớp đúng 1 lần trong toàn file trước khi thay; `node -c` sạch. Không cần sửa exml (label do JS gán động qua `this.btn.label=s[2]`, không phải giá trị tĩnh trong skin).
+
+**Cache-bust**: `main.min_d1fb82a6.js` → `main.min_54b48e0c.js` (default.thm.js giữ nguyên `default.thm_f8316301.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận nhãn mới "Hoàn Thành" đã đủ ngắn để tránh chạm hiệu ứng ánh sáng dư mục 183 để lại.
