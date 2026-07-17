@@ -15,7 +15,7 @@
 			<e:Button id="btn1" label="Vào" skinName="SkinBtn3" width="123" height="55" enabled="true" verticalCenter="-3" horizontalCenter="192"/>
 			<e:Image id="redPoint1" source="zjmhongdian" scaleX="1" scaleY="1" verticalCenter="-24" right="31" locked="true" visible="false"/>
 
-			<e:Label id="time1" text="Từ ngày 2 sau mở server, mở lúc 19:30 mỗi ngày" size="18" y="125" right="16" width="400" textAlign="right" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+			<e:Label id="time1" text="Từ ngày 2 sau mở server, Mỗi ngày 19:30 mở" size="18" y="125" right="16" width="400" textAlign="right" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
 		</e:Group>
 		<e:Group y="10" width="575" height="159" x="10">

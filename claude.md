@@ -5205,3 +5205,27 @@ Người dùng gửi ảnh màn chính "Thần Binh" (`归元帝剑`/"Quy Nguyê
 **Cache-bust**: `default.thm_f8316301.js` → `default.thm_eecc183c.js`, `main.min_54b48e0c.js` → `main.min_58e5fc16.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - `width="460"` cho `curPointLabel` và `y="90"` cho nhóm Lv/exp là ước lượng dựa trên độ dài chữ quan sát được, cần người dùng xác nhận không còn đè và không tràn ra ngoài khung ảnh nền phía dưới.
+
+## 186. Màn "Phó Bản" > "Cách chơi" - "Mỗi ngàyundefined" ở dòng Boss Thế Giới + giải thích cơ chế mở Boss Thế Giới (2026-07-17)
+
+Người dùng gửi ảnh màn "Phó Bản" > "Cách chơi": dòng thời gian mở của "Boss Thế Giới" hiện "Mỗi ngàyundefined" thay vì giờ mở thật. Đồng thời báo bấm nút "Vào" thì báo "BOSS Thế Giới chưa mở" và nhờ dò code xem cơ chế mở boss này hoạt động thế nào.
+
+**Xác định lỗi hiển thị "undefined"**: `main.min.js`, class `PlayMethodPanel` (điều khiển `resource/exml/playWaySkin.exml`, class `SkinplayWay`) - đoạn code xử lý dòng giờ mở của Boss Thế Giới (`time1`):
+```js
+var s=this.time1.text;
+if(GameServer.serverOpenDay){
+  var n=s.split("Mỗi ngày");
+  this.time1.textFlow=TextFlowMaker.generateTextFlow1("Mỗi ngày"+n[1])
+}
+```
+Đoạn này CẮT chuỗi mặc định tại vị trí cụm `"Mỗi ngày"` (viết hoa chữ M) rồi GHÉP LẠI thành `"Mỗi ngày"+n[1]` - ý đồ ban đầu: khi server đã mở lâu (`GameServer.serverOpenDay`), rút gọn câu, bỏ phần "Từ ngày X sau mở server" chỉ giữ lại phần lặp lại hàng ngày. Nhưng chuỗi mặc định trong `playWaySkin.exml` lại là `"Từ ngày 2 sau mở server, mở lúc 19:30 mỗi ngày"` - cụm `"mỗi ngày"` nằm ở CUỐI câu và viết THƯỜNG (chữ m), không khớp với chuỗi tìm `"Mỗi ngày"` (viết hoa) code đang tìm → `s.split("Mỗi ngày")` không tách được gì, mảng chỉ có 1 phần tử, `n[1]` là `undefined` → kết quả "Mỗi ngày" + "undefined" = "Mỗi ngàyundefined" - khớp đúng lỗi trong ảnh.
+
+**Cách sửa**: viết lại chuỗi mặc định trong `playWaySkin.exml` để cụm `"Mỗi ngày"` (viết hoa) nằm ĐÚNG VỊ TRÍ trước giờ mở, khớp với logic tách chuỗi có sẵn: `"Từ ngày 2 sau mở server, mở lúc 19:30 mỗi ngày"` → `"Từ ngày 2 sau mở server, Mỗi ngày 19:30 mở"`. Khi đó `n[1]=" 19:30 mở"`, kết quả ghép = `"Mỗi ngày 19:30 mở"` - đúng ý nghĩa, không còn "undefined". Mirror vào `default.thm.js` đúng trong ranh giới class `SkinplayWay` (`time1_i`).
+
+**Kiểm thử**: `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận chuỗi cũ trong `default.thm.js` chỉ khớp đúng 1 lần trước khi thay; `node -c` sạch. Không cần sửa `main.min.js` (logic tách chuỗi giữ nguyên, chỉ chuỗi nguồn trong skin cần sửa cho khớp).
+
+**Nghiên cứu cơ chế mở "Boss Thế Giới" theo yêu cầu người dùng** (không phải lỗi - hành vi đúng thiết kế, giải thích riêng cho người dùng, không sửa code): dò trong `main.min.js` hàm xử lý bấm nút "Vào" (`case this.btn1`) thấy 3 lớp kiểm tra tuần tự: (1) `UserBossesSystem.ins().newWorldBossData.isOpen` - cờ đồng bộ từ server, nếu `false` báo đúng "BOSS Thế Giới chưa mở"; (2) nếu đã mở nhưng `startTime` (giờ boss thật sự xuất hiện) còn ở tương lai → báo "Mỗi ngày X điểm Y phút mở, vui lòng tham gia đúng giờ"; (3) kiểm tra cấp độ đủ điều kiện tham gia. Dò tiếp phía server (`server/bin/s1/gameworld/data/functions/systems/boss/newworldboss.lua`): activity chỉ yêu cầu server đã mở ≥1 ngày (`openSevDay=1`, dễ dàng thoả), nhưng có LỊCH CỐ ĐỊNH MỖI NGÀY qua `scripttimerconf.lua`: `19:20` gọi `newWorldBossPerStart` (bắt đầu cho phép vào, cờ `isOpen`→true, hẹn giờ boss thật xuất hiện lúc `19:30`), `19:30` gọi `newWorldBossStart` (boss thật xuất hiện, hoạt động kéo dài `bossTime=600` giây = 10 phút, tới `19:40` tự kết thúc và tắt cờ `isOpen`). **Kết luận: Boss Thế Giới CHỈ mở cửa sổ 19:20-19:40 (giờ server) mỗi ngày** - thông báo "BOSS Thế Giới chưa mở" người dùng thấy là ĐÚNG hành vi (thời điểm chụp ảnh không nằm trong khung giờ này), không phải lỗi cần sửa.
+
+**Cache-bust**: `default.thm_eecc183c.js` → `default.thm_f879cfbe.js` (main.min.js giữ nguyên `main.min_58e5fc16.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận vào đúng khung giờ 19:20-19:40 server để thấy dòng "Mỗi ngày 19:30 mở" hiển thị đúng và nút "Vào" hoạt động bình thường.
