@@ -5159,3 +5159,19 @@ Sau khi tôi giải thích hiệu ứng "chargeff3" ở mục trước là anima
 **Cache-bust**: `main.min_213d37ee.js` → `main.min_a1fc68b6.js` (default.thm.js giữ nguyên `default.thm_f8316301.js`, không đụng file skin).
 
 **Chưa kiểm chứng trên trình duyệt thật** - logic sửa dựa trên đối chiếu chính xác với mẫu code đã hoạt động đúng ở nơi khác (không phải suy đoán), độ tin cậy cao, nhưng vẫn cần người dùng bấm giữ nút thử lại để xác nhận hiệu ứng đã bám đúng theo nút.
+
+## 183. Mục 182 KHÔNG sửa được - tìm ra nguyên nhân thật (scaleX.down nằm trên ảnh con trong skin, không phải trên nút) (2026-07-16)
+
+Người dùng xác nhận đã copy đúng file `main.min_a1fc68b6.js` lên server thật, chụp lại đúng lúc bấm giữ nút - vẫn còn y hệt lỗi cũ. Nghĩa là cách sửa ở mục 182 (gắn `taskMc` làm con của `btn`) tuy đúng theo mẫu tham chiếu (`suerBtn.addChild`) nhưng KHÔNG giải quyết được vấn đề thật.
+
+**Đọc lại kỹ `Btn1Skin.exml`** (skin `SkinBtn1` dùng cho nút này): thuộc tính `scaleX.down="0.95" scaleY.down="0.95"` cùng `width.down="176"` nằm trên phần tử `<e:Image>` BÊN TRONG skin của nút (ảnh nền nút) - KHÔNG nằm trên chính đối tượng `Button` (`btn`). Khi nút chuyển trạng thái "down", chỉ ẢNH NỀN bên trong tự thu nhỏ lại - bản thân `btn` (kích thước, vị trí, transform tổng thể) HOÀN TOÀN KHÔNG đổi. Vì vậy việc gắn `taskMc` làm con của `btn` (mục 182) không giúp ích gì: `taskMc` không tự động thu nhỏ theo, vì chính `btn` cũng có bao giờ thu nhỏ đâu - chỉ có ảnh CON RIÊNG của nó (một phần tử nội bộ trong skin, `taskMc` không phải phần tử đó) mới co lại.
+
+**Cách sửa đúng**: không cố đồng bộ scale (phức tạp, dễ sai vì phải biết chính xác tỉ lệ ảnh nội bộ), thay vào đó **ẩn hiệu ứng lúc đang bấm giữ, hiện lại lúc thả tay** - cách nhiều game vẫn làm với hiệu ứng dạng này:
+- Thêm sự kiện `egret.TouchEvent.TOUCH_BEGIN` trên `btn` (đăng ký trong `open()`, gỡ trong `close()`): gọi hàm mới `onBtnDown_a94` → `this.taskMc.visible=false` (nếu đang tồn tại).
+- Sửa `onTap_a94` (đã gắn sẵn theo `TOUCH_END`, chạy mỗi khi thả tay khỏi nút bất kể tap có hợp lệ hay không): thêm dòng đầu tiên `this.taskMc.visible=true` để hiện lại hiệu ứng ngay khi thả tay (nút quay về trạng thái "up" đúng kích thước gốc, hiệu ứng cũng đồng thời hiện lại nên khớp hoàn toàn).
+
+**Kiểm thử**: xác nhận cả 2 đoạn code cũ trong `main.min.js` chỉ khớp đúng 1 lần trước khi thay; xác nhận `onBtnDown_a94` được nối dây đúng qua `addEvent`/`removeEvent` (grep xác nhận xuất hiện đúng 2 lần - 1 lúc đăng ký, 1 lúc định nghĩa hàm); `node -c` sạch.
+
+**Cache-bust**: `main.min_a1fc68b6.js` → `main.min_d1fb82a6.js` (default.thm.js giữ nguyên `default.thm_f8316301.js`).
+
+**Chưa kiểm chứng trên trình duyệt thật** - lần này đã đọc đúng cấu trúc `Btn1Skin.exml` để hiểu chính xác TẠI SAO mục 182 không có tác dụng (không phải đoán mò lần 2), chọn giải pháp ẩn/hiện thay vì đồng bộ scale vì đơn giản và chắc chắn không lệch - cần người dùng bấm giữ thử lại để xác nhận cuối cùng.
