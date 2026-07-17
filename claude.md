@@ -5143,3 +5143,19 @@ Người dùng xác nhận màn Tiên Minh đẹp rồi, chuyển sang báo lỗ
 **Cache-bust**: `default.thm_5ba828f6.js` → `default.thm_f8316301.js`, `main.min_e4aa5ad1.js` → `main.min_213d37ee.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - `width="150"`/`width="110"` là ước lượng dựa trên độ dài tên kỹ năng dài nhất quan sát được trong ảnh ("Kết Thuẫn"), cần người dùng xác nhận không bị tràn với tên kỹ năng dài hơn nếu có.
+
+## 182. Hiệu ứng ánh sáng "sẵn sàng nhận" lệch khỏi nút khi bấm giữ (màn nhiệm vụ Thần Binh) (2026-07-16)
+
+Sau khi tôi giải thích hiệu ứng "chargeff3" ở mục trước là animation bình thường, người dùng gửi thêm ảnh chụp lúc đang GIỮ (bấm xuống) nút "Hoàn Thành Nhiệm Vụ": nút chuyển sang trạng thái "down" (ảnh nền đổi màu xanh dương, thu nhỏ lại theo `scaleX.down/scaleY.down=0.95`) nhưng khung sáng hiệu ứng vẫn giữ nguyên kích thước/vị trí của trạng thái "up" (to hơn, không co lại theo) - gây lệch rõ rệt, xác nhận đây MỚI thật sự là lỗi (không phải animation bình thường như nhận định trước).
+
+**Xác định nguyên nhân chính xác**: `main.min.js`, class `GweaponTaskView`, hàm `addTaskMC_a94()` - hiệu ứng `taskMc` (animation "chargeff3") được thêm vào bằng `this.btn.parent.addChild(this.taskMc)` - tức là gắn làm **anh em (sibling)** với nút `btn` trong cùng 1 parent, KHÔNG phải làm **con (child)** của nút. Vị trí `taskMc.x/y` chỉ tính 1 lần dựa trên `btn.width/height` tại thời điểm nhiệm vụ chuyển sang trạng thái sẵn sàng - không hề tự cập nhật khi nút đổi trạng thái `up`→`down` lúc người dùng bấm giữ (nút co lại + đổi màu, nhưng hiệu ứng đứng yên vì nó không phải con của nút nên không được kế thừa phép biến đổi scale/state của nút).
+
+**Bằng chứng đối chiếu**: cùng kiểu hiệu ứng "chargeff1/2/3/4" ở CÁC nút khác trong game (nút "Nhận thưởng" `suerBtn`, xuất hiện 4 lần trong `main.min.js`) đều dùng đúng mẫu `this.suerBtn.addChild(this.btnMC)` - gắn hiệu ứng làm CON của nút, nên tự động ăn theo mọi biến đổi scale/state của nút mẹ, không bao giờ bị lệch. Chỉ riêng hàm `addTaskMC_a94` của màn nhiệm vụ Thần Binh này viết sai thành `.parent.addChild` thay vì `.addChild` trực tiếp trên nút - đây là lỗi code thật sự (không đối xứng với mọi chỗ khác dùng cùng loại hiệu ứng), không phải hành vi animation cố ý.
+
+**Cách sửa**: đổi `this.btn.parent.addChild(this.taskMc)` → `this.btn.addChild(this.taskMc)` - khớp đúng mẫu chuẩn đã dùng ở `suerBtn`. Từ nay hiệu ứng sẽ tự động di chuyển/co giãn đồng bộ theo nút ở MỌI trạng thái (up/down/disabled) vì là con trực tiếp của nút, không cần thêm logic tính lại vị trí thủ công mỗi lần đổi trạng thái.
+
+**Kiểm thử**: xác nhận chuỗi cũ `this.btn.parent.addChild(this.taskMc)` chỉ xuất hiện đúng 1 lần trong toàn file trước khi thay; `node -c` sạch. Không cần sửa exml (thuần lỗi logic JS, không phải lỗi khai báo layout).
+
+**Cache-bust**: `main.min_213d37ee.js` → `main.min_a1fc68b6.js` (default.thm.js giữ nguyên `default.thm_f8316301.js`, không đụng file skin).
+
+**Chưa kiểm chứng trên trình duyệt thật** - logic sửa dựa trên đối chiếu chính xác với mẫu code đã hoạt động đúng ở nơi khác (không phải suy đoán), độ tin cậy cao, nhưng vẫn cần người dùng bấm giữ nút thử lại để xác nhận hiệu ứng đã bám đúng theo nút.
