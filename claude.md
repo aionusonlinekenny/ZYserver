@@ -5339,3 +5339,22 @@ Người dùng gửi ảnh ngay sau khi deploy bản vá mục 190: toàn bộ k
 **Cache-bust**: `default.thm_186a8bbb.js` → `default.thm_0a4a3872.js` (`main.min_a1ec5ccc.js` giữ nguyên, không đổi).
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận màn Huyễn Cảnh không còn bị đen, hiển thị lại đầy đủ nền/HUD, đồng thời dòng "Thưởng kinh nghiệm Thần Binh:" ở mục 190 hoạt động đúng như mong đợi.
+
+## 192. "Thời gian tiêu hao：" bị số giây đè giữa câu trên màn "Thắng Lợi" (GwResultSkin) (2026-07-17)
+
+Người dùng xác nhận màn Huyễn Cảnh (mục 191) đã hết đen, nhưng báo tiếp màn "Thắng Lợi" (kết quả sau khi thắng boss Thần Binh) bị chồng chữ tương tự: dòng "Thời gian tiêu hao：" bị số giây (ví dụ "0") đè vào giữa câu, giữa "tiêu" và "hao".
+
+**Nguyên nhân**: `resource/exml/GwResultSkin.exml` (class `SkinGwResult`, controller `GweaponResultView`) dùng 3 Label định vị cố định cạnh nhau trên cùng 1 dòng - `timeTitle` (tĩnh "Thời gian tiêu hao：", x=100, auto-width), `time` (số giây động, x=206) và `gaptime` (chuỗi "(Cách hạng S chỉ còn X giây)", x=280). Bản gốc tiếng Trung ngắn nên `time` vừa lọt vào khoảng trống sau tiêu đề tại x=206; bản dịch tiếng Việt dài hơn nên x=206 rơi vào giữa chữ "tiêu hao" - cùng nguyên nhân với mục 189/190 (label tĩnh dịch dài hơn bản gốc, label động cạnh bên định vị theo toạ độ cố định lỗi thời).
+
+**Cách sửa (gộp cả 3 vào 1 textFlow trên `timeTitle`, theo đúng khuôn mẫu mục 189/190)**: sửa `GweaponResultView.prototype.open` trong `main.min.js` - thay vì gán `.text` riêng cho `time`/`gaptime`, dựng toàn bộ câu (tiêu đề + giá trị + ghi chú xếp hạng nếu có) rồi gán 1 lần vào `timeTitle.textFlow`:
+- Chưa tiêu diệt boss: `"Thời gian tiêu hao：Chưa tiêu diệt BOSS"`.
+- Đã tiêu diệt, chưa đạt hạng S cao nhất: `"Thời gian tiêu hao："+thời_gian+" (Cách hạng S chỉ còn "+X+" giây)"`.
+- Đã tiêu diệt, đạt hạng cao nhất (không cần hiện thêm gaptime): `"Thời gian tiêu hao："+thời_gian`.
+
+`time` và `gaptime` đặt `visible="false"` vĩnh viễn (cả `default.thm.js` lẫn exml), không còn dùng riêng. Vì `timeTitle`/`time`/`gaptime` là 3 id ĐÃ CÓ SẴN từ trước (không thêm id mới) nên KHÔNG cần đụng tới mảng `skinParts` - rút kinh nghiệm trực tiếp từ hotfix mục 191, đã chủ động viết script Python đối chiếu toàn bộ tập hợp id trong exml với `skinParts` để xác nhận khớp tuyệt đối TRƯỚC khi coi là xong việc.
+
+**Kiểm thử**: `node -c` sạch cả 2 file JS; `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận khối `if(-1==n)...else...` cũ trong `main.min.js` và 2 factory `time_i`/`gaptime_i` trong `default.thm.js` (scoped đúng theo class `SkinGwResult`) mỗi cái chỉ khớp đúng 1 lần trước khi thay; script đối chiếu id-exml ↔ skinParts xác nhận khớp tuyệt đối sau khi sửa.
+
+**Cache-bust**: `default.thm_0a4a3872.js` → `default.thm_b8a420ae.js`, `main.min_a1ec5ccc.js` → `main.min_a3a59590.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận màn "Thắng Lợi" hiển thị đúng ở cả 3 trường hợp: chưa diệt boss, diệt boss nhưng chưa đạt hạng S, và đạt hạng S cao nhất (trường hợp trong ảnh gửi).
