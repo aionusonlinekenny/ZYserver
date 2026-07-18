@@ -102,6 +102,28 @@
     </div>
 
 <script>
+    (function () {
+        // Giữ màn hình không tự tắt khi treo game (Screen Wake Lock API - Safari iOS 16.4+)
+        var wakeLock = null;
+        function requestWakeLock() {
+            if (!('wakeLock' in navigator)) return;
+            navigator.wakeLock.request('screen').then(function (lock) {
+                wakeLock = lock;
+                wakeLock.addEventListener('release', function () {
+                    wakeLock = null;
+                });
+            }).catch(function () {
+                // Thất bại (thường do chưa có thao tác chạm) - sẽ thử lại ở lần chạm/click tiếp theo
+            });
+        }
+        document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === 'visible') requestWakeLock();
+        });
+        document.addEventListener('touchstart', requestWakeLock);
+        document.addEventListener('click', requestWakeLock);
+        requestWakeLock();
+    })();
+
     var ARGS = "<?php echo $args?>";
     var urlParam = {};
     var paraUrl = location.href;

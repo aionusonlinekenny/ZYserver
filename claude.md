@@ -5358,3 +5358,17 @@ Người dùng xác nhận màn Huyễn Cảnh (mục 191) đã hết đen, như
 **Cache-bust**: `default.thm_0a4a3872.js` → `default.thm_b8a420ae.js`, `main.min_a1ec5ccc.js` → `main.min_a3a59590.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận màn "Thắng Lợi" hiển thị đúng ở cả 3 trường hợp: chưa diệt boss, diệt boss nhưng chưa đạt hạng S, và đạt hạng S cao nhất (trường hợp trong ảnh gửi).
+
+## 193. Nghiên cứu: mốc tối đa hệ thống Chuyển Sinh - lệch dữ liệu client/server khiến bấm nút không lên điểm ở Chuyển 12 (2026-07-18)
+
+Người dùng gửi ảnh màn "Chuyển Sinh" đang ở "Chuyển 12", dòng "Tiêu hao Tu Vi: 231584100 / 40000000" (Tu Vi tích luỹ đã vượt xa mốc yêu cầu), nhờ dò xem mốc tối đa của hệ thống Chuyển Sinh là bao nhiêu vì bấm nút "Chuyển sinh" không còn thấy tăng điểm.
+
+**Kết quả nghiên cứu** (không sửa code, chỉ điều tra):
+- **Server** (`server/bin/s1/gameworld/data/config/zhuansheng/zhuanshenglevel.config`, giống hệt ở `s99`): bảng `ZhuanShengLevelConfig` chỉ có index `[0]`-`[12]` - KHÔNG có mốc `[13]`. Mức tối đa THẬT SỰ do server cho phép là **Chuyển 12**.
+- **Client** (`resource/config/config.json` và bản sao `resource/config1/config2.json`, bảng `ConfigZhuanShengLevel`): lại có tới 14 mốc (`0`-`13`) - dư ra 1 entry "ma" cho Chuyển 13 (`"13": {"level":13,"exp":40000000,...}`) mà server không hề có.
+
+**Vì sao bấm nút không có tác dụng**: `main.min.js` (class `ZsPanel`) đọc `GlobalConfig.ConfigZhuanShengLevel[t.lv+1]` (t.lv=12 → tra mốc 13) - vì client CÓ mốc 13 nên hiển thị bình thường (không hiện chữ "đã đạt cấp tối đa"), dòng "Tiêu hao Tu Vi: X / Y" chỉ đơn thuần là Tu Vi tích luỹ thật (`t.exp`=231584100) so với yêu cầu mốc 13 theo client (`exp`=40000000, đúng bằng số hiển thị) - không phải lỗi hiển thị hay lỗi công thức thanh tiến trình. Khi bấm nút, request gửi lên SERVER; server tra `ZhuanShengLevelConfig[13]` ra `nil` và hàm `onReqUpgrade` trong `actorzhuansheng.lua` **âm thầm `return`** (không trừ Tu Vi, không tăng điểm, KHÔNG gửi thông báo lỗi nào về client) → người chơi thấy như bấm vô tác dụng, không rõ lý do.
+
+**Đã hỏi ý kiến người dùng** hướng xử lý (mở khoá Chuyển 13 trên server / ẩn mốc 13 phía client để khớp đúng giới hạn thật / chỉ thêm thông báo lỗi rõ ràng khi bấm thất bại) - CHƯA quyết định, chưa sửa code cho phần này, chờ phản hồi tiếp.
+
+**Kết luận cho người dùng**: mốc tối đa hiện tại của hệ thống Chuyển Sinh, xét theo dữ liệu server (nơi quyết định thật), là **Chuyển 12**. Client đang hứa hẹn sai 1 mốc không tồn tại.
