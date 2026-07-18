@@ -5372,3 +5372,21 @@ Người dùng gửi ảnh màn "Chuyển Sinh" đang ở "Chuyển 12", dòng "
 **Đã hỏi ý kiến người dùng** hướng xử lý (mở khoá Chuyển 13 trên server / ẩn mốc 13 phía client để khớp đúng giới hạn thật / chỉ thêm thông báo lỗi rõ ràng khi bấm thất bại) - CHƯA quyết định, chưa sửa code cho phần này, chờ phản hồi tiếp.
 
 **Kết luận cho người dùng**: mốc tối đa hiện tại của hệ thống Chuyển Sinh, xét theo dữ liệu server (nơi quyết định thật), là **Chuyển 12**. Client đang hứa hẹn sai 1 mốc không tồn tại.
+
+## 194. Tên người chơi quá dài đè lên cột "cấp" trên màn "Bảng Xếp Hạng" - cắt ngắn + "…" (2026-07-18)
+
+Người dùng gửi ảnh màn "Bảng Xếp Hạng" (danh sách xếp hạng theo Tổng chiến lực/Cấp Độ/Cảnh Giới/.../, mở qua `RankingWin`, skin `RankSkin.exml`): tên "BạchPhượngHồng" (14 ký tự) đè lên chữ "cấp" bên cạnh (hiện "10cấp" thay vì đúng "110cấp"). Yêu cầu: tên quá dài thì cắt ngắn dạng "..." thay vì đè chữ.
+
+**Xác định đúng màn hình** (khó dò vì các nhãn tab bên phải "Cấp Độ/Cảnh Giới/Tụ Linh/..." trong `RankSkin.exml` vẫn còn nguyên tiếng Trung `"等  级"`/`"境  界"`/`"聚  灵"` - bản dịch tiếng Việt được ánh xạ ĐỘNG theo số `type` trong `main.min.js`, không phải text tĩnh trong exml, nên grep tìm chuỗi "Cấp Độ" trực tiếp không ra kết quả, phải lần theo `skinName="SkinRank"` → class `RankingWin` → `this.list.itemRenderer=RankItemRenderer` → skin dòng danh sách `resource/exml/RankItemPowerSkin.exml` (`SkinRankItemPower`)).
+
+**Nguyên nhân**: `resource/exml/RankItemPowerSkin.exml`, Label `player` (tên người chơi, `horizontalCenter="-39"`, KHÔNG có `width` → tự đo theo tên thật, `textAlign="left"`) và Label `level` (`horizontalCenter="55.5"`) đặt cạnh nhau bằng toạ độ cố định - tên ngắn (≤~10 ký tự, ví dụ "NguyệtTrần") vừa đủ chỗ, tên dài hơn (≥14 ký tự như "BạchPhượngHồng") tràn box đè lên `level`.
+
+**Cách sửa**: cắt ngắn CHUỖI TÊN (không phải chỉnh toạ độ/width, vì độ dài tên người chơi không kiểm soát được và mỗi tab hiển thị cột dữ liệu khác nhau - `level`/`count`/`weiWang`/`power` - nên không có 1 giá trị `width` cố định nào đúng cho mọi tab) - giới hạn tối đa 10 ký tự, thừa thì cắt và nối `"..."`, áp dụng ở ĐÚNG ĐIỂM GÁN TEXT trong `main.min.js`, class `RankItemRenderer.updateValue` (dùng chung cho toàn bộ danh sách xếp hạng mọi tab) - thêm `case RankDataType.DATA_PLAYER:s=(""+s).length>10?(""+s).substring(0,10)+"...":s;break;` ngay sau case `DATA_LEVEL`.
+
+**Chủ động rà thêm chỗ giống hệt**: `RankingWin.prototype.refrushFirstInfo_a94` (hiển thị tên người xếp HẠNG 1 nổi bật riêng, `this.firstNameTxt.text=t.player`, cạnh `firstLevelTxt` ở `horizontalCenter="155"` trong cùng `RankSkin.exml`) dùng cùng khuôn mẫu lỗi tiềm ẩn (tuy ảnh gửi chưa thấy đè vì "Emmaban" ngắn) - áp dụng cắt ngắn tương tự: `this.firstNameTxt.text=t.player.length>10?t.player.substring(0,10)+"...":t.player`.
+
+**Kiểm thử**: `node -c` sạch `main.min.js`; xác nhận cả 2 đoạn code cũ chỉ khớp đúng 1 lần trước khi thay.
+
+**Cache-bust**: `main.min_a3a59590.js` → `main.min_37ad6668.js` (`default.thm.js` giữ nguyên, không đổi vì không sửa file skin).
+
+**Chưa kiểm chứng trên trình duyệt thật** - ngưỡng cắt 10 ký tự là ước lượng dựa trên so sánh các tên hiển thị đúng/sai trong ảnh gửi (tên 10 ký tự "NguyệtTrần" hiển thị vừa đủ, tên 14 ký tự tràn), cần người dùng xác nhận không còn đè chữ ở tất cả các tab (Cấp Độ/Cảnh Giới/Tụ Linh/Ngự Khí/...) vì mỗi tab có độ rộng cột `level`/`count`/`power` khác nhau.
