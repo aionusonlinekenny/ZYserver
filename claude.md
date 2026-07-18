@@ -5323,3 +5323,19 @@ Dùng `egret.HtmlTextParser` (không phải `TextFlowMaker.generateTextFlow1`) �
 **Cache-bust**: `default.thm_6d7b4652.js` → `default.thm_186a8bbb.js`, `main.min_29481c84.js` → `main.min_a1ec5ccc.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận dòng "Thưởng kinh nghiệm Thần Binh: X" hiển thị đúng thứ tự, không còn đè chữ giữa câu, ở cả trường hợp có thưởng và không có thưởng (tầng không có `award`).
+
+## 191. HOTFIX mục 190 - thêm `id` mới vào exml nhưng quên đăng ký vào `skinParts` gây crash toàn bộ HUD chiến đấu (màn đen) (2026-07-17)
+
+Người dùng gửi ảnh ngay sau khi deploy bản vá mục 190: toàn bộ khung cảnh nền và HUD trong lúc đánh "Huyễn Cảnh" biến mất hoàn toàn (màn đen), chỉ còn nhân vật/hiệu ứng đánh nhau và các lớp UI KHÔNG thuộc `GameFightSceneSkin` (khung thưởng, chat, thanh công cụ dưới) vẫn hiển thị bình thường - dấu hiệu đặc trưng của một exception JS chưa bắt được làm dừng luồng cập nhật/khởi tạo của RIÊNG skin đó, không phải lỗi hiển thị/layout thông thường.
+
+**Nguyên nhân gốc**: ở mục 190, thêm `id="rewardLabel"` cho 1 Label trong `resource/exml/GameFightSceneSkin.exml` (trước đó label này KHÔNG có `id`) bằng cách sửa tay trực tiếp trên FILE JS ĐÃ BIÊN DỊCH (`default.thm.js`), không chạy lại trình biên dịch exml gốc. Runtime của Egret (`eui.min.js`, cơ chế gán skin cho component) đọc mảng `this.skinParts` (do trình biên dịch exml tạo sẵn, liệt kê TOÀN BỘ id trong file) để COPY từng property `skin[part]` sang `hostComponent[part]` khi skin được gán cho view - đây là bước bắt buộc để `main.min.js` (view controller) truy cập được `this.rewardLabel`. Vì sửa tay chỉ thêm hàm `rewardLabel_i()` và gán `this.rewardLabel=t` bên trong SKIN, nhưng KHÔNG thêm `"rewardLabel"` vào mảng `this.skinParts` khai báo ở đầu class `SkinGameFightScene` → runtime không copy property này sang controller → `this.rewardLabel` ở `main.min.js` là `undefined` → dòng `this.rewardLabel.textFlow=...` (chạy khi cập nhật thông tin tầng Huyễn Cảnh) ném `TypeError: Cannot set property 'textFlow' of undefined`, exception này không được bắt (uncaught) làm hỏng luồng render/cập nhật của toàn bộ scene chiến đấu → nền và HUD biến mất.
+
+**Bài học cho các lần sau**: khi thêm MỘT `id` MỚI (chưa từng tồn tại) vào file `.exml` mà chỉnh tay trực tiếp trên bản JS đã biên dịch (không chạy lại `packEui`/trình biên dịch chính thức), BẮT BUỘC phải tự tay thêm đúng tên id đó vào mảng `this.skinParts` khai báo trong constructor của class - đây là bước dễ bị bỏ sót vì không gây lỗi cú pháp (`node -c` vẫn sạch) và không thấy ngay trong diff logic, chỉ lộ ra khi runtime thực thi và ném exception.
+
+**Cách sửa**: thêm `"rewardLabel"` vào đúng vị trí trong mảng `this.skinParts` của class `SkinGameFightScene`, xác nhận lại bằng cách so khớp ĐẦY ĐỦ tập hợp `id="..."` liệt kê trong exml với tập hợp phần tử trong `skinParts` (Python set so sánh 2 chiều) - khớp chính xác 21/21 phần tử.
+
+**Kiểm thử**: `node -c` sạch; so khớp tập hợp id exml ↔ skinParts bằng script Python xác nhận bằng nhau tuyệt đối (không chỉ riêng phần tử mới thêm, để chắc chắn không còn lỗ hổng tương tự nào khác từ trước).
+
+**Cache-bust**: `default.thm_186a8bbb.js` → `default.thm_0a4a3872.js` (`main.min_a1ec5ccc.js` giữ nguyên, không đổi).
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận màn Huyễn Cảnh không còn bị đen, hiển thị lại đầy đủ nền/HUD, đồng thời dòng "Thưởng kinh nghiệm Thần Binh:" ở mục 190 hoạt động đúng như mong đợi.
