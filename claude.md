@@ -5301,3 +5301,25 @@ this.lbNum0.textFlow=TextFlowMaker.generateTextFlow1("|C:0xFFFFFF&T:Số lượn
 **Cache-bust**: `default.thm_bdc9f58d.js` → `default.thm_6d7b4652.js`, `main.min_2e6152fb.js` → `main.min_29481c84.js`.
 
 **Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận dòng đếm quái vật hiển thị đúng, canh giữa, không còn chồng chữ ở các giá trị đếm khác nhau (đặc biệt khi số lên tới 3 chữ số "100/100").
+
+## 190. "Thưởng kinh nghiệm Thần Binh:" bị số thưởng đè giữa câu - cùng skin `GameFightSceneSkin` với mục 189 (2026-07-17)
+
+Người dùng gửi tiếp ảnh cùng màn hình chiến đấu (panel xếp hạng "S/A/B/C" khi vượt ải Thần Binh): dòng "Thưởng kinh nghiệm Thần Binh:" bị số thưởng động (ví dụ "760000") đè LÊN GIỮA CÂU - chèn giữa "kinh nghiệm" và "Thần Binh:" thay vì nằm sau.
+
+**Nguyên nhân**: cùng `resource/exml/GameFightSceneSkin.exml` (class `SkinGameFightScene`, nhóm `GwRankGroup`) như mục 189, nhưng lỗi ngược chiều - label tĩnh không có `id` (text gộp sẵn CẢ HAI đầu câu "Thưởng kinh nghiệm" + "Thần Binh:" làm MỘT, x="112") và label số động `rewardExp` (x="228", set trực tiếp `.text` trong `main.min.js`) được đặt x cố định ĐÈ VÀO GIỮA label tĩnh - thiết kế gốc kỳ vọng số thưởng nằm lọt vào khoảng trống giữa 2 nửa câu tiếng Trung ngắn, nhưng câu tiếng Việt dài hơn nên khoảng trống đó nay nằm giữa chữ, không phải cuối câu.
+
+**Cách sửa (cùng kiểu với mục 189 - gộp 1 Label duy nhất)**: đặt `id="rewardLabel"` cho label tĩnh (trước đây không có id, không có tham chiếu JS), sửa `main.min.js` để gán TOÀN BỘ câu (tiền tố tĩnh + số màu xanh) vào `textFlow` của `rewardLabel`, số luôn nằm ở CUỐI câu:
+```js
+// cũ: this.rewardExp.text = a ? ""+a[0].count : ""  (hoặc "" nếu không có dữ liệu tầng)
+// mới:
+this.rewardLabel.textFlow=(new egret.HtmlTextParser).parser("Thưởng kinh nghiệm Thần Binh: "+(a?'<font color="#00ff00">'+a[0].count+"</font>":""))
+```
+Dùng `egret.HtmlTextParser` (không phải `TextFlowMaker.generateTextFlow1`) để nhất quán với `requireTime` ngay trong cùng hàm (`setMJInfo` hay tương đương) vốn đã dùng cách này. Label `rewardExp` cũ đặt `visible="false"` vĩnh viễn (cả `default.thm.js` lẫn exml), không xoá hẳn để tránh động vào cấu trúc `elementsContent`.
+
+**Đổi tên factory function** `_Label1_i` (tên dùng chung, trùng với hàng chục class khác trong file) → `rewardLabel_i` để có thể gán `this.rewardLabel = t` (label tĩnh trước đây không lưu tham chiếu instance vì không cần - nay cần vì `main.min.js` phải truy cập được để gán `textFlow`). Sửa cả lời gọi trong mảng `elementsContent` của `GwRankGroup_i` (`this._Label1_i()` → `this.rewardLabel_i()`), scope đúng theo class `SkinGameFightScene` (xác nhận chuỗi gọi kèm ngữ cảnh 3 hàm liền kề chỉ khớp đúng 1 lần trước khi thay).
+
+**Kiểm thử**: `node -c` sạch cả 2 file JS; `python3 -c "import xml.etree..."` xác nhận exml hợp lệ; xác nhận chuỗi cũ trong `main.min.js` (toàn bộ khối `if(o){...}else...`) và `t.text = "Thưởng kinh nghiệm Thần Binh:";` trong `default.thm.js` mỗi cái chỉ khớp đúng 1 lần trước khi thay.
+
+**Cache-bust**: `default.thm_6d7b4652.js` → `default.thm_186a8bbb.js`, `main.min_29481c84.js` → `main.min_a1ec5ccc.js`.
+
+**Chưa kiểm chứng trên trình duyệt thật** - cần người dùng xác nhận dòng "Thưởng kinh nghiệm Thần Binh: X" hiển thị đúng thứ tự, không còn đè chữ giữa câu, ở cả trường hợp có thưởng và không có thưởng (tầng không có `award`).

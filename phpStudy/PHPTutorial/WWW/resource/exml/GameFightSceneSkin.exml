@@ -33,9 +33,9 @@
 		<e:Image x="2" y="93" source="godpfwaikuang_png"/>
 		<e:Label id="requireTime" text="Vượt ải trong 120 giây sẽ giữ đánh giá S" x="112" y="43" size="18" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 
-		<e:Label text="Thưởng kinh nghiệm Thần Binh:" x="112" y="68" size="18" fontFamily="Microsoft YaHei"/>
+		<e:Label id="rewardLabel" text="Thưởng kinh nghiệm Thần Binh:" x="112" y="68" size="18" fontFamily="Microsoft YaHei"/>
 
-		<e:Label id="rewardExp" text="10000000" x="228" y="69" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label id="rewardExp" text="10000000" x="228" y="69" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00" visible="false"/>
 		<e:Label id="time" text="00:00:00" x="112" y="92" size="18" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
 	</e:Group>
 	<e:Group id="riseupBtn" y="551" right="11" visible="false">
