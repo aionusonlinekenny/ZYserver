@@ -5390,3 +5390,25 @@ Người dùng gửi ảnh màn "Bảng Xếp Hạng" (danh sách xếp hạng t
 **Cache-bust**: `main.min_a3a59590.js` → `main.min_37ad6668.js` (`default.thm.js` giữ nguyên, không đổi vì không sửa file skin).
 
 **Chưa kiểm chứng trên trình duyệt thật** - ngưỡng cắt 10 ký tự là ước lượng dựa trên so sánh các tên hiển thị đúng/sai trong ảnh gửi (tên 10 ký tự "NguyệtTrần" hiển thị vừa đủ, tên 14 ký tự tràn), cần người dùng xác nhận không còn đè chữ ở tất cả các tab (Cấp Độ/Cảnh Giới/Tụ Linh/Ngự Khí/...) vì mỗi tab có độ rộng cột `level`/`count`/`power` khác nhau.
+
+## 195. Dịch nốt 2 chỗ còn sót tiếng Trung: thông báo hết lượt Phó Bản + tên khoáng thạch hệ thống khai thác (2026-07-18)
+
+Người dùng gửi 2 ảnh: (1) màn "Phó Bản" > "Thủ Hộ Thần Kiếm" hiện dòng `今天次数已用完，请明天再参加` (chưa dịch) khi đã hết lượt thử thách trong ngày; (2) khung chat hệ thống hiện `[Hệ Thống] Emmaban đã khai thác 亘古仙玉, phần thưởng hậu hĩnh sắp nhận được` - câu đã dịch nhưng TÊN khoáng thạch chèn vào giữa câu vẫn còn nguyên tiếng Trung.
+
+**Lỗi 1 - thông báo hết lượt**: `server/bin/s1/gameworld/data/language/zh-cn/scripttips.txt` (và bản sao `s99`), khoá `ggw007 = "今天次数已用完，请明天再参加"` - toàn bộ file `scripttips.txt` phần lớn vẫn còn tiếng Trung (chưa dịch hệ thống, phạm vi rộng hơn báo cáo của người dùng) nhưng chỉ dịch ĐÚNG khoá `ggw007` theo đúng phạm vi được báo cáo: `"Hôm nay số lần đã dùng hết, vui lòng tham gia lại vào ngày mai"`.
+
+**Lỗi 2 - tên khoáng thạch trong thông báo khai thác**: dò template thông báo hệ thống `server/bin/s1/gameworld/data/config/notice/notice.config` mục `id=56`: `content = "|C:0x16b2ff&T:%s|đã khai thác |C:0xff0000&T:%s|, phần thưởng hậu hĩnh sắp nhận được"` - `%s` thứ 2 được điền trực tiếp từ trường `name` trong `server/bin/s1/gameworld/data/config/caikuang/kuangyuan.config` (bảng 4 loại khoáng thạch theo cấp độ hệ thống "Tích Lũy Nạp"/khai thác) - cả 4 tên đều còn nguyên tiếng Trung, chưa từng được dịch (không riêng tên bị báo cáo). Dịch cả 4 theo Hán Việt cho nhất quán phong cách tiên hiệp toàn game:
+- `碧叶璞玉` → `Bích Diệp Phác Ngọc` (cấp 1)
+- `湛蓝晶玉` → `Trạm Lam Tinh Ngọc` (cấp 2)
+- `天穹灵玉` → `Thiên Khung Linh Ngọc` (cấp 3)
+- `亘古仙玉` → `Hằng Cổ Tiên Ngọc` (cấp 4, tên bị báo cáo trong ảnh - "亘古" theo lối dịch tiên hiệp phổ biến là "Hằng Cổ" nghĩa "từ xưa đến nay/vĩnh viễn", không dịch âm Hán Việt cứng "Tuyên Cổ" vì kém tự nhiên hơn)
+
+**Xác nhận không cần sửa client**: cả 2 chuỗi đều không tồn tại trong `resource/config/config.json`/`config1/*.json` phía client - do server chèn thẳng chuỗi vào nội dung chat/tip gửi qua mạng, client chỉ hiển thị nguyên văn.
+
+**Đồng bộ s1/s99**: cả 2 file cấu hình (`kuangyuan.config`, `scripttips.txt`) tồn tại độc lập ở `server/bin/s1` và `server/bin/s99`, nội dung giống hệt nhau trước khi sửa (`diff` xác nhận) - áp dụng đúng 4+1 thay đổi cho cả 2 bản, `diff` lại xác nhận vẫn giống hệt nhau sau khi sửa.
+
+**Kiểm thử**: `luac5.3 -p` xác nhận cú pháp Lua hợp lệ cho cả 4 file đã sửa (2 config + 2 language file, s1 và s99).
+
+**Không cần cache-bust/deploy client** - đây là dữ liệu cấu hình SERVER thuần tuý (không phải file JS/exml client), có hiệu lực ngay khi server load lại, không liên quan `manifest.json`.
+
+**Chưa kiểm chứng trên môi trường thật** - cần khởi động lại server (hoặc chờ hot-reload nếu có) để nạp lại 2 file cấu hình, sau đó người dùng xác nhận cả 2 thông báo hiển thị đúng tiếng Việt.

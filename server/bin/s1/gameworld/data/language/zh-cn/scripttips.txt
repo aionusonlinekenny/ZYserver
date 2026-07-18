@@ -2490,7 +2490,7 @@ ScriptTips =
 
 	ggw005 = "开服时间6天后开启",
 	ggw006 = "角色转数不足，无法参与活动",
-	ggw007 = "今天次数已用完，请明天再参加",
+	ggw007 = "Hôm nay số lần đã dùng hết, vui lòng tham gia lại vào ngày mai",
 	ggw008 = "找不到当前转数的副本ID",
 
 	tianti001 = "没有匹配到对手",
