@@ -5451,3 +5451,21 @@ Người dùng muốn build 1 app iOS để load client game này (thay vì mở
 **Kiểm thử**: không có trình biên dịch Swift/Xcode trong môi trường này nên KHÔNG build-test được - chỉ rà soát thủ công cú pháp Swift (API chuẩn `UIViewRepresentable`/`WKNavigationDelegate`/`UIApplicationDelegateAdaptor`, không dùng API lạ) và xác nhận `Info-additions.plist` là XML hợp lệ qua parser.
 
 **Chưa kiểm chứng thực tế** - cần người dùng tự build trên Xcode theo README và xác nhận: (1) app mở đúng màn đăng nhập/đăng ký, (2) đăng nhập/chơi được bình thường như trên Safari, (3) màn hình không tự tắt khi không thao tác.
+
+## 198. Viết sẵn app Android wrapper (WebView) song song với iOS - `android-app/` (2026-07-19)
+
+Người dùng muốn build song song bản Android bằng Android Studio, cùng cách tiếp cận với `ios-app/` (mục 197).
+
+**Kiểm tra khả năng tự build trong phiên này**: môi trường có sẵn Java 21 + Gradle 8.14.3 nhưng KHÔNG có Android SDK (`ANDROID_HOME` rỗng, không tìm thấy thư mục SDK nào) - cài đặt SDK đầy đủ (platform-tools, build-tools, chấp nhận license) khá nặng và không cần thiết vì người dùng đã có sẵn Android Studio - viết sẵn mã nguồn Kotlin theo đúng mô hình đã làm với iOS, không cố build APK thật trong phiên.
+
+**Kiến trúc**: giống hệt tinh thần `ios-app/` - 1 `WebView` duy nhất trỏ vào `http://71.31.97.241/`, để nguyên luồng đăng nhập/đăng ký (`reg/`) chạy qua web, không viết lại bằng Kotlin.
+
+**Các file đã tạo** (thư mục `android-app/`):
+- `MainActivity.kt` - dùng View system cổ điển (không phải Jetpack Compose, để đơn giản/ít phụ thuộc phiên bản hơn) - bật `FLAG_KEEP_SCREEN_ON` (tương đương `isIdleTimerDisabled` bên iOS, cũng là giải pháp native đáng tin cậy hơn hẳn Wake Lock API/video câm ở mục 193/196), bật `WindowInsetsControllerCompat` ẩn thanh trạng thái/điều hướng, `WebViewClient` xử lý loading/error + nút "Thử lại", nút Back của Android lùi lại lịch sử trong `WebView` thay vì thoát app ngay (`onBackPressedDispatcher.addCallback`).
+- `activity_main.xml` - layout: `WebView` + `ProgressBar` + khung lỗi có nút thử lại, nền đen.
+- `manifest-additions.xml` - ghi chú 3 dòng cần THÊM vào `AndroidManifest.xml` do Android Studio tự sinh (không thay cả file, tránh mất theme/cấu hình mặc định): quyền `INTERNET`, `android:usesCleartextTraffic="true"` (BẮT BUỘC vì server `http://`, tương đương `NSAllowsArbitraryLoads` bên iOS), `android:screenOrientation="portrait"`.
+- `README.md` - hướng dẫn tạo project ("Empty Views Activity", KHÔNG chọn template Compose), package name gợi ý khớp với dòng `package` sẵn có trong `MainActivity.kt`, cách build/cài qua USB hoặc xuất file APK cài thủ công (Android không giới hạn 7 ngày như sideload iOS), kèm mục "nếu Gradle báo lỗi thiếu thư viện" (gợi ý thêm `activity-ktx`/`core-ktx`) vì không build-test thật được.
+
+**Kiểm thử**: không có Android SDK nên KHÔNG build-test được - chỉ rà soát thủ công cú pháp Kotlin (đếm ngoặc cân bằng, API chuẩn AndroidX không dùng hàm lạ) và xác nhận `activity_main.xml` là XML hợp lệ qua parser.
+
+**Chưa kiểm chứng thực tế** - cần người dùng tự build trên Android Studio theo README và xác nhận: (1) app mở đúng màn đăng nhập/đăng ký, (2) chơi được bình thường, (3) màn hình không tự tắt, (4) nút Back hoạt động đúng (lùi trang trước khi thoát app).

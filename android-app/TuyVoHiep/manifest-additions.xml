@@ -1,0 +1,22 @@
+<!--
+Android Studio đã tự sinh sẵn AndroidManifest.xml khi tạo project - KHÔNG
+cần thay cả file, chỉ cần thêm các thuộc tính/dòng dưới đây vào đúng vị trí
+tương ứng trong file có sẵn của bạn:
+
+1) Thêm dòng permission này ngay dưới thẻ <manifest ...> mở đầu (phía trên
+   thẻ <application>):
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+2) Trong thẻ <application ...> đã có sẵn, thêm thuộc tính:
+
+    android:usesCleartextTraffic="true"
+
+   (BẮT BUỘC - vì server chạy http:// chưa có SSL, thiếu dòng này Android sẽ
+   chặn hết kết nối mạng của app, tương đương NSAllowsArbitraryLoads bên iOS)
+
+3) Trong thẻ <activity android:name=".MainActivity" ...> đã có sẵn, thêm
+   thuộc tính khoá xoay màn hình dọc:
+
+    android:screenOrientation="portrait"
+-->
