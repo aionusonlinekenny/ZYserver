@@ -5432,3 +5432,22 @@ Người dùng báo Screen Wake Lock (mục 193) không ngăn được iPhone t�
 **Không cần cache-bust** - `index.php`/`nosleep.mp4` không nằm trong `manifest.json`, không dùng cơ chế hash/query-version, tải lại trang là thấy thay đổi ngay.
 
 **Chưa kiểm chứng trên iPhone thật** - cần người dùng xác nhận sau khi cập nhật, để máy không thao tác một lúc lâu (vượt quá thời gian Auto-Lock mặc định của iOS) mà màn hình không tự tắt/game không bị rớt kết nối. Về lâu dài khuyến nghị chuyển site sang https:// để Cách 1 (Wake Lock API, đáng tin cậy hơn) hoạt động được, video câm chỉ là giải pháp tình thế.
+
+## 197. Viết sẵn app iOS wrapper (WKWebView) cho client web - `ios-app/` (2026-07-19)
+
+Người dùng muốn build 1 app iOS để load client game này (thay vì mở qua Safari), có máy Mac để tự build, và muốn app có màn hình đăng nhập/đăng ký dẫn qua `reg/` mỗi lần mở (không hardcode sẵn 1 tài khoản).
+
+**Giới hạn môi trường**: phiên làm việc này chạy trên Linux từ xa, không có macOS/Xcode nên không thể tự biên dịch ra `.ipa` hay cài trực tiếp lên iPhone - việc build/cài đặt bắt buộc phải làm trên máy Mac có Xcode (yêu cầu của Apple). Đã viết sẵn toàn bộ mã nguồn Swift + hướng dẫn từng bước để người dùng tự tạo project trong Xcode và dán vào.
+
+**Kiến trúc**: app chỉ là 1 màn hình `WKWebView` trỏ thẳng vào `http://71.31.97.241/` (gốc site) - trang gốc tự động chuyển hướng tới `reg/` (màn đăng nhập/đăng ký) khi chưa có `uid`/`sign` trong URL (logic có sẵn trong `index.php`), sau khi đăng nhập/đăng ký thành công `reg/server.php` tự chuyển tiếp vào game - giữ nguyên 100% luồng web hiện có, không viết lại bằng Swift, tránh rủi ro không đồng bộ khi backend đổi logic đăng nhập sau này.
+
+**Các file đã tạo** (thư mục `ios-app/`):
+- `TuyVoHiepApp.swift` - entry point, dùng `AppDelegate.applicationDidBecomeActive` bật `UIApplication.isIdleTimerDisabled=true` - giải pháp NATIVE cho vấn đề tắt màn hình (mục 193/196), đáng tin cậy hơn hẳn Wake Lock API/video câm phía web vì không phụ thuộc secure context hay autoplay policy.
+- `ContentView.swift` - khung UI: nền đen, spinner lúc tải, nút "Thử lại" khi mất kết nối.
+- `GameWebView.swift` - `UIViewRepresentable` bọc `WKWebView`, tắt bounce/scroll của WebView (game tự lo cuộn nội dung của nó qua canvas Egret), tắt cử chỉ vuốt-back (tránh vuốt nhầm thoát trang), bật `allowsInlineMediaPlayback`+`mediaTypesRequiringUserActionForPlayback=[]` (phòng khi web vẫn còn dùng `nosleep.mp4`).
+- `Info-additions.plist` - snippet các key cần thêm vào Info.plist qua Xcode: `NSAllowsArbitraryLoads=true` (BẮT BUỘC vì server chạy `http://` không phải `https://`, thiếu key này app sẽ không tải được trang), khoá xoay màn hình dọc (Portrait, khớp `data-content-width="640" data-content-height="1136"` trong `index.php`), ẩn thanh trạng thái.
+- `README.md` - hướng dẫn từng bước: tạo project Xcode (SwiftUI/Swift) → copy 3 file `.swift` vào → thêm Info.plist keys → build & sideload lên iPhone bằng Apple ID cá nhân (miễn phí, cần mở lại chữ ký mỗi 7 ngày) hoặc Apple Developer trả phí; nêu rõ giới hạn: hướng WebView-wrapper này không phù hợp để phát hành chính thức lên App Store (Apple thường từ chối app "chỉ là WebView" không có giá trị gia tăng), chỉ phù hợp cài nội bộ/sideload.
+
+**Kiểm thử**: không có trình biên dịch Swift/Xcode trong môi trường này nên KHÔNG build-test được - chỉ rà soát thủ công cú pháp Swift (API chuẩn `UIViewRepresentable`/`WKNavigationDelegate`/`UIApplicationDelegateAdaptor`, không dùng API lạ) và xác nhận `Info-additions.plist` là XML hợp lệ qua parser.
+
+**Chưa kiểm chứng thực tế** - cần người dùng tự build trên Xcode theo README và xác nhận: (1) app mở đúng màn đăng nhập/đăng ký, (2) đăng nhập/chơi được bình thường như trên Safari, (3) màn hình không tự tắt khi không thao tác.

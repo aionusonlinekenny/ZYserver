@@ -1,0 +1,33 @@
+<!--
+Dán các key này vào Info tab của target trong Xcode (hoặc mở Info.plist dưới
+dạng Source Code và chèn vào bên trong thẻ <dict> gốc).
+
+- NSAppTransportSecurity/NSAllowsArbitraryLoads: bắt buộc phải có vì server
+  đang chạy http:// (không có https), iOS mặc định chặn hết kết nối HTTP
+  thuần trong app native.
+- UISupportedInterfaceOrientations: khoá dọc (Portrait) - client khai báo
+  data-content-width="640" data-content-height="1136" (tỉ lệ dọc) trong
+  index.php.
+- UIStatusBarHidden / UIViewControllerBasedStatusBarAppearance: ẩn thanh
+  trạng thái để game chiếm toàn màn hình, khớp với
+  apple-mobile-web-app-capable đã khai báo sẵn trên web.
+-->
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+<key>UISupportedInterfaceOrientations</key>
+<array>
+    <string>UIInterfaceOrientationPortrait</string>
+</array>
+<key>UISupportedInterfaceOrientations~ipad</key>
+<array>
+    <string>UIInterfaceOrientationPortrait</string>
+</array>
+<key>UIStatusBarHidden</key>
+<true/>
+<key>UIViewControllerBasedStatusBarAppearance</key>
+<false/>
+<key>UIRequiresFullScreen</key>
+<true/>
