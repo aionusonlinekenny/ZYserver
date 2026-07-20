@@ -5412,3 +5412,23 @@ Người dùng gửi 2 ảnh: (1) màn "Phó Bản" > "Thủ Hộ Thần Kiếm"
 **Không cần cache-bust/deploy client** - đây là dữ liệu cấu hình SERVER thuần tuý (không phải file JS/exml client), có hiệu lực ngay khi server load lại, không liên quan `manifest.json`.
 
 **Chưa kiểm chứng trên môi trường thật** - cần khởi động lại server (hoặc chờ hot-reload nếu có) để nạp lại 2 file cấu hình, sau đó người dùng xác nhận cả 2 thông báo hiển thị đúng tiếng Việt.
+
+## 196. Screen Wake Lock (mục 193) không có tác dụng - nguyên nhân site chạy http:// không phải https:// + thêm phương án dự phòng video câm (2026-07-19)
+
+Người dùng báo Screen Wake Lock (mục 193) không ngăn được iPhone tự tắt màn hình, dù đã thêm vào `index.php`.
+
+**Nguyên nhân gốc**: `navigator.wakeLock.request()` (Screen Wake Lock API) theo chuẩn W3C CHỈ hoạt động trong "secure context" (`https://` hoặc `localhost`). Toàn bộ session này (xác nhận qua thanh địa chỉ mọi ảnh chụp màn hình gửi lên) đều hiện **"Not Secure — 71.31.97.241"** - trang chạy `http://` thuần, không phải `https://`. Trên iOS Safari, gọi `.request('screen')` trong ngữ cảnh không an toàn sẽ REJECT NGAY LẬP TỨC (thường là `NotAllowedError`) - code cũ ở mục 193 có `.catch(function(){})` bắt lỗi im lặng, không log gì, nên lỗi này hoàn toàn vô hình, tưởng như đã chạy nhưng thực chất chưa từng xin khoá thành công.
+
+**Giải pháp lâu dài (không làm trong lượt này)**: chuyển toàn bộ site sang `https://` (cần chứng chỉ SSL cho domain/IP, cấu hình lại nginx/phpstudy, và có thể phát sinh vấn đề mixed-content với kết nối socket game) - việc này ngoài phạm vi sửa code đơn thuần, cần hạ tầng.
+
+**Giải pháp bổ sung ngay (hoạt động trên cả http://)**: thêm "video câm" (`nosleep.mp4`) phát nền, lặp vô hạn, gần như vô hình (`opacity:0.01`, `1x1px`, `z-index:-1`) - mẹo kinh điển cho Safari iOS: khi có video đang phát (dù câm/gần như vô hình), hệ điều hành coi trang đang phát media nên tạm hoãn Auto-Lock, KHÔNG phụ thuộc secure context nên hoạt động bình thường trên `http://`.
+
+**Tạo file video**: môi trường không có sẵn `ffmpeg`; cài `imageio-ffmpeg` qua `pip` (tải kèm binary ffmpeg tĩnh) để tạo `nosleep.mp4` - video H.264 baseline profile, khung hình 2x2px, 1 giây, không âm thanh, `movflags +faststart` (phát ngay không cần tải hết) - dung lượng ~1.4KB, đặt tại `resource` root: `phpStudy/PHPTutorial/WWW/nosleep.mp4` (cạnh `index.php`, load qua đường dẫn tương đối `./nosleep.mp4`).
+
+**Cách nối vào code**: giữ nguyên Wake Lock API (mục 193) làm "Cách 1" (phòng khi site chuyển sang https sau này, tự động hoạt động không cần sửa lại), thêm hàm `startNoSleepVideo()` làm "Cách 2" - tạo `<video>` ẩn, `muted+loop+playsinline`, gọi `.play()` ngay khi tạo và thử lại mỗi khi có chạm/click/tab quay lại foreground (phòng trường hợp trình duyệt tạm dừng video do chính sách autoplay).
+
+**Kiểm thử**: `php -l` sạch; tách riêng khối `<script>` (bỏ dòng PHP echo) chạy `node -c` xác nhận JS hợp lệ; xác nhận `nosleep.mp4` là file MP4 hợp lệ qua `ffmpeg -i` (in đúng thời lượng/codec, không lỗi decode).
+
+**Không cần cache-bust** - `index.php`/`nosleep.mp4` không nằm trong `manifest.json`, không dùng cơ chế hash/query-version, tải lại trang là thấy thay đổi ngay.
+
+**Chưa kiểm chứng trên iPhone thật** - cần người dùng xác nhận sau khi cập nhật, để máy không thao tác một lúc lâu (vượt quá thời gian Auto-Lock mặc định của iOS) mà màn hình không tự tắt/game không bị rớt kết nối. Về lâu dài khuyến nghị chuyển site sang https:// để Cách 1 (Wake Lock API, đáng tin cậy hơn) hoạt động được, video câm chỉ là giải pháp tình thế.

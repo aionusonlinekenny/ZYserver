@@ -103,7 +103,10 @@
 
 <script>
     (function () {
-        // Giữ màn hình không tự tắt khi treo game (Screen Wake Lock API - Safari iOS 16.4+)
+        // Giữ màn hình không tự tắt khi treo game
+        // Cách 1: Screen Wake Lock API - CHỈ hoạt động trên "secure context" (https/localhost).
+        // Trang này đang chạy http:// (xem "Not Secure" trên thanh địa chỉ) nên API này sẽ
+        // luôn thất bại âm thầm trên iOS Safari - giữ lại phòng khi site chuyển sang https.
         var wakeLock = null;
         function requestWakeLock() {
             if (!('wakeLock' in navigator)) return;
@@ -113,7 +116,7 @@
                     wakeLock = null;
                 });
             }).catch(function () {
-                // Thất bại (thường do chưa có thao tác chạm) - sẽ thử lại ở lần chạm/click tiếp theo
+                // Thất bại (không có secure context, hoặc chưa có thao tác chạm) - thử lại sau
             });
         }
         document.addEventListener('visibilitychange', function () {
@@ -122,6 +125,40 @@
         document.addEventListener('touchstart', requestWakeLock);
         document.addEventListener('click', requestWakeLock);
         requestWakeLock();
+
+        // Cách 2 (dự phòng cho http://): phát 1 video câm, lặp vô hạn, gần như vô hình -
+        // mẹo kinh điển để Safari iOS coi trang đang "phát media" nên không tự khoá màn hình,
+        // hoạt động không cần secure context.
+        function startNoSleepVideo() {
+            if (document.getElementById('noSleepVideo')) return;
+            var v = document.createElement('video');
+            v.id = 'noSleepVideo';
+            v.src = './nosleep.mp4';
+            v.setAttribute('playsinline', '');
+            v.setAttribute('webkit-playsinline', '');
+            v.muted = true;
+            v.loop = true;
+            v.style.position = 'fixed';
+            v.style.top = '0';
+            v.style.left = '0';
+            v.style.width = '1px';
+            v.style.height = '1px';
+            v.style.opacity = '0.01';
+            v.style.pointerEvents = 'none';
+            v.style.zIndex = '-1';
+            document.body.appendChild(v);
+            var tryPlay = function () {
+                v.play().catch(function () {});
+            };
+            tryPlay();
+            document.addEventListener('touchstart', tryPlay);
+            document.addEventListener('click', tryPlay);
+            document.addEventListener('visibilitychange', function () {
+                if (document.visibilityState === 'visible') tryPlay();
+            });
+        }
+        if (document.body) startNoSleepVideo();
+        else document.addEventListener('DOMContentLoaded', startNoSleepVideo);
     })();
 
     var ARGS = "<?php echo $args?>";
