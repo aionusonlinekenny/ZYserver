@@ -5469,3 +5469,15 @@ Người dùng muốn build song song bản Android bằng Android Studio, cùng
 **Kiểm thử**: không có Android SDK nên KHÔNG build-test được - chỉ rà soát thủ công cú pháp Kotlin (đếm ngoặc cân bằng, API chuẩn AndroidX không dùng hàm lạ) và xác nhận `activity_main.xml` là XML hợp lệ qua parser.
 
 **Chưa kiểm chứng thực tế** - cần người dùng tự build trên Android Studio theo README và xác nhận: (1) app mở đúng màn đăng nhập/đăng ký, (2) chơi được bình thường, (3) màn hình không tự tắt, (4) nút Back hoạt động đúng (lùi trang trước khi thoát app).
+
+## 199. Ghi nhận quá trình build thực tế app Android (mục 198) trên máy người dùng - đang tạm gác lại (2026-07-19)
+
+Người dùng bắt tay build thử app Android (project đặt tên "SayMong", package `com.tuyvohiep.client`) trên Android Studio theo hướng dẫn mục 198. Ghi lại các lỗi gặp phải và cách xử lý (KHÔNG sửa code trong `android-app/` - lỗi phát sinh do bước thao tác thủ công trên máy người dùng, code nguồn cung cấp sẵn không có lỗi):
+
+**Lỗi 1 - `Unresolved reference 'webView'/'progressBar'/'errorLayout'/'retryButton'`** khi build (`compileDebugKotlin` FAILED): nguyên nhân là người dùng chưa thay nội dung `app/src/main/res/layout/activity_main.xml` bằng file mẫu cung cấp - vẫn còn layout mặc định Android Studio tự sinh (chỉ có 1 `TextView "Hello World!"`, xác nhận qua ảnh chụp khung "Component Tree"). Gốc rễ của việc thao tác nhầm: người dùng mở file ở chế độ xem **Design** (kéo-thả trực quan) thay vì **Code** (xem mã nguồn XML thuần) - dán XML vào chế độ Design không có tác dụng. Hướng dẫn: bấm nút "Code" (`</>`) ở góc khung soạn thảo trước khi dán đè nội dung XML. Sau khi sửa đúng, build qua được bước biên dịch Kotlin.
+
+**Lỗi 2 - `net::ERR_CLEARTEXT_NOT_PERMITTED`** khi mở app (WebView không tải được `http://71.31.97.241/`): đúng như đã lường trước trong mục 198 (`manifest-additions.xml`) - người dùng chưa thêm `android:usesCleartextTraffic="true"` vào `AndroidManifest.xml`. Đã hướng dẫn lại cụ thể 3 chỗ cần thêm (quyền `INTERNET`, `usesCleartextTraffic` trong thẻ `<application>`, `screenOrientation="portrait"` trong thẻ `<activity>`) - CHƯA có xác nhận đã hết lỗi từ người dùng, tạm dừng ở bước này theo yêu cầu người dùng ("Tạm gác lại phần này").
+
+**Câu hỏi phụ đã trả lời (thông tin, không phải sửa lỗi)**: hướng dẫn đổi icon app Android bằng công cụ có sẵn của Android Studio - chuột phải `res` → **New → Image Asset** → chọn "Launcher Icons (Adaptive and Legacy)" → chọn ảnh nguồn → Next → Finish; công cụ tự ghi đè đúng các thư mục `mipmap-*` có sẵn, không cần sửa `AndroidManifest.xml` (đã trỏ sẵn `@mipmap/ic_launcher`).
+
+**Trạng thái hiện tại**: build Kotlin đã qua, còn vướng lỗi cleartext traffic (đã hướng dẫn cách sửa, chưa xác nhận kết quả) - người dùng chủ động tạm gác việc build app iOS/Android lại, chưa rõ thời điểm quay lại tiếp tục.
