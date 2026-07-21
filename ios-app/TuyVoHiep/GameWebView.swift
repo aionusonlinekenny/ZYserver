@@ -24,6 +24,10 @@ struct GameWebView: UIViewRepresentable {
         webView.navigationDelegate = context.coordinator
         webView.scrollView.bounces = false
         webView.scrollView.isScrollEnabled = false
+        // Mặc định WKWebView tự chừa khoảng trống theo vùng an toàn (tai thỏ/
+        // thanh cảm ứng) dù view cha đã .ignoresSafeArea() - tắt hẳn để nội
+        // dung trang phủ kín toàn màn hình, không còn viền đen trên/dưới.
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
         webView.allowsBackForwardNavigationGestures = false
         webView.isOpaque = false
         webView.backgroundColor = .black

@@ -5511,3 +5511,17 @@ Người dùng xác nhận vấn đề tự tắt màn hình (mục 200) đã �
 **Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
 
 **Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` (chỉ file này thay đổi so với lần trước, `ContentView.swift`/`TuyVoHiepApp.swift` giữ nguyên như đã dán ở mục 200) vào Xcode, build lại, xác nhận: (1) mở app sau khi server cập nhật code thấy đúng bản mới nhất ngay lập tức, (2) tài khoản đăng nhập vẫn được nhớ như trước.
+
+## 202. App iOS: viền đen trên/dưới màn đăng nhập lúc mới mở app (2026-07-19)
+
+Người dùng gửi ảnh: lúc mới mở app, nền màn đăng nhập/đăng ký bị hụt - lộ ra khoảng đen ở trên VÀ dưới màn hình, ảnh nền không phủ kín toàn bộ dù đã set `.ignoresSafeArea()` cho `GameWebView` trong `ContentView.swift`.
+
+**Nguyên nhân**: `WKWebView` có 1 `UIScrollView` bên trong quản lý việc cuộn nội dung trang - mặc định (từ iOS 11 trở đi) scroll view này TỰ ĐỘNG áp `contentInset` theo vùng an toàn của thiết bị (safe area - vùng tai thỏ/Dynamic Island phía trên, thanh cảm ứng phía dưới), HOÀN TOÀN ĐỘC LẬP với việc view cha (`GameWebView`/`ContentView`) đã `.ignoresSafeArea()` hay chưa - `.ignoresSafeArea()` chỉ quyết định KÍCH THƯỚC/VỊ TRÍ của toàn bộ `WKWebView` trên màn hình (đã đúng, phủ kín full-screen), nhưng không tắt được hành vi tự chèn inset của `UIScrollView` BÊN TRONG nó. Kết quả: nội dung trang web (ảnh nền `reg/user/img/bg_page.jpg`) bị đẩy vào trong so với khung `WKWebView` một khoảng đúng bằng chiều cao vùng an toàn, để lộ màu nền đen (`webView.backgroundColor = .black`) ở phần bị chừa ra.
+
+**Cách sửa**: `GameWebView.swift`, `makeUIView` - thêm `webView.scrollView.contentInsetAdjustmentBehavior = .never` ngay sau các dòng cấu hình `scrollView` khác - tắt hẳn việc tự chèn inset theo safe area, để nội dung trang web phủ kín đúng toàn bộ khung hình chữ nhật của `WKWebView` (đã full-screen sẵn).
+
+**Kiểm thử**: không build-test được (môi trường không có Xcode) - đếm ngoặc `{}`/`()` cân bằng qua script Python; `git fetch` + đối chiếu `HEAD` với remote trước khi sửa để đảm bảo bắt đầu từ đúng trạng thái đã push (rút kinh nghiệm sự cố mục 200/201).
+
+**Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
+
+**Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` mới vào Xcode, build lại, mở app xác nhận không còn viền đen ở trên/dưới màn đăng nhập lẫn trong lúc chơi game.
