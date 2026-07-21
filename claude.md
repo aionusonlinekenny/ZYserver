@@ -5541,3 +5541,21 @@ Người dùng gửi ảnh xác nhận: sau mục 202, viền đen TRÊN màn đ
 **Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
 
 **Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` mới (CHỈ file này thay đổi, các file `.swift` khác giữ nguyên) vào Xcode, build lại, xác nhận: (1) màn đăng nhập/đăng ký phủ kín ảnh nền toàn màn hình, không còn khoảng đen ở trên lẫn dưới, (2) trong game, thanh thông tin tiền/vàng phía trên hiển thị đầy đủ, không bị tai thỏ/Dynamic Island che.
+
+## 204. App iOS: hoàn tác dynamic contentInsetAdjustmentBehavior, đổi nền đen sang trắng (2026-07-21)
+
+Người dùng gửi ảnh xác nhận: sau mục 203, màn đăng nhập (ảnh 1) đã đẹp - hết viền đen. Nhưng ảnh 2 (đang đánh boss trong game) lộ ra vấn đề mới: dải đen cao ~186px trải đều hết chiều ngang phía trên màn hình - đo bằng script PIL/numpy xác nhận đây chính là khoảng `contentInset.top` mà `.automatic` chèn vào cho trang game (đúng như thiết kế mục 203), KHÔNG phải bị tai thỏ vật lý đè lên nội dung.
+
+**Lý do gốc**: kiểm tra `index.php` xác nhận thẻ `<meta name="viewport">` KHÔNG có `viewport-fit=cover` - nghĩa là trang web hoàn toàn không có khái niệm "an toàn tai thỏ" (safe area) ở tầng CSS, không dùng `env(safe-area-inset-*)` gì cả. Vì vậy bật `.automatic` chỉ tạo ra một khoảng trống lãng phí phía trên (nơi WKWebView tự chừa chỗ) mà trang không hề tận dụng để né tai thỏ - lợi bất cập hại so với `.never`.
+
+**Quyết định của người dùng** (sau khi xem lại 2 ảnh và giải thích của tôi): `.never` áp dụng chung cho MỌI trang (kể cả trang chơi game) vốn đã ổn từ trước - chỉ cần xử lý riêng phần nền ảnh trang đăng nhập (đã làm ở mục 203, giữ nguyên) là đủ. Đồng thời yêu cầu đổi màu nền app từ đen sang TRẮNG để đỡ "xấu" khi có khoảng hở lộ ra bất kỳ đâu.
+
+**Cách sửa**:
+- `GameWebView.swift`: bỏ hẳn cơ chế set `contentInsetAdjustmentBehavior` động theo từng trang (xoá hàm `updateSafeAreaBehavior`, xoá `webView(_:didCommit:)`) - quay lại set MỘT LẦN `webView.scrollView.contentInsetAdjustmentBehavior = .never` ngay trong `makeUIView`, áp dụng chung cho mọi trang như mục 202 ban đầu. Đổi `webView.backgroundColor`/`webView.scrollView.backgroundColor` từ `.black` sang `.white`.
+- `ContentView.swift`: đổi `Color.black.ignoresSafeArea()` (nền phía sau `ZStack`) sang `Color.white.ignoresSafeArea()`; đồng thời đổi màu chữ/icon của `ProgressView` (tint `.white`→`.gray`) và khối lỗi "Không thể kết nối tới máy chủ" (chữ + nút `.white`→`.black`, nền nút `Color.white.opacity(0.15)`→`Color.black.opacity(0.1)`) để vẫn nhìn rõ trên nền trắng mới - không đổi thì chữ/icon trắng trên nền trắng sẽ vô hình.
+
+**Kiểm thử**: không build-test được (môi trường không có Xcode) - đếm ngoặc `{}`/`()` cân bằng qua script Python (GameWebView.swift 15/15, 39/39; ContentView.swift 11/11, 24/24); đo pixel ảnh chụp thật để xác nhận chính xác dải đen 186px là do `.automatic` chèn safe-area chứ không phải bị tai thỏ vật lý che, trước khi quyết định hướng sửa theo đúng yêu cầu người dùng.
+
+**Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
+
+**Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` VÀ `ContentView.swift` (cả 2 file đều đổi) vào Xcode, build lại, xác nhận: (1) màn đăng nhập vẫn đẹp như mục 203, (2) trong game không còn dải đen/trắng lãng phí phía trên, thanh tiền/vàng hiển thị bình thường như thời điểm gốc, (3) màn hình loading và màn báo lỗi kết nối vẫn đọc được chữ rõ ràng trên nền trắng mới.

@@ -49,8 +49,15 @@ struct GameWebView: UIViewRepresentable {
         webView.scrollView.isScrollEnabled = false
         webView.allowsBackForwardNavigationGestures = false
         webView.isOpaque = false
-        webView.backgroundColor = .black
-        webView.scrollView.backgroundColor = .black
+        webView.backgroundColor = .white
+        webView.scrollView.backgroundColor = .white
+
+        // Tắt hẳn việc WKWebView tự chèn khoảng trống theo vùng an toàn
+        // (safe area) - áp dụng chung cho mọi trang (kể cả màn chơi game),
+        // vì trang không hề khai báo viewport-fit=cover nên không có khái
+        // niệm an toàn tai thỏ ở tầng CSS - để tự động (.automatic) chỉ tạo
+        // ra khoảng trống lãng phí phía trên mà không giải quyết được gì.
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
 
         // Xoá cache tài nguyên (JS/CSS/hình ảnh...) mỗi lần mở app để luôn tải
         // bản mới nhất từ server - KHÔNG xoá cookie/localStorage nên tài khoản
@@ -80,22 +87,7 @@ struct GameWebView: UIViewRepresentable {
             self.parent = parent
         }
 
-        // Màn đăng nhập/đăng ký (reg/) bỏ qua vùng an toàn để ảnh nền phủ kín
-        // toàn màn hình (không có nội dung quan trọng nào bị tai thỏ che ở
-        // đây). Màn chơi game (index.php) PHẢI tôn trọng vùng an toàn để
-        // thanh thông tin (lực chiến/tiền/vàng) phía trên không bị tai thỏ
-        // che mất - đây là hành vi mặc định vốn hoạt động đúng trước đây.
-        private func updateSafeAreaBehavior(for webView: WKWebView) {
-            let path = webView.url?.path ?? ""
-            webView.scrollView.contentInsetAdjustmentBehavior = path.contains("/reg") ? .never : .automatic
-        }
-
-        func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-            updateSafeAreaBehavior(for: webView)
-        }
-
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            updateSafeAreaBehavior(for: webView)
             parent.isLoading = false
         }
 

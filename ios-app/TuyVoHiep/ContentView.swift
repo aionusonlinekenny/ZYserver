@@ -9,7 +9,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
+            Color.white.ignoresSafeArea()
 
             GameWebView(isLoading: $isLoading, loadFailed: $loadFailed)
                 .id(reloadToken)
@@ -17,14 +17,14 @@ struct ContentView: View {
 
             if isLoading && !loadFailed {
                 ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                    .progressViewStyle(CircularProgressViewStyle(tint: .gray))
                     .scaleEffect(1.5)
             }
 
             if loadFailed {
                 VStack(spacing: 16) {
                     Text("Không thể kết nối tới máy chủ")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                     Button("Thử lại") {
                         loadFailed = false
                         isLoading = true
@@ -32,8 +32,8 @@ struct ContentView: View {
                     }
                     .padding(.horizontal, 24)
                     .padding(.vertical, 10)
-                    .background(Color.white.opacity(0.15))
-                    .foregroundColor(.white)
+                    .background(Color.black.opacity(0.1))
+                    .foregroundColor(.black)
                     .cornerRadius(8)
                 }
             }
