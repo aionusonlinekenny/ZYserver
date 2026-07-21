@@ -5573,3 +5573,19 @@ Trạng thái `GameWebView.swift`/`ContentView.swift` sau khi hoàn tác: KHÔNG
 **Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
 
 **Chưa kiểm chứng thực tế** - đây là quay lại đúng bản mà người dùng đã từng thấy "ok hơn" trước đó (bản mục 201), cần dán lại `GameWebView.swift` và `ContentView.swift` vào Xcode, build lại để xác nhận đúng như mong đợi. Nếu vẫn còn khoảng đen ở màn đăng nhập/trong game, đây là hành vi mặc định của WKWebView vốn có từ trước khi có bất kỳ can thiệp `contentInsetAdjustmentBehavior` nào của tôi - cần người dùng mô tả rõ lại vấn đề cụ thể trước khi thử hướng sửa khác.
+
+## 206. App iOS: đổi nền app sang trắng, KHÔNG đụng lại contentInsetAdjustmentBehavior (2026-07-21)
+
+Người dùng xác nhận bản mục 205 (đúng trạng thái `728c9c1a`) ổn, giờ chỉ muốn thêm đúng 1 việc: đổi nền app từ đen sang trắng, không đả động gì tới xử lý safe-area/tai thỏ đã gây rắc rối ở mục 202-204.
+
+**Cách sửa**: CHỈ đổi màu, không thêm/bớt logic nào khác so với mục 205:
+- `GameWebView.swift`: `webView.backgroundColor`/`webView.scrollView.backgroundColor` từ `.black` → `.white`.
+- `ContentView.swift`: nền `ZStack` (`Color.black.ignoresSafeArea()` → `Color.white.ignoresSafeArea()`); đổi màu chữ/icon loading (`ProgressView` tint `.white`→`.gray`) và khối báo lỗi kết nối (chữ + nút `.white`→`.black`, nền nút `Color.white.opacity(0.15)`→`Color.black.opacity(0.1)`) để vẫn đọc được trên nền trắng mới - không đổi thì chữ/icon trắng sẽ vô hình trên nền trắng.
+
+Hoàn toàn không thêm lại `contentInsetAdjustmentBehavior`, không thêm `WKUserScript` CSS injection nào - giữ nguyên hành vi mặc định của WKWebView cho mọi trang như mục 205.
+
+**Kiểm thử**: không build-test được (môi trường không có Xcode) - đếm ngoặc `{}`/`()` cân bằng qua script Python (GameWebView.swift 10/10, 20/20; ContentView.swift 11/11, 24/24).
+
+**Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
+
+**Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` và `ContentView.swift` vào Xcode, build lại, xác nhận nền trắng hiển thị đúng ở cả màn đăng nhập lẫn trong game, chữ/icon loading và báo lỗi vẫn đọc rõ.

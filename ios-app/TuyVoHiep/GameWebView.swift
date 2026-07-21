@@ -26,8 +26,8 @@ struct GameWebView: UIViewRepresentable {
         webView.scrollView.isScrollEnabled = false
         webView.allowsBackForwardNavigationGestures = false
         webView.isOpaque = false
-        webView.backgroundColor = .black
-        webView.scrollView.backgroundColor = .black
+        webView.backgroundColor = .white
+        webView.scrollView.backgroundColor = .white
 
         // Xoá cache tài nguyên (JS/CSS/hình ảnh...) mỗi lần mở app để luôn tải
         // bản mới nhất từ server - KHÔNG xoá cookie/localStorage nên tài khoản
