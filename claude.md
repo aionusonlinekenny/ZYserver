@@ -5619,3 +5619,21 @@ Người dùng gửi ảnh màn "Con Đường U Minh" (dungeon Team Phó Bản,
 **Cache-bust**: `default.thm_b8a420ae.js` → `default.thm_1eadfe20.js`, `manifest.json?v=5a563d2f` → `?v=07edb213` trong `index.php` (`main.min.js` giữ nguyên, không đổi).
 
 **Chưa kiểm chứng thực tế** - mức nâng 30px thiết kế là ước lượng từ đo pixel trên ảnh gửi, cần người dùng xác nhận khung mục tiêu và khung chat không còn chồng lấn, đọc được đầy đủ tên quái lẫn tin nhắn hệ thống.
+
+## 209. Cụm dò máu boss (bossBloodGroup) đè lên khung "Con Đường U Minh" phía trên (2026-07-21)
+
+Người dùng xác nhận khung mục tiêu quái/boss (mục 208) đã hết chồng khung chat, nhưng gửi ảnh mới cho thấy vấn đề KHÁC: cụm "dò máu boss" (avatar + tên "Bạch Vô Thường(Cấp 100)" + thanh máu 99% + "X5") nằm ở góc trên-trái màn hình đang bị đè/chồng lên khung "Con Đường U Minh" + "Thời gian sự kiện còn lại :" + "Xem hướng dẫn" ở góc trên-phải - yêu cầu dời thanh máu xuống dưới thêm để 2 khung không đè nhau.
+
+**Xác định đúng thành phần**: khác với mục 208 (thuộc `teamFbFightSkin.exml`), cụm dò máu boss này thuộc MỘT SKIN KHÁC hoàn toàn - `resource/exml/worldbossUiSkin.exml` (class `SkinWorldBossUi`, controller `WorldBossesUiInfo`) - dò ra qua chuỗi text tĩnh khớp chính xác trong exml: `bossBloodNumLabel` (text mặc định `"X5"`), `nameTxt`, `lvTxt`, `bloodBar`/`bossBloodPercentageLabel`. Đây là UI "boss đang giao tranh" DÙNG CHUNG cho nhiều loại boss/dungeon khác nhau (`WorldBossesUiInfo` được `ViewMgr` mở cho `FB_TYPE_ALLHUMENBOSS`/`FB_TYPE_HOMEBOSS`/`FB_TYPE_GUIDEBOSS` và tương tự cho dungeon Team Phó Bản) - hiển thị ĐÈ LÊN các skin scene khác như `SkinTeamFbFight` (mục 208) như 2 lớp UI riêng biệt chồng nhau trên cùng màn hình, mỗi lớp tự định vị độc lập không biết về lớp kia, nên khi lớp `SkinTeamFbFight` có thêm khung đếm giờ sự kiện chiếm trọn góc trên-phải thì đè lên `bossBloodGroup` vốn định vị cố định gần đỉnh màn hình.
+
+**Đo pixel xác nhận mức chồng lấn**: dòng tên+máu boss (~y=290-330 trên ảnh gốc 1320px rộng) chồng thẳng lên dòng "Thời gian sự kiện còn lại :" (~y=270-340); khung "Con Đường U Minh" kéo dài tới "Xem hướng dẫn" ở tận y≈460 - cần dời cụm dò máu boss xuống quá mốc này.
+
+**Cách sửa**: tăng `y` của `bossBloodGroup` (nhóm chứa toàn bộ avatar/tên/thanh máu/nút "Phần thưởng") từ `20` lên `170` (thiết kế gốc, +150px) trong CẢ `worldbossUiSkin.exml` lẫn `js/default.thm_1eadfe20.js` đã biên dịch (xác nhận đúng vị trí sửa bằng cách dò theo cấu trúc `elementsContent` của `SkinWorldBossUi` khớp thứ tự y hệt exml: `attList_i, leftTimeGroup_i, bossBloodGroup_i, ...` trước khi sửa, tránh nhầm với các id trùng tên `bossBloodGroup` khác trong file JS lớn).
+
+**Rủi ro đã cân nhắc**: `WorldBossesUiInfo`/`SkinWorldBossUi` dùng chung cho nhiều loại boss/dungeon khác, dời `bossBloodGroup` xuống có thể ảnh hưởng bố cục ở các màn hình boss KHÁC không có khung đếm giờ sự kiện chồng lên (ví dụ World Boss thường) - chấp nhận rủi ro này vì mức dời (+150px thiết kế, tương đương dưới 1/3 chiều cao màn hình thiết kế 930px) nằm trong vùng nền game trống thông thường, cần người dùng xác nhận thêm ở các loại boss khác nếu phát hiện lệch.
+
+**Kiểm thử**: `node -c` sạch; `xml.etree.ElementTree` xác nhận exml hợp lệ; xác nhận thứ tự `elementsContent` của class `SkinWorldBossUi` trong JS khớp đúng với exml trước khi xác định đúng vị trí sửa.
+
+**Cache-bust**: `default.thm_1eadfe20.js` → `default.thm_79529cb6.js`, `manifest.json?v=07edb213` → `?v=75bea7ff` trong `index.php` (`main.min.js` giữ nguyên).
+
+**Chưa kiểm chứng thực tế** - mức dời +150px thiết kế là ước lượng từ đo pixel, cần người dùng xác nhận cụm dò máu boss không còn chồng lên khung sự kiện ở "Con Đường U Minh", đồng thời kiểm tra thêm các màn hình boss khác (World Boss, Gia Tộc Boss...) xem vị trí mới có còn hợp lý không vì đây là UI dùng chung.
