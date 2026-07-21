@@ -8,8 +8,8 @@
 		<ns1:TeamFbMembersItemRender id="member1" y="33" horizontalCenter="0" skinName="SkinTeamFbMember"/>
 		<ns1:TeamFbMembersItemRender id="member2" y="134" horizontalCenter="0" skinName="SkinTeamFbMember"/>
 	</e:Group>
-	<e:Image width="499" height="150" horizontalCenter="0" bottom="142" source="zsbg2" scale9Grid="4,5,86,13"/>
-	<e:Group id="teamFbTarget" anchorOffsetY="0" horizontalCenter="0" bottom="138">
+	<e:Image width="499" height="150" horizontalCenter="0" bottom="172" source="zsbg2" scale9Grid="4,5,86,13"/>
+	<e:Group id="teamFbTarget" anchorOffsetY="0" horizontalCenter="0" bottom="168">
 		<ns1:TeamFbMonsterItemRender id="target1" y="33" horizontalCenter="0" scaleX="0.8" scaleY="0.8" skinName="SkinTeamFbTarget"/>
 		<ns1:TeamFbMonsterItemRender id="target2" y="134" horizontalCenter="0" scaleX="0.8" scaleY="0.8" skinName="SkinTeamFbTarget"/>
 		<ns1:TeamFbMonsterItemRender id="boss" y="134" horizontalCenter="0" skinName="SkinTeamFbTarget"/>

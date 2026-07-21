@@ -5603,3 +5603,19 @@ Người dùng gửi ảnh chụp trong game (đang đánh quái, có thanh HUD 
 **Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
 
 **Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` và `ContentView.swift` vào Xcode, build lại, xác nhận: (1) màn đăng nhập vẫn nền trắng như mục 206, (2) sau khi đăng nhập vào game, nền chuyển đúng sang đen, không còn khoảng trắng lộ ra phía trên/dưới.
+
+## 208. Khung mục tiêu boss/quái (Team Phó Bản) chồng lên khung chat hệ thống (2026-07-21)
+
+Người dùng gửi ảnh màn "Con Đường U Minh" (dungeon Team Phó Bản, `SkinTeamFbFight`): khung 4 mục tiêu quái/boss đang đánh (`teamFbTarget`, 4 icon tròn + tên bên dưới, ví dụ "Sự Tử Tinh") đặt sát đáy màn hình, bị khung chat hệ thống ("[Tiên Minh] chào mừng...") đè lên, cắt mất nửa dưới của dòng tên quái - yêu cầu kéo khung mục tiêu lên cao hơn để 2 khung giáp mí, đọc được cả hai.
+
+**Xác định đúng file**: dò qua identifier `TeamFbMonsterItemRender` trong `main.min.js` → tìm ra `resource/exml/teamFbFightSkin.exml` (class `SkinTeamFbFight`, kích thước thiết kế gốc 600x948) - đúng màn hình chứa cả label đếm giờ sự kiện ("Thời gian sự kiện còn lại :", "Xem hướng dẫn") lẫn nhóm `teamFbTarget` (5 `TeamFbMonsterItemRender`: target1/target2/boss/target3/target4, `HorizontalLayout`) khớp chính xác với ảnh chụp.
+
+**Đo pixel xác nhận mức chồng lấn**: dòng tên quái (~y=2222-2252 trên ảnh gốc 1320px rộng) bị khung chat (bắt đầu ~y=2237) che khoảng nửa dưới - quy đổi theo tỷ lệ khung hình thiết kế (600px) → màn hình thật (~1320px, hệ số ~2.2), khoảng chồng lấn tương đương ~7-9px trong không gian thiết kế.
+
+**Cách sửa**: tăng `bottom` của cả nền `zsbg2` (Image nền phía sau khung mục tiêu) và nhóm `teamFbTarget` thêm 30px thiết kế (142→172, 138→168) - kéo cả khung lẫn nền lên cùng lúc, giữ nguyên vị trí tương đối giữa 2 phần tử. Sửa ở CẢ 2 nơi (bắt buộc theo đúng bài học mục 19-21/191): `resource/exml/teamFbFightSkin.exml` (nguồn) VÀ `js/default.thm_b8a420ae.js` (bản đã biên dịch, thực sự chạy runtime - xác nhận đúng vị trí sửa bằng cách khớp `t.bottom = 142;`/`t.bottom = 138;` liền kề nhau ở dòng 155148/155160, phân biệt với hơn chục chỗ trùng giá trị số ở các skin khác trong cùng file). Vì `bottom`/`horizontalCenter`/`id` đều là thuộc tính ĐÃ CÓ SẴN (không thêm id mới) nên không cần đụng `skinParts`.
+
+**Kiểm thử**: `node -c` sạch; `xml.etree.ElementTree` xác nhận exml hợp lệ; `grep` xác nhận sửa đúng 1 cặp `_Image3_i`/`teamFbTarget_i` duy nhất (dòng 155148/155160), không đụng các skin khác dùng chung giá trị `bottom=142`/`138`.
+
+**Cache-bust**: `default.thm_b8a420ae.js` → `default.thm_1eadfe20.js`, `manifest.json?v=5a563d2f` → `?v=07edb213` trong `index.php` (`main.min.js` giữ nguyên, không đổi).
+
+**Chưa kiểm chứng thực tế** - mức nâng 30px thiết kế là ước lượng từ đo pixel trên ảnh gửi, cần người dùng xác nhận khung mục tiêu và khung chat không còn chồng lấn, đọc được đầy đủ tên quái lẫn tin nhắn hệ thống.
