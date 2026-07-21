@@ -9,6 +9,7 @@ import WebKit
 struct GameWebView: UIViewRepresentable {
     @Binding var isLoading: Bool
     @Binding var loadFailed: Bool
+    @Binding var isRegPage: Bool
 
     // Đổi địa chỉ này nếu server đổi IP/domain sau này.
     private let entryURL = URL(string: "http://71.31.97.241/")!
@@ -57,7 +58,22 @@ struct GameWebView: UIViewRepresentable {
             self.parent = parent
         }
 
+        // Màn đăng nhập/đăng ký (reg/) nền trắng, vào trong game (index.php)
+        // nền đen - chỉ đổi màu nền, không đụng gì tới contentInsetAdjustmentBehavior.
+        private func updateBackgroundColor(for webView: WKWebView) {
+            let isReg = webView.url?.path.contains("/reg") ?? true
+            parent.isRegPage = isReg
+            let color: UIColor = isReg ? .white : .black
+            webView.backgroundColor = color
+            webView.scrollView.backgroundColor = color
+        }
+
+        func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+            updateBackgroundColor(for: webView)
+        }
+
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            updateBackgroundColor(for: webView)
             parent.isLoading = false
         }
 

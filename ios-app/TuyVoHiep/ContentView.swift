@@ -6,12 +6,14 @@ struct ContentView: View {
     @State private var loadFailed = false
     @State private var reloadToken = UUID()
     @State private var keepAwakeTimer: Timer?
+    // Trang đầu tiên luôn là màn đăng nhập/đăng ký (reg/) nên mặc định true.
+    @State private var isRegPage = true
 
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
+            (isRegPage ? Color.white : Color.black).ignoresSafeArea()
 
-            GameWebView(isLoading: $isLoading, loadFailed: $loadFailed)
+            GameWebView(isLoading: $isLoading, loadFailed: $loadFailed, isRegPage: $isRegPage)
                 .id(reloadToken)
                 .ignoresSafeArea()
 
@@ -24,7 +26,7 @@ struct ContentView: View {
             if loadFailed {
                 VStack(spacing: 16) {
                     Text("Không thể kết nối tới máy chủ")
-                        .foregroundColor(.black)
+                        .foregroundColor(isRegPage ? .black : .white)
                     Button("Thử lại") {
                         loadFailed = false
                         isLoading = true
@@ -32,8 +34,8 @@ struct ContentView: View {
                     }
                     .padding(.horizontal, 24)
                     .padding(.vertical, 10)
-                    .background(Color.black.opacity(0.1))
-                    .foregroundColor(.black)
+                    .background((isRegPage ? Color.black : Color.white).opacity(0.1))
+                    .foregroundColor(isRegPage ? .black : .white)
                     .cornerRadius(8)
                 }
             }

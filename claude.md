@@ -5589,3 +5589,17 @@ Hoàn toàn không thêm lại `contentInsetAdjustmentBehavior`, không thêm `W
 **Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
 
 **Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` và `ContentView.swift` vào Xcode, build lại, xác nhận nền trắng hiển thị đúng ở cả màn đăng nhập lẫn trong game, chữ/icon loading và báo lỗi vẫn đọc rõ.
+
+## 207. App iOS: nền trắng chỉ ở màn đăng nhập, vào trong game trở lại nền đen (2026-07-21)
+
+Người dùng gửi ảnh chụp trong game (đang đánh quái, có thanh HUD lực chiến/tiền/vàng phía trên) cho thấy nền trắng từ mục 206 lộ ra khoảng trắng phía trên màn hình - không hợp với giao diện tối màu của game. Yêu cầu: khi đã vào trong game thì nền phải là màu đen, chỉ cần trắng ở màn đăng nhập/đăng ký thôi.
+
+**Cách sửa**: thêm `@Binding var isRegPage: Bool` vào `GameWebView`, cập nhật trong `Coordinator` qua hàm `updateBackgroundColor(for:)` (gọi từ cả `webView(_:didCommit:)` lẫn `webView(_:didFinish:)`) - kiểm tra `webView.url?.path` có chứa `/reg` hay không để quyết định màu trắng (đăng nhập) hay đen (trong game), set trực tiếp `webView.backgroundColor`/`webView.scrollView.backgroundColor` VÀ báo ngược lên `parent.isRegPage` để `ContentView` đổi màu nền `ZStack` (`Color.white`/`Color.black` tuỳ `isRegPage`) và màu chữ/nút màn báo lỗi kết nối theo cùng logic. Giá trị khởi tạo `isRegPage = true` vì trang đầu tiên luôn là `/reg`.
+
+**KHÔNG đụng đến `contentInsetAdjustmentBehavior`** - giữ nguyên mặc định của hệ thống như mục 205/206, chỉ đổi màu theo trang, tránh lặp lại sự cố notch của mục 202-204.
+
+**Kiểm thử**: không build-test được (môi trường không có Xcode) - đếm ngoặc `{}`/`()` cân bằng qua script Python (GameWebView.swift 12/12, 27/27; ContentView.swift 11/11, 27/27).
+
+**Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
+
+**Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` và `ContentView.swift` vào Xcode, build lại, xác nhận: (1) màn đăng nhập vẫn nền trắng như mục 206, (2) sau khi đăng nhập vào game, nền chuyển đúng sang đen, không còn khoảng trắng lộ ra phía trên/dưới.
