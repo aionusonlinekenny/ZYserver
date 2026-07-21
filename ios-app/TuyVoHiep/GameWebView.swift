@@ -28,7 +28,20 @@ struct GameWebView: UIViewRepresentable {
         webView.isOpaque = false
         webView.backgroundColor = .black
         webView.scrollView.backgroundColor = .black
-        webView.load(URLRequest(url: entryURL))
+
+        // Xoá cache tài nguyên (JS/CSS/hình ảnh...) mỗi lần mở app để luôn tải
+        // bản mới nhất từ server - KHÔNG xoá cookie/localStorage nên tài khoản
+        // đã đăng nhập/nhớ mật khẩu vẫn giữ nguyên.
+        let cacheTypes: Set<String> = [
+            WKWebsiteDataTypeDiskCache,
+            WKWebsiteDataTypeMemoryCache,
+            WKWebsiteDataTypeOfflineWebApplicationCache,
+        ]
+        WKWebsiteDataStore.default().removeData(ofTypes: cacheTypes, modifiedSince: .distantPast) {
+            var request = URLRequest(url: self.entryURL)
+            request.cachePolicy = .reloadIgnoringLocalCacheData
+            webView.load(request)
+        }
         return webView
     }
 

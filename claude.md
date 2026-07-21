@@ -5497,3 +5497,17 @@ Người dùng quay lại build app iOS theo `ios-app/` (mục 197), gửi ảnh
 **Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
 
 **Chưa kiểm chứng thực tế** - cần người dùng dán lại `ContentView.swift` mới vào Xcode, build lại, cài lên máy, để yên máy quá thời gian Auto-Lock đã cấu hình mà xác nhận màn hình không còn tự tắt.
+
+## 201. App iOS tự xoá cache WebView mỗi lần mở app (2026-07-19)
+
+Người dùng xác nhận vấn đề tự tắt màn hình (mục 200) đã ổn, đổi icon app xong, tiếp tục yêu cầu: mỗi lần mở app tự "clear cache" để luôn tải nội dung mới hoàn toàn từ server - vì trong lúc dùng app để test, code client (JS/exml/config) vẫn đang được cập nhật liên tục qua các mục trước, không muốn WebView giữ bản cache cũ.
+
+**Sự cố quy trình cần ghi nhận**: bản sửa gộp chung (Timer isIdleTimerDisabled + xoá cache) ở một lượt trả lời trước đã bị báo nhầm là "mất do lỗi kỹ thuật" - khi `git push` bị `rejected` do remote đã có commit `183a39a5` (chính là bản mục 200 đã push thành công trước đó, chỉ là local session bị lệch trạng thái file tạm thời, không phải mất commit thật). Đã `git fetch` + so sánh `diff` giữa bản remote và local để xác nhận chính xác phần nào đã có sẵn (README + `TuyVoHiepApp.swift` + `ContentView.swift` của mục 200 đã khớp 100% với remote) và phần nào là MỚI thực sự (chỉ có đoạn xoá cache trong `GameWebView.swift`) - `git reset --hard origin/...` để đồng bộ lại rồi CHỈ áp dụng đúng phần thay đổi mới, tránh tạo nhánh rẽ (diverged history) hay đè nhầm lên công sức đã push trước đó.
+
+**Cách sửa**: `GameWebView.swift`, hàm `makeUIView` - gọi `WKWebsiteDataStore.default().removeData(ofTypes:modifiedSince:)` xoá `WKWebsiteDataTypeDiskCache`/`WKWebsiteDataTypeMemoryCache`/`WKWebsiteDataTypeOfflineWebApplicationCache` TRƯỚC khi `webView.load()`, đồng thời set `request.cachePolicy = .reloadIgnoringLocalCacheData` cho request tải trang. CHỦ ĐỘNG KHÔNG đưa `WKWebsiteDataTypeCookies`/`WKWebsiteDataTypeLocalStorage`/`WKWebsiteDataTypeSessionStorage` vào tập bị xoá - giữ nguyên tài khoản đã đăng nhập/nhớ mật khẩu qua cookie (`reg/user/js/app.js`), đúng đúng nghĩa "xoá cache" người dùng yêu cầu (không phải xoá sạch toàn bộ dữ liệu app).
+
+**Kiểm thử**: không build-test được (môi trường không có Xcode) - đếm ngoặc `{}`/`()` cân bằng qua script Python; `diff` xác nhận phần thay đổi so với bản gốc trên remote ĐÚNG BẰNG đoạn code mới thêm, không lẫn thay đổi ngoài ý muốn nào khác.
+
+**Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
+
+**Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` (chỉ file này thay đổi so với lần trước, `ContentView.swift`/`TuyVoHiepApp.swift` giữ nguyên như đã dán ở mục 200) vào Xcode, build lại, xác nhận: (1) mở app sau khi server cập nhật code thấy đúng bản mới nhất ngay lập tức, (2) tài khoản đăng nhập vẫn được nhớ như trước.
