@@ -1,9 +1,11 @@
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @State private var isLoading = true
     @State private var loadFailed = false
     @State private var reloadToken = UUID()
+    @State private var keepAwakeTimer: Timer?
 
     var body: some View {
         ZStack {
@@ -37,6 +39,19 @@ struct ContentView: View {
             }
         }
         .statusBar(hidden: true)
+        .onAppear {
+            // Đặt lại isIdleTimerDisabled liên tục thay vì chỉ 1 lần - WKWebView
+            // trên iOS đôi khi âm thầm reset lại giá trị này, đặt lại định kỳ
+            // để đảm bảo không bị ghi đè.
+            UIApplication.shared.isIdleTimerDisabled = true
+            keepAwakeTimer = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { _ in
+                UIApplication.shared.isIdleTimerDisabled = true
+            }
+        }
+        .onDisappear {
+            keepAwakeTimer?.invalidate()
+            keepAwakeTimer = nil
+        }
     }
 }
 

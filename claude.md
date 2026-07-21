@@ -5481,3 +5481,19 @@ Người dùng bắt tay build thử app Android (project đặt tên "SayMong",
 **Câu hỏi phụ đã trả lời (thông tin, không phải sửa lỗi)**: hướng dẫn đổi icon app Android bằng công cụ có sẵn của Android Studio - chuột phải `res` → **New → Image Asset** → chọn "Launcher Icons (Adaptive and Legacy)" → chọn ảnh nguồn → Next → Finish; công cụ tự ghi đè đúng các thư mục `mipmap-*` có sẵn, không cần sửa `AndroidManifest.xml` (đã trỏ sẵn `@mipmap/ic_launcher`).
 
 **Trạng thái hiện tại**: build Kotlin đã qua, còn vướng lỗi cleartext traffic (đã hướng dẫn cách sửa, chưa xác nhận kết quả) - người dùng chủ động tạm gác việc build app iOS/Android lại, chưa rõ thời điểm quay lại tiếp tục.
+
+## 200. Hỗ trợ trực tiếp build app iOS trên Xcode + fix isIdleTimerDisabled bị reset (2026-07-19)
+
+Người dùng quay lại build app iOS theo `ios-app/` (mục 197), gửi ảnh từng bước Xcode để tôi hướng dẫn trực tiếp (chọn nhầm template "Game" thay vì "App", thêm file `GameWebView.swift` mới qua "New File from Template...", thêm 5 key vào tab Info của target qua giao diện Add Row thay vì sửa Info.plist trực tiếp vì bản Xcode này không có file Info.plist riêng).
+
+**Build thành công, cài lên iPhone thật được**, nhưng người dùng báo: để yên máy hoàn toàn không thao tác (không bấm nút nguồn, không rời app) thì màn hình vẫn tự tối/khoá sau một lúc - dù đã xác nhận nội dung `TuyVoHiepApp.swift` (chứa `AppDelegate.applicationDidBecomeActive` bật `isIdleTimerDisabled=true`) đúng y hệt file mẫu, không thiếu sót gì.
+
+**Nguyên nhân nghi vấn**: `isIdleTimerDisabled` chỉ đặt MỘT LẦN lúc app chuyển sang active - đây là vấn đề đã được nhiều lập trình viên khác ghi nhận: `WKWebView` trên iOS đôi khi âm thầm reset lại giá trị `isIdleTimerDisabled` của app (liên quan tới cách WebKit tự quản lý idle timer nội bộ khi render nội dung), khiến giá trị `true` bị ghi đè thành `false` mà không có sự kiện nào (`applicationWillResignActive`) để code phát hiện và đặt lại.
+
+**Cách sửa**: thay vì chỉ đặt 1 lần trong `AppDelegate`, thêm `Timer.scheduledTimer` trong `ContentView.onAppear` đặt LẠI `UIApplication.shared.isIdleTimerDisabled=true` mỗi 15 giây trong suốt thời gian view hiển thị (huỷ timer trong `onDisappear`) - đảm bảo dù có bị ghi đè bởi WKWebView hay bất kỳ nguyên nhân nào khác thì cũng được đặt lại `true` trong tối đa 15 giây, thực tế ngắn hơn nhiều thời gian Auto-Lock tối thiểu của iOS (mặc định thấp nhất là 30 giây) nên không có khoảng hở nào đủ để máy tự khoá. Giữ nguyên cơ chế `AppDelegate` cũ (không hại, chỉ bổ sung thêm lớp bảo vệ).
+
+**Kiểm thử**: không build-test được (môi trường không có Xcode) - đếm ngoặc `{}`/`()` cân bằng qua script Python.
+
+**Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
+
+**Chưa kiểm chứng thực tế** - cần người dùng dán lại `ContentView.swift` mới vào Xcode, build lại, cài lên máy, để yên máy quá thời gian Auto-Lock đã cấu hình mà xác nhận màn hình không còn tự tắt.
