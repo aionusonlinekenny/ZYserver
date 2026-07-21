@@ -5525,3 +5525,19 @@ Người dùng gửi ảnh: lúc mới mở app, nền màn đăng nhập/đăng
 **Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
 
 **Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` mới vào Xcode, build lại, mở app xác nhận không còn viền đen ở trên/dưới màn đăng nhập lẫn trong lúc chơi game.
+
+## 203. App iOS: sửa lại - viền đen dưới màn đăng nhập vẫn còn + tai thỏ che thanh tiền/vàng trong game (2026-07-19)
+
+Người dùng gửi ảnh xác nhận: sau mục 202, viền đen TRÊN màn đăng nhập đã hết, nhưng viền đen DƯỚI vẫn còn nguyên; đồng thời khi vào trong game, thanh thông tin tiền/vàng phía trên bị tai thỏ/Dynamic Island che mất - trước mục 202 phần này vẫn hiển thị đúng.
+
+**Đo lại bằng phân tích pixel (PIL/numpy) trên ảnh chụp thật thay vì đoán**: khoảng đen dưới màn đăng nhập đo được ~570-756px (tăng so với trước, không giảm) - lớn hơn nhiều so với chiều cao vùng an toàn thực tế của home indicator (~34pt tương đương ~102px ở độ phân giải Retina 3x), nên chứng minh khoảng đen này KHÔNG liên quan gì đến safe-area/`contentInsetAdjustmentBehavior` - đây là lỗi bố cục CSS có sẵn của chính trang `reg/index.php` (ảnh nền `#frmLogin img` không giãn hết chiều cao khung chứa), chỉ là trước giờ bị che lấp một phần vì Safari có thanh công cụ riêng chiếm bớt chiều cao màn hình nên ít lộ ra, còn app hiển thị full-screen tuyệt đối nên lộ rõ. Ngược lại, việc tắt `contentInsetAdjustmentBehavior` TOÀN CỤC ở mục 202 lại gây tác dụng phụ: màn hình chơi game (`index.php`) vốn ngầm dựa vào inset an toàn mặc định để đẩy thanh tiền/vàng xuống dưới tai thỏ - tắt inset khiến thanh này bị đẩy lên che khuất bởi tai thỏ (đo được ~110px viền đen/nội dung bị che ở đúng vùng tai thỏ).
+
+**Cách sửa (2 phần, đều trong `GameWebView.swift`)**:
+1. **`contentInsetAdjustmentBehavior` chuyển từ set 1 lần cố định sang set ĐỘNG theo từng trang** - thêm hàm `updateSafeAreaBehavior(for:)` trong `Coordinator`, gọi từ cả `webView(_:didCommit:)` (delegate method mới thêm) lẫn `webView(_:didFinish:)`: nếu URL đang ở path chứa `/reg` (màn đăng nhập/đăng ký) thì `.never` (phủ kín full-screen, không có nội dung quan trọng nào bị tai thỏ che ở màn này), còn lại (màn chơi game `index.php`) thì `.automatic` (khôi phục đúng hành vi mặc định vốn hoạt động đúng trước mục 202, thanh tiền/vàng lại được đẩy xuống dưới tai thỏ).
+2. **Chèn CSS ép ảnh nền màn đăng nhập bằng `WKUserScript`** (thêm vào `config.userContentController`, `.atDocumentStart`, `forMainFrameOnly: true`) - script JS kiểm tra `location.pathname` chứa `/reg` thì chèn `<style>` ép `#frmLogin img{position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:0}` - vá thẳng lỗi CSS gốc của trang bằng cách chèn từ phía app, không cần sửa file PHP/CSS dùng chung với người dùng web thường (tránh ảnh hưởng trải nghiệm trên trình duyệt, nơi lỗi này không rõ rệt).
+
+**Kiểm thử**: không build-test được (môi trường không có Xcode) - đếm ngoặc `{}`/`()`/`[]` cân bằng qua script Python (17/17, 45/45, 2/2); đối chiếu bằng chứng đo pixel từ ảnh chụp thật của người dùng để phân biệt đúng 2 nguyên nhân khác nhau (lỗi CSS gốc của trang vs. tác dụng phụ do chính sửa đổi ở mục 202 gây ra) trước khi chọn hướng sửa, tránh vá sai chỗ.
+
+**Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
+
+**Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` mới (CHỈ file này thay đổi, các file `.swift` khác giữ nguyên) vào Xcode, build lại, xác nhận: (1) màn đăng nhập/đăng ký phủ kín ảnh nền toàn màn hình, không còn khoảng đen ở trên lẫn dưới, (2) trong game, thanh thông tin tiền/vàng phía trên hiển thị đầy đủ, không bị tai thỏ/Dynamic Island che.

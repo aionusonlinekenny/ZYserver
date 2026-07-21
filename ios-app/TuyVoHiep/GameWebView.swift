@@ -20,14 +20,33 @@ struct GameWebView: UIViewRepresentable {
         config.allowsInlineMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
 
+        // Ảnh nền của màn đăng nhập/đăng ký (reg/) không giãn hết chiều cao
+        // thật của màn hình (lỗi CSS có sẵn trong trang, chỉ lộ rõ trong app
+        // vì app hiển thị toàn màn hình lớn hơn khung nhìn của Safari) - ép
+        // ảnh nền luôn phủ kín đúng 100% khung hình bằng CSS chèn thêm, chỉ
+        // áp dụng cho đường dẫn "/reg" để không ảnh hưởng màn hình chơi game.
+        let fixRegBackgroundJS = """
+        (function() {
+            function applyFix() {
+                if (location.pathname.indexOf('/reg') === -1) return;
+                var style = document.createElement('style');
+                style.textContent = '#frmLogin img{position:fixed!important;top:0!important;left:0!important;width:100vw!important;height:100vh!important;object-fit:cover!important;z-index:0!important;}';
+                (document.head || document.documentElement).appendChild(style);
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', applyFix);
+            } else {
+                applyFix();
+            }
+        })();
+        """
+        let userScript = WKUserScript(source: fixRegBackgroundJS, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+        config.userContentController.addUserScript(userScript)
+
         let webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = context.coordinator
         webView.scrollView.bounces = false
         webView.scrollView.isScrollEnabled = false
-        // Mặc định WKWebView tự chừa khoảng trống theo vùng an toàn (tai thỏ/
-        // thanh cảm ứng) dù view cha đã .ignoresSafeArea() - tắt hẳn để nội
-        // dung trang phủ kín toàn màn hình, không còn viền đen trên/dưới.
-        webView.scrollView.contentInsetAdjustmentBehavior = .never
         webView.allowsBackForwardNavigationGestures = false
         webView.isOpaque = false
         webView.backgroundColor = .black
@@ -61,7 +80,22 @@ struct GameWebView: UIViewRepresentable {
             self.parent = parent
         }
 
+        // Màn đăng nhập/đăng ký (reg/) bỏ qua vùng an toàn để ảnh nền phủ kín
+        // toàn màn hình (không có nội dung quan trọng nào bị tai thỏ che ở
+        // đây). Màn chơi game (index.php) PHẢI tôn trọng vùng an toàn để
+        // thanh thông tin (lực chiến/tiền/vàng) phía trên không bị tai thỏ
+        // che mất - đây là hành vi mặc định vốn hoạt động đúng trước đây.
+        private func updateSafeAreaBehavior(for webView: WKWebView) {
+            let path = webView.url?.path ?? ""
+            webView.scrollView.contentInsetAdjustmentBehavior = path.contains("/reg") ? .never : .automatic
+        }
+
+        func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+            updateSafeAreaBehavior(for: webView)
+        }
+
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            updateSafeAreaBehavior(for: webView)
             parent.isLoading = false
         }
 
