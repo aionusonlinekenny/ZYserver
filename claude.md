@@ -5559,3 +5559,17 @@ Người dùng gửi ảnh xác nhận: sau mục 203, màn đăng nhập (ảnh
 **Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
 
 **Chưa kiểm chứng thực tế** - cần người dùng dán lại `GameWebView.swift` VÀ `ContentView.swift` (cả 2 file đều đổi) vào Xcode, build lại, xác nhận: (1) màn đăng nhập vẫn đẹp như mục 203, (2) trong game không còn dải đen/trắng lãng phí phía trên, thanh tiền/vàng hiển thị bình thường như thời điểm gốc, (3) màn hình loading và màn báo lỗi kết nối vẫn đọc được chữ rõ ràng trên nền trắng mới.
+
+## 205. App iOS: hoàn tác toàn bộ mục 202/203/204, quay lại đúng trạng thái commit 728c9c1a (2026-07-21)
+
+Người dùng xem lại kết quả mục 204 (quay về `.never` toàn cục + nền trắng) và phản hồi thẳng: muốn quay lại đúng lúc vừa xong commit `728c9c1a` (mục 201 - chỉ có tính năng tự xoá cache khi mở app), lúc đó thấy ổn hơn các bản sửa notch/safe-area sau này (mục 202, 203, 204).
+
+**Cách làm**: `git checkout 728c9c1a -- ios-app/TuyVoHiep/GameWebView.swift ios-app/TuyVoHiep/ContentView.swift` - lấy nguyên văn 2 file này từ đúng commit đó, ghi đè lên bản hiện tại. Kết quả tương đương hoàn tác toàn bộ nội dung mục 202 (`contentInsetAdjustmentBehavior = .never` toàn cục), mục 203 (dynamic theo path + CSS injection cho `/reg`), và mục 204 (nền trắng) - GIỮ NGUYÊN tính năng xoá cache (mục 201) và Timer chống ngủ màn hình (mục 200), không đụng gì tới các phần đó.
+
+Trạng thái `GameWebView.swift`/`ContentView.swift` sau khi hoàn tác: KHÔNG có bất kỳ dòng nào set `contentInsetAdjustmentBehavior` (giữ mặc định `.automatic` của hệ thống), nền `.black` như ban đầu, không có `WKUserScript` chèn CSS cho `/reg`.
+
+**Kiểm thử**: đối chiếu byte-for-byte 2 file với `git show 728c9c1a:<path>` xác nhận khớp 100% trước khi commit.
+
+**Cache-bust**: không áp dụng (app native, không qua `manifest.json`).
+
+**Chưa kiểm chứng thực tế** - đây là quay lại đúng bản mà người dùng đã từng thấy "ok hơn" trước đó (bản mục 201), cần dán lại `GameWebView.swift` và `ContentView.swift` vào Xcode, build lại để xác nhận đúng như mong đợi. Nếu vẫn còn khoảng đen ở màn đăng nhập/trong game, đây là hành vi mặc định của WKWebView vốn có từ trước khi có bất kỳ can thiệp `contentInsetAdjustmentBehavior` nào của tôi - cần người dùng mô tả rõ lại vấn đề cụ thể trước khi thử hướng sửa khác.
