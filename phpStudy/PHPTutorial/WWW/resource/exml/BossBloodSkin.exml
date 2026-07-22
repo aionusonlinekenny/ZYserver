@@ -5,7 +5,7 @@
 
 
 
-	<e:Group id="barGroup" y="65" horizontalCenter="24">
+	<e:Group id="barGroup" y="74" horizontalCenter="24">
 
 
 		<e:Group id="bossBloodGroup" width="480" horizontalCenter="0" x="-24" y="1">
