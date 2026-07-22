@@ -30,5 +30,5 @@
 	</e:Group>
 	<e:Group id="flyItemGroup" touchEnabled="false" touchChildren="false"  width="600" height="948" bottom="0" horizontalCenter="0">
 	</e:Group>
-	<e:Image id="tips" horizontalCenter="0" bottom="370" source=""/>
+	<e:Image id="tips" horizontalCenter="0" bottom="361" source=""/>
 </e:Skin>

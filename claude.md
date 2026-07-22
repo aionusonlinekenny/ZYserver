@@ -5717,3 +5717,23 @@ Người dùng cung cấp thông tin trực tiếp: chữ "BOSS đang ở gần 
 **Cache-bust**: `default.thm_b8425a41.js` → `default.thm_2cc0a1f0.js`, `main.min_3d4d92c5.js` → `main.min_c411bfd2.js`, `manifest.json?v=81f7fc1c` → `?v=717bd5d8` trong `index.php`.
 
 **Chưa kiểm chứng thực tế** - lần này có bằng chứng số học chắc chắn hơn nhiều so với mục 212 (không cần đoán qua hình ảnh), nhưng vẫn cần người dùng xác nhận bằng ảnh chụp MỚI: chữ "BOSS đang ở gần đây..." không còn chồng lên khung "Đang tấn công", và khoảng trắng "Tên Boss (Cấp N)" (mục 212) hiển thị đúng.
+
+## 214. Tinh chỉnh 2 vị trí Y: cảnh báo "BOSS gần đây" kéo xuống 20px, cụm dò máu boss dời xuống lấy "Xem hướng dẫn" làm mốc (2026-07-22)
+
+Người dùng xác nhận qua ảnh chụp mới: (1) mục 213 (cảnh báo "BOSS đang ở gần đây") đã lên trên khung "Đang tấn công" nhưng hơi quá xa, muốn kéo xuống lại ~20px; (2) cụm dò máu boss (mục 211) vẫn còn nằm khá cao, yêu cầu dùng dòng "Xem hướng dẫn" (góc trên-phải) làm mốc Y, dời cụm dò máu boss xuống dưới mốc này khoảng 10px, giữ nguyên vị trí X.
+
+**Đo pixel chính xác trên ảnh chụp mới** (dùng script Python vẽ ruler lên ảnh để đọc toạ độ):
+- `UIView2Skin.tips` (cảnh báo "BOSS gần đây"): người dùng yêu cầu số cụ thể (20px) - quy đổi theo tỷ lệ khung 600 thiết kế ↔ 1320px màn hình thật (hệ số ~2.2) → ~9px thiết kế.
+- `BossBloodSkin.barGroup` (cụm dò máu boss): đo được viền trên avatar hiện tại ở y≈292 (màn hình thật), "Xem hướng dẫn" kết thúc ở y≈478 (màn hình thật) - cần dời cụm dò máu boss xuống để viền trên avatar chạm mốc 478+10=488 → chênh lệch cần dời = 488-292=196px màn hình thật, quy đổi theo tỷ lệ khung 580 thiết kế (hệ số ~2.276) → ~86px thiết kế.
+
+**Cách sửa** (chỉ đổi toạ độ Y, giữ nguyên X như yêu cầu):
+- `UIView2Skin.exml`: `tips` `bottom` từ `370` → `361` (giảm 9, kéo XUỐNG gần khung đen hơn - `bottom` càng nhỏ càng gần đáy màn hình).
+- `BossBloodSkin.exml`: `barGroup` `y` từ `170` → `256` (tăng 86, dời XUỐNG dưới - `y` càng lớn càng xuống thấp), `horizontalCenter="24"` giữ nguyên không đổi.
+
+Sửa đồng thời cả 2 file exml nguồn lẫn `default.thm.js` đã biên dịch (dò đúng scope qua `generateEUI.paths[...]` cho từng skin, xác nhận đúng dòng `tips_i`/`barGroup_i` trước khi sửa).
+
+**Kiểm thử**: `node -c` sạch; `xml.etree.ElementTree` xác nhận cả 2 exml hợp lệ; đo pixel trực tiếp trên ảnh chụp thật (không chỉ tính toán từ giá trị thiết kế) để xác định chính xác mức dời cần thiết.
+
+**Cache-bust**: `default.thm_2cc0a1f0.js` → `default.thm_03a417b4.js`, `manifest.json?v=717bd5d8` → `?v=9f54bbe4` trong `index.php` (`main.min.js` giữ nguyên, không đổi).
+
+**Chưa kiểm chứng thực tế** - mức dời tính từ đo pixel trên ảnh chụp cụ thể, có thể lệch nhẹ vì ước lượng thủ công điểm đo (viền avatar, baseline chữ) - cần người dùng xác nhận bằng ảnh chụp mới: (1) cảnh báo "BOSS gần đây" gần khung đen hơn vừa đủ đẹp, (2) cụm dò máu boss nằm ngay dưới "Xem hướng dẫn" khoảng 10px như yêu cầu.
