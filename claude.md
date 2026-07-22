@@ -5655,3 +5655,21 @@ Người dùng gửi ảnh dungeon khác ("Sào Huyệt Xương Hoang") cho th�
 **Cache-bust**: `default.thm_79529cb6.js` → `default.thm_d675c3d7.js`, `manifest.json?v=75bea7ff` → `?v=97a5a20f` trong `index.php`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận dungeon "Sào Huyệt Xương Hoang" (và các dungeon Team Phó Bản khác dùng `SkinWpkBossUi`) hết chồng lấn; nếu còn gặp lại ở dungeon/màn hình khác nữa (nghi ngờ còn sót thêm bản sao khác chưa phát hiện), báo kèm ảnh để dò tiếp.
+
+## 211. Tìm đúng thủ phạm thật sự: BossBloodSkin.exml (SkinBossBlood) - mục 209/210 đã sửa nhầm 2 skin không liên quan (2026-07-22)
+
+Người dùng gửi lại ảnh CHÍNH XÁC dungeon "Sào Huyệt Xương Hoang" (đã báo ở mục 210) - cụm dò máu boss "Minh Địa Cốt Nữ(Cấp 100)" VẪN chồng lên khung sự kiện y hệt chưa sửa, dù mục 210 đã cache-bust và deploy. Xác nhận không phải do cache trình duyệt cũ (bằng chứng: khung mục tiêu boss/quái dưới đáy màn hình - fix mục 208 - đã hiển thị đúng, không còn chồng chat, tức bản JS mới nhất ĐÃ được tải).
+
+**Truy vết lại cho ra kết quả HOÀN TOÀN KHÁC**: đọc kỹ điều kiện mở view trong `main.min.js` (hàm xử lý gần vị trí ~1470300) phát hiện `WorldBossesUiInfo`/`SkinWorldBossUi` (mục 209) và `NewWorldBossesUIView`/`SkinWpkBossUi` (mục 210) đều KHÔNG BAO GIỜ mở cho dungeon Team Phó Bản: `TeamFightWin` (điều khiển `SkinTeamFbFight`, khung mục tiêu dưới đáy) chỉ mở khi `GameMap.fbType==UserFb.FB_TEAM` (hằng số 35) - MỘT LOẠI RIÊNG, không trùng với bất kỳ điều kiện mở nào của 2 view trên (`FB_TYPE_NEW_WORLD_BOSS`, `FB_TYPE_ZHUANSHENGBOSS/ALLHUMENBOSS/HOMEBOSS/GUIDEBOSS`) - với `FB_TEAM`, đoạn code đó thực ra CHỦ ĐỘNG ĐÓNG cả 2 view này lại. Tức mục 209 và 210 sửa đúng 2 lỗi CÓ THẬT (có thể ảnh hưởng World Boss/Gia Tộc Boss/New World Boss...) nhưng KHÔNG PHẢI nguyên nhân gây ra ảnh chụp màn hình của người dùng từ đầu.
+
+**Thành phần đúng**: dò tiếp điều kiện mở `BossesBloodPanel` (class dùng `SkinBossBlood`, file `resource/exml/BossBloodSkin.exml`) - đây là panel dò máu boss "dự phòng" (fallback) dùng cho MỌI loại boss KHÔNG thuộc danh sách loại trừ (`FB_TYPE_ZHUANSHENGBOSS/ALLHUMENBOSS/HOMEBOSS/LABA/NEW_WORLD_BOSS/GUIDEBOSS(trừ fubenID 40001)`) - `FB_TEAM` KHÔNG nằm trong danh sách loại trừ này nên `BossesBloodPanel` chính là panel thực sự hiển thị cho dungeon Team Phó Bản. Xác nhận thêm bằng cấu trúc exml: `BossBloodSkin.exml` có `nameTxt` là 1 Label DUY NHẤT (width=230, không có `lvTxt` tách riêng như 2 skin kia) - khớp đúng với cách hiển thị "Minh Địa Cốt Nữ(Cấp 100)" dạng 1 chuỗi liền trong ảnh chụp, khác với `worldbossUiSkin`/`wpkBossUiSkin` vốn tách riêng `nameTxt` và `lvTxt` thành 2 Label cạnh nhau.
+
+**Cách sửa**: tăng `y` của `barGroup` (nhóm cha chứa `bossBloodGroup` + `bossBloodNumLabel`/`bossBloodPercentageLabel`/`myTxt`/`currewards`) từ `20` lên `170` trong `BossBloodSkin.exml` (thiết kế gốc 580x930, giống hệt kích thước `worldbossUiSkin.exml` nên dùng chung mức dời 150px). Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (dò đúng scope qua `generateEUI.paths['resource/exml/BossBloodSkin.exml']` → `barGroup_i`, dòng 12153).
+
+**Quyết định về mục 209/210**: KHÔNG hoàn tác - đó là các lỗi thật (dù chưa được người dùng xác nhận trực tiếp qua ảnh chụp cho đúng loại boss của chúng), giữ nguyên các thay đổi đó vì rủi ro thấp (chỉ dời cụm xuống vùng nền trống phía trên) và có thể vẫn hữu ích nếu người dùng gặp lại vấn đề tương tự ở World Boss/Gia Tộc Boss/New World Boss sau này.
+
+**Kiểm thử**: `node -c` sạch; `xml.etree.ElementTree` xác nhận exml hợp lệ; đối chiếu cấu trúc `nameTxt`/`lvTxt` giữa 3 file exml để xác nhận đúng thành phần trước khi sửa (rút kinh nghiệm từ 2 lần đoán sai liên tiếp ở mục 209/210).
+
+**Cache-bust**: `default.thm_d675c3d7.js` → `default.thm_b8425a41.js`, `manifest.json?v=97a5a20f` → `?v=e48857ca` trong `index.php`.
+
+**Chưa kiểm chứng thực tế** - đây là lần sửa thứ 3 cho cùng 1 vấn đề người dùng báo cáo (sau 2 lần đoán sai component ở mục 209/210) - cần người dùng xác nhận CHẮC CHẮN bằng ảnh chụp mới rằng cụm dò máu boss không còn chồng lên khung sự kiện ở dungeon Team Phó Bản trước khi coi là xong.
