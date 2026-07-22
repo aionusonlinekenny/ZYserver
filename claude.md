@@ -5699,3 +5699,21 @@ Người dùng gửi lại ảnh (cùng ảnh đã gửi trước, khả năng c
 **Cache-bust**: `main.min_37ad6668.js` → `main.min_3d4d92c5.js`, `manifest.json?v=e48857ca` → `?v=81f7fc1c` trong `index.php` (`default.thm.js` giữ nguyên, không đổi).
 
 **Chưa kiểm chứng thực tế** - đặc biệt lưu ý: (1) cần ảnh chụp MỚI sau khi tải lại để xác nhận cả bossBloodGroup (mục 211) lẫn willBossPrompt (mục này) đã đúng vị trí - ảnh người dùng gửi lần này trùng khớp hoàn toàn với ảnh đã gửi trước mục 211 (cùng giờ/cùng số liệu) nên nhiều khả năng chưa phản ánh đúng bản mới nhất; (2) khoảng trắng "Tên Boss (Cấp N)" cần xác nhận hiển thị đúng ở cả 3 vị trí đã sửa.
+
+## 213. Tìm đúng thành phần thật cho "BOSS đang ở gần đây": UIView2Skin.tips - hoàn tác willBossPrompt sai của mục 212 (2026-07-22)
+
+Người dùng cung cấp thông tin trực tiếp: chữ "BOSS đang ở gần đây..." là ẢNH tải từ file `resource/eui/boss/bossPic/bosstishi.png` (xác nhận đây đúng là ảnh dựng sẵn chữ, không phải Label - khớp với suy đoán ở mục 212, nhưng SAI về việc xác định ĐÚNG component nào hiển thị nó).
+
+**Tìm lại đúng component**: grep trực tiếp `"bosstishi"` trong `main.min.js` (khoá resource, không phải chuỗi hiển thị) → tìm ra `UIDownView.onBossAppear_a94` gọi `this.showEffTips_a94("bosstishi")` khi xuất hiện boss (điều kiện `fbType != FB_TYPE_HUN_SHOU`, áp dụng cho Team Phó Bản) → `showEffTips_a94` gán `this.tips.source=t` rồi tween fade in/out - `this.tips` là 1 `eui.Image` CHUNG cho nhiều loại tip khác nhau (`bosstishi`, `pktishi_png`, `bosstishi_0`+n cho khiên boss...). Component thật: `UIView2Skin.exml` (class `SkinUIView2`, cùng khung thiết kế 600x948 với `teamFbFightSkin.exml`), phần tử `id="tips"` tại `bottom="247"`.
+
+**Xác nhận vị trí chồng lấn bằng toán học chính xác** (không cần đo pixel ảnh chụp lần này): nền khung "Đang tấn công" (`_Image3`/`zsbg2` trong `teamFbFightSkin.exml`, đã sửa `bottom=172` ở mục 208) có `height=150` → span thiết kế `[948-172-150, 948-172] = [626, 776]`. Ảnh `tips` (cao 41px thật theo file `bosstishi.png`, gần như 1:1 với đơn vị thiết kế) tại `bottom=247` → span `[948-247-41, 948-247] = [660, 701]` - NẰM HOÀN TOÀN TRONG khoảng `[626, 776]` của khung "Đang tấn công" → xác nhận chắc chắn nguyên nhân chồng lấn, không cần suy đoán qua ảnh chụp nữa.
+
+**Cách sửa**: tăng `bottom` của `tips` từ `247` lên `370` (dời lên ~123px thiết kế, đưa bottom edge ảnh lên y=578, cách top khung "Đang tấn công" (y=626) một khoảng đệm ~48px) trong CẢ `UIView2Skin.exml` lẫn `default.thm.js` đã biên dịch (dò đúng scope qua `generateEUI.paths['resource/exml/UIView2Skin.exml']` → `tips_i`, dòng 164613).
+
+**Hoàn tác mục 212**: đổi `willBossPrompt.y` từ `400` (đã sửa nhầm) trở lại `500` (giá trị gốc) - xác nhận đây là animation `zaoyuBoss` HOÀN TOÀN KHÁC, không liên quan tới `bosstishi`/khung "Đang tấn công" - giữ nguyên bản gốc, không để lại thay đổi sai không cần thiết.
+
+**Kiểm thử**: `node -c` sạch cả 2 file JS; `xml.etree.ElementTree` xác nhận exml hợp lệ; tính toán khoảng chồng lấn bằng số học trực tiếp từ giá trị `bottom`/`height` của 2 thành phần (không chỉ dựa vào đo pixel ảnh chụp như các lần trước) để xác nhận chắc chắn trước khi sửa.
+
+**Cache-bust**: `default.thm_b8425a41.js` → `default.thm_2cc0a1f0.js`, `main.min_3d4d92c5.js` → `main.min_c411bfd2.js`, `manifest.json?v=81f7fc1c` → `?v=717bd5d8` trong `index.php`.
+
+**Chưa kiểm chứng thực tế** - lần này có bằng chứng số học chắc chắn hơn nhiều so với mục 212 (không cần đoán qua hình ảnh), nhưng vẫn cần người dùng xác nhận bằng ảnh chụp MỚI: chữ "BOSS đang ở gần đây..." không còn chồng lên khung "Đang tấn công", và khoảng trắng "Tên Boss (Cấp N)" (mục 212) hiển thị đúng.
