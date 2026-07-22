@@ -5817,3 +5817,17 @@ Người dùng xác nhận gần đúng, chỉ cần thêm 20px cuối cùng là
 **Cache-bust**: `default.thm_f4a11994.js` → `default.thm_233355b2.js`, `main.min_f9c540f1.js` → `main.min_e3968b18.js`, `manifest.json?v=10e4b7d9` → `?v=034a8614` trong `index.php`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng đồng bộ file lên server, xoá cache, tải lại rồi xác nhận bằng ảnh chụp mới. Lịch sử điều chỉnh Y của `barGroup` qua các mục: 20(gốc, luôn bị ghi đè) → 170(m211, vô tác dụng) → 256(m214, vô tác dụng) → 65(m215, LẦN ĐẦU có tác dụng sau khi tìm ra lỗi ghi đè) → 74(m216) → 100(m217) → 109(m218, hiện tại).
+
+## 220. Cắt ngắn tên quái/boss trong khung mục tiêu Team Phó Bản - tránh đè chữ khi tên dài (2026-07-22)
+
+Người dùng xác nhận vị trí cụm dò máu boss đã đẹp (mục 219), báo tiếp: trong khung "Đang tấn công" ở đáy màn hình, tên các quái/boss (ví dụ "Thương Lang Yêu", "Lâm Hồ Linh Yêu") bị dài, chen chúc/đè lên tên quái bên cạnh - yêu cầu chuyển thành 2 dòng hoặc cắt ngắn kèm "...".
+
+**Xác định đúng thành phần**: `resource/exml/teamFbTargetSkin.exml` (class `SkinTeamFbTarget`, dùng cho các icon quái/boss trong khung `teamFbTarget` đã sửa ở mục 208) - Label `roleName` KHÔNG có `width` cố định, `textAlign="center"` - tự do giãn theo độ dài tên thật, không co lại theo kích thước item (115 thiết kế, co 0.8 lần cho các mục quái thường) nên tên dài (tiếng Việt có dấu thường dài hơn) tràn ra ngoài, đè lên tên mục bên cạnh (các item xếp cạnh nhau theo `HorizontalLayout`).
+
+**Cách sửa**: chọn phương án cắt ngắn kèm "..." (giống khuôn mẫu đã dùng ở mục 194 cho tên người chơi trong Bảng Xếp Hạng) thay vì word-wrap 2 dòng - vì khung `teamFbTarget` xếp nhiều item theo hàng ngang rất sát nhau, word-wrap 2 dòng có nguy cơ tràn dọc đè lên hàng icon phía trên hoặc dòng "Đang tấn công" phía trên nữa, khó kiểm soát; cắt ngắn theo chiều ngang an toàn và dễ đoán kết quả hơn. Sửa `TeamFbMonsterItemRender.prototype.dataChanged` trong `main.min.js`: `this.roleName.text=e.name` → `this.roleName.text=e.name.length>6?e.name.substring(0,6)+"...":e.name` - giới hạn 6 ký tự (ước lượng theo bề rộng item nhỏ ~92-115px thiết kế, hẹp hơn nhiều so với cột tên trong bảng xếp hạng ở mục 194 vốn dùng ngưỡng 10 ký tự).
+
+**Kiểm thử**: `node -c` sạch; xác nhận đoạn code cũ chỉ khớp đúng 1 lần trước khi thay.
+
+**Cache-bust**: `main.min_e3968b18.js` → `main.min_208b41b1.js`, `manifest.json?v=034a8614` → `?v=96d47ee0` trong `index.php` (`default.thm.js` giữ nguyên, không đổi).
+
+**Chưa kiểm chứng thực tế** - ngưỡng cắt 6 ký tự là ước lượng, cần người dùng xác nhận không còn đè chữ giữa các tên quái/boss cạnh nhau trong khung "Đang tấn công", đồng thời tên sau khi cắt vẫn đủ để nhận diện quái (nếu quá ngắn/khó đọc, có thể tăng ngưỡng lên 7-8 ký tự).
