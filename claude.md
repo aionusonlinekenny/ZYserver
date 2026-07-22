@@ -5793,3 +5793,15 @@ Người dùng xác nhận mục 216 đã đúng hướng (cụm dò máu boss n
 **Cache-bust**: `default.thm_9455159f.js` → `default.thm_c676c33c.js`, `main.min_3efd8cc6.js` → `main.min_b8f05c03.js`, `manifest.json?v=63dc34e3` → `?v=abc11d33` trong `index.php`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng đồng bộ file lên server, xoá cache, tải lại rồi xác nhận bằng ảnh chụp mới khoảng cách đã đúng ý.
+
+## 218. Dời cụm dò máu boss xuống thêm 60px (2026-07-22)
+
+Người dùng báo vẫn còn hơi cao, yêu cầu dời xuống thêm 60px màn hình.
+
+**Cách sửa**: quy đổi 60px màn hình theo hệ số ~2.276 → ~26px thiết kế. Tăng `barGroup.y` từ `74` lên `100` ở cả 3 nơi đồng bộ: `BossBloodSkin.exml`, `default.thm.js` (`barGroup_i`), và dòng ghi đè trong `main.min.js` (`guildInfoOfFB_a94`) - `y=74→100` (mặc định), `y=155→181` (chế độ Tiên Minh Chiến, giữ nguyên độ lệch 81).
+
+**Kiểm thử**: `node -c` sạch cả 2 file JS; `xml.etree.ElementTree` xác nhận exml hợp lệ.
+
+**Cache-bust**: `default.thm_c676c33c.js` → `default.thm_f4a11994.js`, `main.min_b8f05c03.js` → `main.min_f9c540f1.js`, `manifest.json?v=abc11d33` → `?v=10e4b7d9` trong `index.php`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng đồng bộ file lên server, xoá cache, tải lại rồi xác nhận bằng ảnh chụp mới.
