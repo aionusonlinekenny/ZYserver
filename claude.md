@@ -5805,3 +5805,15 @@ Người dùng báo vẫn còn hơi cao, yêu cầu dời xuống thêm 60px mà
 **Cache-bust**: `default.thm_c676c33c.js` → `default.thm_f4a11994.js`, `main.min_b8f05c03.js` → `main.min_f9c540f1.js`, `manifest.json?v=abc11d33` → `?v=10e4b7d9` trong `index.php`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng đồng bộ file lên server, xoá cache, tải lại rồi xác nhận bằng ảnh chụp mới.
+
+## 219. Dời cụm dò máu boss xuống thêm 20px - hoàn tất chuỗi tinh chỉnh vị trí (2026-07-22)
+
+Người dùng xác nhận gần đúng, chỉ cần thêm 20px cuối cùng là đẹp.
+
+**Cách sửa**: quy đổi 20px màn hình → ~9px thiết kế. Tăng `barGroup.y` từ `100` lên `109` ở cả 3 nơi đồng bộ (exml, `default.thm.js`, dòng ghi đè trong `main.min.js`) - `y=100→109` (mặc định), `y=181→190` (chế độ Tiên Minh Chiến).
+
+**Kiểm thử**: `node -c` sạch cả 2 file JS; `xml.etree.ElementTree` xác nhận exml hợp lệ.
+
+**Cache-bust**: `default.thm_f4a11994.js` → `default.thm_233355b2.js`, `main.min_f9c540f1.js` → `main.min_e3968b18.js`, `manifest.json?v=10e4b7d9` → `?v=034a8614` trong `index.php`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng đồng bộ file lên server, xoá cache, tải lại rồi xác nhận bằng ảnh chụp mới. Lịch sử điều chỉnh Y của `barGroup` qua các mục: 20(gốc, luôn bị ghi đè) → 170(m211, vô tác dụng) → 256(m214, vô tác dụng) → 65(m215, LẦN ĐẦU có tác dụng sau khi tìm ra lỗi ghi đè) → 74(m216) → 100(m217) → 109(m218, hiện tại).
