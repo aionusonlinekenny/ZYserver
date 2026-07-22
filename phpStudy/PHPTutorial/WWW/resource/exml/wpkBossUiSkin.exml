@@ -35,7 +35,7 @@
 			</e:layout>
 		</e:Group>
 	</e:Group>
-	<e:Group id="bossBloodGroup" y="20" horizontalCenter="0">
+	<e:Group id="bossBloodGroup" y="170" horizontalCenter="0">
 		<e:Rect height="20" y="50" left="110" right="30" fillColor="0x111010"  visible="false"/>
 		<e:Rect width="82" height="82" x="17" y="19" ellipseWidth="82" ellipseHeight="82" fillColor="0x111010"  visible="false"/>
 		<e:Group id="hudun" x="89" y="74" width="186">

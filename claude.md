@@ -5637,3 +5637,21 @@ Người dùng xác nhận khung mục tiêu quái/boss (mục 208) đã hết c
 **Cache-bust**: `default.thm_1eadfe20.js` → `default.thm_79529cb6.js`, `manifest.json?v=07edb213` → `?v=75bea7ff` trong `index.php` (`main.min.js` giữ nguyên).
 
 **Chưa kiểm chứng thực tế** - mức dời +150px thiết kế là ước lượng từ đo pixel, cần người dùng xác nhận cụm dò máu boss không còn chồng lên khung sự kiện ở "Con Đường U Minh", đồng thời kiểm tra thêm các màn hình boss khác (World Boss, Gia Tộc Boss...) xem vị trí mới có còn hợp lý không vì đây là UI dùng chung.
+
+## 210. Cụm dò máu boss vẫn đè khung sự kiện ở dungeon khác - phát hiện thêm 1 skin sao chép riêng (SkinWpkBossUi) (2026-07-22)
+
+Người dùng gửi ảnh dungeon khác ("Sào Huyệt Xương Hoang") cho thấy CÙNG lỗi vừa sửa ở mục 209 (cụm dò máu boss "Minh Địa Cốt Nữ(Cấp 100)" đè lên khung "Thời gian sự kiện còn lại :") vẫn còn nguyên - dù đã sửa `worldbossUiSkin.exml` (mục 209).
+
+**Nguyên nhân**: code gốc có ít nhất 2 bản UI "dò máu boss" gần như GIỐNG HỆT NHAU về bố cục (avatar/tên/thanh máu/"X5") nhưng là 2 file/class HOÀN TOÀN RIÊNG BIỆT (kiểu code sao chép-dán cho từng loại dungeon thay vì dùng chung 1 component):
+- `worldbossUiSkin.exml` (`SkinWorldBossUi`, controller `WorldBossesUiInfo`) - đã sửa ở mục 209.
+- `resource/exml/wpkBossUiSkin.exml` (`SkinWpkBossUi`, controller `NewWorldBossesUIView`) - dungeon "Sào Huyệt Xương Hoang" dùng bản NÀY, chưa hề được sửa nên vẫn còn `bossBloodGroup y="20"` y hệt lỗi ban đầu.
+
+Đã chủ động rà thêm 2 file khác cũng có `id="bossBloodGroup"` (`BossBloodSkin.exml` dùng cho `BossesBloodPanel`, `guardGodWeaponUISkind.exml` dùng cho `GuardMainUIView` - tính năng Thần Binh Hộ Pháp) - CHƯA sửa vì không có bằng chứng cụ thể 2 màn này thật sự bị chồng lấn giống kiểu dungeon Team Phó Bản (không có khung đếm giờ sự kiện lớn kiểu `teamFbTime` xuất hiện cùng lúc); giữ nguyên, chờ báo cáo cụ thể nếu người dùng gặp phải.
+
+**Cách sửa**: giống hệt công thức mục 209 - tăng `y` của `bossBloodGroup` trong `wpkBossUiSkin.exml` từ `20` lên `170` (thiết kế gốc 600x948, khớp đúng width thiết kế của `teamFbFightSkin.exml` nên hệ số quy đổi pixel giống hệt, không cần đo lại). Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (dò đúng vị trí qua `generateEUI.paths['resource/exml/wpkBossUiSkin.exml']` rồi tìm `bossBloodGroup_i` bên trong đúng phạm vi class đó, tránh nhầm với các class khác dùng trùng id).
+
+**Kiểm thử**: `node -c` sạch; `xml.etree.ElementTree` xác nhận exml hợp lệ.
+
+**Cache-bust**: `default.thm_79529cb6.js` → `default.thm_d675c3d7.js`, `manifest.json?v=75bea7ff` → `?v=97a5a20f` trong `index.php`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận dungeon "Sào Huyệt Xương Hoang" (và các dungeon Team Phó Bản khác dùng `SkinWpkBossUi`) hết chồng lấn; nếu còn gặp lại ở dungeon/màn hình khác nữa (nghi ngờ còn sót thêm bản sao khác chưa phát hiện), báo kèm ảnh để dò tiếp.
