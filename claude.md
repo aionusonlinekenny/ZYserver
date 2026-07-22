@@ -5831,3 +5831,27 @@ Người dùng xác nhận vị trí cụm dò máu boss đã đẹp (mục 219)
 **Cache-bust**: `main.min_e3968b18.js` → `main.min_208b41b1.js`, `manifest.json?v=034a8614` → `?v=96d47ee0` trong `index.php` (`default.thm.js` giữ nguyên, không đổi).
 
 **Chưa kiểm chứng thực tế** - ngưỡng cắt 6 ký tự là ước lượng, cần người dùng xác nhận không còn đè chữ giữa các tên quái/boss cạnh nhau trong khung "Đang tấn công", đồng thời tên sau khi cắt vẫn đủ để nhận diện quái (nếu quá ngắn/khó đọc, có thể tăng ngưỡng lên 7-8 ký tự).
+
+## 221. App iOS: chỉ xoá cache khi version.txt trên server thay đổi, không còn xoá mỗi lần mở app (2026-07-22)
+
+Người dùng muốn thay đổi cơ chế xoá cache của app iOS (đã làm ở mục 201): thay vì LÚC NÀO CŨNG xoá cache + tải lại mỗi khi mở app (gây chậm, tốn dữ liệu), chuyển sang cơ chế THÔNG MINH - tải 1 file `version.txt` nhỏ từ server, so với bản đã lưu trong máy lần trước, CHỈ xoá cache khi 2 bản khác nhau.
+
+**File version mới**: tạo `phpStudy/PHPTutorial/WWW/version.txt` (thư mục gốc web, KHÁC với `resource/version.txt` đã có sẵn từ trước - file đó là bảng hash TOÀN BỘ tài nguyên game (ảnh/model/json...) rất nặng (vài MB), dùng cho hệ thống tải tài nguyên nội bộ của Egret, không phù hợp để app tải mỗi lần mở app chỉ để kiểm tra version) - file mới chỉ 1 dòng, nội dung tuỳ ý (hiện tại: `ec4eadc0`, cùng kiểu chuỗi hex 8 ký tự như các hash cache-bust khác cho nhất quán).
+
+**Cách sửa `GameWebView.swift`**:
+- Thêm `versionURL` trỏ tới `http://71.31.97.241/version.txt`.
+- Hàm mới `checkVersionAndLoad(_:)`: gọi `URLSession.shared.dataTask` tải `version.txt` (timeout 5s, `cachePolicy=.reloadIgnoringLocalCacheData` để không tự cache riêng file version này), so với `UserDefaults.standard.string(forKey:)` (khoá `"TuyVoHiep.clientVersion"`, lưu bền giữa các lần mở app - đúng ý người dùng "lưu thông tin trong file vào bộ nhớ").
+  - Trùng version → `webView.load(...)` bình thường (không xoá gì, tận dụng cache WebView có sẵn).
+  - Khác version, hoặc lần đầu mở app (`savedVersion` là `nil`) → gọi `clearCacheAndLoad(_:newVersion:)`.
+  - Không tải được `version.txt` (mất mạng, server lỗi, `data` rỗng...) → tải bình thường, KHÔNG ép xoá cache (tránh xoá oan khi chỉ là sự cố mạng tạm thời) và KHÔNG cập nhật version đã lưu (để lần mở app kế tiếp thử kiểm tra lại).
+- Hàm `clearCacheAndLoad(_:newVersion:)`: giữ nguyên logic xoá cache cũ (`WKWebsiteDataTypeDiskCache`/`MemoryCache`/`OfflineWebApplicationCache`, không đụng cookie) từ mục 201, thêm bước lưu `newVersion` vào `UserDefaults` SAU KHI xoá xong (trong closure hoàn tất của `removeData`) để lần mở sau nhận diện đúng.
+
+**Cập nhật `ios-app/README.md`**: thêm mục "Cơ chế tự làm mới nội dung (version.txt)" giải thích rõ cơ chế 2 chiều, và LƯU Ý QUAN TRỌNG: mỗi khi deploy code/tài nguyên mới lên server, PHẢI đổi nội dung `WWW/version.txt` - nếu quên, app sẽ không nhận ra có bản mới và tiếp tục phục vụ cache cũ.
+
+**QUY TẮC MỚI cho các lần deploy game sau này** (bổ sung vào quy trình cache-bust hiện có `default.thm_*.js`/`main.min_*.js`/`manifest.json`/`index.php?v=`): TỪ NAY MỖI LẦN sửa file ảnh hưởng tới trải nghiệm trong app (JS/exml compiled/tài nguyên game...) PHẢI ĐỒNG THỜI cập nhật nội dung `phpStudy/PHPTutorial/WWW/version.txt` sang 1 chuỗi mới (ví dụ dùng lại chuỗi hex cache-bust của `manifest.json?v=` cho tiện, khỏi phải sinh thêm chuỗi riêng) - nếu quên bước này, app iOS sẽ không bao giờ phát hiện có bản cập nhật và tiếp tục dùng cache cũ vô thời hạn.
+
+**Kiểm thử**: không build-test được (môi trường không có Xcode) - đếm ngoặc `{}`/`()`/`[]` cân bằng qua script Python (20/20, 46/46, 2/2); rà soát logic 3 nhánh (trùng version/khác version/lỗi mạng) đảm bảo mỗi nhánh đều gọi đúng 1 lần `webView.load` (không bị gọi trùng hoặc bỏ sót khiến app treo ở màn loading).
+
+**Cache-bust**: không áp dụng cho phần app native; RIÊNG `WWW/version.txt` là file MỚI, không phải cache-bust rename (giữ tên cố định `version.txt` để app luôn biết đường dẫn tải, chỉ đổi NỘI DUNG bên trong mỗi lần deploy).
+
+**Chưa kiểm chứng thực tế** - cần người dùng: (1) dán lại `GameWebView.swift` vào Xcode, build lại, cài lên máy; (2) xác nhận `version.txt` đã có trên server tại `http://71.31.97.241/version.txt`; (3) mở app lần đầu (sau khi cài bản mới) xác nhận vẫn tải được bình thường (đường lần đầu luôn xoá cache vì chưa có bản lưu); (4) đóng mở lại app lần 2 mà KHÔNG đổi `version.txt` trên server, xác nhận app mở nhanh hơn (dấu hiệu không xoá cache); (5) đổi nội dung `version.txt` trên server rồi mở lại app, xác nhận app xoá cache và tải bản mới đúng như mong đợi.

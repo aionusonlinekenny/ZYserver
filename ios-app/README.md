@@ -62,6 +62,23 @@ native nào can thiệp vào, chỉ khác 2 điểm:
 Với Apple ID miễn phí, app chỉ chạy được 7 ngày rồi cần mở Xcode chạy lại
 bước 3 để "làm mới" chữ ký (không cần làm lại từ đầu, chỉ cần Run lại).
 
+## Cơ chế tự làm mới nội dung (version.txt)
+
+Mỗi lần mở app, app tải file nhỏ `http://71.31.97.241/version.txt` (khác
+với `resource/version.txt` - đó là bảng hash toàn bộ tài nguyên game, rất
+nặng, không dùng ở đây) và so với bản đã lưu trong máy lần mở trước:
+
+- **Trùng version** → tải trang bình thường, tận dụng cache có sẵn (mở app
+  nhanh, đỡ tốn dữ liệu di động).
+- **Khác version** (hoặc lần đầu mở app, hoặc không đọc được file) → xoá
+  sạch cache JS/CSS/hình ảnh rồi tải lại toàn bộ từ server (không đụng
+  cookie nên tài khoản đã đăng nhập vẫn giữ nguyên).
+
+**Quan trọng**: mỗi khi deploy code/tài nguyên mới lên server, PHẢI đổi nội
+dung file `version.txt` ở thư mục gốc web (`WWW/version.txt`, chỉ 1 dòng,
+tuỳ ý đặt chuỗi gì cũng được miễn khác chuỗi cũ) - nếu quên đổi, app sẽ
+tưởng không có gì mới và tiếp tục dùng cache cũ, không thấy bản cập nhật.
+
 ## Đổi địa chỉ server sau này
 
 Nếu server đổi IP/domain, chỉ cần sửa 1 dòng trong `GameWebView.swift`:
