@@ -5673,3 +5673,29 @@ Người dùng gửi lại ảnh CHÍNH XÁC dungeon "Sào Huyệt Xương Hoang
 **Cache-bust**: `default.thm_d675c3d7.js` → `default.thm_b8425a41.js`, `manifest.json?v=97a5a20f` → `?v=e48857ca` trong `index.php`.
 
 **Chưa kiểm chứng thực tế** - đây là lần sửa thứ 3 cho cùng 1 vấn đề người dùng báo cáo (sau 2 lần đoán sai component ở mục 209/210) - cần người dùng xác nhận CHẮC CHẮN bằng ảnh chụp mới rằng cụm dò máu boss không còn chồng lên khung sự kiện ở dungeon Team Phó Bản trước khi coi là xong.
+
+## 212. Thêm khoảng trắng "Tên Boss (Cấp N)" toàn source + dời cảnh báo "BOSS đang ở gần đây" lên trên khung "Đang tấn công" (2026-07-22)
+
+Người dùng gửi lại ảnh (cùng ảnh đã gửi trước, khả năng chưa test lại sau mục 211) kèm 2 yêu cầu mới:
+1. Chữ "BOSS đang ở gần đây, tiêu diệt có thể nhận vô số trang bị cực phẩm!" (chữ tím) đang chồng lên khung "Đang tấn công" (khung đen dưới đáy) - cần dời chữ tím LÊN TRÊN khung đen đó.
+2. Phần "Tên Boss(Cấp N)" bị dính liền, cần thêm khoảng trắng thành "Tên Boss (Cấp N)" - yêu cầu dò lại TOÀN BỘ source cho mọi chỗ có kiểu ghép "tên boss + cấp" này.
+
+**Việc 2 - dò toàn source**: grep pattern `+"("+"Cấp "+` (kiểu ghép chuỗi `tên+"("+"Cấp "+cấp+")"` không có khoảng trắng) trên toàn bộ `main.min.js`, tìm được ĐÚNG 3 chỗ, không sót:
+- `BossesBloodPanel.updateInfoOfBase_a94` (class `SkinBossBlood`, panel dò máu boss Team Phó Bản vừa sửa mục 211) - 2 nhánh (`FB_TYPE_GUIDEBOSS` và nhánh còn lại) đều dùng `tên+"("+"Cấp "+cấp+")"`.
+- `MonsterWarInCityView` (class dùng skin `CityBossSkin.exml`, tính năng "BOSS Xâm Thành") - cùng kiểu ghép.
+
+Đã kiểm tra riêng `WorldBossesUiInfo`/`NewWorldBossesUIView` (mục 209/210) - 2 lớp này dùng ĐỊNH DẠNG KHÁC hẳn (`"Lv."+cấp` cho nhãn `lvTxt` riêng biệt, không ghép chung với tên) nên KHÔNG thuộc phạm vi lỗi này, không cần sửa. Cũng kiểm tra `server/*/task/limittime.config` có cụm "(Cấp 60)" tương tự nhưng ĐÃ có khoảng trắng sẵn từ trước, không phải lỗi.
+
+**Cách sửa việc 2**: đổi `"("+"Cấp "` thành `" ("+"Cấp "` ở cả 3 vị trí trong `main.min.js` - chỉ thêm 1 khoảng trắng trước dấu ngoặc mở, không đổi gì khác.
+
+**Việc 1 - dời cảnh báo "BOSS đang ở gần đây"**: dò theo hướng khác vì text này KHÔNG tồn tại dưới dạng chuỗi có thể tìm kiếm trong bất kỳ file nào (đã thử tìm trên `main.min.js`, toàn bộ `resource/config*/*.json`, `translation/*.json`, server Lua/config, kể cả tìm không dấu) - kết luận đây là ẢNH ĐỘNG (McAnimation) đã dựng sẵn chữ vào khung hình (file `zaoyuBoss`), không phải Label văn bản thuần. Tìm ra qua `MainView.upDataWillBoss` (class dùng skin `SkinPlayFun`, `PlayFunSkin.exml`, chung khung thiết kế 600x948 với `teamFbFightSkin.exml`) - phát WillBossPrompt (McAnimation `zaoyuBoss`, "遭遇boss" = chạm trán boss) tại toạ độ cố định `y=500, x=330`, được kích hoạt cùng nhánh xử lý cảnh Quan Ải Boss (`GUANQIABOSS`)/Team Phó Bản đã gặp ở mục 211.
+
+**Cách sửa việc 1**: đổi `this.willBossPrompt.y=500` thành `y=400` (dời lên ~100px thiết kế, ước lượng từ đo pixel ảnh chụp: khung đen "Đang tấn công" bắt đầu ở ~70% chiều cao ảnh, chữ tím hiện đang chồng ngay giữa khung).
+
+**Mức độ tin cậy**: việc 2 (khoảng trắng) CHẮC CHẮN đúng (tìm thấy chính xác chuỗi text nguồn). Việc 1 (dời McAnimation) CHỈ Ở MỨC KHÁ TIN CẬY - suy luận từ ngữ cảnh code (cùng nhánh GUANQIABOSS, cùng khung thiết kế), KHÔNG xác nhận được 100% qua text trực tiếp vì đây là ảnh động - cần người dùng xác nhận rõ ràng bằng ảnh chụp MỚI (không phải ảnh cũ đã gửi) sau khi test.
+
+**Kiểm thử**: `node -c` sạch `main.min.js`.
+
+**Cache-bust**: `main.min_37ad6668.js` → `main.min_3d4d92c5.js`, `manifest.json?v=e48857ca` → `?v=81f7fc1c` trong `index.php` (`default.thm.js` giữ nguyên, không đổi).
+
+**Chưa kiểm chứng thực tế** - đặc biệt lưu ý: (1) cần ảnh chụp MỚI sau khi tải lại để xác nhận cả bossBloodGroup (mục 211) lẫn willBossPrompt (mục này) đã đúng vị trí - ảnh người dùng gửi lần này trùng khớp hoàn toàn với ảnh đã gửi trước mục 211 (cùng giờ/cùng số liệu) nên nhiều khả năng chưa phản ánh đúng bản mới nhất; (2) khoảng trắng "Tên Boss (Cấp N)" cần xác nhận hiển thị đúng ở cả 3 vị trí đã sửa.
