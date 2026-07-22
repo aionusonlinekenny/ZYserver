@@ -5765,3 +5765,19 @@ Giữ nguyên giá trị `y="256"` đã sửa trong `BossBloodSkin.exml`/`defaul
 **Cache-bust**: `main.min_c411bfd2.js` → `main.min_0a38bfe5.js`, `manifest.json?v=9f54bbe4` → `?v=116f6fdf` trong `index.php` (`default.thm.js` giữ nguyên, không đổi thêm lần này).
 
 **Chưa kiểm chứng thực tế** - đây là fix quan trọng nhất trong toàn bộ chuỗi mục 209-215, cần người dùng xác nhận CHẮC CHẮN bằng ảnh chụp mới (sau khi đồng bộ đúng quy trình đã làm ở mục trước: copy file + xoá cache + tải lại) rằng cụm dò máu boss ĐÃ di chuyển xuống dưới "Xem hướng dẫn" như mong đợi.
+
+## 216. Tinh chỉnh lần cuối: cụm dò máu boss xuống hơi quá xa, kéo lên lại gần "Xem hướng dẫn" (2026-07-22)
+
+Người dùng xác nhận mục 215 CÓ TÁC DỤNG (lần đầu tiên cụm dò máu boss thực sự di chuyển sau nhiều lần thử) nhưng dời xuống hơi quá xa so với mong muốn ban đầu (mốc "Xem hướng dẫn" + 10px) - yêu cầu kéo lên lại gần mốc hơn.
+
+**Đo lại pixel trên ảnh chụp MỚI (lần đầu có dữ liệu đo đúng, không còn bị nhiễu bởi lỗi ghi đè ở mục 215)**: viền trên avatar đo được ở y≈800 (màn hình thật), "Xem hướng dẫn" kết thúc ở y≈345 - khoảng cách hiện tại ~455px, cần rút còn ~20px → dời LÊN khoảng 435px màn hình, quy đổi hệ số ~2.276 (580 thiết kế/1320 màn hình) → ~191px thiết kế.
+
+**Lưu ý quan trọng rút ra**: mọi phép đo pixel TRƯỚC mục 215 (dùng để tính giá trị 170, 256...) đều SAI vì đo nhầm vị trí bị lỗi ghi đè (`this.barGroup.y=20` cứng) chứ không phải vị trí thực sự đã set trong skin - giải thích vì sao các lần tính toán trước liên tục "sai" dù logic quy đổi tỷ lệ đúng. Từ mục 215 trở đi, dữ liệu đo mới đáng tin cậy.
+
+**Cách sửa**: giảm `barGroup.y` từ `256` xuống `65` (giảm 191, kéo LÊN) ở CẢ 3 nơi: `BossBloodSkin.exml`, `default.thm.js` (`barGroup_i`), VÀ dòng ghi đè trong `main.min.js` (`guildInfoOfFB_a94`, phát hiện ở mục 215) - đổi `y=256→65` (mặc định) và `y=337→146` (chế độ Tiên Minh Chiến, giữ nguyên độ lệch 81).
+
+**Kiểm thử**: `node -c` sạch cả 2 file JS; `xml.etree.ElementTree` xác nhận exml hợp lệ; đối chiếu cả 3 nơi (exml/default.thm.js/main.min.js) đều đồng bộ cùng giá trị 65/146 trước khi cache-bust.
+
+**Cache-bust**: `default.thm_03a417b4.js` → `default.thm_9455159f.js`, `main.min_0a38bfe5.js` → `main.min_3efd8cc6.js`, `manifest.json?v=116f6fdf` → `?v=63dc34e3` trong `index.php`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng đồng bộ đúng quy trình (copy file lên server, xoá cache, tải lại) rồi xác nhận bằng ảnh chụp mới cụm dò máu boss đã nằm sát dưới "Xem hướng dẫn" vừa đủ đẹp, không quá gần cũng không quá xa.
