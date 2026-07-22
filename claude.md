@@ -5737,3 +5737,31 @@ Sửa đồng thời cả 2 file exml nguồn lẫn `default.thm.js` đã biên 
 **Cache-bust**: `default.thm_2cc0a1f0.js` → `default.thm_03a417b4.js`, `manifest.json?v=717bd5d8` → `?v=9f54bbe4` trong `index.php` (`main.min.js` giữ nguyên, không đổi).
 
 **Chưa kiểm chứng thực tế** - mức dời tính từ đo pixel trên ảnh chụp cụ thể, có thể lệch nhẹ vì ước lượng thủ công điểm đo (viền avatar, baseline chữ) - cần người dùng xác nhận bằng ảnh chụp mới: (1) cảnh báo "BOSS gần đây" gần khung đen hơn vừa đủ đẹp, (2) cụm dò máu boss nằm ngay dưới "Xem hướng dẫn" khoảng 10px như yêu cầu.
+
+## 215. TÌM RA NGUYÊN NHÂN GỐC THẬT SỰ: main.min.js ghi đè cứng barGroup.y mỗi lần cập nhật máu - lý giải vì sao mục 209-214 không có tác dụng (2026-07-22)
+
+Người dùng làm đúng mọi bước xác minh: copy thủ công file lên server, xoá cache Safari, đóng mở lại app, kiểm tra trực tiếp `http://71.31.97.241/manifest.json` qua Safari (ảnh chụp xác nhận đúng `default.thm_03a417b4.js`/`main.min_c411bfd2.js`) và cấu trúc thư mục `js/` trên máy server (ảnh chụp File Explorer xác nhận đúng file, đúng ngày giờ copy) - LOẠI TRỪ HOÀN TOÀN khả năng lỗi do đồng bộ/deploy/cache. Điều này buộc phải xác định lại: vấn đề nằm ở CHÍNH CODE, không phải ở việc triển khai.
+
+**Tìm ra nguyên nhân thật**: grep toàn bộ các phép gán thuộc tính `.barGroup.` trong `main.min.js` (không chỉ riêng đọc file skin `default.thm.js`) - phát hiện dòng DUY NHẤT nhưng CHẾT NGƯỜI: trong `BossesBloodPanel.prototype.guildInfoOfFB_a94` (hàm chạy MỖI LẦN cập nhật thanh máu boss - tức chạy liên tục trong suốt trận đánh, không chỉ lúc mở panel):
+```js
+GuildBattle.ins().getModel().checkinAppoint(1)?this.barGroup.y=101:this.barGroup.y=20
+```
+Dòng này GHI ĐÈ CỨNG giá trị `y` của `barGroup` về lại `20` (hoặc `101` nếu đang trong chế độ "được chỉ định trong Tiên Minh Chiến") NGAY SAU KHI panel được tạo/mở - hoàn toàn độc lập với giá trị khai báo trong skin (`BossBloodSkin.exml`/`default.thm.js`). Đây chính là lý do TẤT CẢ các lần sửa `barGroup.y` trong skin ở mục 211 và 214 đều VÔ TÁC DỤNG dù deploy đúng 100% - code JS ghi đè lại gần như ngay lập tức mỗi khi có cập nhật máu boss (rất thường xuyên trong lúc chiến đấu).
+
+**Vì sao trước đó không phát hiện ra**: mục 211/214 chỉ kiểm tra file skin (`.exml`/`default.thm.js` - nơi khai báo giá trị KHỞI TẠO), không kiểm tra `main.min.js` (nơi chứa logic ĐIỀU KHIỂN, có thể ghi đè giá trị khởi tạo bất kỳ lúc nào) - đây là bài học tương tự các vụ trước trong phiên làm việc này (label tĩnh dịch dài đè chữ, phải sửa logic ghép text trong `main.min.js` chứ không chỉ toạ độ cố định trong skin) nhưng lần này là ghi đè TOẠ ĐỘ chứ không phải TEXT.
+
+**Cách sửa**: đổi cả 2 giá trị trong dòng ghi đè, giữ nguyên độ lệch tương đối 81 đơn vị giữa 2 chế độ (81 = 101-20, có thể do chế độ Tiên Minh Chiến cần thêm chỗ cho `myTxt`/`dropDown`):
+- `this.barGroup.y=20` (mặc định) → `this.barGroup.y=256` (đúng giá trị đã tính ở mục 214).
+- `this.barGroup.y=101` (chế độ Tiên Minh Chiến) → `this.barGroup.y=337` (256+81, giữ nguyên độ lệch gốc).
+
+Giữ nguyên giá trị `y="256"` đã sửa trong `BossBloodSkin.exml`/`default.thm.js` (mục 214) - không cần đổi lại, vì đây vẫn là giá trị khởi tạo hợp lý (khớp với giá trị JS ghi đè ngay sau đó, tránh hiện tượng nhấp nháy sai vị trí trước khi hàm `guildInfoOfFB_a94` chạy lần đầu).
+
+**Về "tips" (cảnh báo BOSS gần đây)**: grep tương tự cho `.tips.` KHÔNG tìm thấy bất kỳ ghi đè `y`/`bottom` nào trong `main.min.js` - xác nhận việc sửa `bottom` trong `UIView2Skin.exml`/`default.thm.js` ở mục 213/214 là ĐÚNG VÀ ĐỦ, không cần sửa thêm. Khả năng cao người dùng chỉ chưa để ý phần dịch chuyển nhỏ (~20px màn hình, khá tinh tế) vì tập trung vào phần cụm dò máu boss không hề nhúc nhích (rõ rệt hơn nhiều, ~190px).
+
+**Bài học quy trình quan trọng cho các lần sau**: khi sửa TOẠ ĐỘ (x/y/bottom/top...) của một phần tử UI mà sau khi deploy đúng vẫn không thấy thay đổi dù đã xác nhận chắc chắn file đã cập nhật đúng, PHẢI kiểm tra thêm `main.min.js` xem có dòng code nào gán trực tiếp thuộc tính đó của phần tử (`this.<tên id>.<thuộc tính>=`) hay không - không được mặc định tin rằng sửa skin là đủ.
+
+**Kiểm thử**: `node -c` sạch; xác nhận dòng ghi đè chỉ xuất hiện DUY NHẤT 1 lần trong toàn file trước khi sửa; grep riêng `.tips.` xác nhận không có ghi đè tương tự cần lo.
+
+**Cache-bust**: `main.min_c411bfd2.js` → `main.min_0a38bfe5.js`, `manifest.json?v=9f54bbe4` → `?v=116f6fdf` trong `index.php` (`default.thm.js` giữ nguyên, không đổi thêm lần này).
+
+**Chưa kiểm chứng thực tế** - đây là fix quan trọng nhất trong toàn bộ chuỗi mục 209-215, cần người dùng xác nhận CHẮC CHẮN bằng ảnh chụp mới (sau khi đồng bộ đúng quy trình đã làm ở mục trước: copy file + xoá cache + tải lại) rằng cụm dò máu boss ĐÃ di chuyển xuống dưới "Xem hướng dẫn" như mong đợi.
