@@ -5903,3 +5903,26 @@ Người dùng xác nhận mục 223 đúng hướng (ô "Tiêu hao" hiển th�
 **Cache-bust**: `default.thm_8fd790a2.js` → `default.thm_146bb5a8.js`, `manifest.json?v=e7f24c77` → `?v=bfd704a7` trong `index.php`; cập nhật `WWW/version.txt` → `bfd704a7`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới vị trí nút đã đúng ý.
+
+## 225. Fix 3 lỗi hiển thị popup "Khóa Ô Sách" (Thiên Thư) (2026-07-23)
+
+Người dùng gửi ảnh popup "Thiên Thư" → "Khóa Ô Sách" (mở bằng nút khoá trong màn Thiên Thư), báo 3 lỗi: (1) tiêu đề "Khóa Ô Sách" trong khung cuộn ở trên bị xuống dòng xấu ("Khóa Ô Sá"/"ch"), (2) link xanh lá "Nhận Vật Phẩm" (góc dưới phải) cũng xuống dòng ("Nhận Vật"/"Phẩm"), (3) icon "!" (`gantanhao1`) trong câu "Thiên Thư đã khóa sẽ không bị thay thế khi học" bị nằm chồng/lọt vào giữa câu (ngay sau chữ "Th") thay vì nằm TRƯỚC câu như đúng ý đồ thiết kế.
+
+**Xác định đúng thành phần**:
+- Class hiển thị popup này là `MijiLockView` (`skinName="SkinMijiLock"`, file `resource/exml/MijiLockSkin.exml`) - mở qua `ViewMgr.ins().open(MijiLockView,...)` khi bấm nút khoá (`btnLock`) trong `MijiPanelSkin`.
+- **Tiêu đề "Khóa Ô Sách" KHÔNG nằm trong `MijiLockSkin.exml`** - nó được set động bằng `this.roleSelect.changeTabName("Khóa Ô Sách")` trong `MijiLockView.prototype.open` (`main.min.js`), gọi vào `RoleSelectPanel.prototype.changeTabName=function(t){this.titleTxt.text=t}`. Vì `MijiLockSkin.exml` khai báo `<ns1:RoleSelectPanel id="roleSelect" skinName="Skin2RoleSelectPanel" .../>`, tiêu đề thật sự nằm ở Label `id="titleTxt"` trong `resource/exml/RoleSelectPanelSkin2.exml` (class `Skin2RoleSelectPanel`) - `width="115"` quá hẹp so với chuỗi "Khóa Ô Sách" ở `size="24"` nên bị wrap. Đây là component DÙNG CHUNG cho nhiều popup khác (mở rộng width không ảnh hưởng vị trí do vẫn giữ `textAlign="center"`/`horizontalCenter="0"`, chỉ nới khoảng chứa chữ).
+- Link "Nhận Vật Phẩm": exml khai báo mặc định `id="link" text="Đổi Thiên Thư" width="80"`, nhưng `MijiLockView.prototype.initUI` ghi đè bằng `this.link.textFlow=(new egret.HtmlTextParser).parser("<u>Nhận Vật Phẩm</u>")` - chuỗi thật luôn là "Nhận Vật Phẩm" (13 ký tự), `width="80"` không đủ nên xuống dòng.
+- Icon "!" (`source="gantanhao1"`, kích thước gốc xác nhận qua `resource/image/common/img_tj5.json` là 14×20) đặt tại `bottom="98" horizontalCenter="-152"`, câu văn đặt tại `bottom="95" horizontalCenter="14"` không có `width` cố định (tự co theo nội dung, căn giữa quanh điểm `horizontalCenter`) - với câu dài ~48 ký tự ở size 20, vùng chữ thực tế trải rộng gần hết bề ngang khung (566 thiết kế), khiến điểm đặt icon rơi vào ngay đầu câu thay vì nằm hẳn bên trái.
+
+**Cách sửa**:
+- `RoleSelectPanelSkin2.exml` (`titleTxt`): `width` 115→230 (dưới `width=249` của nền `tongyong_titlebg` phía sau, đủ chỗ cho "Khóa Ô Sách" trên 1 dòng, không đổi `horizontalCenter`/`textAlign` nên vẫn căn giữa đúng vị trí cũ).
+- `MijiLockSkin.exml` (`link`): `width` 80→120, thêm `textAlign="right"` (giữ nguyên `right="72"` làm neo phải, chữ mọc dài thêm về bên trái nhưng vẫn hụt trước mép phải nút "Khóa ô sách" `smeltBtn` - đã tính khoảng hở còn lại ~12 đơn vị thiết kế để không đè lên nút).
+- `MijiLockSkin.exml` (icon "!" + câu văn): thay 2 phần tử độc lập (định vị bằng toạ độ tay) bằng 1 `<e:Group>` chứa `<e:layout><e:HorizontalLayout verticalAlign="middle" gap="6"/></e:layout>` bọc icon và Label theo đúng thứ tự (icon trước, chữ sau) - cách này để Egret tự xếp icon-rồi-chữ cạnh nhau có khoảng hở cố định 6 đơn vị, đảm bảo icon LUÔN nằm trước câu và không bao giờ chồng lấn bất kể độ dài câu thay đổi (thay vì tính tay `horizontalCenter` dễ sai khi không đo được độ rộng chữ thực tế) - mẫu `HorizontalLayout` này đã có sẵn trong `PunchTransformSkin.exml` nên là cách làm nhất quán với codebase.
+
+Sửa cả 2 file exml nguồn lẫn `default.thm.js` đã biên dịch: `titleTxt_i` (trong khối `Skin2RoleSelectPanel`), `link_i`, và thay `_Image7_i`/`_Label1_i` (gọi trực tiếp trong `elementsContent` của `_Group2_i`) bằng `_Group3_i` mới (chứa `_HorizontalLayout1_i`, `_Image7_i`, `_Label1_i` đã bỏ toạ độ tay) - xác nhận không trùng tên hàm nào khác trong phạm vi class `SkinMijiLock`.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận 2 file exml hợp lệ; `node -c` sạch cho `default.thm.js`; rà soát toàn bộ tên hàm `_proto.*_i` trong phạm vi `SkinMijiLock` (27 tên, không trùng lặp).
+
+**Cache-bust**: `default.thm_146bb5a8.js` → `default.thm_309cc750.js`, `manifest.json?v=bfd704a7` → `?v=309cc750` trong `index.php`; cập nhật `WWW/version.txt` → `309cc750`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) tiêu đề "Khóa Ô Sách" đã nằm gọn 1 dòng, (2) "Nhận Vật Phẩm" không còn xuống dòng và không đè lên nút "Khóa ô sách", (3) icon "!" đã nằm rõ ràng trước câu văn, có khoảng hở, không còn chồng chữ - nếu khoảng cách/vị trí cần tinh chỉnh thêm (ví dụ `link` vẫn hơi sát nút, hoặc cụm icon+câu bị lệch trái/phải so với mong muốn), báo cụ thể mức px để chỉnh tiếp.
