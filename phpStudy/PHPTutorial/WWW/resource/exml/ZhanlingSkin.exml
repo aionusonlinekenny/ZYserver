@@ -154,7 +154,7 @@
 			<e:Label textColor="0xffff00" text="Đã đạt bậc tối đa" size="26" width="144" height="36" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" bottom.skin_max="19" horizontalCenter="0" bottom.zl_max="-10"/>
 		</e:Group>
 		<ns1:ItemStage id="lv" skinName="SkinLv" y="116" top="64" left="105"/>
-		<e:Image id="zhanlingName" source="zl_name_1" top="232" left="113" width="27" height="111" source.skin_up="zl_name_1_png"/>
+		<e:Image id="zhanlingName" source="zl_name_1" top="210" left="108" width="38" height="155" source.skin_up="zl_name_1_png"/>
 	</e:Group>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" includeIn="skin_up,skin_max" y.skin_up="0" height.skin_up="738" height.skin_max="748" top="1" bottom="0" horizontalCenter="0"/>
 	<e:Image id="skillTitle" source="biaoti_zhanling" includeIn="skin_up,skin_max" horizontalCenter="-198.5" top="9"/>

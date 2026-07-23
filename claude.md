@@ -5855,3 +5855,19 @@ Người dùng muốn thay đổi cơ chế xoá cache của app iOS (đã làm 
 **Cache-bust**: không áp dụng cho phần app native; RIÊNG `WWW/version.txt` là file MỚI, không phải cache-bust rename (giữ tên cố định `version.txt` để app luôn biết đường dẫn tải, chỉ đổi NỘI DUNG bên trong mỗi lần deploy).
 
 **Chưa kiểm chứng thực tế** - cần người dùng: (1) dán lại `GameWebView.swift` vào Xcode, build lại, cài lên máy; (2) xác nhận `version.txt` đã có trên server tại `http://71.31.97.241/version.txt`; (3) mở app lần đầu (sau khi cài bản mới) xác nhận vẫn tải được bình thường (đường lần đầu luôn xoá cache vì chưa có bản lưu); (4) đóng mở lại app lần 2 mà KHÔNG đổi `version.txt` trên server, xác nhận app mở nhanh hơn (dấu hiệu không xoá cache); (5) đổi nội dung `version.txt` trên server rồi mở lại app, xác nhận app xoá cache và tải bản mới đúng như mong đợi.
+
+## 222. Tăng size chữ tên Pháp Bảo (ảnh dọc zl_name_1.png) trong màn Pháp Bảo (2026-07-22)
+
+Người dùng gửi ảnh màn "Pháp Bảo" (Zhanling), hỏi cách tăng kích thước ảnh chữ dọc màu vàng "Kim Long Nguyệt Trụy" (file `resource/eui/zhanling/zhanling/zl_name_1.png`) hiển thị bên cạnh vật phẩm.
+
+**Xác định đúng thành phần**: `resource/exml/ZhanlingSkin.exml`, phần tử `<e:Image id="zhanlingName" source="zl_name_1" top="232" left="113" width="27" height="111" .../>` - đây là ảnh TĨNH (chữ đã dựng sẵn thành hình, không phải Label văn bản) nên "tăng size chữ" ở đây nghĩa là tăng kích thước hiển thị của ảnh (`width`/`height`), không có font-size để chỉnh. Kích thước gốc file PNG là 27x112 (gần khớp 1:1 với `width`/`height` khai báo trong skin, tức đang hiển thị đúng độ phân giải gốc, chưa phóng to).
+
+**Cách sửa**: phóng to theo tỷ lệ ~1.4 lần để tránh méo hình (giữ đúng tỷ lệ khung hình gốc 27:112): `width` 27→38, `height` 111→155; đồng thời chỉnh lại `top`/`left` để giữ nguyên điểm chính giữa hình ảnh cũ (tránh lệch vị trí so với trước, chỉ "phồng to" tại chỗ): `top` 232→210, `left` 113→108. Đã rà soát không gian xung quanh (cột icon trang bị `item1-4` bên trái kết thúc ở x=90, ảnh tên bắt đầu từ x=108 - còn đủ khoảng hở, không chồng lấn) trước khi chọn mức phóng to này.
+
+Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (`zhanlingName_i`, dòng 186023).
+
+**Kiểm thử**: `node -c` sạch; `xml.etree.ElementTree` xác nhận exml hợp lệ.
+
+**Cache-bust**: `default.thm_233355b2.js` → `default.thm_56f7be93.js`, `manifest.json?v=96d47ee0` → `?v=b4c1aaea` trong `index.php`. Đồng thời cập nhật `WWW/version.txt` → `b4c1aaea` theo đúng quy tắc mới thiết lập ở mục 221 (để app iOS nhận diện đúng có bản cập nhật, không dùng nhầm cache cũ).
+
+**Chưa kiểm chứng thực tế** - mức phóng to 1.4 lần là ước lượng hợp lý dựa trên khoảng trống xung quanh, cần người dùng xác nhận bằng ảnh chụp mới chữ đã đủ lớn và chưa bị chồng lấn với icon trang bị bên cạnh hay khung vật phẩm chính giữa; nếu muốn to hơn/nhỏ hơn có thể chỉnh tiếp tỷ lệ.
