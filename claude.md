@@ -5891,3 +5891,15 @@ Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (`upBtnGroup_i`
 **Cache-bust**: `default.thm_56f7be93.js` → `default.thm_8fd790a2.js`, `manifest.json?v=b4c1aaea` → `?v=e7f24c77` trong `index.php`; cập nhật `WWW/version.txt` → `e7f24c77` theo quy tắc mục 221.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) nút "Nâng sao nhanh" đã dời sang phải đúng mức mong muốn, (2) giá trị tiêu hao hiển thị trên 1 dòng không còn bị xuống dòng ở "/640", (3) 2 khu vực không còn đè/quá sát nhau - nếu còn cần điều chỉnh thêm, báo cụ thể mức px cần dời/mở rộng thêm.
+
+## 224. Dời nút "Nâng sao nhanh" thêm 100px nữa sang phải (2026-07-22)
+
+Người dùng xác nhận mục 223 đúng hướng (ô "Tiêu hao" hiển thị 1 dòng, không đè nhau), yêu cầu dời nút "Nâng sao nhanh" qua phải thêm 100px màn hình nữa.
+
+**Cách sửa**: quy đổi 100px màn hình → ~45px thiết kế (theo đúng tỷ lệ đã dùng ở mục 223). Tăng `upBtnGroup.horizontalCenter` từ `45` lên `90` (tổng cộng dời 90 đơn vị thiết kế so với vị trí gốc, tương đương ~200px màn hình thật qua 2 đợt). Sửa cả exml lẫn `default.thm.js` (`upBtnGroup_i`, dòng 185792).
+
+**Kiểm thử**: `node -c` sạch; `xml.etree.ElementTree` xác nhận exml hợp lệ.
+
+**Cache-bust**: `default.thm_8fd790a2.js` → `default.thm_146bb5a8.js`, `manifest.json?v=e7f24c77` → `?v=bfd704a7` trong `index.php`; cập nhật `WWW/version.txt` → `bfd704a7`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới vị trí nút đã đúng ý.
