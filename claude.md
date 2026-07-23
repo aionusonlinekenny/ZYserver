@@ -5871,3 +5871,23 @@ Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (`zhanlingName_
 **Cache-bust**: `default.thm_233355b2.js` → `default.thm_56f7be93.js`, `manifest.json?v=96d47ee0` → `?v=b4c1aaea` trong `index.php`. Đồng thời cập nhật `WWW/version.txt` → `b4c1aaea` theo đúng quy tắc mới thiết lập ở mục 221 (để app iOS nhận diện đúng có bản cập nhật, không dùng nhầm cache cũ).
 
 **Chưa kiểm chứng thực tế** - mức phóng to 1.4 lần là ước lượng hợp lý dựa trên khoảng trống xung quanh, cần người dùng xác nhận bằng ảnh chụp mới chữ đã đủ lớn và chưa bị chồng lấn với icon trang bị bên cạnh hay khung vật phẩm chính giữa; nếu muốn to hơn/nhỏ hơn có thể chỉnh tiếp tỷ lệ.
+
+## 223. Dời nút "Nâng sao nhanh" sang phải + mở rộng ô "Tiêu hao" tránh xuống dòng (2026-07-22)
+
+Người dùng gửi ảnh màn Pháp Bảo: nút "Nâng sao nhanh" nằm sát/đè lên khu vực "Tiêu hao：X/Y" bên trái, đồng thời giá trị tiêu hao dài (VD "27525425/640") bị tràn width cố định của `countLabel` (88 thiết kế) nên tự xuống dòng ("/640" rơi xuống dòng dưới). Yêu cầu: dời nút "Nâng sao nhanh" sang phải 100px, tăng width ô tiêu hao để không xuống dòng.
+
+**Xác định đúng thành phần**: `resource/exml/ZhanlingSkin.exml`, nhóm `dinghong` (width=600 thiết kế, khớp tỷ lệ màn hình ~2.2 lần) chứa `upBtnGroup` (chứa nút `upBtn`="Nâng sao nhanh") và `costGroup` (chứa `expendLabel`="Tiêu hao：", `icon`, `countLabel`=giá trị "X/Y") xếp cạnh nhau, khoảng cách vốn đã hẹp.
+
+**Cách sửa**:
+- `upBtnGroup`: `horizontalCenter` từ `0` → `45` (quy đổi 100px màn hình thật theo tỷ lệ ~2.2 → ~45 đơn vị thiết kế, theo đúng quy ước đã dùng suốt các mục 214-219 cho cụm dò máu boss) - dời cả nhóm nút (bao gồm `upBtn`/`upBtnEx`/`upRedPoint`) sang phải.
+- `costGroup`: `width` từ `180` → `260`; `countLabel`: `width` từ `88` → `160` - đủ chỗ cho chuỗi số dài (ước lượng cỡ chữ size=20, ~13-14 ký tự tối đa).
+
+Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (`upBtnGroup_i`, `costGroup_i`, `countLabel_i`).
+
+**Lưu ý về khoảng cách còn lại**: theo tính toán toạ độ (nút mới có tâm ở x≈340/600 thiết kế, mép trái nút ≈235.5; ô tiêu hao mới mép phải ≈275), 2 khu vực vẫn có thể còn khá sát nhau tuỳ độ dài số thực tế hiển thị - đây là ước lượng ban đầu theo đúng tinh thần các lần chỉnh trước trong phiên này (chỉnh gần đúng, tinh chỉnh tiếp theo phản hồi ảnh chụp thật).
+
+**Kiểm thử**: `node -c` sạch; `xml.etree.ElementTree` xác nhận exml hợp lệ; xác nhận đúng 3 vị trí sửa trong `default.thm.js` qua dòng chính xác (185795/185838/185879).
+
+**Cache-bust**: `default.thm_56f7be93.js` → `default.thm_8fd790a2.js`, `manifest.json?v=b4c1aaea` → `?v=e7f24c77` trong `index.php`; cập nhật `WWW/version.txt` → `e7f24c77` theo quy tắc mục 221.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) nút "Nâng sao nhanh" đã dời sang phải đúng mức mong muốn, (2) giá trị tiêu hao hiển thị trên 1 dòng không còn bị xuống dòng ở "/640", (3) 2 khu vực không còn đè/quá sát nhau - nếu còn cần điều chỉnh thêm, báo cụ thể mức px cần dời/mở rộng thêm.

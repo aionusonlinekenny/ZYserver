@@ -122,15 +122,15 @@
 		</e:Group>
 		
 		<e:Group id="dinghong" height="75" anchorOffsetY="0" width="590" horizontalCenter="0" includeIn="zl_up,skin_up" bottom="0">
-			<e:Group id="upBtnGroup" includeIn="zl_up,skin_up" horizontalCenter="0" bottom="6">
+			<e:Group id="upBtnGroup" includeIn="zl_up,skin_up" horizontalCenter="45" bottom="6">
 			<e:Button id="upBtn" includeIn="zl_up,skin_up" label="Nâng sao nhanh" width="209" height="63" y="0" x="0" icon="btn1_2" skinName="SkinBtn6" horizontalCenter="0" verticalCenter="0"/>
 			<e:Button id="upBtnEx" label="Kích hoạt" skinName="SkinBtn6" width="209" height="63" includeIn="skin_up" icon="btn1_2" horizontalCenter="0" verticalCenter="0"/>
 			<e:Image id="upRedPoint" source="zjmhongdian" x="132" y="0" right.skin_up="20" top.skin_up="0" right.zl_up="20" top.zl_up="0"/>
 			</e:Group>
-			<e:Group id="costGroup" includeIn="zl_up,skin_up" verticalCenter="4" left="15" width="180">
+			<e:Group id="costGroup" includeIn="zl_up,skin_up" verticalCenter="4" left="15" width="260">
 			<e:Label id="expendLabel" text="Tiêu hao：" size="20" bold.zl_max="true" x="0" y="0" textColor="0x001828" fontFamily="Microsoft YaHei" width.skin_max="60"/>
 			<e:Image id="icon" x="55" width="31" height="31" y="28" source="205003_png" source.skin_up="zl_suit_btn" width.skin_max="36" source.zl_up="tongyongyuanbao2"/>
-			<e:Label id="countLabel" text="12000/100" size="20" textAlign="left" x="94" y="12" textAlign.zl_up="left" textColor="0x001828" fontFamily="Microsoft YaHei" text.zl_up="" text.skin_up="" width="88"/>
+			<e:Label id="countLabel" text="12000/100" size="20" textAlign="left" x="94" y="12" textAlign.zl_up="left" textColor="0x001828" fontFamily="Microsoft YaHei" text.zl_up="" text.skin_up="" width="160"/>
 			<e:layout>
 				<e:HorizontalLayout verticalAlign="middle" gap.zl_max="-5" gap.zl_up="0" gap.skin_up="0" gap.skin_max="0" gap="0"/>
 			</e:layout>
