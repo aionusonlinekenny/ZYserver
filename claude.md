@@ -5987,3 +5987,21 @@ Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (`input_i` tron
 **Cache-bust**: `default.thm_3dead432.js` → `default.thm_c328bdfe.js`, `manifest.json?v=3dead432` → `?v=c328bdfe` trong `index.php`; cập nhật `WWW/version.txt` → `c328bdfe`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận: mở popup "Đổi tên" từ "Thẻ Đổi Tên" và gõ thử tên dài hơn 6 ký tự (tối đa 24) để xác nhận đã nhập được, không còn bị chặn sớm như trước.
+
+## 229. Fix icon "!" chồng lên câu "Chức năng Nung Luyện..." (Luyện Hóa Trang Bị) (2026-07-24)
+
+Người dùng gửi ảnh màn "Luyện Hóa Trang Bị" (nút "Nung luyện nhanh"), báo icon "!" nằm chồng ngay giữa câu "Chức năng Nung Luyện chỉ thu hồi trang bị vô dụng" (icon lọt vào giữa "Chức năng" và "Nung").
+
+**Phát hiện quan trọng - file exml nguồn bị LỆCH (stale) so với `default.thm.js` đã deploy thực tế**: đọc `resource/exml/SmeltMainViewSkin.exml` thấy icon `gantanhao1` khai báo `x="116"` và Label câu văn khai báo `x="141" textAlign="center"` KHÔNG có `width` - nhưng khi đối chiếu trực tiếp `default.thm.js` (nguồn thực sự client đang chạy) thì Label này lại có `horizontalCenter="0" width="417"` (căn giữa toàn bộ khung 417, không dùng `x="141"` như exml) - tức đã có người sửa trực tiếp trong file JS biên dịch ở một thời điểm nào đó trước đây mà KHÔNG đồng bộ ngược lại exml nguồn (vi phạm quy tắc dual-location editing đã thiết lập trong phiên này). Icon vẫn giữ toạ độ tuyệt đối `x="116"` không đổi trong cả 2 phiên bản, nên khi câu văn chuyển sang chế độ căn-giữa-cả-khối rộng 417, vị trí icon cũ (vốn tính toán cho cách bố trí `x="141"` không căn giữa) rơi thẳng vào giữa vùng chữ đã dịch chuyển, gây chồng lấn.
+
+**Cách sửa**: áp dụng đúng kỹ thuật đã dùng ở mục 225/227 - gộp icon `gantanhao1` và Label câu văn vào 1 `<e:Group>` dùng `HorizontalLayout gap="6"`, cả cụm căn giữa bằng `horizontalCenter="0"` - đảm bảo icon luôn đứng ngay trước câu văn có khoảng cách cố định, không thể chồng lấn bất kể độ dài câu. Đồng thời đồng bộ luôn `resource/exml/SmeltMainViewSkin.exml` khớp với `default.thm.js` (cả Label dòng 2 "(Thẻ Tháng Đặc Quyền...)" cũng bị lệch tương tự - `x="141"` trong exml vs `horizontalCenter="0" width="417"` thực tế - sửa lại exml cho khớp, dù dòng này không có icon nên không gây lỗi hiển thị, chỉ để tránh nhầm lẫn cho lần sửa sau).
+
+Xác nhận qua `main.min.js`: controller `SmeltEquipsTotalWin` (`skinName="SkinSmeltMainView"`) chỉ đụng tới `closeBtn`/`equip`/`bgClose`, không set text/vị trí của icon hay 2 Label này - an toàn để sửa trực tiếp trong skin.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`; rà soát tên hàm `_proto.*_i` trong phạm vi class `SkinSmeltMainView` không trùng lặp trước khi đặt tên hàm mới.
+
+**Cache-bust**: `default.thm_c328bdfe.js` → `default.thm_3976c522.js`, `manifest.json?v=c328bdfe` → `?v=3976c522` trong `index.php`; cập nhật `WWW/version.txt` → `3976c522`.
+
+**Lưu ý cho các lần sửa sau**: phát hiện này cho thấy KHÔNG PHẢI lúc nào exml nguồn cũng khớp 100% với `default.thm.js` đang chạy thực tế - nếu 1 vị trí/thuộc tính đã sửa trong exml mà kiểm tra ảnh chụp vẫn không thấy hiệu lực (và đã loại trừ nguyên nhân cache/cách override từ JS như mục 215), cần đối chiếu TRỰC TIẾP factory tương ứng trong `default.thm.js` (không tin tưởng exml nguồn tuyệt đối) trước khi kết luận sai component.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới icon "!" đã nằm rõ ràng trước câu văn, không còn chồng lấn.

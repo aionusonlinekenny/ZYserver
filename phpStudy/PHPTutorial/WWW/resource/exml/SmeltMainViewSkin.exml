@@ -11,9 +11,14 @@
 		<e:Image source="tongyong_titlebg" anchorOffsetX="0" width="303" y="-15" horizontalCenter="0"/>
 		<e:Label id="title" size="22" text="Luyện Hóa Trang Bị" horizontalCenter="0" y="-3.5" bold="false" fontFamily="Microsoft YaHei" textColor="0x084151"/>
 		<e:Image source="ronglianbg_png" height="348" width="417" x="33" top="40"/>
-		<e:Image x="116" source="gantanhao1" bottom="153"/>
-		<e:Label text="Chức năng Nung Luyện chỉ thu hồi trang bị vô dụng" size="20" fontFamily="Microsoft YaHei" textColor="0x0038ab" height="20" verticalAlign="middle" textAlign="center" x="141" bottom="153"/>
-		<e:Label text="(Thẻ Tháng Đặc Quyền mở Nung Luyện nhanh)" size="20" fontFamily="Microsoft YaHei" height="20" verticalAlign="middle" textAlign="center" x="141" bottom="128" textColor="0xffff00"/>
+		<e:Group bottom="153" horizontalCenter="0">
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="6"/>
+			</e:layout>
+			<e:Image source="gantanhao1"/>
+			<e:Label text="Chức năng Nung Luyện chỉ thu hồi trang bị vô dụng" size="20" fontFamily="Microsoft YaHei" textColor="0x0038ab" height="20" verticalAlign="middle"/>
+		</e:Group>
+		<e:Label text="(Thẻ Tháng Đặc Quyền mở Nung Luyện nhanh)" size="20" fontFamily="Microsoft YaHei" height="20" verticalAlign="middle" textAlign="center" horizontalCenter="0" width="417" bottom="128" textColor="0xffff00"/>
 		<ns1:SmeltEquipNormalPanel name="123" id="equip" skinName="SkinSmeltMain" anchorOffsetY="0" anchorOffsetX="0" width="417" x="33" top="40"/>
 		<e:Button id="closeBtn" width="54" height="54" y="-14" x="434" skinName="SkinBtn0" icon="tongyong_btnclose">
 		</e:Button>	
