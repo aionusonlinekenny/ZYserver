@@ -2,7 +2,7 @@
 <e:Skin class="SkinGuardGodWeaponUISkind" currentState="normal" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="600" height="948">
 	<w:Config id="15c6d0f73d2" />
-	<e:Group id="RoleInformation" right="6" bottom="396" height="368" width="112">
+	<e:Group id="RoleInformation" right="6" top="50" height="368" width="112">
 		<e:Image width="112" height="368" x="0" source="zsbg2" scale9Grid="5,4,87,14" anchorOffsetY="0" anchorOffsetX="0" y="0"/>
 		<e:Group id="player1" y="12" horizontalCenter="0">
 
@@ -106,9 +106,14 @@
 			<e:HorizontalLayout gap="22"/>
 		</e:layout>
 	</e:Group>
-	<e:Label id="refreshHints" text="Còn lại đến đợt tiếp theo" size="20" bottom="267" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
-	<e:Label id="refreshHints0" text="(15/15)" size="20" textColor="0x05FE03" bottom="267" horizontalCenter="-130" fontFamily="Microsoft YaHei"/>
-	<e:Label id="refreshHints1" text="9 giây" size="20" textColor="0x3BFE03" bottom="267" horizontalCenter="108.5" fontFamily="Microsoft YaHei"/>
+	<e:Group bottom="267" horizontalCenter="0">
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="6"/>
+		</e:layout>
+		<e:Label id="refreshHints0" text="(15/15)" size="20" textColor="0x05FE03" fontFamily="Microsoft YaHei"/>
+		<e:Label id="refreshHints" text="Còn lại đến đợt tiếp theo" size="20" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:Label id="refreshHints1" text="9 giây" size="20" textColor="0x3BFE03" fontFamily="Microsoft YaHei"/>
+	</e:Group>
 	<e:Group id="missionInformation" width="126" height="73" right="4" top="687">
 		<e:Image width="126" height="73" x="0" y="0" scale9Grid="7,11,4,5" source="zsbg2"/>
 		<e:Image width="120" y="36" height="2" source="line6" horizontalCenter="0"/>

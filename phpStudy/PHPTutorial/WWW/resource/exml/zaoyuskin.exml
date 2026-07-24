@@ -19,7 +19,7 @@
 		<e:Label id="dayPrestige" text="" y="64.65" size="20" x="405" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		<e:Label id="rank" text="" y="100.01" size="20" x="405" textColor="0x001828" fontFamily="Microsoft YaHei"/>
 		<e:Label id="labelRed" text="Xóa ngay" x="217.27" y="155.35" size="20" textColor="0x35e62d" fontFamily="Microsoft YaHei"/>
-		<e:Button id="rewardBtn" label="Button" x="476.83" y="47.84" skinName="SkinBtn0" icon="meirijiangli2"/>
+		<e:Button id="rewardBtn" label="Button" x="476.83" y="8" skinName="SkinBtn0" icon="meirijiangli2"/>
 		<e:Label id="labelRedPoint" text="" x="405" y="137.31" size="20" fontFamily="Microsoft YaHei" textColor="0x35e62d"/>
 		<e:Label id="time" text="（Có thể thách đấu sau 33:59）" x="217.69" y="164" fontFamily="Microsoft YaHei" size="20" textColor="0xf3311e"/>
 	</e:Group>

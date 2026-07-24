@@ -10,10 +10,16 @@
 		<e:Image left="25" right="25" y="37" anchorOffsetX="0" source="tongyong_dikuang1" anchorOffsetY="0" height="188" width="419" scale9Grid="22,20,25,25"/>
 		<e:Image source="tongyongtip1" scale9Grid="5,5,15,15" touchEnabled="true" width="400" height="240" x="0" y="0" visible="false"/>
 		<e:Image source="tongyongtip2" scale9Grid="19,18,3,6" width="400" height="240" x="0" y="0" visible="false"/>
-		<e:Label id="callTimesLable" text="1" size="20" x="284" y="176" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-		<e:Label text="Triệu hồi BOSS May Mắn" size="22" y="-2" fontFamily="Microsoft YaHei" textColor="0x084151" horizontalCenter="0"/>
-		<e:Label id="desc" text="Mỗi lần thách đấu có thể triệu hồi BOSS May Mắn\n\nBOSS May Mắn có máu thấp, tỷ lệ cao rơi Trang Tâm Pháp" size="20" y="74" width="400" height="62" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x213847"/>
-		<e:Label id="desc0" text="Số lần có thể triệu hồi： lần" size="20" y="176" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		<e:Label text="Triệu hồi BOSS" size="22" y="-2" fontFamily="Microsoft YaHei" textColor="0x084151" horizontalCenter="0"/>
+		<e:Label id="desc" text="Mỗi lần thách đấu có thể triệu hồi&#10;BOSS May Mắn&#10;&#10;BOSS May Mắn có máu thấp, tỷ lệ cao rơi Trang Tâm Pháp" size="20" y="74" width="400" height="62" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x213847"/>
+		<e:Group y="176" horizontalCenter="0">
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="4"/>
+			</e:layout>
+			<e:Label id="desc0" text="Số lần có thể triệu hồi：" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+			<e:Label id="callTimesLable" text="1" size="20" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label text="lần" size="20" fontFamily="Microsoft YaHei" textColor="0x00ff00"/>
+		</e:Group>
 		<e:Image scale9Grid="85,1,6,1" y="40" source="tongyongline" left="0" right="0" visible="false"/>
 
 

@@ -5944,3 +5944,26 @@ Sửa cả `MijiLockSkin.exml` lẫn `default.thm.js` (`link_i`).
 **Cache-bust**: `default.thm_309cc750.js` → `default.thm_470f6cd4.js`, `manifest.json?v=309cc750` → `?v=470f6cd4` trong `index.php`; cập nhật `WWW/version.txt` → `470f6cd4`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới "Nhận Vật Phẩm" đã nằm gọn 1 dòng và không đè lên nút "Khóa ô sách" bên cạnh.
+
+## 227. Fix 3 màn hình: popup "Triệu hồi BOSS May Mắn", HUD Hộ Vệ Thần Khí, panel Đấu Trường (2026-07-24)
+
+Người dùng gửi 3 ảnh, báo tổng cộng 6 lỗi hiển thị riêng biệt.
+
+**Ảnh 1 - popup "Triệu hồi BOSS May Mắn"** (`GuardCallBossWindow`, `skinName="SkinGuardGodWeaponBossTips"`, file `resource/exml/guardGodWeaponBossTips.exml`) - xác nhận qua `GuardCallBossWindow.prototype.open` trong `main.min.js` CHỈ set `callTimesLable.text`/`zb0.text`, không đụng tới tiêu đề/`desc`/`desc0` nên các Label này lấy đúng `text` mặc định khai báo trong exml (an toàn khi sửa trực tiếp trong exml):
+- Tiêu đề "Triệu hồi BOSS May Mắn" quá dài → rút gọn còn "Triệu hồi BOSS" theo đúng yêu cầu.
+- Câu "Mỗi lần thách đấu có thể triệu hồi BOSS May Mắn" tự động wrap giữa chừng khiến chữ "n" rớt xuống dòng riêng xấu → chèn xuống dòng thủ công (`&#10;`) ngay trước cụm "BOSS May Mắn" để cả cụm luôn đi cùng nhau xuống dòng 2 thay vì dựa vào auto-wrap (đúng theo đề nghị của người dùng).
+- "Số lần có thể triệu hồi： lần" đè lên số lượt (`callTimesLable`, text="1"): nguyên nhân là `desc0` dùng `horizontalCenter="0"` (căn giữa theo nội dung) trong khi `callTimesLable` lại dùng toạ độ TUYỆT ĐỐI cố định `x="284"` - khi số lượt đổi từ 1 chữ số sang nhiều chữ số, 2 điểm neo độc lập này lệch nhau gây đè chữ. Sửa bằng kỹ thuật đã dùng ở mục 225: gộp `desc0` + `callTimesLable` + Label "lần" (tách khỏi text gốc) vào 1 `<e:Group>` dùng `HorizontalLayout gap="4"` - đảm bảo luôn xếp cạnh nhau đúng thứ tự, không thể đè bất kể số lượt dài ngắn.
+
+**Ảnh 2 - HUD "Hộ Vệ Thần Khí"** (`GuardMainUIView`, `skinName="SkinGuardGodWeaponUISkind"`, file `resource/exml/guardGodWeaponUISkind.exml`):
+- Cụm 3 avatar người chơi + thanh máu (`RoleInformation`, neo `bottom="396"`) nằm đè lên nút `luckyBossBtn` (icon "BOSS" mở popup ở ảnh 1, neo `y="590"` cố định phía dưới) - theo đúng yêu cầu người dùng, dời cả cụm `RoleInformation` lên cao góc phải bằng cách đổi neo từ `bottom="396"` sang `top="50"` (đặt ngay dưới thanh "Thời gian còn lại" ở đỉnh màn hình, tách hẳn khỏi vùng `luckyBossBtn` phía dưới, không còn phụ thuộc phép tính khoảng cách với nút BOSS nữa).
+- "Còn lại đến đợt tiếp theo13" - số giây đếm ngược dính liền chữ "theo": xác nhận qua `GuardMainUIView.prototype.updateInfo_a94`/`runTimes_a94` trong `main.min.js`, `refreshHints1.text` luôn được set là SỐ THUẦN (`""+e`, ví dụ "13"), không có khoảng trắng hay chữ "giây" kèm theo như text mặc định "9 giây" trong exml gợi ý sai. Đồng thời `refreshHints`/`refreshHints0`/`refreshHints1` định vị bằng 3 `horizontalCenter` tuyệt đối độc lập (0/-130/108.5) - số càng nhiều chữ số càng lấn sát/dính vào chữ "theo" phía trước do hộp căn giữa theo nội dung. Sửa bằng cùng kỹ thuật: gộp cả 3 Label vào 1 `<e:Group>` `HorizontalLayout gap="6"`, đảm bảo luôn có khoảng cách cố định bất kể số giây/đợt dài bao nhiêu chữ số.
+
+**Ảnh 3 - panel "Đấu Trường"** (`Skinzaoyu`, file `resource/exml/zaoyuskin.exml`): icon "Phần thưởng Xếp Hạng" (`rewardBtn`, icon=`meirijiangli2`, kích thước gốc xác nhận qua `resource/eui/ui/tj2.json` là 81×80) đặt tại `y="47.84"` đè lên hàng "Xếp hạng Sát Lục: Chưa lên" (`y="100.02"`/`y="100.01"`) vì icon cao 80 nên trải dài tới y≈128, lấn qua hàng bên dưới. Dời icon lên `y="8"` (rời khỏi vùng va chạm, còn cách hàng "Xếp hạng" ~12 đơn vị, không đụng nhóm tiêu đề "Thông tin cá nhân" phía trên vì khác cột x).
+
+Sửa cả 3 file exml nguồn lẫn `default.thm.js` đã biên dịch tương ứng: `guardGodWeaponBossTips.exml`/`_Label1_i`+`desc_i`+`desc0Group_i`(mới, thay `callTimesLable_i`+`desc0_i` độc lập); `guardGodWeaponUISkind.exml`/`RoleInformation_i`+`refreshHintsGroup_i`(mới, thay 3 hàm riêng); `zaoyuskin.exml`/`rewardBtn_i`. Đã rà soát tên hàm `_proto.*_i` trong từng class không trùng lặp trước khi đặt tên (phát hiện và tránh 1 trùng tên `_HorizontalLayout2_i` đã tồn tại sẵn trong `SkinGuardGodWeaponUISkind`, đổi thành `_HorizontalLayout3_i`).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận cả 3 exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_470f6cd4.js` → `default.thm_3dead432.js`, `manifest.json?v=470f6cd4` → `?v=3dead432` trong `index.php`; cập nhật `WWW/version.txt` → `3dead432`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới cả 3 màn hình: (1) tiêu đề/câu văn/số lượt trong popup Triệu hồi BOSS đã đúng ý, (2) cụm avatar+máu đã lên góc trên phải và không còn đè icon BOSS, số giây đếm ngược đã tách rời chữ "theo", (3) icon phần thưởng xếp hạng đã rời khỏi chữ "Chưa lên" - lưu ý riêng phần "dời RoleInformation lên top=50" là suy luận từ toạ độ khai báo trong exml (không đo trực tiếp trên ảnh do khó xác định tỉ lệ px↔thiết kế chính xác cho màn hình này), nếu vẫn còn chồng lấn hoặc lên quá cao/thấp cần báo cụ thể mức px để tinh chỉnh tiếp.
