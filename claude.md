@@ -6005,3 +6005,19 @@ Xác nhận qua `main.min.js`: controller `SmeltEquipsTotalWin` (`skinName="Skin
 **Lưu ý cho các lần sửa sau**: phát hiện này cho thấy KHÔNG PHẢI lúc nào exml nguồn cũng khớp 100% với `default.thm.js` đang chạy thực tế - nếu 1 vị trí/thuộc tính đã sửa trong exml mà kiểm tra ảnh chụp vẫn không thấy hiệu lực (và đã loại trừ nguyên nhân cache/cách override từ JS như mục 215), cần đối chiếu TRỰC TIẾP factory tương ứng trong `default.thm.js` (không tin tưởng exml nguồn tuyệt đối) trước khi kết luận sai component.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới icon "!" đã nằm rõ ràng trước câu văn, không còn chồng lấn.
+
+## 230. Fix câu mô tả "Tiên Cung Chi Linh" tràn cả 2 mép màn hình (Luyện Khí) (2026-07-24)
+
+Người dùng gửi ảnh màn "Luyện Khí" → tab "Tiên Cung", báo dòng "...Tiên Cung Chi Linh, tối đa có thể kích hoạt đồng thời..." bị tràn ra ngoài không đọc được nguyên câu (chữ mất cả 2 đầu trái/phải màn hình, kể cả icon "!" phía trước cũng mất tích khỏi màn hình).
+
+**Xác định đúng thành phần**: `WeaponView` (component `<ns1:WeaponView skinName="SkinweaponSoul".../>` nhúng trong `forgeskin.exml`/`DailyFbSkin.exml`), text được set động qua `this.desc.textFlow=TextFlowMaker.generateTextFlow1("...Hiện đã dùng "+l+" Tiên Cung Chi Linh, tối đa có thể kích hoạt đồng thời "+(l+1)+" hiệu ứng kỹ năng Tiên Cung")` trong `main.min.js` - chuỗi khá dài (~55-60 ký tự tuỳ số lượng dồn). Label `id="desc"` trong `resource/exml/weaponSoulSkin.exml` (class `SkinweaponSoul`) nằm trong `descGroup` (Group dùng `HorizontalLayout` xếp icon "!" + Label cạnh nhau, cả cụm căn giữa) nhưng Label lại KHÔNG khai báo `width` - khi không có `width`, Label sẽ không bao giờ tự xuống dòng (wrap) mà cứ kéo dài theo đúng độ dài nội dung trên 1 dòng duy nhất, khiến với câu dài, cả cụm icon+chữ vượt xa 600 đơn vị bề ngang màn hình, bị đẩy che khuất cả 2 đầu ra ngoài vùng nhìn thấy (kể cả icon cũng bị đẩy mất hút sang trái).
+
+**Cách sửa**: thêm `width="520"` cho Label `desc` (600 thiết kế - 14 (icon) - 2 (gap) - lề an toàn ≈ 520) để bật chế độ tự xuống dòng (word-wrap) khi câu quá dài, giữ cả cụm nằm gọn trong màn hình; thêm `textAlign="left"` (đọc tự nhiên cạnh icon, nhất quán style đã dùng cho các icon+câu văn khác trong phiên này). Đã xác nhận qua `main.min.js`: `desc` chỉ bị gán `.textFlow`, không có code nào set `.x`/`.width` đè lên sau đó nên an toàn sửa trực tiếp trong skin.
+
+Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (`desc_i` trong class `SkinweaponSoul` - xác nhận đúng phạm vi vì id `desc` bị trùng tên với 1 factory khác thuộc màn hình "Bỉ Kỳ" không liên quan).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_3976c522.js` → `default.thm_8e246ac2.js`, `manifest.json?v=3976c522` → `?v=8e246ac2` trong `index.php`; cập nhật `WWW/version.txt` → `8e246ac2`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới câu mô tả đã tự xuống dòng gọn trong màn hình, đọc được đầy đủ nguyên câu, icon "!" hiển thị đúng vị trí trước câu.

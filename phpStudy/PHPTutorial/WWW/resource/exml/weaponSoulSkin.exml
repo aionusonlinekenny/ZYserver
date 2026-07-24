@@ -60,7 +60,7 @@
 
 		<e:Group id="descGroup" horizontalCenter="0" y="142">
 			<e:Image x="0" y="1" source="gantanhao3"/>
-			<e:Label id="desc" y="0" size="20" x="27" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="desc" y="0" size="20" width="520" textAlign="left" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 			<e:layout>
 			<e:HorizontalLayout gap="2" horizontalAlign="center" verticalAlign="middle"/>
 			</e:layout>
