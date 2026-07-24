@@ -5926,3 +5926,21 @@ Sửa cả 2 file exml nguồn lẫn `default.thm.js` đã biên dịch: `titleT
 **Cache-bust**: `default.thm_146bb5a8.js` → `default.thm_309cc750.js`, `manifest.json?v=bfd704a7` → `?v=309cc750` trong `index.php`; cập nhật `WWW/version.txt` → `309cc750`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) tiêu đề "Khóa Ô Sách" đã nằm gọn 1 dòng, (2) "Nhận Vật Phẩm" không còn xuống dòng và không đè lên nút "Khóa ô sách", (3) icon "!" đã nằm rõ ràng trước câu văn, có khoảng hở, không còn chồng chữ - nếu khoảng cách/vị trí cần tinh chỉnh thêm (ví dụ `link` vẫn hơi sát nút, hoặc cụm icon+câu bị lệch trái/phải so với mong muốn), báo cụ thể mức px để chỉnh tiếp.
+
+## 226. Fix tiếp "Nhận Vật Phẩm" vẫn xuống dòng sau mục 225 (2026-07-24)
+
+Người dùng gửi ảnh xác nhận: tiêu đề "Khóa Ô Sách" và icon "!" đã đúng, nhưng "Nhận Vật Phẩm" vẫn xuống dòng thành "Nhận Vật Phẩ"/"m" - tức mức nới `width` 80→120 ở mục 225 vẫn còn thiếu đúng 1 ký tự.
+
+**Đo lại chính xác từ ảnh chụp thật** (thay vì ước lượng chữ/px như mục 225): dùng 2 điểm mốc đã biết toạ độ thiết kế - mép phải nút `smeltBtn` ("Khóa ô sách", design x=368, tính từ `horizontalCenter="-3" width="176"`) và vị trí `link` cũ (`right="72"` → design x=494) - đối chiếu với toạ độ pixel thật của 2 mốc này trên ảnh chụp (587px và 783px) để suy ra tỉ lệ quy đổi chính xác (≈1.556 px ảnh / 1 đơn vị thiết kế) cho riêng khu vực này, rồi đo ngược lại độ rộng chữ "Nhận Vật Phẩ" (12 ký tự, đã xuống dòng) trên ảnh ra ≈109 đơn vị thiết kế → cả câu "Nhận Vật Phẩm" (13 ký tự) cần ≈118-120 đơn vị - đúng bằng mức đã set (120) nên chỉ vừa đủ/thiếu chút ít, chưa có khoảng đệm nên vẫn tràn 1 ký tự.
+
+**Phát hiện thêm**: đo luôn khoảng trống bên phải `link` tới viền khung (viền ở ảnh ≈849px ↔ thiết kế ≈536) - cho thấy vẫn còn dư ~40 đơn vị thiết kế chưa dùng tới bên phải vị trí `right="72"` cũ, có thể tận dụng để vừa nới `width` vừa dịch cả khối `link` sang phải mà không cần lấn thêm vào khoảng cách với nút `smeltBtn`.
+
+**Cách sửa**: `link`: `width` 120→130 (thêm đệm ~10 đơn vị so với nhu cầu đo được ~120), `right` 72→51 (dịch cả khối sang phải 21 đơn vị, tận dụng khoảng trống viền phải) - kết quả: mép trái mới ở thiết kế x≈385 (vẫn cách nút `smeltBtn` mép phải x=368 đúng 17 đơn vị, y hệt khoảng hở gốc trước khi bug này xảy ra), mép phải mới x≈515 (còn cách viền khung ~21 đơn vị, không tràn viền).
+
+Sửa cả `MijiLockSkin.exml` lẫn `default.thm.js` (`link_i`).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_309cc750.js` → `default.thm_470f6cd4.js`, `manifest.json?v=309cc750` → `?v=470f6cd4` trong `index.php`; cập nhật `WWW/version.txt` → `470f6cd4`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới "Nhận Vật Phẩm" đã nằm gọn 1 dòng và không đè lên nút "Khóa ô sách" bên cạnh.

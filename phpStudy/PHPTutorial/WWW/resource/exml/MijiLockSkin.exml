@@ -24,7 +24,7 @@
 		<ns1:MijiItem id="mijiBtn6" y="218" skinName="SkinMijiItem" width="100" height="100" x="13"/>
 		<ns1:MijiItem y="67" skinName="SkinMijiItem" id="mijiBtn7" width="100" height="100" x="73"/>
 	</e:Group>
-		<e:Label id="link" text="Đổi Thiên Thư" size="20" textColor="0x00ff00" fontFamily="Microsoft YaHei" textAlign="right" bottom="46" right="72" width="120"/>
+		<e:Label id="link" text="Đổi Thiên Thư" size="20" textColor="0x00ff00" fontFamily="Microsoft YaHei" textAlign="right" bottom="46" right="51" width="130"/>
 		<e:Label id="labCount" text="Số lượng còn lại：12" size="20" textColor="0x00FF00" textAlign="right" right="41" verticalCenter="214.5" fontFamily="Microsoft YaHei"/>
 		<e:Button id="smeltBtn" label="Khóa ô sách" skinName="SkinBtn1" width="176" height="69" horizontalCenter="-3" bottom="18"/>
 		<e:Button skinName="SkinBtn0" icon="tongyong_btnclose" label="Nút bấm" id="closeBtn" height="29" width="30" right="2" top="8"/>
