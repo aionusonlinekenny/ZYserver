@@ -6021,3 +6021,21 @@ Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (`desc_i` trong
 **Cache-bust**: `default.thm_3976c522.js` → `default.thm_8e246ac2.js`, `manifest.json?v=3976c522` → `?v=8e246ac2` trong `index.php`; cập nhật `WWW/version.txt` → `8e246ac2`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới câu mô tả đã tự xuống dòng gọn trong màn hình, đọc được đầy đủ nguyên câu, icon "!" hiển thị đúng vị trí trước câu.
+
+## 231. Fix câu "Điểm Chúc Phúc..." tràn màn hình + 2 nút bấm tràn chữ (Thăm Dò Mỏ Ngọc) (2026-07-24)
+
+Người dùng gửi ảnh màn "Thăm Dò Mỏ Ngọc" (`MineChoseWorkerWindow`, `skinName="SkinChoseWorker"`, file `resource/exml/ChoseWorkerSin.exml`), báo 2 lỗi: (1) câu "Điểm Chúc Phúc tăng tỷ lệ thành công, đầy điểm chắc chắn thành công, thành công sẽ reset điểm Chúc Phúc" tràn cả 2 mép màn hình không đọc được, (2) chữ trong 2 nút "Nâng cao phẩm chất" / "Bắt đầu thu thập" tràn ra ngoài viền nút, đề nghị giảm font size (đoán hiện tại 20, muốn xuống 18).
+
+**Lỗi 1 - câu mô tả tràn màn hình**: cùng nguyên nhân với mục 230 - Label câu văn không khai báo `width` nên không bao giờ tự xuống dòng. Thêm `width="560" textAlign="center"`. Vì câu dài chắc chắn phải xuống 2 dòng, đồng thời dời khối "祝福值" (thanh Chúc Phúc) và `progressGroup` bên dưới xuống thêm 27 đơn vị thiết kế (y `678`→`705` và `683`→`710`) để nhường chỗ cho dòng 2, tránh tạo ra lỗi chồng lấn mới.
+
+**Lỗi 2 - font nút bấm tràn viền**: kiểm tra thực tế `size` của label trong 2 nút KHÔNG phải 20 như người dùng đoán mà là **30** (`Btn1Skin.exml`, class `SkinBtn1`, dùng chung cho rất nhiều nút "Đóng"/"Xác nhận"/... khắp game). Do đây là skin DÙNG CHUNG, không thể chỉnh trực tiếp size trong `Btn1Skin.exml` (sẽ ảnh hưởng tất cả nút khác đang dùng `SkinBtn1` trong toàn bộ game). Cũng không thể set `button.labelDisplay.size=` sau khi tạo (cách "ghi đè nhanh") vì `Btn1Skin` định nghĩa `size` là thuộc tính gắn theo STATE (`up`/`down`/`disabled`, mỗi lần đổi state như khi nhấn giữ nút đều tự set lại `size=30`, đúng loại bug override-qua-state đã ghi nhận ở mục 215) - override 1 lần sẽ bị chính state "down"/"up" ghi đè lại ngay khi người dùng chạm vào nút.
+
+**Cách sửa**: tạo skin MỚI `Btn1SmallSkin.exml` (class `SkinBtn1Small`) - bản sao y hệt `Btn1Skin.exml` (cùng ảnh nền, cùng 3 state up/down/disabled) nhưng `size` cả 3 state đổi từ `30` xuống `24` (ước lượng theo tỉ lệ giảm tương tự đề xuất 20→18 của người dùng, áp dụng cho giá trị gốc thực tế 30). Đổi `skinName` của 2 nút `advance`/`start` trong `ChoseWorkerSin.exml` từ `SkinBtn1` sang `SkinBtn1Small` - chỉ ảnh hưởng đúng 2 nút này, không đụng tới nút nào khác trong toàn game.
+
+Thêm cả file exml nguồn mới lẫn 1 block class hoàn toàn mới trong `default.thm.js` (`generateEUI.paths['resource/exml/Btn1SmallSkin.exml'] = window.SkinBtn1Small = ...`, chèn ngay sau block `SkinBtn1` gốc) - xác nhận tên `SkinBtn1Small` không trùng với bất kỳ định danh nào khác trong toàn file trước khi chèn.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận 2 exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_8e246ac2.js` → `default.thm_671d7765.js`, `manifest.json?v=8e246ac2` → `?v=671d7765` trong `index.php`; cập nhật `WWW/version.txt` → `671d7765`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) câu "Điểm Chúc Phúc..." đọc được đầy đủ trên 2 dòng, không đè lên thanh Chúc Phúc bên dưới, (2) chữ trong 2 nút đã nằm gọn trong viền nút - nếu size 24 vẫn chưa đủ nhỏ hoặc còn dư quá nhiều khoảng trống, báo cụ thể để chỉnh tiếp giá trị `size` trong `Btn1SmallSkin.exml`.
