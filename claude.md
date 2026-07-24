@@ -6039,3 +6039,19 @@ Thêm cả file exml nguồn mới lẫn 1 block class hoàn toàn mới trong `
 **Cache-bust**: `default.thm_8e246ac2.js` → `default.thm_671d7765.js`, `manifest.json?v=8e246ac2` → `?v=671d7765` trong `index.php`; cập nhật `WWW/version.txt` → `671d7765`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) câu "Điểm Chúc Phúc..." đọc được đầy đủ trên 2 dòng, không đè lên thanh Chúc Phúc bên dưới, (2) chữ trong 2 nút đã nằm gọn trong viền nút - nếu size 24 vẫn chưa đủ nhỏ hoặc còn dư quá nhiều khoảng trống, báo cụ thể để chỉnh tiếp giá trị `size` trong `Btn1SmallSkin.exml`.
+
+## 232. Fix tiếp tên BOSS + cấp độ vẫn xuống dòng xấu (BossBloodSkin, sau mục 219) (2026-07-24)
+
+Người dùng gửi ảnh dòng "Thần Kiếm BOSS （đợt 5）（Cấp 200）" (thanh máu BOSS trong Team Phó Bản) báo VẪN còn bị xuống dòng xấu giữa chữ "Cấp" ("...（C" / "ấp 200）"), dù mục 212 trước đó đã fix lỗi thiếu dấu cách trong cùng khu vực này.
+
+**Xác định đúng nguyên nhân - lại là bug override qua JS giống mục 215/229**: `nameTxt` trong `resource/exml/BossBloodSkin.exml` khai báo mặc định `width="230"`, nhưng `BossesBloodPanel.prototype.updateInfoOfBase_a94` (`main.min.js`) có dòng `this.nameTxt.width=i?320:230,this.nameTxt.size=i?15:18` - CHỦ ĐỘNG ghi đè `width` mỗi lần cập nhật thông tin BOSS, trong đó `i` chỉ có giá trị (khác rỗng) khi ở chế độ "Tầng X Thủ Tướng·" (phó bản kiểu `FB_TYPE_TIAOZHAN` có `layer`) - còn lại (kể cả Team Phó Bản "Thần Kiếm BOSS" đang gặp lỗi) luôn rơi vào nhánh `width=230`, quá hẹp cho chuỗi dài "Tên BOSS （đợt N）（Cấp N）" (~30 ký tự) ở size 18.
+
+**Cách sửa**: đổi `this.nameTxt.width=i?320:230` thành `this.nameTxt.width=320` (áp dụng width rộng 320 cho MỌI trường hợp, không chỉ nhánh "Tầng X Thủ Tướng·" - giá trị 320 vốn đã được coi là an toàn cho chuỗi dài hơn theo đúng code cũ). Giữ nguyên logic `size=i?15:18`. Đồng thời phát hiện dòng code kế bên `this.tipBtn0.x=this.nameTxt.x+this.nameTxt.textWidth+10` tự động tính lại vị trí nút "Phần thưởng" theo ĐỘ RỘNG THỰC TẾ của chữ (không phải theo width khung) nên việc nới rộng khung không gây lệch vị trí nút này.
+
+Đồng bộ lại `width="230"`→`"320"` trong cả `BossBloodSkin.exml` (nguồn) và `default.thm.js` (factory `nameTxt_i`) dù JS runtime luôn ghi đè giá trị này - làm vậy để tránh gây nhầm lẫn cho các lần sửa sau (bài học đã rút ra ở mục 229).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho cả `default.thm.js` và `main.min.js`.
+
+**Cache-bust**: `default.thm_671d7765.js` → `default.thm_cead5cfa.js`, `main.min_208b41b1.js` → `main.min_63ef5797.js`, `manifest.json?v=671d7765` → `?v=cead5cfa` trong `index.php`; cập nhật `WWW/version.txt` → `cead5cfa`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới tên BOSS + cấp độ đã nằm gọn 1 dòng, không còn xuống dòng giữa chữ.

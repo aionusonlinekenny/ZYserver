@@ -31,7 +31,7 @@
 
 			<e:Image width="69" height="71" x="24.33" y="26.33" source="guildkuang"/>
 
-			<e:Label id="nameTxt" y="30.05" size="18" text="Tổ Mã Giáo Chủ" x="104.3"  fontFamily="Microsoft YaHei" anchorOffsetX="0" width="230" textAlign="left"/>
+			<e:Label id="nameTxt" y="30.05" size="18" text="Tổ Mã Giáo Chủ" x="104.3"  fontFamily="Microsoft YaHei" anchorOffsetX="0" width="320" textAlign="left"/>
 			<e:Button id="tipBtn0" label="Phần thưởng" x="261.26" y="13.73" skinName="SkinBtn18"/>
 		</e:Group>
 		<e:Label id="bossBloodNumLabel" text="X5" x="313.6" y="52.5" fontFamily="Microsoft YaHei" size="18"/>
