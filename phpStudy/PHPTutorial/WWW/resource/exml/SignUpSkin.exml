@@ -51,7 +51,7 @@
 		<e:Button id="signUpBtn" label="Đăng ký tham gia" x="0" y="0" skinName="SkinBtn7"/>
 		<e:Image id="redPoint" touchEnabled="false" source="zjmhongdian" x="173" y="5"/>
 		</e:Group>
-		<e:Image source="peakness_rules" top="39" horizontalCenter="-213.5"/>
+		<e:Image source="peakness_rules" top="39" left="33"/>
 		<e:Image width="236" source="line8" top="77" scale9Grid="6,0,12,1" left="0"/>
 		<e:Image source="togglered" left="7" top="45"/>
 		<e:Image source="peakness_champion_rewards" verticalCenter="52" left="33"/>

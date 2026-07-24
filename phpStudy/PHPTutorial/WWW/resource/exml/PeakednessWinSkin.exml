@@ -10,14 +10,14 @@
 	</e:Group>
 	<e:Image horizontalCenter="0" scale9Grid="19,12,14,25" source="worshipbg_png" height="702" verticalCenter="-61" visible="false"/>
 	<e:ViewStack id="viewStack" selectedIndex="0" width="600" horizontalCenter="0" height="728" verticalCenter="-57">
-		<ns1:PeakedPanel id="peakedPanel" xmlns:ns1="*" name="巅峰赛季" skinName="SkinPeakedInlet" left="0" right="0" top="0" bottom="0"/>
-		<ns1:PeakAwardPanel xmlns:ns1="*" id="peakAwardPanel" name="赛季奖励" skinName="SkinSeasonRewards"  left="0" right="0" top="0" bottom="0" visible="false"/>
-		<ns1:PeakedMallPanel xmlns:ns1="*" id="peakedMallPanel" name="巅峰商城" skinName="SkinPeakMarket" left="0" right="0" top="0" bottom="0" visible="false"/>
-		<ns1:PeakChipMallPanel xmlns:ns1="*" id="peakChipMallPanel" name="筹码商城" left="0" right="0" top="0" bottom="0" skinName="SkinChipMarket" visible="false"/>
-		<ns1:WorshipChampionPanel xmlns:ns1="*" id="worshipChampionPanel" name="膜拜" left="0" right="0" top="0" bottom="0" skinName="SkinWorshipChampion" visible="false"/>
+		<ns1:PeakedPanel id="peakedPanel" xmlns:ns1="*" name="Mùa Giải Đỉnh Phong" skinName="SkinPeakedInlet" left="0" right="0" top="0" bottom="0"/>
+		<ns1:PeakAwardPanel xmlns:ns1="*" id="peakAwardPanel" name="Thưởng mùa giải" skinName="SkinSeasonRewards"  left="0" right="0" top="0" bottom="0" visible="false"/>
+		<ns1:PeakedMallPanel xmlns:ns1="*" id="peakedMallPanel" name="Cửa Hàng Đỉnh Phong" skinName="SkinPeakMarket" left="0" right="0" top="0" bottom="0" visible="false"/>
+		<ns1:PeakChipMallPanel xmlns:ns1="*" id="peakChipMallPanel" name="Cửa Hàng Chip" left="0" right="0" top="0" bottom="0" skinName="SkinChipMarket" visible="false"/>
+		<ns1:WorshipChampionPanel xmlns:ns1="*" id="worshipChampionPanel" name="Bái Phục" left="0" right="0" top="0" bottom="0" skinName="SkinWorshipChampion" visible="false"/>
 	</e:ViewStack>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="98"/>
-	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="103">
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0Wide" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="103">
 		<e:layout>
 		<e:HorizontalLayout gap="-8"/>
 		</e:layout>

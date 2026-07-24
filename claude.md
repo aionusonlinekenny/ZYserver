@@ -6055,3 +6055,30 @@ Người dùng gửi ảnh dòng "Thần Kiếm BOSS （đợt 5）（Cấp 200�
 **Cache-bust**: `default.thm_671d7765.js` → `default.thm_cead5cfa.js`, `main.min_208b41b1.js` → `main.min_63ef5797.js`, `manifest.json?v=671d7765` → `?v=cead5cfa` trong `index.php`; cập nhật `WWW/version.txt` → `cead5cfa`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới tên BOSS + cấp độ đã nằm gọn 1 dòng, không còn xuống dòng giữa chữ.
+
+## 233. Dò và fix toàn bộ lỗi màn "Mùa Giải Đỉnh Cao" (chữ Trung, dính chữ, tab đè nhau) (2026-07-24)
+
+Người dùng gửi ảnh màn "Mùa Giải Đỉnh Cao" (peak season tournament), báo tổng quát: các nút tab dưới cùng đè chồng lên nhau, còn sót chữ Trung, và nhiều chỗ nối chữ bị thiếu khoảng cách (ví dụ "đạt5chuyển"), yêu cầu dò toàn bộ màn hình fix hết.
+
+**1. 2 tiêu đề vẫn là ảnh tiếng Trung** (`resource/eui/peakedness/peaknessPic/peakness_rules.png` = "报名规则", `peakness_champion_rewards.png` = "巅峰奖励") - đây là ẢNH tĩnh có chữ vẽ sẵn (không phải Label văn bản) nên không sửa được bằng cách đổi text trong exml. Dùng Python/PIL vẽ lại 2 ảnh mới cùng phong cách (chữ vàng viền đỏ có glow mờ, nền trong suốt, font DejaVu Sans Bold hỗ trợ dấu tiếng Việt) với nội dung "Quy Tắc Đăng Ký" và "Phần Thưởng", canvas rộng hơn (107×36 → 220×40 và 165×40) vì tiếng Việt dài hơn tiếng Trung nhiều. Đổi `peakness_rules` từ neo `horizontalCenter="-213.5"` sang `left="33"` (giữ đúng mép trái cũ) để ảnh rộng hơn không bị tràn ra ngoài lề trái; `peakness_champion_rewards` vốn đã neo `left="33"` nên không cần đổi vị trí.
+
+**Phát hiện quan trọng - hệ thống kiểm tra tài nguyên riêng của Egret**: `resource/version.txt`/`version.json` (KHÁC với `WWW/version.txt` dùng cho app iOS ở mục 221) là bảng băm MD5 (8 ký tự đầu) của TỪNG file tài nguyên, dùng để engine Egret tự kiểm tra file có bị đổi hay không. Đã dò ngược đúng thuật toán (so khớp hash cũ với MD5 file gốc) rồi cập nhật hash mới cho đúng 2 file ảnh vừa thay, nếu bỏ sót bước này ảnh mới có thể không được nhận diện đúng bởi cơ chế `verifySize` của engine.
+
+**2. 5 nút tab dưới cùng đè chữ lên nhau** ("Mùa Giải Đỉnh Phong", "Thưởng mùa giải", "Cửa Hàng Đỉnh Phong", "Cửa Hàng Chip", "Bái Phục"): `TabBar` dùng `itemRendererSkinName="SkinBtnTab0"` - skin này có Label không giới hạn `width` (auto-size theo nội dung, size=21), khiến các tên tab dài tràn ra đè lên tab bên cạnh. `SkinBtnTab0` là skin DÙNG CHUNG cho ~30 màn hình khắp game (Túi đồ, Guild, Boss, Shop, VIP...) nên không thể sửa trực tiếp. May mắn phát hiện game đã có sẵn skin `SkinBtnTab0Wide` (file `BtnTab0WideSkin.exml`, đã dùng cho `BossSkin`/`DailyFbSkin`) - cùng hình nền, chỉ khác Label: `size="14" width="100" multiline="true" wordWrap="true"` (tự động xuống dòng khi tên dài) - đúng giải pháp đã có sẵn cho vấn đề này. Đổi `itemRendererSkinName` của tab trong màn "Mùa Giải Đỉnh Cao" từ `SkinBtnTab0` sang `SkinBtnTab0Wide`.
+
+**Phát hiện thêm - exml nguồn cũ hơn JS đang chạy**: `resource/exml/PeakednessWinSkin.exml` vẫn còn `name="巅峰赛季"`, `name="赛季奖励"`... (tiếng Trung gốc) cho từng tab trong khi `default.thm.js` đã có sẵn tên tiếng Việt "Mùa Giải Đỉnh Phong"/"Thưởng mùa giải"/... (ai đó đã dịch trực tiếp trong JS biên dịch trước đây mà quên đồng bộ exml, giống mục 229/232) - đã đồng bộ lại exml khớp JS.
+
+**3. Nhiều chỗ nối chữ bị dính (thiếu dấu cách)** - xác nhận qua `DateUtils.PeakedHelp.getTimerRuleStr`/`getKFTimerRuleStr` (`main.min.js`):
+- `"đạt"+e+t.needZsLv+"|chuyển"` → "đạt5chuyển" - thêm dấu cách cả 2 phía: `"đạt "+e+t.needZsLv+"| chuyển"`.
+- `"|đến"` (giữa 2 mốc thời gian) → "12:00đến8tháng..." - sửa thành `"| đến "`.
+- `"|diễn ra"` (câu 3 vòng loại, và câu 2 của bản Liên Server `getKFTimerRuleStr`) → "21:00diễn ra" - sửa thành `"| diễn ra"` (các câu 4-7 vốn đã đúng sẵn `"| diễn ra"`, chỉ 2-3 câu đầu bị thiếu).
+- `DateUtils.format_13`: `s+"tháng "` (số tháng nối thẳng "tháng") → "8tháng" - sửa thành `s+" tháng "`.
+- `"1、...："` (dùng dấu câu kiểu Trung Quốc "、"/"：" trong bản Liên Server) → đổi thành dấu câu thường ". "/": " cho nhất quán với các câu còn lại.
+
+**4. Vẫn còn tiếng Trung trong ngày tháng**: `DateUtils.WEEK_CN=["ngày","一","二","三","四","五","六"]` - mảng tên thứ trong tuần dùng để ghép vào "(thứ X)" trong `format_13`, các phần tử chỉ số 1-6 (thứ Hai đến thứ Bảy) vẫn là SỐ ĐẾM CHỮ HÁN gốc "一二三四五六" chưa dịch (giữ nguyên phần tử 0 "ngày" vì không nằm trong phạm vi báo lỗi lần này, thay đổi phạm vi hẹp để tránh ảnh hưởng các chỗ dùng khác của mảng này). Đổi thành `["ngày","2","3","4","5","6","7"]` theo đúng cách gọi thứ phổ biến kiểu Việt Nam ("thứ 2" đến "thứ 7").
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận 2 exml hợp lệ; `node -c` sạch cho cả `default.thm.js` và `main.min.js`; `json.load` xác nhận `version.json` vẫn hợp lệ sau khi sửa hash.
+
+**Cache-bust**: `default.thm_cead5cfa.js` → `default.thm_09030c38.js`, `main.min_63ef5797.js` → `main.min_96a2094c.js`, `manifest.json?v=cead5cfa` → `?v=09030c38` trong `index.php`; cập nhật `WWW/version.txt` → `09030c38`. Riêng 2 file ảnh + `resource/version.txt`/`version.json` không theo cơ chế cache-bust rename (giữ tên cố định, engine tự nhận diện qua hash).
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) 2 tiêu đề đã hiển thị tiếng Việt "Quy Tắc Đăng Ký"/"Phần Thưởng" rõ nét không lem, (2) 5 tab dưới không còn đè chữ lên nhau, (3) toàn bộ câu trong danh sách quy tắc đăng ký đọc được rõ ràng không dính chữ, (4) ngày tháng hiển thị "(thứ 2)"..."(thứ 7)" thay vì chữ Hán - nếu ảnh tiêu đề mới bị lem/khó đọc hoặc tab vẫn chưa vừa, báo cụ thể để chỉnh tiếp.
