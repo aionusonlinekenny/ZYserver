@@ -5967,3 +5967,23 @@ Sửa cả 3 file exml nguồn lẫn `default.thm.js` đã biên dịch tương 
 **Cache-bust**: `default.thm_470f6cd4.js` → `default.thm_3dead432.js`, `manifest.json?v=470f6cd4` → `?v=3dead432` trong `index.php`; cập nhật `WWW/version.txt` → `3dead432`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới cả 3 màn hình: (1) tiêu đề/câu văn/số lượt trong popup Triệu hồi BOSS đã đúng ý, (2) cụm avatar+máu đã lên góc trên phải và không còn đè icon BOSS, số giây đếm ngược đã tách rời chữ "theo", (3) icon phần thưởng xếp hạng đã rời khỏi chữ "Chưa lên" - lưu ý riêng phần "dời RoleInformation lên top=50" là suy luận từ toạ độ khai báo trong exml (không đo trực tiếp trên ảnh do khó xác định tỉ lệ px↔thiết kế chính xác cho màn hình này), nếu vẫn còn chồng lấn hoặc lên quá cao/thấp cần báo cụ thể mức px để tinh chỉnh tiếp.
+
+## 228. Đồng bộ giới hạn ký tự ô nhập tên khi Đổi Tên với lúc Tạo Nhân Vật (2026-07-24)
+
+Người dùng gửi ảnh vật phẩm "Thẻ Đổi Tên" (dùng để đổi tên nhân vật) và popup "Đổi tên" hiện ra khi dùng thẻ, báo ô nhập tên mới bị giới hạn chỉ 6 ký tự, yêu cầu đồng bộ lại với giới hạn ký tự của ô nhập tên lúc tạo nhân vật mới.
+
+**Xác định đúng 2 thành phần**:
+- Popup "Đổi tên": `RenameWinPanel` (`skinName="SkinNameChange"`, file `resource/exml/NameChangeSkin.exml`) - ô `<e:EditableText id="input" .../>` khai báo cứng `maxChars="6"` ngay trong exml (không bị JS ghi đè, `RenameWinPanel` trong `main.min.js` chỉ đọc `this.input.text` khi bấm xác nhận, không set `maxChars`).
+- Màn tạo nhân vật: `resource/exml/CreateRole1Skin.exml`, ô `<e:EditableText id="nameInput" .../>` KHÔNG khai báo `maxChars` trong exml, mà được set động trong `main.min.js` lúc mở màn hình (`e.nameInput.maxChars=24`) - xác nhận qua đúng dòng code trong hàm `open()` của controller tạo nhân vật.
+
+Vậy giới hạn thật sự đang dùng khi tạo nhân vật là **24 ký tự**, trong khi ô đổi tên chỉ cho 6 ký tự - lệch nhau đáng kể, đúng như người dùng phản ánh.
+
+**Cách sửa**: đổi `maxChars` của ô `input` trong `NameChangeSkin.exml` từ `6` lên `24` để khớp đúng giới hạn của màn tạo nhân vật. Không đổi `width="230"` của ô nhập (EditableText tự cuộn ngang khi text dài hơn khung hiển thị, đây là hành vi chuẩn của ô nhập liệu, không phải lỗi tràn/xuống dòng như các Label tĩnh đã sửa ở các mục trước).
+
+Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch (`input_i` trong class `SkinNameChange` - đã xác nhận đúng factory bằng cách giới hạn tìm kiếm trong phạm vi biên của class này, vì id `input` bị trùng tên với 1 factory khác thuộc màn nhập mã kích hoạt).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_3dead432.js` → `default.thm_c328bdfe.js`, `manifest.json?v=3dead432` → `?v=c328bdfe` trong `index.php`; cập nhật `WWW/version.txt` → `c328bdfe`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận: mở popup "Đổi tên" từ "Thẻ Đổi Tên" và gõ thử tên dài hơn 6 ký tự (tối đa 24) để xác nhận đã nhập được, không còn bị chặn sớm như trước.

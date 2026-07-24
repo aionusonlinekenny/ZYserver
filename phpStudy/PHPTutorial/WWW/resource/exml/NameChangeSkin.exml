@@ -11,7 +11,7 @@
 		<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" right="4" bottom="-66" visible="false"/>
 		<e:Button id="sureBtn" skinName="SkinBtn1" label="Xác nhận thay đổi" horizontalCenter="0" bottom="10"/>
 		<e:Image y="156" scale9Grid="6,6,3,3" width="250" height="40" source="shuzibg" horizontalCenter="0"/>
-		<e:EditableText id="input" width="230" prompt="单击此处输入名字" maxChars="6" size="20" promptColor="0x878787" multiline="false" textAlign="center" verticalAlign="middle" horizontalCenter="0" y="160" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
+		<e:EditableText id="input" width="230" prompt="单击此处输入名字" maxChars="24" size="20" promptColor="0x878787" multiline="false" textAlign="center" verticalAlign="middle" horizontalCenter="0" y="160" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 		<e:Group horizontalCenter="0" touchEnabled="false" touchChildren="false" bottom="-45" x="42" y="600" scaleX="1" scaleY="1">
 			<e:Image source="bantoutiaobg" height="40" width="400" y="0" x="0"/>
 			<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" x="105" y="7" fontFamily="Microsoft YaHei" textColor="0xFFFFFF"/>
