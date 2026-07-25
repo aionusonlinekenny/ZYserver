@@ -6103,3 +6103,28 @@ Người dùng gửi 2 ảnh tab "Thưởng mùa giải" (cả bảng "Giải đ
 **Cache-bust**: `default.thm_09030c38.js` → `default.thm_7f1fb951.js`, `manifest.json?v=09030c38` → `?v=7f1fb951` trong `index.php`; cập nhật `WWW/version.txt` → `7f1fb951`.
 
 **Chưa kiểm chứng thực tế** - các con số (gap=22, scale=0.85, width các nhãn) là ước lượng tính toán từ kích thước khai báo trong skin (không đo trực tiếp trên ảnh vì đây là danh sách cuộn động, khó xác định tỉ lệ chính xác). Cần người dùng xác nhận bằng ảnh chụp mới: (1) nhãn hạng không còn bị icon đè, (2) tên vật phẩm dưới mỗi icon đã tách rời nhau đọc được, (3) kích thước icon mới có vừa mắt không - nếu vẫn còn dính hoặc icon quá nhỏ/quá thưa, báo cụ thể để tăng/giảm `gap` và `scale` tiếp.
+
+## 235. Fix "祝福值" tiếng Trung + thanh Chúc Phúc đè "Tiêu hao"/"Số lần khai thác" (Thăm Dò Mỏ Ngọc, sau mục 231) (2026-07-24)
+
+Người dùng gửi ảnh màn "Thăm Dò Mỏ Ngọc" báo: (1) dòng ảnh chữ Trung "祝福值" và thanh thanh bar chồng lên chỗ "Tiêu hao"/"Số lần khai thác ngọc hôm nay" bên dưới, cần dời lên cao, (2) dòng "Số lần khai thác..." bị cắt không đọc hết nguyên câu.
+
+**Nguyên nhân chồng lấn - hệ quả trực tiếp từ mục 231**: khi thêm dòng mô tả "Điểm Chúc Phúc..." thành 2 dòng ở mục 231, đã dời khối thanh Chúc Phúc (`_Group1_i`, chứa ảnh "祝福值" + thanh bar) xuống `y="705"` để nhường chỗ - nhưng CHƯA đồng thời dời `Tiêu hao`/`countTxt` (đang neo bằng `bottom` cố định, không tự trôi theo) xuống thêm, khiến khối thanh Chúc Phúc mới đè lên đúng 2 phần tử đó. Đây là bài học: khi 1 khối bị đẩy theo 1 hướng để né phần tử PHÍA TRÊN, phải kiểm tra và né luôn phần tử PHÍA DƯỚI nếu khoảng cách không đủ dư - đã bỏ sót bước này ở mục 231.
+
+**Nguyên nhân "Số lần khai thác" bị cắt**: `countTxt` (`main.min.js`: `"Số lần khai thác ngọc hôm nay: X/Y"`, ~35 ký tự) không có `width` trong exml, nên không bao giờ tự xuống dòng - text cứ kéo dài 1 dòng và bị tràn hẳn ra ngoài mép phải màn hình (600 thiết kế) từ vị trí `x="388"`, đúng loại lỗi đã gặp nhiều lần trong phiên này.
+
+**"祝福值" vẫn là ảnh tiếng Trung** (`wkzfj.png`, không phải Label) - áp dụng đúng quy trình mục 233: vẽ lại ảnh mới "Chúc Phúc:" cùng phong cách chữ vàng cam viền nâu bằng PIL, canvas rộng hơn (81×28 → 160×32 vì tiếng Việt dài hơn nhiều), cập nhật hash MD5 trong `resource/version.txt`/`version.json` cho đúng.
+
+**Cách sửa tổng thể** (cân đối lại toàn bộ khoảng trống dọc vốn đã rất chật do phải chứa thêm 1 dòng mô tả từ mục 231):
+- Giảm nhẹ cỡ chữ dòng mô tả "Điểm Chúc Phúc..." (20→18) và dòng "Số lần khai thác" (20→18) để bớt chiếm chỗ.
+- Khối thanh Chúc Phúc: dời từ `y="705"` lên `y="692"`, mở rộng `width` khối từ 445→524 (đủ chỗ cho ảnh "Chúc Phúc:" mới rộng hơn), nén khoảng cách nội bộ giữa ảnh và thanh bar.
+- `Tiêu hao` (Group): dời `bottom` từ `94`→`68` (dời xuống, tạo thêm khoảng hở phía trên).
+- `countTxt`: dời `bottom` từ `98`→`72` (dời xuống tương ứng), thêm `width="180"` để bật tự xuống dòng, không còn tràn ra ngoài mép phải màn hình.
+- `progressGroup` (khối liên quan): dời `y` từ `710`→`692` cho khớp vị trí mới của thanh Chúc Phúc.
+
+Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch tương ứng cho tất cả các phần tử trên.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`; xác nhận hash MD5 cũ khớp trước khi thay, tính lại hash mới cho ảnh đã đổi.
+
+**Cache-bust**: `default.thm_7f1fb951.js` → `default.thm_2e32f4d5.js`, `manifest.json?v=7f1fb951` → `?v=2e32f4d5` trong `index.php`; cập nhật `WWW/version.txt` → `2e32f4d5`.
+
+**Lưu ý quan trọng - khoảng trống dọc ở khu vực này RẤT CHẬT** (giữa danh sách phần thưởng phía trên và cụm nút bấm phía dưới), các con số dời vị trí là tính toán ước lượng từ kích thước khai báo (không đo trực tiếp vì không có ảnh render thực tế để đo). Cần người dùng xác nhận bằng ảnh chụp mới: (1) "Chúc Phúc:" đã hiện tiếng Việt rõ ràng, (2) thanh Chúc Phúc không còn đè "Tiêu hao"/"Số lần khai thác", (3) câu "Số lần khai thác ngọc hôm nay: X/Y" đọc được đầy đủ - nếu vẫn còn chồng lấn ở bất kỳ đâu trong cụm này, đây là khu vực rất dễ vỡ lại nên có thể cần tinh chỉnh thêm 1-2 lần.

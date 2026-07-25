@@ -20,10 +20,10 @@
 		</e:List>
 		<e:Button id="advance" label="Nâng cao phẩm chất" icon="xb_25" skinName="SkinBtn1Small" bottom="12" x="70"/>
 		<e:Button id="start" label="Bắt đầu thu thập" icon="xb_25" skinName="SkinBtn1Small" bottom="12" x="364"/>
-		<e:Label text="Điểm Chúc Phúc tăng tỷ lệ thành công, đầy điểm chắc chắn thành công, thành công sẽ reset điểm Chúc Phúc" size="20" horizontalCenter="0" fontFamily="Microsoft YaHei" stroke="0" width="560" textAlign="center" y="648"/>
-		<e:Group horizontalCenter="0" y="705" anchorOffsetX="0" width="445">
-			<e:Image width="81" height="28" x="30" y="17" source="wkzfj_png"/>
-			<e:Group id="barGroup" width="362" height="40" horizontalCenter="41.5" y="11" x="43"   anchorOffsetX="0" visible="false">
+		<e:Label text="Điểm Chúc Phúc tăng tỷ lệ thành công, đầy điểm chắc chắn thành công, thành công sẽ reset điểm Chúc Phúc" size="18" horizontalCenter="0" fontFamily="Microsoft YaHei" stroke="0" width="560" textAlign="center" y="648"/>
+		<e:Group horizontalCenter="0" y="692" anchorOffsetX="0" width="524">
+			<e:Image width="160" height="32" source="wkzfj_png"/>
+			<e:Group id="barGroup" width="362" height="40" horizontalCenter="41.5" y="6" x="43"   anchorOffsetX="0" visible="false">
 				<e:ProgressBar id="expBar0" maximum="100" value="40" skinName="SkinWingExpBar" slideDuration="0" height="16" left="39" right="36" verticalCenter="0" anchorOffsetX="0"/>
 				<e:Image id="barBg0" left="0" source="jingyantiao1" verticalCenter="0" scale9Grid="26,1,13,21" width="359"/>
 			</e:Group>
@@ -31,7 +31,7 @@
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="2"/>
 			</e:layout>
 		</e:Group>
-		<e:Group bottom="94" horizontalCenter="-122">
+		<e:Group bottom="68" horizontalCenter="-122">
 			<e:Label text="Tiêu hao:" x="14" y="-4" size="20"   fontFamily="Microsoft YaHei" stroke="0"/>
 			<e:Label id="yuanbaoNum" text="" x="140" y="-4" size="20"   fontFamily="Microsoft YaHei" textColor="0x00ff06" stroke="0"/>
 			<e:Image source="szyuanbao" x="156" y="-2"   width="40" height="30"/>
@@ -44,8 +44,8 @@
 				<e:HorizontalLayout verticalAlign="middle" gap="3"/>
 			</e:layout>
 		</e:Group>
-		<e:Label id="countTxt" text="" size="20"   bottom="98" height="31" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xfcfcfc" stroke="0" x="388"/>
-		<e:Group id="progressGroup" width="360" height="30" y="710" anchorOffsetY="0" left="162"/>
+		<e:Label id="countTxt" text="" size="18"   bottom="72" height="31" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xfcfcfc" stroke="0" x="388" width="180"/>
+		<e:Group id="progressGroup" width="360" height="30" y="692" anchorOffsetY="0" left="162"/>
 
 	</e:Group>
 	<e:Button id="closeBtn" label="Button" skinName="SkinBtn0" icon="chatclose" horizontalCenter="273" top="45"/>
