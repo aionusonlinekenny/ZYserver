@@ -6082,3 +6082,24 @@ Người dùng gửi ảnh màn "Mùa Giải Đỉnh Cao" (peak season tournamen
 **Cache-bust**: `default.thm_cead5cfa.js` → `default.thm_09030c38.js`, `main.min_63ef5797.js` → `main.min_96a2094c.js`, `manifest.json?v=cead5cfa` → `?v=09030c38` trong `index.php`; cập nhật `WWW/version.txt` → `09030c38`. Riêng 2 file ảnh + `resource/version.txt`/`version.json` không theo cơ chế cache-bust rename (giữ tên cố định, engine tự nhận diện qua hash).
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) 2 tiêu đề đã hiển thị tiếng Việt "Quy Tắc Đăng Ký"/"Phần Thưởng" rõ nét không lem, (2) 5 tab dưới không còn đè chữ lên nhau, (3) toàn bộ câu trong danh sách quy tắc đăng ký đọc được rõ ràng không dính chữ, (4) ngày tháng hiển thị "(thứ 2)"..."(thứ 7)" thay vì chữ Hán - nếu ảnh tiêu đề mới bị lem/khó đọc hoặc tab vẫn chưa vừa, báo cụ thể để chỉnh tiếp.
+
+## 234. Fix hàng phần thưởng "Thưởng mùa giải" đè icon + dính tên vật phẩm (Mùa Giải Đỉnh Cao) (2026-07-24)
+
+Người dùng gửi 2 ảnh tab "Thưởng mùa giải" (cả bảng "Giải đấu liên máy chủ" lẫn "Giải đấu máy chủ đơn"), báo icon phần thưởng đè lên nhau và xin phân tích hướng chỉnh cho đẹp, được phép thu nhỏ icon nếu cần.
+
+**Phân tích qua ảnh (không phải icon đè icon)**: đo trực tiếp trong ảnh cho thấy các Ô ICON thực ra KHÔNG chồng lên nhau (khoảng cách đều nhau, đúng theo layout) - lỗi thật sự là 2 chỗ khác: (1) nhãn hạng ("Vô Địch", "Giải Tham Gia"...) bị icon đầu tiên đè lên phần đuôi chữ vì danh sách icon bắt đầu quá gần nhãn, (2) TÊN VẬT PHẨM bên dưới mỗi icon bị dính liền nhau thành 1 chuỗi đọc không nổi ("Tam Giới Đỉnh PhongLệnh Đỉnh Vô Tướng...").
+
+**Xác định đúng nguyên nhân qua `default.thm.js` (KHÔNG tin exml nguồn - lại là 1 trường hợp lệch giống mục 229/232/233)**: `resource/exml/SeasonRewardsItemSkin.exml` cho thấy `awardslist` là 1 `<e:List>` trần, nhưng bản JS đang chạy thực tế đã bọc nó trong `<e:Scroller width="342">` (cho phép cuộn ngang khi nhiều vật phẩm) - thông tin này hoàn toàn thiếu trong exml. Với mỗi ô vật phẩm dùng skin DÙNG CHUNG `SkinItem2` (dùng ở 72 file khác trong game, không thể sửa trực tiếp): ô rộng 74 nhưng Label tên vật phẩm rộng tới 93 và lệch trái 9 đơn vị - tức MỖI tên vật phẩm vốn đã tự tràn ra ngoài ô của chính nó khoảng 19 đơn vị (9 trái + 10 phải). Trong khi đó `awardslist` chỉ đặt `gap="5"` giữa các ô - hoàn toàn không đủ để bù cho phần tràn 19 đơn vị đó, nên tên vật phẩm của ô này luôn dính vào tên ô kế bên bất kể ô có bao nhiêu vật phẩm.
+
+**Hướng chỉnh** (đúng tinh thần đã làm các lần trước: không sửa skin dùng chung `SkinItem2`, chỉ chỉnh các thuộc tính CỤC BỘ trong `SeasonRewardsItemSkin.exml`):
+- `typeLabel` (nhãn hạng): giảm `size` 26→20, thêm `width="95"`, dời `left` 29→16 - đủ chỗ cho tên dài nhất "Giải Tham Gia" mà không bị icon đầu tiên đè lên.
+- `awardslist`: tăng `gap` từ `5`→`22` (bù đủ cho phần tràn 19 đơn vị của tên vật phẩm + có khoảng hở dư), đồng thời thêm `scaleX="0.85" scaleY="0.85"` để icon nhỏ lại vừa phải (theo đúng gợi ý người dùng "có thể thu nhỏ nếu cần") giúp nhìn gọn hơn và đỡ phải cuộn nhiều.
+- `Scroller` bọc ngoài: dời `x` 108→116, thu `width` 342→330 cho khớp với `typeLabel` mới rộng hơn.
+
+Đồng bộ luôn cấu trúc `Scroller` bọc `awardslist` vào `SeasonRewardsItemSkin.exml` (trước đây thiếu hoàn toàn) để không còn lệch với `default.thm.js`.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_09030c38.js` → `default.thm_7f1fb951.js`, `manifest.json?v=09030c38` → `?v=7f1fb951` trong `index.php`; cập nhật `WWW/version.txt` → `7f1fb951`.
+
+**Chưa kiểm chứng thực tế** - các con số (gap=22, scale=0.85, width các nhãn) là ước lượng tính toán từ kích thước khai báo trong skin (không đo trực tiếp trên ảnh vì đây là danh sách cuộn động, khó xác định tỉ lệ chính xác). Cần người dùng xác nhận bằng ảnh chụp mới: (1) nhãn hạng không còn bị icon đè, (2) tên vật phẩm dưới mỗi icon đã tách rời nhau đọc được, (3) kích thước icon mới có vừa mắt không - nếu vẫn còn dính hoặc icon quá nhỏ/quá thưa, báo cụ thể để tăng/giảm `gap` và `scale` tiếp.
