@@ -6153,3 +6153,26 @@ Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch.
 **Cache-bust**: `default.thm_2e32f4d5.js` → `default.thm_cea83430.js`, `manifest.json?v=2e32f4d5` → `?v=cea83430` trong `index.php`; cập nhật `WWW/version.txt` → `cea83430`.
 
 **Chưa kiểm chứng thực tế** - lần này đã đo bằng pixel thực tế trên ảnh chụp thay vì chỉ suy luận từ số liệu khai báo nên độ tin cậy cao hơn hẳn các lần trước, nhưng khoảng hở tính được vẫn khá sát (~5 đơn vị thiết kế ≈ 11px màn hình) do không gian khu vực này vốn quá chật. Cần người dùng xác nhận bằng ảnh chụp mới: "Tiêu hao..." và "Số lần khai thác..." đã tách rời hẳn khỏi 2 nút bấm bên dưới.
+
+## 237. Đo pixel vòng 2: fix ảnh "Chúc Phúc" đè icon thanh bar dò + Tiêu hao vẫn đè nút (2026-07-24)
+
+Người dùng gửi ảnh xác nhận "Số lần khai thác" đã tách khỏi nút, nhưng báo 2 lỗi còn lại: (1) ảnh "Chúc Phúc:" và icon mũi tên của thanh bar dò "0/5" đè lên nhau, không thành hàng ngay ngắn, (2) "Tiêu hao..." vẫn đè lên nút "Nâng cao phẩm chất".
+
+**Phát hiện quan trọng bằng đo pixel - hiểu sai cấu trúc component ở mục 235**: dò trong `main.min.js` (`MineChoseWorkerWindow` class) xác nhận controller CHỈ dùng `this.progressGroup`/`this.barbc` (1 `ProgressBar` được tạo bằng code và add vào `progressGroup` lúc `initUI`) để hiển thị thanh "0/5" - còn `barGroup`/`expBar0`/`barBg0` trong `ChoseWorkerSin.exml` (đã lồng cùng ảnh "Chúc Phúc" trong 1 `HorizontalLayout` từ mục 235) là code CHẾT (`visible="false"`, không được class này đụng tới bao giờ). Nghĩa là ảnh "Chúc Phúc" và thanh bar THẬT không hề nằm chung 1 hàng layout như tưởng - chúng là 2 phần tử định vị ĐỘC LẬP (`progressGroup` neo `left="162"`), nên việc gộp chúng vào 1 `HorizontalLayout` ở mục 235 không hề ảnh hưởng tới vị trí thật của thanh bar, chỉ khiến ảnh "Chúc Phúc" (đã nới rộng lên 160) đè trực tiếp lên icon mũi tên bên trái của thanh bar thật.
+
+**Đo pixel xác nhận**: dùng lại phương pháp mục 236 (quy đổi pixel↔thiết kế qua 2 mốc nút bấm đã biết toạ độ) đo được: icon mũi tên trái của thanh bar bắt đầu đúng ngay tại `progressGroup`'s mép trái (thiết kế x≈162, khớp chính xác với khai báo `left="162"`) - nghĩa là icon mũi tên không tràn ra ngoài khung `progressGroup`, nó CHIẾM TRỌN khoảng x từ 162 tới khi vào phần track thanh ngang (~x=185). Vậy: ảnh "Chúc Phúc" phải kết thúc trước x=162 mới không đè.
+
+**Cách sửa dứt điểm**:
+- Bỏ hẳn `barGroup`/`expBar0`/`barBg0` (code chết, xác nhận an toàn xoá vì không có chỗ nào trong `MineChoseWorkerWindow` đụng tới) và cụm `HorizontalLayout` bọc ngoài - đặt ảnh "Chúc Phúc" trực tiếp bằng neo `left`/`y`, không còn phụ thuộc layout với thanh bar nữa.
+- Vẽ lại ảnh "Chúc Phúc:" nhỏ gọn hơn (130×30, cỡ chữ 17, trước là 160×32 cỡ 20) để vừa trong khoảng trống bên trái `progressGroup` (đặt `left="20"`, mép phải ảnh ở x=150, còn cách `progressGroup` (x=162) đúng 12 đơn vị thiết kế).
+- `Tiêu hao` Group: đo lại chính xác - khoảng hở cũ (`bottom="72"`) chỉ cho gap ~1 đơn vị thiết kế so với nút (gần như dính hẳn dù đã tăng từ 68 lên 72 ở mục 236, mức tăng quá nhỏ so với yêu cầu thực tế). Tính lại theo đúng khoảng trống thật giữa đáy thanh Chúc Phúc thật (progressGroup, đo được kết thúc ở thiết kế y≈720) và đỉnh nút bấm (đo được ở thiết kế y≈778) - chia đều khoảng trống 58 đơn vị cho khối cao 40 đơn vị, dời `bottom` từ `72`→`84` (tăng mạnh hơn hẳn lần trước).
+
+Sửa cả exml nguồn (xoá hẳn phần tử chết, đơn giản hoá) lẫn `default.thm.js` (xoá `_Group1_i`/`barGroup_i`/`expBar0_i`/`barBg0_i`/`_HorizontalLayout1_i`, thay bằng `_Image4_i` trực tiếp trong `elementsContent`, xoá 3 mục thừa khỏi mảng `skinParts`). Cập nhật hash MD5 ảnh mới trong `resource/version.txt`/`version.json`.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`; rà soát toàn bộ tên biến/hàm liên quan tới `barGroup`/`expBar0`/`barBg0`/`_Group1_i`/`_HorizontalLayout1_i` đã bị xoá sạch không còn tham chiếu treo trong phạm vi class.
+
+**Cache-bust**: `default.thm_cea83430.js` → `default.thm_02a927f1.js`, `manifest.json?v=cea83430` → `?v=02a927f1` trong `index.php`; cập nhật `WWW/version.txt` → `02a927f1`.
+
+**Bài học quan trọng cho các lần sau**: trước khi gộp 2 phần tử vào cùng 1 `HorizontalLayout`/`Group` để "xếp thành hàng", PHẢI xác nhận cả 2 phần tử đó thực sự được điều khiển bởi cùng 1 đoạn code/parent, không chỉ dựa vào việc chúng ĐANG hiển thị gần nhau trên màn hình - nếu 1 trong 2 được định vị độc lập bởi JS khác (như `progressGroup`/`barbc` ở đây), việc gộp layout sẽ không có tác dụng với phần tử đó và có thể gây chồng lấn mới.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) ảnh "Chúc Phúc:" không còn đè icon mũi tên của thanh bar, cả 2 nhìn thẳng hàng, (2) "Tiêu hao..." đã tách rõ khỏi nút "Nâng cao phẩm chất".
