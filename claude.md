@@ -6128,3 +6128,28 @@ Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch tương ứng c
 **Cache-bust**: `default.thm_7f1fb951.js` → `default.thm_2e32f4d5.js`, `manifest.json?v=7f1fb951` → `?v=2e32f4d5` trong `index.php`; cập nhật `WWW/version.txt` → `2e32f4d5`.
 
 **Lưu ý quan trọng - khoảng trống dọc ở khu vực này RẤT CHẬT** (giữa danh sách phần thưởng phía trên và cụm nút bấm phía dưới), các con số dời vị trí là tính toán ước lượng từ kích thước khai báo (không đo trực tiếp vì không có ảnh render thực tế để đo). Cần người dùng xác nhận bằng ảnh chụp mới: (1) "Chúc Phúc:" đã hiện tiếng Việt rõ ràng, (2) thanh Chúc Phúc không còn đè "Tiêu hao"/"Số lần khai thác", (3) câu "Số lần khai thác ngọc hôm nay: X/Y" đọc được đầy đủ - nếu vẫn còn chồng lấn ở bất kỳ đâu trong cụm này, đây là khu vực rất dễ vỡ lại nên có thể cần tinh chỉnh thêm 1-2 lần.
+
+## 236. Đo pixel chính xác để fix dứt điểm chồng lấn "Tiêu hao"/"Số lần khai thác" (sau mục 235) (2026-07-24)
+
+Người dùng gửi ảnh xác nhận "Chúc Phúc:" đã hiện tiếng Việt và không còn đè khu vực dưới - NHƯNG báo tổng thể "vẫn chồng chéo tùm lum", yêu cầu đo pixel cho chính xác thay vì ước lượng.
+
+**Phương pháp đo pixel mới** (thay vì suy luận thuần từ số liệu khai báo trong skin như các mục trước): dùng Python/PIL đọc trực tiếp file ảnh chụp màn hình, quét màu từng hàng/cột pixel để xác định chính xác mép các thành phần (nút bấm, thanh chữ, vùng chữ) thay vì đoán. Quy trình:
+1. Tìm 2 điểm mốc có toạ độ THIẾT KẾ đã biết chắc chắn (mép trái nút `advance` x=70 và nút `start` x=364) - đối chiếu với toạ độ PIXEL thực đo được trên ảnh (dò biên màu nút bấm bằng script) để suy ra công thức quy đổi chính xác: `pixel = scale × design + offset`, với `scale≈2.206` (khớp gần đúng tỉ lệ 1320/600=2.2 của toàn màn hình, xác nhận không có lệch tỷ lệ trục X/Y).
+2. Áp dụng công thức ngược để quy đổi các mốc pixel đo được (mép trên nút, mép dưới thanh Chúc Phúc, mép trên/dưới vùng chữ) trở lại đơn vị thiết kế, từ đó tính đúng khoảng hở thực tế đang có.
+
+**Phát hiện qua đo đạc**: khoảng hở giữa chữ "Tiêu hao.../Số lần khai thác..." và nút bấm bên dưới chỉ còn **~2-3px** (gần như bằng 0) - do 2 nguyên nhân riêng biệt:
+1. Nhãn `"hoặc"` (`width="24"`) - lỗi CŨ có sẵn từ trước (không phải do mục 235 gây ra) - quá hẹp cho 4 ký tự ở size 20, tự động xuống dòng thành "ho"/"ặc", làm dòng "Tiêu hao..." cao thêm hẳn 1 dòng, ăn hết khoảng hở đã tính ở mục 235.
+2. `countTxt` ("Số lần khai thác...") phải xuống 2 dòng (không tránh được vì câu quá dài) nhưng khoảng hở dành cho nó ở mục 235 chưa đủ dư cho chiều cao 2 dòng thực tế.
+
+**Cách sửa dứt điểm**:
+- `"hoặc"` Label: `width` 24→50 - đủ rộng để không tự xuống dòng nữa, dòng "Tiêu hao..." trở lại 1 dòng như thiết kế ban đầu.
+- `Tiêu hao` Group: `bottom` 68→72 (thêm chút đệm an toàn).
+- `countTxt`: giảm `size` 18→16, `bottom` 72→80, `height` 31→42 (đủ chỗ cho 2 dòng ở size nhỏ hơn) - đẩy lên đủ xa để không đè nút "Bắt đầu thu thập" dù vẫn phải xuống 2 dòng.
+
+Sửa cả exml nguồn lẫn `default.thm.js` đã biên dịch.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`; đo pixel bằng script Python xác nhận khoảng hở tính toán mới đạt ~5 đơn vị thiết kế ở cả 2 bên (đủ để không chồng lấn, dù vẫn khá sát do không gian dọc khu vực này quá chật).
+
+**Cache-bust**: `default.thm_2e32f4d5.js` → `default.thm_cea83430.js`, `manifest.json?v=2e32f4d5` → `?v=cea83430` trong `index.php`; cập nhật `WWW/version.txt` → `cea83430`.
+
+**Chưa kiểm chứng thực tế** - lần này đã đo bằng pixel thực tế trên ảnh chụp thay vì chỉ suy luận từ số liệu khai báo nên độ tin cậy cao hơn hẳn các lần trước, nhưng khoảng hở tính được vẫn khá sát (~5 đơn vị thiết kế ≈ 11px màn hình) do không gian khu vực này vốn quá chật. Cần người dùng xác nhận bằng ảnh chụp mới: "Tiêu hao..." và "Số lần khai thác..." đã tách rời hẳn khỏi 2 nút bấm bên dưới.
