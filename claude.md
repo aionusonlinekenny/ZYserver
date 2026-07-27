@@ -6176,3 +6176,48 @@ Sửa cả exml nguồn (xoá hẳn phần tử chết, đơn giản hoá) lẫn
 **Bài học quan trọng cho các lần sau**: trước khi gộp 2 phần tử vào cùng 1 `HorizontalLayout`/`Group` để "xếp thành hàng", PHẢI xác nhận cả 2 phần tử đó thực sự được điều khiển bởi cùng 1 đoạn code/parent, không chỉ dựa vào việc chúng ĐANG hiển thị gần nhau trên màn hình - nếu 1 trong 2 được định vị độc lập bởi JS khác (như `progressGroup`/`barbc` ở đây), việc gộp layout sẽ không có tác dụng với phần tử đó và có thể gây chồng lấn mới.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) ảnh "Chúc Phúc:" không còn đè icon mũi tên của thanh bar, cả 2 nhìn thẳng hàng, (2) "Tiêu hao..." đã tách rõ khỏi nút "Nâng cao phẩm chất".
+
+## 238. Cụm "chiến đấu" đè thanh máu boss + tiếng Hoa trong thông báo hệ thống/vật phẩm + Gói Quà Khiên tràn khung + rà soát khoảng trắng toàn diện (2026-07-27)
+
+Người dùng gửi 5 ảnh (Team Phó Bản đánh boss) báo 5 lỗi riêng biệt, đồng thời yêu cầu rà soát rộng hơn lỗi thiếu khoảng trắng khi ghép chuỗi ("EmĐẹpNhấttại" phải là "EmĐẹpNhất tại ").
+
+### 1. Cụm icon boss + "战斗中" + tên boss đè thanh máu (ảnh 1, 2)
+
+**Xác định đúng thành phần** - KHÔNG phải `BossBloodSkin`/`worldbossUiSkin`/`wpkBossUiSkin` (đã dò và loại từng cái): thanh máu "Lv.120 Sơn Hải Kiếp·Kim Viên" xác nhận thuộc `BossBloodSkin.exml`/`BossesBloodPanel` (tên gộp 1 Label duy nhất, đúng kiểu dungeon Team Phó Bản theo mục 208). Nhưng cụm icon+tên nằm DƯỚI đó lại thuộc 1 view HOÀN TOÀN KHÁC: dò `main.min.js` thấy `BossesBloodPanel.showView` mở đồng thời cả `BossesBelongPanel`, `BossesBloodPanel` VÀ `TargetListView` (skin `SkinTargetList`/`resource/exml/TargetListSkin.exml`) - 3 view chồng lớp độc lập trên cùng màn hình. `list1.itemRenderer` của `TargetListView` được gán là `WorldBossesHeadRender` (kế thừa `GuildWarMemberHeadItemRender`, skin `SkinMemberHead`) - đây chính là cụm icon tròn + tên hiển thị "ai đang bị tấn công/đang được nhắm", tái dùng cho cả người chơi lẫn boss.
+
+Dòng chữ đỏ "战斗中" (tiếng Hoa, nghĩa "đang chiến đấu") KHÔNG phải Label tĩnh trong skin (đã kiểm `MemberHeadSkin.exml` lẫn `default.thm.js` biên dịch, không có chuỗi này ở đâu cả) mà là hoạt ảnh MovieClip: `GuildWarMemberHeadItemRender.prototype.addAttEffect` gọi `this.attEffect.playFile(ResDirMgr.RES_DIR_EFF+"zhandou", -1)` - tức phát file `resource/effect/zhandou.png`/`zhandou.json` (atlas 8 khung hình, chữ "战斗中" nảy lên xuống) đè lên đầu icon khi mục tiêu đang bị đánh. Đây là dạng "tiếng Hoa khắc trong ảnh" giống hệt mẫu đã xử lý ở mục 233/235/237 (`peakness_*.png`, `wkzfj.png`) chứ không phải text có thể sửa qua exml/JS.
+
+**Cách sửa**:
+- Vẽ lại toàn bộ atlas `resource/effect/zhandou.png` (8 khung, canvas 570×106, mỗi khung 140×50) với chữ Việt "CHIẾN ĐẤU" (vàng nhạt, viền đỏ nâu, PIL + DejaVuSans-Bold), cập nhật `resource/effect/zhandou.json`: `w`/`h` mỗi khung 64×40→140×50, toạ độ `res` theo lưới 4×2 mới, `frames[].x` -32→-70, `frames[].y` dịch theo delta gốc (-25,-29,-33,-29,-32,-28,-32,-28) để giữ đúng kiểu nảy lên xuống của hiệu ứng gốc.
+- `resource/exml/TargetListSkin.exml`: `attackGroup0` (cụm "đang tấn công", neo `right="60"`) và `beAttackGroup0` (cụm "bị tấn công", cùng cạnh phải, bên dưới) đang neo `top="180"`/`top="330"` - đo trên ảnh chụp xác nhận `top="180"` gần trùng mép dưới thanh máu boss (`BossBloodSkin`'s `barGroup` kết thúc ở thiết kế y≈181.5, 2 skin khác canvas nên không khớp tuyệt đối) → dời cả cụm xuống: `attackGroup0` `top` 180→205, `beAttackGroup0` `top` 330→355 (dời cùng 1 lượng để giữ nguyên khoảng cách nội bộ giữa 2 cụm, tránh đụng lẫn nhau).
+
+Sửa cả exml nguồn lẫn `default.thm.js` (dò đúng phạm vi `generateEUI.paths['resource/exml/TargetListSkin.exml']`, chỉ có 1 khớp `t.top = 180`/`t.top = 330` trong phạm vi này nên thay trực tiếp, không cần string riêng biệt theo offset). Cập nhật hash MD5 của `effect/zhandou.png`+`.json` trong `resource/version.txt`/`version.json`.
+
+### 2+3+4. Tiếng Hoa trong thông báo "đã đánh bại"/"rơi ra" + rà soát khoảng trắng toàn file `notice.config`
+
+Đọc ảnh 3, 4: dòng `[Hệ Thống]EmĐẹpNhấttại 天地妖冢 đã đánh bại Thiên...` (ảnh 3) và `...rơi ra 青焰·伤·1转` (ảnh 4, tên vật phẩm rơi ra vẫn tiếng Hoa).
+
+**Nguồn `天地妖冢`**: mảng `bossName` trong `server/bin/{s1,s99}/gameworld/data/config/worldboss/worldbossbase.config` (7 tên loại boss, dùng làm placeholder `%s` trong `notice.config` lẫn tiêu đề mail) chưa hề được dịch dù các cụm này đã có sẵn trong `translation/*.json` glossary từ trước - dịch trực tiếp cả 7 phần tử: `天地妖冢`→"Thiên Địa Yêu Trủng", `野外BOSS`→"BOSS Dã Ngoại" (khớp đúng chữ đã dùng sẵn trong `notice.config` dòng 336), `妖帝天宫`→"Yêu Đế Thiên Cung", `万魔祖地`→"Vạn Ma Tổ Địa", `神兵圣域`→"Thần Binh Thánh Vực", `神兵塔`→"Thần Binh Tháp" (khớp chữ đã dùng sẵn trong `notice.config`), `妖冢极境`→"Yêu Trủng Cực Cảnh". Xác nhận qua grep `bossName[` trong `worldboss.lua` chỉ dùng để hiển thị (mail/notice/sceneName), không so sánh bằng chuỗi ở đâu nên đổi an toàn.
+
+**Nguồn `青焰·伤·1转`**: `item.config` có nguyên 1 bộ 56 vật phẩm "Hỏa Phù Thần Phạt" (7 bậc lửa × 8 cổng Kỳ Môn Độn Giáp: 杜/开/休/生/死/伤/景/惊) toàn bộ field `name` VÀ `desc` vẫn tiếng Hoa dù `translation/*.json` đã có sẵn bản dịch đầy đủ cho tất cả 56 tên (`glossary_config_name_round10.json` + rải rác vài file khác) lẫn 7 câu desc dùng chung theo bậc - chỉ là CHƯA ĐƯỢC ÁP DỤNG vào `item.config`. Áp trực tiếp toàn bộ 56 cặp `name` + 7 cặp `desc` (Đỗ/Khai/Hưu/Sinh/Tử/Thương/Cảnh/Kinh môn, "Linh Hỏa/Thanh Diễm/Bích Lam Liệt Diễm/Huyền Liên Thực Hỏa/Phần Cốt Ác Hỏa/Đại Nhật Hoàng Viêm/Kim Liên Thiên Diễm" theo bậc, hậu tố "cấp 60" hoặc "Chuyển N").
+
+**Rà soát khoảng trắng toàn diện** (theo yêu cầu "Bạn dò lại giúp", ví dụ mẫu "EmĐẹpNhấttại"): dò cả file `notice.config` (2 server) bằng regex `%s\|(?!C:)(?=[A-Za-zÀ-ỹ])` (bắt mọi chỗ placeholder `%s` đóng tag màu rồi NỐI LIỀN ngay một chữ cái, loại trừ trường hợp mở tag màu mới `C:`) - phát hiện **310 chỗ thiếu khoảng trắng** trải khắp gần như toàn bộ ~150 mẫu thông báo trong file (không chỉ riêng "tại"/"đã đánh bại" - còn "đã nhận ", "đã đạt cấp độ ", "đã kích hoạt ", "trải qua gian khó...", "tự tin bước vào ", v.v.), chèn 1 khoảng trắng ngay sau mỗi vị trí này. Tiện thể sửa luôn 1 lỗi thiếu dấu `:` (`&T%s|` → `&T:%s|`) làm hỏng cú pháp tag màu ở dòng thông báo "rơi ra" của Team Phó Bản.
+
+Kiểm tra riêng: không phát hiện thêm file `.config` nào khác trong `server/bin/*/gameworld/data/config` có cùng mẫu lỗi (`mail.config`, `zhuangban.config` đã kiểm tra sạch).
+
+**Kiểm thử**: `luac -p` sạch cho `notice.config`, `worldbossbase.config`, `item.config` ở cả `s1` và `s99` (2 server đồng bộ hệt nhau cho các file này); xác nhận `bossName[...]` trong Lua code chỉ dùng hiển thị, không so sánh chuỗi.
+
+### 5. "Gói Quà Khiên" tràn khung + nút "Vui lòng nhấn" bị icon xúc xắc che (ảnh 5)
+
+`resource/exml/WorldBossJiangLiSkin.exml` (class `SkinWorldBossJiangLi`):
+- Tiêu đề `nameTxt0` ("Gói Quà Khiên", size 24) `horizontalCenter="0"` trong 1 Group chỉ rộng 120 nhưng neo sát mép trái (`x="4.5"`) - đo pixel trên ảnh xác nhận chữ tràn ra NGOÀI khung bên trái (chữ rộng ~133 đơn vị thiết kế, lệch tâm nên tràn quá mép). Icon rương quà (Group chứa `zdbossjianglixiaobg`+`goods`) cũng neo sát mép trái tương tự (`x="3.5"`). Sửa: dời cả 2 Group (tiêu đề + icon) sang phải `x` 4.5/3.5 → 19, đồng thời giảm cỡ chữ tiêu đề 24→20 và bỏ thuộc tính `x="127"` thừa/xung đột với `horizontalCenter` (không có tác dụng, gây khó đọc) - vừa khít khung 120 hơn.
+- Nút "Vui lòng nhấn": `playGroup` chỉ rộng 130, ảnh nền nút (`zjmyindao`) rộng 133, nhưng Label "Vui lòng nhấn" (size 20, không đặt `width`) đo/ước lượng cần ~140-155 đơn vị thiết kế → tràn ra ngoài nút, bị icon xúc xắc `play` (đặt ngay `x="132"`, sát mép nút) đè khuất phần đuôi chữ. Sửa: nới `playGroup`/ảnh nền nút rộng 130/133→175/178, dời icon xúc xắc `x` 132→177 (nhường chỗ), giảm nhẹ cỡ chữ 20→18 và dịch trái `x` 30→14 cho cân giữa nút mới.
+- Icon xúc xắc `zdbossqiangjiangli` (khung 75×89 trong atlas dùng chung `resource/eui/ui/tj.json`/`tj.png`, cùng file với hàng chục icon khác) có chữ "抢奖励" (tiếng Hoa, "giành thưởng") khắc trong nửa dưới khung - vẽ đè riêng vùng chữ (giữ nguyên phần icon xúc xắc phía trên) bằng chữ Việt "THƯỞNG" (vàng, viền nâu, size 14, canh giữa trong đúng 75px sẵn có - không đổi kích thước khung để tránh phải sắp xếp lại toàn bộ atlas dùng chung).
+
+Sửa cả exml nguồn lẫn `default.thm.js` (dò đúng phạm vi `generateEUI.paths['resource/exml/WorldBossJiangLiSkin.exml']`, khớp từng khối theo đúng thứ tự thuộc tính). Cập nhật hash MD5 của `eui/ui/tj.png` trong `resource/version.txt`/`version.json` (phát hiện 2 file này vốn đã LỆCH hash nhau từ trước - `version.txt` và `version.json` từng có 2 giá trị khác nhau cho cùng 1 file - không rõ nguyên nhân lịch sử, chỉ cập nhật cả 2 về đúng hash mới).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_02a927f1.js` → `default.thm_dc05a1cc.js`, `manifest.json?v=02a927f1` → `?v=dc05a1cc` trong `index.php`; cập nhật `WWW/version.txt` → `dc05a1cc`. `main.min.js` không đổi lần này (mọi chỉnh sửa chỉ nằm trong skin/exml, không đụng file JS logic server-side hay `main.min.js` phía client).
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới cả 5 điểm: (1) cụm icon+tên boss không còn đè thanh máu, chữ "战斗中" đã thành "CHIẾN ĐẤU", (2) thông báo hệ thống "đã đánh bại" hiện đúng "Thiên Địa Yêu Trủng" tiếng Việt có khoảng trắng, (3) tên vật phẩm rơi ra hiện tiếng Việt, (4) toàn bộ thông báo hệ thống khác đã có khoảng trắng đúng chỗ, (5) "Gói Quà Khiên" không còn tràn khung, nút "Vui lòng nhấn" hiện đủ chữ không bị icon xúc xắc che.
