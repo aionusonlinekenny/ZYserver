@@ -269,7 +269,7 @@
     };
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "./manifest.json?v=dc05a1cc", true);
+    xhr.open("GET", "./manifest.json?v=475b4b47", true);
     xhr.addEventListener("load", function () {
         var manifest = JSON.parse(xhr.response);
         var list = manifest.initial.concat(manifest.game);
