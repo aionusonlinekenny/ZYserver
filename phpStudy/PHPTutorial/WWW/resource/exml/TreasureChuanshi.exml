@@ -6,18 +6,18 @@
 	<e:Group width="600" height="728" horizontalCenter="0" verticalCenter="0">
 		<e:Image horizontalCenter="0" width="585" height="435" x="7"  top="4" scale9Grid="10,8,9,9" source="tongyong_dikuang4"/>
 		<e:Image width="585" horizontalCenter="0" x="8"  height="187" bottom="99" scale9Grid="10,8,9,9" source="tongyong_dikuang4"/>
-		<e:Group left="25" top="20" x="25" y="17" >
-			<e:Label text="Số lần quay thưởng tuần này：" x="0" size="18" y="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
-			<e:Label id="times" text="20" x="10" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
+		<e:Group left="25" top="17" x="25" y="14" >
+			<e:Label text="Số lần quay thưởng tuần này：" x="0" size="15" y="0" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
+			<e:Label id="times" text="20" x="10" size="15" y="1" fontFamily="Microsoft YaHei" textColor="0xFFFF00"/>
 			<e:layout>
-			<e:HorizontalLayout gap="2"/>
+			<e:HorizontalLayout gap="2" verticalAlign="middle"/>
 			</e:layout>
 		</e:Group>
-		<e:Group right="75" top="20" x="287" y="17" >
-			<e:Label text="Thời gian còn lại: " x="0" size="18" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
-			<e:Label id="leftTimeTxt" text="" x="100" size="18" y="10" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+		<e:Group left="25" top="39" x="25" y="36" >
+			<e:Label text="Thời gian còn lại: " x="0" size="15" y="0" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
+			<e:Label id="leftTimeTxt" text="" x="100" size="15" y="1" fontFamily="Microsoft YaHei" textColor="0x00ff06"/>
 			<e:layout>
-			<e:HorizontalLayout gap="2"/>
+			<e:HorizontalLayout gap="2" verticalAlign="middle"/>
 			</e:layout>
 		</e:Group>
 		<e:Group width="513" left="50" top="63" x="50" y="54" >
@@ -141,9 +141,12 @@
 		<e:Group horizontalCenter="-115.5" top="237" x="129" y="200"  width="80" height="80">
 			<e:Image id="maxHopeValue0"  anchorOffsetX="0" anchorOffsetY="0" width="80" source="luckvalue_png" top="0" height="80" horizontalCenter="0"/>
 		</e:Group>
-		<e:Group  height="28" anchorOffsetX="0" anchorOffsetY="0" width="218" top="235" horizontalCenter="49" x="261" y="209">
-			<e:Label id="Descri0" text="Điểm Chúc Phúc hiện tại：" size="18" textAlign="center" x="2" fontFamily="Microsoft YaHei" lineSpacing="4"  y="4" textColor="0xffff00"/>
-			<e:BitmapLabel id="hopeValue0" font="num_g0_fnt" text="10000" letterSpacing="-10" lineSpacing="0" anchorOffsetX="0" anchorOffsetY="0" top="2" left="105"/>
+		<e:Group  height="28" anchorOffsetX="0" anchorOffsetY="0" width="300" top="235" horizontalCenter="49" x="261" y="209">
+			<e:Label id="Descri0" text="Điểm Chúc Phúc hiện tại：" size="15" x="2" fontFamily="Microsoft YaHei" lineSpacing="4"  y="6" textColor="0xffff00"/>
+			<e:BitmapLabel id="hopeValue0" font="num_g0_fnt" text="10000" letterSpacing="-10" lineSpacing="0" anchorOffsetX="0" anchorOffsetY="0" y="2"/>
+			<e:layout>
+			<e:HorizontalLayout gap="6" verticalAlign="middle"/>
+			</e:layout>
 		</e:Group>
 		<e:Group top="267" y="238"  left="238">
 			<e:Label id="Descri" text="Điểm Chúc Phúc càng cao, cơ hội nhận Hộp Báu Vật Chu Tiên càng lớn! Đầy điểm Chúc Phúc chắc chắn nhận 1 Hộp Báu Vật Chu Tiên!" width="224" size="16" textAlign="left" top="512" x="5" y="42" fontFamily="Microsoft YaHei" textColor="0xffffff" height="64" lineSpacing="4"/>
