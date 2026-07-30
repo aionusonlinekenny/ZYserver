@@ -6337,3 +6337,17 @@ State "none" (danh sách rỗng, hiện "Hiện chưa có người chơi nào g�
 **Cache-bust**: `default.thm_c67756d9.js` → `default.thm_86ac72a5.js`, `main.min_18c00868.js` → `main.min_34f43ea7.js`, `manifest.json?v=c67756d9` → `?v=86ac72a5` trong `index.php`; cập nhật `WWW/version.txt` → `86ac72a5`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) tên người chơi nằm sát icon hơn, tên dài hiện "…" thay vì dính vào cấp độ, (2) "Chuyển N Cấp M" hiện 2 dòng canh giữa gọn gàng.
+
+## 244. Ảnh chụp thực tế xác nhận mục 243 vẫn xuống dòng với tên dài - đổi cách cắt "…" từ đo pixel (textWidth) sang đếm ký tự cố định (2026-07-30)
+
+Người dùng gửi ảnh chụp thực tế (IMG_1262.png) xác nhận: vị trí tên đã sát icon và "Chuyển N / Cấp M" đã tách 2 dòng canh giữa đúng như mục 243 - NHƯNG tên dài "BạchPhượngHồng" (14 ký tự) vẫn bị xuống dòng vỡ giữa từ ("BạchPhượngHồn" / "g") thay vì hiện "…", tức cách cắt bằng `wordWrap=false` + đo `textWidth` so với `nameTxt.width` (giống hệt kỹ thuật gốc có sẵn trong `ItemBase.setNameText_a94` của chính game, đã tin tưởng dùng lại ở mục 241/242) **không hoạt động đúng như kỳ vọng ở đây** - dù đặt `wordWrap=false`, tên vẫn vỡ dòng theo kiểu ngắt giữa từ thay vì tràn 1 dòng hoặc cắt "…". Nguyên nhân kỹ thuật chính xác chưa xác định được (có thể do sai khác đo `textWidth` giữa font đo và font hiển thị thực tế trên máy người dùng, hoặc thời điểm đo chưa đúng lúc `width` đã được gán trong vòng đời item renderer ảo hoá của `List`) - không debug được trực tiếp vì không có môi trường chạy thử game thật.
+
+**Cách sửa (đáng tin cậy hơn, không phụ thuộc đo pixel)**: bỏ hẳn cách đo `textWidth`/`width` runtime, thay bằng cắt cố định theo SỐ KÝ TỰ: giới hạn tên tối đa 10 ký tự, quá thì cắt còn 10 + nối "…" (`EncounterInfoItem.truncateNameTxt_a94` trong `main.min.js`). Cách này đảm bảo tuyệt đối không bao giờ vỡ dòng bất kể sai khác đo lường font, đổi lại kém chính xác hơn về mặt hình ảnh (tên 10 ký tự "vừa khít" và tên rất ngắn đều bị xử lý như nhau, không tối ưu khoảng trắng thừa) - chấp nhận đánh đổi vì độ tin cậy quan trọng hơn.
+
+**Lưu ý cho các lần sau**: mục 241 (`ItemBase.setNameText_a94`, tên vật phẩm Tru Tiên) và mục 242 (`WorldBossesHeadRender.truncateRoleName_a94`, tên quái trong SkinMemberHead) dùng CHUNG kỹ thuật đo `textWidth` vừa xác nhận không đáng tin cậy ở đây - CHƯA có phản hồi thực tế xem 2 chỗ đó có bị lỗi tương tự hay không (người dùng chưa gửi ảnh xác nhận). Nếu người dùng báo lỗi tương tự (xuống dòng vỡ giữa từ) ở 2 màn hình đó, áp dụng cách sửa cùng kiểu: chuyển sang cắt cố định theo số ký tự thay vì đo pixel.
+
+**Kiểm thử**: `node -c` sạch cho `main.min.js`.
+
+**Cache-bust**: chỉ đổi `main.min_34f43ea7.js` → `main.min_fdd68928.js` (không sửa exml/skin nên không đụng `default.thm.js`); `manifest.json?v=86ac72a5` → `?v=fdd68928` trong `index.php` (bắt buộc đổi dù `default.thm.js` không đổi, vì nội dung `manifest.json` đã đổi tên file `main.min.js` bên trong, cần cache-bust để trình duyệt tải lại); cập nhật `WWW/version.txt` → `fdd68928`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: tên dài như "BạchPhượngHồng" hiện gọn 1 dòng có "…" thay vì xuống dòng vỡ giữa từ.
