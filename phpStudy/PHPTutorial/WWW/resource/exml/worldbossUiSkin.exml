@@ -2,7 +2,7 @@
 <e:Skin class="SkinWorldBossUi" currentState="normal" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="580" height="930">
 	<w:Config id="15c6d0f73d2" />
-	<e:Group id="attList" width="100" top="190" bottom="144" right="50">
+	<e:Group id="attList" width="100" top="220" bottom="114" right="50">
 		<e:Button id="refush" label="Nút bấm" x="0" y="1" skinName="SkinBtn0" width="76"  visible="false"/>
 		<e:ToggleButton id="btn" touchEnabled="true" label="Nút bấm" right="1" skinName="SkinBtn4" y="1"  visible="false"/>
 		<e:Label text="Chọn mục tiêu" x="6" y="6" size="16" textColor="0xDFD1B5" stroke="1" strokeColor="000000" visible="false" />
@@ -60,8 +60,8 @@
 		<e:Image left="0" right="0" scale9Grid="150,0,9,122" source=""  y="0" visible="false"/>
 		<e:Image width="69" height="71" x="24.33" y="26.33" source="guildkuang"/>
 		<e:Label id="lvTxt" y="30" size="20" text="Lv.2000" x="110.5" width="70" textAlign="right"  textColor="0xffff00"/>
-		<e:Label id="nameTxt" y="30" size="18" text="Tổ Mã Giáo Chủ" x="188"  textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Button id="tipBtn" label="Phần thưởng" x="278.26" y="13.73" skinName="SkinBtn18"/>
+		<e:Label id="nameTxt" y="30" size="18" text="Tổ Mã Giáo Chủ" x="188" width="155"  textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Button id="tipBtn" label="Phần thưởng" x="350" y="13.73" skinName="SkinBtn18"/>
 		<e:Label id="bossBloodNumLabel" text="X5" x="313.6" y="52.5" fontFamily="Microsoft YaHei" size="18"/>
 	</e:Group>
 	<e:Button id="attackPlayer1" label="" skinName="SkinWorldBossAtbtn" currentState="attgsup" horizontalCenter="66" bottom="150" visible="false"/>
@@ -70,7 +70,7 @@
 		<ns1:BossUIBtnItem id="attackBoss" skinName="SkinWorldBossAtbtn" x="75" y="35" anchorOffsetX="75" anchorOffsetY="35"/>
 		<ns1:BossUIBtnItem id="attackPlayer" skinName="SkinWorldBossAtbtn" x="246" y="35" anchorOffsetX="75" anchorOffsetY="35"/>
 	</e:Group>
-	<e:Group width="253" y="60" id="belongGroup" horizontalCenter="162.5">
+	<e:Group width="253" y="100" id="belongGroup" horizontalCenter="162.5">
 		<e:Rect height="14" y="30" left="77" right="13" fillColor="0x111010"    visible="false"/>
 		<e:Rect left="91" right="32" fillColor="0x111010" height="4" width="92"  y="46" visible="false"/>
 		<e:Rect width="58" height="58" x="8" y="9" ellipseWidth="82" ellipseHeight="82" fillColor="0x111010"  visible="false"/>

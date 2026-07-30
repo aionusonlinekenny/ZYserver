@@ -6381,3 +6381,19 @@ Người dùng gửi ảnh chụp màn hình đánh BOSS thế giới ("Thiên H
 **Cache-bust**: `default.thm_7971654b.js` → `default.thm_0b21583c.js`, `manifest.json?v=7971654b` → `?v=0b21583c` trong `index.php`; cập nhật `WWW/version.txt` → `0b21583c`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: cụm "Sở hữu" không còn che "X5"/thanh máu BOSS. Nếu hướng dời (lên thay vì xuống) không đúng ý người dùng, cần trao đổi lại.
+
+## 247. Ảnh chụp thực tế mục 246 cho thấy dời quá tay + phát hiện thêm 2 lỗi mới: nút Thưởng đè tên BOSS, cụm mục tiêu tấn công ngang hàng thanh máu BOSS (2026-07-30)
+
+Người dùng gửi ảnh chụp thực tế sau mục 246: cụm "Sở hữu" bay lên quá cao (cách xa thanh máu BOSS ~140-160px, "bay lên tuốt trên") - xác nhận `y=60` ở mục 246 CHỈNH QUÁ TAY. Đồng thời phát hiện 2 lỗi khác: (1) nút "Thưởng" (`tipBtn`) đè lên tên BOSS dài "Thiên Hồ Thạch Linh" (hiện "Thiên Hồ Thạch Linl" bị nút che mất chữ cuối); (2) cụm mục tiêu tấn công bên phải (icon BOSS nhỏ + nhãn "Đang tấn công"/"CHIẾN ĐẤU", từ `attList`) nằm ngang hàng với thanh máu chính của BOSS - yêu cầu dời xuống ~100px hoặc tính cụ thể hơn để tránh bị tên BOSS dài đè lên khi tên đủ dài.
+
+**Hiệu chỉnh lại `belongGroup`**: đo trực tiếp trên ảnh mới (2 điểm dữ liệu: y=110→chồng nhẹ, y=60→cách 140-160px) suy ra tỉ lệ quy đổi giữa đơn vị toạ độ thiết kế trong exml này và pixel thực tế hiển thị **khác biệt lớn so với các skin khác đã sửa trong session** (~3.1-3.4 lần thay vì gần 1:1 như thường thấy) - có thể do view `SkinWorldBossUi` được phóng to hơn khi hiển thị. Nội suy tuyến tính từ 2 điểm đo được ra `y=100` (dự kiến cho khoảng cách ~15-20px, đủ tách rời nhưng không quá xa).
+
+**Sửa nút "Thưởng" đè tên BOSS - tìm ra nguyên nhân gốc**: code gốc của game (`WorldBossesUiInfo.updateBaseInfo_a94` trong `main.min.js`) đã có sẵn cơ chế tự động định vị nút theo tên: `this.tipBtn.x=this.nameTxt.x+this.nameTxt.textWidth+10` - dùng `textWidth` đo NGAY sau khi gán `nameTxt.text` mới. Đây là **CÙNG LOẠI LỖI đã xác nhận ở mục 244** (đo `textWidth` ngay sau khi đổi `.text` không đáng tin cậy, cho giá trị không khớp với độ rộng hiển thị thực tế) - lần này lỗi nằm ngay trong code gốc của game chứ không phải code tự thêm. Sửa bằng cách bỏ hẳn phép tính động: (1) thêm hàm `truncateBossName_a94` (main.min.js) cắt cố định tên BOSS tối đa 14 ký tự + "…" (theo đúng cách tiếp cận đáng tin cậy đã áp dụng ở mục 244, không đo pixel), (2) đổi `tipBtn.x` từ công thức động sang toạ độ cố định `x=350` (đủ xa để chứa tên đã cắt ngắn, nằm gọn trong `bossBloodGroup` rộng 480). Đồng bộ `nameTxt` thêm `width="155"` và `tipBtn` mặc định `x="350"` trong exml nguồn cho khớp.
+
+**Dời cụm mục tiêu tấn công (`attList`) xuống**: Group này neo CẢ `top="190"` LẪN `bottom="144"` cùng lúc (co giãn theo chiều cao còn lại), không thể chỉ đổi 1 trong 2 để "tịnh tiến" xuống mà không đổi kích thước - phải tăng `top` VÀ giảm `bottom` cùng một lượng để giữ nguyên chiều cao trong lúc dời cả khối xuống. Quy đổi yêu cầu "100px" của người dùng theo tỉ lệ đo được ở `belongGroup` (~3.1-3.4 lần) ra ~30 đơn vị thiết kế: `top` 190→220, `bottom` 144→114 (dời xuống, giữ nguyên chiều cao).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `worldbossUiSkin.exml` hợp lệ; `node -c` sạch cho cả `main.min.js` và `default.thm.js`.
+
+**Cache-bust**: `default.thm_0b21583c.js` → `default.thm_86e58875.js`, `main.min_fdd68928.js` → `main.min_6020defa.js`, `manifest.json?v=0b21583c` → `?v=86e58875` trong `index.php`; cập nhật `WWW/version.txt` → `86e58875`.
+
+**Chưa kiểm chứng thực tế** - do tỉ lệ quy đổi toạ độ→pixel của riêng skin này chỉ ước lượng từ 2 điểm đo (không chắc chắn tuyến tính hoàn toàn), rất cần người dùng xác nhận lại bằng ảnh chụp mới cả 3 điểm: (1) cụm "Sở hữu" cách thanh máu BOSS vừa phải không quá xa/quá gần, (2) nút "Thưởng" không còn đè tên BOSS dù tên dài, (3) cụm "Đang tấn công" đã tách rõ khỏi thanh máu BOSS.
