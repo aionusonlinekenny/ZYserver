@@ -6316,3 +6316,24 @@ Người dùng gửi ảnh chụp thực tế (IMG_1256.png) màn hình đang ch
 **Cache-bust**: `default.thm_8e938f34.js` → `default.thm_c67756d9.js`, `main.min_ba73a4cb.js` → `main.min_18c00868.js`, `manifest.json?v=8e938f34` → `?v=c67756d9` trong `index.php`; cập nhật `WWW/version.txt` → `c67756d9`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) icon/tên/thanh máu quái không còn đè bảng xếp hạng, (2) tên quái ở 2 icon nhỏ hiện gọn 1 dòng có "…" thay vì xuống dòng cắt chữ, (3) thông báo trắng giữa màn hình khi nhận thưởng camp battle đã có tiếng Việt, (4) thông báo "Vạn Tiên Sát Kiếp sẽ mở sau 3 phút nữa" không còn dính chữ.
+
+## 243. Sửa danh sách "Người chơi gần đây" ở màn Đấu Trường: tên xa icon + đè lên cấp độ, tách "Chuyển N Cấp M" thành 2 dòng canh giữa (2026-07-30)
+
+Người dùng gửi ảnh chụp màn "Đấu Trường" (IMG_1260.png), danh sách "Người chơi gần đây": tên người chơi ("ẢnhYên", "LãnhVũ"...) nằm cách xa icon nhân vật (khoảng trống lớn), và tên dài ("BạchPhượngHồng") bị dính liền vào cụm "Chuyển 12 Cấp 110" ngay sau nó ("BạchPhượngHồngChuyển 12 Cấp 110"), yêu cầu: (1) đưa tên gần icon hơn + wrap kiểu "…" khi tên dài, (2) tách "Chuyển 12 Cấp 111" thành 2 dòng canh giữa (dòng 1 "Chuyển 12", dòng 2 "Cấp 111").
+
+**Xác định đúng thành phần**: skin `Skinzaoyu` (`zaoyuskin.exml`, màn "Đấu Trường") dùng `itemRendererSkinName="ZaoYuInfoItem"` cho list "Người chơi gần đây" - class điều khiển `EncounterInfoItem` (main.min.js), skin `ZaoYuInfoItem.exml` **không dùng chung ở file nào khác** (chỉ 1 nơi tham chiếu) nên sửa trực tiếp được, không cần né như các skin dùng chung trước đây.
+
+**Nguyên nhân gốc**: cả `nameTxt` (tên) và `nameTxt0` (cấp độ) đều bị lỗi dual-anchor giống mục 242 - mỗi Label có CẢ `x.have="130"`/`x.have="266"` (toạ độ thiết kế, không dùng lúc chạy) LẪN `horizontalCenter="-107.5"`/`horizontalCenter="23.5"` (constraint thật sự áp dụng). Vì `horizontalCenter` canh theo TÂM (không phải theo mép trái), khi tên ngắn thì tâm cố định khiến tên "trôi" xa icon (icon kết thúc ở x≈92 nhưng tâm tên neo cứng ở x≈174, luôn để trống nhiều khoảng dù tên ngắn hay dài), còn khi tên dài thì nửa phần thừa tràn sang PHẢI đúng vào vùng cột "Chuyển N Cấp M" bên cạnh (cũng neo theo tâm ở x≈305) gây dính chữ.
+
+**Cách sửa**:
+1. Đổi cả 2 Label từ `horizontalCenter` (theo tâm) sang `left` + `width` cố định (theo mép trái, đúng kiểu cột bảng): `nameTxt` → `left="100" width="145"` (mép trái ngay sau icon ở x=92, cách icon ~8px); `nameTxt0` (chỉ áp dụng ở state "have") → `left="250" width="150" textAlign="center"`, đảm bảo đủ khoảng trống trước nút "Thách đấu" (nút rộng 120, `right="43"` → mép trái nút ở x≈400).
+2. Thêm hàm `EncounterInfoItem.prototype.truncateNameTxt_a94` (main.min.js) - ép `wordWrap=false`, đo `textWidth` so với `width=145` của `nameTxt`, cắt dần ký tự cuối + nối "…" - gọi ngay khi gán tên trong `dataChanged` thay vì gán trực tiếp `nameTxt.text=t.name`.
+3. Đổi logic ghép chuỗi cấp độ trong `dataChanged`: từ `"Chuyển "+zsLv+" Cấp "+lv` (1 dòng) sang `"Chuyển "+zsLv+"\nCấp "+lv` (2 dòng, chỉ khi có chuyển sinh `zsLv>0`; người chơi chưa chuyển sinh vẫn hiện 1 dòng "Cấp N" như cũ) - kết hợp `textAlign="center"` mới thêm ở bước 1 để 2 dòng canh giữa đúng yêu cầu.
+
+State "none" (danh sách rỗng, hiện "Hiện chưa có người chơi nào gần đây...") không bị ảnh hưởng - vẫn giữ nguyên `horizontalCenter.none="0"` riêng của nó.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `ZaoYuInfoItem.exml` hợp lệ; `node -c` sạch cho `main.min.js`/`default.thm.js`; đối chiếu factory `nameTxt_i`/`nameTxt0_i` và state "have" trong `default.thm.js` khớp chính xác từng thuộc tính với exml nguồn.
+
+**Cache-bust**: `default.thm_c67756d9.js` → `default.thm_86ac72a5.js`, `main.min_18c00868.js` → `main.min_34f43ea7.js`, `manifest.json?v=c67756d9` → `?v=86ac72a5` trong `index.php`; cập nhật `WWW/version.txt` → `86ac72a5`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: (1) tên người chơi nằm sát icon hơn, tên dài hiện "…" thay vì dính vào cấp độ, (2) "Chuyển N Cấp M" hiện 2 dòng canh giữa gọn gàng.
