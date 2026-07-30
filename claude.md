@@ -6397,3 +6397,17 @@ Người dùng gửi ảnh chụp thực tế sau mục 246: cụm "Sở hữu" 
 **Cache-bust**: `default.thm_0b21583c.js` → `default.thm_86e58875.js`, `main.min_fdd68928.js` → `main.min_6020defa.js`, `manifest.json?v=0b21583c` → `?v=86e58875` trong `index.php`; cập nhật `WWW/version.txt` → `86e58875`.
 
 **Chưa kiểm chứng thực tế** - do tỉ lệ quy đổi toạ độ→pixel của riêng skin này chỉ ước lượng từ 2 điểm đo (không chắc chắn tuyến tính hoàn toàn), rất cần người dùng xác nhận lại bằng ảnh chụp mới cả 3 điểm: (1) cụm "Sở hữu" cách thanh máu BOSS vừa phải không quá xa/quá gần, (2) nút "Thưởng" không còn đè tên BOSS dù tên dài, (3) cụm "Đang tấn công" đã tách rõ khỏi thanh máu BOSS.
+
+## 248. Sửa lỗi bấm icon "魔界入侵" (Ma Giới Nhập Xâm) ở màn Chiến Trường Liên Server hiện ra khung xám trống không tắt được (2026-07-30)
+
+Người dùng gửi 3 ảnh: bấm vào icon "魔界入侵" (banner góc trên-trái, màn "跨服战场"/Chiến Trường Liên Server) làm hiện ra 1 khung màu xám trống trơn, không thấy nội dung gì, che luôn các nút phía trên, không tắt/mở được.
+
+**Điều tra (không sửa được bằng cách thử trực tiếp do không có môi trường chạy game thật, phải truy theo code)**: xác định icon này (`island3` trong `KFFieldSkin.exml`/`KffieldPanel`) mở view `DevildomWindow` (skin `KFInvasionSkin`, tính năng "Ma Giới Nhập Xâm" - PvE liên server có lịch giờ mở cố định). Tìm ra nguyên nhân gốc trong `DevildomWindow.open()` (main.min.js): hàm gọi `this.selectBoss_a94(i)` NGAY LẬP TỨC (đồng bộ) lúc mở view, nhưng danh sách BOSS (`this.menuData`, dùng làm `dataProvider` cho `menuList`) chỉ được điền dữ liệu SAU đó, KHI server gửi về (`this.observe(DevildomSysBase.ins().postBossInfo, this.initData)` - bất đồng bộ). Ở lần mở đầu tiên, `menuList` chưa có dữ liệu nên `menuList.selectedItem` là `undefined` - `selectBoss_a94` đọc `this.menuList.selectedItem.id` sẽ crash ngay (`Cannot read property 'id' of undefined`). Vì exception xảy ra giữa chừng lúc `open()` đang chạy, khung nền (backdrop xám của view toàn màn hình, `isTopLevel=true`) đã kịp hiện ra nhưng toàn bộ phần khởi tạo còn lại (thiết lập nội dung, và có thể cả việc `ViewMgr` hoàn tất đăng ký view đang mở) bị dừng giữa chừng - khớp chính xác triệu chứng "khung xám trống, không tắt được" trong ảnh. Đây là lỗi có sẵn trong code gốc của game (không phải do các lần sửa trước trong session), tái hiện được **mọi lần đầu mở cửa sổ này** vì dữ liệu BOSS luôn đến sau, không phải lỗi ngẫu nhiên hay do server chưa mở tính năng.
+
+**Cách sửa** (main.min.js, `DevildomWindow`):
+1. `selectBoss_a94`: thêm chặn đầu hàm `if(!this.menuList.selectedItem)return;` - không cố đọc dữ liệu chưa tồn tại, tránh crash.
+2. `initData` (chạy khi server gửi dữ liệu BOSS về): sau khi điền `menuData`, chủ động gọi lại `selectBoss_a94` với `selectedIndex` hiện tại (mặc định 0) để đảm bảo thông tin BOSS được hiển thị đúng ngay khi dữ liệu về tới, thay vì trông chờ hoàn toàn vào việc `List` tự bắn sự kiện chọn lại (không chắc chắn ở mọi phiên bản engine).
+
+**Kiểm thử**: `node -c` sạch cho `main.min.js`. **Lưu ý quan trọng**: không có cách nào chạy thử game thật để xác nhận trực tiếp - toàn bộ chẩn đoán dựa trên đọc code, cần người dùng thử lại và xác nhận (1) khung xám không còn xuất hiện, (2) cửa sổ "Ma Giới Nhập Xâm" hiện đúng nội dung (danh sách BOSS, hình ảnh, tên) và có thể đóng lại bình thường bằng nút X.
+
+**Cache-bust**: `main.min_6020defa.js` → `main.min_021bb181.js`, `manifest.json?v=86e58875` → `?v=021bb181` trong `index.php`; cập nhật `WWW/version.txt` → `021bb181`. Không đụng `default.thm.js` (không sửa exml/skin).
