@@ -10,7 +10,7 @@
 			</e:layout>
 		</e:Group>
 	</e:Group>
-	<e:Group id="myGroup" horizontalCenter="0" width="300" height="76" bottom="128">
+	<e:Group id="myGroup" horizontalCenter="0" width="300" height="76" bottom="175">
 		<e:Image source="wordsbg" left="30" right="0" scale9Grid="0,0,115,29" y="28"/>
 		<e:Image y="0" x="0" source="icon_wakuang"/>
 		<e:Group x="66" y="33">

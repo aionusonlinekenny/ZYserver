@@ -6351,3 +6351,17 @@ Người dùng gửi ảnh chụp thực tế (IMG_1262.png) xác nhận: vị t
 **Cache-bust**: chỉ đổi `main.min_34f43ea7.js` → `main.min_fdd68928.js` (không sửa exml/skin nên không đụng `default.thm.js`); `manifest.json?v=86ac72a5` → `?v=fdd68928` trong `index.php` (bắt buộc đổi dù `default.thm.js` không đổi, vì nội dung `manifest.json` đã đổi tên file `main.min.js` bên trong, cần cache-bust để trình duyệt tải lại); cập nhật `WWW/version.txt` → `fdd68928`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: tên dài như "BạchPhượngHồng" hiện gọn 1 dòng có "…" thay vì xuống dòng vỡ giữa từ.
+
+## 245. Sửa "Đang thu thập" ở màn Đào Mỏ bị khung chat thế giới che mất một nửa (2026-07-30)
+
+Người dùng gửi ảnh chụp màn "Đào Mỏ" (mỏ Tiên Ngọc): dòng trạng thái "Đang thu thập(19:57) Hoàn thành nhanh" nằm đè ngay lên mép trên của khung chat thế giới phía dưới, bị che khuất một nửa - yêu cầu dời cao lên trên khung chat, không chồng chéo.
+
+**Xác định đúng thành phần**: `WaKuangFbSkin.exml` (màn Đào Mỏ), Group `myGroup` chứa cụm "Đang thu thập"/`time`/`quickFinish` đang neo `bottom="128"` (128px tính từ đáy màn hình). Khung chat thế giới (`ChatMainSkin.exml`, `chatGroup`) neo `bottom="100" height="60"` (chưa kể ảnh nền kéo dài thêm), nghĩa là mép trên khung chat cách đáy màn hình khoảng 160px trở lên - rất gần khoảng cách hiện tại của `myGroup`, không đủ khoảng đệm nên bị chồng nhau trên thiết bị thực tế (không có môi trường chạy thử để đo chính xác từng pixel).
+
+**Cách sửa**: tăng `bottom` của `myGroup` từ 128→175 (dời cả cụm lên cao thêm 47px), tạo khoảng đệm rõ ràng phía trên khung chat thay vì chỉ nhích nhẹ - tránh lặp lại tình trạng "sửa chưa đủ" từng gặp ở mục 239/240.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `WaKuangFbSkin.exml` hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_86ac72a5.js` → `default.thm_7971654b.js`, `manifest.json?v=86ac72a5` → `?v=7971654b` trong `index.php`; cập nhật `WWW/version.txt` → `7971654b`. Không đụng `main.min.js` (không sửa logic JS).
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: "Đang thu thập" đã tách rõ khỏi khung chat, không còn bị che.
