@@ -70,7 +70,7 @@
 		<ns1:BossUIBtnItem id="attackBoss" skinName="SkinWorldBossAtbtn" x="75" y="35" anchorOffsetX="75" anchorOffsetY="35"/>
 		<ns1:BossUIBtnItem id="attackPlayer" skinName="SkinWorldBossAtbtn" x="246" y="35" anchorOffsetX="75" anchorOffsetY="35"/>
 	</e:Group>
-	<e:Group width="253" y="110" id="belongGroup" horizontalCenter="162.5">
+	<e:Group width="253" y="60" id="belongGroup" horizontalCenter="162.5">
 		<e:Rect height="14" y="30" left="77" right="13" fillColor="0x111010"    visible="false"/>
 		<e:Rect left="91" right="32" fillColor="0x111010" height="4" width="92"  y="46" visible="false"/>
 		<e:Rect width="58" height="58" x="8" y="9" ellipseWidth="82" ellipseHeight="82" fillColor="0x111010"  visible="false"/>

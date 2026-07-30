@@ -6365,3 +6365,19 @@ Người dùng gửi ảnh chụp màn "Đào Mỏ" (mỏ Tiên Ngọc): dòng t
 **Cache-bust**: `default.thm_86ac72a5.js` → `default.thm_7971654b.js`, `manifest.json?v=86ac72a5` → `?v=7971654b` trong `index.php`; cập nhật `WWW/version.txt` → `7971654b`. Không đụng `main.min.js` (không sửa logic JS).
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: "Đang thu thập" đã tách rõ khỏi khung chat, không còn bị che.
+
+## 246. Sửa cụm "Sở hữu" (icon người chơi + thanh máu) đè lên thanh máu BOSS ở màn Thế Giới BOSS (2026-07-30)
+
+Người dùng gửi ảnh chụp màn hình đánh BOSS thế giới ("Thiên Hồ Thạch Linh"), yêu cầu "dời xuống" cụm icon người chơi + thanh máu + "Sở hữu" vì nó đang chồng lên thanh máu của BOSS.
+
+**Xác định đúng thành phần**: `worldbossUiSkin.exml` (`SkinWorldBossUi`, xác nhận qua nút "Tấn công BOSS"/"Tôi sở hữu" trùng khớp ảnh chụp) - `belongGroup` (cụm icon người chơi sở hữu quyền đánh + thanh máu + nhãn "Sở hữu") đặt ở `y="110"`, còn `bossBloodGroup` (cụm tên/thanh máu/icon của BOSS, ví dụ "Thiên Hồ Thạch Linh") đặt ở `y="170"`.
+
+**Đo trực tiếp bằng pixel trên ảnh chụp** (không tin vào so sánh số `y` trong exml vì 2 cụm nằm trong 2 Group cha khác nhau, khó suy ra khoảng cách thực tế chỉ từ số liệu thiết kế): cắt phóng to đúng vùng giao nhau, xác nhận rõ icon người chơi (ảnh đại diện tròn) của cụm "Sở hữu" đang đè xuống che mất chữ "X5" và góc phải thanh máu BOSS bên dưới.
+
+**Về hướng sửa**: người dùng yêu cầu "dời xuống" cụm Sở Hữu, nhưng theo ảnh đo được, cụm Sở Hữu đang nằm phía TRÊN và đè XUỐNG cụm BOSS phía dưới - nếu dời cụm Sở Hữu xuống thêm sẽ làm chồng chéo NẶNG hơn chứ không hết. Mình đã đổi hướng thành dời cụm Sở Hữu LÊN (giảm `y` từ 110→60, cách xa khỏi cụm BOSS phía dưới, vẫn còn đủ khoảng trống phía trên vì `leftTimeGroup` - thanh thời gian sự kiện - kết thúc ở khoảng y=28) để thực sự giải quyết đúng phần chồng chéo nhìn thấy trong ảnh, thay vì làm đúng theo chữ "xuống" nhưng khiến ảnh chụp lần sau còn tệ hơn.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `worldbossUiSkin.exml` hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_7971654b.js` → `default.thm_0b21583c.js`, `manifest.json?v=7971654b` → `?v=0b21583c` trong `index.php`; cập nhật `WWW/version.txt` → `0b21583c`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: cụm "Sở hữu" không còn che "X5"/thanh máu BOSS. Nếu hướng dời (lên thay vì xuống) không đúng ý người dùng, cần trao đổi lại.
