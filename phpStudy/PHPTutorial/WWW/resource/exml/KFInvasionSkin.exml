@@ -2,7 +2,7 @@
 <e:Skin class="KFInvasionSkin" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
         xmlns:ns1="*" xmlns:euiextension="euiextension.*" >
 
-	<e:Image top="0" bottom="0" source="tongyongmianbanbg2" width="580" horizontalCenter="0" scale9Grid="15,12,2,3"/>
+	<e:Image top="0" bottom="0" source="tongyongmianbanbg" width="580" horizontalCenter="0" scale9Grid="15,12,2,3"/>
 	<e:Group width="556" horizontalCenter="0" bottom="58">
 		<e:Image source="bantoumingkuang4" x="0" top="0" bottom="0" width="278" height="90"/>
 		<e:Image source="bantoumingkuang4" scaleX="-1" right="0" top="0" bottom="0" width="278" height="90"/>
