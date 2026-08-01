@@ -10,10 +10,10 @@
 	<ns1:RoleSelectPanel id="roleSelect" y="0" skinName="SkinRoleSelectPanel" width="580" horizontalCenter="0" currentState="nohead"/>
 	<e:Image width="570" horizontalCenter="0" source="tongyongmianbanbg" top="44" bottom="155" scale9Grid="19,12,14,25"/>
 	<e:ViewStack id="viewStack" selectedIndex="2" top="44" bottom="155" horizontalCenter="0" width="580">
-		<ns1:KfArenaDuanPanelView id="rankPanel" name="排行" skinName="KfArenaRankSkin" left="0" right="0" top="0" bottom="0"/>
-		<ns1:KfArenaMacthPanel id="macthPanel" name="匹配" skinName="KfArenaMacthSkin" left="0" right="0" top="0" bottom="0" visible="false"/>
-		<ns1:KfArenaJoinPanel id="joinPanel" name="参与" skinName="KfArenaJoinSkin" left="0" right="0" top="0" bottom="0" visible="false"/>
-		<ns1:KfArenaDuanPanelView id="duanPanel" name="段位"   left="0" right="0" top="0" bottom="0" skinName="KfArenaDuanSkin" visible="false"/>
+		<ns1:KfArenaRankPanel id="rankPanel" name="Xếp hạng" skinName="KfArenaRankSkin" left="0" right="0" top="0" bottom="0"/>
+		<ns1:KfArenaMacthPanel id="macthPanel" name="Ghép trận" skinName="KfArenaMacthSkin" left="0" right="0" top="0" bottom="0" visible="false"/>
+		<ns1:KfArenaJoinPanel id="joinPanel" name="Tham gia" skinName="KfArenaJoinSkin" left="0" right="0" top="0" bottom="0" visible="false"/>
+		<ns1:KfArenaDuanPanelView id="duanPanel" name="Đẳng cấp"   left="0" right="0" top="0" bottom="0" skinName="KfArenaDuanSkin" visible="false"/>
 	</e:ViewStack>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="98"/>
 	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}"

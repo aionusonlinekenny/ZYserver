@@ -6427,3 +6427,34 @@ Người dùng thử lại sau mục 248, gửi ảnh xác nhận **y hệt lỗ
 **Cache-bust**: `default.thm_86e58875.js` → `default.thm_0bacf5ea.js`, `manifest.json?v=021bb181` → `?v=0bacf5ea` trong `index.php`; cập nhật `WWW/version.txt` → `0bacf5ea`. Không đụng `main.min.js` lần này (giữ nguyên fix phòng thủ ở mục 248 dù không phải nguyên nhân chính, không có hại).
 
 **Chưa kiểm chứng thực tế** - đây là lần thử thứ 2 cho cùng 1 lỗi, cần người dùng xác nhận chắc chắn bằng ảnh chụp mới: bấm icon "魔界入侵" (góc trên-trái) có mở đúng cửa sổ Ma Giới Nhập Xâm (thấy nền, danh sách BOSS, nút bấm) và đóng lại được bằng nút X hay không. Nếu VẪN còn lỗi, cần xem xét khả năng còn tài nguyên ảnh thiếu khác chưa phát hiện ra trong lần rà soát này, hoặc bug nằm ở tầng khác (ví dụ logic mở cửa sổ theo lịch giờ hoạt động) - lúc đó nên cân nhắc hỏi người dùng xem có cách nào lấy log lỗi console trình duyệt thật để chẩn đoán chính xác hơn thay vì tiếp tục suy luận tĩnh từ code.
+
+## 250. Người dùng xác nhận mục 249 KHÔNG đổi gì (đã kiểm tra kỹ deploy đúng file) - lấy log lỗi Console thật, tìm ra nguyên nhân THẬT SỰ khác hẳn: sai class cho tab "Xếp hạng" ở màn Đấu Trường Liên Server (2026-07-31)
+
+Người dùng gửi ảnh xác nhận đã copy đúng và đủ file mới nhất (`default.thm_0bacf5ea.js`, `main.min_021bb181.js` có mặt đúng tên trong thư mục `js\` local) - loại trừ hẳn khả năng lỗi do thiếu file/cache. Theo yêu cầu, người dùng đã mở Console trình duyệt (F12) và gửi nguyên văn log lỗi thật khi bấm icon "魔界入侵" - đây là lần đầu tiên trong session có được thông tin lỗi TRỰC TIẾP từ engine thay vì suy luận tĩnh qua code.
+
+**Đọc log lỗi**: dòng quan trọng nhất là
+```
+Uncaught TypeError: can't access property "itemRenderer", this.rewardList is undefined
+    initUI    main.min_021bb181.js:77
+    childrenCreated    main.min_021bb181.js:77
+```
+- **Đây HOÀN TOÀN KHÔNG PHẢI** `DevildomWindow`/`KFInvasionSkin` như 2 lần chẩn đoán trước (mục 248, 249) - cả 2 lần đó đều SAI vì suy luận nhầm cửa sổ nào bị bấm mở. Class thực sự bị crash là `KfArenaDuanPanelView.initUI` (dòng `this.rewardList.itemRenderer=ItemBase`) - tức người dùng bấm vào icon "魔界入侵" Ở GIỮA bản đồ (không phải góc trên-trái như đoán trước), mở ra `KfArenaWin` ("Đấu Trường Liên Server", không phải "Ma Giới Nhập Xâm").
+
+**Truy ra lỗi gốc trong `KfArenaSkin.exml`** (dòng khai báo 4 tab của màn Đấu Trường Liên Server):
+```xml
+<ns1:KfArenaDuanPanelView id="rankPanel" name="排行" skinName="KfArenaRankSkin" .../>   <!-- SAI class -->
+<ns1:KfArenaMacthPanel id="macthPanel" name="匹配" skinName="KfArenaMacthSkin" .../>
+<ns1:KfArenaJoinPanel id="joinPanel" name="参与" skinName="KfArenaJoinSkin" .../>
+<ns1:KfArenaDuanPanelView id="duanPanel" name="段位" skinName="KfArenaDuanSkin" .../>
+```
+Tab `rankPanel` (tab "Xếp hạng") bị gán NHẦM class `KfArenaDuanPanelView` (vốn dành cho tab `duanPanel` "Đẳng cấp", class này cần 1 thành phần tên `rewardList` khớp với skin `KfArenaDuanSkin` của NÓ) - trong khi `rankPanel` lại dùng skin KHÁC hẳn (`KfArenaRankSkin`, không hề có `rewardList`, chỉ có `list`/`rank0-2`/`firstGroup`/`selfPos0`...). Đây là lỗi copy-paste có sẵn từ code gốc của game (đặt nhầm tên class khi khai báo 4 tab, 2 trong 4 dòng dùng chung `KfArenaDuanPanelView`). Vì `e:ViewStack` dựng SẴN cả 4 tab con ngay khi mở cửa sổ (không đợi người dùng bấm chọn tab), lỗi crash xảy ra NGAY LẬP TỨC lúc mở `KfArenaWin`, bất kể tab nào đang được chọn mặc định - khớp chính xác với "bấm vào là hiện khung xám ngay, không thấy gì". Xác nhận thêm bằng cách tìm đúng class `KfArenaRankPanel` (đã có sẵn trong `main.min.js`, tên các thuộc tính `list`/`rank0-2`/`selfPos0`/`firstGroup`/`serverId0`/`vip0`/`firstNameTxt0`/`score0`/`seasonTitle0` khớp CHÍNH XÁC 100% với từng phần tử khai báo trong `KfArenaRankSkin.exml`) - đây mới là class ĐÚNG cần dùng cho `rankPanel`.
+
+**Cách sửa**: đổi `<ns1:KfArenaDuanPanelView id="rankPanel" .../>` → `<ns1:KfArenaRankPanel id="rankPanel" .../>`. Nhân tiện dịch luôn 4 nhãn tab còn để tiếng Hoa thô (`name="排行"/"匹配"/"参与"/"段位"` → "Xếp hạng"/"Ghép trận"/"Tham gia"/"Đẳng cấp", lấy đúng theo tên đã có sẵn trong constructor JS của từng class tương ứng để nhất quán, ví dụ `KfArenaRankPanel` tự đặt `this.name="Xếp hạng"` nhưng bị exml ghi đè lại thành "排行" nên chưa từng hiển thị đúng) - phát hiện `default.thm.js` bản cũ ĐÃ dịch sẵn phần tên tab này (chỉ riêng exml nguồn còn tiếng Hoa) nhưng chưa từng sửa lỗi sai class, nay đồng bộ luôn cả 2.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `KfArenaSkin.exml` hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_0bacf5ea.js` → `default.thm_d1277f84.js`, `manifest.json?v=0bacf5ea` → `?v=d1277f84` trong `index.php`; cập nhật `WWW/version.txt` → `d1277f84`. Không đụng `main.min.js`.
+
+**Bài học quan trọng cho các lần sau**: khi không có môi trường chạy thử, suy luận tĩnh từ code CÓ THỂ sai hoàn toàn hướng điều tra (2 lần liền chẩn đoán nhầm cửa sổ) - log lỗi Console thật từ trình duyệt (F12) là bằng chứng đáng tin cậy nhất, nên chủ động xin ngay từ đầu khi gặp lỗi khó hiểu dạng "màn hình trắng/xám không phản hồi" thay vì đoán 2-3 lần trước mới xin.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: bấm icon "魔界入侵" Ở GIỮA bản đồ (không phải góc trên-trái) mở đúng màn "Đấu Trường Liên Server" với 4 tab hiển thị tiếng Việt, không còn khung xám/crash.
