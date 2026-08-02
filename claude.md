@@ -6482,3 +6482,21 @@ Người dùng gửi 3 ảnh chụp mới (tab "Tham gia", "Đẳng cấp", "Gh�
 **Cache-bust**: `default.thm_d1277f84.js` → `default.thm_0dff67fc.js`, `manifest.json?v=d1277f84` → `?v=0dff67fc` trong `index.php`; cập nhật `WWW/version.txt` → `0dff67fc`. Không đụng `main.min.js` (chỉ sửa exml/skin, không sửa logic JS).
 
 **Chưa kiểm chứng thực tế** - nhiều chỉnh sửa lần này dựa trên ước lượng độ rộng chữ theo ký tự (không đo pixel thực tế do không có môi trường chạy thử), đặc biệt là tab "Ghép trận" có nhiều thay đổi nhất. Cần người dùng chụp lại cả 3 tab để xác nhận: (1) "Tham gia" - chữ không tràn/chồng icon phần thưởng, dòng tổng lệnh cuối màn không bị cắt; (2) "Đẳng cấp" - nhãn không đè icon (lưu ý riêng: các dòng phần thưởng hiện số trơn không icon là lỗi dữ liệu server, không phải lỗi layout, cần kiểm tra `CrossArenaBase.finalAward` phía server); (3) "Ghép trận" - 2 nút không chồng nhau và đọc được hết chữ, 2 dòng thành tích không chồng, cụm "mỗi ngày hồi phục" tách dòng rõ ràng, nền có vừa mắt hơn không.
+
+## 252. Ảnh chụp thực tế mục 251 xác nhận chữ/nút tab "Ghép trận" đã ổn, nhưng ảnh nền vẫn nhỏ hơn khung tab - kéo nền full-bleed toàn tab (2026-08-02)
+
+Người dùng gửi ảnh chụp thực tế tab "Ghép trận" sau mục 251: xác nhận toàn bộ phần chữ/nút đã đẹp, không còn chồng chéo (2 nút "Tạo chiến đội"/"Ghép trận một mình" tách rõ 2 bên, 2 dòng thành tích xếp gọn, cụm "Mỗi ngày hồi phục"/"Tích lũy tối đa" tách dòng rõ ràng) - xác nhận toàn bộ fix chữ/nút ở mục 251 ĐÚNG. Chỉ còn 1 vấn đề: ảnh nền ngôi đền/toà tháp (`tfb_bg_jpg`) vẫn là 1 khung nhỏ hơn, viền lộ màu xanh navy trơn (không có ảnh) bao quanh cả 4 phía, đặc biệt rõ ở 2 bên trái/phải và phía dưới khung ảnh.
+
+**Truy nguyên nguyên nhân**: ở mục 251 mới chỉ nới `width` ảnh nền từ 464→500 (vẫn hụt so với khung skin rộng 580, dư 80 đơn vị margin 2 bên) và giữ nguyên chưa set `height` (mặc định dùng kích thước gốc file ảnh). Kiểm tra trực tiếp file `resource/eui/fb/tfb_bg.jpg` bằng cách đọc header JPEG (không có PIL nên tự parse marker SOF): kích thước gốc **493×718px** - rất gần khớp với khung tab `KfArenaMacthSkin` (580×731, cùng 1 tỉ lệ khung dựng UI 1:1 với skin cha `KfArenaSkin`, không bị phóng đại như 1 số dialog khác đã gặp trong session) → ảnh này rõ ràng được thiết kế SẴN để phủ gần kín cả khung tab, chỉ cần set đúng `width="580" height="731"` (thay vì để mặc định theo size gốc 493×718) là phủ kín, không cần thêm bước gì phức tạp.
+
+**Cách sửa** (`KfArenaMacthSkin.exml`, cả `matchGroup`'s ảnh chính lẫn `waitGroup`'s ảnh chờ ghép trận):
+- Ảnh: `width="500" x="38"` (mục 251, chưa full) → `width="580" height="731" x="0" y="0"` (phủ kín đúng bằng kích thước khung skin, scale9Grid `49,382,295,6` có sẵn lo phần giãn không méo ở vùng biên).
+- `matchGroup` (group cha bọc ảnh + `roleGroup` nhân vật): dời từ `x="20" y="68"` về `x="0" y="0"` để ảnh con (đặt tại 0,0 bên trong) phủ đúng góc trên-trái khung tab.
+- `roleGroup` (cụm 3 nhân vật đứng trên nền): bù lại đúng offset đã mất do dời `matchGroup` - đổi `x="0" y="17"` → `x="20" y="85"` (giữ nguyên vị trí tuyệt đối trên màn hình của 3 nhân vật y hệt trước khi sửa nền, không bị dịch chuyển theo).
+- `waitGroup` (khung nền hiển thị khi đang chờ ghép trận, không có nhân vật): đồng bộ y hệt - ảnh `width="580" height="731" x="0" y="0"`, group `y="0"` (bỏ offset y=68 cũ).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `KfArenaMacthSkin.exml` hợp lệ; `node -c` sạch cho `default.thm.js` sau khi đồng bộ.
+
+**Cache-bust**: `default.thm_d1277f84.js`... (đã cache-bust 1 lần ở mục 251 thành `default.thm_0dff67fc.js`) → `default.thm_71620928.js`, `manifest.json?v=0dff67fc` → `?v=71620928` trong `index.php`; cập nhật `WWW/version.txt` → `71620928`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng chụp lại tab "Ghép trận" xác nhận ảnh nền giờ phủ kín sát 4 mép khung tab (không còn viền xanh navy trơn lộ ra), đồng thời xác nhận 3 nhân vật (2 thành viên + đội trưởng) vẫn đứng đúng vị trí cũ trên nền (không bị lệch do đổi toạ độ `roleGroup`).

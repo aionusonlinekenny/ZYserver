@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="KfArenaMacthSkin" width="580" height="731" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<w:Config id="15dbfa8e636"/>
-	<e:Group id="matchGroup" x="20" y="68">
-		<e:Image anchorOffsetY="0" scale9Grid="49,382,295,6" width="500" x="38" y="0" source="tfb_bg_jpg"/>
-		<e:Group id="roleGroup" height="430" width="620" scaleX="0.8" scaleY="0.8" x="0" y="17">
+	<e:Group id="matchGroup" x="0" y="0">
+		<e:Image anchorOffsetY="0" scale9Grid="49,382,295,6" width="580" height="731" x="0" y="0" source="tfb_bg_jpg"/>
+		<e:Group id="roleGroup" height="430" width="620" scaleX="0.8" scaleY="0.8" x="20" y="85">
 			<ns1:KfArenaRoleItemRenderBase id="member1" scaleX="0.8" scaleY="0.8" y="42.75" skinName="SkinTeamFbRoleItem" horizontalCenter="-175" width="450" height="420"/>
 			<ns1:KfArenaRoleItemRenderBase id="member2" scaleX="0.8" scaleY="0.8" y="41.5" skinName="SkinTeamFbRoleItem" horizontalCenter="225" width="450" height="420"/>
 			<ns1:KfArenaRoleItemRenderBase id="leader" y="-26.5" scaleX="1.1" scaleY="1.1" skinName="SkinTeamFbRoleItem" horizontalCenter="18.5" width="450" height="420"/>
 		</e:Group>
 	</e:Group>
-	<e:Group id="waitGroup" y="68" horizontalCenter="0">
-		<e:Image anchorOffsetY="0" source="tfb_bg_jpg" width="500" x="38" y="0"/>
+	<e:Group id="waitGroup" y="0" horizontalCenter="0">
+		<e:Image anchorOffsetY="0" source="tfb_bg_jpg" width="580" height="731" x="0" y="0"/>
 	</e:Group>
 	<e:Label id="duanLabel" size="18" text="Bậc： Vàng" y="449" bold="true" textColor="0x35E62D" x="78"/>
 	<e:Label id="scoreLabel" size="18" text="Điểm：1000" y="449" bold="true" textColor="0x35E62D" x="321"/>
