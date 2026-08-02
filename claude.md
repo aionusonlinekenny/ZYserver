@@ -6500,3 +6500,21 @@ Người dùng gửi ảnh chụp thực tế tab "Ghép trận" sau mục 251: 
 **Cache-bust**: `default.thm_d1277f84.js`... (đã cache-bust 1 lần ở mục 251 thành `default.thm_0dff67fc.js`) → `default.thm_71620928.js`, `manifest.json?v=0dff67fc` → `?v=71620928` trong `index.php`; cập nhật `WWW/version.txt` → `71620928`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng chụp lại tab "Ghép trận" xác nhận ảnh nền giờ phủ kín sát 4 mép khung tab (không còn viền xanh navy trơn lộ ra), đồng thời xác nhận 3 nhân vật (2 thành viên + đội trưởng) vẫn đứng đúng vị trí cũ trên nền (không bị lệch do đổi toạ độ `roleGroup`).
+
+## 253. Ảnh chụp thực tế mục 252 xác nhận full chiều ngang nhưng còn dư khoảng trống lớn phía dưới ảnh nền - đổi từ kích thước cố định sang neo co giãn theo khung thực tế (2026-08-02)
+
+Người dùng gửi ảnh xác nhận: chiều ngang ảnh nền tab "Ghép trận" đã phủ đúng full bề rộng khung (đúng như mục 252 sửa), NHƯNG chiều dọc vẫn còn "dư cả khúc" - 1 mảng màu xanh navy trơn khá lớn phía dưới ảnh, phía trên hàng tab "Xếp hạng/Ghép trận/Tham gia/Đẳng cấp".
+
+**Truy nguyên nguyên nhân**: mục 252 đặt `width="580" height="731"` CỐ ĐỊNH cho ảnh nền, đúng bằng kích thước khai báo (declared) của canvas `KfArenaMacthSkin` (580×731). Nhưng khung tab THỰC TẾ lúc hiển thị trên máy người dùng (điện thoại màn hình rất dài, tỉ lệ khung hình cao bất thường 1320×2868) **không nhất thiết đúng bằng 731 đơn vị cao như khai báo** - do `KfArenaSkin.exml` (skin cha) định vị `ViewStack` bằng `top="44" bottom="155"` (neo co giãn theo 2 mép, KHÔNG phải chiều cao cố định) nên `ViewStack` (và từng tab con bên trong, trong đó có `KfArenaMacthSkin`) sẽ tự **CO GIÃN CAO HƠN** con số 731 khai báo để lấp đầy khoảng trống thực tế còn lại giữa mép trên/dưới trên những màn hình cao bất thường. Ảnh nền đặt `height="731"` cố định chỉ cao đúng bằng "chiều cao thiết kế", ngắn hơn "chiều cao co giãn thực tế" trên máy người dùng → sinh khoảng trống dư phía dưới.
+
+**Bằng chứng đối chiếu ngay trong file skin cha**: dòng đầu tiên của `KfArenaSkin.exml` (ảnh nền toàn khung `tongyongmianbanbg2`) VÀ dòng ảnh nền khung viewStack (`tongyongmianbanbg`) đều dùng đúng kiểu neo co giãn `top="0" bottom="0"` (không phải `height` cố định) - xác nhận đây CHÍNH LÀ cách làm chuẩn/nhất quán mà code gốc game luôn dùng cho mọi ảnh nền cần "phủ kín khung dù khung co giãn cỡ nào", mục 252 chỉ chưa áp dụng đúng kiểu neo này cho `KfArenaMacthSkin`.
+
+**Cách sửa**: đổi `matchGroup`/`waitGroup` (2 Group chứa ảnh nền) và cả 2 `Image` bên trong (`tfb_bg_jpg`) từ toạ độ+kích thước CỐ ĐỊNH (`x="0" y="0" width="580" height="731"`) sang neo co giãn 4 cạnh (`left="0" right="0" top="0" bottom="0"`) - giống hệt cách skin cha đã làm. Nhờ vậy ảnh sẽ luôn tự phủ kín ĐÚNG BẰNG kích thước khung thực tế trên MỌI thiết bị, bất kể tỉ lệ màn hình dài/ngắn ra sao, không còn phụ thuộc vào con số cố định 731 nữa. `roleGroup` (cụm nhân vật, đặt tại `x="20" y="85"` cục bộ bên trong `matchGroup`) không bị ảnh hưởng vì toạ độ tương đối trong Group không phụ thuộc kích thước Group cha.
+
+**Bài học cho các lần dán ảnh nền phủ kín khung sau này**: LUÔN ưu tiên neo co giãn `left/right/top/bottom="0"` thay vì đặt cứng `width`/`height` bằng đúng con số khai báo trong header `<e:Skin>`, đặc biệt với những skin nằm bên trong 1 `ViewStack`/container khác cũng dùng kiểu neo co giãn (không phải kích thước cố định) - vì kích thước hiển thị THỰC TẾ có thể lớn hơn kích thước "thiết kế" tuỳ tỉ lệ màn hình từng máy, cách kiểm tra nhanh là xem thử skin cha/container bọc ngoài dùng `top/bottom` hay `height` cố định để bắt chước đúng kiểu.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `KfArenaMacthSkin.exml` hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_71620928.js` → `default.thm_337fb3a3.js`, `manifest.json?v=71620928` → `?v=337fb3a3` trong `index.php`; cập nhật `WWW/version.txt` → `337fb3a3`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng chụp lại tab "Ghép trận" xác nhận khoảng trống phía dưới ảnh nền đã biến mất hoàn toàn (ảnh phủ kín sát cả 4 mép khung tab, kể cả trên máy màn hình dài bất thường của họ), và nhân vật vẫn đứng đúng vị trí cũ.
