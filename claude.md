@@ -6518,3 +6518,27 @@ Người dùng gửi ảnh xác nhận: chiều ngang ảnh nền tab "Ghép tr�
 **Cache-bust**: `default.thm_71620928.js` → `default.thm_337fb3a3.js`, `manifest.json?v=71620928` → `?v=337fb3a3` trong `index.php`; cập nhật `WWW/version.txt` → `337fb3a3`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng chụp lại tab "Ghép trận" xác nhận khoảng trống phía dưới ảnh nền đã biến mất hoàn toàn (ảnh phủ kín sát cả 4 mép khung tab, kể cả trên máy màn hình dài bất thường của họ), và nhân vật vẫn đứng đúng vị trí cũ.
+
+## 254. Người dùng xác nhận mục 253 đã full nền - yêu cầu dời toàn bộ text/button xuống để tránh chồng lên 3 bệ đá trong ảnh nền (2026-08-02)
+
+Người dùng gửi ảnh xác nhận ảnh nền tab "Ghép trận" đã phủ kín đúng khung (mục 253 thành công). Yêu cầu tiếp theo: khối text ("Đẳng cấp hiện tại...", "Chiến tích...", "Số lần còn lại...") và 2 nút đang nằm ĐÈ lên 3 bệ đá tròn phát sáng có sẵn trong ảnh nền (2 bệ nhỏ 2 bên + 1 bệ lớn ở giữa) - yêu cầu dời toàn bộ khối này xuống dưới một chút để không còn chồng lên 3 bệ đá.
+
+**Cách sửa** (`KfArenaMacthSkin.exml`): dời đồng loạt toàn bộ khối text + 2 nút xuống **+70 đơn vị** (giữ nguyên khoảng cách tương đối giữa các dòng/nhóm đã chỉnh ở mục 251, chỉ tịnh tiến cả khối):
+- `duanLabel`/`scoreLabel`: y=449→519
+- `curMonthLabel`: y=490→560
+- `historyLabel`: y=516→586
+- Nhóm "Số lần còn lại": y=550→620
+- Nhóm "Mỗi ngày hồi phục": y=580→650
+- Nhóm "Tích lũy tối đa": y=601→671
+- `disBtn`/`macthBtn`: y=634→704
+- `macthingLabel`: y=692→762
+
+Mức dịch +70 đơn vị được ước lượng từ vị trí 2 bệ đá nhỏ (đo trên ảnh chụp, khớp khoảng với dòng "Đẳng cấp hiện tại") và bệ đá lớn ở giữa (khớp với dòng "Số lần còn lại") - đủ để dòng đầu tiên và group "Số lần còn lại" thoát khỏi cả 3 bệ đá theo ảnh mẫu.
+
+**Rủi ro đã lường trước, chưa thể loại bỏ hoàn toàn**: vì khung tab hiện co giãn theo thiết bị (mục 253), "70 đơn vị" tính theo hệ toạ độ thiết kế gốc (0-731) không đảm bảo tịnh tiến đúng y hệt số pixel trên MỌI kích thước màn hình - trên máy người dùng cụ thể (màn hình dài) nên có nhiều khoảng trống dư, dịch xuống không đáng ngại; nhưng trên máy có tỉ lệ khung hình chuẩn/thấp hơn, nút "Bắt đầu ghép trận"/"Giải tán đội" (nay ở y=704, cao 50 → đáy 754) có thể vượt nhẹ ra ngoài vùng khai báo gốc 731 - cần xác nhận thêm nếu người dùng thấy nút bị cắt/khuất trên các phiên bản màn hình khác.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `KfArenaMacthSkin.exml` hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_337fb3a3.js` → `default.thm_21e10c67.js`, `manifest.json?v=337fb3a3` → `?v=21e10c67` trong `index.php`; cập nhật `WWW/version.txt` → `21e10c67`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng chụp lại tab "Ghép trận" xác nhận: (1) khối text/nút đã tránh khỏi 3 bệ đá phát sáng trong ảnh nền, (2) 2 nút "Giải tán đội"/"Ghép trận một mình" không bị cắt/khuất ở đáy màn hình.
