@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SkinBtn1Tiny" states="up,down,disabled"
+        currentState="up" xmlns:e="http://ns.egret.com/eui" width.down="176">
+	<e:Image                      left.down="0" right.down="0" left.up="0" right.up="0" top.up="0" bottom.up="0" left="0" right="0" top.disabled="0" bottom.disabled="0" scale9Grid="18,0,121,60" scale9Grid.up="18,0,109,60" scale9Grid.down="18,0,108,60" scale9Grid.disabled="20,0,117,60" source.down="btn2" source.disabled="btn2_3" source.up="btn2_2" source="btn2_2" top.down="0" bottom.down="0" top="0" bottom="0" left.disabled="0" right.disabled="0" width.down="176" scaleX.down="0.95" scaleY.down="0.95"/>
+	<e:Label id="labelDisplay" size="17"
+	        textColor.disabled="0x2c2c2c" fontFamily="Microsoft YaHei" anchorOffsetX="0" anchorOffsetY="0" bold="false" text="Xác nhận" size.down="17" textColor.down="0x000000" textColor.up="0x7e2a00" textColor="0x7e2a00" size.up="17" size.disabled="17" verticalCenter.up="0" horizontalCenter.up="0" scaleX.down="0.95" scaleY.down="0.95" verticalCenter.down="0" horizontalCenter.down="0" verticalCenter.disabled="0" horizontalCenter.disabled="0" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

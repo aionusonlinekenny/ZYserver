@@ -22,14 +22,14 @@
 		</e:List>
 	</e:Scroller>
 	<e:Group x="11" y="595" width="560" height="80">
-		<e:Label text="Thưởng hàng ngày của bậc hiện tại：" x="0" y="7"/>
+		<e:Label text="Thưởng hàng ngày của bậc hiện tại：" size="15" width="400" x="0" y="14" fontFamily="Microsoft YaHei"/>
 		<e:List id="rewardList" x="422" y="5" itemRendererSkinName="SkinItem" height="69"/>
 	</e:Group>
 	<e:Group y="681" horizontalCenter="0">
-		<e:Label text="Bậc hiện tại của tôi：" x="0" y="0"/>
-		<e:Label id="dw" text="Vàng" x="0" y="0" textColor="0x00FF00"/>
+		<e:Label text="Bậc hiện tại của tôi：" size="16" x="0" y="0" fontFamily="Microsoft YaHei"/>
+		<e:Label id="dw" text="Vàng" size="16" x="0" y="0" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
 		<e:layout>
-		<e:HorizontalLayout gap="0"/>
+		<e:HorizontalLayout gap="2" verticalAlign="middle"/>
 		</e:layout>
 	</e:Group>
 	<e:Image id="redPoint" source="zjmhongdian" x="480" y="595" visible="false"/>
