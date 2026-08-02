@@ -6542,3 +6542,27 @@ Mức dịch +70 đơn vị được ước lượng từ vị trí 2 bệ đá 
 **Cache-bust**: `default.thm_337fb3a3.js` → `default.thm_21e10c67.js`, `manifest.json?v=337fb3a3` → `?v=21e10c67` trong `index.php`; cập nhật `WWW/version.txt` → `21e10c67`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng chụp lại tab "Ghép trận" xác nhận: (1) khối text/nút đã tránh khỏi 3 bệ đá phát sáng trong ảnh nền, (2) 2 nút "Giải tán đội"/"Ghép trận một mình" không bị cắt/khuất ở đáy màn hình.
+
+## 255. Người dùng xác nhận mục 254 dịch KHÔNG đủ, chữ vẫn còn chồng lên bệ đá - đo lại theo ảnh chụp thực tế, dịch thêm +100 đơn vị (2026-08-02)
+
+Người dùng gửi ảnh chụp thực tế sau mục 254 xác nhận: "Không thấy dời xuống khỏi chỗ bệ đá mà chữ đang chồng lên nha" - mức dịch +70 đơn vị ở mục 254 có áp dụng đúng (đo được ~107px dịch chuyển thực tế trên ảnh, khớp tỉ lệ quy đổi ~1.53px/đơn vị đã tính) nhưng KHÔNG đủ xa để thoát khỏi toàn bộ cụm 3 bệ đá.
+
+**Đo lại kỹ hơn từ chính ảnh chụp mới**: nhận ra bệ đá TRUNG TÂM (bệ lớn ở giữa, có vòng năng lượng phát sáng) có phần "chân đế" kéo dài xuống thấp hơn nhiều so với ước lượng ban đầu ở mục 251/253 (từng đoán chỉ tới khoảng y≈1130 hiển thị, thực tế vòng sáng + chân đế kéo dài tới tận y≈1080-1140 hiển thị, và dòng "Đẳng cấp hiện tại" sau khi dịch +70 mới chỉ tới y≈1005 - vẫn còn nằm giữa vùng bệ đá trung tâm). Tính lại: cần dịch thêm khoảng **+90 đến +100 đơn vị thiết kế** nữa (dựa trên tỉ lệ quy đổi ~1.53px/đơn vị đã xác nhận đúng qua 2 lần đo liên tiếp) để dòng đầu tiên vượt hẳn qua vùng sáng của bệ đá trung tâm.
+
+**Cách sửa** (`KfArenaMacthSkin.exml`): dịch thêm **+100 đơn vị** nữa lên trên mức đã có ở mục 254 (tổng cộng dịch +170 so với gốc mục 251):
+- `duanLabel`/`scoreLabel`: y=519→619
+- `curMonthLabel`: y=560→660
+- `historyLabel`: y=586→686
+- Nhóm "Số lần còn lại": y=620→720
+- Nhóm "Mỗi ngày hồi phục": y=650→750
+- Nhóm "Tích lũy tối đa": y=671→771
+- `disBtn`/`macthBtn`: y=704→804
+- `macthingLabel`: y=762→862
+
+Với mức dịch mới, nút bấm rơi vào khoảng hiển thị ước tính ~y=1427 (so với khung tab người dùng hiện thấy kéo dài đến ~y=1940 trước hàng tab) - còn dư khá nhiều khoảng trống an toàn trên máy người dùng, không lo bị cắt.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `KfArenaMacthSkin.exml` hợp lệ; `node -c` sạch cho `default.thm.js`; xác nhận bằng `awk`+`grep` rằng đúng 8/8 giá trị `y=619/660/686/720/750/771/804/862` xuất hiện ĐÚNG PHẠM VI khối `KfArenaMacthSkin` trong `default.thm.js` (không đụng các khối `_Group2_i`/`_Group3_i` trùng tên ở skin khác - file này có nhiều skin dùng chung tên hàm nội bộ do đều là closure riêng biệt theo từng IIFE).
+
+**Cache-bust**: `default.thm_21e10c67.js` → `default.thm_6f3e34dc.js`, `manifest.json?v=21e10c67` → `?v=6f3e34dc` trong `index.php`; cập nhật `WWW/version.txt` → `6f3e34dc`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - đây là lần dịch thứ 2 liên tiếp cho cùng 1 yêu cầu (lần 1 chưa đủ), rất cần người dùng xác nhận chắc chắn bằng ảnh chụp mới rằng toàn bộ khối text/nút đã hoàn toàn thoát khỏi cả 3 bệ đá (không chỉ dòng đầu, mà cả dòng "Số lần còn lại" - dòng gần bệ đá trung tâm nhất). Nếu vẫn chưa đủ ở lần này, nên cân nhắc đổi cách tiếp cận: có thể yêu cầu người dùng đo/khoanh vùng trực tiếp trên ảnh chụp (ví dụ toạ độ pixel y của mép dưới bệ đá) thay vì tiếp tục ước lượng dịch từng đợt, để tránh lặp lại chu trình "dịch chưa đủ - dịch thêm" nhiều lần.

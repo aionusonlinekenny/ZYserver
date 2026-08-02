@@ -12,18 +12,18 @@
 	<e:Group id="waitGroup" left="0" right="0" top="0" bottom="0">
 		<e:Image anchorOffsetY="0" source="tfb_bg_jpg" left="0" right="0" top="0" bottom="0"/>
 	</e:Group>
-	<e:Label id="duanLabel" size="18" text="Bậc： Vàng" y="519" bold="true" textColor="0x35E62D" x="78"/>
-	<e:Label id="scoreLabel" size="18" text="Điểm：1000" y="519" bold="true" textColor="0x35E62D" x="321"/>
-	<e:Label id="curMonthLabel" size="16" text="Thành tích tháng này：1 thắng 1 thua 1 hòa" y="560" bold="true" textColor="0x35E62D" x="78"/>
-	<e:Label id="historyLabel" size="16" text="Thành tích lịch sử：1 thắng 1 thua 1 hòa" y="586" bold="true" textColor="0x35E62D" anchorOffsetY="0" height="21" x="78"/>
-	<e:Group y="620" horizontalCenter="0">
+	<e:Label id="duanLabel" size="18" text="Bậc： Vàng" y="619" bold="true" textColor="0x35E62D" x="78"/>
+	<e:Label id="scoreLabel" size="18" text="Điểm：1000" y="619" bold="true" textColor="0x35E62D" x="321"/>
+	<e:Label id="curMonthLabel" size="16" text="Thành tích tháng này：1 thắng 1 thua 1 hòa" y="660" bold="true" textColor="0x35E62D" x="78"/>
+	<e:Label id="historyLabel" size="16" text="Thành tích lịch sử：1 thắng 1 thua 1 hòa" y="686" bold="true" textColor="0x35E62D" anchorOffsetY="0" height="21" x="78"/>
+	<e:Group y="720" horizontalCenter="0">
 		<e:Label text="Số lần còn lại：" size="16" fontFamily="Microsoft YaHei"/>
 		<e:Label id="countLabel" text="6/6" size="16" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
 		<e:layout>
 		<e:HorizontalLayout gap="2" verticalAlign="middle"/>
 		</e:layout>
 	</e:Group>
-	<e:Group y="650" horizontalCenter="0">
+	<e:Group y="750" horizontalCenter="0">
 		<e:Label text="Mỗi ngày hồi phục" size="14" fontFamily="Microsoft YaHei"/>
 		<e:Label id="dailyTime" text="5" size="15" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
 		<e:Label text="lần" size="14" fontFamily="Microsoft YaHei"/>
@@ -31,7 +31,7 @@
 		<e:HorizontalLayout gap="3" verticalAlign="middle"/>
 		</e:layout>
 	</e:Group>
-	<e:Group y="671" horizontalCenter="0">
+	<e:Group y="771" horizontalCenter="0">
 		<e:Label text="Tích lũy tối đa" size="14" fontFamily="Microsoft YaHei"/>
 		<e:Label id="maxTime" text="10" size="15" textColor="0x00FF00" fontFamily="Microsoft YaHei"/>
 		<e:Label text="lần" size="14" fontFamily="Microsoft YaHei"/>
@@ -39,9 +39,9 @@
 		<e:HorizontalLayout gap="3" verticalAlign="middle"/>
 		</e:layout>
 	</e:Group>
-	<e:Button id="disBtn" label="Giải tán đội" width="200" height="50" skinName="SkinBtn1Tiny" y="704" horizontalCenter="-105"/>
-	<e:Button id="macthBtn" label="Bắt đầu ghép trận" width="200" height="50" skinName="SkinBtn1Tiny" y="704" horizontalCenter="105"/>
-	<e:Label id="macthingLabel" size="18" text="Đang ghép trận..." y="762" bold="true" textColor="0x35E62D" horizontalCenter="0" visible="false"/>
+	<e:Button id="disBtn" label="Giải tán đội" width="200" height="50" skinName="SkinBtn1Tiny" y="804" horizontalCenter="-105"/>
+	<e:Button id="macthBtn" label="Bắt đầu ghép trận" width="200" height="50" skinName="SkinBtn1Tiny" y="804" horizontalCenter="105"/>
+	<e:Label id="macthingLabel" size="18" text="Đang ghép trận..." y="862" bold="true" textColor="0x35E62D" horizontalCenter="0" visible="false"/>
 
 
 
