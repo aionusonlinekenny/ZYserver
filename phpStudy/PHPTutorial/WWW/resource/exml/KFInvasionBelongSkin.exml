@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="KFInvasionBelongSkin" width="580" height="930" xmlns:e="http://ns.egret.com/eui">
 	<e:Rect id="BG" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
-	<e:Group id="anigroup" horizontalCenter="0" verticalCenter="0">
+	<e:Group id="anigroup" left="0" right="0" top="0" bottom="0">
 		<e:Image id="background1" source="tongyongtip1" scale9Grid="7,6,11,12" left="0" right="0" top="0" bottom="0" x="-3" y="1" scaleX="1" scaleY="1"/>
 		<e:Image source="tongyongtip2" left="0" right="0" top="0" scale9Grid="18,18,2,4" bottom="0" scaleX="1" scaleY="1"/>
 		<e:Label text="Thưởng sở hữu" size="22" bold="true" x="10" y="18" scaleX="1" scaleY="1" textColor="0xFF00FF"/>
