@@ -6566,3 +6566,25 @@ Với mức dịch mới, nút bấm rơi vào khoảng hiển thị ước tín
 **Cache-bust**: `default.thm_21e10c67.js` → `default.thm_6f3e34dc.js`, `manifest.json?v=21e10c67` → `?v=6f3e34dc` trong `index.php`; cập nhật `WWW/version.txt` → `6f3e34dc`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - đây là lần dịch thứ 2 liên tiếp cho cùng 1 yêu cầu (lần 1 chưa đủ), rất cần người dùng xác nhận chắc chắn bằng ảnh chụp mới rằng toàn bộ khối text/nút đã hoàn toàn thoát khỏi cả 3 bệ đá (không chỉ dòng đầu, mà cả dòng "Số lần còn lại" - dòng gần bệ đá trung tâm nhất). Nếu vẫn chưa đủ ở lần này, nên cân nhắc đổi cách tiếp cận: có thể yêu cầu người dùng đo/khoanh vùng trực tiếp trên ảnh chụp (ví dụ toạ độ pixel y của mép dưới bệ đá) thay vì tiếp tục ước lượng dịch từng đợt, để tránh lặp lại chu trình "dịch chưa đủ - dịch thêm" nhiều lần.
+
+## 256. Người dùng báo nút "魔界入侵" (góc trên-trái, mở DevildomWindow/Ma Giới Nhập Xâm) không bấm được nữa - LỖI DO CHÍNH MÌNH GÂY RA từ mục 248, tìm ra và sửa qua log Console thật (2026-08-02)
+
+Người dùng gửi 2 ảnh (không kèm chữ) theo yêu cầu xin log Console thật ở lượt trước - hoá ra là 2 ảnh chụp **hộp thoại lỗi JS thật** (game này có cơ chế hiện `alert()` khi gặp lỗi runtime, không cần mở DevTools riêng). Nội dung:
+```
+Thông tin lỗi: Uncaught TypeError: Cannot read properties of undefined (reading 'killedState')
+Vị trí lỗi: 76 dòng 20336 cột
+Hàm lỗi: e.selectBoss_a94
+Gọi hàm: main.min_021bb181.js:76:17691
+```
+
+**Truy ra nguyên nhân - lỗi CHÍNH MÌNH tạo ra ở mục 248**: khi đó, để phòng ngừa crash `menuList.selectedItem` chưa có dữ liệu, mình đã thêm 1 dòng gọi lại `this.selectBoss_a94(t)` bên trong `initData()` của `DevildomWindow`. Nhưng không để ý: `ViewMgr.openEasy()` (hàm mở cửa sổ lần đầu tiên) gọi vòng đời theo đúng thứ tự **`initUI()` → `initData()` → `open()`** - trong khi `this.dataSys=DevildomSysBase.ins()` (biến `selectBoss_a94` cần dùng ở dòng `this.dataSys.killedState.length`) chỉ được gán bên trong `open()`, tức là chạy SAU `initData()`. Kết quả: lần đầu tiên mở cửa sổ này, dòng gọi thêm ở mục 248 khiến `selectBoss_a94` chạy khi `this.dataSys` vẫn còn là `undefined` → crash `Cannot read properties of undefined (reading 'killedState')` → cửa sổ auto bị dừng nửa chừng, không mở lên được, đúng y hệt triệu chứng "bấm không có phản ứng gì" người dùng báo. Đây là lỗi hoàn toàn do chính bản sửa ở mục 248 gây ra (không phải lỗi có sẵn của game gốc), chỉ giờ mới lộ ra vì đây là lần ĐẦU TIÊN người dùng thực sự bấm đúng nút này kể từ mục 248 (các lượt test trước đó ở mục 249/250 hoá ra đều nhắm nhầm nút khác).
+
+**Cách sửa** (`main.min.js`, `DevildomWindow.initUI`): thêm `this.dataSys=DevildomSysBase.ins();` làm dòng ĐẦU TIÊN trong `initUI()` (hàm này luôn chạy trước tiên trong mọi trường hợp, kể cả lần mở đầu tiên) - đảm bảo `this.dataSys` LUÔN có giá trị trước khi bất kỳ hàm nào (kể cả `initData()`/`selectBoss_a94`) có thể dùng tới nó. Giữ nguyên dòng gán trùng lặp cũ trong `open()` (vô hại, chỉ gán lại đúng cùng 1 singleton).
+
+**Bài học**: khi thêm 1 lệnh gọi hàm "phòng ngừa" vào 1 lifecycle method (như `initData`), cần kiểm tra kỹ THỨ TỰ gọi các lifecycle method của framework (ở đây là `ViewMgr.openEasy`: `initUI→initData→open`), không chỉ riêng logic bên trong hàm đang sửa - nếu không sẽ vô tình gọi hàm quá sớm, trước khi các biến phụ thuộc (ở đây là `this.dataSys`, chỉ được khởi tạo trong `open()`) đã sẵn sàng.
+
+**Kiểm thử**: `node -c` sạch cho `main.min.js`; xác nhận đúng 2 chỗ gán `this.dataSys=DevildomSysBase.ins()` tồn tại (1 mới thêm trong `initUI`, 1 cũ trong `open`), không đụng vào các class khác.
+
+**Cache-bust**: `main.min_021bb181.js` → `main.min_ac513e53.js`, `manifest.json?v=6f3e34dc` → `?v=ac513e53` trong `index.php`; cập nhật `WWW/version.txt` → `ac513e53`. Không đụng `default.thm.js` lần này (chỉ sửa logic JS, không sửa exml/skin).
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận bằng ảnh chụp mới: bấm nút "魔界入侵" góc trên-trái (mở đúng `DevildomWindow`) không còn hiện hộp thoại lỗi, cửa sổ "Ma Giới Nhập Xâm" mở lên bình thường với nội dung (danh sách boss, hình ảnh) hiển thị đúng.
