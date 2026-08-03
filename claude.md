@@ -6608,3 +6608,25 @@ Sau khi mục 256 sửa xong crash, người dùng vào lại được màn "Ma 
 **Cache-bust**: `default.thm_6f3e34dc.js` → `default.thm_3185881c.js`, `manifest.json?v=6f3e34dc` → `?v=3185881c` trong `index.php`; cập nhật `WWW/version.txt` → `3185881c`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng chụp lại ảnh mới sau khi bấm 2 nút "归属"/"参与" ở màn "Ma Giới Nhập Xâm", xác nhận popup thưởng hiện đúng giữa màn hình, không còn bị cắt/lệch sang trái.
+
+## 258. Mục 257 sửa SAI CÁCH (dùng left/right/top/bottom="0" full-bleed thay vì width/height cố định) - làm mất khung viền popup + chặn luôn tap-to-close; tìm ra pattern đúng từ file tương tự trong codebase (2026-08-02)
+
+Người dùng gửi ảnh xác nhận: text không còn bị cắt bên TRÁI nữa (đúng hướng), nhưng giờ lộ ra 2 vấn đề mới: (1) không còn cách nào chạm để đóng popup (trước đây có tính năng "chạm vùng trống để đóng cửa sổ"), (2) dòng "Thành viên cùng Tiên Minh với người sở hữu trong khu vực có thể n…" vẫn bị cắt - lần này cắt ở mép PHẢI thay vì trái.
+
+**Nhận ra cách sửa ở mục 257 sai hướng tiếp cận**: đổi `anigroup` sang `left="0" right="0" top="0" bottom="0"` khiến nó bị kéo giãn thành ĐÚNG BẰNG kích thước toàn bộ khung skin (580×930) - tức phủ kín toàn màn hình. Hệ quả: (a) khung viền trang trí (`tongyongtip1`/`tongyongtip2`, vốn là ảnh 9-slice thiết kế cho 1 hộp thoại nhỏ gọn ở giữa màn hình) bị kéo giãn tràn lan ra sát 4 mép màn hình, không còn nhận ra là 1 "khung thông báo" nữa (chỉ còn thấy vài nét viền mờ ở góc màn hình); (b) vì `anigroup` giờ phủ kín toàn bộ diện tích, mọi cú chạm đều rơi vào các `Image` con của nó (mặc định có thể nhận chạm) TRƯỚC KHI chạm tới được `BG` (Rect nền phía dưới, nơi thực sự xử lý "chạm để đóng") - chặn đứng hoàn toàn tính năng đóng bằng cách chạm vùng trống; (c) dù vị trí bắt đầu không còn bị cắt ở trái, nhãn dài "Thành viên cùng Tiên Minh..." vẫn KHÔNG có `width`/`wordWrap` nên tiếp tục vẽ tràn theo chiều ngang tự nhiên của nó, chỉ là giờ tràn sang PHẢI thay vì trái (do vị trí gốc x=0 khác trước).
+
+**Tìm pattern chuẩn đã có sẵn trong codebase**: rà các exml khác cùng dùng `id="anigroup"` + `source="tongyongtip1"` (rất phổ biến, dùng cho hầu hết popup tooltip dạng "chạm khung ngoài để đóng" trong game này), phát hiện `UsualEquipTipsSkin.exml` là ví dụ chuẩn:
+```xml
+<e:Group id="anigroup" width="350" horizontalCenter="0" verticalCenter="5.5" touchEnabled="false" ...>
+```
+→ xác nhận: `anigroup` LUÔN cần khai báo `width`/`height` (hoặc `top`/`bottom`) TƯỜNG MINH thay vì để trống dựa vào con tự tính, VÀ luôn có `touchEnabled="false"` để không chặn tap-to-close của `BG`/`bgClose` bên dưới - đúng 2 điều mục 257 đã bỏ sót.
+
+**Cách sửa đúng** (áp dụng cho cả `KFInvasionBelongSkin.exml` và `KFInvasionPartSkin.exml`):
+1. `anigroup`: đổi từ `left="0" right="0" top="0" bottom="0"` (phủ kín, sai) sang `width="560" horizontalCenter="0" top="40" bottom="40" touchEnabled="false"` - có `width` cố định (560, gần sát mép 580 nhưng chừa margin nhỏ, đủ rộng cho nội dung + tránh phải đoán chiều cao) kết hợp `top`/`bottom` (thay vì `height` cố định) để tự co giãn vừa phải theo chiều dọc mà không cần đoán chính xác chiều cao nội dung, cộng `touchEnabled="false"` để trả lại tap-to-close.
+2. 2 nhãn dài ("Thành viên cùng Tiên Minh với người sở hữu/tham gia...", "Tiên Minh của người sở hữu/tham gia có tỷ lệ...") mỗi file: thêm `width="540" wordWrap="true"` (540 = 560 trừ 10+10 padding của `Group left=10 right=10` bọc ngoài) để chữ tự xuống dòng gọn trong khung thay vì tràn ngang vô hạn - đây mới là chỗ sửa TRỰC TIẾP nguyên nhân tràn chữ (không phải do vị trí `anigroup`).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận cả 2 exml hợp lệ; `node -c` sạch cho `default.thm.js`; xác nhận đúng phạm vi sửa bằng cách kiểm tra riêng biệt 2 khối biên dịch (`KFInvasionBelongSkin`/`KFInvasionPartSkin`), không đụng nhầm sang khối `KFInvasionJiangLiTishiSkin` (dùng bởi `DevildomBossAwardWindow`, có 1 nhãn TRÙNG y hệt nội dung chữ "Thành viên cùng Tiên Minh với người sở hữu..." nhưng KHÔNG nằm trong phạm vi bug người dùng báo lần này, không tự ý sửa theo).
+
+**Cache-bust**: `default.thm_3185881c.js` → `default.thm_d915f7b8.js`, `manifest.json?v=3185881c` → `?v=d915f7b8` trong `index.php`; cập nhật `WWW/version.txt` → `d915f7b8`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng chụp lại ảnh mới, xác nhận cả 3 điểm: (1) khung viền popup hiện rõ dạng hộp gọn ở giữa màn hình (không còn tràn full-screen như lần trước), (2) chạm vào vùng trống ngoài khung có đóng được popup không, (3) 2 dòng chữ dài đã tự xuống dòng gọn trong khung, đọc được đầy đủ không bị cắt.
