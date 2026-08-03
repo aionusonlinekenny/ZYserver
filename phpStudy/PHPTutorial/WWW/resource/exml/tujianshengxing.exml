@@ -33,7 +33,7 @@
 			<e:Image source="tongyongbg7" scale9Grid="3,3,21,18" height="110" width="524" verticalCenter="-16" horizontalCenter="0"/>
 			<e:Group horizontalCenter="0" verticalCenter="-18" width="525">
 				<e:Group x.max="70.22" y.nomax="336" y.max="336" horizontalCenter="-129" verticalCenter="0" x="0" y="-10">
-					<e:Label id="labelCur" text="" size="20" x.max="212" width="170" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="5" textAlign="left" horizontalCenter="0"/>
+					<e:Label id="labelCur" text="" size="20" x.max="107" width="170" width.max="380" fontFamily="Microsoft YaHei" textColor="0xffffff" lineSpacing="5" textAlign="left" horizontalCenter="0"/>
 				</e:Group>
 				<e:Image source="jiantouyou" horizontalCenter="0" x="150" verticalCenter="0" y="-31" visible.max="false" width="79"/>
 				<e:Group y.nomax="336" verticalCenter="0" y="-10" visible.max="false" width="170" horizontalCenter="169">
