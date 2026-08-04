@@ -9,12 +9,22 @@
 
 	<e:Group bottom="160" horizontalCenter="0" width="600" height="80">
 
-		<e:Label text="Chức vụ của tôi:" size="20" verticalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei" x="19"/>
-		<e:Label text="Cống hiến tích lũy:" size="20" x="199.99" verticalCenter="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Label id="office" text="Thành viên" size="20" x="119.35" verticalCenter="0" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
-		<e:Label id="totalCon" text="0" size="20" x="299.96" verticalCenter="0" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+		<e:Group x="19" y="14">
+			<e:Label text="Chức vụ của tôi:" size="16" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="office" text="Thành viên" size="16" textColor="0x0038ab" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout gap="4" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="19" y="44">
+			<e:Label text="Cống hiến tích lũy:" size="16" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+			<e:Label id="totalCon" text="0" size="16" textColor="0x00ff06" fontFamily="Microsoft YaHei"/>
+			<e:layout>
+				<e:HorizontalLayout gap="4" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
 		<e:Button id="quitBtn" label="Thoát" width="110" height="46" verticalCenter="1" x="435.97" skinName="SkinBtn6" icon="btn2_2"/>
-	</e:Group>	
+	</e:Group>
 	<e:Scroller width="588" horizontalCenter="-0.5" top="60" bottom="259" anchorOffsetY="0">
 
 			<e:List id="list" x="2" y="2" itemRendererSkinName="SkinMemberItem2">

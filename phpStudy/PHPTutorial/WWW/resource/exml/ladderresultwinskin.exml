@@ -15,12 +15,12 @@
 		</e:Scroller>
 		<e:Image id="result" y="49"   source="labwin_png" horizontalCenter="28"/>
 		<ns1:LadderStarListView id="starList" y="310" skinName="SkinLadderSratList" horizontalCenter="0"/>
-		<e:Label text="Thưởng thách đấu：" y="586" fontFamily="Microsoft YaHei" size="20" x="106"/>
+		<e:Label text="Thưởng thách đấu：" y="590" fontFamily="Microsoft YaHei" size="14" x="88"/>
 		<e:Button id="sureBtn" label="Nhận thưởng" width="213" horizontalCenter="0" y="690" skinName="SkinBtn7" height="67"/>
-		<e:Group id="upStar" width="237" height="50" y="498"   x="106">
-			<e:Label text="Thưởng cấp sao：" x="0" y="17" size="20" fontFamily="Microsoft YaHei"/>
-			<ns1:LadderStarView id="star1" x="96" y="4" skinName="SkinLadderSrat"/>
-			<ns1:LadderStarView id="star2" x="136" y="4" skinName="SkinLadderSrat"/>
+		<e:Group id="upStar" width="250" height="50" y="498"   x="76">
+			<e:Label text="Thưởng cấp sao：" x="0" y="18" size="14" fontFamily="Microsoft YaHei"/>
+			<ns1:LadderStarView id="star1" x="105" y="4" skinName="SkinLadderSrat"/>
+			<ns1:LadderStarView id="star2" x="145" y="4" skinName="SkinLadderSrat"/>
 		</e:Group>
 		<e:Label id="leavetime" text="2s" y="758" fontFamily="Microsoft YaHei" size="30" textColor="0x00ff06" textAlign="center" horizontalCenter="0"/>
 		<e:Button id="closeBtn" label="Button" x="10" y="776" skinName="SkinBtn0" icon="tuichu" visible="false"/>

@@ -834,8 +834,8 @@ function handleDonate(actor, packet)
 	common.changeContrib(actor, conf.awardContri, "Donate")
 	common.changeGuildFund(guild, conf.awardFund, actor)
 
-	LActor.sendTipmsg(actor, string.format("仙盟贡献 +%d", conf.awardContri), ttScreenCenter)
-	LActor.sendTipmsg(actor, string.format("仙盟资金 +%d", conf.awardFund), ttScreenCenter)
+	LActor.sendTipmsg(actor, string.format("Cống hiến Tiên Minh +%d", conf.awardContri), ttScreenCenter)
+	LActor.sendTipmsg(actor, string.format("Ngân quỹ Tiên Minh +%d", conf.awardFund), ttScreenCenter)
 end
 
 function handleDonateBonFire(actor, packet)
