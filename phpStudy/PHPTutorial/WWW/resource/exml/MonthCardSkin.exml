@@ -32,7 +32,7 @@
 			<e:VerticalLayout gap="2"/>
 			</e:layout>
 		</e:Group>
-		<e:Image source="yueka5" top="28" horizontalCenter="-215.5"/>
+		<e:Image source="yueka5" top="3" horizontalCenter="-215.5"/>
 		<e:Image source="yuekatu" left="130" top="-23"/>
 		<e:Image y="116" source="bantoutiaoboss" scaleX="-1" right="2" width="244" visible="false"/>
 		<e:Label text="Mua Thẻ Tháng không tính vào VIP và nạp đầu" size="22" fontFamily="Microsoft YaHei" width="160" top="80" textColor="0xffff00" left="368" textAlign="center"/>

@@ -6686,3 +6686,13 @@ Người dùng gửi 4 ảnh, mỗi ảnh 1 lỗi riêng biệt ở các màn h�
 **Cache-bust**: `default.thm_e43e970c.js` → `default.thm_371e27a0.js`, `manifest.json?v=e43e970c` → `?v=371e27a0` trong `index.php`; cập nhật `WWW/version.txt` → `371e27a0`. Không đụng `main.min.js` (không sửa JS lần này, guildsystem.lua là code server Lua riêng biệt, không liên quan tới `main.min.js` client).
 
 **Chưa kiểm chứng thực tế** - lỗi 3 và lỗi 4 dựa trên ước lượng tỉ lệ ký tự/đơn vị (không đo trực tiếp), cần người dùng xác nhận qua ảnh chụp mới: (1) thông báo quyên góp Tiên Minh hiện tiếng Việt; (2) "Chức vụ của tôi"/"Cống hiến tích lũy" tách 2 dòng rõ ràng không chồng; (3) bảng Thắng Lợi không còn chữ đè icon/sao; (4) số tầng trong câu "Càn quét tầng" nằm đúng vào chỗ trống, không bị lệch xa. Riêng người dùng cần chơi lại 1 trận Vương Giả và quyên góp Tiên Minh mới kiểm tra được lỗi 1 và 3 (không tái hiện được bằng ảnh tĩnh).
+
+## 262. Dời hình "Thẻ Tháng Siêu Cấp" (yueka5.png) lên cao hơn ở màn Phúc Lợi (2026-08-03)
+
+Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard/yuekaPic/yueka5.png`) và chỉ cần dời lên cao một chút - không cần dò tìm lại. Tìm thấy `MonthCardSkin.exml` dòng 35: `<e:Image source="yueka5" top="28" horizontalCenter="-215.5"/>` (ảnh chữ vàng dọc "Thẻ Tháng Siêu Cấp" bên trái màn Phúc Lợi). Giảm `top` từ 28 xuống 3 (dời lên ~25 đơn vị).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_371e27a0.js` → `default.thm_e0f877e3.js`, `manifest.json?v=371e27a0` → `?v=e0f877e3` trong `index.php`; cập nhật `WWW/version.txt` → `e0f877e3`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận ảnh mới đã dời lên đủ cao chưa, có thể cần tinh chỉnh thêm nếu 25 đơn vị chưa đúng ý.
