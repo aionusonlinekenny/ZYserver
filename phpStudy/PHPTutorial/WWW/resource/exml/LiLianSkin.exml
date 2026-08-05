@@ -19,7 +19,7 @@
 		</e:Group>
 
 		<e:Group id="showAct" top="0"   left="0" right="0" height="728">
-			<e:Group id="addReward" top="13" right="64" height="74">
+			<e:Group id="addReward" top="13" right="104" height="74">
 				<e:Image id="guanyin" y="0" width="76" height="76" scale9Grid="8,8,48,48" source="quality5" horizontalCenter="0" visible="false"/>
 				<ns1:ItemBase id="item4" y="0" skinName="SkinItem" right="100" scaleX="0.8" scaleY="0.8"/>
 				<e:Group id="tipsGroup" top="10" left="99" width="90">
@@ -28,7 +28,7 @@
 					<e:Label id="targetLevel" text="1" size="20" y="0" horizontalCenter="12" textAlign="center" textColor="0x00ff00" x="43" fontFamily="Microsoft YaHei"/>
 					<e:Label text="tầng" size="20" y="10" horizontalCenter="0" textAlign="center" x="10" fontFamily="Microsoft YaHei" textColor="0xffffff"/>
 					<e:layout>
-					<e:HorizontalLayout gap="0" horizontalAlign="center"/>
+					<e:HorizontalLayout gap="6" horizontalAlign="center"/>
 					</e:layout>
 				</e:Group>
 				<e:Label text="Có thể nhận" size="20" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xffffff" horizontalCenter="0" top="21"/>

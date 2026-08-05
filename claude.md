@@ -6739,3 +6739,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `default.thm_8b3f4c91.js` → `default.thm_364b72c8.js`, cập nhật đồng bộ `manifest.json`, query version trong `index.php` và `WWW/version.txt`. Không đụng `main.min_10a132ee.js`.
 
 **Chưa kiểm chứng thực tế**: cần copy bundle và loader mới lên server, đồng thời bảo đảm file `jueweiattr.png` bản dịch rộng 280 px đã có trên server; sau đó chụp lại màn Cảnh Giới để xác nhận mép phải dòng chữ thẳng với thanh Lịch Luyện và không đè nút.
+
+## 266. Dời cụm thưởng Cảnh Giới sang trái và tách khoảng cách “Tiếp tục nâng N tầng” (2026-08-05)
+
+**Triệu chứng/phạm vi**: cụm icon phần thưởng cùng hai dòng “Tiếp tục nâng 7 tầng / Có thể nhận” nằm sát lề phải màn Cảnh Giới; riêng dòng đầu hiển thị dính thành `Tiếp tục nâng7tầng`.
+
+**Nguyên nhân**: group `addReward` trong `LiLianSkin.exml` neo bằng `right="64"`, chưa chừa đủ lề cho câu tiếng Việt dài. Ba Label “Tiếp tục nâng”, `targetLevel` và “tầng” dùng `HorizontalLayout gap="0"`, nên không có khoảng trống giữa ba phần.
+
+**Cách sửa**: tăng neo phải của toàn bộ `addReward` từ 64 lên 104 để dời cả icon và text sang trái 40 đơn vị; đổi `HorizontalLayout gap` từ 0 lên 6 để kết quả hiển thị thành `Tiếp tục nâng 7 tầng`. Đồng bộ hai giá trị trong class `SkinLiLian` của bundle `default.thm` active. Không đổi logic runtime; `main.min` vẫn chỉ gán số động cho `targetLevel`.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `LiLianSkin.exml` hợp lệ; `node -c` sạch cho `default.thm`; xác nhận trong đúng class `SkinLiLian`, `addReward.right=104` và layout hàng đầu có `gap=6`.
+
+**Cache-bust**: `default.thm_364b72c8.js` → `default.thm_693b56a7.js`; cập nhật đồng bộ `manifest.json`, query version trong `index.php` và `WWW/version.txt`. Không đụng `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: cần copy các file mới lên server, tải lại sạch cache và chụp màn Cảnh Giới để xác nhận cụm icon/text đã cách lề phải hợp lý, đồng thời câu “Tiếp tục nâng N tầng” có khoảng cách rõ mà không đè lên icon.
