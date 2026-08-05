@@ -6710,3 +6710,18 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `default.thm_e0f877e3.js` → `default.thm_8b3f4c91.js`, `manifest.json?v=e0f877e3` → `?v=8b3f4c91` trong `index.php`; cập nhật `WWW/version.txt` → `8b3f4c91`. Không đụng `main.min_505568b9.js`.
 
 **Chưa kiểm chứng thực tế**: cần copy các file đã đổi lên server và chụp lại màn Vạn Long để xác nhận số `3` nằm ngay sau dấu hai chấm, toàn dòng vẫn canh giữa và không tràn hai mép.
+
+
+## 264. Thêm khoảng cách trong dòng yêu cầu thử thách ở màn Vạn Long (2026-08-05)
+
+**Triệu chứng/phạm vi**: dòng màu xanh hiển thị `Yêu cầu thử thách: Nhân vậtChuyển 8`, thiếu khoảng cách giữa `Nhân vật` và `Chuyển 8`.
+
+**Nguyên nhân**: class runtime của màn `challengeHunshou` trong `main.min.js` ghép hai chuỗi `"Nhân vật"+"Chuyển "` trực tiếp. Đây là nội dung động gán cho `zsLimit`, nên sửa EXML không xử lý được lỗi.
+
+**Cách sửa**: đổi chuỗi đầu thành `"Nhân vật "` để kết quả hiển thị là `Yêu cầu thử thách: Nhân vật Chuyển 8`. Không sửa `challengeHunshouSkin.exml` hay `default.thm`, vì vị trí và kiểu chữ không có lỗi.
+
+**Kiểm thử**: xác nhận phép ghép cũ không còn, phép ghép mới xuất hiện đúng một lần; `node -c` sạch cho bundle `main.min.js`; `manifest.json` hợp lệ.
+
+**Cache-bust**: `main.min_505568b9.js` → `main.min_10a132ee.js`, cập nhật đồng bộ `manifest.json`, query version trong `index.php` và `WWW/version.txt`. `default.thm_8b3f4c91.js` giữ nguyên.
+
+**Chưa kiểm chứng thực tế**: cần copy các file đã đổi lên server, tải lại sạch cache và chụp màn Vạn Long để xác nhận khoảng cách hiển thị đúng.
