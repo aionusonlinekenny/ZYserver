@@ -6696,3 +6696,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `default.thm_371e27a0.js` → `default.thm_e0f877e3.js`, `manifest.json?v=371e27a0` → `?v=e0f877e3` trong `index.php`; cập nhật `WWW/version.txt` → `e0f877e3`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận ảnh mới đã dời lên đủ cao chưa, có thể cần tinh chỉnh thêm nếu 25 đơn vị chưa đúng ý.
+
+## 263. Sửa số lần nhận thưởng đè lên chữ "còn" ở màn Vạn Long (2026-08-05)
+
+**Triệu chứng/phạm vi**: ảnh chụp màn Vạn Long cho thấy dòng "Số lần nhận thưởng còn lại: 3" bị chồng chữ; số động `3` nằm đè lên chữ "còn".
+
+**Nguyên nhân**: `challengeHunshouSkin.exml` đặt câu tĩnh và số động `lbTime` thành 2 Label độc lập. Câu tĩnh dùng `horizontalCenter="-10"`, còn `lbTime` đặt cứng `x="358"`; câu tiếng Việt dài hơn câu gốc nên hai vùng chữ giao nhau.
+
+**Cách sửa**: bọc hai Label trong một `Group` canh giữa, dùng `HorizontalLayout gap="4"`. Bỏ toàn bộ tọa độ ngang/dọc riêng của hai Label để Egret tự đặt `lbTime` ngay sau câu tĩnh theo bề rộng chữ thực tế. Đồng bộ cùng cấu trúc vào đúng class `SkinchallengeHunshou` trong bundle `default.thm` đang active; không đụng `main.min.js` vì code runtime chỉ gán nội dung số cho `lbTime`, không gán lại vị trí.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận EXML hợp lệ; `node -c` sạch cho `default.thm.js`; xác nhận class `SkinchallengeHunshou` chỉ còn một `Group` chứa `_Label1_i()` và `lbTime_i()`, hai Label không còn `x`/`horizontalCenter` riêng.
+
+**Cache-bust**: `default.thm_e0f877e3.js` → `default.thm_8b3f4c91.js`, `manifest.json?v=e0f877e3` → `?v=8b3f4c91` trong `index.php`; cập nhật `WWW/version.txt` → `8b3f4c91`. Không đụng `main.min_505568b9.js`.
+
+**Chưa kiểm chứng thực tế**: cần copy các file đã đổi lên server và chụp lại màn Vạn Long để xác nhận số `3` nằm ngay sau dấu hai chấm, toàn dòng vẫn canh giữa và không tràn hai mép.

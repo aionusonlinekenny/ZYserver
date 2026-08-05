@@ -31,8 +31,13 @@
 
 	<e:Button id="btnChallenge" label="Thách đấu" width="209" skinName="SkinBtn7" bottom="162" height="67" x="334"/>
 	<e:Button id="btnSweep" label="Càn quét" width="209" height="67" skinName="SkinBtn7" x="62" bottom="162"/>
-	<e:Label text="Số lần nhận thưởng còn lại：" size="20" horizontalCenter="-10" fontFamily="Microsoft YaHei" y="691" stroke="0" textColor="0x00ff00"/>
-	<e:Label id="lbTime" text="" size="20" fontFamily="Microsoft YaHei" y="691" x="358" textAlign="left" stroke="0" textColor="0x00ff00"/>
+	<e:Group horizontalCenter="0" y="691">
+		<e:layout>
+			<e:HorizontalLayout gap="4"/>
+		</e:layout>
+		<e:Label text="Số lần nhận thưởng còn lại：" size="20" fontFamily="Microsoft YaHei" stroke="0" textColor="0x00ff00"/>
+		<e:Label id="lbTime" text="" size="20" fontFamily="Microsoft YaHei" textAlign="left" stroke="0" textColor="0x00ff00"/>
+	</e:Group>
 		<e:Scroller id="notice" horizontalCenter="-149" bottom="257">
 
 		</e:Scroller>
