@@ -6725,3 +6725,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `main.min_505568b9.js` → `main.min_10a132ee.js`, cập nhật đồng bộ `manifest.json`, query version trong `index.php` và `WWW/version.txt`. `default.thm_8b3f4c91.js` giữ nguyên.
 
 **Chưa kiểm chứng thực tế**: cần copy các file đã đổi lên server, tải lại sạch cache và chụp màn Vạn Long để xác nhận khoảng cách hiển thị đúng.
+
+## 265. Canh phải ảnh thuộc tính Cảnh Giới theo thanh Lịch Luyện (2026-08-05)
+
+**Triệu chứng/phạm vi**: sau khi dịch `jueweiattr.png` sang tiếng Việt và tăng chiều rộng ảnh lên 280 px, dòng “Cảnh Giới có hiệu lực với mọi nhân vật” tràn sang phải, đè lên nút “Thăng chức” trong màn Cảnh Giới.
+
+**Nguyên nhân**: `LiLianSkin.exml` neo ảnh bằng `left="148"`; khi bitmap rộng từ 202 lên 280 px, mép phải tăng từ x=350 lên x=428 và đi vào vùng nút. Thanh Lịch Luyện nằm từ x=119 đến x=388, còn nút bắt đầu gần x=407.
+
+**Cách sửa**: đổi neo ảnh `jueweiattr` từ `left="148"` sang `right="212"`, tương ứng mép phải x=388 của thanh Lịch Luyện. Với ảnh rộng 280 px, ảnh nằm từ x=108 đến x=388 và nở về bên trái, không còn đi vào vùng nút. Đồng bộ cùng giá trị vào class `SkinLiLian` trong bundle `default.thm` đang active.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận `LiLianSkin.exml` hợp lệ; `node -c` sạch cho bundle `default.thm`; xác nhận trong class `SkinLiLian`, ảnh `jueweiattr` có `right=212` và không còn `left=148`.
+
+**Cache-bust**: `default.thm_8b3f4c91.js` → `default.thm_364b72c8.js`, cập nhật đồng bộ `manifest.json`, query version trong `index.php` và `WWW/version.txt`. Không đụng `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: cần copy bundle và loader mới lên server, đồng thời bảo đảm file `jueweiattr.png` bản dịch rộng 280 px đã có trên server; sau đó chụp lại màn Cảnh Giới để xác nhận mép phải dòng chữ thẳng với thanh Lịch Luyện và không đè nút.

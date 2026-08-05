@@ -72,7 +72,7 @@
 			</e:Group>
 
 
-			<e:Image includeIn="nomax" source="jueweiattr" top="366" left="148"/>
+			<e:Image includeIn="nomax" source="jueweiattr" top="366" right="212"/>
 			<e:Label text="Lịch Luyện:" top="396" fontFamily="Microsoft YaHei" left="8" textColor="0xffffff" size="20" includeIn="nomax"/>
 			<e:Group width="591" height="38" includeIn="nomax,max" top="448" horizontalCenter.max="0" horizontalCenter="0" top.max="448" top.nomax="448">
 
