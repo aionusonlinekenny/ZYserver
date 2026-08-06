@@ -12,7 +12,7 @@
 		<e:Group width="388" y="61" horizontalCenter="0" anchorOffsetX="0" anchorOffsetY="0" height="261">
 			<e:Button id="btn_add" label="Thêm" y="198" horizontalCenter="0" skinName="SkinBtn3"/>
 			<e:Label text="Vui lòng nhập biệt danh người chơi" size="20" y="68" fontFamily="Microsoft YaHei" textColor="0xffffff" x="33"/>
-			<e:Group x="178" y="61">
+			<e:Group x="178" y="104">
 				<e:Image width="173" height="36" source="shuzibg" scale9Grid="5,6,48,26"/>
 				<e:EditableText id="editText_name" size="18" textAlign="center" verticalAlign="middle" height="30" width="173" x="0" fontFamily="Microsoft YaHei" textColor="0xffff00" promptColor="0xabebff" y="2"/>
 			</e:Group>

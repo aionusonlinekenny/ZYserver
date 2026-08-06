@@ -6851,3 +6851,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_9f181ca4.js` → `avatar-system_0d7e767b.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `0d7e767b`. Giữ nguyên `default.thm_693b56a7.js` và `main.min_10a132ee.js`.
 
 **Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới, tải lại popup Cài đặt và chụp ảnh xác nhận preview 84×84 đủ rõ, nút nhỏ cân đối và hàng `Tự động thi triển Thần Phạt` vẫn nằm gọn trong khung.
+
+## 274. Bo tròn avatar bạn bè và tách ô nhập trong popup Thêm bạn (2026-08-06)
+
+**Triệu chứng/phạm vi**: avatar cá nhân đã được bo tròn đúng ở MainView nhưng ảnh server vẫn hiện thành hình vuông trong các item bạn bè/Gần đây, lộ bốn góc JPEG phía trong viền `friend_kuang`. Trong popup `Thêm bạn`, ô nhập tên nằm đè trực tiếp lên phần cuối câu `Vui lòng nhập biệt danh người chơi`, làm câu hướng dẫn bị che.
+
+**Nguyên nhân**: các skin `FriendsRecentItemSkin` và `FriendsItemSkin` đặt `img_userIcon` 59×59 bên dưới viền tròn nhưng không có mask; asset đầu nhân vật mặc định có alpha nên lỗi không lộ ra trước khi thay bằng JPEG avatar server. Runtime `avatar-system` trước đó chỉ gọi mask cho `MainView.face`. Với popup, trace `FriendsAddWinSkin.exml` và class `SkinFriendsAddWin` active xác nhận label nằm tại `y=68`, còn group chứa `editText_name` bắt đầu tại `y=61`, tức hai control nằm cùng hàng và giao nhau.
+
+**Cách sửa**: tổng quát helper thành `ensureAvatarCircle(image, inset)` và áp dụng inset 1 cho năm renderer bạn bè dùng `img_userIcon`: `FriendApplyItemRender`, `FriendHeadItem`, `FriendMenuItemRender`, `FriendRecentlyItemRender`, `ShieldListItemRender`. Mask được tái sử dụng nhưng cập nhật lại tọa độ/kích thước mỗi lần `dataChanged` để theo đúng state của item; MainView tiếp tục dùng cùng helper với inset 2 như trước. Trong `FriendsAddWinSkin.exml`, giữ label ở `y=68` và dời riêng group ô nhập từ `y=61` xuống `y=104`; đồng bộ đúng thay đổi vào `SkinFriendsAddWin` trong bundle `default.thm` active. Nút `Thêm` vẫn ở `y=198` nên không đổi kích thước popup hay vùng bấm.
+
+**Kiểm thử**: parse XML sạch cho `FriendsAddWinSkin.exml`; `node -c` sạch cho cả bundle `default.thm` và `avatar-system`; xác nhận class `SkinFriendsAddWin` compiled có group ô nhập `x=178,y=104`; xác nhận năm renderer bạn bè gọi circle mask inset 1 và MainView vẫn inset 2; `manifest.json` parse hợp lệ; `git diff --check` sạch.
+
+**Cache-bust**: `default.thm_693b56a7.js` → `default.thm_3f4e4ff7.js` và `avatar-system_0d7e767b.js` → `avatar-system_4252c575.js`; giữ nguyên `main.min_10a132ee.js`. `manifest.json` trỏ hai bundle mới, query manifest trong `index.php` và `WWW/version.txt` cùng đổi sang `4252c575`.
+
+**Chưa kiểm chứng thực tế**: sau khi deploy cần tải game sạch cache, kiểm tra cả tab `Gần đây` lẫn `Bạn bè` để xác nhận JPG avatar bị cắt tròn đúng bên trong `friend_kuang`; mở `Thêm bạn` để xác nhận câu hướng dẫn hiển thị trọn vẹn và ô nhập nằm thành hàng riêng phía dưới.
