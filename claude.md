@@ -6879,3 +6879,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_4252c575.js` → `avatar-system_8dfcf5f0.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `8dfcf5f0`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js` vì không sửa skin/runtime game gốc.
 
 **Chưa kiểm chứng thực tế**: deploy bundle avatar + loader/version mới, tải sạch cache và mở Tiên Minh → Thành viên. Cần xác nhận avatar cá nhân có kích thước ngang avatar mặc định của hàng bên dưới, nằm gọn trong viền vàng và được cắt tròn, không còn che chức vụ/tên/cống hiến.
+
+## 276. Chỉ áp resize/mask cho avatar custom, giữ nguyên avatar mặc định (2026-08-06)
+
+**Triệu chứng/phạm vi**: sau bản sửa Tiên Minh ở mục 275, avatar custom của player đã đúng kích thước và tròn, nhưng thành viên chưa đổi avatar lại bị cắt/lệch trong viền vàng; ảnh production cho thấy `yuanhead...` mặc định chỉ còn phần trên khuôn mặt và phần dưới vòng tròn bị trống/xám.
+
+**Nguyên nhân**: `patchRenderer()` ở bản 275 áp `sourceSize=66` và `ensureAvatarCircle()` ngay trước `loadAvatar()`, tức áp cả khi API avatar không có ảnh custom. Asset `yuanhead...` gốc là subtexture atlas đã có alpha/offset riêng và skin vốn render đúng; việc ép thêm mask hình học dành cho JPEG custom làm thay đổi cách asset mặc định bị clip. Cùng vấn đề có thể xảy ra trên các renderer bạn bè và MainView vì mask cũng được tạo trước khi biết request custom thành công hay thất bại.
+
+**Cách sửa**: thêm callback `onCustomApply` vào `loadAvatar()`. Callback chỉ được gọi khi cache hoặc HTTP loader thực sự có texture avatar server; negative-cache/404 không gọi. `patchRenderer()` từ nay tháo mask custom cũ khi renderer được tái sử dụng, giữ fallback `yuanhead...` nguyên trạng, và chỉ trong `onCustomApply` mới ép `sourceSize` + tạo circle mask. `MainView` cũng chuyển sang cùng nguyên tắc: fallback mặc định không mask, avatar custom mới inset 2. Luồng upload thành công truyền callback tương tự để avatar góc trái vẫn bo tròn ngay sau khi đổi ảnh.
+
+**Kiểm thử**: `node -c` sạch cho `avatar-system`; trace xác nhận `completeLoad()` chỉ gọi `onCustomApply` khi `texture` tồn tại, cache âm không gọi callback, pending request giữ callback riêng theo từng Image; hook `GuildMemberBaseItem2Render` vẫn dùng custom size 66 + inset 2 nhưng hai thao tác chỉ chạy trong nhánh custom; `git diff --check` sạch và manifest parse hợp lệ.
+
+**Cache-bust**: `avatar-system_8dfcf5f0.js` → `avatar-system_6824da0f.js`; `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng đổi sang `6824da0f`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới, tải sạch cache rồi mở Tiên Minh → Thành viên. Cần xác nhận hàng custom `EmĐẹpNhất` vẫn tròn/đúng cỡ và hàng avatar mặc định `ẢnhYên` trở lại đúng hình nguyên bản, không bị cắt lệch.

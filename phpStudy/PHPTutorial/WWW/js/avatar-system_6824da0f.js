@@ -49,12 +49,13 @@
         for (var i = 0; i < list.length; i++) {
             var item = list[i];
             if (texture && item.image && item.image._playerAvatarKey === key) {
+                if (typeof item.onCustomApply === "function") item.onCustomApply(item.image);
                 item.image.source = texture;
             }
         }
     }
 
-    function loadAvatar(image, actorId, serverId, fallback, version) {
+    function loadAvatar(image, actorId, serverId, fallback, version, onCustomApply) {
         if (!image) return;
         image._playerAvatarKey = "";
         if (fallback !== undefined && fallback !== null) image.source = fallback;
@@ -66,15 +67,18 @@
         image._playerAvatarKey = key;
         var entry = cache[key];
         if (entry && Date.now() - entry.time < CACHE_MS) {
-            if (entry.texture) image.source = entry.texture;
+            if (entry.texture) {
+                if (typeof onCustomApply === "function") onCustomApply(image);
+                image.source = entry.texture;
+            }
             return;
         }
         if (pending[key]) {
-            pending[key].push({ image: image });
+            pending[key].push({ image: image, onCustomApply: onCustomApply });
             return;
         }
 
-        pending[key] = [{ image: image }];
+        pending[key] = [{ image: image, onCustomApply: onCustomApply }];
         var loader = new egret.ImageLoader();
         loader.once(egret.Event.COMPLETE, function (event) {
             var bitmapData = event.currentTarget.data;
@@ -121,8 +125,12 @@
         mask.graphics.endFill();
     }
 
-    function ensureMainFaceCircle(image) {
-        ensureAvatarCircle(image, 2);
+    function clearAvatarCircle(image) {
+        if (!image || !image._playerAvatarCircleMask) return;
+        var mask = image._playerAvatarCircleMask;
+        image.mask = null;
+        if (mask.parent) mask.parent.removeChild(mask);
+        image._playerAvatarCircleMask = null;
     }
 
     function dataUrlToBlob(dataUrl) {
@@ -206,7 +214,12 @@
                     loadAvatar(preview, actorId, serverId, fallback, data.version);
                     try {
                         var main = ViewMgr.ins().getView(MainView);
-                        if (main && main.face) loadAvatar(main.face, actorId, serverId, fallback, data.version);
+                        if (main && main.face) {
+                            clearAvatarCircle(main.face);
+                            loadAvatar(main.face, actorId, serverId, fallback, data.version, function (image) {
+                                ensureAvatarCircle(image, 2);
+                            });
+                        }
                     } catch (e) {}
                     showTip("Đổi avatar thành công");
                 };
@@ -243,12 +256,18 @@
             if (!data || !image) return;
             var actorId = actorIdOf(data);
             if (!actorId) return;
-            if (sourceSize) {
-                image.width = sourceSize;
-                image.height = sourceSize;
+            var onCustomApply = null;
+            if (circleInset !== undefined || sourceSize) {
+                clearAvatarCircle(image);
+                onCustomApply = function (target) {
+                    if (sourceSize) {
+                        target.width = sourceSize;
+                        target.height = sourceSize;
+                    }
+                    if (circleInset !== undefined) ensureAvatarCircle(target, circleInset);
+                };
             }
-            if (circleInset !== undefined) ensureAvatarCircle(image, circleInset);
-            loadAvatar(image, actorId, serverIdOf(data), image.source);
+            loadAvatar(image, actorId, serverIdOf(data), image.source, undefined, onCustomApply);
         });
     }
 
@@ -305,8 +324,10 @@
     patchMethod("MainView", "initUI", function () {
         if (!this.face) return;
         var role = SubRoles.ins().getSubRoleByIndex(0);
-        ensureMainFaceCircle(this.face);
-        loadAvatar(this.face, Actor.actorID, currentServerId(), "yuanhead" + role.job + "0");
+        clearAvatarCircle(this.face);
+        loadAvatar(this.face, Actor.actorID, currentServerId(), "yuanhead" + role.job + "0", undefined, function (image) {
+            ensureAvatarCircle(image, 2);
+        });
     });
 
     patchRenderer("FriendApplyItemRender", "dataChanged", "img_userIcon", null, 1);
