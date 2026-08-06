@@ -6907,3 +6907,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_6824da0f.js` → `avatar-system_2f377a09.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `2f377a09`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
 
 **Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới, tải sạch cache rồi mở lại popup từ chat riêng. Cần xác nhận avatar custom nằm tròn gọn trong `guildkuang`, còn player chưa đổi avatar vẫn hiển thị nguyên bản.
+
+## 278. Bo tròn avatar custom trong màn Xem thuộc tính player (2026-08-06)
+
+**Triệu chứng/phạm vi**: từ popup thông tin player/chat riêng, bấm `Xem` mở màn thuộc tính/trang bị của player; avatar custom ở thanh thông tin phía dưới vẫn là ảnh vuông và lộ bốn góc ngoài viền tròn.
+
+**Nguyên nhân**: trace luồng `PlayerTipsBaseWin.openPlayerViewOther()` xác nhận mở `CheckRoleWin`. `CheckRoleWin` dùng `SkinRRoleWin`; `RRoleWinSkin.exml` đặt `headIcon` 88×88 dưới `touxiangkuang0` 92×95. `setRoleInfo_a94()` gán `headIcon.source="yuanhead"+job+0`. `avatar-system` đã có đúng một hook `CheckRoleWin.setRoleInfo_a94`, nhưng hook cũ chỉ gọi `loadAvatar()` không có `onCustomApply`, nên JPEG server giữ hình vuông.
+
+**Cách sửa**: nâng hook `CheckRoleWin` hiện có thay vì tạo hook thứ hai: xác minh actor ID, tháo mask cũ khi view tái sử dụng, gọi `loadAvatar()` với callback custom và `ensureAvatarCircle(image, 2)`. Không resize `headIcon` vì skin đã cố định đúng 88×88. Avatar mặc định vẫn giữ nguyên vì callback chỉ chạy khi texture custom tồn tại.
+
+**Kiểm thử**: trace runtime xác nhận `CheckRoleWin.skinName="SkinRRoleWin"` và `setRoleInfo_a94()` là nơi gán head; đối chiếu EXML/compiled theme xác nhận `headIcon=88×88`, viền `92×95`; `rg` xác nhận chỉ còn đúng 1 hook `CheckRoleWin.setRoleInfo_a94` trong avatar bundle; `node -c` sạch; `manifest.json` parse hợp lệ; `git diff --check` sạch.
+
+**Cache-bust**: `avatar-system_2f377a09.js` → `avatar-system_100b4948.js`; cập nhật `manifest.json`, query manifest `index.php` và `WWW/version.txt` cùng token `100b4948`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới, tải sạch cache, từ popup player bấm `Xem`; cần xác nhận avatar custom ở thanh dưới được cắt tròn gọn trong `touxiangkuang0`, còn avatar mặc định không thay đổi.

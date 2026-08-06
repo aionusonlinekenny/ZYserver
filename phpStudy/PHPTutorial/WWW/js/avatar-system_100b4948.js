@@ -371,7 +371,12 @@
     });
     patchMethod("CheckRoleWin", "setRoleInfo_a94", function () {
         if (!this.headIcon || !this.otherPlayerData) return;
-        loadAvatar(this.headIcon, actorIdOf(this.otherPlayerData), serverIdOf(this.otherPlayerData), this.headIcon.source);
+        var actorId = actorIdOf(this.otherPlayerData);
+        if (!actorId) return;
+        clearAvatarCircle(this.headIcon);
+        loadAvatar(this.headIcon, actorId, serverIdOf(this.otherPlayerData), this.headIcon.source, undefined, function (image) {
+            ensureAvatarCircle(image, 2);
+        });
     });
     patchMethod("TeamFBLookRoleWin", "setRoleData_a94", function () {
         if (!this.headIcon || !this.otherPlayerData) return;
