@@ -6865,3 +6865,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `default.thm_693b56a7.js` → `default.thm_3f4e4ff7.js` và `avatar-system_0d7e767b.js` → `avatar-system_4252c575.js`; giữ nguyên `main.min_10a132ee.js`. `manifest.json` trỏ hai bundle mới, query manifest trong `index.php` và `WWW/version.txt` cùng đổi sang `4252c575`.
 
 **Chưa kiểm chứng thực tế**: sau khi deploy cần tải game sạch cache, kiểm tra cả tab `Gần đây` lẫn `Bạn bè` để xác nhận JPG avatar bị cắt tròn đúng bên trong `friend_kuang`; mở `Thêm bạn` để xác nhận câu hướng dẫn hiển thị trọn vẹn và ô nhập nằm thành hàng riêng phía dưới.
+
+## 275. Thu nhỏ và bo tròn avatar thành viên Tiên Minh (2026-08-06)
+
+**Triệu chứng/phạm vi**: trong tab `Thành viên` của Tiên Minh, avatar server của player hiện thành JPG vuông rất lớn, phủ qua khung avatar và che phần chức vụ/tên/cống hiến; avatar mặc định của các thành viên khác vẫn vừa khung tròn.
+
+**Nguyên nhân**: trace xác nhận `GuildMemberSkin` dùng `SkinMemberItem2` và runtime `GuildMemberBaseItem2Render`. Trong `MemberItem2Skin.exml`, `face` không khai báo `width/height` mà dùng kích thước tự nhiên của resource `yuanhead10` rồi `scaleX=scaleY=1.3`. Atlas `image/common/img_tj3.json` xác nhận `yuanhead10` có `sourceW=66, sourceH=66`, nên avatar mặc định hiển thị khoảng 85.8×85.8. JPG server là 128×128 nhưng trước đó `avatar-system` thay trực tiếp texture, khiến nó bị scale thành khoảng 166.4×166.4 và không có alpha tròn.
+
+**Cách sửa**: giữ nguyên EXML/compiled theme vì skin mặc định đang đúng. Trong hook riêng `GuildMemberBaseItem2Render`, ép `face.width=face.height=66` trước khi tải avatar server và áp circle mask inset 2. Nâng `ensureAvatarCircle()` để tính kích thước mask theo `width/height × scaleX/scaleY`, nhờ đó renderer Tiên Minh với scale 1.3 tạo mask theo đúng kích thước hiển thị ~85.8 px; các avatar MainView/bạn bè scale 1 vẫn giữ hành vi cũ.
+
+**Kiểm thử**: `node -c` sạch cho bundle `avatar-system`; đối chiếu atlas xác nhận `yuanhead10 sourceW/sourceH=66`; trace `MemberItem2Skin.exml` xác nhận `face scaleX=scaleY=1.3`; xác nhận hook `GuildMemberBaseItem2Render` dùng `sourceSize=66`, circle inset 2; `manifest.json` parse hợp lệ và `git diff --check` sạch.
+
+**Cache-bust**: `avatar-system_4252c575.js` → `avatar-system_8dfcf5f0.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `8dfcf5f0`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js` vì không sửa skin/runtime game gốc.
+
+**Chưa kiểm chứng thực tế**: deploy bundle avatar + loader/version mới, tải sạch cache và mở Tiên Minh → Thành viên. Cần xác nhận avatar cá nhân có kích thước ngang avatar mặc định của hàng bên dưới, nằm gọn trong viền vàng và được cắt tròn, không còn che chức vụ/tên/cống hiến.

@@ -98,7 +98,11 @@
 
     function ensureAvatarCircle(image, inset) {
         if (!image || !image.parent) return;
-        var size = Math.min(Number(image.width) || 0, Number(image.height) || 0);
+        var scaleX = Math.abs(Number(image.scaleX) || 1);
+        var scaleY = Math.abs(Number(image.scaleY) || 1);
+        var displayWidth = (Number(image.width) || 0) * scaleX;
+        var displayHeight = (Number(image.height) || 0) * scaleY;
+        var size = Math.min(displayWidth, displayHeight);
         if (size <= 4) return;
         inset = Math.max(0, Number(inset) || 0);
         var mask = image._playerAvatarCircleMask;
@@ -109,8 +113,8 @@
             image.mask = mask;
             image._playerAvatarCircleMask = mask;
         }
-        mask.x = Number(image.x) + (Number(image.width) - size) / 2;
-        mask.y = Number(image.y) + (Number(image.height) - size) / 2;
+        mask.x = Number(image.x) + (displayWidth - size) / 2;
+        mask.y = Number(image.y) + (displayHeight - size) / 2;
         mask.graphics.clear();
         mask.graphics.beginFill(0xffffff, 1);
         mask.graphics.drawCircle(size / 2, size / 2, size / 2 - inset);
@@ -232,13 +236,17 @@
         };
     }
 
-    function patchRenderer(className, methodName, imageName, dataGetter, circleInset) {
+    function patchRenderer(className, methodName, imageName, dataGetter, circleInset, sourceSize) {
         patchMethod(className, methodName, function () {
             var data = dataGetter ? dataGetter.call(this) : this.data;
             var image = this[imageName];
             if (!data || !image) return;
             var actorId = actorIdOf(data);
             if (!actorId) return;
+            if (sourceSize) {
+                image.width = sourceSize;
+                image.height = sourceSize;
+            }
             if (circleInset !== undefined) ensureAvatarCircle(image, circleInset);
             loadAvatar(image, actorId, serverIdOf(data), image.source);
         });
@@ -313,7 +321,7 @@
     patchRenderer("AssistantItemRender", "dataChanged", "imgHead", function () {
         return this.data && this.data.vo;
     });
-    patchRenderer("GuildMemberBaseItem2Render", "dataChanged", "face");
+    patchRenderer("GuildMemberBaseItem2Render", "dataChanged", "face", null, 2, 66);
     patchRenderer("GuildWarMemListItemRenderer", "dataChanged", "face");
     patchRenderer("MemberBaseItem3Renderer", "dataChanged", "face", function () {
         return this.data && this.data.data;
