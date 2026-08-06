@@ -66,6 +66,64 @@ function avatar_public_url($serverId, $actorId, $version) {
       . '&actor_id=' . intval($actorId) . '&v=' . intval($version);
 }
 
+function avatar_circle_png_path($filePath) {
+ return $filePath . '.circle.png';
+}
+
+function avatar_build_circle_png($filePath, $circlePath) {
+ if (is_file($circlePath) && filemtime($circlePath) >= filemtime($filePath)) {
+  return true;
+ }
+ $raw = @file_get_contents($filePath);
+ $src = $raw !== false ? @imagecreatefromstring($raw) : false;
+ if (!$src) {
+  return false;
+ }
+ $srcW = imagesx($src);
+ $srcH = imagesy($src);
+ $side = min($srcW, $srcH);
+ if ($side <= 0) {
+  imagedestroy($src);
+  return false;
+ }
+ $size = AVATAR_OUTPUT_SIZE;
+ $dst = imagecreatetruecolor($size, $size);
+ if (!$dst) {
+  imagedestroy($src);
+  return false;
+ }
+ imagealphablending($dst, false);
+ imagesavealpha($dst, true);
+ $transparent = imagecolorallocatealpha($dst, 0, 0, 0, 127);
+ imagefill($dst, 0, 0, $transparent);
+ imagealphablending($dst, true);
+ $srcX = intval(($srcW - $side) / 2);
+ $srcY = intval(($srcH - $side) / 2);
+ if (!imagecopyresampled($dst, $src, 0, 0, $srcX, $srcY, $size, $size, $side, $side)) {
+  imagedestroy($src);
+  imagedestroy($dst);
+  return false;
+ }
+ imagealphablending($dst, false);
+ $center = ($size - 1) / 2;
+ $radius = ($size / 2) - 2;
+ $radiusSq = $radius * $radius;
+ for ($y = 0; $y < $size; $y++) {
+  $dy = $y - $center;
+  for ($x = 0; $x < $size; $x++) {
+   $dx = $x - $center;
+   if (($dx * $dx) + ($dy * $dy) > $radiusSq) {
+    imagesetpixel($dst, $x, $y, $transparent);
+   }
+  }
+ }
+ imagesavealpha($dst, true);
+ $ok = @imagepng($dst, $circlePath, 6);
+ imagedestroy($src);
+ imagedestroy($dst);
+ return $ok && is_file($circlePath);
+}
+
 function avatar_output_image($serverId, $actorId, $row) {
  if (!$row || !$row['file_name']) {
   http_response_code(404);
@@ -77,17 +135,21 @@ function avatar_output_image($serverId, $actorId, $row) {
   http_response_code(404);
   exit;
  }
- $etag = '"avatar-' . intval($serverId) . '-' . intval($actorId) . '-' . intval($row['version']) . '"';
+ $circlePath = avatar_circle_png_path($filePath);
+ $useCircle = avatar_build_circle_png($filePath, $circlePath);
+ $outputPath = $useCircle ? $circlePath : $filePath;
+ $contentType = $useCircle ? 'image/png' : 'image/jpeg';
+ $etag = '"avatar-circle-v1-' . intval($serverId) . '-' . intval($actorId) . '-' . intval($row['version']) . '"';
  if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && $_SERVER['HTTP_IF_NONE_MATCH'] === $etag) {
   header('ETag: ' . $etag);
   http_response_code(304);
   exit;
  }
- header('Content-Type: image/jpeg');
- header('Content-Length: ' . filesize($filePath));
+ header('Content-Type: ' . $contentType);
+ header('Content-Length: ' . filesize($outputPath));
  header('Cache-Control: public, max-age=60');
  header('ETag: ' . $etag);
- readfile($filePath);
+ readfile($outputPath);
  exit;
 }
 
@@ -284,6 +346,10 @@ if ($old && $old['file_name']) {
  $oldPath = $dir . DIRECTORY_SEPARATOR . basename($old['file_name']);
  if ($oldPath !== $filePath && is_file($oldPath)) {
   @unlink($oldPath);
+ }
+ $oldCirclePath = avatar_circle_png_path($oldPath);
+ if ($oldPath !== $filePath && is_file($oldCirclePath)) {
+  @unlink($oldCirclePath);
  }
 }
 

@@ -6949,3 +6949,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_ef971aa1.js` → `avatar-system_3c58691a.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `3c58691a`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
 
 **Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới và tải sạch cache. Cần chụp lại đúng ba màn: Xung Quanh, popup player từ chat, và màn `Xem`; cả ba avatar custom phải nằm tròn đúng tâm trong viền, không còn góc vuông/mất ảnh/cắt lệch. Avatar mặc định phải giữ nguyên.
+
+## 281. Bỏ Egret Shape mask, xuất avatar PNG tròn bằng PHP GD (2026-08-06)
+
+**Triệu chứng/phạm vi**: người dùng xác nhận production đã chạy đúng token `3c58691a` nhưng ba lỗi vẫn giữ nguyên: Xung Quanh lộ ảnh vuông, popup player mất ảnh trong viền, màn Xem chỉ lộ một phần avatar. Điều này loại trừ cache/deploy và chứng minh sửa timing ở mục 280 chưa giải quyết được cơ chế mask của engine.
+
+**Nguyên nhân**: Egret runtime active quản lý DisplayObject mask qua `$mask/$maskedObject` và render mode phụ thuộc mask DisplayObject/transform trên stage. Dùng một `egret.Shape` nằm ngoài `eui.Image` khiến kết quả phụ thuộc cây hiển thị/layout của từng skin; việc trì hoãn một nhịp vẫn không làm cơ chế này ổn định trên ba cấu trúc khác nhau. Asset `yuanhead...` gốc không gặp lỗi vì bản thân texture đã có alpha trong suốt, không cần runtime Shape mask.
+
+**Cách sửa**: chuyển bo tròn về đúng dạng asset. `avatar.php` thêm `avatar_build_circle_png()`: đọc JPEG avatar hiện có bằng GD, crop/resample 128×128, đặt alpha=127 cho pixel ngoài bán kính 62px và cache file dẫn xuất `<avatar>.circle.png`. `avatar_output_image()` ưu tiên trả PNG dẫn xuất với `Content-Type: image/png`; ETag đổi sang `avatar-circle-v1-*` để không tái dùng cache JPEG cũ. Action `image` và `image_by_name` cùng đi qua hàm này nên cả avatar theo actor ID lẫn danh sách Xung Quanh đều thống nhất. Khi upload avatar mới, file circle dẫn xuất của avatar cũ cũng được dọn. Phía client bỏ việc tạo/định vị Shape mask; helper `ensureAvatarCircle()` chỉ đảm bảo tháo mask cũ, còn callback `sourceSize=66` của Tiên Minh vẫn giữ nguyên.
+
+**Kiểm thử**: `node --check` sạch cho avatar bundle; `git diff --check` sạch; đối chiếu GD production trước đó đã xác nhận `GD Support enabled`, JPEG/PNG enabled. Môi trường local không có `php-cli`, nên PHP chưa chạy `php -l` tại local. Trace xác nhận cả `action=image` và `action=image_by_name` dùng `avatar_output_image()`, và cache PNG nằm cùng thư mục avatar đã được production write-test xác nhận có quyền ghi.
+
+**Cache-bust**: `avatar-system_3c58691a.js` → `avatar-system_f5db914d.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `f5db914d`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: deploy bắt buộc cả `reg/api/avatar.php` và bundle/manifest/loader/version mới. Sau đó tải trực tiếp URL avatar phải trả `Content-Type: image/png`, rồi tải sạch game và kiểm tra lại đúng ba màn. Kỳ vọng ảnh custom tròn do alpha của texture, không còn phụ thuộc Shape mask của Egret; avatar mặc định không thay đổi.

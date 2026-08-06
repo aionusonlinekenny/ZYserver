@@ -139,53 +139,12 @@
         if (actorId && serverId) delete cache[serverId + ":" + actorId];
     }
 
-    function applyAvatarCircle(image, inset, requestId) {
-        if (!image || !image.parent) return;
-        if (image._playerAvatarMaskRequest !== requestId) return;
-        var bounds = typeof image.getTransformedBounds === "function"
-            ? image.getTransformedBounds(image.parent)
-            : null;
-        var scaleX = Math.abs(Number(image.scaleX) || 1);
-        var scaleY = Math.abs(Number(image.scaleY) || 1);
-        var displayWidth = bounds && Number(bounds.width) > 0
-            ? Number(bounds.width)
-            : (Number(image.width) || 0) * scaleX;
-        var displayHeight = bounds && Number(bounds.height) > 0
-            ? Number(bounds.height)
-            : (Number(image.height) || 0) * scaleY;
-        var size = Math.min(displayWidth, displayHeight);
-        if (size <= 4) return;
-        inset = Math.max(0, Number(inset) || 0);
-        var mask = image._playerAvatarCircleMask;
-        if (!mask) {
-            mask = new egret.Shape();
-            mask.touchEnabled = false;
-            image.parent.addChild(mask);
-            image.mask = mask;
-            image._playerAvatarCircleMask = mask;
-        }
-        var displayX = bounds ? Number(bounds.x) : Number(image.x) || 0;
-        var displayY = bounds ? Number(bounds.y) : Number(image.y) || 0;
-        mask.x = displayX + (displayWidth - size) / 2;
-        mask.y = displayY + (displayHeight - size) / 2;
-        mask.graphics.clear();
-        mask.graphics.beginFill(0xffffff, 1);
-        mask.graphics.drawCircle(size / 2, size / 2, size / 2 - inset);
-        mask.graphics.endFill();
-    }
-
-    function ensureAvatarCircle(image, inset) {
-        if (!image) return;
-        var requestId = (numberValue(image._playerAvatarMaskRequest) || 0) + 1;
-        image._playerAvatarMaskRequest = requestId;
-        egret.callLater(function () {
-            applyAvatarCircle(image, inset, requestId);
-        }, this);
+    function ensureAvatarCircle(image) {
+        clearAvatarCircle(image);
     }
 
     function clearAvatarCircle(image) {
         if (!image) return;
-        image._playerAvatarMaskRequest = (numberValue(image._playerAvatarMaskRequest) || 0) + 1;
         if (!image._playerAvatarCircleMask) return;
         var mask = image._playerAvatarCircleMask;
         image.mask = null;
