@@ -6837,3 +6837,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_70a06f5e.js` → `avatar-system_9f181ca4.js`; `manifest.json` trỏ bundle mới, query manifest trong `index.php` và `WWW/version.txt` cùng đổi sang `9f181ca4`. Giữ nguyên `default.thm_693b56a7.js` và `main.min_10a132ee.js` vì không sửa hai bundle này.
 
 **Chưa kiểm chứng thực tế**: cần deploy bundle avatar mới + `manifest.json` + `index.php` + `version.txt`, tải lại game sạch cache và chụp lại góc avatar. Kỳ vọng ảnh cá nhân bị cắt tròn gọn trong vùng 74 px, khung/VIP giữ nguyên vị trí; nếu viền cần rộng/hẹp hơn thì tinh chỉnh inset theo ảnh thực tế.
+
+## 273. Tăng preview avatar và thu nhỏ nút Đổi Avatar trong Cài đặt (2026-08-06)
+
+**Triệu chứng/phạm vi**: người dùng xác nhận avatar tròn ở MainView đã đẹp. Trong popup `Cài đặt`, preview avatar cá nhân 64×64 còn hơi nhỏ khó nhìn ảnh, trong khi nút `Đổi Avatar` chiếm diện tích khá lớn trên cùng một hàng.
+
+**Nguyên nhân**: UI avatar trong `SettingView` được dựng runtime bởi `ensureSettingsAvatar()` của bundle avatar, không nằm trong `settingskin.exml`: row cao 72, preview 64×64, gap 28 và nút `SkinBtn2` giữ nguyên scale 1. `contentGroup` của skin cao 462 nên còn đủ không gian để tăng riêng hàng đầu.
+
+**Cách sửa**: tăng row 72→92, preview 64×64→84×84, giảm gap 28→24; giữ nguyên `SkinBtn2` nhưng scale nút xuống 0.85 ở cả hai chiều để viền/nội dung không bị méo. Giữ `contentGroup.layout.gap=18`; tổng chiều cao vẫn nằm trong vùng 462 và không đổi sáu dòng checkbox bên dưới.
+
+**Kiểm thử**: `node -c` sạch cho bundle avatar; đối chiếu `settingskin.exml` xác nhận `contentGroup height=462`; `manifest.json` parse hợp lệ; loader/version chỉ trỏ bundle avatar mới; `git diff --check` sạch.
+
+**Cache-bust**: `avatar-system_9f181ca4.js` → `avatar-system_0d7e767b.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `0d7e767b`. Giữ nguyên `default.thm_693b56a7.js` và `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới, tải lại popup Cài đặt và chụp ảnh xác nhận preview 84×84 đủ rõ, nút nhỏ cân đối và hàng `Tự động thi triển Thần Phạt` vẫn nằm gọn trong khung.

@@ -239,20 +239,22 @@
         if (!view || !view.contentGroup || (view.btnAvatar && view.avatarPreview)) return;
         var row = new eui.Group();
         row.width = 360;
-        row.height = 72;
+        row.height = 92;
         var layout = new eui.HorizontalLayout();
-        layout.gap = 28;
+        layout.gap = 24;
         layout.horizontalAlign = "center";
         layout.verticalAlign = "middle";
         row.layout = layout;
 
         var preview = new eui.Image();
-        preview.width = 64;
-        preview.height = 64;
+        preview.width = 84;
+        preview.height = 84;
         preview.source = "yuanhead10";
         var button = new eui.Button();
         button.label = "Đổi Avatar";
         button.skinName = "SkinBtn2";
+        button.scaleX = 0.85;
+        button.scaleY = 0.85;
         row.addChild(preview);
         row.addChild(button);
 
