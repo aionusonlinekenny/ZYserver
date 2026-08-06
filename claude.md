@@ -6823,3 +6823,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: không cần; chỉ thêm file SQL hỗ trợ triển khai và cập nhật tài liệu, không sửa client/runtime.
 
 **Chưa kiểm chứng thực tế**: import `reg/api/sql/player_avatar.sql` vào MySQL production, tải lại `/reg/api/avatar-test.php?server_id=1`; trạng thái phải đổi từ `CHƯA CÓ` sang `ĐÃ CÓ`, sau đó thử đổi avatar trong game.
+
+## 272. Cắt avatar cá nhân thành hình tròn trong khung MainView (2026-08-06)
+
+**Triệu chứng/phạm vi**: upload/lưu/đọc avatar production đã hoạt động, nhưng ảnh cá nhân hiện thành hình vuông 78×78 ở góc trái, phủ ra ngoài phần chân dung tròn của khung nhân vật/VIP.
+
+**Nguyên nhân**: `SkinPlayFun` đặt `MainView.face` tại `x=20,y=4,width=78,height=78`. Asset mặc định `yuanhead10` là sprite có vùng alpha trong suốt nên tự trông tròn, còn avatar server được re-encode JPEG nên không có alpha; `avatar-system` chỉ thay `image.source` và chưa tạo mask.
+
+**Cách sửa**: thêm `ensureMainFaceCircle()` trong bundle `avatar-system`. Khi `MainView.initUI` hoàn tất, tạo `egret.Shape` cùng parent với `face`, vẽ mask tròn tâm giữa ảnh với inset 2 (đường kính hiển thị 74 trên khung 78×78), gán `face.mask` rồi mới tải avatar. Mask được cache trên chính Image để không tạo lặp nếu init lại. Không thay skin/khung/VIP và không crop lại file server.
+
+**Kiểm thử**: đối chiếu `PlayFunSkin.exml` và class `SkinPlayFun` active xác nhận `face` đúng 78×78 tại `(20,4)`; `node -c` sạch cho bundle avatar mới; `manifest.json` parse hợp lệ; tìm kiếm xác nhận loader/version không còn tham chiếu bundle avatar cũ; `git diff --check` sạch.
+
+**Cache-bust**: `avatar-system_70a06f5e.js` → `avatar-system_9f181ca4.js`; `manifest.json` trỏ bundle mới, query manifest trong `index.php` và `WWW/version.txt` cùng đổi sang `9f181ca4`. Giữ nguyên `default.thm_693b56a7.js` và `main.min_10a132ee.js` vì không sửa hai bundle này.
+
+**Chưa kiểm chứng thực tế**: cần deploy bundle avatar mới + `manifest.json` + `index.php` + `version.txt`, tải lại game sạch cache và chụp lại góc avatar. Kỳ vọng ảnh cá nhân bị cắt tròn gọn trong vùng 74 px, khung/VIP giữ nguyên vị trí; nếu viền cần rộng/hẹp hơn thì tinh chỉnh inset theo ảnh thực tế.

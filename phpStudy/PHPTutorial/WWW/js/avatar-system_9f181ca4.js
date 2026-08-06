@@ -96,6 +96,23 @@
         if (actorId && serverId) delete cache[serverId + ":" + actorId];
     }
 
+    function ensureMainFaceCircle(image) {
+        if (!image || !image.parent || image._playerAvatarCircleMask) return;
+        var size = Math.min(Number(image.width) || 0, Number(image.height) || 0);
+        if (size <= 4) return;
+        var inset = 2;
+        var mask = new egret.Shape();
+        mask.touchEnabled = false;
+        mask.x = Number(image.x) + (Number(image.width) - size) / 2;
+        mask.y = Number(image.y) + (Number(image.height) - size) / 2;
+        mask.graphics.beginFill(0xffffff, 1);
+        mask.graphics.drawCircle(size / 2, size / 2, size / 2 - inset);
+        mask.graphics.endFill();
+        image.parent.addChild(mask);
+        image.mask = mask;
+        image._playerAvatarCircleMask = mask;
+    }
+
     function dataUrlToBlob(dataUrl) {
         var parts = dataUrl.split(",");
         var binary = atob(parts[1]);
@@ -269,6 +286,7 @@
     patchMethod("MainView", "initUI", function () {
         if (!this.face) return;
         var role = SubRoles.ins().getSubRoleByIndex(0);
+        ensureMainFaceCircle(this.face);
         loadAvatar(this.face, Actor.actorID, currentServerId(), "yuanhead" + role.job + "0");
     });
 
