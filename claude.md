@@ -6893,3 +6893,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_8dfcf5f0.js` → `avatar-system_6824da0f.js`; `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng đổi sang `6824da0f`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
 
 **Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới, tải sạch cache rồi mở Tiên Minh → Thành viên. Cần xác nhận hàng custom `EmĐẹpNhất` vẫn tròn/đúng cỡ và hàng avatar mặc định `ẢnhYên` trở lại đúng hình nguyên bản, không bị cắt lệch.
+
+## 277. Bo tròn avatar custom trong popup thông tin player/chat riêng (2026-08-06)
+
+**Triệu chứng/phạm vi**: sau khi avatar Tiên Minh đã được xác nhận đúng, popup thông tin player mở từ danh sách/chat riêng vẫn hiển thị avatar custom thành hình vuông 85×85 phía dưới viền tròn vàng; kích thước đúng nhưng bốn góc JPEG vẫn lộ rõ.
+
+**Nguyên nhân**: screenshot khớp chính xác `SkinPlayerInfo` trong `playerinfoskin.exml`: `imgHead` cố định 85×85, `imgBg` dùng `guildkuang` 92×95 và bốn nút `Nhắn riêng / Xem / Chặn / Bạn bè`. Runtime `PlayerTipsBaseWin.initToView()` gán `yuanhead...`; hook avatar hiện có gọi `loadAvatar()` cho `imgHead` nhưng chưa truyền `onCustomApply`, nên texture server được thay vào đúng kích thước mà không có circle mask.
+
+**Cách sửa**: giữ nguyên skin và kích thước `imgHead`. Trong hook `PlayerTipsBaseWin.initToView`, tháo mask cũ khi popup được tái sử dụng rồi gọi `loadAvatar()` với `onCustomApply`; chỉ khi server thực sự trả texture custom mới gọi `ensureAvatarCircle(image, 2)`. Avatar `yuanhead...` mặc định tiếp tục không bị resize/mask theo nguyên tắc đã xác nhận ở mục 276.
+
+**Kiểm thử**: trace runtime xác nhận `PlayerTipsBaseWin.skinName="SkinPlayerInfo"`; đối chiếu source/compiled theme xác nhận `imgHead=85×85` và `imgBg=92×95`; `node -c` sạch cho bundle avatar; callback custom của popup dùng inset 2; `manifest.json` parse hợp lệ và `git diff --check` sạch.
+
+**Cache-bust**: `avatar-system_6824da0f.js` → `avatar-system_2f377a09.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `2f377a09`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới, tải sạch cache rồi mở lại popup từ chat riêng. Cần xác nhận avatar custom nằm tròn gọn trong `guildkuang`, còn player chưa đổi avatar vẫn hiển thị nguyên bản.

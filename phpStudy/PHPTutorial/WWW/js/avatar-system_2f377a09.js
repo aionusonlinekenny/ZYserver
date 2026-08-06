@@ -356,7 +356,10 @@
 
     patchMethod("PlayerTipsBaseWin", "initToView", function () {
         if (!this.imgHead || !this.currId) return;
-        loadAvatar(this.imgHead, this.currId, serverIdOf(this.data), this.imgHead.source);
+        clearAvatarCircle(this.imgHead);
+        loadAvatar(this.imgHead, this.currId, serverIdOf(this.data), this.imgHead.source, undefined, function (image) {
+            ensureAvatarCircle(image, 2);
+        });
     });
     patchMethod("MembersInfoWin", "update_a94", function () {
         if (!this.imgHead || !this._data) return;
