@@ -6935,3 +6935,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_100b4948.js` → `avatar-system_ef971aa1.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `ef971aa1`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
 
 **Chưa kiểm chứng thực tế**: sau deploy cần tải sạch cache và mở Xung Quanh. Kỳ vọng ảnh cá nhân lớn lấy avatar custom hiện tại; mỗi dòng gần đây có custom sẽ lấy đúng ảnh theo server+tên và được bo tròn, còn player chưa đổi avatar giữ nguyên `yuanhead` gốc.
+
+## 280. Sửa lệch mask avatar trên ba skin dùng constraint layout (2026-08-06)
+
+**Triệu chứng/phạm vi**: screenshot production sau mục 279 cho thấy ba biểu hiện cùng lúc: `Skinzaoyu.myFace` đã lấy đúng ảnh custom nhưng còn lộ mảng vuông trên/trái; popup `SkinPlayerInfo` chỉ còn viền vàng và mất hẳn ảnh; `SkinRRoleWin.headIcon` chỉ lộ một mẩu avatar ở góc dưới/trái.
+
+**Nguyên nhân**: helper `ensureAvatarCircle()` tạo mask ngay trong callback tải texture và lấy trực tiếp `image.x/y`. Với các Image được đặt bằng `left/top`, `horizontalCenter/verticalCenter` hoặc nằm trong Group constraint-layout, callback có thể chạy trước nhịp EUI validate/layout; lúc đó `x/y` vẫn là tọa độ cũ/default (thường gần `0,0`). Sau đó EUI dời Image đến vị trí thật nhưng Shape mask vẫn đứng yên, nên tùy khoảng giao nhau mà ảnh bị lộ góc, biến mất hoàn toàn hoặc chỉ còn một mẩu. Ba screenshot khớp chính xác ba mức giao nhau này.
+
+**Cách sửa**: tách việc vẽ thành `applyAvatarCircle()`. `ensureAvatarCircle()` giờ tạo request generation và dùng `egret.callLater()` để đợi một nhịp layout trước khi đặt mask; vị trí/kích thước ưu tiên lấy từ `image.getTransformedBounds(image.parent)` thay vì tự suy ra từ `x/y × scale`. `clearAvatarCircle()` tăng generation để hủy callback mask cũ nếu renderer bị tái sử dụng trước nhịp kế tiếp. Giữ nguyên nguyên tắc chỉ mask khi texture custom thực sự tồn tại; avatar `yuanhead...` mặc định không bị can thiệp.
+
+**Kiểm thử**: `node --check` sạch cho avatar bundle; `git diff --check` sạch; đối chiếu EXML xác nhận ba ảnh lỗi dùng ba kiểu constraint khác nhau (`Skinzaoyu.myFace` center, `SkinPlayerInfo.imgHead` left/top, `SkinRRoleWin.headIcon` center) nên sửa ở helper chung là đúng scope. Không đổi EXML, `default.thm` hay `main.min`.
+
+**Cache-bust**: `avatar-system_ef971aa1.js` → `avatar-system_3c58691a.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `3c58691a`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới và tải sạch cache. Cần chụp lại đúng ba màn: Xung Quanh, popup player từ chat, và màn `Xem`; cả ba avatar custom phải nằm tròn đúng tâm trong viền, không còn góc vuông/mất ảnh/cắt lệch. Avatar mặc định phải giữ nguyên.
