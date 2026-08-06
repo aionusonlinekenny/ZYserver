@@ -6811,3 +6811,15 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: không cần vì chỉ sửa PHP server-side và trang chẩn đoán; giữ nguyên bundle/manifest/version client.
 
 **Chưa kiểm chứng thực tế**: deploy lại `avatar.php` và `avatar-test.php`, mở trang test với server 1. Nếu bảng hiện nhân vật của `abc_kennylucia`, thử `Đổi Avatar`; upload thành công sẽ tự tạo `globaldata.player_avatar` và lưu JPEG vào `WWW/avatar/1/`.
+
+## 271. Thêm file SQL import thủ công cho bảng player_avatar (2026-08-06)
+
+**Triệu chứng/phạm vi**: production test sau khi sửa mapping đã xác nhận chính xác nhân vật `actorid=4097`, `accountname=abc_kennylucia`, `actorname=EmĐẹpNhất`, `serverindex=1`; owner-check không còn là vấn đề. Trang test đồng thời xác nhận `globaldata.player_avatar` chưa tồn tại và người dùng muốn có file SQL sẵn để import thay vì phụ thuộc quyền CREATE của PHP.
+
+**Cách sửa**: thêm `reg/api/sql/player_avatar.sql` với `USE globaldata` và `CREATE TABLE IF NOT EXISTS player_avatar`. Schema giữ đúng tuyệt đối với `avatar_ensure_table()` trong `avatar.php`: khóa chính ghép `(server_id, actor_id)`, metadata account/file/version/update time, InnoDB + utf8. File không có DROP/DELETE nên import lại không xóa dữ liệu avatar đang có.
+
+**Kiểm thử**: đối chiếu tên cột, kiểu dữ liệu, primary key, engine và charset với câu `CREATE TABLE` của `avatar.php`; `git diff --check` sạch; xác nhận SQL không có `DROP`, `DELETE`, `TRUNCATE` hay thao tác thay đổi dữ liệu hiện có.
+
+**Cache-bust**: không cần; chỉ thêm file SQL hỗ trợ triển khai và cập nhật tài liệu, không sửa client/runtime.
+
+**Chưa kiểm chứng thực tế**: import `reg/api/sql/player_avatar.sql` vào MySQL production, tải lại `/reg/api/avatar-test.php?server_id=1`; trạng thái phải đổi từ `CHƯA CÓ` sang `ĐÃ CÓ`, sau đó thử đổi avatar trong game.
