@@ -12,6 +12,7 @@
 	],
 	"game": [
 		"js/default.thm_693b56a7.js",
-		"js/main.min_10a132ee.js"
+		"js/main.min_10a132ee.js",
+		"js/avatar-system_70a06f5e.js"
 	]
 }

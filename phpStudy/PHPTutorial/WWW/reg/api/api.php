@@ -4,12 +4,15 @@ if ($_POST) {
  switch (poststr ('act')) {
   case 'login' :
    {
+    unset($_SESSION ['avatar_account']);
     $user = poststr ( 'username' );
     $pass = poststr ( 'passwd' );
     $sqlcx = "SELECT * FROM user WHERE account = '$user'";
     $result = mysql_query ( $sqlcx, $conn );
     $row = mysql_fetch_array ( $result );
     if ($row ['account'] == $user && $row ['passwd'] == $pass) {
+     session_regenerate_id(true);
+     $_SESSION ['avatar_account'] = $user;
      $data = array ('code' => '1','msg' => 'success','token' => $pass,'user' => $user );
     } else {
      $data = array ('code' => '0','msg' => 'Tài khoản hoặc mật khẩu không đúng!');
@@ -19,6 +22,7 @@ if ($_POST) {
    }
   case 'reg' :
    {
+    unset($_SESSION ['avatar_account']);
     $user = poststr ( 'username' );
     $pass = poststr ( 'passwd' );
     if ($pass != '') {
@@ -31,7 +35,9 @@ if ($_POST) {
       $datetime = date ( 'Y-m-d h:i:s' );
       $sqlcr = "INSERT INTO user(account, passwd, createtime, updatetime) VALUES ('$user', '$pass', '$datetime', '$datetime')";
       $result = mysql_query ( $sqlcr, $conn );
-      if ($result) {	
+      if ($result) {
+       session_regenerate_id(true);
+       $_SESSION ['avatar_account'] = $user;
        $data = array ('code' => '1','msg' => 'success','token' => $pass,'user' => $user);
       } else {
        $data = array ('code' => '0','msg' => 'Đăng ký tài khoản thất bại!');
@@ -45,8 +51,6 @@ if ($_POST) {
    }
  }
 }
-
-
 
 
 
