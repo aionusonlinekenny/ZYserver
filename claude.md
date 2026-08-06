@@ -6797,3 +6797,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: không cần vì chỉ thêm PHP server-side; giữ nguyên toàn bộ bundle/manifest/version client.
 
 **Chưa kiểm chứng thực tế**: deploy file PHP mới, đăng nhập game lại trong cùng browser rồi mở `/reg/api/avatar-test.php?server_id=1`; gửi ảnh kết quả để xác định chính xác `actorid`, `accountname` hay `serverindex` đang làm owner check thất bại.
+
+## 270. Sửa mapping tài khoản web sang accountname của GameWorld cho avatar (2026-08-06)
+
+**Triệu chứng/phạm vi**: production test xác nhận session avatar là `kennylucia`, đọc `actors.actors` thành công nhưng không có dòng nào với `accountname='kennylucia'`, nên upload luôn dừng ở owner-check trước khi tạo `player_avatar`.
+
+**Nguyên nhân**: trace luồng đăng nhập hiện hành xác nhận `index.php` cấu hình `agentId="abc"`. `SDkMsg.InitBasePlatInfo()` dùng `agentId` này làm `channelid`, và `GameSelectServeUI` gán `HttpProperty.openID = channelid + "_" + uid` trước khi `GameSocket.login()`. Vì vậy tài khoản `kennylucia` của web được gửi vào game dưới identity `abc_kennylucia`; owner-check cũ so trực tiếp với `kennylucia` là sai mapping.
+
+**Cách sửa**: `avatar.php` xác minh `actorid + serverindex` với `accountname` thuộc một trong hai identity an toàn suy ra trực tiếp từ session: raw username (tương thích dữ liệu cũ) hoặc `abc_` + username (identity runtime hiện tại). Không nhận accountname tùy ý từ client. `avatar-test.php` dùng cùng mapping và hiện thêm `Tài khoản game dự kiến` để kiểm chứng production.
+
+**Kiểm thử**: parse sạch `avatar.php` và `avatar-test.php` bằng `php-parser 3.7.0`; đối chiếu `index.php` có `agentId=abc`, active `main.min_10a132ee.js` có phép gán `HttpProperty.openID=channelid+"_"+uid`; `git diff --check` sạch.
+
+**Cache-bust**: không cần vì chỉ sửa PHP server-side và trang chẩn đoán; giữ nguyên bundle/manifest/version client.
+
+**Chưa kiểm chứng thực tế**: deploy lại `avatar.php` và `avatar-test.php`, mở trang test với server 1. Nếu bảng hiện nhân vật của `abc_kennylucia`, thử `Đổi Avatar`; upload thành công sẽ tự tạo `globaldata.player_avatar` và lưu JPEG vào `WWW/avatar/1/`.

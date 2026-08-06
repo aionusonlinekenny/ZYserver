@@ -16,6 +16,7 @@ $loggedIn = isset($_SESSION['avatar_account']) && $_SESSION['avatar_account'] !=
 $serverId = isset($_GET['server_id']) && preg_match('/^[0-9]+$/', (string)$_GET['server_id'])
  ? intval($_GET['server_id']) : 1;
 $account = $loggedIn ? $_SESSION['avatar_account'] : '';
+$gameAccount = $loggedIn ? 'abc_' . $account : '';
 $actors = array();
 $actorQueryOk = false;
 $sameServerCount = 0;
@@ -23,8 +24,10 @@ $avatarTableExists = false;
 
 if ($loggedIn) {
  $accountEsc = mysql_real_escape_string($account, $conn);
+ $gameAccountEsc = mysql_real_escape_string($gameAccount, $conn);
  $sql = "SELECT actorid, accountname, actorname, serverindex FROM actors.actors "
-      . "WHERE accountname='" . $accountEsc . "' ORDER BY serverindex ASC, actorid ASC";
+      . "WHERE accountname IN ('" . $accountEsc . "','" . $gameAccountEsc . "') "
+      . "ORDER BY serverindex ASC, actorid ASC";
  $result = @mysql_query($sql, $conn);
  if ($result) {
   $actorQueryOk = true;
@@ -62,6 +65,7 @@ if ($loggedIn) {
    <div class="note">Chưa có session avatar. Hãy đăng nhập game lại trong trình duyệt này, sau đó mở lại trang test.</div>
   <?php } else { ?>
    <div class="row">Tài khoản session: <strong><?php echo avatar_test_h($account); ?></strong></div>
+   <div class="row">Tài khoản game dự kiến: <strong><?php echo avatar_test_h($gameAccount); ?></strong></div>
    <div class="row">Server đang kiểm tra: <strong><?php echo intval($serverId); ?></strong></div>
    <div class="row">Đọc bảng actors: <?php echo avatar_test_status($actorQueryOk); ?></div>
    <div class="row">Nhân vật thuộc tài khoản: <strong><?php echo count($actors); ?></strong></div>
@@ -71,7 +75,7 @@ if ($loggedIn) {
    <?php if (!$actorQueryOk) { ?>
     <div class="note">Không đọc được bảng nhân vật. Hãy gửi ảnh trang này để mình kiểm tra tiếp; trang test không hiển thị chi tiết lỗi MySQL để tránh lộ thông tin nội bộ.</div>
    <?php } elseif (count($actors) === 0) { ?>
-    <div class="note">Không tìm thấy nhân vật nào có accountname trùng với tài khoản session. Đây chính là lý do API hiện báo không có quyền đổi avatar.</div>
+    <div class="note">Không tìm thấy nhân vật nào có accountname trùng với tài khoản session hoặc tài khoản game dự kiến. Hãy gửi ảnh trang này để mình kiểm tra tiếp mapping tài khoản.</div>
    <?php } else { ?>
     <table>
      <thead><tr><th>actorid</th><th>accountname</th><th>actorname</th><th>serverindex</th><th>Khớp server?</th></tr></thead>

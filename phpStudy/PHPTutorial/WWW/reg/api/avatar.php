@@ -165,12 +165,15 @@ if ($serverId <= 0 || $actorId <= 0) {
  avatar_json(0, 'Nhân vật không hợp lệ');
 }
 
-$account = mysql_real_escape_string($_SESSION['avatar_account'], $conn);
+$sessionAccount = $_SESSION['avatar_account'];
+$account = mysql_real_escape_string($sessionAccount, $conn);
+$gameAccount = mysql_real_escape_string('abc_' . $sessionAccount, $conn);
 $ownerSql = "SELECT actorid FROM actors.actors WHERE actorid=" . intval($actorId)
           . " AND serverindex=" . intval($serverId)
-          . " AND accountname='" . $account . "' LIMIT 1";
+          . " AND accountname IN ('" . $account . "','" . $gameAccount . "') LIMIT 1";
 $ownerResult = @mysql_query($ownerSql, $conn);
-if (!$ownerResult || !mysql_fetch_assoc($ownerResult)) {
+$owner = $ownerResult ? mysql_fetch_assoc($ownerResult) : false;
+if (!$owner) {
  avatar_json(0, 'Bạn không có quyền đổi avatar của nhân vật này');
 }
 
