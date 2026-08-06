@@ -6783,3 +6783,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cách kiểm tra production**: đăng nhập game lại trong cùng browser để có session, sau đó mở `/reg/api/avatar.php?action=check&server_id=1` (đổi `1` theo server đang chơi). Thành công sẽ trả `code:1`, `write_test:true`, `cleanup:true`. Nếu `code:0`, trường `msg` cho biết lỗi ở bước tạo thư mục, quyền ghi, ghi file hay xóa file.
 
 **Cache-bust**: không cần. Thay đổi chỉ nằm ở PHP server và tài liệu; giữ nguyên `default.thm_693b56a7.js`, `main.min_10a132ee.js`, `avatar-system_70a06f5e.js`, manifest loader và version client.
+
+## 269. Thêm trang chẩn đoán avatar không cần chạy SQL thủ công (2026-08-06)
+
+**Triệu chứng/phạm vi**: upload avatar đi đến bước xác minh chủ nhân nhưng trả `Bạn không có quyền đổi avatar của nhân vật này`. Người dùng không quen SQL-Front/phpMyAdmin nên cần một cách chẩn đoán trực tiếp bằng trình duyệt.
+
+**Nguyên nhân cần xác minh**: lỗi này xảy ra trước bước tạo/lưu `player_avatar`: câu kiểm tra owner cần `actorid + serverindex + accountname` cùng khớp trong `actors.actors`. Schema thật trong repo xác nhận bảng `actors` có đúng bốn field `actorid`, `accountname`, `actorname`, `serverindex`; cần xem dữ liệu production của chính session đang đăng nhập để biết phần nào lệch.
+
+**Cách sửa**: thêm `reg/api/avatar-test.php`, bắt buộc session `avatar_account`, mặc định kiểm tra `server_id=1`, chỉ truy vấn các nhân vật thuộc đúng account của session và hiển thị bảng dễ đọc gồm actor ID/tên/server cùng số dòng khớp server. Trang cũng kiểm tra không phá huỷ xem `globaldata.player_avatar` đã tồn tại hay chưa. Không hiển thị mật khẩu MySQL, không cho nhập account tùy ý và không liệt kê nhân vật của tài khoản khác.
+
+**Kiểm thử**: parse PHP bằng `php-parser 3.7.0`; `git diff --check` sạch; xác nhận trang không thực hiện CREATE/INSERT/UPDATE/DELETE và mọi dữ liệu DB/session được escape HTML trước khi render.
+
+**Cache-bust**: không cần vì chỉ thêm PHP server-side; giữ nguyên toàn bộ bundle/manifest/version client.
+
+**Chưa kiểm chứng thực tế**: deploy file PHP mới, đăng nhập game lại trong cùng browser rồi mở `/reg/api/avatar-test.php?server_id=1`; gửi ảnh kết quả để xác định chính xác `actorid`, `accountname` hay `serverindex` đang làm owner check thất bại.
