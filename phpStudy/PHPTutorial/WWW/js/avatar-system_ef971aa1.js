@@ -94,6 +94,45 @@
         loader.load(API + "?action=image&server_id=" + serverId + "&actor_id=" + actorId + "&v=" + token);
     }
 
+    function loadAvatarByName(image, actorName, serverId, fallback, version, onCustomApply) {
+        if (!image) return;
+        image._playerAvatarKey = "";
+        if (fallback !== undefined && fallback !== null) image.source = fallback;
+        actorName = String(actorName || "").replace(/^\s+|\s+$/g, "");
+        serverId = numberValue(serverId) || currentServerId();
+        if (!actorName || !serverId) return;
+
+        var key = "name:" + serverId + ":" + actorName;
+        image._playerAvatarKey = key;
+        var entry = cache[key];
+        if (entry && Date.now() - entry.time < CACHE_MS) {
+            if (entry.texture) {
+                if (typeof onCustomApply === "function") onCustomApply(image);
+                image.source = entry.texture;
+            }
+            return;
+        }
+        if (pending[key]) {
+            pending[key].push({ image: image, onCustomApply: onCustomApply });
+            return;
+        }
+
+        pending[key] = [{ image: image, onCustomApply: onCustomApply }];
+        var loader = new egret.ImageLoader();
+        loader.once(egret.Event.COMPLETE, function (event) {
+            var bitmapData = event.currentTarget.data;
+            if (!bitmapData) return completeLoad(key, null);
+            var texture = new egret.Texture();
+            texture.bitmapData = bitmapData;
+            completeLoad(key, texture);
+        }, this);
+        loader.once(egret.IOErrorEvent.IO_ERROR, function () {
+            completeLoad(key, null);
+        }, this);
+        var token = numberValue(version) || Math.floor(Date.now() / CACHE_MS);
+        loader.load(API + "?action=image_by_name&server_id=" + serverId + "&actor_name=" + encodeURIComponent(actorName) + "&v=" + token);
+    }
+
     function invalidate(actorId, serverId) {
         actorId = numberValue(actorId);
         serverId = numberValue(serverId) || currentServerId();
@@ -231,6 +270,7 @@
 
     window.PlayerAvatar = {
         apply: loadAvatar,
+        applyByName: loadAvatarByName,
         upload: upload,
         invalidate: invalidate,
         actorIdOf: actorIdOf,
@@ -339,6 +379,13 @@
     patchRenderer("SelectRoleItem", "dataChanged", "imgRole");
     patchRenderer("GuildAppltListBaseItemRender", "dataChanged", "myFace");
     patchRenderer("ChallengerItemRender", "dataChanged", "imgHead");
+    patchMethod("EncounterInfoItem", "dataChanged", function () {
+        if (!this.data || !this.face || !this.data.name) return;
+        clearAvatarCircle(this.face);
+        loadAvatarByName(this.face, this.data.name, currentServerId(), this.face.source, undefined, function (image) {
+            ensureAvatarCircle(image, 2);
+        });
+    });
     patchRenderer("AssistantItemRender", "dataChanged", "imgHead", function () {
         return this.data && this.data.vo;
     });
@@ -353,6 +400,15 @@
         return this.itemData || this.data;
     });
     patchRenderer("LastWeekRankItemRendererBase", "dataChanged", "head");
+
+    patchMethod("NearbyInfoWin", "childrenCreated", function () {
+        if (!this.myFace) return;
+        var role = SubRoles.ins().getSubRoleByIndex(0);
+        clearAvatarCircle(this.myFace);
+        loadAvatar(this.myFace, Actor.actorID, currentServerId(), "bigyuanhead" + role.job + "0", undefined, function (image) {
+            ensureAvatarCircle(image, 2);
+        });
+    });
 
     patchMethod("PlayerTipsBaseWin", "initToView", function () {
         if (!this.imgHead || !this.currId) return;

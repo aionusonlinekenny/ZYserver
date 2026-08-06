@@ -44,6 +44,18 @@ function avatar_find($serverId, $actorId, $conn) {
  return mysql_fetch_assoc($result);
 }
 
+function avatar_find_by_name($serverId, $actorName, $conn) {
+ $name = mysql_real_escape_string($actorName, $conn);
+ $sql = "SELECT p.actor_id, p.file_name, p.version FROM player_avatar p "
+      . "INNER JOIN actors.actors a ON a.actorid=p.actor_id AND a.serverindex=p.server_id "
+      . "WHERE p.server_id=" . intval($serverId) . " AND a.actorname='" . $name . "' LIMIT 1";
+ $result = @mysql_query($sql, $conn);
+ if (!$result) {
+  return false;
+ }
+ return mysql_fetch_assoc($result);
+}
+
 function avatar_storage_dir($serverId) {
  $webRoot = dirname(dirname(dirname(__FILE__)));
  return $webRoot . DIRECTORY_SEPARATOR . 'avatar' . DIRECTORY_SEPARATOR . intval($serverId);
@@ -52,6 +64,31 @@ function avatar_storage_dir($serverId) {
 function avatar_public_url($serverId, $actorId, $version) {
  return '/reg/api/avatar.php?action=image&server_id=' . intval($serverId)
       . '&actor_id=' . intval($actorId) . '&v=' . intval($version);
+}
+
+function avatar_output_image($serverId, $actorId, $row) {
+ if (!$row || !$row['file_name']) {
+  http_response_code(404);
+  exit;
+ }
+ $fileName = basename($row['file_name']);
+ $filePath = avatar_storage_dir($serverId) . DIRECTORY_SEPARATOR . $fileName;
+ if (!is_file($filePath)) {
+  http_response_code(404);
+  exit;
+ }
+ $etag = '"avatar-' . intval($serverId) . '-' . intval($actorId) . '-' . intval($row['version']) . '"';
+ if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && $_SERVER['HTTP_IF_NONE_MATCH'] === $etag) {
+  header('ETag: ' . $etag);
+  http_response_code(304);
+  exit;
+ }
+ header('Content-Type: image/jpeg');
+ header('Content-Length: ' . filesize($filePath));
+ header('Cache-Control: public, max-age=60');
+ header('ETag: ' . $etag);
+ readfile($filePath);
+ exit;
 }
 
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
@@ -64,28 +101,22 @@ if ($action === 'image') {
   exit;
  }
  $row = avatar_find($serverId, $actorId, $conn);
- if (!$row || !$row['file_name']) {
+ avatar_output_image($serverId, $actorId, $row);
+}
+
+if ($action === 'image_by_name') {
+ $serverId = avatar_int_param($_GET, 'server_id');
+ $actorName = isset($_GET['actor_name']) ? trim((string)$_GET['actor_name']) : '';
+ if ($serverId <= 0 || $actorName === '' || strlen($actorName) > 96) {
   http_response_code(404);
   exit;
  }
- $fileName = basename($row['file_name']);
- $filePath = avatar_storage_dir($serverId) . DIRECTORY_SEPARATOR . $fileName;
- if (!is_file($filePath)) {
+ $row = avatar_find_by_name($serverId, $actorName, $conn);
+ if (!$row) {
   http_response_code(404);
   exit;
  }
- $etag = '"avatar-' . $serverId . '-' . $actorId . '-' . intval($row['version']) . '"';
- if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && $_SERVER['HTTP_IF_NONE_MATCH'] === $etag) {
-  header('ETag: ' . $etag);
-  http_response_code(304);
-  exit;
- }
- header('Content-Type: image/jpeg');
- header('Content-Length: ' . filesize($filePath));
- header('Cache-Control: public, max-age=60');
- header('ETag: ' . $etag);
- readfile($filePath);
- exit;
+ avatar_output_image($serverId, intval($row['actor_id']), $row);
 }
 
 if ($action !== 'upload' && $action !== 'check') {

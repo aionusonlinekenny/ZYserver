@@ -6921,3 +6921,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_2f377a09.js` → `avatar-system_100b4948.js`; cập nhật `manifest.json`, query manifest `index.php` và `WWW/version.txt` cùng token `100b4948`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
 
 **Chưa kiểm chứng thực tế**: deploy bundle/manifest/loader/version mới, tải sạch cache, từ popup player bấm `Xem`; cần xác nhận avatar custom ở thanh dưới được cắt tròn gọn trong `touxiangkuang0`, còn avatar mặc định không thay đổi.
+
+## 279. Đưa avatar custom vào màn Xung Quanh / Người chơi gần đây (2026-08-06)
+
+**Triệu chứng/phạm vi**: màn `Xung Quanh` (`Skinzaoyu`) vẫn hiển thị `yuanhead` gốc ở ảnh cá nhân lớn phía trên và các dòng `Người chơi gần đây`, dù avatar custom đã hoạt động ở MainView, bạn bè, Tiên Minh và màn Xem player.
+
+**Nguyên nhân**: trace xác nhận `NearbyInfoWin.childrenCreated()` gán `myFace.source="bigyuanhead..."`, còn renderer `EncounterInfoItem.dataChanged()` gán `face.source="yuanhead..."`; cả hai class chưa có hook trong `avatar-system`. Đặc biệt `NearbyModel` không có `actorId`: protocol chỉ đọc `index/lv/zsLv/name/subRole...`; `Role.parser()` ở nhánh này cũng không cung cấp actor ID đáng tin, nên không thể dùng helper `actorIdOf()` như các danh sách khác.
+
+**Cách sửa**: hook `NearbyInfoWin.childrenCreated` để ảnh `myFace` dùng trực tiếp `Actor.actorID` và chỉ bo tròn inset 2 khi texture custom tồn tại. Hook `EncounterInfoItem.dataChanged` để giữ `yuanhead...` làm fallback và tải custom theo tên. API avatar thêm action public `image_by_name`, resolve chính xác bằng `server_id + actors.actors.actorname`, join với `player_avatar` để lấy `actor_id/file_name/version`, sau đó dùng chung hàm xuất JPEG/ETag với action `image`. Không dùng `NearbyModel.index` hay `Role.handle` làm actor ID để tránh lấy nhầm avatar.
+
+**Kiểm thử**: `node --check` sạch cho bundle avatar; trace source/compiled xác nhận `Skinzaoyu.myFace` là ảnh 131×130 và `ZaoYuInfoItem.face` là 70×70; xác nhận `NearbyInfoWin`/`EncounterInfoItem` là runtime active của màn; `git diff --check` sạch. Môi trường local không có `php-cli`, nên PHP được kiểm tra tĩnh nhưng chưa chạy `php -l` tại local.
+
+**Cache-bust**: `avatar-system_100b4948.js` → `avatar-system_ef971aa1.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `ef971aa1`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
+
+**Chưa kiểm chứng thực tế**: sau deploy cần tải sạch cache và mở Xung Quanh. Kỳ vọng ảnh cá nhân lớn lấy avatar custom hiện tại; mỗi dòng gần đây có custom sẽ lấy đúng ảnh theo server+tên và được bo tròn, còn player chưa đổi avatar giữ nguyên `yuanhead` gốc.
