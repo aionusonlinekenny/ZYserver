@@ -88,12 +88,75 @@ if ($action === 'image') {
  exit;
 }
 
-if ($action !== 'upload') {
+if ($action !== 'upload' && $action !== 'check') {
  avatar_json(0, 'Thao tác không hợp lệ');
 }
 
 if (!isset($_SESSION['avatar_account']) || $_SESSION['avatar_account'] === '') {
  avatar_json(0, 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại');
+}
+
+if ($action === 'check') {
+ $serverId = avatar_int_param($_GET, 'server_id');
+ if ($serverId <= 0) {
+  avatar_json(0, 'Server không hợp lệ');
+ }
+
+ $dir = avatar_storage_dir($serverId);
+ $created = false;
+ if (!is_dir($dir)) {
+  if (!@mkdir($dir, 0775, true)) {
+   avatar_json(0, 'Không thể tạo thư mục avatar', array(
+    'server_id' => $serverId,
+    'directory_ready' => false,
+    'write_test' => false,
+    'cleanup' => true
+   ));
+  }
+  $created = true;
+ }
+ if (!is_dir($dir) || !is_writable($dir)) {
+  avatar_json(0, 'Thư mục avatar không có quyền ghi', array(
+   'server_id' => $serverId,
+   'directory_ready' => is_dir($dir),
+   'write_test' => false,
+   'cleanup' => true
+  ));
+ }
+
+ $testName = '.avatar_write_test_' . substr(md5(uniqid('', true)), 0, 12) . '.tmp';
+ $testPath = $dir . DIRECTORY_SEPARATOR . $testName;
+ $testData = 'avatar-write-test';
+ $written = @file_put_contents($testPath, $testData);
+ if ($written !== strlen($testData) || !is_file($testPath)) {
+  if (is_file($testPath)) {
+   @unlink($testPath);
+  }
+  avatar_json(0, 'Không thể ghi file vào thư mục avatar', array(
+   'server_id' => $serverId,
+   'directory_ready' => true,
+   'write_test' => false,
+   'cleanup' => !is_file($testPath)
+  ));
+ }
+
+ $cleanup = @unlink($testPath);
+ if (!$cleanup) {
+  avatar_json(0, 'Ghi được nhưng không thể xóa file kiểm tra', array(
+   'server_id' => $serverId,
+   'directory_ready' => true,
+   'write_test' => true,
+   'cleanup' => false
+  ));
+ }
+
+ avatar_json(1, 'Thư mục avatar có quyền ghi', array(
+  'server_id' => $serverId,
+  'directory_ready' => true,
+  'directory_created' => $created,
+  'write_test' => true,
+  'cleanup' => true
+ ));
 }
 
 $serverId = avatar_int_param($_POST, 'server_id');

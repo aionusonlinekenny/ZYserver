@@ -6773,3 +6773,13 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: giữ nguyên `default.thm_693b56a7.js` và `main.min_10a132ee.js`; thêm mới bundle `avatar-system` sau `main.min` trong `manifest.json`; đổi query manifest và `WWW/version.txt` sang release token của bundle avatar. Không sửa hai bundle cũ vì toàn bộ avatar runtime được tách riêng.
 
 **Chưa kiểm chứng thực tế**: sau khi deploy cần đăng nhập lại một lần để có session upload mới, mở `Cài đặt` kiểm tra hàng `Đổi Avatar`, chọn ảnh trên Safari/iOS, xác nhận avatar góc trái đổi ngay; sau đó dùng tài khoản/player thứ hai mở chat/danh sách bạn/chi tiết player để xác nhận cùng avatar xuất hiện. Client khác có thể giữ ảnh cũ tối đa khoảng 60 giây do cache chủ động. Cần kiểm tra Windows PHP production đã bật GD và user chạy Apache có quyền ghi `WWW/avatar/`; API tự tạo bảng metadata ở upload đầu tiên nên MySQL account của web cũng cần quyền `CREATE/INSERT/UPDATE` trong `globaldata`.
+
+## 268. Thêm kiểm tra quyền ghi thư mục avatar trên server (2026-08-06)
+
+**Mục đích/phạm vi**: sau khi production xác nhận PHP GD, JPEG và PNG đều đã bật, cần có cách kiểm tra trực tiếp tiến trình PHP/Apache thực sự có thể tạo và ghi file trong thư mục avatar hay không trước khi thử upload ảnh thật.
+
+**Cách sửa**: thêm `action=check` vào `reg/api/avatar.php`. Endpoint vẫn bắt buộc `avatar_account` trong PHP session, nhận `server_id`, tự tạo `WWW/avatar/<server_id>/` với mode `0775` nếu chưa có, kiểm tra `is_writable`, ghi một file tạm có tên ngẫu nhiên rồi xóa ngay. JSON trả riêng trạng thái `directory_ready`, `directory_created`, `write_test` và `cleanup`; không trả đường dẫn tuyệt đối trên Windows để tránh lộ cấu trúc filesystem. `action=image` công khai và luồng `action=upload` hiện có được giữ nguyên.
+
+**Cách kiểm tra production**: đăng nhập game lại trong cùng browser để có session, sau đó mở `/reg/api/avatar.php?action=check&server_id=1` (đổi `1` theo server đang chơi). Thành công sẽ trả `code:1`, `write_test:true`, `cleanup:true`. Nếu `code:0`, trường `msg` cho biết lỗi ở bước tạo thư mục, quyền ghi, ghi file hay xóa file.
+
+**Cache-bust**: không cần. Thay đổi chỉ nằm ở PHP server và tài liệu; giữ nguyên `default.thm_693b56a7.js`, `main.min_10a132ee.js`, `avatar-system_70a06f5e.js`, manifest loader và version client.
