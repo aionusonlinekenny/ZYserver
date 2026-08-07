@@ -6963,3 +6963,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `avatar-system_3c58691a.js` → `avatar-system_f5db914d.js`; cập nhật `manifest.json`, query manifest trong `index.php` và `WWW/version.txt` cùng token `f5db914d`. Giữ nguyên `default.thm_3f4e4ff7.js` và `main.min_10a132ee.js`.
 
 **Chưa kiểm chứng thực tế**: deploy bắt buộc cả `reg/api/avatar.php` và bundle/manifest/loader/version mới. Sau đó tải trực tiếp URL avatar phải trả `Content-Type: image/png`, rồi tải sạch game và kiểm tra lại đúng ba màn. Kỳ vọng ảnh custom tròn do alpha của texture, không còn phụ thuộc Shape mask của Egret; avatar mặc định không thay đổi.
+
+## 282. Sửa chữ chồng chéo ở màn Tụ Linh và popup kết quả (2026-08-07)
+
+**Triệu chứng/phạm vi**: screenshot production cho thấy 5 nhãn `Nhấn để chiếm lĩnh` ở hàng trên của `SkinPointFight` tràn sang nhau; `Đếm ngược` dính vào giá trị thời gian. Popup `SkinPointResult` có header `Phần thưởng / Kinh nghiệm` chạm nhau và dòng `3 giây thoát Tụ Linh` nằm sát/đè khu vực nút `Xác nhận`.
+
+**Nguyên nhân**: EXML gốc được bố trí cho chữ Trung ngắn. Mỗi điểm chỉ rộng 96px nhưng nhãn Việt không có giới hạn width; timer chỉ rộng 200px; header kết quả dùng các tọa độ x cố định quá sát và countdown bị neo lệch phải ở cùng vùng với nút xác nhận. Runtime chỉ cập nhật text/visibility nên lỗi thuộc layout skin.
+
+**Cách sửa**: `PointFightSkin.exml` và compiled theme giới hạn `name/guild/occupy` trong đúng 96px, căn giữa, cho `Nhấn để\nchiếm lĩnh` xuống 2 dòng ở size 16; timer tăng 290px và tách vùng label/value. `PointResultSkin.exml` chia header 476px thành các cột có width rõ ràng, đổi header chung `Phần thưởng` thành `Uy Vọng`, và đưa countdown `N giây nữa sẽ thoát` thành hàng riêng căn giữa phía trên nút xác nhận. Source EXML và compiled `default.thm` được cập nhật đồng bộ.
+
+**Kiểm thử**: hai EXML parse sạch; `node --check` sạch cho compiled theme; `git diff --check` sạch; không còn chuỗi layout cũ `Nhấn để chiếm lĩnh` một dòng hay `giây thoát Tụ Linh` trong hai skin active.
+
+**Cache-bust**: `default.thm_3f4e4ff7.js` → `default.thm_2394a25d.js`; `manifest.json` trỏ bundle mới, query manifest trong `index.php` và `WWW/version.txt` cùng token `2394a25d`. Giữ nguyên `main.min_10a132ee.js` và `avatar-system_f5db914d.js`.
+
+**Chưa kiểm chứng thực tế**: sau deploy cần tải sạch cache và chụp lại màn Tụ Linh + popup kết quả. Kỳ vọng 5 nhãn chiếm lĩnh tách riêng từng ô, timer dễ đọc, header thưởng không chạm nhau và countdown nằm gọn trên nút `Xác nhận`.

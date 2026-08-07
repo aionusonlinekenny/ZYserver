@@ -21,12 +21,12 @@
 			</e:layout>
 		</e:List>
 		<e:Image y="300" width="417" height="40" horizontalCenter="0.5" x="82" scaleX="1" scaleY="1" source="tongyongbg7" scale9Grid="7,6,12,10" visible="false"/>
-		<e:Group y="250" scaleX="1" scaleY="1" width="455" horizontalCenter="0" height="20">
-			<e:Label text="Thứ hạng" y="0" size="20" x="1" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label id="NaN" text="Người chơi" y="0" size="20" x="86" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label text="Tiên Minh" y="0" size="20" x="225" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label text="Phần thưởng" y="0" size="20" x="330" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
-			<e:Label text="Kinh nghiệm" y="0" size="20" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xABEBFF" x="415"/>
+		<e:Group y="250" scaleX="1" scaleY="1" width="476" horizontalCenter="0" height="22">
+			<e:Label text="Thứ hạng" y="0" size="18" x="0" width="75" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label id="NaN" text="Người chơi" y="0" size="18" x="75" width="130" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label text="Tiên Minh" y="0" size="18" x="205" width="115" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label text="Uy Vọng" y="0" size="18" x="325" width="60" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xabebff"/>
+			<e:Label text="Kinh nghiệm" y="0" size="17" width="86" scaleX="1" scaleY="1" textAlign="center" fontFamily="Microsoft YaHei" textColor="0xABEBFF" x="390"/>
 		</e:Group>
 		<e:Scroller width="476" height="252" y="274" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
 			<e:Group height="0">
@@ -37,11 +37,11 @@
 				</e:List>
 			</e:Group>
 		</e:Scroller>
-		<e:Group id="timerGroup" horizontalCenter="161" x="393" scaleX="1" scaleY="1" bottom="57">
-			<e:Label id="info" text="5" y="8" textColor="0x00ff00" size="18" horizontalCenter="172" x="37" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei"/>
-			<e:Label text="giây thoát Tụ Linh" y="8" textColor="0x00FF00" size="18" horizontalCenter="172" x="37" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei"/>
+		<e:Group id="timerGroup" horizontalCenter="0" scaleX="1" scaleY="1" bottom="105">
+			<e:Label id="info" text="5" textColor="0x00ff00" size="18" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei"/>
+			<e:Label text="giây nữa sẽ thoát" textColor="0x00FF00" size="18" scaleX="1" scaleY="1" fontFamily="Microsoft YaHei"/>
 			<e:layout>
-			<e:HorizontalLayout gap="1"/>
+			<e:HorizontalLayout gap="4"/>
 			</e:layout>
 		</e:Group>
 	</e:Group>
