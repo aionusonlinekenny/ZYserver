@@ -6977,3 +6977,15 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `default.thm_3f4e4ff7.js` → `default.thm_2394a25d.js`; `manifest.json` trỏ bundle mới, query manifest trong `index.php` và `WWW/version.txt` cùng token `2394a25d`. Giữ nguyên `main.min_10a132ee.js` và `avatar-system_f5db914d.js`.
 
 **Chưa kiểm chứng thực tế**: sau deploy cần tải sạch cache và chụp lại màn Tụ Linh + popup kết quả. Kỳ vọng 5 nhãn chiếm lĩnh tách riêng từng ô, timer dễ đọc, header thưởng không chạm nhau và countdown nằm gọn trên nút `Xác nhận`.
+
+## 283. Việt hóa thông báo bạn bè, tổ đội và mô tả hoạt động đầu `scripttips` (2026-08-09)
+
+**Phạm vi**: tiếp tục quét khối ngôn ngữ server còn chữ Hán, ưu tiên các thông báo chắc chắn hiển thị cho người chơi và đồng bộ hai server `s1`/`s99`.
+
+**Cách sửa**: dịch toàn bộ 39 literal trong `friend.txt`, 37 literal trong `team.txt`, cùng 64 literal đầu của `scripttips.txt` gồm hướng dẫn Thần Trang, mô tả icon hoạt động và thưởng đăng nhập liên tục. Tổng cộng 140 literal cho mỗi server. Giữ nguyên key Lua, `%s`/`%d`, mã màu `<font>`, markup nội bộ và ký tự xuống dòng `\n`. Từ điển áp dụng được lưu tại `translation/glossary_lang_friend_team_scripttips_20260809.json` để có thể kiểm tra và tái sử dụng.
+
+**Kiểm thử**: script glossary chặn dấu ngoặc kép thẳng không escape; số thay thế đúng 39/37/64 trên cả `s1` và `s99`; `cmp` xác nhận ba cặp file sau khi dịch giống nhau hoàn toàn; kiểm tra cân bằng delimiter chuỗi và `git diff --check` sạch.
+
+**Cache-bust**: không áp dụng. Batch này chỉ đổi file ngôn ngữ server, không sửa bundle client, manifest, `index.php` hay `version.txt`.
+
+**Chưa kiểm chứng thực tế**: sau khi deploy cần restart/reload phần language của cả `s1` và `s99`, kiểm tra thông báo kết bạn/tổ đội và tooltip icon hoạt động trong game. Khối `scripttips.txt` phía sau vẫn còn nhiều nội dung tiếng Hán và sẽ được dịch tiếp theo từng nhóm an toàn.
