@@ -25,7 +25,7 @@
 	<e:Group height="45" anchorOffsetY="0" bottom="5" horizontalCenter="-60">
 		<e:Group left="0" height="45" width="470" anchorOffsetX="0" anchorOffsetY="0" y="0">
 		<e:Image left="0" scale9Grid="3,3,4,18" source="chatbg2" width="470" y="0" anchorOffsetX="0"/>
-		<e:EditableText id="input" text="" prompt="请输入内容" left="5" size="18" textAlign="left" verticalAlign="middle" verticalCenter="0" fontFamily="Microsoft YaHei" width="412" promptColor="0x6b9baa" textColor="0xabebff"/>
+		<e:EditableText id="input" text="" prompt="Nhập nội dung" left="5" size="18" textAlign="left" verticalAlign="middle" verticalCenter="0" fontFamily="Microsoft YaHei" width="412" promptColor="0x6b9baa" textColor="0xabebff"/>
 		</e:Group>
 	</e:Group>
 	<e:Button id="btnSend" label="Gửi" width="123" height="50" icon="chat_btnbg" bottom="1" horizontalCenter="237.5" skinName="SkinBtn26"/>
