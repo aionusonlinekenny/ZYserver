@@ -133714,7 +133714,7 @@ return SkinLYRAttr;
 		this.biaoti = t;
 		t.horizontalCenter = -230;
 		t.source = "biaoti_juese_png";
-		t.top = 10;
+		t.top = 5;
 		return t;
 	};
 	_proto.redPointGroup_i = function () {

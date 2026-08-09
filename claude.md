@@ -6696,3 +6696,17 @@ Người dùng tự xác định đúng file ảnh cần chỉnh (`eui/monthcard
 **Cache-bust**: `default.thm_371e27a0.js` → `default.thm_e0f877e3.js`, `manifest.json?v=371e27a0` → `?v=e0f877e3` trong `index.php`; cập nhật `WWW/version.txt` → `e0f877e3`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận ảnh mới đã dời lên đủ cao chưa, có thể cần tinh chỉnh thêm nếu 25 đơn vị chưa đúng ý.
+
+## 263. Dò ra file ảnh chứa "属性" chưa dịch (biaoti_juese.png, tên file không khớp nội dung) + dời lên cao 5px theo yêu cầu (2026-08-03)
+
+Người dùng gửi ảnh crop góc trên-trái màn hình "Nhân Vật" (3 chân dung nhân vật phụ + Lực chiến), hỏi file ảnh nào chứa chữ "属性" (Thuộc Tính) còn tiếng Hoa để tự vẽ lại. Dò theo cấu trúc `RoleWinSkin.exml` (cửa sổ "Nhân Vật" chính, mở từ icon chân dung góc dưới-trái màn hình chính) tìm thấy `<e:Image id="biaoti" top="10" horizontalCenter="-230" source="biaoti_juese_png"/>` - tên file "biaoti_juese" (角色/Nhân Vật) nhưng dùng `Read` xem trực tiếp nội dung ảnh thì phát hiện chữ trong ảnh thực ra là "属性" (Thuộc Tính), KHÔNG khớp với tên file - trường hợp đặt tên file sai/không nhất quán với nội dung, cần lưu ý cho các lần tìm ảnh sau này (không thể chỉ dựa vào tên file, phải xem trực tiếp nội dung ảnh khi nghi ngờ).
+
+**File xác định**: `resource/rolePreload/biaoti_juese.png`.
+
+Người dùng yêu cầu tiếp: dời ảnh này lên cao 5px. Sửa `top="10"` → `top="5"` trong `RoleWinSkin.exml`.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_e0f877e3.js` → `default.thm_b6572b28.js`, `manifest.json?v=e0f877e3` → `?v=b6572b28` trong `index.php`; cập nhật `WWW/version.txt` → `b6572b28`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận vị trí mới đã đúng ý (dời lên đúng 5px, giả định 1 đơn vị exml ≈ 1px cho skin toàn màn hình này, chưa kiểm chứng tỉ lệ quy đổi thực tế qua ảnh chụp).
