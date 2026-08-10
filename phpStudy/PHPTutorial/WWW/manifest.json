@@ -11,7 +11,8 @@
 		"js/jszip.min_a07c80a9.js"
 	],
 	"game": [
-		"js/default.thm_b6572b28.js",
-		"js/main.min_505568b9.js"
+		"js/default.thm_2394a25d.js",
+		"js/main.min_10a132ee.js",
+		"js/avatarsystem_f5db914d.js"
 	]
 }
