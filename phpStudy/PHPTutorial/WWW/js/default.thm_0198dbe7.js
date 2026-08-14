@@ -64228,7 +64228,7 @@ window.skins={};
 		t.height = 158;
 		t.left = 20;
 		t.width = 90;
-		t.y = 17;
+		t.y = 117;
 		t.layout = this._BasicLayout1_i();
 		t.elementsContent = [this.heartmethodStage_i(),this.xinfaName_i()];
 		return t;
