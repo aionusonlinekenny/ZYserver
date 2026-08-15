@@ -6836,3 +6836,15 @@ Người dùng gửi ảnh Đạo Tạng mới: xác nhận NGẦM cụm "三阶
 **Cache-bust**: `default.thm_60e4b645.js` → `default.thm_63d09267.js`, `manifest.json?v=60e4b645` → `?v=63d09267` trong `index.php`; cập nhật `WWW/version.txt` → `63d09267`.
 
 **Chưa kiểm chứng thực tế** - đây là vòng chỉnh thứ 3 cho riêng nút "?" (mục 268 quá xa phải → mục 269 gần đúng hướng nhưng chưa đủ xa trái → mục 270 lùi thêm), cần người dùng xác nhận qua ảnh mới xem `-60` đã đủ chưa hay cần lùi thêm nữa; nếu vẫn chưa đúng, nên cân nhắc cung cấp toạ độ ước lượng cụ thể hơn (vd đo trực tiếp % chiều rộng ảnh) thay vì tiếp tục suy từ file khác để tránh mất thêm nhiều vòng.
+
+## 271. Người dùng hỏi trực tiếp "muốn dời cụm 三阶/Phần Thiên Quyết lên cao hơn 100px thì chỉnh ở đâu" - trả lời và áp dụng luôn (2026-08-15)
+
+Theo đúng thông lệ đã thiết lập từ mục 263 (câu hỏi trực tiếp kiểu "nếu muốn... thì chỉnh ở đâu" được coi là yêu cầu thực hiện luôn, không chỉ hỏi suông): trả lời vị trí cần sửa là thuộc tính `y` của Group cha (dòng 11, `heartmethod.exml`) chứa cả `heartmethodStage` (icon "三阶") lẫn `xinfaName` ("Phần Thiên Quyết") - đây chính là thuộc tính đã điều chỉnh qua các mục 267 (17→117), 268 (117 giữ nguyên, chỉ đổi height/verticalCenter nội bộ), 269 (117→70, đã được người dùng xác nhận ổn ở mục 270). Áp dụng trực tiếp: `y="70"` → `y="-30"` (dời lên cao thêm đúng 100px so với vị trí đã xác nhận ổn ở mục 269/270).
+
+Không đổi gì khác (giữ nguyên `height="200"`, khoảng cách nội bộ `verticalCenter="55"` của `xinfaName` - các giá trị này đã được xác nhận ổn ở mục 270, không liên quan tới yêu cầu lần này).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; kiểm tra kỹ các state đã biên dịch (`open`/`narmal`/`stage`/`max`) trong `default.thm.js` xác nhận KHÔNG có `SetProperty("_Group1","y",...)` nào ở bất kỳ state nào (chỉ có `visible`/`height` bị override theo state) - nên chỉ cần sửa 1 chỗ duy nhất là giá trị `y` cơ sở (base) trong `_Group1_i()`, không cần đồng bộ thêm state nào khác; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_63d09267.js` → `default.thm_aab4fb43.js`, `manifest.json?v=63d09267` → `?v=aab4fb43` trong `index.php`; cập nhật `WWW/version.txt` → `aab4fb43`.
+
+**Chưa kiểm chứng thực tế** - dời lên 100px khá lớn so với khoảng trống phía trên vốn hạn hẹp đã phân tích ở mục 269 (từng có lỗi đè lên "hình quyển sách nền"/vòng tròn phát sáng khi ở vị trí gốc y=17-117), y=-30 đưa cụm chữ lên còn CAO HƠN cả vị trí gốc ban đầu (17) trước khi có bất kỳ chỉnh sửa nào trong session - nhiều khả năng sẽ tái diễn đúng lỗi đè lên hình nền đã từng được báo ở mục 265-267, cần người dùng xác nhận lại qua ảnh chụp thực tế.
