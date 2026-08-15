@@ -6822,3 +6822,17 @@ Sửa đồng bộ cả exml lẫn block base attributes VÀ block `SetProperty`
 **Cache-bust**: `default.thm_38da3a1a.js` → `default.thm_60e4b645.js`, `manifest.json?v=38da3a1a` → `?v=60e4b645` trong `index.php`; cập nhật `WWW/version.txt` → `60e4b645`.
 
 **Chưa kiểm chứng thực tế - độ tin cậy THẤP HƠN bình thường vì thiếu ảnh chụp Đạo Tạng mới nhất**: người dùng chỉ mô tả bằng lời tình trạng "三阶/Thần Thiên Quyết" bị đè (không kèm ảnh), nên các con số `y=70`/`verticalCenter=55` là ước lượng dựa trên phân tích toạ độ các phần tử lân cận trong file (`ditu2`, `showGroup`) chứ KHÔNG đo trực tiếp từ ảnh thực tế như thường lệ - khả năng cần thêm 1-2 vòng tinh chỉnh nữa khá cao. Đề nghị người dùng gửi ảnh chụp MỚI của đúng tab Đạo Tạng (sau khi đã deploy bản `60e4b645` lên server thật) để xác nhận hoặc chỉnh tiếp chính xác hơn, thay vì tiếp tục đoán mù. Nút "?" cũng cần xác nhận qua ảnh xem đã nằm đúng "trước icon tiền đồng" như mong muốn chưa.
+
+## 270. Mục 269 chỉnh nút "?" chưa đủ xa - vẫn đè lên số "1trăm triệu"; cụm "三阶"/Thần Thiên Quyết đã ổn (2026-08-15)
+
+Người dùng gửi ảnh Đạo Tạng mới: xác nhận NGẦM cụm "三阶"/"Phần Thiên Quyết" ở mục 269 đã tách rời gọn gàng, không còn đè lên `ditu2` hay vòng tròn quyển sách nữa (không có phản hồi tiêu cực về phần này) - coi như ĐÃ FIX xong, không cần chỉnh thêm. Riêng nút "?" tuy đã dời đúng hướng (sang trái) nhưng vẫn CHƯA ĐỦ XA - ảnh cho thấy nó nằm chen giữa icon tiền đồng và chữ số, che mất chữ số "1" của "1trăm triệu" (chỉ còn thấy "trăm triệu").
+
+**Tính lại khoảng cách dựa trên bằng chứng thực tế mới**: quy đổi vị trí "?" quan sát được trên ảnh (mục 269, `horizontalCenter="-20"`) về toạ độ thiết kế bằng đúng công thức đã dùng trước đó (tỉ lệ ảnh chụp/toạ độ thiết kế ~1.4375, khớp khá sát với vị trí quan sát trên ảnh - xác nhận công thức quy đổi đáng tin cậy) - cho thấy `-20` mới chỉ đưa "?" tới rìa CỦA cụm icon tiền đồng (`recharge2` tại x=313 cục bộ trong `PlayFunSkin.exml`, `coin_dikuang` nền bắt đầu x=325) chứ chưa thực sự vượt qua để đứng hẳn TRƯỚC nó.
+
+**Cách sửa**: đổi tiếp `horizontalCenter` từ `-20` xuống `-60` (lùi thêm 40 đơn vị thiết kế về bên trái, đủ để nằm rõ ràng trước điểm bắt đầu x=313 của cụm icon tiền đồng, có khoảng đệm).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`. Không đụng gì khác trong lần này (giữ nguyên các giá trị của cụm "三阶/Thần Thiên Quyết" từ mục 269 vì đã được xác nhận ổn).
+
+**Cache-bust**: `default.thm_60e4b645.js` → `default.thm_63d09267.js`, `manifest.json?v=60e4b645` → `?v=63d09267` trong `index.php`; cập nhật `WWW/version.txt` → `63d09267`.
+
+**Chưa kiểm chứng thực tế** - đây là vòng chỉnh thứ 3 cho riêng nút "?" (mục 268 quá xa phải → mục 269 gần đúng hướng nhưng chưa đủ xa trái → mục 270 lùi thêm), cần người dùng xác nhận qua ảnh mới xem `-60` đã đủ chưa hay cần lùi thêm nữa; nếu vẫn chưa đúng, nên cân nhắc cung cấp toạ độ ước lượng cụ thể hơn (vd đo trực tiếp % chiều rộng ảnh) thay vì tiếp tục suy từ file khác để tránh mất thêm nhiều vòng.

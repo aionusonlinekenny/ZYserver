@@ -162857,7 +162857,7 @@ return SkinLYRAttr;
 	_proto.help_i = function () {
 		var t = new eui.Button();
 		this.help = t;
-		t.horizontalCenter = -20;
+		t.horizontalCenter = -60;
 		t.icon = "wenhao";
 		t.label = "Nút bấm";
 		t.scaleX = 0.9;

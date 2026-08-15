@@ -18,7 +18,7 @@
         </e:layout>
     </e:TabBar>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" horizontalCenter="0" top="0" locked="true"/>
-	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-20" y="4" scaleX="0.9" scaleY="0.9" visible="false"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" horizontalCenter="-60" y="4" scaleX="0.9" scaleY="0.9" visible="false"/>
 	<e:Group id="redPointGroup" bottom="143" horizontalCenter="50.5" touchEnabled="false">
 		<e:Image id="redPoint0" touchEnabled="false" source="zjmhongdian" x="120" y="0"/>
 		<e:Image id="redPoint1" touchEnabled="false" source="zjmhongdian" x="0" y="0"/>
