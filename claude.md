@@ -6878,3 +6878,19 @@ Người dùng gửi 3 ảnh (Mùa Giải Đỉnh Cao, Phi Thăng, Đạo Tạng
 **Cache-bust**: `default.thm_d3561254.js` → `default.thm_6e19d2ac.js`, `manifest.json?v=d3561254` → `?v=6e19d2ac` trong `index.php`; cập nhật `WWW/version.txt` → `6e19d2ac`.
 
 **Chưa kiểm chứng thực tế** - nút "?" ở `RoleWinSkin.exml`/`PeakednessWinSkin.exml` áp dụng theo suy luận "cùng width=600 nên cùng toạ độ" chưa được xác nhận trực tiếp qua ảnh (dù cùng cách tính đã đúng cho `TreasureWinSkin.exml`); việc dời "Tu luyện"/"Nhận vật phẩm" xuống 40px cũng chưa kiểm chứng có va vào thanh tab (Ngự Khí/Luyện Trận/...) phía dưới hay không - cần người dùng xác nhận qua ảnh chụp mới của cả 3 màn hình.
+
+## 274. Màn "跨服战场" (Chiến Trường Liên Server): tên tab đầu tiên quá dài tràn đè lên tab kế bên - đổi sang skin tab dạng chữ nhỏ/xuống dòng có sẵn thay vì đè lên component tab dùng chung toàn game (2026-08-15)
+
+Người dùng gửi ảnh màn "跨服战场" (tiêu đề vẫn tiếng Hoa - ảnh ghép/tiêu đề dạng banner, giống cách các màn khác trong session này để nguyên không dịch), báo "Chỗ này nữa" kèm ảnh cho thấy dòng tab đầu tiên "Chiến Trường Liên" bị dính/tràn vào tab "Bản ghi rơi đồ" kế bên, thiếu hẳn chữ "Server" phía cuối.
+
+**Truy vết**: dò ra `KFFieldWinSkin.exml` (`ViewStack` cha của 3 tab: `kffieldPanel`/`kffieldRecordPanel`/`rankPanel`). Phát hiện file exml TRÊN Ổ ĐĨA vẫn còn `name="跨服战场"`/`name="掉落记录"`/`name="排行"` (tiếng Hoa, CHƯA từng được đồng bộ về sau các đợt cập nhật bundle JS của người dùng ở mục 264) - trong khi `default.thm.js` đang chạy thực tế ĐÃ có `t.name = "Chiến Trường Liên Server"`/`"Bản ghi rơi đồ"`/`"Xếp hạng"` (bản dịch đã tồn tại từ trước, không rõ ai dịch, rất có thể nằm trong 1 trong ~37 vùng diff chưa rà soát chi tiết đã ghi chú ở mục 264) - xác nhận đây là ĐÚNG NGUYÊN NHÂN gây lỗi: tên tab "Chiến Trường Liên Server" (23 ký tự) quá dài so với khung nút tab cố định.
+
+**Không sửa trực tiếp component tab dùng chung**: tra `BtnTab0Skin.exml` (`class="SkinBtnTab0"`, dùng làm `itemRendererSkinName` cho TabBar ở RẤT NHIỀU màn hình khác trong toàn game - `TreasureWinSkin.exml`, `RoleWinSkin.exml`, `PeakednessWinSkin.exml`...) - width cố định 110-120, `Label` không có `wordWrap`, cỡ chữ 21 - sửa trực tiếp file này sẽ ảnh hưởng dây chuyền tới HÀNG CHỤC màn hình khác, rủi ro rất cao. May mắn phát hiện codebase đã có sẵn 1 biến thể dành riêng cho trường hợp tên dài: `BtnTab0WideSkin.exml` (`class="SkinBtnTab0Wide"`) - cùng kích thước nút vật lý (110-120) nhưng `Label` có `size="14"` (nhỏ hơn), `width="100"`, `multiline="true"`, `wordWrap="true"` - cho phép tên dài tự xuống dòng gọn trong cùng khung nút thay vì tràn ra ngoài.
+
+**Cách sửa**: đổi `itemRendererSkinName` của `TabBar` trong `KFFieldWinSkin.exml` (CHỈ riêng file này, không đụng file dùng chung) từ `"SkinBtnTab0"` → `"SkinBtnTab0Wide"`; đồng thời đồng bộ lại 3 `name=` trong exml nguồn khớp đúng bản dịch Việt đã có sẵn trong `default.thm.js` (không dịch lại, chỉ đưa exml về khớp với bản đang chạy thực tế).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; xác nhận `window.SkinBtnTab0Wide` đã tồn tại sẵn trong cùng `default.thm.js` (biên dịch từ `BtnTab0WideSkin.exml`, đã có mặt trong bundle từ trước, không cần thêm mới) trước khi tham chiếu; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_6e19d2ac.js` → `default.thm_5e1c49fd.js`, `manifest.json?v=6e19d2ac` → `?v=5e1c49fd` trong `index.php`; cập nhật `WWW/version.txt` → `5e1c49fd`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới: (1) cả 3 tab ("Chiến Trường Liên Server", "Bản ghi rơi đồ", "Xếp hạng") hiển thị gọn trong khung nút, có thể xuống 2 dòng do cỡ chữ nhỏ hơn nhưng không tràn/đè lên nhau; (2) không có tác dụng phụ nào khác do đổi `itemRendererSkinName` (dù đã xác định phạm vi ảnh hưởng chỉ riêng file này, chưa xác nhận qua ảnh thực tế màu sắc/kiểu chữ mới có hài hoà với phần còn lại của màn hình không).

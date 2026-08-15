@@ -82095,7 +82095,7 @@ window.skins={};
 		this.tab = t;
 		t.bottom = 106;
 		t.horizontalCenter = 0;
-		t.itemRendererSkinName = SkinBtnTab0;
+		t.itemRendererSkinName = SkinBtnTab0Wide;
 		t.selectedIndex = 0;
 		t.layout = this._HorizontalLayout1_i();
 		return t;

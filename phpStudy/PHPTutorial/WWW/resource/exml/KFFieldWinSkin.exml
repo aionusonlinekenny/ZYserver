@@ -11,12 +11,12 @@
 
 	<ns1:RoleSelectPanel id="roleSelect" y="0" skinName="SkinRoleSelectPanel"  width="580" horizontalCenter="0" currentState="nohead"/>
 	<e:ViewStack id="viewStack" width="560" selectedIndex="1" top="52" bottom="162" horizontalCenter="0">
-		<ns1:KffieldPanel id="kffieldPanel" left="0" right="0" top="0" bottom="0" skinName="KFFieldSkin" name="跨服战场"/>
-		<ns1:KffieldRecordPanel id="kffieldRecordPanel" skinName="KFFieldDropRecordSkin" name="掉落记录"/>
-		<ns1:KfArenaRankPanel id="rankPanel" name="排行" skinName="KfArenaRankSkin" left="0" right="0" top="0" bottom="0"/>
+		<ns1:KffieldPanel id="kffieldPanel" left="0" right="0" top="0" bottom="0" skinName="KFFieldSkin" name="Chiến Trường Liên Server"/>
+		<ns1:KffieldRecordPanel id="kffieldRecordPanel" skinName="KFFieldDropRecordSkin" name="Bản ghi rơi đồ"/>
+		<ns1:KfArenaRankPanel id="rankPanel" name="Xếp hạng" skinName="KfArenaRankSkin" left="0" right="0" top="0" bottom="0"/>
 	</e:ViewStack>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" source="bantoumingkuang3" horizontalCenter="0" bottom="98"/>
-	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="106">
+	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0Wide" dataProvider="{viewStack}" selectedIndex="0" horizontalCenter="0" bottom="106">
 		<e:layout>
 		<e:HorizontalLayout gap="-8"/>
 		</e:layout>
