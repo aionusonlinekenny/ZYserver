@@ -8,10 +8,10 @@
 			<e:Group id="effGroup"  horizontalCenter="0" visible.open="false" verticalCenter="-100"/>
 		</e:Group>
 		<e:Group name="心法" left="0" right="0" top="0" bottom="0" x="0" y="0" >
-			<e:Group y="117" height="158" visible.open="false" anchorOffsetY="0" left="20" height.narmal="158" anchorOffsetX="0" width="90">
+			<e:Group y="117" height="230" visible.open="false" anchorOffsetY="0" left="20" height.narmal="230" anchorOffsetX="0" width="90">
 				<ns1:LevelImage id="heartmethodStage" width="40" height="109" skinName="Skinjieji" top="3" left="0"/>
 
-			<e:Label id="xinfaName" text="Vô Ảnh Tâm Pháp" italic="false" width="80" size="24" textAlign="center" verticalCenter="22" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" verticalCenter.narmal="22" horizontalCenter="-4"/>
+			<e:Label id="xinfaName" text="Vô Ảnh Tâm Pháp" italic="false" width="80" size="24" textAlign="center" verticalCenter="90" textColor="0xffff00" fontFamily="Microsoft YaHei" verticalAlign="middle" verticalCenter.narmal="90" horizontalCenter="-4"/>
 				<e:layout>
 					<e:BasicLayout/>
 				</e:layout>
