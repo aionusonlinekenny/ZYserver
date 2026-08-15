@@ -6894,3 +6894,15 @@ Người dùng gửi ảnh màn "跨服战场" (tiêu đề vẫn tiếng Hoa - 
 **Cache-bust**: `default.thm_6e19d2ac.js` → `default.thm_5e1c49fd.js`, `manifest.json?v=6e19d2ac` → `?v=5e1c49fd` trong `index.php`; cập nhật `WWW/version.txt` → `5e1c49fd`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới: (1) cả 3 tab ("Chiến Trường Liên Server", "Bản ghi rơi đồ", "Xếp hạng") hiển thị gọn trong khung nút, có thể xuống 2 dòng do cỡ chữ nhỏ hơn nhưng không tràn/đè lên nhau; (2) không có tác dụng phụ nào khác do đổi `itemRendererSkinName` (dù đã xác định phạm vi ảnh hưởng chỉ riêng file này, chưa xác nhận qua ảnh thực tế màu sắc/kiểu chữ mới có hài hoà với phần còn lại của màn hình không).
+
+## 275. Người dùng xác nhận mục 274 (tab xuống dòng gọn gàng) - áp dụng tiếp vị trí nút "?" cho màn "跨服战场" (2026-08-15)
+
+Người dùng gửi lại ảnh xác nhận NGẦM lỗi tràn tab ở mục 274 đã hết (3 tab hiển thị gọn, "Chiến Trường Liên Server" xuống 2 dòng đúng như dự kiến, không còn đè lên "Bản ghi rơi đồ") - không có phản hồi tiêu cực nên coi như ĐÃ FIX xong. Yêu cầu tiếp: áp dụng cùng cách dời nút "?" (đã ổn định ở `horizontalCenter="-110"` cho `TreasureWinSkin.exml`/`RoleWinSkin.exml`/`PeakednessWinSkin.exml` ở mục 268-273) cho màn này.
+
+**Áp dụng**: `KFFieldWinSkin.exml` có nút "?" với `id="seeRule"` (khác tên id `help` ở các file trước nhưng cùng chức năng, `icon="wenhao"`) tại `horizontalCenter="-246"`. Dù skin này khai `width="580"` (khác 600 như các file trước) nhưng vẫn canh giữa trên cùng 1 sân khấu (stage) chung, nên `horizontalCenter` vẫn quy đổi ra cùng 1 vị trí tuyệt đối bất kể khai báo width của từng skin - áp thẳng `horizontalCenter="-110"` đã xác nhận ổn.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_5e1c49fd.js` → `default.thm_89f23a3e.js`, `manifest.json?v=5e1c49fd` → `?v=89f23a3e` trong `index.php`; cập nhật `WWW/version.txt` → `89f23a3e`.
+
+**Chưa kiểm chứng thực tế** - giả định "width khác nhau (580 vs 600) không ảnh hưởng tới việc quy đổi horizontalCenter vì cùng canh giữa 1 stage chung" CHƯA được kiểm chứng qua ảnh cho trường hợp width khác biệt này (các lần trước đều là width=600 giống hệt nhau) - cần người dùng xác nhận qua ảnh mới xem nút "?" đã tới đúng vị trí mong muốn (trước icon tiền đồng) hay bị lệch do khác biệt width.

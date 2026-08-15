@@ -35,7 +35,7 @@
 
 
 
-	<e:Button id="seeRule" label="Nút bấm" icon="wenhao" skinName="SkinBtn0" horizontalCenter="-246" y="8" scaleX="0.9" scaleY="0.9"/>
+	<e:Button id="seeRule" label="Nút bấm" icon="wenhao" skinName="SkinBtn0" horizontalCenter="-110" y="8" scaleX="0.9" scaleY="0.9"/>
 
 	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose" y="46" scaleX="0.8" scaleY="0.8" horizontalCenter="266"/>
 
