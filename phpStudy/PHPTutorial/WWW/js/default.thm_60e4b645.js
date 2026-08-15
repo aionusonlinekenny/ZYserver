@@ -64010,8 +64010,8 @@ window.skins={};
 					new eui.SetProperty("bigIcon","visible",false),
 					new eui.SetProperty("showGroup","top",252),
 					new eui.SetProperty("showGroup","y",252),
-					new eui.SetProperty("xinfaName","verticalCenter",90),
-					new eui.SetProperty("_Group1","height",230),
+					new eui.SetProperty("xinfaName","verticalCenter",55),
+					new eui.SetProperty("_Group1","height",200),
 					new eui.SetProperty("_Group2","height",77),
 					new eui.SetProperty("_Group2","y",419),
 					new eui.SetProperty("_Group2","horizontalCenter",0),
@@ -64225,10 +64225,10 @@ window.skins={};
 		this._Group1 = t;
 		t.anchorOffsetX = 0;
 		t.anchorOffsetY = 0;
-		t.height = 230;
+		t.height = 200;
 		t.left = 20;
 		t.width = 90;
-		t.y = 117;
+		t.y = 70;
 		t.layout = this._BasicLayout1_i();
 		t.elementsContent = [this.heartmethodStage_i(),this.xinfaName_i()];
 		return t;
@@ -64258,7 +64258,7 @@ window.skins={};
 		t.textAlign = "center";
 		t.textColor = 0xffff00;
 		t.verticalAlign = "middle";
-		t.verticalCenter = 90;
+		t.verticalCenter = 55;
 		t.width = 80;
 		return t;
 	};
@@ -162857,7 +162857,7 @@ return SkinLYRAttr;
 	_proto.help_i = function () {
 		var t = new eui.Button();
 		this.help = t;
-		t.horizontalCenter = 180;
+		t.horizontalCenter = -20;
 		t.icon = "wenhao";
 		t.label = "Nút bấm";
 		t.scaleX = 0.9;
