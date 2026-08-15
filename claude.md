@@ -6906,3 +6906,25 @@ Người dùng gửi lại ảnh xác nhận NGẦM lỗi tràn tab ở mục 27
 **Cache-bust**: `default.thm_5e1c49fd.js` → `default.thm_89f23a3e.js`, `manifest.json?v=5e1c49fd` → `?v=89f23a3e` trong `index.php`; cập nhật `WWW/version.txt` → `89f23a3e`.
 
 **Chưa kiểm chứng thực tế** - giả định "width khác nhau (580 vs 600) không ảnh hưởng tới việc quy đổi horizontalCenter vì cùng canh giữa 1 stage chung" CHƯA được kiểm chứng qua ảnh cho trường hợp width khác biệt này (các lần trước đều là width=600 giống hệt nhau) - cần người dùng xác nhận qua ảnh mới xem nút "?" đã tới đúng vị trí mong muốn (trước icon tiền đồng) hay bị lệch do khác biệt width.
+
+## 276. Xác nhận nút "?" mục 275 ổn - dời tiêu đề "跨服战场" cho khớp các skin khác + mở rộng khoảng cách/độ rộng 2 ô hiển thị tiền tệ ở thanh HUD DÙNG CHUNG TOÀN GAME vì chữ số bị rớt xuống dòng (2026-08-15)
+
+Người dùng gửi lại ảnh xác nhận NGẦM nút "?" ở mục 275 đã ổn (không phản hồi tiêu cực) - coi như XONG. Báo thêm 2 việc mới trên cùng màn "跨服战场": (1) hình tiêu đề bị lệch khỏi góc trái so với các màn khác; (2) 2 ô hiển thị tiền tệ ở thanh trên cùng ("1.2trăm triệu" và "2444.9vạn") bị RỚT XUỐNG DÒNG (chữ "u" cuối "triệu" và chữ "n" cuối "vạn" xuống dòng riêng) do khung chữ quá hẹp, yêu cầu thêm khoảng cách giữa 2 ô VÀ mở rộng độ rộng.
+
+**Lỗi 1 - tiêu đề lệch**: `KFFieldWinSkin.exml` có `<e:Image y="6" horizontalCenter="-155" source="biaoti_kuafuzhanchang"/>` - so với các skin khác đã xử lý trong session (`TreasureWinSkin.exml` tiêu đề tại `horizontalCenter="-222"`, `RoleWinSkin.exml` tại `-230"`) thì `-155` lệch hẳn về bên phải nhiều, giải thích đúng hiện tượng "lệch khỏi góc trái". Sửa `-155` → `-220` cho khớp nhóm.
+
+**Lỗi 2 - CẢNH BÁO ĐẶC BIỆT: đây là thanh HUD tiền tệ TOÀN CỤC (`PlayFunSkin.exml`), hiển thị Y HỆT trên MỌI màn hình trong toàn bộ game, không riêng gì màn "跨服战场"** - khác hẳn tất cả các fix trước trong session (luôn giới hạn phạm vi trong 1 file/1 màn hình cụ thể). Sửa file này có rủi ro ảnh hưởng dây chuyền tới TOÀN BỘ game.
+
+Phân tích: `goldTxt` (số đồng tiền, x=343 width=82 size=18) và `ybTxt` (số vàng/yuanbao, x=484 width=82 size=18) đều quá hẹp cho các chuỗi dài như "1.2trăm triệu" (13 ký tự) hoặc số lớn tương lai - gây tự động xuống dòng (Egret Label tự wrap khi width cố định + text tràn, quy luật đã xác nhận nhiều lần trong session). Không gian khả dụng trên thanh HUD rất hạn chế (2 cụm icon+chữ chỉ có khoảng x=313 đến x≈600-620 trước khi chạm mép phải sân khấu 640, gần như không còn dư địa để mở rộng thoải mái).
+
+**Cách sửa (thận trọng, mở rộng vừa phải + giảm cỡ chữ thay vì mở quá rộng)**: 
+- `goldTxt`: `width="82"` → `"105"`, `size="18"` → `"12"` (giữ nguyên `x="343"`).
+- Nền hình `coin_dikuang` thứ nhất: `width="118"` → `"125"` (giữ `x="325"`) cho khớp `goldTxt` mới.
+- Dời cụm thứ 2 (icon `recharge1`, nền `coin_dikuang` thứ hai, `ybTxt`) sang phải để (a) tạo khoảng cách với cụm 1 như yêu cầu, (b) có thêm chỗ cho `ybTxt` rộng hơn: `recharge1`'s `x` từ `456.5` → `480`; nền `coin_dikuang` thứ hai `x` từ `467` → `490`; `ybTxt`'s `x` từ `484` → `507`, `width="82"` → `"90"`, `size="18"` → `"12"`.
+- Mép phải cùng sau khi sửa ước tính khoảng x=597 (cục bộ, tương đương x≈617 trên sân khấu 640-rộng) - còn dư ~23 đơn vị trước khi chạm mép phải, chấp nhận được nhưng KHÔNG CÒN NHIỀU DƯ ĐỊA cho số liệu lớn hơn trong tương lai.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận cả 2 exml hợp lệ; `node -c` sạch cho `default.thm.js`; đối chiếu kỹ 2 khối `_Image2_i`/`_Image3_i` (2 nền `coin_dikuang` giống hệt source nhưng khác `x`) trước khi sửa để tránh sửa nhầm khối.
+
+**Cache-bust**: `default.thm_89f23a3e.js` → `default.thm_a77d17a2.js`, `manifest.json?v=89f23a3e` → `?v=a77d17a2` trong `index.php`; cập nhật `WWW/version.txt` → `a77d17a2`.
+
+**Chưa kiểm chứng thực tế - RỦI RO CAO HƠN BÌNH THƯỜNG do đây là thay đổi thanh HUD toàn cục**: cần người dùng kiểm tra RẤT KỸ trên NHIỀU màn hình khác nhau (không chỉ riêng "跨服战场") xem: (1) 2 ô tiền tệ không còn xuống dòng với số liệu hiện tại của họ; (2) không bị tràn ra ngoài mép phải màn hình trên các thiết bị/tỉ lệ khác nhau; (3) cỡ chữ 12 (giảm từ 18) có còn dễ đọc không; (4) chưa tính tới trường hợp số liệu tăng lên rất lớn trong tương lai (vd tiền vượt "999.9vạn" hay đơn vị lớn hơn "vạn") có thể vẫn xuống dòng trở lại do dư địa mở rộng đã gần hết. Nếu phát hiện vấn đề ở BẤT KỲ màn hình nào khác (không chỉ Chiến Trường Liên Server), cần báo lại ngay vì đây là lỗi ảnh hưởng toàn game.

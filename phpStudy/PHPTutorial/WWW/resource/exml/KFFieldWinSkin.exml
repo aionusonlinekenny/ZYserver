@@ -28,7 +28,7 @@
 		<e:HorizontalLayout gap="96"/>
 		</e:layout>
 	</e:Group>
-	<e:Image y="6"  horizontalCenter="-155" source="biaoti_kuafuzhanchang"/>
+	<e:Image y="6"  horizontalCenter="-220" source="biaoti_kuafuzhanchang"/>
 
 
 
