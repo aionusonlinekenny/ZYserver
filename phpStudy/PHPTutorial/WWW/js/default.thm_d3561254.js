@@ -64011,7 +64011,7 @@ window.skins={};
 					new eui.SetProperty("showGroup","top",252),
 					new eui.SetProperty("showGroup","y",252),
 					new eui.SetProperty("xinfaName","verticalCenter",55),
-					new eui.SetProperty("_Group1","height",200),
+					new eui.SetProperty("_Group1","height",170),
 					new eui.SetProperty("_Group2","height",77),
 					new eui.SetProperty("_Group2","y",419),
 					new eui.SetProperty("_Group2","horizontalCenter",0),
@@ -162857,7 +162857,7 @@ return SkinLYRAttr;
 	_proto.help_i = function () {
 		var t = new eui.Button();
 		this.help = t;
-		t.horizontalCenter = -60;
+		t.horizontalCenter = -110;
 		t.icon = "wenhao";
 		t.label = "Nút bấm";
 		t.scaleX = 0.9;

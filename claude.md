@@ -6848,3 +6848,17 @@ Không đổi gì khác (giữ nguyên `height="200"`, khoảng cách nội bộ
 **Cache-bust**: `default.thm_63d09267.js` → `default.thm_aab4fb43.js`, `manifest.json?v=63d09267` → `?v=aab4fb43` trong `index.php`; cập nhật `WWW/version.txt` → `aab4fb43`.
 
 **Chưa kiểm chứng thực tế** - dời lên 100px khá lớn so với khoảng trống phía trên vốn hạn hẹp đã phân tích ở mục 269 (từng có lỗi đè lên "hình quyển sách nền"/vòng tròn phát sáng khi ở vị trí gốc y=17-117), y=-30 đưa cụm chữ lên còn CAO HƠN cả vị trí gốc ban đầu (17) trước khi có bất kỳ chỉnh sửa nào trong session - nhiều khả năng sẽ tái diễn đúng lỗi đè lên hình nền đã từng được báo ở mục 265-267, cần người dùng xác nhận lại qua ảnh chụp thực tế.
+
+## 272. Người dùng gửi trực tiếp file `default.thm.js` đã tự chỉnh (2 tinh chỉnh nhỏ tiếp theo mục 271) - đồng bộ vào exml nguồn và branch (2026-08-15)
+
+Người dùng upload file `default.thm_60e4b645.js` (tên file bị lệch hash so với nội dung thật - nội dung bên trong thực chất dựa trên bản mục 271 `aab4fb43`, không phải bản `60e4b645` cũ hơn của mục 269 như tên gợi ý) kèm yêu cầu "đổi theo file này". So sánh `diff` trực tiếp với bản đang có trong git xác nhận CHỈ khác đúng 2 dòng (còn lại giống hệt, kể cả `_Group1`'s `y=-30` và `xinfaName`'s `verticalCenter=55` từ mục 271 vẫn giữ nguyên - xác nhận người dùng tinh chỉnh THÊM từ đúng bản mới nhất chứ không phải rollback):
+1. `heartmethod.exml`: `new eui.SetProperty("_Group1","height",200)` (state "narmal") → đổi thành `170` - thu hẹp thêm chiều cao khai báo của cụm "三阶/Phần Thiên Quyết" khi ở trạng thái "narmal" (không đổi `height` cơ sở, vẫn giữ 200).
+2. Nút "?" trợ giúp (`TreasureWinSkin.exml`): `horizontalCenter` từ `-60` (mục 270) → `-110` - lùi thêm về bên trái, có khả năng người dùng tự đo và thấy `-60` vẫn chưa đủ xa nên tự chỉnh tiếp bằng công cụ riêng thay vì nhờ tôi tính lại.
+
+**Đồng bộ ngược lại vào exml nguồn** (theo đúng thông lệ luôn giữ exml khớp với bản JS đã biên dịch, dù người dùng chỉ gửi file JS): `heartmethod.exml` đổi `height.narmal="200"` → `height.narmal="170"` (giữ nguyên `height="200"` cơ sở, khớp đúng cách người dùng chỉ đổi state override chứ không đổi base); `TreasureWinSkin.exml` đổi `horizontalCenter="-60"` → `horizontalCenter="-110"`.
+
+**Kiểm thử**: `node -c` xác nhận file JS người dùng gửi hợp lệ trước khi nhận; `diff` xác nhận đúng CHỈ 2 khác biệt so với bản trước, không có thay đổi ngoài ý muốn nào khác; `xml.etree.ElementTree` xác nhận 2 exml sau khi đồng bộ vẫn hợp lệ; `node -c` sạch cho bản `default.thm.js` cuối cùng sau khi cache-bust.
+
+**Cache-bust**: `default.thm_aab4fb43.js` → `default.thm_d3561254.js` (nội dung lấy trực tiếp từ file người dùng gửi, không tự biên dịch lại), `manifest.json?v=aab4fb43` → `?v=d3561254` trong `index.php`; cập nhật `WWW/version.txt` → `d3561254`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - đây là tinh chỉnh do người dùng TỰ đo/tự sửa trực tiếp trên file JS đã biên dịch (không qua tôi tính toán lại), nên độ chính xác phụ thuộc vào chính người dùng; chỉ ghi nhận và đồng bộ vào exml nguồn cho nhất quán, không tự đánh giá đúng/sai.
