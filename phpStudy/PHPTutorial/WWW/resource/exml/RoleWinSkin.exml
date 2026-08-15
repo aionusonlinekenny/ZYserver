@@ -23,7 +23,7 @@
 		<e:HorizontalLayout gap="-8" horizontalAlign="center"/>
 		</e:layout>
 	</e:TabBar>
-	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" scaleX="0.8" scaleY="0.8" top="8" horizontalCenter="-281"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" scaleX="0.8" scaleY="0.8" top="8" horizontalCenter="-110"/>
 	<e:Image id="biaoti"  top="5" horizontalCenter="-230" source="biaoti_juese_png"/>
 
 

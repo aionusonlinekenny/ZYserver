@@ -64041,11 +64041,11 @@ window.skins={};
 					new eui.SetProperty("shuxingbianhua","horizontalCenter",0.5),
 					new eui.SetProperty("shuxingbianhua","verticalCenter",225.5),
 					new eui.SetProperty("getItemTxt0","horizontalCenter",200),
-					new eui.SetProperty("getItemTxt0","bottom",15),
+					new eui.SetProperty("getItemTxt0","bottom",-25),
 					new eui.SetProperty("getItemTxt0","height",20),
 					new eui.SetProperty("getItemTxt0","fontFamily","Microsoft YaHei"),
 					new eui.SetProperty("boostBtn","horizontalCenter",0),
-					new eui.SetProperty("boostBtn","bottom",-10),
+					new eui.SetProperty("boostBtn","bottom",-50),
 					new eui.SetProperty("boostBtn","skinName","SkinBtn7"),
 					new eui.SetProperty("boostBtn","width",213),
 					new eui.SetProperty("boostBtn","height",67),
@@ -113077,7 +113077,7 @@ return SkinLYRAttr;
 	_proto.help_i = function () {
 		var t = new eui.Button();
 		this.help = t;
-		t.horizontalCenter = -277;
+		t.horizontalCenter = -110;
 		t.icon = "wenhao";
 		t.label = "Nút bấm";
 		t.scaleX = 1;
@@ -133739,7 +133739,7 @@ return SkinLYRAttr;
 	_proto.help_i = function () {
 		var t = new eui.Button();
 		this.help = t;
-		t.horizontalCenter = -281;
+		t.horizontalCenter = -110;
 		t.icon = "wenhao";
 		t.label = "Nút bấm";
 		t.scaleX = 0.8;
