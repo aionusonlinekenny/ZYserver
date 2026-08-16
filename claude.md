@@ -7042,3 +7042,17 @@ Người dùng xác nhận mục 283 đã đẹp (canh giữa dọc ổn), chỉ
 **Cache-bust**: `default.thm_00b76085.js` → `default.thm_2b1027e6.js`, `manifest.json?v=00b76085` → `?v=2b1027e6` trong `index.php`; cập nhật `WWW/version.txt` → `2b1027e6`.
 
 **Chưa kiểm chứng thực tế** - thay đổi nhỏ, rủi ro thấp, nhưng vẫn cần người dùng xác nhận qua ảnh mới cho chắc vì đây là component dùng chung 58 file.
+
+## 285. Sửa tên Thánh Vật đè chồng lên nhau ở màn "Thần Binh" tab "Hợp Thành" (2026-08-16)
+
+Người dùng gửi ảnh màn "Thần Binh" tab "Hợp Thành" (GwMixSkin), báo tên 3 vật phẩm bên dưới danh sách chọn nguyên liệu bị dính chồng lên nhau ("Quân Kiếm Quy" đè "Ngự Trấn Phá" đè "Quân Thạch...Chân Thủ Kính").
+
+**Truy vết**: 3 vật phẩm này thuộc `<e:List id="list" itemRendererSkinName="SkinGwMixItem".../>` trong `GwMixSkin.exml` (danh sách cuộn ngang các Thánh Vật có sẵn trong túi đồ để chọn làm nguyên liệu) - KHÁC với `mix1Name`/`mix2Name`/`mix3Name` (tên 3 ô nguyên liệu ĐÃ CHỌN ở khung hợp thành phía trên, không phải chỗ lỗi). ItemRenderer thực tế là `GwMixItemSkin.exml`, mỗi ô rộng cố định `width="90"` (đặt cách nhau `gap="14"` trong `HorizontalLayout`), nhưng nhãn tên `shengwuName` không có `width`/`wordWrap` - tên Thánh Vật dài (ví dụ dạng "X Kiếm Quyện"/"Y Trấn Phá") tự do tràn ra 2 bên theo `horizontalCenter="0"`, lấn sang ô bên cạnh - đúng dạng lỗi "thiếu width+wordWrap" đã gặp rất nhiều lần trong session.
+
+**Cách sửa**: `shengwuName` thêm `width="88"` (vừa khít trong ô rộng 90), `wordWrap="true"` `multiline="true"` `height="30"` (đủ 2 dòng), `textAlign="center"`, giảm `size` từ `18` xuống `13` (cho vừa 2 dòng trong ô hẹp 88px).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_2b1027e6.js` → `default.thm_22e3c24b.js`, `manifest.json?v=2b1027e6` → `?v=22e3c24b` trong `index.php`; cập nhật `WWW/version.txt` → `22e3c24b`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới: tên các Thánh Vật đã tách rời rõ ràng theo từng ô, không còn chồng lên ô bên cạnh, chữ vẫn đọc được ở cỡ 13.

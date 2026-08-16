@@ -59189,9 +59189,15 @@ window.skins={};
 		t.bold = false;
 		t.bottom = 0;
 		t.fontFamily = "Microsoft YaHei";
+		t.height = 30;
 		t.horizontalCenter = 0;
-		t.size = 18;
+		t.lineSpacing = 0;
+		t.multiline = true;
+		t.size = 13;
 		t.text = "Tên Thánh Vật";
+		t.textAlign = "center";
+		t.width = 88;
+		t.wordWrap = true;
 		return t;
 	};
 	_proto.count_i = function () {
