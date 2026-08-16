@@ -14,7 +14,7 @@
 		<ns1:GweaponBossView id="gwBoss" scaleX="1" scaleY="1" skinName="SkinGwBoss" name="Thánh Vực" top="0" bottom="0" left="0" right="0" visible="false"/>
 	</e:ViewStack>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" width="600" currentState="nohead" horizontalCenter="0" top="0"/>
-	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" y="4" scaleX="0.9" scaleY="0.9" horizontalCenter="-274" visible="true"/>
+	<e:Button id="help" label="Nút bấm" skinName="SkinBtn0" icon="wenhao" y="4" scaleX="0.9" scaleY="0.9" horizontalCenter="-110" visible="true"/>
 	<e:Image id="titleImg" source="godweapon_title" y="7" horizontalCenter="-223"/>
 	<e:Image width="592" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" scale9Grid="29,7,539,49" bottom="80" source="bantoumingkuang3_png"/>
 	<e:TabBar id="tab" itemRendererSkinName="SkinBtnTab0" dataProvider="{viewStack}" horizontalCenter="0" bottom="88">

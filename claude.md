@@ -7056,3 +7056,15 @@ Người dùng gửi ảnh màn "Thần Binh" tab "Hợp Thành" (GwMixSkin), b�
 **Cache-bust**: `default.thm_2b1027e6.js` → `default.thm_22e3c24b.js`, `manifest.json?v=2b1027e6` → `?v=22e3c24b` trong `index.php`; cập nhật `WWW/version.txt` → `22e3c24b`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới: tên các Thánh Vật đã tách rời rõ ràng theo từng ô, không còn chồng lên ô bên cạnh, chữ vẫn đọc được ở cỡ 13.
+
+## 286. Áp dụng vị trí nút "?" cho màn Thần Binh (GwSkin.exml) (2026-08-16)
+
+Người dùng gửi ảnh màn "Thần Binh" tab "Thánh Vực", yêu cầu dời nút "?" giống các skin khác đã làm.
+
+**Áp dụng**: `GwSkin.exml` (khung ViewStack cha của 4 tab "Thần Binh/Huyễn Cảnh/Hợp Thành/Thánh Vực", cũng là nơi chứa `GwMixSkin.exml` vừa sửa ở mục 285) có nút `id="help"` tại `horizontalCenter="-274"`, width=600 giống các file đã chỉnh trước - áp thẳng `horizontalCenter="-110"` đã ổn định.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_22e3c24b.js` → `default.thm_262cc7b4.js`, `manifest.json?v=22e3c24b` → `?v=262cc7b4` trong `index.php`; cập nhật `WWW/version.txt` → `262cc7b4`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới nút "?" đã nằm đúng vị trí. Ghi chú thêm: màn này cũng dùng `RoleSelectPanelSkin.exml` (đã sửa ở mục 281-284) cho hiển thị tiền tệ - "1.5 trăm triệu"/"2446.5 vạn" trong ảnh gửi kèm đã hiển thị đúng, không xuống dòng, xác nhận các fix trước đó hoạt động tốt ở màn này.
