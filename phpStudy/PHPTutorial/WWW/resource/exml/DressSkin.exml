@@ -87,7 +87,7 @@
 	</e:Group>
 </e:Group>
 	<ns1:RoleSelectPanel id="roleSelect" skinName="SkinRoleSelectPanel" horizontalCenter="0" top="0" bottom="0"/>
-	<e:Button id="help" icon="wenhao" skinName="SkinBtn0" label="Nút bấm" scaleX="0.9" scaleY="0.9" top="5" horizontalCenter="-271"/>
+	<e:Button id="help" icon="wenhao" skinName="SkinBtn0" label="Nút bấm" scaleX="0.9" scaleY="0.9" top="5" horizontalCenter="-110"/>
 	<e:Image top="11" horizontalCenter="-208.5" source="biaoti_zhuangban_png"/>
 
 	<e:Button id="closeBtn" label="Nút bấm" skinName="SkinBtn0" icon="chatclose"  width="64" top="48" anchorOffsetY="0" height="64" horizontalCenter="272"/>

@@ -7068,3 +7068,15 @@ Người dùng gửi ảnh màn "Thần Binh" tab "Thánh Vực", yêu cầu d�
 **Cache-bust**: `default.thm_22e3c24b.js` → `default.thm_262cc7b4.js`, `manifest.json?v=22e3c24b` → `?v=262cc7b4` trong `index.php`; cập nhật `WWW/version.txt` → `262cc7b4`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới nút "?" đã nằm đúng vị trí. Ghi chú thêm: màn này cũng dùng `RoleSelectPanelSkin.exml` (đã sửa ở mục 281-284) cho hiển thị tiền tệ - "1.5 trăm triệu"/"2446.5 vạn" trong ảnh gửi kèm đã hiển thị đúng, không xuống dòng, xác nhận các fix trước đó hoạt động tốt ở màn này.
+
+## 287. Áp dụng vị trí nút "?" cho màn Huyễn Hóa (DressSkin.exml) (2026-08-16)
+
+Người dùng gửi ảnh màn "Huyễn Hóa" (tab Hóa Hình/Ảo Vũ/Tiên Vũ/Ngự Khí), yêu cầu dời nút "?" giống các skin khác.
+
+**Truy vết**: dò theo chuỗi duy nhất "Thuộc tính Ảo Hóa có thể cộng dồn" trong ảnh, tìm ra `DressSkin.exml` (class `SkinDress`). Nút `id="help"` tại `horizontalCenter="-271"`, width=600 - áp thẳng `horizontalCenter="-110"` đã ổn định.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_262cc7b4.js` → `default.thm_a5244575.js`, `manifest.json?v=262cc7b4` → `?v=a5244575` trong `index.php`; cập nhật `WWW/version.txt` → `a5244575`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới nút "?" đã nằm đúng vị trí.
