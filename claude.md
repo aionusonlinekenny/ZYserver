@@ -7002,3 +7002,17 @@ Người dùng chỉ ra chính xác: "1.3 trăm triệu" vẫn xuống dòng c�
 **Cache-bust**: `default.thm_cf7eb26d.js` → `default.thm_307c1c89.js`, `manifest.json?v=cf7eb26d` → `?v=307c1c89` trong `index.php`; cập nhật `WWW/version.txt` → `307c1c89`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế - RỦI RO RẤT CAO (58 màn hình)**: đây là thay đổi có phạm vi ảnh hưởng lớn nhất từng thực hiện trong session này. Cần người dùng kiểm tra ở NHIỀU cửa sổ con khác nhau (không chỉ "跨服战场") xem: (1) "1.3 trăm triệu"/"2444.9 vạn" hết cắt giữa chữ, xuống dòng gọn tại khoảng trắng nếu cần; (2) không đè lên icon phía trước; (3) không có màn hình nào khác trong số 58 file bị lỗi hiển thị mới do đổi từ `horizontalCenter` sang `x` cố định + đổi `textAlign`. Nếu phát hiện vấn đề ở màn hình BẤT KỲ nào khác ngoài "跨服战场", cần báo lại ngay vì đây là lỗi ảnh hưởng cực rộng.
+
+## 282. Xác nhận mục 281 đúng chỗ (hết xuống dòng ở cả "Tiên Vũ" và "跨服战场") - tăng cỡ chữ 14→16 cho dễ nhìn hơn, tận dụng khoảng trống thật giữa 2 cụm (2026-08-16)
+
+Người dùng gửi 2 ảnh (Tiên Vũ + 跨服战场) xác nhận mục 281 đã sửa ĐÚNG CHỖ - "1.3 trăm triệu"/"2444.9 vạn" hiển thị gọn trên 1 dòng ở cả 2 màn hình, không còn cắt giữa chữ. Chỉ còn nhận xét: chữ hiện tại (size 14) "quá nhỏ làm lệch không đẹp" so với các icon lớn xung quanh, cần chỉnh cỡ chữ to hơn.
+
+**Tính lại khoảng trống thực tế còn dư (khác cách tính trước đây)**: nhận ra thuộc tính `width` khai báo trên Group `jinbi`/`yb` KHÔNG cắt (clip) nội dung con - nó chỉ ảnh hưởng tới việc TỰ CĂN GIỮA của chính Group đó (`horizontalCenter`) chứ không giới hạn không gian thực tế cho nhãn `goldTxt`/`ybTxt` bên trong. Tính lại khoảng cách thật giữa 2 cụm (`jinbi` tại `horizontalCenter="7"`, `yb` tại `horizontalCenter="203.5"`, chênh nhau 196.5 đơn vị) trừ đi phần đã dùng bởi icon+text hiện tại, phát hiện còn dư đáng kể (~29-30 đơn vị) chưa dùng tới - đủ để tăng cỡ chữ lên an toàn mà không cần đổi vị trí/khoảng cách 2 cụm.
+
+**Cách sửa**: `goldTxt`: `size` 14→16, `width` 125→148 (tận dụng khoảng dư tính được, chừa lại buffer nhỏ ~5 đơn vị trước khi chạm icon cụm `yb`). `ybTxt`: `size` 14→16, `width` 120→128. Giữ nguyên `x`, `multiline`/`wordWrap`/`height`/vị trí Group đã ổn định ở mục 281 (không đụng, dùng làm lưới an toàn phòng khi số liệu dài hơn trong tương lai vẫn tự xuống dòng gọn thay vì tràn).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_307c1c89.js` → `default.thm_bcb5f78c.js`, `manifest.json?v=307c1c89` → `?v=bcb5f78c` trong `index.php`; cập nhật `WWW/version.txt` → `bcb5f78c`.
+
+**Chưa kiểm chứng thực tế** - vẫn là component dùng chung 58 file, cần người dùng xác nhận qua ảnh mới: (1) cỡ chữ 16 đủ lớn/hài hoà với icon xung quanh chưa; (2) vẫn không xuống dòng/tràn/đè icon ở cả 2 màn đã test lẫn các màn khác trong số 58 file.
