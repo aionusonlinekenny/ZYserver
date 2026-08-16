@@ -7016,3 +7016,17 @@ Người dùng gửi 2 ảnh (Tiên Vũ + 跨服战场) xác nhận mục 281 đ
 **Cache-bust**: `default.thm_307c1c89.js` → `default.thm_bcb5f78c.js`, `manifest.json?v=307c1c89` → `?v=bcb5f78c` trong `index.php`; cập nhật `WWW/version.txt` → `bcb5f78c`.
 
 **Chưa kiểm chứng thực tế** - vẫn là component dùng chung 58 file, cần người dùng xác nhận qua ảnh mới: (1) cỡ chữ 16 đủ lớn/hài hoà với icon xung quanh chưa; (2) vẫn không xuống dòng/tràn/đè icon ở cả 2 màn đã test lẫn các màn khác trong số 58 file.
+
+## 283. Xác nhận mục 282 cỡ chữ ổn - sửa chữ bị lệch lên trên do thiếu verticalAlign khi thêm height=40 (2026-08-16)
+
+Người dùng gửi ảnh màn "Nhân Vật" nhận xét chữ số tiền "lệch lệch", cụ thể "lệch lên trên" so với khung hiển thị - không phàn nàn gì về cỡ chữ nữa (coi như mục 282 đã ổn).
+
+**Gốc rễ**: mục 281 thêm `height="40"` cho `goldTxt`/`ybTxt` (dự phòng 2 dòng) nhưng KHÔNG khai báo `verticalAlign` - mặc định của `eui.Label` là căn theo TOP khi có `height` tường minh, nên với nội dung chỉ 1 dòng (thấp hơn nhiều so với khung cao 40), chữ dồn lên sát mép trên, để trống khoảng lớn phía dưới - đúng hiện tượng "lệch lên trên" người dùng mô tả. Đây là hệ quả bỏ sót của chính kỹ thuật `multiline`+`wordWrap`+`height` cố định đã áp dụng từ mục 280-281, không phải lỗi mới phát sinh.
+
+**Cách sửa**: thêm `verticalAlign="middle"` cho cả `goldTxt` và `ybTxt` - căn giữa theo chiều dọc trong khung cao 40 (áp dụng đúng cho cả trường hợp 1 dòng lẫn 2 dòng nếu xuống dòng trong tương lai).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_bcb5f78c.js` → `default.thm_00b76085.js`, `manifest.json?v=bcb5f78c` → `?v=00b76085` trong `index.php`; cập nhật `WWW/version.txt` → `00b76085`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới chữ đã canh giữa đúng theo chiều dọc trong khung, không còn lệch lên trên.
