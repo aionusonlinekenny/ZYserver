@@ -7030,3 +7030,15 @@ Người dùng gửi ảnh màn "Nhân Vật" nhận xét chữ số tiền "l�
 **Cache-bust**: `default.thm_bcb5f78c.js` → `default.thm_00b76085.js`, `manifest.json?v=bcb5f78c` → `?v=00b76085` trong `index.php`; cập nhật `WWW/version.txt` → `00b76085`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới chữ đã canh giữa đúng theo chiều dọc trong khung, không còn lệch lên trên.
+
+## 284. Xác nhận mục 283 đẹp - dời text tiền tệ sang phải thêm 5px cho có khoảng cách với icon (2026-08-16)
+
+Người dùng xác nhận mục 283 đã đẹp (canh giữa dọc ổn), chỉ cần yêu cầu nhỏ cuối: dời `goldTxt`/`ybTxt` sang phải thêm 5px để có khoảng cách rõ hơn với icon đứng trước.
+
+**Sửa**: `goldTxt`'s `x` từ `42` → `47`; `ybTxt`'s `x` từ `48` → `53` (cả 2 cùng dời +5, giữ nguyên mọi thuộc tính khác đã ổn định ở mục 283).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_00b76085.js` → `default.thm_2b1027e6.js`, `manifest.json?v=00b76085` → `?v=2b1027e6` trong `index.php`; cập nhật `WWW/version.txt` → `2b1027e6`.
+
+**Chưa kiểm chứng thực tế** - thay đổi nhỏ, rủi ro thấp, nhưng vẫn cần người dùng xác nhận qua ảnh mới cho chắc vì đây là component dùng chung 58 file.

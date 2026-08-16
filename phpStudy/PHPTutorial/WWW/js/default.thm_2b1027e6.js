@@ -2163,7 +2163,7 @@ window.skins={};
 		t.verticalCenter = -1;
 		t.width = 128;
 		t.wordWrap = true;
-		t.x = 48;
+		t.x = 53;
 		return t;
 	};
 	_proto.jinbi_i = function () {
@@ -2202,7 +2202,7 @@ window.skins={};
 		t.verticalCenter = -0.5;
 		t.width = 148;
 		t.wordWrap = true;
-		t.x = 42;
+		t.x = 47;
 		return t;
 	};
 	return SkinRoleSelectPanel;
