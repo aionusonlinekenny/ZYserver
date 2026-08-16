@@ -6956,3 +6956,15 @@ Người dùng gửi ảnh xác nhận NGẦM mục 277 đã đúng (thấy rõ 
 **Cache-bust**: `default.thm_b308e321.js` → `default.thm_94b428c0.js`, `manifest.json?v=b308e321` → `?v=94b428c0` trong `index.php`; cập nhật `WWW/version.txt` → `94b428c0`.
 
 **Chưa kiểm chứng thực tế** - đổi `textAlign` sang trái trong khi `width` hộp chữ (135/100) vẫn giữ nguyên như tính cho canh giữa - do đây chỉ đổi CÁCH VẼ chữ bên trong hộp có sẵn (không đổi vị trí/kích thước hộp), rủi ro tràn/xuống dòng không đổi so với mục 277 đã xác nhận ổn, nhưng cần người dùng xác nhận lại hình ảnh cho chắc.
+
+## 279. Mục 278 tái phát lỗi xuống dòng ở "1.3 trăm triệu" (chỉ đổi textAlign nhưng chữ vẫn tràn ngưỡng) - nới thêm width + giảm cỡ chữ 14→13 cho goldTxt (2026-08-16)
+
+Người dùng gửi ảnh cho thấy "1.3 trăm triệu" lại xuống dòng ("1.3 trăm tri" / "ệu") ngay sau khi đổi `textAlign` sang trái ở mục 278 - dù width/size không hề đổi, chỉ đổi cách canh chữ. Kết luận: ước tính px/ký tự ở mục 277 (suy từ 1 điểm dữ liệu duy nhất, ngoại suy tuyến tính) đã đánh giá THẤP độ rộng thực tế cần thiết - `width="135"` ở `size="14"` vốn đã sát ngưỡng ngay từ đầu (khớp với việc mục 277 "vừa đủ không xuống dòng" thực ra là may mắn nằm sát biên chứ không có dư địa an toàn), không phải do đổi `textAlign` gây ra hồi quy thực sự. `ybTxt` ("2444.9 vạn") không bị ảnh hưởng - vẫn hiển thị đúng 1 dòng trong cùng ảnh.
+
+**Cách sửa (chỉ riêng `goldTxt`, không đụng `ybTxt` đang ổn)**: tăng `width` từ `135` → `145`; GIẢM cỡ chữ từ `14` → `13` (đổi ngược lại gần với mức đã kiểm chứng ổn định ở mục 277 trước khi tăng lên 14, ưu tiên an toàn hơn đúng ý "16" người dùng từng yêu cầu vì không gian thực tế không đủ). Đồng thời nới nền `coin_dikuang` thứ nhất từ `width="155"` → `"160"` cho khớp text mới, không đụng vị trí cụm icon vàng/`ybTxt` thứ 2 (giữ nguyên `x` đã ổn định).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_94b428c0.js` → `default.thm_cb3c3d59.js`, `manifest.json?v=94b428c0` → `?v=cb3c3d59` trong `index.php`; cập nhật `WWW/version.txt` → `cb3c3d59`.
+
+**Chưa kiểm chứng thực tế** - đây là lần thứ 2 lỗi xuống dòng ở CÙNG vị trí tái phát dù đã tính toán trước, cho thấy phương pháp ước lượng px/ký tự tuyến tính từ 1 mẫu không đủ tin cậy cho trường hợp sát ngưỡng - lần này đã nới thêm biên độ an toàn (giảm cỡ chữ THAY VÌ chỉ tăng width, để giảm rủi ro tính sai lần nữa) nhưng VẪN cần người dùng xác nhận trực tiếp qua ảnh vì chưa có cách đo chính xác px thực tế của font "Microsoft YaHei" trong môi trường egret.

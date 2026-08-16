@@ -114510,7 +114510,7 @@ return SkinLYRAttr;
 	_proto._Image2_i = function () {
 		var t = new eui.Image();
 		t.source = "coin_dikuang";
-		t.width = 155;
+		t.width = 160;
 		t.x = 325;
 		t.y = 0;
 		return t;
@@ -114553,12 +114553,12 @@ return SkinLYRAttr;
 	_proto.goldTxt_i = function () {
 		var t = new eui.Label();
 		this.goldTxt = t;
-		t.size = 14;
+		t.size = 13;
 		t.text = "0";
 		t.textAlign = "left";
 		t.textColor = 0xffffff;
 		t.verticalAlign = "middle";
-		t.width = 135;
+		t.width = 145;
 		t.x = 343;
 		t.y = 4.5;
 		return t;
