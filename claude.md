@@ -6968,3 +6968,19 @@ Người dùng gửi ảnh cho thấy "1.3 trăm triệu" lại xuống dòng ("
 **Cache-bust**: `default.thm_94b428c0.js` → `default.thm_cb3c3d59.js`, `manifest.json?v=94b428c0` → `?v=cb3c3d59` trong `index.php`; cập nhật `WWW/version.txt` → `cb3c3d59`.
 
 **Chưa kiểm chứng thực tế** - đây là lần thứ 2 lỗi xuống dòng ở CÙNG vị trí tái phát dù đã tính toán trước, cho thấy phương pháp ước lượng px/ký tự tuyến tính từ 1 mẫu không đủ tin cậy cho trường hợp sát ngưỡng - lần này đã nới thêm biên độ an toàn (giảm cỡ chữ THAY VÌ chỉ tăng width, để giảm rủi ro tính sai lần nữa) nhưng VẪN cần người dùng xác nhận trực tiếp qua ảnh vì chưa có cách đo chính xác px thực tế của font "Microsoft YaHei" trong môi trường egret.
+
+## 280. Mục 279 vẫn xuống dòng (lần thứ 3) + phát hiện thêm ybTxt đè lên icon vàng - đổi chiến lược: dùng wordWrap+multiline tường minh thay vì đoán px, chấp nhận 2 dòng có chủ đích thay vì cố ép 1 dòng (2026-08-16)
+
+Người dùng gửi lại 2 ảnh: (1) màn "跨服战场" - "1.3 trăm triệu" VẪN xuống dòng y hệt kiểu cũ dù đã tăng width/giảm size ở mục 279 (lần tái phát THỨ 3 của đúng lỗi này); (2) màn chính - phát hiện thêm lỗi MỚI: "2444.9 vạn" (`ybTxt`) đè lên icon vàng (`recharge1`) đứng ngay trước nó.
+
+**Đổi chiến lược sau 2 lần đoán px sai liên tiếp**: nhận thấy phương pháp ước lượng px/ký tự tuyến tính (ngoại suy từ 1 điểm dữ liệu) đã chứng minh KHÔNG ĐÁNG TIN CẬY qua 2 lần liên tiếp thất bại (mục 277→279). Thay vì tiếp tục đoán 1 con số width "vừa khít" để ép chữ vừa đúng 1 dòng (rủi ro cao, dễ sai lại), chuyển sang cách tiếp cận ĐÃ CHỨNG MINH HOẠT ĐỘNG TỐT trong session (mục 274, `BtnTab0WideSkin.exml` dùng `multiline="true" wordWrap="true"` cho tên tab dài) - khai báo tường minh `multiline="true" wordWrap="true"` kèm `height` đủ cho 2 dòng, CHẤP NHẬN việc chữ xuống 2 dòng như một thiết kế có chủ đích (ngắt tại khoảng trắng nhờ word-wrap) thay vì cố ép nhồi vào 1 dòng duy nhất - loại bỏ hẳn rủi ro "ngắt giữa từ" (như "tri"/"ệu" đã thấy) vì word-wrap ngắt tại ranh giới từ, không ngắt giữa chữ.
+
+**goldTxt (tiền đồng)**: giảm `width` từ `145` xuống `110` (đủ cho "1.3 trăm" trên 1 dòng, "triệu" xuống dòng dưới một cách gọn gàng thay vì bị cắt giữa chữ); thêm `height="32"` (đủ cho 2 dòng), `multiline="true"`, `wordWrap="true"`, `lineSpacing="0"`; dời `y` từ `4.5` lên `-2` để giữ tâm hiển thị 2 dòng gần đúng vị trí cũ.
+
+**ybTxt (kim bảo) - sửa cả lỗi xuống dòng tiềm ẩn LẪN lỗi đè icon mới phát hiện**: đổi từ `verticalAlign="bottom"` sang `"middle"` (đồng bộ với `goldTxt`, hợp lý hơn cho khối 2 dòng); thêm cùng bộ `height="32" multiline="true" wordWrap="true"` như `goldTxt` (phòng ngừa xuống dòng xấu nếu số liệu dài hơn trong tương lai); **quan trọng nhất**: dời `x` từ `512` → `535` để thoát khỏi vùng chiếm dụng của icon `recharge1` (khai báo `x="495" width="35"`, tức chiếm 495-530 - `x=512` cũ nằm LỌT HẲN trong khoảng này, giải thích đúng hiện tượng đè lên icon người dùng vừa phát hiện). Đồng thời nới nền `coin_dikuang` thứ 2 (`width` 118→135) và giảm nền thứ 1 (`width` 160→140, do `goldTxt` giờ hẹp hơn) cho khớp trực quan.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_cb3c3d59.js` → `default.thm_cf7eb26d.js`, `manifest.json?v=cb3c3d59` → `?v=cf7eb26d` trong `index.php`; cập nhật `WWW/version.txt` → `cf7eb26d`.
+
+**Chưa kiểm chứng thực tế - đã đổi chiến lược nhưng vẫn cần xác nhận**: cần người dùng xác nhận qua ảnh mới: (1) "1.3 trăm triệu" giờ xuống 2 dòng GỌN GÀNG tại ranh giới từ (không cắt giữa chữ) - nếu người dùng KHÔNG chấp nhận việc hiển thị 2 dòng (muốn ép 1 dòng bằng mọi giá), cần trao đổi thêm hướng khác (có thể phải rút gọn đơn vị tiền tệ trong code, hoặc thiết kế lại bố cục HUD thay vì tiếp tục chỉnh width/size); (2) "2444.9 vạn" đã hết đè lên icon vàng; (3) không phát sinh lỗi tràn/chồng lấn mới nào khác do các thay đổi width nền/vị trí lần này.
