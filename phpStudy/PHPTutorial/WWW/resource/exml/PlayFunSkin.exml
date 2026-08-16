@@ -9,8 +9,8 @@
 			<e:Image y="0" scale9Grid="6,6,20,21" x="495" width="118" source="coin_dikuang"/>
 			<e:Button id="recharge1" skinName="SkinBtn0" y="6" icon="zjmyuanbao" x="495" width="35" height="27" scaleX="0.7" scaleY="0.7"/>
 			<e:Button id="recharge2" skinName="SkinBtn0" y="6" icon="zjmjinbi" x="313" width="35" height="27" scaleX="0.7" scaleY="0.7"/>
-			<e:Label id="goldTxt" text="0" y="4.5" size="14" textAlign="center" width="135" x="343" textColor="0xffffff" verticalAlign="middle"/>
-			<e:Label id="ybTxt" text="0" y="4.5" size="14" textAlign="center" width="100" x="512" textColor="0xffffff" verticalAlign="bottom"/>
+			<e:Label id="goldTxt" text="0" y="4.5" size="14" textAlign="left" width="135" x="343" textColor="0xffffff" verticalAlign="middle"/>
+			<e:Label id="ybTxt" text="0" y="4.5" size="14" textAlign="left" width="100" x="512" textColor="0xffffff" verticalAlign="bottom"/>
 			<e:Group width="260" height="30" x="345" y="37.5">
 			<e:Label id="mapName0" text="Ải 3600" size="13" backgroundColor="0x000000" x="22.52" y="5.15" scaleX="1" fontFamily="Microsoft YaHei" textColor="0xffff00"/>
 			<e:Group id="expGroup" y="-0.5" x="111.69" width="190">

@@ -6944,3 +6944,15 @@ Người dùng gửi 2 ảnh xác nhận mục 276 đã hết xuống dòng (th�
 **Cache-bust**: `default.thm_a77d17a2.js` → `default.thm_b308e321.js`, `main.min_d62659a1.js` → `main.min_d28e2ac0.js`, `manifest.json?v=a77d17a2` → `?v=b308e321` trong `index.php`; cập nhật `WWW/version.txt` → `b308e321`.
 
 **Chưa kiểm chứng thực tế - vẫn là thay đổi HUD TOÀN CỤC, rủi ro cao**: cần người dùng xác nhận qua ảnh mới: (1) đã có khoảng trắng giữa số và đơn vị ở cả 2 chỗ; (2) cỡ chữ 14 có đủ lớn/dễ đọc chấp nhận được dù chưa đúng 16 như yêu cầu (giải thích lý do ở trên); (3) QUAN TRỌNG NHẤT - vẫn không xuống dòng/tràn màn hình với cỡ chữ và dấu cách mới trên NHIỀU màn hình khác nhau, vì phép tính px/ký tự chỉ là suy luận tuyến tính từ 1 điểm dữ liệu, chưa đo trực tiếp qua ảnh thực tế ở cỡ 14.
+
+## 278. Người dùng xác nhận mục 277 (khoảng trắng + cỡ chữ 14) ổn - đổi canh chữ 2 ô tiền tệ từ center sang left (2026-08-16)
+
+Người dùng gửi ảnh xác nhận NGẦM mục 277 đã đúng (thấy rõ "1.3 trăm triệu" và "2444.9 vạn" có khoảng trắng, không xuống dòng) - không phản hồi tiêu cực nên coi như XONG. Yêu cầu tiếp: đổi `textAlign` của `goldTxt`/`ybTxt` từ `"center"` sang `"left"`.
+
+**Sửa**: `PlayFunSkin.exml` - `goldTxt` và `ybTxt` đều đổi `textAlign="center"` → `textAlign="left"`. Không đổi gì khác (giữ nguyên `width`/`x`/`size` đã ổn định ở mục 277).
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`. Không đụng `main.min.js` lần này.
+
+**Cache-bust**: `default.thm_b308e321.js` → `default.thm_94b428c0.js`, `manifest.json?v=b308e321` → `?v=94b428c0` trong `index.php`; cập nhật `WWW/version.txt` → `94b428c0`.
+
+**Chưa kiểm chứng thực tế** - đổi `textAlign` sang trái trong khi `width` hộp chữ (135/100) vẫn giữ nguyên như tính cho canh giữa - do đây chỉ đổi CÁCH VẼ chữ bên trong hộp có sẵn (không đổi vị trí/kích thước hộp), rủi ro tràn/xuống dòng không đổi so với mục 277 đã xác nhận ổn, nhưng cần người dùng xác nhận lại hình ảnh cho chắc.
