@@ -7112,3 +7112,17 @@ Người dùng gửi lại ảnh màn "Thắng Lợi", xác nhận dòng "Nhận
 **Cache-bust**: `default.thm_10ec4522.js` → `default.thm_47b32bf2.js`, `manifest.json?v=10ec4522` → `?v=47b32bf2` trong `index.php`; cập nhật `WWW/version.txt` → `47b32bf2`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới: (1) tên vật phẩm hiện đủ chữ (có thể xuống 2 dòng, cỡ chữ nhỏ hơn 1 chút); (2) không bị đè lên hàng vật phẩm phía dưới do tăng chiều cao nhãn trong khung `verticalGap` hẹp; (3) các màn khác dùng chung component `SkinItem3` (ngoài "Thắng Lợi") không phát sinh lỗi hiển thị mới.
+
+## 290. Áp dụng vị trí nút "?" cho 3 màn: Tiên Cung Tranh Bá, Tầm Bảo, Đấu Trường (2026-08-16)
+
+Người dùng gửi 3 ảnh, yêu cầu áp dụng cách dời nút "?" đã ổn định cho các màn này.
+
+**Truy vết**: "Tiên Cung Tranh Bá" (nút "Xông vào chiến trường") → `GuildWarMainSkin.exml`. "Tầm Bảo" (ảnh chụp là popup "Nhận báu vật sau" - `HuntResult.exml` - che lên TRÊN màn nền "Tầm Bảo"; nút "?" thuộc về màn NỀN chứ không phải popup, nên truy theo chuỗi "Số lần quay thưởng tuần này" thấy trong ảnh mới ra đúng `TreasureChuanshi.exml` - nhưng file này không có nút "?" riêng, nó chỉ là 1 tab con của khung cha `TreasureHuntSkin.exml` (tương tự mẫu hình GwSkin/GwMixSkin đã gặp) - nút "?" nằm ở khung cha đó). "Đấu Trường" (tab "Vạn Long") → `ladderwinskin.exml`.
+
+**Áp dụng**: cả 3 file đều `width="600"`, áp thẳng `horizontalCenter="-110"` đã ổn định cho nút `id="help"`: `GuildWarMainSkin.exml` từ `-282.5`, `TreasureHuntSkin.exml` từ `-278`, `ladderwinskin.exml` từ `-277`.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận cả 3 exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_47b32bf2.js` → `default.thm_a9b5f636.js`, `manifest.json?v=47b32bf2` → `?v=a9b5f636` trong `index.php`; cập nhật `WWW/version.txt` → `a9b5f636`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới nút "?" đã nằm đúng vị trí ở cả 3 màn.
