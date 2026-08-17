@@ -7096,3 +7096,19 @@ Người dùng gửi ảnh màn kết quả "Thắng Lợi" (có "Cống Hiến 
 **Cache-bust**: `default.thm_a5244575.js` → `default.thm_10ec4522.js`, `manifest.json?v=a5244575` → `?v=10ec4522` trong `index.php`; cập nhật `WWW/version.txt` → `10ec4522`. Không đụng `main.min.js` (chuỗi text giữ nguyên, chỉ sửa vị trí hiển thị).
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới dòng chữ hiện đủ, không còn tràn ra ngoài. Ghi chú riêng chưa xử lý: cùng ảnh cho thấy tên vật phẩm thưởng bên dưới ("Cống Hiến Ti", "Kết Tinh Thầ", "Gói Bí Ẩn Ti", "Thẻ Kinh Ng"...) cũng bị cắt ngắn/thiếu chữ ở itemRenderer riêng của từng List (`listCoin`/`listItem`/`listEmblem`) - đây là vấn đề KHÁC, chưa được người dùng báo cụ thể trong yêu cầu lần này nên chưa sửa, cần báo lại nếu muốn xử lý.
+
+## 289. Người dùng gửi lại ảnh xác nhận dòng đầu đã đủ chữ nhưng "vẫn chưa ok" - sửa nốt tên vật phẩm bị cắt ngắn ở lưới phần thưởng đã ghi chú tồn đọng ở mục 288 (2026-08-16)
+
+Người dùng gửi lại ảnh màn "Thắng Lợi", xác nhận dòng "Nhận được phần thưởng như sau：" đã dịch chuyển và hiện đủ chữ (mục 288 đã đúng), nhưng nói "vẫn chưa ok" - khớp đúng với vấn đề đã tự ghi chú TỒN ĐỌNG ở cuối mục 288 (tên vật phẩm trong lưới 8 ô bên dưới vẫn bị cắt ngắn: "Cống Hiến Ti", "Kết Tinh Thầ", "Gói Bí Ẩn Ti" x4, "Thẻ Kinh Ng"). Chủ động xử lý luôn vấn đề đã biết trước thay vì chờ người dùng mô tả lại chi tiết.
+
+**Truy vết**: lưới 8 ô vật phẩm dùng `<e:List id="listItem" itemRendererSkinName=...` trong `ResultSkin.exml`, itemRenderer thực tế là class `GuildItemBase2` (kế thừa `ItemBase`, ghi đè `skinName="SkinItem3"` + `nameTxt.y=78`) → file `ItemSkin3.exml`. Nhãn `nameTxt` có `width="74"` (đúng bằng chiều rộng ô) nhưng KHÔNG có `wordWrap`, lại có `height="16"` cố định (chỉ đủ 1 dòng) - tên dài bị cắt ngang theo chiều rộng (không xuống dòng, không có "...", chỉ đơn giản mất phần thừa) - khớp đúng hiện tượng trong ảnh.
+
+**Cân nhắc rủi ro chồng dòng**: lưới dùng `TileLayout ... verticalGap="5"` (khoảng cách dọc giữa các hàng chỉ 5 đơn vị, RẤT hẹp) - nếu tăng `height` của `nameTxt` quá nhiều để chứa 2 dòng thoải mái, item ở hàng dưới có nguy cơ bị đè lên. Chọn mức tăng vừa phải, kèm giảm cỡ chữ để bù lại: `height` từ `16` → `25` (chỉ +9, thay vì +14 nếu giữ nguyên cỡ chữ 13), `size` từ `13` → `11` (đủ nhỏ để 2 dòng vừa gọn trong 25 đơn vị), thêm `multiline="true" wordWrap="true" lineSpacing="0"`, giữ nguyên `width="74"`.
+
+**Phạm vi ảnh hưởng**: `GuildItemBase2`/`SkinItem3` được dùng ở khoảng 17 vị trí khác trong `main.min.js` (không riêng màn "Thắng Lợi") - tương tự nhiều fix trước, đây là 1 component tái sử dụng, nhưng thay đổi lần này CHỈ THÊM khả năng xuống dòng (không di chuyển vị trí, không đổi hành vi khi tên đã đủ ngắn để vừa 1 dòng) nên rủi ro thấp hơn nhiều so với các lần chỉnh toạ độ HUD trước đây.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_10ec4522.js` → `default.thm_47b32bf2.js`, `manifest.json?v=10ec4522` → `?v=47b32bf2` trong `index.php`; cập nhật `WWW/version.txt` → `47b32bf2`.
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới: (1) tên vật phẩm hiện đủ chữ (có thể xuống 2 dòng, cỡ chữ nhỏ hơn 1 chút); (2) không bị đè lên hàng vật phẩm phía dưới do tăng chiều cao nhãn trong khung `verticalGap` hẹp; (3) các màn khác dùng chung component `SkinItem3` (ngoài "Thắng Lợi") không phát sinh lỗi hiển thị mới.
