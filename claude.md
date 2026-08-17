@@ -7080,3 +7080,19 @@ Người dùng gửi ảnh màn "Huyễn Hóa" (tab Hóa Hình/Ảo Vũ/Tiên V�
 **Cache-bust**: `default.thm_262cc7b4.js` → `default.thm_a5244575.js`, `manifest.json?v=262cc7b4` → `?v=a5244575` trong `index.php`; cập nhật `WWW/version.txt` → `a5244575`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới nút "?" đã nằm đúng vị trí.
+
+## 288. Sửa dòng "Nhận được phần thưởng như sau:" bị tràn sang trái, mất chữ đầu ở màn "Thắng Lợi" (ResultSkin.exml) (2026-08-16)
+
+Người dùng gửi ảnh màn kết quả "Thắng Lợi" (có "Cống Hiến Tiên Minh"), báo dòng "Nhận được phần thưởng như sau:" bị tràn sang trái, đọc thiếu chữ đầu (chỉ thấy "hận được...", mất chữ "N").
+
+**Truy vết**: chuỗi này KHÔNG nằm tĩnh trong bất kỳ file exml nào (dò cả `default.thm.js` lẫn exml source đều không thấy) - hoá ra được TRUYỀN ĐỘNG từ `main.min.js` lúc gọi `ResultMgr.ins().create(o,1,r,"Nhận được phần thưởng như sau：",t)` (chuỗi hardcode trong code xử lý kết thúc phó bản, không phải dữ liệu tĩnh trong skin). Lần theo `ResultMgr.create` → case mặc định mở `ResultedWin` → `skinName="SkinResult"` → tìm ra `ResultSkin.exml`, Label `id="txt"` là nơi nhận chuỗi này.
+
+**Gốc rễ**: `txt` Label dùng `horizontalCenter="-176.5"` (canh giữa quanh 1 điểm cố định lệch hẳn về bên trái, KHÔNG có `width`) - với placeholder thiết kế gốc "Phần thưởng nhận được như sau:" (tương tự độ dài) đã ổn định vị trí đó từ trước, nhưng khi thực tế chuỗi runtime tương đối dài (~20+ ký tự) tự nhiên render CANH GIỮA quanh điểm cục bộ x=123.5 (300-176.5), nửa trái của chữ tràn ra NGOÀI mép trái màn hình (x<0) - đúng hiện tượng "mất chữ N đầu dòng" người dùng mô tả.
+
+**Cách sửa**: bỏ `horizontalCenter="-176.5"`, thay bằng `x="24"` (neo theo mép trái với biên độ vừa phải, giống cách các Label khác trong CÙNG file này như "Nhận tiền tệ："/"Nhận vật phẩm：" đã dùng `x` cố định thay vì `horizontalCenter`) - đảm bảo chữ luôn bắt đầu từ vị trí cố định trong khung nhìn bất kể độ dài thực tế, không phụ thuộc vào việc căn giữa quanh 1 điểm có thể đẩy nửa đầu ra ngoài màn hình.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_a5244575.js` → `default.thm_10ec4522.js`, `manifest.json?v=a5244575` → `?v=10ec4522` trong `index.php`; cập nhật `WWW/version.txt` → `10ec4522`. Không đụng `main.min.js` (chuỗi text giữ nguyên, chỉ sửa vị trí hiển thị).
+
+**Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới dòng chữ hiện đủ, không còn tràn ra ngoài. Ghi chú riêng chưa xử lý: cùng ảnh cho thấy tên vật phẩm thưởng bên dưới ("Cống Hiến Ti", "Kết Tinh Thầ", "Gói Bí Ẩn Ti", "Thẻ Kinh Ng"...) cũng bị cắt ngắn/thiếu chữ ở itemRenderer riêng của từng List (`listCoin`/`listItem`/`listEmblem`) - đây là vấn đề KHÁC, chưa được người dùng báo cụ thể trong yêu cầu lần này nên chưa sửa, cần báo lại nếu muốn xử lý.

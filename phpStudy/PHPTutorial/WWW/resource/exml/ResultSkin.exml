@@ -7,7 +7,7 @@
 	<e:Group horizontalCenter="0" width="600" height="948" verticalCenter="0">
 
 		<e:Image id="bg1"   horizontalCenter="28" x="34" y="6" source="labwin_png" visible="false"/>
-		<e:Label id="txt" text="Phần thưởng nhận được như sau:" size="20" horizontalCenter="-176.5"   y="288.21" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="txt" text="Phần thưởng nhận được như sau:" size="20" x="24"   y="288.21" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 		<e:Label id="labelEmblem" text="Nhận vật phẩm:" size="20" textColor="0xFFFFFF" y="323.21" fontFamily="Microsoft YaHei" textAlign="left" horizontalCenter="-196.5" visible="false"/>
 		<e:Label id="labelItem" text="Nhận vật phẩm:" size="20" textColor="0xFFFFFF" y="358.21" fontFamily="Microsoft YaHei" textAlign="center" horizontalCenter="-196.5" visible="false"/>
 		<e:List id="listCoin" width="398" x="55" y="313" scaleX="1" scaleY="1"/>
