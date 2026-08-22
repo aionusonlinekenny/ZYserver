@@ -42,8 +42,13 @@
 		</e:Group>
 		<e:Button id="minus" label="Button" y="230" skinName="SkinBtn0" icon="btn-" x="95"/>
 		<e:Button id="add" label="Button" y="230" skinName="SkinBtn0" icon="btnadd" x="356"/>
-		<e:Image width="14" height="20" source="gantanhao1" bottom="70" horizontalCenter="-145"/>
-		<e:Label text="Liệt Hỏa Chi Châu không thể chuyển thành Thần Hỏa Bảo Châu" size="20" fontFamily="Microsoft YaHei" textColor="0x0000f1" bottom="70" verticalAlign="middle" horizontalCenter="0"/>
+		<e:Group bottom="55" horizontalCenter="0" height="50">
+			<e:layout>
+				<e:HorizontalLayout gap="6" verticalAlign="middle"/>
+			</e:layout>
+			<e:Image width="14" height="20" source="gantanhao1"/>
+			<e:Label text="Liệt Hỏa Chi Châu không thể chuyển thành Thần Hỏa Bảo Châu" size="18" fontFamily="Microsoft YaHei" textColor="0x0000f1" multiline="true" wordWrap="true" width="360" height="50" textAlign="left" verticalAlign="middle"/>
+		</e:Group>
 		<e:Image height="30" scale9Grid="128,2,15,41" width="300" horizontalCenter="0" bottom="1" touchEnabled="false" source="bantoutiaobg"/>
 		<e:Label text="Chạm vùng trống để đóng cửa sổ" size="20" horizontalCenter="0" bottom="8" touchEnabled="false" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 	</e:Group>
