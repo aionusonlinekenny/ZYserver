@@ -12525,7 +12525,7 @@ window.skins={};
 		var t = new eui.Group();
 		this.barGroup = t;
 		t.horizontalCenter = 24;
-		t.y = 109;
+		t.y = 200;
 		t.elementsContent = [this.bossBloodGroup_i(),this.bossBloodNumLabel_i(),this.dropDown_i(),this.bossBloodPercentageLabel_i(),this.myTxt_i(),this.currewards_i()];
 		return t;
 	};

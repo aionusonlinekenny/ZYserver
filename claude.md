@@ -7148,3 +7148,19 @@ Người dùng gửi 3 ảnh liền, mỗi ảnh 1 lỗi khác nhau trong cùng 
 **Cache-bust**: `default.thm_a9b5f636.js` → `default.thm_234683ae.js`, `manifest.json?v=a9b5f636` → `?v=234683ae` trong `index.php`; cập nhật `WWW/version.txt` → `234683ae`. Không đụng `main.min.js`.
 
 **Chưa kiểm chứng thực tế** - cần người dùng xác nhận qua ảnh mới cả 3 màn: (1) nút bên phải danh sách "Đổi Hỏa Phù" không còn ngắt chữ giữa từ; (2) dòng "Đổi nguyên liệu" đã lọt vào giữa khoảng trống bên phải hợp lý (mức dời 15px có thể cần chỉnh thêm nếu chưa vừa ý); (3) popup "Phân giải" - icon "!" và câu cảnh báo đã gọn 1 dòng, không bị tràn khỏi khung nền; (4) popup "Chuyển đổi Hỏa Châu" - icon "!" và câu dài đã xuống đúng 2 dòng theo từ, không còn tràn/che 2 mép.
+
+## 292. Sửa icon máu nhân vật "sở hữu" đè lên thanh máu BOSS ở màn chiến đấu Thần Phạt (BossBloodSkin.exml) (2026-08-22)
+
+Người dùng gửi ảnh màn chiến đấu boss thế giới (badge "神罚"/Thần Phạt góc trái trên), báo khung "Sở hữu EmĐẹpNhất" (tên người chơi + thanh máu đỏ/vàng + avatar tròn, góc phải trên) đè chồng lên thanh máu BOSS "Thiết Sơn Hắc Hùng 100% X5" (khung xanh, cũng ở góc trên, chiếm gần hết bề ngang màn hình).
+
+**Truy vết**: dò chuỗi "Sở hữu" trong `default.thm.js` ra nhiều file, thu hẹp bằng cách đọc nội dung - khung "Sở hữu ..." (tên người chơi + avatar + thanh máu nhỏ) là `belongGroup` trong `BossBelongSkin.exml` (class `SkinBossBelong`, controller `BossesBelongPanel`), neo `right="1"` width="253" (khối 253px flush theo mép phải, y="110"). Khung máu BOSS (avatar boss + tên + thanh máu dài + nhãn "100%"/"X5") là `barGroup`/`bossBloodGroup` trong `BossBloodSkin.exml` (class `SkinBossBlood`), đặt `y="109"` - GẦN NHƯ TRÙNG y với `belongGroup` (110), trong khi nội dung bên trong (tên boss, thanh máu dài ~263-320px, nút "Phần thưởng") trải rộng gần hết bề ngang 580px của màn - lấn thẳng vào vùng 253px bên phải mà `belongGroup` đang chiếm, gây chồng lấp đúng như ảnh.
+
+**Đánh giá phạm vi ảnh hưởng để chọn file sửa**: `SkinBossBelong` (khung "Sở hữu") được `BossesBelongPanel` dùng tới 21 nơi trong `main.min.js` (rất nhiều loại màn boss khác nhau dùng chung) - sửa toạ độ trực tiếp trong `BossBelongSkin.exml` rủi ro cao vì có thể làm lệch các màn boss khác chưa được người dùng báo lỗi. Ngược lại `SkinBossBlood` chỉ được dùng ĐÚNG 1 nơi (riêng cho loại boss có khiên "hudun" như màn này) - sửa file này an toàn hơn nhiều, không ảnh hưởng màn nào khác.
+
+**Cách sửa**: chọn sửa `BossBloodSkin.exml` - dời cả khối `barGroup` (chứa toàn bộ avatar/tên/thanh máu/nhãn % và X5 của BOSS) xuống dưới, khỏi vùng `belongGroup` đang chiếm ở trên: `y="109"` → `y="200"` (dời xuống 91px). Với chiều cao nội dung của `belongGroup` ước tính khoảng 74px (từ y=110 đến ~184), mốc y=200 mới cho `barGroup` tạo khoảng đệm an toàn phía dưới nó, tránh chồng lấp theo chiều dọc mà không cần đụng tới file dùng chung `BossBelongSkin.exml`.
+
+**Kiểm thử**: `xml.etree.ElementTree` xác nhận exml hợp lệ; `node -c` sạch cho `default.thm.js`.
+
+**Cache-bust**: `default.thm_234683ae.js` → `default.thm_72aed718.js`, `manifest.json?v=234683ae` → `?v=72aed718` trong `index.php`; cập nhật `WWW/version.txt` → `72aed718`. Không đụng `main.min.js`.
+
+**Chưa kiểm chứng thực tế** - đây là fix dựa trên suy luận toạ độ (không chạy được engine Egret thật để đo pixel chính xác), đặc biệt `bossBloodGroup` bên trong có khai báo ĐỒNG THỜI cả `x="-24"` lẫn `horizontalCenter="0"` (rất bất thường, hành vi ưu tiên thuộc tính nào giữa 2 constraint này chưa kiểm chứng chắc chắn với engine thật) - cần người dùng xác nhận qua ảnh mới: (1) 2 khung không còn đè lên nhau; (2) khung máu BOSS không bị đẩy xuống quá sâu che mất phần nội dung/nhân vật bên dưới; (3) mức dời 91px đã đủ hay cần chỉnh thêm.
